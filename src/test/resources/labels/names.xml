@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+    <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="v">
+        <value plural="n">Activity</value>
+        <value plural="y">Activities</value>
+    </noun>
+    <!-- Needed for dynamic labels -->
+    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+        <value plural="n">{0}</value>
+        <value plural="y">{0}</value>
+    </noun>
+    <adjective name="My" startsWith="c">
+        <value plural="n">My</value></adjective>
+    <article name="A" type="a">
+        <value plural="n" startsWith="c">A</value>
+        <value plural="n" startsWith="v">An</value>
+    </article>
+</names>

@@ -1,0 +1,95 @@
+/* 
+ * Copyright (c) 2017, salesforce.com, inc.
+ * All rights reserved.
+ * Licensed under the BSD 3-Clause license. 
+ * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ */
+
+package com.force.i18n.grammar;
+
+import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
+
+import java.io.*;
+
+import com.force.i18n.*;
+import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
+
+/**
+ * Represents a grammatical term; generally one that is declined based on a noun form or other
+ * factors.  This provides some default behavior, such as having a transient pointer to the
+ * associated declension (but not the dictionary), and dealing with serialization
+ *
+ * Currently, a Noun or a Modifier/Adjective.
+ *
+ * @author stamm
+ */
+public abstract class GrammaticalTerm implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final String name;
+    private transient LanguageDeclension declension;
+
+    public enum TermType {
+        Noun,
+        Adjective,
+        Article;
+    }
+
+    protected GrammaticalTerm(LanguageDeclension declension, String name) {
+        this.name = intern(name);
+        this.declension = declension;
+    }
+
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * After all of the parsing has been done for a noun or modifier, "fix up"
+     * any missing values needed.
+     *
+     * TODO: This may not be very necessary.
+     * @param name the name of the term 
+     * @return <tt>true</tt> if the term is valid
+     */
+    protected abstract boolean validate(String name);
+
+    /**
+     * @return the type of this term
+     */
+    protected abstract TermType getTermType();
+
+    /**
+     * The "startsWith" is based on the next term in the sequence, not the next noun
+     * @return the startsWith of this grammatical term
+     */
+    public abstract LanguageStartsWith getStartsWith();
+
+    /**
+     * @return whether this grammatical term was inherited from english
+     */
+    public abstract boolean isCopiedFromDefault();
+
+    /**
+     * Get the declension associated with the language.  This
+     */
+    public LanguageDeclension getDeclension() {
+        return this.declension;
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeShort(this.declension.getLanguage().ordinal());
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getAll().get(in.readShort());
+        this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
+    }
+}
+
+

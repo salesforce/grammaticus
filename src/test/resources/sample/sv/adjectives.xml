@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value>
+    </adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+
+    <adjective name="Accessed">
+        <value gender="e" plural="n">Använd</value>
+        <value gender="e" plural="n" article="the">Använda</value>
+        <value gender="n" plural="n">Använt</value>
+        <value gender="n" plural="n" article="the">Använda</value>
+        <value gender="e" plural="y">Använda</value>
+        <value gender="e" plural="y" article="the">Använda</value>
+        <value gender="n" plural="y">Använda</value>
+        <value gender="n" plural="y" article="the">Använda</value>
+        </adjective>
+
+    <adjective name="Active">
+        <value gender="e" plural="n">Aktiv</value>
+        <value gender="e" plural="n" article="the">Aktiv</value>
+        <value gender="n" plural="n">Aktivt</value>
+        <value gender="n" plural="n" article="the">Aktivt</value>
+        <value gender="e" plural="y">Aktiva</value>
+        <value gender="e" plural="y" article="the">Aktiva</value>
+        <value gender="n" plural="y">Aktiva</value>
+        <value gender="n" plural="y" article="the">Aktiva</value>
+        </adjective>
+
+    <adjective name="Additional">
+       <value gender="n" plural="n">Ytterligare</value>
+        <value gender="e" plural="n" article="the">Ytterligare</value>
+        <value gender="n" plural="n">Ytterligare</value>
+        <value gender="n" plural="n" article="the">Ytterligare</value>
+        <value gender="e" plural="y">Ytterligare</value>
+        <value gender="e" plural="y" article="the">Ytterligare</value>
+        <value gender="n" plural="y">Ytterligare</value>
+        <value gender="n" plural="y" article="the">Ytterligare</value>
+    </adjective>
+
+    <adjective name="All">
+        <value gender="e" plural="n"></value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n"></value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Alla</value>
+        <value gender="e" plural="y" article="the">Alla</value>
+        <value gender="n" plural="y">Alla</value>
+        <value gender="n" plural="y" article="the">Alla</value>
+        </adjective>
+
+    <adjective name="All_Day">
+        <value gender="n" plural="n">Hela dagen</value>
+        <value gender="e" plural="n" article="the">Hela dagen</value>
+        <value gender="n" plural="n">Hela dagen</value>
+        <value gender="n" plural="n" article="the">Hela dagen</value>
+        <value gender="e" plural="y">Hela dagen</value>
+        <value gender="e" plural="y" article="the">Hela dagen</value>
+        <value gender="n" plural="y">Hela dagen</value>
+        <value gender="n" plural="y" article="the">Hela dagen</value>
+    </adjective>
+
+    <adjective name="Alternative">
+    	<value gender="e" plural="n">Alternativ</value>
+        <value gender="e" plural="n" article="the">Alternativa</value>
+        <value gender="n" plural="n">Alternativt</value>
+        <value gender="n" plural="n" article="the">Alternativa</value>
+        <value gender="e" plural="y">Alternativa</value>
+        <value gender="e" plural="y" article="the">Alternativa</value>
+        <value gender="n" plural="y">Alternativa</value>
+        <value gender="n" plural="y" article="the">Alternativa</value>
+        </adjective>
+
+    <adjective name="Another">
+         <value gender="n" plural="n">Annan</value>
+        <value gender="e" plural="n" article="the">Andra</value>
+        <value gender="n" plural="n">Annat</value>
+        <value gender="n" plural="n" article="the">Andra</value>
+        <value gender="e" plural="y">Andra</value>
+        <value gender="e" plural="y" article="the">Andra</value>
+        <value gender="n" plural="y">Andra</value>
+        <value gender="n" plural="y" article="the">Andra</value>
+    </adjective>
+        
+    <adjective name="Any">
+         <value gender="e" plural="n">Någon</value>
+        <value gender="e" plural="n" article="the">Någon</value>
+        <value gender="n" plural="n">Någon</value>
+        <value gender="n" plural="n" article="the">Någon</value>
+        <value gender="e" plural="y">Några</value>
+        <value gender="e" plural="y" article="the">Några</value>
+        <value gender="n" plural="y">Några</value>
+        <value gender="n" plural="y" article="the">Några</value>
+	</adjective>
+
+    <adjective name="Archived">
+        <value gender="e" plural="n">Arkiverad</value>
+        <value gender="e" plural="n" article="the">Arkiverade</value>
+        <value gender="n" plural="n">Arkiverat</value>
+        <value gender="n" plural="n" article="the">Arkiverade</value>
+        <value gender="e" plural="y">Arkiverade</value>
+        <value gender="e" plural="y" article="the">Arkiverade</value>
+        <value gender="n" plural="y">Arkiverade</value>
+        <value gender="n" plural="y" article="the">Arkiverade</value>
+        </adjective>
+
+    <adjective name="Assigned">
+        <value gender="e" plural="n">Tilldelad</value>
+        <value gender="e" plural="n" article="the">Tilldelad</value>
+        <value gender="n" plural="n">Tilldelat</value>
+        <value gender="n" plural="n" article="the">Tilldelat</value>
+        <value gender="e" plural="y">Tilldelade</value>
+        <value gender="e" plural="y" article="the">Tilldelade</value>
+        <value gender="n" plural="y">Tilldelade</value>
+        <value gender="n" plural="y" article="the">Tilldelade</value>
+        </adjective>
+
+    <adjective name="Associated">
+        <value gender="n" plural="n">Associerad</value>
+        <value gender="e" plural="n" article="the">Associerade</value>
+        <value gender="n" plural="n">Associerat</value>
+        <value gender="n" plural="n" article="the">Associerade</value>
+        <value gender="e" plural="y">Associerade</value>
+        <value gender="e" plural="y" article="the">Associerade</value>
+        <value gender="n" plural="y">Associerade</value>
+        <value gender="n" plural="y" article="the">Associerade</value>
+        </adjective>
+
+    <adjective name="Attached">
+        <value gender="n" plural="n">Bifogad</value>
+        <value gender="e" plural="n" article="the">Bifogad</value>
+        <value gender="n" plural="n">Bifogat</value>
+        <value gender="n" plural="n" article="the">Bifogade</value>
+        <value gender="e" plural="y">Bifogade</value>
+        <value gender="e" plural="y" article="the">Bifogade</value>
+        <value gender="n" plural="y">Bifogade</value>
+        <value gender="n" plural="y" article="the">Bifogade</value>
+    </adjective>
+
+    <adjective name="Available">
+        <value gender="n" plural="n">Tillgänglig</value>
+        <value gender="e" plural="n" article="the">Tillgängliga</value>
+        <value gender="n" plural="n">Tillgängligt</value>
+        <value gender="n" plural="n" article="the">Tillgängliga</value>
+        <value gender="e" plural="y">Tillgängliga</value>
+        <value gender="e" plural="y" article="the">Tillgängliga</value>
+        <value gender="n" plural="y">Tillgängliga</value>
+        <value gender="n" plural="y" article="the">Tillgängliga</value>
+    </adjective>
+
+    <adjective name="Billed">
+        <value gender="e" plural="n">Fakturerad</value>
+        <value gender="e" plural="n" article="the">Fakturerade</value>
+        <value gender="n" plural="n">Fakturerat</value>
+        <value gender="n" plural="n" article="the">Fakturerade</value>
+        <value gender="e" plural="y">Fakturerade</value>
+        <value gender="e" plural="y" article="the">Fakturerade</value>
+        <value gender="n" plural="y">Fakturerade</value>
+        <value gender="n" plural="y" article="the">Fakturerade</value>
+        </adjective>
+        
+    <adjective name="Certain">
+        <value gender="n" plural="n">Viss</value>
+        <value gender="e" plural="n" article="the">Vissa</value>
+        <value gender="n" plural="n">Visst</value>
+        <value gender="n" plural="n" article="the">Vissa</value>
+        <value gender="e" plural="y">Vissa</value>
+        <value gender="e" plural="y" article="the">Vissa</value>
+        <value gender="n" plural="y">Vissa</value>
+        <value gender="n" plural="y" article="the">Vissa</value>
+    </adjective>
+
+    <adjective name="Closed">
+        <value gender="e" plural="n">Avslutad</value>
+        <value gender="e" plural="n" article="the">Avslutade</value>
+        <value gender="n" plural="n">Avslutat</value>
+        <value gender="n" plural="n" article="the">Avslutade</value>
+        <value gender="e" plural="y">Avslutade</value>
+        <value gender="e" plural="y" article="the">Avslutade</value>
+        <value gender="n" plural="y">Avslutade</value>
+        <value gender="n" plural="y" article="the">Avslutade</value>
+        </adjective>
+
+    <adjective name="Completed">
+       <value gender="e" plural="n">Slutförd</value>
+        <value gender="e" plural="n" article="the">Slutförda</value>
+        <value gender="n" plural="n">Slutfört</value>
+        <value gender="n" plural="n" article="the">Slutförda</value>
+        <value gender="e" plural="y">Slutförda</value>
+        <value gender="e" plural="y" article="the">Slutförda</value>
+        <value gender="n" plural="y">Slutförda</value>
+        <value gender="n" plural="y" article="the">Slutförda</value>
+    </adjective>
+
+    <adjective name="Converted">
+        <value gender="e" plural="n">Konverterad</value>
+        <value gender="e" plural="n" article="the">Konverterade</value>
+        <value gender="n" plural="n">Konverterat</value>
+        <value gender="n" plural="n" article="the">Konverterade</value>
+        <value gender="e" plural="y">Konverterade</value>
+        <value gender="e" plural="y" article="the">Konverterade</value>
+        <value gender="n" plural="y">Konverterade</value>
+        <value gender="n" plural="y" article="the">Konverterade</value>
+        </adjective>
+    
+     <adjective name="Corresponding">
+        <value gender="e" plural="n">Motsvarande</value>
+        <value gender="e" plural="n" article="the">Motsvarande</value>
+        <value gender="n" plural="n">Motsvarande</value>
+        <value gender="n" plural="n" article="the">Motsvarande</value>
+        <value gender="e" plural="y">Motsvarande</value>
+        <value gender="e" plural="y" article="the">Motsvarande</value>
+        <value gender="n" plural="y">Motsvarande</value>
+        <value gender="n" plural="y" article="the">Motsvarande</value>
+        </adjective>
+
+<adjective name="Created">
+        <value gender="n" plural="n">Skapad</value>
+        <value gender="e" plural="n" article="the">Skapade</value>
+        <value gender="n" plural="n">Skapat</value>
+        <value gender="n" plural="n" article="the">Skapade</value>
+        <value gender="e" plural="y">Skapade</value>
+        <value gender="e" plural="y" article="the">Skapade</value>
+        <value gender="n" plural="y">Skapade</value>
+        <value gender="n" plural="y" article="the">Skapade</value>
+        </adjective>
+
+    <adjective name="Current">
+        <value gender="e" plural="n">Aktuell</value>
+        <value gender="e" plural="n" article="the">Aktuella</value>
+        <value gender="n" plural="n">Aktuellt</value>
+        <value gender="n" plural="n" article="the">Aktuella</value>
+        <value gender="e" plural="y">Aktuella</value>
+        <value gender="e" plural="y" article="the">Aktuella</value>
+        <value gender="n" plural="y">Aktuella</value>
+        <value gender="n" plural="y" article="the">Aktuella</value>
+        </adjective>
+
+    <adjective name="Custom">
+        <value gender="e" plural="n">Anpassad</value>
+        <value gender="e" plural="n" article="the">Anpassade</value>
+        <value gender="n" plural="n">Anpassat</value>
+        <value gender="n" plural="n" article="the">Anpassade</value>
+        <value gender="e" plural="y">Anpassade</value>
+        <value gender="e" plural="y" article="the">Anpassade</value>
+        <value gender="n" plural="y">Anpassade</value>
+        <value gender="n" plural="y" article="the">Anpassade</value>
+        </adjective>
+
+    <adjective name="Default">
+        <value gender="e" plural="n">Standard</value>
+        <value gender="e" plural="n" article="the">Standard</value>
+        <value gender="n" plural="n">Standard</value>
+        <value gender="n" plural="n" article="the">Standard</value>
+        <value gender="e" plural="y">Standard</value>
+        <value gender="e" plural="y" article="the">Standard</value>
+        <value gender="n" plural="y">Standard</value>
+        <value gender="n" plural="y" article="the">Standard</value>
+        </adjective>
+
+    <adjective name="Delegated">
+       <value gender="e" plural="n">Delegerad</value>
+        <value gender="e" plural="n" article="the">Delegerade</value>
+        <value gender="n" plural="n">Delegerat</value>
+        <value gender="n" plural="n" article="the">Delegerade</value>
+        <value gender="e" plural="y">Delegerade</value>
+        <value gender="e" plural="y" article="the">Delegerade</value>
+        <value gender="n" plural="y">Delegerade</value>
+        <value gender="n" plural="y" article="the">Delegerade</value>
+        </adjective>
+
+    <adjective name="Deleted">
+        <value gender="n" plural="n">Raderad</value>
+        <value gender="e" plural="n" article="the">Raderade</value>
+        <value gender="n" plural="n">Raderat</value>
+        <value gender="n" plural="n" article="the">Raderade</value>
+        <value gender="e" plural="y">Raderade</value>
+        <value gender="e" plural="y" article="the">Raderade</value>
+        <value gender="n" plural="y">Raderade</value>
+        <value gender="n" plural="y" article="the">Raderade</value>
+    </adjective>
+
+    <adjective name="Designated">
+        <value gender="n" plural="n">Utsedd</value>
+        <value gender="e" plural="n" article="the">Utsedda</value>
+        <value gender="n" plural="n">Utsett</value>
+        <value gender="n" plural="n" article="the">Utsedda</value>
+        <value gender="e" plural="y">Utsedda</value>
+        <value gender="e" plural="y" article="the">Utsedda</value>
+        <value gender="n" plural="y">Utsedda</value>
+        <value gender="n" plural="y" article="the">Utsedda</value>
+    </adjective>
+
+    <adjective name="Different">
+        <value gender="n" plural="n">Different</value>
+    </adjective>
+
+    <adjective name="Draft">
+        <value gender="e" plural="n">Utkast</value>
+        <value gender="e" plural="n" article="the">Utkastet</value>
+        <value gender="n" plural="n">Utkast</value>
+        <value gender="n" plural="n" article="the">Utkastet</value>
+        <value gender="e" plural="y">Utkast</value>
+        <value gender="e" plural="y" article="the">Utkasten</value>
+        <value gender="n" plural="y">Utkast</value>
+        <value gender="n" plural="y" article="the">Utkasten</value>
+        </adjective>
+
+    <adjective name="Duplicate">
+        <value gender="e" plural="n">Dubbel</value>
+        <value gender="e" plural="n" article="the">Dubbla</value>
+        <value gender="n" plural="n">Dubbelt</value>
+        <value gender="n" plural="n" article="the">Dubbla</value>
+        <value gender="e" plural="y">Dubbla</value>
+        <value gender="e" plural="y" article="the">Dubbla</value>
+        <value gender="n" plural="y">Dubbelt</value>
+        <value gender="n" plural="y" article="the">Dubbla</value>
+        </adjective>
+
+    <adjective name="Each">
+        <value gender="e" plural="n">Varje</value>
+        <value gender="e" plural="n" article="the">Varje</value>
+        <value gender="n" plural="n">Varje</value>
+        <value gender="n" plural="n" article="the">Varje</value>
+        <value gender="e" plural="y">Varje</value>
+        <value gender="e" plural="y" article="the">Varje</value>
+        <value gender="n" plural="y">Varje</value>
+        <value gender="n" plural="y" article="the">Varje</value>
+        </adjective>
+
+    <adjective name="Editable">
+        <value gender="e" plural="n">Redigerbar</value>
+        <value gender="e" plural="n" article="the">Redigerbara</value>
+        <value gender="n" plural="n">Redigerbara</value>
+        <value gender="n" plural="n" article="the">Redigerbara</value>
+        <value gender="e" plural="y">Redigerbara</value>
+        <value gender="e" plural="y" article="the">Redigerbara</value>
+        <value gender="n" plural="y">Redigerbara</value>
+        <value gender="n" plural="y" article="the">Redigerbara</value>
+            </adjective>        
+        
+    <adjective name="Empty">
+        <value gender="n" plural="n">Tom</value>
+        <value gender="e" plural="n" article="the">Tomma</value>
+        <value gender="n" plural="n">Tomt</value>
+        <value gender="n" plural="n" article="the">Tomma</value>
+        <value gender="e" plural="y">Tomma</value>
+        <value gender="e" plural="y" article="the">Tomma</value>
+        <value gender="n" plural="y">Tomma</value>
+        <value gender="n" plural="y" article="the">Tomma</value>
+        </adjective>
+
+    <adjective name="Every">
+        <value gender="n" plural="n">Varje</value>
+        <value gender="e" plural="n" article="the">Varje</value>
+        <value gender="n" plural="n">Varje</value>
+        <value gender="n" plural="n" article="the">Varje</value>
+        <value gender="e" plural="y">Varje</value>
+        <value gender="e" plural="y" article="the">Varje</value>
+        <value gender="n" plural="y">Varje</value>
+        <value gender="n" plural="y" article="the">Varje</value>
+        </adjective>
+
+    <adjective name="Existing">
+        <value gender="e" plural="n">Befintlig</value>
+        <value gender="e" plural="n" article="the">Befintliga</value>
+        <value gender="n" plural="n">Befintligt</value>
+        <value gender="n" plural="n" article="the">Befintliga</value>
+        <value gender="e" plural="y">Befintliga</value>
+        <value gender="e" plural="y" article="the">Befintliga</value>
+        <value gender="n" plural="y">Befintliga</value>
+        <value gender="n" plural="y" article="the">Befintliga</value>
+        </adjective>
+
+    <adjective name="Expected">
+        <value gender="e" plural="n">Förväntad</value>
+        <value gender="e" plural="n" article="the">Förväntade</value>
+        <value gender="n" plural="n">Förväntat</value>
+        <value gender="n" plural="n" article="the">Förväntade</value>
+        <value gender="e" plural="y">Förväntade</value>
+        <value gender="e" plural="y" article="the">Förväntade</value>
+        <value gender="n" plural="y">Förväntade</value>
+        <value gender="n" plural="y" article="the">Förväntade</value>
+        </adjective>
+
+    <adjective name="First">
+        <value gender="e" plural="n">Första</value>
+        <value gender="e" plural="n" article="the">Första</value>
+        <value gender="n" plural="n">Första</value>
+        <value gender="n" plural="n" article="the">Första</value>
+        <value gender="e" plural="y">Första</value>
+        <value gender="e" plural="y" article="the">Första</value>
+        <value gender="n" plural="y">Första</value>
+        <value gender="n" plural="y" article="the">Första</value>
+        </adjective>
+
+     <adjective name="Following">
+        <value gender="e" plural="n">Följande</value>
+        <value gender="e" plural="n" article="the">Följande</value>
+        <value gender="n" plural="n">Följande</value>
+        <value gender="n" plural="n" article="the">Följande</value>
+        <value gender="e" plural="y">Följande</value>
+        <value gender="e" plural="y" article="the">Följande</value>
+        <value gender="n" plural="y">Följande</value>
+        <value gender="n" plural="y" article="the">Följande</value>
+        </adjective>
+
+	<adjective name="Future">
+        <value gender="e" plural="n">Framtid</value>
+        <value gender="e" plural="n" article="the">Framtiden</value>
+        <value gender="n" plural="n">Framtid</value>
+        <value gender="n" plural="n" article="the">Framtiden</value>
+        <value gender="e" plural="y">Framtider</value>
+        <value gender="e" plural="y" article="the">Framtiderna</value>
+        <value gender="n" plural="y">Framtider</value>
+        <value gender="n" plural="y" article="the">Framtiderna</value>
+        </adjective>
+
+    <adjective name="Helpful">
+        <value gender="e" plural="n">Användbar</value>
+        <value gender="e" plural="n" article="the">Användbara</value>
+        <value gender="n" plural="n">Användbart</value>
+        <value gender="n" plural="n" article="the">Användbara</value>
+        <value gender="e" plural="y">Användbara</value>
+        <value gender="e" plural="y" article="the">Användbara</value>
+        <value gender="n" plural="y">Användbara</value>
+        <value gender="n" plural="y" article="the">Användbara</value>
+        </adjective>
+
+    <adjective name="Historical">
+        <value gender="e" plural="n">Historisk</value>
+        <value gender="e" plural="n" article="the">Historiska</value>
+        <value gender="n" plural="n">Historiskt</value>
+        <value gender="n" plural="n" article="the">Historiska</value>
+        <value gender="e" plural="y">Historiska</value>
+        <value gender="e" plural="y" article="the">Historiska</value>
+        <value gender="n" plural="y">Historiska</value>
+        <value gender="n" plural="y" article="the">Historiska</value>
+    </adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot">
+        <value gender="n" plural="n">Hot</value>
+    </adjective>
+
+    <adjective name="Ignored">
+        <value gender="n" plural="n">Ignored</value>
+    </adjective>
+
+     <adjective name="Imported">
+        <value gender="e" plural="n">Importerad</value>
+        <value gender="e" plural="n" article="the">Importerad</value>
+        <value gender="n" plural="n">Importerat</value>
+        <value gender="n" plural="n" article="the">Importerade</value>
+        <value gender="e" plural="y">Importerade</value>
+        <value gender="e" plural="y" article="the">Importerade</value>
+        <value gender="n" plural="y">Importerade</value>
+        <value gender="n" plural="y" article="the">Importerade</value>
+        </adjective>
+
+    <adjective name="Inactive">
+       <value gender="e" plural="n">Inaktiv</value>
+        <value gender="e" plural="n" article="the">Inaktiva</value>
+        <value gender="n" plural="n">Inaktivt</value>
+        <value gender="n" plural="n" article="the">Inaktiva</value>
+        <value gender="e" plural="y">Inaktiva</value>
+        <value gender="e" plural="y" article="the">Inaktiva</value>
+        <value gender="n" plural="y">Inaktiva</value>
+        <value gender="n" plural="y" article="the">Inaktiva</value>
+        </adjective>
+
+	<adjective name="Individual">
+        <value gender="n" plural="n">Individuell</value>
+        <value gender="e" plural="n" article="the">Individuella</value>
+        <value gender="n" plural="n">Individuell</value>
+        <value gender="n" plural="n" article="the">Individuella</value>
+        <value gender="e" plural="y">Individuella</value>
+        <value gender="e" plural="y" article="the">Individuella</value>
+        <value gender="n" plural="y">Individuella</value>
+        <value gender="n" plural="y" article="the">Individuella</value>
+        </adjective>
+
+    <adjective name="Invalid">
+        <value gender="e" plural="n">Ogiltig</value>
+        <value gender="e" plural="n" article="the">Ogiltiga</value>
+        <value gender="n" plural="n">Ogiltigt</value>
+        <value gender="n" plural="n" article="the">Ogiltiga</value>
+        <value gender="e" plural="y">Ogiltiga</value>
+        <value gender="e" plural="y" article="the">Ogiltiga</value>
+        <value gender="n" plural="y">Ogiltiga</value>
+        <value gender="n" plural="y" article="the">Ogiltiga</value>
+        </adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+ <adjective name="Its">
+         <value gender="e" plural="n">Dess</value>
+        <value gender="e" plural="n" article="the">Dess</value>
+        <value gender="n" plural="n">Dess</value>
+        <value gender="n" plural="n" article="the">Dess</value>
+        <value gender="e" plural="y">Deras</value>
+        <value gender="e" plural="y" article="the">Deras</value>
+        <value gender="n" plural="y">Deras</value>
+        <value gender="n" plural="y" article="the">Deras</value>
+	</adjective>
+
+    <adjective name="Key">
+        <value gender="n" plural="n">Key</value>
+    </adjective>
+        
+	<adjective name="Last">
+        <value gender="e" plural="n">Senaste</value>
+        <value gender="e" plural="n" article="the">Senaste</value>
+        <value gender="n" plural="n">Senaste</value>
+        <value gender="n" plural="n" article="the">Senaste</value>
+        <value gender="e" plural="y">Senaste</value>
+        <value gender="e" plural="y" article="the">Senaste</value>
+        <value gender="n" plural="y">Senaste</value>
+        <value gender="n" plural="y" article="the">Senaste</value>
+        </adjective>
+
+<adjective name="Linked">
+       <value gender="n" plural="n">Länkad</value>
+        <value gender="e" plural="n" article="the">Länkade</value>
+        <value gender="n" plural="n">Länkat</value>
+        <value gender="n" plural="n" article="the">Länkade</value>
+        <value gender="e" plural="y">Länkade</value>
+        <value gender="e" plural="y" article="the">Länkade</value>
+        <value gender="n" plural="y">Länkade</value>
+        <value gender="n" plural="y" article="the">Länkade</value>
+        </adjective>
+
+    <adjective name="Loaded">
+       <value gender="n" plural="n">Laddad</value>
+        <value gender="e" plural="n" article="the">Laddade</value>
+        <value gender="n" plural="n">Laddat</value>
+        <value gender="n" plural="n" article="the">Laddade</value>
+        <value gender="e" plural="y">Laddade</value>
+        <value gender="e" plural="y" article="the">Laddade</value>
+        <value gender="n" plural="y">Laddade</value>
+        <value gender="n" plural="y" article="the">Laddade</value>
+        </adjective>
+
+    <adjective name="Locked">
+        <value gender="n" plural="n">Låst</value>
+        <value gender="e" plural="n" article="the">Låsta</value>
+        <value gender="n" plural="n">Låst</value>
+        <value gender="n" plural="n" article="the">Låsta</value>
+        <value gender="e" plural="y">Låsta</value>
+        <value gender="e" plural="y" article="the">Låsta</value>
+        <value gender="n" plural="y">Låsta</value>
+        <value gender="n" plural="y" article="the">Låsta</value>
+    </adjective>
+
+    <adjective name="Managing">
+        <value gender="n" plural="n">Hanterad</value>
+        <value gender="e" plural="n" article="the">Hanterade</value>
+        <value gender="n" plural="n">Hanterat</value>
+        <value gender="n" plural="n" article="the">Hanterade</value>
+        <value gender="e" plural="y">Hanterade</value>
+        <value gender="e" plural="y" article="the">Hanterade</value>
+        <value gender="n" plural="y">Hanterade</value>
+        <value gender="n" plural="y" article="the">Hanterade</value>
+        </adjective>
+
+    <adjective name="Managed">
+        <value gender="n" plural="n"> Hanterad</value>
+        <value gender="e" plural="n" article="the">Hanterade</value>
+        <value gender="n" plural="n">Hanterat</value>
+        <value gender="n" plural="n" article="the">Hanterade</value>
+        <value gender="e" plural="y">Hanterade</value>
+        <value gender="e" plural="y" article="the">Hanterade</value>
+        <value gender="n" plural="y">Hanterade</value>
+        <value gender="n" plural="y" article="the">Hanterade</value>
+    </adjective>
+
+   <adjective name="Master">
+        <value gender="e" plural="n">Huvud</value>
+        <value gender="e" plural="n" article="the">Huvud</value>
+        <value gender="n" plural="n">Huvud</value>
+        <value gender="n" plural="n" article="the">Huvud</value>
+        <value gender="e" plural="y">Huvud</value>
+        <value gender="e" plural="y" article="the">Huvud</value>
+        <value gender="n" plural="y">Huvud</value>
+        <value gender="n" plural="y" article="the">Huvud</value>
+         </adjective>
+
+    <adjective name="Matching">
+        <value gender="e" plural="n">Matchande</value>
+        <value gender="e" plural="n" article="the">Matchande</value>
+        <value gender="n" plural="n">Matchande</value>
+        <value gender="n" plural="n" article="the">Matchande</value>
+        <value gender="e" plural="y">Matchande</value>
+        <value gender="e" plural="y" article="the">Matchande</value>
+        <value gender="n" plural="y">Matchande</value>
+        <value gender="n" plural="y" article="the">Matchande</value>
+        </adjective>
+
+    <adjective name="Merged">
+       <value gender="e" plural="n">Kopplad</value>
+        <value gender="e" plural="n" article="the">Kopplade</value>
+        <value gender="n" plural="n">Kopplat</value>
+        <value gender="n" plural="n" article="the">Kopplade</value>
+        <value gender="e" plural="y">Kopplade</value>
+        <value gender="e" plural="y" article="the">Kopplade</value>
+        <value gender="n" plural="y">Kopplat</value>
+        <value gender="n" plural="y" article="the">Kopplade</value>
+    </adjective>
+
+ 	 <adjective name="More">
+        <value gender="n" plural="n">Mer</value>
+    </adjective>   
+
+    <adjective name="Multiple">
+        <value gender="n" plural="n">Multipel</value>
+		<value gender="e" plural="n" article="the">Multipla</value>
+        <value gender="n" plural="n">Multipelt</value>
+        <value gender="n" plural="n" article="the">Multipla</value>
+        <value gender="e" plural="y">Multipla</value>
+        <value gender="e" plural="y" article="the">Mulitpla</value>
+        <value gender="n" plural="y">Mulitpla</value>
+        <value gender="n" plural="y" article="the">Multipla</value>
+    </adjective> 
+
+    <adjective name="My">
+        <value gender="e" plural="n">Min</value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n">Mitt</value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Mina</value>
+        <value gender="e" plural="y" article="the"></value>
+        <value gender="n" plural="y">Mina</value>
+        <value gender="n" plural="y" article="the"></value>
+    </adjective>
+
+    <adjective name="Neglected">
+        <value gender="e" plural="n">Negligerad</value>
+        <value gender="e" plural="n" article="the">Negligerade</value>
+        <value gender="n" plural="n">Negligerat</value>
+        <value gender="n" plural="n" article="the">Negligerade</value>
+        <value gender="e" plural="y">Negligerade</value>
+        <value gender="e" plural="y" article="the">Negligerade</value>
+        <value gender="n" plural="y">Negligerade</value>
+        <value gender="n" plural="y" article="the">Negligerade</value>
+        </adjective>
+
+    <adjective name="New">
+        <value gender="e" plural="n">Ny</value>
+        <value gender="e" plural="n" article="the">Nya</value>
+        <value gender="n" plural="n">Nytt</value>
+        <value gender="n" plural="n" article="the">Nya</value>
+        <value gender="e" plural="y">Nya</value>
+        <value gender="e" plural="y" article="the">Nya</value>
+        <value gender="n" plural="y">Nya</value>
+        <value gender="n" plural="y" article="the">Nya</value>
+        </adjective>
+
+    <adjective name="No">
+        <value gender="e" plural="n">Ingen</value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n">Inget</value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Inga</value>
+        <value gender="e" plural="y" article="the"></value>
+        <value gender="n" plural="y">Inga</value>
+        <value gender="n" plural="y" article="the"></value>
+        </adjective>
+
+    <adjective name="Non-primary">
+        <value gender="n" plural="n">Icke primär</value>
+        <value gender="e" plural="n" article="the">Icke primära</value>
+        <value gender="n" plural="n">Icke primärt</value>
+        <value gender="n" plural="n" article="the">Icke primära</value>
+        <value gender="e" plural="y">Icke primära</value>
+        <value gender="e" plural="y" article="the">Icke primära</value>
+        <value gender="n" plural="y">Icke primära</value>
+        <value gender="n" plural="y" article="the">Icke primära</value>
+    </adjective>
+
+    <adjective name="Num"> <!--number-->
+        <value gender="e" plural="n"></value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n"></value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Antal</value>
+        <value gender="e" plural="y" article="the">Antal</value>
+        <value gender="n" plural="y">Antal</value>
+        <value gender="n" plural="y" article="the">Antal</value>
+    </adjective>
+    
+        
+    <adjective name="One">
+         <value gender="e" plural="n">Ett</value>
+        <value gender="e" plural="n" article="the">Ett</value>
+        <value gender="n" plural="n">Ett</value>
+        <value gender="n" plural="n" article="the">Ett</value>
+        <value gender="e" plural="y">Ett</value>
+        <value gender="e" plural="y" article="the">Ett</value>
+        <value gender="n" plural="y">Ett</value>
+        <value gender="n" plural="y" article="the">Ett</value>
+	</adjective>
+
+    <adjective name="Older">
+        <value gender="e" plural="n">Äldre</value>
+        <value gender="e" plural="n" article="the">Äldre</value>
+        <value gender="n" plural="n">Äldre</value>
+        <value gender="n" plural="n" article="the">Äldre</value>
+        <value gender="e" plural="y">Äldre</value>
+        <value gender="e" plural="y" article="the">Äldre</value>
+        <value gender="n" plural="y">Äldre</value>
+        <value gender="n" plural="y" article="the">Äldre</value>
+    </adjective>
+
+    <adjective name="Open">
+        <value gender="e" plural="n">Öppen</value>
+        <value gender="e" plural="n" article="the">Öppna</value>
+        <value gender="n" plural="n">Öppet</value>
+        <value gender="n" plural="n" article="the">Öppna</value>
+        <value gender="e" plural="y">Öppna</value>
+        <value gender="e" plural="y" article="the">Öppna</value>
+        <value gender="n" plural="y">Öppna</value>
+        <value gender="n" plural="y" article="the">Öppna</value>
+        </adjective>
+
+    <adjective name="Original">
+        <value gender="n" plural="n">Ursprunglig</value>
+        <value gender="e" plural="n" article="the">Ursprungliga</value>
+        <value gender="n" plural="n">Ursprunglig</value>
+        <value gender="n" plural="n" article="the">Ursprungliga</value>
+        <value gender="e" plural="y">Ursprungliga</value>
+        <value gender="e" plural="y" article="the">Ursprungliga</value>
+        <value gender="n" plural="y">Ursprungliga</value>
+        <value gender="n" plural="y" article="the">Ursprungliga</value>
+    </adjective>
+
+    <adjective name="Other">
+        <value gender="n" plural="n">Annan</value>
+        <value gender="e" plural="n" article="the">Andra</value>
+        <value gender="n" plural="n">Annat</value>
+        <value gender="n" plural="n" article="the">Andra</value>
+        <value gender="e" plural="y">Andra</value>
+        <value gender="e" plural="y" article="the">Andra</value>
+        <value gender="n" plural="y">Andra</value>
+        <value gender="n" plural="y" article="the">Andra</value>
+    </adjective>
+
+
+    <adjective name="Overdue">
+        <value gender="e" plural="n">Förfallen</value>
+        <value gender="e" plural="n" article="the">Förfallna</value>
+        <value gender="n" plural="n">Förfallet</value>
+        <value gender="n" plural="n" article="the">Förfallna</value>
+        <value gender="e" plural="y">Förfallna</value>
+        <value gender="e" plural="y" article="the">Förfallna</value>
+        <value gender="n" plural="y">Förfallna</value>
+        <value gender="n" plural="y" article="the">Förfallna</value>
+        </adjective>
+
+    <adjective name="Overridden">
+        <value gender="e" plural="n">Åsidosatt</value>
+        <value gender="e" plural="n" article="the">Åsidosatta</value>
+        <value gender="n" plural="n">Åsidosatt</value>
+        <value gender="n" plural="n" article="the">Åsidosatta</value>
+        <value gender="e" plural="y">Åsidosatta</value>
+        <value gender="e" plural="y" article="the">Åsidosatta</value>
+        <value gender="n" plural="y">Åsidosatta</value>
+        <value gender="n" plural="y" article="the">Åsidosatta</value>
+        </adjective>
+
+<adjective name="Owning">
+        <value gender="n" plural="n">Ägd</value>
+        <value gender="e" plural="n" article="the">Ägda</value>
+        <value gender="n" plural="n">Ägt</value>
+        <value gender="n" plural="n" article="the">Ägda</value>
+        <value gender="e" plural="y">Ägda</value>
+        <value gender="e" plural="y" article="the">Ägda</value>
+        <value gender="n" plural="y">Ägda</value>
+        <value gender="n" plural="y" article="the">Ägda</value>
+        </adjective>
+
+    <adjective name="Personal">
+        <value gender="e" plural="n">Personlig</value>
+        <value gender="e" plural="n" article="the">Personliga</value>
+        <value gender="n" plural="n">Personligt</value>
+        <value gender="n" plural="n" article="the">Personliga</value>
+        <value gender="e" plural="y">Personliga</value>
+        <value gender="e" plural="y" article="the">Personliga</value>
+        <value gender="n" plural="y">Personliga</value>
+        <value gender="n" plural="y" article="the">Personliga</value>
+        </adjective>
+
+    <adjective name="Popular">
+        <value gender="e" plural="n">Populär</value>
+        <value gender="e" plural="n" article="the">Populära</value>
+        <value gender="n" plural="n">Populärt</value>
+        <value gender="n" plural="n" article="the">Populära</value>
+        <value gender="e" plural="y">Populära</value>
+        <value gender="e" plural="y" article="the">Populära</value>
+        <value gender="n" plural="y">Populära</value>
+        <value gender="n" plural="y" article="the">Populära</value>
+        </adjective>
+
+    <adjective name="Predefined">
+        <value gender="e" plural="n">Fördefinierad</value>
+        <value gender="e" plural="n" article="the">Fördefinierade</value>
+        <value gender="n" plural="n">Fördefinierat</value>
+        <value gender="n" plural="n" article="the">Fördefinierade</value>
+        <value gender="e" plural="y">Fördefinierade</value>
+        <value gender="e" plural="y" article="the">Fördefinierade</value>
+        <value gender="n" plural="y">Fördefinierade</value>
+        <value gender="n" plural="y" article="the">Fördefinierade</value>
+        </adjective>
+
+	<adjective name="Proposed">
+        <value gender="n" plural="n">Föreslagen</value>
+        <value gender="e" plural="n" article="the">Föreslagna</value>
+        <value gender="n" plural="n">Föreslaget</value>
+        <value gender="n" plural="n" article="the">Föreslagna</value>
+        <value gender="e" plural="y">Föreslagna</value>
+        <value gender="e" plural="y" article="the">Föreslagna</value>
+        <value gender="n" plural="y">Föreslagna</value>
+        <value gender="n" plural="y" article="the">Föreslagna</value>
+        </adjective>
+
+    <adjective name="Primary">
+        <value gender="e" plural="n">Primär</value>
+        <value gender="e" plural="n" article="the">Primära</value>
+        <value gender="n" plural="n">Primärt</value>
+        <value gender="n" plural="n" article="the">Primära</value>
+        <value gender="e" plural="y">Primära</value>
+        <value gender="e" plural="y" article="the">Primära</value>
+        <value gender="n" plural="y">Primära</value>
+        <value gender="n" plural="y" article="the">Primära</value>
+        </adjective>
+
+    <adjective name="Private">
+        <value gender="e" plural="n">Privat</value>
+        <value gender="e" plural="n" article="the">Privata</value>
+        <value gender="n" plural="n">Privat</value>
+        <value gender="n" plural="n" article="the">Privata</value>
+        <value gender="e" plural="y">Privata</value>
+        <value gender="e" plural="y" article="the">Privata</value>
+        <value gender="n" plural="y">Privata</value>
+        <value gender="n" plural="y" article="the">Privata</value>
+        </adjective>
+
+    <adjective name="Public">
+        <value gender="e" plural="n">Offentlig</value>
+        <value gender="e" plural="n" article="the">Offentliga</value>
+        <value gender="n" plural="n">Offentligt</value>
+        <value gender="n" plural="n" article="the">Offentliga</value>
+        <value gender="e" plural="y">Offentliga</value>
+        <value gender="e" plural="y" article="the">Offentliga</value>
+        <value gender="n" plural="y">Offentliga</value>
+        <value gender="n" plural="y" article="the">Offentliga</value>
+        </adjective>
+
+	<adjective name="Published">
+			<value gender="e" plural="n">Publicerad</value>
+        <value gender="e" plural="n" article="the">Publicerade</value>
+        <value gender="n" plural="n">Publicerat</value>
+        <value gender="n" plural="n" article="the">Publicerade</value>
+        <value gender="e" plural="y">Publicerade</value>
+        <value gender="e" plural="y" article="the">Publicerade</value>
+        <value gender="n" plural="y">Publicerade</value>
+        <value gender="n" plural="y" article="the">Publicerade</value>
+        </adjective>
+
+    <adjective name="Queue_Owned">
+        <value gender="e" plural="n">Köägd</value>
+        <value gender="e" plural="n" article="the">Köägda</value>
+        <value gender="n" plural="n">Köägt</value>
+        <value gender="n" plural="n" article="the">Köägda</value>
+        <value gender="e" plural="y">Köägda</value>
+        <value gender="e" plural="y" article="the">Köägda</value>
+        <value gender="n" plural="y">Köägda</value>
+        <value gender="n" plural="y" article="the">Köägda</value>
+        </adjective>
+        
+    <adjective name="Recent">
+        <value gender="e" plural="n">Senaste</value>
+        <value gender="e" plural="n" article="the">Senaste</value>
+        <value gender="n" plural="n">Senaste</value>
+        <value gender="n" plural="n" article="the">Senaste</value>
+        <value gender="e" plural="y">Senaste</value>
+        <value gender="e" plural="y" article="the">Senaste</value>
+        <value gender="n" plural="y">Senaste</value>
+        <value gender="n" plural="y" article="the">Senaste</value>
+            </adjective>
+
+    <adjective name="Recently">
+        <value gender="e" plural="n">Nyligen</value>
+        <value gender="e" plural="n" article="the">Nyligen</value>
+        <value gender="n" plural="n">Nyligen</value>
+        <value gender="n" plural="n" article="the">Nyligen</value>
+        <value gender="e" plural="y">Nyligen</value>
+        <value gender="e" plural="y" article="the">Nyligen </value>
+        <value gender="n" plural="y">Nyligen</value>
+        <value gender="n" plural="y" article="the">Nyligen</value>
+        </adjective>
+
+    <adjective name="Recurring">
+        <value gender="e" plural="n">Återkommande</value>
+        <value gender="e" plural="n" article="the">Återkommande</value>
+        <value gender="n" plural="n">Återkommande</value>
+        <value gender="n" plural="n" article="the">Återkommande</value>
+        <value gender="e" plural="y">Återkommande</value>
+        <value gender="e" plural="y" article="the">Återkommande</value>
+        <value gender="n" plural="y">Återkommande</value>
+        <value gender="n" plural="y" article="the">Återkommande</value>
+        </adjective>
+
+
+    <adjective name="Remaining">
+        <value gender="e" plural="n">Återstående</value>
+        <value gender="e" plural="n" article="the">Återstående</value>
+        <value gender="n" plural="n">Återstående</value>
+        <value gender="n" plural="n" article="the">Återstående</value>
+        <value gender="e" plural="y">Återstående</value>
+        <value gender="e" plural="y" article="the">Återstående</value>
+        <value gender="n" plural="y">Återstående</value>
+        <value gender="n" plural="y" article="the">Återstående</value>
+        </adjective>
+
+    <adjective name="Rejected">
+        <value gender="n" plural="n">Avvisad</value>
+        <value gender="e" plural="n" article="the">Avvisad</value>
+        <value gender="n" plural="n">Avvisad</value>
+        <value gender="n" plural="n" article="the">Avvisade</value>
+        <value gender="e" plural="y">Avvisade</value>
+        <value gender="e" plural="y" article="the">Avvisade</value>
+        <value gender="n" plural="y">Avvisade</value>
+        <value gender="n" plural="y" article="the">Avvisade</value>
+        </adjective>
+
+    <adjective name="Related">
+        <value gender="e" plural="n">Relaterad</value>
+        <value gender="e" plural="n" article="the">Relaterade</value>
+        <value gender="n" plural="n">Relaterat</value>
+        <value gender="n" plural="n" article="the">Relaterade</value>
+        <value gender="e" plural="y">Relaterade</value>
+        <value gender="e" plural="y" article="the">Relaterade</value>
+        <value gender="n" plural="y">Relaterade</value>
+        <value gender="n" plural="y" article="the">Relaterade</value>
+        </adjective>
+
+    <adjective name="Relevant">
+        <value gender="e" plural="n">Relevant</value>
+        <value gender="e" plural="n" article="the">Relevant</value>
+        <value gender="n" plural="n">Relevant</value>
+        <value gender="n" plural="n" article="the">Relevant</value>
+        <value gender="e" plural="y">Relevanta</value>
+        <value gender="e" plural="y" article="the">Relevanta</value>
+        <value gender="n" plural="y">Relevanta</value>
+        <value gender="n" plural="y" article="the">Relevanta</value>
+        </adjective>
+
+    <adjective name="Resulting">
+        <value gender="n" plural="n">Resulterande</value>
+        <value gender="e" plural="n" article="the">Resulterande</value>
+        <value gender="n" plural="n">Resulterande</value>
+        <value gender="n" plural="n" article="the">Resulterande</value>
+        <value gender="e" plural="y">Resulterande</value>
+        <value gender="e" plural="y" article="the">Resulterande</value>
+        <value gender="n" plural="y">Resulterande</value>
+        <value gender="n" plural="y" article="the">Resulterande</value>
+    </adjective>
+
+    <adjective name="Reviewed">
+        <value gender="e" plural="n">granskad</value>
+        <value gender="e" plural="n" article="the">granskade</value>
+        <value gender="n" plural="n">granskat</value>
+        <value gender="n" plural="n" article="the">granskade</value>
+        <value gender="e" plural="y">granskade</value>
+        <value gender="e" plural="y" article="the">granskade</value>
+        <value gender="n" plural="y">granskade</value>
+        <value gender="n" plural="y" article="the">granskade</value>
+        </adjective>
+
+    <adjective name="Same">
+        <value gender="n" plural="n">Same</value>
+    </adjective>
+
+    <adjective name="Sample">
+        <value gender="e" plural="n">Exempel</value>
+        <value gender="e" plural="n" article="the">Exempel</value>
+        <value gender="n" plural="n">Exempel</value>
+        <value gender="n" plural="n" article="the">Exempel</value>
+        <value gender="e" plural="y">Exempel</value>
+        <value gender="e" plural="y" article="the">Exempel</value>
+        <value gender="n" plural="y">Exempel</value>
+        <value gender="n" plural="y" article="the">Exempel</value>
+        </adjective>
+
+	<adjective name="Scheduled">
+		<value gender="e" plural="n">Schemalagd</value>
+        <value gender="e" plural="n" article="the">Schemalagda</value>
+        <value gender="n" plural="n">Schemalagt</value>
+        <value gender="n" plural="n" article="the">Schemalagda</value>
+        <value gender="e" plural="y">Schemalagda</value>
+        <value gender="e" plural="y" article="the">Schemalagda</value>
+        <value gender="n" plural="y">Schemalagda</value>
+        <value gender="n" plural="y" article="the">Schemalagda</value>
+        </adjective>
+
+    <adjective name="Second">
+        <value gender="e" plural="n">Andra</value>
+        <value gender="e" plural="n" article="the">Andra</value>
+        <value gender="n" plural="n">Andra</value>
+        <value gender="n" plural="n" article="the">Andra</value>
+        <value gender="e" plural="y">Andra</value>
+        <value gender="e" plural="y" article="the">Andra</value>
+        <value gender="n" plural="y">Andra</value>
+        <value gender="n" plural="y" article="the">Andra</value>
+        </adjective>
+
+    <adjective name="Selected">
+        <value gender="e" plural="n">Markerad</value>
+        <value gender="e" plural="n" article="the">Markerade</value>
+        <value gender="n" plural="n">Markerat</value>
+        <value gender="n" plural="n" article="the">Markerade</value>
+        <value gender="e" plural="y">Markerade</value>
+        <value gender="e" plural="y" article="the">Markerade</value>
+        <value gender="n" plural="y">Markerade</value>
+        <value gender="n" plural="y" article="the">Markerade</value>
+        </adjective>
+
+<adjective name="Shared">
+        <value gender="n" plural="n">Delad</value>
+        <value gender="e" plural="n" article="the">Delade</value>
+        <value gender="n" plural="n">Delat</value>
+        <value gender="n" plural="n" article="the">Delade</value>
+        <value gender="e" plural="y">Delade</value>
+        <value gender="e" plural="y" article="the">Delade</value>
+        <value gender="n" plural="y">Delade</value>
+        <value gender="n" plural="y" article="the">Delade</value>
+        </adjective>
+
+     <adjective name="Similar">
+        <value gender="e" plural="n">Liknande </value>
+        <value gender="e" plural="n" article="the">Liknande </value>
+        <value gender="n" plural="n">Liknande </value>
+        <value gender="n" plural="n" article="the">Liknande </value>
+        <value gender="e" plural="y">Liknande </value>
+        <value gender="e" plural="y" article="the">Liknande </value>
+        <value gender="n" plural="y">Liknande </value>
+        <value gender="n" plural="y" article="the">Liknande </value>
+        </adjective>
+
+    <adjective name="Single">
+        <value gender="e" plural="n">Enstaka</value>
+        <value gender="e" plural="n" article="the">Enstaka</value>
+        <value gender="n" plural="n">Enstaka</value>
+        <value gender="n" plural="n" article="the">Enstaka</value>
+        <value gender="e" plural="y">Enstaka</value>
+        <value gender="e" plural="y" article="the">Enstaka</value>
+        <value gender="n" plural="y">Enstaka</value>
+        <value gender="n" plural="y" article="the">Enstaka</value>
+        </adjective>
+
+     <adjective name="Social">
+        <value gender="e" plural="n">Social</value>
+        <value gender="e" plural="n" article="the">Social</value>
+        <value gender="n" plural="n">Socialt</value>
+        <value gender="n" plural="n" article="the">Sociala</value>
+        <value gender="e" plural="y">Sociala</value>
+        <value gender="e" plural="y" article="the">Sociala</value>
+        <value gender="n" plural="y">Sociala</value>
+        <value gender="n" plural="y" article="the">Sociala</value>
+        </adjective>
+        
+    <adjective name="Source">
+	    <value gender="e" plural="n">Käll</value>
+        <value gender="e" plural="n" article="the">Käll</value>
+        <value gender="n" plural="n">Käll</value>
+        <value gender="n" plural="n" article="the">Käll</value>
+        <value gender="e" plural="y">Käll</value>
+        <value gender="e" plural="y" article="the">Käll</value>
+        <value gender="n" plural="y">Käll</value>
+        <value gender="n" plural="y" article="the">Käll</value>
+        </adjective>
+
+    <adjective name="Specified">
+        <value gender="e" plural="n">Angiven</value>
+        <value gender="e" plural="n" article="the">Angivna</value>
+        <value gender="n" plural="n">Angivet</value>
+        <value gender="n" plural="n" article="the">Angivna</value>
+        <value gender="e" plural="y">Angivna</value>
+        <value gender="e" plural="y" article="the">Angivna</value>
+        <value gender="n" plural="y">Angivna</value>
+        <value gender="n" plural="y" article="the">Angivna</value>
+        </adjective>
+
+    <adjective name="Stale">
+        <value gender="e" plural="n">Förlegad</value>
+        <value gender="e" plural="n" article="the">Förlegade</value>
+        <value gender="n" plural="n">Förlegat</value>
+        <value gender="n" plural="n" article="the">Förlegade</value>
+        <value gender="e" plural="y">Förlegade</value>
+        <value gender="e" plural="y" article="the">Förlegade</value>
+        <value gender="n" plural="y">Förlegade</value>
+        <value gender="n" plural="y" article="the">Förlegade</value>
+        </adjective>
+
+    <adjective name="Standard">
+        <value gender="e" plural="n">Standard</value>
+        <value gender="e" plural="n" article="the">Standard</value>
+        <value gender="n" plural="n">Standard</value>
+        <value gender="n" plural="n" article="the">Standard</value>
+        <value gender="e" plural="y">Standard</value>
+        <value gender="e" plural="y" article="the">Standard</value>
+        <value gender="n" plural="y">Standard</value>
+        <value gender="n" plural="y" article="the">Standard</value>
+        </adjective>
+
+    <adjective name="Stuck">
+        <value gender="e" plural="n">Fastnad</value>
+        <value gender="e" plural="n" article="the">Fastnade</value>
+        <value gender="n" plural="n">Fastnat</value>
+        <value gender="n" plural="n" article="the">Fastnade</value>
+        <value gender="e" plural="y">Fastnade</value>
+        <value gender="e" plural="y" article="the">Fastnade</value>
+        <value gender="n" plural="y">Fastnade</value>
+        <value gender="n" plural="y" article="the">Fastnade</value>
+        </adjective>
+
+    <adjective name="Suggested">
+       <value gender="e" plural="n">Föreslagen</value>
+        <value gender="e" plural="n" article="the">Föreslagna</value>
+        <value gender="n" plural="n">Föreslaget</value>
+        <value gender="n" plural="n" article="the">Föreslagna</value>
+        <value gender="e" plural="y">Föreslagna</value>
+        <value gender="e" plural="y" article="the">Föreslagna</value>
+        <value gender="n" plural="y">Föreslagna</value>
+        <value gender="n" plural="y" article="the">Föreslagna</value>
+        </adjective>
+
+    <adjective name="Supplementary">
+        <value gender="n" plural="n">Supplementär</value>
+        <value gender="e" plural="n" article="the">Supplementära</value>
+        <value gender="n" plural="n">Supplementärt</value>
+        <value gender="n" plural="n" article="the">Supplementära</value>
+        <value gender="e" plural="y">Supplementära</value>
+        <value gender="e" plural="y" article="the">Supplementära</value>
+        <value gender="n" plural="y">Supplementära</value>
+        <value gender="n" plural="y" article="the">Supplementära</value>
+        </adjective>
+
+    <adjective name="Synced">
+        <value gender="e" plural="n">Synkroniserad</value>
+        <value gender="e" plural="n" article="the">Synkroniserade</value>
+        <value gender="n" plural="n">Synkroniserat</value>
+        <value gender="n" plural="n" article="the">Synkroniserade</value>
+        <value gender="e" plural="y">Synkroniserade</value>
+        <value gender="e" plural="y" article="the">Synkroniserade</value>
+        <value gender="n" plural="y">Synkroniserade</value>
+        <value gender="n" plural="y" article="the">Synkroniserade</value>
+    </adjective>
+
+    <adjective name="The"> 
+        <value gender="e" plural="n">Den</value> 
+        <value gender="n" plural="n">Det</value> 
+        <value gender="e" plural="y">De</value> 
+        <value gender="n" plural="y">De</value> 
+	</adjective>
+    
+    <adjective name="That">
+        <value gender="e" plural="n">Den där</value>
+        <value gender="e" plural="n" article="the">De där</value>
+        <value gender="n" plural="n">Det där</value>
+        <value gender="n" plural="n" article="the">De där</value>
+        <value gender="e" plural="y">De där</value>
+        <value gender="e" plural="y" article="the">De där</value>
+        <value gender="n" plural="y">De där</value>
+        <value gender="n" plural="y" article="the">De där</value>
+        </adjective>
+
+    <adjective name="Their">
+        <value gender="e" plural="n">Deras</value>
+        <value gender="e" plural="n" article="the">Deras</value>
+        <value gender="n" plural="n">Deras</value>
+        <value gender="n" plural="n" article="the">Deras</value>
+        <value gender="e" plural="y">Deras</value>
+        <value gender="e" plural="y" article="the">Deras</value>
+        <value gender="n" plural="y">Deras</value>
+        <value gender="n" plural="y" article="the">Deras</value>
+        </adjective>
+
+    <adjective name="These">
+        <value gender="e" plural="n"></value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n"></value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Dessa</value>
+        <value gender="e" plural="y" article="the">De här</value>
+        <value gender="n" plural="y">Dessa</value>
+        <value gender="n" plural="y" article="the">De här</value>
+        </adjective>
+
+    <adjective name="Those">
+        <value gender="n" plural="n">Den</value>
+        <value gender="e" plural="n" article="the">De</value>
+        <value gender="n" plural="n">Det</value>
+        <value gender="n" plural="n" article="the">De</value>
+        <value gender="e" plural="y">De</value>
+        <value gender="e" plural="y" article="the">De</value>
+        <value gender="n" plural="y">De</value>
+        <value gender="n" plural="y" article="the">De</value>
+    </adjective>
+
+    <adjective name="This">
+        <value gender="e" plural="n">Denna</value>
+        <value gender="e" plural="n" article="the">Den här</value>
+        <value gender="n" plural="n">Detta</value>
+        <value gender="n" plural="n" article="the">Det här</value>
+        <value gender="e" plural="y">Dessa</value>
+        <value gender="e" plural="y" article="the">De här</value>
+        <value gender="n" plural="y">Dessa</value>
+        <value gender="n" plural="y" article="the">De här</value>
+        </adjective>
+        
+    <adjective name="Today">
+        <value gender="n" plural="n">Today</value>
+    </adjective>
+
+	<adjective name="Top">
+        <value gender="e" plural="n">Överkant</value>
+        <value gender="e" plural="n" article="the">Överkanten</value>
+        <value gender="n" plural="n">Överkant</value>
+        <value gender="n" plural="n" article="the">Överkanten</value>
+        <value gender="e" plural="y">Överkanter</value>
+        <value gender="e" plural="y" article="the">Överkanterna</value>
+        <value gender="n" plural="y">Överkanter</value>
+        <value gender="n" plural="y" article="the">Överkanterna</value>
+        </adjective>
+
+    <adjective name="Total">
+        <value gender="e" plural="n">Total</value>
+        <value gender="e" plural="n" article="the">Totala </value>
+        <value gender="n" plural="n">Totalt</value>
+        <value gender="n" plural="n" article="the">Totala</value>
+        <value gender="e" plural="y">Totala</value>
+        <value gender="e" plural="y" article="the">Totala</value>
+        <value gender="n" plural="y">Totala</value>
+        <value gender="n" plural="y" article="the">Totala</value>
+        </adjective>
+
+    <adjective name="Translated">
+        <value gender="e" plural="n">Översatt</value>
+        <value gender="e" plural="n" article="the">Översatta</value>
+        <value gender="n" plural="n">Översatt</value>
+        <value gender="n" plural="n" article="the">Översatta</value>
+        <value gender="e" plural="y">Översatta</value>
+        <value gender="e" plural="y" article="the">Översatta</value>
+        <value gender="n" plural="y">Översatta</value>
+        <value gender="n" plural="y" article="the">Översatta</value>
+    </adjective>   
+
+  <adjective name="Transferable">
+        <value gender="e" plural="n">Överföringsbar</value>
+        <value gender="e" plural="n" article="the">Överföringsbara</value>
+        <value gender="n" plural="n">Överföringsbart</value>
+        <value gender="n" plural="n" article="the">Överföringsbara</value>
+        <value gender="e" plural="y">Överföringsbara</value>
+        <value gender="e" plural="y" article="the">Överföringsbara</value>
+        <value gender="n" plural="y">Överföringsbara</value>
+        <value gender="n" plural="y" article="the">Överföringsbara</value>
+        </adjective>
+
+    <adjective name="Unconverted">
+        <value gender="e" plural="n">Okonverterad</value>
+        <value gender="e" plural="n" article="the">Okonverterade</value>
+        <value gender="n" plural="n">Okonverterat</value>
+        <value gender="n" plural="n" article="the">Okonverterade</value>
+        <value gender="e" plural="y">Okonverterade</value>
+        <value gender="e" plural="y" article="the">Okonverterade</value>
+        <value gender="n" plural="y">Okonverterade</value>
+        <value gender="n" plural="y" article="the">Okonverterade</value>
+        </adjective>
+
+    <adjective name="Unread">
+        <value gender="e" plural="n">Oläst</value>
+        <value gender="e" plural="n" article="the">Olästa</value>
+        <value gender="n" plural="n">Oläst</value>
+        <value gender="n" plural="n" article="the">Olästa</value>
+        <value gender="e" plural="y">Olästa</value>
+        <value gender="e" plural="y" article="the">Olästa</value>
+        <value gender="n" plural="y">Olästa</value>
+        <value gender="n" plural="y" article="the">Olästa</value>
+        </adjective>
+
+    <adjective name="Unreviewed">
+        <value gender="e" plural="n">Ogranskad</value>
+        <value gender="e" plural="n" article="the">Ogranskade</value>
+        <value gender="n" plural="n">Ogranskat</value>
+        <value gender="n" plural="n" article="the">Ogranskade</value>
+        <value gender="e" plural="y">Ogranskade</value>
+        <value gender="e" plural="y" article="the">Ogranskade</value>
+        <value gender="n" plural="y">Ogranskade</value>
+        <value gender="n" plural="y" article="the">Ogranskade</value>
+        </adjective>
+
+    <adjective name="Unresolved">
+	    <value gender="e" plural="n">Olöst</value>
+        <value gender="e" plural="n" article="the">Olösta</value>
+        <value gender="n" plural="n">Olöst</value>
+        <value gender="n" plural="n" article="the">Olösta</value>
+        <value gender="e" plural="y">Olösta</value>
+        <value gender="e" plural="y" article="the">Olösta</value>
+        <value gender="n" plural="y">Olösta</value>
+        <value gender="n" plural="y" article="the">Olösta</value>
+        </adjective>
+
+    <adjective name="Unused">
+        <value gender="e" plural="n">Oanvänd</value>
+        <value gender="e" plural="n" article="the">Oanvända</value>
+        <value gender="n" plural="n">Oanvänt</value>
+        <value gender="n" plural="n" article="the">Oanvända</value>
+        <value gender="e" plural="y">Oanvända</value>
+        <value gender="e" plural="y" article="the">Oanvända</value>
+        <value gender="n" plural="y">Oanvända</value>
+        <value gender="n" plural="y" article="the">Oanvända</value>
+        </adjective>
+
+    <adjective name="Unfiled">
+        <value gender="e" plural="n">Ej sparad</value>
+        <value gender="e" plural="n" article="the">Ej sparade</value>
+        <value gender="n" plural="n">Ej sparat</value>
+        <value gender="n" plural="n" article="the">Ej sparade</value>
+        <value gender="e" plural="y">Ej sparade</value>
+        <value gender="e" plural="y" article="the">Ej sparade</value>
+        <value gender="n" plural="y">Ej sparade</value>
+        <value gender="n" plural="y" article="the">Ej sparade</value>
+        </adjective>
+
+    <adjective name="Unshared">
+        <value gender="e" plural="n">Odelad</value>
+        <value gender="e" plural="n" article="the">Odelade</value>
+        <value gender="n" plural="n">Odelat</value>
+        <value gender="n" plural="n" article="the">Odelade</value>
+        <value gender="e" plural="y">Odelade</value>
+        <value gender="e" plural="y" article="the">Odelade</value>
+        <value gender="n" plural="y">Odelade</value>
+        <value gender="n" plural="y" article="the">Odelade</value>
+        </adjective>
+
+    <adjective name="Updated">
+        <value gender="n" plural="n">Uppdaterad</value>
+        <value gender="e" plural="n" article="the">Uppdaterade</value>
+        <value gender="n" plural="n">Uppdaterat</value>
+        <value gender="n" plural="n" article="the">Uppdaterade</value>
+        <value gender="e" plural="y">Uppdaterade</value>
+        <value gender="e" plural="y" article="the">Uppdaterade</value>
+        <value gender="n" plural="y">Uppdaterade</value>
+        <value gender="n" plural="y" article="the">Uppdaterade</value>
+    </adjective>
+
+    <adjective name="Useful">
+        <value gender="e" plural="n">Användbar</value>
+        <value gender="e" plural="n" article="the">Användbara</value>
+        <value gender="n" plural="n">Användbart</value>
+        <value gender="n" plural="n" article="the">Det användbara</value>
+        <value gender="e" plural="y">Användbara</value>
+        <value gender="e" plural="y" article="the">Användbara</value>
+        <value gender="n" plural="y">Användbara</value>
+        <value gender="n" plural="y" article="the">Användbara</value>
+        </adjective>
+
+    <adjective name="User_Owned">
+        <value gender="e" plural="n">Användarägd</value>
+        <value gender="e" plural="n" article="the">Användarägda</value>
+        <value gender="n" plural="n">Användarägt</value>
+        <value gender="n" plural="n" article="the">Användarägda</value>
+        <value gender="e" plural="y">Användarägda</value>
+        <value gender="e" plural="y" article="the">Användarägda</value>
+        <value gender="n" plural="y">Användarägda</value>
+        <value gender="n" plural="y" article="the">Användarägda</value>
+    </adjective>
+
+    <adjective name="Viewed">
+        <value gender="e" plural="n">Visad</value>
+        <value gender="e" plural="n" article="the">Visade</value>
+        <value gender="n" plural="n">Visat</value>
+        <value gender="n" plural="n" article="the">Visade</value>
+        <value gender="e" plural="y">Visade</value>
+        <value gender="e" plural="y" article="the">Visade</value>
+        <value gender="n" plural="y">Visade</value>
+        <value gender="n" plural="y" article="the">Visade</value>
+        </adjective>
+
+    <adjective name="Visible">
+        <value gender="e" plural="n">Synlig</value>
+        <value gender="e" plural="n" article="the">Synliga</value>
+        <value gender="n" plural="n">Synligt</value>
+        <value gender="n" plural="n" article="the">Synliga</value>
+        <value gender="e" plural="y">Synliga</value>
+        <value gender="e" plural="y" article="the">Synliga</value>
+        <value gender="n" plural="y">Synliga</value>
+        <value gender="n" plural="y" article="the">Synliga</value>
+        </adjective>
+
+    <adjective name="Won">
+        <value gender="e" plural="n">vunna</value>
+        <value gender="e" plural="n" article="the">vunna</value>
+        <value gender="n" plural="n">vunna</value>
+        <value gender="n" plural="n" article="the">vunna</value>
+        <value gender="e" plural="y">vunna</value>
+        <value gender="e" plural="y" article="the">vunna</value>
+        <value gender="n" plural="y">vunna</value>
+        <value gender="n" plural="y" article="the">vunna</value>
+        </adjective>
+
+    <adjective name="Your">
+        <value gender="e" plural="n">Din</value>
+        <value gender="e" plural="n" article="the"></value>
+        <value gender="n" plural="n">Ditt</value>
+        <value gender="n" plural="n" article="the"></value>
+        <value gender="e" plural="y">Dina</value>
+        <value gender="e" plural="y" article="the"></value>
+        <value gender="n" plural="y">Dina</value>
+        <value gender="n" plural="y" article="the"></value>
+        </adjective>
+        
+    <adjective name="Zero">
+       <value gender="n" plural="n">Noll</value>
+        <value gender="e" plural="n" article="the">Noll</value>
+        <value gender="n" plural="n">Noll</value>
+        <value gender="n" plural="n" article="the">Noll</value>
+        <value gender="e" plural="y">Noll</value>
+        <value gender="e" plural="y" article="the">Noll</value>
+        <value gender="n" plural="y">Noll</value>
+        <value gender="n" plural="y" article="the">Noll</value>
+    </adjective>
+    
+    <adjective name="Marked">
+	    <value gender="e" plural="n">Markerad</value>
+        <value gender="e" plural="n" article="the">Markerade</value>
+        <value gender="n" plural="n">Markerat</value>
+        <value gender="n" plural="n" article="the">Markerade</value>
+        <value gender="e" plural="y">Markerade</value>
+        <value gender="e" plural="y" article="the">Markerade</value>
+        <value gender="n" plural="y">Markerade</value>
+        <value gender="n" plural="y" article="the">Markerade</value>
+    </adjective>
+    
+    <adjective name="Supported">
+     	<value gender="e" plural="n">Stöds</value>
+        <value gender="e" plural="n" article="the">Stöds</value>
+        <value gender="n" plural="n">Stöds</value>
+        <value gender="n" plural="n" article="the">Stöds</value>
+        <value gender="e" plural="y">Stöds</value>
+        <value gender="e" plural="y" article="the">Stöds</value>
+        <value gender="n" plural="y">Stöds</value>
+        <value gender="n" plural="y" article="the">Stöds</value>
+    </adjective>
+    
+    <adjective name="Unfiled_Public">
+        <value gender="e" plural="n">Ej sparad offentlig</value>
+        <value gender="e" plural="n" article="the">Ej sparade offentliga</value>
+        <value gender="n" plural="n">Ej sparat offentligt</value>
+        <value gender="n" plural="n" article="the">Ej sparade offentliga</value>
+        <value gender="e" plural="y">Ej sparade offentliga</value>
+        <value gender="e" plural="y" article="the">Ej sparade offentliga</value>
+        <value gender="n" plural="y">Ej sparade offentliga</value>
+        <value gender="n" plural="y" article="the">Ej sparade offentliga</value>
+    </adjective>
+    
+    <adjective name="Valid">
+        <value gender="n" plural="n">Giltig</value>
+        <value gender="e" plural="n" article="the">Giltiga</value>
+        <value gender="n" plural="n">Giltigt</value>
+        <value gender="n" plural="n" article="the">Giltiga</value>
+        <value gender="e" plural="y">Giltiga</value>
+        <value gender="e" plural="y" article="the">Giltiga</value>
+        <value gender="n" plural="y">Giltiga</value>
+        <value gender="n" plural="y" article="the">Giltiga</value>
+    </adjective>
+
+	<article name="The" type="the">
+	    <value gender="e" plural="n">Den</value>
+	    <value gender="n" plural="n">Det</value>
+	    <value gender="e" plural="y">De</value>
+	    <value gender="n" plural="y">De</value>
+    </article>
+        
+</adjectives>
+

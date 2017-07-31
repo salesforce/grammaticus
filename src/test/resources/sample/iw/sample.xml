@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">ComboBox</param>
+        <param name="select_default">בחר מהפריטים שלהלן.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">בחר {0} להלן.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Contact/> <Primary/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">גישה</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(מנוהל)</param>
+        <param name="activity_history">היסטוריית פעילות</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">פרטים נוספים</param> <!--aliased across labels - do not change-->
+        <param name="alias">כינוי</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">עוזר</param>
+        <param name="assistant_name">שם עוזר</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">טלפון עוזר</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">טלפון עוזר</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">שלוחת טלפון של עוזר</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">תאריך לידה</param>   <!-- aliased across labels; do not change -->
+        <param name="body">גוף</param>   <!-- aliased across labels; do not change -->
+        <param name="company">חברה</param> <!--aliased across labels - do not change-->
+        <param name="created_by">נוצר על-ידי</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">נוצר על-ידי מזהה</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">נוצר על-ידי כינוי</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">קוד ISO של מטבע</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">שדות מותאמים אישית</param> <!--aliased across labels - do not change-->
+        <param name="default_status">מצב ברירת מחדל</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">פירוט {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">מחלקה</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">עריכת {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">רווחים צפויים</param>
+        <param name="first_name">שם פרטי</param> <!-- aliased across app - do not change -->
+        <param name="last_name">שם משפחה</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">שם פרטי (מקומי)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">שם משפחה (מקומי)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">רבעון כספים</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">שנת כספים</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">שם מלא</param> <!-- aliased across app - do not change -->
+        <param name="group">קבוצה</param> <!-- aliased across app - do not change -->
+        <param name="group_name">שם קבוצה</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">שם תור</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">תעשייה</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">שונה לאחרונה על-ידי</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">שונה לאחרונה על-ידי מזהה</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">שונה לאחרונה על-ידי כינוי</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">מזהה רשומה ראשית</param>
+        <param name="mobile">נייד</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">טלפון נייד</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">שלוחת טלפון נייד</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">שיתוף חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">כינוי מוקצה</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">רשימה זמינה</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">שם חברה</param> <!-- aliased across app - do not change -->
+        <param name="activities">פעילויות</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">אין קבצים מצורפים</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">פרטי כתובת</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">נדחה</param>   <!-- aliased across labels; do not change -->
+        <param name="default">ברירת מחדל</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">עדיפות ברירת מחדל</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">יצירת תצוגה חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">פרטים מותאמים אישית</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">מצב כפול</param> <!-- aliased across app - do not change -->
+        <param name="email_address">כתובת דואר אלקטרוני</param> <!-- aliased across app - do not change -->
+        <param name="email_name">שם דואר אלקטרוני</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">תבנית דואר אלקטרוני</param>   <!-- aliased across labels; do not change -->
+        <param name="email">דואר אלקטרוני:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">קישורים מותאמים אישית</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">גודל קובץ</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">אין נתונים זמינים</param>
+        <param name="history_event_checked">שדה סומן {0}</param>
+        <param name="history_event_unchecked">סימון בוטל בשדה {0}</param>
+        <param name="how_do_i_specify_info">כיצד ניתן לציין אילו פרטים יש ללכוד?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">מקור פנימי</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">מרווח זמן:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">ברכה</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">בחר בעלים חדש</param>
+        <param name="select_a_view">בחר תצוגה מהרשימה הנפתחת כדי לראות רשימה של תוצאות קשורות.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">בחר תיקייה מהרשימה הנפתחת כדי לראות רשימה של תוצאות קשורות.</param>
+        <param name="select_the_file">בחר את הקובץ</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">בחר את השדות שייכללו:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">חתימה</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">נושא</param> <!-- aliased across app - do not change -->
+        <param name="system_info">פרטי מערכת</param>   <!-- aliased across labels; do not change -->
+        <param name="website">אתר אינטרנט</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">כינוי בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">שם פרטי של בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">מזהה בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">שם משפחה של בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">שם בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">תפקיד בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">תצוגת תפקיד בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">שם תפקיד בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">ראשי</param>
+        <param name="primary_contact"><Contact/> <Primary/></param>
+        <param name="priority">עדיפות</param><!--aliased across labels - do not change -->
+        <param name="private">פרטי</param>
+        <param name="role">תפקיד</param> <!--aliased across labels - do not change -->
+        <param name="rating">דירוג</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">יצירה מהירה</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">הוצגו לאחרונה</param>
+        <param name="top5">5 שאלות מובילות</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">יצרן</param>
+        <param name="customer">לקוח</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">ספק</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">מזהה סוג רשומה</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">מזהה מחלקה</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">ספירה או מזהה של טבלה</param>
+        <param name="editable">ניתן לעריכה</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">שם רגיל</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">הצהרת פרטיות</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">מצב ניתן לניהול</param>
+        <param name="namespacePrefix">קידומת מרחב שמות</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">מרחב שמות מודול</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">חבילה מותקנת</param>
+        <param name="initialVersion">גירסה משוחררת ראשונה</param>
+        <param name="lastVersion">גירסה זמינה סופית</param>
+        <param name="availableInVersions">זמין בגירסאות</param>
+        <param name="DeveloperName">שם מפתח</param>
+        <param name="apiName">שם API</param>
+        <param name="InvalidDeveloperNameOnEntity">השדה {0} יכול להכיל מקפים תחתונים ותווים אלפאנומריים בלבד. על הערך להיות ייחודי, להתחיל באות, לא לכלול תווי רווח, לא להסתיים במקף תחתון ולא להכיל שני מקפים תחתונים רצופים.</param>
+        <param name="missingDevName">יש לספק {0}.</param>
+        <param name="duplicateDevName">{0} זה כבר קיים או שנעשה בו שימוש בעבר.  אנא בחר שם ייחודי אחר.</param>
+        <param name="manageabilityOverride">עקיפת ניהול</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">תאריך מדדים</param>
+        <param name="MayEdit">מותר לעריכה</param>
+        <param name="IsLocked">נעול</param>
+        <param name="LastViewedDate">תאריך הצגה אחרון</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">יצירה</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">התקנה</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">יצירת חדש...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">קובץ</param>
+        <param name="new_forecast">תחזית</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">סל מחזור</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">שלח דואר אלקטרוני</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">דוח</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">שונה על-ידי</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">תאריך יצירה</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">תאריך שינוי</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">תהליך אוטומטי</param>
+        <param name="partner_network">משתמש קשר</param>
+        <param name="external_who">משתמש ציבורי</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">דוגמה</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">שגיאה: נתונים לא חוקיים. &lt;br/&gt;סקור את כל הודעות השגיאה שלהלן כדי לתקן את הנתונים.</param>
+        <param name="EditPageError2">סקור את כל הודעות השגיאה שלהלן כדי לתקן את הנתונים.</param>
+        <param name="Required">עליך להזין ערך</param>
+        <param name="RequiredWithFieldList">חסרים שדות נדרשים: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">נדרש עבור שירות עצמי</param>
+        <param name="RequiredBy">נדרש על-ידי: {0}</param>
+        <param name="Requires">דרוש: {0}</param>
+        <param name="TooLong">ערך ארוך מדי עבור שדה</param>
+        <param name="CannotExceedXCharacters">הערך אינו יכול לחרוג מ-{0} תווים.</param>
+        <param name="MustBeXCharacters">על הערך להיות באורך {0} תווים בדיוק.</param>
+        <param name="MustBeNumber">על הערך להיות מספרי</param>
+        <param name="StatusCloseRequired">עליך לסמן מצב אחד לפחות כסגור</param>
+        <param name="StatusDefaultRequired">עליך לסמן מצב אחד לפחות כברירת מחדל</param>
+        <param name="StatusInUse">ערכי המצב שלהלן נמצאים בשימוש ואין אפשרות לערוך או למחוק אותם: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">תאריך לא חוקי</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">תאריך לא חוקי. אין באפשרותך להגדיר תאריך מעבר לתאריך {0}</param>
+        <param name="InvalidDateTime">תאריך ושעה לא חוקיים</param>
+        <param name="InvalidColor">צבע לא חוקי</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">כתובת אינטרנט לא חוקית</param>
+        <param name="InvalidOption">אפשרות לא חוקית נבחרה.</param>
+        <param name="UnsupportedCurrency">מטבע לא חוקי</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">כתובת URL לא חוקית</param>
+        <param name="NoneSelectedInPicklist">-- לא נבחרו --</param>
+        <param name="InvalidTime">שעה לא חוקית</param>
+        <param name="InvalidNumber">מספר לא חוקי</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">המספר גדול מדי.</param>
+        <param name="TooLargeNumberWithScale">על המספר להיות קטן מ-{0}.</param>
+        <param name="TooSmallNumberWithScale">על המספר להיות גדול מ-{0}.</param>
+        <param name="NonpositiveError">על המספר להיות חיובי.</param>
+        <param name="NegativeError">על המספר להיות לא-שלילי.</param>
+        <param name="PositiveError">על המספר להיות לא-חיובי.</param>
+        <param name="NonnegativeError">על המספר להיות שלילי.</param>
+        <param name="NonzeroError">על המספר להיות שונה מאפס.</param>
+        <param name="NonintegerError">על המספר להיות מספר שלם.</param>
+        <param name="InvalidPercent">אחוז לא חוקי</param>
+        <param name="InvalidAfterRoundOff">המספר {0} אינו חוקי לאחר עיגול לפי קנה מידה: {1}</param>
+        <param name="CharactersRemaining">נותרים</param>
+        <param name="CharactersOver">מעבר למגבלה</param>
+        <param name="TooManySelection">אין באפשרותך לבחור יותר מ-{0} פריטים</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">ערך כפול ברשומה: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">ערך שדה מוסתר (אינו מוצג) הוא ערך כפול לערך שברשומה: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} הוא ערך כפול לערך שברשומה עם המזהה: {1}</param>
+        <param name="True">True</param>   <!-- aliased across labels; do not change -->
+        <param name="False">False</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">תחום לא חוקי</param>
+        <param name="ReadOnly">אין באפשרותך לערוך שדה זה</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">בטל</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">קבל</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">קבלת שינויים</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">הפעל ארגז חול</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">הוסף הערה</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">הוספת רכיבים</param>
+        <param name="add_contacts">הוסף <Contacts/></param>
+        <param name="add_leads">הוסף <Leads/></param>
+        <param name="add_more_users">הוספת משתמשים נוספים</param>
+        <param name="add_multiple_users">הוספת משתמשים מרובים</param>
+        <param name="add_product">הוסף <Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">הוסף שורה</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">הוספת לוח מחוונים לדוגמה</param>
+        <param name="add_to_call_center">הוסף ל-Call Center</param>
+        <param name="add_to_campaign">הוספה ל<Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">הוספה ל-Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">הוספה ל-<Pricebook/></param>
+        <param name="add_remove">הוספה/הסרה</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">הגדרות מתקדמות</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">אישור</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">הקצאה</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">הקצאת משתמשים לתפקיד</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">בחזרה לרשימת הדוחות</param>
+        <param name="billing_and_licenses">חיוב ורשיונות</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">פרטי חיוב</param>
+        <param name="briefcase_setup">הגדרת מזוודה</param>
+        <param name="cancel">ביטול</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">בטל שיגור</param>
+        <param name="cancel_test_instance">בטל ארגז חול</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">שינוי חברה</param>
+        <param name="change_currency">שינוי מטבע</param>
+        <param name="change_owner">שינוי בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">קבלה ושינוי בעלים</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">קבלה והקצאת ראשי</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">שינוי מצב</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">בדיקת זמינות</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">בדיקת איות</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">בחירת <Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">ניקוי</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">סקירה</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">כרטיסייה {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">רשימה</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: העתק פירוט אב</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">כווץ הכול</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">בחירת פריט מרשימה</param>
+        <param name="composegmail">חיבור הודעה ב-Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">אישור</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">המשך</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">המשך בכל זאת</param>
+        <param name="convert">המרה</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">המרת <Lead/></param>
+        <param name="create">יצירה</param>
+        <param name="create_follow_up_event">יצירת <Event/> מעקב</param>
+        <param name="create_follow_up_task">יצירת <Task/> מעקב</param>
+        <param name="create_new">יצירת {0} חדש</param>
+        <param name="create_new_section">יצירת קטע חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">יצירת <Opportunity/></param>
+        <param name="create_test_instance">יצירת ארגז חול</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">יצירת מסד נתוני בדיקה</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">יצירת טופס 'אינטרנט להפניה'</param>
+        <param name="create_new_holiday">יצירת חג חדש</param>
+        <param name="create_new_sla_process">תהליך זכאות חדש</param>
+        <param name="create_new_milestone_type">אבן דרך חדשה</param>
+        <param name="currency_setup">הגדרת מטבע</param>
+        <param name="customer_view">תצוגת לקוח</param>
+        <param name="customize">התאמה אישית</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">התאמה אישית של תצוגה עבור כל המשתמשים</param>
+        <param name="page_settings">הגדרות דף</param>
+        <param name="customize_page">התאמה אישית של דף</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">עריכת פריסה</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">רשימת לוחות מחוונים</param>
+        <param name="data_export">ייצוא נתונים</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">נקה</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">דחה</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">קישורי ברירת מחדל מותאמים אישית</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">הסרת גישה לקופה</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">סיים עם תצוגה מקדימה</param>
+        <param name="dont_save">אל תשמור</param>
+        <param name="dont_show_page_again">אל תציג לי דף זה שוב</param>
+        <param name="download">הורד</param>
+        <param name="download_now">הורד כעת</param>
+        <param name="download_sample_css_file">הורדת קובץ CSS לדוגמה</param>
+        <param name="edit">עריכה</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">עריכה [ביתא]</param>
+        <param name="edit_all">עריכת הכול</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">עריכת משתמשים</param>
+        <param name="edit_rates">עריכת שערים</param>
+        <param name="edit_selected">עריכת פריטים שנבחרו</param>
+        <param name="editProperties">עריכת מאפיינים</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">יציאה מ-{0}</param>
+        <param name="enable_appstore_user">הענק גישה ליציאה</param>
+        <param name="enable_as_partner">הפוך לזמין כשותף</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">הפוך כניסה לפורטל שותפים לזמינה</param>
+        <param name="enable_self_service">הפוך שירות עצמי לזמין</param>
+        <param name="enable_users">הפוך משתמשים חדשים לזמינים</param>
+        <param name="enableForecasting">הפוך תחזית ניתנת להתאמה אישית לזמינה</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">כניסה להכשרה</param>
+        <param name="erase_test_instance">מחק ארגז חול</param>
+        <param name="establish">יצירה</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">הרחב הכול</param>   <!-- aliased across labels; do not change -->
+        <param name="export">ייצוא פירוט</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">יצא פירוט כעת</param>
+        <param name="export_background">הפעלת ייצוא ברקע...</param>
+        <param name="fctHistory">היסטוריית תחזית</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">סיכום תחזית</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">אימותי שדות</param>
+        <param name="find">איתור</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">איתור דוח</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">איתור <Document/></param>
+        <param name="find_pricebooks">איתור <Pricebook/></param>
+        <param name="find_products">איתור <Product/></param>
+        <param name="find_solution">איתור <Solution/></param>
+        <param name="finished">הסתיים</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">העברה</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">העברה לקשרים</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">יצירת WSDL</param>
+        <param name="generate_login_html">יצירת כניסה ל-HTML</param>
+        <param name="getMoreInfo">קבלת פרטים נוספים</param>
+        <param name="go">בצע!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">עזרה עבור דף זה</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">עזרה של {0}</param>
+        <param name="hide">הסתר פירוט</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">אני מאשר</param>
+        <param name="i_decline">אני דוחה</param>
+        <param name="impactAnalysis">היכן הפריט נמצא בשימוש?</param>
+        <param name="import">ייבוא</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">ייבוא <Leads/></param>
+        <param name="include_offline">כולל לא מקוון</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">הוספה</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">הוסף פריטים שנבחרו</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">התקן כעת</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">הזמן</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">הזמן להתחבר</param>
+        <param name="jigsawsearch">קבל אנשי קשר</param>
+        <param name="join_meeting">הצטרפות לפגישה</param>
+        <param name="jumpstart">התחל מחדש</param>
+        <param name="keep_in_touch">בקש עדכון</param>
+        <param name="layout_assignment">הקצאת פריסה</param>
+        <param name="legal_view">תצוגה משפטית</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">נעילת רשומה</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">כניסה כמשתמש שותף</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">ניהול חברים</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">בקשת פגישה חדשה</param>
+        <param name="add_members_search">הוספת חברים - חיפוש</param>
+        <param name="add_members_import">הוספת חברים - ייבוא קובץ</param>
+        <param name="edit_members_search">עריכת חברים - חיפוש</param>
+        <param name="update_members_import">עדכן והוסף חברים - ייבוא קובץ</param>
+        <param name="manage_call_center_users">ניהול משתמשי Call Center</param>
+        <param name="map_lead_fields"><Lead_Fields/> של מפה</param>
+        <param name="mark_as">סימון בתור...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">ייבוא חבר</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">שינוי תזכורות בודדות</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">חדש</param>
+        <param name="newcase">חדש</param>
+        <param name="new_addition_order">הזמנת הוספה חדשה</param>
+        <param name="new_custom_object">אובייקט מותאם אישית חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">יצירת דוח מותאם אישית חדש</param>
+        <param name="new_dashboard">לוח מחוונים חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">רכיב לוח מחוונים חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/> <New/></param>
+        <param name="new_email_template">תבנית חדשה</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><Entity entity="0"/> <New/></param>
+        <param name="new_entitlement_template">תבנית חדשה</param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="new_folder">תיקייה חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">קבוצה חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">תור חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">הערה חדשה</param>
+        <param name="new_object_custom_tab">כרטיסייה של אובייקטים מותאמים אישית חדשים</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">פגישה באינטרנט</param>
+        <param name="new_order">הזמנה חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">קבוצה אישית חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><Product/> <New/></param>
+        <param name="new_reduction_order">הזמנת הפחתה חדשה</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">תפקיד חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">לחצן 'חדש'</param>
+        <param name="new_territory">אזור חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_user">משתמש חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">כרטיסייה של שילוב אינטרנט חדש</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><Quote/> <New/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">אישור</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">ביצוע עדכון נוסף</param>
+        <param name="performAnotherMigrate">העברת פרופיל אחר</param>
+        <param name="preview">תצוגה מקדימה</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">חישוב מחדש</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">יצירה מחדש</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">דחה</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">דחה שינויים</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">הסר משתמשים</param>
+        <param name="remove_from_briefcase">הסר ממזוודה</param>
+        <param name="remove_from_campaign">הסר מ<Campaign/></param>
+        <param name="reorder">סידור מחדש</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">תקן</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">הפעל את כל הבדיקות</param>
+        <param name="run_test">הפעל בדיקה</param>
+        <param name="quick_save">שמירה מהירה</param>
+        <param name="quick_save_hover">שמור והמשך בעריכה</param>
+        <param name="reply">השב</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">מענה לכולם</param>
+        <param name="reportmanager">מנהל הדוחות</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">איפוס סיסמה</param>
+        <param name="reset_passwords">איפוס סיסמאות</param>
+        <param name="retrieve_prices">אחזור מחירים</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">הפעל דוח</param>   <!-- aliased across labels; do not change -->
+        <param name="save">שמור</param> <!-- aliased across labels do not change -->
+        <param name="saving">שומר...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">שמור והוסף מחיר</param>
+        <param name="save_and_add_product">שמור והוסף <Product/></param>
+        <param name="save_and_clone">שמור ושכפל שוב</param>
+        <param name="save_and_close">שמור וסגור</param>
+        <param name="save_and_attach">שמור והוסף קובץ מצורף</param>
+        <param name="save_and_continue">שמור ועבור לבא</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">שמור ועוד</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">שמור ו<Event/> <New/></param>
+        <param name="save_and_new_product">שמור ו<Product/> <New/></param>
+        <param name="save_and_new_task">שמור ו<Task/> <New/></param>
+        <param name="save_and_refresh">שמור ורענן</param>
+        <param name="save_and_send">שמור ושלח עדכון</param>
+        <param name="event_scheduler">תצוגת לקוח וצוות &gt;</param>
+        <param name="saveAs">שמירה בשם</param>
+        <param name="schedule_to_email">לוח זמנים לשליחת דואר אלקטרוני</param>
+        <param name="schedule_to_print">לוח זמנים להדפסה</param>
+        <param name="scrutinize">בחן</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">איתור <KnowledgeArticles/></param>
+        <param name="newArticle">חדש</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">בחר תבנית</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">התחלה מחדש בשירות עצמי</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">הגדרה בשירות עצמי</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">תצוגה/הפיכה לזמין של שירות עצמי</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">שלח</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">שלח הודעת דואר אלקטרוני ל<all/> <contacts/></param>
+        <param name="send_invitation">שמור ושלח הזמנה</param>
+        <param name="set_status">ניהול מצב</param>
+        <param name="setup_and_install">הגדרה והתקנה</param>
+        <param name="setup_roles">הגדרת תפקידים</param>
+        <param name="setup_sharing">הגדרת שיתוף</param>
+        <param name="sfga_instructions">הוראות מלאות ניתנות להדפסה</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">הצג פירוט</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">דילוג</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">מיון</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">התחל פגישה</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">שלח</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">שלח והוסף קובץ מצורף</param>
+        <param name="subscribe_now">הירשם כמנוי כעת!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">שדרג כעת!</param>
+        <param name="suggest">הצג <Solutions/> <Suggested/></param>
+        <param name="take_training_now">קח את ההכשרה כעת!</param>
+        <param name="terminate">סיום</param>
+        <param name="training_history">היסטוריית הכשרה</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">העברה</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">גירסת ניסיון כעת!</param>
+        <param name="undelete">ביטול מחיקה</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">בטל</param>
+        <param name="unlock">ביטול נעילת רשומה</param>
+        <param name="update">עדכון</param>
+        <param name="update_campaign_history">עדכן והוסף <Campaign_Members/></param>
+        <param name="update_now">עדכן עכשיו</param>
+        <param name="update_statuses">עדכון מצבים</param>
+        <param name="upload">העלה</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">תלות של שדות</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">הצג רכיבים שנמחקו</param>
+        <param name="view_partnerforce">הצג משתמש שותף</param>
+        <param name="view_self_service">הצג שירות עצמי</param>
+        <param name="view_customer_success">הצג משתמש של פורטל לקוחות</param>
+        <param name="enable_customer_success">הפוך משתמש של פורטל לקוחות לזמין</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">מה זה?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">סגור חלון זה</param>
+        <param name="runApexRecalc">חשב מחדש שיתוף Apex</param>
+        <param name="disablecustomerportal">הפוך משתמש של פורטל לקוחות ללא זמין</param>
+        <param name="disablepartnerportal">הפוך משתמש שותף ללא זמין</param>
+        <param name="disablecustomerportalaccount">הפוך חשבון של פורטל לקוחות ללא זמין</param>
+        <param name="disablepartnerportalaccount">הפוך חשבון שותף ללא זמין</param>
+        <param name="voteup">הצבע בעד</param>
+        <param name="votedown">הצבע נגד</param>
+        <param name="markquestionunanswered">סמן כשאלה שלא נענתה</param>
+        <param name="markbestanswer">סמן כתשובה הטובה ביותר</param>
+        <param name="requestUseSfdcAction">חיפוש קשרים</param>
+        <param name="addPET">הוספת תבנית זכאות</param>
+        <param name="truncate">חיתוך</param>
+        <param name="disableprmsuperuser">הפוך גישת-על של שותף לבלתי זמינה</param>
+        <param name="enableprmsuperuser">הפוך גישת-על של שותף לזמינה</param>
+        <param name="purchase_more">רכוש עוד</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">חזור למעלה</param>
+        <param name="descriptionText">גוף הטקסט ארוך מדי. אנא הצג את הפירוט.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">הצג קובץ</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">אב</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">אין פרטים קשורים</param>
+        <param name="no_records">אין רשומות להציג</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">הצג עוד {0} »</param>
+        <param name="NextMoreGeneric">הצג עוד »</param>
+        <param name="view_more">עבור לרשימה</param>
+        <param name="view_more_tot">עבור לרשימה ({0})</param>
+        <param name="view_more_tot_plus">עבור לרשימה ({0}+)</param> <!-- -->
+        <param name="view_more_1">עבור לרשימה עם רשומה נוספת אחת</param> <!-- Singular -->
+        <param name="view_more_n">עבור לרשימה עם {0} רשומות נוספות</param> <!-- Plural -->
+        <param name="view_more_n_plus">עבור לרשימה עם {0}+ רשומות</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">רשומות זמינות נוספות; עבור לרשימה</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">סבירות</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">מקור</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">ניצחון</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">תקופת כספים</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">רבעון {1} בשנה {0}</param>
+        <param name="opportunities_next_step">שלב הבא</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">עדכון</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <Open/></param>
+        <param name="activities_open"><Activities/> <Open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">קשור ל</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">הערה</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">מסמך של Google</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">הערות וקבצים מצורפים</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">כותרת הערה</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">קובץ מצורף</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">קבצים מצורפים</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">שם קובץ</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">בעלות</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">ראשי</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> לתצוגה</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">תאריך</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">תואר</param>
+        <param name="object_title">כותרת</param> <!-- translation note: title of files/attachment -->
+        <param name="name">שם</param>
+        <param name="object_name">שם</param>
+        <param name="date">תאריך</param>
+        <param name="due_date">תאריך יעד</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">השתנה לאחרונה</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">עודכן על-ידי</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">ראשי</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">מתחרים</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">שם מתחרה</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">נקודות חוזק</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">נקודות חולשה</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">סבירות (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">השלמה</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">סמן השלמה של {0}</param>
+        <param name="task_date">תאריך</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">שם</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> ממתין לאישור</param>
+        <param name="task_none">אין לך <tasks/> <open/> המתוזמנות לתקופה זו.</param>
+        <param name="task_mode_today">היום</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">היום + תאריך יעד חלף</param>
+        <param name="task_mode_tomorrow">מחר</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">{0} הימים הבאים</param>
+        <param name="task_mode_next_7days_overdue">{0} הימים הבאים + תאריך יעד חלף</param>
+        <param name="task_mode_overdue">תאריך היעד חלף</param>
+        <param name="task_mode_this_month">חודש זה</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">כל הפתוחים</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">היסטוריה</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">חדשות</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">כותרת</param>
+        <param name="new_date">תאריך</param>
+        <param name="news_none">אין חדשות זמינות</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">תבניות מיזוג דואר אלקטרוני</param>
+        <param name="mail_merge">Microsoft Word®‎</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/> מובילים</param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">תאריך הוספה</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">נוסף על-ידי</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <Solutions/> מצורפים</param>
+        <param name="description">תיאור</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">סמל מניה</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">אין נתוני <Activity_History/> להצגה.</param>
+        <param name="nonotes">אין נתוני 'היסטוריית הערות' להצגה.</param>
+        <param name="noattachments">אין נתוני 'היסטוריית קבצים מצורפים' להצגה.</param>
+        <param name="viewallattachments">הצג את כל הקבצים המצורפים</param>
+        <param name="viewalldocsattachments">הצג את כל Google Docs והקבצים המצורפים</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">תאריך</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">תיאור שורה</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">לכידות API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">מסונן במשתמש</param>
+        <param name="apicapture_filterip">מסונן ב-IP</param>
+        <param name="apicatpure_numbers">לכידות</param>
+        <param name="apicapture_soapscope">הצג לכידות</param>
+        <param name="apicapture_active">פעיל</param>
+        <param name="apicapture_none">אין לכידות</param>
+        <param name="apicapture_new">הפעל לכידה חדשה</param>
+        <param name="apicapture_view">הצגה</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">היסטוריית כניסות</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">אין כניסות</param>
+        <param name="login_none">אין היסטוריית כניסות זמינה.</param>
+        <param name="login_username">שם משתמש</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">מועד כניסה</param>
+        <param name="login_type">סוג כניסה</param>
+        <param name="login_ip">IP מקור</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N/A</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">דפדפן</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">פלטפורמה</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">זיהוי</param>
+        <param name="login_clientversion">גירסת לקוח</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">יישום</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">סוג API</param>
+        <param name="login_apiversion">גירסת API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">הצלחה</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">הורדת היסטוריית כניסות עבור ששת החודשים האחרונים, כולל כניסות ממיקומים שמחוץ לאתר האינטרנט, כגון כניסות API (קובץ ‏‎.csv של Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">הורדת היסטוריית כניסות, כולל כניסות מאתר האינטרנט בלבד (קובץ ‏‎.csv של Excel)</param>
+        <param name="login_history_download_title">אפשרויות הורדה</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">קובץ CSV</param>
+        <param name="login_history_download_file_type_gzip">קובץ GZIP</param>
+        <param name="login_history_download_file_type_help">ניתן להציג קבצי CSV (ערכים מופרדים באמצעות פסיק) באמצעות תוכניות רבות של גליונות אלקטרוניים ועריכת טקסט. קבצי GZIP (GNU zip) הינם דחוסים כדי להפחית את גודלם.</param>
+        <param name="login_history_download_option_title">תוכן קובץ</param>
+        <param name="login_history_download_option_all">כל הכניסות</param>
+        <param name="login_history_download_option_ie6_only">כניסות באמצעות IE6 בלבד</param>
+        <param name="login_history_download_option_web_only">כניסות אתר אינטרנט בלבד</param>
+        <param name="login_history_download_option_help">"כל הכניסות" כולל כניסות מכל המקורות, כגון אתר האינטרנט, Outlook, שילובי API וכו'. "כניסות IE6" כולל כניסות של משתמשי Internet Explorer 6 בלבד. "כניסות אתר אינטרנט" כולל כניסות מדף הכניסה של Salesforce בלבד.</param>
+        <param name="login_history_ie6_deprecation_warning_title">עדיין משתמש ב-IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce מפסיק בהדרגה את התמיכה ב-IE6. השתמש באפשרויות ההורדה המסופקות כדי לברר אילו דפדפנים נמצאים בשימוש בארגון שלך.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">כתובת URL לכניסה</param>
+        <param name="order_history">היסטוריית הזמנות</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">אין הזמנות</param>
+        <param name="order_number">מספר הזמנה</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">תאריך הזמנה</param>
+        <param name="order_currency">מטבע</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">עלות כוללת</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">נמכר ל:</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">אין <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">שורה&lt;BR&gt;מספר</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">מחיר חודשי</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">הפניית חיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">תדירות חיוב&lt;BR&gt;(חודשים)</param>
+        <param name="bo_order_items_billing_frequency_text">תדירות חיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">תקופת הזמנה&lt;BR&gt;(חודשים)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">תאריך</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">חשבוניות</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">אין חשבוניות</param>
+        <param name="invoices_invoice_number">מספר חשבונית</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">תאריך חשבונית</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">תעריך פירעון של חשבונית</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">מזהה מערכת חיצונית</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">סכום כולל</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">יתרת חוב</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">זיכוי כולל</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">מחיקה כוללת</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">איש קשר לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">חברה לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">היסטוריית חשבוניות</param>
+        <param name="revenue_schedule">לוח זמנים</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">תאריך</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">הכנסה</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">הערות</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">היסטוריית מצב</param>
+        <param name="status_none">לא נמצאה היסטוריית מצב</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">בחירת שירות</param>
+        <param name="services_none">אין שירותים</param>
+        <param name="services_description">שירות</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">מחיר יחידה</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">מחיר כולל</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">הנחה</param>
+        <param name="training">היסטוריית שיעורי הכשרה</param>
+        <param name="training_none">ללא</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">שם שיעור</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">תאריך ביצוע</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">תגובה התקבלה</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">ברירת מחדל</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> מוגדר</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">תאריך התחלה</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">תאריך סיום</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">ערך משך חיים</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">יש כללי רכישה</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">תדירות חיוב&lt;br&gt;(חודשים)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">חויב עד תאריך</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <Billed/></param>
+        <param name="event_attending"><Event/> התקבל</param>
+        <param name="event_notdecided">לא התקבלה תגובה</param>
+        <param name="event_declined"><Event/> נדחה</param>
+        <param name="event_attending_none">אף משתתף לא קיבל</param>
+        <param name="event_notdecided_none">כל המשתתפים הגיבו</param>
+        <param name="event_declined_none">אף משתתף לא דחה</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">שם</param>
+        <param name="documents_size">גודל</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">מחבר</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">הצג נתיב ביקורת של התקנה</param>
+        <param name="download">הורדה</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">20 הערכים האחרונים עבור הארגון שלך מפורטים להלן. באפשרותך {0} את נתיב הביקורת של התקנת הארגון שלך עבור ששת החודשים האחרונים (קובץ ‏‎.csv של Excel).</param>
+        <param name="setup_audit_date">תאריך</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">פעולה</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">מקטע</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">משתמש נציג</param>
+        <param name="setup_audit_proxyinguser_help">עמודה זו מפרטת את שם המשתמש של המשתמש שביצע שינוי בהגדרות בשם משתמש קצה. לדוגמה, אם משתמש העניק גישת כניסה לנציג תמיכה, שם המשתמש של הנציג מופיע.</param>
+        <param name="setup_audit_trail_none">אין פרטים זמינים של נתיב ביקורת התקנה</param>
+        <param name="setup_audit_download_csv">הורד נתיב ביקורת של התקנה עבור ששת החודשים האחרונים (קובץ ‏‎.csv של Excel)</param>
+        <param name="DashboardComponents_title">רכיבי לוחות מחוונים</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">אין רכיבי לוח מחוונים</param>
+        <param name="translated_templates_none">אין תבניות דואר אלקטרוני מתורגמות</param>
+        <param name="translated_templates_title">תבניות דואר אלקטרוני מתורגמות</param>
+        <param name="translated_templates_language">שפה</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">פעיל</param>
+        <param name="desc_pnet_conn_audit_trail">20 הערכים האחרונים עבור הארגון שלך מפורטים להלן. באפשרותך {0} את ההיסטוריה המלאה של נתיב ביקורת קשרים כקובץ ‏‎.csv של Excel.</param>
+        <param name="pnet_conn_audit_trail">היסטוריית קשרים</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">תאריך</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">אין פרטים זמינים של נתיב ביקורת קשרים</param>
+        <param name="pnet_conn_audit_download_csv">הורד היסטוריית קשרים (csv)</param>
+        <param name="pnet_entity_conns_title">שיתוף חיצוני</param>
+        <param name="pnet_entity_conn_stop_sharing">עצור שיתוף</param>
+        <param name="pnet_pub_title">אובייקטים שפורסמו</param>
+        <param name="pnet_sub_title">אובייקטים עם רישום כמנוי</param>
+        <param name="pnet_pubsub_object">שם אובייקט</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">שדות</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">פרסם/בטל פרסום</param>
+        <param name="pnet_sub_edit">הירשם כמנוי/בטל רישום כמנוי</param>
+        <param name="pnet_pub_edit_object">אובייקט פורסם.</param>
+        <param name="pnet_pub_edit_field">לחץ על 'עריכה' להלן כדי לפרסם את השדות הזמינים בכל אובייקט.</param>
+        <param name="pnet_sub_edit_object">בוצע רישום כמנוי לאובייקט.</param>
+        <param name="pnet_sub_edit_field">לחץ על 'עריכה' להלן כדי להירשם כמנוי על השדות הזמינים בכל אובייקט.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">תוכן</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">קבצים מצורפים של Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">שגיאה בעת טעינת רשימות קשורות</param>
+        <param name="ajax_exception_desc">אירעה בעיה בעת איסוף פרטי הרשימות הקשורות עבור רשימה זו. אם טעינת הדף מחדש אינה מתקנת את הבעיה, אנא פנה למנהל המערכת שלך או &lt;a href="{0}" title="report{1}"&gt;דווח&lt;/a&gt; על הבעיה לצוות תמיכת הלקוחות שלנו.</param>
+        <param name="category_access_title">הגדרות ניראות של קבוצת קטגוריות</param>
+        <param name="category_access_video_tutorial">וידאו הדרכה</param>
+        <param name="category_access_name">קבוצת קטגוריות</param>
+        <param name="category_access_access">ניראות</param>
+        <param name="category_access_details">פירוט ניראות</param>
+        <param name="category_access_custom">מותאם אישית</param>
+        <param name="category_access_full">הכול</param>
+        <param name="category_access_inherited">עבר בירושה מ-{0}</param>
+        <param name="category_access_revoked">ללא</param>
+        <param name="category_access_userNodeAndChildren_Profile">פרופיל</param>
+        <param name="category_access_userNodeAndChildren_UserRole">תפקיד וכפופים</param>
+        <param name="category_access_noCategories">אין קטגוריות גלויות ב-{0}</param>
+        <param name="category_access_allCategories">כל הקטגוריות גלויות ב-{0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} עבור {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)‎</param>   <!-- aliased across labels; do not change -->
+        <param name="1">ארה"ב כללי ומערב אירופה (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">יפנית (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">יפנית (JIS)</param>
+        <param name="4">יפנית (EUC)</param>
+        <param name="5">קוריאנית (ks_c_5601-1987)</param>
+        <param name="6">סינית מסורתית (Big5)</param>
+        <param name="7">סינית פשוטה (GB2312)</param>
+        <param name="8">סינית מסורתית - הונג קונג (Big5-HKSCS)</param>
+        <param name="9">יפנית (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">ארגון ניסיון</param>
+        <param name="expand">לחץ כדי לפתוח סרגל צידי [Alt+S]</param>
+        <param name="collapse">לחץ כדי לסגור סרגל צידי [Alt+S]</param>
+        <param name="expandNoHotkey">לחץ כדי לפתוח סרגל צידי</param>
+        <param name="collapseNoHotkey">לחץ כדי לסגור סרגל צידי</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">למעלה</param>   <!-- aliased across labels; do not change -->
+        <param name="down">למטה</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">הזז</param>
+        <param name="top">קצה עליון</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">קצה תחתון</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">אנא מלא את השדות הדרושים.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">כל המשתמשים</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">חדש</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">הוסף</param>   <!-- aliased across labels; do not change -->
+        <param name="del">מחק</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[שינוי]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">כיצד ניתן ל...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">הצג עוד</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="log_call">רישום שיחה</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">רישום הערה</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">מיזוג דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">הצג הכול</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">צירוף קובץ</param>   <!-- aliased across labels; do not change -->
+        <param name="help">כיצד ניתן ל...</param>
+        <param name="send_email">שליחת הודעת דואר אלקטרוני</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">תמונה שנוספה על-ידי משתמש</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">יישומים</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">תצוגה ניתנת להדפסה</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">שכפול</param>   <!-- aliased across labels; do not change -->
+       <param name="share">שיתוף</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">בית</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">ספר לי עוד!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">בחר אחד:</param>
+        <param name="hotlist_mode">הצג בחירה</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">הצג {0,number,integer} פריטים</param>
+        <param name="hotlist_empty_title">אין רשומות אחרונות. לחץ על 'בצע' או בחר תצוגה מהרשימה הנפתחת כדי להציג רשומות.</param>
+        <param name="hotlist_empty_description">אין רשומות זמינות עבור קריטריונים אלה.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">עבור אל דוחות</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">מרכז משאבים</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">באמצעות 'מרכז המשאבים', באפשרותך לחקור קשרים אפשריים, למצוא שירותי צד שלישי ועוד הרבה יותר.</param>
+        <param name="resource_center_link_text">עבור אל מרכז המשאבים</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">שיטות מכירות</param>
+        <param name="hotlist_recently_modified">שונה לאחרונה</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">נוצר לאחרונה</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">הוצגו לאחרונה</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--ללא--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--בחירה--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--ברירת מחדל--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**לא ישים**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">מנהל המערכת שלך לא הגדיר קישורים מותאמים אישית כלשהם.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">קפוץ אל:</param>
+        <param name="JumpToStep">שלב {0}: {1}</param>
+        <param name="CloseWizard">סגור אשף</param>
+        <param name="LeftHeader">שלב {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">שלב {0} מתוך {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">שלב {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">שמור וחדש</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">הבא</param> <!-- aliased across labels - do not change -->
+        <param name="previous">הקודם</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">אשף התקנת הארגון עבור {0}</param>
+        <param name="ImportWizardTitle">אשף הייבוא עבור {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">מרכז הזמנות</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">הרשמה לניסיון</param>
+        <param name="WizardBody">גוף אשף</param>
+        <param name="WizardFooter">כותרת תחתונה של אשף</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">כתובת</param><!-- translators note - this is actually the full address -->
+        <param name="street">כתובת</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">עיר</param><!-- aliased across label files - do not change -->
+        <param name="state">מדינה/מחוז</param><!-- aliased across label files - do not change -->
+        <param name="zip">מיקוד</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">מיקוד</param> <!-- aliased across label files - do not change -->
+        <param name="country">ארץ</param> <!-- aliased across label files - do not change -->
+        <param name="phone">טלפון</param> <!-- aliased across label files - do not change -->
+        <param name="extension">שלוחה</param> <!-- aliased across label files - do not change -->
+        <param name="fax">פקס</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">הרחבת פקס.</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">דואר אלקטרוני</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">כתובת למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">רחוב למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">עיר למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">מדינה/מחוז למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">מיקוד למשלוח</param>
+        <param name="shippingzippostalcode">מיקוד למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">מדינה למשלוח</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">כתובת לחיוב</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">עיר לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">מדינה/מחוז לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">מיקוד לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">ארץ לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">רחוב לחיוב</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">רחוב בנק</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">כתובת בנק</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">עיר בנק</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">מדינה/מחוז של בנק</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">מיקוד בנק</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">ארץ בנק</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">כתובת למשלוח דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">רחוב למשלוח דואר</param>
+        <param name="mailingcity">עיר למשלוח דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">מדינה/מחוז למשלוח דואר</param>
+        <param name="mailingzip">מיקוד למשלוח דואר</param>
+        <param name="mailingcountry">ארץ למשלוח דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">שורת כתובת1 למשלוח דואר</param>
+        <param name="mailingaddress2">שורת כתובת2 למשלוח דואר</param>
+        <param name="mailingaddress3">שורת כתובת3 למשלוח דואר</param>
+        <param name="otheraddress">כתובת נוספת</param>
+        <param name="otheraddress1">שורת כתובת 1 אחרת</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">שורת כתובת 2 אחרת</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">שורת כתובת 3 אחרת</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">רחוב אחר</param>
+        <param name="otherstreet2">רחוב 2 אחר</param>
+        <param name="otherstreet3">רחוב 3 אחר</param>
+        <param name="othercity">עיר אחרת</param>
+        <param name="otherstate">מדינה/מחוז אחרים</param>
+        <param name="otherzipcode">מיקוד אחר</param>
+        <param name="otherpostalcode">מיקוד אחר</param>
+        <param name="otherzippostalcode">מיקוד אחר</param>
+        <param name="othercountry">מדינה אחרת</param>
+        <param name="otherphone">טלפון אחר</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">שלוחת טלפון אחרת</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">כתובת 1</param>
+        <param name="address2">כתובת 2</param>
+        <param name="address3">כתובת 3</param>
+        <param name="home_phone">טלפון בבית</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">טוען...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">מיקום</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">כמות</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">מנהל אנשי קשר</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">כן</param>   <!-- aliased across labels; do not change -->
+        <param name="no">לא</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">ברוכים הבאים אל salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. כל הזכויות שמורות.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. כל הזכויות שמורות.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">תאימות 508</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc.‎ כל הזכויות שמורות.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">‎Copyright © {0} {1}.‎ כל הזכויות שמורות.</param>
+        <param name="brandedCopyrightWithLink">‎Copyright &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. כל הזכויות שמורות</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}.‎ כל הזכויות שמורות.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">הצהרת אבטחה</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">תנאי שימוש</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">תודה על הבחירה ב-salesforce.com. לפני שתוכל להתחיל בשימוש ב-salesforce.com, עליך לקרוא את תנאי השימוש שלהלן ולהסכים להם. כאשר תסיים, אנא המשך על-ידי לחיצה על לחצן 'אני מאשר'. שים לב: אם לא תקבל תנאי שימוש לה, לא תוכל לבצע כניסה אל salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">בוצע</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">הוסף כעת!</param>
+        <param name="remove">הסר</param>   <!-- aliased across labels; do not change -->
+        <param name="new">חדש</param>
+        <param name="exciting_and_new">חדש!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">כאן</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">יצירה</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">סגור חלון</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">הדפס דף זה</param>
+        <param name="new_window">(חלון חדש)</param>
+        <param name="new_focus">(העברת מוקד)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">מסגרת מוסתרת - התעלם</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">בחר הכול</param>
+        <param name="select_shown">בחר את הפריטים המוצגים</param>
+        <param name="remove_shown">הסר את הפריטים המוצגים</param>
+        <param name="select_none">אל תבחר</param>
+        <param name="all_active">כל הפעילים</param>
+        <param name="all_inactive">כל הלא פעילים</param>
+        <param name="are_you_sure">האם אתה בטוח?</param>
+        <param name="irreversible_are_you_sure">הפעולה בלתי הפיכה! האם אתה בטוח?</param>
+        <param name="replace">החלפה</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">סיים</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} דקות</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">נמצאו פריטים מרובים. בחר מהרשימה הנפתחת או לחץ על הסמל כדי למקד את החיפוש.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">איפוס</param>   <!-- aliased across labels; do not change -->
+        <param name="override">עקיפה</param>   <!-- aliased across labels; do not change -->
+        <param name="total">סך הכול</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">לחץ כאן</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">הערות למנהל האתר:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML לדוגמה</param>   <!-- aliased across labels; do not change -->
+        <param name="password">סיסמה</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">אל תציג דף זה שוב</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">הסתר הודעה זו עבור: </param>
+        <param name="dontShowMessageAgain">אל תציג הודעה זו שוב</param>
+        <param name="dismissMessage">התעלם מהודעה זו</param>
+        <param name="allObjects">כל האובייקטים</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">הקש על מקש הרווח או על מקש Enter כדי לפתוח</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">שירות עצמי: <Case_Detail/></param>
+        <param name="CssEdit">שירות עצמי: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">הזנת <Case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">הערה</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">אובייקטים מותאמים אישית</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">הגדרת אובייקטים מותאמים אישית</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">לוח מחוונים</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">לוחות מחוונים</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">בטל בחירת הכול</param>
+        <param name="deselect_shown">בטל בחירה בפריטים המוצגים</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">תבנית מיזוג דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">תבניות מיזוג דואר</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">תיקייה</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">תיקיות</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">תחזיות</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">תחזיות</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">מפקח Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">חשבונית</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">הערות</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">הזמנה</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">הזמנות</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">הזמן פריט</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">הזמן פריטים</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">תשלום</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">תשלומים</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">דוח</param>
+        <param name="Reports">דוחות</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">הרשמה</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">תבנית</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">תבניות</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">טבלה</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">פעיל</param>
+        <param name="amount">כמות</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">הכנסה שנתית</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">צירוף מסמך</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">שינוי סיסמה</param>   <!-- aliased across labels; do not change -->
+        <param name="close">סגור</param> <!-- aliased across labels; do not change -->
+        <param name="closed">סגור</param>
+        <param name="closed_date">תאריך סגירה</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">תאריך סגירה</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">תאריך יצירה</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">סוג נתונים</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">נמחק</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">תיאור מפורט</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">עובדים</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">קובץ</param>   <!-- aliased across labels; do not change -->
+        <param name="files">קבצים</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">מידע כללי</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">קבל פרטים לפני שתתחיל</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">תווית</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">כניסה אחרונה</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">תאריך שינוי אחרון</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">שם</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">שם</param>
+        <param name="new_status">מצב חדש</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">ללא</param>
+        <param name="open">פתח</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">ארגון</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">לא נמצאו התאמות.</param> <!-- aliased across labels - do not change -->
+        <param name="all">הכול</param>
+        <param name="clear">נקה</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">לחץ על סמל בדיקת המידע...</param>
+        <param name="click_lookup_icon_info">לחץ על סמל בדיקת המידע כדי לבחור ערך.</param>
+        <param name="clear_all">נקה הכול</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">לחץ על הלחצן 'צרף'.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">שגיאות</param> <!-- aliased across lables - do not change -->
+        <param name="high">גבוה</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">עזרה</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">העבר אותי לשם!</param>
+        <param name="keywords">מילות מפתח</param>
+        <param name="length">אורך</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">מצב</param> <!-- aliased across lables - do not change -->
+        <param name="title">כותרת</param>
+        <param name="object_title">כותרת</param>
+        <param name="type">סוג</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">משתמש</param> <!--aliased across labels - do not change -->
+        <param name="Users">משתמשים</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">אוסף הרשאות</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">פרופיל</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">פרופילים</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">בעלים</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">בוא לחוות הצלחה.</param>
+        <param name="DontShowPage">אל תציג לי דף זה שוב.</param>
+        <param name="click_here_to_create_new_account">{0} כדי ליצור <account/> <new/> כעת.</param>
+        <param name="click_here_to_create_new_contact">{0} כדי ליצור <contact/> <new/> כעת.</param>
+        <param name="click_here_to_create_new_lead">{0} כדי ליצור <lead/> <new/> כעת.</param>
+        <param name="click_here_to_create_new_opportunity">{0} כדי ליצור <opportunity/> <new/> כעת.</param>
+        <param name="click_here_to_create_new_product">{0} כדי ליצור <product/> <new/> כעת.</param>
+        <param name="SystemModstamp">Modstamp של מערכת</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">מחלקה</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">בעיבוד</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">אנא המתן במהלך עדכון הרשומות.</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">תרגום סטטי</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">הסתר דף זה בעתיד</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">מעלה... אנא המתן</param>
+        <param name="uploading_title">מעלה</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">מייבא... אנא המתן</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">וגם </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">שגיאה: אין גישה לשדה זה</param>
+        <param name="noReadAccess">אין ברשותך גישה לתצוגת רשומה זו.</param>
+        <param name="noAccessToUser">אין לך גישה למשתמש זה.</param>
+        <param name="disabledButton">לחצן לא זמין: {0}</param>
+        <param name="RequiredHeader">מידע נדרש</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">הוספת תמונה</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">האם אתה בטוח שברצונך למחוק את טווח כניסת IP?</param>
+        <param name="AMPM">ערך AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">רכיב מוגן</param>
+        <param name="dialogCloseConfirm">ייתכן שחלון האישור שהצגת כעת נסגר מוקדם מדי. לחץ על 'אישור' כדי לחזור אל החלון או על 'ביטול' כדי להתעלם מאזהרה זו.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">תחילת דו-שיח</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">תוצאות חיפוש</param>
+        <param name="Recent">הוצגו לאחרונה</param>
+        <param name="NoMatchHeader">לא נמצאו רשומות עקב אחת מהסיבות הבאות:</param>
+        <param name="BulletOne">אין רשומות מסוג זה</param>
+        <param name="BulletTwo">אין לך ההרשאות הנדרשות כדי לראות רשומות כלשהן</param>
+        <param name="BulletThree">הרשומות אינן מתאימות לקריטריוני הסינון שהוגדרו על-ידי מנהל המערכת שלך</param>
+        <param name="BulletFour">שדה בקרה אחד או יותר הינו ריק או לא חוקי (שדות שולטים:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">משתמשים זמינים</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">משתמשים נבחרים</param>
+        <param name="LicensedUsers">משתמשים מורשים</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">נבחרים להסרה</param>
+        <param name="Selected">נבחרים</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">נבחרים</param>
+        <param name="UnassignedPackages">חבילות שלא הוקצו</param>
+        <param name="SelectedPackages">חבילות שנבחרו</param>
+        <param name="InView">בתצוגה</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">קובץ זה חורג ממגבלת הגודל המרבית של {0}.</param>
+        <param name="no_file_specified">אנא ציין קובץ להעלאה. הקלד את הנתיב לקובץ או השתמש בלחצן 'עיון' כדי לאתר אותו במערכת הקבצים המקומית שלך.</param>
+        <param name="invalid_file_type">סוג הקובץ שציינת אינו נתמך כעת.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">שם הקובץ חורג מהאורך המרבי המותר, שהוא {0} תווים.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">סיומת שם הקובץ חורגת מהאורך המרבי המותר, שהוא {0} תווים.</param>
+        <param name="bytes">בתים</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">סוגי קבצי HTML אינם מותרים מסיבות אבטחה.</param>
+        <param name="attachment_size_exceeded">הקובץ המועלה חרג מהגודל המרבי.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;שגיאה:&lt;/b&gt; עליך לבחור תמונה להעלות.</param>
+        <param name="upload_file_too_large">&lt;b&gt;שגיאה:&lt;/b&gt; התמונה חורגת ממגבלת הגודל של 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;שגיאה:&lt;/b&gt; באפשרותך להוסיף קבצי ‎.gif,‏ ‎.jpeg ו-‎.png בלבד.</param>
+        <param name="upload_failed">&lt;b&gt;שגיאה:&lt;/b&gt; ההעלאה נכשלה - נסה שוב מאוחר יותר.</param>
+        <param name="invalid_file">&lt;b&gt;שגיאה:&lt;/b&gt; הקובץ אינו קובץ תמונה חוקי.</param>
+        <param name="invalid_param">&lt;b&gt;שגיאה:&lt;/b&gt; פרמטרים לא חוקיים.</param>
+        <param name="access_failed_alt">תמונה זו אינה זמינה מאחר ש: אין ברשותך הרשאות לראות אותה, או שהיא הוסרה מהמערכת</param>
+        <param name="weekly_export_folder">תיעוד נלווה אחר שהועלה/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">יצירת {0} בוצעה בהצלחה.</param>
+        <param name="Failure_message">יצירה נכשלה.</param>
+        <param name="Common_success_message">יצירה הצליחה.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">בקש הפחתת רשיונות</param>
+        <param name="pageheader">מלא את כל השדות הדרושים כדי לשלוח את בקשת הפחתת הרשיונות שלך. זוהי הדרך המהירה ביותר לעבד את הבקשה שלך.  אל תשלח בקשות מרובות עבור אותם רשיונות, כיוון שפעולה כזו עלולה לגרום לעיכובים בלתי נחוצים.</param>
+        <param name="title_landing">בקשתך התקבלה!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">בקשתך התקבלה ותעובד לפי סדר הקבלה. שים לב שבקשות להפחתת ספירת הרשיונות שלך ייכנסו לתוקף בתקופת החיוב הבאה שלאחר הבקשה שלך, כל עוד תודיע ל-salesforce.com חמישה ימי עסקים לפני תאריך החשבונית עבור תקופת החיוב החדשה.</param>
+        <param name="pageheader_landing">בקשתך התקבלה ותעובד לפי סדר הקבלה. בקשות להפחתת ספירת הרשיונות שלך ייכנסו לתוקף 30 יום לאחר תאריך שליחת הבקשה. אל תשלח כמה בקשות עבור אותם רשיונות, כיוון שפעולה כזו עלולה לעקב את עיבוד בקשתך.</param>
+        <param name="title_error">לא הייתה אפשרות לעבד את בקשתך.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">לא היה באפשרותנו לשלוח את בקשתך כעת. אנא נסה שוב מאוחר יותר.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">שליחת בקשה</param>
+        <param name="reason">סיבה</param>   <!-- aliased across labels; do not change -->
+        <param name="description">אנא תאר&lt;br&gt; בפירוט רב יותר</param>
+        <param name="numLicenses">מספר רשיונות</param>
+        <param name="potentialResponse">כיצד נוכל&lt;br&gt; לשמור על הפעילות העסקית עמך?</param>
+        <param name="tips_title">עצות לשליחת בקשות להפחתת רשיונות</param>
+        <param name="tip1">מלא את כל הפרטים במדויק כדי להבטיח עיבוד מיידי ונכון של בקשתך.  לפני שליחת בקשה זו, ודא שביטלת את הפעלתם של מספיק משתמשים, כך שספירת המשתמשים תהיה נמוכה מספירת הרשיונות החדשה שלך או שווה לה. ניתן לבצע זאת באמצעות התכונה &lt;a href="{0}"&gt;ניהול משתמשים&lt;/a&gt; ב&lt;a href="{1}"&gt;הגדרה שלי&lt;/a&gt;.</param>
+        <param name="type1">ביטול חשבון</param>
+        <param name="type2">הפחתת רשיונות משתמש</param>
+        <param name="type3">הפחתת רשיונות Offline</param>
+        <param name="type4">הפחתת רשיונות מבצע קידום</param>
+        <param name="type5">ביטול Mobile Edition עבור au</param>
+        <param name="type6">הפחתת רשיונות Mobile Edition עבור au</param>
+        <param name="type7">הפחתת רשיונות Force.com Mobile</param>
+        <param name="reason_0">רכישה/מיזוג חברה</param>
+        <param name="reason_1">פירוק חברה</param>
+        <param name="reason_2">העסקת אנשי מכירות הופסקה</param>
+        <param name="reason_3">משתמשי קצה אינם מאמצים</param>
+        <param name="reason_4">פונקציונליות אינה עומדת בציפיות</param>
+        <param name="reason_5">דרג ניהולי לא רואה מספיק ערך</param>
+        <param name="reason_6">התנסות לא מוצלחת עם עובדי salesforce.com</param>
+        <param name="reason_7">מחיר גבוה מדי</param>
+        <param name="reason_8">מעבר למתחרה</param>
+        <param name="reason_9">רשיונות לא בשימוש</param>
+        <param name="reason_10">אחר</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">אנא מלא את השדות שלהלן:</param>
+        <param name="title">שלח משוב אל salesforce.com</param>
+        <param name="title_upgrade_me">רישום בקשת שדרוג</param>
+        <param name="title_support">שלח משוב</param>
+        <param name="warning_line_too_long">אזהרה: התיאור ארוך מ-4000 תווים, וייחתך.\\n</param>
+        <param name="feedback_info">יצירת קשר עם תמיכת לקוחות</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">תמיכת הלקוחות זמינה לטיפול בכל שאלה או משוב שעשויים להיות לך. אנו מסתמכים רבות על משוב מלקוחותינו בעיצוב ותכנון salesforce.com. אנו שמחים לשמוע את רעיונותיך ומודים עליהם, ומצפים לשמוע ממך.</param>
+        <param name="general_info_me">כדי ללמוד עוד אודות שדרוג מ-Personal Edition למהדורת חברה כלשהי, אנא מלא את הטופס שלהלן. נציג מכירות יתקשר אליך תוך 48 שעות עסקים.</param>
+        <param name="general_info_support">תמיכת הלקוחות זמינה לטיפול בכל שאלה או משוב שעשויים להיות לך. אנו מסתמכים רבות על משוב מלקוחותינו בעיצוב ותכנון Salesforce CRM Call Center. אנו שמחים לשמוע את רעיונותיך ומודים עליהם, ומצפים לשמוע ממך.</param>
+        <param name="defaultOrigin">אינטרנט</param>
+        <param name="defaultStatus">חדש</param>
+        <param name="functionalArea">נושא</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">שאלה</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">בקשה</param>
+        <param name="type3">משוב</param>
+        <param name="type4">בקשת תכונה</param>
+        <param name="priority1">חירום</param>
+        <param name="priority2">רגילה</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">נמוכה</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">ברצוני להירשם ל-Professional Edition כעת</param>
+        <param name="subject_subscribe_me">ברצוני לשדרג כעת</param>
+        <param name="subject_subscribe_we">אני מעוניין במידע נוסף אודות Professional Edition</param>
+        <param name="subject_subscribe_ee">ברצוני להירשם ל-Enterprise Edition כעת</param>
+        <param name="subject_subscribe_ue">ברצוני להירשם ל-Unlimited Edition כעת</param>
+        <param name="subject_subscribe_support">ברצוני להירשם כעת</param>
+        <param name="subject_data_export">אני מעוניין בשירות הייצוא השבועי</param>
+        <param name="subject_marketing_licenses">הוספת רשיונות Marketing</param>
+        <param name="subject_offline_licenses">הוספת רשיונות Offline</param>
+        <param name="subject_wireless_licenses">הוספת רשיונות Wireless</param>
+        <param name="subject_offlinepda_licenses">הוספת רשיונות Sales Anywhere</param>
+        <param name="subject_mobile_licenses">הוספת רשיונות Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">הוספת רשיונות Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">הוספת רשיונות Knowledge</param>
+        <param name="subject_interaction_licenses">הוספת רשיונות Force.com Flow</param>
+        <param name="subject_support_licenses">הוספת רשיונות Service Cloud</param>
+        <param name="subject_jigsaw_licenses">הוספת רישיונות Jigsaw</param>
+        <param name="subject_liveagent_licenses">הוספת רישיונות Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">הוספת רישיונות משתתף של Site.com</param>
+        <param name="subject_siteforcepublisher_licenses">הוספת רישיונות משתתף של Site.com</param>
+        <param name="subject_chatteranswers_licenses">הוספת רשיונות Chatter Answers</param>
+        <param name="subject_license_reduction">הפחתת רשיונות</param>
+        <param name="functionalArea_0">ניהול חשבונות/רשיונות</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">בדיקת חיוב</param>
+        <param name="functionalArea_3">צומת נתונים</param>
+        <param name="functionalArea_4">דואר אלקטרוני/דואר אלקטרוני ב-HTML</param>
+        <param name="functionalArea_5">תחזיות והזדמנויות</param>
+        <param name="functionalArea_6">מייבא</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">הפניות</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">ביצועים</param>
+        <param name="functionalArea_9">דוחות ותצוגות</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">הירשם כמנוי כעת</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">סינכרון</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">שירות הייצוא השבועי</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">אחר</param>
+        <param name="functionalArea_16">רשיון Marketing</param>
+        <param name="functionalArea_17">רשיון Offline</param>
+        <param name="functionalArea_18">סוגי פרופילים/פריסות דפים/רשומות</param>
+        <param name="functionalArea_19">מבצעי קידום</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">שירות עצמי</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">רשיון Wireless</param>
+        <param name="functionalArea_22">שדרג כעת</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">רשיון Sales Anywhere</param>
+        <param name="functionalArea_24">משימות/אירועים </param>
+        <param name="functionalArea_25"><Products/> ומענקים שנתיים / <Pricebooks/></param>
+        <param name="functionalArea_26">התראת Big Deal </param>
+        <param name="functionalArea_27">מסמכים</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">מקרים ופתרונות </param>
+        <param name="functionalArea_29">חיפוש</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">שיתוף</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition עבור au</param>
+        <param name="functionalArea_35">רשיון פורטל שותפים</param>
+        <param name="functionalArea_36">רשיון Force.com Mobile</param>
+        <param name="functionalArea_37">רשיון Salesforce CRM Content</param>
+        <param name="functionalArea_38">רשיון Service Cloud</param>
+        <param name="functionalArea_39">רישיון Jigsaw</param>
+        <param name="functionalArea_40">רישיון Live Agent</param>
+        <param name="functionalArea_41">רישיון משתתף ב-Site.com</param>
+        <param name="functionalArea_42">רישיון מפרסם ב-Site.com</param>
+        <param name="functionalArea_43">רישיון Chatter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">אם אתה מעדיף לשוחח באופן ישיר עם נציג שירות לקוחות, התקשר אל +1-415-901-7010 בין 6 בבוקר ל-9 בערב (שעון החוף המערבי), יום שני&amp;#150;שישי, או התקשר אל +353-1-2723503 בין 8 בבוקר ל-6 בערב GMT, יום שני&amp;#150;שישי.</param>
+        <param name="tips_title">עצות לשליחת מקרים</param>
+        <param name="tip1">אנא ודא שסיפקת מידע מספיק כדי שנוכל לענות על המקרה שלך מהר ככל האפשר.  סיפקנו כמה הצעות ותזכורות להלן:</param>
+        <param name="tip2">ספר לנו מה אתה מנסה לעשות, מה אתה מצפה שיקרה ומה קורה במקום זאת.</param>
+        <param name="tip3">ספר לנו מהם השלבים ליצירה מחדש של הבעיה.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">תצוגה:</param>
+        <param name="X">X</param>
+        <param name="close">סגור</param>
+        <param name="MLclose">סגור</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">מחק</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">מחק</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">מחק לצמיתות</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">רשומה</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">הגדרה</param>
+        <param name="activate">הפעלה</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">ביטול הפעלה</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">ניהול</param>   <!-- aliased across labels; do not change -->
+        <param name="export">ייצוא</param>   <!-- aliased across labels; do not change -->
+        <param name="next">הדף הבא</param>
+        <param name="prev">הדף הקודם</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">סך הכול פריטים בתצוגה: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">הצג לי {0} {1} רשומות בכל דף רשימה</param>
+        <param name="number_shown_detail_page">תמיד הצג לי {0} {1} {2} בכל רשימה קשורה</param>
+        <param name="number_shown_adjust_less_link">פחות</param>
+        <param name="number_shown_adjust_more_link">יותר</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">הכול</param>
+        <param name="last_page">חזרה לדף הקודם</param>
+        <param name="last_list">חזרה לרשימה</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">חזרה לרשימה:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">חזרה לרשימה: <Entity entity="0" plural="y"/> מקשרים</param>
+        <param name="last_suggested_solution_list">חזרה לרשימת ה<Solutions/> ה<Suggested/></param>
+        <param name="last_solution_search_list">חזרה לתוצאות חיפוש <Solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">חזרה ל<Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">פעולות:</param>
+        <param name="checkboxPrompt">אנא בחר שורה אחת לפחות</param>
+        <param name="checkboxSinglePrompt">אנא בחר שורה בודדת</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">הבחירות שלך בדף זה יאבדו. האם ברצונך להמשיך?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">עליך לבחור {0} שורות או פחות כדי לבצע פעולה זו.</param>
+        <param name="selectionLimit">אין באפשרותך לבחור יותר מ-{0} שורות.</param>
+        <param name="login">כניסה</param>   <!-- aliased across labels; do not change -->
+        <param name="session">הפעלה</param>
+        <param name="none">אין רשומות להציג.</param>
+        <param name="no_rows">לא נבחרו שורות</param>
+        <param name="subtotal">סכום ביניים:</param>
+        <param name="total">סך הכול:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">בחר את כל הפריטים</param>
+        <param name="clearAllInfo">בטל את הבחירה בכל הפריטים</param>
+        <param name="rename">שינוי שם</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">בחר</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">בטל בחירה</param>
+        <param name="toggleall">החלף מצב כל השורות</param>
+        <param name="refresh">רענן</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">אנא בחר תצוגה.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">התצוגה שציינת חורגת מהגודל המרבי. אנא צמצם את קריטריוני החיפוש שלך על-ידי עריכת התצוגה או יצירת תצוגה חדשה.</param>
+    <param name="switch_view">החלף תצוגה</param>
+    <param name="records_x_to_y">מציג רשומות {0} - {1}</param>
+    <param name="records_x_to_y_more">מציג רשומות {0} - {1}, רשומות נוספות זמינות</param>
+    <param name="records_x_to_y_more_showing_max">מציג רשומות {0} - {1}. דף זה יכול להציג את 1,000 הרשומות הראשונות בלבד, למרות שיש רשומות נוספות זמינות. כדי להציג פחות רשומות, אנא הגדר את קריטריוני תצוגת הרשימה שלך. כדי להדפיס יותר מ-1,000 רשומות, אנא הפעל דוח ולאחר מכן לחץ על לחצן ''תצוגה ניתנת להדפסה'' בדוח.</param>
+    <param name="number_of_records">מספר הרשומות</param>
+        <param name="createCase">יצירת <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">לחץ כדי להרחיב/לכווץ פריטים מקוננים.</param>
+        <param name="expand">לחץ כדי להרחיב פריטים מקוננים.</param>
+        <param name="collapse">לחץ כדי לכווץ פריטים מקוננים.</param>
+        <param name="shortExpand">הרחב</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">כווץ</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">מורחב</param>
+        <param name="collapsed">מכווץ</param>
+        <param name="level">רמה</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">היררכיה:</param>
+        <param name="siblings">פריטי אחים:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">בדיקת נתונים</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">בחר אובייקט</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">מי</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">מה</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">מספר השורות שהחיפוש החזיר גבוה מהמגבלה המרבית ({0}). אנא מקד את קריטריוני החיפוש.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">כל הזכויות שמורות.</param>
+        <param name="useWildcards">באפשרותך להשתמש ב-'*' בתור תו כללי לצד תווים אחרים, כדי לשפר את תוצאות החיפוש.  לדוגמה, "ad*‎" מחזיר את כל הרשומות עם שם שמתחיל ב-"ad".</param>
+        <param name="useWildcardsWithSearch">באפשרותך להשתמש ב-'*' בתור תו כללי לצד תווים אחרים, כדי לשפר את תוצאות החיפוש.</param>
+        <param name="error_lookup_multiple_matches_ile">פריטים מרובים נמצאו.&lt;br&gt;לחץ על הסמל כדי למקד את החיפוש.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">הרחב רשימה</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">רשימה מורחבת</param>
+        <param name="sharing">שיתוף</param>   <!-- aliased across labels; do not change -->
+        <param name="why">למה?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">מסננים נוספים &gt;&gt;</param>
+        <param name="less_filters">פחות מסננים &lt;&lt;</param>
+        <param name="by_keyword">לפי מילת מפתח</param>
+        <param name="by_filter">לפי מסנן שדה</param>
+        <param name="too_many">החיפוש שלך החזיר יותר מ-{0} שורות. רק {0} השורות הראשונות מוצגות. אנא מקד את קריטריוני החיפוש.</param>
+        <param name="Results">תוצאות</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">חיפוש:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">ניקוד</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">שדה</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">אופרטור</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">ערך</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">באפשרותך להוסיף למסננים 'or' על-ידי הזנת פריטים מרובים בעמודה השלישית.</param>
+        <param name="tip_1">באפשרותך להזין עד 10 פריטים, מופרדים באמצעות פסיק. לדוגמה: CA, NY, TX, FL מחפש את CA או NY או TX או FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">הצב מירכאות מסביב לנתונים הכוללים פסיקים. לדוגמה, "200,000","1,000,000" מחפש 200,000 או 1,000,000.</param>
+        <param name="tip_3">עבור שדות של תיבות סימון, השתמש ב-False ו-True, לדוגמה, "Active equals True" או "Converted equals False".</param>
+        <param name="tip_4">ייתכן שיהיה עליך לכלול ערכי כללים בין סוגריים, לדוגמה. מספר טלפון מתחיל ב-(415), (510).</param>
+        <param name="tip_5">אם אתה משתמש ב-Translation Workbench, הזן את כל קריטריוני המסננים באמצעות ערכים ראשיים.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">זמין</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">בחירות</param>
+        <param name="assignLicensesDescription">בחר את תיבת הסימון שלצד כל חבילה שברצונך להקצות למשתמש זה ולאחר מכן לחץ על 'הקצה'. תיבת הסימון חסרה אם אין מספיק רשיונות זמינים עבור החבילה או אם מצב החבילה הוא פג או מושעה.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">ברירת מחדל של פורטל</param>
+        <param name="3">חנות אינטרנט</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">אישור</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">פרטים</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">שגיאה</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">אזהרה</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">מאובטח</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">תדירות</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">יומית</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">שבועית</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">חודשית</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">כל יום חול</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">כל יום</param>
+       <param name="lastDay">אחרון</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">ראשון</param>
+    <param name="on2">שני</param>
+    <param name="on3">שלישי</param>
+    <param name="on4">רביעי</param>
+    <param name="onLast">אחרון</param>
+    <param name="startTime">התחלה</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">סיום</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">שעת התחלה מועדפת</param>
+    <param name="noPreference">אין העדפה</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">שעת התחלה מדויקת תלויה בפעילות תור המשימות.</param>
+
+    <param name="diffTimeZoneMsg">אזור הזמן עבור הגדרת תדירות חודשית זו הוא:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;הגדרות תדירות מוצגות לפי אזור הזמן של המשתמש האחרון שערך אותן.&lt;br&gt;כל שינוי שתבצע הגדרות אלה יתעדכן ויתאים לאזור הזמן שלך.</param>
+
+      <param name="weeklyRecurrence">התרחשות כל שבוע ב-{0}</param>
+      <param name="weeklyRecurrenceLegendLabel">התרחשות כל שבוע ב-</param>
+      <param name="monthlyRecurrence1">ביום {0} של כל חודש</param>
+      <param name="monthlyRecurrence1LegendLabel">ספציפי</param>
+      <param name="monthlyRecurrence2LegendLabel">מותאם אישית</param>
+      <param name="monthlyRecurrence2">ב-{2} {0} {3} {1} של כל חודש</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">ב-{0} {1} של כל חודש</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">ביום ספציפי של כל חודש</param>
+      <param name="accessibleMonthly2">ביום מותאם אישית של כל חודש</param>
+      <param name="accessibleOnDayN">יום ספציפי</param>
+      <param name="accessibleOnDayNOfWeek">התרחשות</param>
+      <param name="accessibleOnDayName">יום</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">בדיקה פשוטה זו מסייעת למנוע גישה של תוכנות זדוניות לנתונים שלך.  מנהל המערכת שלך דורש לבצע בדיקה זו עבור הורדות גדולות.  היא לא תוצג יותר מפעם אחת בכל הפעלה.</param>
+        <param name="imagePrompt">הזן את המילים שלעיל, מופרדות באמצעות רווח:</param>
+        <param name="audioPrompt">הזן את המספרים שתשמע:</param>
+        <param name="refresh">קבל אתגר חדש</param>
+        <param name="audio">קבל אתגר שמע</param>
+        <param name="image">קבל אתגר תמונה</param>
+        <param name="incorrect">שגיאה, נסה שוב</param>
+        <param name="moreinfo">פרטים נוספים &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; פחות פרטים</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">לחץ לקבלת פרטים נוספים...</param>
+        <param name="show">הצג חלונית סימונים</param>
+        <param name="hide">הסתר חלונית סימונים</param>
+        <param name="empty">אין שדות מסומנים שניתן להציג עבור רשומה זו.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">סיור מודרך</param>
+        <param name="closeIntro">לא תודה</param>
+        <param name="closeOutro">סגור</param>
+        <param name="showLater">הראה לי מאוחר יותר</param>
+        <param name="replay">הפעל מחדש</param>
+        <param name="continue">המשך</param>
+        <param name="previous">הקודם</param>
+        <param name="startTour">התחל סיור</param>
+        <param name="endTour">סיים סיור</param>
+        <param name="stepCounter">{0} מתוך {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">פירוט</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">המלצות</param>
+        <param name="hideBucketTip">&lt;br&gt;שחרר כאן כדי להסתיר פריטים&lt;br/&gt;בדף.</param>
+        <param name="hiddenListTip">כדי להציג פרטים מוסתרים, גרור בחזרה לרשימה שלעיל.</param>
+        <param name="hiddenListShowLinkLabel">{0} מוסתרים </param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">חזור לראש הדף</param>
+        <param name="multipleItemDragGhost">פריטים מרובים (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">תאימות דפדפן של דף פירוט</param>
+        <param name="compatibilityMsgSubTitle">איננו תומכים בדפדפן זה</param>
+        <param name="compatibilityMsg1">אין באפשרותנו להציג את דף הפירוט החדש בדפדפן הנוכחי שלך.</param>
+        <param name="compatibilityMsg2">באפשרותך להשתמש בעיצוב החדש בכל פעם שאתה מבצע כניסה עם אחד מהדפדפנים התואמים הבאים:</param>
+        <param name="supportedIE">Internet Explorer 7 או 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">תודה!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">הפוך את התצוגה הקלאסית לברירת המחדל שלי</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">הקלד כאן כדי לחפש {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">אף {0} לא התאים לחיפוש שלך.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">דף {1} מתוך {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

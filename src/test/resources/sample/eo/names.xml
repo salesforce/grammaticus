@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Accounts/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">A partner</value>
+        <value plural="n" article="the">The partner</value>
+        <value plural="y" article="the">The partners</value>
+
+     Capitalization within labels
+         <Account/> will display "Account"
+         <account/> will display "account"
+    =======================================================================-->
+
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="n" startsWith="v">
+        <value plural="n">Eöש是AccountEöש是</value>
+        <value plural="y">Eöש是AccountsEöש是</value>
+    </noun>
+
+     <import file="adjectives.xml"/>
+</names>

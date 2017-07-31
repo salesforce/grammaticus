@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">ComboBox</param>
+        <param name="select_default">Aşağıdakilerden Seç</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Aşağıdan bir  {0}  seçin.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Erişim</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Başarılı)</param>
+        <param name="activity_history">Aktivite Geçmişi</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Ek Bilgi</param> <!--aliased across labels - do not change-->
+        <param name="alias">Takma Ad</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Asistan</param>
+        <param name="assistant_name">Asistanın Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Asistan&apos;ın Telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Asist. Telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Asist. Har. Telef.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Doğum tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Gövde</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Şirket</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Oluşturan</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">ID Tarafından Oluşturulmuştur</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Oluşturan Takma Ad</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Para Birimi ISO Kodu</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Özel Alanlar</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Varsayılan Durum</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0} Detay</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Departman</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0} Düzenle</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Beklenen Gelir</param>
+        <param name="first_name">Ad</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Soyadı</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">İsim (Yerel)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Soyad (Yerel)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Mali Çeyrek</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Mali Yıl</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Tam Ad</param> <!-- aliased across app - do not change -->
+        <param name="group">Grup</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Grup Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Kuyruk Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Endüstri</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Son Değiştiren Kişi</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Son Değiştiren kişi ID</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Son Değiştiren kişi Takma Ad</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Ana Kayıt ID'si</param>
+        <param name="mobile">Cep Telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Cep Telefonu</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Har. Cep Telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Yeni Paylaşım</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Atanan Takma Ad</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Kullanılabilir liste</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Şirket Adı</param> <!-- aliased across app - do not change -->
+        <param name="activities">Aktiviteler</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">ek yok</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">Adres Bilgileri</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Reddedildi</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Varsayılan</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Varsayılan Öncelik</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Yeni Görünüm Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Özel Bilgi</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Mükerrer Durum</param> <!-- aliased across app - do not change -->
+        <param name="email_address">E-Posta Adresi</param> <!-- aliased across app - do not change -->
+        <param name="email_name">E-Posta Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">E-Posta Şablonu</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-Posta:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Özel Bağlantılar</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Dosya boyutu</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Veri yok</param>
+        <param name="history_event_checked">Kontrol edilen alan {0}</param>
+        <param name="history_event_unchecked">Kontrol edilmeyen alan {0}</param>
+        <param name="how_do_i_specify_info">Hangi bilginin alınacağını nasıl belirleyeceğim?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Dahili Kaynak</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Aralık:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Selamlama</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Yeni Sahip Seç</param>
+        <param name="select_a_view">İlgili sonuçların listesini görmek için açılır listeden bir görünüm seçin.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">İlgili sonuçların listesini görmek için açılır listeden bir klasör seçin.</param>
+        <param name="select_the_file">Dosyayı Seç</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Dahil edilecek alanları seçin:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">İmza</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Konu</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Sistem Bilgisi</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Web Sitesi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Sahibin Takma Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Sahibin Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Sahibin ID'si</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Sahibin Soyadı</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Sahibin Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Sahibin Rolü</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Sahibin Rolü Görünümü</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Sahibin Rolü Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Birinci</param>
+        <param name="primary_contact"><Primary/> <Contact/></param>
+        <param name="priority">Öncelik</param><!--aliased across labels - do not change -->
+        <param name="private">Özel</param>
+        <param name="role">Rol</param> <!--aliased across labels - do not change -->
+        <param name="rating">Derecelendirme</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Hızlı Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Son İncelenen</param>
+        <param name="top5">En çok sorulan 5 soru</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Satıcı</param>
+        <param name="customer">Müşteri</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Sağlayıcı</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Kayıt Tipi ID'si</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Bölüm ID'si</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Tablo numaralandırması veya ID'si</param>
+        <param name="editable">Düzenlenebilir</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Normalleştirilmiş İsim</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Gizlilik Bildirimi</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Yönetilebilir durum</param>
+        <param name="namespacePrefix">İsim Alanı Öneki</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Modül İsim Alanı</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Yüklenmiş Paket</param>
+        <param name="initialVersion">İlk Yayınlanmış Sürüm</param>
+        <param name="lastVersion">Mevcut Olan Son Sürüm</param>
+        <param name="availableInVersions">Şu Sürümlerde Bulunur</param>
+        <param name="DeveloperName">Geliştirici Adı</param>
+        <param name="apiName">API Adı</param>
+        <param name="InvalidDeveloperNameOnEntity">{0} alanı içinde yalnızca alt çizgiler ve alfanümerik karakterler bulunabilir. Benzersiz olmalı, bir harfle başlamalı, boşluk içermemeli, alt çizgiyle bitmemeli ve art arda iki alt çizgi içermemelidir</param>
+        <param name="missingDevName">{0} verilmelidir.</param>
+        <param name="duplicateDevName">Bu {0} zaten mevcut veya önceden kullanılmış.  Lütfen başka bir benzersiz ad seçin.</param>
+        <param name="manageabilityOverride">Yönetilebilirlik Aşımı</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">Ölçümler Tarihi</param>
+        <param name="MayEdit">Düzenleyebilir</param>
+        <param name="IsLocked">Kilitli</param>
+        <param name="LastViewedDate">Son Görüntüleme Tarihi</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Kurulum</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Yeni Oluştur...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Dosya</param>
+        <param name="new_forecast">Yeni Tahmin</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Geri Dönüşüm Kutusu</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">E-posta Gönder</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Yeni Rapor</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Değiştiren</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Oluşturma Tarihi</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Değiştirme Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Otomatikleştirilmiş Proses</param>
+        <param name="partner_network">Bağlantı Kullanıcısı</param>
+        <param name="external_who">Umumi Kullanıcı</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Örnek</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Hata: Geçersiz Veri. &lt;br&gt; Verilerinizi düzeltmek için aşağıda verilen bütün hata mesajlarını inceleyin.</param>
+        <param name="EditPageError2">Verilerinizi düzeltmek için aşağıda verilen bütün hata mesajlarını inceleyin</param>
+        <param name="Required">Bir değer girmelisiniz</param>
+        <param name="RequiredWithFieldList">Gerekli alanlar eksik: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Self-Servis için Gerekli</param>
+        <param name="RequiredBy">İsteyen: {0}</param>
+        <param name="Requires">İstenilen: {0}</param>
+        <param name="TooLong">Değer alan için çok büyük</param>
+        <param name="CannotExceedXCharacters">Değer {0} karakteri geçemez</param>
+        <param name="MustBeXCharacters">Değer tam olarak {0} karakter olmalıdır</param>
+        <param name="MustBeNumber">Değer sayısal olmalıdır</param>
+        <param name="StatusCloseRequired">En az bir durumu kapalı olarak işaretlemelisiniz</param>
+        <param name="StatusDefaultRequired">En az bir durumu varsayılan olarak işaretlemelisiniz</param>
+        <param name="StatusInUse">Aşağıda verilen durum değerleri kullanımda ve düzenlenemez veya iptal edilemez: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Geçersiz Tarih</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Geçersiz Tarih. Tarihi {0} tarihinden sonraya ayarlayamazsınız</param>
+        <param name="InvalidDateTime">Geçersiz Tarih ve Saat</param>
+        <param name="InvalidColor">Geçersiz Renk</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Geçersiz İnternet Adresi:</param>
+        <param name="InvalidOption">Geçersiz bir seçenek belirlendi.</param>
+        <param name="UnsupportedCurrency">Geçersiz para birimi</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Geçersiz URL</param>
+        <param name="NoneSelectedInPicklist">-- hiçbiri seçilmedi --</param>
+        <param name="InvalidTime">Geçerli bir saat değil.</param>
+        <param name="InvalidNumber">Geçersiz numara</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Sayı çok büyük.</param>
+        <param name="TooLargeNumberWithScale">Sayı {0}''dan daha küçük olmalı.</param>
+        <param name="TooSmallNumberWithScale">Sayı {0}''dan daha büyük olmalı.</param>
+        <param name="NonpositiveError">Artı olmalı.</param>
+        <param name="NegativeError">Eksi olmamalı.</param>
+        <param name="PositiveError">Artısız olmalı.</param>
+        <param name="NonnegativeError">Eksi olmalı.</param>
+        <param name="NonzeroError">Sıfırdan farklı olmalı.</param>
+        <param name="NonintegerError">Tam sayı olmalı.</param>
+        <param name="InvalidPercent">Geçersiz yüzde</param>
+        <param name="InvalidAfterRoundOff">Ölçeğe yuvarlama sonrasında {0} sayısı geçersiz oldu: {1}</param>
+        <param name="CharactersRemaining">kalan</param>
+        <param name="CharactersOver">üst sınır</param>
+        <param name="TooManySelection">{0} üzerinde kalem seçemezsiniz</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Kayıtta mükerrer değer: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Gizli alan değeri (gösterilmiyor) kayıt içinde tekrarlanmış bir değer: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} şu kimlik numaralı kayıtta değeri tekrarlıyor: {1}</param>
+        <param name="True">Doğru</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Yanlış</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Geçersiz Alan</param>
+        <param name="ReadOnly">Bu alanı düzenleyemezsiniz</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Durdur</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Kabul Et</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Değişiklikleri Kabul Et</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Etkinleştir Salesforce Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Yorum Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Bileşenleri Ekle</param>
+        <param name="add_contacts"><Contacts/> Ekle</param>
+        <param name="add_leads"><Leads/> Ekle</param>
+        <param name="add_more_users">Daha Fazla Kullanıcı Ekle</param>
+        <param name="add_multiple_users">Birden Çok Kullanıcı Ekle</param>
+        <param name="add_product"><Product/> Ekle</param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Satır Öğesi Ekle</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Örnek Kumanda Paneli Ekle</param>
+        <param name="add_to_call_center">Call Center'a Ekle</param>
+        <param name="add_to_campaign"><Campaign case="d"/> ekle</param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Outlook'a Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook"><Pricebook case="d"/> ekle</param>
+        <param name="add_remove">Ekle / Çıkart</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Gelişmiş Kurulum</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Onayla</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Ata</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Kullanıcıları Göreve Ata</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Rapor Listesine Geri Dön</param>
+        <param name="billing_and_licenses">Faturalama &amp; Lisanslar</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Faturalama Bilgisi</param>
+        <param name="briefcase_setup">Evrak Çantası Kurulumu</param>
+        <param name="cancel">İptal Et</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Dağıtımı İptal Et</param>
+        <param name="cancel_test_instance">Salesforce Sandbox İptal Et</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Kurum Değiştir</param>
+        <param name="change_currency">Para Birimini Değiştir</param>
+        <param name="change_owner">Sahibi Değiştir</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Sahibi Kabul Et ve Değiştir</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Ana Kabulü ve Atama</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Durumu Değiştir</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Uygunluğu Kontrol Et</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Yazım Denetimi</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook"><Pricebook/> Seç</param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Temizle</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Genel Görünüm</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0} Sekmesi</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Liste</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Üst Öğe Detaylarını Kopyala</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Tümünü Daralt</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Seçim listesinden bir kalem seç</param>
+        <param name="composegmail">Gmail oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Onayla</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Devam Et</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Yine De Devam Et</param>
+        <param name="convert">Dönüştür</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead"><Lead case="a"/> Dönüştür</param>
+        <param name="create">Oluştur</param>
+        <param name="create_follow_up_event">Takip <Event case="a"/> Oluştur</param>
+        <param name="create_follow_up_task">Takip <Task case="a"/> Oluştur</param>
+        <param name="create_new">Yeni {0} Oluştur</param>
+        <param name="create_new_section">Yeni Bölüm Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity"><Opportunity/> Oluştur</param>
+        <param name="create_test_instance">Salesforce Sandbox Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Test Veritabanı Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Web-Satış-Sağlayıcı Oluştur</param>
+        <param name="create_new_holiday">Yeni Tatil Oluştur</param>
+        <param name="create_new_sla_process">Yeni <Entitlement/> Süreç</param>
+        <param name="create_new_milestone_type">Yeni Kilometre Taşı</param>
+        <param name="currency_setup">Para Birimi Ayarı</param>
+        <param name="customer_view">Müşteri Görünümü</param>
+        <param name="customize">Özelleştir</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Tüm Kullanıcılar İçin Görüntüyü Özelleştir</param>
+        <param name="page_settings">Sayfa Ayarları</param>
+        <param name="customize_page">Sayfayı Özelleştir</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Anahat Düzenle</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Kumanda Paneli Listesi</param>
+        <param name="data_export">Veri Dışa Aktarma</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Temizle</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Reddet</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Varsayılan Özel Bağlantılar</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Checkout Erişimini Kaldır</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Önizleme ile Tamamlandı</param>
+        <param name="dont_save">Kaydetme</param>
+        <param name="dont_show_page_again">Bu sayfayı bir daha gösterme</param>
+        <param name="download">İndir</param>
+        <param name="download_now">Şimdi Karşıdan Yükle</param>
+        <param name="download_sample_css_file">Örnek CSS Dosyası Karşıdan Yükleme</param>
+        <param name="edit">Düzenle</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Düzenle [Beta]</param>
+        <param name="edit_all">Tümünü Düzenle</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Kullanıcı(lar)ı Düzenleme</param>
+        <param name="edit_rates">Oranları Düzenle</param>
+        <param name="edit_selected">Seçileni Düzenle</param>
+        <param name="editProperties">Özellikleri Düzenle</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Çıkış {0}</param>
+        <param name="enable_appstore_user">Checkout Erişimi Tanı</param>
+        <param name="enable_as_partner">Ortak Olarak Etkinleştir</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Ortak Portal Oturum Açma Etkinleştir</param>
+        <param name="enable_self_service">Self-Servis Etkinleştir</param>
+        <param name="enable_users">Yeni Kullanıcı(lar)ı Etkinleştir</param>
+        <param name="enableForecasting">Özelleştirilebilir Tahmin Özelliğini Etkinleştir</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Eğitime Gir</param>
+        <param name="erase_test_instance">Erase Salesforce Sandbox</param>
+        <param name="establish">Oluştur</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Tümünü Genişlet</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Ayrıntıları Excel'e Aktar</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Detayları Hemen Dışa Aktar</param>
+        <param name="export_background">Dışa Aktarımı Arkaplanda Çalıştır...</param>
+        <param name="fctHistory">Tahmin Geçmişi</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Tahmin Özeti</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Alan Teyitleri</param>
+        <param name="find">Bul</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Rapor Bul</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Bul <Document/></param>
+        <param name="find_pricebooks"><Pricebook/> Bul</param>
+        <param name="find_products"><Product/> Bul</param>
+        <param name="find_solution"><Solution/> Bul</param>
+        <param name="finished">Bitti</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">İleri</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Bağlantılara İlet</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">WSDL Oluştur</param>
+        <param name="generate_login_html">Bağlanma HTML'i Oluştur</param>
+        <param name="getMoreInfo">Daha Fazla Bilgi Al</param>
+        <param name="go">Git!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Bu Sayfa İçin Yardım</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} Yardım</param>
+        <param name="hide">Ayrıntıları Gizle</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Kabul Ediyorum</param>
+        <param name="i_decline">Kabul Etmiyorum</param>
+        <param name="impactAnalysis">Bu nerede kullanıldı?</param>
+        <param name="import">İçe Aktar</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads"><Leads case="a" poss="s"/> Al</param>
+        <param name="include_offline">Çevrim Dışı Ekle</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Seçileni Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Şimdi Yükle</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Davet Et</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Bağlantıya Davet</param>
+        <param name="jigsawsearch">Kişileri Alın</param>
+        <param name="join_meeting">Toplantıya Katıl</param>
+        <param name="jumpstart">Başlangıcı Atla</param>
+        <param name="keep_in_touch">Güncelleme İste</param>
+        <param name="layout_assignment">Yerleşim Tahsisi</param>
+        <param name="legal_view">Yasal Görünüm</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Kayıt Kilitleme</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Login As Partner Portal User</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Üyeleri Yönet</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Yeni Toplantı İsteği</param>
+        <param name="add_members_search">Üye Ekle - Ara</param>
+        <param name="add_members_import">Üyeler Ekle - Dosya Al</param>
+        <param name="edit_members_search">Üyeler Ekle - Ara</param>
+        <param name="update_members_import">Üyeler Ekle &amp; Güncelle - Dosya Al</param>
+        <param name="manage_call_center_users">Çağrı Merkezi Kullanıcılarını Yönet</param>
+        <param name="map_lead_fields"><Lead_Fields case="a"/> Eşleştir</param>
+        <param name="mark_as">Olarak İşaretle...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Üye İçe Aktar</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Bireysel Hatırlatıcıları Değiştir</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Yeni</param>
+        <param name="newcase">Yeni</param>
+        <param name="new_addition_order">Yeni Ekleme Emri</param>
+        <param name="new_custom_object">Yeni Özel Nesne</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Yeni Özel Rapor Oluştur</param>
+        <param name="new_dashboard">Yeni Kumanda Paneli</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Yeni Kumanda Paneli Bileşeni</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <Document/></param>
+        <param name="new_email_template">Yeni Şablon</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <Entity entity="0"/></param>
+        <param name="new_entitlement_template">Yeni Şablon</param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="new_folder">Yeni Klasör</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Yeni Grup</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Yeni Kuyruk</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Yeni Not</param>
+        <param name="new_object_custom_tab">Yeni Özel Nesne Sekmesi</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Çevrimiçi Tanış</param>
+        <param name="new_order">Yeni Sipariş</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Yeni Kişisel Grup</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <Product/></param>
+        <param name="new_reduction_order">Yeni Azaltma Siparişi</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Yeni Görev</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Yeni Düğme</param>
+        <param name="new_territory">Yeni Bölge</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_user">Yeni Kullanıcı</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Yeni Web Bütünleştirme Etiketi</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">TAMAM</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Bir Başka Güncelleme Gerçekleştir</param>
+        <param name="performAnotherMigrate">Başka Profile Geç</param>
+        <param name="preview">Ön izleme</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Tekrar Hesapla</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Yeniden Oluştur</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Reddet</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Değişiklikleri Reddet</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Kullanıcıları Çıkart</param>
+        <param name="remove_from_briefcase">Evrak Çantasından Çıkar</param>
+        <param name="remove_from_campaign"><Campaign case="abl"/> çıkart</param>
+        <param name="reorder">Yeniden Sırala</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Onar</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Bütün Testleri Çalıştır</param>
+        <param name="run_test">Test Çalıştır</param>
+        <param name="quick_save">Hızlı Kaydet</param>
+        <param name="quick_save_hover">Kaydet ve düzenlemeye devam et</param>
+        <param name="reply">Yanıtla</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Tümünü Yanıtla</param>
+        <param name="reportmanager">Rapor Yöneticisi</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Şifre Sıfırla</param>
+        <param name="reset_passwords">Şifre(ler)i Sıfırla</param>
+        <param name="retrieve_prices">Fiyatları Al</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Raporu Görüntüle</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Kaydet</param> <!-- aliased across labels do not change -->
+        <param name="saving">Kaydediliyor ...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Kaydet &amp; Fiyat Ekle</param>
+        <param name="save_and_add_product">Kaydet &amp; <Product/> Ekle</param>
+        <param name="save_and_clone">Kaydet &amp; Tekrar Klonla</param>
+        <param name="save_and_close">Kaydet ve Kapat</param>
+        <param name="save_and_attach">Kaydet &amp; Eklenti Ekle</param>
+        <param name="save_and_continue">Kaydet &amp; Sonraki</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Kaydet &amp; Daha Fazla</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Kaydet &amp; <New gender="n"/> <Event/></param>
+        <param name="save_and_new_product">Kaydet &amp; <New gender="n"/> <Product/></param>
+        <param name="save_and_new_task">Kaydet  &amp; <New gender="n"/> <Task/></param>
+        <param name="save_and_refresh">Kaydet &amp; Yenile</param>
+        <param name="save_and_send">Kaydet &amp; Güncelleme Gönder</param>
+        <param name="event_scheduler">Müşteri &amp;  Ekip Görünümü &gt;</param>
+        <param name="saveAs">Farklı Kaydet</param>
+        <param name="schedule_to_email">E-posta Programlama</param>
+        <param name="schedule_to_print">Yazdırma Programlama</param>
+        <param name="scrutinize">İncele</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles"><KnowledgeArticles/> Bul</param>
+        <param name="newArticle">Yeni</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Şablon Seç</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Self-Servis Başlangıca Atla</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Self-Servis Kurulumu</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Self-Servis Görüntüle veya Etkinleştir</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Gönder</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Tüm <Contacts case="d"/> E-posta Gönder</param>
+        <param name="send_invitation">Kaydet &amp; Davetiye Gönder</param>
+        <param name="set_status">Durumu Yönet</param>
+        <param name="setup_and_install">Kurulum &amp; Kur</param>
+        <param name="setup_roles">Rol Ayarla</param>
+        <param name="setup_sharing">Paylaşımı Ayarla</param>
+        <param name="sfga_instructions">Tümüyle Yazdırılabilir Talimatlar</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Ayrıntıları Göster</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Geç</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Sırala</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Toplantıyı Başlat</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Gönder</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Gönder &amp; Eklenti Ekle</param>
+        <param name="subscribe_now">Şimdi Abone Ol!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Şimdi Yükselt!</param>
+        <param name="suggest">Önerilen <Solution plural="y" case="a"/> görüntüle</param>
+        <param name="take_training_now">Eğitime Şimdi Katılın!</param>
+        <param name="terminate">Bitir</param>
+        <param name="training_history">Eğitim Geçmişi</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Aktar</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Şimdi Dene!</param>
+        <param name="undelete">Geri Al</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Geri Al</param>
+        <param name="unlock">Kayıt Kilidini Aç</param>
+        <param name="update">Güncelle</param>
+        <param name="update_campaign_history"><Campaign_Members/> Güncelle &amp; Ekle</param>
+        <param name="update_now">Şimdi Güncelle</param>
+        <param name="update_statuses">Durumları Güncelle</param>
+        <param name="upload">Karşıya yükle</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Bölge Bağlılıkları</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Silinmiş Bileşenleri Görüntüle</param>
+        <param name="view_partnerforce">Ortak Portal Kullanıcısını Görüntüle</param>
+        <param name="view_self_service">Self-Servis Görüntüle</param>
+        <param name="view_customer_success">Müşteri Portalı Kullanıcısı Görüntüle</param>
+        <param name="enable_customer_success">Müşteri Portalı Kullanıcısı Etkinleştir</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Bu nedir?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Bu Pencereyi Kapat</param>
+        <param name="runApexRecalc">Apex Paylaşımını Yeniden Hesapla</param>
+        <param name="disablecustomerportal">Müşteri Portalı Kullanıcısını Etkisizleştir</param>
+        <param name="disablepartnerportal">Ortak Kullanıcıyı Etkisizleştir</param>
+        <param name="disablecustomerportalaccount">Müşteri Portalı Hesabını Etkisizleştir</param>
+        <param name="disablepartnerportalaccount">Ortak Hesabını Etkisizleştir</param>
+        <param name="voteup">Oy Yukarı</param>
+        <param name="votedown">Oy aşağı</param>
+        <param name="markquestionunanswered">Cevaplanmamış olarak İşaretle</param>
+        <param name="markbestanswer">En İyi Cevap olarak İşaretle</param>
+        <param name="requestUseSfdcAction">Bağlantı Bul</param>
+        <param name="addPET">Yetkilendirme Şablonu Ekle</param>
+        <param name="truncate">Kırp</param>
+        <param name="disableprmsuperuser">Ortak Süper Erişimi'ni devre dışı bırakın</param>
+        <param name="enableprmsuperuser">Ortak Süper Erişimi'ni etkinleştirin</param>
+        <param name="purchase_more">Daha Fazla Satın Alın</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Yukarı Dön</param>
+        <param name="descriptionText">Gövde metni fazla uzun. Lütfen ayrıntılara bakın.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Dosya görüntüle</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Ebeveyn</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Bağlantılı bilgi yok</param>
+        <param name="no_records">Gösterilecek kayıt yok</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">{0} tane daha göster »</param>
+        <param name="NextMoreGeneric">Daha fazla göster »</param>
+        <param name="view_more">Listeye git</param>
+        <param name="view_more_tot">Listeye git ({0})</param>
+        <param name="view_more_tot_plus">Listeye git ({0}+)</param> <!-- -->
+        <param name="view_more_1">Birden fazla kaydın olduğu listeye git</param> <!-- Singular -->
+        <param name="view_more_n">{0}''dan fazla kaydın olduğu listeye git</param> <!-- Plural -->
+        <param name="view_more_n_plus">{0}+ kaydın olduğu listeye git</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Daha fazla mevcut; Listeye git</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Olasılık</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Kaynak</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Kazanılan</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Mali Dönem</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{0}yılı {1} çeyreği</param>
+        <param name="opportunities_next_step">Sonraki Adım</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Güncelle</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <Activities/></param>
+        <param name="activities_open"><Open/> <Activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Şununla İlişkili</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Not</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Doc</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Notlar &amp; Ek</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Not Başlığı</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Ek</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Ekler</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Dosya İsmi</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Sahiplik</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Birinci</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> görüntülenecek <cases/></param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Tarihi</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Ünvan</param>
+        <param name="object_title">Ünvan</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Ad</param>
+        <param name="object_name">Ad</param>
+        <param name="date">Tarihi</param>
+        <param name="due_date">Vade Tarihi</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Son Değiştirme</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Güncelleyen</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Birinci</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Yarışmacılar</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Yarışmacı Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Güçlü noktaları</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Zayıf noktaları</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Olasılık (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Tamamlanan</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">{0}tamamlananı işaretle</param>
+        <param name="task_date">Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Ad</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> Onay Bekleniyor</param>
+        <param name="task_none">Bu dönem için tarihlendirilmiş <open/><tasks/> yok</param>
+        <param name="task_mode_today">Bugün</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Bugün+Gecikmiş</param>
+        <param name="task_mode_tomorrow">Yarın</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Sonraki {0} gün</param>
+        <param name="task_mode_next_7days_overdue">Sonraki {0} gün + Gecikmiş</param>
+        <param name="task_mode_overdue">Gecikmiş</param>
+        <param name="task_mode_this_month">Bu Ay</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Tümü Açık</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Geçmiş</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Haberler</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Başlık</param>
+        <param name="new_date">Tarihi</param>
+        <param name="news_none">Haber yok</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">E-posta Birleştirme Şablonları</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">En İyi <Solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Eklenme Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Ekleyen</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none">Eklenmiş <solution/> yok</param>
+        <param name="description">Açıklama</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Ticker</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Gösterilecek geçmiş verisi yok.</param>
+        <param name="nonotes">Gösterilecek bir Not Geçmişi verisi yok.</param>
+        <param name="noattachments">Gösterilecek bir Eklenti Geçmişi verisi yok.</param>
+        <param name="viewallattachments">Tüm ekleri görüntüle</param>
+        <param name="viewalldocsattachments">Tüm Google Docs &amp; Eklentilerini Görüntüle</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Tarihi</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Hat Tanımı</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API Alımları</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Kullanıcıya göre Filtrele</param>
+        <param name="apicapture_filterip">IP'ye Göre Filtrele</param>
+        <param name="apicatpure_numbers">Alımlar</param>
+        <param name="apicapture_soapscope">Alımları Göster</param>
+        <param name="apicapture_active">Aktif</param>
+        <param name="apicapture_none">Alım Yok</param>
+        <param name="apicapture_new">Yeni Alım Başlat</param>
+        <param name="apicapture_view">Görüntüle</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Oturum Açma Geçmişi</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">açılan oturum yok</param>
+        <param name="login_none">Oturum açma geçmişi yok</param>
+        <param name="login_username">Kullanıcı adı</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Oturum açma zamanı</param>
+        <param name="login_type">Oturum açma tipi</param>
+        <param name="login_ip">Kaynak IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Yok</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Tarayıcı</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platform</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Çözünürlük</param>
+        <param name="login_clientversion">Müşteri Sürümü</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Uygulama</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API Tipi</param>
+        <param name="login_apiversion">API Sürümü</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Başarı</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Tüm Oturum Açma Geçmişini indir (csv)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Yalnızca web sitesinden yapılanlar dahil oturum açma geçmişi karşıdan yükleniyor (Excel .csv dosyası)</param>
+        <param name="login_history_download_title">İndirme Seçenekleri</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV Dosya</param>
+        <param name="login_history_download_file_type_gzip">GZIP Dosya</param>
+        <param name="login_history_download_file_type_help">CSV (virgülle ayrılmış değer) dosyalar bir çok hesap tablosu programı ve metin editörü tarafından görüntülenebilir. GZIP (GNU zip) dosyalar boyutlarının küçültülmesi için sıkıştırılmıştır.</param>
+        <param name="login_history_download_option_title">Dosya İçerikleri</param>
+        <param name="login_history_download_option_all">Tüm Girişler</param>
+        <param name="login_history_download_option_ie6_only">SADECE IE6 Girişler</param>
+        <param name="login_history_download_option_web_only">SADECE Web Sitesi Girişleri</param>
+        <param name="login_history_download_option_help">“Tüm girişler” Web sitesi, Outlook, API entegrasyonları vb tüm kaynaklardan gelen girişleri içerir. "IE6 Girişleri" sadece Internet Explorer 6 kullanan kullanıcıların girişlerini içerir. "Web Sitesi Girişleri" sadece Salesforce giriş sayfasından yapılan girişleri içerir.</param>
+        <param name="login_history_ie6_deprecation_warning_title">IE6 mı kullanıyorsunuz?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce IE6 desteğini aşamalı olarak kaldıracaktır. Kuruluşunuzda hangi tarayıcıların kullanıldığını öğrenmek için indirme seçeneklerini kullanın.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Oturum Açma URL</param>
+        <param name="order_history">Sipariş Geçmişi</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Sipariş Yok</param>
+        <param name="order_number">Sipariş Numarası</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Sipariş Tarihi</param>
+        <param name="order_currency">Para Birimi</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Toplam Maliyet</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Şuna Satılmıştır</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Hayır <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Hat&lt;BR&gt;Numarası</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Aylık Fiyat</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Faturalama Referansı</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Faturalama Sıklığı&lt;BR&gt;(ay)</param>
+        <param name="bo_order_items_billing_frequency_text">Faturalama Sıklığı</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Sipariş Koşulu&lt;BR&gt;(ay)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Tarihi</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Faturalar</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Fatura yok</param>
+        <param name="invoices_invoice_number">Fatura Numarası</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Fatura Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Fatura Vade Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">Harici Sistem ID</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Toplam Miktar</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Vadesi Gelen</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Toplam Kredi</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Toplam Yazılan Zarar</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Faturalama İrtibatı</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Faturayı Yazan Şirket</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Fatura Geçmişi</param>
+        <param name="revenue_schedule">Çizelge</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Tarihi</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Gelir</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Açıklamalar</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Durum Geçmişi</param>
+        <param name="status_none">Durum geçmişi bulunamadı</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Hizmet Seçimi</param>
+        <param name="services_none">Hizmet yok</param>
+        <param name="services_description">Hizmet</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Birim Fiyatı</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Toplam Fiyat</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">İndirim</param>
+        <param name="training">Eğitim Sınıfı Geçmişi</param>
+        <param name="training_none">Hiçbiri</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Sınıf Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Alınan Tarih</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Yanıtlanan</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Varsayılan</param>
+        <param name="campaign_member_none">Tanımlanmış <campaign_member_status/> yok</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Başlangıç Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Bitiş Tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Ömür Değeri</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Satın Alma Kuralları Var</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Faturalama Sıklığı&lt;br&gt;(ay)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Faturalandığı Tarih</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <Products/></param>
+        <param name="event_attending">Kabul edilen <Event/></param>
+        <param name="event_notdecided">Yanıtlanmayan</param>
+        <param name="event_declined">Reddedilen <Event/></param>
+        <param name="event_attending_none">Hiçbir katılımcı kabul edilmedi</param>
+        <param name="event_notdecided_none">Hiçbir katılımcıya cevap verilmedi</param>
+        <param name="event_declined_none">Hiçbir katılımcı reddedilmedi</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Ad</param>
+        <param name="documents_size">Boyut</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Yazar</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Kurulum Denetleme İzini Görüntüle</param>
+        <param name="download">indir</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Organizasyonunuz için yapılan son 20 giriş aşağıda listelenmiştir. Kurulum denetleme izi geçmişinin tamamını Excel .csv dosyası olarak {0} yapabilirsiniz.</param>
+        <param name="setup_audit_date">Tarihi</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Eylem</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Bölüm</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Temsilci Kullanıcı</param>
+        <param name="setup_audit_proxyinguser_help">Bu sütun, bir son kullanıcı adına bir ayar değişikliği yapmış olan kullanıcının kullanıcı ismini listeler. Örneğin; bir kullanıcı bir destek temsilcisine giriş izni vermişse, temsilcinin kullanıcı ismi listelenir.</param>
+        <param name="setup_audit_trail_none">Kurulum denetleme izi bilgisi yok</param>
+        <param name="setup_audit_download_csv">Tüm  Kurulum Denetleme İzini İndir (csv)</param>
+        <param name="DashboardComponents_title">Kumanda Paneli Bileşenleri</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Kumanda Paneli Bileşeni Yok</param>
+        <param name="translated_templates_none">Tercüme Edilmiş E-posta Şablonu Yok</param>
+        <param name="translated_templates_title">Tercüme Edilmiş Eposta Şablonları</param>
+        <param name="translated_templates_language">Dil</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktif</param>
+        <param name="desc_pnet_conn_audit_trail">Kuruluşunuz için yapılan son 20 giriş aşağıda listelenmiştir. Tam bağlantı denetleme izi geçmişinin tamamını Excel .csv dosyası olarak {0} yapabilirsiniz.</param>
+        <param name="pnet_conn_audit_trail">Bağlantı Geçmişi</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Tarihi</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Bağlantı denetleme izi bilgisi yok</param>
+        <param name="pnet_conn_audit_download_csv">Bağlantı geçmişini karşıdan yükle (csv)</param>
+        <param name="pnet_entity_conns_title">Harici Paylaşım</param>
+        <param name="pnet_entity_conn_stop_sharing">Paylaşımı durdur</param>
+        <param name="pnet_pub_title">Yayınlanan Nesneler</param>
+        <param name="pnet_sub_title">Üye Olunan Nesneler</param>
+        <param name="pnet_pubsub_object">Nesne Adı</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Alanlar</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Yayınla / Yayından Kaldır</param>
+        <param name="pnet_sub_edit">Abone Ol / Abonelikten Çık</param>
+        <param name="pnet_pub_edit_object">Nesne yayınlandı.</param>
+        <param name="pnet_pub_edit_field">Her nesneyle ilgili mevcut alanlara yayınlamak için aşağıda Düzenleyi Tıklayın.</param>
+        <param name="pnet_sub_edit_object">Nesneye abone olundu.</param>
+        <param name="pnet_sub_edit_field">Her nesneyle ilgili mevcut alanlara abone olmak için aşağıda Düzenleyi Tıklayın.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">İçerik</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce Eklentileri</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">İlgili Listeleri Yüklerken Hata</param>
+        <param name="ajax_exception_desc">Bu kayıt için ilgili liste bilgisini alırken bir sorun oluştu. Eğer sayfayı yeniden yüklemek sorunu gidermezse, lütfen yöneticinizle görüşün veya Müşteri Destek Ekibimize &lt;a href="{0}" title="report{1}"&gt;rapor&lt;/a&gt; edin.</param>
+        <param name="category_access_title">Kategori Grubu Görünürlük Ayarları</param>
+        <param name="category_access_video_tutorial">Video Eğitim</param>
+        <param name="category_access_name">Kategori Grubu</param>
+        <param name="category_access_access">Görünürlük</param>
+        <param name="category_access_details">Görünürlük Ayrıntıları</param>
+        <param name="category_access_custom">Özel</param>
+        <param name="category_access_full">Tümü</param>
+        <param name="category_access_inherited">Alındığı yer: {0}</param>
+        <param name="category_access_revoked">Hiçbiri</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">görev ve bağlı görevler</param>
+        <param name="category_access_noCategories">Bu {0} için görünür kategori yok</param>
+        <param name="category_access_allCategories">Bu {0} için tüm kategoriler görünür</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} , şunun için {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Genel ABD &amp; Batı Avrupa (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japonca (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japonca (JIS)</param>
+        <param name="4">Japonca (EUC)</param>
+        <param name="5">Korece (ks_c_5601-1987)</param>
+        <param name="6">Geleneksel Çince (Big5)</param>
+        <param name="7">Basitleştirilmiş Çince (GB2312)</param>
+        <param name="8">Geleneksel Çince Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Japonca (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Deneme Kuruluşu</param>
+        <param name="expand">Yan Çubuğu Aç öğesine Tıklayın [Alt+S]</param>
+        <param name="collapse">Yan Çubuğu Kapat öğesine Tıklayın [Alt+S]</param>
+        <param name="expandNoHotkey">Yan Çubuğu Aç öğesine Tıklayın</param>
+        <param name="collapseNoHotkey">Yan Çubuğu Kapat öğesine Tıklayın</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Yukarı</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Aşağı</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Taşı</param>
+        <param name="top">Üst</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Alt</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Lütfen, gerekli alanları doldurun.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Tüm Kullanıcılar</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Yeni</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Sil</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Değiştir]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Ben nasıl...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Devamını Görüntüle</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="log_call">Bir Aramayı Kaydet</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Bir Notu Kaydet</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Posta Birleştirmesi</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Tümünü Görüntüle</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Dosya Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Nasıl yaparım?</param>
+        <param name="send_email">Bir E-posta gönder</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Kullanıcı tarafından eklenen resim</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Uygulamalar</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Yazdırılabilir Görünüm</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Klonla</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Paylaşma</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Anasayfa</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Daha fazla bilgi ver!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Birini Seçin:</param>
+        <param name="hotlist_mode">Seçimi Göster</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">{0,number,integer} kalem göster</param>
+        <param name="hotlist_empty_title">Yakın zamanda kayıt yok. Git'e tıklayın veya kayıtları görüntülemek için açılır menüden bir görünüm seçin.</param>
+        <param name="hotlist_empty_description">Bu kıstas için herhangi bir kayıt yok.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Raporlara Git</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Kaynak Merkezi</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Kaynak Merkezi ile olası müşteriler arayabiilir, üçüncü kişi hizmetleri bulabilir ve daha birçok olasılığa sahip olursunuz.</param>
+        <param name="resource_center_link_text">Kaynak Merkezine Git</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Satış Metodolojileri</param>
+        <param name="hotlist_recently_modified">Son Değiştirilen</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Son Oluşturulan</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Son İncelenen</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Hiçbiri--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Seç--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Varsayılan--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Uygulanamaz**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Yöneticiniz herhangi bir Özel Bağlantı tanımı yapmamış.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Şuraya Atla:</param>
+        <param name="JumpToStep">Adım {0}: {1}</param>
+        <param name="CloseWizard">Sihirbazı Kapat</param>
+        <param name="LeftHeader">Adım {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Adım  {0} / {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Adım {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Kaydet &amp; Yeni</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">İleri</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Önceki</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">{0} için Kuruluş Kurulum Sihirbazı</param>
+        <param name="ImportWizardTitle">{0} için İçe Aktarma Sihirbazı</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Sipariş Merkezi</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Deneme Kaydı</param>
+        <param name="WizardBody">Sihirbaz Gövdesi</param>
+        <param name="WizardFooter">Sihirbaz Alt Bilgi</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Adres</param><!-- translators note - this is actually the full address -->
+        <param name="street">Adres</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Şehir</param><!-- aliased across label files - do not change -->
+        <param name="state">Eyalet</param><!-- aliased across label files - do not change -->
+        <param name="zip">Posta Kutusu</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Zip / Posta Kodu</param> <!-- aliased across label files - do not change -->
+        <param name="country">Ülke</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Uzantı</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Faks</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Faks Dahili Numarası.</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-posta</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Sevkiyat Adres</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Sevkiyat Sokak</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Gönderilecek Şehir</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Sevkiyat Eyalet</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Sevkiyat Zip Kodu</param>
+        <param name="shippingzippostalcode">Sevkiyat Zip / Posta Kodu</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Gönderilecek Ülke</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Faturalama Adres</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Faturalanacak Şehir</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Faturalama Eyalet</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Faturalama Zip / Posta Kodu</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Faturalanacak Ülke</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Faturalama Sokak</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Banka Sokak</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Banka Adres</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Banka Şehir</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Banka Eyalet</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Banka Zip/Posta Kodu</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Banka Ülke</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Posta Adres</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Posta Sokak</param>
+        <param name="mailingcity">Gönderilecek Şehir</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Posta Eyalet</param>
+        <param name="mailingzip">Posta Zip / Posta Kodu</param>
+        <param name="mailingcountry">Gönderilecek Ülke</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Posta Adres Satırı 1</param>
+        <param name="mailingaddress2">Posta Adres Satırı 2</param>
+        <param name="mailingaddress3">Posta Adres Satırı 3</param>
+        <param name="otheraddress">Diğer Adres</param>
+        <param name="otheraddress1">Diğer Adres Satırı 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Diğer Adres Satırı 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Diğer Adres Satırı 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Diğer Sokak</param>
+        <param name="otherstreet2">Diğer Sokak 2</param>
+        <param name="otherstreet3">Diğer Sokak 3</param>
+        <param name="othercity">Diğer Şehir</param>
+        <param name="otherstate">Diğer Eyalet</param>
+        <param name="otherzipcode">Diğer Zip Kodu</param>
+        <param name="otherpostalcode">Diğer Posta Kodu</param>
+        <param name="otherzippostalcode">Diğer Zip / Posta Kodu</param>
+        <param name="othercountry">Diğer Ülke</param>
+        <param name="otherphone">Diğer Telefon</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Diğer Telefon Dahili Numarası.</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Adres 1</param>
+        <param name="address2">Adres 2</param>
+        <param name="address3">Adres 3</param>
+        <param name="home_phone">Ev Telefonu</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Yükleniyor ...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Konum</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Miktar</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Kişi Yöneticisi</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Team Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Team Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Evet</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Hayır</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">salesforce.com'a Hoşgeldiniz!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Telif Hakkı © 2000-{0} salesforce.com, inc. Tüm Hakları Saklıdır.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Telif hakkı &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Tüm hakları saklıdır.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Erişilebilirlik</param>
+        <param name="copyright_nohtml">Telif Hakkı (c) 2000-{0} salesforce.com, Tüm Hakları Saklıdır.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Telif Hakkı © {0} {1}. Tüm hakları saklıdır.</param>
+        <param name="brandedCopyrightWithLink">Telif  &amp;hakkı; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Tüm hakları saklıdır.</param>
+        <param name="brandedCopyright_nohtml">Telif Hakkı (c) {0} {1}. Tüm hakları saklıdır.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Güvenlik Bildirimi</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Kullanım Koşulları</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Salesforce.com'ı seçtiğiniz için teşekkür ederiz. Salesforce.com'u kullanmaya başlamadan önce aşağıdaki  Kullanım Koşulları'nı okuyup kabul etmelisiniz. Bitirdiğinizde lütfen "Kabul Ediyorum" düğmesine tıklayarak devam edin. Bu Kullanım Koşullarını kabul etmediğiniz takdirde Salesforce.com'a bağlantı kuramazsınız.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Bitti</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Şimdi Ekle!</param>
+        <param name="remove">Kaldır</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Yeni</param>
+        <param name="exciting_and_new">Yeni!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">burada</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Oluştur</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Pencereyi Kapat</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Bu Sayfayı Yazdır</param>
+        <param name="new_window">(Yeni Pencere)</param>
+        <param name="new_focus">(Odak Kayması)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">blank &#45; ignore</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">tümünü seç</param>
+        <param name="select_shown">Gösterileni Seç</param>
+        <param name="remove_shown">Gösterileni Kaldır</param>
+        <param name="select_none">Hiçbirini Seçme</param>
+        <param name="all_active">Tümü Aktif</param>
+        <param name="all_inactive">Tümü Aktif Değil</param>
+        <param name="are_you_sure">Emin misiniz?</param>
+        <param name="irreversible_are_you_sure">Geri dönüşü yok! Emin misiniz?</param>
+        <param name="replace">Değiştir</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Bitir</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} dakika</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Birden fazla öğe bulundu. &lt;br&gt;Açılan menüden seçin&lt;br&gt;veya aramayı daraltmak için ikona tıklayın.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Sıfırla</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Geçersiz Kıl</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Toplam</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Buraya tıkla</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Webmaster notları:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Örnek HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Şifre</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Bu sayfayı bir daha gösterme</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Bu mesajı şunun için gizle: </param>
+        <param name="dontShowMessageAgain">Bu mesajı bir daha gösterme</param>
+        <param name="dismissMessage">Bu mesajı göz önüne alma</param>
+        <param name="allObjects">Bütün Nesneler</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Açmak için ara çubuğuna veya Enter tuşuna basın.</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Self-Servis: <Case_Detail/></param>
+        <param name="CssEdit">Self-Servis: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/> Akış</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Yorum</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Özel Nesneler</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Özel Nesne Tanımı</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Kumanda Paneli</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Kumanda Panelleri</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Tümünün Seçimini Kaldır</param>
+        <param name="deselect_shown">Gösterilenin Seçimini Kaldır</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Posta Birleştirme Şablonu</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Posta Birleştirme Şablonları</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Klasör</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Klasörler</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Tahminler</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Tahminler</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent Denetleyicisi</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Fatura</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Notlar</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Sipariş</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Siparişler</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Nesneyi Sipariş Ver</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Öğeleri Sipariş Ver</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Ödeme</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Ödemeler</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">rapor</param>
+        <param name="Reports">Raporlar</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Oturum Aç</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Şablon</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Şablonlar</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tablo</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktif</param>
+        <param name="amount">Miktar</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Yıllık Gelir</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Belge Ekle</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Şifre Değiştir</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Kapat</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Kapalı</param>
+        <param name="closed_date">Kapanan Tarih</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Tarihi Kapat</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Tarih Oluştur</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Veri Tipi</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Silinen</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Açıklama Bilgisi</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Çalışanlar</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Dosya</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Dosyalar</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Genel Bilgi</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Başlamadan Önce Bilgi Alın</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Etiket</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Son Giriş</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Son değiştirme tarihi</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Ad</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Ad</param>
+        <param name="new_status">Yeni Durum</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Hiçbiri</param>
+        <param name="open">Aç</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organizasyon</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Eşleşme bulunamadı.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Tümü</param>
+        <param name="clear">Temizle</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Ara simgesine tıklayın...</param>
+        <param name="click_lookup_icon_info">Bir değer seçmek için ara simgesine tıklayın.</param>
+        <param name="clear_all">Tümünü Temizle</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Ekle düğmesini tıklayın.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Hatalar</param> <!-- aliased across lables - do not change -->
+        <param name="high">Yüksek</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Yardım</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Beni Oraya Götür!</param>
+        <param name="keywords">Anahtar Sözcükler</param>
+        <param name="length">Uzunluk</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Durum</param> <!-- aliased across lables - do not change -->
+        <param name="title">Ünvan</param>
+        <param name="object_title">Ünvan</param>
+        <param name="type">Tip</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Kullanıcı</param> <!--aliased across labels - do not change -->
+        <param name="Users">Kullanıcılar</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">İzin Seti</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profiller</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Sahibi</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">başarılı olun.</param>
+        <param name="DontShowPage">Bu Sayfayı Tekrar Gösterme</param>
+        <param name="click_here_to_create_new_account">Şimdi <new gender="n"/> <account/> oluşturmak için {0}.</param>
+        <param name="click_here_to_create_new_contact">Şimdi <new gender="n"/> <contact/> oluşturmak için {0}.</param>
+        <param name="click_here_to_create_new_lead">Şimdi <new gender="n"/> <lead/> oluşturmak için {0}.</param>
+        <param name="click_here_to_create_new_opportunity">Şimdi <new gender="n"/> <opportunity/> oluşturmak için {0}.</param>
+        <param name="click_here_to_create_new_product">Şimdi <new gender="n"/> <product/> oluşturmak için {0}.</param>
+        <param name="SystemModstamp">Sistem Mod Damgası</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Bölüm</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">İşleniyor</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Kayıtlar güncelleniyor...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Statik Çeviri</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">İleride bu sayfayı Gizle</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Yükleniyor…</param>
+        <param name="uploading_title">Karşıya Yükleniyor</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Alınıyor…</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">ve </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Hata: Bu alana erişim yok.</param>
+        <param name="noReadAccess">Bu kaydı görüntülemek için erişiminiz yok.</param>
+        <param name="noAccessToUser">Bu kullanıcıya erişiminiz yok.</param>
+        <param name="disabledButton">Devre dışı düğme: {0}</param>
+        <param name="RequiredHeader">Gerekli bilgi</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Bir Resim Ekle</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">IP Oturum Açma Aralığını silmek istediğinizden emin misiniz?</param>
+        <param name="AMPM">AMPM Giriş</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Korumalı Bileşen</param>
+        <param name="dialogCloseConfirm">Görüntülemekte olduğunuz onay penceresi zamansız kapanmış olabilir. Geri dönmek için OK üstüne tıklayın veya bu uyarıyı gözardı etmek için İptal'e tıklayın.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Diyalog Başlangıcı</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Arama Sonuçları</param>
+        <param name="Recent">Son İncelenen</param>
+        <param name="NoMatchHeader">Aşağıdakilerden birisi nedeniyle hiçbir kayıt bulunamadı:</param>
+        <param name="BulletOne">Bu tipte kayıt yok</param>
+        <param name="BulletTwo">Kayıtların hiçbirini görme izniniz yok</param>
+        <param name="BulletThree">Kayıtlar, sistem yöneticiniz tarafından ayarlanmış filtre kriterlerine uymuyor</param>
+        <param name="BulletFour">Bir ya da daha fazla kontrol alanı boş veya geçersiz (Kontrol alanları:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Mevcut Kullanıcılar</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Seçilen Kullanıcılar</param>
+        <param name="LicensedUsers">Lisanslı Kullanıcılar</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">İptal İçin Seçilmiş</param>
+        <param name="Selected">Seçildi</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Seçilmiş</param>
+        <param name="UnassignedPackages">Atanmamış Paketler</param>
+        <param name="SelectedPackages">Seçilmiş Paketler</param>
+        <param name="InView">görünümde</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Bu dosya azami büyüklük sınırı olan {0} üzerinde.</param>
+        <param name="no_file_specified">Lütfen karşıya yüklenecek dosyayı belirtin. Dosya yolunu yazın veya yerel dosya sistemi içine bulmak için &quot;Gözat&quot; tuşunu kullanın.</param>
+        <param name="invalid_file_type">Belirttiğiniz dosya tipi henüz desteklenmiyor.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Bu dosya adı izin verilen azami uzuluk sınırı olan {0} karakterin üzerinde.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Bu dosya adı uzantısı izin verilen azami uzunluk sınırı olan {0} karakterin üzerinde.</param>
+        <param name="bytes">bayt</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">HTML dosya tiplerine güvenlik sebebiyle izin verilmemektedir.</param>
+        <param name="attachment_size_exceeded">Yüklenen dosya maksimum boyutu aştı.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Hata:&lt;/b&gt; Yüklenecek bir resim seçmelisiniz</param>
+        <param name="upload_file_too_large">&lt;b&gt;Hata:&lt;/b&gt; Resim 1 MB boyut sınırını aşıyor.</param>
+        <param name="invalid_file_type">&lt;b&gt;Hata:&lt;/b&gt; Yalnızca .gif .jpeg ve .png dosyaları ekleyebilirsiniz.</param>
+        <param name="upload_failed">&lt;b&gt;Hata:&lt;/b&gt; Yükleme başarısız - Daha sonra tekrar deneyin.</param>
+        <param name="invalid_file">&lt;b&gt;Hata:&lt;/b&gt;Dosya, geçersiz bir resim dosyası.</param>
+        <param name="invalid_param">&lt;b&gt;Hata:&lt;/b&gt; Geçersiz parametreler.</param>
+        <param name="access_failed_alt">Bu resme ulaşılamıyor, nedeni: Resmi görüntülemek için gerekli izne sahip değilsiniz veya resim sistemden silindi</param>
+        <param name="weekly_export_folder">Yüklenen Diğer Yardımcı Malzemeler/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} başarıyla oluşturuldu.</param>
+        <param name="Failure_message">Oluşturma Başarısız.</param>
+        <param name="Common_success_message">Oluşturma başarılı.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Lisans Sayısı Azaltma İsteği</param>
+        <param name="pageheader">Lisans sayısı azaltma isteğinizi iletmek için lütfen tüm gerekli alanları doldurun. İsteğinizin işlenmesi için en hızlı yol budur.  Gereksiz gecikmelere neden olabileceğinden lütfen aynı lisanslar için birden fazla istek göndermeyin.</param>
+        <param name="title_landing">İsteğiniz alındı!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">İsteğiniz alındı, alınma sırasına göre işleme konulacak. Salesforce.com’u bir sonraki fatura döneminizin fatura tarihinden 5 iş günü öncesinde haberdar ettiğiniz sürece, lisans sayınızı azaltma talepleriniz, isteğinizi takiben bir sonraki faturalandırma döneminin başlangıcından itibaren uygulamaya konacaktır.</param>
+        <param name="pageheader_landing">İsteğiniz alındı, alınma sırasına göre işleme konulacak. Lisans sayınızı azaltma istekleriniz, isteğiniz teslim edildikten 30 gün sonra yürürlüğe girecek. İsteğinizin işlenmesinde gecikmeye neden olabileceğinden aynı lisanslar için birden fazla lisans sayısı azaltma talep etmeyin.</param>
+        <param name="title_error">İsteğiniz işlenemedi.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Bu seferlik isteğinizi iletemedik. Lütfen daha sonra tekrar deneyin.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">İsteğinizin İletilmesi</param>
+        <param name="reason">Sebep</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Lütfen&lt;br&gt; Daha Ayrıntılı Açıklayın</param>
+        <param name="numLicenses">Lisans Sayısı</param>
+        <param name="potentialResponse">İşinizi nasıl&lt;br&gt; muhafaza edebiliriz?</param>
+        <param name="tips_title">Lisans Sayısı Azaltma İsteği İletmek İçin İpuçları</param>
+        <param name="tip1">İsteğinizin hızlı ve uygun şekilde işlenmesi için lütfen tüm bilgileri doğru şekilde doldurun.  Bu isteği göndermeden önce, kullanıcı sayınızın yeni lisans sayısına eşit ya da daha az olması için yeterli sayıda kullanıcıyı devre dışı bıraktığınıza emin olun. Bunu &lt;a href="{1}"&gt;Benim Kurulumum&lt;/a&gt; üzerindeki &lt;a href="{0}"&gt;Kullanıcıları Yönet&lt;/a&gt; özelliğini kullanarak yapabilirsiniz.</param>
+        <param name="type1">Hesap İptali</param>
+        <param name="type2">Kullanıcı Lisansı Sayısı Azaltma</param>
+        <param name="type3">Çevrimdışı Lisans Sayısı Azaltma</param>
+        <param name="type4">Kampanya Lisansı Sayısı Azaltma</param>
+        <param name="type5">İptal için Mobile Edition</param>
+        <param name="type6">Lisans Sayısı Azaltma için Mobile Edition</param>
+        <param name="type7">Force.com Mobil Lisans Sayısı Azaltma</param>
+        <param name="reason_0">Alınan/Birleştirilen Şirket</param>
+        <param name="reason_1">Şirket Feshi</param>
+        <param name="reason_2">Elenen Satış Personeli</param>
+        <param name="reason_3">Son Kullanıcılar Benimsemedi</param>
+        <param name="reason_4">İşlev beklentileri karşılamadı</param>
+        <param name="reason_5">Yönetim Yeterli Değer Görmedi</param>
+        <param name="reason_6">Salesforce.com çalışanlarıyla zayıf deneyim</param>
+        <param name="reason_7">Fiyat Çok Yüksek</param>
+        <param name="reason_8">Rakibe Geçiş Yaptı</param>
+        <param name="reason_9">Kullanılmayan Lisanslar</param>
+        <param name="reason_10">Diğer</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Lütfen aşağıdaki alanları doldurun:</param>
+        <param name="title">Salesforce.com'a Geri Bildirim gönder</param>
+        <param name="title_upgrade_me">Bir Yükseltme İsteği Gönder</param>
+        <param name="title_support">Geri Bildirim Gönder</param>
+        <param name="warning_line_too_long">Uyarı: Tanım 4000'den fazla karakter içerdiği için kesilecektir.\\n</param>
+        <param name="feedback_info">Müşteri Destek ile İrtibat</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Sorularınız ve geri bildirimlerinize yönelik olarak Müşteri Desteği mevcuttur. salesforce.com'un şekillendirilmesine yardımcı olması için müşterilerimizden gelen geri bildirimlere çok güveniriz. Görüşleriniz ve fikirleriniz bizim için önemlidir.</param>
+        <param name="general_info_me">Personal Edition'dan Kurumsal sürümlerimizden birine geçiş hakkında daha fazla bilgi edinmek için lütfen aşağıdaki formu doldurun. Bir satış temsilcimiz sizi 48 saat içinde arayacaktır.</param>
+        <param name="general_info_support">Sorularınız ve geri bildirimlerinize yönelik olarak Müşteri Desteği mevcuttur. Salesforce CRM Çağrı Merkezini şekillendirmede yardımcı olması bakımından, müşterilerimizden gelen geribildirimlere büyük önem veriyoruz. Görüşleriniz ve fikirleriniz bizim için önemlidir.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Yeni</param>
+        <param name="functionalArea">Konu</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Soru</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">İstek</param>
+        <param name="type3">Geri Bildirim</param>
+        <param name="type4">Özellik İsteği</param>
+        <param name="priority1">Acil Durum</param>
+        <param name="priority2">Normal</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Düşük</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Professional Edition'a şimdi üye olmak istiyorum.</param>
+        <param name="subject_subscribe_me">Şimdi yükseltmek istiyorum</param>
+        <param name="subject_subscribe_we">Professional Edition hakkında daha fazla bilgi istiyorum.</param>
+        <param name="subject_subscribe_ee">Enterprise Edition'a şimdi üye olmak istiyorum.</param>
+        <param name="subject_subscribe_ue">Unlimited Edition'a şimdi üye olmak istiyorum</param>
+        <param name="subject_subscribe_support">Şimdi üye olmak istiyorum</param>
+        <param name="subject_data_export">Haftalık Dışa Verme Servisini istiyorum</param>
+        <param name="subject_marketing_licenses">Pazarlama Lisansları Ekle</param>
+        <param name="subject_offline_licenses">Çevrimdışı Lisanslar Ekle</param>
+        <param name="subject_wireless_licenses">Wireless Lisansları Ekle</param>
+        <param name="subject_offlinepda_licenses">Sales Anywhere Lisansları Ekle</param>
+        <param name="subject_mobile_licenses">Force.com Mobile Lisansları Ekle</param>
+        <param name="subject_sfcontent_licenses">Salesforce CRM Content Lisansları Ekle</param>
+        <param name="subject_knowledge_licenses">Bilgi Lisansları Ekle</param>
+        <param name="subject_interaction_licenses">Force.com Akış Lisansları Ekle</param>
+        <param name="subject_support_licenses">Service Cloud Lisansları Ekle</param>
+        <param name="subject_jigsaw_licenses">Jigsaw Licenses Ekle</param>
+        <param name="subject_liveagent_licenses">Live Agent Licenses Ekle</param>
+        <param name="subject_siteforcecontributor_licenses">Site.com Katılımcı Lisansları Ekle</param>
+        <param name="subject_siteforcepublisher_licenses">Site.com Yayıncı Lisansları Ekle</param>
+        <param name="subject_chatteranswers_licenses">Chatter Answers Lisanslarını ekleyin</param>
+        <param name="subject_license_reduction">Lisans Azaltması</param>
+        <param name="functionalArea_0">Hesap/Lisans İdaresi</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Faturalandırma Sorusu </param>
+        <param name="functionalArea_3">Veri Kesişme Noktası</param>
+        <param name="functionalArea_4">Email/HTML Email</param>
+        <param name="functionalArea_5">Tahminler &amp; Fırsatlar</param>
+        <param name="functionalArea_6">İçeri Aktarılıyor</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Satış Sağlayıcı Bilgiler</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Performans</param>
+        <param name="functionalArea_9">Raporlar &amp; Görünümler</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Şimdi Abone Ol</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Senkronize Et</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Haftalık Dışa Verme Servisi</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Diğer</param>
+        <param name="functionalArea_16">Pazarlama Lisansı</param>
+        <param name="functionalArea_17">Çevrimdışı Lisans</param>
+        <param name="functionalArea_18">Profiller/Sayfa Düzenleri/Kayıt Tipleri</param>
+        <param name="functionalArea_19">Kampanyalar</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Self-Servis</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Wireless Lisansı</param>
+        <param name="functionalArea_22">Şimdi Yükselt</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere Lisansı</param>
+        <param name="functionalArea_24">Görevler / Etkinlikler </param>
+        <param name="functionalArea_25"><Products/> &amp; Tahsisatlar / <Pricebooks/></param>
+        <param name="functionalArea_26">Büyük İş Uyarısı </param>
+        <param name="functionalArea_27">Belgeler</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Olaylar &amp; Çözümler </param>
+        <param name="functionalArea_29">Ara</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Paylaşma</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Wireless Edition</param>
+        <param name="functionalArea_33">Outlook Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Mobile Edition for au</param>
+        <param name="functionalArea_35">Ortak Portal Lisansı</param>
+        <param name="functionalArea_36">Force.com Mobile Lisansı</param>
+        <param name="functionalArea_37">Salesforce CRM Content Lisansı</param>
+        <param name="functionalArea_38">Service Cloud Lisansı</param>
+        <param name="functionalArea_39">Jigsaw Lisansı</param>
+        <param name="functionalArea_40">Live Agent Lisansı</param>
+        <param name="functionalArea_41">Site.com Katılımcı Lisansı</param>
+        <param name="functionalArea_42">Site.com Yayıncı Lisansı</param>
+        <param name="functionalArea_43">Chatter Answers Lisansı</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Doğrudan bir müşteri hizmet temsilcisiyle konuşmak isterseniz Pazartesi&amp;#150;Cuma, Pasifik zamanına göre 6:00-18:00 arası (415) 901-7010 numarasını veya Pazartesi&amp;#150;Cuma, GMT standart zamana göre 8:00-18:00 arası +353-1-2723503 numarasını arayın.</param>
+        <param name="tips_title">Vaka İletme İpuçları</param>
+        <param name="tip1">Vakanıza en kısa zamanda yanıt verebilmemiz için lütfen bize yeterli bilgi sağladığınızdan emin olun.  Aşağıda birkaç öneri ve hatırlatıcı sunuyoruz:</param>
+        <param name="tip2">Bize ne yapmaya çalıştığınızı, ne olmasını beklediğinizi ve bunun yerine ne olduğunu anlatın.</param>
+        <param name="tip3">Sorununuzu yeniden meydana getirmek için yapılması gereken adımları belirtin.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Görünüm:</param>
+        <param name="X">X</param>
+        <param name="close">Kpt</param>
+        <param name="MLclose">Kapat</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Sil</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Sil</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Sil</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Kayıt</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Kur</param>
+        <param name="activate">Etkinleştir</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Devre Dışı Bırak</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Yönet</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Dışarı Aktar</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Sonraki Sayfa</param>
+        <param name="prev">Önceki Sayfa</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Görüntülenen toplam kalem: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Bana liste sayfası başına {0} {1} kayıt göster</param>
+        <param name="number_shown_detail_page">Bana her zaman ilişkili liste başına {0} {1} {2} kayıt göster.</param>
+        <param name="number_shown_adjust_less_link">daha az</param>
+        <param name="number_shown_adjust_more_link">daha fazla</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">tümü</param>
+        <param name="last_page">Önceki sayfaya Dön</param>
+        <param name="last_list">Listeye Geri Dön</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Listeye geri dön:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Listeye geri dön: <Entity entity="0" plural="y"/> Bağlantılardan</param>
+        <param name="last_suggested_solution_list">Önerilen <Solution plural="y"/> Listesine Geri Dön</param>
+        <param name="last_solution_search_list"><Solution plural="n"/> Arama Sonuçlarına Geri Dön</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail"><Entity entity="0" plural="n"/> geri dön: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Eylemler:</param>
+        <param name="checkboxPrompt">Lütfen en az bir satır seçin</param>
+        <param name="checkboxSinglePrompt">Lütfen tek bir sıra seçin</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Bu sayfada seçtikleriniz kaybolacaktır. Devam etmek istiyor musunuz?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Bu işlemi gerçekleştirmek için {0} veya daha az satır seçmelisiniz.</param>
+        <param name="selectionLimit">{0} üzerinde satır seçilemez.</param>
+        <param name="login">Oturum Aç</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Oturum</param>
+        <param name="none">Gösterilecek kayıt yok.</param>
+        <param name="no_rows">Seçilen satır yok</param>
+        <param name="subtotal">Ara toplam:</param>
+        <param name="total">Toplam:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Bütün kalemleri seçin</param>
+        <param name="clearAllInfo">Tüm kalemlerin seçimini kaldır</param>
+        <param name="rename">Yeniden adlandır</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Seç</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Seçimi kaldır</param>
+        <param name="toggleall">Tüm Satırlara Geç</param>
+        <param name="refresh">Yenile</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Lütfen, bir görünüm seçin.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Belirlediğiniz görünüm maksimum boyutu aşıyor. Lütfen, görünümü düzenleyerek veya yeni bir görünüm oluşturarak arama kriterlerinizi sınırlayın.</param>
+    <param name="switch_view">Görünüm Değiştir</param>
+    <param name="records_x_to_y">{0} – {1} arası kayıtlar görüntüleniyor</param>
+    <param name="records_x_to_y_more">{0} – {1} arası kayıtlar görüntüleniyor ve daha fazla kayıt var</param>
+    <param name="records_x_to_y_more_showing_max">{0} – {1} arası kayıtlar görüntüleniyor. Daha fazla sayıda kayıt olmasına karşın, bu sayfa içinde sadece ilk 1.000 kayıt görüntülenebilir. Daha az sayıda kayıt görüntüleme için, liste görüntüleme kıstasınızı düzenleyin. 1.000 üzerinde kayıt yazdırmak için lütfen raporu çalıştırın ve sonra rapor üzerindeki Yazdırılabilir Görünüm tuşuna tıklayın.</param>
+    <param name="number_of_records">Kayıt sayısı</param>
+        <param name="createCase"><Case/> Oluştur</param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">İç içe kalemleri genişletmek/daraltmak için tıklayın.</param>
+        <param name="expand">İç içe kalemleri genişletmek için tıklayın.</param>
+        <param name="collapse">İç içe kalemleri daraltmak için tıklayın.</param>
+        <param name="shortExpand">Genişlet</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Daralt</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Genişletildi</param>
+        <param name="collapsed">Daraltıldı</param>
+        <param name="level">Seviye</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hiyerarşi:</param>
+        <param name="siblings">Kardeş öğeler:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Arama</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Bir nesne seçin</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Kim</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Ne</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Arama maksimum satır sayısından ({0}) daha fazla sonuç buldu. Lütfen arama kriterinizi daraltın.</param>
+        <param name="Copyright">Telif hakkı &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Tüm hakları saklıdır.</param>
+        <param name="useWildcards">Arama sonuçlarınızı geliştirmek için joker karakter olarak '*' kullanabilirsiniz  Örneğin "ad*",;ismin içinde "ad" geçen tüm kayıtları çıkartır.</param>
+        <param name="useWildcardsWithSearch">Arama sonuçlarınızı geliştirmek için diğer karakterlerin yanında joker olarak "*" kullanabilirsiniz</param>
+        <param name="error_lookup_multiple_matches_ile">Birden çok unsur bulundu.&lt;br&gt; Aramayı iyileştirmek için simgeye tıklayın.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Listeyi Genişlet</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Genişletilmiş Liste</param>
+        <param name="sharing">Paylaşma</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Neden?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Daha fazla filtre  &gt;&gt;</param>
+        <param name="less_filters">Daha az filtre &lt;&lt;</param>
+        <param name="by_keyword">Anahtar sözcük ile</param>
+        <param name="by_filter">Alan Filtresi ile</param>
+        <param name="too_many">Arama sonucunda {0} üzerinde satır bulundu. Sadece ilk {0} görüntüleniyor. Lütfen arama kriterinizi daraltın.</param>
+        <param name="Results">Sonuçlar</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Arama:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Skor</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Alan</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operatör</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Değer</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Üçüncü sütuna birden fazla kalem girerek "veya" filtresi kullanabilirsiniz.</param>
+        <param name="tip_1">Virgülle birbirlerinden ayrılan azami 10 kalem girebilirsiniz. Örneğin: CA veya NY veya TX ya da FL yerine CA, NY, TX, FL gibi.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Virgül içeren verilerin önüne ve arkasına tırnak işareti koyun. Örneğin 200,000 veya 1,000,000 yerine "200,000","1,000,000" gibi.</param>
+        <param name="tip_3">İşaret kutucuğu bulunan alanlar için "Doğru" ve "Yanlış" kullanılabilir; Örneğin, "Etkin eşittir Doğru" veya "Dönüştürülmüş eşittir Yanlış".</param>
+        <param name="tip_4">Bölge kodlarına dayalı olarak getirilen kurallar örneğin, parantez gerektiriyor olabilir. Telefonların başında (415), (510) yer alır.</param>
+        <param name="tip_5">Bir çeviri programı kullanılıyorsa, ana değerler kullanılarak bütün filtre kıstasları girilebilir.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Kullanılabilir</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Seçimler</param>
+        <param name="assignLicensesDescription">Bu kullanıcıya atamak istediğiniz her paketin yanındaki kutucuğu işaretleyin ve Ata tuşuna tıklayın. Pakette yeterli lisans yoksa veya paket durumu kullanım süresi sona ermiş ya da askıya alınmış ise kutucuk bulunmaz.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Klasik</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portal Varsayılan</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Teyit</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Bilgi</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Hata</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Uyarı</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Güvenli</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Sıklık</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Günlük</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Haftalık</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Aylık</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Hafta İçi Her Gün</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Hergün</param>
+       <param name="lastDay">son</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">1.</param>
+    <param name="on2">2.</param>
+    <param name="on3">3.</param>
+    <param name="on4">4.</param>
+    <param name="onLast">En son</param>
+    <param name="startTime">Başlat</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Bitiş</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Tercih Edilen Başlama Saati</param>
+    <param name="noPreference">Tercih yok</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Kesin başlama zamanı iş sıra etkinliğine bağlı olacaktır.</param>
+
+    <param name="diffTimeZoneMsg">Bu aylık sıklık ayarı için zaman aralığı:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt; Sıklık ayarları, üzerinde en son düzenleme yapan kullanıcının zaman aralığında görüntülenir.&lt;br&gt; Bu ayarlar üzerinde yapılacak herhangi bir değişiklik sizin zaman aralığınıza uygun güncelleme yapacaktır.</param>
+
+      <param name="weeklyRecurrence">Her hafta {0} günü tekrarlar</param>
+      <param name="weeklyRecurrenceLegendLabel">Her hafta şu gün tekrarlar:</param>
+      <param name="monthlyRecurrence1">Her ayın {0} günü</param>
+      <param name="monthlyRecurrence1LegendLabel">Belirli</param>
+      <param name="monthlyRecurrence2LegendLabel">Özel</param>
+      <param name="monthlyRecurrence2">Her ayın {2} {0} {3} {1} günü</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Her ayın {0} {1} günü</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Her ayın belirli günü</param>
+      <param name="accessibleMonthly2">Her ayın özel günü</param>
+      <param name="accessibleOnDayN">Belirli gün</param>
+      <param name="accessibleOnDayNOfWeek">Olay</param>
+      <param name="accessibleOnDayName">Gün</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Bu basit test, kötü amaçlı programların verinize erişimini engellemeye yardımcı olur.  Yöneticiniz büyük indirmeler için bu testi gerekli kılmaktadır.  Bir bağlanma oturumunda bir kereden fazla asla gösterilmez.</param>
+        <param name="imagePrompt">Yukarıdaki kelimeleri aralarında bir boşluk olacak şekilde girin:</param>
+        <param name="audioPrompt">Duyduğunuz rakamları girin:</param>
+        <param name="refresh">Yeni bir soru al</param>
+        <param name="audio">Sesli soru al</param>
+        <param name="image">Görüntülü soru al</param>
+        <param name="incorrect">Hatalı, lütfen tekrar deneyin.</param>
+        <param name="moreinfo">Daha fazla bilgi &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Daha az bilgi</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Dha fazlası için tıklayın...</param>
+        <param name="show">Vurgulama Panelini Göster</param>
+        <param name="hide">Vurgulama Panelini Sakla</param>
+        <param name="empty">Bu kayıt için gösterilecek vurgulu alan bulunmuyor.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Rehberli Gezinti</param>
+        <param name="closeIntro">Hayır, teşekkürler</param>
+        <param name="closeOutro">Kapat</param>
+        <param name="showLater">Bana Daha Sonra Göster</param>
+        <param name="replay">Yeniden Oynat</param>
+        <param name="continue">Devam Et</param>
+        <param name="previous">Önceki</param>
+        <param name="startTour">Turu Başlat</param>
+        <param name="endTour">Turu Bitir</param>
+        <param name="stepCounter">{1} içinde {0}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Detay</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Öneriler</param>
+        <param name="hideBucketTip">&lt;br&gt;Öğeleri sayfadan saklamak için&lt;br/&gt;buraya bırakın.</param>
+        <param name="hiddenListTip">Saklı öğeleri göstermek için yukarıdaki listeye geri çekin.</param>
+        <param name="hiddenListShowLinkLabel">{0} Saklı</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Başa Dön</param>
+        <param name="multipleItemDragGhost">Çoklu Öğeler (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Detay Sayfası Tarayıcı Uyumluluğu</param>
+        <param name="compatibilityMsgSubTitle">Oops, bu tarayıcıyı desteklemiyoruz</param>
+        <param name="compatibilityMsg1">Yeni detay sayfasını mevcut tarayıcınızda görüntüleyemiyoruz.</param>
+        <param name="compatibilityMsg2">Aşağıdaki uyumlu tarayıcılarla ne zaman oturum açarsanız yeni tasarımı kullanabilirsiniz:</param>
+        <param name="supportedIE">Internet Explorer 7 veya 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Teşekkürler!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Klasik Görünümü Varsayılanım Yap</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Bir {0} aramak için buraya yazın...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Aramanızla eşleşen {0} bulunamadı.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Sayfa {1} / {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

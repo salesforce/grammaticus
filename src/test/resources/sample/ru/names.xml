@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Accounts/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">A partner</value>
+        <value plural="n" article="the">The partner</value>
+        <value plural="y" article="the">The partners</value>
+
+     Capitalization within labels
+         <Account/> will display "Account"
+         <account/> will display "account"
+    =======================================================================-->
+
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts"  gender="f"  startsWith="v">
+        <value plural="n">Организация</value>
+        <value plural="y">Организации</value>
+   	    <value plural="n" case="a">Организацию</value>
+        <value plural="y" case="a">Организации</value>
+        <value plural="n" case="d">Организации</value>
+        <value plural="y" case="d">Организациям</value>
+        <value plural="n" case="g">Организации</value>
+        <value plural="y" case="g">Организаций</value>
+        <value plural="n" case="in">Организацией</value>
+        <value plural="y" case="in">Организациями</value>
+        <value plural="n" case="pr">Организации</value>
+        <value plural="y" case="pr">Организациях</value>
+    </noun>
+    <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="c">
+        <value plural="n">Действие</value>
+        <value plural="y">Действия</value>
+        <value plural="n" case="a">Действие</value>
+        <value plural="y" case="a">Действия</value>
+        <value plural="n" case="d">Действию</value>
+        <value plural="y" case="d">Действиям</value>
+        <value plural="n" case="g">Действия</value>
+        <value plural="y" case="g">Действий</value>
+        <value plural="n" case="in">Действием</value>
+        <value plural="y" case="in">Действиями</value>
+        <value plural="n" case="pr">Действии</value>
+        <value plural="y" case="pr">Действиях</value>
+    </noun>
+    
+
+    
+
+
+<!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
+        <value plural="n">Business Hours</value>
+        <value plural="y">Multiple Business Hours</value>
+    </noun>-->
+    <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
+        <value plural="n">Кампания</value>          
+        <value plural="y">Кампании</value>
+   	    <value plural="n" case="a">Кампанию</value>
+        <value plural="y" case="a">Кампании</value>
+        <value plural="n" case="d">Кампании</value>
+        <value plural="y" case="d">Кампаниям</value>
+        <value plural="n" case="g">Кампании</value>
+        <value plural="y" case="g">Кампаний</value>
+        <value plural="n" case="in">Кампанией</value>
+        <value plural="y" case="in">Кампаниями</value>
+        <value plural="n" case="pr">Кампании</value>
+        <value plural="y" case="pr">Кампаниях</value>
+    </noun>
+
+    <!-- Content -->
+        <!-- // Content -->
+
+    
+    
+    
+    
+    <noun name="Skill" entity="skill" type="entity" alias="skills" gender="m" startsWith="c">
+        <value plural="n">Навык</value>
+        <value plural="y">Навыки</value>
+        <value plural="n" case="a">Навык</value>
+        <value plural="y" case="a">Навыки</value>
+        <value plural="n" case="d">Навыку</value>
+        <value plural="y" case="d">Навыкам</value>
+        <value plural="n" case="g">Навыка</value>
+        <value plural="y" case="g">Навыков</value>
+        <value plural="n" case="in">Навыком</value>
+        <value plural="y" case="in">Навыками</value>
+        <value plural="n" case="pr">Навыке</value>
+        <value plural="y" case="pr">Навыках</value>
+    </noun>
+
+    
+    
+    
+    
+   
+	    
+    
+    
+    
+    
+    
+     
+                    
+    
+    
+        
+    <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
+        <value plural="n">Документ</value>
+        <value plural="y">Документы</value>
+        <value plural="n" case="a">Документ</value>
+        <value plural="y" case="a">Документы</value>
+        <value plural="n" case="d">Документу</value>
+        <value plural="y" case="d">Документам</value>
+        <value plural="n" case="g">Документа</value>
+        <value plural="y" case="g">Документов</value>
+        <value plural="n" case="in">Документом</value>
+        <value plural="y" case="in">Документами</value>
+        <value plural="n" case="pr">Документе</value>
+        <value plural="y" case="pr">Документах</value>
+    </noun>
+
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="c">
+        <value plural="n">Событие</value>
+        <value plural="y">События</value>
+        <value plural="n" case="a">Событие</value>
+        <value plural="y" case="a">События</value>
+        <value plural="n" case="d">Событию</value>
+        <value plural="y" case="d">Событиям</value>
+        <value plural="n" case="g">События</value>
+        <value plural="y" case="g">Событий</value>
+        <value plural="n" case="in">Событием</value>
+        <value plural="y" case="in">Событиями</value>
+        <value plural="n" case="pr">Событии</value>
+        <value plural="y" case="pr">Событиях</value>
+    </noun>
+
+    
+    
+    
+    
+      
+      
+      
+    
+
+<!--    
+   
+    <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
+        <value plural="n">Forecast Access Level</value>
+    </noun> -->
+
+    
+     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="m" startsWith="c">
+        <value plural="n">Вопрос</value>
+        <value plural="y">Вопросы</value>
+        <value plural="n" case="a">Вопрос</value>
+        <value plural="y" case="a">Вопросы</value>
+        <value plural="n" case="g">Вопроса</value>
+        <value plural="y" case="g">Вопросов</value>
+        <value plural="n" case="d">Вопросу</value>
+        <value plural="y" case="d">Вопросам</value>
+        <value plural="n" case="in">Вопросом</value>
+        <value plural="y" case="in">Вопросами</value>
+        <value plural="n" case="pr">Вопросе</value>
+        <value plural="y" case="pr">Вопросах</value>
+    </noun>
+    
+    
+    
+    
+    
+    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="v">
+        <value plural="n">Интерес</value>
+    <value plural="y">Интересы</value>
+    <value plural="n" case="a">Интерес</value>
+        <value plural="y" case="a">Интересы</value>
+        <value plural="n" case="d">Интересу</value>
+        <value plural="y" case="d">Интересам</value>
+        <value plural="n" case="g">Интереса</value>
+        <value plural="y" case="g">Интересов</value>
+        <value plural="n" case="in">Интересом</value>
+        <value plural="y" case="in">Интересами</value>
+        <value plural="n" case="pr">Интересе</value>
+        <value plural="y" case="pr">Интересах</value>
+    </noun>
+
+    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="c">
+        <value plural="n">Возможность</value>
+    <value plural="y">Возможности</value>
+    <value plural="n" case="a">Возможность</value>
+        <value plural="y" case="a">Возможности</value>
+        <value plural="n" case="d">Возможности</value>
+        <value plural="y" case="d">Возможностям</value>
+        <value plural="n" case="g">Возможности</value>
+        <value plural="y" case="g">Возможностей</value>
+        <value plural="n" case="in">Возможностью</value>
+        <value plural="y" case="in">Возможностями</value>
+        <value plural="n" case="pr">Возможности</value>
+        <value plural="y" case="pr">Возможностях</value>
+    </noun>
+
+	
+	
+	
+    <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
+        <value plural="n">Прайс-лист</value>
+        <value plural="y">Прайс-листы</value>
+        <value plural="n" case="a">Прайс-лист</value>
+        <value plural="y" case="a">Прайс-листы</value>
+        <value plural="n" case="d">Прайс-листу</value>
+        <value plural="y" case="d">Прайс-листам</value>
+        <value plural="n" case="g">Прайс-листа</value>
+        <value plural="y" case="g">Прайс-листов</value>
+        <value plural="n" case="in">Прайс-листом</value>
+        <value plural="y" case="in">Прайс-листами</value>
+        <value plural="n" case="pr">Прайс-листе</value>
+        <value plural="y" case="pr">Прайс-листах</value>
+    </noun>
+
+    
+	
+    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
+        <value plural="n">Смета</value>
+        <value plural="y">Сметы</value>
+        <value plural="n" case="a">Смету</value>
+        <value plural="y" case="a">Сметы</value>
+        <value plural="n" case="g">Сметы</value>
+        <value plural="y" case="g">Смет</value>
+        <value plural="n" case="d">Смете</value>
+        <value plural="y" case="d">Сметам</value>
+        <value plural="n" case="in">Сметой</value>
+        <value plural="y" case="in">Сметами</value>
+        <value plural="n" case="pr">Смете</value>
+        <value plural="y" case="pr">Сметах</value>
+    </noun>
+
+ <!--   <noun name="Report" entity="Report" type="entity" alias="Reports" gender="n" startsWith="c">
+        <value plural="n">Report</value>
+        <value plural="y">Reports</value>
+    </noun> -->
+    
+
+   
+    <!-- Special for Custom Objects/Tabs
+         This is actually, not only for custom object but should be considered as template
+         for any unknown entities.
+    -->
+    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+        <value plural="n">{0}</value>
+        <value plural="y">{0}</value>
+    </noun>
+
+
+    <!--
+        Special nouns - these are not rename-able, but need here for dynamic tag such as
+        <entity/>, <entity_record_type/>
+    -->
+
+
+    
+    
+    <!--==================================================================
+      Other Nouns
+    ======================================================================-->
+
+    <!--******* Accounts *************************************************-->
+    
+    
+    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Имя организации</value>
+        <value plural="y">Имена организаций</value>
+    <value plural="n" case="g">Имени организации</value>
+    </noun>
+    
+   
+     
+     <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
+        <value plural="n">Валюта продукта</value>
+    </noun>
+
+     <import file="adjectives.xml"/>
+</names>
+

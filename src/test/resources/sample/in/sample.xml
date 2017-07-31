@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">ComboBox</param>
+        <param name="select_default">Pilih dari yang ada di bawah ini.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Pilih {0} dari yang ada di bawah ini.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Contact/> <Primary/> </param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Akses</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Dikelola)</param>
+        <param name="activity_history">Riwayat Aktivitas</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Informasi Tambahan</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Asisten</param>
+        <param name="assistant_name">Nama Asisten</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telepon Asisten</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Telepon Asisten</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Ekstensi Telepon Asisten</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Tanggal Lahir</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Isi</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Perusahaan</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Dibuat Oleh</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Dibuat Oleh ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Dibuat oleh Alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Kode ISO Mata Uang</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Bidang Isian Ubahsuai</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Status Default</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Rincian {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Departemen</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Edit {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Penghasilan Yang Diharapkan</param>
+        <param name="first_name">Nama Depan</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Nama Belakang</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Nama Depan (Lokal)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Nama Belakang (Lokal)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Kuartal Fiskal</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Tahun Fiskal</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Nama Lengkap</param> <!-- aliased across app - do not change -->
+        <param name="group">Grup</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Nama Grup</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Nama Antrian</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Industri</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Diubah Terakhir Oleh</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">ID Diubah Terakhir Oleh</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Diubah Terakhir Oleh Alias</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">ID Rekaman Utama</param>
+        <param name="mobile">Seluler</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Telepon Seluler</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Ekstensi Telepon Seluler</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Penggunaan Bersama Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Alias Penugasan</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Daftar Yang Ada</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Nama Perusahaan</param> <!-- aliased across app - do not change -->
+        <param name="activities">Aktivitas</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">tidak ada lampiran</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">Informasi Alamat</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Ditolak</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Default</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Prioritas Default</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Buat Tampilan Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Informasi Ubahsuai</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Status Duplikat</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Alamat Email</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Nama Email</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Template Email</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Email:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Tautan Ubahsuai</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Ukuran File</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Tidak ada data</param>
+        <param name="history_event_checked">Bidang isian sudah diberi tanda centang {0}</param>
+        <param name="history_event_unchecked">Bidang isian sudah dihilangkan tanda centangnya {0}</param>
+        <param name="how_do_i_specify_info">Bagaimana caranya saya menetapkan informasi untuk ditangkap?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Sumber Internal</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Interval:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Sebutan</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Pilih Pemilik Baru</param>
+        <param name="select_a_view">Pilih tampilan dari daftar tarik-turun untuk melihat daftar hasil yang terkait.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Pilih folder dari daftar tarik-turun untuk melihat daftar hasil yang terkait.</param>
+        <param name="select_the_file">Pilih File</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Pilih bidang isian isian untuk menyertakan:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Tanda Tangan</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Subjek</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Informasi Sistem</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Situs Web</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Alias Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Nama Depan Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">ID Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Nama Belakang Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Nama Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Peran Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Tampilan Peran Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Nama Peran Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Primer</param>
+        <param name="primary_contact"><Contact/> <Primary/> </param>
+        <param name="priority">Prioritas</param><!--aliased across labels - do not change -->
+        <param name="private">Pribadi</param>
+        <param name="role">Peran</param> <!--aliased across labels - do not change -->
+        <param name="rating">Peringkat</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Buat Cepat</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Terakhir Dilihat</param>
+        <param name="top5">5 Pertanyaan Teratas</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Vendor</param>
+        <param name="customer">Pelanggan</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Pemasok</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">ID Jenis Rekaman</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ID Divisi</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Enumerasi atau ID Tabel</param>
+        <param name="editable">Bisa Diedit</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Nama Yang Dinormalisasi</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Pernyataan Privasi</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Keadaan Yang Bisa Dikelola</param>
+        <param name="namespacePrefix">Awalan Namespace</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Modul Namespace</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Paket yang Diinstal</param>
+        <param name="initialVersion">Versi Dirilis Pertama</param>
+        <param name="lastVersion">Versi Akhir yang Tersedia</param>
+        <param name="availableInVersions">Tersedia dalam Versi</param>
+        <param name="DeveloperName">Nama Pengembang</param>
+        <param name="apiName">Nama API</param>
+        <param name="InvalidDeveloperNameOnEntity">Bidang isian {0} hanya bisa berisi garis bawah dan karakter alfanumerik. Nama harus unik, dimulai dengan huruf, tidak mencakup spasi, tidak diakhiri dengan garis bawah, dan tidak mengandung dua garis bawah berturut-turut.</param>
+        <param name="missingDevName">{0} harus diisi.</param>
+        <param name="duplicateDevName">{0} ini sudah ada atau pernah digunakan sebelumnya.  Silakan pilih nama unik yang berbeda.</param>
+        <param name="manageabilityOverride">Kesampingkan Kemampuan Mengelola</param>
+        <param name="AMPMId">ID AMPM</param>
+        <param name="MetricsDate">Tanggal Metrik</param>
+        <param name="MayEdit">Boleh Edit</param>
+        <param name="IsLocked">Terkunci</param>
+        <param name="LastViewedDate">Tanggal Dilihat Terakhir</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Buat</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Pengaturan</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Buat Baru...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">File</param>
+        <param name="new_forecast">Proyeksi</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Keranjang Sampah</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Kirim Email</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Diubah Oleh</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Tanggal Dibuat</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Tanggal Pengubahan</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Proses Otomatis</param>
+        <param name="partner_network">Pengguna Sambungan</param>
+        <param name="external_who">Pengguna Publik</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Contoh</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Kesalahan: Data Tidak Benar. &lt;br/&gt;Periksa kembali semua pesan di bawah ini untuk membetulkan data Anda.</param>
+        <param name="EditPageError2">Periksa kembali semua pesan kesalahan di bawah ini untuk membetulkan data Anda.</param>
+        <param name="Required">Anda harus memasukkan sebuah nilai</param>
+        <param name="RequiredWithFieldList">Bidang isian yang wajib diisi terlewat: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Wajib diisi untuk Layanan-Sendiri</param>
+        <param name="RequiredBy">Dibutuhkan oleh: {0}</param>
+        <param name="Requires">Membutuhkan: {0}</param>
+        <param name="TooLong">Nilai terlalu panjang untuk bidang isian</param>
+        <param name="CannotExceedXCharacters">Nilai tidak boleh melebihi {0} karakter</param>
+        <param name="MustBeXCharacters">Nilai harus persis {0} karakter</param>
+        <param name="MustBeNumber">Nilai harus berupa angka</param>
+        <param name="StatusCloseRequired">Anda harus menandai sekurang-sekurangnya satu status sebagai tertutup</param>
+        <param name="StatusDefaultRequired">Anda harus menandai sekurang-kurangnya satu status sebagai default</param>
+        <param name="StatusInUse">Nilai-nilai status berikut ini sedang digunakan dan tidak bisa diedit atau dihapus: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Tanggal Tidak Valid</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Tanggal Tidak Valid. Anda tidak dapat mengatur tanggal melebihi {0}</param>
+        <param name="InvalidDateTime">Tanggal dan Waktu Tidak Valid</param>
+        <param name="InvalidColor">Warna Tidak Valid</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Alamat Internet Tidak Valid</param>
+        <param name="InvalidOption">Pilihan yang tidak valid sudah dipilih</param>
+        <param name="UnsupportedCurrency">Mata uang tidak valid</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL tidak valid</param>
+        <param name="NoneSelectedInPicklist">--tidak ada yang dipilih--</param>
+        <param name="InvalidTime">Waktu tidak valid</param>
+        <param name="InvalidNumber">Nomor tidak valid</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Angka terlalu besar.</param>
+        <param name="TooLargeNumberWithScale">Angka harus kurang dari {0}.</param>
+        <param name="TooSmallNumberWithScale">Angka harus lebih besar dari {0}.</param>
+        <param name="NonpositiveError">Harus positif.</param>
+        <param name="NegativeError">Harus bukan negatif.</param>
+        <param name="PositiveError">Harus bukan positif.</param>
+        <param name="NonnegativeError">Harus negatif.</param>
+        <param name="NonzeroError">Harus bukan nol.</param>
+        <param name="NonintegerError">Harus berupa bilangan bulat.</param>
+        <param name="InvalidPercent">Persen tidak valid</param>
+        <param name="InvalidAfterRoundOff">Angka {0} tidak valid setelah pembulatan pada skala: {1}</param>
+        <param name="CharactersRemaining">tersisa</param>
+        <param name="CharactersOver">melebihi batas</param>
+        <param name="TooManySelection">Anda tidak boleh memilih lebih dari {0} item</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Nilai duplikat pada rekaman: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Nilai bidang isian yang disembunyikan (tidak ditunjukkan) membuat tiruan nilai pada rekaman: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} membuat tiruan nilai pada rekaman dengan id: {1}</param>
+        <param name="True">Benar</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Salah</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Domain Tidak Valid</param>
+        <param name="ReadOnly">Anda tidak dapat mengedit kontrak ini.</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Batalkan</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Terima</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Terima Perubahan</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Aktivasi Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Tambah Komentar</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Tambah Komponen</param>
+        <param name="add_contacts">Tambah <Contacts/></param>
+        <param name="add_leads">Tambah <Leads/></param>
+        <param name="add_more_users">Tambah Lagi Pengguna</param>
+        <param name="add_multiple_users">Tambah Beberapa Pengguna</param>
+        <param name="add_product">Tambah <Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Tambah Item Baris</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Tambah Contoh Papan Instrumen</param>
+        <param name="add_to_call_center">Tambah ke Call Center</param>
+        <param name="add_to_campaign">Tambah ke <Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Tambah ke Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Tambah ke <Pricebook/></param>
+        <param name="add_remove">Tambah/Keluarkan</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Penyusunan Mahir</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Setuju</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Penugasan</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Penugasan Pengguna ke Peran</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Kembali ke Daftar Laporan</param>
+        <param name="billing_and_licenses">Tagihan &amp; Lisensi</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Informasi Tagihan</param>
+        <param name="briefcase_setup">Penyusunan Koper</param>
+        <param name="cancel">Batalkan</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Batalkan Pengiriman</param>
+        <param name="cancel_test_instance">Batalkan Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Ubah Perusahaan</param>
+        <param name="change_currency">Ubah Mata Uang</param>
+        <param name="change_owner">Ubah Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Terima dan Ubah Pemilik</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Terima dan Tugaskan Master</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Ubah Status</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Periksa Ketersediaan</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Periksa Ejaan</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Pilih <Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Bersihkan</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Garis Besar</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Tab {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Daftar</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Salin Rincian Induk</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Lipat Semua</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Pilih satu item dari daftar pilih</param>
+        <param name="composegmail">Menulis Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Konfirmasi</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Lanjutkan</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Tetap Lanjutkan</param>
+        <param name="convert">Konversi</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Konversikan <Lead/></param>
+        <param name="create">Buat</param>
+        <param name="create_follow_up_event">Buat <Event/> Tindak Lanjut</param>
+        <param name="create_follow_up_task">Buat <Task/> Tindak Lanjut</param>
+        <param name="create_new">Buat {0} Baru</param>
+        <param name="create_new_section">Buat Bagian Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Buat <Opportunity/></param>
+        <param name="create_test_instance">Buat Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Buat Database Tes</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Buat Daftar Isian Web-to-Prospek</param>
+        <param name="create_new_holiday">Buat Liburan Baru</param>
+        <param name="create_new_sla_process">Proses <Entitlement/> Baru</param>
+        <param name="create_new_milestone_type">Tonggak Pencapaian Baru</param>
+        <param name="currency_setup">Persiapan Mata Uang</param>
+        <param name="customer_view">Tampilan Pelanggan</param>
+        <param name="customize">Ubahsuai</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Ubahsuai Tampilan untuk Semua Pengguna</param>
+        <param name="page_settings">Pengaturan Halaman</param>
+        <param name="customize_page">Ubahsuai Halaman</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Edit Tata Letak</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Daftar Papan Instrumen</param>
+        <param name="data_export">Ekspor Data</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Pembersihan</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Menolak</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Tautan Ubahsuai Default</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Hapus Akses Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Selesai dengan Pratinjau</param>
+        <param name="dont_save">Jangan Simpan</param>
+        <param name="dont_show_page_again">Jangan tunjukkan ke saya halaman ini lagi</param>
+        <param name="download">Unduh</param>
+        <param name="download_now">Unduh Sekarang</param>
+        <param name="download_sample_css_file">Unduh Contoh File CSS</param>
+        <param name="edit">Edit</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Edit [Beta]</param>
+        <param name="edit_all">Edit Semua</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Edit Pengguna</param>
+        <param name="edit_rates">Edit Peringkat</param>
+        <param name="edit_selected">Edit Yang Dipilih</param>
+        <param name="editProperties">Edit Properti</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Keluar {0}</param>
+        <param name="enable_appstore_user">Berikan Akses Checkout</param>
+        <param name="enable_as_partner">Aktifkan Sebagai Partner</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Aktifkan Portal Login Partner</param>
+        <param name="enable_self_service">Aktifkan Layanan-Sendiri</param>
+        <param name="enable_users">Aktifkan Pengguna Baru</param>
+        <param name="enableForecasting">Aktifkan Proyeksi yang Dapat Diubahsuai</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Masukkan Latihan</param>
+        <param name="erase_test_instance">Hapus Sandbox</param>
+        <param name="establish">Tetapkan</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Bentangkan Semua</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Ekspor Rincian</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Ekspor Rincian Sekarang</param>
+        <param name="export_background">Jalankan Ekspor Latar Belakang...</param>
+        <param name="fctHistory">Riwayat Proyeksi</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Ringkasan Proyeksi</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Validasi Bidang Isian</param>
+        <param name="find">Temukan</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Temukan Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Temukan <Document/></param>
+        <param name="find_pricebooks">Temukan <Pricebook/></param>
+        <param name="find_products">Temukan <Product/></param>
+        <param name="find_solution">Temukan <Solution/></param>
+        <param name="finished">Selesai</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Teruskan</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Teruskan ke Sambungan</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Membuat WSDL</param>
+        <param name="generate_login_html">Membuat Login HTML</param>
+        <param name="getMoreInfo">Dapatkan Info Selengkapnya</param>
+        <param name="go">Jalankan!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Bantuan untuk Halaman ini</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Bantuan {0}</param>
+        <param name="hide">Sembunyikan Rincian</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Saya Terima</param>
+        <param name="i_decline">Saya Menolak</param>
+        <param name="impactAnalysis">Di mana ini digunakan?</param>
+        <param name="import">Impor</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Impor <Leads/></param>
+        <param name="include_offline">Termasuk Offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Sisipkan</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Sisipan yang Dipilih</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Instal Sekarang</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Undang</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Undang ke Menyambung</param>
+        <param name="jigsawsearch">Dapatkan Kontak</param>
+        <param name="join_meeting">Ikut Pertemuan</param>
+        <param name="jumpstart">Langsung Mulai</param>
+        <param name="keep_in_touch">Permintaan Perbarui</param>
+        <param name="layout_assignment">Penugasan Tata Letak</param>
+        <param name="legal_view">Tampilan Hukum</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Kunci Rekaman</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Login Sebagai Pengguna Partner</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Kelola Anggota</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Permintaan Pertemuan Baru</param>
+        <param name="add_members_search">Tambah Anggota - Cari</param>
+        <param name="add_members_import">Tambah Anggota - Impor File</param>
+        <param name="edit_members_search">Edit Anggota - Cari</param>
+        <param name="update_members_import">Perbarui &amp; Tambahkan Anggota - File Impor</param>
+        <param name="manage_call_center_users">Kelola Pengguna Call Center</param>
+        <param name="map_lead_fields">Peta <Lead_Fields/></param>
+        <param name="mark_as">Tandai Sebagai...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Impor Anggota</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Ubah Pengingat Individu</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Baru</param>
+        <param name="newcase">Baru</param>
+        <param name="new_addition_order">Pesanan Penambahan Baru</param>
+        <param name="new_custom_object">Objek Ubahsuaian Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Buat Laporan Ubahsuaian Baru</param>
+        <param name="new_dashboard">Papan Instrumen Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Komponen Papan Instrumen Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/> <New/></param>
+        <param name="new_email_template">Template Baru</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><Entity entity="0"/> <New/></param>
+        <param name="new_entitlement_template">Template Baru</param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="new_folder">Folder Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Grup Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Antrian Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Catatan Baru</param>
+        <param name="new_object_custom_tab">Tab Objek Ubahsuaian Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Bertemu Online</param>
+        <param name="new_order">Pesanan Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Grup Pribadi Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><Product/> <New/></param>
+        <param name="new_reduction_order">Pesanan Pengurangan Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Peran Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Tombol Baru</param>
+        <param name="new_territory">Wilayah Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_user">Penguna Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Tab Integrasi Web Baru</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><Quote/> <New/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Lakukan Pembaruan Lainnya</param>
+        <param name="performAnotherMigrate">Migrasikan Profil Lain</param>
+        <param name="preview">Pratinjau</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Hitung Ulang</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Tetapkan Ulang</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Tolak</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Tolak Perubahan</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Keluarkan Pengguna</param>
+        <param name="remove_from_briefcase">Keluarkan Dari Koper</param>
+        <param name="remove_from_campaign">Keluarkan dari <Campaign/></param>
+        <param name="reorder">Pesan Ulang</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Perbaiki</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Jalankan Semua Tes</param>
+        <param name="run_test">Jalankan Tes</param>
+        <param name="quick_save">Simpan Cepat</param>
+        <param name="quick_save_hover">Simpan dan lanjutkan edit</param>
+        <param name="reply">Balas</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Balas Ke Semua</param>
+        <param name="reportmanager">Manajer Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Reset Sandi</param>
+        <param name="reset_passwords">Reset Sandi</param>
+        <param name="retrieve_prices">Buka Harga</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Jalankan Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Simpan</param> <!-- aliased across labels do not change -->
+        <param name="saving">Menyimpan...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Simpan &amp; Tambah Harga</param>
+        <param name="save_and_add_product">Simpan &amp; Tambah <Product/></param>
+        <param name="save_and_clone">Simpan &amp; Kloning Lagi</param>
+        <param name="save_and_close">Simpan &amp; Tutup</param>
+        <param name="save_and_attach">Simpan &amp; Tambah Lampiran</param>
+        <param name="save_and_continue">Simpan &amp; Berikutnya</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Simpan &amp; Selengkapnya</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Simpan &amp; <Event/> <New/></param>
+        <param name="save_and_new_product">Simpan &amp; <Product/> <New/></param>
+        <param name="save_and_new_task">Simpan &amp; <Task/> <New/></param>
+        <param name="save_and_refresh">Simpan &amp; Segarkan</param>
+        <param name="save_and_send">Simpan  &amp; Kirim Pembaruan</param>
+        <param name="event_scheduler">Klien &amp; Tampilan Team &gt;</param>
+        <param name="saveAs">Simpan Sebagai</param>
+        <param name="schedule_to_email">Jadwal Untuk Email</param>
+        <param name="schedule_to_print">Jadwal Untuk Print</param>
+        <param name="scrutinize">Periksa</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Temukan <KnowledgeArticles/></param>
+        <param name="newArticle">Baru</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Pilih Template</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Layanan-Sendiri Langsung Mulai</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Layanan-Sendiri Penyusunan</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Lihat/Aktifkan Layanan-Sendiri</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Kirim</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Kirim Email ke <all/> <contacts/></param>
+        <param name="send_invitation">Simpan  &amp; Kirim Undangan</param>
+        <param name="set_status">Kelola Status</param>
+        <param name="setup_and_install">Setup &amp; Instal</param>
+        <param name="setup_roles">Menyusun Peran</param>
+        <param name="setup_sharing">Menyusun Penggunaan Bersama</param>
+        <param name="sfga_instructions">Selesaikan Instruksi Yang Bisa Dicetak</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Tunjukan Rincian</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Lewati</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Urutkan</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Mulai Pertemuan</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Kirim</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Serahkan &amp; Tambah Lampiran</param>
+        <param name="subscribe_now">Berlangganan Sekarang!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Upgrade Sekarang!</param>
+        <param name="suggest">Lihat <Solutions/> <Suggested/> </param>
+        <param name="take_training_now">Ikuti Pelatihan Sekarang!</param>
+        <param name="terminate">Hentikan</param>
+        <param name="training_history">Riwayat Pelatihan</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Transfer</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Percobaan Sekarang!</param>
+        <param name="undelete">Batal Menghapus</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Urungkan</param>
+        <param name="unlock">Buka Kunci Rekaman</param>
+        <param name="update">Perbarui</param>
+        <param name="update_campaign_history">Perbarui &amp; Tambahkan <Campaign_Members/></param>
+        <param name="update_now">Perbarui Sekarang</param>
+        <param name="update_statuses">Perbarui Status</param>
+        <param name="upload">Unggah</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Dependensi Bidang Isian</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Lihat Komponen yang Dihapus</param>
+        <param name="view_partnerforce">Lihat Pengguna Partner</param>
+        <param name="view_self_service">Lihat Layanan-Sendiri</param>
+        <param name="view_customer_success">Lihat Portal Pengguna Pelanggan</param>
+        <param name="enable_customer_success">Aktifkan Portal Pengguna Pelanggan</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Apa ini?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Tutup jendela ini</param>
+        <param name="runApexRecalc">Hitung Ulang Apex Sharing</param>
+        <param name="disablecustomerportal">Nonaktifkan Pengguna Portal Pelanggan</param>
+        <param name="disablepartnerportal">Nonaktifkan Pengguna Mitra</param>
+        <param name="disablecustomerportalaccount">Nonaktifkan Account Portal Pelanggan</param>
+        <param name="disablepartnerportalaccount">Nonaktifkan Account Mitra</param>
+        <param name="voteup">Suka</param>
+        <param name="votedown">Tidak Suka</param>
+        <param name="markquestionunanswered">Tandai sebagai Belum Dijawab</param>
+        <param name="markbestanswer">Tandai sebagai Jawaban Terbaik</param>
+        <param name="requestUseSfdcAction">Temukan Sambungan</param>
+        <param name="addPET">Tambahkan Template Pemberian Hak</param>
+        <param name="truncate">Potong</param>
+        <param name="disableprmsuperuser">Nonaktifkan Akses Super Partner</param>
+        <param name="enableprmsuperuser">Aktifkan Akses Super Partner</param>
+        <param name="purchase_more">Beli Lebih Banyak</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Kembali Ke Atas</param>
+        <param name="descriptionText">Isi teks terlalu panjang. Silakan lihat rincian.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Lihat file</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Induk</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Tidak Ada Informasi Yang Terkait</param>
+        <param name="no_records">Tidak ada rekaman yang ditampilkan</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Tunjukkan {0} selengkapnya "</param>
+        <param name="NextMoreGeneric">Tunjukkan selengkapnya "</param>
+        <param name="view_more">Ke daftar</param>
+        <param name="view_more_tot">Ke daftar ({0})</param>
+        <param name="view_more_tot_plus">Ke daftar ({0}+)</param> <!-- -->
+        <param name="view_more_1">Ke daftar dengan satu rekaman lagi</param> <!-- Singular -->
+        <param name="view_more_n">Ke daftar dengan {0} rekaman lainnya</param> <!-- Plural -->
+        <param name="view_more_n_plus">Ke daftar dengan {0}+ rekaman</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Lebih banyak lagi tersedia; Ke daftar</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Kemungkinan</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Sumber</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Dimenangkan</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Periode Fiskal</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Catur Wulan {1} dari Tahun {0}</param>
+        <param name="opportunities_next_step">Langkah Berikutnya</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Perbarui</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <Open/></param>
+        <param name="activities_open"><Activities/> <Open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Terkait Dengan</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Catatan</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Docs</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Catatan &amp; Lampiran</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Judul Catatan</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Lampiran</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Lampiran</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Nama File</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Kepemilikan</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Primer</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> yang ditampilkan</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Tanggal</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Gelar</param>
+        <param name="object_title">Gelar</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Nama</param>
+        <param name="object_name">Nama</param>
+        <param name="date">Tanggal</param>
+        <param name="due_date">Tanggal Jatuh Tempo</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Terakhir Diubah</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Diperbarui Oleh</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Primer</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Kompetitor</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Nama Kompetitor</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Kekuatan</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Kelemahan</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Kemungkinan (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Selesai</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Tandai {0} sebagai Selesai</param>
+        <param name="task_date">Tanggal</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Nama</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Penangguhan Persetujuan <Contract/></param>
+        <param name="task_none">Anda tidak mempunyai <tasks/> <open/> yang dijadwalkan untuk periode ini.</param>
+        <param name="task_mode_today">Hari Ini</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Hari Ini + Lewat Masa</param>
+        <param name="task_mode_tomorrow">Besok</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">{0} Hari Berikutnya</param>
+        <param name="task_mode_next_7days_overdue">{0} Hari Berikutnya + Lewat Masa</param>
+        <param name="task_mode_overdue">Lewat Masa</param>
+        <param name="task_mode_this_month">Bulan Ini</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Semua Terbuka</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Riwayat</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Berita</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Berita Utama</param>
+        <param name="new_date">Tanggal</param>
+        <param name="news_none">Tidak ada berita</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Template Penggabungan Email</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/> Teratas</param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Tanggal Ditambahkan</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Ditambahkan Oleh</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <Solutions/> yang Dilampirkan</param>
+        <param name="description">Keterangan</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Ticker</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Tidak ada data <Activity_History/> yang ditampilkan.</param>
+        <param name="nonotes">Tidak ada data Riwayat Catatan yang ditampilkan.</param>
+        <param name="noattachments">Tidak ada data Riwayat Lampiran yang ditampilkan.</param>
+        <param name="viewallattachments">Lihat Semua Lampiran</param>
+        <param name="viewalldocsattachments">Lihat Semua Google Docs &amp; Lampiran</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Tanggal</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Keterangan Baris</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Tangkapan API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Difilter berdasarkan Pengguna</param>
+        <param name="apicapture_filterip">Difilter berdasarkan IP</param>
+        <param name="apicatpure_numbers">Tangkapan</param>
+        <param name="apicapture_soapscope">Lihat Tangkapan</param>
+        <param name="apicapture_active">Aktif</param>
+        <param name="apicapture_none">Tidak Ada Tangkapan</param>
+        <param name="apicapture_new">Mulai Tangkapan Baru</param>
+        <param name="apicapture_view">Lihat</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Riwayat Login</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">tidak ada login</param>
+        <param name="login_none">Tidak ada riwayat login</param>
+        <param name="login_username">Nama pengguna</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Waktu Login</param>
+        <param name="login_type">Jenis Login</param>
+        <param name="login_ip">IP Sumber</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N/A</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Browser</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platform</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Resolusi</param>
+        <param name="login_clientversion">Versi Klien</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Aplikasi</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Jenis API</param>
+        <param name="login_apiversion">Versi API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Berhasil</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Unduh riwayat login selama enam bulan terakhir, termasuk login dari luar website, seperti login API (file .csv Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Unduh riwayat login, termasuk login dari website saja (file .csv Excel)</param>
+        <param name="login_history_download_title">Opsi Download</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">File CSV</param>
+        <param name="login_history_download_file_type_gzip">File GZIP</param>
+        <param name="login_history_download_file_type_help">File CSV (comma separated value) dapat dilihat oleh banyak program dan editor teks. Files GZIP (GNU zip) dimampatkan untuk mengurangi ukurannya.</param>
+        <param name="login_history_download_option_title">Isi File</param>
+        <param name="login_history_download_option_all">Semua Login</param>
+        <param name="login_history_download_option_ie6_only">Login IE6 SAJA</param>
+        <param name="login_history_download_option_web_only">Login Situs Web SAJA</param>
+        <param name="login_history_download_option_help">"Semua Login" mencakup login dari semua sumber, seperti situs web, Outlook, Integrasi API, dll. "Login IE6" mencakup hanya login dari pengguna yang menggunakan Internet Explorer 6. "Login Situs Web" hanya mencakup login dari halaman login Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Masih menggunakan IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce mulai mengurangi penggunaan IE6. Gunakan opsi unduhan yang diberikan untuk menemukan browser yang sedang digunakan di organisasi Anda.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL Login</param>
+        <param name="order_history">Riwayat Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Tidak Ada Pesanan</param>
+        <param name="order_number">Jumlah Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Tanggal Pesanan</param>
+        <param name="order_currency">Mata Uang</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Biaya Total</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Dijual Kepada</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Tidak ada <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Nomor&lt;BR&gt;Baris</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Harga Bulanan</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Rujukan Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Frekuensi Penagihan&lt;BR&gt;(bulan)</param>
+        <param name="bo_order_items_billing_frequency_text">Frekuensi Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Jangka Pesanan&lt;BR&gt;(bulan)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Tanggal</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Faktur</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Tidak ada faktur</param>
+        <param name="invoices_invoice_number">Nomor Faktur</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Tanggal Faktur</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Tanggal Jatuh Tempo Faktur</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">ID Sistem Eksternal</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Jumlah Total</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Jatuh Tempo Neraca</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Kredit Total</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Write-off Total</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Kontak Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Perusahaan Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Riwayat Faktur</param>
+        <param name="revenue_schedule">Jadwal</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Tanggal</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Pendapatan</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Komentar</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Riwayat Status</param>
+        <param name="status_none">Tidak ditemukan riwayat status</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Pilihan Layanan</param>
+        <param name="services_none">Tidak ada layanan</param>
+        <param name="services_description">Layanan</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Harga Satuan</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Harga Total</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Diskon</param>
+        <param name="training">Riwayat Kelas Pelatihan</param>
+        <param name="training_none">Tidak Ada</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Nama Kelas</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Tanggal Diambil</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Direspons</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Default</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> yang ditetapkan</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Tanggal Mulai</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Tanggal Akhir</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Nilai Sepanjang Hayat</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Memiliki Aturan Pembelian</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Frekuensi Penagihan&lt;br&gt;(bulan)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Ditagih Melewati Tanggal</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <Billed/></param>
+        <param name="event_attending"><Event/> yang Diterima </param>
+        <param name="event_notdecided">Tidak Direspons</param>
+        <param name="event_declined"><Event/> yang Ditolak</param>
+        <param name="event_attending_none">Tidak ada pengunjung yang diterima</param>
+        <param name="event_notdecided_none">Semua pengunjung direspons</param>
+        <param name="event_declined_none">Tidak ada pengunjung yang ditolak</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Nama</param>
+        <param name="documents_size">Ukuran</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Pengarang</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Lihat Pelacakan Audit Persiapan</param>
+        <param name="download">unduh</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">20 entri terakhir untuk perusahaan Anda tertera di bawah ini. Anda bisa {0} pelacakan audit persiapan organisasi Anda selama enam bulan terakhir (fie .csv Excel).</param>
+        <param name="setup_audit_date">Tanggal</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Tindakan</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Bagian</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Delegasikan Pengguna</param>
+        <param name="setup_audit_proxyinguser_help">Kolom ini berisi daftar nama pengguna yang mengubah persiapan atas nama pengguna akhir. Sebagai contoh, apabila pengguna mendapatkan akses login ke perwakilan dukungan, maka nama pengguna dari perwakilan akan tercatat.</param>
+        <param name="setup_audit_trail_none">Tidak ada informasi pelacakan audit persiapan</param>
+        <param name="setup_audit_download_csv">Unduh pelacakan audit persiapan selama enam bulan terakhir (file .csv Excel)</param>
+        <param name="DashboardComponents_title">Komponen Papan Instrumen</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Tidak Ada Komponen Papan Instrumen</param>
+        <param name="translated_templates_none">Tidak Ada Template Email Yang Diterjemahkan</param>
+        <param name="translated_templates_title">Template Email Yang Diterjemahkan</param>
+        <param name="translated_templates_language">Bahasa</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktif</param>
+        <param name="desc_pnet_conn_audit_trail">20 entri terakhir untuk perusahaan Anda tertera di bawah ini. Anda bisa {0} riwayat pelacakan audit sambungan penuh sebagai file .csv Excel.</param>
+        <param name="pnet_conn_audit_trail">Riwayat Sambungan</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Tanggal</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Tidak ada informasi pelacakan audit persiapan sambungan</param>
+        <param name="pnet_conn_audit_download_csv">Unduh riwayat sambungan (csv)</param>
+        <param name="pnet_entity_conns_title">Berbagi Eksternal</param>
+        <param name="pnet_entity_conn_stop_sharing">Berhenti Berbagi</param>
+        <param name="pnet_pub_title">Objek Yang Dipublikasikan</param>
+        <param name="pnet_sub_title">Objek yang Dilanggani</param>
+        <param name="pnet_pubsub_object">Nama Objek</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Bidang Isian</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Publikasikan/ Batalkan Publikasi</param>
+        <param name="pnet_sub_edit">Berlangganan/ Berhenti Berlangganan</param>
+        <param name="pnet_pub_edit_object">Objek dipublikasikan.</param>
+        <param name="pnet_pub_edit_field">Klik Edit di bawah ini untuk mempublikasikan bidang isian yang ada pada tiap objek.</param>
+        <param name="pnet_sub_edit_object">Objek yang dilanggani.</param>
+        <param name="pnet_sub_edit_field">Klik Edit di bawah ini untuk berlangganan bidang isian yang ada pada tiap objek.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Isi</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Lampiran Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Kesalahan Memuat Daftar Terkait</param>
+        <param name="ajax_exception_desc">Ada masalah dalam mengumpulkan informasi daftar terkait untuk rekaman ini. Jika memuat ulang halaman tidak menyelesaikan masalah, harap hubungi administrator atau &lt;a href="{0}" title="report{1}"&gt;laporkan&lt;/a&gt; ke tim Dukungan Pelanggan.</param>
+        <param name="category_access_title">Pengaturan Visibilitas Grup Kategori</param>
+        <param name="category_access_video_tutorial">Tutorial Video</param>
+        <param name="category_access_name">Grup Kategori</param>
+        <param name="category_access_access">Visibilitas</param>
+        <param name="category_access_details">Rincian Visibilitas</param>
+        <param name="category_access_custom">Ubahsuai</param>
+        <param name="category_access_full">Semua</param>
+        <param name="category_access_inherited">Diwarisi dari {0}</param>
+        <param name="category_access_revoked">Tidak Ada</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">peran dan subordinat</param>
+        <param name="category_access_noCategories">Tidak ada kategori yang terlihat ke {0} ini</param>
+        <param name="category_access_allCategories">Semua kategori terlihat ke {0} ini</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} untuk {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">General US &amp; Western Europe (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japanese (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japanese (JIS)</param>
+        <param name="4">Japanese (EUC)</param>
+        <param name="5">Korean (ks_c_5601-1987)</param>
+        <param name="6">Traditional Chinese (Big5)</param>
+        <param name="7">Simplified Chinese (GB2312)</param>
+        <param name="8">Traditional Chinese Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Japanese (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Organisasi Percobaan</param>
+        <param name="expand">Klik untuk Membuka Sidebar [Alt+S]</param>
+        <param name="collapse">Klik untuk Menutup Sidebar [Alt+S]</param>
+        <param name="expandNoHotkey">Klik untuk Membuka Sidebar</param>
+        <param name="collapseNoHotkey">Klik untuk Menutup Sidebar</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Naik</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Turun</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Pindahkan</param>
+        <param name="top">Atas</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Bawah</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Silakan isi daftar isian wajib.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Semua Pengguna</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Baru</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Tambahkan</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Hapus</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Ubah]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Bagaimana cara saya...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Lihat Selengkapnya</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="log_call">Log Panggilan</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Buat Catatan</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Penggabungan Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Lihat Semua</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Lampirkan File</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Bagaimanakah Saya?</param>
+        <param name="send_email">Kirim Email</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Gambar yang ditambahkan pengguna</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Aplikasi</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Tampilan Cetak</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Kloning</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Berbagi</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Beranda</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Informasi selengkapnya!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Pilih Satu:</param>
+        <param name="hotlist_mode">Pilihan Tampilan</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Tunjukkan {0,number,integer} item</param>
+        <param name="hotlist_empty_title">Tidak ada rekaman terakhir. Klik Jalankan atau pilih tampilan dari daftar tarik turun untuk menampilkan rekaman.</param>
+        <param name="hotlist_empty_description">Tidak ada rekaman untuk kriteria ini.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Buka Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Pusat Sumberdaya</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Dengan Pusat Sumberdaya Anda bisa meneliti prospek, menemukan layanan pihak ketiga, dan masih banyak lagi lainnya.</param>
+        <param name="resource_center_link_text">Pergi ke Pusat Sumberdaya</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Metodologi Penjualan</param>
+        <param name="hotlist_recently_modified">Terakhir Diubah</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Terakhir Dibuat</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Terakhir Dilihat</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Tidak ada--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Pilih--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Default--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Tidak Bisa Diterapkan**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Administrator Anda belum menentukan Tautan Ubahsuai.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Langsung Ke:</param>
+        <param name="JumpToStep">Langkah {0}: {1}</param>
+        <param name="CloseWizard">Tutup Penuntun</param>
+        <param name="LeftHeader">Langkah {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Langkah {0} dari {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Langkah {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Simpan &amp; Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Berikutnya</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Sebelumnya</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Penuntun Penyusunan Organisasi untuk {0}</param>
+        <param name="ImportWizardTitle">Impor Penuntun untuk {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Pusat Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Pendaftaran Percobaan</param>
+        <param name="WizardBody">Isi Penuntun</param>
+        <param name="WizardFooter">Catatan Kaki Penuntun</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Alamat</param><!-- translators note - this is actually the full address -->
+        <param name="street">Alamat</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Kota</param><!-- aliased across label files - do not change -->
+        <param name="state">Provinsi/ Negara Bagian</param><!-- aliased across label files - do not change -->
+        <param name="zip">Kode Pos</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Kode Pos</param> <!-- aliased across label files - do not change -->
+        <param name="country">Negara</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telepon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Ekstensi</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Faks</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Ekstensi Faks</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Email</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Alamat Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Jalan Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Kota Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Provinsi/ Negara Bagian Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Kode Pos Pengiriman</param>
+        <param name="shippingzippostalcode">Kode Pos Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Negara Pengiriman</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Alamat Tagihan</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Kota Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Provinsi/ Negara Bagian Tagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Kode Pos Tagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Negara Penagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Jalan Tagihan</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Jalan Bank</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Alamat Bank</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Kota Bank</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Provinsi/ Negara Bagian Bank</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Kode Pos Bank</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Negara Bank</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Alamat Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Jalan Surat</param>
+        <param name="mailingcity">Kota Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Provinsi / Negara Bagian Surat</param>
+        <param name="mailingzip">Kode Pos Surat</param>
+        <param name="mailingcountry">Negara Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Alamat Surat Baris 1</param>
+        <param name="mailingaddress2">Alamat Surat Baris 2</param>
+        <param name="mailingaddress3">Alamat Surat Baris 3</param>
+        <param name="otheraddress">Alamat Lain</param>
+        <param name="otheraddress1">Alamat Lain Baris 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Alamat Lain Baris 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Alamat Lain Baris 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Jalan Lain</param>
+        <param name="otherstreet2">Jalan Lain 2</param>
+        <param name="otherstreet3">Jalan Lain 3</param>
+        <param name="othercity">Kota Lain</param>
+        <param name="otherstate">Provinsi/ Negara Bagian Lain</param>
+        <param name="otherzipcode">Kode Pos Lain</param>
+        <param name="otherpostalcode">Kode Pos Lain</param>
+        <param name="otherzippostalcode">Kode Pos Lain</param>
+        <param name="othercountry">Negara Lain</param>
+        <param name="otherphone">Telepon Lain</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Ekstensi Telepon Lain</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Alamat 1</param>
+        <param name="address2">Alamat 2</param>
+        <param name="address3">Alamat 3</param>
+        <param name="home_phone">Telepon Rumah</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Memuat...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Lokasi</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Kuantitas</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Edisi Dasar</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Hubungi Manajer</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Ya</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Tidak</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Selamat datang di salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Hak Cipta © 2000-{0} salesforce.com, inc. Semua hak dilindungi undang-undang.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Hak Cipta &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Semua hak dilindungi undang-undang.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 Kepatuhan</param>
+        <param name="copyright_nohtml">Hak cipta (c) 2000-{0} salesforce.com, inc. Semua hak dilindungi undang-undang.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Hak Cipta © {0} {1}. Semua hak dilindungi undang-undang.</param>
+        <param name="brandedCopyrightWithLink">Hak cipta &amp;salinan; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Semua hak dilindungi undang-undang.</param>
+        <param name="brandedCopyright_nohtml">Hak Cipta (c) {0} {1}. Semua hak dilindungi undang-undang.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Pernyataan Keamanan</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Syarat Penggunaan</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Terima kasih karena Anda telah memilih salesforce.com. Sebelum bisa mulai menggunakan salesforce.com, Anda harus membaca dan menyetujui Syarat Penggunaan di bawah ini. Setelah Anda selesai, silakan melanjutkan dengan menekan tombol "Saya Setuju". Perlu dicatat, bahwa jika Anda tidak menerima Syarat Penggunaan ini maka Anda tidak akan bisa login ke salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Selesai</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Tambah Sekarang!</param>
+        <param name="remove">Hapus</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Baru</param>
+        <param name="exciting_and_new">Baru!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">di sini</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Buat</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Tutup Jendela</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Cetak Halaman Ini</param>
+        <param name="new_window">(Jendela Baru)</param>
+        <param name="new_focus">(Pergeseran Fokus)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Frame Disembunyikan - Abaikan</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">pilih semua</param>
+        <param name="select_shown">Pilih yang Ditampilkan</param>
+        <param name="remove_shown">Hapus yang Ditampilkan</param>
+        <param name="select_none">Tidak Ada yang Dipilih</param>
+        <param name="all_active">Semua Aktif</param>
+        <param name="all_inactive">Semua Tidak Aktif</param>
+        <param name="are_you_sure">Anda yakin?</param>
+        <param name="irreversible_are_you_sure">Tidak bisa dibalik! Anda yakin?</param>
+        <param name="replace">Ganti</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Selesaikan</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} menit</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Ditemukan banyak item. Pilih dari tarik-turun atau klik ikon untuk mempersempit pencarian.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Reset</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Kesampingkan</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Total</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Klik di sini</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Catatan kepada webmaster:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML Sampel</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Sandi</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Jangan tunjukkan halaman ini lagi</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Sembunyikan pesan ini untuk: </param>
+        <param name="dontShowMessageAgain">Jangan tunjukkan pesan ini lagi</param>
+        <param name="dismissMessage">Abaikan pesan ini</param>
+        <param name="allObjects">Semua Objek</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Tekan tombol spasi atau Enter untuk membuka</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Layanan-Sendiri: <Case_Detail/></param>
+        <param name="CssEdit">Layanan-Sendiri: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Feed <Case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Komentari</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Objek Ubahsuai</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definisi Objek Ubahsuai</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Papan Instrumen</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Papan Instrumen</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Urungkan Semua Pilihan</param>
+        <param name="deselect_shown">Urungkan Pilihan yang Ditunjukkan</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Template Penggabungan Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Template Penggabungan Surat</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Folder</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Folder</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Proyeksi</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Proyeksi</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Supervisor Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Faktur</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Catatan</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Item Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Item Pesanan</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Pembayaran</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Pembayaran</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">laporan</param>
+        <param name="Reports">Laporan</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Pendaftaran</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Template</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Template</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabel</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktif</param>
+        <param name="amount">Jumlah</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Pendapatan Tahunan</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Lampiran Dokumen</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Ubah Sandi</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Menutup</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Ditutup</param>
+        <param name="closed_date">Tanggal Ditutup</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Tanggal Tutup</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Tanggal Buat</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Jenis Data</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Dihapus</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Informasi Uraian</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Karyawan</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">File</param>   <!-- aliased across labels; do not change -->
+        <param name="files">File</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Informasi Umum</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Dapatkan Info Sebelum Anda Mulai</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Label</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Login Terakhir</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Tanggal Diubah Terakhir</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Nama</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Nama</param>
+        <param name="new_status">Status Baru</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Tidak Ada</param>
+        <param name="open">Buka</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organisasi</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Tidak ada yang cocok.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Semua</param>
+        <param name="clear">Hapus</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Klik ikon pencarian...</param>
+        <param name="click_lookup_icon_info">Klik ikon pencarian untuk memilih nilai.</param>
+        <param name="clear_all">Hapus Semua</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Klik tombol Lampirkan.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Kesalahan</param> <!-- aliased across lables - do not change -->
+        <param name="high">Tinggi</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Bantuan</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Bawa Saya Ke Sana!</param>
+        <param name="keywords">Kata Kunci</param>
+        <param name="length">Panjang</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Status</param> <!-- aliased across lables - do not change -->
+        <param name="title">Gelar</param>
+        <param name="object_title">Gelar</param>
+        <param name="type">Jenis</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Pengguna</param> <!--aliased across labels - do not change -->
+        <param name="Users">Pengguna</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Kumpulan Izin</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Pemilik</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">alami kesuksesan.</param>
+        <param name="DontShowPage">Jangan tunjukkan ke saya halaman ini lagi</param>
+        <param name="click_here_to_create_new_account">{0} untuk membuat <account/> <new/> sekarang.</param>
+        <param name="click_here_to_create_new_contact">{0} untuk membuat <contact/> <new/> sekarang.</param>
+        <param name="click_here_to_create_new_lead">{0} untuk membuat <lead/> <new/> sekarang.</param>
+        <param name="click_here_to_create_new_opportunity">{0} untuk membuat <opportunity/> <new/> sekarang.</param>
+        <param name="click_here_to_create_new_product">{0} untuk membuat <product/> <new/> sekarang.</param>
+        <param name="SystemModstamp">Modstamp Sistem</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divisi</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Memproses</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Memperbarui rekaman...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Terjemahan Statis</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Sembunyikan halaman ini mulai sekarang</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Mengunggah...</param>
+        <param name="uploading_title">Mengunggah</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Mengimpor...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">dan </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Kesalahan: Tidak ada akses ke bidang isian ini</param>
+        <param name="noReadAccess">Anda tidak memiliki akses untuk melihat rekaman ini.</param>
+        <param name="noAccessToUser">Anda tidak memiliki akses ke pengguna ini.</param>
+        <param name="disabledButton">Tombol dinonaktifkan: {0}</param>
+        <param name="RequiredHeader">Informasi yang Dibutuhkan</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Sisipkan Gambar</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Anda yakin ingin menghapus Rentang Login IP</param>
+        <param name="AMPM">Entri AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Komponen Dilindungi</param>
+        <param name="dialogCloseConfirm">Jendela konfirmasi yang baru saja dilihat mungkin telah ditutup lebih awal. Klik OK untuk kembali, atau Batalkan untuk membatalkan peringatan ini.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Permulaan Dialog</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Hasil Pencarian</param>
+        <param name="Recent">Terakhir Dilihat</param>
+        <param name="NoMatchHeader">Tidak ditemukan data karena salah satu dari yang berikut ini:</param>
+        <param name="BulletOne">Tidak ada data dari jenis ini</param>
+        <param name="BulletTwo">Anda tidak memiliki izin untuk melihat data</param>
+        <param name="BulletThree">Data tidak cocok dengan kriteria filter administrator Anda</param>
+        <param name="BulletFour">Satu kolom pengontrol kosong atau tidak valid (Kolom pengontrol:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Pengguna yang Ada</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Pengguna yang Dipilih</param>
+        <param name="LicensedUsers">Pengguna Berlisensi</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Dipilih untuk Dikeluarkan</param>
+        <param name="Selected">Dipilih</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Terpilih</param>
+        <param name="UnassignedPackages">Paket yang Tidak Ditugaskan</param>
+        <param name="SelectedPackages">Paket Yang Dipilih</param>
+        <param name="InView">terlihat</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">File ini melebihi batas ukuran maksimal {0}.</param>
+        <param name="no_file_specified">Tolong cantumkan file yang hendak diunggah. Ketik di lintasan ke file, atau gunakan tombol "Browse" untuk mencarinya di dalam sistem file lokal Anda.</param>
+        <param name="invalid_file_type">Jenis file yang Anda maksudkan saat ini tidak didukung.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Nama file melebihi panjang maksimal yang diperbolehkan, yaitu {0} karakter.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Ekstensi nama file melebihi panjang maksimal yang diperbolehkan, yaitu {0} karakter.</param>
+        <param name="bytes">byte</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Jenis file HTML tidak diizinkan dengan alasan keamanan.</param>
+        <param name="attachment_size_exceeded">File yang diunggah melampaui ukuran maksimum.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Kesalahan:&lt;/b&gt; Anda harus memilih sebuah gambar untuk diunduh</param>
+        <param name="upload_file_too_large">&lt;b&gt;Kesalahan:&lt;/b&gt; Gambar melebihi batas ukuran 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Kesalahan:&lt;/b&gt; Anda hanya dapat menyisipkan file .gif, .jpeg atau .png.</param>
+        <param name="upload_failed">&lt;b&gt;Kesalahan:&lt;/b&gt; Pengunggahan gagal - Coba lagi nanti.</param>
+        <param name="invalid_file">&lt;b&gt;Kesalahan:&lt;/b&gt; File bukan file gambar yang valid.</param>
+        <param name="invalid_param">&lt;b&gt;Kesalahan:&lt;/b&gt; Parameter tidak valid.</param>
+        <param name="access_failed_alt">Gambar ini tidak tersedia karena: Anda tidak memiliki izin untuk melihatnya, atau telah dihapus dari sistem</param>
+        <param name="weekly_export_folder">Jaminan Unggahan Lain/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} berhasil dibuat.</param>
+        <param name="Failure_message">Pembuatan Gagal.</param>
+        <param name="Common_success_message">Pembuatan berhasil.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Minta Pengurangan Lisensi</param>
+        <param name="pageheader">Harap isi semua bidang isian yang diperlukan untuk mengirimkan permintaan pengurangan lisensi Anda. Ini adalah cara tercepat untuk memproses permintaan Anda.  Harap jangan kirim beberapa permintaan untuk lisensi yang sama karena ini dapat menyebabkan penundaan yang tidak diperlukan.</param>
+        <param name="title_landing">Permintaan Anda telah diterima!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Permintaan Anda telah diterima dan akan diproses dalam urutan penerimaannya. Perlu dicatat, bahwa permintaan untuk mengurangi hitungan lisensi Anda akan mulai berlaku di awal periode penagihan berikutnya setelah permintaan Anda sepanjang Anda memberi tahu salesforce.com lima hari kerja sebelumnya sebelum tanggal faktur periode tagihan Anda berikutnya.</param>
+        <param name="pageheader_landing">Permintaan Anda telah diterima dan akan diproses dalam urutan penerimaannya. Permintaan untuk mengurangi hitungan lisensi Anda akan mulai berlaku 30 hari setelah permintaan Anda dikirim. Harap jangan kirim beberapa permintaan untuk lisensi yang sama karena ini dapat menyebabkan penundaan pemrosesan permintaan Anda.</param>
+        <param name="title_error">Permintaan Anda tidak dapat diproses.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Kami tidak bisa mengirimkan permintaan Anda saat ini. Silakan coba kembali di lain waktu.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Mengirimkan Permintaan Anda</param>
+        <param name="reason">Alasan</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Harap Jelaskan&lt;br&gt; Secara Mendetail</param>
+        <param name="numLicenses">Jumlah Lisensi</param>
+        <param name="potentialResponse">Bagaimana caranya agar kami bisa terus &lt;br&gt; berbisnis dengan Anda?</param>
+        <param name="tips_title">Tips Mengirimkan Permintaan Pengurangan Lisensi</param>
+        <param name="tip1">Harap isi semua informasi secara akurat untuk memastikan bahwa permintaan Anda diproses secara cepat dan benar.  Sebelum mengirimkan permintaan ini, pastikan Anda telah menonaktifkan cukup pengguna sehingga hitungan pengguna Anda kurang dari atau sama dengan hitungan lisensi Anda yang baru. Ini dapat dilakukan melalui fitur &lt;a href="{0}"&gt;Kelola Pengguna&lt;/a&gt; di &lt;a href="{1}"&gt;Persiapan Saya&lt;/a&gt;.</param>
+        <param name="type1">Pembatalan Account</param>
+        <param name="type2">Pengurangan Lisensi Pengguna</param>
+        <param name="type3">Pengurangan Lisensi Offline</param>
+        <param name="type4">Pengurangan Lisensi Kampanye</param>
+        <param name="type5">Mobile Edition untuk pembatalan</param>
+        <param name="type6">Mobile Edition untuk Pengurangan Lisensi</param>
+        <param name="type7">Pengurangan Lisensi Force.com Mobile</param>
+        <param name="reason_0">Perusahaan Diakuisisi/Digabung</param>
+        <param name="reason_1">Perusahaan Dibubarkan</param>
+        <param name="reason_2">Staf Penjualan yang Dikurangi</param>
+        <param name="reason_3">Pengguna Akhir Tidak Mengadopsi</param>
+        <param name="reason_4">Fungsionalitas tidak memenuhi harapan</param>
+        <param name="reason_5">Manajemen Tidak Melihat Ada Nilai Tambah</param>
+        <param name="reason_6">Pengalaman buruk dengan karyawan salesforce.com</param>
+        <param name="reason_7">Harga Terlalu Mahal</param>
+        <param name="reason_8">Beralih ke Kompetitor</param>
+        <param name="reason_9">Lisensi Tidak Terpakai</param>
+        <param name="reason_10">Lainnya</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Silakan isi bidang isian berikut ini:</param>
+        <param name="title">Kirim Masukan kepada salesforce.com</param>
+        <param name="title_upgrade_me">Log Permintaan Upgrade</param>
+        <param name="title_support">Kirim Masukan</param>
+        <param name="warning_line_too_long">Peringatan: Uraian lebih dari 4000 karakter, dan akan dipotong.\\n</param>
+        <param name="feedback_info">Menghubungi Dukungan Pelanggan</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Dukungan Pelanggan siap menanggapi segala pertanyaan atau masukan Anda. Kami sangat bergantung pada masukan dari pelanggan untuk membantu mengarahkan dan membentuk salesforce.com. Kami senang mendengar dan menghargai ide-ide Anda, dan kami mengharapkan balasan Anda.</param>
+        <param name="general_info_me">Untuk menemukan selengkapnya mengenai cara meng-upgrade dari Personal Edition ke Corporate Edition, isilah daftar isian berikut ini. Seorang perwakilan penjualan akan menelepon balik Anda dalam jangka waktu 48 jam.</param>
+        <param name="general_info_support">Dukungan Pelanggan siap menanggapi segala pertanyaan atau masukan Anda. Kami sangat bergantung pada masukan dari pelanggan untuk membantu mengarahkan dan membentuk Salesforce CRM Call Center. Kami senang mendengar dan menghargai ide-ide Anda, dan kami mengharapkan balasan Anda.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Baru</param>
+        <param name="functionalArea">Topik</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Pertanyaan</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Permintaan</param>
+        <param name="type3">Masukan</param>
+        <param name="type4">Permintaan Fitur</param>
+        <param name="priority1">Darurat</param>
+        <param name="priority2">Normal</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Rendah</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Sekarang saya ingin berlangganan Professional Edition</param>
+        <param name="subject_subscribe_me">Saya ingin meng-upgrade sekarang</param>
+        <param name="subject_subscribe_we">Saya ingin informasi lebih tentang Professional Edition</param>
+        <param name="subject_subscribe_ee">Sekarang saya ingin berlangganan Enterprise Edition</param>
+        <param name="subject_subscribe_ue">Sekarang saya ingin berlangganan Unlimited Edition</param>
+        <param name="subject_subscribe_support">Saya ingin berlangganan sekarang</param>
+        <param name="subject_data_export">Saya menginginkan Layanan Ekspor Mingguan</param>
+        <param name="subject_marketing_licenses">Tambah Lisensi Pemasaran</param>
+        <param name="subject_offline_licenses">Tambah Lisensi Offline</param>
+        <param name="subject_wireless_licenses">Tambah Lisensi Nirkabel</param>
+        <param name="subject_offlinepda_licenses">Tambah Lisensi Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Tambah Lisensi Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">Tambah Lisensi Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Tambah Lisensi Pengetahuan</param>
+        <param name="subject_interaction_licenses">Tambahkan Lisensi Force.com Flow</param>
+        <param name="subject_support_licenses">Tambahkan Lisensi Cloud Layanan</param>
+        <param name="subject_jigsaw_licenses">Tambahkan Lisensi Jigsaw</param>
+        <param name="subject_liveagent_licenses">Tambahkan Lisensi Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Tambahkan Lisensi Kontributor Site.com</param>
+        <param name="subject_siteforcepublisher_licenses">Tambahkan Lisensi Penerbit Site.com</param>
+        <param name="subject_chatteranswers_licenses">Tambah Lisensi Jawaban Chatter</param>
+        <param name="subject_license_reduction">Pengurangan Lisensi</param>
+        <param name="functionalArea_0">Administrasi Akun/Lisensi</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Pertanyaan Tagihan</param>
+        <param name="functionalArea_3">Gabungan Data</param>
+        <param name="functionalArea_4">Email/HTML</param>
+        <param name="functionalArea_5">Proyeksi &amp; Peluang</param>
+        <param name="functionalArea_6">Mengimpor</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Prospek</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Kinerja</param>
+        <param name="functionalArea_9">Laporan &amp; Tampilan</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Langganan Sekarang</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Sinkronisasi</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Layanan Ekspor Mingguan</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Lainnya</param>
+        <param name="functionalArea_16">Lisensi Pemasaran</param>
+        <param name="functionalArea_17">Lisensi Offline</param>
+        <param name="functionalArea_18">Profil/Tata Letak Halaman/Jenis Rekaman</param>
+        <param name="functionalArea_19">Kampanye</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Layanan-Sendiri</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Lisensi Nirkabel</param>
+        <param name="functionalArea_22">Upgrade Sekarang</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Lisensi Sales Anywhere</param>
+        <param name="functionalArea_24">Tugas/Acara </param>
+        <param name="functionalArea_25"><Products/> &amp; Tunjangan / <Pricebooks/></param>
+        <param name="functionalArea_26">Tanda Peringatan Kesepakatan Besar </param>
+        <param name="functionalArea_27">Dokumen</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Kasus &amp; Solusi </param>
+        <param name="functionalArea_29">Cari</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Berbagi</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Nirkabel</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for</param>
+        <param name="functionalArea_35">Lisensi Portal Partner</param>
+        <param name="functionalArea_36">Lisensi Force.com Mobile</param>
+        <param name="functionalArea_37">Lisensi Salesforce CRM Content</param>
+        <param name="functionalArea_38">Lisensi Cloud Layanan </param>
+        <param name="functionalArea_39">Lisensi Jigsaw</param>
+        <param name="functionalArea_40">Lisensi Live Agent</param>
+        <param name="functionalArea_41">Lisensi Kontributor Site.com</param>
+        <param name="functionalArea_42">Lisensi Penerbit Site.com</param>
+        <param name="functionalArea_43">Lisensi Jawaban Chatter</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Kalau Anda ingin berbicara langsung dengan perwakilan penjualan kami, telepon (415) 901-7010 antara 06:00 dan 18:00 Pacific Time, Senin&amp;#150;Jumat, atau telepon +353-1-2723503 antara 08:00 dan 18:00 GMT, Senin&amp;#150;Jumat.</param>
+        <param name="tips_title">Tip untuk Menyerahkan Kasus</param>
+        <param name="tip1">Pastikan bahwa Anda sudah memberikan informasi secukupnya kepada kami supaya kami bisa menanggapi kasus Anda secepat mungkin.  Kami telah memberikan sejumlah saran dan pengingat di bawah ini:</param>
+        <param name="tip2">Sampaikan apa yang sedang Anda coba lakukan, apa yang Anda harapkan, dan apa yang terjadi.</param>
+        <param name="tip3">Sampaikan kepada kami langkah-langkah untuk reka-ulang masalah Anda.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Lihat</param>
+        <param name="X">X</param>
+        <param name="close">Ttp</param>
+        <param name="MLclose">Tutup</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Hapus</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Hapus</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Hapus</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Rekam</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Siapkan</param>
+        <param name="activate">Aktifkan</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Nonaktifkan</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Kelola</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Ekspor</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Halaman Berikutnya</param>
+        <param name="prev">Halaman Sebelumnya</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Total item yang terlihat: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Tampilkan {0} {1} rekaman per halaman daftar</param>
+        <param name="number_shown_detail_page">Selalu tampilkan {0} {1} {2} rekaman per halaman yang terkait</param>
+        <param name="number_shown_adjust_less_link">lebih sedikit</param>
+        <param name="number_shown_adjust_more_link">lebih banyak</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">semua</param>
+        <param name="last_page">Kembali ke Halaman Sebelumnya</param>
+        <param name="last_list">Kembali ke Daftar</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Kembali ke Daftar: <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Kembali ke Daftar: <Entity entity="0" plural="y"/> dari Connections</param>
+        <param name="last_suggested_solution_list">Kembali ke Daftar <Solutions/> <Suggested/></param>
+        <param name="last_solution_search_list">Kembali ke Hasil Pencarian <Solution plural="n"/> </param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Kembali ke <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Tindakan:</param>
+        <param name="checkboxPrompt">Silakan pilih sekurang-kurangnya satu deret</param>
+        <param name="checkboxSinglePrompt">Silakan pilih satu deret</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Pilihan Anda di halaman ini akan hilang. Anda ingin melanjutkan?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Anda harus memilih {0} deret atau kurang untuk menjalankan operasi ini.</param>
+        <param name="selectionLimit">Anda tidak bisa memilih lebih dari {0} deret.</param>
+        <param name="login">Login</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Sesi</param>
+        <param name="none">Tidak ada rekaman yang ditampilkan.</param>
+        <param name="no_rows">Tidak ada deret yang dipilih</param>
+        <param name="subtotal">Subtotal:</param>
+        <param name="total">Total:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Pilih semua item</param>
+        <param name="clearAllInfo">Urukan pilihan semua item</param>
+        <param name="rename">Ganti nama</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Pilih</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Urungkan pilihan</param>
+        <param name="toggleall">Berganti-ganti Semua Deret</param>
+        <param name="refresh">Segarkan</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Silakan pilih tampilan.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Tampilan yang Anda maksudkan melebihi ukuran maksimal. Persempitlah kriteria pencarian dengan cara mengubah tampilan atau membuat tampilan baru.</param>
+    <param name="switch_view">Pindah Tampilan</param>
+    <param name="records_x_to_y">Menampilkan rekaman {0} - {1}</param>
+    <param name="records_x_to_y_more">Menampilkan rekaman {0} - {1}, tersedia lebih banyak lagi rekaman</param>
+    <param name="records_x_to_y_more_showing_max">Menampilkan rekaman {0} - {1}. Halaman ini hanya bisa menampilkan 1000 rekaman pertama meskipun lebih banyak lagi yang tersedia. Untuk menampilkan lebih sedikit rekaman, silakan persempit kriteria tampilan daftar Anda. Untuk print lebih dari 1000 rekaman, silakan jalankan laporan, kemudian klik tombol Tampilan Cetak pada laporan.</param>
+    <param name="number_of_records">Jumlah rekaman</param>
+        <param name="createCase">Buat <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Klik untuk membentangkan/ melipat item terkurung.</param>
+        <param name="expand">Klik untuk membentangkan item terkurung.</param>
+        <param name="collapse">Klik untuk melipat item terkurung.</param>
+        <param name="shortExpand">Bentangkan</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Lipat</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Dibentangkan</param>
+        <param name="collapsed">Dilipat</param>
+        <param name="level">Tingkat</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hierarki:</param>
+        <param name="siblings">Saudara Kandung:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Pencarian</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Ambil sebuah objek</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Siapa</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Apa</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Hasil pencarian lebih banyak daripada jumlah deret maksimal ({0}). Silakan persempit kriteria pencarian Anda.</param>
+        <param name="Copyright">Hak cipta &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Semua hak dilindungi undang-undang.</param>
+        <param name="useWildcards">Anda dapat menggunakan '*' (tanda bintang) sebagai wildcard di sebelah karakter lain untuk memperbaiki hasil pencarian Anda.  Misalnya, "ad*" akan menghasilkan semua rekaman dengan nama yang mengandung "ad".</param>
+        <param name="useWildcardsWithSearch">Anda dapat menggunakan "*" (tanda bintang) sebagai wildcard di sebelah karakter lain untuk memperbaiki hasil pencarian Anda.</param>
+        <param name="error_lookup_multiple_matches_ile">Banyak item ditemukan.&lt;br&gt;Klik ikon untuk mempersempit pencarian.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Bentangkan Daftar</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Daftar yang Dibentangkan</param>
+        <param name="sharing">Berbagi</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Mengapa?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Lebih banyak filter &gt;&gt;</param>
+        <param name="less_filters">Lebih sedikit filter &lt;&lt;</param>
+        <param name="by_keyword">Berdasarkan Kata Kunci</param>
+        <param name="by_filter">Berdasarkan Filter Bidang Isian</param>
+        <param name="too_many">Hasil pencarian Anda kembali dengan lebih dari {0} deret. Hanya {0} pertama yang akan ditampilkan. Persempitlah kriteria pencarian Anda.</param>
+        <param name="Results">Hasil</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Cari:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Skor</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Bidang Isian</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operator</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Nilai</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Anda bisa memanfaatkan filter "or" dengan memasukkan banyak item di kolom tiga.</param>
+        <param name="tip_1">Anda dapat memasukkan hingga 10 item, dipisahkan oleh koma. Misalnya: CA, NY, TX, FL akan mencari CA atau NY atau TX atau FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Beri tanda kutip pada data yang mengandung koma. Misalnya, "200.000","1,000.000" akan mencari 200.000 atau 1.000.000.</param>
+        <param name="tip_3">Untuk bidang isian kotak centang, gunakan "False" dan "True", misalnya, "Active equals True" atau "Converted equals False."</param>
+        <param name="tip_4">Entri aturan yang didasarkan pada kode area mungkin perlu menyertakan dalam kurang, misalnya. Telepon mulai dengan (415), (510).</param>
+        <param name="tip_5">Jika Anda menggunakan translation workbench, masukkan semua kriteria filter dengan menggunakan nilai master.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Tersedia</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Pilihan</param>
+        <param name="assignLicensesDescription">Pilih kotak centang di sebelah setiap paket yang ingin Anda tugaskan kepada pengguna ini, dan kemudian klik Penugasan. Kotak centang tidak ada jika paket tidak memiliki lisensi yang cukup atau status paket kadaluwarsa atau ditangguhkan.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Klasik</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portal Default</param>
+        <param name="3">Toko web</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Konfirmasi</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Informasi</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Kesalahan</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Peringatan</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Aman</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Frekuensi</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Harian</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Mingguan</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Bulanan</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Setiap hari kerja</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Setiap hari</param>
+       <param name="lastDay">terakhir</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">ke-1</param>
+    <param name="on2">ke-2</param>
+    <param name="on3">ke-3</param>
+    <param name="on4">ke-4</param>
+    <param name="onLast">terakhir</param>
+    <param name="startTime">Awal</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Akhir</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Waktu Awal Yang Disukai</param>
+    <param name="noPreference">Tidak ada preferensi</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Waktu awal persis mulai bergantung pada aktivitas antrian pekerjaan.</param>
+
+    <param name="diffTimeZoneMsg">Zona waktu untuk pengaturan frekuensi bulanan ini adalah:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Tampilan pengaturan frrekuensi dalam zona waktu pengguna yang terakhir kali mengedit.&lt;br&gt;Segala perubahan yang Anda lakukan terhadap pengaturan ini akan diperbarui untuk menyetel zona waktu Anda.</param>
+
+      <param name="weeklyRecurrence">Berulang tiap minggu pada {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Berulang tiap minggu pada</param>
+      <param name="monthlyRecurrence1">Pada hari {0} setiap bulan</param>
+      <param name="monthlyRecurrence1LegendLabel">Khusus</param>
+      <param name="monthlyRecurrence2LegendLabel">Ubahsuai</param>
+      <param name="monthlyRecurrence2">Pada {2} {0} {3} {1} setiap bulan</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Pada {0} {1} setiap bulan</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Pada hari tertentu setiap bulan</param>
+      <param name="accessibleMonthly2">Pada hari ubahsuai setiap bulan</param>
+      <param name="accessibleOnDayN">Hari tertentu</param>
+      <param name="accessibleOnDayNOfWeek">Kejadian</param>
+      <param name="accessibleOnDayName">Hari</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Uji sederhana ini membantu mencegah program berbahaya mengakses data Anda.  Administrator Anda memerlukan uji ini untuk pengunduhan besar.  Ini tidak pernah disajikan lebih dari sekali per sesi login.</param>
+        <param name="imagePrompt">Masukkan kata-kata di atas, dipisahkan dengan spasi:</param>
+        <param name="audioPrompt">Masukkan angka-angka yang Anda dengar:</param>
+        <param name="refresh">Dapatkan tantangan baru</param>
+        <param name="audio">Dapatkan tantangan audio</param>
+        <param name="image">Dapatkan tantangan gambar</param>
+        <param name="incorrect">Tidak benar, silakan coba lagi</param>
+        <param name="moreinfo">Info selengkapnya &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Sedikit info</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Klik untuk selengkapnya...</param>
+        <param name="show">Tampilkan Panel Sorotan</param>
+        <param name="hide">Sembunyikan Panel Sorotan</param>
+        <param name="empty">Tidak ada bidang isian yang disorot yang ditampilkan untuk rekaman ini.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Tur Berpanduan</param>
+        <param name="closeIntro">Tidak, terima kasih</param>
+        <param name="closeOutro">Tutup</param>
+        <param name="showLater">Tunjukkan pada Saya Nanti</param>
+        <param name="replay">Putar ulang</param>
+        <param name="continue">Lanjutkan</param>
+        <param name="previous">Sebelumnya</param>
+        <param name="startTour">Mulai Tour</param>
+        <param name="endTour">Akhiri Tur</param>
+        <param name="stepCounter">{0} dari {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Rincian</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Rekomendasi</param>
+        <param name="hideBucketTip">&lt;br&gt;Jatuhkan di sini untuk menyembunyikan item&lt;br/&gt;dari halaman.</param>
+        <param name="hiddenListTip">Untuk menampilkan item yang tersembunyi, seret kembali ke daftar di atas.</param>
+        <param name="hiddenListShowLinkLabel">{0} Tersembunyi</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Kembali ke atas</param>
+        <param name="multipleItemDragGhost">Beberapa Item (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Rincian Kompatibilitas Browser Halaman</param>
+        <param name="compatibilityMsgSubTitle">Maaf, kami tidak mendukung browser ini</param>
+        <param name="compatibilityMsg1">Kami tidak dapat menampilkan rincian halaman baru di browser yang Anda gunakan sekarang.</param>
+        <param name="compatibilityMsg2">Anda dapat menggunakan desain baru kapan pun Anda masuk menggunakan salah satu browser yang kompatibel berikut ini:</param>
+        <param name="supportedIE">Internet Explorer 7 atau 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Terima kasih!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Jadikan Tampilan Klasik sebagai Default</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Ketik di sini untuk mencari sebuah {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Tidak ada {0}  yang cocok dengan pencarian Anda.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Halaman {1} dari {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

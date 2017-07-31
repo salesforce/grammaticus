@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">ComboBox</param>
+        <param name="select_default">Vyberte z nabídky níže.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Vyberte položku {0} níže.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Přístup</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Řízený)</param>
+        <param name="activity_history">Činnost – historie</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Další informace</param> <!--aliased across labels - do not change-->
+        <param name="alias">Přezdívka</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Asistent</param>
+        <param name="assistant_name">Jméno asistenta</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telefon asistenta</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Tel. asistenta</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Telefonní klapka asistenta</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Datum narození</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Text</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Společnost</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Vytvořil/a</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Vytvořil/a (ID)</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Vytvořil/a (přezdívka)</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">ISO kód měny</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Vlastní pole</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Výchozí stav</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0}: Podrobnosti</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Oddělení</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Upravit {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Očekávaný výnos</param>
+        <param name="first_name">Křestní jméno</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Příjmení</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Křestní jméno (místní)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Příjmení (místní)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Fiskální kvartál</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Fiskální rok</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Celé jméno</param> <!-- aliased across app - do not change -->
+        <param name="group">Skupina</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Název skupiny</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Název řady</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Odvětví</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Naposledy změnil/a</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Naposledy změnil/a (ID)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Naposledy změnil/a (přezdívka)</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">ID hlavního záznamu</param>
+        <param name="mobile">Mobil</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Mobilní telefon</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Klapka mobilního telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Nové sdílení</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Přiřazená přezdívka</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Dostupný seznam</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Název společnosti</param> <!-- aliased across app - do not change -->
+        <param name="activities">Činnosti</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">bez příloh</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <documents/></param>
+        <param name="address_info">Informace o adrese</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Odmítnuto</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Výchozí</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Výchozí priorita</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Vytvořit nové zobrazení</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Vlastní informace</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Duplikovaný stav</param> <!-- aliased across app - do not change -->
+        <param name="email_address">E-mailová adresa</param> <!-- aliased across app - do not change -->
+        <param name="email_name">E-mail – jméno</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">E-mailová šablona</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-mail:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Vlastní odkazy</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Velikost souboru</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Nejsou k dispozici žádná data.</param>
+        <param name="history_event_checked">Zaškrtnuté pole {0}</param>
+        <param name="history_event_unchecked">Nezaškrtnuté pole {0}</param>
+        <param name="how_do_i_specify_info">Jak mám určit informace pro dosažení?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Vnitřní zdroj</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Interval:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Pozdrav</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Vybrat nového majitele</param>
+        <param name="select_a_view">Vyberte zobrazení z rozevíracího seznamu a zobrazí se seznam souvisejících výsledků.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Vyberte složku z rozevíracího seznamu a zobrazí se seznam souvisejících výsledků.</param>
+        <param name="select_the_file">Vyberte soubor</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Vyberte pole, která chcete zahrnout:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Podpis</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Předmět</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Systémové informace</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Webové stránky</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Přezdívka majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Křestní jméno majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">ID majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Příjmení majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Jméno majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Role majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Role majitele – zobrazení</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Role majitele – název</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Primární</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Priorita</param><!--aliased across labels - do not change -->
+        <param name="private">Soukromé</param>
+        <param name="role">Role</param> <!--aliased across labels - do not change -->
+        <param name="rating">Hodnocení</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Rychlé vytvoření</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Nedávno zobrazené</param>
+        <param name="top5">5 nejčastějších dotazů</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Dodavatel</param>
+        <param name="customer">Zákazník</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Poskytovatel</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">ID typu záznamu</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ID divize</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Tabulkový výčet nebo ID</param>
+        <param name="editable">Možnost úprav</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Normalizovaný název</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Ochrana osobních údajů</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Řiditelný stav</param>
+        <param name="namespacePrefix">Předpona názvu</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Název modulu</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Nainstalovaný balíček</param>
+        <param name="initialVersion">První vydaná verze</param>
+        <param name="lastVersion">Poslední dostupná verze</param>
+        <param name="availableInVersions">K dispozici ve verzích</param>
+        <param name="DeveloperName">Jméno vývojáře</param>
+        <param name="apiName">Název rozhraní API systému</param>
+        <param name="InvalidDeveloperNameOnEntity">Pole {0} může obsahovat pouze alfanumerické a podtržítka. Musí být jedinečné, začínat písmenem, nesmí obsahovat mezery, nesmí končit podtržítkem ani obsahovat dvě za sebou jdoucí podtržítka.</param>
+        <param name="missingDevName">{0} musí být k dispozici.</param>
+        <param name="duplicateDevName">Tento {0} již existuje nebo byl již dříve použit.  Vyberte prosím jiný název.</param>
+        <param name="manageabilityOverride">Zastoupení spravovatelnosti</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">Datum metriky</param>
+        <param name="MayEdit">Lze upravit</param>
+        <param name="IsLocked">Je blokováno</param>
+        <param name="LastViewedDate">Datum posledního zobrazení</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Vytvořit</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Nastavit</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Vytvořit nové...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Soubor</param>
+        <param name="new_forecast">Nová předpověď</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Koš</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Odeslat e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Zpráva</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Změnil/a</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Datum vytvoření</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Datum úpravy</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Automatizovaný proces</param>
+        <param name="partner_network">Uživatel připojení</param>
+        <param name="external_who">Veřejný uživatel</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Příklad</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Chyba: Neplatná data. &lt;br&gt;Zkontrolujte všechna chybná hlášení níže a opravte svá data.</param>
+        <param name="EditPageError2">Projděte všechna níže uvedená chybová hlášení a opravte svá data.</param>
+        <param name="Required">Musíte zadat hodnotu.</param>
+        <param name="RequiredWithFieldList">Chybí požadovaná pole: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Požadováno u samoobsluhy:</param>
+        <param name="RequiredBy">Požadoval/a: {0}</param>
+        <param name="Requires">Požadavky: {0}</param>
+        <param name="TooLong">Hodnota je pro pole příliš dlouhá.</param>
+        <param name="CannotExceedXCharacters">Hodnota nesmí přesahovat {0} znaků.</param>
+        <param name="MustBeXCharacters">Hodnota musí mít přesně {0} znaků.</param>
+        <param name="MustBeNumber">Hodnota musí být číselná.</param>
+        <param name="StatusCloseRequired">Musíte označit alespoň jeden stav jako uzavřený.</param>
+        <param name="StatusDefaultRequired">Musíte označit alespoň jeden stav jako výchozí.</param>
+        <param name="StatusInUse">Následující hodnoty stavu jsou používány a nelze je upravit ani odstranit: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Neplatné datum</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Neplatné datum. Nemůžete nastavit datum nad {0}</param>
+        <param name="InvalidDateTime">Datum a čas jsou neplatné.</param>
+        <param name="InvalidColor">Neplatná barva</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Neplatná internetová adresa</param>
+        <param name="InvalidOption">Zvolili jste neplatnou volbu.</param>
+        <param name="UnsupportedCurrency">Neplatná měna</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Neplatná adresa URL</param>
+        <param name="NoneSelectedInPicklist">-- nebyla vybrána žádná položka --</param>
+        <param name="InvalidTime">Neplatný čas</param>
+        <param name="InvalidNumber">Neplatné číslo</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Číslo je příliš dlouhé.</param>
+        <param name="TooLargeNumberWithScale">Číslo nesmí být menší než {0}.</param>
+        <param name="TooSmallNumberWithScale">Číslo nesmí být větší než {0}.</param>
+        <param name="NonpositiveError">Musí být kladné.</param>
+        <param name="NegativeError">Nesmí být záporné.</param>
+        <param name="PositiveError">Nesmí být kladné.</param>
+        <param name="NonnegativeError">Musí být záporné.</param>
+        <param name="NonzeroError">Musí být jiné než nula.</param>
+        <param name="NonintegerError">Musí být celé číslo.</param>
+        <param name="InvalidPercent">Neplatné procento</param>
+        <param name="InvalidAfterRoundOff">Číslo {0} je neplatné po zaokrouhlení do stupnice: {1}</param>
+        <param name="CharactersRemaining">zbývá</param>
+        <param name="CharactersOver">nad limit</param>
+        <param name="TooManySelection">Nemůžete vybrat více než {0} položek.</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Duplicitní hodnota záznamu: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Hodnota skrytého pole (nezobrazená) duplikuje hodnotu v záznamu: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} duplikuje hodnotu záznamu s ID: {1}</param>
+        <param name="True">Pravda</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Nespravda</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Neplatná doména</param>
+        <param name="ReadOnly">Toto pole nemůžete upravovat.</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Zrušit</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Přijmout</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Přijmout změny</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Aktivovat nástroj Salesforce Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Přidat komentář</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Přidat komponenty</param>
+        <param name="add_contacts">Přidat <contacts case="a"/></param>
+        <param name="add_leads">Přidat <leads case="a"/></param>
+        <param name="add_more_users">Přidat další uživatele</param>
+        <param name="add_multiple_users">Přidat několik uživatelů</param>
+        <param name="add_product">Přidat <product case="a"/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Přidat řádkovou položku</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Přidat ukázkový řídicí panel</param>
+        <param name="add_to_call_center">Přidat do střediska Call Center</param>
+        <param name="add_to_campaign">Přidat do <campaign case="g"/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Přidat do aplikace Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Přidat do <pricebook case="g"/></param>
+        <param name="add_remove">Přidat/Odebrat</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Pokročilé nastavení</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Schválit</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Přidělit</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Přidělit uživatele k roli</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Zpět na seznam zpráv</param>
+        <param name="billing_and_licenses">Fakturace &amp; licence</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Informace o fakturaci</param>
+        <param name="briefcase_setup">Nastavení složky Aktovka</param>
+        <param name="cancel">Storno</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Zrušit odeslání</param>
+        <param name="cancel_test_instance">Zrušit nástroj Salesforce Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Změnit společnost</param>
+        <param name="change_currency">Změnit měnu</param>
+        <param name="change_owner">Změnit majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Přijmout a změnit majitele</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Přijmout a přidělit hlavní</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Změnit stav</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Zkontrolovat dostupnost</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Zkontrolovat pravopis</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Vybrat <pricebook case="a"/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Vyčistit</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Přehled</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Karta {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Seznam</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Zkopírovat podrobnosti nadřazeného</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Vypnout všechna zobrazení</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Vybrat položku z výběrového seznamu</param>
+        <param name="composegmail">Vytvořit Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Potvrdit</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Pokračovat</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Přesto pokračovat</param>
+        <param name="convert">Převést</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Převést <lead case="a"/></param>
+        <param name="create">Vytvořit</param>
+        <param name="create_follow_up_event">Vytvořit další <event case="a"/></param>
+        <param name="create_follow_up_task">Vytvořit další <task case="a"/></param>
+        <param name="create_new">Vytvořit novou položku {0}</param>
+        <param name="create_new_section">Vytvořit novou sekci</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Vytvořit <opportunity case="a"/></param>
+        <param name="create_test_instance">Vytvořit nástroj Salesforce Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Vytvořit zkušební databázi</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Vytvořit formulář Web-to-Lead (z webu k tipu)</param>
+        <param name="create_new_holiday">Vytvořit nový svátek</param>
+        <param name="create_new_sla_process">Proces nového <entitlement case="g"/></param>
+        <param name="create_new_milestone_type">Nový milník</param>
+        <param name="currency_setup">Nastavení měny</param>
+        <param name="customer_view">Zobrazení zákazníka</param>
+        <param name="customize">Přizpůsobit</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Přizpůsobit zobrazení pro všechny uživatele</param>
+        <param name="page_settings">Nastavení stránky</param>
+        <param name="customize_page">Přizpůsobit stránku</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Upravit rozvržení</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Seznam řídicího panelu</param>
+        <param name="data_export">Export dat</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Vymazat</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Odmítnout</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Výchozí vlastní odkazy</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Odstranit přístup ke službě Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Hotovo s náhledem</param>
+        <param name="dont_save">Neukládat</param>
+        <param name="dont_show_page_again">Tuto stránku již nezobrazovat</param>
+        <param name="download">Stáhnout</param>
+        <param name="download_now">Stáhnout nyní</param>
+        <param name="download_sample_css_file">Stáhnout ukázkový soubor CSS</param>
+        <param name="edit">Upravit</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Upravit [Beta]</param>
+        <param name="edit_all">Upravit vše</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Upravit uživatele</param>
+        <param name="edit_rates">Upravit hodnocení</param>
+        <param name="edit_selected">Upravit vybrané</param>
+        <param name="editProperties">Upravit vlastnosti</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Ukončit {0}</param>
+        <param name="enable_appstore_user">Poskytnout přístup ke službě Checkout</param>
+        <param name="enable_as_partner">Povolit jako partnera</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Povolit přihlášení z partnerského portálu</param>
+        <param name="enable_self_service">Povolit samoobsluhu</param>
+        <param name="enable_users">Povolit nového uživatele</param>
+        <param name="enableForecasting">Povolit přizpůsobitelné předpovídání</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Spustit školení</param>
+        <param name="erase_test_instance">Vymazat nástroj Salesforce Sandbox</param>
+        <param name="establish">Sestavit</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Rozevřít vše</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Exportovat podrobnosti do aplikace Excel</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Exportovat podrobnosti nyní</param>
+        <param name="export_background">Spustit export na pozadí…</param>
+        <param name="fctHistory">Historie předpovědi</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Shrnutí předpovědi</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Ověřování polí</param>
+        <param name="find">Najít</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Najít zprávu</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Najít <document case="a"/></param>
+        <param name="find_pricebooks">Najít <pricebook case="a"/></param>
+        <param name="find_products">Najít <product case="a"/></param>
+        <param name="find_solution">Najít <solution case="a"/></param>
+        <param name="finished">Dokončeno</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Přeposlat</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Přeposlat klientům</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Vytvořit WSDL</param>
+        <param name="generate_login_html">Vytvořit přihlášení HTML</param>
+        <param name="getMoreInfo">Více informací</param>
+        <param name="go">Provést!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Nápověda pro tuto stránku</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0}  Nápověda</param>
+        <param name="hide">Skrýt podrobnosti</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Přijímám.</param>
+        <param name="i_decline">Odmítám.</param>
+        <param name="impactAnalysis">Kde se to používá?</param>
+        <param name="import">Importovat</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Importovat <leads case="a"/></param>
+        <param name="include_offline">Zahrnout režim offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Vložit</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Vložit vybrané</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Instalovat nyní</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Pozvat</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Pozvat k připojení</param>
+        <param name="jigsawsearch">Získat kontakty</param>
+        <param name="join_meeting">Připojit se k setkání</param>
+        <param name="jumpstart">Přejít na začátek</param>
+        <param name="keep_in_touch">Požádat o aktualizaci</param>
+        <param name="layout_assignment">Přidělení rozložení</param>
+        <param name="legal_view">Zobrazit ve formátu Legal</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Zablokovat záznam</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Přihlaste se jako uživatel partnerského portálu</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Spravovat členy</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Žádost o nové setkání</param>
+        <param name="add_members_search">Přidat členy – Hledat</param>
+        <param name="add_members_import">Přidat členy – importovat soubor</param>
+        <param name="edit_members_search">Upravit členy – Hledat</param>
+        <param name="update_members_import">Aktualizovat a přidat členy – importovat soubor</param>
+        <param name="manage_call_center_users">Spravovat uživatele střediska Call Center</param>
+        <param name="map_lead_fields">Mapovat <lead_fields case="a"/></param>
+        <param name="mark_as">Označit jako…</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Import členů</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Upravit jednotlivé připomínky</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Nový</param>
+        <param name="newcase">Nový</param>
+        <param name="new_addition_order">Nová objednávka dodatků</param>
+        <param name="new_custom_object">Nový vlastní objekt</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Vytvořit novou vlastní zprávu</param>
+        <param name="new_dashboard">Nové řídicí panely</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Nový komponent řídicího panelu</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Nová šablona</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Nová šablona</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Nová složka</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Nová skupina</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Nová řada</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Nová poznámka</param>
+        <param name="new_object_custom_tab">Karta nového vlastního objektu</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Setkat se on-line</param>
+        <param name="new_order">Nové pořadí</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Nová osobní skupina</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Nová objednávka se slevou:</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Nová role</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Nové tlačítko</param>
+        <param name="new_territory">Nové území</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Nový uživatel</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Karta nové webové integrace</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Provést další aktualizaci</param>
+        <param name="performAnotherMigrate">Přesunout jiný profil</param>
+        <param name="preview">Náhled</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Přepočítat</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Znovu sestavit</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Odmítnout</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Odmítnout změny</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Odstranit uživatele</param>
+        <param name="remove_from_briefcase">Odstranit ze složky Aktovka</param>
+        <param name="remove_from_campaign">Odstranit z položky <Campaign/></param>
+        <param name="reorder">Znovu uspořádat</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Opravit</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Spustit všechny testy</param>
+        <param name="run_test">Spustit test</param>
+        <param name="quick_save">Rychlé ukládání</param>
+        <param name="quick_save_hover">Uložit a pokračovat v úpravách</param>
+        <param name="reply">Odpovědět</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Odpovědět všem</param>
+        <param name="reportmanager">Manažer zpráv</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Nastavit nové heslo</param>
+        <param name="reset_passwords">Nastavit nová hesla</param>
+        <param name="retrieve_prices">Získat ceny</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Spustit zprávu</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Uložit</param> <!-- aliased across labels do not change -->
+        <param name="saving">Ukládání...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Uložit a přidat cenu</param>
+        <param name="save_and_add_product">Uložit a přidat <product case="a"/></param>
+        <param name="save_and_clone">Uložit a znovu klonovat</param>
+        <param name="save_and_close">Uložit a zavřít</param>
+        <param name="save_and_attach">Uložit a přidat přílohu</param>
+        <param name="save_and_continue">Uložit a další</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Uložit a více</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Uložit a <new/> <event/></param>
+        <param name="save_and_new_product">Uložit a <new/> <product/></param>
+        <param name="save_and_new_task">Uložit a <new/> <task/></param>
+        <param name="save_and_refresh">Uložit a obnovit</param>
+        <param name="save_and_send">Uložit  &amp; Odeslat aktualizaci</param>
+        <param name="event_scheduler">Zobrazení klienta &amp; týmu &gt;</param>
+        <param name="saveAs">Uložit jako</param>
+        <param name="schedule_to_email">Naplánovat odeslání e-mailu</param>
+        <param name="schedule_to_print">Naplánovat tisk</param>
+        <param name="scrutinize">Prozkoumat</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Najít <knowledgeArticle case="a"/></param>
+        <param name="newArticle">Nový</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Vybrat šablonu</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Přejít na začátek samoobsluhy</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Nastavení samoobsluhy</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Zobrazit/Povolit samoobsluhu</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Odeslat</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Odeslat e-mail <all/> <contacts case="d"/></param>
+        <param name="send_invitation">Uložit a Odeslat pozvánku</param>
+        <param name="set_status">Spravovat stav</param>
+        <param name="setup_and_install">Nastavit &amp; instalovat</param>
+        <param name="setup_roles">Nastavit role</param>
+        <param name="setup_sharing">Nastavit sdílení</param>
+        <param name="sfga_instructions">Dokončit pokyny k tisku</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Zobrazit podrobnosti</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Přeskočit</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Seřadit</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Zahájit setkání</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Odeslat</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Odeslat &amp;přidat přílohu</param>
+        <param name="subscribe_now">Předplatit si nyní!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Aktualizovat nyní!</param>
+        <param name="suggest">Zobrazit doporučené <solutions case="a"/></param>
+        <param name="take_training_now">Absolvovat školení nyní!</param>
+        <param name="terminate">Ukončit</param>
+        <param name="training_history">Historie školení</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Přesun</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Vyzkoušet nyní!</param>
+        <param name="undelete">Obnovit smazané</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Zpět</param>
+        <param name="unlock">Odblokovat záznam</param>
+        <param name="update">Aktualizovat</param>
+        <param name="update_campaign_history">Aktualizovat a přidat <campaign_Members case="a"/></param>
+        <param name="update_now">Aktualizovat nyní</param>
+        <param name="update_statuses">Stavy aktualizací</param>
+        <param name="upload">Načíst</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Závislosti polí</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Zobrazit odstraněné komponenty</param>
+        <param name="view_partnerforce">Zobrazit uživatele partnerského portálu</param>
+        <param name="view_self_service">Zobrazit samoobsluhu</param>
+        <param name="view_customer_success">Zobrazit uživatele zákaznického portálu</param>
+        <param name="enable_customer_success">Povolit uživatel zákaznického portálu</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Co je to?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Zavřít toto okno</param>
+        <param name="runApexRecalc">Přepočítat sdílení Apex</param>
+        <param name="disablecustomerportal">Zakázat uživatele zákaznického portálu</param>
+        <param name="disablepartnerportal">Zakázat uživatele partnera</param>
+        <param name="disablecustomerportalaccount">Zakázat účet zákaznického portálu</param>
+        <param name="disablepartnerportalaccount">Zakázat účet partnera</param>
+        <param name="voteup">Schválit (při hlasování)</param>
+        <param name="votedown">Přehlasovat</param>
+        <param name="markquestionunanswered">Označit jako nezodpovězenou</param>
+        <param name="markbestanswer">Označit jako nejlepší odpověď</param>
+        <param name="requestUseSfdcAction">Najít spojení</param>
+        <param name="addPET">Přidejte šablonu oprávnění</param>
+        <param name="truncate">Ořezat</param>
+        <param name="disableprmsuperuser">Zakázat super přístup partnera</param>
+        <param name="enableprmsuperuser">Povolit super přístup partnera</param>
+        <param name="purchase_more">Koupit více</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Nahoru</param>
+        <param name="descriptionText">Text je příliš dlouhý. Zobrazte si detail.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Zobrazit soubor</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Nadřazená</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Žádné související informace</param>
+        <param name="no_records">Žádné záznamy k zobrazení</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Zobrazit {0} více &#187;</param>
+        <param name="NextMoreGeneric">Zobrazit více &#187;</param>
+        <param name="view_more">Jdi na seznam</param>
+        <param name="view_more_tot">Jdi na seznam ({0})</param>
+        <param name="view_more_tot_plus">Jdi na seznam ({0}+)</param> <!-- -->
+        <param name="view_more_1">Jdi na seznam s jedním záznamem navíc</param> <!-- Singular -->
+        <param name="view_more_n">Jdi na seznam s {0} záznamy navíc</param> <!-- Plural -->
+        <param name="view_more_n_plus">Jdi na seznam s {0}+ záznamy</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Další dostupné položky; Přejít do seznamu</param>
+        <param name="opportunities"><Opportunities/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Pravděpodobnost</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Zdroj</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Získán</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Fiskální období</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Kvartál {1} roku {0}</param>
+        <param name="opportunities_next_step">Další krok</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Aktualizovat</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Souvisí s</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Poznámka</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Dokument Google</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Poznámky a přílohy</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Název poznámky</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Přílohy</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Přílohy</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Název souboru</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Vlastnictví</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Roles/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Primární</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Cases/></param>
+        <param name="cases_none"><No/> <cases/> pro zobrazení</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Datum</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Nadpis</param>
+        <param name="object_title">Nadpis</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Název</param>
+        <param name="object_name">Název</param>
+        <param name="date">Datum</param>
+        <param name="due_date">Datum platnosti</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Naposledy změněno</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Aktualizoval</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partners/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Primární</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Konkurence</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Jméno konkurence</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Silné stránky</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Slabiny</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Pravděpodobnost (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Dokončeno</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Označit jako {0} Dokončeno</param>
+        <param name="task_date">Datum</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Název</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> čeká na schválení</param>
+        <param name="task_none">Pro toto období nemáte naplánovány žádné <open/> <tasks/>.</param>
+        <param name="task_mode_today">Dnes</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Dnes + zpožděný</param>
+        <param name="task_mode_tomorrow">Zítra</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Dalších {0} dní</param>
+        <param name="task_mode_next_7days_overdue">Dalších {0} dní + zpožděné</param>
+        <param name="task_mode_overdue">Zpožděné</param>
+        <param name="task_mode_this_month">Tento měsíc</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Vše otevřít</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Historie</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Novinky</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Nadpis</param>
+        <param name="new_date">Datum</param>
+        <param name="news_none">Nejsou k dispozici žádné novinky</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Šablony hromadných e-mailů</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Nejlepší <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Přidané datum</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Přidal/a</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <solutions/> přiložena</param>
+        <param name="description">Popis položky</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Zkratky registrace cenných papírů</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">Adresa URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Nejsou k dispozici žádná data historie.</param>
+        <param name="nonotes">Nejsou k dispozici žádná data historie poznámek.</param>
+        <param name="noattachments">Nejsou k dispozici žádná data historie příloh.</param>
+        <param name="viewallattachments">Zobrazit všechny přílohy</param>
+        <param name="viewalldocsattachments">Zobrazit všechny dokumenty Dokumenty Google, &amp; Přílohy</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Datum</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Popis spojení</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Dosažení rozhraní API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Filtrováno u uživatele</param>
+        <param name="apicapture_filterip">Filtrováno u IP</param>
+        <param name="apicatpure_numbers">Získané položky</param>
+        <param name="apicapture_soapscope">Zobrazit získané položky</param>
+        <param name="apicapture_active">Aktivní</param>
+        <param name="apicapture_none">Žádné získané položky</param>
+        <param name="apicapture_new">Zahájit nové získané položky</param>
+        <param name="apicapture_view">Zobrazit</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Historie přihlášení</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">žádná přihlášení</param>
+        <param name="login_none">Není dostupná žádná historie přihlášení.</param>
+        <param name="login_username">Uživatelské jméno</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Čas přihlášení</param>
+        <param name="login_type">Typ přihlášení</param>
+        <param name="login_ip">Zdrojová adresa IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">nedostupné</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Prohlížeč</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platforma</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Rozlišení</param>
+        <param name="login_clientversion">Klientská verze</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Aplikace</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Typ API</param>
+        <param name="login_apiversion">Verze API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Úspěšné</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Stáhnout úplnou historii přihlášení (csv)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Stáhnout historii přihlášení, včetně přihlášení pouze z webové stránky (soubor Excel .csv)</param>
+        <param name="login_history_download_title">Možnosti stahování</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">Soubor CSV</param>
+        <param name="login_history_download_file_type_gzip">Soubor GZIP</param>
+        <param name="login_history_download_file_type_help">Soubory CSV (hodnota oddělená čárkou) je možné zobrazit pomocí mnoha tabulkových procesorů a textových editorů. Soubory GZIP (soubory zip GNU) jsou komprimované, aby se zmenšila jejich velikost.</param>
+        <param name="login_history_download_option_title">Obsah souboru</param>
+        <param name="login_history_download_option_all">Všechna přihlášení</param>
+        <param name="login_history_download_option_ie6_only">POUZE přihlášení z IE6</param>
+        <param name="login_history_download_option_web_only">POUZE přihlášení z webové stránky</param>
+        <param name="login_history_download_option_help">Položka Všechna přihlášení zahrnuje přihlášení ze všech zdrojů, jako webová stránka, Outlook, integrace rozhraní API systému apod. Položka Přihlášení z IE6 zahrnuje pouze přihlášení uživateli pomocí Internet Exploreru 6. Položka Přihlášení z webové stránky zahrnuje pouze přihlášení z přihlašovací stránky salesforce.com.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Stále používáte IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Systém Salesforce postupně vyřazuje podporu pro IE6. Pokud chcete zjistit, jaké prohlížeče jsou používány ve vaší organizaci, použijte nabídnuté možnosti stahování.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Přihlašovací adresa URL</param>
+        <param name="order_history">Historie objednávek</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Žádné objednávky</param>
+        <param name="order_number">Číslo objednávky</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Datum objednávky</param>
+        <param name="order_currency">Měna</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Celková cena</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Prodáno</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Žádné <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Číslo&lt;BR&gt; spojení</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Měsíční cena</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Fakturační reference</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Frekvence fakturace&lt;BR&gt;(měsíce)</param>
+        <param name="bo_order_items_billing_frequency_text">Frekvence fakturace</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Termín objednávky&lt;BR&gt;(měsíce)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Datum</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Faktury</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Žádné faktury</param>
+        <param name="invoices_invoice_number">Číslo faktury</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Datum faktury</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Splatnost faktury</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">ID externího systému</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Celková částka</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Splatná částka</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Obrat strany DAL</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Celkem odpisy</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Fakturační kontakt</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Fakturační společnost</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Historie faktur</param>
+        <param name="revenue_schedule">Plán</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Datum</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Výnos</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Komentáře</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Historie stavu</param>
+        <param name="status_none">Nebyla nalezena žádná historie stavu</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Výběr služby</param>
+        <param name="services_none">Žádné služby</param>
+        <param name="services_description">Služba</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Cena jednotky</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Celková cena</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Sleva</param>
+        <param name="training">Historie školení</param>
+        <param name="training_none">Žádná</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Název lekce</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Datum uskutečnění</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Odpovězeno</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Výchozí</param>
+        <param name="campaign_member_none">Nebyl určen <no/> <campaign_member_status/></param>
+        <param name="contract"><Contracts/></param>
+        <param name="contracts_title"><Contracts/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Datum zahájení</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Datum ukončení</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Celoživotní</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Má pravidla nákupu</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Frekvence fakturace&lt;br&gt;(měsíce)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Fakturováno dne</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending">Přijatá <event/></param>
+        <param name="event_notdecided">Bez odezvy</param>
+        <param name="event_declined">Odmítnutá <event/></param>
+        <param name="event_attending_none">Nebyli schváleni žádní účastníci</param>
+        <param name="event_notdecided_none">Všichni účastníci odpověděli</param>
+        <param name="event_declined_none">Nebyli odmítnuti žádní účastníci</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Documents/></param>
+        <param name="documents_title">Název</param>
+        <param name="documents_size">Velikost</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Autor</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Zobrazit nastavení revizních záznamů</param>
+        <param name="download">stáhnout</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Posledních 20 položek pro vaši organizaci je uvedeno níže. Můžete {0} úplné nastavení revizních záznamů v souboru Excel .csv.</param>
+        <param name="setup_audit_date">Datum</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Akce</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Sekce</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Delegovat uživatele</param>
+        <param name="setup_audit_proxyinguser_help">Tato kolonka uvádí uživatelské jméno uživatele, který provedl změnu nastavení jménem koncového uživatele. Například, pokud uživatel získal přihlašovací heslo pro přístup jako pracovník podpory, bude uvedeno uživatelské jméno pracovníka podpory.</param>
+        <param name="setup_audit_trail_none">Nejsou k dispozici žádné informace o nastavení revizních záznamů.</param>
+        <param name="setup_audit_download_csv">Stáhnout úplné nastavení revizních záznamů (csv)</param>
+        <param name="DashboardComponents_title">Komponenty řídicího panelu</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Žádné komponenty řídicího panelu</param>
+        <param name="translated_templates_none">Žádné přeložené e-mailové šablony</param>
+        <param name="translated_templates_title">Přeložené e-mailové šablony</param>
+        <param name="translated_templates_language">Jazyk</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktivní</param>
+        <param name="desc_pnet_conn_audit_trail">Posledních 20 položek pro vaši organizaci je uvedeno níže. Můžete {0} úplnou historii revizních záznamů o klientele v souboru Excel .csv.</param>
+        <param name="pnet_conn_audit_trail">Historie připojení</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Datum</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Nejsou k dispozici žádné informace o revizních záznamech o klientele.</param>
+        <param name="pnet_conn_audit_download_csv">Stáhnout historii připojení (csv)</param>
+        <param name="pnet_entity_conns_title">Externí sdílení</param>
+        <param name="pnet_entity_conn_stop_sharing">Ukončit sdílení</param>
+        <param name="pnet_pub_title">Zveřejněné objekty</param>
+        <param name="pnet_sub_title">Odebírané objekty</param>
+        <param name="pnet_pubsub_object">Název objektu</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Pole</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Zveřejnit/Nezveřejňovat</param>
+        <param name="pnet_sub_edit">Odebírat/Neodebírat</param>
+        <param name="pnet_pub_edit_object">Objekt zveřejněn</param>
+        <param name="pnet_pub_edit_field">Klepnutím na níže uvedenou položku Upravit zveřejníte u každého objektu dostupná pole.</param>
+        <param name="pnet_sub_edit_object">Objekt odebrán</param>
+        <param name="pnet_sub_edit_field">Klepnutím na níže uvedenou položku Upravit odeberete dostupná pole u každého objektu.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Obsah</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Přílohy Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Chyba při načítání souvisejících seznamů</param>
+        <param name="ajax_exception_desc">Došlo k problému při získávání souvisejících informací ze seznamu pro tento záznam. Pokud opětovné načtení stránky nevede k opravě problému, obraťte se na správce nebo problém &lt;a href="{0}" title="report{1}"&gt;oznamte&lt;/a&gt; týmu zákaznické podpory.</param>
+        <param name="category_access_title">Nastavení viditelnosti skupiny kategorie</param>
+        <param name="category_access_video_tutorial">Video školení</param>
+        <param name="category_access_name">Skupina kategorie</param>
+        <param name="category_access_access">Viditelnost</param>
+        <param name="category_access_details">Podrobnosti o viditelnosti</param>
+        <param name="category_access_custom">Vlastní</param>
+        <param name="category_access_full">Vše</param>
+        <param name="category_access_inherited">Zděděno z {0}</param>
+        <param name="category_access_revoked">Žádný</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">role a podrole</param>
+        <param name="category_access_noCategories">Pro tuto položku {0} nejsou viditelné žádné kategorie.</param>
+        <param name="category_access_allCategories">Pro tuto položku {0} jsou viditelné všechny kategorie.</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} pro {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Obecné pro USA a Západní Evropu (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japonština (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japonština (JIS)</param>
+        <param name="4">Japonština (EUC)</param>
+        <param name="5">Korejština (ks_c_5601-1987)</param>
+        <param name="6">Tradiční čínština (Big5)</param>
+        <param name="7">Zjednodušená čínština (GB2312)</param>
+        <param name="8">Tradiční čínština – Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Japonština (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Zkušební organizace</param>
+        <param name="expand">Klepnutím otevřete boční lištu [Alt+S]</param>
+        <param name="collapse">Klepnutím zavřete boční lištu [Alt+S]</param>
+        <param name="expandNoHotkey">Klepnutím otevřete boční lištu</param>
+        <param name="collapseNoHotkey">Klepnutím uzavřete boční lištu</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Nahoru</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Dolů</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Přesunout</param>
+        <param name="top">Horní</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Dolní</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Vyplňte prosím požadovaná pole.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Všichni uživatelé</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Nový</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Přidat</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Odstranit</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Změnit]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Jak...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Zobrazit více</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Zaznamenat volání</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Zaregistrovat poznámku</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Hromadná korespondence</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Zobrazit vše</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Přiložit soubor</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Jak?</param>
+        <param name="send_email">Odeslat e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Obrázek přidaný uživatelem</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Aplikace</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Zobrazení verze pro tisk</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Klonovat</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Sdílení</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Domů</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Více informací</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Vybrat jeden:</param>
+        <param name="hotlist_mode">Zobrazit výběr</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Zobrazit {0,number,integer} položek</param>
+        <param name="hotlist_empty_title">Žádné nedávné záznamy. Chcete-li zobrazit záznamy, klepněte na položku Zobrazit nebo vyberte zobrazení v rozevírací nabídce.</param>
+        <param name="hotlist_empty_description">Pro tato kritéria nejsou dostupné žádné záznamy.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Přejít na zprávy</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Středisko informačních zdrojů</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Pomocí střediska informačních zdrojů můžete prozkoumat své vyhlídky, nalézt služby třetích stran a mnohem více.</param>
+        <param name="resource_center_link_text">Jděte na Středisko informačních zdrojů.</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Metodologie prodeje</param>
+        <param name="hotlist_recently_modified">Nedávno upravené</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Nedávno vytvořené</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Nedávno zobrazené</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Žádný--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Vybrat--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Výchozí--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Nelze použít**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Váš správce nedefinoval žádné vlastní odkazy.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Přejít na:</param>
+        <param name="JumpToStep">Krok {0}: {1}</param>
+        <param name="CloseWizard">Ukončit průvodce</param>
+        <param name="LeftHeader">Krok {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Krok {0} z {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Krok {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Uložit a nové</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Další</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Předchozí</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Průvodce nastavením organizace pro {0}</param>
+        <param name="ImportWizardTitle">Průvodce importu pro {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Centrum objednávek</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Zkušební registrace</param>
+        <param name="WizardBody">Text průvodce</param>
+        <param name="WizardFooter">Zápatí průvodce</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Adresa</param><!-- translators note - this is actually the full address -->
+        <param name="street">Adresa</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Město</param><!-- aliased across label files - do not change -->
+        <param name="state">Stát nebo oblast</param><!-- aliased across label files - do not change -->
+        <param name="zip">PSČ</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">PSČ</param> <!-- aliased across label files - do not change -->
+        <param name="country">Země</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Klapka</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Fax. linka</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-mail</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Doručovací adresa</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Ulice doručení</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Město doručení</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Stát nebo oblast doručení</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">PSČ doručení</param>
+        <param name="shippingzippostalcode">PSČ doručení</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Země doručení</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Fakturační adresa</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Fakturační město</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Fakturační stát nebo oblast</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Fakturační PSČ</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Fakturační země</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Fakturační ulice</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Ulice banky</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Adresa banky</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Město banky</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Stát nebo oblast banky</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">PSČ banky</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Země banky</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Poštovní adresa</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Poštovní ulice</param>
+        <param name="mailingcity">Poštovní město</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Poštovní stát nebo provincie</param>
+        <param name="mailingzip">Poštovní PSČ</param>
+        <param name="mailingcountry">Poštovní země</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Poštovní adresa – řádek 1</param>
+        <param name="mailingaddress2">Poštovní adresa – řádek 2</param>
+        <param name="mailingaddress3">Poštovní adresa – řádek 3</param>
+        <param name="otheraddress">Jiná adresa</param>
+        <param name="otheraddress1">Jiná adresa řádek 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Jiná adresa řádek 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Jiná adresa řádek 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Další ulice</param>
+        <param name="otherstreet2">Další ulice 2</param>
+        <param name="otherstreet3">Další ulice 3</param>
+        <param name="othercity">Další město</param>
+        <param name="otherstate">Jiný stát nebo oblast</param>
+        <param name="otherzipcode">Jiné PSČ</param>
+        <param name="otherpostalcode">Další PSČ</param>
+        <param name="otherzippostalcode">Jiné PSČ</param>
+        <param name="othercountry">Další země</param>
+        <param name="otherphone">Další telefon</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Klapka dalšího telefonu</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Adresa 1</param>
+        <param name="address2">Adresa 2</param>
+        <param name="address3">Adresa 3</param>
+        <param name="home_phone">Telefon domů</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Načítání...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Umístění</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Množství</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Kontakt – manažer</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Team Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Team Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Ano</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Ne</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Vítejte v systému salesforce.com.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. Všechna práva vyhrazena.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000 – {1} &lt;a href="{0}"&gt; salesforce.com&lt;/a&gt;, inc. Všechna práva vyhrazena.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Přístupnost</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. Všechna práva vyhrazena.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Všechna práva vyhrazena.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Všechna práva vyhrazena.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Všechna práva vyhrazena.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Zabezpečení</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Podmínky použití</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Děkujeme, že jste si vybrali systém salesforce.com. Než jej začnete používat, musíte si přečíst podmínky použití uvedené níže a souhlasit s nimi. Jakmile budete připraveni, pokračujte klepnutím na tlačítko „Souhlasím“. Nezapomeňte, že pokud s podmínkami používání nesouhlasíte, nebudete se moci k systému salesforce.com přihlásit.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Hotovo</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Přidat nyní</param>
+        <param name="remove">Odebrat</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Nový</param>
+        <param name="exciting_and_new">Novinka!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">zde</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Vytvořit</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Zavřít okno</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Vytisknout stránku</param>
+        <param name="new_window">(Nové okno)</param>
+        <param name="new_focus">(Posun zájmu)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">blank &#45; ignore</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">vybrat vše</param>
+        <param name="select_shown">Zvolit vybrané</param>
+        <param name="remove_shown">Odstranit vybrané</param>
+        <param name="select_none">Nezvolit nic</param>
+        <param name="all_active">Vše aktivní</param>
+        <param name="all_inactive">Vše neaktivní</param>
+        <param name="are_you_sure">Pokračovat?</param>
+        <param name="irreversible_are_you_sure">Nezvratné. Pokračovat?</param>
+        <param name="replace">Vyměnit</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Dokončit</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">Počet minut: {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Nalezeno více položek. Vyberte se seznamu nebo klepněte na ikonu pro upřesnění hledání.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Obnovit</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Zastoupit</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Celkem</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Klepněte zde</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Poznámky pro správce webových stránek:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Ukázkové HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Heslo</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Tuto stránku již nezobrazovat</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Skrýt tuto zprávu pro: </param>
+        <param name="dontShowMessageAgain">Tuto zprávu již nezobrazovat</param>
+        <param name="dismissMessage">Zamítnout tuto zprávu</param>
+        <param name="allObjects">Všechny objekty</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Pro otevření stiskněte mezerník nebo klávesu Enter.</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaigns/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Samoobsluha: <Case_Detail/></param>
+        <param name="CssEdit">Samoobsluha: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Podání <case case="g"/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Cases/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Cases/></param>
+        <param name="Comment">Komentář</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contacts/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contacts/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contracts/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Vlastní objekty</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definice vlastního objektu</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Řídicího panel</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Řídicí panely</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Zrušit výběr vše</param>
+        <param name="deselect_shown">Zrušit výběr zobrazených</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Documents/></param>
+        <param name="MailmergeTemplate">Šablona hromadné korespondence</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Šablony hromadné korespondence</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Složka</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Složky</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Předpovědi</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Předpovědi</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Supervizor služby Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Faktura</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><leads/></param>
+        <param name="Leads"><Leads/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Poznámky</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunities/></param>
+        <param name="Order">Objednávka</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Objednávky</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Položka objednávky</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Položky objednávky</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partners/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Platba</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Platby</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">zpráva</param>
+        <param name="Reports">Zprávy</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Registrace</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Šablona</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Šablony</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabulka</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktivní</param>
+        <param name="amount">Částka</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Roční výnos</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Přiložit dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Změnit heslo</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Zavřít</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Zavřeno</param>
+        <param name="closed_date">Datum ukončení</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Datum uzavření</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Datum vytvoření</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Typ dat</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Odstraněno</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Popis informace</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Zaměstnanci</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Soubor</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Soubory</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Všeobecné informace</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Než začnete, získejte informace.</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Popisek</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Poslední přihlášení</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Datum poslední úpravy</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Název</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Název</param>
+        <param name="new_status">Nový stav</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Žádná</param>
+        <param name="open">Otevřít</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organizace</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Nebyly nalezeny žádné shody.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Vše</param>
+        <param name="clear">Vymazat</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Klepněte na ikonu vyhledávání…</param>
+        <param name="click_lookup_icon_info">Klepněte na ikonu vyhledávání, abyste vybrali hodnotu.</param>
+        <param name="clear_all">Vymazat vše</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Click the Attach button.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Chyby</param> <!-- aliased across lables - do not change -->
+        <param name="high">Vysoký</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Nápověda</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Vezměte mě s sebou!</param>
+        <param name="keywords">Klíčová slova</param>
+        <param name="length">Délka</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Stav</param> <!-- aliased across lables - do not change -->
+        <param name="title">Nadpis</param>
+        <param name="object_title">Nadpis</param>
+        <param name="type">Typ</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Uživatel</param> <!--aliased across labels - do not change -->
+        <param name="Users">Uživatelé</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Nastavit oprávnění</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profily</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Majitel</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">Tuto stránku již nezobrazovat.</param>
+        <param name="click_here_to_create_new_account">{0} a vytvořte nyní <new/> <account case="a"/>.</param>
+        <param name="click_here_to_create_new_contact">{0} a vytvořte nyní <new/> <contact case="a"/>.</param>
+        <param name="click_here_to_create_new_lead">{0} a vytvořte nyní <new/> <lead case="a"/>.</param>
+        <param name="click_here_to_create_new_opportunity">{0} a vytvořte nyní <new/> <lead case="a"/>.</param>
+        <param name="click_here_to_create_new_product">{0} a vytvořte nyní <new/> <product case="a"/>.</param>
+        <param name="SystemModstamp">Značka režimu systému</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divize</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Zpracování</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Aktualizování záznamů…</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Statický překlad</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Příště skrýt tuto stránku</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Načítání…</param>
+        <param name="uploading_title">Načítání</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Probíhá import…</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">a </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Chyba: Do tohoto pole nelze vstoupit.</param>
+        <param name="noReadAccess">K zobrazení tohoto záznamu nemáte oprávnění.</param>
+        <param name="noAccessToUser">K tomuto uživateli nemáte přístup.</param>
+        <param name="disabledButton">Nepovolené tlačítko: {0}</param>
+        <param name="RequiredHeader">Požadované informace</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Vložit obrázek</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Opravdu chcete rozsah přihlášení IP odstranit?</param>
+        <param name="AMPM">AMPM zápis</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Chráněný komponent</param>
+        <param name="dialogCloseConfirm">Okno s potvrzením, které právě prohlížíte, bylo pravděpodobně předčasně uzavřeno. Klepnutím na tlačítko OK přejděte zpět do tohoto okna nebo klepnutím na tlačítko Zrušit toto varování ignorujte.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Spuštění dialogu</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Výsledky hledání</param>
+        <param name="Recent">Nedávno zobrazené</param>
+        <param name="NoMatchHeader">Nebyly nalezeny žádné záznamy. Jedna z možných příčin:</param>
+        <param name="BulletOne">Žádné záznamy tohoto typu neexistují.</param>
+        <param name="BulletTwo">Nemáte povolení prohlížet jakýkoliv z těchto záznamů.</param>
+        <param name="BulletThree">Zýznamy neodpovídají správcem stanoveným kritériím nastavení filtru.</param>
+        <param name="BulletFour">Jedno nebo více řídících polí je prázdných nebo jsou neplatná (Řídící pole:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Dostupní uživatelé</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Vybraní uživatelé</param>
+        <param name="LicensedUsers">Oprávnění uživatelé</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Vybráno k odstranění</param>
+        <param name="Selected">Vybráno</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Zvoleno</param>
+        <param name="UnassignedPackages">Nepřidělené balíčky</param>
+        <param name="SelectedPackages">Vybrané balíčky</param>
+        <param name="InView">zobrazené</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Tento soubor přesahuje maximální velikost odpovídající {0}.</param>
+        <param name="no_file_specified">Zadejte prosím soubor, který chcete načíst. Vepište cestu k souboru nebo použijte tlačítko „Prohledat“, abyste jej umístili do svého místního systému souborů.</param>
+        <param name="invalid_file_type">Typ souboru, který jste zadali, není aktuálně podporován.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Název souboru přesahuje maximální povolenou délku, která činí {0} znaků.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Přípona názvu souboru přesahuje maximální povolenou délku, která činí {0} znaků.</param>
+        <param name="bytes">bajtů</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">kB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Typy souborů HTML nejsou z bezpečnostních důvodů povoleny.</param>
+        <param name="attachment_size_exceeded">Odeslaný soubor překračuje maximální velikost.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Chyba:&lt;/b&gt; Je třeba vybrat obrázek, který chcete nahrát.</param>
+        <param name="upload_file_too_large">&lt;b&gt;Chyba:&lt;/b&gt; Obrázek překračuje limit velikosti 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Chyba:&lt;/b&gt; Vložit lze pouze soubory .gif, .jpeg a .png.</param>
+        <param name="upload_failed">&lt;b&gt;Chyba:&lt;/b&gt; Odeslání se nezdařilo – opakujte akci později.</param>
+        <param name="invalid_file">&lt;b&gt;Chyba:&lt;/b&gt; Soubor není platný obrazový soubor.</param>
+        <param name="invalid_param">&lt;b&gt;Chyba:&lt;/b&gt; Neplatné parametry.</param>
+        <param name="access_failed_alt">Obrázek není dostupný z následující důvodů: Nemáte oprávnění k jeho zobrazení nebo byl ze systému odebrán.</param>
+        <param name="weekly_export_folder">Jiná načtená majetková záruka/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} úspěšně vytvořeno.</param>
+        <param name="Failure_message">Vytváření se nezdařilo.</param>
+        <param name="Common_success_message">Vytváření bylo úspěšné.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Požádat o omezení licence</param>
+        <param name="pageheader">Vyplňte prosím všechna požadovaná políčka pro odeslání vaší žádosti o omezení licence. Je to nejrychlejší způsob zpracování vaší žádosti.  Nezadávejte více požadavků o tytéž licence, mohlo by dojít ke zbytečným prodlevám.</param>
+        <param name="title_landing">Váš požadavek byl přijat!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Váš požadavek byl přijat a bude zpracován v doručeném pořadí. Nezapomeňte, že žádosti o omezení vašeho počtu licencí budou platné od následujícího fakturačního období po vaší žádosti, pokud upozorníte salesforce.com pět pracovních dní před datem faktury pro vaše následující fakturační období.</param>
+        <param name="pageheader_landing">Váš požadavek byl přijat a bude zpracován v doručeném pořadí. Požadavky o omezení počtu licencí budou platné 30 dní po odeslání vašeho požadavku. Nezasílejte vícečetné požadavky na omezení licencí pro tytéž licence, mohlo by dojít ke zpoždění zpracovávání vašeho požadavku.</param>
+        <param name="title_error">Váš požadavek nebylo možno zpracovat.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Momentálně jsme nemohli váš požadavek odeslat. Opakujte akci později.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Odesílání vašeho požadavku</param>
+        <param name="reason">Důvod</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Popište prosím&lt;br&gt; podrobněji</param>
+        <param name="numLicenses">Počet licencí</param>
+        <param name="potentialResponse">Jak bychom mohli zachovat&lt;br&gt; váš podnik?</param>
+        <param name="tips_title">Tipy pro odesílání požadavků na omezení licencí</param>
+        <param name="tip1">Vyplňte pozorně všechny informace, abyste zajistili rychlé a řádné zpracování vašeho požadavku.  Před odesláním této žádosti zkontrolujte, zda deaktivujete dostatečný počet uživatelů, aby byl počet vašich uživatelů menší nebo rovný vašemu novému počtu licencí. Toto lze provést pomocí funkce &lt;a href="{0}"&gt;Spravovat uživatele&lt;/a&gt; v &lt;a href="{1}"&gt;Mé nastavení&lt;/a&gt;.</param>
+        <param name="type1">Stornování účtu</param>
+        <param name="type2">Omezení uživatelských licencí</param>
+        <param name="type3">Omezení offline licencí</param>
+        <param name="type4">Omezení licencí kampaně</param>
+        <param name="type5">Stornování verze Mobile</param>
+        <param name="type6">Omezení licence verze Mobile</param>
+        <param name="type7">Omezení licence Force.com Mobile</param>
+        <param name="reason_0">Převzetí/fúze se společností</param>
+        <param name="reason_1">Rozpuštění společnosti</param>
+        <param name="reason_2">Eliminovaní prodejci</param>
+        <param name="reason_3">Koncoví uživatelé neadoptující</param>
+        <param name="reason_4">Funkce nesplnila očekávání</param>
+        <param name="reason_5">Vedení nezaznamenává dostatečnou hodnotu</param>
+        <param name="reason_6">Špatné zkušenosti se zaměstnanci salesforce.com</param>
+        <param name="reason_7">Příliš vysoká cena</param>
+        <param name="reason_8">Přechod ke konkurenci</param>
+        <param name="reason_9">Nepoužitá oprávnění</param>
+        <param name="reason_10">Jiné</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Vyplňte následující pole:</param>
+        <param name="title">Odeslat zpětnou vazbu na stránky salesforce.com</param>
+        <param name="title_upgrade_me">Registrovat žádost o aktualizaci</param>
+        <param name="title_support">Odeslat zpětnou vazbu</param>
+        <param name="warning_line_too_long">Varování: Popis je delší než 4 000 znaků a bude zkrácen.\\n</param>
+        <param name="feedback_info">Kontaktování zákaznické podpory</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">S jakýmikoli dotazy se můžete obrátit na zákaznickou podporu. Spoléháme se na odezvu našich zákazníků, která nám pomáhá při vytváření a zlepšování systému salesforce.com. Rádi poznáváme a oceňujeme vaše nápady a těšíme se na další připomínky.</param>
+        <param name="general_info_me">Chcete-li získat více informací o aktualizaci z verze Personal Edition na kteroukoli z našich podnikových verzí, vyplňte níže uvedený formulář. Obchodní zástupce vám zpětně zavolá do 48 pracovních hodin.</param>
+        <param name="general_info_support">S jakýmikoli dotazy se můžete obrátit na zákaznickou podporu. Zpětná vazba ze strany zákazníků je pro nás velmi důležitá, protože nám pomáhá formovat systém Salesforce CRM Call Center. Těšíme se na vaše nápady. Neváhejte a ozvěte se nám.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Nový</param>
+        <param name="functionalArea">Téma</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Otázka</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Žádost</param>
+        <param name="type3">Zpětná vazba</param>
+        <param name="type4">Žádost o funkci</param>
+        <param name="priority1">Mimořádná situace</param>
+        <param name="priority2">Normální</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Nízký</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Chci si nyní předplatit verzi Professional Edition.</param>
+        <param name="subject_subscribe_me">Chci nyní provést aktualizaci.</param>
+        <param name="subject_subscribe_we">Chci více informací o verzi Professional Edition.</param>
+        <param name="subject_subscribe_ee">Chci si nyní předplatit verzi Enterprise Edition.</param>
+        <param name="subject_subscribe_ue">Chci si nyní předplatit verzi Unlimited Edition.</param>
+        <param name="subject_subscribe_support">Chci se nyní přihlásit k odběru.</param>
+        <param name="subject_data_export">Chci službu Týdenní export.</param>
+        <param name="subject_marketing_licenses">Přidat marketingové licence</param>
+        <param name="subject_offline_licenses">Přidat licence offline</param>
+        <param name="subject_wireless_licenses">Přidat bezdrátové licence</param>
+        <param name="subject_offlinepda_licenses">Přidat licence Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Přidat mobilní oprávnění Force.com</param>
+        <param name="subject_sfcontent_licenses">Přidat oprávnění pro Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Přidat oprávnění pro znalosti</param>
+        <param name="subject_interaction_licenses">Přidat oprávnění toku Force.com</param>
+        <param name="subject_support_licenses">Přidat oprávnění služby Cloud</param>
+        <param name="subject_jigsaw_licenses">Přidat licence Jigsaw</param>
+        <param name="subject_liveagent_licenses">Přidat licence Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Přidat licence Site.com Contributor</param>
+        <param name="subject_siteforcepublisher_licenses">Přidat licence Site.com Publisher</param>
+        <param name="subject_chatteranswers_licenses">Přidat licence Chatter Answers</param>
+        <param name="subject_license_reduction">Sleva na licence</param>
+        <param name="functionalArea_0">Účet/Správa licencí</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Fakturační dotaz</param>
+        <param name="functionalArea_3">Spojení dat</param>
+        <param name="functionalArea_4">E-mail/E-mail ve formátu HTML</param>
+        <param name="functionalArea_5">Předpovědi &amp; Příležitosti</param>
+        <param name="functionalArea_6">Importování</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Tipy</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Výkon</param>
+        <param name="functionalArea_9">Zprávy &amp; Zobrazení</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Předplaťte si nyní</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Synchronizace</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Služba Týdenní export</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Bezdrátový</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Jiné</param>
+        <param name="functionalArea_16">Marketingová licence</param>
+        <param name="functionalArea_17">Licence Offline</param>
+        <param name="functionalArea_18">Profily/Rozložení stránek/Typy záznamů</param>
+        <param name="functionalArea_19">Kampaně</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Samoobsluha</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Bezdrátová licence</param>
+        <param name="functionalArea_22">Aktualizovat nyní</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Licence Sales Anywhere</param>
+        <param name="functionalArea_24">Úkoly/Události </param>
+        <param name="functionalArea_25"><Products/> &amp; Splátky/<Pricebooks/></param>
+        <param name="functionalArea_26">Důležité upozornění </param>
+        <param name="functionalArea_27">Dokumenty</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Věci &amp; Řešení </param>
+        <param name="functionalArea_29">Vyhledat</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Sdílení</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Wireless Edition</param>
+        <param name="functionalArea_33">Outlook Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Mobile Edition for au</param>
+        <param name="functionalArea_35">Partner Portal License</param>
+        <param name="functionalArea_36">Oprávnění pro Force.com Mobile</param>
+        <param name="functionalArea_37">Oprávnění pro Salesforce CRM Content</param>
+        <param name="functionalArea_38">Licence služby Cloud</param>
+        <param name="functionalArea_39">Licence Jigsaw</param>
+        <param name="functionalArea_40">Licence Live Agent</param>
+        <param name="functionalArea_41">Licence Site.com Contributor</param>
+        <param name="functionalArea_42">Licence Site.com Publisher</param>
+        <param name="functionalArea_43">Licence Charter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Chcete-li raději hovořit přímo se zástupcem oddělení zákaznických služeb, volejte (415) 901-7010 mezi 6:00 a 18:00 pacifického času (PT), pondělí&amp;#150;pátek, nebo volejte +353-1-2723503 mezi 8:00 a 18:00 GMT, pondělí&amp;#150;pátek.</param>
+        <param name="tips_title">Tipy pro odesílání případů</param>
+        <param name="tip1">Ujistěte se, že nám poskytli dostatek informací, abychom vám vyřešit váš případ co nejdříve.  Níže nabízíme pár doporučení a připomínek:</param>
+        <param name="tip2">Sdělte nám, co se pokoušíte udělat, co myslíte, že se stane, a co se místo toho stane.</param>
+        <param name="tip3">Sdělte nám, jaké máme postupovat, abychom váš problém navodili.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Zobrazení:</param>
+        <param name="X">X</param>
+        <param name="close">Zavřít</param>
+        <param name="MLclose">Zavřít</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Odstr.</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Odstranit</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Vymazat</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Záznam</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Nastavit</param>
+        <param name="activate">Aktivovat</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Deaktivovat</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Spravovat</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Exportovat</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Další strana</param>
+        <param name="prev">Předchozí stránka</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Položky v zobrazení – celkem: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Zobrazit {0} {1} záznamů na stránku seznamu</param>
+        <param name="number_shown_detail_page">V souvisejícím seznamu vždy zobrazovat {0} {1} {2} záznamů</param>
+        <param name="number_shown_adjust_less_link">méně</param>
+        <param name="number_shown_adjust_more_link">více</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">vše</param>
+        <param name="last_page">Zpět na předchozí stránku</param>
+        <param name="last_list">Zpět na seznam</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Zpět na seznam:  <Entities/></param>
+        <param name="last_type_list_conn">Zpět na seznam: položky <Entities/> od klientel</param>
+        <param name="last_suggested_solution_list">Zpět na seznam doporučených <solutions case="g"/></param>
+        <param name="last_solution_search_list">Zpět na výsledky vyhledávání <solution case="g"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Zpět na položku <Entity/> {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Akce:</param>
+        <param name="checkboxPrompt">Vyberte prosím alespoň jednu řadu.</param>
+        <param name="checkboxSinglePrompt">Vyberte prosím jednu řadu.</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Vaše výběry na této stránce budou ztraceny. Chcete pokračovat?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Chcete-li provést tuto operaci, musíte vybrat {0} řad nebo méně.</param>
+        <param name="selectionLimit">Nemůžete vybrat více než {0} řad.</param>
+        <param name="login">Přihlášení</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Relace</param>
+        <param name="none">Žádné záznamy k zobrazení.</param>
+        <param name="no_rows">Nebyly vybrány žádné řady.</param>
+        <param name="subtotal">Mezisoučet:</param>
+        <param name="total">Celkem:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Vybrat všechny položky</param>
+        <param name="clearAllInfo">Zrušit výběr všech položek</param>
+        <param name="rename">Přejmenovat</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Vybrat</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Zrušit výběr</param>
+        <param name="toggleall">Přepnout všechny řady</param>
+        <param name="refresh">Obnovit</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Vyberte zobrazení.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Zadané zobrazení přesahuje maximální povolenou velikost. Upřesněte prosím kritéria pro vyhledávání úpravou zobrazení nebo vytvořením nového zobrazení.</param>
+    <param name="switch_view">Přepnout zobrazení</param>
+    <param name="records_x_to_y">Zobrazování záznamů {0} – {1}</param>
+    <param name="records_x_to_y_more">Zobrazování záznamů {0} – {1}, další dostupné záznamy</param>
+    <param name="records_x_to_y_more_showing_max">Zobrazování záznamů {0} – {1}. Na této stránce lze zobrazit pouze prvních 1 000 záznamů, i když k dispozici je více záznamů. Chcete-li zobrazit méně záznamů, upřesněte svá kritéria pro zobrazení seznamu. Chcete-li vytisknout více než 1 000 záznamů, spusťte prosím zprávu a klepněte na tlačítko Zobrazení s možností tisku ve zprávě.</param>
+    <param name="number_of_records">Počet záznamů</param>
+        <param name="createCase">Vytvořit <case case="a"/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Klepnutím rozevřete/vypněte zobrazení vložených položek.</param>
+        <param name="expand">Klepnutím rozevřete vložené položky.</param>
+        <param name="collapse">Klepnutím vypněte zobrazení vložených položek.</param>
+        <param name="shortExpand">Rozevřít</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Sbalit</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Rozevřeno</param>
+        <param name="collapsed">Vypnuto zobrazení</param>
+        <param name="level">Úroveň</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hierarchie:</param>
+        <param name="siblings">Souřadné:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Vyhledávání</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Vybrat objekt</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Kdo</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Co</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Při vyhledávání bylo nalezeno více řad, než je maximální počet ({0}). Upřesněte prosím svá kritéria vyhledávání.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Všechna práva vyhrazena.</param>
+        <param name="useWildcards">Použitím zástupného znaku '*' lze dosáhnout lepších výsledků při vyhledávání.  Například "ad*" vrátí všechny záznamy s názvem, který obsahuje "ad".</param>
+        <param name="useWildcardsWithSearch">Použitím zástupného znaku „*“ vedle jiného znaku lze dosáhnout lepších výsledků při vyhledávání.</param>
+        <param name="error_lookup_multiple_matches_ile">Bylo nalezeno několik položek.&lt;br&gt;Klepněte na ikonu a upřesněte vyhledávání.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Rozbalit seznam</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Rozbalený seznam</param>
+        <param name="sharing">Sdílení</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Proč?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Více filtrů &gt;&gt;</param>
+        <param name="less_filters">Méně filtrů &lt;&lt;</param>
+        <param name="by_keyword">Podle klíčového slova</param>
+        <param name="by_filter">Podle filtru pole</param>
+        <param name="too_many">Vyhledáno bylo více než {0} výsledků. Zobrazeno je pouze prvních {0}. Upřesněte prosím kritéria vyhledávání.</param>
+        <param name="Results">Výsledky</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Vyhledávání:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Výsledek</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Pole</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operátor</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Hodnota</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Zadáním několika položek do třetího sloupce můžete použít filtry „nebo“.</param>
+        <param name="tip_1">Zadat můžete až 10 položek oddělených čárkami. Např.: CA, NY, TX, FL vyhledá položku CA nebo NY nebo TX nebo FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Po stranách údajů, které obsahují čárky, vložte uvozovky. Např."2000,00", "10000,00" vyhledá položku 2000,00 nebo 10000,00.</param>
+        <param name="tip_3">U zaškrtávacích políček použijte položku „Správně“ a „Nesprávně“, např.</param>
+        <param name="tip_4">„Aktivní se rovná správně“ nebo „Převedené se rovná nesprávně“. Zadání pravidla založeného na směrových číslech musí obsahovat závorky, např. telefon začíná na (415), (510).</param>
+        <param name="tip_5">Jestliže používáte nástroj pro překládání, zadejte všechna kritéria filtru pomocí hlavních hodnot.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Dostupný</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Výběry</param>
+        <param name="assignLicensesDescription">Zaškrtněte políčko vedle každého balíčku, který chcete přidělit k tomuto uživateli a klepněte na položku Přidělit. Zaškrtávací políčko chybí, pokud balíček nemá dostatek oprávnění, pokud platnost balíčku vypršela nebo byla pozastavena.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Výchozí portál</param>
+        <param name="3">Internetový obchod</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Potvrzení</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Informace</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Chyba</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Varování</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Zabezpečit</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Frekvence</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Denně</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Týdně</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Měsíčně</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Každý pracovní den</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Každý den</param>
+       <param name="lastDay">poslední</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">1.</param>
+    <param name="on2">2.</param>
+    <param name="on3">3.</param>
+    <param name="on4">4.</param>
+    <param name="onLast">poslední</param>
+    <param name="startTime">Zahájit</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Ukončit</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Preferovaný čas zahájení</param>
+    <param name="noPreference">Bez preference</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Přesný čas zahájení bude záviset na činnosti řady úloh.</param>
+
+    <param name="diffTimeZoneMsg">Časová zóna pro toto měsíční nastavení frekvence je:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Nastavení frekvence se zobrazují v časové zóně toho uživatele, který je naposledy upravoval.&lt;br&gt;Jakékoli změny, které u nastavení provedete, budou aktualizovány tak, aby odpovídaly vaší časové zóně.</param>
+
+      <param name="weeklyRecurrence">Opakuje se každý týden v tento den: {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Opakuje se každý týden v tento den:</param>
+      <param name="monthlyRecurrence1">Opakování: {0} každý měsíc</param>
+      <param name="monthlyRecurrence1LegendLabel">Určitý</param>
+      <param name="monthlyRecurrence2LegendLabel">Vlastní</param>
+      <param name="monthlyRecurrence2">Opakování: {2} {0} {3} {1} každý měsíc</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Opakování: {0} {1} každý měsíc</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Opakování: v určitý den každý měsíc</param>
+      <param name="accessibleMonthly2">Opakování: ve zvolený den každý měsíc</param>
+      <param name="accessibleOnDayN">Určitý den</param>
+      <param name="accessibleOnDayNOfWeek">Výskyt</param>
+      <param name="accessibleOnDayName">Den</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Tímto jednoduchým testem můžete zabránit škodlivému softwaru v přístupu k vašim datům.  Váš správce vyžaduje tento test při stahování velkého objemu dat.  Bude se nabízet pouze jednou v každé relaci přihlášení.</param>
+        <param name="imagePrompt">Zadejte výše uvedená slova, oddělená mezerou:</param>
+        <param name="audioPrompt">Zadejte čísla, která uslyšíte:</param>
+        <param name="refresh">Získat nový ověřovací kód</param>
+        <param name="audio">Získat zvukový ověřovací kód</param>
+        <param name="image">Získat obrázkový ověřovací kód</param>
+        <param name="incorrect">Vaše zadání není správné, opakujte akci.</param>
+        <param name="moreinfo">Více informací &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Méně informací</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Klikněte pro více...</param>
+        <param name="show">Zobrazit panel zvýraznění</param>
+        <param name="hide">Skrýt panel zvýraznění</param>
+        <param name="empty">U tohoto záznamu nejsou žádná zvýrazněná pole ke zobrazení.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Průvodce</param>
+        <param name="closeIntro">Ne, děkuji.</param>
+        <param name="closeOutro">Zavřít</param>
+        <param name="showLater">Zobrazit později</param>
+        <param name="replay">Přehrát znovu</param>
+        <param name="continue">Pokračovat</param>
+        <param name="previous">Předchozí</param>
+        <param name="startTour">Spustit průvodce</param>
+        <param name="endTour">Ukončit průvodce</param>
+        <param name="stepCounter">{0} z {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Podrobnosti</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Doporučení</param>
+        <param name="hideBucketTip">&lt;br&gt;Přetáhněte sem položky&lt;br/&gt;ze stránky a tyto položky budou skryté.</param>
+        <param name="hiddenListTip">Pro zobrazení skrytých položek je přetáhněte zpět do seznamu výše.</param>
+        <param name="hiddenListShowLinkLabel">Skryto: {0}</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Zpět na začátek</param>
+        <param name="multipleItemDragGhost">Více položek (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Kompatibilita prohlížeče detailu stránky</param>
+        <param name="compatibilityMsgSubTitle">Tento prohlížeč bohužel nepodporujeme</param>
+        <param name="compatibilityMsg1">Ve vašem stávajícím prohlížeči nemůžeme tento detail stránky zobrazit.</param>
+        <param name="compatibilityMsg2">Nový design můžete používat, kdykoli se přihlásíte s některým z těchto kompatibilních prohlížečů:</param>
+        <param name="supportedIE">Internet Explorer 7 nebo 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Díky!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Klasické zobrazení mých položek – nastavit jako výchozí</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Chcete-li vyhledat položku {0}, zadejte vyhledávací slovo sem...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Žádný {0} neodpovídá vašemu hledání.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Strana {1} z {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

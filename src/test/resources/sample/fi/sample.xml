@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">Yhdistelmäruutu</param>
+        <param name="select_default">Valitse alla olevista vaihtoehdoista.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Valitse {0} alla olevista vaihtoehdoista.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">Käyttöoikeus</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Hallittava)</param>
+        <param name="activity_history">Toimintohistoria</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Lisätiedot</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Avustaja</param>
+        <param name="assistant_name">Avustajan nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Avustajan puhelinnumero</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Avustajan puh.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Avustajan ulkoinen puh.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Syntymäaika</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Tekstiosa</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Yhtiö</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Luoja:</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Luojan tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Luojan alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Valuutan ISO-koodi</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Mukautetut kentät</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Oletustila</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0} Yksityiskohta</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Osasto</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0}: Muokkaus</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Odotettu tuotto</param>
+        <param name="first_name">Etunimi</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Sukunimi</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Etunimi (paikallinen)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Sukunimi (paikallinen)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Tilivuosineljännes</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Tilivuosi</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Koko nimi</param> <!-- aliased across app - do not change -->
+        <param name="group">Ryhmä</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Ryhmän nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Jonon nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Toimiala</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Edellinen muokkaaja</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Edellisen muokkaajan tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Edellisen muokkaajan alias</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Päätietotietueen tunnus</param>
+        <param name="mobile">Matkapuhelin</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Matkapuhelin</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Matkapuhelinnro</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Uusi jako</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Kohdistettu alias</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Käytettävissä</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Yhtiön nimi</param> <!-- aliased across app - do not change -->
+        <param name="activities">Toiminnot</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">ei liitteitä</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents">ei <document plural="y" case="par"/></param>
+        <param name="address_info">Osoitetiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Hylätty</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Oletus</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Oletusarvoinen prioriteetti</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Luo uusi näkymä</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Mukautetut tiedot</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Kaksoiskappaleen tila</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Sähköpostiosoite</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Sähköpostinimi</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Sähköpostimalli</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Sähköposti:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Mukautetut linkit</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Tiedostokoko</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Ei tietoja käytettävissä</param>
+        <param name="history_event_checked">Valittu kenttä {0}</param>
+        <param name="history_event_unchecked">Valitsematon kenttä {0}</param>
+        <param name="how_do_i_specify_info">Miten määritän, mitä tietoja tallennetaan?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Sisäinen lähde</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Väli:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Tervehdys</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Valitse uusi omistaja</param>
+        <param name="select_a_view">Näet liittyvien tuloksien luettelon valitsemalla näkymän avattavasta luetteloruudusta.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Näet liittyvien tuloksien luettelon valitsemalla kansion avattavasta luetteloruudusta.</param>
+        <param name="select_the_file">Valitse tiedosto</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">Valitse sisällytettävät kentät:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Allekirjoitus</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Aihe</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Järjestelmän tiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Web-sivusto</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">Omistajan alias</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Omistajan etunimi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Omistajan tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Omistajan sukunimi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Omistajan nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Omistajan rooli</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Omistajan roolin näyttäminen</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Omistajan roolin nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Ensisijainen</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Prioriteetti</param><!--aliased across labels - do not change -->
+        <param name="private">Yksityinen</param>
+        <param name="role">Rooli</param> <!--aliased across labels - do not change -->
+        <param name="rating">Luokitus</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Pikaluonti</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Viimeksi tarkastellut</param>
+        <param name="top5">Viisi yleisintä kysymystä</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Alihankkija</param>
+        <param name="customer">Asiakas</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Toimittaja</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Tietuetyypin tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Divisioonan tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Taulukon numerointi tai tunnus</param>
+        <param name="editable">Muokattava</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Normalisoitu nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Tietosuojatiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Hallittava tila</param>
+        <param name="namespacePrefix">Nimitilan etuliite</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Moduulin nimitila</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Asennettu paketti</param>
+        <param name="initialVersion">Ensimmäinen julkaistu versio</param>
+        <param name="lastVersion">Lopullinen saatavilla oleva versio</param>
+        <param name="availableInVersions">Saatavilla olevat versiot</param>
+        <param name="DeveloperName">Sovelluskehittäjän nimi</param>
+        <param name="apiName">API-nimi</param>
+        <param name="InvalidDeveloperNameOnEntity">Kenttä {0} voi sisältää vain alaviivoja ja aakkosnumeerisia merkkejä. Sen on oltava yksilöivä ja sen on alettava kirjaimella, se ei saa päättyä alaviivaan eikä sisältää kahta peräkkäistä alaviivaa.</param>
+        <param name="missingDevName">{0} on määritettävä.</param>
+        <param name="duplicateDevName">Tämä {0} on jo olemassa tai sitä on aikaisemmin käytetty.  Valitse jokin toinen nimi.</param>
+        <param name="manageabilityOverride">Hallittavuuden korvaaminen</param>
+        <param name="AMPMId">AMPM-tunnus</param>
+        <param name="MetricsDate">Metriikan päivämäärä</param>
+        <param name="MayEdit">Muokattavissa</param>
+        <param name="IsLocked">On lukittu</param>
+        <param name="LastViewedDate">Edellinen tarkastelupäivämäärä</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">Luo</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Määritykset</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Luo uusi...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Tiedosto</param>
+        <param name="new_forecast">Ennuste</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Roskakori</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Lähetä sähköposti</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Raportti</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">Muokkaaja:</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Luontipäivä</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Muokkauspäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">Automaattinen prosessi</param>
+        <param name="partner_network">Yhteyden käyttäjä</param>
+        <param name="external_who">Julkinen käyttäjä</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">Esimerkki</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Virhe: Tiedot eivät kelpaa. &lt;br/&gt;Korjaa tiedot tarkistamalla kaikki alla olevat virheviestit.</param>
+        <param name="EditPageError2">Korjaa tiedot tarkistamalla kaikki alla olevat virheviestit.</param>
+        <param name="Required">Arvo on määritettävä</param>
+        <param name="RequiredWithFieldList">Pakolliset kentät puuttuvat: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Itsepalvelun edellyttämä</param>
+        <param name="RequiredBy">Kohteen {0} edellyttämä</param>
+        <param name="Requires">Pakollinen: {0}</param>
+        <param name="TooLong">Arvo on liian pitkä kenttään</param>
+        <param name="CannotExceedXCharacters">Arvon enimmäispituus on {0} merkkiä</param>
+        <param name="MustBeXCharacters">Arvossa on oltava {0} merkkiä</param>
+        <param name="MustBeNumber">Arvon on oltava numero</param>
+        <param name="StatusCloseRequired">Vähintään yhden tilan on oltava suljettu</param>
+        <param name="StatusDefaultRequired">Vähintään yhden tilan on oltava oletustila</param>
+        <param name="StatusInUse">Seuraavat tila-arvot ovat käytössä, eikä niitä voi muokata tai poistaa: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Virheellinen päivämäärä</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Virheellinen päivämäärä. Et voi asettaa päivämäärää päivän {0} jälkeen</param>
+        <param name="InvalidDateTime">Päivämäärä ja aika ei kelpaa</param>
+        <param name="InvalidColor">Väri ei kelpaa</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Internet-osoite ei kelpaa</param>
+        <param name="InvalidOption">Valittu vaihtoehto ei kelpaa.</param>
+        <param name="UnsupportedCurrency">Valuutta ei kelpaa</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL ei kelpaa</param>
+        <param name="NoneSelectedInPicklist">-- ei valintoja --</param>
+        <param name="InvalidTime">Aika-arvo ei kelpaa</param>
+        <param name="InvalidNumber">Numero ei kelpaa</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Luku on liian suuri.</param>
+        <param name="TooLargeNumberWithScale">Luvun on oltava pienempi kuin {0}.</param>
+        <param name="TooSmallNumberWithScale">Luvun on oltava suurempi kuin {0}.</param>
+        <param name="NonpositiveError">Arvon on oltava positiivinen.</param>
+        <param name="NegativeError">Arvo ei voi olla negatiivinen.</param>
+        <param name="PositiveError">Arvo ei voi olla positiivinen.</param>
+        <param name="NonnegativeError">Arvon on oltava negatiivinen.</param>
+        <param name="NonzeroError">Arvo ei voi olla nolla.</param>
+        <param name="NonintegerError">Luvun on oltava kokonaisluku.</param>
+        <param name="InvalidPercent">Prosentti ei kelpaa</param>
+        <param name="InvalidAfterRoundOff">Luku {0} ei kelpaa, kun se on pyöristetty asteikkoon: {1}</param>
+        <param name="CharactersRemaining">jäljellä</param>
+        <param name="CharactersOver">yli rajan</param>
+        <param name="TooManySelection">Voit valita vain {0} kohdetta</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Sama arvo tietueessa: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Piilotetun kentän arvo (ei näkyvissä) monistaa seuraavan tietueen arvon: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} monistaa sen tietueen arvon, jonka tunnus on: {1}</param>
+        <param name="True">Tosi</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Epätosi</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Virheellinen toimialue</param>
+        <param name="ReadOnly">Et voi muokata tätä kenttää</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">Jos päätät jatkaa tuontia, nämä tiedot ohitetaan ja kenttä jää tyhjäksi.</param>
+        <param name="extra_DefaultDivision">Jos päätät jatkaa tuontia, näissä tietueissa käytetään tietueen omistajan oletusdivisioonaa.</param>
+        <param name="extra_DefaultCurrency">Jos päätät jatkaa tuontia, näissä tietueissa käytetään oletusvaluuttaa.</param>
+        <param name="InvalidDataType">arvo ei ole oikeaa tyyppiä: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">omistaja ei voi olla tyhjä</param>
+        <param name="DynamicEnumValue">valintaluettelon arvo ei ole aktiivinen: {0}</param>
+        <param name="DynamicEnumValue_extra">Jos päätät jatkaa tuontia, tämä arvo tuodaan, mutta sitä ei lisätä tämän valintaluettelon aktiivisten arvojen luetteloon.</param>
+        <param name="InvalidCurrencyCode">valuuttakoodi ei kelpaa: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">ei-aktiivinen valuuttakoodi: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">virheellinen aika: {0}</param>
+        <param name="InvalidDateValue">päivämäärä ei kelpaa: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">prosentti ei kelpaa: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">Puuttuva tai virheellinen tunnus</param>
+        <param name="Id15Characters">Tunnuksen on oltava tarkalleen 15 merkkiä pitkä</param>
+        <param name="IdMissing_extra">Tietueet ohitetaan</param>
+        <param name="InvalidDivision">divisioona ei kelpaa: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">ei-aktiivinen divisioona: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">numero ei kelpaa: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">numeerisen kentän arvo on sallitun alueen ulkopuolella: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">liian monta kohdetta valittu: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">sähköpostiosoite ei kelpaa: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">IP-osoite ei kelpaa: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">tyypin tunnusarvo ei kelpaa: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">rajoitetun valintaluettelokentän arvo ei kelpaa: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">bittivektorikentän arvo ei kelpaa: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">data-arvo on liian suuri: {0}</param>
+        <param name="DataTruncated_extra">Jos päätät jatkaa tuontia, nämä tiedot katkaistaan siten, että ne sopivat kenttään.</param>
+        <param name="DuplicateExternalId">ulkoiseen tunnuskenttään löytyi useita tietueita: {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">Pyyntöä käsitellään...</param>
+        <param name="InvalidDeveloperNameChars"><Entity entity="0" case="g"/> API-nimi voi sisältää vain alaviivoja ja aakkosnumeerisia merkkejä. Sen on oltava yksilöivä ja sen on alettava kirjaimella, se ei saa päättyä alaviivaan eikä sisältää kahta peräkkäistä alaviivaa.</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">Keskeytä</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Hyväksy</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Hyväksy muutokset</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Aktivoi Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Lisää kommentti</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Lisää komponentteja</param>
+        <param name="add_contacts">Lisää <contacts case="par"/></param>
+        <param name="add_leads">Lisää <leads case="par"/></param>
+        <param name="add_more_users">Lisää käyttäjiä</param>
+        <param name="add_multiple_users">Lisää useita käyttäjiä</param>
+        <param name="add_product">Lisää <product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Lisää rivi</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Lisää esimerkkimittaristo</param>
+        <param name="add_to_call_center">Lisää puhelukeskukseen</param>
+        <param name="add_to_campaign">Lisää <campaign case="il"/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Lisää Outlookiin</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Lisää <pricebook case="il"/></param>
+        <param name="add_remove">Lisää/Poista</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Lisäasetukset</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Hyväksy</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Kohdista</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Kohdista käyttäjät rooliin</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Palaa raporttiluetteloon</param>
+        <param name="billing_and_licenses">Laskutus ja lisenssit</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Laskutustiedot</param>
+        <param name="briefcase_setup">Salkun määritykset</param>
+        <param name="cancel">Peruuta</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Peruuta lähetys</param>
+        <param name="cancel_test_instance">Peruuta Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Muuta yritystietoja</param>
+        <param name="change_currency">Vaihda valuutta</param>
+        <param name="change_owner">Vaihda omistaja</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Hyväksy ja vaihda omistaja</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Hyväksy ja kohdista päätieto</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Vaihda tila</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Tarkista käytettävyys</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Tarkista oikeinkirjoitus</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Valitse <pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Puhdista</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Yleiskatsaus</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0}: Välilehti</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Luettelo</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Kopioi ylätason tietueen tiedot</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Tiivistä kaikki</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Valitse kohde valintaluettelosta</param>
+        <param name="composegmail">Kirjoita Gmail-viesti</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Vahvista</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Jatka</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Jatka silti</param>
+        <param name="convert">Muunna</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Muunna <lead/></param>
+        <param name="create">Luo</param>
+        <param name="create_follow_up_event">Luo jatko<event/></param>
+        <param name="create_follow_up_task">Luo jatko<task/></param>
+        <param name="create_new">Luo uusi {0}</param>
+        <param name="create_new_section">Luo uusi osio</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Luo <opportunity/></param>
+        <param name="create_test_instance">Luo Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Luo testitietokanta</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Luo Webistä liidiksi -lomake</param>
+        <param name="create_new_holiday">Luo uusi loma</param>
+        <param name="create_new_sla_process">Uusi <entitlement/>prosessi</param>
+        <param name="create_new_milestone_type">Uusi virstanpylväs</param>
+        <param name="currency_setup">Valuutan määritykset</param>
+        <param name="customer_view">Asiakasnäkymä</param>
+        <param name="customize">Mukauta</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Mukauta näyttö kaikille käyttäjille</param>
+        <param name="page_settings">Sivun asetukset</param>
+        <param name="customize_page">Mukauta sivu</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Muokkaa asettelua</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Mittaristoluettelo</param>
+        <param name="data_export">Tietojen vienti</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Tyhjennä</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Hylkää</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Oletusarvoiset mukautetut linkit</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Poista käyttöoikeus</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Esikatselu valmis</param>
+        <param name="dont_save">Älä tallenna</param>
+        <param name="dont_show_page_again">Älä näytä tätä sivua uudelleen</param>
+        <param name="download">Lataa</param>
+        <param name="download_now">Lataa nyt</param>
+        <param name="download_sample_css_file">Lataa CSS-esimerkkitiedosto</param>
+        <param name="edit">Muokkaa</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Muokkaa: [Beta]</param>
+        <param name="edit_all">Muokkaa kaikkia</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Muokkaa käyttäjiä</param>
+        <param name="edit_rates">Muokkaa hintoja</param>
+        <param name="edit_selected">Muokkaa valittuja</param>
+        <param name="editProperties">Muokkaa ominaisuuksia</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Poistu {0}</param>
+        <param name="enable_appstore_user">Myönnä kassan käyttöoikeus</param>
+        <param name="enable_as_partner">Ota käyttöön kumppanina</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Ota käyttöön kumppaniportaaliin kirjautuminen</param>
+        <param name="enable_self_service">Ota käyttöön itsepalvelu</param>
+        <param name="enable_users">Lisää uusia käyttäjiä</param>
+        <param name="enableForecasting">Ota käyttöön mukautettava ennuste</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Anna koulutus</param>
+        <param name="erase_test_instance">Poista Sandbox</param>
+        <param name="establish">Määritä</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Laajenna kaikki</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Vie lisätiedot</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Vie lisätiedot nyt</param>
+        <param name="export_background">Suorita taustavienti...</param>
+        <param name="fctHistory">Ennustehistoria</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Ennusteyhteenveto</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Kenttäkelpoisuudet</param>
+        <param name="find">Etsi</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Etsi raportti</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Etsi <document/></param>
+        <param name="find_pricebooks">Etsi <pricebook/></param>
+        <param name="find_products">Etsi <product/></param>
+        <param name="find_solution">Etsi <solution/></param>
+        <param name="finished">Lopetettu</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Välitä</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Välitä yhteyksiin</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Luo WSDL</param>
+        <param name="generate_login_html">Luo kirjautumis-HTML</param>
+        <param name="getMoreInfo">Lisätietoja</param>
+        <param name="go">Siirry</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Tämän sivun ohje</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} -ohje</param>
+        <param name="hide">Piilota lisätiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Hyväksyn</param>
+        <param name="i_decline">En hyväksy</param>
+        <param name="impactAnalysis">Missä tätä käytetään?</param>
+        <param name="import">Tuo</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Tuo <leads case="par"/></param>
+        <param name="include_offline">Myös offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Lisää</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Lisää valitut</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Asenna nyt</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Kutsu</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Kutsu yhdistämään</param>
+        <param name="jigsawsearch">Hae yhteystietoja</param>
+        <param name="join_meeting">Liity kokoukseen</param>
+        <param name="jumpstart">Pika-aloitus</param>
+        <param name="keep_in_touch">Pyydä päivitys</param>
+        <param name="layout_assignment">Asettelun kohdistus</param>
+        <param name="legal_view">Lakiasiakirjanäkymä</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Lukitse tietue</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Kirjaudu kumppanikäyttäjänä</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Jäsenten hallinta</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Uusi kokouspyyntö</param>
+        <param name="add_members_search">Lisää jäseniä - Hae</param>
+        <param name="add_members_import">Lisää jäseniä - Tuo tiedosto</param>
+        <param name="edit_members_search">Muokkaa jäseniä - Hae</param>
+        <param name="update_members_import">Päivitä &amp; lisää jäseniä - Tuo tiedosto</param>
+        <param name="manage_call_center_users">Puhelukeskuksen käyttäjien hallinta</param>
+        <param name="map_lead_fields">Määritä <lead_Fields/></param>
+        <param name="mark_as">Merkitse...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Jäsenen tuonti</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Muokkaa yksittäisiä muistutuksia</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Uusi</param>
+        <param name="newcase">Uusi</param>
+        <param name="new_addition_order">Uusi lisätilaus</param>
+        <param name="new_custom_object">Uusi mukautettu objekti</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Luo uusi mukautettu raportti</param>
+        <param name="new_dashboard">Uusi mittaristo</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Uusi mittariston komponentti</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Uusi malli</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Uusi malli</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Uusi kansio</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Uusi ryhmä</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Uusi jono</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Uusi huomautus</param>
+        <param name="new_object_custom_tab">Uusi mukautettu objekti -välilehti</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Online-tapaaminen</param>
+        <param name="new_order">Uusi tilaus</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Uusi henkilökohtainen ryhmä</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Uusi alennustilaus</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Uusi rooli</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Uusi painike</param>
+        <param name="new_territory">Uusi alue</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Uusi käyttäjä</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Uusi Web-integrointi -välilehti</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Suorita toinen päivitys</param>
+        <param name="performAnotherMigrate">Siirrä toinen profiili</param>
+        <param name="preview">Esikatselu</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Laske uudelleen</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Määritä uudelleen</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Hylkää</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Hylkää muutokset</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Poista käyttäjiä</param>
+        <param name="remove_from_briefcase">Poista salkusta</param>
+        <param name="remove_from_campaign">Poista <campaign case="el"/></param>
+        <param name="reorder">Järjestä uudelleen</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Korjaa</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Suorita kaikki testit</param>
+        <param name="run_test">Suorita testi</param>
+        <param name="quick_save">Pikatallennus</param>
+        <param name="quick_save_hover">Tallenna ja jatka muokkaamista</param>
+        <param name="reply">Vastaa</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Vastaa kaikille</param>
+        <param name="reportmanager">Raportinhallinta</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">Vaihda salasana</param>
+        <param name="reset_passwords">Vaihda salasana(t)</param>
+        <param name="retrieve_prices">Hae hinnat</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Suorita raportti</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Tallenna</param> <!-- aliased across labels do not change -->
+        <param name="saving">Tallennetaan...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Tallenna ja lisää hinta</param>
+        <param name="save_and_add_product">Tallenna ja lisää <product/></param>
+        <param name="save_and_clone">Tallenna ja kloonaa uudelleen</param>
+        <param name="save_and_close">Tallenna ja sulje</param>
+        <param name="save_and_attach">Tallenna ja lisää liite</param>
+        <param name="save_and_continue">Tallenna ja seuraava</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Tallenna ja lisää</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Tallenna ja <new/> <event/></param>
+        <param name="save_and_new_product">Tallenna ja <new/> <product/></param>
+        <param name="save_and_new_task">Tallenna ja <new/> <task/></param>
+        <param name="save_and_refresh">Tallenna ja päivitä</param>
+        <param name="save_and_send">Tallenna ja lähetä päivitys</param>
+        <param name="event_scheduler">Asiakas- ja tiiminäkymä &gt;</param>
+        <param name="saveAs">Tallenna nimellä</param>
+        <param name="schedule_to_email">Sähköpostin ajoitus</param>
+        <param name="schedule_to_print">Tulostuksen ajoitus</param>
+        <param name="scrutinize">Tarkasta</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Etsi <knowledgeArticles case="par"/></param>
+        <param name="newArticle">Uusi</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Valitse malli</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Itsepalvelun pika-aloitus</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Itsepalvelun määritykset</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Näytä / ota käyttöön itsepalvelu</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Lähetä</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Lähetä sähköposti <all/> <contacts case="al"/></param>
+        <param name="send_invitation">Tallenna ja lähetä kutsu</param>
+        <param name="set_status">Tilanhallinta</param>
+        <param name="setup_and_install">Määritä ja asenna</param>
+        <param name="setup_roles">Määritä roolit</param>
+        <param name="setup_sharing">Määritä jakaminen</param>
+        <param name="sfga_instructions">Tulostettavat ohjeet</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Näytä lisätiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Ohita</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Lajittele</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Aloita kokous</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Lähetä</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Lähetä ja lisää liite</param>
+        <param name="subscribe_now">Tilaa nyt</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Päivitä nyt!</param>
+        <param name="suggest">Näytä <suggested/> <solutions/></param>
+        <param name="take_training_now">Harjoittele nyt!</param>
+        <param name="terminate">Lopeta</param>
+        <param name="training_history">Koulutushistoria</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Siirto</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Kokeile nyt!</param>
+        <param name="undelete">Kumoa poisto</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Kumoa</param>
+        <param name="unlock">Poista tietueen lukitus</param>
+        <param name="update">Päivitä</param>
+        <param name="update_campaign_history">Päivitä &amp; lisää <campaign_Members case="par"/></param>
+        <param name="update_now">Päivitä nyt</param>
+        <param name="update_statuses">Päivitä tilat</param>
+        <param name="upload">Lataa</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Kenttäriippuvuudet</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Tarkastele poistettuja komponentteja</param>
+        <param name="view_partnerforce">Näytä kumppanikäyttäjä</param>
+        <param name="view_self_service">Näytä itsepalvelu</param>
+        <param name="view_customer_success">Näytä asiakasportaalin käyttäjä</param>
+        <param name="enable_customer_success">Ota käyttöön asiakasportaalin käyttäjä</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Mikä tämä on?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Sulje tämä ikkuna</param>
+        <param name="runApexRecalc">Laske Apex-jako uudelleen</param>
+        <param name="disablecustomerportal">Poista asiakasportaalin käyttäjä</param>
+        <param name="disablepartnerportal">Poista kumppanikäyttäjä</param>
+        <param name="disablecustomerportalaccount">Poista asiakasportaalitili</param>
+        <param name="disablepartnerportalaccount">Poista kumppanikäyttäjä</param>
+        <param name="voteup">Äänestä puolesta</param>
+        <param name="votedown">Äänestä vastaan</param>
+        <param name="markquestionunanswered">Merkitse ei-vastatuksi</param>
+        <param name="markbestanswer">Merkitse parhaaksi vastaukseksi</param>
+        <param name="requestUseSfdcAction">Etsi yhteyksiä</param>
+        <param name="addPET">Lisää oikeutusmalli</param>
+        <param name="truncate">Lyhennä</param>
+        <param name="disableprmsuperuser">Ota Kumppanisuperkäyttö pois käytöstä</param>
+        <param name="enableprmsuperuser">Ota Kumppanisuperkäyttö käyttöön</param>
+        <param name="purchase_more">Osta lisää</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">Takaisin alkuun</param>
+        <param name="descriptionText">Tekstiosa on liian pitkä. Katso lisätietoja.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Tarkastele tiedostoa</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Ylätaso</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Liittyviä tietoja ei ole</param>
+        <param name="no_records">Näytettäviä tietueita ei ole</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Näytä {0} lisää &#187;</param>
+        <param name="NextMoreGeneric">Näytä lisää &#187;</param>
+        <param name="view_more">Siirry luetteloon</param>
+        <param name="view_more_tot">Siirry luetteloon ({0})</param>
+        <param name="view_more_tot_plus">Siirry luetteloon ({0}+)</param> <!-- -->
+        <param name="view_more_1">Siirry luetteloon, jossa on yksi tietue enemmän</param> <!-- Singular -->
+        <param name="view_more_n">Siirry luetteloon, jossa on {0} tietuetta enemmän</param> <!-- Plural -->
+        <param name="view_more_n_plus">Siirry luetteloon, jossa on {0}+ tietuetta</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Lisää käytettävissä. Siirry luetteloon</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Todennäköisyys</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Lähde</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Voitetut</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Tilikausi</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Vuoden {0} vuosineljännes {1}</param>
+        <param name="opportunities_next_step">Seuraava vaihe</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Päivitä</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Liittyy tietueeseen</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Huomautus</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google-asiakirja</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Huomautukset ja liitteet</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">Huomautuksen otsikko</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Liite</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Liitteet</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">Tiedostonimi</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Omistajuus</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Ensisijainen</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none">Näytettäviä <cases case="par"/> <no/> ole</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Päiväys</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Otsikko</param>
+        <param name="object_title">Otsikko</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Nimi</param>
+        <param name="object_name">Nimi</param>
+        <param name="date">Päiväys</param>
+        <param name="due_date">Määräpäivä</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">Viimeksi muokattu</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Päivittäjä</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_partner/></param>
+        <param name="partners_primary">Ensisijainen</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Kilpailijat</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Kilpailijan nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Vahvuudet</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Heikkoudet</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Todennäköisyys (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Valmis</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Merkitse {0} valmiiksi</param>
+        <param name="task_date">Päiväys</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Nimi</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> odottaa hyväksymistä</param>
+        <param name="task_none">Tälle jaksolle ei ole määritetty <open/> <tasks case="par"/>.</param>
+        <param name="task_mode_today">Tänään</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Tänään + myöhässä olevat</param>
+        <param name="task_mode_tomorrow">Huomenna</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Seuraavat {0} päivää</param>
+        <param name="task_mode_next_7days_overdue">Seuraavat {0} päivää + myöhässä olevat</param>
+        <param name="task_mode_overdue">Myöhässä olevat</param>
+        <param name="task_mode_this_month">Tässä kuussa</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Kaikki avoimet</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Historia</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Uutiset</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Otsikko</param>
+        <param name="new_date">Päiväys</param>
+        <param name="news_none">Uutisia ei ole</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Yhdistämismallit</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Parhaat <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Lisäyspäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Lisääjä</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> liitettyjä <solutions case="par"/></param>
+        <param name="description">Kuvaus</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Tikkeri</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Näytettäviä <activity_History/>tietoja ei ole.</param>
+        <param name="nonotes">Näytettäviä huomautushistoriatietoja ei ole.</param>
+        <param name="noattachments">Näytettäviä liitehistoriatietoja ei ole.</param>
+        <param name="viewallattachments">Näytä kaikki liitteet</param>
+        <param name="viewalldocsattachments">Näytä kaikki Google Doc -asiakirjat ja liitteet</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Päiväys</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Rivin kuvaus</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API-tallenteet</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Suodatettu käyttäjän perusteella</param>
+        <param name="apicapture_filterip">Suodatettu IP-osoitteen perusteella</param>
+        <param name="apicatpure_numbers">Tallenteet</param>
+        <param name="apicapture_soapscope">Tarkastele tallenteita</param>
+        <param name="apicapture_active">Aktiivinen</param>
+        <param name="apicapture_none">Ei tallenteita</param>
+        <param name="apicapture_new">Aloita uusi tallennus</param>
+        <param name="apicapture_view">Näytä</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Kirjautumishistoria</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">ei sisäänkirjautumisia</param>
+        <param name="login_none">Kirjautumishistoriaa ei ole.</param>
+        <param name="login_username">Käyttäjänimi</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Kirjautumisaika</param>
+        <param name="login_type">Kirjautumistyyppi</param>
+        <param name="login_ip">Lähteen IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Puuttuu</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Selain</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Alusta</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Tarkkuus</param>
+        <param name="login_clientversion">Asiakasversio</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Sovellus</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API-tyyppi</param>
+        <param name="login_apiversion">API-versio</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">Onnistui</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Lataa kuluneiden kuuden kuukauden kirjautumishistoria, joka sisältää kirjautumiset sivuston ulkopuolelta, kuten API-kirjautumiset (Excelin .csv-tiedosto)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Lataa kirjautumishistoria, joka sisältää vain kirjautumiset sivustosta (Excelin .csv-tiedosto)</param>
+        <param name="login_history_download_title">Latausvaihtoehdot</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV-tiedosto</param>
+        <param name="login_history_download_file_type_gzip">GZIP-tiedosto</param>
+        <param name="login_history_download_file_type_help">CSV-tiedostoja (pilkulla erotettu arvo) voidaan tarkastella useilla taulukko- ja tekstinmuokkausohjelmilla. GZIP-tiedostot (GNU-zip) on pakattu niiden tiedostokoon pienentämiseksi.</param>
+        <param name="login_history_download_option_title">Tiedoston sisältö</param>
+        <param name="login_history_download_option_all">Kaikki sisäänkirjautumiset</param>
+        <param name="login_history_download_option_ie6_only">VAIN IE6-sisäänkirjautumiset</param>
+        <param name="login_history_download_option_web_only">VAIN verkkosivun sisäänkirjautumiset</param>
+        <param name="login_history_download_option_help">"Kaikki sisäänkirjautumiset" sisältää sisäänkirjautumiset kaikista lähteistä, kuten verkkosivu, Outlook, API-integraatiot, jne. "IE6-sisäänkirjautumiset" sisältää vain Internet Explorer 6 -käyttäjien sisäänkirjautumiset. "Verkkosivun sisäänkirjautumiset" sisältää vain Salesforce-sisäänkirjautumissivun sisäänkirjautumiset.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Käytätkö yhä IE6:a?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce aikoo lopettaa IE6-tuen. Käytä tarjottuja latausvaihtoja nähdäksesi organisaatiosi käyttämät selaimet.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Kirjautumis-URL</param>
+        <param name="order_history">Tilaushistoria</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Tilauksia ei ole</param>
+        <param name="order_number">Tilausnumero</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Tilauspäivä</param>
+        <param name="order_currency">Valuutta</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Kokonaiskustannukset</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">Ostaja</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none"><Order_products case="par"/> ei ole</param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Rivi-&lt;BR&gt;numero</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Kuukausihinta</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Laskutusviite</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Laskutusväli&lt;BR&gt;(kuukautta)</param>
+        <param name="bo_order_items_billing_frequency_text">Laskutusväli</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Tilausehdot&lt;BR&gt;(kuukautta)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Päiväys</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Laskut</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Laskuja ei ole</param>
+        <param name="invoices_invoice_number">Laskun numero</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Laskun päivämäärä</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Laskun eräpäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">Ulkoisen järjestelmän tunnus</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Kokonaismäärä</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Velkasaldo</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Kokonaisluotto</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Poiskirjattu yhteensä</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Laskutuksen yhteyshenkilö</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Laskutusyritys</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Laskun historia</param>
+        <param name="revenue_schedule">Aikataulu</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Päiväys</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">Tuotto</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Kommentit</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Tilahistoria</param>
+        <param name="status_none">Tilahistoriaa ei löydy</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Palvelun valinta</param>
+        <param name="services_none">Palveluja ei ole</param>
+        <param name="services_description">Palvelu</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">Yksikköhinta</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Kokonaishinta</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Alennus</param>
+        <param name="training">Kurssihistoria</param>
+        <param name="training_none">Ei yhtään</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">Luokan nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Ottopäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Vastattu</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Oletus</param>
+        <param name="campaign_member_none"><No/> määritettyä <campaign_member_status case="par"/></param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Alkamispäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Päättymispäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">Kelpoisuusajan arvo</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Hankintasäännöt</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">Laskutusväli&lt;br&gt;(kuukautta)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Laskutuskauden päättymispäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending">Hyväksytty <event/></param>
+        <param name="event_notdecided">Ei vastattu</param>
+        <param name="event_declined">Hylätty <event/></param>
+        <param name="event_attending_none">Hyväksyttyjä osallistujia ei ole</param>
+        <param name="event_notdecided_none">Kaikki osallistujat vastanneet</param>
+        <param name="event_declined_none">Hylättyjä osallistujia ei ole</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Nimi</param>
+        <param name="documents_size">Koko</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Tekijä</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Näytä määritysloki</param>
+        <param name="download">ladata</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Seuraavassa luettelossa on organisaation 20 viimeisintä merkintää. Voit {0} organisaation määrityslokihistorian kuluneilta kuudelta kuukaudelta (Excelin .csv-tiedosto).</param>
+        <param name="setup_audit_date">Päiväys</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">Toiminto</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Osio</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Valtuuta käyttäjä</param>
+        <param name="setup_audit_proxyinguser_help">Tässä sarakkeessa on sen käyttäjän käyttäjänimi, joka teki muutoksia määrityksiin loppukäyttäjän puolesta. Jos käyttäjä esimerkiksi myönsi kirjautumisoikeuden tukiedustajalle, edustajan käyttäjänimi näytetään.</param>
+        <param name="setup_audit_trail_none">Määrityslokitietoja ei ole</param>
+        <param name="setup_audit_download_csv">Lataa kuluneiden kuuden kuukauden määrityslokihistoria (Excelin .csv-tiedosto)</param>
+        <param name="DashboardComponents_title">Mittariston komponentit</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Mittariston komponentteja ei ole</param>
+        <param name="translated_templates_none">Ei käännettyjä sähköpostimalleja</param>
+        <param name="translated_templates_title">Käännetyt sähköpostimallit</param>
+        <param name="translated_templates_language">Kieli</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktiivinen</param>
+        <param name="desc_pnet_conn_audit_trail">Seuraavassa luettelossa on organisaation 20 viimeisintä merkintää. Voit {0} koko yhteyden lokihistorian Excel (.csv) -tiedostona.</param>
+        <param name="pnet_conn_audit_trail">Yhteyshistoria</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Päiväys</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Yhteyden lokitietoja ei ole saatavilla.</param>
+        <param name="pnet_conn_audit_download_csv">Lataa yhteyshistoria (csv)</param>
+        <param name="pnet_entity_conns_title">Ulkoinen jakaminen</param>
+        <param name="pnet_entity_conn_stop_sharing">Lopeta jakaminen</param>
+        <param name="pnet_pub_title">Julkaistut objektit</param>
+        <param name="pnet_sub_title">Tilatut objektit</param>
+        <param name="pnet_pubsub_object">Objektin nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Kentät</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Julkaise / peru julkaisu</param>
+        <param name="pnet_sub_edit">Tilaa / peru tilaus</param>
+        <param name="pnet_pub_edit_object">Objekti julkaistu.</param>
+        <param name="pnet_pub_edit_field">Valitse Muokkaa, jos haluat julkaista kunkin objektin käytettävissä olevissa kentissä.</param>
+        <param name="pnet_sub_edit_object">Objekti tilattu.</param>
+        <param name="pnet_sub_edit_field">Valitse Muokkaa, jos haluat tilata kunkin objektin käytettävissä olevat kentät.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">Sisältö</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce-liitteet</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Virhe liittyvien luetteloiden lataamisessa</param>
+        <param name="ajax_exception_desc">Esiintyi ongelma kerättäessä liittyvän luettelon tietoa tälle tietueelle. Jos sivun päivittäminen ei korjaa ongelmaa, ota yhteyttä pääkäyttäjääsi tai &lt;a href=&quot;{0}&quot; title=&quot;report{1}&quot;&gt;raportoi&lt;/a&gt; siitä asiakastukeen.</param>
+        <param name="category_access_title">Luokkaryhmän näkyvyysasetukset</param>
+        <param name="category_access_video_tutorial">Video-ohje</param>
+        <param name="category_access_name">Luokkaryhmä</param>
+        <param name="category_access_access">Näkyvyys</param>
+        <param name="category_access_details">Näkyvyyden lisätiedot</param>
+        <param name="category_access_custom">Mukautettu</param>
+        <param name="category_access_full">Kaikki</param>
+        <param name="category_access_inherited">Peritty kohteesta {0}</param>
+        <param name="category_access_revoked">Ei yhtään</param>
+        <param name="category_access_userNodeAndChildren_Profile">profiili</param>
+        <param name="category_access_userNodeAndChildren_UserRole">rooli ja aliroolit</param>
+        <param name="category_access_noCategories">Luokka ei ole näkyvissä tälle {0}</param>
+        <param name="category_access_allCategories">Kaikki luokat ovat näkyvissä tälle {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} kohteelle {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Yleinen USA ja länsieurooppalainen (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japanilainen (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japanilainen (JIS)</param>
+        <param name="4">Japanilainen (EUC)</param>
+        <param name="5">Korealainen (ks_c_5601-1987)</param>
+        <param name="6">Kiina, perinteinen (Big5)</param>
+        <param name="7">Kiina, yksinkertaistettu (GB2312)</param>
+        <param name="8">Kiina, perinteinen (Big5)</param>
+        <param name="9">Japanilainen (Shift-JIS)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Kokeiluorganisaatio</param>
+        <param name="expand">Avaa sivupalkki napsauttamalla [Alt+S]</param>
+        <param name="collapse">Sulje sivupalkki napsauttamalla [Alt+S]</param>
+        <param name="expandNoHotkey">Avaa sivupalkki napsauttamalla</param>
+        <param name="collapseNoHotkey">Sulje sivupalkki napsauttamalla</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">Ylös</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Alas</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Siirry</param>
+        <param name="top">Alkuun</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Loppuun</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">Täytä tarvittavat kentät.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">Kaikki käyttäjät</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">Uusi</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Lisää</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Poista</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Muuta]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Kuinka...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Näytä lisää</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Kirjaa kutsu lokiin</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Kirjaa ylös huomautus</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Yhdistäminen</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Näytä kaikki</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Liitä tiedosto</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Kuinka?</param>
+        <param name="send_email">Lähetä sähköposti</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Käyttäjän lisäämä kuva</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Sovellukset</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">Tulostettava näkymä</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Kloonaa</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Jakaminen</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">Aloitus</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Lue lisää!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Valitse yksi:</param>
+        <param name="hotlist_mode">Näyttövalinta</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Näytä {0,number,integer} kohdetta</param>
+        <param name="hotlist_empty_title">Ei äskettäisiä tietueita. Napsauta Siirry tai valitse näkymä alasvetovalikosta nähdäksesi tietueita.</param>
+        <param name="hotlist_empty_description">Hakuehdoilla ei löytynyt tietueita.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Siirry raportteihin</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Resurssikeskus</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Resurssikeskuksen avulla voit hakea esimerkiksi mahdollisia asiakkaita ja kolmannen osapuolen tarjoamia palveluja.</param>
+        <param name="resource_center_link_text">Siirry Resurssikeskukseen</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Myyntimetodologiat</param>
+        <param name="hotlist_recently_modified">Viimeksi muokatut</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Viimeksi luodut</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Viimeksi tarkastellut</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--Ei mitään--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Valitse--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Oletus--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Ei käytettävissä**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">On riippuvainen kohteesta &quot;{0}&quot;</param>
+        <param name="dependentFields">Sidonnaiset kentät</param>
+        <param name="controls">Säätöarvot kohteelle {0}</param>
+        <param name="dependsOnMultiple">on riippuvainen kohteesta {0}</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Pääkäyttäjä ei ole määrittänyt mukautettuja linkkejä.</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">Siirry:</param>
+        <param name="JumpToStep">Vaihe {0}: {1}</param>
+        <param name="CloseWizard">Sulje ohjattu toiminto</param>
+        <param name="LeftHeader">Vaihe {0}: {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Vaihe {0}/{1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Vaihe {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Tallenna ja uusi</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">Seuraava</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Edellinen</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Organisaation {0} ohjattu organisaation lisäystoiminto</param>
+        <param name="ImportWizardTitle">Organisaation {0} ohjattu tuontitoiminto</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Tilauskeskus</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Kokeiluversioon kirjautuminen</param>
+        <param name="WizardBody">Ohjatun toiminnon tekstiosa</param>
+        <param name="WizardFooter">Ohjatun toiminnon alatunniste</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Osoite</param><!-- translators note - this is actually the full address -->
+        <param name="street">Osoite</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Kaupunki</param><!-- aliased across label files - do not change -->
+        <param name="state">Osavaltio/provinssi</param><!-- aliased across label files - do not change -->
+        <param name="zip">Postinumero</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Postinumero</param> <!-- aliased across label files - do not change -->
+        <param name="country">Maa</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Puhelinnumero</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Laajennus</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Faksi</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Ulk. faksi</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Sähköposti</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Toimitusosoite</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Toimitusosoite: katu</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Toimitusosoite: kaupunki</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Toimitusosoite: osavaltio/provinssi</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Toimitusosoite: postinumero</param>
+        <param name="shippingzippostalcode">Toimitusosoite: postinumero</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Toimitusosoite: maa</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Laskutusosoite</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Laskutusosoite: kaupunki</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Laskutusosoite: osavaltio/provinssi</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Laskutusosoite: postinumero</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Laskutusosoite: maa</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Laskutusosoite: katu</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Pankin osoite: katu</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Pankin osoite</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">Pankin osoite: kaupunki</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Pankin osoite: osavaltio/provinssi</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Pankin osoite: postinumero</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Pankin osoite: maa</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Postiosoite</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Postiosoite: katu</param>
+        <param name="mailingcity">Postiosoite: kaupunki</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Postiosoite: osavaltio/provinssi</param>
+        <param name="mailingzip">Postiosoite: postinumero</param>
+        <param name="mailingcountry">Postiosoite: maa</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Postiosoiterivi1</param>
+        <param name="mailingaddress2">Postiosoiterivi2</param>
+        <param name="mailingaddress3">Postiosoiterivi3</param>
+        <param name="otheraddress">Muu osoite</param>
+        <param name="otheraddress1">Muu osoiterivi 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Muu osoiterivi 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Muu osoiterivi 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Katuosoite (muu)</param>
+        <param name="otherstreet2">Lähiosoite (muu) 2</param>
+        <param name="otherstreet3">Lähiosoite (muu) 3</param>
+        <param name="othercity">Postitoimipaikka (muu)</param>
+        <param name="otherstate">Muu osavaltio/provinssi</param>
+        <param name="otherzipcode">Muu postinumero</param>
+        <param name="otherpostalcode">Postinumero (muu)</param>
+        <param name="otherzippostalcode">Muu postinumero</param>
+        <param name="othercountry">Maa (muu)</param>
+        <param name="otherphone">Muu puhelin</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Muu puhelinnro</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Osoite 1</param>
+        <param name="address2">Osoite 2</param>
+        <param name="address3">Osoite 3</param>
+        <param name="home_phone">Kotipuhelin</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">Ladataan...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Sijainti</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Määrä</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contact Manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Kyllä</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Ei</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Tervetuloa salesforce.com:iin!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000–{0} salesforce.com, inc. Kaikki oikeudet pidätetään.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000–{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. Kaikki oikeudet pidätetään.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Pykälän 508 vaatimusten mukaisuus</param>
+        <param name="copyright_nohtml">Copyright (c) 2000–{0} salesforce.com, inc. Kaikki oikeudet pidätetään.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Kaikki oikeudet pidätetään.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. Kaikki oikeudet pidätetään.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Kaikki oikeudet pidätetään.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Turvatiedote</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Käyttöehdot</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Kiitos, että valitsit salesforce.com:in. Ennen kun voit aloittaa salesforce.com:in käytön, sinun on luettava ja hyväksyttävä alla olevat käyttöehdot. Kun olet valmis hyväksymään käyttöehdot, napsauta Hyväksyn-painiketta. Huomaa, että salesforce.com:iin kirjautuminen edellyttää käyttöehtojen hyväksymistä.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">Valmis</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Lisää nyt!</param>
+        <param name="remove">Poista</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Uusi</param>
+        <param name="exciting_and_new">Uusi!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">tässä</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Luo</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Sulje ikkuna</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Tulosta tämä sivu</param>
+        <param name="new_window">(Uusi ikkuna)</param>
+        <param name="new_focus">(Kohdistussiirto)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Piilotettu kehys &#45; Ohita</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">valitse kaikki</param>
+        <param name="select_shown">Valitse näytetty</param>
+        <param name="remove_shown">Poista näytetty</param>
+        <param name="select_none">Älä valitse mitään</param>
+        <param name="all_active">Kaikki aktiiviset</param>
+        <param name="all_inactive">Kaikki ei-aktiiviset</param>
+        <param name="are_you_sure">Haluatko varmasti jatkaa?</param>
+        <param name="irreversible_are_you_sure">Peruuntumaton! Haluatko varmasti jatkaa?</param>
+        <param name="replace">Korvaa</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Valmis</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} minuuttia</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Löytyi useita kohteita. Tarkenna hakua valitsemalla luettelosta tai napsauttamalla kuvaketta.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Neljännes{0}-{1}</param>
+        <param name="reset">Palauta</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Korvaa</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Yhteensä</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Napsauta tätä</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Huomautuksia sivuston ylläpitäjälle:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML-esimerkki</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Salasana</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Älä näytä tätä sivua uudelleen</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Piilota tämä viesti seuraaville: </param>
+        <param name="dontShowMessageAgain">Älä näytä tätä viestiä uudelleen</param>
+        <param name="dismissMessage">Hylkää viesti</param>
+        <param name="allObjects">Kaikki objektit</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Paina välilyöntiä tai Enter-näppäintä avataksesi</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Itsepalvelu: <Case_Detail/></param>
+        <param name="CssEdit">Itsepalvelu: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/>-syöte</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Kommentti</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Mukautetut objektit</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Mukautetun objektin määritys</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Mittaristo</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Mittaristot</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Poista kaikki valinnat</param>
+        <param name="deselect_shown">Poista näytetyn valinnat</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Yhdistämismalli</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Yhdistämismallit</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Kansio</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Kansiot</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Ennusteet</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Ennusteet</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent -valvoja</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Lasku</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Huomautukset</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Tilaus</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Tilaukset</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Tilausrivi</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Tilausrivit</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Maksu</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Maksut</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">raportti</param>
+        <param name="Reports">Raportit</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Kirjautuminen</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Malli</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Mallit</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Taulukko</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktiivinen</param>
+        <param name="amount">Määrä</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Vuosituotto</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Liitä asiakirja</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Vaihda salasana</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Sulje</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Suljettu</param>
+        <param name="closed_date">Sulkemispäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Päättymispäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Luontipäivä</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Tietotyyppi</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Poistettu</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Kuvaustiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Työntekijät</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Tiedosto</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Tiedostot</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Yleistiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Hae tiedot ennen kuin aloitat</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Otsikko</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Edellinen kirjautuminen</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Viimeinen muokkauspäivä</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Nimi</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Nimi</param>
+        <param name="new_status">Uusi tila</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Ei yhtään</param>
+        <param name="open">Avaa</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organisaatio</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Vastaavia tietoja ei löytynyt.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Kaikki</param>
+        <param name="clear">Tyhjennä</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Napsauta hakukuvaketta...</param>
+        <param name="click_lookup_icon_info">Valitse arvo napsauttamalla hakukuvaketta.</param>
+        <param name="clear_all">Tyhjennä kaikki</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Napsauta Liitä-painiketta.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Virheet</param> <!-- aliased across lables - do not change -->
+        <param name="high">Suuri</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Ohje</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Siirrä minut sinne!</param>
+        <param name="keywords">Avainsanat</param>
+        <param name="length">Pituus</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Tila</param> <!-- aliased across lables - do not change -->
+        <param name="title">Otsikko</param>
+        <param name="object_title">Otsikko</param>
+        <param name="type">Tyyppi</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Käyttäjä</param> <!--aliased across labels - do not change -->
+        <param name="Users">Käyttäjät</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Käyttöoikeusjoukko</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profiili</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profiilit</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Omistaja</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">kokemus onnistui.</param>
+        <param name="DontShowPage">Älä näytä tätä sivua uudelleen.</param>
+        <param name="click_here_to_create_new_account">{0} luodaksesi <new/> <account case="g"/> nyt.</param>
+        <param name="click_here_to_create_new_contact">{0} luodaksesi <new/> <contact case="g"/> nyt.</param>
+        <param name="click_here_to_create_new_lead">{0} luodaksesi <new/> <lead case="g"/> nyt.</param>
+        <param name="click_here_to_create_new_opportunity">{0} luodaksesi <new/> <opportunity case="g"/> nyt.</param>
+        <param name="click_here_to_create_new_product">{0} luodaksesi <new/> <product case="g"/> nyt.</param>
+        <param name="SystemModstamp">Järjestelmän mod-leima</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divisioona</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Käsitellään</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Tietueita päivitetään...</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Staattinen käännös</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Piilota tämä sivu seuraavilla kerroilla</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Ladataan...</param>
+        <param name="uploading_title">Ladataan</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Tuodaan...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">ja </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">Virhe: Tämän kentän käyttöoikeutta ei ole</param>
+        <param name="noReadAccess">Sinulla ei ole tarvittavia käyttöoikeuksia, jotta voit tarkastella tätä tietuetta.</param>
+        <param name="noAccessToUser">Sinulla ei ole käyttöoikeuksia tähän käyttäjään.</param>
+        <param name="disabledButton">Käytöstä poistettu painike: {0}</param>
+        <param name="RequiredHeader">Pakolliset tiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Lisää kuva</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Haluatko varmasti poistaa IP-kirjautumisalueen?</param>
+        <param name="AMPM">AMPM-syöte</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Suojattu komponentti</param>
+        <param name="dialogCloseConfirm">Vahvistusikkuna, jota juuri tarkastelit, sulkeutui ehkä ennenaikaisesti. Napsauta OK palataksesi siihen takaisin, tai Peruuta ohittaaksesi tämän varoituksen.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Dialogin alku</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">Selainta ei tueta uudelle käyttöliittymän teemalle</param>
+        <param name="DialogHeader">Tiedoksesi...</param>
+        <param name="DialogContent1">Käytät selainta, joka ei näytä viimeisintä käyttöliitymän teemaa.</param>
+        <param name="DialogContent2">Salesforce näyttää klassisen teeman, joka näkyy yllä vasemmalla, kunnes päivität selaimesi tuettuun versioon:</param>
+        <param name="DialogClassicDesc">Klassinen teema</param>
+        <param name="DialogAlohaDesc">Uusi teema</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">Hakutulokset</param>
+        <param name="Recent">Viimeksi tarkastellut</param>
+        <param name="NoMatchHeader">Tietueita ei löytynyt jostakin seuraavista syistä johtuen:</param>
+        <param name="BulletOne">Tälle tyypille ei ole tietueita.</param>
+        <param name="BulletTwo">Sinulla ei ole käyttöoikeuksia nähdä mitään tietueita.</param>
+        <param name="BulletThree">Tietueet eivät sovi pääkäyttäjän määrittämiin suodatusehtoihin</param>
+        <param name="BulletFour">Vähintään yksi ohjaavista kentistä on tyhjä tai ei kelpaa (Ohjaavat kentät:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">Käytettävissä olevat käyttäjät</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Valitut käyttäjät</param>
+        <param name="LicensedUsers">Käyttäjät, joilla on lisenssi</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Valittu poistettavaksi</param>
+        <param name="Selected">Valitut</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Valittu</param>
+        <param name="UnassignedPackages">Kohdistamattomat paketit</param>
+        <param name="SelectedPackages">Valitut paketit</param>
+        <param name="InView">näkymässä</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Tiedoston koko ylittää enimmäiskokorajoituksen ({0}).</param>
+        <param name="no_file_specified">Määritä ladattava tiedosto. Kirjoita tiedoston polku tai hae se paikallisesta tiedostojärjestelmästä napsauttamalla Selaa-painiketta.</param>
+        <param name="invalid_file_type">Määrittämäsi tiedoston tyyppiä ei tueta tällä hetkellä.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Tiedostonimi ylittää sallitun enimmäispituuden ({0} merkkiä).</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Tiedostonimen tunniste ylittää sallitun enimmäispituuden ({0} merkkiä).</param>
+        <param name="bytes">tavua</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">kt</param>
+        <param name="mbytes">Mt</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">HTML-tiedostotyyppejä ei ole sallittu tietoturvasyistä.</param>
+        <param name="attachment_size_exceeded">Ladattu tiedosto ylittää enimmäiskoon.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;Virhe:&lt;/b&gt; Sinun täytyy valita ladattava kuva</param>
+        <param name="upload_file_too_large">&lt;b&gt;Virhe:&lt;/b&gt; Kuvakoko ylittää 1 Mt:n kokorajoituksen.</param>
+        <param name="invalid_file_type">&lt;b&gt;Virhe:&lt;/b&gt; Voit syöttää vain .gif, .jpeg ja .png-tiedostoja.</param>
+        <param name="upload_failed">&lt;b&gt;Virhe:&lt;/b&gt; Lataus epäonnistui - yritä myöhemmin uudelleen.</param>
+        <param name="invalid_file">&lt;b&gt;Virhe:&lt;/b&gt; Tiedosto ei ole käypä kuvatiedosto.</param>
+        <param name="invalid_param">&lt;b&gt;Virhe:&lt;/b&gt; Virheelliset parametrit.</param>
+        <param name="access_failed_alt">Kuva ei ole käytettävissä, koska: Sinulla ei ole oikeuksia nähdä sitä, tai se on poistettu järjestelmästä.</param>
+        <param name="weekly_export_folder">Muut ladatut vakuudet/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">Välilehden tyylin valitsin</param>
+        <param name="instructions">Valitse välilehden tyyli.</param>
+        <param name="createYourOwn">Luo oma tyyli</param>
+        <param name="defaultCustomStyleDesc">Mukautettu tyyli</param>
+        <param name="styleIsUsedOn">Tätä tyyliä käytetään seuraavissa välilehdissä:</param>
+        <param name="showUsedStyles">Näytä muissa välilehdissä käytössä olevat tyylit</param>
+        <param name="hideUsedStyles">Piilota muissa välilehdissä käytössä olevat tyylit</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">Välilehden värin valitsin</param>
+        <param name="instructions">Valitse väri.</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">Väri:</param>
+        <param name="icon">Kuvake:</param>
+        <param name="defineNew">Määritä uusi värityyli</param>
+        <param name="noMotifErr">Väri on määritettävä</param>
+        <param name="noIconErr">Kuvake on määritettävä</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} luotu onnistuneesti.</param>
+        <param name="Failure_message">Luonti epäonnistui.</param>
+        <param name="Common_success_message">Luonti onnistui.</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">Pyydä lisätuotteita</param>
+        <param name="pageheader">Lähetä lisätuotepyyntö täyttämällä alla olevat kentät. Määritä tilattavat tuotteet Kuvaus-kenttään. Jos haluat tilata olemassa olevaan sopimukseen liittyviä tuotteita, käytä viitteenä sopimuksen numeroa.</param>
+        <param name="colHeader">Lähetetään hankintapyyntöä</param>
+        <param name="functionalArea_0">Lisenssin hankinta</param>
+        <param name="type_0">Hankinta</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">Hankintapyyntö</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">Kiitos pyynnöstäsi. Myyntiedustaja ottaa sinuun yhteyttä tilauksen viimeistelyä varten.</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">Lisenssien vähentämispyyntö</param>
+        <param name="pageheader">Lähetä lisenssien vähentämispyyntö täyttämällä kaikki pakolliset kentät. Tämä on pyynnön nopein käsittelytapa.  Älä lähetä samoja lisenssejä koskevia toistuvia pyyntöjä, ettei pyyntöjen käsittelyssä ilmene turhaa viivytystä.</param>
+        <param name="title_landing">Pyyntösi on vastaanotettu.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Pyyntösi on vastaanotettu ja se käsitellään vastaanottojärjestyksessä. Huomaa, että lisenssien vähennyspyynnöt tulevat voimaan pyynnön luontipäivää seuraavan laskutuskauden alussa, kunhan ilmoitat asiasta salesforce.com:ille viisi työpäivää ennen seuraavan laskutuskauden laskutuspäivämäärää.</param>
+        <param name="pageheader_landing">Pyyntösi on vastaanotettu ja se käsitellään vastaanottojärjestyksessä. Lisenssien vähentämispyynnöt tulevat voimaan 30 päivän kuluttua pyynnön lähettämisestä. Älä lähetä samoja lisenssejä koskevia toistuvia vähennyspyyntöjä, ettei pyyntöjen käsittelyssä ilmene turhaa viivytystä.</param>
+        <param name="title_error">Pyyntöäsi ei voitu käsitellä.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Pyyntöäsi ei voitu lähettää tällä kertaa. Yritä myöhemmin uudelleen.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Lähetetään pyyntöä</param>
+        <param name="reason">Syy</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Kuvaile&lt;br&gt; tarkemmin</param>
+        <param name="numLicenses">Lisenssien määrä</param>
+        <param name="potentialResponse">Kuinka voimme säilyttää&lt;br&gt; liiketoimintasi?</param>
+        <param name="tips_title">Vihjeitä lisenssien vähennyspyyntöjen lähettämiseen</param>
+        <param name="tip1">Varmista pyynnön nopea ja oikea käsittely täyttämällä kaikki tiedot tarkasti.  Ennen pyynnön lähettämistä varmista, että käytöstä on poistettu tarpeeksi käyttäjiä, jotta käyttäjien määrä on pienempi tai yhtä suuri kuin uusi lisenssimäärä. Voit määrittää lisenssien määrän &lt;a href=&quot;{1}&quot;&gt;Omat määritykset&lt;/a&gt; -osion &lt;a href=&quot;{0}&quot;&gt;Käyttäjien hallinta&lt;/a&gt; -kohdassa.</param>
+        <param name="type1">Tilin lopettaminen</param>
+        <param name="type2">Käyttäjälisenssien vähentäminen</param>
+        <param name="type3">Offline-lisenssien vähentäminen</param>
+        <param name="type4">Kampanjakohtainen lisenssialennus</param>
+        <param name="type5">Mobile Edition for au -versio peruuttamista varten</param>
+        <param name="type6">Mobile Edition for au -versio lisenssien vähentämistä varten</param>
+        <param name="type7">Force.com Mobile -käyttäjälisenssien vähentäminen</param>
+        <param name="reason_0">Yritysfuusio</param>
+        <param name="reason_1">Yrityksen lakkauttaminen</param>
+        <param name="reason_2">Poistetut myyjät</param>
+        <param name="reason_3">Loppukäyttäjät eivät mukaudu käyttöön</param>
+        <param name="reason_4">Toiminnot eivät vastaa odotuksia</param>
+        <param name="reason_5">Johto ei pidä tarpeeksi arvokkaana</param>
+        <param name="reason_6">Huonoja kokemuksia salesforce.com-työntekijöistä</param>
+        <param name="reason_7">Hinta liian korkea</param>
+        <param name="reason_8">Siirtyminen kilpailijan tuotteisiin</param>
+        <param name="reason_9">Käyttämättömät lisenssit</param>
+        <param name="reason_10">Muu</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">Täytä seuraavat kentät:</param>
+        <param name="title">Lähetä palautetta salesforce.com:ille</param>
+        <param name="title_upgrade_me">Kirjaa päivityspyyntö</param>
+        <param name="title_support">Lähetä palautetta</param>
+        <param name="warning_line_too_long">Varoitus: Kuvaus on pidempi kuin 4 000 merkkiä, joten se katkaistaan.\\n</param>
+        <param name="feedback_info">Yhteyden ottaminen asiakastukeen</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Voit ottaa yhteyttä asiakastukeen, jos sinulla on kysyttävää tai haluat antaa palautetta. Hyödynnämme erittäin paljon asiakkailtamme saatua palautetta salesforce.com:in kehittämisessä. Kuulisimme mielellämme ideoitasi, joten jäämme odottamaan yhteydenottoasi.</param>
+        <param name="general_info_me">Jos haluat lisätietoja Personal Edition -version päivittämisestä mihinkä tahansa muuhun yritysversioon, täytä alla oleva lomake. Myyntiedustaja ottaa sinuun yhteyttä 48 tunnin kuluessa (toimistoaikana).</param>
+        <param name="general_info_support">Voit ottaa yhteyttä asiakastukeen, jos sinulla on kysyttävää tai haluat antaa palautetta. Asiakkaiden palaute on meille tärkeä apu Salesforce CRM Call Center -sovelluksen kehittämisessä ja muokkauksessa. Kuulemme mielellämme ideoitasi. Odotamme yhteydenottoasi.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Uusi</param>
+        <param name="functionalArea">Aihe</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Kysymys</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Pyyntö</param>
+        <param name="type3">Palaute</param>
+        <param name="type4">Toiveita ominaisuuksista</param>
+        <param name="priority1">Hätätilanne</param>
+        <param name="priority2">Normaali</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Pieni</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Haluan tilata Professional Edition -version nyt</param>
+        <param name="subject_subscribe_me">Haluan päivittää nyt</param>
+        <param name="subject_subscribe_we">Haluan lisätietoja Professional Edition -versiosta</param>
+        <param name="subject_subscribe_ee">Haluan tilata Enterprise Edition -version nyt</param>
+        <param name="subject_subscribe_ue">Haluan tilata Unlimited Edition -version nyt</param>
+        <param name="subject_subscribe_support">Haluan tilata nyt</param>
+        <param name="subject_data_export">Haluan viikoittaisen vientipalvelun</param>
+        <param name="subject_marketing_licenses">Lisää markkinointilisenssejä</param>
+        <param name="subject_offline_licenses">Lisää offline-lisenssejä</param>
+        <param name="subject_wireless_licenses">Lisää Wireless-lisenssejä</param>
+        <param name="subject_offlinepda_licenses">Lisää Sales Anywhere ­lisenssejä</param>
+        <param name="subject_mobile_licenses">Lisää Force.com Mobile -lisenssejä</param>
+        <param name="subject_sfcontent_licenses">Lisää Salesforce CRM Content -lisenssejä</param>
+        <param name="subject_knowledge_licenses">Lisää Knowledge-lisenssejä</param>
+        <param name="subject_interaction_licenses">Lisää Force.com Flow -lisenssejä</param>
+        <param name="subject_support_licenses">Uusi Service Cloud -lisenssejä</param>
+        <param name="subject_jigsaw_licenses">Lisää Jigsaw-lisenssejä</param>
+        <param name="subject_liveagent_licenses">Lisää Live Agent -lisenssejä</param>
+        <param name="subject_siteforcecontributor_licenses">Lisää Site.com Contributor -lisenssejä</param>
+        <param name="subject_siteforcepublisher_licenses">Lisää Site.com Publisher -lisenssejä</param>
+        <param name="subject_chatteranswers_licenses">Lisää Chatter Answers -lisenssejä</param>
+        <param name="subject_license_reduction">Lisenssien vähentäminen</param>
+        <param name="functionalArea_0">Tilien tai lisenssien hallinta</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Laskutuskysely</param>
+        <param name="functionalArea_3">Data Junction -muunnos</param>
+        <param name="functionalArea_4">Sähköposti/HTML-sähköposti</param>
+        <param name="functionalArea_5">Ennusteet ja mahdollisuudet</param>
+        <param name="functionalArea_6">Tuontitoiminto</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Liidit</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Suorituskyky</param>
+        <param name="functionalArea_9">Raportit ja näkymät</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Tilaa nyt</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Synkronointi</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Viikoittainen vientipalvelu</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Muut</param>
+        <param name="functionalArea_16">Markkinointilisenssi</param>
+        <param name="functionalArea_17">Offline-lisenssi</param>
+        <param name="functionalArea_18">Profiilit/sivun asettelut/tietuetyypit</param>
+        <param name="functionalArea_19">Kampanjat</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Itsepalvelu</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Wireless-lisenssi</param>
+        <param name="functionalArea_22">Päivitä nyt</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere ­lisenssi</param>
+        <param name="functionalArea_24">Tehtävät/tapahtumat </param>
+        <param name="functionalArea_25"><Products/> ja annuiteetit / <pricebooks/></param>
+        <param name="functionalArea_26">Suuri sopimus -hälytys </param>
+        <param name="functionalArea_27">Asiakirjat</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Tapaukset ja ratkaisut </param>
+        <param name="functionalArea_29">Etsi</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Jakaminen</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">Kumppaniportaalilisenssi</param>
+        <param name="functionalArea_36">Force.com Mobile -lisenssi</param>
+        <param name="functionalArea_37">Salesforce CRM Content-lisenssi</param>
+        <param name="functionalArea_38">Service Cloud -lisenssi</param>
+        <param name="functionalArea_39">Jigsaw-lisenssi</param>
+        <param name="functionalArea_40">Live Agent -lisenssi</param>
+        <param name="functionalArea_41">Site.com Contributor -lisenssi</param>
+        <param name="functionalArea_42">Site.com Publisher -lisenssi</param>
+        <param name="functionalArea_43">Chatter Answers -lisenssi</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Jos haluat ottaa suoraan yhteyttä asiakaspalveluedustajaan, soita numeroon (415) 901-7010 klo 6–18 (Tyynenmeren normaaliaika) maanantaista&amp;#150;perjantaihin tai +353-1-2723503 klo 8–18 (GMT) maanantaista&amp;#150;perjantaihin.</param>
+        <param name="tips_title">Vihjeitä tapausten lähettämiseen</param>
+        <param name="tip1">Tarkista, että olet antanut meille riittävästi tietoja, jotta voimme kommentoida tapausta mahdollisimman nopeasti.  Seuraavassa on muutamia ehdotuksia ja muistutuksia:</param>
+        <param name="tip2">Kerro meille, mitä aiot tehdä, mitä luulet tapahtuvan ja mitä tosiasiassa tapahtuu.</param>
+        <param name="tip3">Kerro meille, miten voimme toistaa ongelman.</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">Näytä:</param>
+        <param name="X">X</param>
+        <param name="close">Sulje</param>
+        <param name="MLclose">Sulje</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Poista</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Poista</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Poista pysyvästi</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Tietue</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Asetus</param>
+        <param name="activate">Aktivoi</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Poista aktivointi</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Hallinta</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Vie</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Seuraava sivu</param>
+        <param name="prev">Edellinen sivu</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Näkymän kohteet yhteensä: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Näytä luettelosivulla {0} {1} tietueita</param>
+        <param name="number_shown_detail_page">Näytä liittyvässä luetteloissa aina {0} {1} {2} tietueita</param>
+        <param name="number_shown_adjust_less_link">vähemmän</param>
+        <param name="number_shown_adjust_more_link">enemmän</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">kaikki</param>
+        <param name="last_page">Palaa edelliselle sivulle</param>
+        <param name="last_list">Palaa luetteloon</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Palaa luetteloon: <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Palaa luetteloon: <Entity entity="0" plural="y"/> yhteyksistä</param>
+        <param name="last_suggested_solution_list">Palaa <Suggested/> <solutions/> -luetteloon</param>
+        <param name="last_solution_search_list">Palaa <Solution plural="n"/>-hakutuloksiin</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Palaa <entity entity="0" plural="n" case="il"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Toiminnot:</param>
+        <param name="checkboxPrompt">Valitse vähintään yksi rivi</param>
+        <param name="checkboxSinglePrompt">Valitse yksi rivi</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Tämän sivun valinnat poistetaan. Haluatko jatkaa?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Voit suorittaa tämän toiminnon valitsemalla enintään {0} riviä.</param>
+        <param name="selectionLimit">Voit valita enintään {0} riviä.</param>
+        <param name="login">Kirjaudu sisään</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Istunto</param>
+        <param name="none">Näytettäviä tietueita ei ole.</param>
+        <param name="no_rows">Rivejä ei ole valittu</param>
+        <param name="subtotal">Välisumma:</param>
+        <param name="total">Yhteensä:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Valitse kaikki</param>
+        <param name="clearAllInfo">Poista kaikki valinnat</param>
+        <param name="rename">Nimeä uudelleen</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">Valitse</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Poista valinta</param>
+        <param name="toggleall">Valitse kaikki rivit tai poista valinnat</param>
+        <param name="refresh">Päivitä</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Valitse näkymä.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Valitsemasi näkymä ylittää enimmäismäärän. Rajaa hakuehtoja muokkaamalla näkymää tai luomalla uusi näkymä.</param>
+    <param name="switch_view">Vaihda näkymä</param>
+    <param name="records_x_to_y">Näytetään tietueet {0} - {1}</param>
+    <param name="records_x_to_y_more">Näytetään tietueet {0} - {1}, lisää tietueita käytettävissä</param>
+    <param name="records_x_to_y_more_showing_max">Näytetään tietueet {0} - {1}. Tällä sivulla voidaan näyttää vain 1 000 ensimmäistä tietuetta, mutta käytettävissä on enemmän tietueita. Jos haluat näyttää vähemmän tietueita, tarkenna luettelonäkymän ehtoja. Jos haluat tulostaa yli 1 000 tietuetta, suorita raportti ja napsauta sitten raportin Tulostettava näkymä -painiketta.</param>
+    <param name="number_of_records">Tietueiden määrä</param>
+        <param name="createCase">Luo <case/></param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">Laajenna tai tiivistä sisäkkäisiä kohteita napsauttamalla tätä.</param>
+        <param name="expand">Laajenna sisäkkäisiä kohteita napsauttamalla tätä.</param>
+        <param name="collapse">Tiivistä sisäkkäisiä kohteita napsauttamalla tätä.</param>
+        <param name="shortExpand">Laajenna</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Tiivistä</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Laajennettu</param>
+        <param name="collapsed">Tiivistetty</param>
+        <param name="level">Taso</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hierarkia:</param>
+        <param name="siblings">Rinnakkaiset:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">Haku</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Valitse objekti</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Kuka</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Mitä</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Haku palautti enimmäismäärää ({0}) enemmän rivejä. Tarkenna hakua.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000–{0}salesforce.com, inc.</param>
+        <param name="Rights">Kaikki oikeudet pidätetään.</param>
+        <param name="useWildcards">Voit parantaa etsinnän tuloksia käyttämällä yleismerkkinä tähteä * muiden merkkien vieressä.  Haku "ad*" palauttaa esimerkiksi kaikki tietueet, joiden nimi sisältää merkkijonon "ad".</param>
+        <param name="useWildcardsWithSearch">Voit parantaa etsinnän tuloksia käyttämällä yleismerkkinä tähteä "*" muiden merkkien vieressä.</param>
+        <param name="error_lookup_multiple_matches_ile">Löytyi useita kohteita.&lt;br&gt;Tarkenna hakua napsauttamalla kuvaketta.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">Valitse väri</param>
+        <param name="cpFrameTitle">Värivalitsin</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">Valitse kaaviotyyppi</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">Laajenna luettelo</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Laajennettu luettelo</param>
+        <param name="sharing">Jakaminen</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Miksi?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">Enemmän suodattimia &gt;&gt;</param>
+        <param name="less_filters">Vähemmän suodattimia &lt;&lt;</param>
+        <param name="by_keyword">Avainsanan mukaan</param>
+        <param name="by_filter">Kenttäsuodattimen mukaan</param>
+        <param name="too_many">Haku palautti yli {0} riviä. Vain ensimmäiset {0} näytetään. Tarkenna hakua.</param>
+        <param name="Results">Tulokset</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">Hae:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Pistemäärä</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">Kenttä</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operaattori</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Arvo</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Voit käyttää tai-suodattimia määrittämällä kolmanteen sarakkeeseen useita arvoja.</param>
+        <param name="tip_1">Voit syöttää enintään 10 arvoa. Arvot on eroteltava toisistaan pilkulla. Esimerkki: CA, NY, TX, FL hakee merkkijonoa CA tai NY tai TX tai FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Erittele pilkkuja sisältävät merkkijonot lainausmerkeillä. Esimerkiksi "200,000","1,000,000" hakee merkkijonoa 200,000 tai 1,000,000.</param>
+        <param name="tip_3">Käytä valintaruutukentissä "Epätosi"- ja "Tosi"-merkkijonoa. Esimerkiksi "Aktiivinen yhtä suuri kuin tosi" tai "Muunnettu yhtä suuri kuin epätosi".</param>
+        <param name="tip_4">Aluekoodeihin perustuvat sääntömerkinnät on ehkä esitettävä suluissa. Puhelin alkaa (415), (510).</param>
+        <param name="tip_5">Jos käytät käännöstyökalua, määritä kaikki suodatinehdot pääarvojen avulla.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">Käytettävissä</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Valinnat</param>
+        <param name="assignLicensesDescription">Valitse kaikkien niiden pakettien vieressä olevat valintaruudut, jotka haluat kohdistaa tälle käyttäjälle ja valitse sitten Kohdista. Jos paketille ei ole tarvittavia lisenssejä tai jos paketin tila on vanhentunut tai keskeytetty, valintaruutua ei näy.</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">Vaakasuuntainen näkymä</param>
+        <param name="vertical_view">Pystysuuntainen näkymä</param>
+        <param name="view_select_title">Valitse näkymä</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portaalin oletusasetus</param>
+        <param name="3">Verkkokauppa</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This/> <entity entity="0"/> on hallittava, joten voit muokata vain tiettyjä ominaisuuksia.</param>
+        <param name="EntityDeprecated">Tämä <entity entity="0"/> on lukittu.</param>
+        <param name="UnmanagedDeprecatedByOther">Tätä <Entity entity="0" case="par"/> ei ole vielä julkaistu, vaan sen emokomponentti on lukinnut sen.</param>
+        <param name="EntityDeprecatedByDev">Paketin julkaisija on lukinnut <this/> <Entity entity="0" case="g"/>. Ota yhteyttä julkaisijaan saadaksesi lisätietoja.</param>
+        <param name="Undeprecate">Et voi poistaa komponentin lukitusta ennen hallittavan/julkaistun paketin lataamista.</param>
+        <param name="UndeprecateByOther">Voit poistaa tämän komponentin emon lukituksen ennen hallittavan/julkaistun paketin lataamista.</param>
+        <param name="MoreInfo">Näytä lisätietoja</param>
+        <param name="LessInfo">Piilota tiedot</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded">Tämä <entity entity="0"/> kuuluu päivitettävään pakettiin, jonka olet ladannut AppExchange-palveluun.</param>
+        <param name="BecauseInstalled">Tämä <entity entity="0"/> kuuluu päivitettävään pakettiin, jonka olet asentanut AppExchange-palvelusta.</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">Mitä voin muokata?</param>
+        <param name="WhatNone">Jos {0} on hallittava, niiden määritteitä ei voi muokata, jotta päivitysongelmilta vältyttäisiin tulevaisuudessa.</param>
+        <param name="WhatTop">Kun {0} on hallittava, seuraavia komponetteja voidaan muokata:</param>
+        <param name="WhatBottom">Jotta päivitysprosessi sujuisi helposti, kaikki muut attribuutit on lukittu.</param>
+        <param name="WhoCanDelete">Kuka voi poistaa tietyn {0}?</param>
+        <param name="Who">{0} voi poistaa {1}.</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">Yksikön yksityiskohtien peittokaavio</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0} on tallennettu.</param>
+        <param name="modified">{0} on päivitetty.</param>
+        <param name="submitted">{0} on lähetetty.</param> <!-- Label swap for Case object -->
+        <param name="attached">Liitteet lisätty.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">Värimalli</param>
+        <param name="colorHexValue">Värin arvo heksadesimaalina</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">Vahvistus</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Tiedot</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Virhe</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Varoitus</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Suojattu</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">Yleisyys</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Päivittäin</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Viikoittain</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Kuukausittain</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Jokaisena arkipäivänä</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Joka päivä</param>
+       <param name="lastDay">viim.</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">ensimmäinen</param>
+    <param name="on2">toinen</param>
+    <param name="on3">kolmas</param>
+    <param name="on4">neljäs</param>
+    <param name="onLast">viimeinen</param>
+    <param name="startTime">Aloitus</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Lopetus</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Toivottu aloitusaika</param>
+    <param name="noPreference">Ei oletusasetusta</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Täsmällinen alkamisaika määräytyy työjonon toimintojen mukaan.</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[Tämän kuukausittaisen taajuusasetuksen aikavyöhyke on seuraava:<br> <strong>{0}</strong><br>Taajuusasetukset näkyvät niitä viimeksi muokanneen käyttäjän aikavyöhykkeellä.<br>Kaikki kyseisiin asetuksiin tekemäsi muutokset päivitetään aikavyöhykkeen mukaisesti.]]></param>
+
+      <param name="weeklyRecurrence">Toistuu joka viikko: {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Toistuu joka viikko</param>
+      <param name="monthlyRecurrence1">Joka kuukauden {0} päivänä</param>
+      <param name="monthlyRecurrence1LegendLabel">Määrätty</param>
+      <param name="monthlyRecurrence2LegendLabel">Mukautettu</param>
+      <param name="monthlyRecurrence2">Joka kuukausi: {2} {0} {3} {1}</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Joka kuukausi: {0} {1}</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Joka kuukauden tiettynä päivänä</param>
+      <param name="accessibleMonthly2">Joka kuukauden mukautettuna päivänä</param>
+      <param name="accessibleOnDayN">Tietty päivä</param>
+      <param name="accessibleOnDayNOfWeek">Tapahtuma</param>
+      <param name="accessibleOnDayName">Päivä</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">Tämä yksinkertainen testi auttaa estämään haittaohjelmien pääsyn tietoihisi.  Pääkäyttäjä edellyttää testin suorittamista, kun kyse on suurista latauksista.  Testi suoritetaan vain kerran yhden kirjautumisistunnon aikana.</param>
+        <param name="imagePrompt">Kirjoita yllä olevat sanat välilyönneillä erotettuna:</param>
+        <param name="audioPrompt">Kirjoita kuulemasi numerot:</param>
+        <param name="refresh">Uusi haaste</param>
+        <param name="audio">Äänihaaste</param>
+        <param name="image">Kuvahaaste</param>
+        <param name="incorrect">Väärin. Yritä uudelleen.</param>
+        <param name="moreinfo">Lisätietoja &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Vähemmän tietoja</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">Enemmän napsauttamalla...</param>
+        <param name="show">Näytä tehostepaneeli</param>
+        <param name="hide">Kätke tehostepaneeli</param>
+        <param name="empty">Tälle tietueelle ei ole näytettäviä tehostekenttiä.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">Opastettu kierros</param>
+        <param name="closeIntro">Ei kiitos</param>
+        <param name="closeOutro">Sulje</param>
+        <param name="showLater">Näytä myöhemmin</param>
+        <param name="replay">Toista</param>
+        <param name="continue">Jatka</param>
+        <param name="previous">Edellinen</param>
+        <param name="startTour">Aloita kierros</param>
+        <param name="endTour">Päätä kierros</param>
+        <param name="stepCounter">kohteen "{1}/{0}"</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">Lisätiedot</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Suositukset</param>
+        <param name="hideBucketTip">&lt;br&gt;Pudota tähän kätkeäksesi kohteet&lt;br/&gt;sivulta.</param>
+        <param name="hiddenListTip">Näytä piilotetut kohteet, vedä takaisin yllä olevaan luetteloon.</param>
+        <param name="hiddenListShowLinkLabel">{0} piilotettu</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">Takaisin alkuun</param>
+        <param name="multipleItemDragGhost">Useita kohteita (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">Lisätietosivun selaimen yhteensopivuus</param>
+        <param name="compatibilityMsgSubTitle">Oops,  tätä selainta ei tueta</param>
+        <param name="compatibilityMsg1">Uutta lisätietosivua ei voida näyttää nykyisessä selaimessasi.</param>
+        <param name="compatibilityMsg2">Voit käyttää uutta suunnittelua missä tahansa, jossa kirjaudut sisään jonkin yhteensopivan selaimen kautta:</param>
+        <param name="supportedIE">Internet Explorer 7 tai 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Kiitos!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Tee klassisesta näkymästä oletus</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">Kirjoita tähän etsiäksesi kohdetta {0}…</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Yksikään {0} ei vastannut hakuehtojasi.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Sivu {1}/{0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">Poista valikko käytöstä</param>
+        <param name="confirmTurnOffTitle">Haluatko varmasti poistaa tämän valikon käytöstä?</param>
+        <param name="confirmTurnOffText">Jos haluat ottaa tämän valikon käyttöön myöhemmin, siirry asetusvalikon Henkilökohtaiset tiedot -sivulle ja ota käyttöön Force.com-pikavalikko-asetus.</param>
+        <param name="viewObject">Näytä objekti</param>
+        <param name="viewObjectHover">Tarkastele ja hallitse tämän objektin lisätietoja</param>
+        <param name="viewObjectNewHover">Luo objekti</param>
+        <param name="viewFields">Näytä kentät</param>
+        <param name="viewFieldsHover">Tarkastele ja hallitse tämän objektin kenttiä</param>
+        <param name="viewFieldsNewHover">Lisää kenttä tähän objektiin</param>
+        <param name="viewRecordTypes">Tarkastele tietuetyyppejä</param>
+        <param name="viewRecordTypesHover">Tarkastele ja hallitse tämän objektin tietuetyyppejä</param>
+        <param name="viewRecordTypesNewHover">Lisää tietuetyyppi tähän objektiin</param>
+        <param name="viewValidationRules">Näytä vahvistussäännöt</param>
+        <param name="viewValidationRulesHover">Tarkastele ja hallitse tämän objektin vahvistussääntöjä</param>
+        <param name="viewValidationRulesNewHover">Lisää vahvistussääntö tähän objektiin</param>
+        <param name="viewApprovals">Näytä hyväksynnät</param>
+        <param name="viewApprovalsHover">Tarkastele ja hallitse tämän objektin hyväksyntäprosesseja</param>
+        <param name="viewApprovalsNewHover">Käytä ohjattua pika-aloitusta lisäämällä hyväksyntäprosesseja tälle objektille</param>
+        <param name="editApp">Muokkaa sovellusta</param>
+        <param name="editAppHover">Mukauta välilehtiluetteloa, profiilien kohdistuksia ja muita tämän sovelluksen lisätietoja</param>
+        <param name="editTab">Muokkaa välilehteä</param>
+        <param name="editTabHover">Mukauta kuvaketta, väriä ja muita tämän sovelluksen lisätietoja</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">Mukauta tätä sivun asettelua</param>
+        <param name="viewRecordType">Näytä tietuetyyppi</param>
+        <param name="viewRecordTypeHover">Tarkastele ja hallitse tätä tietuetyyppiä, mukaan lukien valintaluettelon arvojen muokkaaminen</param>
+        <param name="editColumns">Muokkaa sarakkeita</param>
+        <param name="editColumnsHover">Mukauta tämän luettelon sarakkeita</param>
+        <param name="importData">Tuo tietoja</param>
+        <param name="importDataHover">Tuo tietoja tähän objektiin</param>
+    </section>
+</iniFile>

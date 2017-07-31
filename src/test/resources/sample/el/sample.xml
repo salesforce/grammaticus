@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">Πλαίσιο αναδιπλούμενης λίστας</param>
+        <param name="select_default">Επιλέξτε από τα ακόλουθα.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Επιλέξτε {0} παρακάτω.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Πρόσβαση</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Διαχειριζόμενο)</param>
+        <param name="activity_history">Ιστορικό δραστηριότητας</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Επιπλέον πληροφορίες</param> <!--aliased across labels - do not change-->
+        <param name="alias">Ψευδώνυμο</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Βοηθός</param>
+        <param name="assistant_name">Όνομα βοηθού</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Τηλέφωνο βοηθού</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Τηλ. βοηθού</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Εσωτ. τηλ. βοηθού</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Ημερομηνία γέννησης</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Κύριο τμήμα</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Εταιρεία</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Δημιουργία από</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Δημιουργήθηκε από αναγνωριστικό</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Δημιουργήθηκε από ψευδώνυμο</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Κωδικός ISO νομίσματος</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Προσαρμοσμένα πεδία</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Προεπιλεγμένη κατάσταση</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Λεπτομέρειες {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Τμήμα</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Επεξεργασία {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Αναμενόμενα έσοδα</param>
+        <param name="first_name">Όνομα</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Επώνυμο</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Όνομα (τοπικό)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Επώνυμο (τοπικό)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Οικονομικό τρίμηνο</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Οικονομικό έτος</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Ονοματεπώνυμο</param> <!-- aliased across app - do not change -->
+        <param name="group">Ομάδα</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Όνομα ομάδας</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Όνομα ουράς</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Κλάδος</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Τελευταία τροποποίηση από</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Τελευταία τροποποίηση από το αναγνωριστικό</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Τελευταία τροποποίηση από το ψευδώνυμο</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Αναγνωριστικό κύριας εγγραφής</param>
+        <param name="mobile">Κινητό τηλέφωνο</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Κινητό τηλέφωνο</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Εσωτ. κινητού τηλεφώνου</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Νέα κοινή χρήση</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Εκχωρημένο ψευδώνυμο</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Λίστα διαθεσιμότητας</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Επωνυμία εταιρείας</param> <!-- aliased across app - do not change -->
+        <param name="activities">Δραστηριότητες</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">δεν υπάρχουν συνημμένα</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> υπάρχουν <document plural="y" case="a"/></param>
+        <param name="address_info">Πληροφορίες διεύθυνσης</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Απορρίφθηκε</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Προεπιλογή</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Προεπιλεγμένη προτεραιότητα</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Δημιουργία νέας προβολής</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Προσαρμοσμένες πληροφορίες</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Διπλότυπη κατάσταση</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Διεύθυνση email</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Όνομα email</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Πρότυπο email</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Email:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Προσαρμοσμένοι σύνδεσμοι</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Μέγεθος αρχείου</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Δεν υπάρχουν διαθέσιμα δεδομένα</param>
+        <param name="history_event_checked">Επελέγη το πεδίο {0}</param>
+        <param name="history_event_unchecked">Καταργήθηκε η επιλογή του πεδίου {0}</param>
+        <param name="how_do_i_specify_info">Πώς μπορώ να καθορίσω ποιές πληροφορίες θα αποτυπωθούν;</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Εσωτερική προέλευση</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Χρονικό διάστημα:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Προσφώνηση</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Επιλογή νέου κατόχου</param>
+        <param name="select_a_view">Επιλέξτε προβολή από την αναπτυσσόμενη λίστα για να δείτε μια λίστα σχετικών αποτελεσμάτων.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Επιλέξτε φάκελο από την αναπτυσσόμενη λίστα για να δείτε μια λίστα σχετικών αποτελεσμάτων.</param>
+        <param name="select_the_file">Επιλέξτε το αρχείο</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Επιλέξτε τα αρχεία που θα περιλαμβάνονται:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Υπογραφή</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Θέμα</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Πληροφορίες συστήματος</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Τοποθεσία Web</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Ψευδώνυμο κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Όνομα κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Αναγνωριστικό κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Επώνυμο κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Ονοματεπώνυμο κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Ρόλος κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Εμφάνιση ρόλου κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Όνομα ρόλου κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Πρωτεύων</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Προτεραιότητα</param><!--aliased across labels - do not change -->
+        <param name="private">Απόρρητη</param>
+        <param name="role">Ρόλος</param> <!--aliased across labels - do not change -->
+        <param name="rating">Αξιολόγηση</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Γρήγορη δημιουργία</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Πρόσφατα προβεβλημένα</param>
+        <param name="top5">5 κυριότερες ερωτήσεις</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Πωλητής</param>
+        <param name="customer">Πελάτης</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Προμηθευτής</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Αναγνωριστικό τύπου εγγραφής</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Αναγνωριστικό τμήματος</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Απαρίθμηση ή αναγνωριστικό πίνακα</param>
+        <param name="editable">Επεξεργάσιμο</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Κανονικοποιημένο όνομα</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Δήλωση απορρήτου</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Διαχειρίσιμη κατάσταση</param>
+        <param name="namespacePrefix">Πρόθεμα χώρου ονομάτων</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Χώρος ονομάτων ενότητας</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Εγκατεστημένο πακέτο</param>
+        <param name="initialVersion">Πρώτη έκδοση που κυκλοφόρησε</param>
+        <param name="lastVersion">Τελική διαθέσιμη έκδοση</param>
+        <param name="availableInVersions">Διαθέσιμο στις εκδόσεις</param>
+        <param name="DeveloperName">Όνομα προγραμματιστή</param>
+        <param name="apiName">Όνομα API</param>
+        <param name="InvalidDeveloperNameOnEntity">Το πεδίο{0} μπορεί να περιλαμβάνει μόνο κάτω παύλες και αλφαριθμητικούς χαρακτήρες. Θα πρέπει να είναι μοναδικό, να αρχίζει με γράμμα, να μην περιλαμβάνει κενά, να μην λήγει με κάτω παύλα και να μην περιέχει δύο συνεχόμενες κάτω παύλες.</param>
+        <param name="missingDevName">Θα πρέπει να παρέχεται {0}.</param>
+        <param name="duplicateDevName">Αυτό το {0} υπάρχει ήδη ή έχει χρησιμοποιηθεί προηγουμένως.  Επιλέξτε ένα διαφορετικό μοναδικό όνομα.</param>
+        <param name="manageabilityOverride">Παράκαμψη διαχειρισιμότητας</param>
+        <param name="AMPMId">Αναγνωριστικό Π.Μ./Μ.Μ.</param>
+        <param name="MetricsDate">Ημερομηνία μετρικών στοιχείων</param>
+        <param name="MayEdit">Με δυνατότητα επεξεργασίας</param>
+        <param name="IsLocked">Κλειδωμένη</param>
+        <param name="LastViewedDate">Ημερομηνία τελευταίας προβολής</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Δημιουργία</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Ρύθμιση</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Δημιουργία νέου...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Αρχείο</param>
+        <param name="new_forecast">Πρόβλεψη</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Κάδος ανακύκλωσης</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Αποστολή email</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Αναφορά</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Τροποποιήθηκε από</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Ημερομηνία δημιουργίας</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Ημερομηνία τροποποίησης</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Αυτοματοποιημένη διαδικασία</param>
+        <param name="partner_network">Χρήστης σύνδεσης</param>
+        <param name="external_who">Δημόσιος χρήστης</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Παράδειγμα</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Σφάλμα: Μη έγκυρα δεδομένα. &lt;br/&gt;Αναθεωρήστε όλα τα ακόλουθα μηνύματα σφαλμάτων για να διορθώσετε τα δεδομένα σας.</param>
+        <param name="EditPageError2">Αναθεωρήστε όλα τα ακόλουθα μηνύματα σφαλμάτων για να διορθώσετε τα δεδομένα σας.</param>
+        <param name="Required">Πρέπει να καταχωρήσετε τιμή</param>
+        <param name="RequiredWithFieldList">Λείπουν απαιτούμενα πεδία: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Απαιτείται για τις υπηρεσίες αυτοεξυπηρέτησης</param>
+        <param name="RequiredBy">Απαιτείται από: {0}</param>
+        <param name="Requires">Απαιτεί: {0}</param>
+        <param name="TooLong">Η τιμή είναι υπερβολικά μεγάλη για το πεδίο</param>
+        <param name="CannotExceedXCharacters">Η τιμή δεν είναι δυνατόν να υπερβαίνει τους {0} χαρακτήρες</param>
+        <param name="MustBeXCharacters">Η τιμή θα πρέπει να είναι ακριβώς {0} χαρακτήρες</param>
+        <param name="MustBeNumber">Η τιμή θα πρέπει να είναι αριθμητική</param>
+        <param name="StatusCloseRequired">Θα πρέπει να επισημάνετε τουλάχιστον μία κατάσταση ως κλειστή</param>
+        <param name="StatusDefaultRequired">Θα πρέπει να επισημάνετε τουλάχιστον μία κατάσταση ως προεπιλογή</param>
+        <param name="StatusInUse">Οι ακόλουθες τιμές καταστάσεων χρησιμοποιούνται και δεν είναι δυνατή η επεξεργασία ή η διαγραφή τους: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Μη έγκυρη ημερομηνία</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Μη έγκυρη ημερομηνία. Δεν μπορείτε να ορίσετε ημερομηνία μετά από {0}</param>
+        <param name="InvalidDateTime">Μη έγκυρη ημερομηνία και ώρα</param>
+        <param name="InvalidColor">Μη έγκυρο χρώμα</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Μη έγκυρη διεύθυνση Internet</param>
+        <param name="InvalidOption">Έχει επιλεγεί μη έγκυρο στοιχείο.</param>
+        <param name="UnsupportedCurrency">Μη έγκυρο νόμισμα</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Μη έγκυρη διεύθυνση URL</param>
+        <param name="NoneSelectedInPicklist">--κανένα επιλεγμένο--</param>
+        <param name="InvalidTime">Μη έγκυρη ώρα</param>
+        <param name="InvalidNumber">Μη έγκυρος αριθμός</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Ο αριθμός είναι υπερβολικά μεγάλος.</param>
+        <param name="TooLargeNumberWithScale">Ο αριθμός θα πρέπει να είναι μικρότερος από {0}.</param>
+        <param name="TooSmallNumberWithScale">Ο αριθμός θα πρέπει να είναι μεγαλύτερος από {0}.</param>
+        <param name="NonpositiveError">Θα πρέπει να είναι θετικός.</param>
+        <param name="NegativeError">Θα πρέπει να είναι μη αρνητικός.</param>
+        <param name="PositiveError">Θα πρέπει να είναι μη θετικός.</param>
+        <param name="NonnegativeError">Θα πρέπει να είναι αρνητικός.</param>
+        <param name="NonzeroError">Θα πρέπει να είναι διαφορετικός του μηδενός.</param>
+        <param name="NonintegerError">Θα πρέπει να είναι ακέραιος αριθμός.</param>
+        <param name="InvalidPercent">Μη έγκυρο ποσοστό</param>
+        <param name="InvalidAfterRoundOff">Ο αριθμός {0} δεν είναι έγκυρος μετά τη στρογγυλοποίηση στην κλιμάκωση: {1}</param>
+        <param name="CharactersRemaining">υπολειπόμενο</param>
+        <param name="CharactersOver">πάνω από το όριο</param>
+        <param name="TooManySelection">Δεν μπορείτε να επιλέξετε περισσότερα από {0} στοιχεία</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Διπλότυπη τιμή στην εγγραφή: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Η τιμή κρυφού πεδίου (δεν εμφανίζεται) είναι διπλότυπη της τιμής εγγραφής: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0}είναι διπλότυπη της τιμής στην εγγραφή με αναγνωριστικό: {1}</param>
+        <param name="True">Αληθές</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Ψευδές</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Μη έγκυρος τομέας</param>
+        <param name="ReadOnly">Δεν μπορείτε να επεξεργαστείτε αυτό το πεδίο.</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Ματαίωση</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Αποδοχή</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Αποδοχή αλλαγών</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Ενεργοποίηση προστατευτικού περιβάλλοντος</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Προσθήκη σχολίου</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Προσθήκη στοιχείων</param>
+        <param name="add_contacts">Προσθήκη <contacts case="g"/></param>
+        <param name="add_leads">Προσθήκη <leads case="g"/></param>
+        <param name="add_more_users">Προσθήκη περισσότερων χρηστών</param>
+        <param name="add_multiple_users">Προσθήκη πολλών χρηστών</param>
+        <param name="add_product">Προσθήκη <product case="g"/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Προσθήκη στοιχείου σειράς</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Προσθήκη δείγματος πίνακα εργαλείων</param>
+        <param name="add_to_call_center">Προσθήκη στο Κέντρο κλήσεων</param>
+        <param name="add_to_campaign">Προσθήκη σε <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Προσθήκη στο Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Προσθήκη σε <pricebook case="a"/></param>
+        <param name="add_remove">Προσθήκη/Κατάργηση</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Σύνθετη εγκατάσταση</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Έγκριση</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Εκχώρηση</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Εκχώρηση ρόλου σε χρήστες</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Επιστροφή στη λίστα αναφορών</param>
+        <param name="billing_and_licenses">Τιμολόγηση &amp; Άδειες χρήσης</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Πληροφορίες τιμολόγησης</param>
+        <param name="briefcase_setup">Ρύθμιση χαρτοφύλακα</param>
+        <param name="cancel">Άκυρο</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Ακύρωση αποστολής</param>
+        <param name="cancel_test_instance">Ακύρωση προστατευτικού περιβάλλοντος Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Αλλαγή εταιρικού</param>
+        <param name="change_currency">Αλλαγή νομίσματος</param>
+        <param name="change_owner">Αλλαγή κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Αποδοχή και αλλαγή κατόχου</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Αποδοχή και εκχώρηση κύριου</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Αλλαγή κατάστασης</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Έλεγχος διαθεσιμότητας</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Ορθογραφικός έλεγχος</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Επιλογή <pricebook case="g"/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Εκκαθάριση</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Επισκόπηση</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Καρτέλα {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Λίστα</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Αντιγραφή γονικών στοιχείων</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Σύμπτυξη όλων</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Επιλέξτε ένα στοιχείο από τη λίστα επιλογών</param>
+        <param name="composegmail">Σύνθεση Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Επιβεβαίωση</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Συνέχεια</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Συνέχεια οπωσδήποτε</param>
+        <param name="convert">Μετατροπή</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Μετατροπή <lead case="g"/></param>
+        <param name="create">Δημιουργία</param>
+        <param name="create_follow_up_event">Δημιουργία συμπληρωματικού <event case="g"/></param>
+        <param name="create_follow_up_task">Δημιουργία συμπληρωματικής <task case="g"/></param>
+        <param name="create_new">Δημιουργία νέου {0}</param>
+        <param name="create_new_section">Δημιουργία νέας ενότητας</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Δημιουργία <opportunity case="g"/></param>
+        <param name="create_test_instance">Δημιουργία προστατευτικού περιβάλλοντος Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Δημιουργία δοκιμαστικής βάσης δεδομένων</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Δημιουργία φόρμας Web-to-Lead</param>
+        <param name="create_new_holiday">Δημιουργία νέας αργίας</param>
+        <param name="create_new_sla_process">Νέα διαδικασία δικαιωμάτων</param>
+        <param name="create_new_milestone_type">Νέο ορόσημο</param>
+        <param name="currency_setup">Ρύθμιση νομίσματος</param>
+        <param name="customer_view">Προβολή πελατών</param>
+        <param name="customize">Προσαρμογή</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Προσαρμογή εμφάνισης για όλους τους χρήστες</param>
+        <param name="page_settings">Ρυθμίσεις σελίδας</param>
+        <param name="customize_page">Προσαρμογή σελίδας</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Επεξεργασία διάταξης</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Λίστα πίνακα εργαλείων</param>
+        <param name="data_export">Εξαγωγή δεδομένων</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Εκκαθάριση</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Απόρριψη</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Προεπιλεγμένοι προσαρμοσμένοι σύνδεσμοι</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Κατάργηση πρόσβασης στην ολοκλήρωση αγοράς</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Τέλος με την προεπισκόπηση</param>
+        <param name="dont_save">Να μην αποθηκευτεί</param>
+        <param name="dont_show_page_again">Να μην εμφανιστεί ξανά αυτή η σελίδα</param>
+        <param name="download">Λήψη</param>
+        <param name="download_now">Λήψη τώρα</param>
+        <param name="download_sample_css_file">Λήψη δείγματος αρχείου CSS</param>
+        <param name="edit">Επεξεργασία</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Επεξεργασία [Beta]</param>
+        <param name="edit_all">Επεξεργασία όλων</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Επεξεργασία χρηστών</param>
+        <param name="edit_rates">Επεξεργασία χρεώσεων</param>
+        <param name="edit_selected">Επεξεργασία επιλεγμένων</param>
+        <param name="editProperties">Επεξεργασία ιδιοτήτων</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Έξοδος από {0}</param>
+        <param name="enable_appstore_user">Χορήγηση πρόσβασης στην ολοκλήρωση αγοράς</param>
+        <param name="enable_as_partner">Ενεργοποίηση ως συνεργάτη</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Ενεργοποίηση σύνδεσης στην πύλη συνεργατών</param>
+        <param name="enable_self_service">Ενεργοποίηση αυτοεξυπηρέτησης</param>
+        <param name="enable_users">Ενεργοποίηση νέων χρηστών</param>
+        <param name="enableForecasting">Ενεργοποίηση προσαρμοσμένων προβλέψεων</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Είσοδος σε εκπαίδευση</param>
+        <param name="erase_test_instance">Σβήσιμο προστατευτικού περιβάλλοντος Sandbox</param>
+        <param name="establish">Καθορισμός</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Ανάπτυξη όλων</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Εξαγωγή λεπτομερειών</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Εξαγωγή λεπτομερειών τώρα</param>
+        <param name="export_background">Εκτέλεση εξαγωγής στο παρασκήνιο...</param>
+        <param name="fctHistory">Ιστορικό πρόβλεψης</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Σύνοψη πρόβλεψης</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Επικυρώσεις πεδίων</param>
+        <param name="find">Εύρεση</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Εύρεση αναφοράς</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Εύρεση <document case="g"/></param>
+        <param name="find_pricebooks">Εύρεση <pricebook case="g"/></param>
+        <param name="find_products">Εύρεση <product case="g"/></param>
+        <param name="find_solution">Εύρεση <solution case="g"/></param>
+        <param name="finished">Τερματίστηκε</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Εμπρός</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Εμπρός στις &quot;Συνδέσεις&quot;</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Δημιουργία WSDL</param>
+        <param name="generate_login_html">Δημιουργία HTML σύνδεσης</param>
+        <param name="getMoreInfo">Λήψη περισσότερων πληροφοριών</param>
+        <param name="go">Μετάβαση</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Βοήθεια για αυτήν τη σελίδα</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Βοήθεια για {0}</param>
+        <param name="hide">Απόκρυψη λεπτομερειών</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Αποδοχή</param>
+        <param name="i_decline">Απόρριψη</param>
+        <param name="impactAnalysis">Πού χρησιμοποιείται αυτό;</param>
+        <param name="import">Εισαγωγή</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Εισαγωγή <leads case="g"/></param>
+        <param name="include_offline">Συμπερίληψη εκτός σύνδεσης</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Εισαγωγή</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Εισαγωγή επιλεγμένου</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Εγκατάσταση τώρα</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Πρόσκληση</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Πρόσκληση για σύνδεση</param>
+        <param name="jigsawsearch">Λήψη επαφών</param>
+        <param name="join_meeting">Συμμετοχή σε σύσκεψη</param>
+        <param name="jumpstart">Άμεση εκκίνηση</param>
+        <param name="keep_in_touch">Ενημέρωση αίτησης</param>
+        <param name="layout_assignment">Εκχώρηση διάταξης</param>
+        <param name="legal_view">Προβολή νομικών πληροφοριών</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Κλείδωμα εγγραφής</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Σύνδεση ως χρήστης-συνεργάτης</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Διαχείριση μελών</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Ζητήστε σύσκεψη</param>
+        <param name="add_members_search">Προσθήκη μελών - Αναζήτηση</param>
+        <param name="add_members_import">Προσθήκη μελών – Εισαγωγή αρχείου</param>
+        <param name="edit_members_search">Επεξεργασία μελών - Αναζήτηση</param>
+        <param name="update_members_import">Ενημέρωση &amp;Προσθήκη μελών – Εισαγωγή αρχείου</param>
+        <param name="manage_call_center_users">Διαχείριση χρηστών κέντρου κλήσεων</param>
+        <param name="map_lead_fields">Χάρτης για τα <lead_fields/></param>
+        <param name="mark_as">Σήμανση ως...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Εισαγωγή μελών</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Τροποποίηση μεμονωμένων υπενθυμίσεων</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Νέο</param>
+        <param name="newcase">Νέο</param>
+        <param name="new_addition_order">Νέα παραγγελία προσθήκης</param>
+        <param name="new_custom_object">Νέο προσαρμοσμένο αντικείμενο</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Δημιουργία νέας προσαρμοσμένης αναφοράς</param>
+        <param name="new_dashboard">Νέος πίνακας εργαλείων</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Νέο στοιχείο πίνακα εργαλείων</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Νέο πρότυπο</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Νέο πρότυπο</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Νέος φάκελος</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Νέα ομάδα</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Νέα ουρά</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Νέα σημείωση</param>
+        <param name="new_object_custom_tab">Νέα καρτέλα προσαρμοσμένου αντικειμένου</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Ηλεκτρονική συνάντηση</param>
+        <param name="new_order">Νέα παραγγελία</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Νέα προσωπική ομάδα</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Νέα παραγγελία έκπτωσης</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Νέος ρόλος</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Νέο κουμπί</param>
+        <param name="new_territory">Νέα περιοχή</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Νέος χρήστης</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Νέα καρτέλα ενοποίησης Web</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OΚ</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Εκτέλεση διαφορετικής ενημέρωσης</param>
+        <param name="performAnotherMigrate">Μετεγκατάσταση άλλου προφίλ</param>
+        <param name="preview">Προεπισκόπηση</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Επανάληψη υπολογισμού</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Επανάληψη καθορισμού</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Απόρριψη</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Απόρριψη αλλαγών</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Κατάργηση χρηστών</param>
+        <param name="remove_from_briefcase">Κατάργηση από το χαρτοφύλακα</param>
+        <param name="remove_from_campaign">Κατάργηση από <campaign case="a"/></param>
+        <param name="reorder">Αναδιάταξη</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Επιδιόρθωση</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Εκτέλεση όλων των δοκιμών</param>
+        <param name="run_test">Εκτέλεση δοκιμής</param>
+        <param name="quick_save">Γρήγορη αποθήκευση</param>
+        <param name="quick_save_hover">Αποθήκευση και συνέχιση επεξεργασίας</param>
+        <param name="reply">Απάντηση</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Απάντηση σε όλους</param>
+        <param name="reportmanager">Διαχείριση αναφορών</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Επαναφορά κωδικού πρόσβασης</param>
+        <param name="reset_passwords">Επαναφορά κωδικών πρόσβασης</param>
+        <param name="retrieve_prices">Ανάκτηση τιμών</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Εκτέλεση αναφοράς</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Αποθήκευση</param> <!-- aliased across labels do not change -->
+        <param name="saving">Αποθήκευση...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Αποθήκευση &amp; Προσθήκη τιμής</param>
+        <param name="save_and_add_product">Αποθήκευση &amp; Προσθήκη <product case="g"/></param>
+        <param name="save_and_clone">Αποθήκευση &amp; Δημιουργία κλώνου</param>
+        <param name="save_and_close">Αποθήκευση &amp; Κλείσιμο</param>
+        <param name="save_and_attach">Αποθήκευση &amp; Προσθήκη συνημμένου</param>
+        <param name="save_and_continue">Αποθήκευση &amp; Επόμενο</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Αποθήκευση &amp; Περισσότερα</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Αποθήκευση &amp; <New/> <event/></param>
+        <param name="save_and_new_product">Αποθήκευση &amp; <New/> <product/></param>
+        <param name="save_and_new_task">Αποθήκευση &amp; <New/> <task/></param>
+        <param name="save_and_refresh">Αποθήκευση &amp; Ανανέωση</param>
+        <param name="save_and_send">Αποθήκευση &amp; Αποστολή ενημέρωσης</param>
+        <param name="event_scheduler">Προβολές Πελάτη &amp; Ομάδας &gt;</param>
+        <param name="saveAs">Αποθήκευση ως</param>
+        <param name="schedule_to_email">Προγραμματισμός για αποστολή email</param>
+        <param name="schedule_to_print">Προγραμματισμός για εκτύπωση</param>
+        <param name="scrutinize">Εξονυχιστικός έλεγχος</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Εύρεση <knowledgeArticles case="g"/></param>
+        <param name="newArticle">Νέο</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Επιλογή προτύπου</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Άμεση εκκίνηση αυτοεξυπηρέτησης</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Ρύθμιση αυτοεξυπηρέτησης</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Προβολή/Ενεργοποίηση αυτοεξυπηρέτησης</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Αποστολή</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Αποστολή email σε <all/> <the/> <contact plural="y" case="a"/></param>
+        <param name="send_invitation">Αποθήκευση &amp; Αποστολή πρόσκλησης</param>
+        <param name="set_status">Διαχείριση κατάστασης</param>
+        <param name="setup_and_install">Ρύθμιση &amp; Εγκατάσταση</param>
+        <param name="setup_roles">Ρύθμιση ρόλων</param>
+        <param name="setup_sharing">Ρύθμιση κοινής χρήσης</param>
+        <param name="sfga_instructions">Ολοκλήρωση εκτυπώσιμων οδηγιών</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Εμφάνιση λεπτομερειών</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Παράλειψη</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Ταξινόμηση</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Έναρξη συνάντησης</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Υποβολή</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Υποβολή &amp; Προσθήκη συνημμένου</param>
+        <param name="subscribe_now">Γίνετε συνδρομητές τώρα!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Αναβάθμιση τώρα</param>
+        <param name="suggest">Προβολή <suggested/> <solution plural="y" case="g"/></param>
+        <param name="take_training_now">Εκπαιδευτείτε τώρα!</param>
+        <param name="terminate">Τερματισμός</param>
+        <param name="training_history">Ιστορικό εκπαίδευσης</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Μεταφορά</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Δοκιμή τώρα</param>
+        <param name="undelete">Κατάργηση διαγραφής</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Αναίρεση</param>
+        <param name="unlock">Ξεκλείδωμα εγγραφής</param>
+        <param name="update">Ενημέρωση</param>
+        <param name="update_campaign_history">Ενημέρωση &amp; Προσθήκη σε <campaign_members/></param>
+        <param name="update_now">Ενημέρωση τώρα</param>
+        <param name="update_statuses">Ενημέρωση καταστάσεων</param>
+        <param name="upload">Μεταφόρτωση</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Εξαρτήσεις πεδίων</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Προβολή διαγεγραμμένων στοιχείων</param>
+        <param name="view_partnerforce">Προβολή χρήστη-συνεργάτη</param>
+        <param name="view_self_service">Προβολή αυτοεξυπηρέτησης</param>
+        <param name="view_customer_success">Προβολή χρήστη πύλης πελατών</param>
+        <param name="enable_customer_success">Ενεργοποίηση χρήστη πύλης πελατών</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Τι είναι αυτό;</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Κλείσιμο αυτού του παραθύρου</param>
+        <param name="runApexRecalc">Επανάληψη υπολογισμού κοινής χρήσης Apex</param>
+        <param name="disablecustomerportal">Απενεργοποίηση χρήστη πύλης πελατών</param>
+        <param name="disablepartnerportal">Απενεργοποίηση χρήστη-συνεργάτη</param>
+        <param name="disablecustomerportalaccount">Απενεργοποίηση λογαριασμού πύλης πελατών</param>
+        <param name="disablepartnerportalaccount">Απενεργοποίηση λογαριασμού συνεργάτη</param>
+        <param name="voteup">Θετική ψήφος</param>
+        <param name="votedown">Αρνητική ψήφος</param>
+        <param name="markquestionunanswered">Σήμανση ως μη αναγνωσμένο</param>
+        <param name="markbestanswer">Σήμανση ως η καλύτερη απάντηση</param>
+        <param name="requestUseSfdcAction">Εύρεση συνδέσεων</param>
+        <param name="addPET">Προσθήκη προτύπου δικαιωμάτων</param>
+        <param name="truncate">Περικοπή</param>
+        <param name="disableprmsuperuser">Απενεργοποίηση πρόσβασης διαχείρισης συνεργατών</param>
+        <param name="enableprmsuperuser">Ενεργοποίηση πρόσβασης διαχείρισης συνεργατών</param>
+        <param name="purchase_more">Αγορά περισσότερων</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Επιστροφή στην κορυφή</param>
+        <param name="descriptionText">Το κείμενο του κυρίου σώματος είναι υπερβολικά μεγάλο. Δείτε τις λεπτομέρειες.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Προβολή αρχείου</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Γονικό στοιχείο</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Δεν υπάρχουν σχετικές πληροφορίες</param>
+        <param name="no_records">Δεν υπάρχουν εγγραφές προς εμφάνιση</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Εμφάνιση {0} επιπλέον »</param>
+        <param name="NextMoreGeneric">Εμφάνιση περισσοτέρων »</param>
+        <param name="view_more">Μετάβαση σε λίστα</param>
+        <param name="view_more_tot">Μετάβαση σε λίστα ({0})</param>
+        <param name="view_more_tot_plus">Μετάβαση σε λίστα ({0}+)</param> <!-- -->
+        <param name="view_more_1">Μετάβαση σε λίστα με μία επιπλέον εγγραφή</param> <!-- Singular -->
+        <param name="view_more_n">Μετάβαση σε λίστα με {0} επιπλέον εγγραφές</param> <!-- Plural -->
+        <param name="view_more_n_plus">Μετάβαση σε λίστα με {0} + εγγραφές</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Περισσότερα διαθέσιμα στοιχεία. Μετάβαση σε λίστα</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Πιθανότητα</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Προέλευση</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Εξασφαλισμένο</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Οικονομική περίοδος</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Τρίμηνο {1} του έτους {0}</param>
+        <param name="opportunities_next_step">Επόμενο βήμα</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Ενημέρωση</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Σχετικό με</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Σημείωση</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Έγγραφο Google</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Σημειώσεις &amp; Συνημμένα</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Τίτλος σημείωσης</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Συνημμένο</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Συνημμένα</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Όνομα αρχείου</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Κυριότητα</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Πρωτεύων</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> υπάρχουν <cases/> προς προβολή</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Ημερομηνία</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Τίτλος</param>
+        <param name="object_title">Τίτλος</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Όνομα</param>
+        <param name="object_name">Όνομα</param>
+        <param name="date">Ημερομηνία</param>
+        <param name="due_date">Προθεσμία</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Τελευταία τροποποίηση</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Ενημερώθηκε από</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Πρωτεύων</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Ανταγωνιστές</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Όνομα ανταγωνιστή</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Δυνατά σημεία</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Αδύνατα σημεία</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Πιθανότητα (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Ολοκληρώθηκε</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Σήμανση του στοιχείου {0} ως ολοκληρωμένου</param>
+        <param name="task_date">Ημερομηνία</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Όνομα</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Εκκρεμεί έγκριση <contract case="g"/></param>
+        <param name="task_none">Δεν έχετε <open/> <tasks case="a"/> προγραμματισμένες για αυτήν την περίοδο.</param>
+        <param name="task_mode_today">Σήμερα</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Σήμερα + Ληξιπρόθεσμα</param>
+        <param name="task_mode_tomorrow">Αύριο</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Επόμενες {0} μέρες</param>
+        <param name="task_mode_next_7days_overdue">Επόμενες {0} μέρες + Ληξιπρόθεσμα</param>
+        <param name="task_mode_overdue">Ληξιπρόθεσμα</param>
+        <param name="task_mode_this_month">Αυτόν το μήνα</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Όλα όσα είναι ανοικτά</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Ιστορικό</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Ειδήσεις</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Επικεφαλίδα</param>
+        <param name="new_date">Ημερομηνία</param>
+        <param name="news_none">Δεν υπάρχουν διαθέσιμες ειδήσεις</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Πρότυπα συγχώνευσης email</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Κορυφαίες <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Ημερομηνία προσθήκης</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Προστέθηκε από</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> υπάρχουν συνημμένες <solutions/></param>
+        <param name="description">Περιγραφή</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Κωδικός</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">Διεύθυνση URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Δεν υπάρχουν δεδομένα προς προβολή στο <activity_history/>.</param>
+        <param name="nonotes">Δεν υπάρχουν δεδομένα προς προβολή στο ιστορικό σημειώσεων.</param>
+        <param name="noattachments">Δεν υπάρχουν δεδομένα προς προβολή στο ιστορικό συνημμένων.</param>
+        <param name="viewallattachments">Προβολή όλων των συνημμένων</param>
+        <param name="viewalldocsattachments">Προβολή όλων των Εγγράφων Google &amp; των συνημμένων</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Ημερομηνία</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Περιγραφή σειράς</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Αποτυπώσεις API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Φιλτραρισμένο ανά χρήστη</param>
+        <param name="apicapture_filterip">Φιλτραρισμένο ανά IP</param>
+        <param name="apicatpure_numbers">Αποτυπώσεις</param>
+        <param name="apicapture_soapscope">Προβολή αποτυπώσεων</param>
+        <param name="apicapture_active">Ενεργές</param>
+        <param name="apicapture_none">Δεν υπάρχουν αποτυπώσεις</param>
+        <param name="apicapture_new">Έναρξη νέας αποτύπωσης</param>
+        <param name="apicapture_view">Προβολή</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Ιστορικό σύνδεσης</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">καμία σύνδεση</param>
+        <param name="login_none">Δεν υπάρχει διαθέσιμο ιστορικό σύνδεσης.</param>
+        <param name="login_username">Όνομα χρήστη</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Ώρα σύνδεσης</param>
+        <param name="login_type">Τύπος σύνδεσης</param>
+        <param name="login_ip">IP προέλευσης</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Δεν υπάρχει</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Πρόγραμμα περιήγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Πλατφόρμα</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Διεκπεραίωση</param>
+        <param name="login_clientversion">Έκδοση υπολογιστή-πελάτη</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Εφαρμογή</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Τύπος API</param>
+        <param name="login_apiversion">Έκδοση API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Επιτυχία</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Λήψη του ιστορικού σύνδεσης για τους τελευταίους έξι μήνες, συμπεριλαμβανομένων συνδέσεων εκτός της τοποθεσίας web, όπως συνδέσεις API (αρχείο .csv του Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Λήψη ιστορικού συνδέσεων, συμπεριλαμβανομένων συνδέσεων μόνο από αυτήν την τοποθεσία web (αρχείο .csv του Excel)</param>
+        <param name="login_history_download_title">Επιλογές λήψης</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">Αρχείο CSV</param>
+        <param name="login_history_download_file_type_gzip">Αρχείο GZIP</param>
+        <param name="login_history_download_file_type_help">Η προβολή των αρχείων CSV (τιμές διαχωρισμένες με κόμματα) είναι δυνατή με τη χρήση πολλών προγραμμάτων υπολογιστικών φύλλων και επεξεργασίας κειμένου. Τα αρχεία GZIP (αρχείο zip GNU) είναι συμπιεσμένα για τη μείωση του μεγέθους τους.</param>
+        <param name="login_history_download_option_title">Περιεχόμενα αρχείου</param>
+        <param name="login_history_download_option_all">Όλες οι συνδέσεις</param>
+        <param name="login_history_download_option_ie6_only">ΜΟΝΟ Συνδέσεις IE6</param>
+        <param name="login_history_download_option_web_only">ΜΟΝΟ συνδέσεις τοποθεσίας Web</param>
+        <param name="login_history_download_option_help">Η επιλογή "Όλες οι συνδέσεις" περιλαμβάνει συνδέσεις από όλες τις προελεύσεις, όπως η τοποθεσία Web, το Outlook, οι ενοποιήσεις API, κτλ. Η επιλογή "Συνδέσεις IE6" περιλαμβάνει συνδέσεις μόνο από χρήστες οι οποίοι χρησιμοποιούν τον Internet Explorer 6. Η επιλογή "Συνδέσεις τοποθεσίας Web" περιλαμβάνει τις συνδέσεις μόνο από τη σελίδα σύνδεσης της Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Χρησιμοποιείτε ακόμη τον IE6;</param>
+        <param name="login_history_ie6_deprecation_warning_text">Η Salesforce προετοιμάζει την κατάργηση της υποστήριξης για τον IE6. Χρησιμοποιήστε τις επιλογές λήψης που παρέχονται για να προσδιορίσετε τα προγράμματα περιήγησης που χρησιμοποιούνται στον οργανισμό σας.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Διεύθυνση URL σύνδεσης</param>
+        <param name="order_history">Ιστορικό παραγγελίας</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Δεν υπάρχουν παραγγελίες</param>
+        <param name="order_number">Αριθμός παραγγελίας</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Ημερομηνία παραγγελίας</param>
+        <param name="order_currency">Νόμισμα</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Συνολικό κόστος</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Πώληση σε</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Κανένα <order_product/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Αριθμός&lt;BR&gt;γραμμής</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Μηνιαία τιμή</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Στοιχείο αναφοράς τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Συχνότητα τιμολόγησης&lt;BR&gt;(μήνες)</param>
+        <param name="bo_order_items_billing_frequency_text">Συχνότητα τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Διάστημα παραγγελίας&lt;BR&gt;(μήνες)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Ημερομηνία</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Τιμολόγια</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Δεν υπάρχουν τιμολόγια</param>
+        <param name="invoices_invoice_number">Αριθμός τιμολογίου</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Ημερομηνία τιμολογίου</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Προθεσμία τιμολογίου</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">Αναγνωριστικό εξωτερικού συστήματος</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Συνολικό ποσό</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Οφειλόμενο υπόλοιπο</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Συνολική πίστωση</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Συνολικό ποσό διορθωτικής εγγραφής</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Επαφή τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Εταιρεία τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Ιστορικό τιμολογίου</param>
+        <param name="revenue_schedule">Προγραμματισμός</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Ημερομηνία</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Έσοδα</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Σχόλια</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Ιστορικό κατάστασης</param>
+        <param name="status_none">Δεν βρέθηκε ιστορικό κατάστασης</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Επιλογή υπηρεσίας</param>
+        <param name="services_none">Δεν υπάρχουν υπηρεσίες</param>
+        <param name="services_description">Υπηρεσία</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Τιμή μονάδος</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Συνολική τιμή</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Έκπτωση</param>
+        <param name="training">Ιστορικό τάξεων εκπαίδευσης</param>
+        <param name="training_none">Καμία</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Όνομα τάξης</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Ημερομηνία λήψης</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Έχει απαντηθεί</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Προεπιλογή</param>
+        <param name="campaign_member_none"><No/> καθορίζεται <campaign_member_status/></param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Ημερομηνία έναρξης</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Ημερομηνία λήξης</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Τιμή διάρκειας ζωής</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Έχει κανόνες αγοράς</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Συχνότητα τιμολόγησης&lt;br&gt;(μήνες)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Τιμολόγηση έως ημερομηνία</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending"><Event article="the"/> έγινε αποδεκτό</param>
+        <param name="event_notdecided">Δεν έχει απαντηθεί</param>
+        <param name="event_declined">Απορρίφθηκε <event article="the"/></param>
+        <param name="event_attending_none">Δεν έγινε αποδοχή από κανέναν συμμετέχοντα</param>
+        <param name="event_notdecided_none">Όλοι οι συμμετέχοντες έχουν απαντήσει</param>
+        <param name="event_declined_none">Κανείς συμμετέχων δεν έχει αρνηθεί</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Όνομα</param>
+        <param name="documents_size">Μέγεθος</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Συντάκτης</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Προβολή ίχνους ελέγχου ρύθμισης</param>
+        <param name="download">λήψη</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Οι τελευταίες 20 καταχωρήσεις για τον οργανισμό σας παρατίθενται στην ακόλουθη λίστα. Μπορείτε να {0} του ίχνους ελέγχου ρύθμισης του οργανισμού σας για τους τελευταίους έξι μήνες (αρχείο .csv του Excel).</param>
+        <param name="setup_audit_date">Ημερομηνία</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Ενέργεια</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Ενότητα</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Πληρεξούσιος χρήστης</param>
+        <param name="setup_audit_proxyinguser_help">Σε αυτήν τη στήλη παρατίθεται το όνομα του χρήστη που εφάρμοσε μια αλλαγή ρύθμισης εκ μέρους του τελικού χρήστη. Για παράδειγμα, αν κάποιος χρήστης εκχώρησε πρόσβαση σύνδεσης σε κάποιον αντιπρόσωπο τεχνικής υποστήριξης, εμφανίζεται στη λίστα το όνομα χρήστη του αντιπροσώπου.</param>
+        <param name="setup_audit_trail_none">Δεν υπάρχουν διαθέσιμες πληροφορίες ίχνους ελέγχου ρύθμισης</param>
+        <param name="setup_audit_download_csv">Λήψη ίχνους ελέγχου ρύθμισης για τους τελευταίους έξι μήνες (αρχείο .csv του Excel)</param>
+        <param name="DashboardComponents_title">Στοιχεία πίνακα εργαλείων</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Δεν υπάρχουν στοιχεία πίνακα εργαλείων</param>
+        <param name="translated_templates_none">Δεν υπάρχουν μεταφρασμένα πρότυπα email</param>
+        <param name="translated_templates_title">Μεταφρασμένα πρότυπα email</param>
+        <param name="translated_templates_language">Γλώσσα</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Ενεργά</param>
+        <param name="desc_pnet_conn_audit_trail">Οι τελευταίες 20 καταχωρήσεις για τον οργανισμό σας παρατίθενται στην ακόλουθη λίστα. Μπορείτε να {0} το πλήρες ιστορικό ίχνους ελέγχου σύνδεσης ως αρχείο .csv του Excel.</param>
+        <param name="pnet_conn_audit_trail">Ιστορικό σύνδεσης</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Ημερομηνία</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Δεν υπάρχουν διαθέσιμες πληροφορίες ίχνους ελέγχου σύνδεσης</param>
+        <param name="pnet_conn_audit_download_csv">Λήψη ιστορικού σύνδεσης (csv)</param>
+        <param name="pnet_entity_conns_title">Εξωτερική κοινή χρήση</param>
+        <param name="pnet_entity_conn_stop_sharing">Διακοπή κοινής χρήσης</param>
+        <param name="pnet_pub_title">Δημοσιευμένα αντικείμενα</param>
+        <param name="pnet_sub_title">Εγγεγραμμένα αντικείμενα</param>
+        <param name="pnet_pubsub_object">Όνομα αντικειμένου</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Πεδία</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Δημοσίευση/Κατάργηση δημοσίευσης</param>
+        <param name="pnet_sub_edit">Συνδρομή/Διακοπή συνδρομής</param>
+        <param name="pnet_pub_edit_object">Το αντικείμενο δημοσιεύτηκε.</param>
+        <param name="pnet_pub_edit_field">Κάντε κλικ στην επιλογή &quot;Επεξεργασία&quot; πιο κάτω για δημοσίευση σε διαθέσιμα πεδία σε κάθε αντικείμενο.</param>
+        <param name="pnet_sub_edit_object">Το αντικείμενο έχει εγγραφεί.</param>
+        <param name="pnet_sub_edit_field">Κάντε κλικ στην επιλογή &quot;Επεξεργασία&quot; πιο κάτω για εγγραφή σε διαθέσιμα πεδία σε κάθε αντικείμενο.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Περιεχόμενο</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Συνημμένα Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Σφάλμα κατά τη φόρτωση σχετικών λιστών</param>
+        <param name="ajax_exception_desc">Παρουσιάστηκε κάποιο πρόβλημα κατά τη συλλογή των πληροφοριών σχετικής λίστας για αυτήν την εγγραφή. Εάν η επαναφόρτωση της σελίδας δεν διορθώσει το πρόβλημα, επικοινωνήστε με το διαχειριστή σας ή &lt;a href="{0}" title="report{1}"&gt;υποβάλετε αναφορά&lt;/a&gt; στην ομάδα υποστήριξης πελατών μας.</param>
+        <param name="category_access_title">Ρυθμίσεις ορατότητας ομάδας κατηγορίας</param>
+        <param name="category_access_video_tutorial">Βίντεο εκπαιδευτικού υλικού</param>
+        <param name="category_access_name">Ομάδα κατηγορίας</param>
+        <param name="category_access_access">Ορατότητα</param>
+        <param name="category_access_details">Λεπτομέρειες ορατότητας</param>
+        <param name="category_access_custom">Προσαρμοσμένο</param>
+        <param name="category_access_full">Όλες</param>
+        <param name="category_access_inherited">Μεταβιβάστηκε από {0}</param>
+        <param name="category_access_revoked">Καμία</param>
+        <param name="category_access_userNodeAndChildren_Profile">προφίλ</param>
+        <param name="category_access_userNodeAndChildren_UserRole">ρόλος και υφιστάμενοι</param>
+        <param name="category_access_noCategories">Δεν υπάρχουν ορατές κατηγορίες για αυτό το {0}</param>
+        <param name="category_access_allCategories">Όλες οι κατηγορίες είναι ορατές για αυτό το {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0}για {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Γενικά για τις ΗΠΑ &amp; Δυτική Ευρώπη (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Ιαπωνικά (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Ιαπωνικά (JIS)</param>
+        <param name="4">Ιαπωνικά (EUC)</param>
+        <param name="5">Κορεατικά (ks_c_5601-1987)</param>
+        <param name="6">Παραδοσιακά Κινεζικά (Big5)</param>
+        <param name="7">Απλοποιημένα Κινεζικά (GB2312)</param>
+        <param name="8">Παραδοσιακά Κινεζικά Χονγκ Κόνγκ (Big5-HKSCS)</param>
+        <param name="9">Ιαπωνικά (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Δοκιμαστικός οργανισμός</param>
+        <param name="expand">Κάντε κλικ για &quot;Άνοιγμα πλευρικής εργαλειοθήκης&quot; [Alt+S]</param>
+        <param name="collapse">Κάντε κλικ για &quot;Κλείσιμο πλευρικής εργαλειοθήκης&quot; [Alt+S]</param>
+        <param name="expandNoHotkey">Κάντε κλικ για το άνοιγμα πλευρικής εργαλειοθήκης</param>
+        <param name="collapseNoHotkey">Κάντε κλικ για το κλείσιμο πλευρικής εργαλειοθήκης</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Επάνω</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Κάτω</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Μετακίνηση</param>
+        <param name="top">Κορυφή</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Κάτω μέρος</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Συμπληρώστε τα απαιτούμενα πεδία.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Όλοι οι χρήστες</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Νέο</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Προσθήκη</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Διαγραφή</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Αλλαγή]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Πώς μπορώ να...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Προβολή περισσότερων</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Καταγραφή κλήσης</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Καταγραφή σημείωσης</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Συγχώνευση αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Προβολή όλων</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Επισύναψη αρχείου</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Πώς μπορώ να;</param>
+        <param name="send_email">Αποστολή email</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Εικόνα που προστέθηκε από το χρήστη</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Εφαρμογές</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Εκτυπώσιμη προβολή</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Δημιουργία αντιγράφου</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Κοινή χρήση</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Αρχική σελίδα</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Περισσότερες πληροφορίες!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Επιλέξτε ένα:</param>
+        <param name="hotlist_mode">Εμφάνιση επιλογής</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Εμφάνιση {0,number,integer} στοιχείων</param>
+        <param name="hotlist_empty_title">Δεν υπάρχουν πρόσφατες εγγραφές. Κάντε κλικ στην επιλογή &quot;Μετάβαση&quot; ή επιλέξτε μια προβολή από το αναπτυσσόμενο μενού για προβολή εγγραφών.</param>
+        <param name="hotlist_empty_description">Δεν υπάρχουν διαθέσιμες εγγραφές για αυτά τα κριτήρια.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Μετάβαση στις αναφορές</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Κέντρο πόρων</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Με το κέντρο πόρων μπορείτε να αναζητήσετε προοπτικές, να βρείτε υπηρεσίες τρίτων εταιρειών και πολλά περισσότερα.</param>
+        <param name="resource_center_link_text">Μετάβαση στο κέντρο πόρων</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Μεθοδολογίες πωλήσεων</param>
+        <param name="hotlist_recently_modified">Πρόσφατα τροποποιημένα</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Πρόσφατα δημιουργημένα</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Πρόσφατα προβεβλημένα</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Καμία--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Επιλογή--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Προεπιλογή--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Χωρίς εφαρμογή**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Ο διαχειριστής σας δεν έχει καθορίσει προσαρμοσμένους συνδέσμους.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Άμεση μετάβαση σε:</param>
+        <param name="JumpToStep">Βήμα {0}: {1}</param>
+        <param name="CloseWizard">Κλείσιμο οδηγού</param>
+        <param name="LeftHeader">Βήμα {0}: {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Βήμα {0} από {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Βήμα {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Αποθήκευση &amp; Νέο</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Επόμενο</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Προηγούμενο</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Οδηγός ρύθμισης οργανισμού για {0}</param>
+        <param name="ImportWizardTitle">Οδηγός εισαγωγής για {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Κέντρο παραγγελιών</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Δοκιμαστική εγγραφή</param>
+        <param name="WizardBody">Κύριο τμήμα οδηγού</param>
+        <param name="WizardFooter">Υποσέλιδο οδηγού</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Διεύθυνση</param><!-- translators note - this is actually the full address -->
+        <param name="street">Διεύθυνση</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Πόλη</param><!-- aliased across label files - do not change -->
+        <param name="state">Νομός/Επαρχία</param><!-- aliased across label files - do not change -->
+        <param name="zip">ΤΚ</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Ταχυδρομικός κώδικας</param> <!-- aliased across label files - do not change -->
+        <param name="country">Χώρα</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Τηλέφωνο</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Εσωτερικό</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Φαξ</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Εσωτ. φαξ</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Email</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Διεύθυνση αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Οδός αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Πόλη αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Νομός/Επαρχία αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Ταχυδρομικός κώδικας αποστολής</param>
+        <param name="shippingzippostalcode">Ταχυδρομικός κώδικας αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Χώρα αποστολής</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Διεύθυνση τιμολόγησης</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Πόλη τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Νομός/Επαρχία τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Ταχυδρομικός κώδικας τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Χώρα τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Οδός τιμολόγησης</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Οδός τράπεζας</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Διεύθυνση τράπεζας</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Πόλη τράπεζας</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Νομός/Επαρχία τράπεζας</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Ταχυδρομικός κώδικας τράπεζας</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Χώρα τράπεζας</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Διεύθυνση αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Οδός αλληλογραφίας</param>
+        <param name="mailingcity">Πόλη αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Νομός/Επαρχία αλληλογραφίας</param>
+        <param name="mailingzip">Ταχυδρομικός κώδικας αλληλογραφίας</param>
+        <param name="mailingcountry">Χώρα αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Διεύθυνση αλληλογραφίας Γραμμή 1</param>
+        <param name="mailingaddress2">Διεύθυνση αλληλογραφίας Γραμμή 2</param>
+        <param name="mailingaddress3">Διεύθυνση αλληλογραφίας Γραμμή 3</param>
+        <param name="otheraddress">Άλλη διεύθυνση</param>
+        <param name="otheraddress1">Άλλη διεύθυνση Γραμμή 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Άλλη διεύθυνση Γραμμή 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Άλλη διεύθυνση Γραμμή 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Άλλη οδός</param>
+        <param name="otherstreet2">Άλλη οδός 2</param>
+        <param name="otherstreet3">Άλλη οδός 3</param>
+        <param name="othercity">Άλλη πόλη</param>
+        <param name="otherstate">Άλλος νομός/επαρχία</param>
+        <param name="otherzipcode">Άλλος ταχυδρομικός κώδικας</param>
+        <param name="otherpostalcode">Άλλος ταχυδρομικός κώδικας</param>
+        <param name="otherzippostalcode">Άλλος ταχυδρομικός κώδικας</param>
+        <param name="othercountry">Άλλη χώρα</param>
+        <param name="otherphone">Άλλο τηλέφωνο</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Εσωτ. άλλου τηλεφώνου</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Διεύθυνση 1</param>
+        <param name="address2">Διεύθυνση 2</param>
+        <param name="address3">Διεύθυνση 3</param>
+        <param name="home_phone">Τηλέφωνο οικίας</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Φόρτωση...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Θέση</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Ποσότητα</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Διαχείριση επαφών</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Ναι</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Όχι</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Καλωσορίσατε στην salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Πνευματικά δικαιώματα © 2000-{0} salesforce.com, inc. Με την επιφύλαξη παντός δικαιώματος.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Πνευματικά δικαιώματα &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Με την επιφύλαξη παντός δικαιώματος.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Συμβατότητα με 508</param>
+        <param name="copyright_nohtml">Πνευματικά δικαιώματα (c) 2000-{0} salesforce.com, inc. Με την επιφύλαξη παντός δικαιώματος.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Πνευματικά δικαιώματα © {0} {1}. Με την επιφύλαξη παντός δικαιώματος.</param>
+        <param name="brandedCopyrightWithLink">Πνευματικά δικαιώματα &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Με την επιφύλαξη παντός δικαιώματος.</param>
+        <param name="brandedCopyright_nohtml">Πνευματικά δικαιώματα (c) {0} {1}. Με την επιφύλαξη παντός δικαιώματος.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Δήλωση ασφαλείας</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Όροι χρήσης</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Σας ευχαριστούμε που επιλέξατε την salesforce.com. Πριν αρχίσετε να χρησιμοποιείτε τη salesforce.com, θα πρέπει να διαβάσετε και να αποδεχθείτε τους παρακάτω Όρους χρήσης. Μόλις τελειώσετε, μπορείτε να συνεχίσετε κάνοντας κλικ στο κουμπί "Αποδοχή". Λάβετε υπόψη σας ότι, εάν δεν αποδεχθείτε τους εν λόγω Όρους χρήσης, δεν θα μπορείτε να συνδεθείτε στη salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Τέλος</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Προσθήκη τώρα</param>
+        <param name="remove">Κατάργηση</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Νέο</param>
+        <param name="exciting_and_new">Νέο!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">εδώ</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Δημιουργία</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Κλείσιμο παραθύρου</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Εκτύπωση αυτής της σελίδας</param>
+        <param name="new_window">(Νέο παράθυρο)</param>
+        <param name="new_focus">(Αλλαγή εστίασης)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Κρυφό πλαίσιο - Παράκαμψη</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">επιλογή όλων</param>
+        <param name="select_shown">Επιλογή εμφανιζόμενων</param>
+        <param name="remove_shown">Κατάργηση εμφανιζόμενων</param>
+        <param name="select_none">Να μην επιλεγεί κανένα</param>
+        <param name="all_active">Όλα τα ενεργά</param>
+        <param name="all_inactive">Όλα τα ανενεργά</param>
+        <param name="are_you_sure">Είστε βέβαιοι;</param>
+        <param name="irreversible_are_you_sure">Μη αναστρέψιμο! Είστε βέβαιοι;</param>
+        <param name="replace">Αντικατάσταση</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Τερματισμός</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} λεπτά</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Βρέθηκαν πολλά στοιχεία. Επιλέξτε από το αναπτυσσόμενο μενού ή κάντε κλικ στο εικονίδιο για περιορισμό της αναζήτησης.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Τ{0}-{1}</param>
+        <param name="reset">Επαναφορά</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Παράκαμψη</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Σύνολο</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Κάντε κλικ εδώ</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Σημειώσεις προς τον υπεύθυνο τοποθεσίας web:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Δείγμα HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Κωδικός πρόσβασης</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Να μην εμφανιστεί ξανά αυτή η σελίδα</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Απόκρυψη αυτού του μηνύματος για: </param>
+        <param name="dontShowMessageAgain">Να μην εμφανιστεί ξανά αυτό το μήνυμα</param>
+        <param name="dismissMessage">Κλείσιμο μηνύματος</param>
+        <param name="allObjects">Όλα τα αντικείμενα</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Πατήστε το πλήκτρο διαστήματος ή το πλήκτρο Enter για άνοιγμα</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Αυτοεξυπηρέτηση: <Case_Detail/></param>
+        <param name="CssEdit">Αυτοεξυπηρέτηση: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Τροφοδοσία <case case="g"/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Σχόλιο</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Προσαρμοσμένα αντικείμενα</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Ορισμός προσαρμοσμένου αντικειμένου</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Πίνακας εργαλείων</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Πίνακες εργαλείων</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Κατάργηση επιλογής όλων</param>
+        <param name="deselect_shown">Κατάργηση επιλογής εμφανιζόμενων</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Πρότυπο συγχώνευσης αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Πρότυπα συγχώνευσης αλληλογραφίας</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Φάκελος</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Φάκελοι</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Προβλέψεις</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Προβλέψεις</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Επόπτης Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Τιμολόγιο</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Σημειώσεις</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Παραγγελία</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Παραγγελίες</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Στοιχείο παραγγελίας</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Στοιχεία παραγγελίας</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Πληρωμή</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Πληρωμές</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">αναφορά</param>
+        <param name="Reports">Αναφορές</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Εγγραφή</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Πρότυπο</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Πρότυπα</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Πίνακας</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Ενεργά</param>
+        <param name="amount">Ποσό</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Ετήσια έσοδα</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Επισύναψη εγγράφου</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Αλλαγή κωδικού πρόσβασης</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Κλείσιμο</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Κλειστό</param>
+        <param name="closed_date">Ημερομηνία κλεισίματος</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Ημερομηνία κλεισίματος</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Ημερομηνία δημιουργίας</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Τύπος δεδομένων</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Διαγραμμένα</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Πληροφορίες περιγραφής</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Υπάλληλοι</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Αρχείο</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Αρχεία</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Γενικές πληροφορίες</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Λήψη πληροφοριών πριν ξεκινήσετε</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Ετικέτα</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Τελευταία σύνδεση</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Ημερομηνία τελευταίας τροποποίησης</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Όνομα</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Όνομα</param>
+        <param name="new_status">Νέα κατάσταση</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Καμία</param>
+        <param name="open">Άνοιγμα</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Οργανισμός</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Δεν βρέθηκαν αντιστοιχίες.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Όλες</param>
+        <param name="clear">Εκκαθάριση</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Κάντε κλικ στο εικονίδιο αναζήτησης...</param>
+        <param name="click_lookup_icon_info">Κάντε κλικ στο εικονίδιο αναζήτησης για να επιλέξετε τιμή.</param>
+        <param name="clear_all">Εκκαθάριση όλων</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Κάντε κλικ στο κουμπί &quot;Επισύναψη&quot;</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Σφάλματα</param> <!-- aliased across lables - do not change -->
+        <param name="high">Υψηλό</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Βοήθεια</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Μετάβαση</param>
+        <param name="keywords">Λέξεις-κλειδιά</param>
+        <param name="length">Έκταση</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Κατάσταση</param> <!-- aliased across lables - do not change -->
+        <param name="title">Τίτλος</param>
+        <param name="object_title">Τίτλος</param>
+        <param name="type">Τύπος</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Χρήστης</param> <!--aliased across labels - do not change -->
+        <param name="Users">Χρήστες</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Σύνολο δικαιωμάτων</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Προφίλ</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Προφίλ</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Κάτοχος</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">βιώστε την επιτυχία.</param>
+        <param name="DontShowPage">Να μην εμφανιστεί ξανά αυτή η σελίδα.</param>
+        <param name="click_here_to_create_new_account">{0} για δημιουργία <new/> <account case="g"/> τώρα.</param>
+        <param name="click_here_to_create_new_contact">{0} για δημιουργία <new/> <contact case="g"/> τώρα.</param>
+        <param name="click_here_to_create_new_lead">{0} για δημιουργία <new/> <lead case="g"/> τώρα.</param>
+        <param name="click_here_to_create_new_opportunity">{0} για δημιουργία <new/> <opportunity case="g"/> τώρα.</param>
+        <param name="click_here_to_create_new_product">{0} για δημιουργία <new/> <product case="g"/> τώρα.</param>
+        <param name="SystemModstamp">Σφραγίδα τροποποίησης από το σύστημα</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Τομέας</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Επεξεργασία</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Περιμένετε όσο οι εγγραφές ενημερώνονται.</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Στατική μετάφραση</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Απόκρυψη αυτής της σελίδας στο μέλλον</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Μεταφόρτωση... Περιμένετε</param>
+        <param name="uploading_title">Μεταφόρτωση</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Εισαγωγή... Περιμένετε</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">και </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Σφάλμα: Δεν επιτρέπεται η πρόσβαση σε αυτό το πεδίο</param>
+        <param name="noReadAccess">Δεν έχετε δικαίωμα πρόσβασης για προβολή αυτής της εγγραφής.</param>
+        <param name="noAccessToUser">Δεν έχετε δικαίωμα πρόσβασης σε αυτόν το χρήστη.</param>
+        <param name="disabledButton">Ανενεργό κουμπί: {0}</param>
+        <param name="RequiredHeader">Απαιτούμενες πληροφορίες</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Εισαγάγετε εικόνα</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Είστε βέβαιοι ότι θέλετε να διαγράψετε το εύρος σύνδεσης IP</param>
+        <param name="AMPM">Καταχώριση Π.Μ./Μ.Μ.</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Προστατευμένο στοιχείο</param>
+        <param name="dialogCloseConfirm">Το παράθυρο επιβεβαίωσης που μόλις βλέπατε ενδέχεται να έκλεισε πρόωρα. Κάντε κλικ στο κουμπί &quot;ΟΚ&quot; για να επιστρέψετε σε αυτό ή στο κουμπί &quot;Άκυρο&quot; για να αγνοήσετε αυτήν την προειδοποίηση.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Έναρξη παραθύρου διαλόγου</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Αποτελέσματα αναζήτησης</param>
+        <param name="Recent">Πρόσφατα προβεβλημένα</param>
+        <param name="NoMatchHeader">Δεν βρέθηκαν εγγραφές εξαιτίας κάποιου από τους ακόλουθους λόγους:</param>
+        <param name="BulletOne">Δεν υπάρχουν εγγραφές αυτού του τύπου</param>
+        <param name="BulletTwo">Δεν έχετε δικαιώματα προβολής των εγγραφών</param>
+        <param name="BulletThree">Οι εγγραφές δεν συμφωνούν με τα κριτήρια του φίλτρου που έχει ορίσει ο διαχειριστής σας</param>
+        <param name="BulletFour">Ένα ή περισσότερα από τα πεδία ελέγχου είναι κενά ή μη έγκυρα (Πεδία ελέγχου:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Διαθέσιμοι χρήστες</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Επιλεγμένοι χρήστες</param>
+        <param name="LicensedUsers">Αδειοδοτημένοι χρήστες</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Επιλεγμένο για κατάργηση</param>
+        <param name="Selected">Επιλεγμένο</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Επιλεγμένο</param>
+        <param name="UnassignedPackages">Μη εκχωρημένα πακέτα</param>
+        <param name="SelectedPackages">Επιλεγμένα πακέτα</param>
+        <param name="InView">σε προβολή</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Αυτό το αρχείο υπερβαίνει το μέγιστο όριο μεγέθους των {0}.</param>
+        <param name="no_file_specified">Καθορίστε αρχείο για μεταφόρτωση. Πληκτρολογήστε τη διαδρομή προς το αρχείο ή χρησιμοποιήστε το κουμπί &quot;Περιήγηση&quot; για να το εντοπίσετε στο τοπικό σύστημα αρχείων σας.</param>
+        <param name="invalid_file_type">Ο τύπος του αρχείου που καθορίσατε προς το παρόν δεν υποστηρίζεται.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Το όνομα αρχείου υπερβαίνει το μέγιστο επιτρεπόμενο μήκος, το οποίο είναι {0} χαρακτήρες.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Η κατάληξη του ονόματος αρχείου υπερβαίνει το μέγιστο επιτρεπόμενο μήκος, το οποίο είναι {0} χαρακτήρες.</param>
+        <param name="bytes">byte</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Οι τύποι αρχείων HTML δεν επιτρέπονται για λόγους ασφαλείας.</param>
+        <param name="attachment_size_exceeded">Το αρχείο που μεταφορτώθηκε υπερβαίνει το μέγιστο μέγεθος.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Σφάλμα:&lt;/b&gt; Πρέπει να επιλέξετε εικόνα για μεταφόρτωση</param>
+        <param name="upload_file_too_large">&lt;b&gt;Σφάλμα:&lt;/b&gt; Η εικόνα υπερβαίνει το όριο μεγέθους 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Σφάλμα:&lt;/b&gt; Είναι δυνατή η εισαγωγή μόνο αρχείων .gif, .jpeg και .png.</param>
+        <param name="upload_failed">&lt;b&gt;Σφάλμα:&lt;/b&gt; Η μεταφόρτωση απέτυχε – Δοκιμάστε ξανά αργότερα.</param>
+        <param name="invalid_file">&lt;b&gt;Σφάλμα:&lt;/b&gt; Το αρχείο δεν είναι έγκυρο αρχείο εικόνας.</param>
+        <param name="invalid_param">&lt;b&gt;Σφάλμα:&lt;/b&gt; Μη έγκυρες παράμετροι.</param>
+        <param name="access_failed_alt">Αυτή η εικόνα δεν είναι διαθέσιμη διότι: Δεν διαθέτετε τα δικαιώματα για να την προβάλετε ή έχει καταργηθεί από το σύστημα</param>
+        <param name="weekly_export_folder">Άλλο μεταφορτωμένο πρόσθετο/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">Το στοιχείο {0} δημιουργήθηκε επιτυχώς.</param>
+        <param name="Failure_message">Η δημιουργία απέτυχε.</param>
+        <param name="Common_success_message">Η δημιουργία ολοκληρώθηκε με επιτυχία.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Αίτημα μείωσης αδειών χρήσης</param>
+        <param name="pageheader">Συμπληρώστε όλα τα απαιτούμενα πεδία για την υποβολή του αιτήματός σας για μείωση αδειών χρήσης. Αυτός είναι ο ταχύτερος τρόπος για την επεξεργασία του αιτήματός σας.  Παρακαλούμε να μην υποβάλετε πολλαπλά αιτήματα για τις ίδιες άδειες χρήσης καθώς ενδέχεται να προκληθούν άσκοπες καθυστερήσεις.</param>
+        <param name="title_landing">Το αίτημα σας ελήφθη!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Το αίτημά σας έχει ληφθεί και η επεξεργασία του θα γίνει σύμφωνα με τη σειρά με την οποία ελήφθη. Λάβετε υπόψη σας ότι τα αιτήματα για μείωση του πλήθους αδειών χρήσης σας θα τεθούν σε εφαρμογή με την έναρξη της επόμενης περιόδου χρέωσης από την υποβολή του αιτήματός σας, εφόσον έχετε ενημερώσει τη salesforce.com πέντε εργάσιμες ημέρες πριν από την ημερομηνία τιμολόγησης της επόμενης περιόδου χρέωσής σας.</param>
+        <param name="pageheader_landing">Το αίτημά σας έχει ληφθεί και η επεξεργασία του θα γίνει σύμφωνα με τη σειρά με την οποία ελήφθη. Τα αιτήματα μείωσης του πλήθους των αδειών χρήσης θα τεθούν σε εφαρμογή 30 ημέρες μετά από την ημερομηνία υποβολής του αιτήματος. Παρακαλούμε να μην υποβάλετε πολλαπλά αιτήματα μείωσης αδειών χρήσεις για τις ίδιες άδειες, καθώς ενδέχεται να προκληθεί καθυστέρηση της επεξεργασίας του αιτήματός σας.</param>
+        <param name="title_error">Δεν ήταν δυνατή η επεξεργασία του αιτήματός σας.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Δεν ήταν δυνατή η υποβολή του αιτήματός σας αυτήν τη στιγμή. Δοκιμάστε ξανά αργότερα.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Υποβολή του αιτήματός σας</param>
+        <param name="reason">Αιτία</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Καταχωρήστε περιγραφή&lt;br&gt; με περισσότερες λεπτομέρειες</param>
+        <param name="numLicenses">Αριθμός αδειών χρήσης</param>
+        <param name="potentialResponse">Πώς μπορούμε να διατηρήσουμε&lt;br&gt; την επιχείρησή σας;</param>
+        <param name="tips_title">Συμβουλές για την υποβολή αιτημάτων μείωσης αδειών χρήσης</param>
+        <param name="tip1">Συμπληρώστε όλες τις πληροφορίες με ακρίβεια για να εξασφαλίσετε την άμεση και σωστή επεξεργασία του αιτήματός σας.  Πριν από την υποβολή του αιτήματός σας, βεβαιωθείτε ότι έχετε απενεργοποιήσει αρκετούς χρήστες ώστε το πλήθος χρηστών σας να είναι μικρότερο ή ίσο του νέου πλήθους αδειών χρήσης σας. Αυτή η ενέργεια μπορεί να εφαρμοστεί μέσω της δυνατότητας &lt;a href="{0}"&gt;Διαχείριση χρηστών&lt;/a&gt; στην περιοχή &lt;a href="{1}"&gt;Η ρύθμισή μου&lt;/a&gt;.</param>
+        <param name="type1">Ακύρωση λογαριασμού</param>
+        <param name="type2">Μείωση αδειών χρήστη</param>
+        <param name="type3">Μείωση αδειών χρήσης Offline</param>
+        <param name="type4">Μείωση αδειών χρήσης εκστρατείας</param>
+        <param name="type5">Ακύρωση Mobile Edition για au</param>
+        <param name="type6">Έκπτωση άδειας χρήσης Mobile Edition για au</param>
+        <param name="type7">Μείωση αδειών χρήσης Force.com Mobile</param>
+        <param name="reason_0">Αποκτηθείσα/Συγχωνευμένη εταιρεία</param>
+        <param name="reason_1">Διάλυση εταιρείας</param>
+        <param name="reason_2">Χρήστες του salesforce που απαλείφθηκαν</param>
+        <param name="reason_3">Οι τελικοί χρήστες δεν ανταποκρίθηκαν</param>
+        <param name="reason_4">Η λειτουργικότητα δεν ήταν ικανοποιητική</param>
+        <param name="reason_5">Η διοίκηση έκρινε ότι δεν ήταν απαραίτητο</param>
+        <param name="reason_6">Κακή εμπειρία με του υπαλλήλους salesforce.com</param>
+        <param name="reason_7">Πολύ υψηλή τιμή</param>
+        <param name="reason_8">Μετάβαση σε ανταγωνιστή</param>
+        <param name="reason_9">Μη χρησιμοποιούμενες άδειες χρήσης</param>
+        <param name="reason_10">Άλλο</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Συμπληρώστε τα ακόλουθα πεδία:</param>
+        <param name="title">Αποστολή σχολίων στην salesforce.com</param>
+        <param name="title_upgrade_me">Καταγραφή αίτησης αναβάθμισης</param>
+        <param name="title_support">Αποστολή σχολίων</param>
+        <param name="warning_line_too_long">Προειδοποίηση: Η περιγραφή υπερβαίνει τους 4000 χαρακτήρες και θα εφαρμοστεί περικοπή.\\n</param>
+        <param name="feedback_info">Επικοινωνία με την υποστήριξη πελατών</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Η υποστήριξη πελατών είναι στη διάθεσή σας για οποιεσδήποτε ερωτήσεις ή σχόλια έχετε. Βασιζόμαστε ιδιαίτερα στα σχόλια των πελατών μας για τον καθορισμό και τη διαμόρφωση των υπηρεσιών salesforce.com. Εκτιμούμε ιδιαίτερα τις ιδέες σας και ανυπομονούμε να λάβουμε τα σχόλια σας.</param>
+        <param name="general_info_me">Για να μάθετε περισσότερα σχετικά με την αναβάθμιση από την έκδοση Personal σε οποιαδήποτε από τις εταιρικές μας εκδόσεις, συμπληρώστε την ακόλουθη φόρμα. Κάποιος από τους αντιπροσώπους πωλήσεων θα σας τηλεφωνήσει εντός 48 εργάσιμων ωρών.</param>
+        <param name="general_info_support">Η υποστήριξη πελατών είναι στη διάθεσή σας για οποιεσδήποτε ερωτήσεις ή σχόλια έχετε. Βασιζόμαστε ιδιαίτερα στα σχόλια των πελατών μας για τον καθορισμό και τη διαμόρφωση των υπηρεσιών Salesforce CRM Call Center. Εκτιμούμε ιδιαίτερα τις ιδέες σας και ανυπομονούμε να λάβουμε τα σχόλια σας.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Νέο</param>
+        <param name="functionalArea">Θέμα</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Ερώτηση</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Αίτηση</param>
+        <param name="type3">Σχόλια</param>
+        <param name="type4">Αίτηση δυνατότητας</param>
+        <param name="priority1">Έκτακτη ανάγκη</param>
+        <param name="priority2">Κανονικό</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Χαμηλό</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Επιθυμώ να εγγραφώ τώρα στην έκδοση Professional</param>
+        <param name="subject_subscribe_me">Επιθυμώ να πραγματοποιήσω αναβάθμιση τώρα</param>
+        <param name="subject_subscribe_we">Επιθυμώ περισσότερες πληροφορίες σχετικά με την έκδοση Professional</param>
+        <param name="subject_subscribe_ee">Επιθυμώ να εγγραφώ τώρα στην έκδοση Enterprise</param>
+        <param name="subject_subscribe_ue">Επιθυμώ να εγγραφώ τώρα στην έκδοση Unlimited</param>
+        <param name="subject_subscribe_support">Επιθυμώ να εγγραφώ τώρα</param>
+        <param name="subject_data_export">Επιθυμώ την υπηρεσία εβδομαδιαίας εξαγωγής</param>
+        <param name="subject_marketing_licenses">Προσθήκη αδειών χρήσης Marketing</param>
+        <param name="subject_offline_licenses">Προσθήκη αδειών χρήσης Offline</param>
+        <param name="subject_wireless_licenses">Προσθήκη αδειών χρήσης Wireless</param>
+        <param name="subject_offlinepda_licenses">Προσθήκη αδειών χρήσης Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Προσθήκη αδειών χρήσης Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">Προσθήκη αδειών χρήσης Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Προσθήκη αδειών χρήσης Knowledge</param>
+        <param name="subject_interaction_licenses">Προσθήκη αδειών χρήσης Force.com Flow</param>
+        <param name="subject_support_licenses">Προσθήκη αδειών χρήσης Service Cloud</param>
+        <param name="subject_jigsaw_licenses">Προσθήκη αδειών χρήσης Jigsaw</param>
+        <param name="subject_liveagent_licenses">Προσθήκη αδειών χρήσης Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Προσθήκη αδειών χρήσης Site.com Contributor</param>
+        <param name="subject_siteforcepublisher_licenses">Προσθήκη αδειών χρήσης Site.com Publisher</param>
+        <param name="subject_chatteranswers_licenses">Προσθήκη αδειών χρήσης Chatter Answers</param>
+        <param name="subject_license_reduction">Έκπτωση άδειας χρήσης</param>
+        <param name="functionalArea_0">Διαχείριση λογαριασμού/άδειας χρήσης</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Διερεύνηση τιμολόγησης</param>
+        <param name="functionalArea_3">Σύνδεση δεδομένων</param>
+        <param name="functionalArea_4">Email/Email HTML</param>
+        <param name="functionalArea_5">Προβλέψεις &amp; Ευκαιρίες</param>
+        <param name="functionalArea_6">Εισαγωγή</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Υποψήφιοι πελάτες</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Απόδοση</param>
+        <param name="functionalArea_9">Αναφορές &amp; Προβολές</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Γίνετε συνδρομητές τώρα</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Συγχρονισμός</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Υπηρεσία εβδομαδιαίας εξαγωγής</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Άλλο</param>
+        <param name="functionalArea_16">Άδεια χρήσης Marketing</param>
+        <param name="functionalArea_17">Άδεια χρήσης Offline</param>
+        <param name="functionalArea_18">Προφίλ/Διατάξεις σελίδας/Τύποι εγγραφών</param>
+        <param name="functionalArea_19">Εκστρατείες</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Αυτοεξυπηρέτηση</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Άδεια χρήσης Wireless</param>
+        <param name="functionalArea_22">Αναβάθμιση τώρα</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Άδεια χρήσης Sales Anywhere</param>
+        <param name="functionalArea_24">Εργασίες/Συμβάντα </param>
+        <param name="functionalArea_25"><Products/> &amp; Ετήσιες δόσεις/ <Pricebooks/></param>
+        <param name="functionalArea_26">Ειδοποίηση σημαντικής συμφωνίας </param>
+        <param name="functionalArea_27">Έγγραφα</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Υποθέσεις &amp; Λύσεις </param>
+        <param name="functionalArea_29">Αναζήτηση</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Κοινή χρήση</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect για Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition για au</param>
+        <param name="functionalArea_35">Άδεια χρήσης πύλης συνεργάτη</param>
+        <param name="functionalArea_36">Άδεια χρήσης Force.com Mobile</param>
+        <param name="functionalArea_37">Άδεια χρήσης Salesforce CRM Content</param>
+        <param name="functionalArea_38">Άδεια χρήσης Service Cloud</param>
+        <param name="functionalArea_39">Άδεια χρήσης Jigsaw</param>
+        <param name="functionalArea_40">Άδεια χρήσης Live Agent</param>
+        <param name="functionalArea_41">Άδεια χρήσης Site.com Contributor</param>
+        <param name="functionalArea_42">Άδεια χρήσης Site.com Publisher</param>
+        <param name="functionalArea_43">Άδεια χρήσης του Chatter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Αν προτιμάτε να μιλήσετε απευθείας με κάποιον αντιπρόσωπο της υπηρεσίας πελατών, καλέστε το (415) 901-7010 μεταξύ 6πμ και 6μμ PST, Δευτέρα&amp;#150;Παρασκευή ή καλέστε το +353-1-2723503 μεταξύ 8πμ και 6μμ GMT, Δευτέρα&amp;#150;Παρασκευή.</param>
+        <param name="tips_title">Συμβουλές για την υποβολή υποθέσεων</param>
+        <param name="tip1">Βεβαιωθείτε ότι μας έχετε αποστείλει επαρκείς πληροφορίες ώστε να απαντήσουμε στην υπόθεσή σας το συντομότερο δυνατό.  Παρακάτω μπορείτε να βρείτε ορισμένες υποδείξεις και στοιχεία που πρέπει να θυμηθείτε:</param>
+        <param name="tip2">Πείτε μας τι προσπαθείτε να κάνετε, τι περιμένετε να συμβεί και τι συμβαίνει αντ’ αυτού.</param>
+        <param name="tip3">Πείτε μας ποιά βήματα ακολουθήσατε για να αναπαράγουμε το πρόβλημά σας.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Προβολή:</param>
+        <param name="X">X</param>
+        <param name="close">Κλείσιμο</param>
+        <param name="MLclose">Κλείσιμο</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Διαγρ.</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Διαγραφή</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Σβήσιμο</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Εγγραφή</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Ρύθμιση</param>
+        <param name="activate">Ενεργοποίηση</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Απενεργοποίηση</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Διαχείριση</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Εξαγωγή</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Επόμενη σελίδα</param>
+        <param name="prev">Προηγούμενη σελίδα</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Συνολικά στοιχεία στην προβολή: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Να εμφανίζονται {0} {1} εγγραφές ανά σελίδα λίστας</param>
+        <param name="number_shown_detail_page">Να εμφανίζονται πάντα {0} {1} {2} ανά σχετική λίστα</param>
+        <param name="number_shown_adjust_less_link">λιγότερα</param>
+        <param name="number_shown_adjust_more_link">περισσότερα</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">όλα</param>
+        <param name="last_page">Επιστροφή στην προηγούμενη σελίδα</param>
+        <param name="last_list">Επιστροφή στη λίστα</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Επιστροφή στη λίστα:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Επιστροφή στη λίστα: <Entity entity="0" plural="y"/> από συνδέσεις</param>
+        <param name="last_suggested_solution_list">Επιστροφή στη λίστα <suggested/> <solution plural="y" case="g"/></param>
+        <param name="last_solution_search_list">Επιστροφή στα αποτελέσματα αναζήτησης <solution plural="n" case="g"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Επιστροφή σε <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Ενέργειες:</param>
+        <param name="checkboxPrompt">Επιλέξτε τουλάχιστον μία γραμμή</param>
+        <param name="checkboxSinglePrompt">Επιλέξτε μοναδική γραμμή</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Οι επιλογές σας σε αυτήν τη σελίδα θα χαθούν. Θέλετε να συνεχίσετε;</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Θα πρέπει να επιλέξετε {0} ή λιγότερες γραμμές για την εκτέλεση αυτής της λειτουργίας.</param>
+        <param name="selectionLimit">Δεν μπορείτε να επιλέξετε περισσότερες από {0} γραμμές.</param>
+        <param name="login">Σύνδεση</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Περίοδος λειτουργίας</param>
+        <param name="none">Δεν υπάρχουν εγγραφές προς εμφάνιση.</param>
+        <param name="no_rows">Δεν επελέγησαν γραμμές</param>
+        <param name="subtotal">Υποσύνολο:</param>
+        <param name="total">Σύνολο:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Επιλογή όλων των στοιχείων</param>
+        <param name="clearAllInfo">Κατάργηση της επιλογής όλων των στοιχείων</param>
+        <param name="rename">Μετονομασία</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Επιλογή</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Αποεπιλογή</param>
+        <param name="toggleall">Εναλλαγή όλων των σειρών</param>
+        <param name="refresh">Ανανέωση</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Επιλέξτε προβολή.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Η προβολή που έχετε καθορίσει υπερβαίνει το μέγιστο μέγεθος. Περιορίστε τα κριτήρια αναζήτησης με την επεξεργασία της προβολής ή τη δημιουργία μιας νέας προβολής.</param>
+    <param name="switch_view">Εναλλαγή προβολής</param>
+    <param name="records_x_to_y">Προβολή εγγραφών {0} - {1}</param>
+    <param name="records_x_to_y_more">Προβολή εγγραφών {0} - {1}, υπάρχουν περισσότερες διαθέσιμες εγγραφές</param>
+    <param name="records_x_to_y_more_showing_max">Προβολή εγγραφών {0} - {1}. Αυτή η σελίδα μπορεί να εμφανίσει μόνο τις πρώτες 1.000 εγγραφές παρόλο που υπάρχουν περισσότερες διαθέσιμες εγγραφές. Για την εμφάνιση λιγότερων εγγραφών, περιορίστε τα κριτήρια προβολής λίστας σας. Για την εκτύπωση περισσότερων από 1.000 εγγραφές, εκτελέστε αναφορά και κατόπιν κάντε κλικ στο κουμπί &quot;Εκτυπώσιμη προβολή&quot; που θα δείτε στην αναφορά.</param>
+    <param name="number_of_records">Αριθμός εγγραφών</param>
+        <param name="createCase">Δημιουργία <case case="g"/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Κάντε κλικ για ανάπτυξη/σύμπτυξη ένθετων στοιχείων.</param>
+        <param name="expand">Κάντε κλικ για ανάπτυξη ένθετων στοιχείων.</param>
+        <param name="collapse">Κάντε κλικ για σύμπτυξη ένθετων στοιχείων.</param>
+        <param name="shortExpand">Ανάπτυξη</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Σύμπτυξη</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Αναπτύχθηκε</param>
+        <param name="collapsed">Συνεπτυγμένο</param>
+        <param name="level">Επίπεδο</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Ιεραρχία:</param>
+        <param name="siblings">Στοιχεία ίδιου επιπέδου:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Αναζήτηση</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Επιλογή αντικειμένου</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Ποιος</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Τι</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Η αναζήτηση επέστρεψε περισσότερες σειρές από το μέγιστο αριθμό σειρών ({0}). Βελτιώστε τα κριτήρια αναζήτησης.</param>
+        <param name="Copyright">Πνευματικά δικαιώματα &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Με την επιφύλαξη παντός δικαιώματος.</param>
+        <param name="useWildcards">Μπορείτε να χρησιμοποιήσετε το σύμβολο '*' ως χαρακτήρα μπαλαντέρ πλάι σε άλλους χαρακτήρες για να βελτιώσετε τα αποτελέσματα της αναζήτησής σας.  Για παράδειγμα, η αναζήτηση για "ad*" θα επιστρέψει όλες τις εγγραφές που περιέχουν το "ad" στην ονομασία τους.</param>
+        <param name="useWildcardsWithSearch">Μπορείτε να χρησιμοποιήσετε το σύμβολο "*" ως χαρακτήρα μπαλαντέρ πλάι σε άλλους χαρακτήρες για να βελτιώσετε τα αποτελέσματα της αναζήτησής σας.</param>
+        <param name="error_lookup_multiple_matches_ile">Βρέθηκαν πολλαπλά στοιχεία.&lt;br&gt;Κάντε κλικ στο εικονίδιο για να βελτιώσετε την αναζήτηση.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Ανάπτυξη λίστας</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Αναπτυγμένη λίστα</param>
+        <param name="sharing">Κοινή χρήση</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Γιατί;</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Περισσότερα φίλτρα &gt;&gt;</param>
+        <param name="less_filters">Λιγότερα φίλτρα &lt;&lt;</param>
+        <param name="by_keyword">Ανά λέξη-κλειδί</param>
+        <param name="by_filter">Ανά φίλτρο πεδίου</param>
+        <param name="too_many">Η αναζήτησή σας επέστρεψε περισσότερες από {0} γραμμές. Εμφανίζονται μόνο οι πρώτες {0}. Βελτιώστε τα κριτήρια αναζήτησής σας.</param>
+        <param name="Results">Αποτελέσματα</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Αναζήτηση:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Βαθμολογία</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Πεδίο</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Τελεστής</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Τιμή</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Μπορείτε να εφαρμόσετε τη συνάρτηση ΟR στα φίλτρα, καταχωρώντας πολλαπλά στοιχεία στην τρίτη στήλη.</param>
+        <param name="tip_1">Μπορείτε να εισαγάγετε έως και 10 στοιχεία, διαχωρισμένα με κόμματα. Για παράδειγμα: Η καταχώρηση CA, NY, TX, FL εκτελεί αναζήτηση για CA ή NY ή TX ή FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Τοποθετήστε εισαγωγικά στα δεδομένα που περιλαμβάνουν κόμματα. Για παράδειγμα, η καταχώρηση "0,05","1,35" εκτελεί αναζήτηση για 0,05 ή 1,35.</param>
+        <param name="tip_3">Για πεδία πλαισίου ελέγχου, χρησιμοποιήστε τα ορίσματα &quot;Ψευδές&quot; και &quot;Αληθές&quot;, για παράδειγμα &quot;Ενεργό ισούται με True&quot; ή &quot;Μετατράπηκε ισούται με False.</param>
+        <param name="tip_4">Οι καταχωρήσεις κανόνων βάσει κωδικών περιοχής ενδέχεται να χρειάζονται παρενθέσεις, για παράδειγμα. Το τηλέφωνο αρχίζει με (415), (510).</param>
+        <param name="tip_5">Αν χρησιμοποιείτε το πλαίσιο εργασίας μετάφρασης, καταχωρήστε όλα τα κριτήρια φίλτρων με τη χρήση κύριων τιμών.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Διαθέσιμο</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Επιλογές</param>
+        <param name="assignLicensesDescription">Επιλέξτε το πλαίσιο ελέγχου πλάι σε κάθε πακέτο το οποίο θέλετε να εκχωρήσετε σε αυτόν τον χρήστη και κατόπιν κάντε κλικ στην επιλογή &quot;Εκχώρηση&quot;. Το πλαίσιο ελέγχου απουσιάζει, εάν το πακέτο δεν διαθέτει επαρκείς διαθέσιμες άδειες ή εάν η κατάσταση του πακέτου έχει λήξει ή ακυρωθεί.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Κλασσικό</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Προεπιλογή πύλης</param>
+        <param name="3">Κατάστημα Web</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Επιβεβαίωση</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Πληροφορίες</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Σφάλμα</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Προειδοποίηση</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Ασφαλές</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Συχνότητα</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Καθημερινά</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Εβδομαδιαία</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Μηνιαία</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Κάθε εργάσιμη</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Κάθε μέρα</param>
+       <param name="lastDay">τελευταίο</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">την 1η</param>
+    <param name="on2">την 2η</param>
+    <param name="on3">την 3η</param>
+    <param name="on4">την 4η</param>
+    <param name="onLast">την τελευταία</param>
+    <param name="startTime">Έναρξη</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Λήξη</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Προτιμώμενη ώρα έναρξης</param>
+    <param name="noPreference">Καμία προτίμηση</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Η ακριβής ώρα έναρξης θα εξαρτηθεί από τη δραστηριότητα που υπάρχει στην ουρά της εργασίας.</param>
+
+    <param name="diffTimeZoneMsg">Η ζώνη ώρας για αυτήν τη ρύθμιση μηνιαίας συχνότητας είναι:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Οι ρυθμίσεις συχνότητας εμφανίζονται στη ζώνη ώρας του χρήστη που εφάρμοσε την τελευταία επεξεργασία τους.&lt;br&gt;Οποιεσδήποτε αλλαγές εφαρμόσετε σε αυτές τις ρυθμίσεις θα ενημερωθούν για να συμφωνούν με τη δική σας ζώνη ώρας.</param>
+
+      <param name="weeklyRecurrence">Επαναλαμβάνεται κάθε εβδομάδα στις {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Επαναλαμβάνεται κάθε εβδομάδα στις</param>
+      <param name="monthlyRecurrence1">Την {0} ημέρα κάθε μήνα</param>
+      <param name="monthlyRecurrence1LegendLabel">Συγκεκριμένο</param>
+      <param name="monthlyRecurrence2LegendLabel">Προσαρμοσμένο</param>
+      <param name="monthlyRecurrence2">Την {2} {0} {3} {1} κάθε μήνα</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Την {0} {1} κάθε μήνα</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Την καθορισμένη ημέρα κάθε μήνα</param>
+      <param name="accessibleMonthly2">Την προσαρμοσμένη ημέρα κάθε μήνα</param>
+      <param name="accessibleOnDayN">Συγκεκριμένη ημέρα</param>
+      <param name="accessibleOnDayNOfWeek">Εμφάνιση</param>
+      <param name="accessibleOnDayName">Ημέρα</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Αυτή η απλή δοκιμή βοηθά στην αποτροπή της πρόσβασης κακόβουλων προγραμμάτων στα δεδομένα σας.  Ο διαχειριστής σας έχει ορίσει ως απαιτούμενη αυτήν τη δοκιμή για μεγάλες λήψεις.  Δεν θα εμφανίζεται παρά μόνο μία φορά σε κάθε περίοδο λειτουργίας σύνδεσης.</param>
+        <param name="imagePrompt">Πληκτρολογήστε τις παραπάνω λέξεις, διαχωρισμένες με κενό διάστημα:</param>
+        <param name="audioPrompt">Πληκτρολογήστε τους αριθμούς που ακούτε:</param>
+        <param name="refresh">Λήψη νέας πρόκλησης</param>
+        <param name="audio">Λήψη ηχητικής πρόκλησης</param>
+        <param name="image">Λήψη πρόκλησης με εικόνα</param>
+        <param name="incorrect">Εσφαλμένη απάντηση, προσπαθήστε ξανά</param>
+        <param name="moreinfo">Περισσότερες πληροφορίες &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Λιγότερες πληροφορίες</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Κάντε κλικ για περισσότερα...</param>
+        <param name="show">Εμφάνιση παραθύρου επισημάνσεων</param>
+        <param name="hide">Απόκρυψη παραθύρου επισημάνσεων</param>
+        <param name="empty">Δεν υπάρχουν επισημασμένα πεδία για προβολή για αυτήν την εγγραφή.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Επίδειξη</param>
+        <param name="closeIntro">Όχι, ευχαριστώ</param>
+        <param name="closeOutro">Κλείσιμο</param>
+        <param name="showLater">Να εμφανιστεί αργότερα</param>
+        <param name="replay">Επανάληψη</param>
+        <param name="continue">Συνέχεια</param>
+        <param name="previous">Προηγούμενο</param>
+        <param name="startTour">Έναρξη επίδειξης</param>
+        <param name="endTour">Τερματισμός επίδειξης</param>
+        <param name="stepCounter">{0} από {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Λεπτομέρεια</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Προτάσεις</param>
+        <param name="hideBucketTip">&lt;br&gt;Αποθέστε εδώ για την απόκρυψη στοιχείων&lt;br/&gt;από τη σελίδα.</param>
+        <param name="hiddenListTip">Για την εμφάνιση των κρυφών στοιχείων, σύρετέ τα και πάλι στην παραπάνω λίστα.</param>
+        <param name="hiddenListShowLinkLabel">{0} Κρυφά</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Επιστροφή στην αρχή</param>
+        <param name="multipleItemDragGhost">Πολλαπλά στοιχεία (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Συμβατότητα σελίδας λεπτομερειών με προγράμματα περιήγησης</param>
+        <param name="compatibilityMsgSubTitle">Δυστυχώς, αυτό το πρόγραμμα περιήγησης δεν υποστηρίζεται</param>
+        <param name="compatibilityMsg1">Δεν είναι δυνατή η προβολή της νέας σελίδας λεπτομερειών στο τρέχον πρόγραμμα περιήγησής σας.</param>
+        <param name="compatibilityMsg2">Μπορείτε να χρησιμοποιήσετε τη νέα σχεδίαση μόλις συνδεθείτε με κάποιο από τα ακόλουθα συμβατά προγράμματα περιήγησης:</param>
+        <param name="supportedIE">Internet Explorer 7 ή 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Σας ευχαριστούμε.</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Ορισμός της κλασσικής προβολής ως προεπιλογής</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Πληκτρολογήστε εδώ για να εκτελέσετε αναζήτηση για {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Δεν υπάρχει {0} που να αντιστοιχεί στην αναζήτησή σας.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Σελίδα {1} από {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

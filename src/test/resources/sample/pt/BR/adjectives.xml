@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value>
+    </adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+
+    <adjective name="Accessed">
+        <value gender="f" plural="n">Acessada</value>
+        <value gender="f" plural="y">Acessadas</value>
+        <value gender="m" plural="n">Acessado</value>
+        <value gender="m" plural="y">Acessados</value>
+    </adjective>
+
+    <adjective name="Active">
+        <value gender="f" plural="n">Ativa</value>
+        <value gender="f" plural="y">Ativas</value>
+        <value gender="m" plural="n">Ativo</value>
+        <value gender="m" plural="y">Ativos</value>
+    </adjective>
+
+<adjective name="Additional">
+        <value gender="f" plural="n">Adicional</value>
+        <value gender="f" plural="y">Adicionais</value>
+        <value gender="m" plural="n">Adicional</value>
+        <value gender="m" plural="y">Adicionais</value>
+    </adjective>
+
+    <adjective name="All">
+        <value gender="f" plural="n">Toda</value>
+        <value gender="f" plural="y">Todas</value>
+        <value gender="m" plural="n">Todo</value>
+        <value gender="m" plural="y">Todos</value>
+    </adjective>
+
+    <adjective name="All_Day">
+        <value gender="f" plural="n">Todo o Dia</value>
+        <value gender="f" plural="y">Todos os Dias</value>
+        <value gender="m" plural="n">Todo o Dia</value>
+        <value gender="m" plural="y">Todos os Dias</value>
+    </adjective>
+
+<adjective name="Alternative">
+        <value gender="f" plural="n">Alternativa</value>
+        <value gender="f" plural="y">Alternativas</value>
+        <value gender="m" plural="n">Alternativo</value>
+        <value gender="m" plural="y">Alternativos</value>
+    </adjective>
+
+    <adjective name="Another">
+        <value gender="f" plural="n">Outra</value>
+        <value gender="f" plural="y">Outras</value>
+        <value gender="m" plural="n">Outro</value>
+        <value gender="m" plural="y">Outros</value>
+    </adjective>
+        
+    <adjective name="Any">
+        <value gender="n" plural="n">Any</value>
+    </adjective>
+
+    <adjective name="Archived">
+        <value gender="f" plural="n">arquivada</value>
+        <value gender="f" plural="y">arquivadas</value>
+        <value gender="m" plural="n">arquivado</value>
+        <value gender="m" plural="y">arquivados</value>
+    </adjective>
+
+   <adjective name="Assigned">
+        <value gender="f" plural="n">Atribuída</value>
+        <value gender="f" plural="y">Atribuídas</value>
+        <value gender="m" plural="n">Atribuído</value>
+        <value gender="m" plural="y">Atribuídos</value>
+    </adjective>
+
+   <adjective name="Associated">
+        <value gender="f" plural="n">Associada</value>
+        <value gender="f" plural="y">Associadas</value>
+        <value gender="m" plural="n">Associado</value>
+        <value gender="m" plural="y">Associados</value>
+    </adjective>
+
+    <adjective name="Attached">
+        <value gender="f" plural="n">Anexada</value>
+        <value gender="f" plural="y">Anexadas</value>
+        <value gender="m" plural="n">Anexado</value>
+        <value gender="m" plural="y">Anexados</value>
+    </adjective>
+
+    <adjective name="Available">
+        <value gender="f" plural="n">Disponível</value>
+        <value gender="f" plural="y">Disponíveis</value>
+        <value gender="m" plural="n">Disponível</value>
+        <value gender="m" plural="y">Disponíveis</value>
+    </adjective>
+
+	<adjective name="Billed">
+        <value gender="f" plural="n">Cobrado</value>
+        <value gender="f" plural="y">Cobrado</value>
+        <value gender="m" plural="n">Cobrado</value>
+        <value gender="m" plural="y">Cobrado</value>
+	</adjective>
+        
+    <adjective name="Certain">
+        <value gender="f" plural="n">Determinada</value>
+        <value gender="f" plural="y">Determinadas</value>
+        <value gender="m" plural="n">Determinado</value>
+        <value gender="m" plural="y">Determinados</value>
+    </adjective>
+
+    <adjective name="Closed">
+        <value gender="f" plural="n">Fechada</value>
+        <value gender="f" plural="y">Fechadas</value>
+        <value gender="m" plural="n">Fechado</value>
+        <value gender="m" plural="y">Fechados</value>
+    </adjective>
+
+    <adjective name="Completed">
+        <value gender="f" plural="n">Concluída</value>
+        <value gender="f" plural="y">Concluídas</value>
+        <value gender="m" plural="n">Concluído</value>
+        <value gender="m" plural="y">Concluídos</value>
+	</adjective>
+
+    <adjective name="Converted">
+        <value gender="f" plural="n">Convertida</value>
+        <value gender="f" plural="y">Convertidas</value>
+        <value gender="m" plural="n">Convertido</value>
+        <value gender="m" plural="y">Convertidos</value>
+    </adjective>
+    
+<adjective name="Corresponding">
+        <value gender="f" plural="n">Correspondente</value>
+        <value gender="f" plural="y">Correspondentes</value>
+        <value gender="m" plural="n">Correspondente</value>
+        <value gender="m" plural="y">Correspondentes</value>
+    </adjective>
+
+<adjective name="Created">
+        <value gender="f" plural="n">Criada</value>
+        <value gender="f" plural="y">Criadas</value>
+        <value gender="m" plural="n">Criado</value>
+        <value gender="m" plural="y">Criados</value>
+    </adjective>
+
+   <adjective name="Current">
+        <value gender="f" plural="n">Atual</value>
+        <value gender="f" plural="y">Atuais</value>
+        <value gender="m" plural="n">Atual</value>
+        <value gender="m" plural="y">Atuais</value>
+    </adjective>
+
+    <adjective name="Custom">
+        <value gender="f" plural="n">personalizada</value>
+        <value gender="f" plural="y">personalizadas</value>
+        <value gender="m" plural="n">personalizado</value>
+        <value gender="m" plural="y">personalizados</value>
+    </adjective>
+
+    <adjective name="Default">
+        <value gender="f" plural="n">Padrão</value>
+        <value gender="f" plural="y">Padrões</value>
+        <value gender="m" plural="n">Padrão</value>
+        <value gender="m" plural="y">Padrões</value>
+    </adjective>
+
+    <adjective name="Delegated">
+ 	  <value gender="f" plural="n">Delegada</value>
+        <value gender="f" plural="y">Delegadas</value>
+        <value gender="m" plural="n">Delegado</value>
+        <value gender="m" plural="y">Delegados</value>
+	</adjective>
+    
+    <adjective name="Deleted">
+        <value gender="f" plural="n">Excluída</value> 
+        <value gender="f" plural="y">Excluídas</value> 
+        <value gender="m" plural="n">Excluído</value> 
+        <value gender="m" plural="y">Excluídos</value>
+    </adjective>
+
+    <adjective name="Designated">
+        <value gender="f" plural="n">Designada</value> 
+        <value gender="f" plural="y">Designadas</value> 
+        <value gender="m" plural="n">Designado</value> 
+        <value gender="m" plural="y">Designados</value>
+    </adjective>
+
+    <adjective name="Different">
+        <value gender="n" plural="n">Different</value>
+    </adjective>
+
+<adjective name="Draft">
+        <value gender="f" plural="n">Rascunho</value>
+        <value gender="f" plural="y">Rascunhos</value>
+        <value gender="m" plural="n">Rascunho</value>
+        <value gender="m" plural="y">Rascunhos</value>
+    </adjective>
+
+    <adjective name="Duplicate">
+        <value gender="f" plural="n">Repetida</value>
+        <value gender="f" plural="y">Repetidas</value>
+        <value gender="m" plural="n">Repetido</value>
+        <value gender="m" plural="y">Repetidos</value>
+    </adjective>
+
+    <adjective name="Each">
+        <value gender="f" plural="n">Cada</value>
+        <value gender="f" plural="y">Cada</value>
+        <value gender="m" plural="n">Cada</value>
+        <value gender="m" plural="y">Cada</value>
+    </adjective>
+
+    <adjective name="Editable">
+        <value gender="f" plural="n">Editável</value>
+        <value gender="f" plural="y">Editáveis</value>
+        <value gender="m" plural="n">Editável</value>
+        <value gender="m" plural="y">Editáveis</value>
+        </adjective>        
+        
+    <adjective name="Empty">
+        <value gender="f" plural="n">Vazia</value>
+        <value gender="f" plural="y">Vazias</value>
+        <value gender="m" plural="n">Vazio</value>
+        <value gender="m" plural="y">Vazios</value>
+    </adjective>
+
+    <adjective name="Every">
+        <value gender="f" plural="n">Toda</value>
+        <value gender="f" plural="y">Todas</value>
+        <value gender="m" plural="n">Todo</value>
+        <value gender="m" plural="y">Todos</value>
+    </adjective>
+
+    <adjective name="Existing">
+        <value gender="f" plural="n">existente</value>
+        <value gender="f" plural="y">existentes</value>
+        <value gender="m" plural="n">existente</value>
+        <value gender="m" plural="y">existentes</value>
+    </adjective>
+
+    <adjective name="Expected">
+        <value gender="f" plural="n">esperada</value>
+        <value gender="f" plural="y">esperadas</value>
+        <value gender="m" plural="n">esperado</value>
+        <value gender="m" plural="y">esperados</value>
+    </adjective>
+
+    <adjective name="First">
+        <value gender="f" plural="n">Primeira</value>
+        <value gender="f" plural="y">Primeiras</value>
+        <value gender="m" plural="n">Primeiro</value>
+        <value gender="m" plural="y">Primeiros</value>
+    </adjective>
+
+    <adjective name="Following">
+        <value gender="f" plural="n">Seguinte</value>
+        <value gender="f" plural="y">Seguintes</value>
+        <value gender="m" plural="n">Seguinte</value>
+        <value gender="m" plural="y">Seguintes</value>
+    </adjective>
+
+    <adjective name="Future">
+        <value gender="f" plural="n">Futuro</value>
+        <value gender="f" plural="y">Futuro</value>
+        <value gender="m" plural="n">Futuro</value>
+        <value gender="m" plural="y">Futuro</value>
+    </adjective>
+
+    <adjective name="Helpful">
+        <value gender="f" plural="n">Útil</value>
+        <value gender="f" plural="y">Útil</value>
+        <value gender="m" plural="n">Útil</value>
+        <value gender="m" plural="y">Útil</value>
+    </adjective>
+
+    <adjective name="Historical">
+        <value gender="f" plural="n">Histórica</value>
+        <value gender="f" plural="y">Históricas</value>
+        <value gender="m" plural="n">Histórico</value>
+        <value gender="m" plural="y">Históricos</value>
+    </adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot">
+        <value gender="n" plural="n">Hot</value>
+    </adjective>
+
+    <adjective name="Ignored">
+        <value gender="n" plural="n">Ignored</value>
+    </adjective>
+
+    <adjective name="Imported">
+        <value gender="f" plural="n">Importada</value>
+        <value gender="f" plural="y">Importadas</value>
+        <value gender="m" plural="n">Importado</value>
+        <value gender="m" plural="y">Importados</value>
+    </adjective>
+
+    <adjective name="Inactive">
+ 	  <value gender="f" plural="n">Inativa</value>
+        <value gender="f" plural="y">Inativas</value>
+        <value gender="m" plural="n">Inativo</value>
+        <value gender="m" plural="y">Inativos</value>
+	</adjective>
+
+<adjective name="Individual">
+        <value gender="f" plural="n">Individual</value>
+        <value gender="f" plural="y">Individuais</value>
+        <value gender="m" plural="n">Individual</value>
+        <value gender="m" plural="y">Individuais</value>
+    </adjective>
+
+    <adjective name="Invalid">
+        <value gender="f" plural="n">Inválida</value>
+        <value gender="f" plural="y">Inválidas</value>
+        <value gender="m" plural="n">Inválido</value>
+        <value gender="m" plural="y">Inválidos</value>
+    </adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+<adjective name="Its">
+        	<value gender="f" plural="n">Sua</value>
+        <value gender="f" plural="y">Suas</value>
+        <value gender="m" plural="n">Seu</value>
+        <value gender="m" plural="y">Seus</value>
+	</adjective>
+
+    <adjective name="Key">
+        <value gender="n" plural="n">Key</value>
+    </adjective>
+        
+    <adjective name="Last">
+        <value gender="f" plural="n">Última</value>
+        <value gender="f" plural="y">Últimas</value>
+        <value gender="m" plural="n">Último</value>
+        <value gender="m" plural="y">Últimos</value>
+    </adjective>
+
+<adjective name="Linked">
+       <value gender="f" plural="n">Vinculada</value>
+       <value gender="f" plural="y">Vinculadas</value>
+       <value gender="m" plural="n">Vinculado</value>
+       <value gender="m" plural="y">Vinculados</value>
+    </adjective>
+
+    <adjective name="Loaded">
+        <value gender="f" plural="n">Carregada</value>
+        <value gender="f" plural="y">Carregadas</value>
+        <value gender="m" plural="n">Carregado</value>
+        <value gender="m" plural="y">Carregados</value>
+         </adjective>
+
+    <adjective name="Locked">
+        <value gender="f" plural="n">Bloqueada</value>
+        <value gender="f" plural="y">Bloqueadas</value>
+        <value gender="m" plural="n">Bloqueado</value>
+        <value gender="m" plural="y">Bloqueados</value>
+        </adjective>
+
+    <adjective name="Managing">
+        <value gender="f" plural="n">Gerenciadora</value>
+        <value gender="f" plural="y">Gerenciadoras</value>
+        <value gender="m" plural="n">Gerenciador</value>
+        <value gender="m" plural="y">Gerenciadores</value>
+    </adjective>
+
+    <adjective name="Managed">
+        <value gender="f" plural="n">Gerenciada</value>
+        <value gender="f" plural="y">Gerenciadas</value>
+        <value gender="m" plural="n">Gerenciado</value>
+        <value gender="m" plural="y">Gerenciados</value>
+    </adjective>
+
+    <adjective name="Master">
+        <value gender="f" plural="n">Mestra</value>
+        <value gender="f" plural="y">Mestras</value>
+        <value gender="m" plural="n">Mestre</value>
+        <value gender="m" plural="y">Mestres</value>
+    </adjective>
+
+	<adjective name="Matching">
+        <value gender="f" plural="n">Correspondente</value>
+        <value gender="f" plural="y">Correspondentes</value>
+        <value gender="m" plural="n">Correspondente</value>
+        <value gender="m" plural="y">Correspondentes</value>
+    </adjective>
+
+    <adjective name="Merged">
+        <value gender="f" plural="n">Mesclada</value>
+        <value gender="f" plural="y">Mescladas</value>
+        <value gender="m" plural="n">Mesclado</value>
+        <value gender="m" plural="y">Mesclados</value>
+    </adjective>
+
+<adjective name="More">
+        <value gender="f" plural="n">Mais</value>
+        <value gender="f" plural="y">Mais</value>
+        <value gender="m" plural="n">Mais</value>
+        <value gender="m" plural="y">Mais</value>
+    </adjective>
+
+	<adjective name="Multiple">
+        <value gender="f" plural="n">Múltipla</value>
+        <value gender="f" plural="y">Múltiplas</value>
+        <value gender="m" plural="n">Múltiplo</value>
+        <value gender="m" plural="y">Múltiplos</value>
+    </adjective>
+
+    <adjective name="My">
+        <value gender="f" plural="n">Minha</value>
+        <value gender="f" plural="y">Minhas</value>
+        <value gender="m" plural="n">Meu</value>
+        <value gender="m" plural="y">Meus</value>
+    </adjective>
+
+    <adjective name="Neglected">
+        <value gender="f" plural="n">Ignorada</value>
+        <value gender="f" plural="y">Ignoradas</value>
+        <value gender="m" plural="n">Ignorado</value>
+        <value gender="m" plural="y">Ignorados</value>
+    </adjective>
+
+    <adjective name="New">
+        <value gender="f" plural="n">Nova</value>
+        <value gender="f" plural="y">Novas</value>
+        <value gender="m" plural="n">Novo</value>
+        <value gender="m" plural="y">Novos</value>
+    </adjective>
+
+    <adjective name="No">
+        <value gender="f" plural="n">Nenhuma</value>
+        <value gender="f" plural="y">Nenhuma</value>
+        <value gender="m" plural="n">Nenhum</value>
+        <value gender="m" plural="y">Nenhum</value>
+    </adjective>
+
+    <adjective name="Non-primary">
+        <value gender="f" plural="n">Não primária</value>
+        <value gender="f" plural="y">Não primárias</value> 
+        <value gender="m" plural="n">Não primário</value> 
+        <value gender="m" plural="y">Não primários</value>
+    </adjective>
+
+    <adjective name="Num">  <!--number-->
+        <value gender="f" plural="n">Nº de</value>
+        <value gender="f" plural="y">Nº de</value>
+        <value gender="m" plural="n">Nº de</value>
+        <value gender="m" plural="y">Nº de</value>
+    </adjective>       
+        
+	<adjective name="One">
+         <value gender="f" plural="n">Uma</value>
+        <value gender="f" plural="y">Umas</value>
+        <value gender="m" plural="n">Um</value>
+        <value gender="m" plural="y">Uns</value>
+	</adjective>
+
+	<adjective name="Older">
+        <value gender="m" plural="n">Mais antigo</value>
+        <value gender="f" plural="n">Mais antiga</value>
+         <value gender="m" plural="y">Mais antigos</value>
+         <value gender="f" plural="y">Mais antigas</value>
+	</adjective>
+
+    <adjective name="Open">
+        <value gender="f" plural="n">Aberta</value>
+        <value gender="f" plural="y">Abertas</value>
+        <value gender="m" plural="n">Aberto</value>
+        <value gender="m" plural="y">Abertos</value>
+    </adjective>
+
+    <adjective name="Original">
+        <value gender="f" plural="n">Original</value>
+        <value gender="f" plural="y">Originais</value>
+        <value gender="m" plural="n">Original</value>
+        <value gender="m" plural="y">Originais</value>
+    </adjective>
+
+<adjective name="Other">
+        <value gender="f" plural="n">Outra</value>
+        <value gender="f" plural="y">Outras</value>
+        <value gender="m" plural="n">Outro</value>
+        <value gender="m" plural="y">Outros</value>
+    </adjective>
+
+    <adjective name="Overdue">
+        <value gender="f" plural="n">Atrasada</value>
+        <value gender="f" plural="y">Atrasadas</value>
+        <value gender="m" plural="n">Atrasado</value>
+        <value gender="m" plural="y">Atrasados</value>
+    </adjective>
+
+    <adjective name="Overridden">
+ 	  <value gender="f" plural="n">Substituída</value>
+        <value gender="f" plural="y">Substituídas</value>
+        <value gender="m" plural="n">Substituído</value>
+        <value gender="m" plural="y">Substituídos</value>
+	</adjective>
+
+<adjective name="Owning">
+        <value gender="f" plural="n">Proprietária</value>
+        <value gender="f" plural="y">Proprietárias</value>
+        <value gender="m" plural="n">Proprietário</value>
+        <value gender="m" plural="y">Proprietários</value>
+    </adjective>
+
+    <adjective name="Personal">
+        <value gender="f" plural="n">pessoal</value>
+        <value gender="f" plural="y">pessoais</value>
+        <value gender="m" plural="n">pessoal</value>
+        <value gender="m" plural="y">pessoais</value>
+    </adjective>
+
+    <adjective name="Popular">
+        <value gender="f" plural="n">Popular</value>
+        <value gender="f" plural="y">Populares</value>
+        <value gender="m" plural="n">Popular</value>
+        <value gender="m" plural="y">Populares</value>
+    </adjective>
+
+	<adjective name="Predefined">
+       <value gender="f" plural="n">Predefinida</value>
+        <value gender="f" plural="y">Predefinidas</value>
+        <value gender="m" plural="n">Predefinido</value>
+        <value gender="m" plural="y">Predefinidos</value>
+    </adjective>
+
+    <adjective name="Proposed">
+        <value gender="f" plural="n">Proposta</value>
+        <value gender="f" plural="y">Propostas</value>
+        <value gender="m" plural="n">Proposto</value>
+        <value gender="m" plural="y">Propostos</value>
+    </adjective>
+
+    <adjective name="Primary">
+        <value gender="f" plural="n">Principal</value>
+        <value gender="f" plural="y">Principais</value>
+        <value gender="m" plural="n">Principal</value>
+        <value gender="m" plural="y">Principais</value>
+    </adjective>
+
+    <adjective name="Private">
+        <value gender="f" plural="n">Privada</value>
+        <value gender="f" plural="y">Privadas</value>
+        <value gender="m" plural="n">Privado</value>
+        <value gender="m" plural="y">Privados</value>
+    </adjective>
+
+    <adjective name="Public">
+        <value gender="f" plural="n">Pública</value>
+        <value gender="f" plural="y">Públicas</value>
+        <value gender="m" plural="n">Público</value>
+        <value gender="m" plural="y">Públicos</value>
+    </adjective>
+
+<adjective name="Published">
+        <value gender="f" plural="n">Publicada</value>
+        <value gender="f" plural="y">Publicadas</value>
+        <value gender="m" plural="n">Publicado</value>
+        <value gender="m" plural="y">Publicados</value>
+    </adjective>
+
+    <adjective name="Queue_Owned">
+        <value gender="f" plural="n">De propriedade da fila</value>
+        <value gender="f" plural="y">De propriedade da fila</value>
+        <value gender="m" plural="n">De propriedade da fila</value>
+        <value gender="m" plural="y">De propriedade da fila</value>
+    </adjective>
+        
+    <adjective name="Recent">
+        <value gender="f" plural="n">Recente</value>
+        <value gender="f" plural="y">Recentes</value>
+        <value gender="m" plural="n">Recente</value>
+        <value gender="m" plural="y">Recentes</value>
+        </adjective>
+
+    <adjective name="Recently">
+        <value gender="f" plural="n">Recentemente</value>
+        <value gender="f" plural="y">Recentemente</value>
+        <value gender="m" plural="n">Recentemente</value>
+        <value gender="m" plural="y">Recentemente</value>
+    </adjective>
+
+	<adjective name="Recurring">
+        <value gender="f" plural="n">Recorrente</value>
+        <value gender="f" plural="y">Recorrente</value>
+        <value gender="m" plural="n">Recorrentes</value>
+        <value gender="m" plural="y">Recorrentes</value>
+    </adjective>
+
+
+    <adjective name="Remaining">
+        <value gender="f" plural="n">Restante</value>
+        <value gender="f" plural="y">Restantes</value>
+        <value gender="m" plural="n">Restante</value>
+        <value gender="m" plural="y">Restantes</value>
+    </adjective>
+
+    <adjective name="Rejected">
+        <value gender="f" plural="n">Rejeitada</value>
+        <value gender="f" plural="y">Rejeitadas</value>
+        <value gender="m" plural="n">Rejeitado</value>
+        <value gender="m" plural="y">Rejeitados</value>
+    </adjective>
+
+    <adjective name="Related">
+        <value gender="f" plural="n">Relacionada</value>
+        <value gender="f" plural="y">Relacionadas</value>
+        <value gender="m" plural="n">Relacionado</value>
+        <value gender="m" plural="y">Relacionados</value>
+    </adjective>
+
+    <adjective name="Relevant">
+        <value gender="f" plural="n">Relevante</value>
+        <value gender="f" plural="y">Relevantes</value>
+        <value gender="m" plural="n">Relevante</value>
+        <value gender="m" plural="y">Relevantes</value>
+    </adjective>
+
+    <adjective name="Resulting">
+        <value gender="f" plural="n">Resultante</value>
+        <value gender="f" plural="y">Resultantes</value>
+        <value gender="m" plural="n">Resultante</value>
+        <value gender="m" plural="y">Resultantes</value>
+    </adjective>
+
+    <adjective name="Reviewed">
+        <value gender="f" plural="n">Revisada</value>
+        <value gender="f" plural="y">Revisadas</value>
+        <value gender="m" plural="n">Revisado</value>
+        <value gender="m" plural="y">Revisados</value>
+    </adjective>
+
+    <adjective name="Same">
+        <value gender="n" plural="n">Same</value>
+    </adjective>
+
+    <adjective name="Sample">
+        <value gender="f" plural="n">Exemplo</value>
+        <value gender="f" plural="y">Exemplos</value>
+        <value gender="m" plural="n">Exemplo</value>
+        <value gender="m" plural="y">Exemplos</value>
+    </adjective>
+
+	<adjective name="Scheduled">
+        <value gender="f" plural="n">Agendada</value>
+        <value gender="f" plural="y">Agendadas</value>
+        <value gender="m" plural="n">Agendado</value>
+        <value gender="m" plural="y">Agendados</value>
+    </adjective>
+
+    <adjective name="Second">
+        <value gender="f" plural="n">Segunda</value>
+        <value gender="f" plural="y">Active</value>
+        <value gender="m" plural="n">Segundo</value>
+        <value gender="m" plural="y">Active</value>
+    </adjective>
+
+    <adjective name="Selected">
+        <value gender="f" plural="n">Selecionada</value>
+        <value gender="f" plural="y">Selecionadas</value>
+        <value gender="m" plural="n">Selecionado</value>
+        <value gender="m" plural="y">Selecionados</value>
+    </adjective>
+
+    <adjective name="Shared">
+        <value gender="f" plural="n">Compartilhada</value>
+        <value gender="f" plural="y">Compartilhadas</value>
+        <value gender="m" plural="n">Compartilhado</value>
+        <value gender="m" plural="y">Compartilhados</value>
+    </adjective>
+
+    <adjective name="Similar">
+        <value gender="f" plural="n">Semelhante</value>
+        <value gender="f" plural="y">Semelhantes</value>
+        <value gender="m" plural="n">Semelhante</value>
+        <value gender="m" plural="y">Semelhantes</value>
+    </adjective>
+
+    <adjective name="Single">
+        <value gender="f" plural="n">Única</value>
+        <value gender="f" plural="y">Únicas</value>
+        <value gender="m" plural="n">Único</value>
+        <value gender="m" plural="y">Únicos</value>
+    </adjective>
+
+    <adjective name="Social">
+        <value gender="f" plural="n">Social</value>
+        <value gender="f" plural="y">Sociais</value>
+        <value gender="m" plural="n">Social</value>
+        <value gender="m" plural="y">Sociais</value>
+    </adjective>
+        
+    <adjective name="Source">
+	<value gender="f" plural="n">Original</value>
+ 	<value gender="f" plural="y">Originais</value>
+	<value gender="m" plural="n">Original</value>
+ 	<value gender="m" plural="y">Originais</value>
+    </adjective>
+
+    <adjective name="Specified">
+        <value gender="f" plural="n">especificada</value>
+        <value gender="f" plural="y">especificadas</value>
+        <value gender="m" plural="n">especificado</value>
+        <value gender="m" plural="y">especificados</value>
+    </adjective>
+
+    <adjective name="Stale">
+        <value gender="f" plural="n">Antiga</value>
+        <value gender="f" plural="y">Antigas</value>
+        <value gender="m" plural="n">Antigo</value>
+        <value gender="m" plural="y">Antigos</value>
+    </adjective>
+
+    <adjective name="Standard">
+        <value gender="f" plural="n">Padrão</value>
+        <value gender="f" plural="y">Padrão</value>
+        <value gender="m" plural="n">Padrão</value>
+        <value gender="m" plural="y">Padrão</value>
+    </adjective>
+
+    <adjective name="Stuck">
+        <value gender="f" plural="n">Paralisada</value>
+        <value gender="f" plural="y">Paralisadas</value>
+        <value gender="m" plural="n">Paralisado</value>
+        <value gender="m" plural="y">Paralisados</value>
+    </adjective>
+
+    <adjective name="Suggested">
+ 	<value gender="f" plural="n">Sugerida</value>
+        <value gender="f" plural="y">Sugeridas</value>
+        <value gender="m" plural="n">Sugerido</value>
+        <value gender="m" plural="y">Sugeridos</value>
+	</adjective>
+
+     <adjective name="Supplementary">
+        <value gender="f" plural="n">Suplementar</value>
+        <value gender="f" plural="y">Suplementares</value>
+        <value gender="m" plural="n">Suplementar</value>
+        <value gender="m" plural="y">Suplementares</value>
+    </adjective>
+
+    <adjective name="Synced">
+        <value gender="f" plural="n">Sincronizada</value>
+        <value gender="f" plural="y">Sincronizadas</value>
+        <value gender="m" plural="n">Sincronizado</value>
+        <value gender="m" plural="y">Sincronizados</value>
+    </adjective>
+
+    <adjective name="That">
+        <value gender="f" plural="n">Desta</value>
+        <value gender="f" plural="y">Destas</value>
+        <value gender="m" plural="n">Deste</value>
+        <value gender="m" plural="y">Destes</value>
+    </adjective>
+
+    <adjective name="Their">
+        <value gender="f" plural="n">Sua</value>
+        <value gender="f" plural="y">Suas</value>
+        <value gender="m" plural="n">Seu</value>
+        <value gender="m" plural="y">Seus</value>
+    </adjective>
+
+    <adjective name="These">
+        <value gender="f" plural="n">Esta</value>
+        <value gender="f" plural="y">Estas</value>
+        <value gender="m" plural="n">Este</value>
+        <value gender="m" plural="y">Estes</value>
+    </adjective>
+
+<adjective name="Those">
+        <value gender="f" plural="n">Aquela</value>
+        <value gender="f" plural="y">Aquelas</value>
+        <value gender="m" plural="n">Aquele</value>
+        <value gender="m" plural="y">Aqueles</value>
+    </adjective>
+
+    <adjective name="This">
+        <value gender="f" plural="n">Esta</value>
+        <value gender="f" plural="y">Estas</value>
+        <value gender="m" plural="n">Este</value>
+        <value gender="m" plural="y">Estes</value>
+    </adjective>
+        
+    <adjective name="Today">
+        <value gender="n" plural="n">Today</value>
+    </adjective>
+
+    <adjective name="Top">
+         <value gender="f" plural="n">Melhores</value>
+        <value gender="f" plural="y">Melhores</value>
+        <value gender="m" plural="n">Melhores</value>
+        <value gender="m" plural="y">Melhores</value>
+    </adjective>
+
+    <adjective name="Total">
+        <value gender="f" plural="n">Total</value>
+        <value gender="f" plural="y">Totais</value>
+        <value gender="m" plural="n">Total</value>
+        <value gender="m" plural="y">Totais</value>
+    </adjective>
+
+    <adjective name="Translated">
+     	<value gender="f" plural="n">Traduzida</value>
+        <value gender="f" plural="y">Traduzidas</value>
+        <value gender="m" plural="n">Traduzido</value>
+        <value gender="m" plural="y">Traduzidos</value>
+    </adjective>   
+
+    <adjective name="Transferable">
+        <value gender="f" plural="n">Transferível</value>
+        <value gender="f" plural="y">Transferíveis</value>
+        <value gender="m" plural="n">Transferível</value>
+        <value gender="m" plural="y">Transferíveis</value>
+    </adjective>
+
+    <adjective name="Unconverted">
+        <value gender="f" plural="n">Não convertida</value>
+        <value gender="f" plural="y">Não convertidas</value>
+        <value gender="m" plural="n">Não convertido</value>
+        <value gender="m" plural="y">Não convertidos</value>
+    </adjective>
+
+    <adjective name="Unread">
+        <value gender="f" plural="n">Não lida</value>
+        <value gender="f" plural="y">Não lidas</value>
+        <value gender="m" plural="n">Não lido</value>
+        <value gender="m" plural="y">Não lidos</value>
+    </adjective>
+
+    <adjective name="Unreviewed">
+        <value gender="f" plural="n">Não revisada</value>
+        <value gender="f" plural="y">Não revisadas</value>
+        <value gender="m" plural="n">Não revisado</value>
+        <value gender="m" plural="y">Não revisados</value>
+    </adjective>
+
+     <adjective name="Unresolved">
+	<value gender="f" plural="n">Não resolvida</value>
+	<value gender="f" plural="y">Não resolvidas</value>
+	<value gender="m" plural="n">Não resolvido</value>
+	<value gender="m" plural="y">Não resolvidos</value>
+     </adjective>
+
+    <adjective name="Unused">
+        <value gender="f" plural="n">Não utilizada</value>
+        <value gender="f" plural="y">Não utilizadas</value>
+        <value gender="m" plural="n">Não utilizado</value>
+        <value gender="m" plural="y">Não utilizados</value>
+    </adjective>
+
+    <adjective name="Unfiled">
+        <value gender="f" plural="n">Não arquivada</value>
+        <value gender="f" plural="y">Não arquivada</value>
+        <value gender="m" plural="n">Não arquivado</value>
+        <value gender="m" plural="y">Não arquivados</value>
+    </adjective>
+
+    <adjective name="Unshared">
+        <value gender="f" plural="n">Não compartilhada</value>
+        <value gender="f" plural="y">Não compartilhadas</value>
+        <value gender="m" plural="n">Não compartilhado</value>
+        <value gender="m" plural="y">Não compartilhados</value>
+    </adjective>
+
+    <adjective name="Updated">
+        <value gender="f" plural="n">Atualizada</value>
+        <value gender="f" plural="y"> Atualizadas </value>
+        <value gender="m" plural="n"> Atualizado </value>
+        <value gender="m" plural="y"> Atualizados </value>
+        </adjective>
+
+    <adjective name="Useful">
+        <value gender="f" plural="n">Útil</value>
+        <value gender="f" plural="y">Úteis</value>
+        <value gender="m" plural="n">Útil</value>
+        <value gender="m" plural="y">Úteis</value>
+    </adjective>
+
+    <adjective name="User_Owned">
+        <value gender="f" plural="n">De propriedade do usuário</value>
+        <value gender="f" plural="y">De propriedade do usuário</value>
+        <value gender="m" plural="n">De propriedade do usuário</value>
+        <value gender="m" plural="y">De propriedade do usuário</value>
+    </adjective>
+
+    <adjective name="Viewed">
+        <value gender="f" plural="n">Exibida</value>
+        <value gender="f" plural="y">Exibidas</value>
+        <value gender="m" plural="n">Exibido</value>
+        <value gender="m" plural="y">Exibidos</value>
+    </adjective>
+
+    <adjective name="Visible">
+        <value gender="f" plural="n">visível</value>
+        <value gender="f" plural="y">visíveis</value>
+        <value gender="m" plural="n">visível</value>
+        <value gender="m" plural="y">visíveis</value>
+    </adjective>
+
+    <adjective name="Won">
+        <value gender="f" plural="n">Ganha</value>
+        <value gender="f" plural="y">Ganhas</value>
+        <value gender="m" plural="n">Ganho</value>
+        <value gender="m" plural="y">Ganhos</value>
+    </adjective>
+
+    <adjective name="Your">
+        <value gender="f" plural="n">Sua</value>
+        <value gender="f" plural="y">Suas</value>
+        <value gender="m" plural="n">Seu</value>
+        <value gender="m" plural="y">Seus</value>
+    </adjective>
+        
+    <adjective name="Zero">
+        <value gender="f" plural="n">Zero</value>
+        <value gender="f" plural="y">Zeros</value>
+        <value gender="m" plural="n">Zero</value>
+        <value gender="m" plural="y">Zeros</value>    
+</adjective>
+
+	<adjective name="The">
+        <value gender="f" plural="n">A</value>
+        <value gender="f" plural="y">As</value>
+        <value gender="m" plural="n">O</value>
+        <value gender="m" plural="y">Os</value>
+    </adjective>
+
+	<adjective name="A">
+        <value gender="f" plural="n">Uma</value>
+        <value gender="f" plural="y">Umas</value>
+        <value gender="m" plural="n">Um</value>
+        <value gender="m" plural="y">Uns</value>
+    </adjective>
+    
+    <adjective name="Marked">
+        <value gender="f" plural="n">Marcada</value>
+        <value gender="f" plural="y">Marcadas</value>
+        <value gender="m" plural="n">Marcado</value>
+        <value gender="m" plural="y">Marcados</value>
+    </adjective>
+     
+    <adjective name="Posted">
+        <value gender="f" plural="n">Publicada</value>
+        <value gender="f" plural="y">Publicadas</value>
+        <value gender="m" plural="n">Publicado</value>
+        <value gender="m" plural="y">Publicados</value>    
+    </adjective>
+    
+    <adjective name="Supported">
+        <value gender="f" plural="n">Suportada</value>
+        <value gender="f" plural="y">Suportadas</value>
+        <value gender="m" plural="n">Suportado</value>
+        <value gender="m" plural="y">Suportados</value>
+    </adjective>
+    
+    <adjective name="Unfiled_Public">
+        <value gender="f" plural="n">Pública não arquivada</value>
+        <value gender="f" plural="y">Públicas não arquivadas</value>
+        <value gender="m" plural="n">Público não arquivado</value>
+        <value gender="m" plural="y">Públicos não arquivados</value>
+    </adjective>
+    
+    <adjective name="Valid">
+        <value gender="f" plural="n">Válida</value>
+        <value gender="f" plural="y">Válidas</value>
+        <value gender="m" plural="n">Válido</value>
+        <value gender="m" plural="y">Válidos</value>
+    </adjective>
+    
+</adjectives>
+

@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+ SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">Hộp Kết Hợp</param>
+        <param name="select_default">Lựa chọn từ danh sách dưới đây.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Lựa chọn một {0} dưới đây.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Truy Cập</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Được Quản Lý)</param>
+        <param name="activity_history">Lược Sử Hoạt Động</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Thông Tin Bổ Sung</param> <!--aliased across labels - do not change-->
+        <param name="alias">Bí Danh</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Trợ Lý</param>
+        <param name="assistant_name">Tên Trợ Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Điện Thoại của Trợ Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Điện Thoại Trợ Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Máy Nhánh Điện Thoại Trợ Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Ngày Sinh</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Phần Thân</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Công Ty</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Người Tạo Lập</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Thông Tin Nhận Dạng Người Tạo Lập</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Được Tạo Bởi Bí Danh</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Mã ISO Tiền Tệ</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Các Trường Tùy Thích</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Trạng Thái Mặc Định</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Chi Tiết {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Phòng Ban</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Chỉnh Sửa {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Doanh Thu Dự Kiến</param>
+        <param name="first_name">Tên Gọi</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Tên Họ</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Tên Gọi (Địa Phương)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Tên Họ (Địa Phương)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Quý tài chính</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Năm Tài Chính</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Tên Đầy Đủ</param> <!-- aliased across app - do not change -->
+        <param name="group">Nhóm</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Tên Nhóm</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Tên Hàng Đợi</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Ngành</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Người Sửa Đổi Mới Nhất</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Thông Tin Nhận Dạng Sửa Đổi Mới Nhất</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Bí Danh Sửa Đổi Mới Nhất</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Thông Tin Nhận Dạng Hồ Sơ Chủ Đạo</param>
+        <param name="mobile">Di Động</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Điện Thoại Di Động</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Máy Nhánh Điện Thoại Di Động</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Chia Sẻ Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Bí Danh Được Phân Công</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Danh Sách Sẵn Có</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Tên Công ty</param> <!-- aliased across app - do not change -->
+        <param name="activities">Các Hoạt Động</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">không có tài liệu đính kèm</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">Thông Tin Địa Chỉ</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Đã Từ Chối</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Mặc Định</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Mức Ưu Tiên Mặc Định</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Tạo Lập Giao Diện Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Thông Tin Tùy Thích</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Trạng Thái Sao Y</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Địa chỉ Email</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Tên Email</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Khuôn Mẫu Email</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Email:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Các Liên Kết Tùy Thích</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Kích Thước Tập Tin</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Không dữ liệu sẵn có</param>
+        <param name="history_event_checked">Trường được kiểm tra {0}</param>
+        <param name="history_event_unchecked">Trường không được kiểm tra{0}</param>
+        <param name="how_do_i_specify_info">Tôi chỉ định thông tin nào sao chụp bằng cách nào?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Nguồn Nội Bộ</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Khoảng Cách:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Xưng Hô</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Lựa Chọn Chủ Sở Hữu Mới</param>
+        <param name="select_a_view">Lựa chọn một giao diện từ danh sách thả dọc để xem danh sách các kết quả liên quan.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Chọn một thư mục từ danh sách thả dọc để xem danh sách các kết quả liên quan.</param>
+        <param name="select_the_file">Lựa Chọn Tập Tin</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Lựa chọn các tập tin bao gồm:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Chữ Ký</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Chủ đề</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Thông Tin Hệ Thống</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Trang Web</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Bí Danh Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Tên Gọi Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Thông Tin Nhận Dạng Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Tên Họ Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Tên Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Vai Trò Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Hiển Thị Vai Trò Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Tên Vai Trò Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Chính</param>
+        <param name="primary_contact"><Primary/> <Contact/></param>
+        <param name="priority">Mức Ưu Tiên</param><!--aliased across labels - do not change -->
+        <param name="private">Riêng tư</param>
+        <param name="role">Vai Trò</param> <!--aliased across labels - do not change -->
+        <param name="rating">Đánh Giá</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Tạo Lập Nhanh</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Được Xem Gần Đây</param>
+        <param name="top5">5 Câu Hỏi Hàng Đầu</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Đại Lý</param>
+        <param name="customer">Khách Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Nhà Cung Cấp</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Thông Tin Nhận Dạng Loại Hồ Sơ</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Thông Tin Nhận Dạng Bộ Phận</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Liệt Kê Theo Bảng hoặc Thông Tin Nhận Dạng</param>
+        <param name="editable">Chỉnh Sửa Được</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Tên Bình Thường Hóa</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Tuyên Bố Quyền Riêng Tư</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Tiểu Bang Có Thể Quản Lý Được</param>
+        <param name="namespacePrefix">Tiền Tố Không Gian Tên</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Không gian tên mô-đun</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Gói Lắp Đặt</param>
+        <param name="initialVersion">Phiên Bản Được Công Bố Đầu Tiên</param>
+        <param name="lastVersion">Phiên Bản Sẵn Có Cuối Cùng</param>
+        <param name="availableInVersions">Sẵn Có trong Các Phiên Bản</param>
+        <param name="DeveloperName">Tên Nhà Phát Triển</param>
+        <param name="apiName">Tên API</param>
+        <param name="InvalidDeveloperNameOnEntity">Trường {0} chỉ có thể chứa các gạch dưới và các ký tự chữ-số. Nó phải là duy nhất, bắt đầu bằng một chữ cái, không bao gồm các dấu cách, không kết thúc bằng gạch dưới, và không chứa hai gạch dưới liên tiếp nhau.</param>
+        <param name="missingDevName">{0} phải được cung cấp.</param>
+        <param name="duplicateDevName">{0} này đã tồn tại hoặc đã được dùng trước đây.  Hãy chọn một tên độc nhất khác.</param>
+        <param name="manageabilityOverride">Thay Thế Tính Điều Khiển Được</param>
+        <param name="AMPMId">Thông Tin Nhận Dạng AMPM</param>
+        <param name="MetricsDate">Ngày đo</param>
+        <param name="MayEdit">Có Thể Chỉnh Sửa</param>
+        <param name="IsLocked">Bị Khóa</param>
+        <param name="LastViewedDate">Ngày xem cuối</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Tạo Lập</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Thiết Lập</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Tạo Mới...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Tập Tin</param>
+        <param name="new_forecast">Dự Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Thùng Rác</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Gửi Email</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Người Sửa Đổi</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Ngày đã tạo</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Ngày Sửa Đổi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Tiến Hành Tự Động</param>
+        <param name="partner_network">Người Dùng Kết Nối</param>
+        <param name="external_who">Người Dùng Công Khai</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Ví Dụ</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Lỗi: Dữ Liệu Không Hợp Lệ. &lt;br/&gt;Xem lại tất cả các tin nhắn báo lỗi bên dưới để sửa dữ liệu của bạn.</param>
+        <param name="EditPageError2">Xem lại tất cả các tin nhắn báo lỗi bên dưới để sửa dữ liệu của bạn.</param>
+        <param name="Required">Bạn phải nhập một giá trị</param>
+        <param name="RequiredWithFieldList">Các trường bắt buộc bị thiếu: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Bắt Buộc cho Tự Phục Vụ</param>
+        <param name="RequiredBy">Người Yêu Cầu: {0}</param>
+        <param name="Requires">Yêu Cầu Phải Có: {0}</param>
+        <param name="TooLong">Giá trị quá dài cho trường</param>
+        <param name="CannotExceedXCharacters">Giá trị không thể vượt quá {0} ký tự</param>
+        <param name="MustBeXCharacters">Giá trị chính xác phải là {0} ký tự</param>
+        <param name="MustBeNumber">Giá trị phải bằng số</param>
+        <param name="StatusCloseRequired">Bạn phải đánh dấu ít nhất một trạng thái dưới dạng đã đóng</param>
+        <param name="StatusDefaultRequired">Bạn phải đánh dấu ít nhất một trạng thái làm mặc định</param>
+        <param name="StatusInUse">Các giá trị trạng thái dưới đây đang được sử dụng và không thể được chỉnh sửa hoặc xóa: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Ngày Không Hợp Lệ</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Ngày không hợp lệ. Bạn không thể đặt ngày sau {0}</param>
+        <param name="InvalidDateTime">Ngày và Thời Gian Không Hợp Lệ</param>
+        <param name="InvalidColor">Màu Không Hợp Lệ</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Địa Chỉ Mạng Internet Không Hợp Lệ</param>
+        <param name="InvalidOption">Đã chọn một tùy chọn không hợp lệ.</param>
+        <param name="UnsupportedCurrency">Tiền tệ không hợp lệ</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL Không Hợp Lệ</param>
+        <param name="NoneSelectedInPicklist">-- không có mục được chọn --</param>
+        <param name="InvalidTime">Không phải là thời gian hợp lệ</param>
+        <param name="InvalidNumber">Số không hợp lệ</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Số quá lớn.</param>
+        <param name="TooLargeNumberWithScale">Số phải nhỏ hơn {0}.</param>
+        <param name="TooSmallNumberWithScale">Số phải lớn hơn {0}.</param>
+        <param name="NonpositiveError">Phải là số dương.</param>
+        <param name="NegativeError">Phải là số không âm.</param>
+        <param name="PositiveError">Phải là số không dương.</param>
+        <param name="NonnegativeError">Phải là số âm.</param>
+        <param name="NonzeroError">Phải là số khác 0.</param>
+        <param name="NonintegerError">Phải là số nguyên.</param>
+        <param name="InvalidPercent">Phần trăm không hợp lệ</param>
+        <param name="InvalidAfterRoundOff">Số {0} không hợp lệ sau khi làm tròn theo tỷ lệ: {1}</param>
+        <param name="CharactersRemaining">còn lại</param>
+        <param name="CharactersOver">quá giới hạn</param>
+        <param name="TooManySelection">Bạn không thể lựa chọn nhiều hơn {0} mục</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Giá trị sao y trên hồ sơ: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Giá trị trường ẩn (không hiện) sao y giá trị trên hồ sơ: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} sao y giá trị trên hồ sơ cùng với thông tin nhận dạng: {1}</param>
+        <param name="True">Đúng</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Sai</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Miền không hợp lệ</param>
+        <param name="ReadOnly">Bạn không thể chỉnh sửa trường này</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Bỏ ngang</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Chấp nhận</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Chấp Nhận Các Thay Đổi</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Kích Hoạt Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Bổ Sung Nhận Xét</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Bổ Sung Các Thành Phần</param>
+        <param name="add_contacts">Bổ Sung <Contacts/></param>
+        <param name="add_leads">Bổ Sung <Leads/></param>
+        <param name="add_more_users">Bổ Sung Thêm Người Dùng</param>
+        <param name="add_multiple_users">Bổ Sung Nhiều Người Dùng</param>
+        <param name="add_product">Bổ Sung <Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Bổ Sung Mục Đường Truyền</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Bổ Sung Bảng Điều Khiển Mẫu</param>
+        <param name="add_to_call_center">Bổ Sung vào Call Center</param>
+        <param name="add_to_campaign">Bổ Sung vào <Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Bổ Sung vào Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Bổ Sung vào <Pricebook/></param>
+        <param name="add_remove">Bổ Sung/Gỡ Bỏ</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Thiết Lập Nâng Cao</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Phê Duyệt</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Phân Công</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Phân Công Người Dùng cho Vai Trò</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Trở lại Danh Sách Báo Cáo</param>
+        <param name="billing_and_licenses">Lập Hóa Đơn &amp; Bản Quyền</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Thông Tin Lập Hóa Đơn</param>
+        <param name="briefcase_setup">Thiết Lập Cặp Tài Liệu</param>
+        <param name="cancel">Hủy</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Hủy Bỏ Gửi Đi</param>
+        <param name="cancel_test_instance">Hủy Bỏ Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Thay Đổi Công Ty</param>
+        <param name="change_currency">Thay Đổi Tiền Tệ</param>
+        <param name="change_owner">Thay Đổi Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Chấp Nhận và Thay Đổi Chủ Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Chấp Nhận và Phân Công Chủ Đạo</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Thay Đổi Trạng Thái</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Kiểm Tra Tính Sẵn Có</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Kiểm Tra Chính Tả</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Chọn <Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Làm Sạch</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Tổng Quan</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Tab {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Danh Sách</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Sao Chép Các Chi Tiết Mẹ</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Thu Bớt Tất Cả</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Chọn một mục từ danh sách chọn</param>
+        <param name="composegmail">Soạn email từ tài khoản Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Xác Nhận</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Tiếp Tục</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Dù Sao Vẫn Tiếp Tục</param>
+        <param name="convert">Chuyển Đổi</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Chuyển Đổi <Lead/></param>
+        <param name="create">Tạo Lập</param>
+        <param name="create_follow_up_event">Tạo Lập <Event/> Tiếp Theo</param>
+        <param name="create_follow_up_task">Tạo Lập <Task/> Tiếp Theo</param>
+        <param name="create_new">Tạo {0}Mới</param>
+        <param name="create_new_section">Tạo Phần Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Tạo Lập <Opportunity/></param>
+        <param name="create_test_instance">Tạo Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Tạo Cơ Sở Dữ Liệu Kiểm Tra</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Tạo Mẫu Web dành cho Khách Hàng Tiềm Năng</param>
+        <param name="create_new_holiday">Tạo Ngày Nghỉ Mới</param>
+        <param name="create_new_sla_process">Quy Trình <Entitlement/> Mới</param>
+        <param name="create_new_milestone_type">Cột Mốc Mới</param>
+        <param name="currency_setup">Thiết Lập Tiền Tệ</param>
+        <param name="customer_view">Giao Diện Khách Hàng</param>
+        <param name="customize">Tùy Chỉnh</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Tùy Chỉnh Hiển Thị cho Tất Cả Người Dùng</param>
+        <param name="page_settings">Cài Đặt Trang</param>
+        <param name="customize_page">Tùy Chỉnh Trang</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Chỉnh Sửa Bố Cục</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Danh Sách Bảng Điều Khiển</param>
+        <param name="data_export">Xuất Dữ Liệu</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Dọn</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Từ Chối</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Các Liên Kết Tùy Thích Mặc Định</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Gỡ Bỏ Truy Cập Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Đã Thực Hiện cùng với Xem Trước</param>
+        <param name="dont_save">Không Lưu</param>
+        <param name="dont_show_page_again">Không hiện lại cho tôi trang này.</param>
+        <param name="download">Tải Xuống</param>
+        <param name="download_now">Tải Xuống Ngay Bây Giờ</param>
+        <param name="download_sample_css_file">Tải Xuống Tập Tin CSS Mẫu</param>
+        <param name="edit">Chỉnh sửa</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Chỉnh Sửa [Beta]</param>
+        <param name="edit_all">Chỉnh Sửa Tất Cả</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Chỉnh Sửa Người Dùng</param>
+        <param name="edit_rates">Chỉnh Sửa Tỷ Lệ</param>
+        <param name="edit_selected">Chỉnh Sửa Mục Đã Chọn</param>
+        <param name="editProperties">Chỉnh Sửa Đặc Tính</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Thoát {0}</param>
+        <param name="enable_appstore_user">Cấp Truy Cập Checkout</param>
+        <param name="enable_as_partner">Cho Phép Hoạt Động Như Tài Khoản Đối Tác</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Cho Phép Đăng Nhập Cổng Đối Tác</param>
+        <param name="enable_self_service">Cho Phép Tự Phục Vụ</param>
+        <param name="enable_users">Cho Phép Người Dùng Mới</param>
+        <param name="enableForecasting">Cho Phép Dự Báo Tùy Chỉnh</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Nhập Đào Tạo</param>
+        <param name="erase_test_instance">Xóa Sandbox</param>
+        <param name="establish">Thiết Lập</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Mở Rộng Tất Cả</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Xuất Chi Tiết</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Xuất Chi Tiết Ngay Bây Giờ</param>
+        <param name="export_background">Chạy Xuất Nền...</param>
+        <param name="fctHistory">Lược Sử Dự Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Tóm Tắt Dự Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Xác Minh Dữ Liệu Trong Trường</param>
+        <param name="find">Tìm</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Tìm Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Tìm <Document/></param>
+        <param name="find_pricebooks">Tìm <Pricebook/></param>
+        <param name="find_products">Tìm <Product/></param>
+        <param name="find_solution">Tìm <Solution/></param>
+        <param name="finished">Đã Hoàn Tất</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Chuyển Tiếp</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Chuyển Tiếp đến các Kết Nối</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Tạo WSDL</param>
+        <param name="generate_login_html">Tạo HTML Đăng Nhập</param>
+        <param name="getMoreInfo">Lấy Thêm Thông Tin</param>
+        <param name="go">Thực Hiện!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Trợ Giúp cho Trang này</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Trợ Giúp {0}</param>
+        <param name="hide">Ẩn Chi Tiết</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Tôi Chấp Nhận</param>
+        <param name="i_decline">Tôi Từ Chối</param>
+        <param name="impactAnalysis">Mục này được sử dụng tại đâu?</param>
+        <param name="import">Nhập</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Nhập <Leads/></param>
+        <param name="include_offline">Bao Gồm Ngoại Tuyến</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Chèn</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Chèn Mục Đã Chọn</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Lắp Đặt Ngay Bây Giờ</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Mời</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Mời Kết Nối</param>
+        <param name="jigsawsearch">Nhận Người Liên Hệ</param>
+        <param name="join_meeting">Tham Dự Họp Mặt</param>
+        <param name="jumpstart">Khởi Động Nhanh</param>
+        <param name="keep_in_touch">Yêu Cầu Cập Nhật</param>
+        <param name="layout_assignment">Chỉ Định Bố Cục</param>
+        <param name="legal_view">Bố Cục Trang theo phong cách Pháp Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Khóa Hồ Sơ</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Đăng Nhập Dưới Dạng Người Dùng Đối Tác</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Quản Lý Thành Viên</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Yêu Cầu Cuộc Họp Mới</param>
+        <param name="add_members_search">Bổ Sung Thành Viên - Tìm Kiếm</param>
+        <param name="add_members_import">Bổ Sung Các Thành Viên - Nhập Tập Tin</param>
+        <param name="edit_members_search">Chỉnh Sửa Thành Viên - Tìm Kiếm</param>
+        <param name="update_members_import">Cập Nhật &amp; Bổ Sung Thành Viên - Nhập Tập Tin</param>
+        <param name="manage_call_center_users">Quản Lý Người Dùng Trung Tâm Cuộc Gọi</param>
+        <param name="map_lead_fields">Sắp Xếp <Lead_Fields/></param>
+        <param name="mark_as">Đánh Dấu Dưới Dạng...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Nhập Thành Viên</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Sửa Đổi Thông Báo Nhắc Cá Nhân</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Mới</param>
+        <param name="newcase">Mới</param>
+        <param name="new_addition_order">Dòng Tự Bổ Sung Mới</param>
+        <param name="new_custom_object">Đối Tượng Tùy Thích Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Tạo Báo Cáo Tùy Thích Mới</param>
+        <param name="new_dashboard">Bảng Điều Khiển Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Thành Phần Bảng Điều Khiển Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/> <New/></param>
+        <param name="new_email_template">Khuôn Mẫu Mới</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><Entity entity="0"/> <New/></param>
+        <param name="new_entitlement_template">Khuôn Mẫu Mới</param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="new_folder">Thư Mục Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Nhóm mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Hàng Đợi Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Ghi Chú Mới</param>
+        <param name="new_object_custom_tab">Tab Đối Tượng Tùy Thích Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Gặp Gỡ Trực Tuyến</param>
+        <param name="new_order">Đơn Đặt Hàng Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Nhóm Cá Nhân Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><Product/> <New/></param>
+        <param name="new_reduction_order">Đơn Đặt Hàng Giảm Giá Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Vai Trò Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Nút Mới</param>
+        <param name="new_territory">Khu Vực Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_user">Người Dùng Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Tab Tích Hợp Web Mới</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><Quote/> <New/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Thực Hiện Cập Nhật Khác</param>
+        <param name="performAnotherMigrate">Di Chuyển Hồ Sơ Khác</param>
+        <param name="preview">Xem trước</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Tính Toán Lại</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Thiết Lập Lại</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Từ Chối</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Từ Chối Thay Đổi</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Gỡ Bỏ Người Dùng</param>
+        <param name="remove_from_briefcase">Gỡ Bỏ Khỏi Cặp Tài Liệu</param>
+        <param name="remove_from_campaign">Gỡ Bỏ khỏi <Campaign/></param>
+        <param name="reorder">Xếp Lại Dòng Tự</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Sửa</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Chạy Tất Cả Kiểm Tra</param>
+        <param name="run_test">Chạy Kiểm Tra</param>
+        <param name="quick_save">Lưu Nhanh</param>
+        <param name="quick_save_hover">Lưu và tiếp tục chỉnh sửa</param>
+        <param name="reply">Trả Lời</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Trả Lời Tất Cả</param>
+        <param name="reportmanager">Người Quản Lý Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Đặt Lại Mật Khẩu</param>
+        <param name="reset_passwords">Đặt Lại (các) Mật Khẩu</param>
+        <param name="retrieve_prices">Truy Lục Giá</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Chạy Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Lưu</param> <!-- aliased across labels do not change -->
+        <param name="saving">Đang Lưu...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Lưu &amp; Bổ Sung Giá</param>
+        <param name="save_and_add_product">Lưu &amp; Bổ Sung <Product/></param>
+        <param name="save_and_clone">Lưu &amp; Nhân Bản Lại</param>
+        <param name="save_and_close">Lưu &amp; Đóng</param>
+        <param name="save_and_attach">Lưu &amp; Bổ Sung Tài Liệu Đính Kèm</param>
+        <param name="save_and_continue">Lưu &amp; Kế Tiếp</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Lưu &amp; Thêm</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Lưu &amp; <Event/> <New/></param>
+        <param name="save_and_new_product">Lưu &amp; <Product/> <New/></param>
+        <param name="save_and_new_task">Lưu &amp; <Task/>  <New/></param>
+        <param name="save_and_refresh">Lưu &amp; Làm Mới</param>
+        <param name="save_and_send">Lưu &amp; Gửi Cập Nhật</param>
+        <param name="event_scheduler">Ứng Dụng Khách &amp; Giao Diện Nhóm &gt;</param>
+        <param name="saveAs">Lưu Là</param>
+        <param name="schedule_to_email">Lập Kế Hoạch Cho Email</param>
+        <param name="schedule_to_print">Lập Kế Hoạch Cho In Ấn</param>
+        <param name="scrutinize">Nhìn kỹ</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Tìm <KnowledgeArticles/></param>
+        <param name="newArticle">Mới</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Lựa Chọn Khuôn Mẫu</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Khởi Động Nhanh Đến Tự Phục Vụ</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Thiết Lập Tự Phục Vụ</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Xem/Cho Phép Tự Phục Vụ</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Gửi</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Gửi một Email đến <all/> <contacts/></param>
+        <param name="send_invitation">Lưu &amp; Gửi Lời Mời</param>
+        <param name="set_status">Quản Lý Trạng Thái</param>
+        <param name="setup_and_install">Thiết Lập &amp;Cài Đặt</param>
+        <param name="setup_roles">Thiết Lập Vai Trò</param>
+        <param name="setup_sharing">Thiết Lập Chia Sẻ</param>
+        <param name="sfga_instructions">Hoàn Tất Hướng Dẫn Có Thể In</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Hiện Chi Tiết</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Bỏ Qua</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Sắp xếp</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Bắt Đầu Họp Mặt</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Gửi</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Nộp &amp; Bổ Sung Tài Liệu Đính Kèm</param>
+        <param name="subscribe_now">Đăng Ký Dài Hạn Ngay Bây Giờ!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Nâng Cấp Ngay Bây Giờ!</param>
+        <param name="suggest">Xem <Solutions/> <Suggested/></param>
+        <param name="take_training_now">Thực Hiện Đào Tạo Ngay Bây Giờ</param>
+        <param name="terminate">Chấm Dứt</param>
+        <param name="training_history">Lược Sử Đào Tạo</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Truyền</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Dùng Thử Ngay Bây Giờ!</param>
+        <param name="undelete">Không Xóa</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Hủy bỏ thao tác</param>
+        <param name="unlock">Ngưng Khóa Hồ Sơ</param>
+        <param name="update">Cập Nhật</param>
+        <param name="update_campaign_history">Cập Nhật &amp; Bổ Sung <Campaign_Members/></param>
+        <param name="update_now">Cập Nhật Ngay Bây Giờ</param>
+        <param name="update_statuses">Cập Nhật Trạng Thái</param>
+        <param name="upload">Tải Lên</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Các Mục Phụ Thuộc Trong Trường</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Xem Các Thành Phần Đã Xóa</param>
+        <param name="view_partnerforce">Xem Người Dùng Đối Tác</param>
+        <param name="view_self_service">Xem Tự Phục Vụ</param>
+        <param name="view_customer_success">Xem Người Dùng Cổng Thông Tin Khách Hàng</param>
+        <param name="enable_customer_success">Cho Phép Người Dùng Cổng Thông Tin Khách Hàng</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Đây là cái gì?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Đóng cửa sổ này</param>
+        <param name="runApexRecalc">Tính Toán Lại Chia Sẻ Apex</param>
+        <param name="disablecustomerportal">Vô Hiệu Hóa Người Dùng Cổng Thông Tin Khách Hàng</param>
+        <param name="disablepartnerportal">Vô Hiệu Hóa Người Dùng Đối Tác</param>
+        <param name="disablecustomerportalaccount">Vô Hiệu Hóa Tài Khoản Cổng Thông Tin Khách Hàng</param>
+        <param name="disablepartnerportalaccount">Vô Hiệu Hóa Tài Khoản Đối Tác</param>
+        <param name="voteup">Bình Chọn Lên</param>
+        <param name="votedown">Bỏ Phiếu Chống</param>
+        <param name="markquestionunanswered">Đánh Dấu là Không Được Trả Lời</param>
+        <param name="markbestanswer">Đánh Dấu là Câu Trả Lời Tốt Nhất</param>
+        <param name="requestUseSfdcAction">Tìm Các Kết Nối</param>
+        <param name="addPET">Bổ Sung Khuôn Mẫu Quyền Được Phép</param>
+        <param name="truncate">Rút ngắn</param>
+        <param name="disableprmsuperuser">Vô Hiệu Hóa Siêu Truy Cập Đối Tác</param>
+        <param name="enableprmsuperuser">Kích Hoạt Siêu Truy Cập Đối Tác</param>
+        <param name="purchase_more">Mua Thêm</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Quay Lại Đầu</param>
+        <param name="descriptionText">Văn bản phần thân quá dài. Hãy xem chi tiết.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Xem tập tin</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Mẹ</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Không Thông Tin Liên Quan</param>
+        <param name="no_records">Không hồ sơ nào hiển thị</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Hiện thêm {0} &#187;</param>
+        <param name="NextMoreGeneric">Hiện thêm &#187;</param>
+        <param name="view_more">Đi đến danh sách</param>
+        <param name="view_more_tot">Đi đến danh sách ({0})</param>
+        <param name="view_more_tot_plus">Đi đến danh sách ({0}+)</param> <!-- -->
+        <param name="view_more_1">Đi đến danh sách với thêm một hồ sơ</param> <!-- Singular -->
+        <param name="view_more_n">Đi đến danh sách cùng với {0} hồ sơ thêm</param> <!-- Plural -->
+        <param name="view_more_n_plus">Đi đến danh sách với {0}+ hồ sơ</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Sẵn có thêm; Đi đến danh sách</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Xác Suất</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Nguồn</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Đã Giành Được</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Kỳ Tài Chính</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Quý {1} của Năm {0}</param>
+        <param name="opportunities_next_step">Bước Kế Tiếp</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Cập Nhật</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <Open/></param>
+        <param name="activities_open"><Activities/> <Open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Liên Quan Đến</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Ghi Chú</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Doc</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Ghi Chú &amp; Tài Liệu Đính Kèm</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Tiêu Đề Ghi Chú</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Tài Liệu Đính Kèm</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Các Tài Liệu Đính Kèm</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Tên tập tin</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Quyền Sở Hữu</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Chính</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> hiển thị</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Ngày</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Chức Vụ</param>
+        <param name="object_title">Chức Vụ</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Tên</param>
+        <param name="object_name">Tên</param>
+        <param name="date">Ngày</param>
+        <param name="due_date">Ngày Tới Hạn</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Sửa đổi mới nhất</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Được Cập Nhật Bởi</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Chính</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Người Cạnh Tranh</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Tên Người Cạnh Tranh</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Điểm Mạnh</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Điểm Yếu</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Xác Suất (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Hoàn Tất</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Đánh Dấu {0} Hoàn Tất</param>
+        <param name="task_date">Ngày</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Tên</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Chấp Thuận <Contract/> Đang Chờ</param>
+        <param name="task_none">Bạn không có <tasks/> <open/> nào được lên kế hoạch cho kỳ này.</param>
+        <param name="task_mode_today">Hôm Nay</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Hôm Nay + Quá Hạn</param>
+        <param name="task_mode_tomorrow">Ngày Mai</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">{0} Ngày Kế Tiếp</param>
+        <param name="task_mode_next_7days_overdue">{0} Ngày Kế Tiếp + Quá Hạn</param>
+        <param name="task_mode_overdue">Quá Hạn</param>
+        <param name="task_mode_this_month">Tháng Này</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Tất Cả Mở</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Lược Sử</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Tin Tức</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Đề Mục</param>
+        <param name="new_date">Ngày</param>
+        <param name="news_none">Không tin tức sẵn có</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Các Khuôn Mẫu Trộn Email</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/> Hàng Đầu</param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Ngày Bổ Sung</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Được Bổ Sung Bởi</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <Solutions/> Được Đính Kèm</param>
+        <param name="description">Mô tả</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Chứng Khoán</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Không có dữ liệu <Activity_History/> hiển thị.</param>
+        <param name="nonotes">Không có dữ liệu Lược Sử Ghi Chú hiển thị.</param>
+        <param name="noattachments">Không có dữ liệu Lược Sử Tài Liệu Đính Kèm hiển thị.</param>
+        <param name="viewallattachments">Xem Tất Cả Các Tài Liệu Đính Kèm</param>
+        <param name="viewalldocsattachments">Xem Tất Cả Google Docs &amp; Attachments</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Ngày</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Mô Tả Đường Truyền</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Sao Chụp API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Được Lọc theo  Người Dùng</param>
+        <param name="apicapture_filterip">Được Lọc theo IP</param>
+        <param name="apicatpure_numbers">Sao Chụp</param>
+        <param name="apicapture_soapscope">Xem Các Sao Chụp</param>
+        <param name="apicapture_active">Đang Hoạt động</param>
+        <param name="apicapture_none">Không Có Sao Chụp</param>
+        <param name="apicapture_new">Bắt Đầu Sao Chụp Mới</param>
+        <param name="apicapture_view">Xem</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Lược Sử Đăng Nhập</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">không có đăng nhập</param>
+        <param name="login_none">Không có lược sử đăng nhập nào sẵn có.</param>
+        <param name="login_username">Tên Người Dùng</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Thời Gian Đăng Nhập</param>
+        <param name="login_type">Loại Đăng Nhập</param>
+        <param name="login_ip">IP Nguồn</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Không Sẵn Có</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Trình Duyệt</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Nền Tảng</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Độ Phân Giải</param>
+        <param name="login_clientversion">Phiên Bản Ứng Dụng Khách</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Ứng Dụng</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Loại API</param>
+        <param name="login_apiversion">Phiên Bản API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Thành Công</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Tải xuống lược sử đăng nhập trong sáu tháng mới nhất, kể cả các đăng nhập từ bên ngoài trang web, chẳng hạn như các đăng nhập API (tập tin .csv Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Tải xuống lược sử đăng nhập, kể cả các đăng nhập chỉ từ trang web đó (Tập tin .csv Excel)</param>
+        <param name="login_history_download_title">Các Tùy chọn Tải xuống</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">Tập tin CSV</param>
+        <param name="login_history_download_file_type_gzip">Tập Tin GZIP</param>
+        <param name="login_history_download_file_type_help">Các tập tin CSV (giá trị phân tách bằng dấu phẩy) có thể được xem bằng cách sử dụng nhiều chương trình bảng tính và trình chỉnh sửa văn bản. Các tập tin GZIP (GNU zip) được nén lại để giảm kích thước của chúng.</param>
+        <param name="login_history_download_option_title">Nội Dung Tập Tin</param>
+        <param name="login_history_download_option_all">Tất Cả Các Lần Đăng Nhập</param>
+        <param name="login_history_download_option_ie6_only">CHỈ Các Lần Đăng Nhập IE6</param>
+        <param name="login_history_download_option_web_only">CHỈ Các Lần Đăng Nhập Trang Web</param>
+        <param name="login_history_download_option_help">"Tất Cả Các Lần Đăng Nhập" bao gồm các lần đăng nhập từ tất cả các nguồn, như trang Web, Outlook, tích hợp API,... "Các Lần Đăng Nhập IE6" chỉ bao gồm các lần đăng nhập từ những người dùng sử dụng Internet Explorer 6. "Các Lần Đăng Nhập Trang Web" chỉ bao gồm những lần đăng nhập từ trang đăng nhập Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Vẫn Sử Dụng IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce đang bỏ dần hỗ trợ cho IE6. Hãy sử dụng các tùy chọn tải xuống được cung cấp để tìm hiểu xem các trình duyệt nào đang được sử dụng trong tổ chức của bạn.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL Đăng Nhập</param>
+        <param name="order_history">Lược Sử Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Không Có Đặt Hàng</param>
+        <param name="order_number">Số Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Ngày Đặt Hàng</param>
+        <param name="order_currency">Tiền Tệ</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Tổng Chi Phí</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Được Bán Cho</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Không có <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Đường Truyền&lt;BR&gt;Số</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Giá Hàng Tháng</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Tham Chiếu Lập Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Tần Suất Lập Hóa Đơn&lt;BR&gt;(tháng)</param>
+        <param name="bo_order_items_billing_frequency_text">Tần Suất Lập Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Điều Khoản Đặt Hàng&lt;BR&gt;(tháng)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Ngày</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Các Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Không có hóa đơn</param>
+        <param name="invoices_invoice_number">Số Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Ngày Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Ngày Tới Hạn Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">Thông Tin Nhận Dạng Hệ Thống Bên Ngoài</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Tổng Số Tiền</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Tới Hạn Cân Bằng</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Tổng Tín Dụng</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Tổng Xóa Bỏ</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Người Liên Hệ mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Công Ty mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Lược Sử Hóa Đơn</param>
+        <param name="revenue_schedule">Kế Hoạch</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Ngày</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Doanh Thu</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Các Nhận Xét</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Lược Sử Trạng Thái</param>
+        <param name="status_none">Không Tìm thấy lược sử trạng thái nào</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Lựa Chọn Dịch Vụ</param>
+        <param name="services_none">Không có dịch vụ</param>
+        <param name="services_description">Dịch Vụ</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Đơn Giá</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Tổng Giá</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Chiết Khấu</param>
+        <param name="training">Lược Sử Lớp Đào Tạo</param>
+        <param name="training_none">Không có</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Tên Lớp Học</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Ngày Được Thực Hiện</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Đã Phản Hồi</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Mặc Định</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> được xác định</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Ngày Bắt Đầu</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Ngày Kết Thúc</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Giá Trị Thời Hạn Sử Dụng</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Có Các Quy Tắc Mua</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Tần Suất Lập Hóa Đơn&lt;br&gt;(tháng)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Được Lập Hóa Đơn Đến Ngày</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <Billed/></param>
+        <param name="event_attending"><Event/> Được Chấp Nhận</param>
+        <param name="event_notdecided">Không Được Phản Hồi</param>
+        <param name="event_declined"><Event/> Bị Từ Chối</param>
+        <param name="event_attending_none">Không người tham dự nào được chấp nhận</param>
+        <param name="event_notdecided_none">Tất cả những người tham dự đều được phản hồi</param>
+        <param name="event_declined_none">Không người tham dự nào bị từ chối</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Tên</param>
+        <param name="documents_size">Kích Thước</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Tác giả</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Xem Biên Bản Kiểm Toán Được Thiết Lập</param>
+        <param name="download">tải xuống</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">20 thực thể mới nhất dành cho tổ chức bạn được liệt kê dưới đây. Bạn có thể {0} biên bản kiểm toán được thiết lập của tổ chức bạn trong vòng 6 tháng vừa qua (Tập tin .csv Excel).</param>
+        <param name="setup_audit_date">Ngày</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Hành động</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Phần</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Delegate User</param>
+        <param name="setup_audit_proxyinguser_help">Cột này liệt kê tên người dùng của người dùng đã thực hiện thay đổi thiết lập thay mặt người dùng đầu cuối. Chẳng hạn như, nếu người dùng đã cấp quyền truy cập đăng nhập cho một đại diện hỗ trợ, thì tên người dùng của đại diện đó được liệt kê.</param>
+        <param name="setup_audit_trail_none">Không thông tin biên bản kiểm toán được thiết lập nào sẵn có</param>
+        <param name="setup_audit_download_csv">Tải biên bản kiểm toán được thiết lập trong 6 tháng vừa qua (Tập tin .csv Excel)</param>
+        <param name="DashboardComponents_title">Các Thành Phần Bảng Điều Khiển</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Không Có Các Thành Phần Bảng Điều Khiển</param>
+        <param name="translated_templates_none">Không Có Khuôn Mẫu Email Được Thông Dịch</param>
+        <param name="translated_templates_title">Khuôn Mẫu Email Được Thông Dịch</param>
+        <param name="translated_templates_language">Ngôn Ngữ</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Đang Hoạt Động</param>
+        <param name="desc_pnet_conn_audit_trail">20 thực thể mới nhất dành cho tổ chức bạn được liệt kê dưới đây. Bạn có thể {0} lược sử biên bản kiểm toán kết nối đầy đủ dưới dạng Tập tin .csv Excel.</param>
+        <param name="pnet_conn_audit_trail">Lược Sử Kết Nối</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Ngày</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Không thông tin biên bản kiểm toán kết nối nào sẵn có</param>
+        <param name="pnet_conn_audit_download_csv">Tải xuống lược sử kết nối (csv)</param>
+        <param name="pnet_entity_conns_title">Chia Sẻ Bên Ngoài</param>
+        <param name="pnet_entity_conn_stop_sharing">Ngừng Chia Sẻ</param>
+        <param name="pnet_pub_title">Các Đối Tượng Được Xuất Bản</param>
+        <param name="pnet_sub_title">Các Đối Tượng Được Đăng Ký Dài Hạn</param>
+        <param name="pnet_pubsub_object">Tên Đối Tượng</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Các Trường</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Xuất Bản/Không Xuất Bản</param>
+        <param name="pnet_sub_edit">Đăng Ký Dài Hạn/Không Đăng Ký Dài Hạn</param>
+        <param name="pnet_pub_edit_object">Đối tượng được xuất bản.</param>
+        <param name="pnet_pub_edit_field">Nhấp Chỉnh Sửa dưới đây để xuất bản đến các trường sẵn có trên mỗi đối tượng.</param>
+        <param name="pnet_sub_edit_object">Đối tượng được đăng ký dài hạn.</param>
+        <param name="pnet_sub_edit_field">Nhấp Chỉnh Sửa dưới đây để đăng ký dài hạn các trường sẵn có trên mỗi đối tượng.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Nội dung</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Tài Liệu Đính Kèm Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Lỗi Khi Đang Nạp Các Danh Sách Liên Quan</param>
+        <param name="ajax_exception_desc">Đã có một vấn đề khi tập hợp thông tin danh sách liên quan cho hồ sơ này. Nếu nạp lại trang này không khắc phục vấn đề đó được, hãy liên hệ với quản trị viên của bạn hoặc &lt;a href="{0}" title="report{1}"&gt;thông báo&lt;/a&gt; vấn đề đó cho nhóm Hỗ Trợ Khách Hàng.</param>
+        <param name="category_access_title">Cài Đặt Trạng Thái Nhìn Thấy Nhóm Phân Loại</param>
+        <param name="category_access_video_tutorial">Hướng Dẫn Học Video</param>
+        <param name="category_access_name">Nhóm Phân Loại</param>
+        <param name="category_access_access">Trạng Thái Nhìn Thấy</param>
+        <param name="category_access_details">Chi Tiết Trạng Thái Nhìn Thấy</param>
+        <param name="category_access_custom">Tùy Thích</param>
+        <param name="category_access_full">Tất cả</param>
+        <param name="category_access_inherited">Được thừa hưởng từ {0}</param>
+        <param name="category_access_revoked">Không có</param>
+        <param name="category_access_userNodeAndChildren_Profile">hồ sơ</param>
+        <param name="category_access_userNodeAndChildren_UserRole">vai trò và các cấp dưới</param>
+        <param name="category_access_noCategories">Không phân loại nào nhìn thấy được đối với {0}này</param>
+        <param name="category_access_allCategories">Tất cả các phân loại đều nhìn thấy được đối với {0} này</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} cho {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Tổng Hoa Kỳ &amp; Tây Âu (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Tiếng Nhật (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Tiếng Nhật (JIS)</param>
+        <param name="4">Tiếng Nhật (EUC)</param>
+        <param name="5">Tiếng Hàn (ks_c_5601-1987)</param>
+        <param name="6">Tiếng Trung Phồn Thể (Big5)</param>
+        <param name="7">Tiếng Trung Giản Thể (GB2312)</param>
+        <param name="8">Tiếng Hồng Kông Trung Quốc Truyền Thống (Big5-HKSCS)</param>
+        <param name="9">Tiếng Nhật (Shift-JIS)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Tổ Chức Dùng Thử</param>
+        <param name="expand">Nhấp Mở Cột Bên [Alt+S]</param>
+        <param name="collapse">Nhấp Đóng Cột Bên [Alt+S]</param>
+        <param name="expandNoHotkey">Nhấp để Mở Cột Bên</param>
+        <param name="collapseNoHotkey">Nhấp để Đóng Cột Bên</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Lên</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Xuống</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Di Chuyển</param>
+        <param name="top">Đầu</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Cuối</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Hãy điền vào các trường bắt buộc.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Tất Cả Người Dùng</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Mới</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Bổ Sung</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Xóa</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Thay Đổi]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Tôi làm thế nào...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Xem Thêm</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="log_call">Ghi Một Cuộc Gọi</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Ghi Một Ghi Chú</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Trộn Thư</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Xem Tất Cả</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Đính Kèm Tập Tin</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Tôi làm thế nào?</param>
+        <param name="send_email">Gửi Một Email</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Hình ảnh được bổ sung bởi người dùng</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Các Ứng Dụng</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Giao Diện Có Thể In</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Bản Sao</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Chia Sẻ</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Trang Chủ</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Hãy cho tôi biết thêm!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Lựa Chọn Một:</param>
+        <param name="hotlist_mode">Hiển Thị Lựa Chọn</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Hiện {0,number,integer} mục</param>
+        <param name="hotlist_empty_title">Không có hồ sơ gần đây. Nhấp Thực Hiện hoặc lựa chọn một giao diện từ danh sách thả dọc để hiển thị các hồ sơ</param>
+        <param name="hotlist_empty_description">Không có hồ sơ nào sẵn có cho tiêu chuẩn này.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Đi đến Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Trung Tâm Tài Nguyên</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Với Trung Tâm Tài Nguyên, bạn có thể nghiên cứu các triển vọng, Tìm các dịch vụ bên dòng ba, và thêm nhiều tiện ích khác.</param>
+        <param name="resource_center_link_text">Đi đến Trung Tâm Tài Nguyên</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Các Phương Pháp Luận Kinh Doanh</param>
+        <param name="hotlist_recently_modified">Được Sửa Đổi Gần Đây</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Được Tạo Lập Gần Đây</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Được Xem Gần Đây</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Không Có--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Lựa Chọn--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Mặc Định--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Không Áp Dụng Được**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Quản trị viên của bạn đã không xác định bất kỳ Liên Kết Tùy Thích nào.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Nhảy Đến:</param>
+        <param name="JumpToStep">Bước {0}: {1}</param>
+        <param name="CloseWizard">Đóng Trình Hướng Dẫn</param>
+        <param name="LeftHeader">Bước{0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Bước {0} /{1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Bước {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Lưu &amp; Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Kế Tiếp</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Trước đó</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Trình Hướng Dẫn Thiết Lập Tổ Chức cho {0}</param>
+        <param name="ImportWizardTitle">Trình Hướng Dẫn Nhập cho {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Trung Tâm Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Đăng Ký Dùng Thử</param>
+        <param name="WizardBody">Phần Thân Trình Hướng Dẫn</param>
+        <param name="WizardFooter">Phần Cuối Trình Hướng Dẫn</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Địa Chỉ</param><!-- translators note - this is actually the full address -->
+        <param name="street">Địa Chỉ</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Thành Phố</param><!-- aliased across label files - do not change -->
+        <param name="state">Tiểu Bang/Tỉnh</param><!-- aliased across label files - do not change -->
+        <param name="zip">Mã Bưu Điện</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Mã Bưu Điện/Mã Bưu Điện</param> <!-- aliased across label files - do not change -->
+        <param name="country">Quốc Gia</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Điện Thoại</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Máy Nhánh</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Máy Nhánh Số Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Email</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Địa Chỉ Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Phố Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Thành Phố Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Tiểu Bang/Tỉnh Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Mã Bưu Điện Vận Chuyển Đến</param>
+        <param name="shippingzippostalcode">Mã Bưu Điện/Mã Bưu Điện Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Quốc Gia Vận Chuyển Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Địa Chỉ mà Hóa Đơn Được Gửi Đến</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Thành Phố mà Hóa Đơn Được Gửi Đế</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Tiểu Bang/Tỉnh mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Mã Bưu Điện/Mã Bưu Điện mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Quốc Gia mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Phố mà Hóa Đơn Được Gửi Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Phố Ngân Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Địa Chỉ Ngân Hàng</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Thành Phố Ngân Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Tiểu Bang/Tỉnh Ngân Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Mã Bưu Điện/Mã Bưu Điện Ngân Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Quốc Gia Ngân Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Địa Chỉ Gửi Thư Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Phố Gửi Thư Đến</param>
+        <param name="mailingcity">Thành Phố Gửi Thư Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Tiểu Bang/Tỉnh Gửi Thư Đến</param>
+        <param name="mailingzip">Mã Bưu Điện/Mã Bưu Điện Gửi Thư Đến</param>
+        <param name="mailingcountry">Quốc Gia Gửi Thư Đến</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Địa Chỉ Gửi Thư Đến Dòng1</param>
+        <param name="mailingaddress2">Địa Chỉ Gửi Thư Đến Dòng2</param>
+        <param name="mailingaddress3">Địa Chỉ Gửi Thư Đến Dòng3</param>
+        <param name="otheraddress">Địa Chỉ Khác</param>
+        <param name="otheraddress1">Địa Chỉ Khác Dòng 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Địa Chỉ Khác Dòng 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Địa Chỉ Khác Dòng 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Phố Khác</param>
+        <param name="otherstreet2">Phố Khác 2</param>
+        <param name="otherstreet3">Phố Khác 3</param>
+        <param name="othercity">Thành Phố Khác</param>
+        <param name="otherstate">Tiểu Bang/Tỉnh Khác</param>
+        <param name="otherzipcode">Mã Bưu Điện Khác</param>
+        <param name="otherpostalcode">Mã Bưu Điện Khác</param>
+        <param name="otherzippostalcode">Mã Bưu Điện/Bưu Điện Khác</param>
+        <param name="othercountry">Quốc Gia Khác</param>
+        <param name="otherphone">Điện Thoại Khác</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Máy Nhánh Điện Thoại Khác</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Địa Chỉ 1</param>
+        <param name="address2">Địa Chỉ 2</param>
+        <param name="address3">Địa Chỉ 3</param>
+        <param name="home_phone">Điện Thoại Nhà</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Đang Nạp...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Vị Trí</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Số Lượng</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Công cụ tùy biến</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Người Quản Lý Người Liên Hệ</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Có</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Không</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Chào mừng đến salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Bản Quyền © 2000-{0} của salesforce.com, inc. Bản quyền được bảo hộ.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Bản Quyền &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Bản Quyền Được Bảo Hộ.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Tuân Thủ 508</param>
+        <param name="copyright_nohtml">Bản Quyền (c) 2000-{0} của salesforce.com, inc. Quyền Được Bảo Hộ.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Bản quyền © {0} {1}. Bản quyền được bảo hộ.</param>
+        <param name="brandedCopyrightWithLink">Bản Quyền &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;inc. Bản quyền được bảo hộ.</param>
+        <param name="brandedCopyright_nohtml">Bản Quyền (c) {0} {1}. Bản quyền được bảo hộ.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Tuyên Bố Bảo Mật</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Điều Khoản Sử Dụng</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Xin cảm ơn đã chọn salesforce.com. Trước khi bạn có thể bắt đầu sử dụng salesforce.com, bạn phải đọc và đồng ý các điều khoản sử dụng dưới đây. Ngay sau khi bạn hoàn tất, hãy tiếp tục bằng cách nhấp nút "Tôi Chấp Nhận". Xin lưu ý là, nếu bạn không chấp nhận Thỏa Thuận Sử Dụng này, bạn sẽ không thể đăng nhập đến salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Xong</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Bổ Sung Ngay Bây Giờ!</param>
+        <param name="remove">Gỡ bỏ</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Mới</param>
+        <param name="exciting_and_new">Mới!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">tại đây</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Tạo</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Đóng Cửa Sổ</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">In Trang Này</param>
+        <param name="new_window">(Cửa Sổ Mới)</param>
+        <param name="new_focus">(Dịch Chuyển Tiêu Điểm)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Khung Ẩn- Lờ Đi</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">lựa chọn tất cả</param>
+        <param name="select_shown">Chọn Được Hiển Thị</param>
+        <param name="remove_shown">Gỡ Bỏ Được Hiển Thị</param>
+        <param name="select_none">Chọn Không Có</param>
+        <param name="all_active">Tất Cả Đang Hoạt Động</param>
+        <param name="all_inactive">Tất Cả Không Hoạt Động</param>
+        <param name="are_you_sure">Bạn có chắc chắn không?</param>
+        <param name="irreversible_are_you_sure">Không Thể Thay Đổi Được! Bạn có chắc chắn không?</param>
+        <param name="replace">Thay Thế</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Hoàn Tất</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} phút</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Nhiều mục được Tìm thấy. Lựa chọn từ danh sách thả dọc hoặc nhấp biểu tượng để chỉnh sửa lại Tìm kiếm.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Đặt Lại</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Thay Thế</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Tổng</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Nhấp vào đây</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Các ghi chú cho chủ web:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML Mẫu</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Mật khẩu</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Không hiện trang này lại</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Ẩn tin nhắn này đối với: </param>
+        <param name="dontShowMessageAgain">Không hiện tin nhắn này lại</param>
+        <param name="dismissMessage">Gạt bỏ tin nhắn này</param>
+        <param name="allObjects">Tất Cả Các Đối Tượng</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Nhấn thanh dấu cách hoặc phím Enter để mở</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Tự Phục Vụ: <Case_Detail/></param>
+        <param name="CssEdit">Tự Phục Vụ: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Nguồn Cấp <Case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Nhận xét</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Các Đối Tượng Tùy Thích</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Xác Định Đối Tượng Tùy Thích</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Bảng Điều Khiển</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Các Bảng Điều Khiển</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Bỏ Chọn Tất Cả</param>
+        <param name="deselect_shown">Bỏ Chọn Hiện</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Khuôn Mẫu Trộn Thư</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Các Khuôn Mẫu Trộn Thư</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Thư Mục</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Các Thư Mục</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Các Dự Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Các Dự Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent Supervisor</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Hóa Đơn</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Các Ghi Chú</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Đơn Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Các Đơn Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Mục Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Các Mục Đặt Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Thanh Toán</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Các Thanh Toán</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">báo cáo</param>
+        <param name="Reports">Báo Cáo</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Đăng Ký</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Khuôn Mẫu</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Các Khuôn Mẫu</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Bảng</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Đang Hoạt Động</param>
+        <param name="amount">Số Tiền</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Doanh Thu Hàng Năm</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Đính Kèm Tài Liệu</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Thay Đổi Mật Khẩu</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Đóng</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Đã đóng</param>
+        <param name="closed_date">Ngày Được Đóng</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Ngày Đóng</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Tạo Ngày</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Loại Dữ Liệu</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Đã Xóa</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Thông Tin Mô Tả</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Nhân Viên</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Tập Tin</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Tập tin</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Thông Tin Chung</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Lấy Thông Tin Trước Khi Bạn Khởi Động</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Nhãn</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Đăng Nhập Mới Nhất</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Ngày Sửa Đổi Mới Nhất</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Tên</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Tên</param>
+        <param name="new_status">Trạng Thái Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Không có</param>
+        <param name="open">Mở</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Tổ Chức</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Không trường hợp thỏa mãn nào được Tìm thấy.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Tất cả</param>
+        <param name="clear">Xóa</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Nhấp vào biểu tượng tra cứu...</param>
+        <param name="click_lookup_icon_info">Nhấp vào biểu tượng tra cứu để lựa chọn một giá trị.</param>
+        <param name="clear_all">Làm Sạch Tất Cả</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Nhấp nút Đính Kèm.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Lỗi</param> <!-- aliased across lables - do not change -->
+        <param name="high">Cao</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Trợ Giúp</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Đưa Tôi Đến Đó!</param>
+        <param name="keywords">Từ Khóa</param>
+        <param name="length">Độ Dài</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Trạng thái</param> <!-- aliased across lables - do not change -->
+        <param name="title">Chức Vụ</param>
+        <param name="object_title">Chức Vụ</param>
+        <param name="type">Loại</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Người Dùng</param> <!--aliased across labels - do not change -->
+        <param name="Users">Người Dùng</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Bộ Quyền Được Phép</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Hồ sơ</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Các Hồ Sơ</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Chủ sở hữu</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">trải nghiệm sự thành công.</param>
+        <param name="DontShowPage">Không chỉ lại cho tôi trang này.</param>
+        <param name="click_here_to_create_new_account">{0} để tạo lập một <account/> <new/> ngay bây giờ.</param>
+        <param name="click_here_to_create_new_contact">{0} để tạo lập một <contact/> <new/> ngay bây giờ.</param>
+        <param name="click_here_to_create_new_lead">{0} để tạo lập một <lead/> <new/>  ngay bây giờ.</param>
+        <param name="click_here_to_create_new_opportunity">{0} để tạo lập một <opportunity/> <new/>  ngay bây giờ.</param>
+        <param name="click_here_to_create_new_product">{0} để tạo lập một <product/> <new/> ngay bây giờ.</param>
+        <param name="SystemModstamp">Hệ Thống Modstamp</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Bộ Phận</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Đang Xử Lý</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Đang cập nhật hồ sơ...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Bản Thông Dịch Tĩnh</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Ẩn trang này sau này</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Đang tải lên...</param>
+        <param name="uploading_title">Đang tải lên</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Đang Nhập...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">và </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Lỗi: Không có quyền truy cập trường này</param>
+        <param name="noReadAccess">Bạn không có quyền truy cập để xem hồ sơ này</param>
+        <param name="noAccessToUser">Bạn không có quyền truy cập người dùng này.</param>
+        <param name="disabledButton">Nút Bị Vô Hiệu Hóa: {0}</param>
+        <param name="RequiredHeader">Thông Tin Bắt Buộc</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Chèn một Hình Ảnh</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Bạn có chắc chắn là mình muốn xóa Dăy Đăng Nhập IP không</param>
+        <param name="AMPM">Mục Nhập AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Thành Phần Được Bảo Vệ</param>
+        <param name="dialogCloseConfirm">Cửa sổ xác nhận mà bạn đang xem có thể đã đóng lại nhanh. Nhấp OK để quay lại nó hoặc Hủy Bỏ để phớt lờ cảnh báo này.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Bắt Đầu Hội Thoại</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Kết Quả Tìm Kiếm</param>
+        <param name="Recent">Được Xem Gần Đây</param>
+        <param name="NoMatchHeader">Không có hồ sơ nào được tìm thấy do một trong số nguyên nhân sau đây:</param>
+        <param name="BulletOne">Không có hồ sơ nào thuộc loại này</param>
+        <param name="BulletTwo">Bạn không có quyền được phép để xem bất kỳ trong số những hồ sơ này</param>
+        <param name="BulletThree">Hồ sơ không phù hợp với tiêu chuẩn bộ lọc do quản trị viên thiết lập</param>
+        <param name="BulletFour">Một hoặc nhiều trường điều khiển bị trống hoặc không hợp lệ (trường Điều Khiển:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Người Dùng Sẵn Có</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Người Dùng Được Chọn</param>
+        <param name="LicensedUsers">Người Dùng Được Cấp Bản Quyền</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Đã Chọn Gỡ Bỏ</param>
+        <param name="Selected">Đã Chọn</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Đã Chọn</param>
+        <param name="UnassignedPackages">Các Gói Không Được Phân Công</param>
+        <param name="SelectedPackages">Các Gói Đã Chọn</param>
+        <param name="InView">trong giao diện</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Tập tin này vượt quá giới hạn kích thước tối đa {0}.</param>
+        <param name="no_file_specified">Hãy chỉ định một tập tin tải lên. Nhập vào đường dẫn đến tập tin, hoặc sử dụng nút "Duyệt Qua" để định vị nó trong hệ thống tập tin cục bộ của bạn.</param>
+        <param name="invalid_file_type">Loại tập tin mà bạn chỉ định hiện không được hỗ trợ.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Tên tập tin vượt quá độ dài tối đa được phép là{0} ký tự.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Đuôi tên tập tin vượt quá độ dài tối đa được phép, là {0}ký tự.</param>
+        <param name="bytes">byte</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Loại tập tin HTML không được cho phép vì các lý do bảo mật.</param>
+        <param name="attachment_size_exceeded">Tập tin được tải lên đã vượt quá kích thước tối đa.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Lỗi:&lt;/b&gt; Bạn phải lựa chọn một hình ảnh tải lên</param>
+        <param name="upload_file_too_large">&lt;b&gt;Lỗi:&lt;/b&gt; Hình ảnh vượt quá giới hạn kích thước là 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Lỗi:&lt;/b&gt; Bạn chỉ có thể chèn các tập tin .gif .jpeg và .png.</param>
+        <param name="upload_failed">&lt;b&gt;Lỗi:&lt;/b&gt; Không tải lên được - Hãy thử lại sau.</param>
+        <param name="invalid_file">&lt;b&gt;Lỗi:&lt;/b&gt; Tập tin không phải là một tập tin ảnh hợp lệ.</param>
+        <param name="invalid_param">&lt;b&gt;Lỗi:&lt;/b&gt; Các thông số không hợp lệ.</param>
+        <param name="access_failed_alt">Hình ảnh này không sẵn có bởi vì: Bạn không có quyền xem nó, hoặc nó đã bị gỡ bỏ khỏi hệ thống</param>
+        <param name="weekly_export_folder">Tài Sản Tải Lên Khác/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} đã tạo lập thành công.</param>
+        <param name="Failure_message">Không Tạo Lập Được.</param>
+        <param name="Common_success_message">Tạo Lập Thành Công.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Yêu Cầu Giảm Bớt Bản Quyền</param>
+        <param name="pageheader">Vui lòng điền vào tất cả các trường bắt buộc để nộp yêu cầu giảm bớt bản quyền của bạn. Đây là cách nhanh nhất để yêu cầu của bạn được xử lý.  Vui lòng không nộp nhiều yêu cầu cho cùng bản quyền vì điều này có thể gây ra các trì hoãn không cần thiết.</param>
+        <param name="title_landing">Yêu cầu của bạn đã được nhận!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Yêu cầu của bạn đã được nhận và sẽ được xử lý trong đơn đặt hàng đã nhận. Vui lòng lưu ý rằng các yêu cầu trong việc giảm bớt tổng số bản quyền của bạn sẽ có hiệu lực bắt đầu cùng với kỳ lập hóa đơn kế tiếp theo sau yêu cầu của bạn miễn là bạn thông báo với salesforce.com trước năm ngày kinh doanh của ngày hóa đơn cho kỳ lập hóa đơn kế tiếp của bạn.</param>
+        <param name="pageheader_landing">Yêu cầu của bạn đã được nhận và sẽ được xử lý trong đơn đặt hàng đã nhận. Các yêu cầu trong việc giảm bớt tổng số bản quyền của bạn sẽ có hiệu lực 30 ngày sau ngày đã nộp yêu cầu của bạn. Vui lòng không nộp nhiều yêu cầu giảm bớt bản quyền đối với cùng loại bản quyền, vì điều này có thể làm trì hoãn tiến trình xử lý yêu cầu của bạn.</param>
+        <param name="title_error">Không thể xử lý yêu cầu của bạn.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Chúng tôi không thể nộp yêu cầu của bạn tại thời điểm này. Xin vui lòng thử lại sau.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Đang Nộp Yêu Cầu Của Bạn</param>
+        <param name="reason">Lý do</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Vui Lòng Mô Tả&lt;br&gt; Chi Tiết Hơn</param>
+        <param name="numLicenses">Số Lượng Bản Quyền</param>
+        <param name="potentialResponse">Làm thế nào mà chúng tôi có thể tiếp tục &lt;br&gt; hoạt động kinh doanh của bạn?</param>
+        <param name="tips_title">Các Lời Khuyên về Nộp Yêu Cầu Giảm Bớt Bản Quyền</param>
+        <param name="tip1">Vui lòng điền vào tất cả những thông tin một cách chính xác để đảm bảo việc xử lý nhanh chóng và chuẩn xác yêu cầu của bạn.  Trước khi nộp yêu cầu này, hãy đảm bảo là bạn sẽ tắt kích hoạt đủ số lượng người dùng để tổng số người dùng của bạn ít hơn hoặc bằng với tổng số bản quyền mới của bạn. Điều này có thể được thực hiện thông qua tính năng &lt;a href="{0}"&gt; Quản Lý Người Dùng&lt;/a&gt; trong &lt;a href="{1}"&gt;Thiết Lập Của Tôi&lt;/a&gt;.</param>
+        <param name="type1">Hủy Bỏ Tài Khoản</param>
+        <param name="type2">Giảm Bớt Bản Quyền Người Dùng</param>
+        <param name="type3">Giảm Bớt Bản Quyền Ngoại Tuyến</param>
+        <param name="type4">Giảm Bớt Bản Quyền Chiến Dịch</param>
+        <param name="type5">Mobile Edition cho hủy bỏ hoàn toàn</param>
+        <param name="type6">Mobile Edition cho Giảm Bớt Bản Quyền Hoàn Toàn</param>
+        <param name="type7">Giảm Bớt Bản Quyền Force.com Mobile</param>
+        <param name="reason_0">Công Ty  Mua Lại/Hợp Nhất</param>
+        <param name="reason_1">Giải Tán Công Ty</param>
+        <param name="reason_2">Người Bán Hàng Bị Loại</param>
+        <param name="reason_3">Người Dùng Đầu Cuối Không Áp Dụng</param>
+        <param name="reason_4">Tính năng không đáp ứng với các kỳ vọng</param>
+        <param name="reason_5">Quản Lý Không Xem Đầy Đủ Giá Trị</param>
+        <param name="reason_6">Trải nghiệm kém với các nhân viên salesforce.com</param>
+        <param name="reason_7">Giá Quá Cao</param>
+        <param name="reason_8">Chuyển Đổi Sang Một Người Cạnh Tranh</param>
+        <param name="reason_9">Các Bản Quyền Không Dùng Đến</param>
+        <param name="reason_10">Khác</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Hãy điền vào các trường dưới đây:</param>
+        <param name="title">Gửi Thông Tin Phản Hồi đến salesforce.com</param>
+        <param name="title_upgrade_me">Ghi Một Yêu Cầu Nâng Cấp</param>
+        <param name="title_support">Gửi Thông Tin Phản Hồi</param>
+        <param name="warning_line_too_long">Cảnh Báo: Mô Tả lớn hơn 4000 ký tự, và sẽ bị cắt bớt.\\n</param>
+        <param name="feedback_info">Liên Hệ với Bộ Phận Hỗ Trợ Khách Hàng</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Hỗ Trợ Khách Hàng sẵn có để ghi nhận bất kỳ thắc mắc hay thông tin phản hồi nào mà bạn có thể có. Chúng tôi tin cậy rất nhiều vào thông tin phản hồi từ các khách hàng của chúng tôi trong việc giúp tạo hình và định dạng cho salesforce.com. Chúng tôi vui mừng và cảm kích khi lắng nghe các ý kiến của bạn, và rất mong được nghe phản hồi từ bạn.</param>
+        <param name="general_info_me">Để Tìm hiểu thêm về việc nâng cấp từ Personal Edition lên bất kỳ các Edition của công ty chúng tôi, hãy điền vào mẫu đơn dưới đây. Một đại diện bán hàng sẽ gọi lại cho bạn trong vòng 48 giờ kinh doanh.</param>
+        <param name="general_info_support">Hỗ Trợ Khách Hàng sẵn có để ghi nhận bất kỳ thắc mắc hay thông tin phản hồi nào mà bạn có thể có. Chúng tôi tin cậy rất nhiều vào thông tin phản hồi từ các khách hàng của chúng tôi trong việc giúp tạo hình và định dạng cho Salesforce CRM Call Center. Chúng tôi vui mừng và cảm kích khi lắng nghe các ý kiến của bạn, và rất mong được nghe phản hồi từ bạn.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Mới</param>
+        <param name="functionalArea">Chủ Đề</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Thắc Mắc</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Yêu Cầu</param>
+        <param name="type3">Thông Tin Phản Hồi</param>
+        <param name="type4">Yêu Cầu Tính Năng</param>
+        <param name="priority1">Khẩn Cấp</param>
+        <param name="priority2">Bình Thường</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Thấp</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Tôi muốn đăng ký dài hạn Professional Edition ngay bây giờ</param>
+        <param name="subject_subscribe_me">Tôi muốn nâng cấp ngay bây giờ</param>
+        <param name="subject_subscribe_we">Tôi muốn có thêm thông tin về Professional Edition</param>
+        <param name="subject_subscribe_ee">Tôi muốn đăng ký dài hạn Enterprise Edition ngay bây giờ</param>
+        <param name="subject_subscribe_ue">Tôi muốn đăng ký dài hạn ngay bây giờ Unlimited Edition</param>
+        <param name="subject_subscribe_support">Tôi muốn đăng ký dài hạn ngay bây giờ</param>
+        <param name="subject_data_export">Tôi muốn có Dịch Vụ Xuất Hàng Tuần</param>
+        <param name="subject_marketing_licenses">Bổ Sung Bản Quyền Tiếp Thị</param>
+        <param name="subject_offline_licenses">Bổ Sung Bản Quyền Ngoại Tuyến</param>
+        <param name="subject_wireless_licenses">Bổ Sung Bản Quyền Không Dây</param>
+        <param name="subject_offlinepda_licenses">Bổ Sung Bản Quyền Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Bổ Sung Bản Quyền Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">Bổ Sung Bản Quyền Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Bổ Sung Bản Quyền Kiến Thức</param>
+        <param name="subject_interaction_licenses">Bổ Sung Bản Quyền Force.com Flow</param>
+        <param name="subject_support_licenses">Bổ Sung Bản Quyền Service Cloud</param>
+        <param name="subject_jigsaw_licenses">Thêm Jigsaw Licenses</param>
+        <param name="subject_liveagent_licenses">Thêm Live Agent Licenses</param>
+        <param name="subject_siteforcecontributor_licenses">Thêm Bản quyền Site.com Contributor</param>
+        <param name="subject_siteforcepublisher_licenses">Thêm Bản quyền Site.com Publisher</param>
+        <param name="subject_chatteranswers_licenses">Bổ sung Giấy Phép Chatter Answers</param>
+        <param name="subject_license_reduction">Giảm Giá Bản Quyền</param>
+        <param name="functionalArea_0">Quản Lý Tài Khoản/Bản Quyền</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Yêu Cầu Lập Hóa Đơn</param>
+        <param name="functionalArea_3">Nối Dữ Liệu</param>
+        <param name="functionalArea_4">Email/ Email HTML</param>
+        <param name="functionalArea_5">Dự Báo&amp; Cơ Hội</param>
+        <param name="functionalArea_6">Đang Nhập</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Các Khách Hàng Tiềm Năng</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Thực Thi</param>
+        <param name="functionalArea_9">Báo Cáo &amp; Giao Diện</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Đăng Ký Dài Hạn Ngay Bây Giờ!</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Đồng Bộ</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Dịch Vụ Xuất Hàng Tuần</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Không Dây</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Khác</param>
+        <param name="functionalArea_16">Bản Quyền Tiếp Thị</param>
+        <param name="functionalArea_17">Bản Quyền Ngoại Tuyến</param>
+        <param name="functionalArea_18">Hồ Sơ/Bố Cục Trang/Loại Hồ Sơ</param>
+        <param name="functionalArea_19">Chiến Dịch</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Tự Phục Vụ</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Bản Quyền Không Dây</param>
+        <param name="functionalArea_22">Nâng Cấp Ngay Bây Giờ</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Bản Quyền Sales Anywhere</param>
+        <param name="functionalArea_24">Nhiệm Vụ/Sự Kiện </param>
+        <param name="functionalArea_25"><Products/> &amp; Tiền Trả Góp / <Pricebooks/></param>
+        <param name="functionalArea_26">Thông Báo Thỏa Thuận Lớn </param>
+        <param name="functionalArea_27">Tài Liệu</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Trường Hợp &amp; Giải Pháp </param>
+        <param name="functionalArea_29">Tìm Kiếm</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Chia Sẻ</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition cho au</param>
+        <param name="functionalArea_35">Bản Quyền Cổng Thông Tin Đối Tác</param>
+        <param name="functionalArea_36">Bản Quyền Force.com Mobile</param>
+        <param name="functionalArea_37">Bản Quyền Salesforce CRM Content</param>
+        <param name="functionalArea_38">Bản Quyền Service Cloud</param>
+        <param name="functionalArea_39">Jigsaw License</param>
+        <param name="functionalArea_40">Live Agent License</param>
+        <param name="functionalArea_41">Bản quyền Site.com Contributor</param>
+        <param name="functionalArea_42">Bản quyền Site.com Publisher</param>
+        <param name="functionalArea_43">Giấy Phép Chatter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Nếu bạn thích nói chuyện trực tiếp với một đại diện dịch vụ khách hàng, hãy gọi cho số (415) 901-7010 từ 6 giờ sáng đến 6 giờ chiều theo Giờ Thái Bình Dương, Dòng Hai&amp;#150;Dòng Sáu, hoặc gọi cho số +353-1-2723503 từ 8 giờ sáng đến 6 giờ tối theo giờ GMT, Dòng Hai&amp;#150;Dòng Sáu.</param>
+        <param name="tips_title">Lời Khuyên cho Nộp Trường Hợp</param>
+        <param name="tip1">Hãy chắc chắn rằng bạn đã cung cấp đủ thông tin cho chúng tôi để chúng tôi có thể giải đáp trường hợp của bạn nhanh nhất có thể.  Chúng tôi đã cung cấp một số gợi ý và các thông báo nhắc dưới đây:</param>
+        <param name="tip2">Hãy cho chúng tôi biết bạn đang cố gắng làm gì, bạn nghĩ điều gì sẽ xảy ra, và điều gì đang xảy ra thay vào đó.</param>
+        <param name="tip3">Hãy cho chúng tôi biết những bước nào cần có để tạo lại vấn đề của bạn.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Xem:</param>
+        <param name="X">X</param>
+        <param name="close">Đóng</param>
+        <param name="MLclose">Đóng</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Xóa</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Xóa</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Xóa</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Hồ Sơ</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Thiết Lập</param>
+        <param name="activate">Kích Hoạt</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Tắt Kích Hoạt</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Quản lý</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Xuất</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Trang Kế Tiếp</param>
+        <param name="prev">Trang Trước Đó</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Tổng mục ở giao diện: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Hiện cho tôi {0} {1} hồ sơ trên mỗi trang danh sách</param>
+        <param name="number_shown_detail_page">Luôn hiện cho tôi {0} {1} {2} hồ sơ trên mỗi danh sách liên quan</param>
+        <param name="number_shown_adjust_less_link">ít hơn</param>
+        <param name="number_shown_adjust_more_link">thêm</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">tất cả</param>
+        <param name="last_page">Quay lại Trang Trước Đó</param>
+        <param name="last_list">Quay Lại Danh Sách</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Quay Lại Danh Sách:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Quay Lại Danh Sách: <Entity entity="0" plural="y"/> từ các Kết Nối</param>
+        <param name="last_suggested_solution_list">Trở lại Danh Sách <Solutions/> <Suggested/></param>
+        <param name="last_solution_search_list">Trở lại Kết Quả Tìm Kiếm <Solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Trở lại <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Hành Động:</param>
+        <param name="checkboxPrompt">Hãy chọn ít nhất một hàng</param>
+        <param name="checkboxSinglePrompt">Hãy chọn một hàng duy nhất</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Các lựa chọn của bạn trên trang này sẽ bị mất. Bạn có muốn tiếp tục?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Bạn phải lựa chọn {0} hàng hoặc ít hơn để thực hiện thao tác này.</param>
+        <param name="selectionLimit">Bạn không thể lựa chọn nhiều hơn {0} hàng.</param>
+        <param name="login">Đăng Nhập</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Phiên</param>
+        <param name="none">Không hồ sơ nào hiển thị.</param>
+        <param name="no_rows">Không có hàng nào được lựa chọn</param>
+        <param name="subtotal">Tổng phụ:</param>
+        <param name="total">Tổng:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Chọn tất cả các mục</param>
+        <param name="clearAllInfo">Không chọn tất cả các mục</param>
+        <param name="rename">Đổi Tên</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Lựa Chọn</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Bỏ Chọn</param>
+        <param name="toggleall">Chuyển Đổi Tất Cả Các Hàng</param>
+        <param name="refresh">Làm Mới</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Hãy lựa chọn một giao diện.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Giao diện mà bạn chỉ định vượt quá kích thước tối đa. Hãy thu hẹp tiêu chí Tìm kiếm của bạn bằng cách chỉnh sửa giao diện hoặc tạo lập một giao diện mới.</param>
+    <param name="switch_view">Chuyển Đổi Giao Diện</param>
+    <param name="records_x_to_y">Đang hiển thị các hồ sơ {0} - {1}</param>
+    <param name="records_x_to_y_more">Đang hiển thị các hồ sơ {0} - {1}, thêm hồ sơ sẵn có.</param>
+    <param name="records_x_to_y_more_showing_max">Đang hiển thị các hồ sơ {0} - {1}. Trang này chỉ có thể hiển thị 1.000 hồ sơ đầu tiên mặc dù sẵn có nhiều hồ sơ hơn. Để hiện ít hồ sơ hơn, hãy chỉnh sửa lại tiêu chuẩn giao diện danh sách của bạn. Để in nhiều hơn 1.000 hồ sơ, hãy chạy một báo cáo và sau đó nhấp nút Giao Diện Có Thể In trên báo cáo đó.</param>
+    <param name="number_of_records">Số Lượng Hồ Sơ</param>
+        <param name="createCase">Tạo Lập <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Nhấp mở rộng/thu bớt các mục lồng nhau.</param>
+        <param name="expand">Nhấp mở rộng các mục lồng nhau.</param>
+        <param name="collapse">Nhấp thu bớt các mục lồng nhau.</param>
+        <param name="shortExpand">Mở Rộng</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Thu Bớt</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Đã Mở Rộng</param>
+        <param name="collapsed">Đã Thu Bớt</param>
+        <param name="level">Cấp Độ</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Cây:</param>
+        <param name="siblings">Anh em:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Tra Cứu</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Chọn một đối tượng</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Ai</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Làm GÌ</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Tìm kiếm đã trả lại nhiều hơn số lượng các hàng tối đa ({0}). Hãy chỉnh sửa lại các tiêu chí tìm kiếm của bạn.</param>
+        <param name="Copyright">Bản Quyền &amp;copy; 2000-{0} của salesforce.com, inc.</param>
+        <param name="Rights">Bản quyền được bảo hộ.</param>
+        <param name="useWildcards">Bạn có thể sử dụng '*' làm một ký tự đại diện đứng sát các ký tự khác để nâng cao các kết quả Tìm kiếm của bạn.  Chẳng hạn như, "ad*" sẽ trả về tất cả các hồ sơ có một tên chứa "ad".</param>
+        <param name="useWildcardsWithSearch">Bạn có thể sử dụng "*" làm một ký tự đại diện đứng sát các ký tự khác để nâng cao các kết quả Tìm kiếm của bạn.</param>
+        <param name="error_lookup_multiple_matches_ile">Nhiều mục được Tìm thấy.&lt;br&gt;Nhấp biểu tượng để chỉnh sửa lại Tìm kiếm của bạn.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Mở Rộng Danh Sách</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Danh Sách Được Mở Rộng</param>
+        <param name="sharing">Chia Sẻ</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Tại Sao?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Thêm bộ lọc &gt;&gt;</param>
+        <param name="less_filters">Ít bộ lọc hơn &lt;&lt;</param>
+        <param name="by_keyword">Theo Từ Khóa</param>
+        <param name="by_filter">Theo Bộ Lọc Trường</param>
+        <param name="too_many">Tìm kiếm của bạn đã trả về nhiều hơn {0} hàng. Chỉ có {0} đầu tiên được hiển thị. Hãy chỉnh sửa lại tiêu chuẩn Tìm kiếm.</param>
+        <param name="Results">Kết Quả</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Tìm Kiếm:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Điểm Số</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Trường</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Toán Tử</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Giá Trị</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Bạn có thể sử dụng các bộ lọc "hoặc" bằng cách nhập nhiều mục ở cột dòng ba.</param>
+        <param name="tip_1">Bạn có thể nhập đến 10 mục, được ngăn cách bằng dấu phẩy. Chẳng hạn như: CA, NY, TX, FL Tìm kiếm CA hoặc NY hoặc TX hoặc FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Đặt dấu nháy xung quanh dữ liệu có dấu phẩy. Chẳng hạn như, "200,000","1,000,000" sẽ tìm kiếm cho 200,000 hoặc 1,000,000.</param>
+        <param name="tip_3">Đối với các trường hộp chọn, hãy sử dụng "Sai" và "Đúng", chẳng hạn như, "Đang Hoạt Động bằng với Đúng" hoặc "Đã Chuyển Đổi bằng với Sai."</param>
+        <param name="tip_4">Các mục nhập quy tắc dựa trên các mã vùng có thể cần bao hàm các dấu ngoặc đơn, chẳng hạn như. Số điện thoại sẽ bắt đầu bằng (415), (510).</param>
+        <param name="tip_5">Nếu bạn đang sử dụng thiết kế và mô phỏng bản thông dịch, hãy nhập tất cả các tiêu chuẩn lọc bằng cách sử dụng các giá trị chủ đạo.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Sẵn Có</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Các Lựa Chọn</param>
+        <param name="assignLicensesDescription">Lựa chọn hộp chọn bên cạnh mỗi gói bạn muốn phân công cho người dùng này, và sau đó nhấp Phân Công. Hộp chọn sẽ thiếu nếu một gói sản phẩm không có đủ bản quyền sẵn có hoặc trạng thái của gói sản phẩm bị hết hạn hoặc tạm ngưng.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Cổng Thông Tin Mặc Định</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Xác Nhận</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Thông Tin</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Lỗi</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Cảnh Báo</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">An Toàn</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Tần Suất</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Hàng Ngày</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Hàng Tuần</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Hàng Tháng</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Hàng ngày trong tuần</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Hàng ngày</param>
+       <param name="lastDay">mới nhất</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">thứ 1</param>
+    <param name="on2">thứ 2</param>
+    <param name="on3">thứ 3</param>
+    <param name="on4">thứ 4</param>
+    <param name="onLast">lần cuối cùng</param>
+    <param name="startTime">Bắt Đầu</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Kết Thúc</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Thời Gian Bắt Đầu Được Ưu Tiên</param>
+    <param name="noPreference">Không có ưu tiên</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Thời gian bắt đầu chính xác sẽ phụ thuộc vào hoạt động của hàng đợi công việc.</param>
+
+    <param name="diffTimeZoneMsg">Múi thời gian cho cài đặt tần suất hàng tháng này là:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Các cài đặt tần suất sẽ hiển thị ở múi giờ của người dùng đã chỉnh sửa chúng mới nhất.&lt;br&gt;Bất kỳ thay đổi nào mà bạn tạo ra cho các cài đặt này sẽ được cập nhật sao cho phù hợp với múi thời gian của bạn.</param>
+
+      <param name="weeklyRecurrence">Trở lại hàng tuần vào {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Trở lại hàng tuần vào</param>
+      <param name="monthlyRecurrence1">Vào ngày {0} hàng tháng</param>
+      <param name="monthlyRecurrence1LegendLabel">Cụ Thể</param>
+      <param name="monthlyRecurrence2LegendLabel">Tùy Thích</param>
+      <param name="monthlyRecurrence2">Vào {2} {0} {3} {1} hàng tháng</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Vào {0} {1} hàng tháng</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Vào ngày cụ thể hàng tháng</param>
+      <param name="accessibleMonthly2">Vào ngày tùy thích hàng tháng</param>
+      <param name="accessibleOnDayN">Ngày cụ thể</param>
+      <param name="accessibleOnDayNOfWeek">Diễn Ra</param>
+      <param name="accessibleOnDayName">Ngày</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Kiểm tra đơn giản này giúp chặn các chương trình độc hại truy cập dữ liệu của bạn.  Quản trị viên của bạn yêu cầu kiểm tra này đối với tập tin tải xuống lớn.  Kiểm tra này không bao giờ xuất hiện nhiều hơn một lần đối với mỗi phiên đăng nhập.</param>
+        <param name="imagePrompt">Nhập các từ ở trên, được phân tách bằng dấu cách.</param>
+        <param name="audioPrompt">Nhập các số bạn nghe thấy:</param>
+        <param name="refresh">Nhận thách thức mới</param>
+        <param name="audio">Nhận thách thức âm thanh</param>
+        <param name="image">Nhận thách thức hình ảnh</param>
+        <param name="incorrect">Không chính xác, vui lòng thử lại</param>
+        <param name="moreinfo">Thêm thông tin &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Bớt thông tin</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Nhấp để biết hơn...</param>
+        <param name="show">Hiển thị bảng đánh dấu</param>
+        <param name="hide">Ẩn bảng đánh dấu</param>
+        <param name="empty">Không có trường được đánh dấu nào cho hồ sơ này.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Tham Quan Theo Hướng Dẫn</param>
+        <param name="closeIntro">Không, xin cảm ơn</param>
+        <param name="closeOutro">Đóng</param>
+        <param name="showLater">Hiển thị sau</param>
+        <param name="replay">Phát lại</param>
+        <param name="continue">Tiếp Tục</param>
+        <param name="previous">Trước đó</param>
+        <param name="startTour">Bắt đầu tham quan</param>
+        <param name="endTour">Kết thúc tham quan</param>
+        <param name="stepCounter">{0} / {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Chi Tiết</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Các Khuyến Nghị</param>
+        <param name="hideBucketTip">&lt;br&gt;Thả và đây để ẩn các mục&lt;br/&gt;từ trang.</param>
+        <param name="hiddenListTip">Để hiển thị các mục đã ẩn, kéo lại vào danh sách ở trên.</param>
+        <param name="hiddenListShowLinkLabel">{0} đã ẩn</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Quay lại Đầu Trang</param>
+        <param name="multipleItemDragGhost">Nhiều Mục (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Tính Tương Thích Trình Duyệt Trang Chi Tiết</param>
+        <param name="compatibilityMsgSubTitle">Thật đáng tiếc, chúng tôi không hỗ trợ trình duyệt này</param>
+        <param name="compatibilityMsg1">Chúng tôi không thể hiển thị trang chi tiết mới trong trình duyệt hiện tại của bạn.</param>
+        <param name="compatibilityMsg2">Bạn có thể sử dụng thiết kế mới bất cứ khi nào bạn đăng nhập bằng một trong các trình duyệt tương thích này:</param>
+        <param name="supportedIE">* Internet Explorer 7 hoặc 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Xin cảm ơn!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Biến Giao Diện Cổ Điển Thành Mặc Định Của Tôi</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Nhập vào đây để tìm kiếm {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Không có {0} nào thỏa mãn tìm kiếm của bạn.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Trang {1} / {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

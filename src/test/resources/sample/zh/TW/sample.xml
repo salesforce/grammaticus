@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">組合方塊</param>
+        <param name="select_default">請從下面選取。</param>   <!-- aliased across labels; do not change -->
+        <param name="select">從下面選取 {0}。</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/><Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">存取權</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(受管理)</param>
+        <param name="activity_history">活動歷程記錄</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">其他資訊</param> <!--aliased across labels - do not change-->
+        <param name="alias">別名</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">助理</param>
+        <param name="assistant_name">助理姓名</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">助理電話</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">助理電話</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">助理電話分機</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">生日</param>   <!-- aliased across labels; do not change -->
+        <param name="body">內文</param>   <!-- aliased across labels; do not change -->
+        <param name="company">公司</param> <!--aliased across labels - do not change-->
+        <param name="created_by">建立者</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">建立者識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">建立者別名</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">貨幣 ISO 代碼</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">自訂欄位</param> <!--aliased across labels - do not change-->
+        <param name="default_status">預設狀態</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0}詳細資料</param>   <!-- aliased across labels; do not change -->
+        <param name="department">部門</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0}編輯</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">預期收入</param>
+        <param name="first_name">名字</param> <!-- aliased across app - do not change -->
+        <param name="last_name">姓氏</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">名字 (本地語言)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">姓氏 (本地語言)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">會計季度</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">會計年度</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">全名</param> <!-- aliased across app - do not change -->
+        <param name="group">群組</param> <!-- aliased across app - do not change -->
+        <param name="group_name">群組名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">佇列名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">行業</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">上次修改者</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">上次修改者識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">上次修改者別名</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">主要記錄識別碼</param>
+        <param name="mobile">行動</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">行動電話</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">行動電話分機</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">新增共用</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">指派對象別名</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">可用的清單</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">公司名稱</param> <!-- aliased across app - do not change -->
+        <param name="activities">活動</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">沒有附件</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/><document plural="y"/></param>
+        <param name="address_info">地址資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">已拒絕</param>   <!-- aliased across labels; do not change -->
+        <param name="default">預設</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">預設優先順序</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">新增檢視</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">自訂資訊</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">重複狀態</param> <!-- aliased across app - do not change -->
+        <param name="email_address">電子郵件地址</param> <!-- aliased across app - do not change -->
+        <param name="email_name">電子郵件名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">電子郵件範本</param>   <!-- aliased across labels; do not change -->
+        <param name="email">電子郵件：</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">自訂連結</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">檔案大小</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">無可用的資料</param>
+        <param name="history_event_checked">選取的欄位 {0}</param>
+        <param name="history_event_unchecked">未選取的欄位 {0}</param>
+        <param name="how_do_i_specify_info">我如何指定要擷取哪些資訊？</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">內部來源</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">間隔：</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">稱呼</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">選取新擁有者</param>
+        <param name="select_a_view">從下拉式清單中選取一個檢視，查看相關的結果清單。</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">從下拉式清單中選取一個資料夾，查看相關的結果清單。</param>
+        <param name="select_the_file">選取檔案</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">選取要包含的欄位：</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">簽名</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">主題</param> <!-- aliased across app - do not change -->
+        <param name="system_info">系統資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="website">網站</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">擁有者別名</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">擁有者名字</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">擁有者識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">擁有者姓氏</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">擁有者名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">擁有者角色</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">擁有者角色顯示</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">擁有者角色名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">主要</param>
+        <param name="primary_contact"><Primary/><Contact/></param>
+        <param name="priority">優先順序</param><!--aliased across labels - do not change -->
+        <param name="private">私人</param>
+        <param name="role">角色</param> <!--aliased across labels - do not change -->
+        <param name="rating">分級</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">快速建立</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">最近檢視</param>
+        <param name="top5">最常見的 5 個問題</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">賣方</param>
+        <param name="customer">客戶</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">提供商</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">記錄類型識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">分部識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">表格列舉或識別碼</param>
+        <param name="editable">可編輯</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">標準化名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">隱私權聲明</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">可管理狀態</param>
+        <param name="namespacePrefix">命名空間字首</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">模組命名空間</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">已安裝的封裝</param>
+        <param name="initialVersion">最初發行的版本</param>
+        <param name="lastVersion">最終可用版本</param>
+        <param name="availableInVersions">可用的版本</param>
+        <param name="DeveloperName">開發人員名稱</param>
+        <param name="apiName">API 名稱</param>
+        <param name="InvalidDeveloperNameOnEntity">「{0}」 欄位只能包括底線和英數字元，且必須是唯一的、以字母開頭、不包含空格、不能以底線結尾，且必須包括兩個連續的底線。</param>
+        <param name="missingDevName">必須提供 {0}。</param>
+        <param name="duplicateDevName">此 {0} 已經存在或先前已使用。請選擇一個不同的名稱。</param>
+        <param name="manageabilityOverride">管理性覆寫</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">度量日期</param>
+        <param name="MayEdit">可編輯</param>
+        <param name="IsLocked">已鎖定</param>
+        <param name="LastViewedDate">最後檢視日期</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">建立</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">設定</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">新建…</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">檔案</param>
+        <param name="new_forecast">預測</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">資源回收筒</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">傳送電子郵件</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">報告</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">修改者</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">建立日期</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">修改日期</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">自動化程序</param>
+        <param name="partner_network">連線使用者</param>
+        <param name="external_who">Public User</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">範例</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">錯誤：無效的資料。&lt;br/&gt;檢閱以下所有的錯誤訊息以修正您的資料。</param>
+        <param name="EditPageError2">檢閱以下所有的錯誤訊息以修正您的資料。</param>
+        <param name="Required">您必須輸入一個值</param>
+        <param name="RequiredWithFieldList">必要的欄位遺失：{0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">對自助式服務必要</param>
+        <param name="RequiredBy">有此必要的項目：{0}</param>
+        <param name="Requires">需要：{0}</param>
+        <param name="TooLong">欄位的值太長</param>
+        <param name="CannotExceedXCharacters">數值不可超過 {0} 個字元</param>
+        <param name="MustBeXCharacters">值必須恰好為 {0} 個字元</param>
+        <param name="MustBeNumber">值必須為數字</param>
+        <param name="StatusCloseRequired">您必須至少將一個狀態標記為已結束</param>
+        <param name="StatusDefaultRequired">您必須至少將一個狀態標記為預設</param>
+        <param name="StatusInUse">下列狀態值正在使用中，並且不能編輯或刪除：{0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">日期無效</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">日期無效。您無法設定超過 {0} 的日期</param>
+        <param name="InvalidDateTime">日期和時間無效</param>
+        <param name="InvalidColor">色彩無效</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">無效的網際網路位址</param>
+        <param name="InvalidOption">選擇的選項無效。</param>
+        <param name="UnsupportedCurrency">貨幣無效</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL 無效</param>
+        <param name="NoneSelectedInPicklist">-- 未選取任何項目 --</param>
+        <param name="InvalidTime">不是有效的時間</param>
+        <param name="InvalidNumber">數字無效</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">數字太大。</param>
+        <param name="TooLargeNumberWithScale">數字必須小於 {0}。</param>
+        <param name="TooSmallNumberWithScale">數字必須大於 {0}。</param>
+        <param name="NonpositiveError">必須為正值。</param>
+        <param name="NegativeError">必須為非負值。</param>
+        <param name="PositiveError">必須為非正值。</param>
+        <param name="NonnegativeError">必須為負值。</param>
+        <param name="NonzeroError">必須為非 0 值。</param>
+        <param name="NonintegerError">必須為整數。</param>
+        <param name="InvalidPercent">百分比無效</param>
+        <param name="InvalidAfterRoundOff">捨入為小數位數後的數字 {0} 無效：{1}</param>
+        <param name="CharactersRemaining">剩餘</param>
+        <param name="CharactersOver">超出限制</param>
+        <param name="TooManySelection">您不能選取 {0} 個以上的項目</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">複製記錄上的值：{0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">「隱藏」欄位值 (未顯示) 複製記錄上的值：{0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} 複製具有識別碼之記錄上的值：{1}</param>
+        <param name="True">真</param>   <!-- aliased across labels; do not change -->
+        <param name="False">假</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">無效網域</param>
+        <param name="ReadOnly">您不能編輯此欄位</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">如果您選擇繼續匯入，此資料將被忽略而且該欄位將為空。</param>
+        <param name="extra_DefaultDivision">如果您選擇繼續匯入，該記錄擁有者的預設分部將用於這些記錄。</param>
+        <param name="extra_DefaultCurrency">如果您選擇繼續匯入，將為這些記錄指派您的預設貨幣。</param>
+        <param name="InvalidDataType">值不屬於所要求的類型：{0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">擁有者不可為空白</param>
+        <param name="DynamicEnumValue">選項清單值未啟用：{0}</param>
+        <param name="DynamicEnumValue_extra">如果您選擇繼續匯入，此資料將被匯入，但將不新增至此選項清單的現用值清單中。</param>
+        <param name="InvalidCurrencyCode">貨幣代碼無效：{0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">貨幣代碼未啟用：{0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">時間無效：{0}</param>
+        <param name="InvalidDateValue">日期無效：{0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">百分比無效：{0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">缺少識別碼或識別碼無效</param>
+        <param name="Id15Characters">識別碼必須正好是 15 個字元</param>
+        <param name="IdMissing_extra">記錄將被忽略</param>
+        <param name="InvalidDivision">分部無效：{0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">分部未啟用：{0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">數字無效：{0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">值超出數字欄位的有效範圍：{0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">選取了太多項目：{0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">電子郵件地址無效：{0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">IP 位址無效：{0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">識別碼值類型錯誤：{0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">受限制選項清單欄位值錯誤：{0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">位元向量欄位值無效：{0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">資料值太大：{0}</param>
+        <param name="DataTruncated_extra">如果您選擇繼續匯入，此資料將被截斷以適合欄位的最大長度。</param>
+        <param name="DuplicateExternalId">找到一個以上外部識別碼欄位的記錄：{0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">您的要求已在進行中...</param>
+        <param name="InvalidDeveloperNameChars"><Entity entity="0"/> API 名稱只能包括底線和英數字元。且必須是唯一的、以字母開頭、不包含空格、不能以底線結尾，且必須包括兩個連續的底線。</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">中止</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">接受</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">接受變更</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">啟用 Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">新增註解</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">新增元件</param>
+        <param name="add_contacts">新增<Contacts/></param>
+        <param name="add_leads">新增<Leads/></param>
+        <param name="add_more_users">新增更多使用者</param>
+        <param name="add_multiple_users">新增多個使用者</param>
+        <param name="add_product">新增<Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">新增條列項目</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">新增範例顯示面板</param>
+        <param name="add_to_call_center">新增至 Call Center</param>
+        <param name="add_to_campaign">新增至<Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">新增至 Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">新增至<Pricebook/></param>
+        <param name="add_remove">新增/移除</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">進階設定</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">批准</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">指派</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">為使用者指派角色</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">回到報告清單</param>
+        <param name="billing_and_licenses">帳單和授權</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">帳單資訊</param>
+        <param name="briefcase_setup">公事包設定</param>
+        <param name="cancel">取消</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">取消分派</param>
+        <param name="cancel_test_instance">取消 Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">變更公司</param>
+        <param name="change_currency">變更貨幣</param>
+        <param name="change_owner">變更擁有者</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">接受和變更擁有者</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">接受和指派決定者</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">變更狀態</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">查看可用性</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">拼字檢查</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">選擇<Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">清理</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">概觀</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0} 索引標籤</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">清單</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>：複製父系詳細資料</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">全部摺疊</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">從選項清單選擇項目</param>
+        <param name="composegmail">編寫 Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">確認</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">繼續</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">總是繼續</param>
+        <param name="convert">轉換</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">轉換<Lead/></param>
+        <param name="create">建立</param>
+        <param name="create_follow_up_event">建立後續<Event/></param>
+        <param name="create_follow_up_task">建立後續<Task/></param>
+        <param name="create_new">建立新 {0}</param>
+        <param name="create_new_section">新增區段</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">建立<Opportunity/></param>
+        <param name="create_test_instance">建立 Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">建立測試資料庫</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">建立線上商機表單</param>
+        <param name="create_new_holiday">建立新假日</param>
+        <param name="create_new_sla_process">新<Entitlement/>流程</param>
+        <param name="create_new_milestone_type">新里程碑</param>
+        <param name="currency_setup">貨幣設定</param>
+        <param name="customer_view">客戶檢視</param>
+        <param name="customize">自訂</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">用於所有使用者的自訂顯示</param>
+        <param name="page_settings">頁面設定</param>
+        <param name="customize_page">自訂頁面</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">編輯版面配置</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">顯示面板清單</param>
+        <param name="data_export">資料匯出</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">更新</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">拒絕</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">預設自訂連結</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">移除Checkout存取權</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">完成並預覽</param>
+        <param name="dont_save">不要儲存</param>
+        <param name="dont_show_page_again">以後不再顯示此頁</param>
+        <param name="download">下載</param>
+        <param name="download_now">立即下載</param>
+        <param name="download_sample_css_file">下載範例 CSS 檔</param>
+        <param name="edit">編輯</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">編輯 [測試版]</param>
+        <param name="edit_all">全部編輯</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">編輯使用者</param>
+        <param name="edit_rates">編輯價格</param>
+        <param name="edit_selected">編輯選定項目</param>
+        <param name="editProperties">編輯內容</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">結束 {0}</param>
+        <param name="enable_appstore_user">授與Checkout存取權</param>
+        <param name="enable_as_partner">啟用為合作夥伴</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">啟用合作夥伴入口網頁登入</param>
+        <param name="enable_self_service">啟用自助式服務</param>
+        <param name="enable_users">啟用新使用者</param>
+        <param name="enableForecasting">啟用可自訂預測</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">進入訓練</param>
+        <param name="erase_test_instance">清除 Sandbox</param>
+        <param name="establish">建立</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">全部展開</param>   <!-- aliased across labels; do not change -->
+        <param name="export">匯出詳細資料</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">立即匯出詳細資料</param>
+        <param name="export_background">執行背景匯出...</param>
+        <param name="fctHistory">預測歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">預測摘要</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">欄位驗證</param>
+        <param name="find">尋找</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">尋找報告</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">尋找<Document/></param>
+        <param name="find_pricebooks">尋找<Pricebook/></param>
+        <param name="find_products">尋找<Product/></param>
+        <param name="find_solution">尋找<Solution/></param>
+        <param name="finished">已完成</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">下一步</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">轉送至連線</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">產生 WSDL</param>
+        <param name="generate_login_html">產生登入 HTML</param>
+        <param name="getMoreInfo">取得詳細資訊</param>
+        <param name="go">執行！</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">關於此頁的說明</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0}說明</param>
+        <param name="hide">隱藏詳細資料</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">我接受</param>
+        <param name="i_decline">我拒絕</param>
+        <param name="impactAnalysis">此項用於何處？</param>
+        <param name="import">匯入</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">匯入<Leads/></param>
+        <param name="include_offline">包括離線</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">插入</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">插入選取內容</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">立即安裝</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">邀請</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">邀請連線</param>
+        <param name="jigsawsearch">取得聯絡人</param>
+        <param name="join_meeting">加入會議</param>
+        <param name="jumpstart">跳轉起點</param>
+        <param name="keep_in_touch">要求更新</param>
+        <param name="layout_assignment">版面配置指派</param>
+        <param name="legal_view">法律資料檢視</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">鎖定記錄</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">以合作夥伴使用者的身份登入</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">管理成員</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">新增會議要求</param>
+        <param name="add_members_search">新增成員 – 搜尋</param>
+        <param name="add_members_import">新增成員 – 匯入檔案</param>
+        <param name="edit_members_search">編輯成員 – 搜尋</param>
+        <param name="update_members_import">更新 &amp; 新增成員 - 匯入檔案</param>
+        <param name="manage_call_center_users">管理 Call Center 使用者</param>
+        <param name="map_lead_fields">對應<Lead_Fields/></param>
+        <param name="mark_as">標記為...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">匯入成員</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">修改個別提醒</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">新增</param>
+        <param name="newcase">新增</param>
+        <param name="new_addition_order">新增附加訂單</param>
+        <param name="new_custom_object">新增自訂物件</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">新增自訂報告</param>
+        <param name="new_dashboard">新增顯示面板</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">新增顯示面板元件</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/><Document/></param>
+        <param name="new_email_template">新增範本</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <Entity entity="0"/></param>
+        <param name="new_entitlement_template">新增範本</param>
+        <param name="new_event"><New/><Event/></param>
+        <param name="new_folder">新增資料夾</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">新增群組</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">新佇列</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">新增備註</param>
+        <param name="new_object_custom_tab">新增自訂物件標籤</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">線上會議</param>
+        <param name="new_order">新增訂單</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">新增個人使用者群組</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/><Product/></param>
+        <param name="new_reduction_order">新增減購訂單</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">新增角色</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">新按鈕</param>
+        <param name="new_territory">新增區域範圍</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/><Task/></param>
+        <param name="new_user">新增使用者</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">新增網路整合標籤</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">確定</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">執行另一項更新</param>
+        <param name="performAnotherMigrate">移轉另一個設定檔</param>
+        <param name="preview">預覽</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">重新計算</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">重新建立</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">拒絕</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">拒絕變更</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">移除使用者</param>
+        <param name="remove_from_briefcase">從公事包中移除</param>
+        <param name="remove_from_campaign">從 <Campaign/> 移除</param>
+        <param name="reorder">重新排序</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">修復</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">執行所有測試</param>
+        <param name="run_test">執行測試</param>
+        <param name="quick_save">快速儲存</param>
+        <param name="quick_save_hover">儲存並繼續編輯</param>
+        <param name="reply">回覆</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">全部回覆</param>
+        <param name="reportmanager">報告管理員</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">重設密碼</param>
+        <param name="reset_passwords">重設密碼</param>
+        <param name="retrieve_prices">擷取價格</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">執行報告</param>   <!-- aliased across labels; do not change -->
+        <param name="save">儲存</param> <!-- aliased across labels do not change -->
+        <param name="saving">正在儲存...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">儲存並新增價格</param>
+        <param name="save_and_add_product">儲存並新增<Product/></param>
+        <param name="save_and_clone">儲存並重新複製</param>
+        <param name="save_and_close">儲存並關閉</param>
+        <param name="save_and_attach">儲存並新增附件</param>
+        <param name="save_and_continue">儲存並下一步</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">儲存並更多</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">儲存並<New/><Event/></param>
+        <param name="save_and_new_product">儲存並<New/><Product/></param>
+        <param name="save_and_new_task">儲存並<New/><Task/></param>
+        <param name="save_and_refresh">儲存並重新整理</param>
+        <param name="save_and_send">儲存並傳送更新</param>
+        <param name="event_scheduler">用戶端與小組檢視 &gt;</param>
+        <param name="saveAs">另存新檔</param>
+        <param name="schedule_to_email">電子郵件排程</param>
+        <param name="schedule_to_print">列印排程</param>
+        <param name="scrutinize">仔細查看</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">尋找<KnowledgeArticles/></param>
+        <param name="newArticle">新增</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">選取範本</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">自助式服務跳轉起點</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">自助式服務設定</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">檢視/啟用自助式服務</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">傳送</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">傳送電子郵件至<all/><contacts/></param>
+        <param name="send_invitation">儲存並傳送邀請</param>
+        <param name="set_status">管理狀態</param>
+        <param name="setup_and_install">安裝和設定</param>
+        <param name="setup_roles">設定角色</param>
+        <param name="setup_sharing">設定共用</param>
+        <param name="sfga_instructions">完整的可列印指示</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">顯示詳細資料</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">略過</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">排序</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">開始會議</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">提交</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">提交並新增附件</param>
+        <param name="subscribe_now">立即訂購！</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">立即升級！</param>
+        <param name="suggest">檢視<Suggested/><Solutions/></param>
+        <param name="take_training_now">立即加入訓練！</param>
+        <param name="terminate">終止</param>
+        <param name="training_history">訓練歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">轉移</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">立即試用！</param>
+        <param name="undelete">取消刪除</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">復原</param>
+        <param name="unlock">解除鎖定記錄</param>
+        <param name="update">更新</param>
+        <param name="update_campaign_history">更新並新增<Campaign_Members/></param>
+        <param name="update_now">立即更新</param>
+        <param name="update_statuses">更新狀態</param>
+        <param name="upload">上載</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">欄位相依性</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">檢視已刪除元件</param>
+        <param name="view_partnerforce">檢視合作夥伴使用者</param>
+        <param name="view_self_service">檢視自助式服務</param>
+        <param name="view_customer_success">檢視客戶入口網頁使用者</param>
+        <param name="enable_customer_success">啟用客戶入口網頁使用者</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">這是什麼？</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">關閉此視窗</param>
+        <param name="runApexRecalc">重新計算 Apex 共用</param>
+        <param name="disablecustomerportal">停用客戶入口網頁使用者</param>
+        <param name="disablepartnerportal">停用合作夥伴使用者</param>
+        <param name="disablecustomerportalaccount">停用客戶入口網頁帳戶</param>
+        <param name="disablepartnerportalaccount">停用合作夥伴帳戶</param>
+        <param name="voteup">投票通過</param>
+        <param name="votedown">投票否決</param>
+        <param name="markquestionunanswered">標記為未回答</param>
+        <param name="markbestanswer">標記為最佳回答</param>
+        <param name="requestUseSfdcAction">尋找連線</param>
+        <param name="addPET">新增權益範本</param>
+        <param name="truncate">截斷</param>
+        <param name="disableprmsuperuser">停用合作夥伴超級存取權</param>
+        <param name="enableprmsuperuser">啟用合作夥伴超級存取權</param>
+        <param name="purchase_more">購買更多</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">回到頁首</param>
+        <param name="descriptionText">內文文字太長。請檢視詳細資料。</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">檢視檔案</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">父系</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">沒有相關資訊</param>
+        <param name="no_records">沒有要顯示的記錄</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">顯示另外 {0} 筆 &#187;</param>
+        <param name="NextMoreGeneric">顯示更多 &#187;</param>
+        <param name="view_more">轉至清單</param>
+        <param name="view_more_tot">轉至清單 ({0})</param>
+        <param name="view_more_tot_plus">轉至清單 (另外 {0} 筆)</param> <!-- -->
+        <param name="view_more_1">轉至具有另外一筆記錄的清單</param> <!-- Singular -->
+        <param name="view_more_n">轉至具有另外 {0} 筆記錄的清單</param> <!-- Plural -->
+        <param name="view_more_n_plus">轉至具有另外 {0} 筆記錄的清單</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">更多可用內容；移至清單</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">可能性</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">來源</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">贏得客戶</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">會計年度週期</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{0} 年第 {1} 季度</param>
+        <param name="opportunities_next_step">下一步</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">更新</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/><Activities/></param>
+        <param name="activities_open"><Open/><Activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">相關項</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">備註</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google 文件</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">備註和附件</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">備註標題</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">附件</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">附件</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">檔案名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">擁有權</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">主要</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none">沒有<cases/>要顯示</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">日期</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">標題</param>
+        <param name="object_title">標題</param> <!-- translation note: title of files/attachment -->
+        <param name="name">名稱</param>
+        <param name="object_name">名稱</param>
+        <param name="date">日期</param>
+        <param name="due_date">到期日期</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">上次修改</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">更新者</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">主要</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">競爭者</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">競爭者名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">優勢</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">劣勢</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">可能性 (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">完成</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">標記 {0} 完成</param>
+        <param name="task_date">日期</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">名稱</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/>待批准</param>
+        <param name="task_none">在此期間您沒有排程<open/><tasks/>。</param>
+        <param name="task_mode_today">今天</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">今天 + 過期</param>
+        <param name="task_mode_tomorrow">明天</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">未來 {0} 天</param>
+        <param name="task_mode_next_7days_overdue">未來 {0} 天 + 過期</param>
+        <param name="task_mode_overdue">過期</param>
+        <param name="task_mode_this_month">本月</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">所有未結束</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">新聞</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">主標題</param>
+        <param name="new_date">日期</param>
+        <param name="news_none">無可用的新聞</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">電子郵件合併範本</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">頂級<Solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">新增日期</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">新增者</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none">未附加<Solutions/></param>
+        <param name="description">描述</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">股票代號</param>
+        <param name="sic">標準行業分類</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">沒有可顯示的<Activity_History/>資料。</param>
+        <param name="nonotes">沒有可顯示的「備註歷程記錄」資料。</param>
+        <param name="noattachments">沒有可顯示的「附件歷程記錄」資料。</param>
+        <param name="viewallattachments">檢視所有附件</param>
+        <param name="viewalldocsattachments">檢視全部 Google 文件和附件</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">日期</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">條列項目描述</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API 擷取</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">按使用者篩選</param>
+        <param name="apicapture_filterip">按 IP 篩選</param>
+        <param name="apicatpure_numbers">擷取</param>
+        <param name="apicapture_soapscope">檢視擷取</param>
+        <param name="apicapture_active">啟用</param>
+        <param name="apicapture_none">無擷取</param>
+        <param name="apicapture_new">開始新擷取</param>
+        <param name="apicapture_view">檢視</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">登入歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">無登入</param>
+        <param name="login_none">沒有可用的登入歷程記錄。</param>
+        <param name="login_username">使用者名稱</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">登入時間</param>
+        <param name="login_type">登入類型</param>
+        <param name="login_ip">來源 IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">無</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">瀏覽器</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">平台</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">解析度</param>
+        <param name="login_clientversion">用戶端版本</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">應用程式</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API 類型</param>
+        <param name="login_apiversion">API 版本</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">成功</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">下載最近六個月的登入歷程記錄，包括從網站以外登入，如 API 登入 (Excel .csv 檔案)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">下載登入歷程記錄，包括僅從網站的登入 (Excel .csv 檔案)</param>
+        <param name="login_history_download_title">下載選項</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV 檔案</param>
+        <param name="login_history_download_file_type_gzip">GZIP 檔案</param>
+        <param name="login_history_download_file_type_help">您可以使用許多試算表程式和文字編輯器來檢視 CSV (逗號分隔值) 檔案。GZIP (GNU zip) 檔案則經過壓縮以縮小其大小。</param>
+        <param name="login_history_download_option_title">檔案內容</param>
+        <param name="login_history_download_option_all">所有登入</param>
+        <param name="login_history_download_option_ie6_only">僅限 IE6 登入</param>
+        <param name="login_history_download_option_web_only">僅限網站登入</param>
+        <param name="login_history_download_option_help">「所有登入」包括來自所有來源的登入，如網站、Outlook、API 整合等。「IE6 登入」只包括來自使用 Internet Explorer 6 的使用者登入。「網站登入」只包括來自 Salesforce 登入頁面的登入。</param>
+        <param name="login_history_ie6_deprecation_warning_title">還在使用 IE6 嗎？</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce 未來將停止對 IE6 的支援。請使用提供的下載選項來瞭解您組織中使用的瀏覽器種類。</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">登入 URL</param>
+        <param name="order_history">訂單歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">無訂單</param>
+        <param name="order_number">訂單編號</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">訂單日期</param>
+        <param name="order_currency">貨幣</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">總成本</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">銷售對象</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">沒有<order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">行&lt;BR&gt;號</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">月度價格</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">帳單參照</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">帳單頻率&lt;BR&gt;(月)</param>
+        <param name="bo_order_items_billing_frequency_text">帳單頻率</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">訂單期限&lt;BR&gt;(月)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">日期</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">發票</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">無發票</param>
+        <param name="invoices_invoice_number">發票編號</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">發票日期</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">發票付款日期</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">外部系統識別碼</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">總金額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">欠款餘額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">賒帳總額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">註銷總額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">帳單連絡人</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">帳單公司</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">發票歷程記錄</param>
+        <param name="revenue_schedule">排程</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">日期</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">收入</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">註解</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">狀態歷程記錄</param>
+        <param name="status_none">找不到狀態歷程記錄</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">服務選擇</param>
+        <param name="services_none">無服務</param>
+        <param name="services_description">服務</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">單價</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">總價</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">折扣</param>
+        <param name="training">訓練課程歷程記錄</param>
+        <param name="training_none">無</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">類別名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">參加日期</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">已回應</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">預設</param>
+        <param name="campaign_member_none"><No/> 已定義<campaign_member_status/></param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">開始日期</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">結束日期</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">存留時間值</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">有購買規則</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">帳單頻率&lt;br&gt;(月)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">帳單記帳截止日期</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/><Products/></param>
+        <param name="event_attending">已接受<Event/></param>
+        <param name="event_notdecided">無回應</param>
+        <param name="event_declined">已拒絕<Event/></param>
+        <param name="event_attending_none">沒有出席者已接受</param>
+        <param name="event_notdecided_none">所有已回應的出席者</param>
+        <param name="event_declined_none">沒有出席者已拒絕</param>
+
+<param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">名稱</param>
+        <param name="documents_size">大小</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">作者</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">檢視設定稽核追蹤</param>
+        <param name="download">下載</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">您組織的最後 20 個項目如下所列。您可以 {0} 您組織過去六個月的設定稽核追蹤 (Excel .csv 檔案)。</param>
+        <param name="setup_audit_date">日期</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">動作</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">區段</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">委派使用者</param>
+        <param name="setup_audit_proxyinguser_help">此欄列出的使用者名稱，其使用者代表一般使用者，進行設定變更。例如，如果使用者將登入存取權權授與支援代表，則將列出代表的使用者名稱。</param>
+        <param name="setup_audit_trail_none">沒有可用的設定稽核追蹤資訊</param>
+        <param name="setup_audit_download_csv">下載最近六過月的設定稽核追蹤 (Excel .csv 檔案)</param>
+        <param name="DashboardComponents_title">顯示面板元件</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">無顯示面板元件</param>
+        <param name="translated_templates_none">沒有翻譯的電子郵件範本</param>
+        <param name="translated_templates_title">翻譯的電子郵件範本</param>
+        <param name="translated_templates_language">語言</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">啟用</param>
+        <param name="desc_pnet_conn_audit_trail">您組織的最後 20 個項目如下所列。您可以將完整的連線稽核追蹤歷程記錄 {0} 為 Excel .csv 檔。</param>
+        <param name="pnet_conn_audit_trail">連線歷程記錄</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">日期</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">沒有可用的連線稽核追蹤資訊</param>
+        <param name="pnet_conn_audit_download_csv">下載連線歷程記錄 (csv)</param>
+        <param name="pnet_entity_conns_title">外部共用</param>
+        <param name="pnet_entity_conn_stop_sharing">停止共用</param>
+        <param name="pnet_pub_title">發佈的物件</param>
+        <param name="pnet_sub_title">訂閱的物件</param>
+        <param name="pnet_pubsub_object">物件名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">欄位</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">發佈/取消發佈</param>
+        <param name="pnet_sub_edit">訂閱/取消訂閱</param>
+        <param name="pnet_pub_edit_object">已發佈的物件。</param>
+        <param name="pnet_pub_edit_field">按一下以下的「編輯」以發佈至每個物件的可用欄位。</param>
+        <param name="pnet_sub_edit_object">已訂閱的物件。</param>
+        <param name="pnet_sub_edit_field">按一下以下的「編輯」以訂閱每個物件的可用欄位。</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">內容</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce 附件</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">載入相關清單時發生錯誤</param>
+        <param name="ajax_exception_desc">蒐集此記錄的相關清單資訊時發生問題。如果重新載入頁面無法修正問題，請聯絡您的管理員或者向客戶支援小組&lt;a href=&quot;{0}&quot; title=&quot;report{1}&quot;&gt;報告&lt;/a&gt;此問題。</param>
+        <param name="category_access_title">種類群組可視性設定</param>
+        <param name="category_access_video_tutorial">視訊教學課程</param>
+        <param name="category_access_name">種類群組</param>
+        <param name="category_access_access">可視性</param>
+        <param name="category_access_details">可視性詳細資料</param>
+        <param name="category_access_custom">自訂</param>
+        <param name="category_access_full">全部</param>
+        <param name="category_access_inherited">繼承自 {0}</param>
+        <param name="category_access_revoked">無</param>
+        <param name="category_access_userNodeAndChildren_Profile">設定檔</param>
+        <param name="category_access_userNodeAndChildren_UserRole">角色和下屬</param>
+        <param name="category_access_noCategories">此 {0} 看不到任何種類</param>
+        <param name="category_access_allCategories">此 {0} 可看到所有種類</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{1} 的 {0}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">通用美式英語和西歐語言 (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">日文 (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">日文 (JIS)</param>
+        <param name="4">日文 (EUC)</param>
+        <param name="5">韓文 (ks_c_5601-1987)</param>
+        <param name="6">繁體中文 (Big5)</param>
+        <param name="7">簡體中文 (GB2312)</param>
+        <param name="8">香港繁體中文 (Big5-HKSCS)</param>
+        <param name="9">日文 (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">試用組織</param>
+        <param name="expand">按一下以開啟側列 [Alt+S]</param>
+        <param name="collapse">按一下以關閉側列 [Alt+S]</param>
+        <param name="expandNoHotkey">按一下以開啟側列</param>
+        <param name="collapseNoHotkey">按一下以關閉側列</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">向上</param>   <!-- aliased across labels; do not change -->
+        <param name="down">向下</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">移動</param>
+        <param name="top">靠上</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">靠下</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">請填寫必要的欄位。</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">所有使用者</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">新增</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">新增</param>   <!-- aliased across labels; do not change -->
+        <param name="del">刪除</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[變更]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">如何...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">檢視更多</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/><Task/></param>
+        <param name="new_event"><New/><Event/></param>
+        <param name="log_call">記錄電話</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">記錄備註</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">郵件合併</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">全部檢視</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">附加檔案</param>   <!-- aliased across labels; do not change -->
+        <param name="help">如何做？</param>
+        <param name="send_email">傳送電子郵件</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">使用者新增的影像</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">應用程式</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">可列印檢視</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">複製</param>   <!-- aliased across labels; do not change -->
+        <param name="share">共用</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">首頁</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">取得更多資訊！</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">選擇一個：</param>
+        <param name="hotlist_mode">顯示選擇</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">顯示 {0,number,integer} 個項目</param>
+        <param name="hotlist_empty_title">無任何最近記錄。按一下「執行」或從下拉式清單中選取檢視，以顯示記錄。</param>
+        <param name="hotlist_empty_description">沒有符合此條件的可用記錄。</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">移至報告</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">資源中心</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">「資源中心」可讓您搜尋潛在的客戶、尋找協力廠商的服務等。</param>
+        <param name="resource_center_link_text">移至資源中心</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">銷售方法</param>
+        <param name="hotlist_recently_modified">最近修改</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">最近建立</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">最近檢視</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--無--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">-- 選取 --</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--預設--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**不適用**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">視「{0}」而定</param>
+        <param name="dependentFields">從屬欄位</param>
+        <param name="controls">控制 {0} 的值</param>
+        <param name="dependsOnMultiple">視 {0} 而定</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">您的管理員尚未定義任何自訂連結。</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">跳至：</param>
+        <param name="JumpToStep">步驟 {0}：{1}</param>
+        <param name="CloseWizard">關閉精靈</param>
+        <param name="LeftHeader">步骤 {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">步驟 {1} 之 {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">步驟 {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">儲存並新增</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">下一步</param> <!-- aliased across labels - do not change -->
+        <param name="previous">上一步</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">{0} 組織設定精靈</param>
+        <param name="ImportWizardTitle">{0} 匯入精靈</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">訂購中心</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">試用註冊</param>
+        <param name="WizardBody">精靈內文</param>
+        <param name="WizardFooter">精靈頁尾</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">地址</param><!-- translators note - this is actually the full address -->
+        <param name="street">地址</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">城市</param><!-- aliased across label files - do not change -->
+        <param name="state">州/省</param><!-- aliased across label files - do not change -->
+        <param name="zip">郵遞區號</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">郵遞區號</param> <!-- aliased across label files - do not change -->
+        <param name="country">國家/地區</param> <!-- aliased across label files - do not change -->
+        <param name="phone">電話</param> <!-- aliased across label files - do not change -->
+        <param name="extension">分機</param> <!-- aliased across label files - do not change -->
+        <param name="fax">傳真</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">傳真分機</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">電子郵件</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">寄送地址</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">寄送街道</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">寄送城市</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">寄送州/省</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">寄送郵遞區號</param>
+        <param name="shippingzippostalcode">寄送郵遞區號</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">寄送國家/地區</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">帳單地址</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">帳單城市</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">帳單州/省</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">帳單郵遞區號</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">帳單國家/地區</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">帳單街道</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">銀行街道</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">銀行地址</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">銀行城市</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">銀行州/省</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">銀行郵遞區號</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">銀行所在國家/地區</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">郵寄地址</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">郵寄街道</param>
+        <param name="mailingcity">郵寄城市</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">郵寄州/省</param>
+        <param name="mailingzip">郵寄郵遞區號</param>
+        <param name="mailingcountry">郵寄國家/地區</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">郵寄地址第 1 行</param>
+        <param name="mailingaddress2">郵寄地址第 2 行</param>
+        <param name="mailingaddress3">郵寄地址第 3 行</param>
+        <param name="otheraddress">其他地址</param>
+        <param name="otheraddress1">其他地址第 1 行</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">其他地址第 2 行</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">其他地址第 3 行</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">其他地址 - 街道</param>
+        <param name="otherstreet2">其他地址 - 街道第 2 行</param>
+        <param name="otherstreet3">其他地址 - 街道第 3 行</param>
+        <param name="othercity">其他地址 - 城市</param>
+        <param name="otherstate">其他地址 - 州/省</param>
+        <param name="otherzipcode">其他地址 - 郵遞區號</param>
+        <param name="otherpostalcode">其他地址 - 郵遞區號</param>
+        <param name="otherzippostalcode">其他地址 - 郵遞區號</param>
+        <param name="othercountry">其他地址 - 國家/地區</param>
+        <param name="otherphone">其他電話</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">其他電話分機</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">地址 1</param>
+        <param name="address2">地址 2</param>
+        <param name="address3">地址 3</param>
+        <param name="home_phone">住家電話</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">正在載入...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">位置</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">數量</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">連絡人管理程式</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">是</param>   <!-- aliased across labels; do not change -->
+        <param name="no">否</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">歡迎您造訪 salesforce.com！</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. 保留所有權利。</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. 保留所有權利。</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 法規遵循</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. 保留所有權利。</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}.保留所有權利。</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. 保留所有權利。</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}.保留所有權利。</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">安全性聲明</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">使用條款</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">感謝您選擇使用 Salesforce！開始使用 Salesforce 前，您必須先閱讀並同意下述使用條款。完成後請按「我接受」按鈕繼續。請注意，如果您不接受這份使用條款，您將無法登入 Salesforce。</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">完成</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">立即新增！</param>
+        <param name="remove">移除</param>   <!-- aliased across labels; do not change -->
+        <param name="new">新增</param>
+        <param name="exciting_and_new">新增！</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">這裡</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">產生</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">關閉視窗</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">列印此頁</param>
+        <param name="new_window">(新視窗)</param>
+        <param name="new_focus">(焦點移動)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">隱藏範圍 &#45; 忽略</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">全選</param>
+        <param name="select_shown">選取顯示</param>
+        <param name="remove_shown">移除顯示</param>
+        <param name="select_none">全部不選</param>
+        <param name="all_active">所有已啟用</param>
+        <param name="all_inactive">所有未啟用</param>
+        <param name="are_you_sure">您確定嗎？</param>
+        <param name="irreversible_are_you_sure">無法復原！您確定嗎？</param>
+        <param name="replace">取代</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">完成</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} 分鐘</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">找到多個項目。從下拉式清單選取，或按一下圖示以細化搜尋。</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">第 {0}-{1} 季度</param>
+        <param name="reset">重設</param>   <!-- aliased across labels; do not change -->
+        <param name="override">覆寫</param>   <!-- aliased across labels; do not change -->
+        <param name="total">總計</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">按這裡</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">對網站管理員的備註：</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">範例 HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">密碼</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">以後不要再顯示此頁</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">隱藏以下項目的這個訊息： </param>
+        <param name="dontShowMessageAgain">以後不要再顯示此訊息</param>
+        <param name="dismissMessage">取消此訊息</param>
+        <param name="allObjects">所有物件</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">按空白鍵或「Enter」鍵來開啟</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">自助式服務：<Case_Detail/></param>
+        <param name="CssEdit">自助式服務：<Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/> 摘要</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">註解</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">自訂物件</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">自訂物件定義</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">顯示面板</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">顯示面板</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">取消全選</param>
+        <param name="deselect_shown">取消選取顯示</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">郵件合併範本</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">郵件合併範本</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">資料夾</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">資料夾</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">預測</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">預測</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent 監督員</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">發票</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">備註</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">訂單</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">訂單</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">訂單項目</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">訂單項目</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">付款</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">付款</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">報告</param>
+        <param name="Reports">報告</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">註冊</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">範本</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">範本</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">表格</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">啟用</param>
+        <param name="amount">總額</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">年度收入</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">附加文件</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">變更密碼</param>   <!-- aliased across labels; do not change -->
+        <param name="close">結束</param> <!-- aliased across labels; do not change -->
+        <param name="closed">已關閉</param>
+        <param name="closed_date">結束的日期</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">結束日期</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">建立日期</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">資料類型</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">已刪除</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">描述資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">員工人數</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">檔案</param>   <!-- aliased across labels; do not change -->
+        <param name="files">檔案</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">一般資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">開始之前獲取資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">標籤</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">上次登入</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">最後修改日期</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">名稱</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">名稱</param>
+        <param name="new_status">新增狀態</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">無</param>
+        <param name="open">未結束</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">組織</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">找不到符合的項目。</param> <!-- aliased across labels - do not change -->
+        <param name="all">全部</param>
+        <param name="clear">清除</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">按一下對應圖示...</param>
+        <param name="click_lookup_icon_info">按一下對應圖示以選取值。</param>
+        <param name="clear_all">全部清除</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">按「附加」按鈕。</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">錯誤</param> <!-- aliased across lables - do not change -->
+        <param name="high">高</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">說明</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">移至該處！</param>
+        <param name="keywords">關鍵字</param>
+        <param name="length">長度</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">狀態</param> <!-- aliased across lables - do not change -->
+        <param name="title">標題</param>
+        <param name="object_title">標題</param>
+        <param name="type">類型</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">使用者</param> <!--aliased across labels - do not change -->
+        <param name="Users">使用者</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">權限集</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">設定檔</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">設定檔</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">擁有者</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">以後不再顯示此頁</param>
+        <param name="click_here_to_create_new_account">{0} 立即建立<new/><account/>。</param>
+        <param name="click_here_to_create_new_contact">{0} 立即建立<new/><contact/>。</param>
+        <param name="click_here_to_create_new_lead">{0} 立即建立<new/><lead/>。</param>
+        <param name="click_here_to_create_new_opportunity">{0} 立即建立<new/><opportunity/>。</param>
+        <param name="click_here_to_create_new_product">{0} 立即建立<new/><product/>。</param>
+        <param name="SystemModstamp">系統修改時間戳記</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">分部</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">正在處理</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">記錄更新時請稍候。</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">靜態翻譯</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">以後不再顯示此頁</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">上載... 請稍候</param>
+        <param name="uploading_title">上載</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">匯入... 請稍候</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">與 </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">錯誤：沒有此欄位的存取權限</param>
+        <param name="noReadAccess">您沒有檢視此記錄的存取權限。</param>
+        <param name="noAccessToUser">您沒有此使用者的存取權。</param>
+        <param name="disabledButton">已停用按鈕：{0}</param>
+        <param name="RequiredHeader">必要資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">插入影像</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">您確定要刪除「IP 登入範圍」嗎</param>
+        <param name="AMPM">AMPM 項目</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">受保護的元件</param>
+        <param name="dialogCloseConfirm">您剛剛所檢視的確認視窗可能已提前關閉。請按一下「確定」回到該視窗，或按一下「取消」以忽略該警告。</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">對話方塊開始</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">不支援新使用者介面主題的瀏覽器</param>
+        <param name="DialogHeader">剛好您知道...</param>
+        <param name="DialogContent1">您正在使用不會顯示我們最新使用者介面主題的瀏覽器。</param>
+        <param name="DialogContent2">Salesforce 將顯示左側所示的傳統主題，直到您升級為支援的瀏覽器最新版為止：</param>
+        <param name="DialogClassicDesc">傳統主題</param>
+        <param name="DialogAlohaDesc">新主題</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">搜尋結果</param>
+        <param name="Recent">最近檢視</param>
+        <param name="NoMatchHeader">由於下列其中一個因素，找不到任何記錄：</param>
+        <param name="BulletOne">沒有此類型的任何記錄</param>
+        <param name="BulletTwo">您沒有權限可檢視任何記錄。</param>
+        <param name="BulletThree">記錄不適合您的管理員設定的篩選條件</param>
+        <param name="BulletFour">一個或多個控制欄位空白或無效 (控制欄位：</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">可用的使用者</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">選取的使用者</param>
+        <param name="LicensedUsers">授權的使用者</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">選取的移除</param>
+        <param name="Selected">已選取</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">選取</param>
+        <param name="UnassignedPackages">未指派的封裝</param>
+        <param name="SelectedPackages">選取的封裝</param>
+        <param name="InView">在檢視中</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">此檔案超過大小限制上限 {0}。</param>
+        <param name="no_file_specified">請指定要上載的檔案。輸入檔案的路徑，或使用「瀏覽」按鈕在本機檔案系統中尋找。</param>
+        <param name="invalid_file_type">您指定的檔案類型目前並不支援。</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">檔案名稱超過允許的最大長度，也就是 {0} 個字元。</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">檔案副檔名超過允許的最大長度，也就是 {0} 個字元。</param>
+        <param name="bytes">位元組</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">基於安全理由不允許使用 HTML 檔案類型。</param>
+        <param name="attachment_size_exceeded">上載的檔案超過大小上限。</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;錯誤：&lt;/b&gt;您必須選取要上載的影像</param>
+        <param name="upload_file_too_large">&lt;b&gt;錯誤：&lt;/b&gt; 影像超過 1 MB 的大小限制。</param>
+        <param name="invalid_file_type">&lt;b&gt;錯誤：&lt;/b&gt; 您只能插入 .gif、.jpeg 和 .png 檔案。</param>
+        <param name="upload_failed">&lt;b&gt;錯誤：&lt;/b&gt;上載失敗 - 請稍後重試。</param>
+        <param name="invalid_file">&lt;b&gt;錯誤：&lt;/b&gt;檔案不是有效的影像檔案。</param>
+        <param name="invalid_param">&lt;b&gt;錯誤：&lt;/b&gt; 無效的參數。</param>
+        <param name="access_failed_alt">此影像無法使用，原因如下：您沒有檢視它的權限，或它已從系統中移除</param>
+        <param name="weekly_export_folder">其他上載附隨品/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">標籤樣式選擇器</param>
+        <param name="instructions">請選擇一個標籤樣式。</param>
+        <param name="createYourOwn">建立自己的樣式</param>
+        <param name="defaultCustomStyleDesc">自訂樣式</param>
+        <param name="styleIsUsedOn">此樣式用於下列索引標籤：</param>
+        <param name="showUsedStyles">顯示用於其他索引標籤上的樣式</param>
+        <param name="hideUsedStyles">隱藏用於其他索引標籤上的樣式</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">索引標籤色彩選擇器</param>
+        <param name="instructions">請選取色彩</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">色彩：</param>
+        <param name="icon">圖示：</param>
+        <param name="defineNew">定義新色彩樣式</param>
+        <param name="noMotifErr">您必須選取色彩</param>
+        <param name="noIconErr">您必須選取圖示</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} 已成功建立。</param>
+        <param name="Failure_message">建立失敗。</param>
+        <param name="Common_success_message">建立成功。</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">要求其他產品</param>
+        <param name="pageheader">請填寫下面的欄位，提交您需要其他產品的要求。使用「描述」欄位列出您想要訂購的產品。如果您希望訂購目前契約上的產品，請提供契約編號作參照。</param>
+        <param name="colHeader">提交您的購買要求</param>
+        <param name="functionalArea_0">購買授權</param>
+        <param name="type_0">購買</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">購買要求</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">感謝您提出要求。我們已通知您的銷售代表，他 (她) 將與您連絡並完成您的訂購程序。</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">要求減少授權數</param>
+        <param name="pageheader">請填寫所有必要的欄位，提交您的減少授權數要求。這是處理您要求的最快方法。請不要提交相同授權的多個要求，如此可避免不必要的延遲。</param>
+        <param name="title_landing">已經收到您的要求！</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">已經收到您的要求，將依收到的次序處理。請注意，只要在您的下次帳單期間的發票日期之前五個工作日通知 salesforce.com，則從要求後的下一次帳單期間開始，減少授權數要求就會開始生效。</param>
+        <param name="pageheader_landing">已經收到您的要求，將依收到的次序處理。減少授權數要求，會在要求提交後 30 天之後生效。請勿對相同授權重複提交減少授權數要求，以免延誤處理。</param>
+        <param name="title_error">您的要求無法處理。</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">我們目前無法提交您的要求。請稍後再試一次。</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">提交您的要求</param>
+        <param name="reason">原因</param>   <!-- aliased across labels; do not change -->
+        <param name="description">請描述&lt;br&gt;詳細情況</param>
+        <param name="numLicenses">授權數目</param>
+        <param name="potentialResponse">我們如何保持及改進&lt;br&gt;您的業務？</param>
+        <param name="tips_title">提交減少授權數要求小祕訣</param>
+        <param name="tip1">請正確填寫所有資訊，以便確定可以即時、適當地處理您的要求。提交此要求前，請確定您停用足夠多的使用者，讓您的帳戶少於或等於新的授權數。透過 &lt;a href=&quot;{1}&quot;&gt;我的設定&lt;/a&gt; 中的 &lt;a href=&quot;{0}&quot;&gt;管理使用者&lt;/a&gt; 功能，可以完成上述動作。</param>
+        <param name="type1">帳戶取消</param>
+        <param name="type2">減少使用者授權數</param>
+        <param name="type3">減少離線授權數</param>
+        <param name="type4">減少行銷活動授權數</param>
+        <param name="type5">Mobile Edition for au 取消</param>
+        <param name="type6">Mobile Edition for au 減少授權數</param>
+        <param name="type7">減少 Force.com Mobile 授權數</param>
+        <param name="reason_0">公司收購/合併</param>
+        <param name="reason_1">公司解散</param>
+        <param name="reason_2">離職的銷售代表</param>
+        <param name="reason_3">一般使用者未採用</param>
+        <param name="reason_4">功能不符合期望</param>
+        <param name="reason_5">管理人員看不出有足夠價值</param>
+        <param name="reason_6">salesforce.com 員工經驗不足</param>
+        <param name="reason_7">價格太高</param>
+        <param name="reason_8">轉換至競爭者</param>
+        <param name="reason_9">未使用的授權</param>
+        <param name="reason_10">其他</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">請填入下列欄位：</param>
+        <param name="title">傳送回饋意見給 salesforce.com</param>
+        <param name="title_upgrade_me">記錄升級要求</param>
+        <param name="title_support">傳送回饋意見</param>
+        <param name="warning_line_too_long">警告：描述大於 4000 個字元，將會被截斷。\\n</param>
+        <param name="feedback_info">連絡客戶支援</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">「客戶支援」可用來處理您可能有的任何問題或反饋。我們非常需要客戶的回饋資訊，以協助 Salesforce 提供更好的服務。我們非常歡迎也非常感謝您的意見及建議，期待著您的回應。</param>
+        <param name="general_info_me">要詳細瞭解從 Personal Edition 升級到任何版本的資訊，請填寫下面的表單。銷售代表將會在 48 小時內給您回電。</param>
+        <param name="general_info_support">「客戶支援」可用來處理您可能有的任何問題或反饋。客戶的回饋意見具有莫大的助益，可協助塑造和設計 Salesforce CRM Call Center。很希望聽到您的意見，並期待著聽到您的消息。</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">新增</param>
+        <param name="functionalArea">主題</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">問題</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">要求</param>
+        <param name="type3">回饋</param>
+        <param name="type4">功能要求</param>
+        <param name="priority1">緊急</param>
+        <param name="priority2">正常</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">低</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">我想立即訂購 Professional Edition</param>
+        <param name="subject_subscribe_me">我想立即升級</param>
+        <param name="subject_subscribe_we">我想得知 Professional Edition 的詳細資訊</param>
+        <param name="subject_subscribe_ee">我想立即訂購 Enterprise Edition</param>
+        <param name="subject_subscribe_ue">我想立即訂購 Unlimited Edition</param>
+        <param name="subject_subscribe_support">我想立即訂購</param>
+        <param name="subject_data_export">我需要每週匯出服務</param>
+        <param name="subject_marketing_licenses">新增行銷授權</param>
+        <param name="subject_offline_licenses">新增離線授權</param>
+        <param name="subject_wireless_licenses">新增無線授權</param>
+        <param name="subject_offlinepda_licenses">新增 Sales Anywhere 授權</param>
+        <param name="subject_mobile_licenses">新增 Force.com Mobile 授權</param>
+        <param name="subject_sfcontent_licenses">新增 Salesforce CRM Content 授權</param>
+        <param name="subject_knowledge_licenses">新增知識庫授權</param>
+        <param name="subject_interaction_licenses">新增 Force.com 流動授權</param>
+        <param name="subject_support_licenses">新增 Service Cloud 授權</param>
+        <param name="subject_jigsaw_licenses">新增 Jigsaw 授權</param>
+        <param name="subject_liveagent_licenses">新增 Live Agent 授權</param>
+        <param name="subject_siteforcecontributor_licenses">新增 Site.com Contributor 授權</param>
+        <param name="subject_siteforcepublisher_licenses">新增 Site.com Publisher 授權</param>
+        <param name="subject_chatteranswers_licenses">新增 Chatter Answers 授權</param>
+        <param name="subject_license_reduction">減少授權數</param>
+        <param name="functionalArea_0">帳戶/授權管理</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">帳單查詢</param>
+        <param name="functionalArea_3">資料連結</param>
+        <param name="functionalArea_4">電子郵件/HTML 電子郵件</param>
+        <param name="functionalArea_5">預測和機會</param>
+        <param name="functionalArea_6">匯入</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">商機</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">績效</param>
+        <param name="functionalArea_9">報告和檢視</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">立即訂購</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">同步化</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">每週匯出服務</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">無線</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">其他</param>
+        <param name="functionalArea_16">行銷授權數</param>
+        <param name="functionalArea_17">離線授權</param>
+        <param name="functionalArea_18">設定檔/版面配置/記錄類型</param>
+        <param name="functionalArea_19">行銷活動</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">自助式服務</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">無線授權</param>
+        <param name="functionalArea_22">立即升級</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere 授權</param>
+        <param name="functionalArea_24">工作/事件 </param>
+        <param name="functionalArea_25"><Products/>和年金/<Pricebooks/></param>
+        <param name="functionalArea_26">大型交易警示 </param>
+        <param name="functionalArea_27">文件</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">個案和解決方案 </param>
+        <param name="functionalArea_29">搜尋</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">共用</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">適用於澳洲的 Force.com Mobile Edition</param>
+        <param name="functionalArea_35">合作夥伴入口網頁授權</param>
+        <param name="functionalArea_36">Force.com Mobile 授權</param>
+        <param name="functionalArea_37">Salesforce CRM Content 授權</param>
+        <param name="functionalArea_38">Service Cloud 授權</param>
+        <param name="functionalArea_39">Jigsaw 授權</param>
+        <param name="functionalArea_40">Live Agent 授權</param>
+        <param name="functionalArea_41">Site.com Contributor 授權</param>
+        <param name="functionalArea_42">Site.com Publisher 授權</param>
+        <param name="functionalArea_43">Chatter Answers 授權</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">如果您希望直接與客戶服務人員連絡，可以在太平洋時間週一至週五早上 6 點至下午 6 點，撥打 (415) 901-7010；或在 GMT (格林威治時間) 週一至週五早上 8 點到下午 6 點，撥打 +353-1-2723503。</param>
+        <param name="tips_title">提交個案小祕訣</param>
+        <param name="tip1">請確定您已提供足夠的資訊，讓我們能夠盡快回答您的個案。我們已在下面提供幾項建議和提醒：</param>
+        <param name="tip2">請告訴我們您想做的事、期待的結果及實際發生的情況。</param>
+        <param name="tip3">請告訴我們您執行的步驟，以便重建您遇到的問題。</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">檢視：</param>
+        <param name="X">X</param>
+        <param name="close">關閉</param>
+        <param name="MLclose">結束</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">刪除</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">刪除</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">清除</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">記錄</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">設定</param>
+        <param name="activate">啟用</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">停用</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">管理</param>   <!-- aliased across labels; do not change -->
+        <param name="export">匯出</param>   <!-- aliased across labels; do not change -->
+        <param name="next">下一頁</param>
+        <param name="prev">上一頁</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">檢視中的項目總計：{0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">每個清單頁顯示 {0} 筆 {1}記錄</param>
+        <param name="number_shown_detail_page">每個相關清單一律顯示 {0} 筆 {1}{2}記錄</param>
+        <param name="number_shown_adjust_less_link">更少</param>
+        <param name="number_shown_adjust_more_link">更多</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">所有</param>
+        <param name="last_page">回到上一頁</param>
+        <param name="last_list">回到清單</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">回到清單：<Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">回到清單：來自連線的<Entity entity="0" plural="y"/></param>
+        <param name="last_suggested_solution_list">回到<Suggested/><Solutions/>清單</param>
+        <param name="last_solution_search_list">回到<Solution plural="n"/>搜尋結果</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">回到<Entity entity="0" plural="n"/>：{0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">動作：</param>
+        <param name="checkboxPrompt">請至少選擇一個資料行</param>
+        <param name="checkboxSinglePrompt">請選取單一資料行</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">您在此頁面上的選擇將遺失。您要繼續嗎？</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">您必須至少選取 {0} 列，才可以執行此作業。</param>
+        <param name="selectionLimit">您無法選取 {0} 個以上的列。</param>
+        <param name="login">登入</param>   <!-- aliased across labels; do not change -->
+        <param name="session">工作階段</param>
+        <param name="none">沒有要顯示的記錄。</param>
+        <param name="no_rows">未選取資料行</param>
+        <param name="subtotal">小計：</param>
+        <param name="total">總計：</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">選取所有項目</param>
+        <param name="clearAllInfo">取消選取所有項目</param>
+        <param name="rename">重新命名</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">選取</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">取消選取</param>
+        <param name="toggleall">切換所有資料行</param>
+        <param name="refresh">重新整理</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">請選取檢視。</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">您指定的檢視超出大小上限。請編輯檢視或建立新檢視以縮小您的搜尋條件範圍。</param>
+        <param name="switch_view">切換檢視</param>
+        <param name="records_x_to_y">顯示記錄 {0} - {1}</param>
+        <param name="records_x_to_y_more">顯示記錄 {0} - {1}，更多的可用記錄</param>
+        <param name="records_x_to_y_more_showing_max">顯示記錄 {0} - {1}。儘管有更多的可用記錄，但此頁面只能顯示前 1,000 筆記錄。若要顯示較少的記錄，請細化您的清單檢視條件。若要列印 1,000 筆以上的記錄，請執行報告，然後按一下報告上的「可列印的檢視」按鈕。</param>
+        <param name="number_of_records">記錄數</param>
+        <param name="createCase">建立<Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">按一下以展開/摺疊下層項目。</param>
+        <param name="expand">按一下以展開下層項目。</param>
+        <param name="collapse">按一下以摺疊下層項目。</param>
+        <param name="shortExpand">展開</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">摺疊</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">已展開</param>
+        <param name="collapsed">已摺疊</param>
+        <param name="level">等級</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">階層：</param>
+        <param name="siblings">同屬：</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">對應</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">選取物件</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">對象</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">內容</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">搜尋傳回的結果超過資料行數上限 ({0})。請進一步限定您的搜尋條件。</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">保留所有權利。</param>
+        <param name="useWildcards">您可以使用 '*' 當做其他字元旁邊的萬用字元以改善您的搜尋結果。例如，"ad*" 會傳回名稱包含 "ad" 的所有記錄。</param>
+        <param name="useWildcardsWithSearch">您可以使用 "*" 放在其他字元旁邊作為萬用字元，以改善您的搜尋結果。</param>
+        <param name="error_lookup_multiple_matches_ile">找到多個項目。&lt;br&gt;按一下圖示以細化搜尋。</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">選擇一種色彩</param>
+        <param name="cpFrameTitle">色彩選擇器</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">選擇一種圖表類型</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">展開清單</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">展開的清單</param>
+        <param name="sharing">共用</param>   <!-- aliased across labels; do not change -->
+        <param name="why">為什麼？</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">更多篩選器 &gt;&gt;</param>
+        <param name="less_filters">較少篩選器 &lt;&lt;</param>
+        <param name="by_keyword">依關鍵字</param>
+        <param name="by_filter">依欄位篩選器</param>
+        <param name="too_many">您的搜尋返回 {0} 個以上的列。只顯示前面的 {0} 個。請限定您的搜尋條件。</param>
+        <param name="Results">結果</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">搜尋：</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">分數</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">欄位</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">運算子</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">值</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">使用「或」篩選符，您可以在第三個欄位中輸入多個關鍵字。</param>
+        <param name="tip_1">您最多可以輸入 10 個以逗點分隔的關鍵字。例如：輸入 CA, NY, TX, FL 將搜尋 CA 或 NY 或 TX 或 FL。</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">在包含逗點的關鍵字兩邊使用引號。例如，輸入 "200,000","1,000,000" 將搜尋 200,000 或 1,000,000。</param>
+        <param name="tip_3">對於核取方塊欄位，請使用「False」和「True」，例如「Active equals True」或「Converted equals False」。</param>
+        <param name="tip_4">依據地區碼的規則項目可能需要包含括號，例如開頭為 (415)、(510) 的電話。</param>
+        <param name="tip_5">如果您在使用翻譯工作台，請輸入使用主要數值的所有篩選條件。</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">可用</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">選擇</param>
+        <param name="assignLicensesDescription">選取您要指派給此使用者之每個封裝旁邊的核取方塊，然後按一下「指派」。如果封裝沒有足夠的可用授權，或者封裝狀態過期或暫停，則不會出現這個核取方塊。</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">水平檢視</param>
+        <param name="vertical_view">垂直檢視</param>
+        <param name="view_select_title">選擇檢視</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">Salesforce 傳統</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">預設入口網頁</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This/><Entity entity="0"/>已受管理，其表示您只能編輯特定屬性。</param>
+        <param name="EntityDeprecated">已取代<This/><Entity entity="0"/>。</param>
+        <param name="UnmanagedDeprecatedByOther">尚未發行<This/><Entity entity="0"/>，但它已由其父系元件取代。</param>
+        <param name="EntityDeprecatedByDev"><This/><Entity entity="0"/>已由封裝發行者取代。請查看發行者，以瞭解詳細資訊。</param>
+        <param name="Undeprecate">您可以在上載至受管理 - 已發行封裝之前先取消取代元件。</param>
+        <param name="UndeprecateByOther">您可以在上載至受管理 - 已發行封裝之前先取消取代此元件的父系。</param>
+        <param name="MoreInfo">顯示詳細資訊</param>
+        <param name="LessInfo">隱藏資訊</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><This/><Entity entity="0"/>是您已上載至 AppExchange 之可升級封裝的一部份。</param>
+        <param name="BecauseInstalled"><This/><Entity entity="0"/>是從 AppExchange 安裝之可升級封裝的一部份。</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">可以編輯的項目為何？</param>
+        <param name="WhatNone">就已受管理的 {0} 而言，您不可編輯任何屬性，因為這有助於讓將來的升級更順暢。</param>
+        <param name="WhatTop">針對受管理 {0}，您可編輯下列項目：</param>
+        <param name="WhatBottom">若要簡化升級程序，就得鎖定其他所有屬性。</param>
+        <param name="WhoCanDelete">誰可以刪除哪個 {0}？</param>
+        <param name="Who">{0} 可以刪除 {1}。</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">實體詳細資料一覽</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">已經儲存 {0}。</param>
+        <param name="modified">已經更新 {0}。</param>
+        <param name="submitted">已經提交 {0}。</param> <!-- Label swap for Case object -->
+        <param name="attached">已新增附件。</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">色彩範例</param>
+        <param name="colorHexValue">色彩十六進位值</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">確認</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">資訊</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">錯誤</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">警告</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">安全</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+        <param name="frequency">頻率</param>   <!-- aliased across labels; do not change -->
+        <param name="daily">每日</param>   <!-- aliased across labels; do not change -->
+        <param name="weekly">每週</param>   <!-- aliased across labels; do not change -->
+        <param name="monthly">每月</param>   <!-- aliased across labels; do not change -->
+        <param name="everyWeekday">每週末</param>   <!-- aliased across labels; do not change -->
+        <param name="everyDay">每日</param>
+        <param name="lastDay">最後</param>   <!-- aliased across labels; do not change -->
+        <param name="on1">第一</param>
+        <param name="on2">第二</param>
+        <param name="on3">第三</param>
+        <param name="on4">第四</param>
+        <param name="onLast">最後</param>
+        <param name="startTime">開始</param>   <!-- aliased across labels; do not change -->
+        <param name="endTime">結束</param>   <!-- aliased across labels; do not change -->
+        <param name="preferredTime">我的最愛開始時間</param>
+        <param name="noPreference">沒有我的最愛</param>
+    <param name="edit" alias="Buttons.edit"/>
+        <param name="preferredTimeDescr">精確的開始時間會視工作佇列活動而定。</param>
+
+<param name="diffTimeZoneMsg"><![CDATA[此每月頻率設定的時區為：<br><strong>{0}</strong><br>頻率設定會在最後一位編輯使用者的時區中顯示。<br>您對這些設定所做的任何變更都將更新以符合您的時區。]]></param>
+
+<param name="weeklyRecurrence">每週的 {0} 重複發生</param>
+        <param name="weeklyRecurrenceLegendLabel">每週重複發生於</param>
+        <param name="monthlyRecurrence1">在每個月的第 {0} 天</param>
+        <param name="monthlyRecurrence1LegendLabel">特定</param>
+        <param name="monthlyRecurrence2LegendLabel">自訂</param>
+        <param name="monthlyRecurrence2">在每個月的 {2} {0} {3} {1}</param> <!--  On <label> <element> <label> <element> of every month -->
+        <param name="monthlyRecurrence2Sentence">在每個月的第 {0} {1}</param> <!--  same as label above but without the <label>'s -->
+        <param name="accessibleMonthly1">在每個月的特定日期</param>
+        <param name="accessibleMonthly2">在每個月的自訂日期</param>
+        <param name="accessibleOnDayN">特定日期</param>
+        <param name="accessibleOnDayNOfWeek">事件</param>
+        <param name="accessibleOnDayName">日</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">此簡單的測試能防止惡意程式存取您的資料。大量下載時，您的管理員會要求進行此測試。每次登入工作階段中，要求次數不會超過一次。</param>
+        <param name="imagePrompt">輸入以上的文字，以空格分隔：</param>
+        <param name="audioPrompt">輸入您聽到的數字：</param>
+        <param name="refresh">接受新的挑戰</param>
+        <param name="audio">接受音訊的挑戰</param>
+        <param name="image">接受影像的挑戰</param>
+        <param name="incorrect">不正確，請再試一次</param>
+        <param name="moreinfo">更多的資訊 &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; 較少的資訊</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">按一下以取得詳細資訊...</param>
+        <param name="show">顯示反白顯示窗格</param>
+        <param name="hide">隱藏反白顯示窗格</param>
+        <param name="empty">沒有可針對此記錄顯示的反白欄位</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">指引導覽</param>
+        <param name="closeIntro">不，謝謝</param>
+        <param name="closeOutro">結束</param>
+        <param name="showLater">稍後再顯示</param>
+        <param name="replay">回應</param>
+        <param name="continue">繼續</param>
+        <param name="previous">上一步</param>
+        <param name="startTour">開始導覽</param>
+        <param name="endTour">結束導覽</param>
+        <param name="stepCounter">{0} / {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">詳細資料</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">建議</param>
+        <param name="hideBucketTip">&lt;br&gt;將項目從頁面拖放至此處以將其隱藏&lt;br/&gt;。</param>
+        <param name="hiddenListTip">若要顯示隱藏的物件，請將其拖曳回上述清單。</param>
+        <param name="hiddenListShowLinkLabel">已隱藏 {0}</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">回到頁首</param>
+        <param name="multipleItemDragGhost">多個項目 (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">詳細資料頁面瀏覽器相容性</param>
+        <param name="compatibilityMsgSubTitle">抱歉，我們不支援此瀏覽器。</param>
+        <param name="compatibilityMsg1">我們無法在您目前的瀏覽器中顯示新的詳細資料頁面。</param>
+        <param name="compatibilityMsg2">一經登入，您隨時都能將新設計搭配使用其中一款相容的瀏覽器：</param>
+        <param name="supportedIE">Internet Explorer 7 或 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">感謝您！</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">將傳統檢視設為我的預設值</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">在此輸入以搜尋 {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">沒有任何 {0} 符合您的搜尋。</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">第 {1} 頁，共 {0} 頁</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">關閉功能表</param>
+        <param name="confirmTurnOffTitle">您確定要關閉這個功能表嗎？</param>
+        <param name="confirmTurnOffText">未來若要開啟這個功能表，請移至設定功能表的「個人資訊」頁面，並啟用 Force.com 快速存取功能表」偏好設定。</param>
+        <param name="viewObject">檢視物件</param>
+        <param name="viewObjectHover">檢視和管理此物件的詳細資料</param>
+        <param name="viewObjectNewHover">建立物件</param>
+        <param name="viewFields">檢視欄位</param>
+        <param name="viewFieldsHover">檢視和管理此物件的欄位</param>
+        <param name="viewFieldsNewHover">將欄位新增至此物件</param>
+        <param name="viewRecordTypes">檢視記錄類型</param>
+        <param name="viewRecordTypesHover">檢視和管理此物件的記錄類型</param>
+        <param name="viewRecordTypesNewHover">新增此物件的記錄類型</param>
+        <param name="viewValidationRules">檢視驗證規則</param>
+        <param name="viewValidationRulesHover">檢視和管理此物件的驗證規則</param>
+        <param name="viewValidationRulesNewHover">新增此物件的驗證規則</param>
+        <param name="viewApprovals">檢視批准</param>
+        <param name="viewApprovalsHover">檢視和管理此物件的批准流程</param>
+        <param name="viewApprovalsNewHover">使用跳轉起點精靈，新增此物件的批准流程</param>
+        <param name="editApp">編輯應用程式</param>
+        <param name="editAppHover">自訂索引標籤清單、設定檔指派，以及此應用程式的其他詳細資料</param>
+        <param name="editTab">編輯索引標籤</param>
+        <param name="editTabHover">自訂圖示、色彩，以及此標籤的其他詳細資料</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">自訂此版面配置</param>
+        <param name="viewRecordType">檢視記錄類型</param>
+        <param name="viewRecordTypeHover">檢視和管理此記錄類型，包括編輯選項清單值</param>
+        <param name="editColumns">編輯欄位</param>
+        <param name="editColumnsHover">自訂此清單中的欄位</param>
+        <param name="importData">匯入資料</param>
+        <param name="importDataHover">將資料匯入此物件</param>
+    </section>
+</iniFile>

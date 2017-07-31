@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value></adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+    <adjective name="Accessed" startsWith="c">
+        <value plural="n">Hozzáférés sikeres</value></adjective>
+
+    <adjective name="Active" startsWith="v">
+        <value plural="n">Aktív</value></adjective>
+
+    <adjective name="Additional" startsWith="c">
+        <value plural="n">További</value></adjective>
+
+    <adjective name="All" startsWith="v">
+        <value plural="n">Összes</value></adjective>
+
+    <adjective name="All_Day" startsWith="v">
+        <value plural="n">Egész napos</value></adjective>
+
+	<adjective name="Alternative" startsWith="v">
+        <value plural="n">Alternatív</value></adjective>
+
+    <adjective name="Another" startsWith="v">
+        <value plural="n">Újabb</value></adjective>
+        
+     <adjective name="Any" startsWith="c"> 
+        <value plural="n">Minden</value>
+	</adjective>
+
+    <adjective name="Archived" startsWith="v">
+        <value plural="n">Archivált</value></adjective>
+
+    <adjective name="Assigned" startsWith="v">
+        <value plural="n">Hozzárendelt</value></adjective>
+
+    <adjective name="Associated" startsWith="c">
+        <value plural="n">Kapcsolódó</value></adjective>
+
+    <adjective name="Attached" startsWith="c">
+        <value plural="n">Mellékelt</value></adjective>
+
+    <adjective name="Available" startsWith="v">
+        <value plural="n">Elérhető</value></adjective>
+
+    <adjective name="Billed" startsWith="c">
+        <value plural="n">Számlázott</value></adjective>
+
+    <adjective name="certain" startsWith="c">
+        <value plural="n">bizonyos</value></adjective>
+
+    <adjective name="Closed" startsWith="c">
+        <value plural="n">Lezárt</value></adjective>
+
+    <adjective name="Completed" startsWith="c">
+        <value plural="n">Befejezett</value></adjective>
+
+    <adjective name="Converted" startsWith="v">
+        <value plural="n">Átalakítva</value></adjective>
+
+    <adjective name="Corresponding" startsWith="c">
+        <value plural="n">Megfelelő</value></adjective>
+
+	<adjective name="Created" startsWith="c">
+        <value plural="n">Létrehozott</value></adjective>
+
+    <adjective name="Current" startsWith="c">
+        <value plural="n">Jelenlegi</value></adjective>
+
+    <adjective name="Custom" startsWith="c">
+        <value plural="n">Felhasználói</value></adjective>
+
+    <adjective name="Default" startsWith="v">
+        <value plural="n">Alapértelmezett</value></adjective>
+
+    <adjective name="Delegated" startsWith="v">
+        <value plural="n">Átadott</value></adjective>
+
+    <adjective name="Deleted" startsWith="c">
+        <value plural="n">Törölt</value></adjective>
+
+	<adjective name="Designated" startsWith="c">
+        <value plural="n">Kijelölt</value></adjective>
+
+    <adjective name="Duplicate" startsWith="v">
+        <value plural="n">Ismételt</value></adjective>
+
+    <adjective name="Draft" startsWith="c">
+        <value plural="n">Vázlatos</value></adjective>
+
+    <adjective name="Each" startsWith="v">
+        <value plural="n">Egyedi</value></adjective>
+
+    <adjective name="Editable" startsWith="c">
+        <value plural="n">Szerkeszthető</value></adjective>
+
+    <adjective name="Empty" startsWith="v">
+        <value plural="n">üres</value></adjective>
+
+    <adjective name="Every" startsWith="c">
+        <value plural="n">Minden</value></adjective>
+
+    <adjective name="Existing" startsWith="c">
+        <value plural="n">Létező</value></adjective>
+
+    <adjective name="Expected" startsWith="c">
+        <value plural="n">Várható</value></adjective>
+
+    <adjective name="First" startsWith="v">
+        <value plural="n">Első</value></adjective>
+
+    <adjective name="Following" startsWith="c">
+        <value plural="n">Következõ</value></adjective>
+
+    <adjective name="Future" startsWith="c">
+        <value plural="n">Jövőbeli</value></adjective>
+
+    <adjective name="Helpful" startsWith="c">
+        <value plural="n">Segítségnyújtási</value></adjective>
+
+    <adjective name="Historical" startsWith="c">
+        <value plural="n">Múltbeli</value></adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot" startsWith="c">
+        <value plural="n">Kedvenc</value></adjective>
+
+    <adjective name="Imported" startsWith="v">
+        <value plural="n">Importálva</value></adjective>
+    
+    <adjective name="Inactive" startsWith="v">
+        <value plural="n">Inaktív</value></adjective>
+
+    <adjective name="Individual" startsWith="v">
+        <value plural="n">Egyedi</value></adjective>
+
+    <adjective name="Invalid" startsWith="v">
+        <value plural="n">Érvénytelen</value></adjective>
+        
+     <adjective name="Its" startsWith="v"> 
+        <value plural="n">Annak a</value>
+	</adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+    <adjective name="Key" startsWith="v">
+        <value plural="n">Alapvető</value></adjective>
+
+    <adjective name="Last" startsWith="c">
+        <value plural="n">Utolsó</value></adjective>
+
+	<adjective name="Linked" startsWith="c">
+       <value plural="n">Csatolt</value></adjective>
+       
+    <adjective name="Loaded" startsWith="c">
+        <value plural="n">Betöltött</value></adjective>
+
+    <adjective name="Locked" startsWith="c">
+        <value plural="n">Lefoglalt</value></adjective>
+    
+    <adjective name="Managed" startsWith="c">
+        <value plural="n">Kezelt</value></adjective>
+
+	<adjective name="Managing" startsWith="c">
+        <value plural="n">Kezelő</value></adjective>
+
+  <adjective name="Master" startsWith="c">
+        <value gender="n" plural="n">Fő</value></adjective>
+  
+    <adjective name="Marked" startsWith="c">
+	<value plural="n">Megjelölt</value></adjective>
+
+    <adjective name="Matching" startsWith="c">
+        <value plural="n">Megfelelő</value></adjective>
+
+    <adjective name="Merged" startsWith="c">
+        <value plural="n">Egyesítve</value>
+    </adjective>
+
+	<adjective name="More" startsWith="c">
+        <value plural="n">További</value></adjective>  
+
+	<adjective name="Multiple" startsWith="c">
+        <value plural="n">Sok</value></adjective>
+        
+    <adjective name="My" startsWith="c">
+        <value plural="n">Saját</value></adjective>
+
+    <adjective name="Neglected" startsWith="c">
+        <value plural="n">Kihagyott</value></adjective>
+
+    <adjective name="New" startsWith="v">
+        <value plural="n">Új</value></adjective>
+
+    <adjective name="No" startsWith="v">
+        <value plural="n">Nem</value></adjective>
+        
+    <adjective name="Non-primary" startsWith="c">
+        <value plural="n">Nem elsődleges</value></adjective>
+
+    <adjective name="Num" startsWith="c"> <!--number-->
+        <value plural="n">Szám</value></adjective>
+
+	<adjective name="Older" startsWith="c">
+        <value plural="n">Régebbi</value></adjective>
+
+<adjective name="One" startsWith="v"> 
+        <value plural="n">Egy</value>
+	</adjective>
+
+    <adjective name="Open" startsWith="c">
+        <value plural="n">Megnyitás</value></adjective>
+
+    <adjective name="Original" startsWith="v">
+        <value plural="n">Eredeti</value></adjective>
+
+    <adjective name="Other" startsWith="v">
+        <value plural="n">Egyéb</value></adjective>
+
+    <adjective name="Overdue" startsWith="c">
+        <value plural="n">Késedelmes</value></adjective>
+
+    <adjective name="Overridden" startsWith="c">
+        <value plural="n">Semmis</value></adjective>
+
+	<adjective name="Owning" startsWith="v">
+        <value plural="n">Tulajdonos</value></adjective>
+        
+    <adjective name="Personal" startsWith="c">
+        <value plural="n">Személyes</value></adjective>
+
+    <adjective name="Popular" startsWith="c">
+        <value plural="n">Népszerű</value></adjective>
+
+    <adjective name="Posted" startsWith="c">
+        <value plural="n">Közzétett</value></adjective>
+
+    <adjective name="Primary" startsWith="v">
+        <value plural="n">Elsődleges</value></adjective>
+
+    <adjective name="Private" startsWith="c">
+        <value plural="n">Privát</value></adjective>
+
+    <adjective name="Proposed">
+        <value plural="n">Javasolt</value></adjective>
+
+    <adjective name="Public" startsWith="c">
+        <value plural="n">Nyilvános</value></adjective>
+
+    <adjective name="Published" startsWith="c">
+        <value plural="n">Közzétett</value></adjective>
+
+    <adjective name="Queue_Owned" startsWith="c">
+        <value plural="n">Sorral rendelkező</value></adjective>
+
+    <adjective name="Recent" startsWith="c">
+        <value plural="n">Legújabb</value></adjective>
+
+    <adjective name="Recurring" startsWith="v">
+        <value plural="n">Ismétlõdõ</value></adjective>
+
+    <adjective name="Recently" startsWith="c">
+        <value plural="n">Mostanában</value></adjective>
+
+    <adjective name="Related" startsWith="c">
+        <value plural="n">Kapcsolódó</value></adjective>
+
+    <adjective name="Relevant" startsWith="c">
+        <value plural="n">Lényeges</value></adjective>
+
+    <adjective name="Rejected" startsWith="v">
+        <value plural="n">Elutasított</value></adjective>
+
+    <adjective name="Resulting" startsWith="c">
+        <value plural="n">Kapott</value></adjective>
+
+    <adjective name="Reviewed" startsWith="c">
+        <value plural="n">Véleményezett</value></adjective>
+
+    <adjective name="Same" startsWith="c">
+        <value gender="n" plural="n">Ugyanaz</value></adjective>
+
+    <adjective name="Sample" startsWith="c">
+        <value plural="n">Minta</value></adjective>
+
+    <adjective name="Scheduled" startsWith="c">
+        <value gender="n" plural="n">Ütemezett</value></adjective>
+
+    <adjective name="Second" startsWith="c">
+        <value plural="n">Második</value></adjective>
+
+    <adjective name="Selected" startsWith="c">
+        <value plural="n">Kiválasztott</value></adjective>
+
+	<adjective name="Shared" startsWith="c">
+        <value plural="n">Megoszott</value></adjective>
+
+    <adjective name="Similar" startsWith="c">
+        <value plural="n">Hasonló</value></adjective>
+
+    <adjective name="Single" startsWith="v">
+        <value plural="n">Egyedi</value></adjective>
+
+    <adjective name="Social" startsWith="c">
+        <value plural="n">Közösségi</value></adjective>
+
+    <adjective name="Source" startsWith="c">
+	<value plural="n">Forrás</value></adjective>
+
+    <adjective name="Specified" startsWith="c">
+        <value plural="n">Megadott</value></adjective>
+
+    <adjective name="Stale" startsWith="v">
+        <value plural="n">Elavult</value></adjective>
+
+    <adjective name="Standard" startsWith="c">
+        <value plural="n">Szokásos</value></adjective>
+
+    <adjective name="Stuck" startsWith="c">
+        <value plural="n">Megmaradt</value></adjective>
+
+    <adjective name="Suggested" startsWith="c">
+        <value plural="n">Javasolt</value></adjective>
+
+    <adjective name="Supplementary" startsWith="c">
+        <value plural="n">Kiegészítő</value></adjective>
+        
+    <adjective name="Supported" startsWith="c">
+	<value plural="n">Támogatott</value></adjective>
+
+    <adjective name="Synced" startsWith="c">
+        <value plural="n">Szinkronizált</value>
+    </adjective>
+
+    <adjective name="That" startsWith="v">
+        <value plural="n" startsWith="v">Azok az</value>
+    <value plural="n" startsWith="c">Azok a</value></adjective>
+
+    <adjective name="Their" startsWith="c">
+        <value plural="n">Saját</value></adjective>
+
+    <adjective name="These" startsWith="v">
+    <value plural="n" startsWith="v">Ezek az</value>
+    <value plural="n" startsWith="c">Ezek a</value></adjective>
+
+    <adjective name="This" startsWith="v">
+    <value plural="n" startsWith="v">Ez az</value>
+    <value plural="n" startsWith="c">Ez a</value></adjective>
+
+    <adjective name="Those" startsWith="v">
+        <value plural="n">Azok</value></adjective>
+
+    <adjective name="Total" startsWith="v">
+        <value plural="n">Összes</value></adjective>
+
+    <adjective name="Top" startsWith="v">
+        <value plural="n">Első</value></adjective>
+
+    <adjective name="Translated" startsWith="c">
+        <value plural="n">Lefordított</value></adjective>
+
+    <adjective name="Transferable" startsWith="v">
+        <value plural="n">Átadható</value></adjective>
+
+    <adjective name="Unconverted" startsWith="c">
+        <value plural="n">Nem átalakított</value></adjective>
+
+    <adjective name="Unread" startsWith="v">
+        <value plural="n">Olvasatlan</value></adjective>
+
+    <adjective name="Unresolved" startsWith="v">
+	<value plural="n">Feloldatlan</value></adjective>
+
+    <adjective name="Unreviewed" startsWith="c">
+        <value plural="n">Nem véleményezett</value></adjective>
+
+    <adjective name="Unused" startsWith="c">
+        <value plural="n">Nem használt</value></adjective>
+
+    <adjective name="Unfiled" startsWith="c">
+        <value plural="n">Nem iktatott</value></adjective>
+
+    <adjective name="Unshared" startsWith="v">
+        <value plural="n">Nem megosztott</value></adjective>
+
+    <adjective name="Updated" startsWith="c">
+        <value plural="n">Frissített</value></adjective>
+
+    <adjective name="Useful" startsWith="c">
+        <value plural="n">Hasznos</value></adjective>
+
+    <adjective name="User_Owned" startsWith="c">
+        <value plural="n">Felhasználói</value></adjective>
+    
+    <adjective name="Valid" startsWith="v">
+        <value plural="n">Érvényes</value>
+    </adjective>
+
+    <adjective name="Viewed" startsWith="c">
+        <value plural="n">Megnézett</value></adjective>
+
+    <adjective name="Visible" startsWith="c">
+        <value plural="n">Látható</value></adjective>
+
+    <adjective name="Won" startsWith="v">
+        <value plural="n">Elnyert</value></adjective>
+
+    <adjective name="Your" startsWith="c">
+        <value plural="n">Saját</value></adjective>
+
+    <adjective name="Zero" startsWith="c">
+        <value plural="n">Nulla </value></adjective>
+        
+    <article name="A" type="a">
+		<value plural="n" startsWith="c">egy</value>
+		<value plural="n" startsWith="v">egy</value>
+	</article>
+
+    <article name="The" type="the">
+        <value plural="n" startsWith="v">Az</value>
+        <value plural="n" startsWith="c">A</value>
+    </article>
+</adjectives>
+

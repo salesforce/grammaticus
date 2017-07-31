@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Activity/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Activitys/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Activity).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">A partner</value>
+        <value plural="n" article="the">The partner</value>
+        <value plural="y" article="the">The partners</value>
+    =======================================================================-->
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts"  gender="m"  startsWith="c">
+        <value plural="n">Обліковий запис</value>
+    	<value plural="y">Облікові записи</value>
+   		<value plural="n" case="a">Обліковий запис</value>
+        <value plural="y" case="a">Облікові записи</value>
+        <value plural="n" case="d">Обліковому запису</value>
+        <value plural="y" case="d">Обліковим записам</value>
+        <value plural="n" case="g">Облікового запису</value>
+        <value plural="y" case="g">Облікових записів</value>
+        <value plural="n" case="in">Обліковим записом</value>
+        <value plural="y" case="in">Обліковими записами</value>
+        <value plural="n" case="l">Обліковому запису</value>
+        <value plural="y" case="l">Облікових записах</value>
+    </noun>
+
+   <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="f" startsWith="c">
+        <value plural="n">Операція</value>
+    	<value plural="y">Операції</value>
+   		<value plural="n" case="a">Операцію</value>
+        <value plural="y" case="a">Операції</value>
+        <value plural="n" case="d">Операції</value>
+        <value plural="y" case="d">Операціям</value>
+        <value plural="n" case="g">Операції</value>
+        <value plural="y" case="g">Операцій</value>
+        <value plural="n" case="in">Операцією</value>
+        <value plural="y" case="in">Операціями</value>
+        <value plural="n" case="l">Операції</value>
+        <value plural="y" case="l">Операціях</value>
+    </noun>
+
+
+    	<noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
+        <value plural="n">Кампанія</value>
+  		<value plural="y">Кампанії</value>
+   		<value plural="n" case="a">Кампанію</value>
+        <value plural="y" case="a">Кампанії</value>
+        <value plural="n" case="d">Кампанії</value>
+        <value plural="y" case="d">Кампаніям</value>
+        <value plural="n" case="g">Кампанії</value>
+        <value plural="y" case="g">Кампаній</value>
+        <value plural="n" case="in">Кампанією</value>
+        <value plural="y" case="in">Кампаніями</value>
+        <value plural="n" case="l">Кампанії</value>
+        <value plural="y" case="l">Кампаніях</value>
+    </noun>
+
+
+	<!-- Content -->
+
+    	<!-- // Content -->
+
+
+        <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
+        <value plural="n">Документ</value>
+   		<value plural="y">Документи</value>
+		<value plural="n" case="a">Документ</value>
+        <value plural="y" case="a">Документи</value>
+        <value plural="n" case="d">Документу</value>
+        <value plural="y" case="d">Документам</value>
+        <value plural="n" case="g">Документу</value>
+        <value plural="y" case="g">Документів</value>
+        <value plural="n" case="in">Документом</value>
+        <value plural="y" case="in">Документами</value>
+        <value plural="n" case="l">Документі</value>
+        <value plural="y" case="l">Документах</value>
+    </noun>
+
+
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="f" startsWith="c">
+        <value plural="n">Подія</value>
+		<value plural="y">Події</value>
+   		<value plural="n" case="a">Подію</value>
+        <value plural="y" case="a">Подіх</value>
+        <value plural="n" case="d">Події</value>
+        <value plural="y" case="d">Подіям</value>
+        <value plural="n" case="g">Події</value>
+        <value plural="y" case="g">Подій</value>
+        <value plural="n" case="in">Подією</value>
+        <value plural="y" case="in">Подіями</value>
+        <value plural="n" case="l">Події</value>
+        <value plural="y" case="l">Подіях</value>
+    </noun>
+
+
+
+
+    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
+        <value plural="n">Інтерес</value>
+		<value plural="y">Інтереси</value>
+   		<value plural="n" case="a">Інтерес</value>
+        <value plural="y" case="a">Інтереси</value>
+        <value plural="n" case="d">Інтересу</value>
+        <value plural="y" case="d">Інтересам</value>
+        <value plural="n" case="g">Інтересу</value>
+        <value plural="y" case="g">Інтересів</value>
+        <value plural="n" case="in">Інтересом</value>
+        <value plural="y" case="in">Інтересами</value>
+        <value plural="n" case="l">Інтересі</value>
+        <value plural="y" case="l">Інтересах</value>
+    </noun>
+
+
+
+
+
+
+
+
+
+
+
+
+    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="c">
+        <value plural="n">Можливість</value>
+		<value plural="y">Можливості</value>
+   		<value plural="n" case="a">Можливість</value>
+        <value plural="y" case="a">Можливості</value>
+        <value plural="n" case="d">Можливості</value>
+        <value plural="y" case="d">Можливостям</value>
+        <value plural="n" case="g">Можливості</value>
+        <value plural="y" case="g">Можливостей</value>
+       <value plural="n" case="in">Можливістю</value>
+        <value plural="y" case="in">Можливостями</value>
+       <value plural="n" case="l">Можливості</value>
+        <value plural="y" case="l">Можливостях</value>
+    </noun>
+
+		          <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
+        <value plural="n">Прейскурант</value>
+		<value plural="y">Прейскуранти</value>
+   		<value plural="n" case="a">Прейскурант</value>
+        <value plural="y" case="a">Прейскуранти</value>
+        <value plural="n" case="d">Прейскуранту</value>
+        <value plural="y" case="d">Прейскурантам</value>
+        <value plural="n" case="g">Прейскуранта</value>
+        <value plural="y" case="g">Прейскурантів</value>
+        <value plural="n" case="in">Прейскурантом</value>
+        <value plural="y" case="in">Прейскурантами</value>
+        <value plural="n" case="l">Прейскуранті</value>
+        <value plural="y" case="l">Прейскурантах</value>
+    </noun>
+
+    <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
+        <value plural="n">Питання</value>
+        <value plural="y">Питання</value>
+        <value plural="n" case="a">Питання</value>
+        <value plural="y" case="a">Питання</value>
+        <value plural="n" case="d">Питанню</value>
+        <value plural="y" case="d">Питанням</value>
+        <value plural="n" case="g">Питання</value>
+        <value plural="y" case="g">Питань</value>
+        <value plural="n" case="in">Питанням</value>
+        <value plural="y" case="in">Питаннями</value>
+        <value plural="n" case="l">Питанні</value>
+        <value plural="y" case="l">Питаннях</value>
+    </noun>
+
+
+
+
+<noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
+ <value plural="n">Пропозиція</value>
+       <value plural="y">Пропозиції</value>
+       <value plural="n" case="a">Припозицію</value>
+       <value plural="y" case="a">Пропозициї</value>
+        <value plural="n" case="g">Пропозиції</value>
+        <value plural="y" case="g">Пропозицій</value>
+        <value plural="n" case="d">Пропозиції</value>
+        <value plural="y" case="d">Пропозиціям</value>
+        <value plural="n" case="in">Пропозицією</value>
+        <value plural="y" case="in">Пропозиціями</value>
+        <value plural="n" case="l">Пропозиції</value>
+        <value plural="y" case="l">Пропозиціях</value>
+    </noun>
+
+
+
+
+
+    <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
+        <value plural="n" case="n">Навичка</value>
+        <value plural="y" case="n">Навички</value>
+         <value plural="n" case="a">Навичку</value>
+        <value plural="y" case="a">Навички</value>
+        <value plural="n" case="g">Навички</value>
+        <value plural="y" case="g">Навичок</value>
+        <value plural="n" case="d">Навичці</value>
+        <value plural="y" case="d">Навичкам</value>
+        <value plural="n" case="in">Навичкою</value>
+        <value plural="y" case="in">Навичками</value>
+        <value plural="n" case="l">Навичці</value>
+        <value plural="y" case="l">Навичках</value>
+    </noun>
+
+    <!--Special for Custom Objects/Tabs
+         This is actually, not only for custom object but should be considered as template
+         for any unknown entities.-->
+    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+        <value plural="n">{0}</value>
+        <value plural="y">{0}</value>
+    </noun>
+
+
+    <!--==================================================================
+      Other Nouns
+    ======================================================================-->
+
+    <!--******* Accounts *************************************************-->
+
+
+
+
+    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Ім'я облікового запису</value>
+        <value plural="n" case="g">Імені облікового запису</value>
+        <value plural="y">Імена облікових записів</value>
+    </noun>
+
+
+
+     <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
+        <value plural="n">Валюта продукту</value></noun>
+
+
+    <import file="adjectives.xml"/>
+
+</names>
+

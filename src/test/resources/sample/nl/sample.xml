@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">Keuzelijst van invoervak</param>
+        <param name="select_default">Maak hieronder een selectie.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Selecteer een {0} hieronder.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">Toegang</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Beheerd)</param>
+        <param name="activity_history">Activiteithistorie</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Aanvullende gegevens</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Assistent</param>
+        <param name="assistant_name">Assistentnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telefoon assistent</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Tel. assistent</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Telefoontoestel assistent</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Geboortedatum</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Hoofdtekst</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Bedrijf</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Gemaakt door</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Gemaakt door ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Gemaakt door alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">ISO-code valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Aangepaste velden</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Standaardstatus</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Detail van {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Afdeling</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0} bewerken</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Verwachte omzet</param>
+        <param name="first_name">Voornaam</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Achternaam</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Voornaam (lokaal)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Achternaam (lokaal)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Fiscaal kwartaal</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Fiscaal jaar</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Volledige naam</param> <!-- aliased across app - do not change -->
+        <param name="group">Groep</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Groepsnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Wachtrijnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Sector</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Laatst gewijzigd door</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">ID van Laatst gewijzigd door</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Alias van Laatst gewijzigd door</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Hoofdrecord-ID</param>
+        <param name="mobile">Mobiel</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Mobiele telefoon</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Toestel mobiele telefoon</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Nieuw gedeeld object</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Toegewezen alias</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Beschikbare lijst</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Bedrijfsnaam</param> <!-- aliased across app - do not change -->
+        <param name="activities">Activiteiten</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">geen bijlagen</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><No/> <document plural="y"/></param>
+        <param name="address_info">Adresgegevens</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Afgewezen</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Standaard</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Standaardprioriteit</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Nieuwe weergave maken</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Aangepaste gegevens</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Dubbele status</param> <!-- aliased across app - do not change -->
+        <param name="email_address">E-mailadres</param> <!-- aliased across app - do not change -->
+        <param name="email_name">E-mailnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">E-mailsjabloon</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-mail:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Aangepaste koppelingen</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Bestandsgrootte</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Geen gegevens beschikbaar</param>
+        <param name="history_event_checked">Veld {0} geselecteerd</param>
+        <param name="history_event_unchecked">Veld {0} niet geselecteerd</param>
+        <param name="how_do_i_specify_info">Hoe geef ik op welke gegevens moeten worden vastgelegd?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Interne bron</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Interval:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Aanhef</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Nieuwe eigenaar selecteren</param>
+        <param name="select_a_view">Selecteer een weergave in de vervolgkeuzelijst om een lijst van gerelateerde resultaten te bekijken.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Selecteer een map in de vervolgkeuzelijst om een lijst van gerelateerde resultaten te bekijken.</param>
+        <param name="select_the_file">Het bestand selecteren</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">Selecteer de op te nemen velden:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Handtekening</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Onderwerp</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Systeeminformatie</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Website</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">Eigenaaralias</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Eigenaarvoornaam</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Eigenaar-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Eigenaarachternaam</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Eigenaarnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Eigenaarrol</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Eigenaarrolweergave</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Eigenaarrolnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Primair</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Prioriteit</param><!--aliased across labels - do not change -->
+        <param name="private">Privé</param>
+        <param name="role">Rol</param> <!--aliased across labels - do not change -->
+        <param name="rating">Beoordeling</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Snel maken</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Recent weergegeven</param>
+        <param name="top5">Top 5 vragen</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Verkoper</param>
+        <param name="customer">Klant</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Leverancier</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Recordtype-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Divisie-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Tabelnummering of -ID</param>
+        <param name="editable">Bewerkbaar</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Genormaliseerde naam</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Privacyverklaring</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Beheerbare status</param>
+        <param name="namespacePrefix">Naamruimteprefix</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Naamruimte van module</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Geïnstalleerd pakket</param>
+        <param name="initialVersion">Eerste uitgegeven versie</param>
+        <param name="lastVersion">Definitief beschikbaar versie</param>
+        <param name="availableInVersions">Beschikbaar in versies</param>
+        <param name="DeveloperName">Naam ontwikkelaar</param>
+        <param name="apiName">API-naam</param>
+        <param name="InvalidDeveloperNameOnEntity">Het veld {0} kan alleen onderstrepingstekens en alfanumerieke lettertekens bevatten. Het moet uniek zijn, beginnen met een letter, mag geen spaties bevatten, mag niet eindigen met een onderstrepingsteken en mag gaan twee opeenvolgende onderstrepingstekens bevatten.</param>
+        <param name="missingDevName">{0} moet worden opgegeven.</param>
+        <param name="duplicateDevName">Deze {0} bestaat al of is al eerder gebruikt.  Kies een andere naam.</param>
+        <param name="manageabilityOverride">Beheersbaarheid overschrijven</param>
+        <param name="AMPMId">VMNM-ID</param>
+        <param name="MetricsDate">Datum in metrische notatie</param>
+        <param name="MayEdit">Mag bewerken</param>
+        <param name="IsLocked">Is vergrendeld</param>
+        <param name="LastViewedDate">Datum laatst weergegeven</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">Maken</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Set-up</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Nieuw maken...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Bestand</param>
+        <param name="new_forecast">Prognose</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Prullenbak</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">E-mail verzenden</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Rapport</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">Gewijzigd door</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Aanmaakdatum</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Wijzigingsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">Geautomatiseerd proces</param>
+        <param name="partner_network">Verbindingsgebruiker</param>
+        <param name="external_who">Openbare gebruiker</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">Voorbeeld</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Fout: ongeldige gegevens. &lt;br/&gt;Controleer alle onderstaande foutmeldingen om uw gegevens te corrigeren.</param>
+        <param name="EditPageError2">Beoordeel alle onderstaande foutberichten om uw gegevens te corrigeren.</param>
+        <param name="Required">U dient een waarde op te geven</param>
+        <param name="RequiredWithFieldList">Er ontbreken verplichte velden: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Vereist voor Selfservice</param>
+        <param name="RequiredBy">Vereist door: {0}</param>
+        <param name="Requires">Vereist: {0}</param>
+        <param name="TooLong">Waarde is te lang voor veld</param>
+        <param name="CannotExceedXCharacters">Waarde mag {0} lettertekens niet overschrijden</param>
+        <param name="MustBeXCharacters">Waarde moet exact {0} tekens lang zijn</param>
+        <param name="MustBeNumber">Waarde moet numeriek zijn</param>
+        <param name="StatusCloseRequired">U moet ten minste één status als gesloten markeren</param>
+        <param name="StatusDefaultRequired">U moet ten minste één status als standaard markeren</param>
+        <param name="StatusInUse">De volgende statuswaarden zijn in gebruik en kunnen niet worden bewerkt of verwijderd: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Ongeldige datum</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Ongeldige datum. U kunt geen datum instellen na {0}</param>
+        <param name="InvalidDateTime">Ongeldige datum en tijd</param>
+        <param name="InvalidColor">Ongeldige kleur</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Ongeldig internetadres</param>
+        <param name="InvalidOption">Er is een ongeldige optie gekozen.</param>
+        <param name="UnsupportedCurrency">Ongeldige valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Ongeldige URL</param>
+        <param name="NoneSelectedInPicklist">-- niet geselecteerd --</param>
+        <param name="InvalidTime">Geen geldige tijd</param>
+        <param name="InvalidNumber">Ongeldig getal</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Getal is te groot.</param>
+        <param name="TooLargeNumberWithScale">Getal moet kleiner zijn dan {0}.</param>
+        <param name="TooSmallNumberWithScale">Getal moet groter zijn dan {0}.</param>
+        <param name="NonpositiveError">Moet positief zijn.</param>
+        <param name="NegativeError">Moet niet-negatief zijn.</param>
+        <param name="PositiveError">Moet niet-positief zijn.</param>
+        <param name="NonnegativeError">Moet negatief zijn.</param>
+        <param name="NonzeroError">Moet niet-nul zijn.</param>
+        <param name="NonintegerError">Moet een heel getal zijn.</param>
+        <param name="InvalidPercent">Ongeldig percentage</param>
+        <param name="InvalidAfterRoundOff">Getal {0} is ongeldig na afronding op schaal: {1}</param>
+        <param name="CharactersRemaining">resterend</param>
+        <param name="CharactersOver">over de limiet</param>
+        <param name="TooManySelection">U kunt niet meer dan {0} items selecteren</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Dubbele waarde in record: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Verborgen veldwaarde (niet weergegeven) dupliceert waarde in record: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} dupliceert waarde in record met ID: {1}</param>
+        <param name="True">True (waar)</param>   <!-- aliased across labels; do not change -->
+        <param name="False">False (onwaar)</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Ongeldig domein</param>
+        <param name="ReadOnly">U kunt dit veld niet bewerken.</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">Als u ervoor kiest verder te gaan met importeren, worden deze gegevens genegeerd en is het veld leeg.</param>
+        <param name="extra_DefaultDivision">Als u ervoor kiest verder te gaan met importeren, wordt de standaarddivisie van de recordeigenaar voor deze records gebruikt.</param>
+        <param name="extra_DefaultCurrency">Als u ervoor kiest verder te gaan met importeren, wordt uw standaardvaluta aan deze records toegewezen.</param>
+        <param name="InvalidDataType">waarde is niet van vereist type: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">eigenaar kan niet leeg zijn</param>
+        <param name="DynamicEnumValue">keuzelijstwaarde is niet actief: {0}</param>
+        <param name="DynamicEnumValue_extra">Als u ervoor kiest verder te gaan met importeren, wordt deze waarde geïmporteerd maar niet toegevoegd aan de lijst van actieve waarden voor deze keuzelijst.</param>
+        <param name="InvalidCurrencyCode">ongeldige valutacode: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">inactieve valutacode: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">ongeldige tijd: {0}</param>
+        <param name="InvalidDateValue">ongeldige datum: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">ongeldig percentage: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">Ontbrekende of ongeldige ID</param>
+        <param name="Id15Characters">ID moet exact 15 tekens lang zijn</param>
+        <param name="IdMissing_extra">Records worden genegeerd</param>
+        <param name="InvalidDivision">ongeldige divisie: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">inactieve divisie: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">ongeldig getal: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">waarde valt buiten geldig bereik in numeriek veld: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">te veel items geselecteerd: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">ongeldig e-mailadres: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">ongeldig IP-adres: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">ID-waarde van onjuist type: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">onjuiste waarde voor beperkt keuzelijstveld: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">ongeldige waarde voor bitvectorveld: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">gegevenswaarde is te groot: {0}</param>
+        <param name="DataTruncated_extra">Als u ervoor kiest verder te gaan met importeren, worden deze gegevens afgekapt zodat ze in het veld passen.</param>
+        <param name="DuplicateExternalId">meer dan één record gevonden voor veld van externe ID: {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">Uw verzoek wordt behandeld...</param>
+        <param name="InvalidDeveloperNameChars">De API-naam van <Entity entity="0"/> mag alleen onderstrepingstekens en alfanumerieke lettertekens bevatten. Het moet uniek zijn, beginnen met een letter, mag geen spaties bevatten, mag niet eindigen met een onderstrepingsteken en mag gaan twee opeenvolgende onderstrepingstekens bevatten.</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">Afbreken</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Accepteren</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Wijzigingen accepteren</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Sandbox inschakelen</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Opmerking toevoegen</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Componenten toevoegen</param>
+        <param name="add_contacts"><Contacts/> toevoegen</param>
+        <param name="add_leads"><Leads/> toevoegen</param>
+        <param name="add_more_users">Meer gebruikers toevoegen</param>
+        <param name="add_multiple_users">Meerdere gebruikers toevoegen</param>
+        <param name="add_product"><Product/> toevoegen</param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Regelitem toevoegen</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Voorbeelddashboard toevoegen</param>
+        <param name="add_to_call_center">Toevoegen aan callcenter</param>
+        <param name="add_to_campaign">Toevoegen aan <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Toevoegen aan Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Toevoegen aan <pricebook/></param>
+        <param name="add_remove">Toevoegen/Verwijderen</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Geavanceerde set-up</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Goedkeuren</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Toewijzen</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Gebruikers aan rol toewijzen</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Terug naar rapportlijst</param>
+        <param name="billing_and_licenses">Facturering en licenties</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Factuurgegevens</param>
+        <param name="briefcase_setup">Set-up werkmap</param>
+        <param name="cancel">Annuleren</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Distributie annuleren</param>
+        <param name="cancel_test_instance">Sandbox annuleren</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Bedrijf wijzigen</param>
+        <param name="change_currency">Valuta wijzigen</param>
+        <param name="change_owner">Eigenaar wijzigen</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Accepteren en eigenaar wijzigen</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Accepteren en hoofd toewijzen</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Status wijzigen</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Beschikbaarheid controleren</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Spelling controleren</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook"><Pricebook/> kiezen</param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Opschonen</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Overzicht</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Tabblad {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Lijst</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Details bovenliggend element kopiëren</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Alles samenvouwen</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Kies een item in de keuzelijst</param>
+        <param name="composegmail">Gmail samenstellen</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Bevestigen</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Doorgaan</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Toch doorgaan</param>
+        <param name="convert">Converteren</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead"><Lead/> converteren</param>
+        <param name="create">Maken</param>
+        <param name="create_follow_up_event">Vervolg<event/> maken</param>
+        <param name="create_follow_up_task">Vervolg<task/> maken</param>
+        <param name="create_new">Nieuwe {0} maken</param>
+        <param name="create_new_section">Nieuwe sectie maken</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity"><Opportunity/> maken</param>
+        <param name="create_test_instance">Sandbox maken</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Testdatabase maken</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Een Web-naar-lead-formulier maken</param>
+        <param name="create_new_holiday">Nieuwe vrije dag maken</param>
+        <param name="create_new_sla_process">Nieuwe <entitlement/>enprocedure</param>
+        <param name="create_new_milestone_type">Nieuwe mijlpaal</param>
+        <param name="currency_setup">Set-up valuta</param>
+        <param name="customer_view">Klantweergave</param>
+        <param name="customize">Aanpassen</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Weergave voor alle gebruikers aanpassen</param>
+        <param name="page_settings">Pagina-instellingen</param>
+        <param name="customize_page">Pagina aanpassen</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Lay-out bewerken</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Dashboardlijst</param>
+        <param name="data_export">Gegevens exporteren</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Opschonen</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Afwijzen</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Aangepaste standaardkoppelingen</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Toegang tot Checkout verwijderen</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Gereed met voorbeeld</param>
+        <param name="dont_save">Niet opslaan</param>
+        <param name="dont_show_page_again">Deze pagina niet meer weergeven</param>
+        <param name="download">Downloaden</param>
+        <param name="download_now">Nu downloaden</param>
+        <param name="download_sample_css_file">CSS-voorbeeldbestand downloaden</param>
+        <param name="edit">Bewerken</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">[Bèta] bewerken</param>
+        <param name="edit_all">Alles bewerken</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Gebruiker(s) bewerken</param>
+        <param name="edit_rates">Koersen bewerken</param>
+        <param name="edit_selected">Selectie bewerken</param>
+        <param name="editProperties">Eigenschappen bewerken</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">{0} beëindigen</param>
+        <param name="enable_appstore_user">Toegang tot Checkout verlenen</param>
+        <param name="enable_as_partner">Inschakelen als partner</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Inloggen bij partnerportal inschakelen</param>
+        <param name="enable_self_service">Selfservice inschakelen</param>
+        <param name="enable_users">Nieuwe gebruiker(s) inschakelen</param>
+        <param name="enableForecasting">Aanpasbare prognoses inschakelen</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Training activeren</param>
+        <param name="erase_test_instance">Sandbox wissen</param>
+        <param name="establish">Maken</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Alles uitvouwen</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Details exporteren</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Details nu exporteren</param>
+        <param name="export_background">Export op achtergrond uitvoeren...</param>
+        <param name="fctHistory">Prognosehistorie</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Prognoseoverzicht</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Veldvalidaties</param>
+        <param name="find">Zoeken</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Rapport zoeken</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document"><Document/> zoeken</param>
+        <param name="find_pricebooks"><Pricebook/> zoeken</param>
+        <param name="find_products"><Product/> zoeken</param>
+        <param name="find_solution"><Solution/> zoeken</param>
+        <param name="finished">Beëindigd</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Doorsturen</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Doorsturen naar Verbindingen</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">WSDL genereren</param>
+        <param name="generate_login_html">Inlog-HTML genereren</param>
+        <param name="getMoreInfo">Meer informatie</param>
+        <param name="go">Ga</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Help voor deze pagina</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Help voor {0}</param>
+        <param name="hide">Details verbergen</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Details verbergen</param>
+        <param name="i_decline">Niet akkoord</param>
+        <param name="impactAnalysis">Waar wordt dit gebruikt?</param>
+        <param name="import">Importeren</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads"><Leads/> importeren</param>
+        <param name="include_offline">Offline opnemen</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Invoegen</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Selectie invoegen</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Nu installeren</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Uitnodigen</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Uitnodigen om te verbinden</param>
+        <param name="jigsawsearch">Contactpersonen ophalen</param>
+        <param name="join_meeting">Deelnemen aan bijeenkomst</param>
+        <param name="jumpstart">Snel starten</param>
+        <param name="keep_in_touch">Update aanvragen</param>
+        <param name="layout_assignment">Lay-outtoewijzing</param>
+        <param name="legal_view">Juridische weergave</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Record vergrendelen</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Inloggen als partnergebruiker</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Leden beheren</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Nieuw vergaderverzoek</param>
+        <param name="add_members_search">Leden toevoegen - Zoeken</param>
+        <param name="add_members_import">Leden toevoegen - Bestand importeren</param>
+        <param name="edit_members_search">Leden bewerken - Zoeken</param>
+        <param name="update_members_import">Leden bijwerken en toevoegen - Bestand importeren</param>
+        <param name="manage_call_center_users">Callcentergebruikers beheren</param>
+        <param name="map_lead_fields"><Lead_Fields/> koppelen</param>
+        <param name="mark_as">Markeren als...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Lid importeren</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Afzonderlijke herinneringen wijzigen</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Nieuw</param>
+        <param name="newcase">Nieuw</param>
+        <param name="new_addition_order">Nieuwe toevoegorder</param>
+        <param name="new_custom_object">Nieuw aangepast object</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Nieuw aangepast rapport maken</param>
+        <param name="new_dashboard">Nieuw dashboard</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Nieuwe dashboardcomponent</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Nieuwe sjabloon</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Nieuwe sjabloon</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Nieuwe map</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Nieuwe groep</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Nieuwe wachtrij</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Nieuwe notitie</param>
+        <param name="new_object_custom_tab">Nieuw aangepast-objecttabblad</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Online vergaderen</param>
+        <param name="new_order">Nieuwe order</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Nieuwe persoonlijke groep</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Nieuwe reductieorder</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Nieuwe rol</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Nieuwe knop</param>
+        <param name="new_territory">Nieuw territorium</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Nieuwe gebruiker</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Tabblad Nieuwe webintegratie</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Nog een update uitvoeren</param>
+        <param name="performAnotherMigrate">Een ander profiel migreren</param>
+        <param name="preview">Voorbeeld</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Opnieuw berekenen</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Opnieuw maken</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Afwijzen</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Wijzigingen afwijzen</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Gebruikers verwijderen</param>
+        <param name="remove_from_briefcase">Verwijderen uit werkmap</param>
+        <param name="remove_from_campaign">Verwijderen uit <campaign/></param>
+        <param name="reorder">Opnieuw ordenen</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Repareren</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Alle tests uitvoeren</param>
+        <param name="run_test">Test uitvoeren</param>
+        <param name="quick_save">Snel opslaan</param>
+        <param name="quick_save_hover">Opslaan en doorgaan met bewerken</param>
+        <param name="reply">Antwoorden</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Antwoorden aan allen</param>
+        <param name="reportmanager">Rapportmanager</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">Wachtwoord resetten</param>
+        <param name="reset_passwords">Wachtwoord(en) resetten</param>
+        <param name="retrieve_prices">Prijzen ophalen</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Rapport uitvoeren</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Opslaan</param> <!-- aliased across labels do not change -->
+        <param name="saving">Opslaan...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Opslaan en prijs toevoegen</param>
+        <param name="save_and_add_product">Opslaan en <product/> toevoegen</param>
+        <param name="save_and_clone">Opslaan en nogmaals klonen</param>
+        <param name="save_and_close">Opslaan en sluiten</param>
+        <param name="save_and_attach">Bijlage opslaan en toevoegen</param>
+        <param name="save_and_continue">Opslaan en volgende</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Opslaan en meer</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Opslaan en <new/> <event/></param>
+        <param name="save_and_new_product">Opslaan en <new/> <product/></param>
+        <param name="save_and_new_task">Opslaan en <new/> <task/></param>
+        <param name="save_and_refresh">Opslaan en vernieuwen</param>
+        <param name="save_and_send">Opslaan en update verzenden</param>
+        <param name="event_scheduler">Client en teamweergave &gt;</param>
+        <param name="saveAs">Opslaan als</param>
+        <param name="schedule_to_email">Plannen voor e-mail</param>
+        <param name="schedule_to_print">Plannen voor afdrukken</param>
+        <param name="scrutinize">Onderzoeken</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles"><KnowledgeArticles/> zoeken</param>
+        <param name="newArticle">Nieuw</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Sjabloon selecteren</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Snel starten met Selfservice</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Set-up Selfservice</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Selfservice weergeven/inschakelen</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Verzenden</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Een e-mail verzenden naar <all/> <contacts/></param>
+        <param name="send_invitation">Opslaan en uitnodiging verzenden</param>
+        <param name="set_status">Status beheren</param>
+        <param name="setup_and_install">Set-up en installatie</param>
+        <param name="setup_roles">Rollen instellen</param>
+        <param name="setup_sharing">Delen instellen</param>
+        <param name="sfga_instructions">Afdrukvriendelijke instructies voltooien</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Details weergeven</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Overslaan</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Sorteren</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Bijeenkomst starten</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Indienen</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Bijlage opslaan en toevoegen</param>
+        <param name="subscribe_now">Nu inschrijven</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Nu upgraden!</param>
+        <param name="suggest"><Suggested/> <solutions/> weergeven</param>
+        <param name="take_training_now">Nu training volgen!</param>
+        <param name="terminate">Beëindigen</param>
+        <param name="training_history">Trainingshistorie</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Doorverbinden</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Nu proberen!</param>
+        <param name="undelete">Verwijderen ongedaan maken</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Ongedaan maken</param>
+        <param name="unlock">Record ontgrendelen</param>
+        <param name="update">Bijwerken</param>
+        <param name="update_campaign_history"><Campaign_Members/> bijwerken en toevoegen</param>
+        <param name="update_now">Nu bijwerken</param>
+        <param name="update_statuses">Statuswaarden bijwerken</param>
+        <param name="upload">Uploaden</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Veldafhankelijkheden</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Verwijderde componenten weergeven</param>
+        <param name="view_partnerforce">Partnergebruiker weergeven</param>
+        <param name="view_self_service">Selfservice weergeven</param>
+        <param name="view_customer_success">Klantportalgebruiker weergeven</param>
+        <param name="enable_customer_success">Klantportalgebruiker inschakelen</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Wat is dit?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Dit venster sluiten</param>
+        <param name="runApexRecalc">Delen via Apex opnieuw berekenen</param>
+        <param name="disablecustomerportal">Klantportalgebruiker uitschakelen</param>
+        <param name="disablepartnerportal">Partnergebruiker uitschakelen</param>
+        <param name="disablecustomerportalaccount">Klantportalaccount uitschakelen</param>
+        <param name="disablepartnerportalaccount">Partneraccount uitschakelen</param>
+        <param name="voteup">Voorstemmen</param>
+        <param name="votedown">Wegstemmen</param>
+        <param name="markquestionunanswered">Markeren als niet beantwoord</param>
+        <param name="markbestanswer">Markeren als beste antwoord</param>
+        <param name="requestUseSfdcAction">Verbindingen zoeken</param>
+        <param name="addPET">Sjabloon voor recht toevoegen</param>
+        <param name="truncate">Afkappen</param>
+        <param name="disableprmsuperuser">Supertoegang van partner uitschakelen</param>
+        <param name="enableprmsuperuser">Supertoegang van partner inschakelen</param>
+        <param name="purchase_more">Meer aanschaffen</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">Terug naar boven</param>
+        <param name="descriptionText">Hoofdtekst is te lang. Geef details weer.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Bestand weergeven</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Bovenliggend element</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Geen gerelateerde informatie</param>
+        <param name="no_records">Er zijn geen records om weer te geven</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">{0} meer tonen &#187;</param>
+        <param name="NextMoreGeneric">Meer weergeven &#187;</param>
+        <param name="view_more">Ga naar lijst</param>
+        <param name="view_more_tot">Ga naar lijst ({0})</param>
+        <param name="view_more_tot_plus">Ga naar lijst ({0}+)</param> <!-- -->
+        <param name="view_more_1">Ga naar lijst van één extra record</param> <!-- Singular -->
+        <param name="view_more_n">Ga naar lijst met nog eens {0} records</param> <!-- Plural -->
+        <param name="view_more_n_plus">Ga naar lijst met {0}+ records</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Meer beschikbaar; ga naar lijst</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Waarschijnlijkheid</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Bron</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Gewonnen</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Fiscale periode</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Kwartaal {1} van jaar {0}</param>
+        <param name="opportunities_next_step">Volgende stap</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Bijwerken</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Gerelateerd aan</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Notitie</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google-document</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Notities en bijlagen</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">Notitietitel</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Bijlage</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Bijlagen</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">Bestandsnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Eigendom</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Primair</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> om weer te geven</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Datum</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Titel</param>
+        <param name="object_title">Titel</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Naam</param>
+        <param name="object_name">Naam</param>
+        <param name="date">Datum</param>
+        <param name="due_date">Vervaldatum</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">Laatst gewijzigd</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Bijgewerkt door</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Primair</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Concurrenten</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Concurrentnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Sterke punten</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Zwakke punten</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Waarschijnlijkheid (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Voltooid</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">{0} als voltooid aanduiden</param>
+        <param name="task_date">Datum</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Naam</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> in afwachting van goedkeuring</param>
+        <param name="task_none">U hebt geen openstaande <tasks/> voor deze periode.</param>
+        <param name="task_mode_today">Vandaag</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Vandaag + achterstallig</param>
+        <param name="task_mode_tomorrow">Morgen</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Volgende {0} dagen</param>
+        <param name="task_mode_next_7days_overdue">Volgende {0} dagen + achterstallig</param>
+        <param name="task_mode_overdue">Achterstallig</param>
+        <param name="task_mode_this_month">Deze maand</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Alle open</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Historie</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Nieuws</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Kop</param>
+        <param name="new_date">Datum</param>
+        <param name="news_none">Geen nieuws beschikbaar</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">E-mail merge-sjablonen</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Beste <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Datum toevoeging</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Toegevoegd door</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> gekoppelde <solutions/></param>
+        <param name="description">Beschrijving</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Ticker</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Er zijn geen <activity_history/>gegevens om weer te geven.</param>
+        <param name="nonotes">Er zijn geen notitiehistoriegegevens die kunnen worden weergegeven.</param>
+        <param name="noattachments">Er zijn geen bijlagehistoriegegevens die kunnen worden weergegeven.</param>
+        <param name="viewallattachments">Alle bijlagen weergeven</param>
+        <param name="viewalldocsattachments">Alle Google-documenten en bijlagen weergeven</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Datum</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Regelbeschrijving</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API vastgelegd</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Gefilterd op gebruiker</param>
+        <param name="apicapture_filterip">Gefilterd op IP</param>
+        <param name="apicatpure_numbers">Vastgelegde gegevens</param>
+        <param name="apicapture_soapscope">Vastgelegde gegevens weergeven</param>
+        <param name="apicapture_active">Actief</param>
+        <param name="apicapture_none">Geen gegevens vastgelegd</param>
+        <param name="apicapture_new">Nieuwe gegevens vastleggen</param>
+        <param name="apicapture_view">Weergeven</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Inloghistorie</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">geen inlogpogingen</param>
+        <param name="login_none">Er is geen inloghistorie beschikbaar.</param>
+        <param name="login_username">Gebruikersnaam</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Inlogtijd</param>
+        <param name="login_type">Inlogtype</param>
+        <param name="login_ip">Bron-IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N.v.t.</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Browser</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platform</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Resolutie</param>
+        <param name="login_clientversion">Klantversie</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Toepassing</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API-type</param>
+        <param name="login_apiversion">API-versie</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">Succes</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Inloghistorie over de laatste zes maanden downloaden, inclusief inlogpogingen van buiten de website, zoals API-inlogpogingen (.csv-bestand voor Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Inloghistorie downloaden, inclusief inlogpogingen vanaf uitsluitend de website (.csv-bestand voor Excel)</param>
+        <param name="login_history_download_title">Downloadopties</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV-bestand</param>
+        <param name="login_history_download_file_type_gzip">GZIP-bestand</param>
+        <param name="login_history_download_file_type_help">CSV-bestanden (Comma Separated Value) kunnen worden weergegeven met behulp van diverse spreadsheetprogramma's en teksteditors. GZIP-bestanden (GNU-zipbestanden) zijn gecomprimeerd om hun grootte te beperken.</param>
+        <param name="login_history_download_option_title">Bestandsinhoud</param>
+        <param name="login_history_download_option_all">Alle inlogpogingen</param>
+        <param name="login_history_download_option_ie6_only">UITSLUITEND IE6-inlogpogingen</param>
+        <param name="login_history_download_option_web_only">UITSLUITEND website-inlogpogingen</param>
+        <param name="login_history_download_option_help">"Alle inlogpogingen" is inclusief inloggen vanuit alle bronnen, zoals de website, Outlook, API-integraties, enz. "IE6-inlogpogingen" omvat alleen inlogpogingen van gebruikers door middel van Internet Explorer 6. "Website-inlogpogingen" omvat alleen inlogpogingen vanaf de Salesforce-inlogpagina.</param>
+        <param name="login_history_ie6_deprecation_warning_title">U gebruikt nog steeds IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">De ondersteuning door Salesforce van IE6 verdwijnt. Gebruik de geboden downloadopties om te achterhalen welke browsers er in uw organisatie worden gebruikt.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Inlog-URL</param>
+        <param name="order_history">Orderhistorie</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Geen orders</param>
+        <param name="order_number">Ordernummer</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Orderdatum</param>
+        <param name="order_currency">Valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Totale kosten</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">Verkocht aan</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Geen <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Regel-&lt;BR&gt;nummer</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Maandelijkse prijs</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Factuurreferentie</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Factuurfrequentie&lt;BR&gt;(maanden)</param>
+        <param name="bo_order_items_billing_frequency_text">Factuurfrequentie</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Ordertermijn&lt;BR&gt;(maanden)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Datum</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Facturen</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Geen facturen</param>
+        <param name="invoices_invoice_number">Factuurnummer</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Factuurdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Factuurvervaldatum</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">ID extern systeem</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Totaalbedrag</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Openstaand saldo</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Krediettotaal</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Totale afschrijving</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Factuurcontactpersoon</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Factuurbedrijf</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Factuurhistorie</param>
+        <param name="revenue_schedule">Planning</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Datum</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">Omzet</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Opmerkingen</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Statushistorie</param>
+        <param name="status_none">Geen statushistorie gevonden</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Serviceselectie</param>
+        <param name="services_none">Geen services</param>
+        <param name="services_description">Service</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">Eenheidsprijs</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Totale prijs</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Korting</param>
+        <param name="training">Trainingsklashistorie</param>
+        <param name="training_none">Geen</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">Klasnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Afnamedatum</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Gereageerd</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Standaard</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> gedefinieerd</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Begindatum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Einddatum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">Totale waarde</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Heeft inkoopregels</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">Factuurfrequentie&lt;br&gt;(maanden)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Gefactureerd tot en met</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending"><Event/> geaccepteerd</param>
+        <param name="event_notdecided">Niet gereageerd</param>
+        <param name="event_declined"><Event/> afgewezen</param>
+        <param name="event_attending_none">Geen deelnemers geaccepteerd</param>
+        <param name="event_notdecided_none">Alle deelnemers gereageerd</param>
+        <param name="event_declined_none">Geen deelnemers afgewezen</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Naam</param>
+        <param name="documents_size">Grootte</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Auteur</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Set-up controletraject weergeven</param>
+        <param name="download">downloaden</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">De laatste 20 ingangen voor uw organisatie staan hieronder vermeld. U kunt het controletraject van de set-up van uw organisatie {0} voor de laatste zes maanden (.csv-bestand voor Excel).</param>
+        <param name="setup_audit_date">Datum</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">Actie</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Sectie</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Gebruiker delegeren</param>
+        <param name="setup_audit_proxyinguser_help">Deze kolom vermeldt de gebruikersnaam van een gebruiker die een wijziging in de set-up heeft aangebracht namens een eindgebruiker. Als een gebruiker bijvoorbeeld inlogtoegang aan een ondersteuningsmedewerker heeft verleend, wordt de gebruikersnaam van de medewerker vermeld.</param>
+        <param name="setup_audit_trail_none">Er zijn geen set-upgegevens voor controletraject beschikbaar</param>
+        <param name="setup_audit_download_csv">Controletraject van de set-up downloaden voor laatste zes maanden (.csv-bestand voor Excel)</param>
+        <param name="DashboardComponents_title">Dashboardcomponenten</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Geen dashboardcomponenten</param>
+        <param name="translated_templates_none">Geen vertaalde e-mailsjablonen</param>
+        <param name="translated_templates_title">Vertaalde e-mailsjablonen</param>
+        <param name="translated_templates_language">Taal</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Actief</param>
+        <param name="desc_pnet_conn_audit_trail">De laatste 20 ingangen voor uw organisatie staan hieronder vermeld. U kunt de volledige controletrajecthistorie voor de verbinding {0} als een Excel .csv-bestand.</param>
+        <param name="pnet_conn_audit_trail">Verbindingshistorie</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Datum</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Geen controletrajecthistorie voor de verbinding beschikbaar</param>
+        <param name="pnet_conn_audit_download_csv">Verbindingshistorie downloaden (csv)</param>
+        <param name="pnet_entity_conns_title">Extern delen</param>
+        <param name="pnet_entity_conn_stop_sharing">Delen stoppen</param>
+        <param name="pnet_pub_title">Gepubliceerde objecten</param>
+        <param name="pnet_sub_title">Abonnementsobjecten</param>
+        <param name="pnet_pubsub_object">Objectnaam</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Velden</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Publiceren/publicatie ongedaan maken</param>
+        <param name="pnet_sub_edit">Abonneren/abonnement opzeggen</param>
+        <param name="pnet_pub_edit_object">Object gepubliceerd.</param>
+        <param name="pnet_pub_edit_field">Klik op Bewerken hieronder om naar beschikbare velden van elke object te publiceren.</param>
+        <param name="pnet_sub_edit_object">Object geabonneerd.</param>
+        <param name="pnet_sub_edit_field">Klik op Bewerken hieronder om op beschikbare velden van elke object te abonneren.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">Inhoud</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce-bijlagen</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Fout bij laden van gerelateerde lijsten</param>
+        <param name="ajax_exception_desc">Er is een probleem met het verzamelen van de gegevens van gerelateerde lijsten voor deze record. Als het opnieuw laden van de pagina het probleem niet opheft, neemt u contact op met uw beheerder of zorgt u voor een &lt;a href=&quot;{0}&quot; title=&quot;melding{1}&quot;&gt;melding&lt;/a&gt; hiervan bij ons Klantenondersteuningsteam.</param>
+        <param name="category_access_title">Instellingen voor categoriegroepzichtbaarheid</param>
+        <param name="category_access_video_tutorial">Instellingen voor categoriegroepzichtbaarheid</param>
+        <param name="category_access_name">Categoriegroep</param>
+        <param name="category_access_access">Zichtbaarheid</param>
+        <param name="category_access_details">Zichtbaarheidsdetails</param>
+        <param name="category_access_custom">Aangepast</param>
+        <param name="category_access_full">Alle</param>
+        <param name="category_access_inherited">Overgenomen van {0}</param>
+        <param name="category_access_revoked">Geen</param>
+        <param name="category_access_userNodeAndChildren_Profile">profiel</param>
+        <param name="category_access_userNodeAndChildren_UserRole">rol en ondergeschikten</param>
+        <param name="category_access_noCategories">Er zijn geen categorieën zichtbaar voor deze {0}</param>
+        <param name="category_access_allCategories">Alle categorieën zijn zichtbaar voor deze {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} voor {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">General US &amp; Western-Europe (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japans (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japans (JIS)</param>
+        <param name="4">Japans (EUC)</param>
+        <param name="5">Koreaans (ks_c_5601-1987)</param>
+        <param name="6">Traditioneel Chinees (Big5)</param>
+        <param name="7">Vereenvoudigd Chinees (GB2312)</param>
+        <param name="8">Traditioneel Chinees -- Hongkong (Big5-HKSCS)</param>
+        <param name="9">Japans (Shift-JIS_2004) </param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Trial-organisatie</param>
+        <param name="expand">Klik om zijbalk te openen [Alt+S]</param>
+        <param name="collapse">Klik om zijbalk te sluiten [Alt+S]</param>
+        <param name="expandNoHotkey">Klik om zijbalk te openen</param>
+        <param name="collapseNoHotkey">Klik om zijbalk te sluiten</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">Omhoog</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Omlaag</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Verplaatsen</param>
+        <param name="top">Boven</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Onder</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">Vul de verplichte velden in.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">Alle gebruikers</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">Nieuw</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Toevoegen</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Verwijderen</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Wijzigen]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Hoe kan ik...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Meer weergeven</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Gesprek loggen</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Notitie loggen</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Mail merge</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Alles weergeven</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Bestand koppelen</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Hoe kan ik?</param>
+        <param name="send_email">Een e-mail verzenden</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Door gebruiker toegevoegde afbeelding</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Toepassingen</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">Afdrukbare weergave</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Klonen</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Delen</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">Hoofdpagina</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Meer informatie!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Eén selecteren:</param>
+        <param name="hotlist_mode">Selectie weergeven</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">{0,number,integer} items tonen</param>
+        <param name="hotlist_empty_title">Geen recente records. Klik op Ga of selecteer een weergave uit de vervolgkeuzelijst om records weer te geven.</param>
+        <param name="hotlist_empty_description">Er zijn geen records beschikbaar voor dit criterium.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Ga naar Rapporten</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Resource Center</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Met het Resource Center kunt u prospecten onderzoeken, services van derden zoeken, enzovoort.</param>
+        <param name="resource_center_link_text">Ga naar Resource Center</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Verkoopmethoden</param>
+        <param name="hotlist_recently_modified">Recent gewijzigd</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Recent gemaakt</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Recent weergegeven</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">-- Geen --</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">-- Selecteren --</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Standaard--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Niet van toepassing**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">Is afhankelijk van &quot;{0}&quot;</param>
+        <param name="dependentFields">Afhankelijke velden</param>
+        <param name="controls">Bepaalt waarden voor {0}</param>
+        <param name="dependsOnMultiple">Is afhankelijk van {0}</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">De beheerder heeft geen aangepaste koppelingen gedefinieerd.</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">Ga naar:</param>
+        <param name="JumpToStep">Stap {0}: {1}</param>
+        <param name="CloseWizard">Wizard sluiten</param>
+        <param name="LeftHeader">Stap {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Stap {0} van {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Stap {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Opslaan en nieuw</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">Volgende</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Vorige</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Wizard Organisatieset-up voor {0}</param>
+        <param name="ImportWizardTitle">Wizard Importeren voor {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Ordercentrum</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Inschrijving trial</param>
+        <param name="WizardBody">Wizard Hoofdtekst</param>
+        <param name="WizardFooter">Wizard Voettekst</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Adres</param><!-- translators note - this is actually the full address -->
+        <param name="street">Adres</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Plaats</param><!-- aliased across label files - do not change -->
+        <param name="state">Staat/provincie</param><!-- aliased across label files - do not change -->
+        <param name="zip">Postcode</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Postcode</param> <!-- aliased across label files - do not change -->
+        <param name="country">Land</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefoon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Toestel</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Faxtoestel</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-mail</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Verzendadres</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Verzendstraat</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Verzendplaats</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Verzendstaat/-provincie</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Verzendpostcode</param>
+        <param name="shippingzippostalcode">Verzendpostcode</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Verzendland</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Factuuradres</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Factuurplaats</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Factuurstaat/-provincie</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Factuurpostcode</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Factuurland</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Factuurstraat</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Bankstraat</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Bankadres</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">Bankplaats</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Bankstaat/-provincie</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Bankpostcode</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Bankland</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Postadres</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Poststraat</param>
+        <param name="mailingcity">Postplaats</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Poststaat/-provincie</param>
+        <param name="mailingzip">Postpostcode</param>
+        <param name="mailingcountry">Postland</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Postadres regel1</param>
+        <param name="mailingaddress2">Postadres regel2</param>
+        <param name="mailingaddress3">Postadres regel3</param>
+        <param name="otheraddress">Overig adres</param>
+        <param name="otheraddress1">Overig adres, regel 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Overig adres, regel 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Overig adres, regel 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Overige straat</param>
+        <param name="otherstreet2">Overige straat 2</param>
+        <param name="otherstreet3">Overige straat 3</param>
+        <param name="othercity">Overige plaats</param>
+        <param name="otherstate">Overige staat/provincie</param>
+        <param name="otherzipcode">Overige postcode</param>
+        <param name="otherpostalcode">Overige postcode</param>
+        <param name="otherzippostalcode">Overige postcode</param>
+        <param name="othercountry">Overig land</param>
+        <param name="otherphone">Overige telefoon</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Overig telefoontoestel</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Adres 1</param>
+        <param name="address2">Adres 2</param>
+        <param name="address3">Adres 3</param>
+        <param name="home_phone">Telefoon privé</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">Bezig met laden...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Locatie</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Hoeveelheid</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contactmanager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Ja</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Nee</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Welkom bij salesforce.com.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. Alle rechten voorbehouden.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. Alle rechten voorbehouden.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Naleving van 508</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. Alle rechten voorbehouden.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Alle rechten voorbehouden.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. Alle rechten voorbehouden.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Alle rechten voorbehouden.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Beveiligingsverklaring</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Gebruiksvoorwaarden</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Wij stellen het zeer op prijs dat u salesforce.com hebt gekozen. Voordat u met salesforce.com aan de slag kunt, moet u de Gebruiksvoorwaarden hieronder lezen en accepteren. Als u klaar bent, kunt u doorgaan door te klikken op de knop "Akkoord". Als u deze Gebruiksvoorwaarden niet accepteert, kunt u zich niet aanmelden bij salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">Gereed</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Nu toevoegen!</param>
+        <param name="remove">Verwijderen</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Nieuw</param>
+        <param name="exciting_and_new">Nieuw!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">hier</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Genereren</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Venster sluiten</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Deze pagina afdrukken</param>
+        <param name="new_window">(Nieuw venster)</param>
+        <param name="new_focus">(Aandacht verplaatsen)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Verborgen frame &#45; negeren</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">alles selecteren</param>
+        <param name="select_shown">Getoonde selecteren</param>
+        <param name="remove_shown">Getoonde verwijderen</param>
+        <param name="select_none">Niets selecteren</param>
+        <param name="all_active">Alle actieve</param>
+        <param name="all_inactive">Alle inactieve</param>
+        <param name="are_you_sure">Weet u het zeker?</param>
+        <param name="irreversible_are_you_sure">Dit is onomkeerbaar. Weet u het zeker?</param>
+        <param name="replace">Vervangen</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Beëindigen</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} minuten</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Meerdere items gevonden. Selecteer vanaf vervolgkeuzelijst of klik op pictogram om de zoekopdracht te verfijnen.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Resetten</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Overschrijven</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Totaal</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Klik hier</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Notities voor webmaster:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Voorbeeld-HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Wachtwoord</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Deze pagina niet meer weergeven</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Dit bericht verbergen voor: </param>
+        <param name="dontShowMessageAgain">Dit bericht niet meer weergeven</param>
+        <param name="dismissMessage">Dit bericht negeren</param>
+        <param name="allObjects">Alle objecten</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Druk op spatiebalk of ENTER-toets om te openen</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Selfservice: <case_detail/></param>
+        <param name="CssEdit">Selfservice: <case_edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/>feed</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Opmerking</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Aangepaste objecten</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definitie aangepast object</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Dashboard</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Dashboards</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Alle selecties opheffen</param>
+        <param name="deselect_shown">Selectie van getoonde opheffen</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Mail merge-sjabloon</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Mail merge-sjablonen</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Map</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Mappen</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Prognoses</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Prognoses</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent-supervisor</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Factuur</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Notities</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Order</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Orders</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Orderartikel</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Orderartikelen</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Betaling</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Betalingen</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">rapport</param>
+        <param name="Reports">Rapporten</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Inschrijven</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Sjabloon</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Sjablonen</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabel</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Actief</param>
+        <param name="amount">Bedrag</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Jaarlijkse omzet</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Document koppelen</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Wachtwoord wijzigen</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Sluiten</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Gesloten</param>
+        <param name="closed_date">Sluitingsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Sluitingsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Aanmaakdatum</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Gegevenstype</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Verwijderd</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Beschrijvingsgegevens</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Werknemers</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Bestand</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Bestanden</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Algemene informatie</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Informatie krijgen voordat u begint</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Label</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Laatste inlogpoging</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Datum laatste wijziging</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Naam</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Naam</param>
+        <param name="new_status">Nieuwe status</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Geen</param>
+        <param name="open">Open</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organisatie</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Geen overeenkomsten gevonden.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Alle</param>
+        <param name="clear">Wissen</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Klikken op opzoekpictogram...</param>
+        <param name="click_lookup_icon_info">Klik op het opzoekpictogram om een waarde te selecteren.</param>
+        <param name="clear_all">Alles wissen</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Klik op de knop Koppelen.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Fouten</param> <!-- aliased across lables - do not change -->
+        <param name="high">Hoog</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Help</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Daar wil ik naartoe!</param>
+        <param name="keywords">Trefwoorden</param>
+        <param name="length">Lengte</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Status</param> <!-- aliased across lables - do not change -->
+        <param name="title">Titel</param>
+        <param name="object_title">Titel</param>
+        <param name="type">Type</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Gebruiker</param> <!--aliased across labels - do not change -->
+        <param name="Users">Gebruikers</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Machtigingenset</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profiel</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profielen</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Eigenaar</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">Deze pagina niet meer weergeven.</param>
+        <param name="click_here_to_create_new_account">{0} om nu een <new/> <account/> te maken.</param>
+        <param name="click_here_to_create_new_contact">{0} om nu een <new/> <contact/> te maken.</param>
+        <param name="click_here_to_create_new_lead">{0} om nu een <new/> <lead/>  te maken.</param>
+        <param name="click_here_to_create_new_opportunity">{0} om nu een <new/> <opportunity/>  te maken.</param>
+        <param name="click_here_to_create_new_product">{0} om nu een <new/> <product/> te maken.</param>
+        <param name="SystemModstamp">Systeemwijzigingsstempel</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divisie</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">In behandeling</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Bezig met het bijwerken van records...</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Statische vertaling</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Deze pagina voortaan verbergen</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Bezig met uploaden...</param>
+        <param name="uploading_title">Bezig met uploaden</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Bezig met importeren...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">en </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">Fout: geen toegang tot dit veld</param>
+        <param name="noReadAccess">U hebt geen toegang om deze record weer te geven.</param>
+        <param name="noAccessToUser">U hebt geen toegang tot deze gebruiker.</param>
+        <param name="disabledButton">Uitgeschakelde knop: {0}</param>
+        <param name="RequiredHeader">Vereiste gegevens</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Een afbeelding invoegen</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Weet u zeker dat u het IP-inlogbereik wilt verwijderen?</param>
+        <param name="AMPM">VMNM-gegevens</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Beschermde component</param>
+        <param name="dialogCloseConfirm">Het bevestigingsvenster dat u zojuist hebt weergegeven, werd mogelijk te vroeg gesloten. Klik op OK om terug te gaan of op Annuleren om deze waarschuwing te negeren.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Begin van dialoog</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">Niet-ondersteunde browser voor nieuwe gebruikersinterfacethema</param>
+        <param name="DialogHeader">Even ter informatie...</param>
+        <param name="DialogContent1">U gebruikt momenteel een browser die ons nieuwste gebruikersinterfacethema niet weergeeft.</param>
+        <param name="DialogContent2">Salesforce geeft het klassieke thema weer (zie linksboven), totdat u een upgrade uitvoert naar de nieuwste versie van een ondersteunde browser:</param>
+        <param name="DialogClassicDesc">Klassieke thema</param>
+        <param name="DialogAlohaDesc">Nieuwe thema</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">Zoekresultaten</param>
+        <param name="Recent">Recent weergegeven</param>
+        <param name="NoMatchHeader">Geen records gevonden om een van de volgende redenen:</param>
+        <param name="BulletOne">Er zijn geen records van dit type</param>
+        <param name="BulletTwo">U hebt de machtiging niet om een van de records te zien</param>
+        <param name="BulletThree">Records voldoen niet aan de filtercriteria die zijn ingesteld door uw beheerder</param>
+        <param name="BulletFour">Een of meer controlevelden zijn blanco of ongeldig (Controlevelden:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">Beschikbare gebruikers</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Geselecteerde gebruikers</param>
+        <param name="LicensedUsers">Gebruikers met licentie</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Geselecteerd voor verwijderen</param>
+        <param name="Selected">Geselecteerd</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Gekozen</param>
+        <param name="UnassignedPackages">Niet toegewezen pakketten</param>
+        <param name="SelectedPackages">Geselecteerde pakketten</param>
+        <param name="InView">in weergave</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Dit bestand overschrijdt de maximale groottelimiet van {0}.</param>
+        <param name="no_file_specified">Geef een bestand om te uploaden op. Typ het pad naar het bestand of gebruik de knop &quot;Bladeren&quot; om het in uw lokale bestandssysteem te zoeken.</param>
+        <param name="invalid_file_type">Het type van het opgegeven bestand wordt momenteel niet ondersteund.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">De bestandsnaam overschrijdt de maximaal toegestane lengte van {0} tekens.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">De bestandsextensie overschrijdt de maximaal toegestane lengte, die {0} tekens bedraagt.</param>
+        <param name="bytes">bytes</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">kB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">HTML-bestandstypen zijn om beveiligingsredenen niet toegestaan.</param>
+        <param name="attachment_size_exceeded">Geüpload bestand overschreed maximale grootte.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;Fout:&lt;/b&gt; u moet een afbeelding selecteren voor uploaden</param>
+        <param name="upload_file_too_large">&lt;b&gt;Fout:&lt;/b&gt; de afbeelding overschrijdt de groottelimiet van 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Fout:&lt;/b&gt; U kunt alleen .gif-, .jpeg- en .png-bestanden invoegen.</param>
+        <param name="upload_failed">&lt;b&gt;Fout:&lt;/b&gt; het uploaden is mislukt - Probeer het later opnieuw.</param>
+        <param name="invalid_file">&lt;b&gt;Fout:&lt;/b&gt; het bestand is geen geldig afbeeldingsbestand.</param>
+        <param name="invalid_param">&lt;b&gt;Fout:&lt;/b&gt; ongeldige parameters.</param>
+        <param name="access_failed_alt">Deze afbeelding is niet beschikbaar om de volgende reden: u beschikt niet over de rechten om deze te zien, of zij is verwijderd uit het systeem</param>
+        <param name="weekly_export_folder">Overige geüploade collateral/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">Tabbladstijl selecteren</param>
+        <param name="instructions">Selecteer een tabbladstijl.</param>
+        <param name="createYourOwn">Maak uw eigen stijl</param>
+        <param name="defaultCustomStyleDesc">Aangepaste stijl</param>
+        <param name="styleIsUsedOn">Deze stijl wordt gebruikt op de volgende tabbladen:</param>
+        <param name="showUsedStyles">Stijlen weergeven die worden gebruikt op andere tabbladen</param>
+        <param name="hideUsedStyles">Stijlen verbergen die worden gebruikt op andere tabbladen</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">Tabbladkleurselectie</param>
+        <param name="instructions">Selecteer een kleur</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">Kleur:</param>
+        <param name="icon">Pictogram:</param>
+        <param name="defineNew">Definieer een nieuwe kleurstijl</param>
+        <param name="noMotifErr">U moet een kleur selecteren.</param>
+        <param name="noIconErr">U moet een pictogram selecteren</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} is met succes gemaakt.</param>
+        <param name="Failure_message">Maken mislukt.</param>
+        <param name="Common_success_message">Maken geslaagd.</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">Extra producten aanvragen</param>
+        <param name="pageheader">Vul de velden hieronder in om uw verzoek om extra producten in te dienen. Geef in het veld Beschrijving de producten weer die u wilt bestellen. Als u producten in een bestaand contract wilt bestellen, geeft u als referentie het contractnummer op.</param>
+        <param name="colHeader">Inkoopverzoek indienen</param>
+        <param name="functionalArea_0">Licentie aanschaffen</param>
+        <param name="type_0">Inkoop</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">Inkoopverzoek</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">Bedankt voor uw verzoek. Uw verkoopmedewerker is op de hoogte gebracht en zal contact met u opnemen om de order af te ronden.</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">Een licentiereductie aanvragen</param>
+        <param name="pageheader">Vul alle verplichte velden in als u uw licentiereductieverzoek wilt indienen. Op deze manier wordt uw verzoek het snelst verwerkt.  Dien voor dezelfde licenties niet meerdere verzoeken in, aangezien dit kan leiden tot onnodige vertragingen.</param>
+        <param name="title_landing">Uw verzoek is ontvangen.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Uw verzoek is ontvangen en wordt in de ontvangen volgorde verwerkt. Verzoeken om reductie van het licentieaantal worden vanaf de volgende factuurperiode na uw verzoek van kracht, mits u salesforce.com vijf werkdagen vóór de factuurdatum van de volgende factuurperiode op de hoogte stelt.</param>
+        <param name="pageheader_landing">Uw verzoek is ontvangen en wordt in de ontvangen volgorde verwerkt. Verzoeken om reductie van het licentieaantal worden dertig dagen na de datum waarop uw verzoek is ingediend van kracht. Dien voor dezelfde licenties niet meerdere licentiereductieverzoeken in. Dit kan de verwerking van uw verzoek namelijk vertragen.</param>
+        <param name="title_error">Uw verzoek kon niet worden verwerkt.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">We kunnen uw verzoek momenteel niet indienen. Probeer het later opnieuw.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Verzoek indienen</param>
+        <param name="reason">Reden</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Geef een gedetailleerdere&lt;br&gt; beschrijving</param>
+        <param name="numLicenses">Aantal licenties</param>
+        <param name="potentialResponse">Hoe kunnen wij u&lt;br&gt; als klant behouden?</param>
+        <param name="tips_title">Tips voor het indienen van licentiereductieverzoeken</param>
+        <param name="tip1">Vul voor een directe en correcte verwerking van uw verzoek alle gegevens nauwkeurig in.  Voordat u dit verzoek indient, moet u voldoende gebruikers deactiveren zodat het gebruikersaantal kleiner is dan of gelijk is aan uw nieuwe licentieaantal. Dit kunt u doen door middel van de voorziening &lt;a href=&quot;{0}&quot;&gt;Gebruikers beheren&lt;/a&gt; in &lt;a href=&quot;{1}&quot;&gt;Mijn set-up&lt;/a&gt;.</param>
+        <param name="type1">Accountannulering</param>
+        <param name="type2">Gebruikerslicentiereductie</param>
+        <param name="type3">Offline licentiereductie</param>
+        <param name="type4">Campagnelicentiereductie</param>
+        <param name="type5">Mobile Edition voor au annulering</param>
+        <param name="type6">Mobile Edition voor au licentiereductie</param>
+        <param name="type7">Reductie op force.com Mobile-licentie</param>
+        <param name="reason_0">Bedrijf overgenomen/gefuseerd</param>
+        <param name="reason_1">Bedrijfsopheffing</param>
+        <param name="reason_2">Ontslagen verkopers</param>
+        <param name="reason_3">Niet-overstappende eindgebruikers</param>
+        <param name="reason_4">Functionaliteit voldeed niet aan verwachtingen</param>
+        <param name="reason_5">Geen toegevoegde waarde volgens management</param>
+        <param name="reason_6">Slechte ervaring met medewerkers van salesforce.com</param>
+        <param name="reason_7">Prijs te hoog</param>
+        <param name="reason_8">Overstap naar een concurrent</param>
+        <param name="reason_9">Ongebruikte licenties</param>
+        <param name="reason_10">Overige</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">Vul de volgende velden in:</param>
+        <param name="title">Feedback naar salesforce.com verzenden</param>
+        <param name="title_upgrade_me">Upgradeverzoek loggen</param>
+        <param name="title_support">Feedback verzenden</param>
+        <param name="warning_line_too_long">Waarschuwing: de beschrijving is langer dan vierduizend tekens en wordt afgekapt.\\n</param>
+        <param name="feedback_info">Contact opnemen met de klantenondersteuning</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">U kunt bij de klantenondersteuning terecht met al uw vragen of opmerkingen: We ontvangen graag feedback van onze klanten om salesforce.com verder vorm te geven. Uw ideeën zijn bij ons van harte welkom en we hopen van u te horen.</param>
+        <param name="general_info_me">Als u meer informatie wilt over een upgrade van Personal Edition naar een van onze bedrijfsedities, moet u het formulier hieronder invullen. Binnen 48 uur wordt u door een verkoopmedewerker teruggebeld.</param>
+        <param name="general_info_support">U kunt bij de klantenondersteuning terecht met al uw vragen of opmerkingen: Met uw feedback kunnen wij Salesforce CRM Call Center steeds verder verbeteren. Wij stellen uw suggesties zeer op prijs en hopen uw reactie te mogen ontvangen.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Nieuw</param>
+        <param name="functionalArea">Onderwerp</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Vraag</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Verzoek</param>
+        <param name="type3">Feedback</param>
+        <param name="type4">Functieverzoek</param>
+        <param name="priority1">Noodgeval</param>
+        <param name="priority2">Normaal</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Laag</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Ik wil me nu inschrijven voor Professional Edition</param>
+        <param name="subject_subscribe_me">Ik wil nu een upgrade uitvoeren</param>
+        <param name="subject_subscribe_we">Ik wil meer informatie over Professional Edition</param>
+        <param name="subject_subscribe_ee">Ik wil me nu inschrijven voor Enterprise Edition</param>
+        <param name="subject_subscribe_ue">Ik wil me nu inschrijven voor Unlimited Edition</param>
+        <param name="subject_subscribe_support">Ik wil me nu inschrijven</param>
+        <param name="subject_data_export">Ik ben geïnteresseerd in de wekelijkse exportservice</param>
+        <param name="subject_marketing_licenses">Marketinglicenties toevoegen</param>
+        <param name="subject_offline_licenses">Offline licenties toevoegen</param>
+        <param name="subject_wireless_licenses">Draadloze licenties toevoegen</param>
+        <param name="subject_offlinepda_licenses">Sales Anywhere-licenties toevoegen</param>
+        <param name="subject_mobile_licenses">Force.com Mobile-licenties toevoegen</param>
+        <param name="subject_sfcontent_licenses">Salesforce CRM Content-licenties toevoegen</param>
+        <param name="subject_knowledge_licenses">Knowledge-licenties toevoegen</param>
+        <param name="subject_interaction_licenses">Force.com Flow-licenties toevoegen</param>
+        <param name="subject_support_licenses">Service Cloud-licenties toevoegen</param>
+        <param name="subject_jigsaw_licenses">Jigsaw-licenties toevoegen</param>
+        <param name="subject_liveagent_licenses">Live Agent-licenties toevoegen</param>
+        <param name="subject_siteforcecontributor_licenses">Site.com Contributor-licenties toevoegen</param>
+        <param name="subject_siteforcepublisher_licenses">Site.com Publisher-licenties toevoegen</param>
+        <param name="subject_chatteranswers_licenses">Chatter Answers-licenties toevoegen</param>
+        <param name="subject_license_reduction">Licentiereductie</param>
+        <param name="functionalArea_0">Account-/licentiebeheer</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Factuurnavraag</param>
+        <param name="functionalArea_3">Gegevenssamenvoeging</param>
+        <param name="functionalArea_4">E-mail/HTML-e-mail</param>
+        <param name="functionalArea_5">Prognoses en opportunities</param>
+        <param name="functionalArea_6">Bezig met importeren</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Leads</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Prestaties</param>
+        <param name="functionalArea_9">Rapporten en weergaven</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Nu inschrijven</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Synchroniseren</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Wekelijkse exportservice</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Draadloos</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Overige</param>
+        <param name="functionalArea_16">Marketinglicentie</param>
+        <param name="functionalArea_17">Offline licentie</param>
+        <param name="functionalArea_18">Profielen/paginalay-outs/recordtypen</param>
+        <param name="functionalArea_19">Campagnes</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Selfservice</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Draadloze licentie</param>
+        <param name="functionalArea_22">Nu upgraden</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere-licentie</param>
+        <param name="functionalArea_24">Taken/events </param>
+        <param name="functionalArea_25"><Products/> en annuïteiten / <pricebooks/></param>
+        <param name="functionalArea_26">Waarschuwing belangrijke deal </param>
+        <param name="functionalArea_27">Documenten</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Cases en oplossingen </param>
+        <param name="functionalArea_29">Zoeken</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Delen</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect voor Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition voor au</param>
+        <param name="functionalArea_35">Partnerportallicentie</param>
+        <param name="functionalArea_36">Force.com Mobile-licentie</param>
+        <param name="functionalArea_37">Salesforce CRM Content-licentie</param>
+        <param name="functionalArea_38">Service Cloud-licentie</param>
+        <param name="functionalArea_39">Jigsaw-licentie</param>
+        <param name="functionalArea_40">Live Agent-licentie</param>
+        <param name="functionalArea_41">Site.com Contributor-licentie</param>
+        <param name="functionalArea_42">Site.com Publisher-licentie</param>
+        <param name="functionalArea_43">Chatter Answers-licentie</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Als u liever rechtstreeks met een medewerker van de klantenondersteuning spreekt, belt u +1(415) 901-7010 tussen 6 uur 's morgens en 6 uur 's avonds Pacific Time, maandag&amp;#150;vrijdag of belt u +353-1-2723503 tussen 8 uur 's morgens en 6 uur 's avonds GMT, maandag&amp;#150;vrijdag.</param>
+        <param name="tips_title">Tips voor het indienen van cases</param>
+        <param name="tip1">Zorg ervoor dat u voldoende gegevens voor ons hebt zodat wij zo snel mogelijk op uw case kunnen reageren.  Hieronder geven we enkele suggesties en tips:</param>
+        <param name="tip2">Vertel ons wat u probeert te doen, wat u denkt dat er zou moeten gebeuren en wat er in werkelijkheid gebeurt.</param>
+        <param name="tip3">Vertel ons wat de stappen zijn om uw probleem te reproduceren.</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">Weergeven:</param>
+        <param name="X">X</param>
+        <param name="close">Slt</param>
+        <param name="MLclose">Sluiten</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Verw</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Verwijderen</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Wissen</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Record</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Set-up</param>
+        <param name="activate">Activeren</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Deactiveren</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Beheren</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Exporteren</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Volgende pagina</param>
+        <param name="prev">Vorige pagina</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Totale items in weergave: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Mij {0} {1} records per lijstpagina tonen</param>
+        <param name="number_shown_detail_page">Mij altijd {0} {1} {2} records per gerelateerde lijst tonen</param>
+        <param name="number_shown_adjust_less_link">minder</param>
+        <param name="number_shown_adjust_more_link">meer</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">alle</param>
+        <param name="last_page">Terug naar vorige pagina</param>
+        <param name="last_list">Terug naar lijst</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Terug naar lijst:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Terug naar lijst: <Entity entity="0" plural="y"/> vanaf Verbindingen</param>
+        <param name="last_suggested_solution_list">Terug naar lijst van <suggested/> <solutions/></param>
+        <param name="last_solution_search_list">Terug naar <solution plural="n"/>zoekresultaten</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Terug naar <entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Acties:</param>
+        <param name="checkboxPrompt">Selecteer ten minste één rij</param>
+        <param name="checkboxSinglePrompt">Selecteer één rij</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Uw selecties op deze pagina gaan verloren. Wilt u doorgaan?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">U moet {0} tijen of minder selecteren om deze bewerking uit te voeren.</param>
+        <param name="selectionLimit">U kunt niet meer dan {0} rijen selecteren.</param>
+        <param name="login">Inloggen</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Sessie</param>
+        <param name="none">Geen records om weer te geven.</param>
+        <param name="no_rows">Er zijn geen rijen geselecteerd</param>
+        <param name="subtotal">Subtotaal:</param>
+        <param name="total">Totaal:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Alle items selecteren</param>
+        <param name="clearAllInfo">Selectie van alle items opheffen</param>
+        <param name="rename">Naam wijzigen</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">Selecteren</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Selecties opheffen</param>
+        <param name="toggleall">Alle rijen in- of uitschakelen</param>
+        <param name="refresh">Vernieuwen</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Selecteer een weergave.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">De opgegeven weergave overschrijdt de maximale grootte. Verfijn uw zoekcriteria door de weergave te wijzigen of een nieuwe weergave te maken.</param>
+    <param name="switch_view">Andere weergave</param>
+    <param name="records_x_to_y">Recordweergave {0} - {1}</param>
+    <param name="records_x_to_y_more">Recordweergave {0} - {1}, meer records beschikbaar</param>
+    <param name="records_x_to_y_more_showing_max">Recordweergave {0} - {1}. Op deze pagina worden alleen de eerste 1000 records weergegeven, maar er zijn meer records beschikbaar. Als u minder records wilt weergeven, moet u de lijstweergavecriteria verfijnen. Als u meer dan 1000 records wilt afdrukken, voert u een rapport uit en klikt u in het rapport op de knop Afdrukbare weergave.</param>
+    <param name="number_of_records">Aantal records</param>
+        <param name="createCase"><Case/> maken</param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">Klik om geneste items uit of samen te vouwen.</param>
+        <param name="expand">Klik om geneste items uit te vouwen.</param>
+        <param name="collapse">Klik om geneste items samen te vouwen.</param>
+        <param name="shortExpand">Uitvouwen</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Samenvouwen</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Uitgevouwen</param>
+        <param name="collapsed">Samengevouwen</param>
+        <param name="level">Niveau</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hiërarchie:</param>
+        <param name="siblings">Elementen op zelfde niveau:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">Opzoeken</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Kies een object</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Wie</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Wat</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">De zoekopdracht retourneerde meer dan het maximale aantal rijen ({0}). Verfijn de zoekcriteria.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Alle rechten voorbehouden.</param>
+        <param name="useWildcards">U kunt naast andere lettertekens '*' als jokerteken gebruiken om uw zoekresultaten te verbeteren.  Zo geeft "ad*" alle records met een woord in een van de doorzochte velden, dat begint met "ad".</param>
+        <param name="useWildcardsWithSearch">U kunt naast andere lettertekens "*" als jokerteken gebruiken om uw zoekresultaten te verbeteren.</param>
+        <param name="error_lookup_multiple_matches_ile">Meerdere items gevonden.&lt;br&gt;Klik op pictogram om zoekopdracht te verfijnen.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">Een kleur selecteren</param>
+        <param name="cpFrameTitle">Kleurenkiezer</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">Een grafiektype selecteren</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">Lijst uitvouwen</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Uitgevouwen lijst</param>
+        <param name="sharing">Delen</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Waarom?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">Meer filters &gt;&gt;</param>
+        <param name="less_filters">Minder filters &lt;&lt;</param>
+        <param name="by_keyword">Op trefwoord</param>
+        <param name="by_filter">Op veldfilter</param>
+        <param name="too_many">Uw zoekopdracht heeft meer dan {0} rijen opgeleverd. Alleen de eerste {0} worden weergegeven. Verfijn de zoekcriteria.</param>
+        <param name="Results">Resultaten</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">Zoeken:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Score</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">Veld</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operator</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Waarde</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">U kunt "or"-filters gebruiken door meerdere items in de derde kolom op te geven.</param>
+        <param name="tip_1">U kunt maximaal 10 items opgeven, die u scheidt met komma's. Bijvoorbeeld: met CA, NY, TX, FL wordt gezocht naar CA of NY of TX of FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Plaats aanhalingstekens rondom gegevens die komma's bevatten. Met bijvoorbeeld "200.000","1.000.000" wordt gezocht naar 200.000 of 1.000.000.</param>
+        <param name="tip_3">Gebruik voor selectievakjes "False (onwaar)" en "True (waar)", bijvoorbeeld "Actief is gelijk aan True (waar)" of "Geconverteerd is gelijk aan False (onwaar)".</param>
+        <param name="tip_4">Regelnummers op basis van netnummers moeten mogelijk haakjes opnemen, bijvoorbeeld. Telefoon begint met (020), (0416).</param>
+        <param name="tip_5">Als u het vertaalcentrum gebruikt, geeft u alle filtercriteria met behulp van hoofdwaarden op.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">Beschikbaar</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Selecties</param>
+        <param name="assignLicensesDescription">Schakel het selectievakje in naast elk pakket dat u aan deze gebruiker wilt toekennen, en klik op Toewijzen. Het selectievakje is afwezig als er onvoldoende licenties beschikbaar zijn voor een pakket of als de pakketstatus is verlopen of opgeschort.</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">Horizontale weergave</param>
+        <param name="vertical_view">Verticale weergave</param>
+        <param name="view_select_title">Weergave selecteren</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portalstandaard</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This/> <entity entity="0"/> is beheerd, hetgeen inhoudt dat u alleen bepaalde kenmerken kunt bewerken.</param>
+        <param name="EntityDeprecated"><This/> <entity entity="0"/> is afgevoerd van de lijst.</param>
+        <param name="UnmanagedDeprecatedByOther"><This/> <entity entity="0"/> is nog niet uitgegeven, maar is wel afgevoerd van de lijst door de bovenliggende component.</param>
+        <param name="EntityDeprecatedByDev"><This/> <entity entity="0"/> is van de lijst afgevoerd door de uitgever van het pakket. Raadpleeg de uitgever voor meer informatie.</param>
+        <param name="Undeprecate">U kunt het van de lijst afvoeren van de component opheffen voordat u uploadt in een beheerd-uitgegeven pakket.</param>
+        <param name="UndeprecateByOther">U kunt het van de lijst afvoeren van de bovenliggende component van deze component opheffen voordat u uploadt in een beheerd-uitgegeven pakket.</param>
+        <param name="MoreInfo">Meer informatie weergeven</param>
+        <param name="LessInfo">Informatie verbergen</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><This/> <entity entity="0"/> vormt onderdeel van een voor een upgrade geschikt pakket dat u hebt geüpload naar de AppExchange.</param>
+        <param name="BecauseInstalled"><This/> <entity entity="0"/> vormt onderdeel van een voor een upgrade geschikt pakket dat is geïnstalleerd vanaf de AppExchange.</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">Wat kan ik bewerken?</param>
+        <param name="WhatNone">Voor {0} die worden beheerd, kunt u geen kenmerken bewerken, aangezien toekomstige upgrades hierdoor gemakkelijker verlopen.</param>
+        <param name="WhatTop">Bij beheerde {0} zijn de volgende items bewerkbaar:</param>
+        <param name="WhatBottom">Ter vereenvoudiging van het upgradeproces zijn alle andere kenmerken vergrendeld.</param>
+        <param name="WhoCanDelete">Wie kan welke {0} verwijderen?</param>
+        <param name="Who">De {0} kan {1} verwijderen.</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">Entiteitdetailoverlay</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0} is opgeslagen.</param>
+        <param name="modified">{0} is bijgewerkt.</param>
+        <param name="submitted">{0} is ingediend.</param> <!-- Label swap for Case object -->
+        <param name="attached">Bijlage(n) toegevoegd.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">Kleurvoorbeeld</param>
+        <param name="colorHexValue">Hexwaarde van kleur</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">bevestiging</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Gegevens</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Fout</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Waarschuwing</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Beveiligd</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">Frequentie</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Dagelijks</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Wekelijks</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Maandelijks</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Elke werkdag</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Elke dag</param>
+       <param name="lastDay">laatste</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">de 1ste</param>
+    <param name="on2">de 2de</param>
+    <param name="on3">de 3de</param>
+    <param name="on4">de 4de</param>
+    <param name="onLast">de laatste</param>
+    <param name="startTime">Begin</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Einde</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Voorkeur begintijd</param>
+    <param name="noPreference">Geen voorkeur</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Exacte begintijd is afhankelijk van wachtrijactiviteiten.</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[De tijdzone voor de instelling voor deze maandelijkse frequentie is:<br> <strong>{0}</strong><br>Frequentie-instellingen worden weergegeven in de tijdzone van de gebruiker die deze het laatst heeft bewerkt.<br>Eventuele wijzigingen die u aanbrengt aan deze instellingen, worden bijgewerkt op basis van uw tijdzone.]]></param>
+
+      <param name="weeklyRecurrence">Vindt plaats elke week op {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Vindt plaats elke week op</param>
+      <param name="monthlyRecurrence1">Op dag {0} van elke maand</param>
+      <param name="monthlyRecurrence1LegendLabel">Opgegeven</param>
+      <param name="monthlyRecurrence2LegendLabel">Aangepast</param>
+      <param name="monthlyRecurrence2">Op {2} {0} {3} {1} van elke maand</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Op {0} {1} van elke maand</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Op bepaalde dag van elke maand</param>
+      <param name="accessibleMonthly2">Op aangepaste dag van elke maand</param>
+      <param name="accessibleOnDayN">Bepaalde dag</param>
+      <param name="accessibleOnDayNOfWeek">Voorkomen</param>
+      <param name="accessibleOnDayName">Dag</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">De eenvoudigste test helpt voorkomen dat kwaadwillende programma's toegang tot uw gegevens krijgen.  Uw beheerder stelt deze test in als verplicht voor grote downloads.  Deze wordt niet meer dan één maal per inlogsessie aangeboden.</param>
+        <param name="imagePrompt">Geef de bovenstaande woorden op, gescheiden met een spatie:</param>
+        <param name="audioPrompt">Geef de getallen op, die u hoort:</param>
+        <param name="refresh">Een nieuwe uitdaging aangaan</param>
+        <param name="audio">Een audio-uitdaging aangaan</param>
+        <param name="image">Een afbeeldingsuitdaging aangaan</param>
+        <param name="incorrect">Onjuist; probeer het nogmaals</param>
+        <param name="moreinfo">Meer info &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Minder info</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">Klik voor meer...</param>
+        <param name="show">Deelvenster Markeringen weergeven</param>
+        <param name="hide">Deelvenster Markeringen verbergen</param>
+        <param name="empty">Er zijn geen gemarkeerde velden om weer te geven voor deze record.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">Rondleiding</param>
+        <param name="closeIntro">Nee, dank u!</param>
+        <param name="closeOutro">Sluiten</param>
+        <param name="showLater">Laat me dit later zien</param>
+        <param name="replay">Opnieuw afspelen</param>
+        <param name="continue">Doorgaan</param>
+        <param name="previous">Vorige</param>
+        <param name="startTour">Beginnen met tour</param>
+        <param name="endTour">Tour beëindigen</param>
+        <param name="stepCounter">{0} van {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">Detail</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Aanbevelingen</param>
+        <param name="hideBucketTip">&lt;br&gt;Hier neerzetten om items te verbergen&lt;br/&gt;van pagina.</param>
+        <param name="hiddenListTip">Voor het weergeven van verborgen items sleept u terug naar lijst hierboven.</param>
+        <param name="hiddenListShowLinkLabel">{0} verborgen</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">Terug naar boven</param>
+        <param name="multipleItemDragGhost">Meerdere items (x {0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">Browsercompatibiliteit voor detailpagina</param>
+        <param name="compatibilityMsgSubTitle">Oei! Wij bieden geen ondersteuning van deze browser</param>
+        <param name="compatibilityMsg1">We kunnen de nieuwe detailpagina niet weergeven in uw huidig browser.</param>
+        <param name="compatibilityMsg2">U kunt het nieuwe ontwerp gebruiken wanneer u inlogt met een van de volgende compatibele browsers:</param>
+        <param name="supportedIE">Internet Explorer 7 of 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Met dank!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Klassieke weergave tot mijn standaardweergave maken</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">Typ hier om te zoeken naar {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Geen {0} die overkwam(en) met uw zoekopdracht.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Pagina {1} van {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">Menu uitschakelen</param>
+        <param name="confirmTurnOffTitle">Weet u zeker dat u dit menu wilt uitschakelen?</param>
+        <param name="confirmTurnOffText">Als u dit menu in de toekomst wilt inschakelen, gaat u naar uw pagina Persoonlijke gegevens in het menu Set-up en schakelt u de voorkeur voor het Force.com-menu Snelle toegang in.</param>
+        <param name="viewObject">Object weergeven</param>
+        <param name="viewObjectHover">Details voor dit object weergeven en beheren</param>
+        <param name="viewObjectNewHover">Een object maken</param>
+        <param name="viewFields">Velden weergeven</param>
+        <param name="viewFieldsHover">De velden voor dit object weergeven en beheren</param>
+        <param name="viewFieldsNewHover">Een veld toevoegen aan dit object</param>
+        <param name="viewRecordTypes">Recordtypen weergeven</param>
+        <param name="viewRecordTypesHover">Recordtypen voor dit object weergeven en beheren</param>
+        <param name="viewRecordTypesNewHover">Een recordtype voor dit object toevoegen</param>
+        <param name="viewValidationRules">Validatieregels weergeven</param>
+        <param name="viewValidationRulesHover">Validatieregels voor dit object weergeven en beheren</param>
+        <param name="viewValidationRulesNewHover">Een validatieregel voor dit object toevoegen</param>
+        <param name="viewApprovals">Goedkeuringen weergeven</param>
+        <param name="viewApprovalsHover">Goedkeuringsprocessen voor dit object weergeven en beheren</param>
+        <param name="viewApprovalsNewHover">De snelstartwizard gebruiken om een goedkeuringsproces voor dit object toe te voegen</param>
+        <param name="editApp">Toepassing bewerken</param>
+        <param name="editAppHover">De lijst van tabbladen, profieltoewijzingen en andere details voor deze toepassing aanpassen</param>
+        <param name="editTab">Tabblad bewerken</param>
+        <param name="editTabHover">Het pictogram, de kleur en andere details voor deze toepassing aanpassen</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">Deze paginalay-out aanpassen</param>
+        <param name="viewRecordType">Recordtype weergeven</param>
+        <param name="viewRecordTypeHover">Dit recordtype weergeven en beheren, inclusief het bewerken van keuzelijstwaarden</param>
+        <param name="editColumns">Kolommen bewerken</param>
+        <param name="editColumnsHover">De kolommen in deze lijst aanpassen</param>
+        <param name="importData">Gegevens importeren</param>
+        <param name="importDataHover">Gegevens importeren in dit object</param>
+    </section>
+</iniFile>

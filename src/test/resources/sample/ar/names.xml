@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+  Required attributes:
+    name: name of this noun. use element like: <Account/>
+    entity: specify which entity this noun belongs to. Must be one of the
+        existing entity.
+
+  Optional attributes:
+    alias: alias to this noun in plural form like: <Accounts/>
+    type: specify type of noun. mainly used by setup UI. If none specified,
+       the noun is considered like proper noun. just singular value is
+       required.
+    "entity": this noun requires full set of values - combination of
+         number, article and cases. It is not necessary that this
+         type of noun should be a real entity (like Account).
+    "field" : this is field name which requires only singular
+         and plural form. no article or cases
+
+    gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+    startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+  Note: if no optional attribute is given, it will be:
+    gender="n"
+
+ <values> Syntax:
+  Optional attributes:
+    case:  (n)moninative | (a)ccusative | (g)enitive | (d)ative
+      or (o)bjective | (s)ubjective
+    plural: (y)es | (n)o                    - default is n
+    article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite - default is n
+
+  Note: if no attributes specified, the default value is equivalent to:
+    <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+  <!--======================================================================
+   Standard Object
+    for English, article forms like following are automatically
+    resolved by the label generator. SO it is not necessary to specify here.
+    <value plural="n" article="a">A partner</value>
+    <value plural="n" article="the">The partner</value>
+    <value plural="y" article="the">The partners</value>
+
+   Capitalization within labels
+     <Account/> will display "Account"
+     <account/> will display "account"
+  =======================================================================-->
+
+
+  <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="m">
+    <value plural="n">حساب</value>
+    <value plural="n" poss="f">حسابي</value>
+    <value plural="n" poss="s">حسابك</value>
+    <value plural="y">حسابات</value>
+    <value plural="y" poss="f">حساباتي</value>
+    <value plural="y" poss="s">حساباتك</value>
+    <value plural="n" case="a">حسابًا</value>
+    <value plural="n" case="a" poss="f">حسابي</value>
+    <value plural="n" case="a" poss="s">حسابك</value>
+    <value plural="y" case="a">حسابات</value>
+    <value plural="y" case="a" poss="f">حساباتي</value>
+    <value plural="y" case="a" poss="s">حساباتك</value>
+  </noun>
+
+  <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="m">
+    <value plural="n">نشاط</value>
+    <value plural="n" poss="f">نشاطي</value>
+    <value plural="n" poss="s">نشاطك</value>
+    <value plural="y">أنشطة</value>
+    <value plural="y" poss="f">نشاطاتي</value>
+    <value plural="y" poss="s">نشاطاتك</value>
+    <value plural="n" case="a">نشاطًا</value>
+    <value plural="n" case="a" poss="f">نشاطي</value>
+    <value plural="n" case="a" poss="s">نشاطك</value>
+    <value plural="y" case="a">نشاطات</value>
+    <value plural="y" case="a" poss="f">نشاطاتي</value>
+    <value plural="y" case="a" poss="s">نشاطاتك</value>
+  </noun>
+  
+  <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f">
+    <value plural="n">حملة</value>
+    <value plural="n" poss="f">حملتي</value>
+    <value plural="n" poss="s">حملتك</value>
+    <value plural="y">حملات</value>
+    <value plural="y" poss="f">حملاتي</value>
+    <value plural="y" poss="s">حملاتك</value>
+    <value plural="n" case="a">حملةً</value>
+    <value plural="n" case="a" poss="f">حملتي</value>
+    <value plural="n" case="a" poss="s">حملتك</value>
+    <value plural="y" case="a">حملات</value>
+    <value plural="y" case="a" poss="f">حملاتي</value>
+    <value plural="y" case="a" poss="s">حملاتك</value>
+  </noun>
+
+  
+   <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="f">
+    <value plural="n">جهة الاتصال</value>
+    <value plural="n" poss="f">جهة الاتصال الخاصة بي</value>
+    <value plural="n" poss="s">جهة الاتصال الخاصة بك</value>
+    <value plural="y">جهات الاتصال</value>
+    <value plural="y" poss="f">جهات الاتصال الخاصة بي</value>
+    <value plural="y" poss="s">جهات الاتصال الخاصة بك</value>
+    <value plural="n" case="a">جهات الاتصال</value>
+    <value plural="n" case="a" poss="f">جهة الاتصال الخاصة بي</value>
+    <value plural="n" case="a" poss="s">جهة الاتصال الخاصة بك</value>
+    <value plural="y" case="a">جهات الاتصال</value>
+    <value plural="y" case="a" poss="f">جهات الاتصال الخاصة بي</value>
+    <value plural="y" case="a" poss="s">جهات الاتصال الخاصة بك</value>
+  </noun>  
+
+  <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m">
+    <value plural="n">مستند</value>
+    <value plural="n" poss="f">مستندي</value>
+    <value plural="n" poss="s">مستندكx</value>
+    <value plural="y">مستندات</value>
+    <value plural="y" poss="f">مستنداتي</value>
+    <value plural="y" poss="s">مستنداتك</value>
+    <value plural="n" case="a">مستندًا</value>
+    <value plural="n" case="a" poss="f">مستندي</value>
+    <value plural="n" case="a" poss="s">مستندك</value>
+    <value plural="y" case="a">مستندات</value>
+    <value plural="y" case="a" poss="f">مستنداتي</value>
+    <value plural="y" case="a" poss="s">مستنداتك</value>
+  </noun>
+
+  <noun name="Event" entity="Event" type="entity" alias="Events" gender="m">
+    <value plural="n">حدث</value>
+    <value plural="n" poss="f">حدث خاص بي</value>
+    <value plural="n" poss="s">حدث خاص بك</value>
+    <value plural="y">أحداث</value>
+    <value plural="y" poss="f">أحداث خاصة بي</value>
+    <value plural="y" poss="s">أحداث خاصة بك</value>
+    <value plural="n" case="a">حدثًا</value>
+    <value plural="n" case="a" poss="f">حدثًا خاصًا بي</value>
+    <value plural="n" case="a" poss="s">حدثًا خاصًا بك</value>
+    <value plural="y" case="a">أحداثًا</value>
+    <value plural="y" case="a" poss="f">أحداثًا خاصة بي</value>
+    <value plural="y" case="a" poss="s">أحداثًا خاصة بك</value>
+  </noun>
+
+
+  <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="m">
+    <value plural="n">عرض أسعار</value>
+    <value plural="n" poss="f">عرض أسعاري</value>
+    <value plural="n" poss="s">عرض أسعارك</value>
+    <value plural="y">عروض الأسعار</value>
+    <value plural="y" poss="f">عروض أسعاري</value>
+    <value plural="y" poss="s">عروض أسعارك</value>
+    <value plural="n" case="a">عرض أسعار</value>
+    <value plural="n" case="a" poss="f">عرض أسعاري</value>
+    <value plural="n" case="a" poss="s">عرض أسعارك</value>
+    <value plural="y" case="a">عروض الأسعار</value>
+    <value plural="y" case="a" poss="f">عروض أسعاري</value>
+    <value plural="y" case="a" poss="s">عروض أسعارك</value>
+   </noun>
+
+
+  <noun name="Question" entity="Question" type="entity" alias="Questions" gender="m">
+    <value plural="n">سؤال</value>
+    <value plural="n" poss="f">سؤالي</value>
+    <value plural="n" poss="s">سؤالك</value>
+    <value plural="y">أسئلة</value>
+    <value plural="y" poss="f">أسئلتي</value>
+    <value plural="y" poss="s">أسئلتك</value>
+    <value plural="n" case="a">سؤالاً</value>
+    <value plural="n" case="a" poss="f">سؤالي</value>
+    <value plural="n" case="a" poss="s">سؤالك</value>
+    <value plural="y" case="a">أسئلةً</value>
+    <value plural="y" case="a" poss="f">أسئلتي</value>
+    <value plural="y" case="a" poss="s">أسئلتك</value>
+  </noun>
+  
+  
+  
+  
+  
+
+
+  <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m">
+    <value plural="n">عميل متوقع</value>
+    <value plural="n" poss="f">عميلي المتوقع</value>
+    <value plural="n" poss="s">عميلك المتوقع</value>
+    <value plural="y">عملاء متوقعون</value>
+    <value plural="y" poss="f">عملائي المتوقعون</value>
+    <value plural="y" poss="s">عملاؤك المتوقعون</value>
+    <value plural="n" case="a">عميلاً متوقعًا</value>
+    <value plural="n" case="a" poss="f">عميلي المتوقع</value>
+    <value plural="n" case="a" poss="s">عميلك المتوقع</value>
+    <value plural="y" case="a">عملاء متوقعين</value>
+    <value plural="y" case="a" poss="f">عملائي المتوقعين</value>
+    <value plural="y" case="a" poss="s">عملاءك المتوقعين</value>
+  </noun>
+
+  <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f">
+    <value plural="n">فرصة</value>
+    <value plural="n" poss="f">فرصتي</value>
+    <value plural="n" poss="s">فرصتك</value>
+    <value plural="y">فرص</value>
+    <value plural="y" poss="f">فرصي</value>
+    <value plural="y" poss="s">فرصك</value>
+    <value plural="n" case="a">فرصةً</value>
+    <value plural="n" case="a" poss="f">فرصتي</value>
+    <value plural="n" case="a" poss="s">فرصتك</value>
+    <value plural="y" case="a">فرصًا</value>
+    <value plural="y" case="a" poss="f">فرصي</value>
+    <value plural="y" case="a" poss="s">فرصك</value>
+  </noun>
+  <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m">
+    <value plural="n">كتاب الأسعار</value>
+    <value plural="n" poss="f">كتاب الأسعار الخاص بي</value>
+    <value plural="n" poss="s">كتاب الأسعار الخاص بك</value>
+    <value plural="y">كتب الأسعار</value>
+    <value plural="y" poss="f">كتب الأسعار الخاصة بي</value>
+    <value plural="y" poss="s">كتب الأسعار الخاصة بك</value>
+    <value plural="n" case="a">كتاب الأسعار</value>
+    <value plural="n" case="a" poss="f">كتاب الأسعار الخاص بي</value>
+    <value plural="n" case="a" poss="s">كتاب الأسعار الخاص بكx</value>
+    <value plural="y" case="a">كتب الأسعار</value>
+    <value plural="y" case="a" poss="f">كتب الأسعار الخاصة بي</value>
+    <value plural="y" case="a" poss="s">كتب الأسعار الخاصة بك</value>
+  </noun>
+
+
+
+
+  <!-- Special for Custom Objects/Tabs
+     This is actually, not only for custom object but should be considered as template
+     for any unknown entities.
+  -->
+  <noun name="Entity" entity="Entity" type="entity" gender="m">
+    <value plural="n">{0}</value>
+    <value plural="y">{0}</value>
+  </noun>
+
+
+  <!--
+    Special nouns - these are not rename-able, but need here for dynamic tag such as
+    <entity/>, <entity_record_type/>
+  -->
+
+
+
+  <!--==================================================================
+   Other Nouns
+  ======================================================================-->
+
+  <!--******* Accounts *************************************************-->
+ 
+  <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="m" standardField="y">
+    <value plural="n">اسم الحساب</value>
+    <value plural="y">اسماء الحساب</value>
+ </noun>
+
+   <noun name="Product_Currency" entity="Product" gender="f" standardField="y">
+    <value plural="n">عملة المنتج</value>
+</noun>
+
+  <import file="adjectives.xml"/>
+</names>

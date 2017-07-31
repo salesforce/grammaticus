@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">กล่องเลือกรายการ</param>
+        <param name="select_default">เลือกจากด้านล่าง</param>   <!-- aliased across labels; do not change -->
+        <param name="select">เลือก {0} จากด้านล่าง</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Contact/><Primary/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">เข้าใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(ถูกจัดการ)</param>
+        <param name="activity_history">ประวัติของกิจกรรม</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">ข้อมูลเพิ่มเติม</param> <!--aliased across labels - do not change-->
+        <param name="alias">ชื่อย่อ</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">ผู้ช่วย</param>
+        <param name="assistant_name">ชื่อของผู้ช่วย</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">หมายโทรศัพท์ของผู้ช่วย</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">หมายเลขโทรศัพท์ของผู้ช่วย</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">หมายเลขต่อของผู้ช่วย</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">วันเดือนปีเกิด</param>   <!-- aliased across labels; do not change -->
+        <param name="body">เนื้อความ</param>   <!-- aliased across labels; do not change -->
+        <param name="company">บริษัท</param> <!--aliased across labels - do not change-->
+        <param name="created_by">สร้างโดย</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">สร้างโดยรหัสประจำ</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">สร้างตามชื่อย่อ</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">รหัส ISO สกุลเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">ฟิลด์กำหนดเอง</param> <!--aliased across labels - do not change-->
+        <param name="default_status">สถานะเริ่มต้น</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">รายละเอียดของ {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">แผนก</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">แก้ไข {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">รายได้ที่คาด</param>
+        <param name="first_name">ชื่อจริง</param> <!-- aliased across app - do not change -->
+        <param name="last_name">นามสกุล</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">ชื่อ (โลคัล)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">นามสกุล (โลคัล)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">ไตรมาสงบประมาณ</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">ปีงบประมาณ</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">ชื่อเต็ม</param> <!-- aliased across app - do not change -->
+        <param name="group">กลุ่ม</param> <!-- aliased across app - do not change -->
+        <param name="group_name">ชื่อกลุ่ม</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">ชื่อคิว</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">อุตสาหกรรม</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">แก้ไขล่าสุดโดย</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">แก้ไขครั้งล่าสุดโดยรหัสประจำ</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">แก้ไขครั้งล่าสุดโดยชื่อย่อ</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">รหัสประจำเร็กคอร์ดหลัก</param>
+        <param name="mobile">โทรศัพท์มือถือ</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">โทรศัพท์มือถือ</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">หมายเลขต่อของโทรศัพท์มือถือ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">การใช้งานร่วมกันใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">ชื่อย่อที่กำหนด</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">รายการที่มีอยู่</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">ชื่อบริษัท</param> <!-- aliased across app - do not change -->
+        <param name="activities">กิจกรรม</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">ไม่มีสิ่งที่แนบมา</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/><document plural="y"/></param>
+        <param name="address_info">ข้อมูลที่อยู่</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">ปฏิเสธ</param>   <!-- aliased across labels; do not change -->
+        <param name="default">ค่าเริ่มต้น</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">ลำดับความสำคัญที่เป็นค่าเริ่มต้น</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">สร้างมุมมองใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">ข้อมูลที่กำหนดเอง</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">สถานะซ้ำซ้อน</param> <!-- aliased across app - do not change -->
+        <param name="email_address">ที่อยู่อีเมล</param> <!-- aliased across app - do not change -->
+        <param name="email_name">ชื่ออีเมล</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">แม่แบบอีเมล</param>   <!-- aliased across labels; do not change -->
+        <param name="email">อีเมล:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">ลิงก์แบบกำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">ขนาดแฟ้ม</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">ไม่มีข้อมูล</param>
+        <param name="history_event_checked">ฟิลด์ {0} ที่ถูกเลือก</param>
+        <param name="history_event_unchecked">ฟิลด์ {0} ที่ไม่ถูกเลือก</param>
+        <param name="how_do_i_specify_info">ฉันจะระบุได้อย่างไรว่าควรใช้ข้อมูลใด?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">แหล่งข้อมูลภายใน</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">ช่วงเวลา:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">คำทักทาย</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">เลือกเจ้าของใหม่</param>
+        <param name="select_a_view">เลือกมุมมองจากรายการแบบหล่นลงเพื่อดูรายการผลลัพธ์ที่เกี่ยวข้อง</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">เลือกโฟลเดอร์จากรายการแบบหล่นลงเพื่อดูรายการผลลัพธ์ที่เกี่ยวข้อง</param>
+        <param name="select_the_file">เลือกแฟ้ม</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">เลือกฟิลด์ที่จะรวมเข้าไว้:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">ลายเซ็น</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">หัวข้อ</param> <!-- aliased across app - do not change -->
+        <param name="system_info">ข้อมูลระบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="website">เว็บไซต์</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">ชื่อย่อของเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">ชื่อเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">รหัสประจำเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">นามสกุลเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">ชื่อเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">บทบาทของเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">แสดงผลบทบาทของเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">ชื่อบทบาทของเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">หลัก</param>
+        <param name="primary_contact"><Contact/><Primary/></param>
+        <param name="priority">ลำดับความสำคัญ</param><!--aliased across labels - do not change -->
+        <param name="private">ส่วนตัว</param>
+        <param name="role">บทบาท</param> <!--aliased across labels - do not change -->
+        <param name="rating">การจัดอันดับ</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">สร้างแบบเร็ว</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">ที่ดูล่าสุด</param>
+        <param name="top5">คำถามยอดนิยม 5 คำถาม</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">ผู้จำหน่าย</param>
+        <param name="customer">ลูกค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">ซัพพลายเออร์</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">รหัสประจำประเภทเร็กคอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">รหัสประจำฝ่าย</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">การนับตารางหรือรหัสประจำ</param>
+        <param name="editable">สามารถแก้ไขได้</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">ชื่อที่ผ่านการจัดกลุ่มข้อมูล</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">นโยบายความเป็นส่วนตัว</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">สถานะที่สามารถจัดการได้</param>
+        <param name="namespacePrefix">ส่วนเสริมหน้าของเนมสเปซ</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">เนมสเปซของโมดูล</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">แพ็คเกจที่ติดตั้ง</param>
+        <param name="initialVersion">เวอร์ชันรีลีสแรก</param>
+        <param name="lastVersion">เวอร์ชันสุดท้ายที่พร้อมใช้งาน</param>
+        <param name="availableInVersions">มีให้ใช้ในเวอร์ชัน</param>
+        <param name="DeveloperName">ชื่อนักพัฒนา</param>
+        <param name="apiName">ชื่อ API</param>
+        <param name="InvalidDeveloperNameOnEntity">ฟิลด์ {0} สามารถใช้เครื่องหมายขีดล่าง ตัวอักษร และตัวเลขได้ จะต้องเป็นชื่อที่ไม่ซ้ำ, ขึ้นต้นด้วยตัวอักษร, ไม่มีเว้นวรรค, ห้ามลงท้ายด้วยเครื่องหมายขีดล่าง และห้ามใช้เครื่องหมายขีดล่างติดกันสองอัน</param>
+        <param name="missingDevName">ต้องเตรียม {0}</param>
+        <param name="duplicateDevName">มี {0} นี้อยู่แล้ว หรือมีการใช้งานแล้วก่อนหน้านี้  โปรดเลือกชื่ออื่น</param>
+        <param name="manageabilityOverride">การยกเลิกที่สามารถจัดการได้</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">วันที่ของเมตริก</param>
+        <param name="MayEdit">อาจแก้ไข</param>
+        <param name="IsLocked">ถูกล็อกอยู่</param>
+        <param name="LastViewedDate">วันที่เรียกดูล่าสุด</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">สร้าง</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">ตั้งค่า</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">สร้างใหม่...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">แฟ้ม</param>
+        <param name="new_forecast">คาดการณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">ถังขยะรีไซเคิล</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">ส่งอีเมล</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">รายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">แก้ไขโดย</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">วันที่สร้าง</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">วันที่แก้ไข</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">กระบวนการอัตโนมัติ</param>
+        <param name="partner_network">การเชื่อมต่อผู้ใช้</param>
+        <param name="external_who">ผู้ใช้สาธารณะ:</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">ตัวอย่าง</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">ข้อผิดพลาด: ข้อมูลที่ไม่ถูกต้อง &lt;br/&gt; ตรวจสอบข้อความแสดงความผิดพลาดทั้งหมดด้านล่างเพื่อแก้ไขข้อมูล</param>
+        <param name="EditPageError2">ตรวจสอบข้อความแสดงความผิดพลาดทั้งหมดด้านล่างเพื่อแก้ไขข้อมูล</param>
+        <param name="Required">คุณต้องป้อนค่า</param>
+        <param name="RequiredWithFieldList">ฟิลด์ที่ต้องกรอกข้อมูลหายไป: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">จำเป็นสำหรับการบริการตนเอง</param>
+        <param name="RequiredBy">ต้องการโดย: {0}</param>
+        <param name="Requires">ต้องการ: {0}</param>
+        <param name="TooLong">ค่ายาวเกินไปสำหรับฟิลด์</param>
+        <param name="CannotExceedXCharacters">ค่าต้องยาวไม่เกิน {0} อักขระ</param>
+        <param name="MustBeXCharacters">ค่าต้องมี {0} อักขระ</param>
+        <param name="MustBeNumber">ค่าต้องเป็นตัวเลข</param>
+        <param name="StatusCloseRequired">คุณต้องกำหนดสถานะอย่างน้อยหนึ่งสถานะให้เป็นปิดแล้ว</param>
+        <param name="StatusDefaultRequired">คุณต้องกำหนดสถานะอย่างน้อยหนึ่งสถานะให้เป็นค่าเริ่มต้น</param>
+        <param name="StatusInUse">ค่าของสถานะต่อไปนี้ถูกใช้งานอยู่และไม่สามารถแก้ไขหรือลบได้: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">วันที่ไม่ถูกต้อง</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">วันที่ไม่ถูกต้อง คุณไม่สามารถกำหนดวันที่นอกเหนือจาก {0} ได้</param>
+        <param name="InvalidDateTime">วันที่และเวลาที่ไม่ถูกต้อง</param>
+        <param name="InvalidColor">สีไม่ถูกต้อง</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">ที่อยู่อินเทอร์เน็ตไม่ถูกต้อง</param>
+        <param name="InvalidOption">มีการเลือกตัวเลือกที่ไม่ถูกต้อง</param>
+        <param name="UnsupportedCurrency">สกุลเงินไม่ถูกต้อง</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL ไม่ถูกต้อง</param>
+        <param name="NoneSelectedInPicklist">-- ไม่มีการเลือกใดๆ --</param>
+        <param name="InvalidTime">ไม่ใช่เวลาที่ถูกต้อง</param>
+        <param name="InvalidNumber">ตัวเลขไม่ถูกต้อง</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">ตัวเลขมีค่ามากเกินไป</param>
+        <param name="TooLargeNumberWithScale">ตัวเลขต้องมีค่าน้อยกว่า {0}</param>
+        <param name="TooSmallNumberWithScale">ตัวเลขต้องมีค่ามากกว่า {0}</param>
+        <param name="NonpositiveError">ต้องเป็นจำนวนบวก</param>
+        <param name="NegativeError">ต้องไม่ติดลบ</param>
+        <param name="PositiveError">ต้องไม่ใช่จำนวนบวก</param>
+        <param name="NonnegativeError">ต้องเป็นจำนวนติดลบ</param>
+        <param name="NonzeroError">ต้องไม่ใช่ศูนย์</param>
+        <param name="NonintegerError">ต้องเป็นจำนวนเต็ม</param>
+        <param name="InvalidPercent">เปอร์เซ็นต์ไม่ถูกต้อง</param>
+        <param name="InvalidAfterRoundOff">ตัวเลข {0} ไม่ถูกต้องหลังจากการปัดเศษตามอัตรา: {1}</param>
+        <param name="CharactersRemaining">ที่เหลืออยู่</param>
+        <param name="CharactersOver">เกินที่กำหนด</param>
+        <param name="TooManySelection">คุณไม่สามารถเลือกรายการได้มากกว่า {0} รายการ</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">ค่าซ้ำกันบนเร็กคอร์ด: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">ค่าฟิลด์ที่ซ่อน (ไม่แสดง) ซ้ำกับค่าบนเร็กคอร์ด: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} ซ้ำกับค่าบนเร็กคอร์ดที่มีรหัสประจำ: {1}</param>
+        <param name="True">จริง</param>   <!-- aliased across labels; do not change -->
+        <param name="False">เท็จ</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">โดเมนไม่ถูกต้อง</param>
+        <param name="ReadOnly">คุณไม่สามารถแก้ไขฟิลด์นี้</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">ถ้าคุณเลือกที่จะดำเนินการต่อด้วยการนำเข้า ข้อมูลนี้จะถูกละเว้น และฟิลด์จะว่าง</param>
+        <param name="extra_DefaultDivision">ถ้าคุณเลือกที่จะดำเนินการต่อด้วยการนำเข้า ฝ่ายที่เป็นค่าเริ่มต้นของเจ้าของเร็กคอร์ดจะถูกนำไปใช้สำหรับเร็กคอร์ดเหล่านี้</param>
+        <param name="extra_DefaultCurrency">ถ้าคุณเลือกที่จะดำเนินการต่อด้วยการนำเข้า เร็กคอร์ดเหล่านี้จะถูกกำหนดเป็นสกุลเงินที่เป็นค่าเริ่มต้นของคุณ</param>
+        <param name="InvalidDataType">ค่าที่ไม่ใช่ประเภทที่ต้องการ: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">ฟิลด์เจ้าของปล่อยว่างไม่ได้</param>
+        <param name="DynamicEnumValue">ค่าของรายการให้เลือกใช้งานไม่ได้: {0}</param>
+        <param name="DynamicEnumValue_extra">ถ้าคุณเลือกที่จะดำเนินการต่อด้วยการนำเข้า ค่านี้จะถูกนำเข้า แต่จะไม่ถูกเพิ่มเข้าในรายการค่าที่ใช้งานได้สำหรับรายการให้เลือกนี้</param>
+        <param name="InvalidCurrencyCode">รหัสสกุลเงินไม่ถูกต้อง: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">รหัสสกุลเงินใช้งานไม่ได้: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">เวลาไม่ถูกต้อง: {0}</param>
+        <param name="InvalidDateValue">วันที่ไม่ถูกต้อง: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">เปอร์เซ็นต์ไม่ถูกต้อง: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">รหัสประจำหายไปหรือไม่ถูกต้อง</param>
+        <param name="Id15Characters">ID ต้องเป็นอักขระ 15 ตัวเท่านั้น</param>
+        <param name="IdMissing_extra">เร็กคอร์ดจะถูกละเลย</param>
+        <param name="InvalidDivision">ฝ่ายไม่ถูกต้อง: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">ฝ่ายใช้งานไม่ได้: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">ตัวเลขไม่ถูกต้อง: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">ค่าที่อยู่นอกช่วงค่าที่ถูกต้องในฟิลด์ตัวเลข: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">เลือกรายการมากเกินไป: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">ที่อยู่อีเมลไม่ถูกต้อง: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">IP Address ไม่ถูกต้อง: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">ค่าของรหัสประจำผิดประเภท: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">ค่าที่ใช้ไม่ได้สำหรับฟิลด์รายการให้เลือกที่จำกัด: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">ค่าไม่ถูกต้องสำหรับฟิลด์บิตเว็คเตอร์: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">ค่าข้อมูลยาวเกินไป: {0}</param>
+        <param name="DataTruncated_extra">ถ้าคุณเลือกที่จะดำเนินการต่อด้วยการนำเข้า ข้อมูลนี้จะถูกตัดให้พอดีกับฟิลด์</param>
+        <param name="DuplicateExternalId">พบมากกว่าหนึ่งเร็กคอร์ดสำหรับฟิลด์รหัสประจำภายนอก: {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">คำร้องขอของคุณอยู่ระหว่างดำเนินการ...</param>
+        <param name="InvalidDeveloperNameChars">ชื่อ API <Entity entity="0"/> สามารถประกอบด้วยเครื่องหมายขีดล่างและตัวอักษรและตัวเลขเท่านั้น แต่ต้องเป็นชื่อที่ไม่ซ้ำ ขึ้นต้นด้วยตัวอักษร ไม่มีเว้นวรรค ห้ามลงท้ายด้วยเครื่องหมายขีดล่าง (_) และห้ามใช้เครื่องหมายขีดล่างติดกันสองอัน</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">ยกเลิก</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">ยอมรับ</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">ยอมรับการเปลี่ยนแปลง</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">เรียกใช้ Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">เพิ่มข้อคิดเห็น</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">เพิ่มคอมโพเนนต์</param>
+        <param name="add_contacts">เพิ่ม<Contacts/></param>
+        <param name="add_leads">เพิ่ม<Leads/></param>
+        <param name="add_more_users">เพิ่มผู้ใช้เพิ่มเติม</param>
+        <param name="add_multiple_users">เพิ่มผู้ใช้จำนวนมาก</param>
+        <param name="add_product">เพิ่ม<Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">เพิ่มรายการบรรทัด</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">เพิ่มตัวอย่างแดชบอร์ด</param>
+        <param name="add_to_call_center">เพิ่มในศูนย์บริการทางโทรศัพท์</param>
+        <param name="add_to_campaign">เพิ่มใน<Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">เพิ่มใน Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">เพิ่มใน<Pricebook/></param>
+        <param name="add_remove">เพิ่ม/ลบ</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">การตั้งค่าขั้นสูง</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">อนุมัติ</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">กำหนด</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">กำหนดผู้ใช้ให้บทบาท</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">กลับสู่รายการรายงาน</param>
+        <param name="billing_and_licenses">การเรียกเก็บเงินและใบอนุญาตใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">ข้อมูลการเรียกเก็บเงิน</param>
+        <param name="briefcase_setup">การตั้งค่า Briefcase</param>
+        <param name="cancel">ยกเลิก</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">ยกเลิกการส่ง</param>
+        <param name="cancel_test_instance">ยกเลิก Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">เปลี่ยนองค์กร</param>
+        <param name="change_currency">เปลี่ยนสกุลเงิน</param>
+        <param name="change_owner">เปลี่ยนเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">ยอมรับและเปลี่ยนเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">ยอมรับและกำหนดข้อมูลหลัก</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">เปลี่ยนสถานะ</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">ตรวจสอบความพร้อมใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">ตรวจสอบการสะกดคำ</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">เลือก<Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">ล้างข้อมูล</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">ภาพรวม</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">แท็บ {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">รายการ</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: คัดลอกรายละเอียดพาเรนต์</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">ยุบทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">เลือกรายการจากรายการให้เลือก</param>
+        <param name="composegmail">เรียบเรียง Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">ยืนยัน</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">ทำต่อ</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">ดำเนินการต่อ</param>
+        <param name="convert">แปลง</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">แปลง<Lead/></param>
+        <param name="create">สร้าง</param>
+        <param name="create_follow_up_event">สร้างการติดตามผล <Event/></param>
+        <param name="create_follow_up_task">สร้างการติดตามผล <Task/></param>
+        <param name="create_new">สร้าง {0} ใหม่</param>
+        <param name="create_new_section">สร้างส่วนใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">สร้าง <Opportunity/></param>
+        <param name="create_test_instance">สร้าง Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">สร้างฐานข้อมูลทดสอบ</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">สร้างแบบฟอร์มเว็บสำหรับลีด</param>
+        <param name="create_new_holiday">สร้างวันหยุดใหม่</param>
+        <param name="create_new_sla_process">สร้างกระบวนการ<Entitlement/></param>
+        <param name="create_new_milestone_type">สร้างหลักเป้าหมาย</param>
+        <param name="currency_setup">ตั้งค่าสกุลเงิน</param>
+        <param name="customer_view">มุมมองลูกค้า</param>
+        <param name="customize">กำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">กำหนดการแสดงผลสำหรับผู้ใช้ทั้งหมด</param>
+        <param name="page_settings">การตั้งค่าหน้า</param>
+        <param name="customize_page">กำหนดหน้า</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">แก้ไขเค้าโครง</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">รายการของแดชบอร์ด</param>
+        <param name="data_export">ส่งออกข้อมูล</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">ล้างข้อมูล</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">ปฏิเสธ</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">ลิงก์ที่กำหนดเองซึ่งเป็นค่าเริ่มต้น</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">ลบการเข้าถึง Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">เสร็จสิ้นพร้อมแสดงตัวอย่าง</param>
+        <param name="dont_save">ไม่ต้องบันทึก</param>
+        <param name="dont_show_page_again">อย่าแสดงหน้านี้อีก</param>
+        <param name="download">ดาวน์โหลด</param>
+        <param name="download_now">ดาวน์โหลด</param>
+        <param name="download_sample_css_file">ดาวน์โหลดตัวอย่างแฟ้ม CSS</param>
+        <param name="edit">แก้ไข</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">แก้ไข [เบต้า]</param>
+        <param name="edit_all">แก้ไขทั้งหมด</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">แก้ไขผู้ใช้</param>
+        <param name="edit_rates">แก้ไขอัตรา</param>
+        <param name="edit_selected">แก้ไขรายการที่เลือก</param>
+        <param name="editProperties">แก้ไขคุณสมบัติ</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">ออกจาก {0}</param>
+        <param name="enable_appstore_user">ให้สิทธิ์ในการเข้าถึง Checkout</param>
+        <param name="enable_as_partner">เปิดใช้งานเป็นคู่ค้า</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">เปิดใช้งานการเข้าสู่ระบบพอร์ทัลคู่ค้า</param>
+        <param name="enable_self_service">เปิดใช้งานการบริการตัวเอง</param>
+        <param name="enable_users">เปิดใช้งานผู้ใช้ใหม่</param>
+        <param name="enableForecasting">เปิดใช้งานการคาดการณ์ที่กำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">ป้อนการฝึกอบรม</param>
+        <param name="erase_test_instance">ลบ Sandbox</param>
+        <param name="establish">จัดตั้ง</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">ขยายทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="export">ส่งออกรายละเอียด</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">ส่งออกรายละเอียดเดี๋ยวนี้</param>
+        <param name="export_background">รันการส่งออกพื้นหลัง...</param>
+        <param name="fctHistory">ประวัติการคาดการณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">สรุปการคาดการณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">การตรวจสอบฟิลด์</param>
+        <param name="find">ค้นหา</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">ค้นหารายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">ค้นหา<Document/></param>
+        <param name="find_pricebooks">ค้นหา<Pricebook/></param>
+        <param name="find_products">ค้นหา<Product/></param>
+        <param name="find_solution">ค้นหา<Solution/></param>
+        <param name="finished">เสร็จสิ้น</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">ส่งต่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">ส่งต่อการเชื่อมต่อ</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">สร้าง WSDL</param>
+        <param name="generate_login_html">สร้าง HTML สำหรับการเข้าสู่ระบบ</param>
+        <param name="getMoreInfo">รับข้อมูลเพิ่มเติม</param>
+        <param name="go">ดำเนินการ!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">วิธีใช้สำหรับหน้านี้</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">วิธีใช้ {0}</param>
+        <param name="hide">ซ่อนรายละเอียด</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">ฉันตอบรับ</param>
+        <param name="i_decline">ฉันปฏิเสธ</param>
+        <param name="impactAnalysis">ใช้สิ่งนี้ที่ใด?</param>
+        <param name="import">นำเข้า</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">นำเข้า<Leads/></param>
+        <param name="include_offline">รวมออฟไลน์เข้าไว้ด้วย</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">แทรก</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">แทรกรายการที่เลือก</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">ติดตั้ง</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">เชิญ</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">เชิญให้เชื่อมต่อ</param>
+        <param name="jigsawsearch">รับผู้ติดต่อ</param>
+        <param name="join_meeting">เข้าร่วมการประชุม</param>
+        <param name="jumpstart">เริ่มต้นใช้งาน</param>
+        <param name="keep_in_touch">ร้องขอการอัพเดต</param>
+        <param name="layout_assignment">การกำหนดเค้าโครง</param>
+        <param name="legal_view">มุมมองทางกฎหมาย</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">ล็อคเร็กคอร์ด</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">ล็อกอินเป็นผู้ใช้แบบคู่ค้า</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">จัดการสมาชิก</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">สร้างจดหมายเชิญประชุม</param>
+        <param name="add_members_search">เพิ่มสมาชิก - ค้นหา</param>
+        <param name="add_members_import">เพิ่มสมาชิก - นำเข้าแฟ้ม</param>
+        <param name="edit_members_search">แก้ไขสมาชิก - ค้นหา</param>
+        <param name="update_members_import">อัพเดตและเพิ่มสมาชิก - นำเข้าแฟ้ม</param>
+        <param name="manage_call_center_users">จัดการผู้ใช้ประจำศูนย์บริการทางโทรศัพท์</param>
+        <param name="map_lead_fields">แผนที่<Lead_Fields/></param>
+        <param name="mark_as">ทำเครื่องหมายเป็น...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">นำเข้าสมาชิก</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">แก้ไขตัวแจ้งเตือนแต่ละรายการ</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">สร้าง</param>
+        <param name="newcase">สร้าง</param>
+        <param name="new_addition_order">คำสั่งการเพิ่มเติมใหม่</param>
+        <param name="new_custom_object">อ็อบเจ็กต์ใหม่แบบกำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">สร้างรายงานแบบกำหนดเองใหม่</param>
+        <param name="new_dashboard">สร้างแดชบอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">สร้างคอมโพเนนต์ของแดชบอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/><New/></param>
+        <param name="new_email_template">สร้างแม่แบบ</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><Entity entity="0"/><New/></param>
+        <param name="new_entitlement_template">สร้างแม่แบบ</param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="new_folder">สร้างโฟลเดอร์</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">สร้างกลุ่ม</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">สร้างคิว</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">สร้างหมายเหตุ</param>
+        <param name="new_object_custom_tab">สร้างแท็บอ็อบเจ็กต์แบบกำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">ประชุมออนไลน์</param>
+        <param name="new_order">สร้างคำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">สร้างกลุ่มส่วนบุคคล</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product">สร้าง<Product/></param>
+        <param name="new_reduction_order">สร้างคำสั่งการลด</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">สร้างบทบาท</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">สร้างปุ่มใหม่</param>
+        <param name="new_territory">สร้างขอบเขต</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_user">ผู้ใช้ใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">สร้างแท็บ Web Integration</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote">สร้าง<Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">ตกลง</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">ทำการอัพเดตอีกรายการหนึ่ง</param>
+        <param name="performAnotherMigrate">ถ่ายโอนโปรไฟล์อื่น</param>
+        <param name="preview">ดูตัวอย่าง</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">คำนวณใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">จัดตั้งใหม่</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">ปฏิเสธ</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">ปฏิเสธการเปลี่ยนแปลง</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">ลบผู้ใช้</param>
+        <param name="remove_from_briefcase">ลบออกจาก Briefcase</param>
+        <param name="remove_from_campaign">ลบจาก<Campaign/></param>
+        <param name="reorder">เรียงลำดับใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">ซ่อมแซม</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">รันการทดสอบทั้งหมด</param>
+        <param name="run_test">รันการทดสอบ</param>
+        <param name="quick_save">บันทึกแบบเร็ว</param>
+        <param name="quick_save_hover">บันทึกแล้วแก้ไขต่อไป</param>
+        <param name="reply">ตอบกลับ</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">ตอบกลับทั้งหมด</param>
+        <param name="reportmanager">ผู้จัดการรายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">รีเซ็ตรหัสผ่าน</param>
+        <param name="reset_passwords">รีเซ็ตรหัสผ่าน</param>
+        <param name="retrieve_prices">เรียกคืนราคา</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">เรียกใช้รายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="save">บันทึก</param> <!-- aliased across labels do not change -->
+        <param name="saving">กำลังบันทึก...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">บันทึกและเพิ่มราคา</param>
+        <param name="save_and_add_product">บันทึกและเพิ่ม <Product/></param>
+        <param name="save_and_clone">บันทึกและคัดลอกอีกครั้ง</param>
+        <param name="save_and_close">บันทึกและปิด</param>
+        <param name="save_and_attach">บันทึกและเพิ่มสิ่งที่แนบมา</param>
+        <param name="save_and_continue">บันทึกและถัดไป</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">บันทึกและอื่นๆ</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">บันทึกและ<New/> <Event/></param>
+        <param name="save_and_new_product">บันทึกและ<New/> <Product/></param>
+        <param name="save_and_new_task">บันทึกและ<New/><Task/></param>
+        <param name="save_and_refresh">บันทึกและรีเฟรช</param>
+        <param name="save_and_send">บันทึกและส่งการอัพเดต</param>
+        <param name="event_scheduler">ไคลเอ็นต์และมุมมองแบบทีม&gt;</param>
+        <param name="saveAs">บันทึกเป็น</param>
+        <param name="schedule_to_email">กำหนดการส่งอีเมล</param>
+        <param name="schedule_to_print">กำหนดการพิมพ์</param>
+        <param name="scrutinize">กลั่นกรอง</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">ค้นหา <KnowledgeArticles/></param>
+        <param name="newArticle">สร้าง</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">เลือกแม่แบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">เริ่มต้นใช้งานการบริการตัวเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">ตั้งค่าการบริการตัวเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">มุมมอง/เปิดใช้งานการบริการตัวเอง</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">ส่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">ส่งอีเมลไปยัง<contacts/><all/></param>
+        <param name="send_invitation">บันทึกและส่งคำเชิญ</param>
+        <param name="set_status">จัดการสถานะ</param>
+        <param name="setup_and_install">ตั้งค่าและติดตั้ง</param>
+        <param name="setup_roles">ตั้งค่าบทบาท</param>
+        <param name="setup_sharing">ตั้งค่าการใช้งานร่วมกัน</param>
+        <param name="sfga_instructions">ทำตามคำแนะนำที่สามารถพิมพ์ได้อย่างสมบูรณ์</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">แสดงรายละเอียด</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">ข้าม</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">จัดเรียง</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">เริ่มต้นประชุม</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">ส่ง</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">ส่งและเพิ่มสิ่งที่แนบมา</param>
+        <param name="subscribe_now">สมัครตอนนี้!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">อัพเกรดตอนนี้!</param>
+        <param name="suggest">ดู<Solutions/><Suggested/></param>
+        <param name="take_training_now">เข้ารับการอบรมตอนนี้!</param>
+        <param name="terminate">ยุติ</param>
+        <param name="training_history">ประวัติการฝึกอบรม</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">โอนย้าย</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">ทดลองตอนนี้!</param>
+        <param name="undelete">ยกเลิกการลบ</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">เลิกทำ</param>
+        <param name="unlock">ปลดล็อคเร็กคอร์ด</param>
+        <param name="update">อัพเดต</param>
+        <param name="update_campaign_history">อัพเดตและเพิ่ม <Campaign_Members/></param>
+        <param name="update_now">อัพเดตเดี๋ยวนี้</param>
+        <param name="update_statuses">สถานะการอัพเดต</param>
+        <param name="upload">อัปโหลด</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">การขึ้นต่อกันของฟิลด์</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">ดูคอมโพเนนต์ที่ลบไป</param>
+        <param name="view_partnerforce">ดูผู้ใช้แบบคู่ค้า</param>
+        <param name="view_self_service">ดูการบริการตัวเอง</param>
+        <param name="view_customer_success">ดูผู้ใช้พอร์ทัลของคู่ค้า</param>
+        <param name="enable_customer_success">เปิดใช้งานผู้ใช้พอร์ทัลของคู่ค้า</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">นี่คืออะไร?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">ปิดหน้าต่างนี้</param>
+        <param name="runApexRecalc">คำนวณการแบ่งใช้ Apex ใหม่</param>
+        <param name="disablecustomerportal">ปิดใช้งานผู้ใช้พอร์ทัลลูกค้า</param>
+        <param name="disablepartnerportal">ปิดใช้งานผู้ใช้คู่ค้า</param>
+        <param name="disablecustomerportalaccount">ปิดใช้งานแอคเคาต์พอร์ทัลลูกค้า</param>
+        <param name="disablepartnerportalaccount">ปิดใช้งานแอคเคาต์คู่ค้า</param>
+        <param name="voteup">โหวตขึ้น</param>
+        <param name="votedown">โหวตลง</param>
+        <param name="markquestionunanswered">ทำเครื่องหมายเป็น ไม่ได้ตอบ</param>
+        <param name="markbestanswer">ทำเครื่องหมายเป็น คำตอบที่ดีที่สุด</param>
+        <param name="requestUseSfdcAction">ค้นหาการเชื่อมต่อ</param>
+        <param name="addPET">เพิ่มแม่แบบการให้สิทธิ์</param>
+        <param name="truncate">ตัดทอน</param>
+        <param name="disableprmsuperuser">ปิดใช้งานการเข้าถึงคู่ค้าแบบพิเศษ</param>
+        <param name="enableprmsuperuser">เปิดใช้งานการเข้าถึงคู่ค้าแบบพิเศษ</param>
+        <param name="purchase_more">สั่งซื้อเพิ่มเติม</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">กลับสู่ด้านบน</param>
+        <param name="descriptionText">เนื้อความยาวเกินไป โปรดดูรายละเอียด</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">เรียกดูแฟ้ม</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">พาเรนต์</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">ไม่มีข้อมูลที่เกี่ยวข้อง</param>
+        <param name="no_records">ไม่มีเร็กคอร์ดแสดงผล</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">แสดง {0} เพิ่มเติม &#187;</param>
+        <param name="NextMoreGeneric">แสดงเพิ่มเติม &#187;</param>
+        <param name="view_more">ไปยังรายการ</param>
+        <param name="view_more_tot">ไปยังรายการ ({0})</param>
+        <param name="view_more_tot_plus">ไปยังรายการ ({0}+)</param> <!-- -->
+        <param name="view_more_1">ไปยังรายการที่มีเร็กคอร์ดมากกว่าหนึ่งเร็กคอร์ด</param> <!-- Singular -->
+        <param name="view_more_n">ไปยังรายการที่มีเร็กคอร์ดอีก {0} เร็กคอร์ด</param> <!-- Plural -->
+        <param name="view_more_n_plus">ไปยังรายการที่มีเร็กคอร์ดมากกว่า {0} เร็กคอร์ด</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">ยังมีพร้อมใช้งานอีก ไปที่รายการ</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">ความเป็นไปได้</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">แหล่งข้อมูล</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">ชนะ</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">รอบงบประมาณ</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">ไตรมาสที่ {1} ประจำปี {0}</param>
+        <param name="opportunities_next_step">ขั้นตอนต่อไป</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">อัพเดต</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/><Open/></param>
+        <param name="activities_open"><Activities/><Open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">สัมพันธ์กับ</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">หมายเหตุ</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Doc</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">หมายเหตุและสิ่งที่แนบมา</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">ชื่อหมายเหตุ</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">สิ่งที่แนบมา</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">สิ่งที่แนบมา</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">ชื่อแฟ้ม</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">ความเป็นเจ้าของ</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">หลัก</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/><cases/> ที่จะแสดงผล</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">วันที่</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">ตำแหน่งงาน</param>
+        <param name="object_title">ตำแหน่งงาน</param> <!-- translation note: title of files/attachment -->
+        <param name="name">ชื่อ</param>
+        <param name="object_name">ชื่อ</param>
+        <param name="date">วันที่</param>
+        <param name="due_date">วันที่ครบกำหนด</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">แก้ไขครั้งล่าสุด</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">อัพเดตโดย</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">หลัก</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">คู่แข่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">ชื่อคู่แข่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">จุดเด่น</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">จุดด้อย</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">ความเป็นไปได้ (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">สมบูรณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">ทำเครื่องหมาย {0} เพื่อสิ้นสุด</param>
+        <param name="task_date">วันที่</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">ชื่อ</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/>กำลังรออนุมัติ</param>
+        <param name="task_none">คุณไม่มี<tasks/><open/>ตามกำหนดการสำหรับรอบนี้</param>
+        <param name="task_mode_today">วันนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">วันนี้ + พ้นกำหนด</param>
+        <param name="task_mode_tomorrow">พรุ่งนี้</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">{0} วันถัดไป</param>
+        <param name="task_mode_next_7days_overdue">{0} วัน + พ้นกำหนดถัดไป</param>
+        <param name="task_mode_overdue">พ้นกำหนด</param>
+        <param name="task_mode_this_month">เดือนนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">เปิดทั้งหมด</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">ประวัติ</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">ข่าว</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">พาดหัวข่าว</param>
+        <param name="new_date">วันที่</param>
+        <param name="news_none">ไม่มีข่าว</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">แม่แบบจดหมายเวียน</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/>สูงสุด</param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">วันที่ที่เพิ่มเข้ามา</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">เพิ่มโดย</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/><Solutions/>ที่แนบมา</param>
+        <param name="description">คำอธิบาย</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">เครื่องพิมพ์ข้อมูลอัตโนมัติ</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">ไม่มีข้อมูล<Activity_History/>สำหรับแสดงผล</param>
+        <param name="nonotes">ไม่มีข้อมูลประวัติหมายเหตุที่จะแสดงผล</param>
+        <param name="noattachments">ไม่มีข้อมูลประวัติสิ่งที่แนบมาด้วยที่จะแสดงผล</param>
+        <param name="viewallattachments">ดูสิ่งที่แนบมาทั้งหมด</param>
+        <param name="viewalldocsattachments">ดู Google Doc และสิ่งที่แนบมาทั้งหมด</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">วันที่</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">คำอธิบายไลน์</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">การเก็บข้อมูล API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">กรองตามผู้ใช้</param>
+        <param name="apicapture_filterip">กรองตาม IP</param>
+        <param name="apicatpure_numbers">การเก็บข้อมูล</param>
+        <param name="apicapture_soapscope">ดูการเก็บข้อมูล</param>
+        <param name="apicapture_active">ใช้งาน</param>
+        <param name="apicapture_none">ไม่มีการเก็บข้อมูล</param>
+        <param name="apicapture_new">เริ่มเก็บข้อมูลใหม่</param>
+        <param name="apicapture_view">ดู</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">ประวัติการเข้าสู่ระบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">ไม่มีการเข้าสู่ระบบ</param>
+        <param name="login_none">ไม่มีประวัติการเข้าสู่ระบบ</param>
+        <param name="login_username">ชื่อผู้ใช้</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">เวลาเข้าสู่ระบบ</param>
+        <param name="login_type">ชนิดการเข้าสู่ระบบ</param>
+        <param name="login_ip">ไอพีของซอร์ส</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">ไม่ระบุ</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">เบราเซอร์</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">แพล็ตฟอร์ม</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">ความละเอียด</param>
+        <param name="login_clientversion">เวอร์ชันไคลเอ็นต์</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">แอพพลิเคชัน</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">ประเภท API</param>
+        <param name="login_apiversion">เวอร์ชัน API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">สำเร็จ</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">ดาวน์โหลดประวัติการเข้าระบบในช่วงเวลา 6 เดือน รวมถึงล็อกอินจากภายนอกเว็บไซต์ เช่น ล็อกอิน API (แฟ้ม .csv ของ Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">ดาวน์โหลดประวัติการเข้าระบบ ประกอบด้วยล็อกอินจากเว็บไซต์เท่านั้น (แฟ้ม .csv ของ Excel)</param>
+        <param name="login_history_download_title">ตัวเลือกการดาวน์โหลด</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">แฟ้ม CSV</param>
+        <param name="login_history_download_file_type_gzip">แฟ้ม GZIP</param>
+        <param name="login_history_download_file_type_help">คุณสามารถเรียกดูแฟ้ม CSV (comma separated value) ได้จากโปรแกรมกระดาษคำนวณและโปรแกรมแก้ไขข้อความหลายโปรแกรม แฟ้ม GZIP (GNU zip) เป็นแฟ้มที่บีบอัดเพื่อลดขนาดของแฟ้ม</param>
+        <param name="login_history_download_option_title">เนื้อหาของแฟ้ม</param>
+        <param name="login_history_download_option_all">การเข้าสู่ระบบทั้งหมด</param>
+        <param name="login_history_download_option_ie6_only">เฉพาะการเข้าสู่ระบบด้วย IE6 เท่านั้น</param>
+        <param name="login_history_download_option_web_only">เฉพาะการเข้าสู่ระบบจากเว็บไซต์เท่านั้น</param>
+        <param name="login_history_download_option_help">"การเข้าสู่ระบบทั้งหมด" จะรวบรวมการเข้าสู่ระบบจากทุกแหล่งข้อมูล อย่างเช่นเว็บไซต์, Outlook, การรวม API และอื่น ๆ "การเข้าสู่ระบบด้วย IE6" จะรวบรวมเฉพาะการเข้าสู่ระบบโดยใช้ Internet Explorer 6 เท่านั้น ส่วน "การเข้าสู่ระบบจากเว็บไซต์" จะรวบรวมเฉพาะการเข้าสู่ระบบจากหน้าการเข้าสู่ระบบของ Salesforce เท่านั้น</param>
+        <param name="login_history_ie6_deprecation_warning_title">ยังคงใช้งาน IE6 อยู่หรือ?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce กำลังจะยกเลิกรองรับการใช้งานจาก IE6 โปรดเลือกใช้ตัวเลือกการดาวน์โหลดที่จัดไว้ให้ เพื่อดูว่ามีการใช้งานเบราว์เซอร์ใดบ้างในองค์กรของคุณ</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL ล็อกอิน</param>
+        <param name="order_history">ประวัติคำสั่งซื้อ</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">ไม่มีคำสั่ง</param>
+        <param name="order_number">หมายเลขคำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">วันที่คำสั่ง</param>
+        <param name="order_currency">สกุลเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">ต้นทุนรวม</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">ขายให้กับ</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">ไม่มี<order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">หมายเลข&lt;BR&gt;บรรทัด</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">ราคาประจำเดือน</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">การอ้างอิงการเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">ความถี่การเรียกเก็บเงิน&lt;BR&gt;(เดือน)</param>
+        <param name="bo_order_items_billing_frequency_text">ความถี่ในการเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">ข้อกำหนดการสั่งซื้อ&lt;BR&gt;(เดือน)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">วันที่</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">ใบแจ้งหนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">ไม่มีใบแจ้งหนี้</param>
+        <param name="invoices_invoice_number">หมายเลขใบแจ้งหนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">วันที่ในใบแจ้งหนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">วันที่ครบกำหนดในใบแจ้งหนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">รหัสประจำระบบภายนอก</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">จำนวนรวม</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">ยอดเงินที่ต้องชำระ</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">สินเชื่อทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">การตัดออกจากบัญชีทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">ผู้ติดต่อในการเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">บริษัทที่เรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">ประวัติของใบแจ้งหนี้</param>
+        <param name="revenue_schedule">กำหนดเวลา</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">วันที่</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">รายได้</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">ข้อคิดเห็น</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">ประวัติสถานะ</param>
+        <param name="status_none">ไม่พบประวัติสถานะ</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">การเลือกบริการ</param>
+        <param name="services_none">ไม่มีบริการ</param>
+        <param name="services_description">บริการ</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">ราคาต่อหน่วย</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">ราคารวม</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">ส่วนลด</param>
+        <param name="training">ประวัติชั้นเรียนการฝึกอบรม</param>
+        <param name="training_none">ไม่มี</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">ชื่อคลาส</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">วันที่ดำเนินการ</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">ตอบสนองแล้ว</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">ค่าเริ่มต้น</param>
+        <param name="campaign_member_none"><No/><campaign_member_status/>ที่กำหนด</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">วันที่เริ่มต้น</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">วันที่สิ้นสุด</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">วงจรการให้คุณค่า</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">มีกฎการจัดซื้อ</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">ความถี่การเรียกเก็บเงิน&lt;br&gt;(เดือน)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">ส่งใบเรียกเก็บเงินในวันที่</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/><Billed/></param>
+        <param name="event_attending"><Event/>ที่ยอมรับ</param>
+        <param name="event_notdecided">ไม่มีการตอบสนอง</param>
+        <param name="event_declined"><Event/>ที่ถูกปฏิเสธ</param>
+        <param name="event_attending_none">ไม่มีผู้เข้าร่วมยอมรับ</param>
+        <param name="event_notdecided_none">ไม่มีการตอบสนองจากผู้เข้าร่วม</param>
+        <param name="event_declined_none">ไม่มีผู้เข้าร่วมปฏิเสธ</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">ชื่อ</param>
+        <param name="documents_size">ขนาด</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">ผู้เขียน</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">ดูหลักฐานการตรวจสอบที่จัดทำไว้</param>
+        <param name="download">ดาวน์โหลด</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">20 รายการล่าสุดสำหรับองค์กรของคุณมีการแสดงไว้ด้านล่าง คุณสามารถ {0} หลักฐานการตรวจสอบที่จัดทำไว้ขององค์กรของคุณในช่วง 6 เดือนหลังสุด (แฟ้ม .csv ของ Excel)</param>
+        <param name="setup_audit_date">วันที่</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">การดำเนินการ</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">ส่วน</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">มอบหมายผู้ใช้</param>
+        <param name="setup_audit_proxyinguser_help">คอลัมน์นี้แสดงรายการชื่อผู้ใช้ของผู้ใช้ที่ทำการเปลี่ยนแปลงการตั้งค่าในนามของผู้ใช้ปลายทาง ตัวอย่างเช่น ถ้าผู้ใช้ให้สิทธิ์ในการเข้าถึงกับตัวแทนฝ่ายสนับสนุน ชื่อผู้ใช้ของตัวแทนดังกล่าวจะแสดงอยู่ในรายการ</param>
+        <param name="setup_audit_trail_none">ไม่มีข้อมูลหลักฐานการตรวจสอบที่จัดทำไว้</param>
+        <param name="setup_audit_download_csv">ดาวน์โหลดหลักฐานการตรวจสอบที่จัดทำไว้ในช่วงเวลา 6 เดือนล่าสุด (แฟ้ม .csv ของ Excel)</param>
+        <param name="DashboardComponents_title">คอมโพเนนต์ของแดชบอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">ไม่มีส่วนคอมโพเนนต์ของแดชบอร์ด</param>
+        <param name="translated_templates_none">ไม่มีแม่แบบอีเมลที่แปล</param>
+        <param name="translated_templates_title">แม่แบบอีเมลที่แปล</param>
+        <param name="translated_templates_language">ภาษา</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">ใช้งาน</param>
+        <param name="desc_pnet_conn_audit_trail">20 รายการล่าสุดสำหรับองค์กรของคุณมีการแสดงไว้ด้านล่าง คุณสามารถ {0} ประวัติของหลักฐานการตรวจสอบที่มีการเชื่อมต่อแบบเต็มเป็นแฟ้ม Excel .csv</param>
+        <param name="pnet_conn_audit_trail">ประวัติการเชื่อมต่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">วันที่</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">ไม่มีข้อมูลหลักฐานการตรวจสอบของการเชื่อมต่อ</param>
+        <param name="pnet_conn_audit_download_csv">ดาวน์โหลดประวัติการเชื่อมต่อ (csv)</param>
+        <param name="pnet_entity_conns_title">การแบ่งใช้ภายนอก</param>
+        <param name="pnet_entity_conn_stop_sharing">หยุดการใช้งานร่วมกัน</param>
+        <param name="pnet_pub_title">อ็อบเจ็กต์ที่เผยแพร่</param>
+        <param name="pnet_sub_title">อ็อบเจ็กต์ที่สมัครสมาชิก</param>
+        <param name="pnet_pubsub_object">ชื่ออ็อบเจ็กต์</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">ฟิลด์</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">เผยแพร่/ไม่ได้เผยแพร่</param>
+        <param name="pnet_sub_edit">สมัครสมาชิก/ไม่ได้สมัครสมาชิก</param>
+        <param name="pnet_pub_edit_object">เผยแพร่อ็อบเจ็กต์แล้ว</param>
+        <param name="pnet_pub_edit_field">คลิก แก้ไข ด้านล่างเพื่อเผยแพร่ในฟิลด์ที่พร้อมใช้งานบนแต่ละอ็อบเจ็กต์</param>
+        <param name="pnet_sub_edit_object">สมัครสมาชิกอ็อบเจ็กต์แล้ว</param>
+        <param name="pnet_sub_edit_field">คลิก แก้ไข ด้านล่างเพื่อสมัครสมาชิกฟิลด์ที่พร้อมใช้งานบนแต่ละอ็อบเจ็กต์</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">เนื้อหา</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">ส่งที่แนบ Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">ข้อผิดพลาดในการโหลดรายการที่เกี่ยวข้อง</param>
+        <param name="ajax_exception_desc">เกิดปัญหาในการรวบรวมข้อมูลของรายการที่เกี่ยวข้องสำหรับเร็กคอร์ดนี้ ถ้าการรีโหลดหน้าไม่สามารถแก้ไขปัญหาได้ โปรดติดต่อผู้ดูแลระบบของคุณ หรือ &lt;a href=&quot;{0}&quot; title=&quot;รายงาน{1}&quot;&gt;รายงาน&lt;/a&gt;ปัญหามายังทีมสนับสนุน</param>
+        <param name="category_access_title">การตั้งค่าการแสดงผลกลุ่มประเภท</param>
+        <param name="category_access_video_tutorial">วิดีโอช่วยสอน</param>
+        <param name="category_access_name">กลุ่มประเภท</param>
+        <param name="category_access_access">การมองเห็นได้</param>
+        <param name="category_access_details">รายละเอียดการมองเห็นได้</param>
+        <param name="category_access_custom">กำหนดเอง</param>
+        <param name="category_access_full">ทั้งหมด</param>
+        <param name="category_access_inherited">สืบทอดจาก {0}</param>
+        <param name="category_access_revoked">ไม่มี</param>
+        <param name="category_access_userNodeAndChildren_Profile">โปรไฟล์</param>
+        <param name="category_access_userNodeAndChildren_UserRole">บทบาทและบทบาทรอง</param>
+        <param name="category_access_noCategories">ไม่มีประเภทใดมองเห็นได้ที่ {0} นี้</param>
+        <param name="category_access_allCategories">ทุกประเภทมองเห็นได้ที่ {0} นี้</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} สำหรับ {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">General US &amp; Western Europe (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japanese (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japanese (JIS)</param>
+        <param name="4">Japanese (EUC)</param>
+        <param name="5">Korean (ks_c_5601-1987)</param>
+        <param name="6">Traditional Chinese (Big5)</param>
+        <param name="7">Simplified Chinese (GB2312)</param>
+        <param name="8">Traditional Chinese Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Japanese (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">องค์กรทดลอง</param>
+        <param name="expand">คลิกเพื่อเปิดแถบข้าง [Alt+S]</param>
+        <param name="collapse">คลิกเพื่อปิดแถบข้าง [Alt+S]</param>
+        <param name="expandNoHotkey">คลิกเพื่อเปิดแถบด้านข้าง</param>
+        <param name="collapseNoHotkey">คลิกเพื่อปิดแถบด้านข้าง</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">ขึ้น</param>   <!-- aliased across labels; do not change -->
+        <param name="down">ลง</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">ย้าย</param>
+        <param name="top">ด้านบน</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">ด้านล่าง</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">โปรดกรอกข้อมูลในฟิลด์ที่จำเป็นต้องกรอกข้อมูล</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">ผู้ใช้ทั้งหมด</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">สร้าง</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">เพิ่ม</param>   <!-- aliased across labels; do not change -->
+        <param name="del">ลบ</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[เปลี่ยนแปลง]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">วิธีการ...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">ดูเพิ่มเติม</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="log_call">บันทึกการโทร</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">บันทึกหมายเหตุ</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">จดหมายเวียน</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">เรียกดูทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">แนบแฟ้ม</param>   <!-- aliased across labels; do not change -->
+        <param name="help">วิธีการ</param>
+        <param name="send_email">ส่งอีเมล</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">รูปที่ผู้ใช้เพิ่มเข้ามา</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">แอพพลิเคชัน</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">มุมมองสำหรับพิมพ์</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">ลอกแบบ</param>   <!-- aliased across labels; do not change -->
+       <param name="share">การใช้งานร่วมกัน</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">หน้าแรก</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">ขอข้อมูลเพิ่มเติม!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">เลือกหนึ่งรายการ:</param>
+        <param name="hotlist_mode">แสดงรายการที่เลือก</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">แสดงรายการ {0,number,integer}</param>
+        <param name="hotlist_empty_title">ไม่มีเร็กคอร์ดล่าสุด คลิก ไป หรือเลือกมุมมองจากดร็อปดาวน์เพื่อแสดงผลเร็กคอร์ด</param>
+        <param name="hotlist_empty_description">ไม่มีเร็กคอร์ดสำหรับเกณฑ์นี้</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">ไปที่รายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">ศูนย์ทรัพยากร</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">ด้วยศูนย์ทรัพยากรที่มีอยู่ คุณสามารถค้นคว้าข้อมูลของผู้ที่มีโอกาสจะมาเป็นลูกค้า ค้นหาบริการจากบุคคลที่สามและอื่นๆ</param>
+        <param name="resource_center_link_text">ไปยังศูนย์ทรัพยากร</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">ระเบียบวิธีการขาย</param>
+        <param name="hotlist_recently_modified">แก้ไขล่าสุด</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">ที่ถูกสร้างล่าสุด</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">ที่ดูล่าสุด</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--ไม่มี--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">-- เลือก --</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--ค่าเริ่มต้น--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**ไม่มีผล**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">ขึ้นอยู่กับ &quot;{0}&quot;</param>
+        <param name="dependentFields">ฟิลด์ที่พึ่งพา</param>
+        <param name="controls">ค่าควบคุมสำหรับ {0}</param>
+        <param name="dependsOnMultiple">ขึ้นอยู่กับ {0}</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">ผู้ดูแลระบบของคุณยังไม่ได้กำหนดลิงก์ที่กำหนดเอง</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">ข้ามไปยัง:</param>
+        <param name="JumpToStep">ขั้นตอนที่ {0}: {1}</param>
+        <param name="CloseWizard">ปิดตัวช่วย</param>
+        <param name="LeftHeader">ขั้นตอน: {0} {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">ขั้นตอนที่ {0} จาก {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">ขั้นตอน: {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">บันทึกและสร้าง</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">ถัดไป</param> <!-- aliased across labels - do not change -->
+        <param name="previous">ก่อนหน้า</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">ตัวช่วยจัดตั้งองค์กรสำหรับ {0}</param>
+        <param name="ImportWizardTitle">ตัวช่วยนำเข้าสำหรับ {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">ศูนย์คำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">ลองลงทะเบียน</param>
+        <param name="WizardBody">เนื้อความในตัวช่วย</param>
+        <param name="WizardFooter">ส่วนท้ายของตัวช่วย</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">ที่อยู่</param><!-- translators note - this is actually the full address -->
+        <param name="street">ที่อยู่</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">เมือง</param><!-- aliased across label files - do not change -->
+        <param name="state">รัฐ/จังหวัด</param><!-- aliased across label files - do not change -->
+        <param name="zip">รหัสไปรษณีย์</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">รหัสไปรษณีย์</param> <!-- aliased across label files - do not change -->
+        <param name="country">ประเทศ</param> <!-- aliased across label files - do not change -->
+        <param name="phone">โทรศัพท์</param> <!-- aliased across label files - do not change -->
+        <param name="extension">เบอร์ต่อภายใน</param> <!-- aliased across label files - do not change -->
+        <param name="fax">โทรสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">หมายเลขต่อแฟกซ์</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">อีเมล</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">ที่อยู่ในการจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">ถนนสำหรับการจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">เมืองสำหรับการจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">รัฐ/จังหวัดสำหรับการจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">รหัสสำหรับการจัดส่งสินค้า</param>
+        <param name="shippingzippostalcode">รหัสไปรษณีย์การจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">ประเทศการจัดส่งสินค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">ที่อยู่ในการเรียกเก็บเงิน</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">เมืองสำหรับเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">รัฐ/จังหวัดสำหรับเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">รหัสไปรษณีย์สำหรับเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">ประเทศสำหรับเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">ถนนสำหรับเรียกเก็บเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">ถนนของธนาคาร</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">ที่อยู่ธนาคาร</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">เมืองที่ตั้งธนาคาร</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">รัฐ/จังหวัดที่ตั้งธนาคาร</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">รหัสไปรษณีย์ธนาคาร</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">ประเทศที่ตั้งธนาคาร</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">ที่อยู่ในการจัดส่งเอกสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">ถนนสำหรับจัดส่งเอกสาร</param>
+        <param name="mailingcity">เมืองสำหรับจัดส่งเอกสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">รัฐ/จังหวัดสำหรับจัดส่งเอกสาร</param>
+        <param name="mailingzip">รหัสไปรษณีย์สำหรับจัดส่งเอกสาร</param>
+        <param name="mailingcountry">ประเทศสำหรับจัดส่งเอกสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">ที่อยู่ในการจัดส่งเอกสารบรรทัดที่ 1</param>
+        <param name="mailingaddress2">ที่อยู่ในการจัดส่งเอกสารบรรทัดที่ 2</param>
+        <param name="mailingaddress3">ที่อยู่ในการจัดส่งเอกสารบรรทัดที่ 3</param>
+        <param name="otheraddress">ที่อยู่อื่น</param>
+        <param name="otheraddress1">ที่อยู่อื่น บรรทัดที่ 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">ที่อยู่อื่น บรรทัดที่ 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">ที่อยู่อื่น บรรทัดที่ 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">ถนนอื่น</param>
+        <param name="otherstreet2">ถนนอื่น 2</param>
+        <param name="otherstreet3">ถนนอื่น 3</param>
+        <param name="othercity">เมืองอื่น</param>
+        <param name="otherstate">รัฐ/จังหวัดอื่น</param>
+        <param name="otherzipcode">รหัสไปรษณีย์อื่น</param>
+        <param name="otherpostalcode">รหัสไปรษณีย์อื่น</param>
+        <param name="otherzippostalcode">รหัสไปรษณีย์อื่น</param>
+        <param name="othercountry">ประเทศอื่น</param>
+        <param name="otherphone">หมายเลขโทรศัพท์อื่น</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">หมายเลขต่ออื่นๆ ของโทรศัพท์</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">ที่อยู่ 1</param>
+        <param name="address2">ที่อยู่ 2</param>
+        <param name="address3">ที่อยู่ 3</param>
+        <param name="home_phone">หมายเลขโทรศัพท์บ้าน</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">กำลังโหลด...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">สถานที่</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">จำนวน</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">ตัวจัดการผู้ติดต่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">ใช่</param>   <!-- aliased across labels; do not change -->
+        <param name="no">ไม่</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">ขอต้อนรับสู่ Salesforce!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">ลิขสิทธิ์ © 2000-{0} salesforce.com, inc. สงวนลิขสิทธิ์</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">ลิขสิทธิ์ &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. สงวนลิขสิทธิ์</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">การตรงตามมาตรฐานมาตรา 508</param>
+        <param name="copyright_nohtml">ลิขสิทธิ์ (c) 2000-{0} salesforce.com, inc. สงวนลิขสิทธิ์</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">ลิขสิทธิ์ © {0} {1} สงวนลิขสิทธิ์ทั้งหมด</param>
+        <param name="brandedCopyrightWithLink">ลิขสิทธิ์ &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. สงวนลิขสิทธิ์</param>
+        <param name="brandedCopyright_nohtml">ลิขสิทธิ์ © {0} {1} สงวนลิขสิทธิ์ทั้งหมด</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">นโยบายความปลอดภัย</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">ข้อกำหนดการใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">ขอขอบคุณที่เลือกใช้บริการจาก Salesforce ก่อนเริ่มใช้งาน Salesforce คุณต้องอ่านและยินยอมปฏิบัติตามข้อกำหนดการใช้งานด้านล่างนี้ เมื่ออ่านข้อกำหนดแล้ว โปรดดำเนินการต่อด้วยการคลิกที่ปุ่ม "ยอมรับ" โปรดทราบว่า ถ้าคุณไม่ยอมรับข้อกำหนดการใช้งานนี้ คุณจะไม่สามารถเข้าสู่ระบบเข้าสู่ Salesforce ได้</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">เสร็จสิ้น</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">เพิ่มตอนนี้!</param>
+        <param name="remove">ลบ</param>   <!-- aliased across labels; do not change -->
+        <param name="new">สร้าง</param>
+        <param name="exciting_and_new">ใหม่!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">ที่นี่</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">สร้าง</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">ปิดหน้าต่าง</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">พิมพ์หน้านี้</param>
+        <param name="new_window">(หน้าต่างใหม่)</param>
+        <param name="new_focus">(เปลี่ยนโฟกัส)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">ซ่อนเฟรมและละเว้น</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">เลือกทั้งหมด</param>
+        <param name="select_shown">เลือกที่แสดง</param>
+        <param name="remove_shown">ลบที่แสดง</param>
+        <param name="select_none">ไม่เลือกเลย</param>
+        <param name="all_active">ใช้งานได้ทั้งหมด</param>
+        <param name="all_inactive">ใช้งานไม่ได้ทั้งหมด</param>
+        <param name="are_you_sure">แน่ใจหรือ?</param>
+        <param name="irreversible_are_you_sure">เรียกกลับคืนไม่ได้! แน่ใจหรือ?</param>
+        <param name="replace">แทนที่</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">เสร็จสิ้น</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} นาที</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">พบรายการหลายรายการ เลือกจากรายการแบบดึงลง หรือคลิกไอคอนเพื่อกำหนดขอบเขตการค้นหา</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">รีเซ็ต</param>   <!-- aliased across labels; do not change -->
+        <param name="override">เขียนทับ</param>   <!-- aliased across labels; do not change -->
+        <param name="total">ทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">คลิกที่นี่</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">หมายเหตุสำหรับเว็บมาสเตอร์:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">ตัวอย่าง HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">รหัสผ่าน</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">ห้ามแสดงหน้านี้อีก</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">ซ่อนข้อความนี้สำหรับ: </param>
+        <param name="dontShowMessageAgain">ห้ามแสดงข้อความนี้อีก</param>
+        <param name="dismissMessage">ไม่แสดงข้อความนี้</param>
+        <param name="allObjects">อ็อบเจ็กต์ทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">กดแป้น Space Bar หรือแป้น Enter เพื่อเปิด</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">บริการตนเอง: <Case_Detail/></param>
+        <param name="CssEdit">บริการตนเอง: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Feed ของ<Case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">ข้อคิดเห็น</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">อ็อบเจ็กต์แบบกำหนดเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">ข้อกำหนดอ็อบเจ็กต์แบบกำหนดเอง</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">แดชบอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">แดชบอร์ด</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">ยกเลิกการเลือกทั้งหมด</param>
+        <param name="deselect_shown">ยกเลิกการเลือกที่แสดง</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">แม่แบบจดหมายเวียน</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">แม่แบบจดหมายเวียน</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">โฟลเดอร์</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">โฟลเดอร์</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">การคาดการณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">การคาดการณ์</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">ผู้ควบคุม Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">ใบแจ้งหนี้</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">หมายเหตุ</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">คำสั่งซื้อ</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">คำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">รายการคำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">รายการคำสั่ง</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">การชำระเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">การชำระเงิน</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">รายงาน</param>
+        <param name="Reports">รายงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">การลงทะเบียน</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">แม่แบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">แม่แบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">ตาราง</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">ใช้งาน</param>
+        <param name="amount">จำนวน</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">รายได้ต่อปี</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">แนบเอกสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">เปลี่ยนรหัสผ่าน</param>   <!-- aliased across labels; do not change -->
+        <param name="close">ปิด</param> <!-- aliased across labels; do not change -->
+        <param name="closed">ปิดแล้ว</param>
+        <param name="closed_date">วันที่ปิด</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">ปิดวันที่</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">วันที่สร้าง</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">ชนิดข้อมูล</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">ถูกลบออก</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">ข้อมูลคำอธิบาย</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">พนักงาน</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">แฟ้ม</param>   <!-- aliased across labels; do not change -->
+        <param name="files">แฟ้ม</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">ข้อมูลทั่วไป</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">อ่านข้อมูลก่อนเริ่มใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">ป้ายชื่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">การล็อกอินล่าสุด</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">วันที่แก้ไขครั้งล่าสุด</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">ชื่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">ชื่อ</param>
+        <param name="new_status">สถานะใหม่</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">ไม่มี</param>
+        <param name="open">เปิด</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">องค์กร</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">ไม่พบผลลัพธ์ที่ตรงกัน</param> <!-- aliased across labels - do not change -->
+        <param name="all">ทั้งหมด</param>
+        <param name="clear">ลบ</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">คลิกไอคอน ค้นหา...</param>
+        <param name="click_lookup_icon_info">คลิกไอคอนค้นหาเพื่อเลือกค่า</param>
+        <param name="clear_all">ล้างทั้งหมด</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">คลิกที่ปุ่ม แนบ</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">ข้อผิดพลาด</param> <!-- aliased across lables - do not change -->
+        <param name="high">สูง</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">วิธีใช้</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">นำฉันไปที่นั่น!</param>
+        <param name="keywords">คีย์เวิร์ด</param>
+        <param name="length">ความยาว</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">สถานะ</param> <!-- aliased across lables - do not change -->
+        <param name="title">ตำแหน่งงาน</param>
+        <param name="object_title">ตำแหน่งงาน</param>
+        <param name="type">ชนิด</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">ผู้ใช้</param> <!--aliased across labels - do not change -->
+        <param name="Users">ผู้ใช้</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">ชุดสิทธิ์การใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">โปรไฟล์</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">โปรไฟล์</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">เจ้าของ</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">ประสบผลสำเร็จ</param>
+        <param name="DontShowPage">อย่าแสดงหน้านี้อีก</param>
+        <param name="click_here_to_create_new_account">{0} เพื่อสร้าง<account/><new/>ในตอนนี้</param>
+        <param name="click_here_to_create_new_contact">{0} เพื่อสร้าง<contact/><new/>ในตอนนี้</param>
+        <param name="click_here_to_create_new_lead">{0} เพื่อสร้าง<lead/><new/>ในตอนนี้</param>
+        <param name="click_here_to_create_new_opportunity">{0} เพื่อสร้าง<opportunity/><new/>ในตอนนี้</param>
+        <param name="click_here_to_create_new_product">{0} เพื่อสร้าง<product/><new/>ในตอนนี้</param>
+        <param name="SystemModstamp">ประทับเวลาการแก้ไขระบบ</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">ฝ่าย</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">กำลังดำเนินการ</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">กำลังปรับปรุงระเบียน...</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">การแปลงข้อมูลทางสถิติ</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">ซ่อนหน้านี้ในอนาคต</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">กำลังอัปโหลด...</param>
+        <param name="uploading_title">กำลังอัปโหลด</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">กำลังนำเข้า...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">และ </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">ข้อผิดพลาด: ไม่สามารถเข้าถึงฟิลด์นี้ได้</param>
+        <param name="noReadAccess">คุณไม่มีสิทธิในการดูเร็กคอร์ดนี้</param>
+        <param name="noAccessToUser">คุณไม่มีสิทธิในการเข้าถึงผู้ใช้นี้</param>
+        <param name="disabledButton">ปุ่มถูกยกเลิกการใช้งาน: {0}</param>
+        <param name="RequiredHeader">ข้อมูลที่จำเป็น</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">แทรกรูป</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">คุณแน่ใจว่าต้องการลบช่วงการล็อกอินด้วย IP</param>
+        <param name="AMPM">รายการ AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">คอมโพเนนต์ที่ป้องกันไว้</param>
+        <param name="dialogCloseConfirm">หน้าต่างยืนยันที่คุณเพิ่งดูอาจถูกปิดก่อนกำหนด คลิก ตกลง เพื่อย้อนกลับ หรือ ยกเลิก เพื่อข้ามคำเตือนนี้</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">เริ่มการโต้ตอบ</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">เบราว์เซอร์ที่ระบบไม่รองรับสำหรับชุดรูปแบบใหม่ของส่วนติดต่อผู้ใช้</param>
+        <param name="DialogHeader">คุณทราบใช่ไหมว่า...</param>
+        <param name="DialogContent1">คุณกำลังใช้งานเบราว์เซอร์ที่จะไม่แสดงผลชุดรูปแบบล่าสุดของส่วนติดต่อผู้ใช้</param>
+        <param name="DialogContent2">Salesforce จะแสดงชุดรูปแบบคลาสสิค ดังแสดงที่ด้านบนซ้าย จนกว่าคุณจะปรับรุ่นไปเป็นเวอร์ชันล่าสุดของเบราว์เซอร์ที่รองรับการใช้งาน:</param>
+        <param name="DialogClassicDesc">ชุดรูปแบบคลาสสิค</param>
+        <param name="DialogAlohaDesc">ชุดรูปแบบใหม่</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">ผลลัพธ์การค้นหา</param>
+        <param name="Recent">ที่ดูล่าสุด</param>
+        <param name="NoMatchHeader">ไม่พบเร็กคอร์ด โดยอาจเนื่องมาจากสาเหตุข้อใดข้อหนึ่งต่อไปนี้:</param>
+        <param name="BulletOne">ไม่มีเร็กคอร์ดสำหรับชนิดนี้</param>
+        <param name="BulletTwo">คุณไม่มีสิทธิ์ที่จะดูเร็กคอร์ดใด ๆ</param>
+        <param name="BulletThree">เร็กคอร์ดไม่ตรงกับเกณฑ์สำหรับตัวกรองที่ผู้ดูแลระบบกำหนด</param>
+        <param name="BulletFour">ฟิลด์ควบคุมหนึ่งฟิลด์หรือมากกว่าเป็นฟิลด์ว่างหรือไม่ถูกต้อง (ฟิลด์ควบคุม:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">ผู้ใช้ที่มีอยู่</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">ผู้ใช้ที่เลือกไว้</param>
+        <param name="LicensedUsers">ผู้ใช้ที่มีใบอนุญาตให้ใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">ที่เลือกไว้สำหรับการลบ</param>
+        <param name="Selected">เลือกแล้ว</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">เลือกแล้ว</param>
+        <param name="UnassignedPackages">แพ็คเกจที่ไม่ได้กำหนด</param>
+        <param name="SelectedPackages">แพ็คเกจที่เลือก</param>
+        <param name="InView">ในมุมมอง</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">แฟ้มนี้มีขนาดเกินกว่า {0} ซึ่งเป็นขนาดที่กำหนดไว้</param>
+        <param name="no_file_specified">กรุณาระบุแฟ้มที่จะอัปโหลด พิมพ์พาธของแฟ้ม หรือใช้ปุ่ม &quot;เรียกดู&quot; เพื่อเลือกแฟ้มในระบบแฟ้มในเครื่อง</param>
+        <param name="invalid_file_type">ระบบไม่รองรับประเภทของแฟ้มที่ระบุ</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">ชื่อแฟ้มเกินความยาวสูงสุดที่อนุญาต {0} ตัวอักษร</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">นามสกุลแฟ้มยาวเกินกว่าความยาวสูงสุดที่กำหนด ซึ่งเท่ากับ {0} อักขระ</param>
+        <param name="bytes">ไบต์</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">ไม่อนุญาตให้ใช้ชนิดแฟ้ม HTML ด้วยเหตุผลด้านความปลอดภัย</param>
+        <param name="attachment_size_exceeded">แฟ้มที่อัปโหลดเกินกว่าขนาดสูงสุด</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; คุณต้องเลือกภาพที่จะอัปโหลด</param>
+        <param name="upload_file_too_large">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; รูปมีขนาดเกินขนาดสูงสุด 1 MB ที่กำหนด</param>
+        <param name="invalid_file_type">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; คุณสามารถแทรกได้เฉพาะแฟ้ม .gif .jpeg และ .png เท่านั้น</param>
+        <param name="upload_failed">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; การอัปโหลดล้มเหลว - ลองอีกครั้งในภายหลัง</param>
+        <param name="invalid_file">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; แฟ้มไม่ใช่แฟ้มภาพที่ถูกต้อง</param>
+        <param name="invalid_param">&lt;b&gt;ข้อผิดพลาด:&lt;/b&gt; พารามิเตอร์ไม่ถูกต้อง</param>
+        <param name="access_failed_alt">ภาพนี้ไม่มีอยู่เนื่องจาก: คุณไม่มีสิทธิพิเศษในการดูภาพนี้ หรือภาพถูกลบออกจากระบบแล้ว</param>
+        <param name="weekly_export_folder">เอกสารประกอบอื่น ๆ ที่อัปโหลด</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">ตัวเลือกสไตล์แท็บ</param>
+        <param name="instructions">โปรดเลือกสไตล์แท็บ</param>
+        <param name="createYourOwn">สร้างสไตล์ของคุณเอง</param>
+        <param name="defaultCustomStyleDesc">สไตล์ที่กำหนดเอง</param>
+        <param name="styleIsUsedOn">สไตล์นี้จะใช้ในแท็บต่อไปนี้:</param>
+        <param name="showUsedStyles">แสดงสไตล์ที่ใช้ในแท็บอื่นๆ</param>
+        <param name="hideUsedStyles">ซ่อนสไตล์ที่ใช้ในแท็บอื่นๆ</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">ตัวเลือกสีแท็บ</param>
+        <param name="instructions">โปรดเลือกสี</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">สี:</param>
+        <param name="icon">ไอคอน:</param>
+        <param name="defineNew">กำหนดสไตล์สีใหม่</param>
+        <param name="noMotifErr">คุณต้องเลือกสี</param>
+        <param name="noIconErr">คุณต้องเลือกไอคอน</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} สร้างสำเร็จแล้ว</param>
+        <param name="Failure_message">การสร้างล้มเหลว</param>
+        <param name="Common_success_message">การสร้างสำเร็จแล้ว</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">ร้องขอสินค้าเพิ่มเติม</param>
+        <param name="pageheader">โปรดกรอกข้อมูลในฟิลด์ด้านล่าง เพื่อส่งคำร้องขอสินค้าเพิ่มเติม ใช้ฟิลด์คำอธิบายเพื่อแสดงรายการสินค้าที่ต้องการสั่ง ถ้าคุณต้องการสั่งสินค้าตามสัญญาปัจจุบัน โปรดระบุหมายเลขสัญญาเพื่อการอ้างอิง</param>
+        <param name="colHeader">การส่งคำร้องการจัดซื้อ</param>
+        <param name="functionalArea_0">การจัดซื้อใบอนุญาตให้ใช้งาน</param>
+        <param name="type_0">การจัดซื้อ</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">คำร้องขอจัดซื้อ</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">ขอขอบคุณที่ทำการร้องขอ พนักงานขายได้รับแจ้งแล้วและจะติดต่อคุณเพื่อสรุปคำสั่งซื้อ</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">ร้องขอการลดใบอนุญาตให้ใช้งาน</param>
+        <param name="pageheader">โปรดกรอกข้อมูลในฟิลด์ที่กำหนดเพื่อส่งการร้องขอการลดใบอนุญาตให้ใช้งาน วิธีการนี้คือวิธีที่เร็วที่สุดในการประมวลผลคำร้องขอของคุณ  โปรดอย่าส่งคำร้องขอหลายครั้งสำหรับใบอนุญาตให้ใช้งานเดียวกัน เพราะอาจก่อให้เกิดความล่าช้าโดยไม่จำเป็น</param>
+        <param name="title_landing">ได้รับคำร้องขอของคุณแล้ว!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">ได้รับคำร้องขอของคุณแล้ว และจะมีการประมวลผลตามลำดับที่ได้รับ โปรดทราบว่าคำร้องขอเพื่อลดจำนวนใบอนุญาตให้ใช้งานจะมีผลในรอบการเรียกเก็บเงินถัดไปหลังจากที่ส่งคำร้อง และเมื่อคุณแจ้ง salesforce.com เป็นเวลาห้าวันทำการก่อนวันที่ออกใบแจ้งหนี้สำหรับรอบการเรียกเก็บเงินรอบถัดไป</param>
+        <param name="pageheader_landing">ได้รับคำร้องขอของคุณแล้ว และจะมีการประมวลผลตามลำดับที่ได้รับ คำร้องขอเพื่อลดจำนวนใบอนุญาตให้ใช้งานการใช้งานจะมีผลบังคับใช้ 30 วันหลังวันที่ส่งคำร้องขอ โปรดอย่าส่งคำร้องขอลดใบอนุญาตให้ใช้งานการใช้งานสำหรับใบอนุญาตเดียวกัน เพราะจะทำให้เกิดการล่าช้าในการประมวลผลคำร้องขอของคุณ</param>
+        <param name="title_error">ไม่สามารถประมวลผลคำร้องขอได้</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">เราไม่สามารถส่งคำร้องขอของคุณได้ในตอนนี้ โปรดลองอีกครั้งในภายหลัง</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">การส่งคำร้องขอ</param>
+        <param name="reason">เหตุผล</param>   <!-- aliased across labels; do not change -->
+        <param name="description">โปรดอธิบาย&lt;br&gt;อย่างละเอียด</param>
+        <param name="numLicenses">จำนวนใบอนุญาตให้ใช้งาน</param>
+        <param name="potentialResponse">เราจะรักษาธุรกิจของคุณ&lt;br&gt;ไว้ได้อย่างไร?</param>
+        <param name="tips_title">คำแนะนำในการส่งคำร้องขอการลดใบอนุญาตให้ใช้งาน</param>
+        <param name="tip1">โปรดกรอกข้อมูลให้ถูกต้องเพื่อความรวดเร็ว และถูกต้องในการประมวลผลคำร้องขอของคุณ  ก่อนส่งคำร้องขอ ตรวจสอบให้แน่ใจว่าได้ยกเลิกการใช้งานผู้ใช้ในจำนวนที่เพียงพอแล้ว ทั้งนี้เพื่อให้จำนวนผู้ใช้มีน้อยกว่าหรือเท่ากับจำนวนใบอนุญาตให้ใช้งานใช้งานใหม่ของคุณ สามารถทำได้โดยใช้คุณสมบัติ&lt;a href=&quot;{0}&quot;&gt;จัดการผู้ใช้&lt;/a&gt;ใน &lt;a href=&quot;{1}&quot;&gt;การตั้งค่าของฉัน&lt;/a&gt;</param>
+        <param name="type1">การยกเลิกแอคเคาต์</param>
+        <param name="type2">การลดใบอนุญาตให้ใช้งานสำหรับผู้ใช้</param>
+        <param name="type3">การลดใบอนุญาตให้ใช้งานแบบออฟไลน์</param>
+        <param name="type4">การลดใบอนุญาตให้ใช้งานแคมเปญ</param>
+        <param name="type5">Mobile Edition สำหรับการยกเลิกการตรวจสอบ</param>
+        <param name="type6">Mobile Edition สำหรับการลดใบอนุญาตใช้งานการตรวจสอบ</param>
+        <param name="type7">การลดใบอนุญาตให้ใช้งาน Force.com Mobile</param>
+        <param name="reason_0">บริษัทถูกซื้อกิจการ/รวมกิจการ</param>
+        <param name="reason_1">การเลิกกิจการของบริษัท</param>
+        <param name="reason_2">พนักงานขายที่หายไป</param>
+        <param name="reason_3">ผู้ใช้ปลายทางไม่นำมาใช้</param>
+        <param name="reason_4">ประสิทธิภาพของฟังก์ชันไม่ตรงกับสิ่งที่คาดหวัง</param>
+        <param name="reason_5">ฝ่ายบริหารยังไม่เห็นคุณค่าเพียงพอ</param>
+        <param name="reason_6">มีประสบการณ์ที่ไม่ดีกับพนักงานของ salesforce.com</param>
+        <param name="reason_7">ราคาสูงเกินไป</param>
+        <param name="reason_8">การเปลี่ยนไปหาคู่แข่ง</param>
+        <param name="reason_9">ใบอนุญาตให้ใช้งานที่ไม่ได้ใช้งาน</param>
+        <param name="reason_10">อื่น ๆ</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">โปรดกรอกข้อมูลในฟิลด์ต่อไปนี้:</param>
+        <param name="title">ส่งความคิดเห็นไปยัง salesforce.com</param>
+        <param name="title_upgrade_me">บันทึกคำร้องขออัพเกรด</param>
+        <param name="title_support">ส่งความคิดเห็น</param>
+        <param name="warning_line_too_long">คำเตือน: คำอธิบายมีความยาวเกินกว่า 4000 อักขระ และจะถูกตัดให้สั้นลง\\n</param>
+        <param name="feedback_info">การติดต่อฝ่ายสนับสนุนลูกค้า</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">ฝ่ายสนับสนุนลูกค้าพร้อมที่จะตอบคำถามหรือรับฟังความคิดเห็นของคุณ ความคิดเห็นจากลูกค้ามีประโยชน์เป็นอย่างมากแก่เราในการจัดการ และอัพเดต salesforce.com เรายินดีและเต็มใจรับฟังไอเดียต่างๆ ของคุณ และหวังอย่างยิ่งว่าจะได้รับความคิดเห็นจากคุณ</param>
+        <param name="general_info_me">หากต้องการข้อมูลเพิ่มเติมเกี่ยวกับการอัพเกรดจาก Personal Edition ให้เป็น Edition อื่นๆ ของบริษัท โปรดกรอกแบบฟอร์มด้านล่างนี้ พนักงานขายจะโทรติดต่อคุณกลับไปภายใน 48 ชั่วโมงทำการ</param>
+        <param name="general_info_support">ฝ่ายสนับสนุนลูกค้าพร้อมที่จะตอบคำถามหรือรับฟังความคิดเห็นของคุณ เราให้ความสำคัญอย่างมากกับความคิดเห็นจากลูกค้าเพื่อนำมาปรับปรุงและพัฒนา Salesforce CRM Call Center เรายินดีรับฟังไอเดียของคุณ และหวังอย่างยิ่งว่าจะได้รับความคิดเห็นจากคุณ</param>
+        <param name="defaultOrigin">เว็บ</param>
+        <param name="defaultStatus">สร้าง</param>
+        <param name="functionalArea">หัวข้อ</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">คำถาม</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">การร้องขอ</param>
+        <param name="type3">ความคิดเห็น</param>
+        <param name="type4">ร้องขอคุณลักษณะ</param>
+        <param name="priority1">ฉุกเฉิน</param>
+        <param name="priority2">ปกติ</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">ต่ำ</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">ฉันอยากสมัคร Professional Edition ในตอนนี้</param>
+        <param name="subject_subscribe_me">ฉันอยากอัพเกรดในตอนนี้</param>
+        <param name="subject_subscribe_we">ฉันอยากได้ข้อมูลเพิ่มเติมเกี่ยวกับ Professional Edition</param>
+        <param name="subject_subscribe_ee">ฉันอยากสมัคร Enterprise Edition ในตอนนี้</param>
+        <param name="subject_subscribe_ue">ฉันต้องการลงทะเบียนไปเป็น Limited Edition ในตอนนี้</param>
+        <param name="subject_subscribe_support">ฉันอยากสมัครในตอนนี้</param>
+        <param name="subject_data_export">ฉันต้องการบริการส่งออกรายสัปดาห์</param>
+        <param name="subject_marketing_licenses">เพิ่มใบอนุญาตให้ใช้งาน Marketing</param>
+        <param name="subject_offline_licenses">เพิ่มใบอนุญาตให้ใช้งาน Offline</param>
+        <param name="subject_wireless_licenses">เพิ่มใบอนุญาตให้ใช้งาน Wireless</param>
+        <param name="subject_offlinepda_licenses">เพิ่มใบอนุญาตให้ใช้งาน Sales Anywhere</param>
+        <param name="subject_mobile_licenses">เพิ่มใบอนุญาตให้ใช้งาน Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">เพิ่มใบอนุญาตให้ใช้งาน Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">เพิ่มใบอนุญาตใช้งานฐานความรู้</param>
+        <param name="subject_interaction_licenses">เพิ่มใบอนุญาตใช้งานโฟลว์ของ Force.com</param>
+        <param name="subject_support_licenses">เพิ่มใบอนุญาตใช้งาน Service Cloud</param>
+        <param name="subject_jigsaw_licenses">เพิ่มใบอนุญาตใช้งาน Jigsaw</param>
+        <param name="subject_liveagent_licenses">เพิ่มใบอนุญาตใช้งาน Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">เพิ่มใบอนุญาตใช้งานสำหรับผู้สนับสนุนของ Site.com</param>
+        <param name="subject_siteforcepublisher_licenses">เพิ่มใบอนุญาตใช้งานสำหรับผู้เผยแพร่ของ Site.com</param>
+        <param name="subject_chatteranswers_licenses">เพิ่มใบอนุญาตใช้งานคำตอบบน Chatter</param>
+        <param name="subject_license_reduction">การลดใบอนุญาตให้ใช้งาน</param>
+        <param name="functionalArea_0">การบริหารแอคเคาต์/ใบอนุญาตให้ใช้งาน</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">การสอบถามเรื่องการเรียกเก็บเงิน</param>
+        <param name="functionalArea_3">Data Junction</param>
+        <param name="functionalArea_4">อีเมล/อีเมล HTML</param>
+        <param name="functionalArea_5">การคาดการณ์และโอกาส</param>
+        <param name="functionalArea_6">การนำเข้า</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">ลีด</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">ประสิทธิภาพการทำงาน</param>
+        <param name="functionalArea_9">รายงานและมุมมอง</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">สมัครตอนนี้</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">ซิงค์</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">บริการส่งออกรายสัปดาห์</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">ไร้สาย</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">อื่น ๆ</param>
+        <param name="functionalArea_16">ใบอนุญาตให้ใช้งาน Marketing</param>
+        <param name="functionalArea_17">ใบอนุญาตให้ใช้งาน Offline</param>
+        <param name="functionalArea_18">โปรไฟล์/โครงหน้า/ประเภทเร็กคอร์ด</param>
+        <param name="functionalArea_19">แคมเปญ</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">บริการตัวเอง</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">ใบอนุญาตให้ใช้งาน Licenses</param>
+        <param name="functionalArea_22">อัพเกรด</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">ใบอนุญาตให้ใช้งาน Sales Anywhere</param>
+        <param name="functionalArea_24">งาน/เหตุการณ์ </param>
+        <param name="functionalArea_25"><Products/> และเงินรายปี / <Pricebooks/></param>
+        <param name="functionalArea_26">การแจ้งเตือนโอกาสทํารายได้สูง </param>
+        <param name="functionalArea_27">เอกสาร</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">เคสและโซลูชัน </param>
+        <param name="functionalArea_29">ค้นหา</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">การใช้งานร่วมกัน</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">ใบอนุญาตให้ใช้งาน Partner Portal</param>
+        <param name="functionalArea_36">ใบอนุญาตให้ใช้งาน Force.com Mobile</param>
+        <param name="functionalArea_37">ใบอนุญาตให้ใช้งาน Salesforce CRM Content</param>
+        <param name="functionalArea_38">ใบอนุญาตใช้งาน Service Cloud</param>
+        <param name="functionalArea_39">ใบอนุญาตใช้งาน Jigsaw</param>
+        <param name="functionalArea_40">ใบอนุญาตใช้งาน Live Agent</param>
+        <param name="functionalArea_41">ใบอนุญาตใช้งานสำหรับผู้สนับสนุนของ Site.com</param>
+        <param name="functionalArea_42">ใบอนุญาตให้ใช้งานสำหรับผู้เผยแพร่ของ Site.com</param>
+        <param name="functionalArea_43">ใบอนุญาตให้ใช้งานคำตอบบน Chatter</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">ถ้าคุณต้องการพูดกับตัวแทนบริการลูกค้า ให้โทรศัพท์ไปที่ (415) 901-7010 ระหว่างเวลา 6 นาฬิกา ถึง 18 นาฬิกา เวลาในเขตแปซิฟิก วันจันทร์ &amp;#150;วันศุกร์ หรือโทรศัพท์ไปที่ +353-1-2723503 ระหว่างเวลา 8 นาฬิกา ถึง 18 นาฬิกา GMT วันจันทร์ &amp;#150;วันศุกร์</param>
+        <param name="tips_title">คำแนะนำในการส่งเคส</param>
+        <param name="tip1">โปรดตรวจสอบให้แน่ใจว่าคุณได้ระบุข้อมูลเพียงพอแล้วเพื่อที่เราจะสามารถจัดการเคสของคุณได้อย่างเร็วที่สุดเท่าที่ทำได้  เรามีคำแนะนำ และคำเตือนบางประการดังต่อไปนี้:</param>
+        <param name="tip2">แจ้งเราถึงสิ่งที่คุณกำลังจะทำ สิ่งที่คุณคาดหวังให้เกิดขึ้น และสิ่งที่เกิดขึ้นจริง</param>
+        <param name="tip3">แจ้งเราถึงขั้นตอนต่างๆ ในการสร้างโจทย์ใหม่ของคุณอีกครั้ง</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">ดู:</param>
+        <param name="X">X</param>
+        <param name="close">ปิด</param>
+        <param name="MLclose">ปิด</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">ลบ</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">ลบ</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">ลบ</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">เร็กคอร์ด</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">ตั้งค่า</param>
+        <param name="activate">เปิดใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">ปิดใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">จัดการ</param>   <!-- aliased across labels; do not change -->
+        <param name="export">ส่งออก</param>   <!-- aliased across labels; do not change -->
+        <param name="next">หน้าถัดไป</param>
+        <param name="prev">หน้าก่อนหน้า</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">รายการรวมในมุมมอง: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">แสดง {0} {1} เร็กคอร์ดต่อหน้ารายการ</param>
+        <param name="number_shown_detail_page">แสดงเร็กคอร์ดต่อรายการที่เกี่ยวข้อง {0} {1} {2} เสมอ</param>
+        <param name="number_shown_adjust_less_link">ลดลง</param>
+        <param name="number_shown_adjust_more_link">เพิ่มขึ้น</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">ทั้งหมด</param>
+        <param name="last_page">กลับไปหน้าก่อนหน้า</param>
+        <param name="last_list">กลับไปยังรายการ</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">กลับไปยังรายการ:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">กลับไปยังรายการ: <Entity entity="0" plural="y"/> จากการเชื่อมต่อ</param>
+        <param name="last_suggested_solution_list">กลับไปยังรายการ<Solutions/><Suggested/></param>
+        <param name="last_solution_search_list">กลับไปยังผลการค้นหาของ<Solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">กลับไปที่ <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">การดำเนินการ:</param>
+        <param name="checkboxPrompt">โปรดเลือกแถวใหม่อย่างน้อยหนึ่งแถว</param>
+        <param name="checkboxSinglePrompt">โปรดเลือกแถวเดียว</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">รายการที่เลือกในหน้านี้จะหายไป ต้องการดำเนินการต่อหรือไม่?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">คุณต้องเลือกแถว {0} แถวหรือน้อยกว่าเพื่อดำเนินการนี้</param>
+        <param name="selectionLimit">คุณไม่สามารถเลือกได้มากกว่า {0} แถว</param>
+        <param name="login">ล็อกอิน</param>   <!-- aliased across labels; do not change -->
+        <param name="session">เซสชัน</param>
+        <param name="none">ไม่มีเร็กคอร์ดที่จะแสดงผล</param>
+        <param name="no_rows">ไม่ได้เลือกแถว</param>
+        <param name="subtotal">ยอดรวมย่อย:</param>
+        <param name="total">รวม:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">เลือกรายการทั้งหมด</param>
+        <param name="clearAllInfo">ยกเลิกการเลือกรายการทั้งหมด</param>
+        <param name="rename">เปลี่ยนชื่อ</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">เลือก</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">ยกเลิกการเลือก</param>
+        <param name="toggleall">สลับทุกแถว</param>
+        <param name="refresh">รีเฟรช</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">โปรดเลือกมุมมอง</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">มุมมองที่คุณระบุเกินกว่าขนาดสูงสุด โปรดจำกัดเงื่อนไขการค้นหาของคุณให้แคบลง โดยการแก้ไขมุมมองหรือสร้างมุมมองใหม่</param>
+    <param name="switch_view">สลับมุมมอง</param>
+    <param name="records_x_to_y">การแสดงเร็กคอร์ด {0} - {1}</param>
+    <param name="records_x_to_y_more">การแสดงเร็กคอร์ด {0} - {1} มีเร็กคอร์ดมากกว่านี้</param>
+    <param name="records_x_to_y_more_showing_max">การแสดงเร็กคอร์ด {0} - {1} หน้านี้สามารถแสดงเร็กคอร์ดได้เพียง 1,000 เร็กคอร์ดแรกเท่านั้นแม้ว่ามีเร็กคอร์ดมากกว่านี้ เมื่อต้องการแสดงเร็กคอร์ดน้อยลง โปรดกำหนดเกณฑ์มุมมองรายการของคุณ เมื่อต้องการพิมพ์มากกว่า 1,000 เร็กคอร์ด โปรดรันรายงาน แล้วคลิกปุ่ม มุมมองที่พิมพ์ได้ บนรายงาน</param>
+    <param name="number_of_records">จำนวนของเร็กคอร์ด</param>
+        <param name="createCase">สร้าง <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">คลิกเพื่อขยาย/ยุบรวมรายการที่ซ้อนกัน</param>
+        <param name="expand">คลิกเพื่อขยายรายการที่ซ้อนกัน</param>
+        <param name="collapse">คลิกเพื่อยุบรวมรายการที่ซ้อนกัน</param>
+        <param name="shortExpand">ขยาย</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">ยุบรวม</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">ถูกขยาย</param>
+        <param name="collapsed">ถูกยุบรวม</param>
+        <param name="level">ระดับ</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">ลำดับ:</param>
+        <param name="siblings">Sibling:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">ค้นหา</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">เลือกอ็อบเจ็กต์</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">ใคร</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">อะไร</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">การค้นหาจะแสดงข้อมูลเกินกว่าจำนวนแถวสูงสุด ({0}) โปรดระบุเกณฑ์การสืบค้นให้มีขอบเขตที่แคบลง</param>
+        <param name="Copyright">ลิขสิทธิ์ &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">สงวนลิขสิทธิ์ทั้งหมด</param>
+        <param name="useWildcards">คุณสามารถใช้ '*' เป็นอักขระไวลด์การ์ดที่อยู่ถัดจากอักขระอื่น เพื่ออัพเดตผลการค้นหาของคุณ  ตัวอย่างเช่น "ad*" ส่งคืนเร็กคอร์ดทั้งหมดที่มีชื่อซึ่งประกอบด้วย "ad"</param>
+        <param name="useWildcardsWithSearch">คุณสามารถใช้อักขระตัวแทน "*" ต่อท้ายอักขระอื่น ๆ เพื่อช่วยปรับปรุงผลการค้นหาของคุณได้</param>
+        <param name="error_lookup_multiple_matches_ile">พบหลายรายการ&lt;br&gt;คลิกไอคอนเพื่อกำหนดการค้นหา</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">เลือกสี</param>
+        <param name="cpFrameTitle">ตัวเลือกสี</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">เลือกประเภทชาร์ต</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">ขยายรายการ</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">รายการที่ถูกขยาย</param>
+        <param name="sharing">การใช้งานร่วมกัน</param>   <!-- aliased across labels; do not change -->
+        <param name="why">ทำไม?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">เพิ่มตัวกรอง &gt;&gt;</param>
+        <param name="less_filters">ลดตัวกรอง &lt;&lt;</param>
+        <param name="by_keyword">ตามคีย์เวิร์ด</param>
+        <param name="by_filter">ตามตัวกรองฟิลด์</param>
+        <param name="too_many">การค้นหาของคุณจะแสดงแถวมากกว่า {0} แถว เฉพาะ {0} แรกเท่านั้นที่จะแสดงผล โปรดระบุเกณฑ์การค้นหาให้มีขอบเขตแคบลง</param>
+        <param name="Results">ผลลัพธ์</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">ค้นหา:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">คะแนน</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">ฟิลด์</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">ตัวดำเนินการ</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">ค่า</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">คุณสามารถ "หรือ" ตัวกรองด้วยการใส่รายการหลายรายการในคอลัมน์ที่สาม</param>
+        <param name="tip_1">คุณสามารถใส่รายการได้ไม่เกิน 10 รายการ และคั่นด้วยเครื่องหมายจุลภาค ตัวอย่างเช่น: ใช้ CA, NY, TX, FL ค้นหา CA หรือ NY หรือ TX หรือ FL</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">ป้อนเครื่องหมายอัญประกาศรอบๆ ข้อมูลที่มีเครื่องหมายจุลภาค ตัวอย่างเช่น ใช้ "200,000","1,000,000" ค้นหา 200,000 หรือ 1,000,000</param>
+        <param name="tip_3">สำหรับฟิลด์กล่องกาเครื่องหมาย ให้ใช้ "False" และ "True" เช่น "ใช้งานได้เท่ากับจริง" หรือ "ที่ถูกแปลงเท่ากับเท็จ"</param>
+        <param name="tip_4">กฎการป้อนข้อมูลที่ยึดตามรหัสพื้นที่อาจจะต้องประกอบด้วยวงเล็บ ตัวอย่างเช่น หมายเลขโทรศัพท์ที่เริ่มด้วย (415), (510)</param>
+        <param name="tip_5">ถ้าคุณกำลังใช้ translation workbench ให้ป้อนเกณฑ์ตัวกรองโดยใช้ค่าหลัก</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">พร้อมใช้งาน</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">รายการที่เลือก</param>
+        <param name="assignLicensesDescription">เลือกกล่องกาเครื่องหมายที่อยู่ถัดจากแต่ละแพ็คเกจที่คุณต้องการกำหนดให้ผู้ใช้รายนี้ แล้วคลิก Assign กล่องกาเครื่องหมายไม่มีอยู่ ถ้าแพ็คเกจไม่มีใบอนุญาตให้ใช้งานที่เพียงพอหรือสถานะของแพ็คเกจหมดอายุหรือถูกระงับ</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">มุมมองแนวนอน</param>
+        <param name="vertical_view">มุมมองแนวดิ่ง</param>
+        <param name="view_select_title">เลือกมุมมอง</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">Salesforce Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">ค่าเริ่มต้นของพอร์ทัล</param>
+        <param name="3">เว็บสโตร์</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><Entity entity="0"/> นี้มีการจัดการไว้อยู่แล้ง จึงหมายความว่าคุณอาจแก้ไขได้เฉพาะแอตทริบิวต์บางรายการเท่านั้น</param>
+        <param name="EntityDeprecated"><Entity entity="0"/> นี้ถูกคัดค้าน</param>
+        <param name="UnmanagedDeprecatedByOther">ยังไม่ได้ออก <Entity entity="0"/> นี้ แต่ถูกคัดค้านโดยคอมโพเนนต์พาเรนต์</param>
+        <param name="EntityDeprecatedByDev"><Entity entity="0"/> นี้ถูกคัดค้านโดยผู้จัดพิมพ์แพ็คเกจ โปรดติดต่อผู้เผยแพร่สำหรับข้อมูลเพิ่มเติม</param>
+        <param name="Undeprecate">คุณอาจยกเลิกการเลิกใช้คอมโพเนนต์ก่อนที่จะอัปโหลดในแพ็คเกจที่มีการจัดการและรีลีสแล้ว</param>
+        <param name="UndeprecateByOther">คุณอาจยกเลิกการเลิกใช้พาเรนต์ของคอมโพเนนต์นี้ก่อนที่จะอัปโหลดในแพ็คเกจที่มีการจัดการและรีลีสแล้ว</param>
+        <param name="MoreInfo">แสดงข้อมูลเพิ่มเติม</param>
+        <param name="LessInfo">ซ่อนข้อมูล</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><Entity entity="0"/> นี้เป็นส่วนหนึ่งของแพ็คเกจแบบปรับรุ่นได้ ที่คุณอัปโหลดลง AppExchange</param>
+        <param name="BecauseInstalled"><Entity entity="0"/> นี้เป็นส่วนหนึ่งของแพ็คเกจแบบปรับรุ่นได้ซึ่งติดตั้งจาก AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">ฉันสามารถแก้ไขอะไรได้บ้าง?</param>
+        <param name="WhatNone">สำหรับ {0} ที่ถูกจัดการแล้ว คุณอาจไม่สามารถแก้ไขแอ็ตทริบิวต์ใดๆ ซึ่งช่วยให้การอัพเกรดในอนาคตดำเนินไปได้อย่างไม่มีปัญหา</param>
+        <param name="WhatTop">สำหรับ {0} ที่จัดการได้ รายการต่อไปนี้สามารถแก้ไขได้:</param>
+        <param name="WhatBottom">เพื่อให้ขั้นตอนการอัพเกรดง่ายขึ้น แอ็ตทรีบิวต์อื่นทั้งหมดจะถูกล็อก</param>
+        <param name="WhoCanDelete">ใครสามารถลบ {0}?</param>
+        <param name="Who">{0} สามารถลบ {1}</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">การซ้อนทับรายละเอียดของเอ็นทิตี้</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0} ได้ถูกบันทึกแล้ว</param>
+        <param name="modified">{0} ได้รับการอัพเดตแล้ว</param>
+        <param name="submitted">{0} ได้รับการส่งแล้ว</param> <!-- Label swap for Case object -->
+        <param name="attached">เพิ่มเอกสารแนบแล้ว</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">ตัวอย่างสี</param>
+        <param name="colorHexValue">ค่าหกเหลี่ยมของสี</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">การยืนยัน</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">ข้อมูล</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">ข้อผิดพลาด</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">คำเตือน</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">ปลอดภัย</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">ความถี่</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">รายวัน</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">รายสัปดาห์</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">รายเดือน</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">ทุกวันทำงาน</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">ทุกวัน</param>
+       <param name="lastDay">ที่แล้ว</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">ที่หนึ่ง</param>
+    <param name="on2">ที่สอง</param>
+    <param name="on3">ที่สาม</param>
+    <param name="on4">ที่สี่</param>
+    <param name="onLast">สุดท้าย</param>
+    <param name="startTime">เริ่มต้น</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">สิ้นสุด</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">เวลาเริ่มต้นที่ต้องการ</param>
+    <param name="noPreference">ไม่กำหนด</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">เวลาเริ่มต้นจริงจะขึ้นอยู่กับกิจกรรมคิวงาน</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[เขตเวลาสำหรับการกำหนดค่าความถี่รายเดือนคือ:<br> <strong>{0}</strong><br>การกำหนดความถี่แสดงผลในเขตเวลาของผู้ใช้ที่แก้ไขล่าสุดโดยพวกเขา<br>การเปลี่ยนแปลงใดๆ ที่คุณทำไว้กับการตั้งค่าเหล่านี้จะถูกอัพเดตให้ตรงกับเขตเวลาของคุณ]]></param>
+
+      <param name="weeklyRecurrence">ทำซ้ำทุกสัปดาห์ในวัน {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">ทำซ้ำทุกสัปดาห์ในวัน</param>
+      <param name="monthlyRecurrence1">ในวัน {0} ของทุกเดือน</param>
+      <param name="monthlyRecurrence1LegendLabel">จำเพาะ</param>
+      <param name="monthlyRecurrence2LegendLabel">กำหนดเอง</param>
+      <param name="monthlyRecurrence2">ใน {2} {0} {3} {1} ของทุกเดือน</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">ใน {0} {1} ของทุกเดือน</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">ในวันที่ระบุของทุกเดือน</param>
+      <param name="accessibleMonthly2">ในวันที่กำหนดเองของทุกเดือน</param>
+      <param name="accessibleOnDayN">วันที่จำเพาะ</param>
+      <param name="accessibleOnDayNOfWeek">เกิดขึ้น</param>
+      <param name="accessibleOnDayName">วัน</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">การทดสอบง่ายๆ นี้เพื่อป้องกันโปรแกรมที่ไม่หวังดีต่างๆ จากการเข้าถึงข้อมูลของคุณ  ผู้ดูแลระบบของคุณจำเป็นต้องทำการทดสอบนี้สำหรับการดาวน์โหลดปริมาณมาก  ซึ่งจะไม่ปรากฏเกินกว่าหนึ่งครั้งต่อเซสชันล็อกอิน</param>
+        <param name="imagePrompt">ป้อนคำข้างต้น โดยแยกด้วยเครื่องหมายเว้นวรรค:</param>
+        <param name="audioPrompt">ป้อนจำนวนที่คุณได้ยิน:</param>
+        <param name="refresh">ขอรับการท้าทายใหม่</param>
+        <param name="audio">ขอรับการท้าทายด้านเสียง</param>
+        <param name="image">ขอรับการท้าทายด้านภาพ</param>
+        <param name="incorrect">ไม่ถูกต้อง โปรดลองใหม่อีกครั้ง</param>
+        <param name="moreinfo">เพิ่มข้อมูล &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; ลดข้อมูล</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">คลิกเพื่อเพิ่ม...</param>
+        <param name="show">แสดงแผงเน้นแถบสี</param>
+        <param name="hide">ซ่อนแผงเน้นแถบสี</param>
+        <param name="empty">ไม่มีฟิลด์ที่เน้นแถบสีไว้สำหรับระเบียนนี้</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">ฝึกสอนการใช้งาน</param>
+        <param name="closeIntro">ไม่ล่ะ ขอบคุณ</param>
+        <param name="closeOutro">ปิด</param>
+        <param name="showLater">แสดงให้ฉันดูภายหลัง</param>
+        <param name="replay">เล่นซ้ำ</param>
+        <param name="continue">ทำต่อ</param>
+        <param name="previous">ก่อนหน้า</param>
+        <param name="startTour">เริ่มต้นการเรียนรู้</param>
+        <param name="endTour">สิ้นสุดการเรียนรู้</param>
+        <param name="stepCounter">{0} จาก {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">รายละเอียด</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">คำแนะนำ</param>
+        <param name="hideBucketTip">&lt;br&gt;วางที่นี่เพื่อซ่อนรายการ&lt;br/&gt;จากหน้า</param>
+        <param name="hiddenListTip">ในการแสดงรายการที่ซ่อนไว้ ให้ลากกลับไปวางที่รายชื่อด้านบน</param>
+        <param name="hiddenListShowLinkLabel">{0} ถูกซ่อน</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">กลับสู่ด้านบน</param>
+        <param name="multipleItemDragGhost">หลายรายการ (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">ความเข้ากันได้ของเบราว์เซอร์หน้ารายละเอียด</param>
+        <param name="compatibilityMsgSubTitle">ขออภัย เราไม่รองรับเบราว์เซอร์นี้</param>
+        <param name="compatibilityMsg1">เราไม่สามารถแสดงผลหน้ารายละเอียดในเบราว์เซอร์ปัจจุบันของคุณ</param>
+        <param name="compatibilityMsg2">คุณสามารถใช้การออกแบบใหม่ได้เมื่อคุณเข้าสู่ระบบด้วยเบราว์เซอร์ที่เข้ากันได้อย่างใดอย่างหนึ่งต่อไปนี้</param>
+        <param name="supportedIE">Internet Explorer 7 หรือ 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">ขอบคุณ!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">ทำมุมมองคลาสสิคเป็นค่าเริ่มต้นของฉัน</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">พิมพ์ที่นี่เพื่อค้นหา {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">ไม่มี {0} ที่ตรงกับการค้นหาของคุณ</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">หน้า {1} จาก {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">ปิดเมนู</param>
+        <param name="confirmTurnOffTitle">แน่ใจว่าต้องการปิดเมนูนี้หรือ?</param>
+        <param name="confirmTurnOffText">ถ้าต้องการเปิดเมนูนี้ในอนาคต ให้ไปที่หน้าข้อมูลส่วนตัวในเมนูการตั้งค่า และเปิดใช้งานค่า เมนูการเข้าใช้งาน Force.com อย่างรวดเร็ว</param>
+        <param name="viewObject">ดูอ็อบเจ็กต์</param>
+        <param name="viewObjectHover">ดูและจัดการรายละเอียดสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewObjectNewHover">สร้างอ็อบเจ็กต์</param>
+        <param name="viewFields">ดูฟิลด์</param>
+        <param name="viewFieldsHover">ดูและจัดการฟิลด์สำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewFieldsNewHover">เพิ่มฟิลด์ไปยังอ็อบเจ็กต์นี้</param>
+        <param name="viewRecordTypes">ดูชนิดเร็กคอร์ด</param>
+        <param name="viewRecordTypesHover">ดูและจัดการชนิดเร็กคอร์ดสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewRecordTypesNewHover">เพิ่มชนิดเร็กคอร์ดสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewValidationRules">ดูกฎการตรวจสอบความถูกต้อง</param>
+        <param name="viewValidationRulesHover">ดูและจัดการกฎการตรวจสอบความถูกต้องสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewValidationRulesNewHover">เพิ่มกฎการตรวจสอบความถูกต้องสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewApprovals">ดูการอนุมัติ</param>
+        <param name="viewApprovalsHover">ดูและจัดการกระบวนการอนุมัติสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="viewApprovalsNewHover">ใช้ตัวช่วยการเริ่มต้นด่วนเพื่อเพิ่มกระบวนการอนุมัติสำหรับอ็อบเจ็กต์นี้</param>
+        <param name="editApp">แก้ไขแอพ</param>
+        <param name="editAppHover">กำหนดค่ารายการแท็บ การกำหนดโปรไฟล์ และรายละเอียดอื่นๆ สำหรับแอพนี้</param>
+        <param name="editTab">แก้ไขแท็บ</param>
+        <param name="editTabHover">กำหนดค่าไอคอน สี และรายละเอียดอื่นๆ สำหรับแท็บนี้</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">กำหนดค่าเค้าโครงหน้า</param>
+        <param name="viewRecordType">ดูชนิดเร็กคอร์ด</param>
+        <param name="viewRecordTypeHover">ดูและจัดการชนิดเร็กคอร์ดนี้ รวมถึงแก้ไขค่าของรายการให้เลือก</param>
+        <param name="editColumns">แก้ไขคอลัมน์</param>
+        <param name="editColumnsHover">กำหนดค่าคอลัมน์ในรายการนี้</param>
+        <param name="importData">นำเข้าข้อมูล</param>
+        <param name="importDataHover">นำเข้าข้อมูลลงในอ็อบเจ็กต์นี้</param>
+    </section>
+</iniFile>

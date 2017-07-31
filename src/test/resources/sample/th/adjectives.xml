@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value>
+    </adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+
+    <adjective name="Accessed">
+        <value plural="n">เข้าถึงแล้ว</value>
+    </adjective>
+
+    <adjective name="Active">
+        <value plural="n">ใช้งานอยู่</value>
+    </adjective>
+
+    <adjective name="Additional">
+        <value plural="n">เพิ่มเติม</value>
+    </adjective>
+
+    <adjective name="All">
+        <value plural="n">ทั้งหมด</value>
+    </adjective>
+
+    <adjective name="All_Day">
+        <value plural="n">ตลอดวัน</value>
+    </adjective>
+
+ <adjective name="Alternative">
+        <value plural="n">อื่น</value>
+    </adjective>
+
+    <adjective name="Another">
+        <value plural="n">อื่น</value>
+    </adjective>
+        
+    <adjective name="Any">
+         <value plural="n">ใด ๆ</value>
+	</adjective>
+
+    <adjective name="Archived">
+        <value plural="n">จัดเก็บแบบถาวร</value>
+    </adjective>
+
+    <adjective name="Assigned">
+        <value plural="n">ที่ได้รับมอบหมาย</value>
+    </adjective>
+
+    <adjective name="Associated">
+        <value plural="n">ที่เกี่ยวข้อง</value>
+    </adjective>
+
+    <adjective name="Attached">
+        <value plural="n">ที่แนบ</value>
+    </adjective>
+
+    <adjective name="Available">
+        <value plural="n">ที่ใช้งานได้</value>
+    </adjective>
+
+    <adjective name="Billed">
+        <value plural="n">เรียกเก็บเงินแล้ว</value>
+    </adjective>
+        
+    <adjective name="Certain">
+        <value plural="n">ที่เฉพาะเจาะจง</value>
+    </adjective>
+
+    <adjective name="Closed">
+        <value plural="n">ปิดแล้ว</value>
+    </adjective>
+
+    <adjective name="Completed">
+        <value plural="n">เสร็จแล้ว</value>
+    </adjective>
+
+    <adjective name="Converted">
+        <value plural="n">แปลงค่าแล้ว</value>
+    </adjective>
+    
+    <adjective name="Corresponding">
+        <value plural="n">ที่สอดคล้องกัน</value>
+    </adjective>
+
+<adjective name="Created">
+        <value plural="n">ที่สร้าง</value>
+    </adjective>
+
+    <adjective name="Current">
+        <value plural="n">ปัจจุบัน</value>
+    </adjective>
+
+    <adjective name="Custom">
+        <value plural="n">กำหนดเอง</value>
+    </adjective>
+
+    <adjective name="Default">
+        <value plural="n">ค่าเริ่มต้น</value>
+    </adjective>
+
+    <adjective name="Delegated">
+        <value plural="n">แบ่งหน้าที่แล้ว</value>
+    </adjective>
+
+<adjective name="Deleted">
+        <value plural="n">ที่ลบแล้ว</value>
+    </adjective>
+    
+    <adjective name="Designated">
+        <value plural="n">ที่กำหนดไว้</value>
+    </adjective>
+
+    <adjective name="Different">
+        <value plural="n">Different</value>
+    </adjective>
+
+<adjective name="Draft">
+        <value plural="n">ฉบับร่าง</value>
+    </adjective>
+
+    <adjective name="Duplicate">
+        <value plural="n">ทำซ้ำ</value>
+    </adjective>
+
+    <adjective name="Each">
+        <value plural="n">แต่ละ</value>
+    </adjective>
+
+    <adjective name="Editable">
+        <value plural="n">สามารถแก้ไขได้</value>
+    </adjective>
+        
+        <adjective name="Empty">
+        <value plural="n">ที่ว่างอยู่</value>
+    </adjective>
+
+    <adjective name="Every">
+        <value plural="n">ทุก</value>
+    </adjective>
+
+    <adjective name="Existing">
+        <value plural="n">ที่มีอยู่</value>
+    </adjective>
+
+    <adjective name="Expected">
+        <value plural="n">คาดการณ์ไว้</value>
+    </adjective>
+
+    <adjective name="First">
+        <value plural="n">อันดับแรก</value>
+    </adjective>
+
+    <adjective name="Following">
+        <value plural="n">ต่อไปนี้</value>
+    </adjective>
+
+    <adjective name="Future">
+        <value plural="n">อันดับแรก</value>
+    </adjective>
+
+    <adjective name="Helpful">
+        <value plural="n">ที่มีประโยชน์</value>
+    </adjective>
+
+    <adjective name="Historical">
+        <value plural="n">ตามประวัติ</value>
+    </adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot">
+        <value plural="n">Hot</value>
+    </adjective>
+
+    <adjective name="Ignored">
+        <value plural="n">Ignored</value>
+    </adjective>
+
+    <adjective name="Imported">
+        <value plural="n">ที่นำเข้า</value>
+    </adjective>
+
+    <adjective name="Inactive">
+        <value plural="n">ปิดใช้งาน</value>
+    </adjective>
+
+    <adjective name="Individual">
+        <value plural="n">แต่ละบุคคล</value>
+    </adjective>
+
+    <adjective name="Invalid">
+        <value plural="n">ไม่ถูกต้อง</value>
+    </adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+    <adjective name="Its">
+        <value plural="n">ของมัน</value>
+    </adjective>
+
+    <adjective name="Key">
+        <value plural="n">คีย์</value>
+    </adjective>
+        
+     <adjective name="Last">
+        <value plural="n">สุดท้าย</value>
+    </adjective>
+
+	<adjective name="Linked">       
+	    <value plural="n">ที่เชื่อมโยง</value>
+    </adjective>
+
+	<adjective name="Loaded">
+        <value plural="n">ที่โหลดแล้ว</value>
+    </adjective>
+
+	<adjective name="Locked">
+        <value plural="n">ที่ล็อคไว้</value>
+    </adjective>
+
+    <adjective name="Managing">
+        <value plural="n">ในการจัดการ</value>
+    </adjective>
+
+    <adjective name="Managed">
+        <value plural="n">ที่มีการจัดการ</value>
+    </adjective>
+
+    <adjective name="Master">
+        <value plural="n">หลัก</value>
+    </adjective>
+
+    <adjective name="Matching">
+        <value plural="n">การจับคู่</value>
+    </adjective>
+
+    <adjective name="Merged">
+        <value plural="n">ที่ผสาน</value>
+    </adjective>
+
+	<adjective name="More">
+        <value plural="n">เพิ่มเติม</value>
+    </adjective> 
+
+ 	<adjective name="Multiple">
+        <value plural="n">หลาย</value>
+    </adjective>
+
+    <adjective name="My">
+        <value plural="n">ของฉัน</value>
+    </adjective>
+
+    <adjective name="Neglected">
+        <value plural="n">ละเว้น</value>
+    </adjective>
+
+    <adjective name="New">
+        <value plural="n">ใหม่</value>
+    </adjective>
+
+    <adjective name="No">
+        <value plural="n">ไม่</value>
+    </adjective>
+    
+    <adjective name="Non-primary">
+        <value plural="n">ที่ไม่ใช่รายการหลัก</value>
+    </adjective>
+    
+    <adjective name="Num"> <!--number-->
+        <value plural="n">จำนวน</value>
+    </adjective>
+        
+    <adjective name="One">
+         <value plural="n">หนึ่ง</value>
+	</adjective>
+
+	<adjective name="Older">
+        <value plural="n">เก่ากว่า</value>
+    </adjective>
+
+    <adjective name="Open">
+        <value plural="n">ที่เปิดอยู่</value>
+    </adjective>
+
+    <adjective name="Original">
+        <value plural="n">ต้นฉบับ</value>
+    </adjective>
+
+    <adjective name="Other">
+        <value plural="n">อื่น ๆ</value>
+    </adjective>
+
+    <adjective name="Overdue">
+        <value plural="n">พ้นกำหนด</value>
+    </adjective>
+
+    <adjective name="Overridden">
+        <value plural="n">ยกเลิกแล้ว</value>
+    </adjective>
+
+	<adjective name="Owning">
+        <value plural="n">ที่เป็นเจ้าของ</value>
+    </adjective>
+
+    <adjective name="Personal">
+        <value plural="n">ส่วนบุคคล</value>
+    </adjective>
+
+    <adjective name="Popular">
+        <value plural="n">ยอดนิยม</value>
+    </adjective>
+
+    <adjective name="Predefined">
+        <value plural="n">ที่กำหนดล่วงหน้า</value>
+    </adjective>
+
+	<adjective name="Proposed">
+        <value plural="n">ที่เสนอ</value>
+    </adjective>
+
+	<adjective name="Primary">
+        <value plural="n">หลัก</value>
+    </adjective>
+
+    <adjective name="Private">
+        <value plural="n">ส่วนตัว</value>
+    </adjective>
+
+    <adjective name="Public">
+        <value plural="n">สาธารณะ</value>
+    </adjective>
+
+	<adjective name="Published">
+        <value plural="n">เผยแพร่แล้ว</value>
+    </adjective>
+
+    <adjective name="Queue_Owned">
+        <value plural="n">คิวที่มีเจ้าของแล้ว</value>
+    </adjective>
+        
+    <adjective name="Recent">
+        <value plural="n">เร็วๆ นี้</value>
+    </adjective>
+
+    <adjective name="Recently">
+        <value plural="n">เมื่อเร็วๆ นี้</value>
+    </adjective>
+
+    <adjective name="Recurring">
+        <value plural="n">เกิดซ้ำ</value>
+    </adjective>
+
+    <adjective name="Remaining">
+        <value plural="n">ที่เหลืออยู่</value>
+    </adjective>
+
+    <adjective name="Rejected">
+        <value plural="n">ที่ถูกปฏิเสธ</value>
+    </adjective>
+
+    <adjective name="Related">
+        <value plural="n">ที่สัมพันธ์กัน</value>
+    </adjective>
+
+    <adjective name="Relevant">
+        <value plural="n">เกี่ยวข้องกัน</value>
+    </adjective>
+
+       <adjective name="Resulting">
+        <value plural="n">ที่เป็นผลลัพธ์</value>
+    </adjective>
+
+    <adjective name="Reviewed">
+        <value plural="n">ตรวจดูแล้ว</value>
+    </adjective>
+
+    <adjective name="Same">
+        <value plural="n">Same</value>
+    </adjective>
+
+    <adjective name="Sample">
+        <value plural="n">ตัวอย่าง</value>
+    </adjective>
+
+    <adjective name="Scheduled">
+        <value plural="n">ที่กำหนดเวลา</value>
+    </adjective>
+
+	<adjective name="Second">
+        <value plural="n">อันดับสอง</value>
+    </adjective>
+
+    <adjective name="Selected">
+        <value plural="n">เลือกแล้ว</value>
+    </adjective>
+
+<adjective name="Shared">
+        <value plural="n">ที่ใช้ร่วมกัน</value>
+    </adjective>
+
+    <adjective name="Similar">
+        <value plural="n">ที่เหมือนกัน</value>
+    </adjective>
+
+    <adjective name="Single">
+        <value plural="n">เดี่ยว</value>
+    </adjective>
+
+    <adjective name="Social">
+        <value plural="n">สังคม</value>
+    </adjective>
+        
+    <adjective name="Source">	
+        <value plural="n">ต้นฉบับ</value>
+    </adjective>
+
+    <adjective name="Specified">
+        <value plural="n">ที่ระบุแล้ว</value>
+    </adjective>
+
+    <adjective name="Stale">
+        <value plural="n">เก่าแก่</value>
+    </adjective>
+
+    <adjective name="Standard">
+        <value plural="n">มาตรฐาน</value>
+    </adjective>
+
+    <adjective name="Stuck">
+        <value plural="n">มีอยู่</value>
+    </adjective>
+
+    <adjective name="Suggested">
+        <value plural="n">ที่แนะนำแล้ว</value>
+    </adjective>
+
+    <adjective name="Supplementary">
+        <value plural="n">เสริม</value>
+    </adjective>
+
+    <adjective name="Synced">
+        <value plural="n">ที่ซิงค์แล้ว</value>
+    </adjective>
+
+    <adjective name="That">
+        <value plural="n">สิ่งนั้น</value>
+    </adjective>
+
+    <adjective name="Their">
+        <value plural="n">ของพวกเขา</value>
+    </adjective>
+
+    <adjective name="These">
+        <value plural="n">เหล่านี้</value>
+    </adjective>
+
+   <adjective name="Those">
+        <value plural="n">เหล่านั้น</value>
+    </adjective>
+
+    <adjective name="This">
+        <value plural="n">นี้</value>
+    </adjective>
+        
+    <adjective name="Today">
+        <value plural="n">Today</value>
+    </adjective>
+
+   <adjective name="Top">		
+       <value plural="n">บนสุด</value>
+    </adjective>
+
+    <adjective name="Total">
+        <value plural="n">รวมทั้งหมด</value>
+    </adjective>
+
+    <adjective name="Translated">
+        <value plural="n">ที่แปลแล้ว</value>
+    </adjective>
+
+    <adjective name="Transferable">
+        <value plural="n">โอนย้ายได้</value>
+    </adjective>
+
+    <adjective name="Unconverted">
+        <value plural="n">ไม่ได้แปลง</value>
+    </adjective>
+
+    <adjective name="Unread">
+        <value plural="n">ไม่ได้อ่าน</value>
+    </adjective>
+
+    <adjective name="Unreviewed">
+        <value plural="n">ไม่ได้ตรวจดู</value>
+    </adjective>
+
+    <adjective name="Unresolved">	
+        <value plural="n">ที่ยังไม่ได้แก้ไข</value>
+    </adjective>
+
+    <adjective name="Unused">
+        <value plural="n">ไม่ได้ใช้</value>
+    </adjective>
+
+    <adjective name="Unfiled">
+        <value plural="n">ไม่ได้จัดเก็บลงในแฟ้ม</value>
+    </adjective>
+
+    <adjective name="Unshared">
+        <value plural="n">ที่ไม่ได้แบ่งปัน</value>
+    </adjective>
+
+    <adjective name="Updated">
+        <value plural="n">ที่ปรับปรุงแล้ว</value>
+    </adjective>
+
+    <adjective name="Useful">
+        <value plural="n">มีประโยชน์</value>
+    </adjective>
+
+    <adjective name="User_Owned">
+        <value plural="n">ผู้ใช้ที่เป็นเจ้าของ</value>
+    </adjective>
+
+    <adjective name="Viewed">
+        <value plural="n">ที่เรียกด</value>
+    </adjective>
+
+    <adjective name="Visible">
+        <value plural="n">ความสามารถในการมองเห็น</value>
+    </adjective>
+
+    <adjective name="Won">
+        <value plural="n">ชนะ</value>
+    </adjective>
+
+    <adjective name="Your">
+        <value plural="n">ของคุณ</value>
+    </adjective>
+        
+    <adjective name="Zero">
+        <value plural="n">เป็นศูนย์</value>
+    </adjective>
+    
+    <adjective name="Marked">
+	    <value plural="n">ที่ถูกทำเครื่องหมายไว้</value>
+    </adjective>
+	
+	<adjective name="Posted">
+        <value plural="n">ที่โพสต์ไว้</value>
+    </adjective>
+        
+    <adjective name="Supported">
+	    <value plural="n">ที่รองรับ</value>
+    </adjective>
+	
+	<adjective name="Valid">
+        <value plural="n">ที่ถูกต้อง</value>
+    </adjective>
+        
+    
+</adjectives>
+

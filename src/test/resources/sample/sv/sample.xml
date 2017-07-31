@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">Kombinationsruta</param>
+        <param name="select_default">Välj nedan.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Välj {0} nedan.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">Åtkomst</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Hanterad)</param>
+        <param name="activity_history">Aktivitetshistorik</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Ytterligare information</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Assistent</param>
+        <param name="assistant_name">Namn, assistent</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telefon, assistent</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Ass. tel.nr.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Ass. tel.nr.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Födelsedag</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Brödtext</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Företag</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Skapad av</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Skapad av ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Skapad av alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Valutans ISO-kod</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Egna fält</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Standardstatus</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0} Information</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Avdelning</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Redigera: {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Förväntade intäkter</param>
+        <param name="first_name">Förnamn</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Efternamn</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Förnamn (lokalt)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Efternamn (lokalt)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Räkenskapskvartal</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Räkenskapsår</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Fullständigt namn</param> <!-- aliased across app - do not change -->
+        <param name="group">Grupp</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Gruppnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Könamn</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Bransch</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Senast ändrad av</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Senast ändrat av ID</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Senast ändrad av alias</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Huvudpost-ID</param>
+        <param name="mobile">Mobil</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Mobiltelefon</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Mobiltelefonnummer</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Ny delning</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Tilldelad alias</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Lista över tillgängliga</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Företagsnamn</param> <!-- aliased across app - do not change -->
+        <param name="activities">Aktiviteter</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">inga bifogade filer</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">Adressinformation</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Avböjt</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Standard</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Standardprioritet</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Skapa ny vy</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Anpassad information</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Dubblerad status</param> <!-- aliased across app - do not change -->
+        <param name="email_address">E-postadress</param> <!-- aliased across app - do not change -->
+        <param name="email_name">E-postadress</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">E-postmall</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-post:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Egna länkar</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Filstorlek</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Det finns inga data</param>
+        <param name="history_event_checked">Markerat fält {0}</param>
+        <param name="history_event_unchecked">Avmarkerat fält {0}</param>
+        <param name="how_do_i_specify_info">Hur anger jag vilken information som ska inhämtas?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Intern källa</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Intervall:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Hälsning</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Välj ny ägare</param>
+        <param name="select_a_view">Välj en vy från listan om du vill se en lista över resultat.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Välj en mapp från listan om du vill se en lista med relaterade resultat.</param>
+        <param name="select_the_file">Välj filen</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">Välj vilka fält som ska ingå:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Signatur</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Ämne</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Systeminformation</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Webbsida</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">Ägaralias</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Ägarens förnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Ägarens ID</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Ägarens efternamn</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Ägarens namn</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Ägarens roll</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Ägarens rollvisning</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Ägarens rollnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Primär</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Prioritet</param><!--aliased across labels - do not change -->
+        <param name="private">Privat</param>
+        <param name="role">Roll</param> <!--aliased across labels - do not change -->
+        <param name="rating">Värdering</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Skapa snabbt</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Nyligen visade</param>
+        <param name="top5">De 5 viktigaste frågorna</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Säljare</param>
+        <param name="customer">Kund</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Leverantör</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Posttyps-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Avdelnings-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Tabellförteckning eller ID</param>
+        <param name="editable">Redigerbar</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Normaliserat namn</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Sekretesspolicy</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Hanterat tillstånd</param>
+        <param name="namespacePrefix">Namnutrymmesprefix</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Modulnamnutrymme</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Installerat paket</param>
+        <param name="initialVersion">Första utgivna version</param>
+        <param name="lastVersion">Slutgängligt tillgängliga version</param>
+        <param name="availableInVersions">Tillgänglig i versionerna</param>
+        <param name="DeveloperName">Utvecklarnamn</param>
+        <param name="apiName">API-namn</param>
+        <param name="InvalidDeveloperNameOnEntity">Fältet {0} får endast innehålla understreck och alfanumeriska tecken. Det måste vara unikt, börja med en bokstav, inte innehålla mellanslag, inte sluta med ett understreck samt inte innehålla två understreck i rad.</param>
+        <param name="missingDevName">{0} måste anges.</param>
+        <param name="duplicateDevName">Detta {0} finns redan eller har använts tidigare.  Vänligen välj ett annat namn.</param>
+        <param name="manageabilityOverride">Åsidosättande av hanterbarhet</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">Metriskt datum</param>
+        <param name="MayEdit">Kan redigera</param>
+        <param name="IsLocked">Är låst</param>
+        <param name="LastViewedDate">Datum senaste visning</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">Skapa</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Inställningar</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Skapa ny/nytt...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Arkiv</param>
+        <param name="new_forecast">Prognos</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Papperskorgen</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Skicka e-postmeddelande</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Rapport</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">Ändrad av</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Skapad datum</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Ändringsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">Automatiserad process</param>
+        <param name="partner_network">Anslutningsanvändare</param>
+        <param name="external_who">Offentlig användare</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">Exempel</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Fel: Ogiltiga data. &lt;br/&gt;Granska alla felmeddelanden nedan och korrigera informationen.</param>
+        <param name="EditPageError2">Granska alla felmeddelanden nedan och korrigera informationen.</param>
+        <param name="Required">Du måste ange ett värde</param>
+        <param name="RequiredWithFieldList">Obligatoriska fält saknas: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Krävs för självbetjäning</param>
+        <param name="RequiredBy">Begärd av: {0}</param>
+        <param name="Requires">Kräver: {0}</param>
+        <param name="TooLong">Värdet är för långt för fältet</param>
+        <param name="CannotExceedXCharacters">Värdet kan inte överskrida {0} tecken</param>
+        <param name="MustBeXCharacters">Värdet måste innehålla exakt {0} tecken</param>
+        <param name="MustBeNumber">Värdet måste vara numeriskt</param>
+        <param name="StatusCloseRequired">Du måste ange minst en status som avslutad</param>
+        <param name="StatusDefaultRequired">Du måste ange minst en status som standard</param>
+        <param name="StatusInUse">Följande statusvärden används och kan inte redigeras eller raderas: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Ogiltigt datum</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Ogiltigt datum. Du kan inte ställa in ett datum efter {0}</param>
+        <param name="InvalidDateTime">Ogiltigt datum och ogiltig tid</param>
+        <param name="InvalidColor">Ogiltig färg</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Ogiltig Internetadress</param>
+        <param name="InvalidOption">Ett ogiltigt alternativ har valts.</param>
+        <param name="UnsupportedCurrency">Ogiltig valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Ogiltig URL</param>
+        <param name="NoneSelectedInPicklist">--saknas--</param>
+        <param name="InvalidTime">Ogiltig tid</param>
+        <param name="InvalidNumber">Ogiltigt nummer</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Talet är för stort.</param>
+        <param name="TooLargeNumberWithScale">Talet måste vara mindre än {0}.</param>
+        <param name="TooSmallNumberWithScale">Talet måste vara större än {0}.</param>
+        <param name="NonpositiveError">Måste vara positivt.</param>
+        <param name="NegativeError">Får inte vara negativt.</param>
+        <param name="PositiveError">Får inte vara positivt.</param>
+        <param name="NonnegativeError">Måste vara negativt.</param>
+        <param name="NonzeroError">Får inte vara noll.</param>
+        <param name="NonintegerError">Måste vara ett heltal.</param>
+        <param name="InvalidPercent">Ogiltigt procentvärde</param>
+        <param name="InvalidAfterRoundOff">Nummer {0} är ogiltigt efter avrundning till skala: {1}</param>
+        <param name="CharactersRemaining">resterande</param>
+        <param name="CharactersOver">över gräns</param>
+        <param name="TooManySelection">Du kan inte välja fler än {0} objekt</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Duplicerat värde för post: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Dolt fältvärde (visas inte) ger dubblettvärde för post: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} ger duplicerat värde för post med id: {1}</param>
+        <param name="True">Sant</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Falskt</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Ogiltig domän</param>
+        <param name="ReadOnly">Du kan inte redigera detta fält</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">Om du väljer att fortsätta med importen, kommer dessa data att ignoreras och fältet att lämnas tomt.</param>
+        <param name="extra_DefaultDivision">Om du väljer att fortsätta importen, kommer postägarens standardavdelning att användas för dessa poster.</param>
+        <param name="extra_DefaultCurrency">Om du väljer att fortsätta importera tilldelas posterna din standardvaluta.</param>
+        <param name="InvalidDataType">värde ej av obligatorisk typ: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">ägaren får inte vara tom</param>
+        <param name="DynamicEnumValue">kombinationsrutevärdet är inte aktivt: {0}</param>
+        <param name="DynamicEnumValue_extra">Om du väljer att fortsätta med importen, kommer detta värde att importeras, men inte läggas till i listan över aktiva värden för denna kombinationsruta.</param>
+        <param name="InvalidCurrencyCode">ogiltig valutakod: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">inaktiv valutakod: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">ogiltig tid: {0}</param>
+        <param name="InvalidDateValue">ogiltigt datum: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">ogiltigt procentvärde: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">ID saknas eller är ogiltigt</param>
+        <param name="Id15Characters">Det måste vara exakt 15 tecken</param>
+        <param name="IdMissing_extra">Posterna kommer att ignoreras</param>
+        <param name="InvalidDivision">ogiltig avdelning: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">inaktiv avdelning: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">ogiltigt nummer: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">värdet ligger utanför giltigt intervall för numeriska fält: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">för många objekt har markerats: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">ogiltig e-postadress: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">ogiltig ip-postadress: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">ID-värde har felaktig typ: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">dåligt värde för kombinationsruta med begränsningar: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">ogiltigt värde för bitvektorfält: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">datavärdet är för stort: {0}</param>
+        <param name="DataTruncated_extra">Om du väljer att fortsätta med importen, kommer dessa data att trunkeras så att de får plats i fältet.</param>
+        <param name="DuplicateExternalId">mer än en post hittades för externt id-fält: {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">Din begäran behandlas...</param>
+        <param name="InvalidDeveloperNameChars"><Entity entity="0"/> API-namn får endast innehålla understreck och alfanumeriska tecken. Det måste vara unikt, börja med en bokstav, inte innehålla mellanslag, inte sluta med ett understreck samt inte innehålla två understreck i rad.</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">Avbryt</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Godkänn</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Acceptera ändringar</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Aktivera Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Lägg till kommentar</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Lägg till komponenter</param>
+        <param name="add_contacts">Lägg till <contacts/></param>
+        <param name="add_leads">Lägg till <leads/></param>
+        <param name="add_more_users">Lägg till flera användare</param>
+        <param name="add_multiple_users">Lägg till flera användare</param>
+        <param name="add_product">Lägg till <product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Lägg till radartikel</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Lägg till instrumentpanelsexempel</param>
+        <param name="add_to_call_center">Lägg till i call center</param>
+        <param name="add_to_campaign">Lägg till i <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Lägg till i Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Lägg till i <pricebook/></param>
+        <param name="add_remove">Lägg till/radera</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Avancerad inställning</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Godkänna</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Tilldela</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Tilldela användare till roll</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Tillbaka till rapportlistan</param>
+        <param name="billing_and_licenses">Fakturering och licenser</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Faktureringsinformation</param>
+        <param name="briefcase_setup">Portföljinställningar</param>
+        <param name="cancel">Avbryt</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Avbryt sändning</param>
+        <param name="cancel_test_instance">Avbryt Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Ändra företag</param>
+        <param name="change_currency">Ändra valuta</param>
+        <param name="change_owner">Byt ägare</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Acceptera och ändra ägare</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Acceptera och tilldela huvud</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Ändra status</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Kontrollera tillgänglighet</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Kontrollera stavning</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Välj <pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Rensa</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Översikt</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0}-flik</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Lista</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Kopiera överordnade detaljer</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Dölj alla</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Välj en post i kombinationsrutan</param>
+        <param name="composegmail">Skapa Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Bekräfta</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Fortsätt</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Fortsätt ändå</param>
+        <param name="convert">Konvertera</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Konvertera <Lead/></param>
+        <param name="create">Skapa</param>
+        <param name="create_follow_up_event">Skapa <event/> för uppföljning</param>
+        <param name="create_follow_up_task">Skapa <task/> för uppföljning</param>
+        <param name="create_new">Skapa ny {0}</param>
+        <param name="create_new_section">Skapa ny avdelning</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Skapa <Opportunity/></param>
+        <param name="create_test_instance">Skapa Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Skapa testdatabas</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Skapa webb-till-lead-formulär</param>
+        <param name="create_new_holiday">Skapa ny helgdag</param>
+        <param name="create_new_sla_process">Ny <entitlement/>-process</param>
+        <param name="create_new_milestone_type">Ny milstolpe</param>
+        <param name="currency_setup">Inställningar för valutor</param>
+        <param name="customer_view">Kundvy</param>
+        <param name="customize">Anpassa</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Anpassa visning för alla användare</param>
+        <param name="page_settings">Sidinställningar</param>
+        <param name="customize_page">Anpassa sida</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Redigeringslayout</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Instrumentpanelslista</param>
+        <param name="data_export">Exportera data</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Rensa</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Avböj</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Egna standardlänkar</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Ta bort åtkomst till Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Klar med förhandsgranskning</param>
+        <param name="dont_save">Spara inte</param>
+        <param name="dont_show_page_again">Visa inte den här sidan igen</param>
+        <param name="download">Hämta</param>
+        <param name="download_now">Hämta nu</param>
+        <param name="download_sample_css_file">Hämta CSS-exempelfil</param>
+        <param name="edit">Redigera</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Redigera [Beta]</param>
+        <param name="edit_all">Redigera alla</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Redigera användare</param>
+        <param name="edit_rates">Redigera kurser</param>
+        <param name="edit_selected">Redigera markerade</param>
+        <param name="editProperties">Redigera egenskaper</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Avsluta {0}</param>
+        <param name="enable_appstore_user">Ge åtkomst till Checkout</param>
+        <param name="enable_as_partner">Aktivera som partner</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Aktivera inloggning för partnerportal</param>
+        <param name="enable_self_service">Aktivera självbetjäning</param>
+        <param name="enable_users">Aktivera ny(a) användare</param>
+        <param name="enableForecasting">Aktivera anpassad prognosticering</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Gå till utbildning</param>
+        <param name="erase_test_instance">Radera Sandbox</param>
+        <param name="establish">Skapa</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Visa alla</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Exportera information</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Exportera information nu</param>
+        <param name="export_background">Kör export i bakgrunden...</param>
+        <param name="fctHistory">Prognoshistorik</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Prognossammanfattning</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Fältvalideringar</param>
+        <param name="find">Sök</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Hitta rapport</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Sök <document/></param>
+        <param name="find_pricebooks">Sök <pricebook/></param>
+        <param name="find_products">Sök <product/></param>
+        <param name="find_solution">Sök <solution/></param>
+        <param name="finished">Slutförd</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Framåt</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Vidarebefordra till anslutningar</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Generera WSDL</param>
+        <param name="generate_login_html">Generera HTML för inloggning</param>
+        <param name="getMoreInfo">Hämta mer information</param>
+        <param name="go">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Hjälp för den här sidan</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} hjälp</param>
+        <param name="hide">Göm detaljer</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Jag accepterar</param>
+        <param name="i_decline">Jag avböjer</param>
+        <param name="impactAnalysis">Var används denna?</param>
+        <param name="import">Importera</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Importera <leads/></param>
+        <param name="include_offline">Inkludera offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Infoga</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Infoga markerad</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Installera nu</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Bjud in</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Bjud in för anslutning</param>
+        <param name="jigsawsearch">Hämta kontakter</param>
+        <param name="join_meeting">Delta i mötet</param>
+        <param name="jumpstart">Snabbstart</param>
+        <param name="keep_in_touch">Begär uppdatering</param>
+        <param name="layout_assignment">Layouttilldelning</param>
+        <param name="legal_view">Giltig vy</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Lås post</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Logga in som partneranvändare</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Hantera medlemmar</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Ny mötesbegäran</param>
+        <param name="add_members_search">Lägg till medlemmar - sök</param>
+        <param name="add_members_import">Lägg till medlemmar - importera fil</param>
+        <param name="edit_members_search">Redigera medlemmar - sök</param>
+        <param name="update_members_import">Uppdatera &amp; Lägg till medlemmar - importera fil</param>
+        <param name="manage_call_center_users">Hantera call center-användare</param>
+        <param name="map_lead_fields">Karta <lead_fields/></param>
+        <param name="mark_as">Markera som...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Medlemsimport</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Ändra enstaka påminnelser</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Nya</param>
+        <param name="newcase">Nya</param>
+        <param name="new_addition_order">Ny tilläggsorder</param>
+        <param name="new_custom_object">Nytt eget objekt</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Skapa ny egen rapport</param>
+        <param name="new_dashboard">Ny instrumentpanel</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Ny instrumentpanelkomponent</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Ny mall</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Ny mall</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Ny mapp</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Ny grupp</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Ny kö</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Ny anteckning</param>
+        <param name="new_object_custom_tab">Ny flik för Eget objekt</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Möte online</param>
+        <param name="new_order">Ny order</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Ny personlig grupp</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Ny reduktionsorder</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Ny roll</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Ny knapp</param>
+        <param name="new_territory">Nytt område</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Ny användare</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Ny flik för Webbintegration</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Gör en annan uppdatering</param>
+        <param name="performAnotherMigrate">Migrera en till profil</param>
+        <param name="preview">Förhandsgranska</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Omberäkna</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Skapa igen</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Avvisa</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Avvisa ändringar</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Ta bort användare</param>
+        <param name="remove_from_briefcase">Ta ut ur Portfölj</param>
+        <param name="remove_from_campaign">Ta bort från <Campaign/></param>
+        <param name="reorder">Ordna om</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Reparera</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Kör alla test</param>
+        <param name="run_test">Kör test</param>
+        <param name="quick_save">Snabbspara</param>
+        <param name="quick_save_hover">Spara och fortsätt redigera</param>
+        <param name="reply">Svara</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Svara alla</param>
+        <param name="reportmanager">Rapportansvarig</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">Återställ lösenord</param>
+        <param name="reset_passwords">Återställ lösenord</param>
+        <param name="retrieve_prices">Hämta priser</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Kör rapport</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Spara</param> <!-- aliased across labels do not change -->
+        <param name="saving">Sparar...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Spara och lägg till pris</param>
+        <param name="save_and_add_product">Spara och lägg till <product/></param>
+        <param name="save_and_clone">Spara och klona igen</param>
+        <param name="save_and_close">Spara och stäng</param>
+        <param name="save_and_attach">Spara och lägg till bifogad fil</param>
+        <param name="save_and_continue">Spara och nästa</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Spara och mer</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Spara och <new/> <event/></param>
+        <param name="save_and_new_product">Spara och <new/> <product/></param>
+        <param name="save_and_new_task">Spara och <new/> <task/></param>
+        <param name="save_and_refresh">Spara och uppdatera</param>
+        <param name="save_and_send">Spara och skicka uppdatering</param>
+        <param name="event_scheduler">Kund- och teamvy &gt;</param>
+        <param name="saveAs">Spara som</param>
+        <param name="schedule_to_email">Schemalägg för e-post</param>
+        <param name="schedule_to_print">Schemalägg för utskrift</param>
+        <param name="scrutinize">Fingranska</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Sök <knowledgeArticles/></param>
+        <param name="newArticle">Nya</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Välj mall</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Snabbstart för självbetjäning</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Inställning för självbetjäning</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Visa/aktivera självbetjäning</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Skicka</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Skicka ett e-postmeddelande till <all/> <contacts/></param>
+        <param name="send_invitation">Spara och skicka inbjudan</param>
+        <param name="set_status">Hantera status</param>
+        <param name="setup_and_install">Inställningar och Installera</param>
+        <param name="setup_roles">Lägg upp roller</param>
+        <param name="setup_sharing">Lägg upp delning</param>
+        <param name="sfga_instructions">Slutför utskrivbara instruktioner</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Visa detaljer</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Hoppa över</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Sortera</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Starta mötet</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Skicka</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Skicka och lägg till bifogad fil</param>
+        <param name="subscribe_now">Prenumerera nu!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Uppgradera nu!</param>
+        <param name="suggest">Visa <suggested/> <solutions/></param>
+        <param name="take_training_now">Ta kursen nu!</param>
+        <param name="terminate">Avsluta</param>
+        <param name="training_history">Kurshistorik</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Överför</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Prova nu!</param>
+        <param name="undelete">Återställ</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Ångra</param>
+        <param name="unlock">Lås upp post</param>
+        <param name="update">Uppdatera</param>
+        <param name="update_campaign_history">Uppdatera &amp; Lägg till <Campaign_Members/></param>
+        <param name="update_now">Uppdatera nu</param>
+        <param name="update_statuses">Uppdatera status</param>
+        <param name="upload">Överför</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Fältberoenden</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Visa borttagna komponenter</param>
+        <param name="view_partnerforce">Visa partneranvändare</param>
+        <param name="view_self_service">Visa självbetjäning</param>
+        <param name="view_customer_success">Visa kundportalanvändare</param>
+        <param name="enable_customer_success">Aktivera kundportalanvändare</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Vad är detta?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Stäng fönstret</param>
+        <param name="runApexRecalc">Omberäkna Apex-delning</param>
+        <param name="disablecustomerportal">Inaktivera kundportalanvändare</param>
+        <param name="disablepartnerportal">Inaktivera partneranvändare</param>
+        <param name="disablecustomerportalaccount">Inaktivera kundportalföretag</param>
+        <param name="disablepartnerportalaccount">Inaktivera partnerföretag</param>
+        <param name="voteup">Rösta upp</param>
+        <param name="votedown">Rösta ned</param>
+        <param name="markquestionunanswered">Markera som obesvarad</param>
+        <param name="markbestanswer">Markera som bästa svar</param>
+        <param name="requestUseSfdcAction">Hissa kopplingar</param>
+        <param name="addPET">Lägg till rättighetsmall</param>
+        <param name="truncate">Trunkera</param>
+        <param name="disableprmsuperuser">Inaktivera partnersuperåtkomst</param>
+        <param name="enableprmsuperuser">Aktivera partnersuperåtkomst</param>
+        <param name="purchase_more">Köpa mer</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">Upp</param>
+        <param name="descriptionText">Brödtexten är för lång. Visa informationen.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Visa fil</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Överordnat</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Ingen relaterad information</param>
+        <param name="no_records">Det finns inga poster att visa</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Visa ytterligare {0} &#187;</param>
+        <param name="NextMoreGeneric">Visa fler &#187;</param>
+        <param name="view_more">Gå till lista</param>
+        <param name="view_more_tot">Gå till lista ({0})</param>
+        <param name="view_more_tot_plus">Gå till lista ({0}+)</param> <!-- -->
+        <param name="view_more_1">Gå till lista med ytterligare en post</param> <!-- Singular -->
+        <param name="view_more_n">Gå till lista med ytterligare {0} poster</param> <!-- Plural -->
+        <param name="view_more_n_plus">Gå till lista med ytterligare {0} poster</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Fler tillgängliga - gå till lista</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Sannolikhet</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Källa</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Vunna</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Räkenskapsperiod</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Kvartal {1} av år {0}</param>
+        <param name="opportunities_next_step">Nästa steg</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_source/></param>
+        <param name="opportunities_update">Uppdatera</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Relaterad till</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Anteckning</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Anteckningar och bilagor</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">Anteckningstitel</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Bifogad fil</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Bilagor</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">Filnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Ägarskap</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Primär</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> att visa</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Datum</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Titel</param>
+        <param name="object_title">Titel</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Namn</param>
+        <param name="object_name">Namn</param>
+        <param name="date">Datum</param>
+        <param name="due_date">Förfallodatum</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">Senaste ändring</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Uppdaterad av</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Primär</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Konkurrenter</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Konkurrentens namn</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Styrkor</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Svagheter</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Sannolikhet (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Slutfört</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Markering {0} utförd</param>
+        <param name="task_date">Datum</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Namn</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> Väntar på godkännande</param>
+        <param name="task_none">Du har inga <open/> <tasks/> schemalagda för den här perioden.</param>
+        <param name="task_mode_today">Idag</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Idag + förfallna</param>
+        <param name="task_mode_tomorrow">Imorgon</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Kommande {0} dagar</param>
+        <param name="task_mode_next_7days_overdue">Kommande {0} dagar + förfallna</param>
+        <param name="task_mode_overdue">Förfallna</param>
+        <param name="task_mode_this_month">Den här månaden</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Alla öppna</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Historik</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Nyheter</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Rubrik</param>
+        <param name="new_date">Datum</param>
+        <param name="news_none">Inga nyheter tillgängliga</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Mallar för kopplade dokument</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Bästa <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Tilläggsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Tillagd av</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> bifogade <solutions/></param>
+        <param name="description">Beskrivning</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Börskod</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_phone/></param>
+        <param name="contactemail"><Contact_email/></param>
+        <param name="noactivities">Det finns ingen <activity_History/> att visa.</param>
+        <param name="nonotes">Det finns inga data i anteckningshistoriken att visa.</param>
+        <param name="noattachments">Det finns inga data i historiken för bifogade filer som kan visas.</param>
+        <param name="viewallattachments">Visa alla bifogade filer</param>
+        <param name="viewalldocsattachments">Visa alla Google Dokument och bilagor</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Datum</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Orderradbeskrivning</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API-hämtningar</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Filtrerad efter användare</param>
+        <param name="apicapture_filterip">Filtrerad efter IP</param>
+        <param name="apicatpure_numbers">Hämtningar</param>
+        <param name="apicapture_soapscope">Visa hämtningar</param>
+        <param name="apicapture_active">Aktiv</param>
+        <param name="apicapture_none">Inga hämtningar</param>
+        <param name="apicapture_new">Starta ny hämtning</param>
+        <param name="apicapture_view">Visa</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Inloggningshistorik</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">inga inloggningar</param>
+        <param name="login_none">Ingen inloggningshistorik är tillgänglig.</param>
+        <param name="login_username">Användarnamn</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Inloggningstid</param>
+        <param name="login_type">Inloggningstyp</param>
+        <param name="login_ip">IP-adress</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Ej tillgängligt</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Webbläsare</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Plattform</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Upplösning</param>
+        <param name="login_clientversion">Klientversion</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Program</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API-typ</param>
+        <param name="login_apiversion">API-version</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">Klart</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Hämta inloggningshistorik för de senaste sex månaderna, inklusive inloggningar utanför webbplatsen, till exempel API-inloggningar (.csv-fil för Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Hämta inloggningshistorik, inklusive endast inloggningar från webbplatsen (.csv-fil för Excel)</param>
+        <param name="login_history_download_title">Hämtningsalternativ</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV-fil</param>
+        <param name="login_history_download_file_type_gzip">GZIP-fil</param>
+        <param name="login_history_download_file_type_help">CSV-filer (kommaseparerat värde) kan visas med hjälp av många kalkylprogram och textredigerare. GZIP-filer (GNU-zip) är komprimerade för att minska sin storlek.</param>
+        <param name="login_history_download_option_title">Filinnehåll</param>
+        <param name="login_history_download_option_all">Alla inloggningar</param>
+        <param name="login_history_download_option_ie6_only">ENDAST IE6-inloggningar</param>
+        <param name="login_history_download_option_web_only">ENDAST webbsideinloggningar</param>
+        <param name="login_history_download_option_help">"Alla inloggningar" inkluderar inloggningar från alla källor såsom webbsidan, Outlook, API-integrationer m.m. "IE6-inloggningar" inkluderar endast inloggningar från användare som använder Internet Explorer 6. "Webbsideinloggningar" inkluderar endast inloggningar från salesforce inloggningssida.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Använder du fortfarande IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce håller på att fasa ut stöd för IE6. Använd hämtningsalternativen för att se vilka webbläsare som används i din organisation.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Inloggnings-URL</param>
+        <param name="order_history">Orderhistorik</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Inga order</param>
+        <param name="order_number">Ordernummer</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Orderdatum</param>
+        <param name="order_currency">Valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Totalkostnad</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">Såld till</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Inga <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Radnummer</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Pris per månad</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Faktureringsreferens</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Faktureringsfrekvens&lt;BR&gt;(månader)</param>
+        <param name="bo_order_items_billing_frequency_text">Faktureringsfrekvens</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Ordervillkor&lt;BR&gt;(månader)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Datum</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Fakturor</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Inga fakturor</param>
+        <param name="invoices_invoice_number">Fakturanummer</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Fakturadatum</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Fakturans förfallodatum</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">Externt system-ID</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Totalt belopp</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Resterande fordran</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Total kredit</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Total avskrivning</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Faktureringskontakt</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Faktureringsbolag</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Faktureringshistorik</param>
+        <param name="revenue_schedule">Schema</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Datum</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">Intäkter</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Kommentarer</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Statushistorik</param>
+        <param name="status_none">Ingen statushistorik hittades</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Val av tjänster</param>
+        <param name="services_none">Inga tjänster</param>
+        <param name="services_description">Tjänst</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">Enhetspris</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Totalpris</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Rabatt</param>
+        <param name="training">Kurshistorik</param>
+        <param name="training_none">Inga</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">Klassnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Genomgicks den</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Besvarad</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Standard</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> definierad</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Startdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Slutdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">Livstids värde</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Har inköpsregler</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">Faktureringsfrekvens&lt;br&gt;(månader)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Faktureringsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending">Godkänd <event/></param>
+        <param name="event_notdecided">Ej besvarad</param>
+        <param name="event_declined">Avvisad <event/></param>
+        <param name="event_attending_none">Inga deltagare accepterade</param>
+        <param name="event_notdecided_none">Alla deltagare svarade</param>
+        <param name="event_declined_none">Inga deltagare avböjde</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Namn</param>
+        <param name="documents_size">Storlek</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Författare</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Visa inställningar för granskningslogg</param>
+        <param name="download">hämta</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Organisationens senaste 20 poster listas nedan. Du kan {0} din organisations granskningsspår för de senaste sex månaderna (.csv-fil för Excel).</param>
+        <param name="setup_audit_date">Datum</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">Åtgärd</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Avsnitt</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Delegera användare</param>
+        <param name="setup_audit_proxyinguser_help">Denna kolumn listar användarnamnet för en användare som har gjort en inställningsändring på uppdrag av en slutanvändare. Till exempel, om en användare bevijar inloggningsåtkomst till en kundcenterrepresentant, listas användarnamnet för representanten.</param>
+        <param name="setup_audit_trail_none">Det finns ingen tillgänglig information om inställningar för granskningslogg</param>
+        <param name="setup_audit_download_csv">Hämta granskningsspår för de senaste sex månaderna (.csv-fil för Excel)</param>
+        <param name="DashboardComponents_title">Instrumentpanelkomponenter</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Inga instrumentpanelkomponenter</param>
+        <param name="translated_templates_none">Inga översatta e-postmallar</param>
+        <param name="translated_templates_title">Översatta e-postmallar</param>
+        <param name="translated_templates_language">Språk</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktiv</param>
+        <param name="desc_pnet_conn_audit_trail">Organisationens senaste 20 poster listas nedan. Du kan {0} hela granskningslogghistoriken som en Excel .csv-fil.</param>
+        <param name="pnet_conn_audit_trail">Anslutningshistorik</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Datum</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Det finns ingen tillgänglig information om granskningslogghistorik för anslutning.</param>
+        <param name="pnet_conn_audit_download_csv">Hämta anslutningshistorik (csv)</param>
+        <param name="pnet_entity_conns_title">Extern delning</param>
+        <param name="pnet_entity_conn_stop_sharing">Avsluta delning</param>
+        <param name="pnet_pub_title">Publicerade objekt</param>
+        <param name="pnet_sub_title">Objekt som ingår i prenumeration</param>
+        <param name="pnet_pubsub_object">Objektnamn</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Fält</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Publicera/avpublicera</param>
+        <param name="pnet_sub_edit">Prenumerera/avbryt prenumeration</param>
+        <param name="pnet_pub_edit_object">Objektet har publicerats.</param>
+        <param name="pnet_pub_edit_field">Klicka på Redigera nedan om du vill publicera till tillgängliga fält för varje objekt.</param>
+        <param name="pnet_sub_edit_object">Objektet ingår i din prenumeration.</param>
+        <param name="pnet_sub_edit_field">Klicka på Redigera nedan om du vill prenumerera på tillgängliga fält för varje objekt.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">Innehåll</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce-bilagor</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Fel i laddning av relaterade listor</param>
+        <param name="ajax_exception_desc">Ett fel uppstod vid insamling av information från de relaterade listorna för denna post. Om uppdatering av denna sida inte korrigerar problemet bör du kontakta din systemadministratör eller &lt;a href=&quot;{0}&quot; title=&quot;rapportera{1}&quot;&gt;rapportera&lt;/a&gt; det till ditt kundtjänst-team.</param>
+        <param name="category_access_title">Kategorigrupps synlighetsinställningar</param>
+        <param name="category_access_video_tutorial">Videolektion</param>
+        <param name="category_access_name">Kategorigrupp</param>
+        <param name="category_access_access">Synlighet</param>
+        <param name="category_access_details">Detaljer för synlighet</param>
+        <param name="category_access_custom">Anpassad</param>
+        <param name="category_access_full">Allt</param>
+        <param name="category_access_inherited">Ärvd från {0}</param>
+        <param name="category_access_revoked">Inga</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">roll och underordnade</param>
+        <param name="category_access_noCategories">Inga kategorier är synliga för denna {0}</param>
+        <param name="category_access_allCategories">Alla kategorier är synliga för denna {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} för {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Allmänt USA och Västeuropa (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japanska (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japanska (JIS)</param>
+        <param name="4">Japanska (EUC)</param>
+        <param name="5">Koreanska (ks_c_5601-1987)</param>
+        <param name="6">Kinesiska (traditionell) (Big5)</param>
+        <param name="7">Kinesiska (förenklad) (GB2312)</param>
+        <param name="8">Traditionell Hong Kong-kinesiska (Big5-HKSCS)</param>
+        <param name="9">Japanska (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Provorganisation</param>
+        <param name="expand">Klicka för att öppna marginallist [Alt+S]</param>
+        <param name="collapse">Klicka för att stänga marginallist [Alt+S]</param>
+        <param name="expandNoHotkey">Klicka för att öppna sidorad</param>
+        <param name="collapseNoHotkey">Klicka för att stänga sidorad</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">Uppåt</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Nedåt</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Flytta</param>
+        <param name="top">Överst</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Längst ned</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">Fyll i alla obligatoriska fält.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">Alla användare</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">Nya</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Lägg till</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Ta bort</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Ändra]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Hur gör jag för att...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Visa fler</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Logga ett samtal</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Logga en anteckning</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Koppla dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Visa alla</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Bifoga fil</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Hur gör jag för att?</param>
+        <param name="send_email">Skicka ett e-postmeddelande</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Bild tillagd av användare</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Applikationer</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">Utskrivbar vy</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Klona</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Delning</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">Startsida</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Jag vill veta mer!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Välj ett:</param>
+        <param name="hotlist_mode">Visa urval</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Visa {0,number,integer} poster</param>
+        <param name="hotlist_empty_title">Ingen senaste post. Klicka OK eller välj en visning från rullmenyn för att visa poster.</param>
+        <param name="hotlist_empty_description">Det finns inga poster inom dessa kriterier.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Gå till rapporter</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Resurscenter</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">I resurscentret kan du undersöka prospekt, söka efter tredjepartstjänster och mycket mer.</param>
+        <param name="resource_center_link_text">Gå till resurscentret</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Försäljningsmetoder</param>
+        <param name="hotlist_recently_modified">Nyligen ändrade</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Nyligen skapade</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Nyligen visade</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">-- Inga --</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">-- Välj --</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Standard--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Inte tillämpligt**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">Beror på &quot;{0}&quot;</param>
+        <param name="dependentFields">Beroende fält</param>
+        <param name="controls">Styr värden för {0}</param>
+        <param name="dependsOnMultiple">Beror på {0}</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Administratören har inte angett några egna länkar.</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">Hoppa till:</param>
+        <param name="JumpToStep">Steg {0}: {1}</param>
+        <param name="CloseWizard">Stäng guiden</param>
+        <param name="LeftHeader">Steg {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Steg {0} av {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Steg {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Spara och ny</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">Nästa</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Föregående</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Guiden Installera organisation {0}</param>
+        <param name="ImportWizardTitle">Importguide för {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Ordercentral</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Anmälan till provversion</param>
+        <param name="WizardBody">Överst i guiden</param>
+        <param name="WizardFooter">Nederst i guiden</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Adress</param><!-- translators note - this is actually the full address -->
+        <param name="street">Adress</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Ort</param><!-- aliased across label files - do not change -->
+        <param name="state">Län</param><!-- aliased across label files - do not change -->
+        <param name="zip">Postort</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Postnummer</param> <!-- aliased across label files - do not change -->
+        <param name="country">Land</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Anknytning</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Faxankn.</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-post</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Leveransadress</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Leveransgata</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Leveransort</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Leveranslän</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Leveranspostnummer</param>
+        <param name="shippingzippostalcode">Postnummer för leveransadress</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Leveransland</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Faktureringsadress</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Faktureringsort</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Faktureringslän</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Faktureringspostnummer</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Faktureringsland</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Faktureringsadress</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Bankgatuadress</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Bankadress</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">Bankort</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Bankdelstat</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Bankpostnummer</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Bankland</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Postadress</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Gatuadress</param>
+        <param name="mailingcity">Ort</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Län</param>
+        <param name="mailingzip">Postnummer</param>
+        <param name="mailingcountry">Land</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Postadress, rad 1</param>
+        <param name="mailingaddress2">Postadress, rad 2</param>
+        <param name="mailingaddress3">Postadress, rad 3</param>
+        <param name="otheraddress">Annan adress</param>
+        <param name="otheraddress1">Annan adress, rad 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Annan adress, rad 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Annan adress, rad 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Annan gata</param>
+        <param name="otherstreet2">Annan gata 2</param>
+        <param name="otherstreet3">Annan gata 3</param>
+        <param name="othercity">Annan ort</param>
+        <param name="otherstate">Annat län</param>
+        <param name="otherzipcode">Annat postnummer</param>
+        <param name="otherpostalcode">Annat postnummer</param>
+        <param name="otherzippostalcode">Annat postnummer</param>
+        <param name="othercountry">Annat land</param>
+        <param name="otherphone">Telefon, annan</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Annat tel.nr.</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Adress 1</param>
+        <param name="address2">Adress 2</param>
+        <param name="address3">Adress 3</param>
+        <param name="home_phone">Hemtelefon</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">Laddar ned...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Plats</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Kvantitet</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Kontaktmanager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Ja</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Nej</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Välkommen till Salesforce!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. Alla rättigheter förbehållna.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. Med ensamrätt.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 uppfyllande</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. Med ensamrätt.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Med ensamrätt.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. Med ensamrätt.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Med ensamrätt.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Säkerhetspolicy</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Användningsvillkor</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Tack för att du har valt Salesforce. Innan du börjar använda Salesforce måste du läsa igenom och acceptera nedanstående användningsvillkor. När du är klar fortsätter du genom att klicka på knappen "Jag accepterar". Observera att om du inte accepterar dessa användningsvillkor så kan du inte logga in till Salesforce.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">Klart</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Lägg till nu!</param>
+        <param name="remove">Ta bort</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Nya</param>
+        <param name="exciting_and_new">Nytt!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">här</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Generera</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Stäng fönster</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Skriv ut den här sidan</param>
+        <param name="new_window">(Nytt fönster)</param>
+        <param name="new_focus">(fokusbyte)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Dold ram &#45; Ignorera</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">markera alla</param>
+        <param name="select_shown">Välj vad som visas</param>
+        <param name="remove_shown">Ta bort vad som visas</param>
+        <param name="select_none">Välj ingenting</param>
+        <param name="all_active">Alla aktiva</param>
+        <param name="all_inactive">Alla inaktiva</param>
+        <param name="are_you_sure">Vill du göra detta?</param>
+        <param name="irreversible_are_you_sure">Du kan inte ångra detta! Vill du göra detta?</param>
+        <param name="replace">Ersätt</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Avsluta</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} minuter</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Flera poster påträffades. Välj i listan eller klicka på ikonen om du vill förfina sökningen.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">Återställ</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Åsidosätt</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Totalt</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Klicka här</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Anteckningar till webbadministratören:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML-exempel</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Lösenord</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Visa inte denna sida igen</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Dölj det här meddelandet för: </param>
+        <param name="dontShowMessageAgain">Visa inte detta meddelande igen</param>
+        <param name="dismissMessage">Bortse från det här meddelandet</param>
+        <param name="allObjects">Alla objekt</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Tryck på mellanslag eller enterknappen för att öppna</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Självbetjäning: <Case_Detail/></param>
+        <param name="CssEdit">Självbetjäning: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/>-kanal</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Kommentar</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Egna objekt</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definition av egna objekt</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Instrumentpanel</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Instrumentpaneler</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Avmarkera alla</param>
+        <param name="deselect_shown">Avmarkera vad som visas</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Mall för Koppla dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Mallar för Koppla dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Mapp</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Mappar</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Prognoser</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Prognoser</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent-övervakare</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Faktura</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Anteckningar</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Ordna</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Order</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Orderpost</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Orderposter</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Betalning</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Betalningar</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">rapport</param>
+        <param name="Reports">Rapporter</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Registrering</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Mall</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Mallar</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabell</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktiv</param>
+        <param name="amount">Belopp</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Årliga intäkter</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Bifoga dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Ändra lösenord</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Stäng</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Avslutad</param>
+        <param name="closed_date">Avslutades, datum</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Avslutsdatum</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Skapa, datum</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Datatyp</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Raderad</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Beskrivningsinformation</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Anställda</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Arkiv</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Filer</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Allmän information</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Hämta information innan du startar</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Etikett</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Senaste inloggning</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Senast ändrat den</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Namn</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Namn</param>
+        <param name="new_status">Ny status</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Inga</param>
+        <param name="open">Öppen</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organisation</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Inga matchningar hittades.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Allt</param>
+        <param name="clear">Rensa</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Klicka på sökikon…</param>
+        <param name="click_lookup_icon_info">Klicka på sökikonen för att välja ett värde.</param>
+        <param name="clear_all">Rensa alla</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Klicka på knappen för bifoga.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Fel</param> <!-- aliased across lables - do not change -->
+        <param name="high">Hög</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Hjälp</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Ta mig dit!</param>
+        <param name="keywords">Nyckelord</param>
+        <param name="length">Längd</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Status</param> <!-- aliased across lables - do not change -->
+        <param name="title">Titel</param>
+        <param name="object_title">Titel</param>
+        <param name="type">Typ</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Användare</param> <!--aliased across labels - do not change -->
+        <param name="Users">Användare</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Behörighetsuppsättning</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profiler</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Ägare</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">Visa inte den här sidan igen.</param>
+        <param name="click_here_to_create_new_account">{0} om du vill skapa en <new/> <account/> nu.</param>
+        <param name="click_here_to_create_new_contact">{0} om du vill skapa en <new/> <contact/> nu.</param>
+        <param name="click_here_to_create_new_lead">{0} om du vill skapa en <new/> <lead/> nu.</param>
+        <param name="click_here_to_create_new_opportunity">{0} om du vill skapa en <new/> <opportunity/> nu.</param>
+        <param name="click_here_to_create_new_product">{0} om du vill skapa en <new/> <product/> nu.</param>
+        <param name="SystemModstamp">System Modstamp</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Avdelning</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Bearbetar</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Uppdaterar poster…</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Statisk översättning</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Dölj den här sidan i fortsättningen</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Laddar upp…</param>
+        <param name="uploading_title">Ladda upp</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Importerar…</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">och </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">Fel: Ingen åtkomst till det här fältet</param>
+        <param name="noReadAccess">Du har inte åtkomst till att visa denna post.</param>
+        <param name="noAccessToUser">Du har inte åtkomst till denna användare.</param>
+        <param name="disabledButton">Avaktiverad knapp: {0}</param>
+        <param name="RequiredHeader">Obligatorisk information</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">För in en bild</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Vill du ta bort IP-inloggningsintervallet</param>
+        <param name="AMPM">AMPM-post</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Skyddad komponent</param>
+        <param name="dialogCloseConfirm">Bekräftelsefönstret du såg kan ha stängts i förtid. Klicka på OK för att gå tillbaka till det eller på avbryt för att ignorera denna varning.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Samtal startar</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">Webbläsare som inte stöds för nytt tema för användargränssnitt</param>
+        <param name="DialogHeader">Bara så att du vet…</param>
+        <param name="DialogContent1">Du använder en webbläsare som inte kan visa vårt senaste användargränssnitt.</param>
+        <param name="DialogContent2">Salesforce kommer att visa sitt klassiska utseende som visas i övre vänstra hörnet tills det att du uppgraderar till den senaste versionen av en webbläsare som inte stöds.</param>
+        <param name="DialogClassicDesc">Klassiskt utseende</param>
+        <param name="DialogAlohaDesc">Nytt utseende</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">Sökresultat</param>
+        <param name="Recent">Nyligen visade</param>
+        <param name="NoMatchHeader">Inga poster hittades på grund av en av följande:</param>
+        <param name="BulletOne">Det finns inga poster av denna typ</param>
+        <param name="BulletTwo">Du har inte behörighet att se några poster</param>
+        <param name="BulletThree">Poster som inte passar filterkriteriet angivet av din administratör</param>
+        <param name="BulletFour">En eller flera styrande fält är tomma eller ogiltiga (styrande fält:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">Tillgängliga användare</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Markerade användare</param>
+        <param name="LicensedUsers">Licensierade användare</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Markerade för borttagande</param>
+        <param name="Selected">Markerade</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Vald</param>
+        <param name="UnassignedPackages">Ej tilldelade paket</param>
+        <param name="SelectedPackages">Valda paket</param>
+        <param name="InView">i vy</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Denna fil överskrider den maximala storleksgränsen som är {0}.</param>
+        <param name="no_file_specified">Ange en fil som ska överföras. Om du vill leta efter filen i ditt lokala filsystem så anger du sökvägen till filen eller så klickar du på knappen Bläddra.</param>
+        <param name="invalid_file_type">Den filtyp du angett stöds inte för tillfället.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Filnamnet överskrider maximalt tillåten längd, vilken är {0} tecken.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Filnamnstillägget överskrider maximalt tillåten längd, vilken är {0} tecken.</param>
+        <param name="bytes">byte</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">kB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Typen HTML-filer är inte tillåtet av säkerhetsskäl.</param>
+        <param name="attachment_size_exceeded">Uppladdad fil överstiger maximal storlek.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;Fel:&lt;/b&gt; Du måste välja en bild att ladda upp</param>
+        <param name="upload_file_too_large">&lt;b&gt;Fel:&lt;/b&gt; Bilden överskrider storleksgränsen på 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Fel:&lt;/b&gt; Du kan endast mata in filer av formatet.gif, .jpeg och .png.</param>
+        <param name="upload_failed">&lt;b&gt;Fel:&lt;/b&gt; Uppladdningen misslyckades - Försök igen senare.</param>
+        <param name="invalid_file">&lt;b&gt;Fel:&lt;/b&gt; Filen är inte en giltig bildfil.</param>
+        <param name="invalid_param">&lt;b&gt;Fel:&lt;/b&gt; Ogiltiga parametrar.</param>
+        <param name="access_failed_alt">Denna bild är inte tillgänglig därför att: Du inte har behörighet att visa den eller för att den har avlägsnats från systemet</param>
+        <param name="weekly_export_folder">Annat uppladdat tilläggsmaterial/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">Välj flikformat</param>
+        <param name="instructions">Välj ett flikformat.</param>
+        <param name="createYourOwn">Skapa egna format</param>
+        <param name="defaultCustomStyleDesc">Eget format</param>
+        <param name="styleIsUsedOn">Det här formatet används på följande flikar:</param>
+        <param name="showUsedStyles">Visa format som används på andra flikar</param>
+        <param name="hideUsedStyles">Dölj format som används på andra flikar</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">Flikfärgväljare</param>
+        <param name="instructions">Välj en färg</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">Färg:</param>
+        <param name="icon">Ikon:</param>
+        <param name="defineNew">Definiera ett nytt färgformat</param>
+        <param name="noMotifErr">En färg måste väljas</param>
+        <param name="noIconErr">En ikon måste väljas</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} skapades.</param>
+        <param name="Failure_message">Det gick inte att skapa.</param>
+        <param name="Common_success_message">Skapad.</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">Förfrågan om ytterligare produkter</param>
+        <param name="pageheader">Skicka din förfrågan om ytterligare produkter genom att fylla i fälten nedan. Använd fältet Beskrivning för att ange vilka produkter du vill beställa. Om du vill beställa produkter för ett befintligt kontrakt anger du kontraktnumret som referens.</param>
+        <param name="colHeader">Skickar din inköpsförfrågan</param>
+        <param name="functionalArea_0">Inköp av licens</param>
+        <param name="type_0">Inköp</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">Inköpsförfrågan</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">Tack för din förfrågan. Din säljare har informerats och kommer att kontakta dig för att slutföra din order.</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">Begär licensreduktion</param>
+        <param name="pageheader">Fyll i alla de obligatoriska fälten för att skicka in din förfrågan om licensreduktion. Detta är det snabbaste sättet att få din förfrågan behandlad.  Skicka inte in flera förfrågningar för samma licenser eftersom det kan orsaka onödiga fördröjningar.</param>
+        <param name="title_landing">Vi har mottagit din förfrågan!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Vi har mottagit din förfrågan och den kommer att behandlas i den ordning vi fick den. Observera att förfrågningar om att reducera ditt licensantal kommer att träda i kraft med början vid nästa faktureringsperiod efter din förfrågan, under förutsättning att du informerar salesforce.com fem arbetsdagar före fakturadatum för nästa faktureringsperiod.</param>
+        <param name="pageheader_landing">Vi har mottagit din förfrågan och den kommer att behandlas i den ordning vi fick den. Förfrågningar som avser att reducera ditt licensavtal börjar gälla 30 dagar efter det att förfrågan skickas. Skicka inte flera förfrågningar om licensreduktion för samma licens eftersom det kan fördröja behandlingen.</param>
+        <param name="title_error">Det gick inte att behandla din förfrågan.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Vi kunde inte skicka din förfrågan nu. Försök senare.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Skickar din förfrågan</param>
+        <param name="reason">Orsak</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Beskriv&lt;br&gt; i mer detalj</param>
+        <param name="numLicenses">Antal licenser</param>
+        <param name="potentialResponse">Hur kan vi behålla&lt;br&gt; dig som kund?</param>
+        <param name="tips_title">Tips för hur du skickar in förfrågningar om licensreduktion</param>
+        <param name="tip1">Fyll i all information korrekt för att garantera tidsenligt och korrekt behandling av din förfrågan.  Innan du skickar in denna förfrågan ska du se till att du avaktiverar tillräckligt många användare så att ditt användarantal är mindre än eller lika med ditt nya licensavtal. Detta kan göras genom funktionen &lt;a href=&quot; {0}&quot;&gt;Hantera användare&lt;/a&gt; i &lt;a href=&quot; {1}&quot;&gt;Mina inställningar&lt;/a&gt;.</param>
+        <param name="type1">Avbryt konto</param>
+        <param name="type2">Reduktion i användarlicenser</param>
+        <param name="type3">Reduktion i Offline-licenser</param>
+        <param name="type4">Reduktion i kampanjlicenser</param>
+        <param name="type5">Avbryt Mobile Edition</param>
+        <param name="type6">Reduktion i Mobile Edition-licenser</param>
+        <param name="type7">Reducering av Force.com Mobile-licens</param>
+        <param name="reason_0">Förvärvat/sammanslaget företag</param>
+        <param name="reason_1">Företaget har upplösts</param>
+        <param name="reason_2">Eliminering av säljare</param>
+        <param name="reason_3">Slutanvändare anammar inte</param>
+        <param name="reason_4">Funktionerna uppfyller inte våra förväntningar</param>
+        <param name="reason_5">Ledningen ser inte tillräckligt med värde</param>
+        <param name="reason_6">Dålig erfarenhet med salesforce.com-anställda</param>
+        <param name="reason_7">Priset är för högt</param>
+        <param name="reason_8">Vi byter till en konkurrent</param>
+        <param name="reason_9">Licenser som inte används</param>
+        <param name="reason_10">Övrigt</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">Fyll i följande fält:</param>
+        <param name="title">Skicka feedback till salesforce.com</param>
+        <param name="title_upgrade_me">Logga en uppgraderingsbegäran</param>
+        <param name="title_support">Skicka feedback</param>
+        <param name="warning_line_too_long">Varning: Beskrivningen är längre än 4000 tecken och kommer att kortas av.\\n</param>
+        <param name="feedback_info">Kontaktar kundtjänst</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Vänd dig till vår kundsupport om du har frågor eller vill skicka oss feedback. Vi är mycket beroende av den feedback vi får från våra kunder när vi utvecklar Salesforce. Vi sätter stort värde på att få ta del av dina idéer, och ser fram mot att höra från dig.</param>
+        <param name="general_info_me">Om du vill få mer information om hur du uppgraderar från Personal Edition till någon av våra företagsversioner (Edition) fyller du i formuläret nedan. En säljare kontaktar dig då inom 48 arbetstimmar.</param>
+        <param name="general_info_support">Vänd dig till vår kundsupport om du har frågor eller vill skicka oss feedback. Vi värdesätter all feedback från våra kunder eftersom den hjälper oss att utveckla och utforma Salesforce CRM Call Center. Vi uppskattar dina idéer och ser fram emot att du hör av dig.</param>
+        <param name="defaultOrigin">Webb</param>
+        <param name="defaultStatus">Nya</param>
+        <param name="functionalArea">Avsnitt</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Fråga</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Begäran</param>
+        <param name="type3">Feedback</param>
+        <param name="type4">Funktionsförfrågan</param>
+        <param name="priority1">Brådskande</param>
+        <param name="priority2">Normal</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Låg</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Jag vill abonnera på Professional Edition nu</param>
+        <param name="subject_subscribe_me">Jag vill uppgradera nu</param>
+        <param name="subject_subscribe_we">Jag vill ha mer information om Professional Edition</param>
+        <param name="subject_subscribe_ee">Jag vill abonnera på Enterprise Edition nu</param>
+        <param name="subject_subscribe_ue">Jag vill börja prenumerera på Unlimited Edition nu</param>
+        <param name="subject_subscribe_support">Jag vill prenumerera nu</param>
+        <param name="subject_data_export">Jag vill ha exporttjänsten varje vecka</param>
+        <param name="subject_marketing_licenses">Lägg till marknadsföringslicenser</param>
+        <param name="subject_offline_licenses">Lägg till licenser för Offline Edition</param>
+        <param name="subject_wireless_licenses">Lägg till licenser för Wireless Edition</param>
+        <param name="subject_offlinepda_licenses">Lägg till Sales Anywhere-licenser</param>
+        <param name="subject_mobile_licenses">Lägg till Force.com Mobile-licenser</param>
+        <param name="subject_sfcontent_licenses">Lägg till Salesforce CRM Content-licenser</param>
+        <param name="subject_knowledge_licenses">Lägg till kunskapslicenser</param>
+        <param name="subject_interaction_licenses">Lägg till Force.com flödeslicenser</param>
+        <param name="subject_support_licenses">Lägg till tjänstmoln-licenser</param>
+        <param name="subject_jigsaw_licenses">Lägg till Jigsaw-licenser</param>
+        <param name="subject_liveagent_licenses">Lägg till Live Agent-licenser</param>
+        <param name="subject_siteforcecontributor_licenses">Lägg till Site.com Contributor-licenser</param>
+        <param name="subject_siteforcepublisher_licenses">Lägg till Site.com Publisher-licenser</param>
+        <param name="subject_chatteranswers_licenses">Lägg till Chatter Answers-licenser</param>
+        <param name="subject_license_reduction">Licensreduktion</param>
+        <param name="functionalArea_0">Företag/licensadministration</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Faktureringsfråga</param>
+        <param name="functionalArea_3">Datakoppling</param>
+        <param name="functionalArea_4">E-post/koppla dokument</param>
+        <param name="functionalArea_5">Prognoser och säljprojekt</param>
+        <param name="functionalArea_6">Importera</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Leads</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Prestanda</param>
+        <param name="functionalArea_9">Rapporter</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Prenumerera nu</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Synkronisera</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Veckoexporttjänst</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Trådlös</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Övrigt</param>
+        <param name="functionalArea_16">Marknadsföringslicens</param>
+        <param name="functionalArea_17">Fristående licens</param>
+        <param name="functionalArea_18">Koppla företag/kontakt</param>
+        <param name="functionalArea_19">Kampanjer</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Självbetjäning</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Trådlös licens</param>
+        <param name="functionalArea_22">Uppgradera nu</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere-licens</param>
+        <param name="functionalArea_24">Aktiviteter/händelser </param>
+        <param name="functionalArea_25"><Products/> och annuiteter / <pricebooks/></param>
+        <param name="functionalArea_26">Meddelande om stora affärer </param>
+        <param name="functionalArea_27">Dokument</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Kundcase och lösningar </param>
+        <param name="functionalArea_29">Sök</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Delning</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect för Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition för au</param>
+        <param name="functionalArea_35">Licens för partnerportal</param>
+        <param name="functionalArea_36">Force.com Mobile-licenser</param>
+        <param name="functionalArea_37">Salesforce CRM Content-licens</param>
+        <param name="functionalArea_38">Tjänstmolnlicens</param>
+        <param name="functionalArea_39">Jigsaw-licens</param>
+        <param name="functionalArea_40">Live Agent-licens</param>
+        <param name="functionalArea_41">Site.com Contributor-licens</param>
+        <param name="functionalArea_42">Site.com Publisher-licens</param>
+        <param name="functionalArea_43">Chatter Answers-licens</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Om du föredrar att tala direkt med en kundsupportrepresentant ringer du +1-415-901-7010 mellan 6:00 och 18:00 Stillahavstid, måndag - fredag. Du kan också ringa +353-1-2723503 mellan 8:00 och 18:00 GMT, måndag - fredag.</param>
+        <param name="tips_title">Tips när du skickar ett kundcase</param>
+        <param name="tip1">Se till att du ger oss tillräckligt med information så att vi kan svara på ditt kundcase så fort som möjligt.  Nedan följer några förslag på vad du bör tänka på när du skickar informationen:</param>
+        <param name="tip2">Tala om vad du försöker göra, vilket resultat du förväntar dig och vad som händer istället.</param>
+        <param name="tip3">Tala om vilka olika steg som måste utföras för att återskapa felet.</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">Visa:</param>
+        <param name="X">X</param>
+        <param name="close">St.</param>
+        <param name="MLclose">Stäng</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Ta bort</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Ta bort</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Radera</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Post</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Ställ in</param>
+        <param name="activate">Aktivera</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Inaktivera</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Hantera</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Export</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Nästa sida</param>
+        <param name="prev">Föregående sida</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Totalt antal poster som visas: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Visa {0} {1} poster i varje listsida</param>
+        <param name="number_shown_detail_page">Visa alltid {0} {1} {2} poster per relaterad lista</param>
+        <param name="number_shown_adjust_less_link">färre</param>
+        <param name="number_shown_adjust_more_link">fler</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">alla</param>
+        <param name="last_page">Tillbaka till föregående sida</param>
+        <param name="last_list">Tillbaka till listan</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Tillbaka till listan: <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Tillbaka till listan: <Entity entity="0" plural="y"/> från kontakter</param>
+        <param name="last_suggested_solution_list">Tillbaka till listan för <suggested/> <solutions/></param>
+        <param name="last_solution_search_list">Tillbaka till sökresultat för <solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Tillbaka till <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Åtgärder:</param>
+        <param name="checkboxPrompt">Välj minst en rad</param>
+        <param name="checkboxSinglePrompt">Välj en enskild rad</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Dina markeringar på den här sidan förloras. Vill du fortsätta?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Om du vill utföra den här åtgärden får högst {0} rader vara markerade.</param>
+        <param name="selectionLimit">Det går inte att markera fler än {0} rader.</param>
+        <param name="login">Logga in</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Session</param>
+        <param name="none">Inga poster att visa.</param>
+        <param name="no_rows">Ingen rad har valts</param>
+        <param name="subtotal">Delsumma:</param>
+        <param name="total">Totalt:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Markera alla posterna</param>
+        <param name="clearAllInfo">Avmarkera alla posterna</param>
+        <param name="rename">Byt namn</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">Välj</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Avmarkera</param>
+        <param name="toggleall">Växla alla rader</param>
+        <param name="refresh">Uppdatera</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Välj en vy.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Med den vy som du har valt överskrids det högsta tillåtna antalet. Begränsa sökvillkoren genom att redigera vyn eller skapa en ny vy.</param>
+    <param name="switch_view">Byt vy</param>
+    <param name="records_x_to_y">Visar posterna {0} - {1}</param>
+    <param name="records_x_to_y_more">Visar posterna {0} - {1}, fler poster är tillgängliga</param>
+    <param name="records_x_to_y_more_showing_max">Visar posterna {0} - {1}. Den här sidan kan bara visa de första 1 000 posterna, trots att fler poster är tllgängliga. Förfina visningskriterierna för listan om du vill visa färre poster. Om du vill skriva ut fler än 1 000 poster kör du en rapport och klickar sedan på knappen Utskrivbar vy i rapporten.</param>
+    <param name="number_of_records">Antal poster</param>
+        <param name="createCase">Skapa <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">Klicka här om du vill utöka/komprimera kapslade objekt.</param>
+        <param name="expand">Klicka här om du vill utöka kapslade objekt.</param>
+        <param name="collapse">Klicka här om du vill komprimera kapslade objekt.</param>
+        <param name="shortExpand">Utöka</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Komprimera</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Utökat</param>
+        <param name="collapsed">Komprimerat</param>
+        <param name="level">Nivå</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hierarki:</param>
+        <param name="siblings">Samma nivå:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">Sök</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Välj ett objekt</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Vem</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Vad</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Sökningen returnerade fler än maximalt antal rader ({0}). Precisera sökkriterierna.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Med ensamrätt.</param>
+        <param name="useWildcards">Du kan precisera sökningen genom att använda asterisk (*) som jokertecken.  Exempel: Med söksträngen "ad*" hittas alla poster vars namn innehåller strängen "ad".</param>
+        <param name="useWildcardsWithSearch">Du kan precisera sökningen genom att använda asterisk (*) som jokertecken.</param>
+        <param name="error_lookup_multiple_matches_ile">Flera poster påträffades.&lt;br&gt;Klicka på ikonen om du vill förfina sökningen.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">Välj färg</param>
+        <param name="cpFrameTitle">Färgväljare</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">Välj diagramtyp</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">Expandera lista</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Expanderad lista</param>
+        <param name="sharing">Delning</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Varför?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">Fler filter &gt;&gt;</param>
+        <param name="less_filters">Färre filter &lt;&lt;</param>
+        <param name="by_keyword">Enligt nyckelord</param>
+        <param name="by_filter">Enligt fältfilter</param>
+        <param name="too_many">Din sökning returnerade fler än {0} rader. Endast de första {0} visas. Precisera sökkriterierna.</param>
+        <param name="Results">Resultat</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">Sök:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Poäng</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">Fält</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operator</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Värde</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Du kan använda eller-filter genom att ange flera poster i den tredje kolumnen.</param>
+        <param name="tip_1">Du kan ange upp till tio poster. Avgränsa dem med kommatecken. Exempel: SVE, NOR, DAN, FIN söker efter SVE eller NOR eller DAN eller FIN.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Placera citationstecken runt data som innehåller komman. Exempel: "200,000","1,000,000" söker efter 200 000 eller 1 000 000.</param>
+        <param name="tip_3">För fält med kryssrutor använder du "Falskt" och "Sant". Exempel: "Aktiv är lika med sant" eller "Konverterad är lika med falskt."</param>
+        <param name="tip_4">Regelposter baserade på riktnummer måste eventuellt innehålla parenteser. Exempel: Telefon startar med (415), (510).</param>
+        <param name="tip_5">Om du använder Translation Workbench anger du alla filterkriterier genom att använda huvudvärden.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">Tillgängliga</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Urval</param>
+        <param name="assignLicensesDescription">Markera kryssrutan vid varje paket som ska tilldelas den här användaren, och klicka sedan på Tilldela. Kryssrutan visas inte om paketet inte har nödvändiga licenser, eller om paketet har utgått eller inaktiverats.</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">Vågrät vy</param>
+        <param name="vertical_view">Lodrät vy</param>
+        <param name="view_select_title">Välj vy</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">Salesforce Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Standardportal</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This/> <Entity entity="0"/> är hanterad vilket betyder att du endast kan redigera vissa attribut.</param>
+        <param name="EntityDeprecated"><This/><Entity entity="0"/> är åsidosatt.</param>
+        <param name="UnmanagedDeprecatedByOther"><This/><Entity entity="0"/> har inte utgiven än men är åsidosatt av din överordnade komponent.</param>
+        <param name="EntityDeprecatedByDev"><This/><Entity entity="0"/> har åsidosatts av paketutgivaren. Mer information finns hos utgivaren.</param>
+        <param name="Undeprecate">Du kan ta bort åsidosättning av komponenten innan den laddas upp i ett hanterat-utgivet paket.</param>
+        <param name="UndeprecateByOther">Du kan ta bort åsidosättning av komponentens överordnade innan den laddas upp i ett hanterat-utgivet paket.</param>
+        <param name="MoreInfo">Visa mer information</param>
+        <param name="LessInfo">Dölj information</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><This/> <Entity entity="0"/> är en del av ett uppgraderingsbart paket du har laddat upp till AppExchange.</param>
+        <param name="BecauseInstalled"><This/> <Entity entity="0"/> är en del av ett uppgraderingsbart paket installerat från AppExchange.</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">Vad går att redigera?</param>
+        <param name="WhatNone">För hanterade {0} går det inte att redigera attribut. Därmed blir det enklare att utföra uppgraderingar.</param>
+        <param name="WhatTop">För hanterade {0}, är följande poster redigerbara:</param>
+        <param name="WhatBottom">För att förenkla uppgraderingsprocessen är alla andra attribut låsta.</param>
+        <param name="WhoCanDelete">Vem kan ta bort vilka {0}?</param>
+        <param name="Who">{0} kan ta bort {1}.</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">Enhetsdetaljöverlägg</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0} has been saved.</param>
+        <param name="modified">{0} har uppdaterats.</param>
+        <param name="submitted">{0} har skickats.</param> <!-- Label swap for Case object -->
+        <param name="attached">Bilaga/bilagor har lagts till.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">Färgexempel</param>
+        <param name="colorHexValue">Hexadecimalt färgvärde</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">Bekräftelse</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Information</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Fel</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Varning!</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Säker</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">Frekvens</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Daglig</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Veckovis</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Månatlig</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Varje veckodag</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Varje dag</param>
+       <param name="lastDay">sista</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">första</param>
+    <param name="on2">andra</param>
+    <param name="on3">tredje</param>
+    <param name="on4">fjärde</param>
+    <param name="onLast">sista</param>
+    <param name="startTime">Starta</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Sluta</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Prioriterad starttid</param>
+    <param name="noPreference">Ingen prioritering</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Exakt starttid beror på aktiviteten i jobbkön.</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[Tidszonen för den här inställningen av månadsfrekvens är:<br> <strong>{0}</strong><br>Frekvensinställningar visas i samma tidszon som för den användare som senast redigerade dem. <br>Om du ändrar dessa inställningar kommer de att uppdateras och matcha din tidszon.]]></param>
+
+      <param name="weeklyRecurrence">Återkommer varje vecka på {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Återkommer varje vecka på</param>
+      <param name="monthlyRecurrence1">På {0} varje månad</param>
+      <param name="monthlyRecurrence1LegendLabel">Specifik</param>
+      <param name="monthlyRecurrence2LegendLabel">Anpassad</param>
+      <param name="monthlyRecurrence2">På {2} {0} {3} {1} i varje månad</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">På {0} {1} i varje månad</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">På specifik dag varje månad</param>
+      <param name="accessibleMonthly2">På anpassad dag varje månad</param>
+      <param name="accessibleOnDayN">Specifik dag</param>
+      <param name="accessibleOnDayNOfWeek">Förekomst</param>
+      <param name="accessibleOnDayName">Dag</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">Det här enkla testet kan förhindra att skadliga program kommer åt dina data.  Din administratör kräver det här testet när du hämtar stora filer.  Det visas aldrig fler än en gång per inloggningssession.</param>
+        <param name="imagePrompt">Ange orden ovan avgränsade med mellanslag:</param>
+        <param name="audioPrompt">Ange de nummer som du hör:</param>
+        <param name="refresh">Hämta en ny utmaning</param>
+        <param name="audio">Hämta en ljudutmaning</param>
+        <param name="image">Hämta en bildutmaning</param>
+        <param name="incorrect">Fel, försök igen</param>
+        <param name="moreinfo">Mer info &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Mindre info</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">Klicka för mer…</param>
+        <param name="show">Visa panelen för markeringar</param>
+        <param name="hide">Göm panelen för markeringar</param>
+        <param name="empty">Det finns inga markerade fält att visa för denna post.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">Guidad tur</param>
+        <param name="closeIntro">Nej tack</param>
+        <param name="closeOutro">Stäng</param>
+        <param name="showLater">Visa mig senare</param>
+        <param name="replay">Spela om</param>
+        <param name="continue">Fortsätt</param>
+        <param name="previous">Föregående</param>
+        <param name="startTour">Starta visning</param>
+        <param name="endTour">Avsluta visning</param>
+        <param name="stepCounter">{0} av {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">Information</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Rekommendationer</param>
+        <param name="hideBucketTip">&lt;br&gt;Släpp här för att gömma artiklar&lt;br/&gt;från sidan.</param>
+        <param name="hiddenListTip">För att visa dolda artiklar drar du dem tillbaka till ovan lista.</param>
+        <param name="hiddenListShowLinkLabel">{0} dolda</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">Upp</param>
+        <param name="multipleItemDragGhost">Flera enheter (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">Detaljsida för webbläsarkompabilitet</param>
+        <param name="compatibilityMsgSubTitle">Vi ber om ursäkt men vi har inget stöd för denna webbläsare</param>
+        <param name="compatibilityMsg1">Vi kan inte visa den nya detaljsidan i den aktuella webbläsaren.</param>
+        <param name="compatibilityMsg2">Du kan använda den nya designen när du loggar in med en av dessa webbläsare:</param>
+        <param name="supportedIE">Internet Explorer 7 eller 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Tack!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Använd klassisk design som standard</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">Skriv här för att söka efter {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Inga {0} matchade din sökning.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Sida {1} av {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">Avstängningsmeny</param>
+        <param name="confirmTurnOffTitle">Är du säker på att du vill stänga av denna meny?</param>
+        <param name="confirmTurnOffText">För att öppna denna meny i framtiden, gå till sidan Personliga information i inställningsmenyn och aktivera alternativet Force.com snabbåtkomstmeny.</param>
+        <param name="viewObject">Visa objekt</param>
+        <param name="viewObjectHover">Visa och hantera detaljer om detta objekt</param>
+        <param name="viewObjectNewHover">Skapa ett objekt</param>
+        <param name="viewFields">Visa fält</param>
+        <param name="viewFieldsHover">Visa och hantera fält för detta objekt</param>
+        <param name="viewFieldsNewHover">Lägg till ett fält i detta objekt</param>
+        <param name="viewRecordTypes">Visa posttyper</param>
+        <param name="viewRecordTypesHover">Visa och hantera posttyper för detta objekt</param>
+        <param name="viewRecordTypesNewHover">Välj en posttyp för detta objekt</param>
+        <param name="viewValidationRules">Visa valideringsregler</param>
+        <param name="viewValidationRulesHover">Visa och hantera valideringsregler för detta objekt</param>
+        <param name="viewValidationRulesNewHover">Lätt till en valideringsregel för detta objekt</param>
+        <param name="viewApprovals">Visa godkännanden</param>
+        <param name="viewApprovalsHover">Visa och hantera godkännandeprocesser för detta objekt</param>
+        <param name="viewApprovalsNewHover">Använda snabbstartguiden och lägg till en godkännandeprocess för detta objekt</param>
+        <param name="editApp">Redigera app</param>
+        <param name="editAppHover">Anpassa fliklistan, profiltilldelningar och annan information för denna app</param>
+        <param name="editTab">Redigera flik</param>
+        <param name="editTabHover">Anpassa ikonen, färg och andra detaljer för denna flik</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">Anpassa denna sidlayout</param>
+        <param name="viewRecordType">Visa posttyp</param>
+        <param name="viewRecordTypeHover">Visa och hantera denna posttyp, inklusive redigera kombinationsrutevärden</param>
+        <param name="editColumns">Redigera kolumner</param>
+        <param name="editColumnsHover">Anpassa kolumnerna i denna lista</param>
+        <param name="importData">Importera data</param>
+        <param name="importDataHover">Importera data till detta objekt</param>
+    </section>
+</iniFile>

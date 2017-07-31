@@ -1,0 +1,2337 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value></adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+
+    <adjective name="Accessed">
+        <value gender="m" plural="n">Visitato</value>
+        <value gender="m" plural="n" startsWith="s">Visitato</value>
+        <value gender="m" plural="n" startsWith="v">Visitato</value>
+        <value gender="m" plural="y">Visitati</value>
+        <value gender="m" plural="y" startsWith="s">Visitati</value>
+        <value gender="m" plural="y" startsWith="v">Visitati</value>
+        <value gender="f" plural="n">Visitata</value>
+        <value gender="f" plural="n" startsWith="v">Visitata</value>
+        <value gender="f" plural="y">Visitate</value>
+        <value gender="f" plural="y" startsWith="v">Visitate</value>
+        <value gender="f" plural="y" startsWith="s">Visitate</value>
+    </adjective>
+
+    <adjective name="Active">
+        <value gender="m" plural="n">Attivo</value>
+        <value gender="m" plural="n" startsWith="s">Attivo</value>
+        <value gender="m" plural="n" startsWith="v">Attivo</value>
+        <value gender="m" plural="y">Attivi</value>
+        <value gender="m" plural="y" startsWith="s">Attivi</value>
+        <value gender="m" plural="y" startsWith="v">Attivi</value>
+        <value gender="f" plural="n">Attiva</value>
+        <value gender="f" plural="n" startsWith="v">Attiva</value>
+        <value gender="f" plural="y">Attive</value>
+        <value gender="f" plural="y" startsWith="s">Attive</value>
+        <value gender="f" plural="y" startsWith="v">Attive</value>
+    </adjective>
+
+    <adjective name="Additional">
+       <value gender="m" plural="n">Aggiuntivo</value>
+        <value gender="m" plural="n" startsWith="s">Aggiuntivo</value>
+        <value gender="m" plural="n" startsWith="v">Aggiuntivo</value>
+        <value gender="m" plural="y">Aggiuntivi</value>
+        <value gender="m" plural="y" startsWith="s">Aggiuntivi</value>
+        <value gender="m" plural="y" startsWith="v">Aggiuntivi</value>
+        <value gender="f" plural="n">Aggiuntiva</value>
+        <value gender="f" plural="n" startsWith="v">Aggiuntiva</value>
+        <value gender="f" plural="y">Aggiuntive</value>
+        <value gender="f" plural="y" startsWith="s">Aggiuntive</value>
+        <value gender="f" plural="y" startsWith="v">Aggiuntive</value>
+    </adjective>
+
+    <adjective name="All" position="b">
+        <value gender="m" plural="n">Tutto</value>
+        <value gender="m" plural="n" startsWith="s">Tutto</value>
+        <value gender="m" plural="n" startsWith="v">Tutto</value>
+        <value gender="m" plural="y">Tutti</value>
+        <value gender="m" plural="y" startsWith="s">Tutti</value>
+        <value gender="m" plural="y" startsWith="v">Tutti</value>
+        <value gender="f" plural="n">Tutta</value>
+        <value gender="f" plural="n" startsWith="v">Tutta</value>
+        <value gender="f" plural="y">Tutte</value>
+        <value gender="f" plural="y" startsWith="v">Tutte</value>
+        <value gender="f" plural="y" startsWith="s">Tutte</value>
+    </adjective>
+
+    <adjective name="All_Day">
+       <value gender="m" plural="n">Intera giornata</value>
+        <value gender="m" plural="n" startsWith="s">Intera giornata</value>
+        <value gender="m" plural="n" startsWith="v">Intera giornata</value>
+        <value gender="m" plural="y">Intera giornata</value>
+        <value gender="m" plural="y" startsWith="s">Intera giornata</value>
+        <value gender="m" plural="y" startsWith="v">Intera giornata</value>
+        <value gender="f" plural="n">Intera giornata</value>
+        <value gender="f" plural="n" startsWith="v">Intera giornata</value>
+        <value gender="f" plural="y">Intera giornata</value>
+        <value gender="f" plural="y" startsWith="s">Intera giornata</value>
+        <value gender="f" plural="y" startsWith="v">Intera giornata</value>
+    </adjective>
+
+        <adjective name="Alternative" startsWith="v">
+        <value gender="m" plural="n">Alternativo</value>
+        <value gender="m" plural="n" startsWith="s">Alternativo</value>
+        <value gender="m" plural="n" startsWith="v">Alternativo</value>
+        <value gender="m" plural="y">Alternativi</value>
+        <value gender="m" plural="y" startsWith="s">Alternativi</value>
+        <value gender="m" plural="y" startsWith="v">Alternativi</value>
+        <value gender="f" plural="n">Alternativa</value>
+        <value gender="f" plural="n" startsWith="v">Alternativa</value>
+        <value gender="f" plural="y">Alternative</value>
+        <value gender="f" plural="y" startsWith="s">Alternative</value>
+        <value gender="f" plural="y" startsWith="v">Alternative</value>
+    </adjective>
+
+    <adjective name="Another" position="b">
+       <value gender="m" plural="n">Un altro</value>
+        <value gender="m" plural="n" startsWith="s">Un altro</value>
+        <value gender="m" plural="n" startsWith="v">Un altro</value>
+        <value gender="m" plural="y">Degli altri</value>
+        <value gender="m" plural="y" startsWith="s">Degli altri</value>
+        <value gender="m" plural="y" startsWith="v">Degli altri</value>
+        <value gender="f" plural="n">Un'altra</value>
+        <value gender="f" plural="n" startsWith="v">Un'altra</value>
+        <value gender="f" plural="y">Delle altre</value>
+        <value gender="f" plural="y" startsWith="v">Delle altre</value>
+        <value gender="f" plural="y" startsWith="s">Delle altre</value>
+    </adjective>
+        
+<adjective name="Any" startsWith="c">
+        <value gender="m" plural="n">Qualsiasi</value>
+        <value gender="m" plural="n" startsWith="s">Qualsiasi</value>
+        <value gender="m" plural="n" startsWith="v">Qualsiasi</value>
+        <value gender="m" plural="y" >Qualsiasi</value>
+        <value gender="m" plural="y" startsWith="s">Qualsiasi</value>
+        <value gender="m" plural="y" startsWith="v">Qualsiasi</value>
+     	<value gender="f" plural="n">Qualsiasi</value>
+        <value gender="f" plural="n" startsWith="v">Qualsiasi</value>
+        <value gender="f" plural="y">Qualsiasi</value>
+        <value gender="f" plural="y" startsWith="v">Qualsiasi</value>
+        <value gender="f" plural="y" startsWith="s">Qualsiasi</value>
+   </adjective>
+
+    <adjective name="Archived">
+        <value gender="m" plural="n">Archiviato</value>
+        <value gender="m" plural="n" startsWith="s">Archiviato</value>
+        <value gender="m" plural="n" startsWith="v">Archiviato</value>
+        <value gender="m" plural="y">Archiviati</value>
+        <value gender="m" plural="y" startsWith="s">Archiviati</value>
+        <value gender="m" plural="y" startsWith="v">Archiviati</value>
+        <value gender="f" plural="n">Archiviata</value>
+        <value gender="f" plural="n" startsWith="v">Archiviata</value>
+        <value gender="f" plural="y">Archiviate</value>
+        <value gender="f" plural="y" startsWith="v">Archiviate</value>
+		<value gender="f" plural="y" startsWith="v">Archiviate</value>
+    </adjective>
+
+<adjective name="Assigned">
+        <value gender="m" plural="n">Assegnato</value>
+        <value gender="m" plural="n" startsWith="s">Assegnato</value>
+        <value gender="m" plural="n" startsWith="v">Assegnato</value>
+        <value gender="m" plural="y">Assegnati</value>
+        <value gender="m" plural="y" startsWith="s">Assegnati</value>
+        <value gender="m" plural="y" startsWith="v">Assegnati</value>
+        <value gender="f" plural="n">Assegnata</value>
+        <value gender="f" plural="n" startsWith="v">Assegnata</value>
+        <value gender="f" plural="y">Assegnate</value>
+        <value gender="f" plural="y" startsWith="s">Assegnate</value>
+        <value gender="f" plural="y" startsWith="v">Assegnate</value>
+    </adjective>
+
+    <adjective name="Associated">
+       <value gender="m" plural="n">Associato</value>
+        <value gender="m" plural="n" startsWith="s">Associato</value>
+        <value gender="m" plural="n" startsWith="v">Associato</value>
+        <value gender="m" plural="y">Associati</value>
+        <value gender="m" plural="y" startsWith="s">Associati</value>
+        <value gender="m" plural="y" startsWith="v">Associati</value>
+        <value gender="f" plural="n">Associata</value>
+        <value gender="f" plural="n" startsWith="v">Associata</value>
+        <value gender="f" plural="y">Associate</value>
+        <value gender="f" plural="y" startsWith="s">Associate</value>
+        <value gender="f" plural="y" startsWith="v">Associate</value>
+    </adjective>
+
+    <adjective name="Attached">
+       <value gender="m" plural="n">Allegato</value>
+        <value gender="m" plural="n" startsWith="s">Allegato</value>
+        <value gender="m" plural="n" startsWith="v">Allegato</value>
+        <value gender="m" plural="y">Allegati</value>
+        <value gender="m" plural="y" startsWith="s">Allegati</value>
+        <value gender="m" plural="y" startsWith="v">Allegati</value>
+        <value gender="f" plural="n">Allegata</value>
+        <value gender="f" plural="n" startsWith="v">Allegata</value>
+        <value gender="f" plural="y">Allegate</value>
+        <value gender="f" plural="y" startsWith="s">Allegate</value>
+        <value gender="f" plural="y" startsWith="v">Allegate</value>
+    </adjective>
+
+    <adjective name="Available">
+       <value gender="m" plural="n">Disponibile</value>
+        <value gender="m" plural="n" startsWith="s">Disponibile</value>
+        <value gender="m" plural="n" startsWith="v">Disponibile</value>
+        <value gender="m" plural="y">Disponibili</value>
+        <value gender="m" plural="y" startsWith="s">Disponibili</value>
+        <value gender="m" plural="y" startsWith="v">Disponibili</value>
+        <value gender="f" plural="n">Disponibile</value>
+        <value gender="f" plural="n" startsWith="v">Disponibile</value>
+        <value gender="f" plural="y">Disponibili</value>
+        <value gender="f" plural="y" startsWith="v">Disponibili</value>
+        <value gender="f" plural="y" startsWith="s">Disponibili</value>
+    </adjective>
+
+    <adjective name="Billed">
+        <value gender="m" plural="n">Fatturato</value>
+        <value gender="m" plural="n" startsWith="s">Fatturato</value>
+        <value gender="m" plural="n" startsWith="v">Fatturato</value>
+        <value gender="m" plural="y">Fatturati</value>
+        <value gender="m" plural="y" startsWith="s">Fatturati</value>
+        <value gender="m" plural="y" startsWith="v">Fatturati</value>
+        <value gender="f" plural="n">Fatturata</value>
+        <value gender="f" plural="n" startsWith="v">Fatturata</value>
+        <value gender="f" plural="y">Fatturate</value>
+        <value gender="f" plural="y" startsWith="v">Fatturate</value>
+        <value gender="f" plural="y" startsWith="s">Fatturate</value>
+    </adjective>
+        
+<adjective name="Certain">
+        <value gender="m" plural="n">Certo</value>
+        <value gender="m" plural="n" startsWith="s">Certo</value>
+        <value gender="m" plural="n" startsWith="v">Certo</value>
+        <value gender="m" plural="y">Certi</value>
+        <value gender="m" plural="y" startsWith="s">Certi</value>
+        <value gender="m" plural="y" startsWith="v">Certi</value>
+        <value gender="f" plural="n">Certa</value>
+        <value gender="f" plural="n" startsWith="v">Certa</value>
+        <value gender="f" plural="y">Certe</value>
+        <value gender="f" plural="y" startsWith="v">Certe</value>
+        <value gender="f" plural="y" startsWith="s">Certe</value>
+    </adjective>
+
+    <adjective name="Closed">
+        <value gender="m" plural="n">Chiuso</value>
+        <value gender="m" plural="n" startsWith="s">Chiuso</value>
+        <value gender="m" plural="n" startsWith="v">Chiuso</value>
+        <value gender="m" plural="y">Chiusi</value>
+        <value gender="m" plural="y" startsWith="s">Chiusi</value>
+        <value gender="m" plural="y" startsWith="v">Chiusi</value>
+        <value gender="f" plural="n">Chiusa</value>
+        <value gender="f" plural="n" startsWith="v">Chiuse</value>
+        <value gender="f" plural="y">Chiusa</value>
+        <value gender="f" plural="y" startsWith="v">Chiuse</value>
+        <value gender="f" plural="y" startsWith="s">Chiuse</value>
+    </adjective>
+
+    <adjective name="Completed">
+        <value gender="m" plural="n">Completato</value>
+        <value gender="m" plural="n" startsWith="s">Completato</value>
+        <value gender="m" plural="n" startsWith="v">Completato</value>
+        <value gender="m" plural="y">Completati</value>
+        <value gender="m" plural="y" startsWith="s">Completati</value>
+        <value gender="m" plural="y" startsWith="v">Completati</value>
+        <value gender="f" plural="n">Completata</value>
+        <value gender="f" plural="n" startsWith="v">Completata</value>
+        <value gender="f" plural="y">Completate</value>
+        <value gender="f" plural="y" startsWith="v">Completate</value>
+        <value gender="f" plural="y" startsWith="s">Completate</value>
+    </adjective>
+
+<adjective name="Converted">
+    <value gender="m" plural="n">Convertito</value>
+    <value gender="m" plural="n" startsWith="s">Convertito</value>
+    <value gender="m" plural="n" startsWith="v">Convertito</value>
+    <value gender="m" plural="y">Convertiti</value>
+    <value gender="m" plural="y" startsWith="s">Convertiti</value>
+    <value gender="m" plural="y" startsWith="v">Convertiti</value>
+    <value gender="f" plural="n">Convertita</value>
+    <value gender="f" plural="n" startsWith="v">Convertita</value>
+    <value gender="f" plural="y">Convertite</value>
+    <value gender="f" plural="y" startsWith="v">Convertite</value>
+    <value gender="f" plural="y" startsWith="s">Convertite</value>
+    </adjective>
+    
+    <adjective name="Corresponding" startsWith="c">
+        <value gender="m" plural="n">Corrispondente</value>
+    <value gender="m" plural="n" startsWith="s">Corrispondente</value>
+    <value gender="m" plural="n" startsWith="v">Corrispondente</value>
+    <value gender="m" plural="y">Corrispondenti</value>
+    <value gender="m" plural="y" startsWith="s">Corrispondenti</value>
+    <value gender="m" plural="y" startsWith="v">Corrispondenti</value>
+    <value gender="f" plural="n">Corrispondente</value>
+    <value gender="f" plural="n" startsWith="v">Corrispondente</value>
+    <value gender="f" plural="y">Corrispondenti</value>
+    <value gender="f" plural="y" startsWith="v">Corrispondenti</value>
+    <value gender="f" plural="y" startsWith="s">Corrispondenti</value>
+    </adjective>
+
+<adjective name="Created" startsWith="c">
+        <value gender="m" plural="n">Creato</value>
+        <value gender="m" plural="n" startsWith="s">Creato</value>
+        <value gender="m" plural="n" startsWith="v">Creato</value>
+        <value gender="m" plural="y">Creati</value>
+        <value gender="m" plural="y" startsWith="s">Creati</value>
+        <value gender="m" plural="y" startsWith="v">Creati</value>
+        <value gender="f" plural="n">Creata</value>
+        <value gender="f" plural="n" startsWith="v">Creata</value>
+        <value gender="f" plural="y">Create</value>
+        <value gender="f" plural="y" startsWith="s">Create</value>
+        <value gender="f" plural="y" startsWith="v">Create</value>
+    </adjective>
+
+  <adjective name="Current">
+        <value gender="m" plural="n">Corrente</value>
+        <value gender="m" plural="n" startsWith="s">Corrente</value>
+        <value gender="m" plural="n" startsWith="v">Corrente</value>
+        <value gender="m" plural="y">Correnti</value>
+        <value gender="m" plural="y" startsWith="s">Correnti</value>
+        <value gender="m" plural="y" startsWith="v">Correnti</value>
+        <value gender="f" plural="n">Corrente</value>
+        <value gender="f" plural="n" startsWith="v">Corrente</value>
+        <value gender="f" plural="y">Correnti</value>
+        <value gender="f" plural="y" startsWith="v">Corrente</value>
+        <value gender="f" plural="y" startsWith="s">Corrente</value>
+    </adjective>
+
+    <adjective name="Custom">
+        <value gender="m" plural="n">Personalizzato</value>
+        <value gender="m" plural="n" startsWith="s">Personalizzato</value>
+        <value gender="m" plural="n" startsWith="v">Personalizzato</value>
+        <value gender="m" plural="y">Personalizzati</value>
+        <value gender="m" plural="y" startsWith="s">Personalizzati</value>
+        <value gender="m" plural="y" startsWith="v">Personalizzati</value>
+        <value gender="f" plural="n">Personalizzata</value>
+        <value gender="f" plural="n" startsWith="v">Personalizzata</value>
+        <value gender="f" plural="y">Personalizzate</value>
+        <value gender="f" plural="y" startsWith="v">Personalizzate</value>
+        <value gender="f" plural="y" startsWith="s">Personalizzate</value>
+    </adjective>
+
+    <adjective name="Default">
+        <value gender="m" plural="n">Predefinito</value>
+        <value gender="m" plural="n" startsWith="s">Predefinito</value>
+        <value gender="m" plural="n" startsWith="v">Predefinito</value>
+        <value gender="m" plural="y">Predefiniti</value>
+        <value gender="m" plural="y" startsWith="s">Predefiniti</value>
+        <value gender="m" plural="y" startsWith="v">Predefiniti</value>
+        <value gender="f" plural="n">Predefinita</value>
+        <value gender="f" plural="n" startsWith="v">Predefinita</value>
+        <value gender="f" plural="y">Predefinite</value>
+        <value gender="f" plural="y" startsWith="v">Predefinite</value>
+        <value gender="f" plural="y" startsWith="s">Predefinite</value>
+    </adjective>
+
+    <adjective name="Delegated">
+        <value gender="m" plural="n">Delegato</value>
+        <value gender="m" plural="n">Delegato</value>
+        <value gender="m" plural="n" startsWith="s">Delegato</value>
+        <value gender="m" plural="n" startsWith="v">Delegato</value>
+        <value gender="m" plural="y">Delegati</value>
+        <value gender="m" plural="y" startsWith="s">Delegati</value>
+        <value gender="m" plural="y" startsWith="v">Delegati</value>
+        <value gender="f" plural="n">Delegata</value>
+        <value gender="f" plural="n" startsWith="v">Delegata</value>
+        <value gender="f" plural="y">Delegate</value>
+        <value gender="f" plural="y" startsWith="v">Delegate</value>
+        <value gender="f" plural="y" startsWith="s">Delegate</value>
+    </adjective>
+
+    <adjective name="Deleted">
+       <value gender="m" plural="n">Eliminato</value>
+        <value gender="m" plural="n" startsWith="s">Eliminato</value>
+        <value gender="m" plural="n" startsWith="v">Eliminato</value>
+        <value gender="m" plural="y">Eliminati</value>
+        <value gender="m" plural="y" startsWith="s">Eliminati</value>
+        <value gender="m" plural="y" startsWith="v">Eliminati</value>
+        <value gender="f" plural="n">Eliminata</value>
+        <value gender="f" plural="n" startsWith="v">Eliminata</value>
+        <value gender="f" plural="y">Eliminate</value>
+        <value gender="f" plural="y" startsWith="v">Eliminate</value>
+        <value gender="f" plural="y" startsWith="s">Eliminate</value>
+    </adjective>
+
+    <adjective name="Designated" startsWith="c">
+        <value gender="m" plural="n">Designato</value>
+        <value gender="m" plural="n" startsWith="s">Designato</value>
+        <value gender="m" plural="n" startsWith="v">Designato</value>
+        <value gender="m" plural="y">Designati</value>
+        <value gender="m" plural="y" startsWith="s">Designati</value>
+        <value gender="m" plural="y" startsWith="v">Designati</value>
+        <value gender="f" plural="n">Designata</value>
+        <value gender="f" plural="n" startsWith="v">Designata</value>
+        <value gender="f" plural="y">Designate</value>
+        <value gender="f" plural="y" startsWith="v">Designate</value>
+        <value gender="f" plural="y" startsWith="s">Designate</value>
+    </adjective>
+    
+
+    <adjective name="Different" startsWith="c">
+        <value gender="m" plural="n">Diverso</value>
+        <value gender="m" plural ="n" startsWith="s">Diverso</value>
+         <value gender="m" plural ="n" startsWith="v">Diverso</value>
+         <value gender="m" plural ="y">Diversi</value>
+         <value gender ="m" plural ="y" startsWith="s">Diversi</value>
+         <value gender ="m" plural ="y" startsWith="v">Diversi</value>
+         <value gender ="f" plural ="n">Diversa</value>
+         <value gender ="f" plural ="n" startsWith="v">Diversa</value>
+         <value gender ="f" plural ="y">Diverse</value>
+         <value gender ="f" plural ="y" startsWith="v">Diverse</value>
+        <value gender ="f" plural ="y" startsWith="s">Diverse</value>
+    </adjective>
+
+<adjective name="Draft">
+       <value gender="m" plural="n">Bozza</value>
+        <value gender="m" plural="n" startsWith="s">Bozza</value>
+        <value gender="m" plural="n" startsWith="v">Bozza</value>
+        <value gender="m" plural="y">Bozza</value>
+        <value gender="m" plural="y" startsWith="s">Bozza</value>
+        <value gender="m" plural="y" startsWith="v">Bozza</value>
+        <value gender="f" plural="n">Bozza</value>
+        <value gender="f" plural="n" startsWith="v">Bozza</value>
+        <value gender="f" plural="y">Bozza</value>
+        <value gender="f" plural="y" startsWith="v">Bozza</value>
+        <value gender="f" plural="y" startsWith="s">Bozza</value>
+    </adjective>
+
+     <adjective name="Duplicate">
+        <value gender="m" plural="n">Duplicato</value>
+        <value gender="m" plural="n" startsWith="s">Duplicato</value>
+        <value gender="m" plural="n" startsWith="v">Duplicato</value>
+        <value gender="m" plural="y">Duplicati</value>
+        <value gender="m" plural="y" startsWith="s">Duplicati</value>
+        <value gender="m" plural="y" startsWith="v">Duplicati</value>
+        <value gender="f" plural="n">Duplicata</value>
+        <value gender="f" plural="n" startsWith="v">Duplicata</value>
+        <value gender="f" plural="y">Duplicate</value>
+        <value gender="f" plural="y" startsWith="v">Duplicate</value>
+        <value gender="f" plural="y" startsWith="s">Duplicate</value>
+    </adjective>
+
+    <adjective name="Each" position="b">
+        <value gender="m" plural="n">Ogni</value>
+        <value gender="m" plural="n" startsWith="s">Ogni</value>
+        <value gender="m" plural="n" startsWith="v">Ogni</value>
+        <value gender="m" plural="y">Ogni</value>
+        <value gender="m" plural="y" startsWith="s">Ogni</value>
+        <value gender="m" plural="y" startsWith="v">Ogni</value>
+        <value gender="f" plural="n">Ogni</value>
+        <value gender="f" plural="n" startsWith="v">Ogni</value>
+        <value gender="f" plural="y">Ogni</value>
+        <value gender="f" plural="y" startsWith="s">Ogni</value>
+        <value gender="f" plural="y" startsWith="v">Ogni</value>
+    </adjective>
+
+    <adjective name="Editable">
+        <value gender="m" plural="n">Modificabile</value>
+        <value gender="m" plural="n" startsWith="s">Modificabile</value>
+        <value gender="m" plural="n" startsWith="v">Modificabile</value>
+        <value gender="m" plural="y">Modificabili</value>
+        <value gender="m" plural="y" startsWith="s">Modificabili</value>
+        <value gender="m" plural="y" startsWith="v">Modificabili</value>
+        <value gender="f" plural="n">Modificabile</value>
+        <value gender="f" plural="n" startsWith="v">Modificabile</value>
+        <value gender="f" plural="y">Modificabili</value>
+        <value gender="f" plural="y" startsWith="c">Modificabili</value>
+         <value gender="f" plural="y" startsWith="c">Modificabili</value>
+               </adjective>        
+        
+ <adjective name="Empty">
+       <value gender="m" plural="n">Vuoto</value>
+        <value gender="m" plural="n" startsWith="s">Vuoto</value>
+        <value gender="m" plural="n" startsWith="v">Vuoto</value>
+        <value gender="m" plural="y">Vuoti</value>
+        <value gender="m" plural="y" startsWith="s">Vuoti</value>
+        <value gender="m" plural="y" startsWith="v">Vuoti</value>
+        <value gender="f" plural="n">Vuota</value>
+        <value gender="f" plural="n" startsWith="v">Vuota</value>
+        <value gender="f" plural="y">Vuote</value>
+        <value gender="f" plural="y" startsWith="v">Vuote</value>
+        <value gender="f" plural="y" startsWith="s">Vuote</value>
+ </adjective> 
+
+     <adjective name="Every" position="b">
+       <value gender="m" plural="n">Ogni</value>
+        <value gender="m" plural="n" startsWith="s">Ogni</value>
+        <value gender="m" plural="n" startsWith="v">Ogni</value>
+        <value gender="m" plural="y">Ogni</value>
+        <value gender="m" plural="y" startsWith="s">Ogni</value>
+        <value gender="m" plural="y" startsWith="v">Ogni</value>
+        <value gender="f" plural="n">Ogni</value>
+        <value gender="f" plural="n" startsWith="v">Ogni</value>
+        <value gender="f" plural="y">Ogni</value>
+        <value gender="f" plural="y" startsWith="s">Ogni</value>
+        <value gender="f" plural="y" startsWith="v">Ogni</value>
+     </adjective>
+
+    <adjective name="Existing">
+        <value gender="m" plural="n">Esistente</value>
+        <value gender="m" plural="n" startsWith="s">Esistente</value>
+        <value gender="m" plural="n" startsWith="v">Esistente</value>
+        <value gender="m" plural="y">Esistenti</value>
+        <value gender="m" plural="y" startsWith="s">Esistenti</value>
+        <value gender="m" plural="y" startsWith="v">Esistenti</value>
+        <value gender="f" plural="n">Esistente</value>
+        <value gender="f" plural="n" startsWith="v">Esistente</value>
+        <value gender="f" plural="y">Esistenti</value>
+        <value gender="f" plural="y" startsWith="s">Esistenti</value>
+        <value gender="f" plural="y" startsWith="v">Esistenti</value>
+    </adjective>
+
+    <adjective name="Expected">
+        <value gender="m" plural="n">Previsto</value>
+        <value gender="m" plural="n" startsWith="s">Previsto</value>
+        <value gender="m" plural="n" startsWith="v">Previsto</value>
+        <value gender="m" plural="y">Previsti</value>
+        <value gender="m" plural="y" startsWith="s">Previsti</value>
+        <value gender="m" plural="y" startsWith="v">Previsti</value>
+        <value gender="f" plural="n">Prevista</value>
+        <value gender="f" plural="n" startsWith="v">Prevista</value>
+        <value gender="f" plural="y">Previste</value>
+        <value gender="f" plural="y" startsWith="v">Previste</value>
+        <value gender="f" plural="y" startsWith="s">Previste</value>
+    </adjective>
+
+    <adjective name="First">
+        <value gender="m" plural="n">Primo</value>
+        <value gender="m" plural="n" startsWith="s">Primo</value>
+        <value gender="m" plural="n" startsWith="v">Primo</value>
+        <value gender="m" plural="y">Primi</value>
+        <value gender="m" plural="y" startsWith="s">Primi</value>
+        <value gender="m" plural="y" startsWith="v">Primi</value>
+        <value gender="f" plural="n">Prima</value>
+        <value gender="f" plural="n" startsWith="v">Prima</value>
+        <value gender="f" plural="y">Prime</value>
+        <value gender="f" plural="y" startsWith="v">Prime</value>
+        <value gender="f" plural="y" startsWith="s">Prime</value>
+    </adjective>
+
+    <adjective name="Following">
+       <value gender="m" plural="n">Seguente</value>
+        <value gender="m" plural="n" startsWith="s">Seguente</value>
+        <value gender="m" plural="n" startsWith="v">Seguente</value>
+        <value gender="m" plural="y">Seguenti</value>
+        <value gender="m" plural="y" startsWith="s">Seguenti</value>
+        <value gender="m" plural="y" startsWith="v">Seguenti</value>
+        <value gender="f" plural="n">Seguente</value>
+        <value gender="f" plural="n" startsWith="s">Seguente</value>
+        <value gender="f" plural="y">Seguenti</value>
+        <value gender="f" plural="y" startsWith="s">Seguenti</value>
+        <value gender="f" plural="y" startsWith="v">Seguenti</value>
+    </adjective>
+
+    <adjective name="Future">
+        <value gender="m" plural="n">Futuro</value>
+        <value gender="m" plural="n" startsWith="s">Futuro</value>
+        <value gender="m" plural="n" startsWith="v">Futuro</value>
+        <value gender="m" plural="y">Futuri</value>
+        <value gender="m" plural="y" startsWith="s">Futuri</value>
+        <value gender="m" plural="y" startsWith="v">Futuri</value>
+        <value gender="f" plural="n">Futura</value>
+        <value gender="f" plural="n" startsWith="v">Futura</value>
+        <value gender="f" plural="y">Future</value>
+        <value gender="f" plural="y" startsWith="v">Future</value>
+        <value gender="f" plural="y" startsWith="s">Future</value>
+    </adjective>
+
+    <adjective name="Helpful">
+        <value gender="m" plural="n">Utile</value>
+        <value gender="m" plural="n" startsWith="s">Utile</value>
+        <value gender="m" plural="n" startsWith="v">Utile</value>
+        <value gender="m" plural="y">Utili</value>
+        <value gender="m" plural="y" startsWith="s">Utili</value>
+        <value gender="m" plural="y" startsWith="v">Utili</value>
+        <value gender="f" plural="n">Utile</value>
+        <value gender="f" plural="n" startsWith="v">Utile</value>
+        <value gender="f" plural="y">Utili</value>
+        <value gender="f" plural="y" startsWith="s">Utili</value>
+        <value gender="f" plural="y" startsWith="v">Utili</value>
+    </adjective>
+
+    <adjective name="Historical">
+        <value gender="m" plural="n">Cronologico</value>
+        <value gender="m" plural="n" startsWith="s">Cronologico</value>
+        <value gender="m" plural="n" startsWith="v">Cronologico</value>
+        <value gender="m" plural="y">Cronologici</value>
+        <value gender="m" plural="y" startsWith="s">Cronologici</value>
+        <value gender="m" plural="y" startsWith="v">Cronologici</value>
+        <value gender="f" plural="n">Cronologica</value>
+        <value gender="f" plural="n" startsWith="v">Cronologica</value>
+        <value gender="f" plural="y">Cronologiche</value>
+        <value gender="f" plural="y" startsWith="v">Cronologiche</value>
+        <value gender="f" plural="y" startsWith="s">Cronologiche</value>
+    </adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot" startsWith="c">
+        <value plural="n">Hot</value>
+    </adjective>
+
+<adjective name="Ignored" startsWith="v ">
+       <value gender="m" plural="n">Ignorato</value>
+        <value gender="m" plural="n" startsWith="s">Ignorato</value>
+        <value gender="m" plural="n" startsWith="v">Ignorato</value>
+        <value gender="m" plural="y">Ignorati</value>
+        <value gender="m" plural="y" startsWith="s">Ignorati</value>
+        <value gender="m" plural="y" startsWith="v">Ignorati</value>
+        <value gender="f" plural="n">Ignorata</value>
+        <value gender="f" plural="n" startsWith="v">Ignorata</value>
+        <value gender="f" plural="y">Ignorate</value>
+        <value gender="f" plural="y" startsWith="s">Ignorate</value>
+        <value gender="f" plural="y" startsWith="v">Ignorate</value>
+    </adjective>
+
+<adjective name="Imported" startsWith="v">
+         <value plural="n" gender="m">Importato</value>
+         <value plural="n" gender="m" startsWith="s">Importato</value>
+         <value plural="n" gender="m" startsWith="v">Importato</value>
+         <value plural="y" gender="m">Importati</value>
+         <value plural="y" gender="m" startsWith="s">Importati</value>
+         <value plural="y" gender="m" startsWith="v">Importati</value>
+         <value plural="n" gender="f">Importata</value>
+         <value plural="n" gender="f" startsWith="v">Importata</value>
+         <value plural="y" gender="f">Importate</value>
+         <value plural="y" gender="f" startsWith="v">Importate</value>
+        <value plural="y" gender="f" startsWith="s">Importate</value>
+    </adjective>
+
+    <adjective name="Inactive">
+        <value gender="m" plural="n">Inattivo</value>
+        <value gender="m" plural="n" startsWith="s">Inattivo</value>
+        <value gender="m" plural="n" startsWith="v">Inattivo</value>
+        <value gender="m" plural="y">Inattivi</value>
+        <value gender="m" plural="y" startsWith="s">Inattivi</value>
+        <value gender="m" plural="y" startsWith="v">Inattivi</value>
+        <value gender="f" plural="n">Inattiva</value>
+        <value gender="f" plural="n" startsWith="v">Inattiva</value>
+        <value gender="f" plural="y">Inattive</value>
+        <value gender="f" plural="y" startsWith="s">Inattive</value>
+        <value gender="f" plural="y" startsWith="v">Inattive</value>
+    </adjective>
+
+    <adjective name="Individual">
+       <value gender="m" plural="n">Singolo</value>
+        <value gender="m" plural="n" startsWith="s">Singolo</value>
+        <value gender="m" plural="n" startsWith="v">Singolo</value>
+        <value gender="m" plural="y">Singoli</value>
+        <value gender="m" plural="y" startsWith="s">Singoli</value>
+        <value gender="m" plural="y" startsWith="v">Singoli</value>
+        <value gender="f" plural="n">Singola</value>
+        <value gender="f" plural="n" startsWith="s">Singola</value>
+        <value gender="f" plural="y">Singole</value>
+        <value gender="f" plural="y" startsWith="s">Singole</value>
+        <value gender="f" plural="y" startsWith="v">Singole</value>
+    </adjective>
+
+    <adjective name="Invalid">
+        <value gender="m" plural="n">Non valido</value>
+        <value gender="m" plural="n" startsWith="s">Non valido</value>
+        <value gender="m" plural="n" startsWith="v">Non valido</value>
+        <value gender="m" plural="y">Non validi</value>
+        <value gender="m" plural="y" startsWith="s">Non validi</value>
+        <value gender="m" plural="y" startsWith="v">Non validi</value>
+        <value gender="f" plural="n">Non valida</value>
+        <value gender="f" plural="n" startsWith="v">Non valida</value>
+        <value gender="f" plural="y">Non valide</value>
+        <value gender="f" plural="y" startsWith="v">Non valide</value>
+        <value gender="f" plural="y" startsWith="s">Non valide</value>
+    </adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+<adjective name="Its" startsWith="c">
+        <value gender="m" plural="n">Suo</value>
+        <value gender="m" plural="n" startsWith="s">Suo</value>
+        <value gender="m" plural="n" startsWith="v">Suo</value>
+        <value gender="m" plural="y">Suoi</value>
+        <value gender="m" plural="y" startsWith="s">Suoi</value>
+        <value gender="m" plural="y" startsWith="v">Suoi</value>
+        <value gender="f" plural="n">Sua</value>
+        <value gender="f" plural="n" startsWith="v">Sua</value>
+        <value gender="f" plural="y">Sue</value>
+        <value gender="f" plural="y" startsWith="s">Sue</value>
+        <value gender="f" plural="y" startsWith="v">Sue</value>
+    </adjective>
+
+    <adjective name="Key" startsWith="c">
+        <value plural="n">Key</value>
+    </adjective>
+        
+ <adjective name="Last" startsWith="v">
+         <value plural="n" gender="m">Ultimo</value>
+         <value plural="n" gender="m" startsWith="s">Ultimo</value>
+         <value plural="n" gender="m" startsWith="v">Ultimo</value>
+         <value plural="y" gender="m">Ultimi</value>
+         <value plural="y" gender="m" startsWith="s">Ultimi</value>
+         <value plural="y" gender="m" startsWith="v">Ultimi</value>
+         <value plural="n" gender="f">Ultima</value>
+         <value plural="n" gender="f" startsWith="v">Ultima</value>
+         <value plural="y" gender="f">Ultime</value>
+         <value plural="y" gender="f" startsWith="v">Ultime</value>
+        <value plural="y" gender="f" startsWith="s">Ultime</value>
+    </adjective>
+
+<adjective name="Linked" startsWith="c">
+       <value gender="m" plural="n">Collegato</value>
+        <value gender="m" plural="n" startsWith="s">Collegato</value>
+        <value gender="m" plural="n" startsWith="v">Collegato</value>
+        <value gender="m" plural="y">Collegati</value>
+        <value gender="m" plural="y" startsWith="s">Collegati</value>
+        <value gender="m" plural="y" startsWith="v">Collegati</value>
+        <value gender="f" plural="n">Collegata</value>
+        <value gender="f" plural="n" startsWith="v">Collegata</value>
+        <value gender="f" plural="y">Collegate</value>
+        <value gender="f" plural="y" startsWith="s">Collegate</value>
+        <value gender="f" plural="y" startsWith="v">Collegate</value>
+    </adjective>
+
+    <adjective name="Loaded">
+       <value gender="m" plural="n">Caricato</value>
+        <value gender="m" plural="n" startsWith="s">Caricato</value>
+        <value gender="m" plural="n" startsWith="v">Caricato</value>
+        <value gender="m" plural="y">Caricati</value>
+        <value gender="m" plural="y" startsWith="s">Caricati</value>
+        <value gender="m" plural="y" startsWith="v">Caricati</value>
+        <value gender="f" plural="n">Caricata</value>
+        <value gender="f" plural="n" startsWith="v">Caricata</value>
+        <value gender="f" plural="y">Caricate</value>
+        <value gender="f" plural="y" startsWith="v">Caricate</value>
+        <value gender="f" plural="y" startsWith="s">Caricate</value>
+    </adjective>
+
+    <adjective name="Locked">
+       <value gender="m" plural="n">Bloccato</value>
+        <value gender="m" plural="n" startsWith="s">Bloccato</value>
+        <value gender="m" plural="n" startsWith="v">Bloccato</value>
+        <value gender="m" plural="y">Bloccati</value>
+        <value gender="m" plural="y" startsWith="s">Bloccati</value>
+        <value gender="m" plural="y" startsWith="v">Bloccati</value>
+        <value gender="f" plural="n">Bloccata</value>
+        <value gender="f" plural="n" startsWith="v">Bloccata</value>
+        <value gender="f" plural="y">Bloccate</value>
+        <value gender="f" plural="y" startsWith="v">Bloccate</value>
+        <value gender="f" plural="y" startsWith="s">Bloccate</value>
+    </adjective>
+
+    <adjective name="Managing" startsWith="c">
+        <value gender="m" plural="n">di gestione</value>
+        <value gender="m" plural="n" startsWith="s">di gestione</value>
+        <value gender="m" plural="n" startsWith="v">di gestione</value>
+        <value gender="m" plural="y">di gestione</value>
+        <value gender="m" plural="y" startsWith="s">di gestione</value>
+        <value gender="m" plural="y" startsWith="v">di gestione</value>
+        <value gender="f" plural="n">di gestione</value>
+        <value gender="f" plural="n" startsWith="v">di gestione</value>
+        <value gender="f" plural="y">di gestione</value>
+        <value gender="f" plural="y" startsWith="s">di gestione</value>
+        <value gender="f" plural="y" startsWith="v">di gestione</value>
+    </adjective>
+
+     <adjective name="Managed">
+        <value gender="m" plural="n">Gestito</value>
+        <value gender="m" plural="n" startsWith="s">Gestito</value>
+        <value gender="m" plural="n" startsWith="v">Gestito</value>
+        <value gender="m" plural="y">Gestiti</value>
+        <value gender="m" plural="y" startsWith="s">Gestiti</value>
+        <value gender="m" plural="y" startsWith="v">Gestiti</value>
+        <value gender="f" plural="n">Gestita</value>
+        <value gender="f" plural="n" startsWith="v">Gestita</value>
+        <value gender="f" plural="y">Gestite</value>
+        <value gender="f" plural="y" startsWith="v">Gestite</value>
+        <value gender="f" plural="y" startsWith="s">Gestite</value>
+    </adjective>
+
+     <adjective name="Master">
+        <value gender="m" plural="n">Principale</value>
+        <value gender="m" plural="n" startsWith="s">Principale</value>
+        <value gender="m" plural="n" startsWith="v">Principale</value>
+        <value gender="m" plural="y">Principali</value>
+        <value gender="m" plural="y" startsWith="s">Principali</value>
+        <value gender="m" plural="y" startsWith="v">Principali</value>
+        <value gender="f" plural="n">Principale</value>
+        <value gender="f" plural="n" startsWith="v">Principale</value>
+        <value gender="f" plural="y">Principali</value>
+        <value gender="f" plural="y" startsWith="v">Principali</value>
+        <value gender="f" plural="y" startsWith="s">Principali</value>
+    </adjective>
+
+    <adjective name="Matching">
+        <value gender="m" plural="n">Corrispondente</value>
+        <value gender="m" plural="n" startsWith="s">Corrispondente</value>
+        <value gender="m" plural="n" startsWith="v">Corrispondente</value>
+        <value gender="m" plural="y">Corrispondenti</value>
+        <value gender="m" plural="y" startsWith="s">Corrispondenti</value>
+        <value gender="m" plural="y" startsWith="v">Corrispondenti</value>
+        <value gender="f" plural="n">Corrispondente</value>
+        <value gender="f" plural="n" startsWith="v">Corrispondente</value>
+        <value gender="f" plural="y">Corrispondenti</value>
+        <value gender="f" plural="y" startsWith="v">Corrispondenti</value>
+        <value gender="f" plural="y" startsWith="s">Corrispondenti</value>
+    </adjective>
+
+    <adjective name="Merged" startsWith="v">
+        <value gender="m" plural="n">Unito</value>
+        <value gender="f" plural="n">Unita</value>
+        <value gender="m" plural="y">Uniti</value>
+        <value gender="f" plural="y">Unite</value>
+    </adjective>
+
+        <adjective name="More" startsWith="v">
+        <value gender="m" plural="n">Altro</value>
+            <value gender="m" plural="n" startsWith="s">Altro</value>
+        <value gender="m" plural="n" startsWith="v">Altro</value>
+        <value gender="m" plural="y">Altri</value>
+        <value gender="m" plural="y" startsWith="s">Altri</value>
+        <value gender="m" plural="y" startsWith="v">Altri</value>
+        <value gender="f" plural="n">Altra</value>
+        <value gender="f" plural="n" startsWith="v">Altra</value>
+        <value gender="f" plural="y">Altre</value>
+        <value gender="f" plural="y" startsWith="s">Altre</value>
+        <value gender="f" plural="y" startsWith="v">Altre</value>
+    </adjective>
+
+	<adjective name="Multiple" startsWith="c">
+        <value gender="m" plural="n">Più</value>
+        <value gender="m" plural="n" startsWith="s">Più</value>
+        <value gender="m" plural="n" startsWith="v">Più</value>
+        <value gender="m" plural="y">Più</value>
+        <value gender="m" plural="y" startsWith="s">Più</value>
+        <value gender="m" plural="y" startsWith="v">Più</value>
+        <value gender="f" plural="n">Più</value>
+        <value gender="f" plural="n" startsWith="v">Più</value>
+        <value gender="f" plural="y">Più</value>
+        <value gender="f" plural="y" startsWith="s">Più</value>
+        <value gender="f" plural="y" startsWith="v">Più</value>
+    </adjective>
+
+    <adjective name="My">
+        <value gender="m" plural="n">personali</value>
+        <value gender="m" plural="n" startsWith="s">personale</value>
+        <value gender="m" plural="n" startsWith="v">personale</value>
+        <value gender="m" plural="y">personali</value>
+        <value gender="m" plural="y" startsWith="s">personali</value>
+        <value gender="m" plural="y" startsWith="v">personali</value>
+        <value gender="f" plural="n">personale</value>
+        <value gender="f" plural="n" startsWith="v">personale</value>
+        <value gender="f" plural="y">personali</value>
+        <value gender="f" plural="y" startsWith="v">personali</value>
+        <value gender="f" plural="y" startsWith="s">personali</value>
+    </adjective>
+
+    <adjective name="Neglected">
+        <value gender="m" plural="n">Trascurato</value>
+        <value gender="m" plural="n" startsWith="s">Trascurato</value>
+        <value gender="m" plural="n" startsWith="v">Trascurato</value>
+        <value gender="m" plural="y">Trascurati</value>
+        <value gender="m" plural="y" startsWith="s">Trascurati</value>
+        <value gender="m" plural="y" startsWith="v">Trascurati</value>
+        <value gender="f" plural="n">Trascurata</value>
+        <value gender="f" plural="n" startsWith="v">Trascurata</value>
+        <value gender="f" plural="y">Trascurate</value>
+        <value gender="f" plural="y" startsWith="v">Trascurate</value>
+        <value gender="f" plural="y" startsWith="s">Trascurate</value>
+    </adjective>
+
+    <adjective name="New">
+        <value gender="m" plural="n">Nuovo</value>
+        <value gender="m" plural="n" startsWith="s">Nuovo</value>
+        <value gender="m" plural="n" startsWith="v">Nuovo</value>
+        <value gender="m" plural="y">Nuovi</value>
+        <value gender="m" plural="y" startsWith="s">Nuovi</value>
+        <value gender="m" plural="y" startsWith="v">Nuovi</value>
+        <value gender="f" plural="n">Nuova</value>
+        <value gender="f" plural="n" startsWith="v">Nuova</value>
+        <value gender="f" plural="y">Nuove</value>
+        <value gender="f" plural="y" startsWith="v">Nuove</value>
+        <value gender="f" plural="y" startsWith="s">Nuove</value>
+    </adjective>
+
+    <adjective name="No">
+        <value gender="m" plural="n">Nessun</value>
+        <value gender="m" plural="n" startsWith="s">Nessuno</value>
+        <value gender="m" plural="n" startsWith="v">Nessun</value>
+        <value gender="m" plural="y">Nessun</value>
+        <value gender="m" plural="y" startsWith="s"></value>
+        <value gender="m" plural="y" startsWith="v">Nessun</value>
+        <value gender="f" plural="n">Nessuna</value>
+        <value gender="f" plural="n" startsWith="v">Nessuna</value>
+        <value gender="f" plural="y">Nessuna</value>
+        <value gender="f" plural="y" startsWith="v">Nessuna</value>
+        <value gender="f" plural="y" startsWith="s">Nessuna</value>
+    </adjective>
+    
+    <adjective name="Non-primary" startsWith="c">
+        <value gender="m" plural="n">Non principale</value>
+        <value gender="m" plural="n" startsWith="s">Non principale</value>
+        <value gender="m" plural="n" startsWith="v">Non principale</value>
+        <value gender="m" plural="y">Non principali</value>
+        <value gender="m" plural="y" startsWith="s">Non principali</value>
+        <value gender="m" plural="y" startsWith="v">Non principali</value>
+        <value gender="f" plural="n">Non principale</value>
+        <value gender="f" plural="n" startsWith="v">Non principale</value>
+        <value gender="f" plural="y">Non principali</value>
+        <value gender="f" plural="y" startsWith="v">Non principali</value>
+        <value gender="f" plural="y" startsWith="s">Non principali</value>
+    </adjective>
+    
+
+    <adjective name="Num" position="b"> <!--number-->
+        <value gender="m" plural="n">N.</value>
+        <value gender="m" plural="n" startsWith="s">N.</value>
+        <value gender="m" plural="n" startsWith="v">N.</value>
+        <value gender="m" plural="y">N.</value>
+        <value gender="m" plural="y" startsWith="s">N.</value>
+        <value gender="m" plural="y" startsWith="v">N.</value>
+        <value gender="f" plural="n">N.</value>
+        <value gender="f" plural="n" startsWith="v">N.</value>
+        <value gender="f" plural="y">N.</value>
+        <value gender="f" plural="y" startsWith="c">N.</value>
+    </adjective>
+        
+    <adjective name="One">
+        <value gender="m" plural="n">Un</value>
+        <value gender="m" plural="n" startsWith="s">Uno</value>
+        <value gender="m" plural="n" startsWith="v">Un</value>
+        <value gender="f" plural="n">Una</value>
+        <value gender="f" plural="n" startsWith="v">Un'</value>
+    </adjective>
+
+<adjective name="Older">
+       <value gender="m" plural="n">Meno recente</value>
+        <value gender="m" plural="n" startsWith="s">Meno recente</value>
+        <value gender="m" plural="n" startsWith="v">Meno recente</value>
+        <value gender="m" plural="y">Meno recenti</value>
+        <value gender="m" plural="y" startsWith="s">Meno recenti</value>
+        <value gender="m" plural="y" startsWith="v">Meno recenti</value>
+        <value gender="f" plural="n">Meno recente</value>
+        <value gender="f" plural="n" startsWith="v">Meno recente</value>
+        <value gender="f" plural="y">Meno recenti</value>
+        <value gender="f" plural="y" startsWith="v">Meno recenti</value>
+        <value gender="f" plural="y" startsWith="s">Meno recenti</value>
+    </adjective>
+
+    <adjective name="Open">
+        <value gender="m" plural="n">Aperto</value>
+        <value gender="m" plural="n" startsWith="s">Aperto</value>
+        <value gender="m" plural="n" startsWith="v">Aperto</value>
+        <value gender="m" plural="y">Aperti</value>
+        <value gender="m" plural="y" startsWith="s">Aperti</value>
+        <value gender="m" plural="y" startsWith="v">Aperti</value>
+        <value gender="f" plural="n">Aperta</value>
+        <value gender="f" plural="n" startsWith="v">Aperta</value>
+        <value gender="f" plural="y">Aperte</value>
+        <value gender="f" plural="y" startsWith="s">Aperte</value>
+        <value gender="f" plural="y" startsWith="v">Aperte</value>
+    </adjective>
+
+    <adjective name="Original">
+       <value gender="m" plural="n">Originale</value>
+        <value gender="m" plural="n" startsWith="s">Originale</value>
+        <value gender="m" plural="n" startsWith="v">Originale</value>
+        <value gender="m" plural="y">Originali</value>
+        <value gender="m" plural="y" startsWith="s">Originali</value>
+        <value gender="m" plural="y" startsWith="v">Originali</value>
+        <value gender="f" plural="n">Originale</value>
+        <value gender="f" plural="n" startsWith="v">Originale</value>
+        <value gender="f" plural="y">Originali</value>
+        <value gender="f" plural="y" startsWith="s">Originali</value>
+        <value gender="f" plural="y" startsWith="v">Originali</value>
+    </adjective>
+
+     <adjective name="Other">
+       <value gender="m" plural="n">Altro</value>
+        <value gender="m" plural="n" startsWith="s">Altro</value>
+        <value gender="m" plural="n" startsWith="v">Altro</value>
+        <value gender="m" plural="y">Altri</value>
+        <value gender="m" plural="y" startsWith="s">Altri</value>
+        <value gender="m" plural="y" startsWith="v">Altri</value>
+        <value gender="f" plural="n">Altra</value>
+        <value gender="f" plural="n" startsWith="v">Altra</value>
+        <value gender="f" plural="y">Altre</value>
+        <value gender="f" plural="y" startsWith="s">Altre</value>
+        <value gender="f" plural="y" startsWith="v">Altre</value>
+    </adjective>
+
+    <adjective name="Overdue">
+        <value gender="m" plural="n">Scaduto</value>
+        <value gender="m" plural="n" startsWith="s">Scaduto</value>
+        <value gender="m" plural="n" startsWith="v">Scaduto</value>
+        <value gender="m" plural="y">Scaduti</value>
+        <value gender="m" plural="y" startsWith="s">Scaduti</value>
+        <value gender="m" plural="y" startsWith="v">Scaduti</value>
+        <value gender="f" plural="n">Scaduta</value>
+        <value gender="f" plural="n" startsWith="v">Scaduta</value>
+        <value gender="f" plural="y">Scadute</value>
+        <value gender="f" plural="y" startsWith="v">Scadute</value>
+        <value gender="f" plural="y" startsWith="s">Scadute</value>
+    </adjective>
+
+    <adjective name="Overridden">
+        <value gender="m" plural="n">Ignorato</value>
+        <value gender="m" plural="n" startsWith="s">Ignorato</value>
+        <value gender="m" plural="n" startsWith="v">Ignorato</value>
+        <value gender="m" plural="y">Ignorati</value>
+        <value gender="m" plural="y" startsWith="s">Ignorati</value>
+        <value gender="m" plural="y" startsWith="v">Ignorati</value>
+        <value gender="f" plural="n">Ignorata</value>
+        <value gender="f" plural="n" startsWith="v">Ignorata</value>
+        <value gender="f" plural="y">Ignorate</value>
+        <value gender="f" plural="y" startsWith="s">Ignorate</value>
+        <value gender="f" plural="y" startsWith="v">Ignorate</value>
+    </adjective>
+
+<adjective name="Owning" startsWith="c">
+        <value gender="m" plural="n">Titolare</value>
+        <value gender="m" plural="n" startsWith="s">Titolare</value>
+        <value gender="m" plural="n" startsWith="v">Titolare</value>
+        <value gender="m" plural="y">Titolari</value>
+        <value gender="m" plural="y" startsWith="s">Titolari</value>
+        <value gender="m" plural="y" startsWith="v">Titolari</value>
+        <value gender="f" plural="n">Titolare</value>
+        <value gender="f" plural="n" startsWith="v">Titolare</value>
+        <value gender="f" plural="y">Titolari</value>
+        <value gender="f" plural="y" startsWith="s">Titolari</value>
+        <value gender="f" plural="y" startsWith="v">Titolari</value>
+    </adjective>
+
+    <adjective name="Personal">
+        <value gender="m" plural="n">Personale</value>
+        <value gender="m" plural="n" startsWith="s">Personale</value>
+        <value gender="m" plural="n" startsWith="v">Personale</value>
+        <value gender="m" plural="y">Personali</value>
+        <value gender="m" plural="y" startsWith="s">Personali</value>
+        <value gender="m" plural="y" startsWith="v">Personali</value>
+        <value gender="f" plural="n">Personale</value>
+        <value gender="f" plural="n" startsWith="v">Personale</value>
+        <value gender="f" plural="y">Personali</value>
+        <value gender="f" plural="y" startsWith="v">Personali</value>
+        <value gender="f" plural="y" startsWith="s">Personali</value>
+    </adjective>
+
+    <adjective name="Popular">
+        <value gender="m" plural="n">Apprezzato</value>
+        <value gender="m" plural="n" startsWith="s">Apprezzato</value>
+        <value gender="m" plural="n" startsWith="v">Apprezzato</value>
+        <value gender="m" plural="y">Apprezzati</value>
+        <value gender="m" plural="y" startsWith="s">Apprezzati</value>
+        <value gender="m" plural="y" startsWith="v">Apprezzati</value>
+        <value gender="f" plural="n">Apprezzata</value>
+        <value gender="f" plural="n" startsWith="v">Apprezzata</value>
+        <value gender="f" plural="y">Apprezzate</value>
+        <value gender="f" plural="y" startsWith="s">Apprezzate</value>
+        <value gender="f" plural="y" startsWith="v">Apprezzate</value>
+    </adjective>
+
+	<adjective name="Predefined">
+        <value gender="m" plural="n">Predefinito</value>
+        <value gender="m" plural="n" startsWith="s">Predefinito</value>
+        <value gender="m" plural="n" startsWith="v">Predefinito</value>
+        <value gender="m" plural="y">Predefiniti</value>
+        <value gender="m" plural="y" startsWith="s">Predefiniti</value>
+        <value gender="m" plural="y" startsWith="v">Predefiniti</value>
+        <value gender="f" plural="n">Predefinita</value>
+        <value gender="f" plural="n" startsWith="v">Predefinita</value>
+        <value gender="f" plural="y">Predefinite</value>
+        <value gender="f" plural="y" startsWith="v">Predefinite</value>
+        <value gender="f" plural="y" startsWith="s">Predefinite</value>
+    </adjective>
+
+  <adjective name="Proposed">
+       <value gender="m" plural="n">Proposto</value>
+        <value gender="m" plural="n" startsWith="s">Proposto</value>
+        <value gender="m" plural="n" startsWith="v">Proposto</value>
+        <value gender="m" plural="y">Proposti</value>
+        <value gender="m" plural="y" startsWith="s">Proposti</value>
+        <value gender="m" plural="y" startsWith="v">Proposti</value>
+        <value gender="f" plural="n">Proposta</value>
+        <value gender="f" plural="n" startsWith="v">Proposta</value>
+        <value gender="f" plural="y">Proposte</value>
+        <value gender="f" plural="y" startsWith="v">Proposte</value>
+        <value gender="f" plural="y" startsWith="s">Proposte</value>
+    </adjective>  
+
+    <adjective name="Primary">
+        <value gender="m" plural="n">Principale</value>
+        <value gender="m" plural="n" startsWith="s">Principale</value>
+        <value gender="m" plural="n" startsWith="v">Principale</value>
+        <value gender="m" plural="y">Principali</value>
+        <value gender="m" plural="y" startsWith="s">Principali</value>
+        <value gender="m" plural="y" startsWith="v">Principali</value>
+        <value gender="f" plural="n">Principale</value>
+        <value gender="f" plural="n" startsWith="v">Principale</value>
+        <value gender="f" plural="y">Principali</value>
+        <value gender="f" plural="y" startsWith="v">Principali</value>
+        <value gender="f" plural="y" startsWith="s">Principali</value>
+    </adjective>
+
+    <adjective name="Private">
+        <value gender="m" plural="n">Privato</value>
+        <value gender="m" plural="n" startsWith="s">Privato</value>
+        <value gender="m" plural="n" startsWith="v">Privato</value>
+        <value gender="m" plural="y">Privati</value>
+        <value gender="m" plural="y" startsWith="s">Privati</value>
+        <value gender="m" plural="y" startsWith="v">Privati</value>
+        <value gender="f" plural="n">Privata</value>
+        <value gender="f" plural="n" startsWith="v">Privata</value>
+        <value gender="f" plural="y">Private</value>
+        <value gender="f" plural="y" startsWith="v">Private</value>
+        <value gender="f" plural="y" startsWith="s">Private</value>
+    </adjective>
+
+ <adjective name="Public">
+        <value gender="m" plural="n">Pubblico</value>
+        <value gender="m" plural="n" startsWith="s">Pubblico</value>
+        <value gender="m" plural="n" startsWith="v">Pubblico</value>
+        <value gender="m" plural="y">Pubblici</value>
+        <value gender="m" plural="y" startsWith="s">Pubblici</value>
+        <value gender="m" plural="y" startsWith="v">Pubblici</value>
+        <value gender="f" plural="n">Pubblica</value>
+        <value gender="f" plural="n" startsWith="v">Pubblica</value>
+        <value gender="f" plural="y">Pubbliche</value>
+        <value gender="f" plural="y" startsWith="v">Pubbliche</value>
+        <value gender="f" plural="y" startsWith="s">Pubbliche</value>
+    </adjective>
+
+<adjective name="Published">
+       <value gender="m" plural="n">Pubblicato</value>
+        <value gender="m" plural="n" startsWith="s">Pubblicato</value>
+        <value gender="m" plural="n" startsWith="v">Pubblicato</value>
+        <value gender="m" plural="y">Pubblicati</value>
+        <value gender="m" plural="y" startsWith="s">Pubblicati</value>
+        <value gender="m" plural="y" startsWith="v">Pubblicati</value>
+        <value gender="f" plural="n">Pubblicata</value>
+        <value gender="f" plural="n" startsWith="v">Pubblicata</value>
+        <value gender="f" plural="y">Pubblicate</value>
+        <value gender="f" plural="y" startsWith="v">Pubblicate</value>
+        <value gender="f" plural="y" startsWith="s">Pubblicate</value>
+    </adjective>
+
+    <adjective name="Queue_Owned">
+        <value gender="m" plural="n">di proprietà delle aree di attesa</value>
+        <value gender="m" plural="n" startsWith="s">di proprietà delle aree di attesa</value>
+        <value gender="m" plural="n" startsWith="v">di proprietà delle aree di attesa</value>
+        <value gender="m" plural="y">di proprietà delle aree di attesa</value>
+        <value gender="m" plural="y" startsWith="s">di proprietà delle aree di attesa</value>
+        <value gender="m" plural="y" startsWith="v">di proprietà delle aree di attesa</value>
+        <value gender="f" plural="n">di proprietà delle aree di attesa</value>
+        <value gender="f" plural="n" startsWith="v">di proprietà delle aree di attesa</value>
+        <value gender="f" plural="y">di proprietà delle aree di attesa</value>
+        <value gender="f" plural="y" startsWith="v">di proprietà delle aree di attesa</value>
+        <value gender="f" plural="y" startsWith="s">di proprietà delle aree di attesa</value>
+    </adjective>
+        
+    <adjective name="Recent">
+        <value gender="m" plural="n">Recente</value>
+        <value gender="m" plural="n" startsWith="s">Recente</value>
+        <value gender="m" plural="n" startsWith="v">Recente</value>
+        <value gender="m" plural="y">Recenti</value>
+        <value gender="m" plural="y" startsWith="s">Recenti</value>
+        <value gender="m" plural="y" startsWith="v">Recenti</value>
+        <value gender="f" plural="n">Recente</value>
+        <value gender="f" plural="n" startsWith="v">Recente</value>
+        <value gender="f" plural="y">Recenti</value>
+        <value gender="f" plural="y" startsWith="v">Recenti</value>
+        <value gender="f" plural="y" startsWith="s">Recenti</value>
+    </adjective>
+
+ <adjective name="Recently">
+        <value gender="m" plural="n">recentemente</value>
+        <value gender="m" plural="n" startsWith="s">recentemente</value>
+        <value gender="m" plural="n" startsWith="v">recentemente</value>
+        <value gender="m" plural="y">recentemente</value>
+        <value gender="m" plural="y" startsWith="s">recentemente</value>
+        <value gender="m" plural="y" startsWith="v">recentemente</value>
+        <value gender="f" plural="n">recentemente</value>
+        <value gender="f" plural="n" startsWith="v">recentemente</value>
+        <value gender="f" plural="y">recentemente</value>
+        <value gender="f" plural="y" startsWith="v">recentemente</value>
+        <value gender="f" plural="y" startsWith="s">recentemente</value>
+    </adjective>
+
+    <adjective name="Recurring">
+        <value gender="m" plural="n">Ricorrente</value>
+        <value gender="m" plural="n" startsWith="s">Ricorrente</value>
+        <value gender="m" plural="n" startsWith="v">Ricorrente</value>
+        <value gender="m" plural="y">Ricorrenti</value>
+        <value gender="m" plural="y" startsWith="s">Ricorrenti</value>
+        <value gender="m" plural="y" startsWith="v">Ricorrenti</value>
+        <value gender="f" plural="n">Ricorrente</value>
+        <value gender="f" plural="n" startsWith="v">Ricorrente</value>
+        <value gender="f" plural="y">Ricorrenti</value>
+        <value gender="f" plural="y" startsWith="c">Ricorrenti</value>
+    </adjective>
+
+
+    <adjective name="Remaining">
+       <value gender="m" plural="n">Restante</value>
+        <value gender="m" plural="n" startsWith="s">Restante</value>
+        <value gender="m" plural="n" startsWith="v">Restante</value>
+        <value gender="m" plural="y">Restanti</value>
+        <value gender="m" plural="y" startsWith="s">Restanti</value>
+        <value gender="m" plural="y" startsWith="v">Restanti</value>
+        <value gender="f" plural="n">Restante</value>
+        <value gender="f" plural="n" startsWith="v">Restante</value>
+        <value gender="f" plural="y">Restanti</value>
+        <value gender="f" plural="y" startsWith="v">Restanti</value>
+        <value gender="f" plural="y" startsWith="s">Restanti</value>
+    </adjective>
+
+    <adjective name="Rejected">
+       <value gender="m" plural="n">Rifiutato</value>
+        <value gender="m" plural="n" startsWith="s">Rifiutato</value>
+        <value gender="m" plural="n" startsWith="v">Rifiutato</value>
+        <value gender="m" plural="y">Rifiutati</value>
+        <value gender="m" plural="y" startsWith="s">Rifiutati</value>
+        <value gender="m" plural="y" startsWith="v">Rifiutati</value>
+        <value gender="f" plural="n">Rifiutata</value>
+        <value gender="f" plural="n" startsWith="v">Rifiutata</value>
+        <value gender="f" plural="y">Rifiutate</value>
+        <value gender="f" plural="y" startsWith="v">Rifiutate</value>
+        <value gender="f" plural="y" startsWith="s">Rifiutate</value>
+    </adjective>
+
+  <adjective name="Related">
+        <value gender="m" plural="n">relativo</value>
+        <value gender="m" plural="n" startsWith="s">relativo</value>
+        <value gender="m" plural="n" startsWith="v">relativo</value>
+        <value gender="m" plural="y">relativi</value>
+        <value gender="m" plural="y" startsWith="s">relativi</value>
+        <value gender="m" plural="y" startsWith="v">relativi</value>
+        <value gender="f" plural="n">relativa</value>
+        <value gender="f" plural="n" startsWith="v">relativa</value>
+        <value gender="f" plural="y">relative</value>
+        <value gender="f" plural="y" startsWith="v">relative</value>
+        <value gender="f" plural="y" startsWith="s">relative</value>
+    </adjective>
+
+    <adjective name="Relevant">
+        <value gender="m" plural="n">rilevante</value>
+        <value gender="m" plural="n" startsWith="s">rilevante</value>
+        <value gender="m" plural="n" startsWith="v">rilevante</value>
+        <value gender="m" plural="y">rilevanti</value>
+        <value gender="m" plural="y" startsWith="s">rilevanti</value>
+        <value gender="m" plural="y" startsWith="v">rilevanti</value>
+        <value gender="f" plural="n">rilevante</value>
+        <value gender="f" plural="n" startsWith="v">rilevante</value>
+        <value gender="f" plural="y">rilevanti</value>
+        <value gender="f" plural="y" startsWith="v">rilevanti</value>
+        <value gender="f" plural="y" startsWith="s">rilevanti</value>
+    </adjective>
+
+    <adjective name="Resulting">
+       <value gender="m" plural="n">Risultante</value>
+        <value gender="m" plural="n" startsWith="s">Risultante</value>
+        <value gender="m" plural="n" startsWith="v">Risultante</value>
+        <value gender="m" plural="y">Risultanti</value>
+        <value gender="m" plural="y" startsWith="s">Risultanti</value>
+        <value gender="m" plural="y" startsWith="v">Risultanti</value>
+        <value gender="f" plural="n">Risultante</value>
+        <value gender="f" plural="n" startsWith="v">Risultante</value>
+        <value gender="f" plural="y">Risultanti</value>
+        <value gender="f" plural="y" startsWith="v">Risultanti</value>
+        <value gender="f" plural="y" startsWith="s">Risultanti</value>
+    </adjective>
+
+    <adjective name="Reviewed">
+        <value gender="m" plural="n">rivisto</value>
+        <value gender="m" plural="n" startsWith="s">rivisto</value>
+        <value gender="m" plural="n" startsWith="v">rivisto</value>
+        <value gender="m" plural="y">rivisti</value>
+        <value gender="m" plural="y" startsWith="s">rivisti</value>
+        <value gender="m" plural="y" startsWith="v">rivisti</value>
+        <value gender="f" plural="n">rivista</value>
+        <value gender="f" plural="n" startsWith="v">rivista</value>
+        <value gender="f" plural="y">riviste</value>
+        <value gender="f" plural="y" startsWith="v">riviste</value>
+        <value gender="f" plural="y" startsWith="s">riviste</value>
+    </adjective>
+
+    <adjective name="Same">
+       <value gender="m" plural="n">Stesso</value>
+        <value gender="m" plural="n" startsWith="s">Stesso</value>
+        <value gender="m" plural="n" startsWith="v">Stesso</value>
+        <value gender="m" plural="y">Stessi</value>
+        <value gender="m" plural="y" startsWith="s">Stessi</value>
+        <value gender="m" plural="y" startsWith="v">Stessi</value>
+        <value gender="f" plural="n">Stessa</value>
+        <value gender="f" plural="n" startsWith="s">Stessa</value>
+        <value gender="f" plural="y">Stesse</value>
+        <value gender="f" plural="y" startsWith="s">Stesse</value>
+        <value gender="f" plural="y" startsWith="v">Stesse</value>
+    </adjective>
+
+    <adjective name="Sample">
+        <value gender="m" plural="n">di esempio</value>
+        <value gender="m" plural="n" startsWith="s">di esempio</value>
+        <value gender="m" plural="n" startsWith="v">di esempio</value>
+        <value gender="m" plural="y">di esempio</value>
+        <value gender="m" plural="y" startsWith="s">di esempio</value>
+        <value gender="m" plural="y" startsWith="v">di esempio</value>
+        <value gender="f" plural="n">di esempio</value>
+        <value gender="f" plural="n" startsWith="v">di esempio</value>
+        <value gender="f" plural="y">di esempio</value>
+        <value gender="f" plural="y" startsWith="v">di esempio</value>
+        <value gender="f" plural="y" startsWith="s">di esempio</value>
+    </adjective>
+
+	<adjective name="Scheduled">
+        <value gender="m" plural="n">Pianificato</value>
+        <value gender="m" plural="n" startsWith="s">Pianificato</value>
+        <value gender="m" plural="n" startsWith="v">Pianificato</value>
+        <value gender="m" plural="y">Pianificati</value>
+        <value gender="m" plural="y" startsWith="s">Pianificati</value>
+        <value gender="m" plural="y" startsWith="v">Pianificati</value>
+        <value gender="f" plural="n">Pianificata</value>
+        <value gender="f" plural="n" startsWith="v">Pianificata</value>
+        <value gender="f" plural="y">Pianificate</value>
+        <value gender="f" plural="y" startsWith="v">Pianificate</value>
+        <value gender="f" plural="y" startsWith="s">Pianificate</value>
+    </adjective>
+
+    <adjective name="Second">
+        <value gender="m" plural="n">secondo</value>
+        <value gender="m" plural="n" startsWith="s">secondo</value>
+        <value gender="m" plural="n" startsWith="v">secondo</value>
+        <value gender="m" plural="y">secondi</value>
+        <value gender="m" plural="y" startsWith="s">secondi</value>
+        <value gender="m" plural="y" startsWith="v">secondi</value>
+        <value gender="f" plural="n">seconda</value>
+        <value gender="f" plural="n" startsWith="s">seconda</value>
+        <value gender="f" plural="y">seconde</value>
+        <value gender="f" plural="y" startsWith="s">seconde</value>
+        <value gender="f" plural="y" startsWith="v">seconde</value>
+    </adjective>
+
+    <adjective name="Selected">
+        <value gender="m" plural="n">selezionato</value>
+        <value gender="m" plural="n" startsWith="s">selezionato</value>
+        <value gender="m" plural="n" startsWith="v">selezionato</value>
+        <value gender="m" plural="y">selezionati</value>
+        <value gender="m" plural="y" startsWith="s">selezionati</value>
+        <value gender="m" plural="y" startsWith="v">selezionati</value>
+        <value gender="f" plural="n">selezionata</value>
+        <value gender="f" plural="n" startsWith="s">selezionata</value>
+        <value gender="f" plural="y">selezionate</value>
+        <value gender="f" plural="y" startsWith="s">selezionate</value>
+        <value gender="f" plural="y" startsWith="v">selezionate</value>
+    </adjective>
+
+    <adjective name="Shared" startsWith="c">
+        <value gender="m" plural="n">Condiviso</value>
+        <value gender="m" plural="n" startsWith="s">Condiviso</value>
+        <value gender="m" plural="n" startsWith="v">Condiviso</value>
+        <value gender="m" plural="y">Condivisi</value>
+        <value gender="m" plural="y" startsWith="s">Condivisi</value>
+        <value gender="m" plural="y" startsWith="v">Condivisi</value>
+        <value gender="f" plural="n">Condivisa</value>
+        <value gender="f" plural="n" startsWith="v">Condivisa</value>
+        <value gender="f" plural="y">Condivise</value>
+        <value gender="f" plural="y" startsWith="s">Condivise</value>
+        <value gender="f" plural="y" startsWith="v">Condivise</value>
+    </adjective>
+
+    <adjective name="Similar">
+        <value gender="m" plural="n">Simile</value>
+        <value gender="m" plural="n" startsWith="s">Simile</value>
+        <value gender="m" plural="n" startsWith="v">Simile</value>
+        <value gender="m" plural="y">Simili</value>
+        <value gender="m" plural="y" startsWith="s">Simili</value>
+        <value gender="m" plural="y" startsWith="v">Simili</value>
+        <value gender="f" plural="n">Simile</value>
+        <value gender="f" plural="n" startsWith="s">Simile</value>
+        <value gender="f" plural="y">Simili</value>
+        <value gender="f" plural="y" startsWith="s">Simili</value>
+    </adjective>
+
+    <adjective name="Single">
+        <value gender="m" plural="n">Singolo</value>
+        <value gender="m" plural="n" startsWith="s">Singolo</value>
+        <value gender="m" plural="n" startsWith="v">Singolo</value>
+        <value gender="m" plural="y">Singoli</value>
+        <value gender="m" plural="y" startsWith="s">Singoli</value>
+        <value gender="m" plural="y" startsWith="v">Singoli</value>
+        <value gender="f" plural="n">Singola</value>
+        <value gender="f" plural="n" startsWith="s">Singola</value>
+        <value gender="f" plural="y">Singole</value>
+        <value gender="f" plural="y" startsWith="s">Singole</value>
+        <value gender="f" plural="y" startsWith="v">Singole</value>
+    </adjective>
+
+    <adjective name="Social" startsWith="c">
+         <value plural="n" gender="m">Sociale</value>
+         <value plural="n" gender="m" startsWith="s">Sociale</value>
+         <value plural="n" gender="m" startsWith="v">Sociale</value>
+         <value plural="y" gender="m">Sociali</value>
+         <value plural="y" gender="m" startsWith="s">Sociali</value>
+         <value plural="y" gender="m" startsWith="v">Sociali</value>
+         <value plural="n" gender="f">Sociale</value>
+         <value plural="n" gender="f" startsWith="v">Sociale</value>
+         <value plural="y" gender="f">Sociali</value>
+         <value plural="y" gender="f" startsWith="v">Sociali</value>
+        <value plural="y" gender="f" startsWith="s">Sociali</value>
+    </adjective>
+        
+    <adjective name="Source" startsWith="v">
+        <value gender="m" plural="n">Origine</value>
+    <value gender="m" plural="n" startsWith="s">Origine</value>
+    <value gender="m" plural="n" startsWith="v">Origine</value>
+    <value gender="m" plural="y">Origine</value>
+    <value gender="m" plural="y" startsWith="s">Origine</value>
+    <value gender="m" plural="y" startsWith="v">Origine</value>
+    <value gender="f" plural="n">Origine</value>
+    <value gender="f" plural="n" startsWith="v">Origine</value>
+    <value gender="f" plural="y">Origine</value>
+    <value gender="f" plural="y" startsWith="v">Origine</value>
+    <value gender="f" plural="y" startsWith="s">Origine</value>
+    </adjective>
+
+    <adjective name="Specified">
+        <value gender="m" plural="n">Specificato</value>
+        <value gender="m" plural="n" startsWith="s">Specificato</value>
+        <value gender="m" plural="n" startsWith="v">Specificato</value>
+        <value gender="m" plural="y">Specificati</value>
+        <value gender="m" plural="y" startsWith="s">Specificati</value>
+        <value gender="m" plural="y" startsWith="v">Specificati</value>
+        <value gender="f" plural="n">Specificata</value>
+        <value gender="f" plural="n" startsWith="s">Specificata</value>
+        <value gender="f" plural="y">Specificate</value>
+        <value gender="f" plural="y" startsWith="s">Specified</value>
+        <value gender="f" plural="y" startsWith="v">Specified</value>
+    </adjective>
+
+    <adjective name="Stale">
+        <value gender="m" plural="n">non aggiornato</value>
+        <value gender="m" plural="n" startsWith="s">non aggiornato</value>
+        <value gender="m" plural="n" startsWith="v">non aggiornato</value>
+        <value gender="m" plural="y">non aggiornati</value>
+        <value gender="m" plural="y" startsWith="s">non aggiornati</value>
+        <value gender="m" plural="y" startsWith="v">non aggiornati</value>
+        <value gender="f" plural="n">non aggiornata</value>
+        <value gender="f" plural="n" startsWith="s">non aggiornata</value>
+        <value gender="f" plural="y">non aggiornate</value>
+        <value gender="f" plural="y" startsWith="s">non aggiornate</value>
+        <value gender="f" plural="y" startsWith="v">non aggiornate</value>
+    </adjective>
+
+    <adjective name="Standard">
+        <value gender="m" plural="n">Standard</value>
+        <value gender="m" plural="n" startsWith="s">Standard</value>
+        <value gender="m" plural="n" startsWith="v">Standard</value>
+        <value gender="m" plural="y">Standard</value>
+        <value gender="m" plural="y" startsWith="s">Standard</value>
+        <value gender="m" plural="y" startsWith="v">Standard</value>
+        <value gender="f" plural="n">Standard</value>
+        <value gender="f" plural="n" startsWith="s">Standard</value>
+        <value gender="f" plural="y">Standard</value>
+        <value gender="f" plural="y" startsWith="s">Standard</value>
+        <value gender="f" plural="y" startsWith="v">Standard</value>
+    </adjective>
+
+    <adjective name="Stuck">
+        <value gender="m" plural="n">bloccato</value>
+        <value gender="m" plural="n" startsWith="s">bloccato</value>
+        <value gender="m" plural="n" startsWith="v">bloccato</value>
+        <value gender="m" plural="y">bloccati</value>
+        <value gender="m" plural="y" startsWith="s">bloccati</value>
+        <value gender="m" plural="y" startsWith="v">bloccati</value>
+        <value gender="f" plural="n">bloccata</value>
+        <value gender="f" plural="n" startsWith="v">bloccata</value>
+        <value gender="f" plural="y">bloccate</value>
+        <value gender="f" plural="y" startsWith="v">bloccate</value>
+        <value gender="f" plural="y" startsWith="s">bloccate</value>
+    </adjective>
+
+    <adjective name="Suggested">
+        <value gender="m" plural="n">Suggerito</value>
+        <value gender="m" plural="n" startsWith="s">Suggerito</value>
+        <value gender="m" plural="n" startsWith="v">Suggerito</value>
+        <value gender="m" plural="y">Suggeriti</value>
+        <value gender="m" plural="y" startsWith="s">Suggeriti</value>
+        <value gender="m" plural="y" startsWith="v">Suggeriti</value>
+        <value gender="f" plural="n">Suggerita</value>
+        <value gender="f" plural="n" startsWith="s">Suggerita</value>
+        <value gender="f" plural="y">Suggerite</value>
+        <value gender="f" plural="y" startsWith="s">Suggerite</value>
+        <value gender="f" plural="y" startsWith="v">Suggerite</value>
+    </adjective>
+
+    <adjective name="Supplementary" startsWith="c">
+        <value gender="m" plural="n">Supplementare</value>
+        <value gender="m" plural="n" startsWith="s">Supplementare</value>
+        <value gender="m" plural="n" startsWith="v">Supplementare</value>
+        <value gender="m" plural="y">Supplementari</value>
+        <value gender="m" plural="y" startsWith="s">Supplementari</value>
+        <value gender="m" plural="y" startsWith="v">Supplementari</value>
+        <value gender="f" plural="n">Supplementare</value>
+        <value gender="f" plural="n" startsWith="v">Supplementare</value>
+        <value gender="f" plural="y">Supplementari</value>
+        <value gender="f" plural="y" startsWith="s">Supplementari</value>
+        <value gender="f" plural="y" startsWith="v">Supplementari</value>
+    </adjective>
+
+    <adjective name="Synced" startsWith="c">
+        <value gender="m" plural="n">Sincronizzato</value>
+        <value gender="m" plural="n" startsWith="s">Sincronizzato</value>
+        <value gender="m" plural="n" startsWith="v">Sincronizzato</value>
+        <value gender="m" plural="y">Sincronizzati</value>
+        <value gender="m" plural="y" startsWith="s">Sincronizzati</value>
+        <value gender="m" plural="y" startsWith="v">Sincronizzati</value>
+        <value gender="f" plural="n">Sincronizzata</value>
+        <value gender="f" plural="n" startsWith="v">Sincronizzata</value>
+        <value gender="f" plural="y">Sincronizzate</value>
+        <value gender="f" plural="y" startsWith="s">Sincronizzate</value>
+        <value gender="f" plural="y" startsWith="v">Sincronizzate</value>
+    </adjective>
+
+	<adjective name="That" position="b">
+ 	  <value gender="m" plural="n">Quel </value>
+	  <value gender="m" plural="n" startsWith="s">Quello </value>
+	  <value gender="m" plural="n" startsWith="v">Quell'</value>
+ 	  <value gender="m" plural="y">Quei </value>
+ 	  <value gender="m" plural="y" startsWith="s">Quegli </value>
+	  <value gender="m" plural="y" startsWith="v">Quegli </value>
+	  <value gender="f" plural="n">Quella </value>
+ 	  <value gender="f" plural="n" startsWith="v">Quell' </value>
+ 	  <value gender="f" plural="n" startsWith="s">Quella </value>
+ 	 <value gender="f" plural="y">Quelle </value>
+ 	 <value gender="f" plural="y" startsWith="v">Quelle </value>
+	 <value gender="f" plural="y" startsWith="s">Quelle </value>
+ 	</adjective>
+
+    <adjective name="Their" position="b">
+        <value gender="m" plural="n"></value>
+        <value gender="m" plural="n" startsWith="s"></value>
+        <value gender="m" plural="n" startsWith="v"></value>
+        <value gender="m" plural="y"></value>
+        <value gender="m" plural="y" startsWith="s"></value>
+        <value gender="m" plural="y" startsWith="v"></value>
+        <value gender="f" plural="n"></value>
+        <value gender="f" plural="n" startsWith="v"></value>
+        <value gender="f" plural="y"></value>
+        <value gender="f" plural="y" startsWith="v"></value>
+        <value gender="f" plural="y" startsWith="s"></value>
+    </adjective>
+
+    <adjective name="These" startsWith="c">
+        <value gender="m" plural="n">Questo</value>
+    <value gender="m" plural="n" startsWith="s">Questo</value>
+    <value gender="m" plural="n" startsWith="v">Questo</value>
+    <value gender="m" plural="y">Questi</value>
+    <value gender="m" plural="y" startsWith="s">Questi</value>
+    <value gender="m" plural="y" startsWith="v">Questi</value>
+    <value gender="f" plural="n">Questa</value>
+    <value gender="f" plural="n" startsWith="v">Questa</value>
+    <value gender="f" plural="y">Queste</value>
+    <value gender="f" plural="y" startsWith="v">Queste</value>
+    <value gender="f" plural="y" startsWith="s">Queste</value>
+    </adjective>
+
+    <adjective name="Those">
+       <value gender="m" plural="n">Quel</value>
+        <value gender="m" plural="n" startsWith="s">Quello</value>
+        <value gender="m" plural="n" startsWith="v">Quell'</value>
+        <value gender="m" plural="y">Quei</value>
+        <value gender="m" plural="y" startsWith="s">Quei</value>
+        <value gender="m" plural="y" startsWith="v">Quegli</value>
+        <value gender="f" plural="n">Quella</value>
+        <value gender="f" plural="n" startsWith="v">Quella</value>
+        <value gender="f" plural="y">Quelle</value>
+        <value gender="f" plural="y" startsWith="v">Quelle</value>
+        <value gender="f" plural="y" startsWith="s">Quelle</value>
+    </adjective>
+
+    <adjective name="This" position="b">
+        <value gender="m" plural="n">Questo </value>
+        <value gender="m" plural="n" startsWith="s">Questo </value>
+        <value gender="m" plural="n" startsWith="v">Questo </value>
+        <value gender="m" plural="y">Questi </value>
+        <value gender="m" plural="y" startsWith="s">Questi </value>
+        <value gender="m" plural="y" startsWith="v">Questi </value>
+        <value gender="f" plural="n">Questa </value>
+        <value gender="f" plural="n" startsWith="v">Quest'</value>
+        <value gender="f" plural="y">Queste </value>
+        <value gender="f" plural="y" startsWith="v">Queste </value>
+        <value gender="f" plural="y" startsWith="s">Queste </value>
+    </adjective>
+        
+    <adjective name="Today" startsWith="c">
+        <value plural="n">Today</value>
+    </adjective>
+
+	<adjective name="Top">
+        <value gender="m" plural="n">Migliore</value>
+        <value gender="m" plural="n" startsWith="s">Migliore</value>
+        <value gender="m" plural="n" startsWith="v">Migliore</value>
+        <value gender="m" plural="y">Migliori</value>
+        <value gender="m" plural="y" startsWith="s">Migliori</value>
+        <value gender="m" plural="y" startsWith="v">Migliori</value>
+        <value gender="f" plural="n">Migliore</value>
+        <value gender="f" plural="n" startsWith="v">Migliore</value>
+        <value gender="f" plural="y">Migliori</value>
+        <value gender="f" plural="y" startsWith="v">Migliori</value>
+        <value gender="f" plural="y" startsWith="s">Migliori</value>
+    </adjective>   
+
+    <adjective name="Total">
+        <value gender="m" plural="n">Totale</value>
+        <value gender="m" plural="n" startsWith="s">Totale</value>
+        <value gender="m" plural="n" startsWith="v">Totale</value>
+        <value gender="m" plural="y">Totali</value>
+        <value gender="m" plural="y" startsWith="s">Totali</value>
+        <value gender="m" plural="y" startsWith="v">Totali</value>
+        <value gender="f" plural="n">Totale</value>
+        <value gender="f" plural="n" startsWith="v">Totale</value>
+        <value gender="f" plural="y">Totali</value>
+        <value gender="f" plural="y" startsWith="v">Totali</value>
+        <value gender="f" plural="y" startsWith="s">Totali</value>
+    </adjective>
+
+    <adjective name="Translated">
+        <value gender="m" plural="n">Tradotto</value>
+        <value gender="m" plural="n" startsWith="s">Tradotto</value>
+        <value gender="m" plural="n" startsWith="v">Tradotto</value>
+        <value gender="m" plural="y">Tradotti</value>
+        <value gender="m" plural="y" startsWith="s">Tradotti</value>
+        <value gender="m" plural="y" startsWith="v">Tradotti</value>
+        <value gender="f" plural="n">Tradotta</value>
+        <value gender="f" plural="n" startsWith="v">Tradotta</value>
+        <value gender="f" plural="y">Tradotte</value>
+        <value gender="f" plural="n" startsWith="c">tradotta</value>
+        <value gender="f" plural="y" startsWith="c">Tradotte</value>
+        <value gender="f" plural="y" startsWith="c">Tradotte</value>
+     </adjective>   
+
+    <adjective name="Transferable">
+        <value gender="m" plural="n">Trasferibile</value>
+        <value gender="m" plural="n" startsWith="s">Trasferibile</value>
+        <value gender="m" plural="n" startsWith="v">Trasferibile</value>
+        <value gender="m" plural="y">Trasferibili</value>
+        <value gender="m" plural="y" startsWith="s">Trasferibili</value>
+        <value gender="m" plural="y" startsWith="v">Trasferibili</value>
+        <value gender="f" plural="n">Trasferibile</value>
+        <value gender="f" plural="n" startsWith="v">Trasferibile</value>
+        <value gender="f" plural="y">Trasferibili</value>
+        <value gender="f" plural="y" startsWith="v">Trasferibili</value>
+        <value gender="f" plural="y" startsWith="s">Trasferibili</value>
+    </adjective>
+
+    <adjective name="Unconverted">
+        <value gender="m" plural="n">non convertito</value>
+        <value gender="m" plural="n" startsWith="s">non convertito</value>
+        <value gender="m" plural="n" startsWith="v">non convertito</value>
+        <value gender="m" plural="y">non convertiti</value>
+        <value gender="m" plural="y" startsWith="s">non convertiti</value>
+        <value gender="m" plural="y" startsWith="v">non convertiti</value>
+        <value gender="f" plural="n">non convertita</value>
+        <value gender="f" plural="n" startsWith="v">non convertita</value>
+        <value gender="f" plural="y">non convertite</value>
+        <value gender="f" plural="y" startsWith="v">non convertite</value>
+        <value gender="f" plural="y" startsWith="s">non convertite</value>
+    </adjective>
+
+    <adjective name="Unread">
+        <value gender="m" plural="n">non letto</value>
+        <value gender="m" plural="n" startsWith="s">non letto</value>
+        <value gender="m" plural="n" startsWith="v">non letto</value>
+        <value gender="m" plural="y">non letti</value>
+        <value gender="m" plural="y" startsWith="s">non letti</value>
+        <value gender="m" plural="y" startsWith="v">non letti</value>
+        <value gender="f" plural="n">non letta</value>
+        <value gender="f" plural="n" startsWith="v">non letta</value>
+        <value gender="f" plural="y">non lette</value>
+        <value gender="f" plural="y" startsWith="v">non lette</value>
+        <value gender="f" plural="y" startsWith="s">non lette</value>
+    </adjective>
+
+<adjective name="Unreviewed">
+        <value gender="m" plural="n">non rivisto</value>
+        <value gender="m" plural="n" startsWith="s">non rivisto</value>
+        <value gender="m" plural="n" startsWith="v">non rivisto </value>
+        <value gender="m" plural="y">non rivisti</value>
+        <value gender="m" plural="y" startsWith="s">non rivisti </value>
+        <value gender="m" plural="y" startsWith="v">non rivisti </value>
+        <value gender="f" plural="n">non rivista</value>
+        <value gender="f" plural="n" startsWith="v">non rivista </value>
+        <value gender="f" plural="y">non riviste</value>
+        <value gender="f" plural="y" startsWith="v">non riviste </value>
+        <value gender="f" plural="y" startsWith="s">non riviste </value>
+    </adjective>
+
+    <adjective name="Unresolved">
+        <value gender="m" plural="n">non risolto</value>
+        <value gender="m" plural="n" startsWith="s">non risolto</value>
+        <value gender="m" plural="n" startsWith="v">non risolto</value>
+        <value gender="m" plural="y">non risolti</value>
+        <value gender="m" plural="y" startsWith="s">non risolti</value>
+        <value gender="m" plural="y" startsWith="v">non risolti</value>
+        <value gender="f" plural="n">non risolta</value>
+        <value gender="f" plural="n" startsWith="v">non risolta</value>
+        <value gender="f" plural="y">non risolte</value>
+        <value gender="f" plural="y" startsWith="s">non risolte</value>
+        <value gender="f" plural="y" startsWith="v">non risolte</value>
+    </adjective>
+
+    <adjective name="Unused">
+        <value gender="m" plural="n">Non utilizzato</value>
+        <value gender="m" plural="n" startsWith="s">Non utilizzato</value>
+        <value gender="m" plural="n" startsWith="v">Non utilizzato</value>
+        <value gender="m" plural="y">Non utilizzati</value>
+        <value gender="m" plural="y" startsWith="s">Non utilizzati</value>
+        <value gender="m" plural="y" startsWith="v">Non utilizzati</value>
+        <value gender="f" plural="n">Non utilizzata</value>
+        <value gender="f" plural="n" startsWith="v">Non utilizzata</value>
+        <value gender="f" plural="y">Non utilizzate</value>
+        <value gender="f" plural="y" startsWith="v">Non utilizzate</value>
+        <value gender="f" plural="y" startsWith="s">Non utilizzate</value>
+    </adjective>
+
+    <adjective name="Unfiled">
+        <value gender="m" plural="n">Non archiviato</value>
+        <value gender="m" plural="n" startsWith="s">Non archiviato</value>
+        <value gender="m" plural="n" startsWith="v">Non archiviato</value>
+        <value gender="m" plural="y">Non archiviati</value>
+        <value gender="m" plural="y" startsWith="s">Non archiviati</value>
+        <value gender="m" plural="y" startsWith="v">Non archiviati</value>
+        <value gender="f" plural="n">Non archiviata</value>
+        <value gender="f" plural="n" startsWith="v">Non archiviata</value>
+        <value gender="f" plural="y">Non archiviate</value>
+        <value gender="f" plural="y" startsWith="v">Non archiviate</value>
+        <value gender="f" plural="y" startsWith="s">Non archiviate</value>
+    </adjective>
+
+<adjective name="Unshared" startsWith="c">
+         <value plural="n" gender="m">Non condiviso</value>
+         <value plural="n" gender="m" startsWith="s">Non condiviso</value>
+         <value plural="n" gender="m" startsWith="v">Non condiviso</value>
+         <value plural="y" gender="m">Non condivisi</value>
+         <value plural="y" gender="m" startsWith="s">Non condivisi</value>
+         <value plural="y" gender="m" startsWith="v">Non condivisi</value>
+         <value plural="n" gender="f">Non condivisa</value>
+         <value plural="n" gender="f" startsWith="v">Non condivisa</value>
+         <value plural="y" gender="f">Non condivise</value>
+         <value plural="y" gender="f" startsWith="v">Non condivise</value>
+        <value plural="y" gender="f" startsWith="s">Non condivise</value>
+    </adjective>
+
+	<adjective name="Updated">
+       <value gender="m" plural="n">Aggiornato</value>
+        <value gender="m" plural="n" startsWith="s">Aggiornato</value>
+        <value gender="m" plural="n" startsWith="v">Aggiornato</value>
+        <value gender="m" plural="y">Aggiornati</value>
+        <value gender="m" plural="y" startsWith="s">Aggiornati</value>
+        <value gender="m" plural="y" startsWith="v">Aggiornati</value>
+        <value gender="f" plural="n">Aggiornata</value>
+        <value gender="f" plural="n" startsWith="v">Aggiornata</value>
+        <value gender="f" plural="y">Aggiornate</value>
+        <value gender="f" plural="y" startsWith="s">Aggiornate</value>
+        <value gender="f" plural="y" startsWith="v">Aggiornate</value>
+	</adjective>
+    
+    <adjective name="Used" startsWith="v">
+        <value gender="m" plural="n">Utilizzato</value>
+        <value gender="m" plural="n" startsWith="s">Utilizzato</value>
+        <value gender="m" plural="n" startsWith="v">Utilizzato</value>
+        <value gender="m" plural="y">Utilizzati</value>
+        <value gender="m" plural="y" startsWith="s">Utilizzati</value>
+        <value gender="m" plural="y" startsWith="v">Utilizzati</value>
+        <value gender="f" plural="n">Utilizzata</value>
+        <value gender="f" plural="n" startsWith="v">Utilizzata</value>
+        <value gender="f" plural="y">Utilizzate</value>
+        <value gender="f" plural="y" startsWith="v">Utilizzate</value>
+        <value gender="f" plural="y" startsWith="s">Utilizzate</value>
+    </adjective>
+
+    <adjective name="Useful">
+        <value gender="m" plural="n">utile</value>
+        <value gender="m" plural="n" startsWith="s">utile</value>
+        <value gender="m" plural="n" startsWith="v">utile</value>
+        <value gender="m" plural="y">utili</value>
+        <value gender="m" plural="y" startsWith="s">utili</value>
+        <value gender="m" plural="y" startsWith="v">utili</value>
+        <value gender="f" plural="n">utile</value>
+        <value gender="f" plural="n" startsWith="v">utile</value>
+        <value gender="f" plural="y">utili</value>
+        <value gender="f" plural="y" startsWith="s">utili</value>
+        <value gender="f" plural="y" startsWith="v">utili</value>
+    </adjective>
+
+    <adjective name="User_Owned">
+        <value gender="m" plural="n">di proprietà degli utenti</value>
+        <value gender="m" plural="n" startsWith="s">di proprietà degli utenti</value>
+        <value gender="m" plural="n" startsWith="v">di proprietà degli utenti</value>
+        <value gender="m" plural="y">di proprietà degli utenti</value>
+        <value gender="m" plural="y" startsWith="s">di proprietà degli utenti</value>
+        <value gender="m" plural="y" startsWith="v">di proprietà degli utenti</value>
+        <value gender="f" plural="n">di proprietà degli utenti</value>
+        <value gender="f" plural="n" startsWith="v">di proprietà degli utenti</value>
+        <value gender="f" plural="y">di proprietà degli utenti</value>
+        <value gender="f" plural="y" startsWith="v">di proprietà degli utenti</value>
+        <value gender="f" plural="y" startsWith="s">di proprietà degli utenti</value>
+    </adjective>
+
+    <adjective name="Viewed">
+        <value gender="m" plural="n">Visualizzato</value>
+        <value gender="m" plural="n" startsWith="s">Visualizzato</value>
+        <value gender="m" plural="n" startsWith="v">Visualizzato</value>
+        <value gender="m" plural="y">Visualizzati</value>
+        <value gender="m" plural="y" startsWith="s">Visualizzati</value>
+        <value gender="m" plural="y" startsWith="v">Visualizzati</value>
+        <value gender="f" plural="n">Visualizzata</value>
+        <value gender="f" plural="n" startsWith="v">Visualizzata</value>
+        <value gender="f" plural="y">Visualizzate</value>
+        <value gender="f" plural="y" startsWith="v">Visualizzate</value>
+        <value gender="f" plural="y" startsWith="s">Visualizzate</value>
+    </adjective>
+
+   <adjective name="Visible">
+        <value gender="m" plural="n">visibile</value>
+        <value gender="m" plural="n" startsWith="s">visibile</value>
+        <value gender="m" plural="n" startsWith="v">visibile</value>
+        <value gender="m" plural="y">visibili</value>
+        <value gender="m" plural="y" startsWith="s">visibili</value>
+        <value gender="m" plural="y" startsWith="v">visibili</value>
+        <value gender="f" plural="n">visibile</value>
+        <value gender="f" plural="n" startsWith="v">visibile</value>
+        <value gender="f" plural="y">visibili</value>
+        <value gender="f" plural="y" startsWith="v">visibili</value>
+        <value gender="f" plural="y" startsWith="s">visibili</value>
+    </adjective>
+
+    <adjective name="Won">
+        <value gender="m" plural="n">conseguito</value>
+        <value gender="m" plural="n" startsWith="s">conseguito</value>
+        <value gender="m" plural="n" startsWith="v">conseguito</value>
+        <value gender="m" plural="y">conseguiti</value>
+        <value gender="m" plural="y" startsWith="s">conseguiti</value>
+        <value gender="m" plural="y" startsWith="v">conseguiti</value>
+        <value gender="f" plural="n">conseguita</value>
+        <value gender="f" plural="n" startsWith="v">conseguita</value>
+        <value gender="f" plural="y">conseguite</value>
+        <value gender="f" plural="y" startsWith="v">conseguite</value>
+        <value gender="f" plural="y" startsWith="s">conseguite</value>
+    </adjective>
+
+    <adjective name="Your">
+        <value gender="m" plural="n"></value>
+        <value gender="m" plural="n" startsWith="s"></value>
+        <value gender="m" plural="n" startsWith="v"></value>
+        <value gender="m" plural="y"></value>
+        <value gender="m" plural="y" startsWith="s"></value>
+        <value gender="m" plural="y" startsWith="v"></value>
+        <value gender="f" plural="n"></value>
+        <value gender="f" plural="n" startsWith="v"></value>
+        <value gender="f" plural="y"></value>
+        <value gender="f" plural="y" startsWith="v"></value>
+        <value gender="f" plural="y" startsWith="s"></value>
+    </adjective>
+        
+ <adjective name="Zero">
+       <value gender="m" plural="n">Zero</value>
+        <value gender="m" plural="n" startsWith="s">Zero</value>
+        <value gender="m" plural="n" startsWith="v">Zero</value>
+        <value gender="m" plural="y">Zero</value>
+        <value gender="m" plural="y" startsWith="s">Zero</value>
+        <value gender="m" plural="y" startsWith="v">Zero</value>
+        <value gender="f" plural="n">Zero</value>
+        <value gender="f" plural="n" startsWith="v">Zero</value>
+        <value gender="f" plural="y">Zero</value>
+        <value gender="f" plural="y" startsWith="v">Zero</value>
+        <value gender="f" plural="y" startsWith="s">Zero</value>
+    </adjective>
+
+    <adjective name="The" position="b"> <!-- use this before compound nouns if necessary -->
+        <value gender="m" plural="n">Il </value>
+        <value gender="m" plural="n" startsWith="s">Lo </value>
+        <value gender="m" plural="n" startsWith="v">L'</value>
+        <value gender="m" plural="y">I</value>
+        <value gender="m" plural="y" startsWith="s">Gli </value>
+        <value gender="m" plural="y" startsWith="v">Gli </value>
+        <value gender="f" plural="n">La </value>
+        <value gender="f" plural="n" startsWith="v">L'</value>
+        <value gender="f" plural="y">Le </value>
+        <value gender="f" plural="y" startsWith="v">Le </value>
+        <value gender="f" plural="y" startsWith="s">Le </value>
+    </adjective>
+
+	<adjective name="A" position="b">
+        <value gender="m" plural="n">Un</value>
+        <value gender="m" plural="n" startsWith="s">Uno</value>
+        <value gender="m" plural="n" startsWith="v">Un</value>
+        <value gender="m" plural="y"></value>
+        <value gender="m" plural="y" startsWith="s"></value>
+        <value gender="m" plural="y" startsWith="v"></value>
+        <value gender="f" plural="n">Una</value>
+        <value gender="f" plural="n" startsWith="v">Un'</value>
+        <value gender="f" plural="y"></value>
+        <value gender="f" plural="y" startsWith="s"></value>
+        <value gender="f" plural="y" startsWith="v"></value>
+    </adjective>
+    
+    <adjective name="Accepted">
+        <value gender="m" plural="n">accettato</value>
+        <value gender="m" plural="n" startsWith="s">accettato</value>
+        <value gender="m" plural="n" startsWith="v">accettato</value>
+        <value gender="m" plural="y">accettati</value>
+        <value gender="m" plural="y" startsWith="s">accettati</value>
+        <value gender="m" plural="y" startsWith="v">accettati</value>
+        <value gender="f" plural="n">accettata</value>
+        <value gender="f" plural="n" startsWith="v">accettata</value>
+        <value gender="f" plural="y">accettate</value>
+        <value gender="f" plural="y" startsWith="s">accettate</value>
+        <value gender="f" plural="y" startsWith="v">accettate</value>
+    </adjective>
+    
+    <adjective name="Accessible">
+        <value gender="m" plural="n">accessibile</value>
+        <value gender="m" plural="n" startsWith="s">accessibile</value>
+        <value gender="m" plural="n" startsWith="v">accessibile</value>
+        <value gender="m" plural="y">accessibili</value>
+        <value gender="m" plural="y" startsWith="s">accessibili</value>
+        <value gender="m" plural="y" startsWith="v">accessibili</value>
+        <value gender="f" plural="n">accessibile</value>
+        <value gender="f" plural="n" startsWith="v">accessibile</value>
+        <value gender="f" plural="y">accessibili</value>
+        <value gender="f" plural="y" startsWith="s">accessibili</value>
+        <value gender="f" plural="y" startsWith="v">accessibili</value>
+    </adjective>
+    
+    <adjective name="Added" startsWith="v">
+        <value gender="m" plural="n">Aggiunto</value>
+        <value gender="m" plural="n" startsWith="s">Aggiunto</value>
+        <value gender="m" plural="n" startsWith="v">Aggiunto</value>
+        <value gender="m" plural="y">Aggiunti</value>
+        <value gender="m" plural="y" startsWith="s">Aggiunti</value>
+        <value gender="m" plural="y" startsWith="v">Aggiunti</value>
+        <value gender="f" plural="n">Aggiunta</value>
+        <value gender="f" plural="n" startsWith="v">Aggiunta</value>
+        <value gender="f" plural="y">Aggiunte</value>
+        <value gender="f" plural="y" startsWith="s">Aggiunte</value>
+        <value gender="f" plural="y" startsWith="v">Aggiunte</value>
+    </adjective>
+    
+    <adjective name="Approved" startsWith="v">
+        <value gender="m" plural="n">Approvato</value>
+        <value gender="m" plural="n" startsWith="s">Approvato</value>
+        <value gender="m" plural="n" startsWith="v">Approvato</value>
+        <value gender="m" plural="y">Approvati</value>
+        <value gender="m" plural="y" startsWith="s">Approvati</value>
+        <value gender="m" plural="y" startsWith="v">Approvati</value>
+        <value gender="f" plural="n">Approvata</value>
+        <value gender="f" plural="n" startsWith="v">Approvata</value>
+        <value gender="f" plural="y">Approvate</value>
+        <value gender="f" plural="y" startsWith="s">Approvate</value>
+        <value gender="f" plural="y" startsWith="v">Approvate</value>
+    </adjective>
+
+<adjective name="Chosen" startsWith="c">
+        <value gender="m" plural="n">Scelto</value>
+        <value gender="m" plural="n" startsWith="s">Scelto</value>
+        <value gender="m" plural="n" startsWith="v">Scelto</value>
+        <value gender="m" plural="y">Scelti</value>
+        <value gender="m" plural="y" startsWith="s">Scelti</value>
+        <value gender="m" plural="y" startsWith="v">Scelti</value>
+        <value gender="f" plural="n">Scelta</value>
+        <value gender="f" plural="n" startsWith="v">Scelta</value>
+        <value gender="f" plural="y">Scelte</value>
+        <value gender="f" plural="y" startsWith="s">Scelte</value>
+        <value gender="f" plural="y" startsWith="v">Scelte</value>
+    </adjective>
+
+<adjective name="Connected">
+        <value gender="m" plural="n">Connesso</value>
+        <value gender="m" plural="n" startsWith="s">Connesso</value>
+        <value gender="m" plural="n" startsWith="v">Connesso</value>
+        <value gender="m" plural="y">Connessi</value>
+        <value gender="m" plural="y" startsWith="s">Connessi</value>
+        <value gender="m" plural="y" startsWith="v">Connessi</value>
+        <value gender="f" plural="n">Connessa</value>
+        <value gender="f" plural="n" startsWith="v">Connessa</value>
+        <value gender="f" plural="y">Connesse</value>
+        <value gender="f" plural="y" startsWith="s">Connesse</value>
+        <value gender="f" plural="y" startsWith="v">Connesse</value>
+    </adjective>
+    
+    <adjective name="Defined">
+       <value gender="m" plural="n">Definito</value>
+        <value gender="m" plural="n" startsWith="s">Definito</value>
+        <value gender="m" plural="n" startsWith="v">Definito</value>
+        <value gender="m" plural="y">Definiti</value>
+        <value gender="m" plural="y" startsWith="s">Definiti</value>
+        <value gender="m" plural="y" startsWith="v">Definiti</value>
+        <value gender="f" plural="n">Definita</value>
+        <value gender="f" plural="n" startsWith="v">Definita</value>
+        <value gender="f" plural="y">Definite</value>
+        <value gender="f" plural="y" startsWith="v">Definite</value>
+        <value gender="f" plural="y" startsWith="s">Definite</value>
+</adjective>
+
+<adjective name="Deprecated">
+       <value gender="m" plural="n">Obsoleto</value>
+        <value gender="m" plural="n" startsWith="s">Obsoleto</value>
+        <value gender="m" plural="n" startsWith="v">Obsoleto</value>
+        <value gender="m" plural="y">Obsoleti</value>
+        <value gender="m" plural="y" startsWith="s">Obsoleti</value>
+        <value gender="m" plural="y" startsWith="v">Obsoleti</value>
+        <value gender="f" plural="n">Obsoleta</value>
+        <value gender="f" plural="n" startsWith="v">Obsoleta</value>
+        <value gender="f" plural="y">Obsolete</value>
+        <value gender="f" plural="y" startsWith="v">Obsolete</value>
+        <value gender="f" plural="y" startsWith="s">Obsolete</value>
+</adjective>
+
+<adjective name="desired">
+        <value gender="m" plural="n">desiderato</value>
+        <value gender="m" plural="n">desiderato</value>
+        <value gender="m" plural="n" startsWith="s">desiderato</value>
+        <value gender="m" plural="n" startsWith="v">desiderato</value>
+        <value gender="m" plural="y">desiderati</value>
+        <value gender="m" plural="y" startsWith="s">desiderati</value>
+        <value gender="m" plural="y" startsWith="v">desiderati</value>
+        <value gender="f" plural="n">desiderata</value>
+        <value gender="f" plural="n" startsWith="v">desiderata</value>
+        <value gender="f" plural="y">desiderate</value>
+        <value gender="f" plural="y" startsWith="v">desiderate</value>
+        <value gender="f" plural="y" startsWith="s">desiderate</value>
+</adjective>
+
+<adjective name="Generated">
+        <value gender="m" plural="n">Generato</value>
+        <value gender="m" plural="n" startsWith="s">Generato</value>
+        <value gender="m" plural="n" startsWith="v">Generato</value>
+        <value gender="m" plural="y">Generati</value>
+        <value gender="m" plural="y" startsWith="s">Generati</value>
+        <value gender="m" plural="y" startsWith="v">Generati</value>
+        <value gender="f" plural="n">Generata</value>
+        <value gender="f" plural="n" startsWith="v">Generata</value>
+        <value gender="f" plural="y">Generate</value>
+        <value gender="f" plural="y" startsWith="s">Generate</value>
+        <value gender="f" plural="y" startsWith="v">Generate</value>
+    </adjective>
+
+<adjective name="Included" startsWith="v">
+        <value gender="m" plural="n">Incluso</value>
+        <value gender="m" plural="n" startsWith="s">Incluso</value>
+        <value gender="m" plural="n" startsWith="v">Incluso</value>
+        <value gender="m" plural="y">Inclusi</value>
+        <value gender="m" plural="y" startsWith="s">Inclusi</value>
+        <value gender="m" plural="y" startsWith="v">Inclusi</value>
+        <value gender="f" plural="n">Inclusa</value>
+        <value gender="f" plural="n" startsWith="v">Inclusa</value>
+        <value gender="f" plural="y">Incluse</value>
+        <value gender="f" plural="y" startsWith="s">Incluse</value>
+        <value gender="f" plural="y" startsWith="v">Incluse</value>
+    </adjective>
+
+<adjective name="Marked">
+        <value gender="m" plural="n">Contrassegnato</value>
+        <value gender="m" plural="n" startsWith="s">Contrassegnato</value>
+        <value gender="m" plural="n" startsWith="v">Contrassegnato</value>
+        <value gender="m" plural="y">Contrassegnati</value>
+        <value gender="m" plural="y" startsWith="s">Contrassegnati</value>
+        <value gender="m" plural="y" startsWith="v">Contrassegnati</value>
+        <value gender="f" plural="n">Contrassegnata</value>
+        <value gender="f" plural="n" startsWith="v">contrassegnata</value>
+        <value gender="f" plural="y">contrassegnate</value>
+        <value gender="f" plural="y" startsWith="s">Contrassegnate</value>
+        <value gender="f" plural="y" startsWith="v">Contrassegnate</value>
+    </adjective>
+
+<adjective name="Modified">
+        <value gender="m" plural="n">Modificato</value>
+        <value gender="m" plural="n" startsWith="s">Modificato</value>
+        <value gender="m" plural="n" startsWith="v">Modificato</value>
+        <value gender="m" plural="y">Modificati</value>
+        <value gender="m" plural="y" startsWith="s">Modificati</value>
+        <value gender="m" plural="y" startsWith="v">Modificati</value>
+        <value gender="f" plural="n">Modificata</value>
+        <value gender="f" plural="n" startsWith="v">Modificata</value>
+        <value gender="f" plural="y">Modificate</value>
+        <value gender="f" plural="y" startsWith="v">Modificate</value>
+        <value gender="f" plural="y" startsWith="s">Modificate</value>
+</adjective>
+
+<adjective name="My_Existing">
+        <value gender="m" plural="n">personali esistenti</value>
+        <value gender="m" plural="n" startsWith="s">personale esistente</value>
+        <value gender="m" plural="n" startsWith="v">personale esistente</value>
+        <value gender="m" plural="y">personale esistente</value>
+        <value gender="m" plural="y" startsWith="s">personali esistenti</value>
+        <value gender="m" plural="y" startsWith="v">personali esistenti</value>
+        <value gender="f" plural="n">personale esistente</value>
+        <value gender="f" plural="n" startsWith="v">personale esistente</value>
+        <value gender="f" plural="y">personali esistenti</value>
+        <value gender="f" plural="y" startsWith="v">personali esistenti</value>
+        <value gender="f" plural="y" startsWith="s">personali esistenti</value>
+    </adjective>
+    
+    <adjective name="Parented" startsWith="c">
+        <value gender="m" plural="n">Controllato</value>
+        <value gender="m" plural="n" startsWith="s">Controllato</value>
+        <value gender="m" plural="n" startsWith="v">Controllato</value>
+        <value gender="m" plural="y">Controllati</value>
+        <value gender="m" plural="y" startsWith="s">Controllati</value>
+        <value gender="m" plural="y" startsWith="v">Controllati</value>
+        <value gender="f" plural="n">Controllata</value>
+        <value gender="f" plural="n" startsWith="v">Controllata</value>
+        <value gender="f" plural="y">Controllate</value>
+        <value gender="f" plural="y" startsWith="s">Controllate</value>
+        <value gender="f" plural="y" startsWith="v">Controllate</value>
+    </adjective>
+
+
+<adjective name="Posted">
+       <value gender="m" plural="n">Inviato</value>
+        <value gender="m" plural="n" startsWith="s">Inviato</value>
+        <value gender="m" plural="n" startsWith="v">Inviato</value>
+        <value gender="m" plural="y">Inviati</value>
+        <value gender="m" plural="y" startsWith="s">Inviati</value>
+        <value gender="m" plural="y" startsWith="v">Inviati</value>
+        <value gender="f" plural="n">Inviata</value>
+        <value gender="f" plural="n" startsWith="v">Inviata</value>
+        <value gender="f" plural="y">Inviate</value>
+        <value gender="f" plural="y" startsWith="v">Inviate</value>
+        <value gender="f" plural="y" startsWith="s">Inviate</value>
+</adjective>
+
+<adjective name="Recalled" startsWith="c">
+        <value gender="m" plural="n">Richiamato</value>
+        <value gender="m" plural="n" startsWith="s">Richiamato</value>
+        <value gender="m" plural="n" startsWith="v">Richiamato</value>
+        <value gender="m" plural="y">Richiamati</value>
+        <value gender="m" plural="y" startsWith="s">Richiamati</value>
+        <value gender="m" plural="y" startsWith="v">Richiamati</value>
+        <value gender="f" plural="n">Richiamata</value>
+        <value gender="f" plural="n" startsWith="v">Richiamata</value>
+        <value gender="f" plural="y">Richiamate</value>
+        <value gender="f" plural="y" startsWith="s">Richiamate</value>
+        <value gender="f" plural="y" startsWith="v">Richiamate</value>
+    </adjective>
+    
+    <adjective name="Released" startsWith="c">
+        <value gender="m" plural="n">Rilasciato</value>
+        <value gender="m" plural="n" startsWith="s">Rilasciato</value>
+        <value gender="m" plural="n" startsWith="v">Rilasciato</value>
+        <value gender="m" plural="y">Rilasciati</value>
+        <value gender="m" plural="y" startsWith="s">Rilasciati</value>
+        <value gender="m" plural="y" startsWith="v">Rilasciati</value>
+        <value gender="f" plural="n">Rilasciata</value>
+        <value gender="f" plural="n" startsWith="v">Rilasciata</value>
+        <value gender="f" plural="y">Rilasciate</value>
+        <value gender="f" plural="y" startsWith="s">Rilasciate</value>
+        <value gender="f" plural="y" startsWith="v">Rilasciate</value>
+    </adjective>
+
+<adjective name="Saved">
+        <value gender="m" plural="n">Salvato</value>
+        <value gender="m" plural="n" startsWith="s">Salvato</value>
+        <value gender="m" plural="n" startsWith="v">Salvato</value>
+        <value gender="m" plural="y">Salvati</value>
+        <value gender="m" plural="y" startsWith="s">Salvati</value>
+        <value gender="m" plural="y" startsWith="v">Salvati</value>
+        <value gender="f" plural="n">Salvata</value>
+        <value gender="f" plural="n" startsWith="v">Salvata</value>
+        <value gender="f" plural="y">Salvate</value>
+        <value gender="f" plural="y" startsWith="s">Salvate</value>
+        <value gender="f" plural="y" startsWith="v">Salvate</value>
+    </adjective>
+
+<adjective name="Sent">
+        <value gender="m" plural="n">Inviato</value>
+        <value gender="m" plural="n" startsWith="s">Inviato</value>
+        <value gender="m" plural="n" startsWith="v">Inviato</value>
+        <value gender="m" plural="y">Inviati</value>
+        <value gender="m" plural="y" startsWith="s">Inviati</value>
+        <value gender="m" plural="y" startsWith="v">Inviati</value>
+        <value gender="f" plural="n">Inviata</value>
+        <value gender="f" plural="n" startsWith="v">Inviata</value>
+        <value gender="f" plural="y">Inviate</value>
+        <value gender="f" plural="y" startsWith="s">Inviate</value>
+        <value gender="f" plural="y" startsWith="v">Inviate</value>
+    </adjective>
+    
+    <adjective name="Submitted">
+        <value gender="m" plural="n">Inviato</value>
+        <value gender="m" plural="n" startsWith="s">Inviato</value>
+        <value gender="m" plural="n" startsWith="v">Inviato</value>
+        <value gender="m" plural="y">Inviati</value>
+        <value gender="m" plural="y" startsWith="s">Inviati</value>
+        <value gender="m" plural="y" startsWith="v">Inviati</value>
+        <value gender="f" plural="n">Inviata</value>
+        <value gender="f" plural="n" startsWith="v">Inviata</value>
+        <value gender="f" plural="y">Inviate</value>
+        <value gender="f" plural="y" startsWith="s">Inviate</value>
+        <value gender="f" plural="y" startsWith="v">Inviate</value>
+    </adjective>
+    
+    <adjective name="Supported">
+        <value gender="m" plural="n">Supportato</value>
+        <value gender="m" plural="n" startsWith="s">Supportato</value>
+        <value gender="m" plural="n" startsWith="v">Supportato</value>
+        <value gender="m" plural="y">Supportati</value>
+        <value gender="m" plural="y" startsWith="s">Supportati</value>
+        <value gender="m" plural="y" startsWith="v">Supportati</value>
+        <value gender="f" plural="n">Supportata</value>
+        <value gender="f" plural="n" startsWith="v">Supportata</value>
+        <value gender="f" plural="y">Supportate</value>
+        <value gender="f" plural="y" startsWith="s">Supportate</value>
+        <value gender="f" plural="y" startsWith="v">Supportate</value>
+    </adjective>
+    
+    <adjective name="the_a" position="b">
+        <value gender="m" plural="n">al </value>
+        <value gender="m" plural="n" startsWith="s">allo </value>
+        <value gender="m" plural="n" startsWith="v">all'</value>
+        <value gender="m" plural="y">ai </value>
+        <value gender="m" plural="y" startsWith="s">agli </value>
+        <value gender="m" plural="y" startsWith="v">agli </value>
+        <value gender="f" plural="n">alla </value>
+        <value gender="f" plural="n" startsWith="v">all'</value>
+        <value gender="f" plural="y">alle </value>
+       <value gender="f" plural="y" startsWith="v">alle </value>
+       <value gender="f" plural="y" startsWith="s">alle </value>
+    </adjective>    
+    
+    <adjective name="the_a_s" position="b">
+        <value gender="m" plural="n">allo</value>
+        <value gender="f" plural="n">alla</value>
+        <value gender="m" plural="y">agli</value>
+        <value gender="f" plural="y">alle</value>
+    </adjective>    
+    
+    <adjective name="the_da" position="b">
+        <value gender="m" plural="n">dal </value>
+        <value gender="m" plural="n" startsWith="s">dallo </value>
+        <value gender="m" plural="n" startsWith="v">dall'</value>
+        <value gender="m" plural="y">dai </value>
+        <value gender="m" plural="y" startsWith="s">dagli </value>
+        <value gender="m" plural="y" startsWith="v">dagli </value>
+        <value gender="f" plural="n">dalla </value>
+        <value gender="f" plural="n" startsWith="v">dall'</value>
+        <value gender="f" plural="y">dalle </value>
+        <value gender="f" plural="n" startsWith="c">dalla </value>
+        <value gender="f" plural="y" startsWith="c">dalle </value>
+        <value gender="f" plural="y" startsWith="c">dalle </value>
+        <value gender="f" plural="y" startsWith="c">dalle </value>
+    </adjective>       
+    
+    <adjective name="the_di" position="b">
+        <value gender="m" plural="n">del </value>
+        <value gender="m" plural="n" startsWith="s">dello </value>
+        <value gender="m" plural="n" startsWith="v">dell'</value>
+        <value gender="m" plural="y">dei </value>
+        <value gender="m" plural="y" startsWith="s">degli </value>
+        <value gender="m" plural="y" startsWith="v">degli </value>
+        <value gender="f" plural="n">della </value>
+        <value gender="f" plural="n" startsWith="v">dell'</value>
+        <value gender="f" plural="y">delle </value>
+        <value gender="f" plural="y" startsWith="v">delle </value>
+        <value gender="f" plural="y" startsWith="s">delle </value>
+    </adjective>
+    
+    <adjective name="the_in" position="b">
+        <value gender="m" plural="n">nel </value>
+        <value gender="m" plural="n" startsWith="s">nello </value>
+        <value gender="m" plural="n" startsWith="v">nell'</value>
+        <value gender="m" plural="y">nei </value>
+        <value gender="m" plural="y" startsWith="s">negli </value>
+        <value gender="m" plural="y" startsWith="v">negli </value>
+        <value gender="f" plural="n">nella </value>
+        <value gender="f" plural="n" startsWith="v">nell'</value>
+        <value gender="f" plural="y">nelle </value>
+        <value gender="f" plural="y" startsWith="s">nelle </value>
+        <value gender="f" plural="y" startsWith="c">nelle </value>
+    </adjective>    
+    
+    <adjective name="the_su" position="b">
+        <value gender="m" plural="n">sul </value>
+        <value gender="m" plural="n" startsWith="s">sullo </value>
+        <value gender="m" plural="n" startsWith="v">sull'</value>
+        <value gender="m" plural="y">sui </value>
+        <value gender="m" plural="y" startsWith="s">sugli </value>
+        <value gender="m" plural="y" startsWith="v">sugli </value>
+        <value gender="f" plural="n">sulla </value>
+        <value gender="f" plural="n" startsWith="s">sull'</value>
+        <value gender="f" plural="y">sulle </value>
+        <value gender="f" plural="n" startsWith="s">sulla </value>
+        <value gender="f" plural="y" startsWith="s">sulle </value>
+        <value gender="f" plural="y" startsWith="s">sulle </value>
+     </adjective>    
+     
+     <adjective name="Transferred" startsWith="c">
+        <value gender="m" plural="n">Trasferito</value>    
+        <value gender="m" plural="n" startsWith="s">Trasferito</value>
+        <value gender="m" plural="n" startsWith="v">Trasferito</value>
+        <value gender="m" plural="y">Trasferiti</value>
+        <value gender="m" plural="y" startsWith="s">Trasferiti</value>
+        <value gender="m" plural="y" startsWith="v">Trasferiti</value>
+        <value gender="f" plural="n">Trasferita</value>
+        <value gender="f" plural="n" startsWith="v">Trasferita</value>
+        <value gender="f" plural="y">Trasferite</value>
+        <value gender="f" plural="y" startsWith="s">Trasferite</value>
+        <value gender="f" plural="y" startsWith="v">Trasferite</value>
+    </adjective>
+
+<adjective name="Unfiled_Public">
+        <value gender="m" plural="n">pubblico non archiviato</value>
+        <value gender="m" plural="n" startsWith="s">pubblico non archiviato</value>
+        <value gender="m" plural="n" startsWith="v">pubblico non archiviato</value>
+        <value gender="m" plural="y">pubblici non archiviati</value>
+        <value gender="m" plural="y" startsWith="s">pubblici non archiviati</value>
+        <value gender="m" plural="y" startsWith="v">pubblici non archiviati</value>
+        <value gender="f" plural="n">pubblica non archiviata</value>
+        <value gender="f" plural="n" startsWith="v">pubblica non archiviata</value>
+        <value gender="f" plural="y">pubbliche non archiviate</value>
+        <value gender="f" plural="y" startsWith="v">pubbliche non archiviate</value>
+        <value gender="f" plural="y" startsWith="s">pubbliche non archiviate</value>
+    </adjective>
+    
+    <adjective name="Unpublished">
+       <value gender="m" plural="n">Non pubblicato</value>
+        <value gender="m" plural="n" startsWith="s">Non pubblicato</value>
+        <value gender="m" plural="n" startsWith="v">Non pubblicato</value>
+        <value gender="m" plural="y">Non pubblicati</value>
+        <value gender="m" plural="y" startsWith="s">Non pubblicati</value>
+        <value gender="m" plural="y" startsWith="v">Non pubblicati</value>
+        <value gender="f" plural="n">Non pubblicata</value>
+        <value gender="f" plural="n" startsWith="v">Non pubblicata</value>
+        <value gender="f" plural="y">Non pubblicate</value>
+        <value gender="f" plural="y" startsWith="v">Non pubblicate</value>
+        <value gender="f" plural="y" startsWith="s">Non pubblicate</value>
+</adjective>
+
+<adjective name="Valid" startsWith="c">
+        <value gender="m" plural="n">Valido</value>
+        <value gender="m" plural ="n" startsWith="s">Valido</value> 
+        <value gender="m" plural ="n" startsWith="v">Valido</value> 
+        <value gender="m" plural ="y">Validi</value> 
+        <value gender ="m" plural ="y" startsWith="s">Validi</value> 
+        <value gender ="m" plural ="y" startsWith="v">Validi</value> 
+        <value gender ="f" plural ="n">Valida</value> 
+        <value gender ="f" plural ="n" startsWith="v">Valida</value> 
+        <value gender ="f" plural ="y">Valide</value> 
+        <value gender ="f" plural ="y" startsWith="v">Valide</value>
+        <value gender ="f" plural ="y" startsWith="s">Valide</value>
+    </adjective>
+    
+    
+</adjectives>
+
+

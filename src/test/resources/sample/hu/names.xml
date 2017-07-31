@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Accounts/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">Egy partner</value>
+        <value plural="n" article="the">A partner</value>
+        <value plural="y" article="the">A partnerek</value>
+    =======================================================================-->
+
+
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="n" startsWith="v">
+        <value plural="n">Ügyfél</value>
+        <value plural="n" poss="f">Ügyfelem</value>
+        <value plural="n" poss="s">Ügyfele</value>
+        <value plural="y">Ügyfelek</value>
+        <value plural="y" poss="f">Ügyfelem</value>
+        <value plural="y" poss="s">Ügyfelei</value>
+        <value plural="n" case="a">Ügyfelet</value>
+        <value plural="n" case="a" poss="f">Ügyfelemet</value>
+        <value plural="n" case="a" poss="s">Ügyfelét</value>
+        <value plural="y" case="a">Ügyfeleket</value>
+        <value plural="y" case="a" poss="f">Ügyfeleimet</value>
+        <value plural="y" case="a" poss="s">Ügyfeleit</value>
+        <value plural="n" case="il">Ügyfélbe</value>
+        <value plural="n" case="il" poss="f">Ügyfelembe</value>
+        <value plural="n" case="il" poss="s">Ügyfelébe</value>
+        <value plural="y" case="il">Ügyfelekbe</value>
+        <value plural="y" case="il" poss="f">Ügyfeleimbe</value>
+        <value plural="y" case="il" poss="s">Ügyfeleibe</value>
+        <value plural="n" case="ines">Ügyfélben</value>
+        <value plural="n" case="ines" poss="f">Ügyfelemben</value>
+        <value plural="n" case="ines" poss="s">Ügyfelében</value>
+        <value plural="y" case="ines">Ügyfelekben</value>
+        <value plural="y" case="ines" poss="f">Ügyfeleimben</value>
+        <value plural="y" case="ines" poss="s">Ügyfeleiben</value>
+        <value plural="n" case="el">Ügyfélből</value>
+        <value plural="n" case="el" poss="f">Ügyfelemből</value>
+        <value plural="n" case="el" poss="s">Ügyfeléből</value>
+        <value plural="y" case="el">Ügyfelekből</value>
+        <value plural="y" case="el" poss="f">Ügyfeleimből</value>
+        <value plural="y" case="el" poss="s">Ügyfeleiből</value>
+        <value plural="n" case="sub">Ügyfélre</value>
+        <value plural="n" case="sub" poss="f">Ügyfelemre</value>
+        <value plural="n" case="sub" poss="s">Ügyfelére</value>
+        <value plural="y" case="sub">Ügyfelekre</value>
+        <value plural="y" case="sub" poss="f">Ügyfeleimre</value>
+        <value plural="y" case="sub" poss="s">Ügyfeleire</value>
+        <value plural="n" case="sup">Ügyfélen</value>
+        <value plural="n" case="sup" poss="f">Ügyfelemen</value>
+        <value plural="n" case="sup" poss="s">Ügyfelén</value>
+        <value plural="y" case="sup">Ügyfeleken</value>
+        <value plural="y" case="sup" poss="f">Ügyfeleimen</value>
+        <value plural="y" case="sup" poss="s">Ügyfelein</value>
+        <value plural="n" case="del">Ügyfélről</value>
+        <value plural="n" case="del" poss="f">Ügyfelemről</value>
+        <value plural="n" case="del" poss="s">Ügyfeléről</value>
+        <value plural="y" case="del">Ügyfelekről</value>
+        <value plural="y" case="del" poss="f">Ügyfeleimről</value>
+        <value plural="y" case="del" poss="s">Ügyfeleiről</value>
+        <value plural="n" case="al">Ügyfélhez</value>
+        <value plural="n" case="al" poss="f">Ügyfelemhez</value>
+        <value plural="n" case="al" poss="s">Ügyfeléhez</value>
+        <value plural="y" case="al">Ügyfelekhez</value>
+        <value plural="y" case="al" poss="f">Ügyfeleimhez</value>
+        <value plural="y" case="al" poss="s">Ügyfeleihez</value>
+        <value plural="n" case="abl">Ügyféltől</value>
+        <value plural="n" case="abl" poss="f">Ügyfelemtől</value>
+        <value plural="n" case="abl" poss="s">Ügyfelétől</value>
+        <value plural="y" case="abl">Ügyfelektől</value>
+        <value plural="y" case="abl" poss="f">Ügyfeleimtől</value>
+        <value plural="y" case="abl" poss="s">Ügyfeleitől</value>
+        <value plural="n" case="d">Ügyfélnek</value>
+        <value plural="n" case="d" poss="f">Ügyfelemnek</value>
+        <value plural="n" case="d" poss="s">Ügyfelének</value>
+        <value plural="y" case="d">Ügyfeleknek</value>
+        <value plural="y" case="d" poss="f">Ügyfeleimnek</value>
+        <value plural="y" case="d" poss="s">Ügyfeleinek</value>
+        <value plural="n" case="in">Ügyféllel</value>
+        <value plural="n" case="in" poss="f">Ügyfelemmel</value>
+        <value plural="n" case="in" poss="s">Ügyfelével</value>
+        <value plural="y" case="in">Ügyfelekkel</value>
+        <value plural="y" case="in" poss="f">Ügyfeleimmel</value>
+        <value plural="y" case="in" poss="s">Ügyfeleivel</value>
+        <value plural="n" case="tra">Ügyféllé</value>
+        <value plural="n" case="tra" poss="f">Ügyfelemmé</value>
+        <value plural="n" case="tra" poss="s">Ügyfelévé</value>
+        <value plural="y" case="tra">Ügyfelekké</value>
+        <value plural="y" case="tra" poss="f">Ügyfeleimmé</value>
+        <value plural="y" case="tra" poss="s">Ügyfeleivé</value>
+        <value plural="n" case="cf">Ügyfélért</value>
+        <value plural="n" case="cf" poss="f">Ügyfelemért</value>
+        <value plural="n" case="cf" poss="s">Ügyfeléért</value>
+        <value plural="y" case="cf">Ügyfelekért</value>
+        <value plural="y" case="cf" poss="f">Ügyfeleimért</value>
+        <value plural="y" case="cf" poss="s">Ügyfeleiért</value>
+        <value plural="n" case="ef">Ügyfélként</value>
+        <value plural="n" case="ef" poss="f">Ügyfelemként</value>
+        <value plural="n" case="ef" poss="s">Ügyfeleként</value>
+        <value plural="y" case="ef">Ügyfelekként</value>
+        <value plural="y" case="ef" poss="f">Ügyfeleimként</value>
+        <value plural="y" case="ef" poss="s">Ügyfeleiként</value>
+        <value plural="n" case="t">Ügyfélig</value>
+        <value plural="n" case="t" poss="f">Ügyfelemig</value>
+        <value plural="n" case="t" poss="s">Ügyfeléig</value>
+        <value plural="y" case="t">Ügyfelekig</value> 
+        <value plural="y" case="t" poss="f">Ügyfeleimig</value>
+        <value plural="y" case="t" poss="s">Ügyfeleiig</value>
+        <value plural="n" case="di">Ügyfelenként</value>
+        <value plural="n" case="di" poss="f">Ügyfeleimként</value>
+        <value plural="n" case="di" poss="s">Ügyfeleiként</value>
+        <value plural="y" case="di">Ügyfelek</value>
+        <value plural="y" case="di" poss="f">Ügyfelek</value>
+        <value plural="y" case="di" poss="s">Ügyfelek</value>
+    </noun>
+    
+        <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="c">
+         <value plural="n">Tevékenység</value>
+        <value plural="n" poss="f">Tevékenységem</value>
+        <value plural="n" poss="s">Tevékenysége</value>
+        <value plural="y">Tevékenységek</value>
+        <value plural="y" poss="f">Tevékenységeim</value>
+        <value plural="y" poss="s">Tevékenységei</value>
+        <value plural="n" case="a">Tevékenységet</value>
+        <value plural="n" case="a" poss="f">Tevékenységemet</value>
+        <value plural="n" case="a" poss="s">Tevékenységét</value>
+        <value plural="y" case="a">Tevékenységeket</value>
+        <value plural="y" case="a" poss="f">Tevékenységeimet</value>
+        <value plural="y" case="a" poss="s">Tevékenységeit</value>
+        <value plural="n" case="il">Tevékenységbe</value>
+        <value plural="n" case="il" poss="f">Tevékenységembe</value>
+        <value plural="n" case="il" poss="s">Tevékenységébe</value>
+        <value plural="y" case="il">Tevékenységekbe</value>
+        <value plural="y" case="il" poss="f">Tevékenységeimbe</value>
+        <value plural="y" case="il" poss="s">Tevékenységeibe</value>
+        <value plural="n" case="ines">Tevékenységben</value>
+        <value plural="n" case="ines" poss="f">Tevékenységemben</value>
+        <value plural="n" case="ines" poss="s">Tevékenységében</value>
+        <value plural="y" case="ines">Tevékenységekben</value>
+        <value plural="y" case="ines" poss="f">Tevékenységeimben</value>
+        <value plural="y" case="ines" poss="s">Tevékenységeiben</value>
+        <value plural="n" case="el">Tevékenységből</value>
+        <value plural="n" case="el" poss="f">Tevékenységemből</value>
+        <value plural="n" case="el" poss="s">Tevékenységéből</value>
+        <value plural="y" case="el">Tevékenységekből</value>
+        <value plural="y" case="el" poss="f">Tevékenységeimből</value>
+        <value plural="y" case="el" poss="s">Tevékenységeiből</value>
+        <value plural="n" case="sub">Tevékenységre</value>
+        <value plural="n" case="sub" poss="f">Tevékenységemre</value>
+        <value plural="n" case="sub" poss="s">Tevékenységére</value>
+        <value plural="y" case="sub">Tevékenységekre</value>
+        <value plural="y" case="sub" poss="f">Tevékenységeimre</value>
+        <value plural="y" case="sub" poss="s">Tevékenységeire</value>
+        <value plural="n" case="sup">Tevékenységen</value>
+        <value plural="n" case="sup" poss="f">Tevékenységemen</value>
+        <value plural="n" case="sup" poss="s">Tevékenységén</value>
+        <value plural="y" case="sup">Tevékenységeken</value>
+        <value plural="y" case="sup" poss="f">Tevékenységeimen</value>
+        <value plural="y" case="sup" poss="s">Tevékenységein</value>
+        <value plural="n" case="del">Tevékenységről</value>
+        <value plural="n" case="del" poss="f">Tevékenységemről</value>
+        <value plural="n" case="del" poss="s">Tevékenységedről</value>
+        <value plural="y" case="del">Tevékenységéről</value>
+        <value plural="y" case="del" poss="f">Tevékenységeimről</value>
+        <value plural="y" case="del" poss="s">Tevékenységeiről</value>
+        <value plural="n" case="al">Tevékenységhez</value>
+        <value plural="n" case="al" poss="f">Tevékenységemhez</value>
+        <value plural="n" case="al" poss="s">Tevékenységéhez</value>
+        <value plural="y" case="al">Tevékenységekhez</value>
+        <value plural="y" case="al" poss="f">Tevékenységeimhez</value>
+        <value plural="y" case="al" poss="s">Tevékenységeihez</value>
+        <value plural="n" case="abl">Tevékenységtől</value>
+        <value plural="n" case="abl" poss="f">Tevékenységemtől</value>
+        <value plural="n" case="abl" poss="s">Tevékenységétől</value>
+        <value plural="y" case="abl">Tevékenységektől</value>
+        <value plural="y" case="abl" poss="f">Tevékenységeimtől</value>
+        <value plural="y" case="abl" poss="s">Tevékenységeitől</value>
+        <value plural="n" case="d">Tevékenységnek</value>
+        <value plural="n" case="d" poss="f">Tevékenységemnek</value>
+        <value plural="n" case="d" poss="s">Tevékenységének</value>
+        <value plural="y" case="d">Tevékenységeknek</value>
+        <value plural="y" case="d" poss="f">Tevékenységeimnek</value>
+        <value plural="y" case="d" poss="s">Tevékenységeinek</value>
+        <value plural="n" case="in">Tevékenységgel</value>
+        <value plural="n" case="in" poss="f">Tevékenységemmel</value>
+        <value plural="n" case="in" poss="s">Tevékenységével</value>
+        <value plural="y" case="in">Tevékenységekkel</value>
+        <value plural="y" case="in" poss="f">Tevékenységeimmel</value>
+        <value plural="y" case="in" poss="s">Tevékenységeivel</value>
+        <value plural="n" case="tra">Tevékenységgé</value>
+        <value plural="n" case="tra" poss="f">Tevékenységemmé</value>
+        <value plural="n" case="tra" poss="s">Tevékenységévé</value>
+        <value plural="y" case="tra">Tevékenységekké</value>
+        <value plural="y" case="tra" poss="f">Tevékenységeimmé</value>
+        <value plural="y" case="tra" poss="s">Tevékenységeivé</value>
+        <value plural="n" case="cf">Tevékenységért</value>
+        <value plural="n" case="cf" poss="f">Tevékenységemért</value>
+        <value plural="n" case="cf" poss="s">Tevékenységéért</value>
+        <value plural="y" case="cf">Tevékenységekért</value>
+        <value plural="y" case="cf" poss="f">Tevékenységeimért</value>
+        <value plural="y" case="cf" poss="s">Tevékenységeiért</value>
+        <value plural="n" case="ef">Tevékenységként</value>
+        <value plural="n" case="ef" poss="f">Tevékenységemként</value>
+        <value plural="n" case="ef" poss="s">Tevékenységeként</value>
+        <value plural="y" case="ef">Tevékenységekként</value>
+        <value plural="y" case="ef" poss="f">Tevékenységekimként</value>
+        <value plural="y" case="ef" poss="s">Tevékenységeiként</value>
+        <value plural="n" case="t">Tevékenységig</value>
+        <value plural="n" case="t" poss="f">Tevékenységemig</value>
+        <value plural="n" case="t" poss="s">Tevékenységéig</value>
+        <value plural="y" case="t">Tevékenységekig</value>
+        <value plural="y" case="t" poss="f">Tevékenységeimig</value>
+        <value plural="y" case="t" poss="s">Tevékenységeiig</value>
+        <value plural="n" case="di">Tevékenységenként</value>
+        <value plural="n" case="di" poss="f">Tevékenységeimként</value>
+        <value plural="n" case="di" poss="s">Tevékenységeiként</value>
+        <value plural="y" case="di">Tevékenységek</value>
+        <value plural="y" case="di" poss="f">Tevékenységek</value>
+        <value plural="y" case="di" poss="s">Tevékenységek</value>   
+
+    </noun>
+    
+        
+            
+    <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
+        <value plural="n">Kampány</value>
+        <value plural="n" poss="f">Kampányom</value>
+        <value plural="n" poss="s">Kampánya</value>
+        <value plural="y">Kampányok</value>
+        <value plural="y" poss="f">Kampányaim</value>
+        <value plural="y" poss="s">Kampányai</value>
+        <value plural="n" case="a">Kampányt</value>
+        <value plural="n" case="a" poss="f">Kampányomat</value>
+        <value plural="n" case="a" poss="s">Kampányát</value>
+        <value plural="y" case="a">Kampányokat</value>
+        <value plural="y" case="a" poss="f">Kampányaimat</value>
+        <value plural="y" case="a" poss="s">Kampányait</value>
+        <value plural="n" case="il">Kampányba</value>
+        <value plural="n" case="il" poss="f">Kampányomba</value>
+        <value plural="n" case="il" poss="s">Kampányába</value>
+        <value plural="y" case="il">Kampányokba</value>
+        <value plural="y" case="il" poss="f">Kampányaimba</value>
+        <value plural="y" case="il" poss="s">Kampányaiba</value>
+        <value plural="n" case="ines">Kampányban</value>
+        <value plural="n" case="ines" poss="f">Kampányomban</value>
+        <value plural="n" case="ines" poss="s">Kampányában</value>
+        <value plural="y" case="ines">Kampányokban</value>
+        <value plural="y" case="ines" poss="f">Kampányaimban</value>
+        <value plural="y" case="ines" poss="s">Kampányaiban</value>
+        <value plural="n" case="el">Kampányból</value>
+        <value plural="n" case="el" poss="f">Kampányomból</value>
+        <value plural="n" case="el" poss="s">Kampányából</value>
+        <value plural="y" case="el">Kampányokból</value>
+        <value plural="y" case="el" poss="f">Kampányaimból</value>
+        <value plural="y" case="el" poss="s">Kampányaiból</value>
+        <value plural="n" case="sub">Kampányra</value>
+        <value plural="n" case="sub" poss="f">Kampányomra</value>
+        <value plural="n" case="sub" poss="s">Kampányára</value>
+        <value plural="y" case="sub">Kampányokra</value>
+        <value plural="y" case="sub" poss="f">Kampányaimra</value>
+        <value plural="y" case="sub" poss="s">Kampányaira</value>
+        <value plural="n" case="sup">Kampányon</value>
+        <value plural="n" case="sup" poss="f">Kampányomon</value>
+        <value plural="n" case="sup" poss="s">Kampányán</value>
+        <value plural="y" case="sup">Kampányokon</value>
+        <value plural="y" case="sup" poss="f">Kampányaimon</value>
+        <value plural="y" case="sup" poss="s">Kampányain</value>
+        <value plural="n" case="del">Kampányról</value>
+        <value plural="n" case="del" poss="f">Kampányomról</value>
+        <value plural="n" case="del" poss="s">Kampányáról</value>
+        <value plural="y" case="del">Kampányokról</value>
+        <value plural="y" case="del" poss="f">Kampányaimról</value>
+        <value plural="y" case="del" poss="s">Kampányairól</value>
+        <value plural="n" case="al">Kampányhoz</value>
+        <value plural="n" case="al" poss="f">Kampányomhoz</value>
+        <value plural="n" case="al" poss="s">Kampányához</value>
+        <value plural="y" case="al">Kampányokhoz</value>
+        <value plural="y" case="al" poss="f">Kampányaimhoz</value>
+        <value plural="y" case="al" poss="s">Kampányaihoz</value>
+        <value plural="n" case="abl">Kampánytól</value>
+        <value plural="n" case="abl" poss="f">Kampányomtól</value>
+        <value plural="n" case="abl" poss="s">Kampányától</value>
+        <value plural="y" case="abl">Kampányoktól</value>
+        <value plural="y" case="abl" poss="f">Kampányaimtól</value>
+        <value plural="y" case="abl" poss="s">Kampányaitól</value>
+        <value plural="n" case="d">Kampánynak</value>
+        <value plural="n" case="d" poss="f">Kampányomnak</value>
+        <value plural="n" case="d" poss="s">Kampányának</value>
+        <value plural="y" case="d">Kampányoknak</value>
+        <value plural="y" case="d" poss="f">Kampányaimnak</value>
+        <value plural="y" case="d" poss="s">Kampányainak</value>
+        <value plural="n" case="in">Kampánnyal</value>
+        <value plural="n" case="in" poss="f">Kampányommal</value>
+        <value plural="n" case="in" poss="s">Kampányával</value>
+        <value plural="y" case="in">Kampányokkal</value>
+        <value plural="y" case="in" poss="f">Kampányaimmal</value>
+        <value plural="y" case="in" poss="s">Kampányaival</value>
+        <value plural="n" case="tra">Kampánnyá</value>
+        <value plural="n" case="tra" poss="f">Kampányommá</value>
+        <value plural="n" case="tra" poss="s">Kampányává</value>
+        <value plural="y" case="tra">Kampányokká</value>
+        <value plural="y" case="tra" poss="f">Kampányaimmá</value>
+        <value plural="y" case="tra" poss="s">Kampányaivá</value>
+        <value plural="n" case="cf">Kampányért</value>
+        <value plural="n" case="cf" poss="f">Kampányomért</value>
+        <value plural="n" case="cf" poss="s">Kampányáért</value>
+        <value plural="y" case="cf">Kampányokért</value>
+        <value plural="y" case="cf" poss="f">Kampányaimért</value>
+        <value plural="y" case="cf" poss="s">Kampányaiért</value>
+        <value plural="n" case="ef">Kampányként</value>
+        <value plural="n" case="ef" poss="f">Kampányomként</value>
+        <value plural="n" case="ef" poss="s">Kampányaként</value>
+        <value plural="y" case="ef">Kampányokként</value>
+        <value plural="y" case="ef" poss="f">Kampányaimként</value>
+        <value plural="y" case="ef" poss="s">Kampányaiként</value>
+        <value plural="n" case="t">Kampányig</value>
+        <value plural="n" case="t" poss="f">Kampányomig</value>
+        <value plural="n" case="t" poss="s">Kampányáig</value>
+        <value plural="y" case="t">Kampányokig</value>
+        <value plural="y" case="t" poss="f">Kampányaimig</value>
+        <value plural="y" case="t" poss="s">Kampányaiig</value>
+        <value plural="n" case="di">Kampányonként</value>
+        <value plural="n" case="di" poss="f">Kampányaimként</value>
+        <value plural="n" case="di" poss="s">Kampányaiként</value>
+        <value plural="y" case="di">Kampányok</value>
+        <value plural="y" case="di" poss="f">Kampányok</value>
+        <value plural="y" case="di" poss="s">Kampányok</value>       </noun>
+    
+
+    <noun name="Case" entity="Case" type="entity" alias="Cases" gender="n" startsWith="v">
+        <value plural="n">Eset</value>
+        <value plural="n" poss="f">Esetem</value>
+        <value plural="n" poss="s">Esete</value>
+        <value plural="y">Esetek</value>
+        <value plural="y" poss="f">Eseteim</value>
+        <value plural="y" poss="s">Esetei</value>
+        <value plural="n" case="a">Esetet</value>
+        <value plural="n" case="a" poss="f">Esetemet</value>
+        <value plural="n" case="a" poss="s">Esetét</value>
+        <value plural="y" case="a">Eseteket</value>
+        <value plural="y" case="a" poss="f">Eseteimet</value>
+        <value plural="y" case="a" poss="s">Eseteit</value>
+        <value plural="n" case="il">Esetbe</value>
+        <value plural="n" case="il" poss="f">Esetembe</value>
+        <value plural="n" case="il" poss="s">Esetébe</value>
+        <value plural="y" case="il">Esetekbe</value>
+        <value plural="y" case="il" poss="f">Eseteimbe</value>
+        <value plural="y" case="il" poss="s">Eseteibe</value>
+        <value plural="n" case="ines">Esetben</value>
+        <value plural="n" case="ines" poss="f">Esetemben</value>
+        <value plural="n" case="ines" poss="s">Esetében</value>
+        <value plural="y" case="ines">Esetekben</value>
+        <value plural="y" case="ines" poss="f">Eseteimben</value>
+        <value plural="y" case="ines" poss="s">Eseteiben</value>
+        <value plural="n" case="el">Esetből</value>
+        <value plural="n" case="el" poss="f">Esetemből</value>
+        <value plural="n" case="el" poss="s">Esetéből</value>
+        <value plural="y" case="el">Esetekből</value>
+        <value plural="y" case="el" poss="f">Eseteimből</value>
+        <value plural="y" case="el" poss="s">Eseteiből</value>
+        <value plural="n" case="sub">Esetre</value>
+        <value plural="n" case="sub" poss="f">Esetemre</value>
+        <value plural="n" case="sub" poss="s">Esetére</value>
+        <value plural="y" case="sub">Esetekre</value>
+        <value plural="y" case="sub" poss="f">Eseteimre</value>
+        <value plural="y" case="sub" poss="s">Eseteire</value>
+        <value plural="n" case="sup">Eseten</value>
+        <value plural="n" case="sup" poss="f">Esetemen</value>
+        <value plural="n" case="sup" poss="s">Esetén</value>
+        <value plural="y" case="sup">Eseteken</value>
+        <value plural="y" case="sup" poss="f">Eseteimen</value>
+        <value plural="y" case="sup" poss="s">Esetein</value>
+        <value plural="n" case="del">Esetről</value>
+        <value plural="n" case="del" poss="f">Esetemről</value>
+        <value plural="n" case="del" poss="s">Esetéről</value>
+        <value plural="y" case="del">Esetekről</value>
+        <value plural="y" case="del" poss="f">Eseteimről</value>
+        <value plural="y" case="del" poss="s">Eseteiről</value>
+        <value plural="n" case="al">Esethez</value>
+        <value plural="n" case="al" poss="f">Esetemhez</value>
+        <value plural="n" case="al" poss="s">Esetéhez</value>
+        <value plural="y" case="al">Esetekhez</value>
+        <value plural="y" case="al" poss="f">Eseteimhez</value>
+        <value plural="y" case="al" poss="s">Eseteihez</value>
+        <value plural="n" case="abl">Esettől</value>
+        <value plural="n" case="abl" poss="f">Esetemtől</value>
+        <value plural="n" case="abl" poss="s">Esetétől</value>
+        <value plural="y" case="abl">Esetektől</value>
+        <value plural="y" case="abl" poss="f">Eseteimtől</value>
+        <value plural="y" case="abl" poss="s">Eseteitől</value>
+        <value plural="n" case="d">Esetnek</value> 
+        <value plural="n" case="d" poss="f">Esetemnek</value>
+        <value plural="n" case="d" poss="s">Esetének</value>
+        <value plural="y" case="d">Eseteknek</value>
+        <value plural="y" case="d" poss="f">Eseteimnek</value>
+        <value plural="y" case="d" poss="s">Eseteinek</value>
+        <value plural="n" case="in">Esettel</value>
+        <value plural="n" case="in" poss="f">Esetemmel</value>
+        <value plural="n" case="in" poss="s">Esetével</value>
+        <value plural="y" case="in">Esetekkel</value>
+        <value plural="y" case="in" poss="f">Eseteimmel</value>
+        <value plural="y" case="in" poss="s">Eseteivel</value>
+        <value plural="n" case="tra">Esetté</value>
+        <value plural="n" case="tra" poss="f">Esetemmé</value>
+        <value plural="n" case="tra" poss="s">Esetévé</value>
+        <value plural="y" case="tra">Esetekké</value>
+        <value plural="y" case="tra" poss="f">Eseteimmé</value>
+        <value plural="y" case="tra" poss="s">Eseteivé</value>
+        <value plural="n" case="cf">Esetért</value>
+        <value plural="n" case="cf" poss="f">Esetemért</value>
+        <value plural="n" case="cf" poss="s">Esetéért</value>
+        <value plural="y" case="cf">Esetekért</value>
+        <value plural="y" case="cf" poss="f">Eseteimért</value>
+        <value plural="y" case="cf" poss="s">Eseteiért</value>
+        <value plural="n" case="ef">Esetként</value>
+        <value plural="n" case="ef" poss="f">Esetemként</value>
+        <value plural="n" case="ef" poss="s">Eseteként</value>
+        <value plural="y" case="ef">Esetekként</value>
+        <value plural="y" case="ef" poss="f">Eseteimként</value>
+        <value plural="y" case="ef" poss="s">Eseteiként</value>
+        <value plural="n" case="t">Esetig</value>
+        <value plural="n" case="t" poss="f">Esetemig</value>
+        <value plural="n" case="t" poss="s">Esetéig</value>
+        <value plural="y" case="t">Esetekig</value>
+        <value plural="y" case="t" poss="f">Eseteimig</value>
+        <value plural="y" case="t" poss="s">Eseteiig</value>
+        <value plural="n" case="di">Esetenként</value>
+        <value plural="n" case="di" poss="f">Eseteimként</value>
+        <value plural="n" case="di" poss="s">Eseteiként</value>
+        <value plural="y" case="di">Esetek</value>
+        <value plural="y" case="di" poss="f">Esetek</value>
+        <value plural="y" case="di" poss="s">Esetek</value>
+</noun> 
+
+       <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="n" startsWith="c">
+         <value plural="n">Kapcsolattartó</value>
+        <value plural="n" poss="f">Kapcsolattartóm</value>
+        <value plural="n" poss="s">Kapcsolattartója</value>
+        <value plural="y">Kapcsolattartók</value>
+        <value plural="y" poss="f">Kapcsolattartóim</value>
+        <value plural="y" poss="s">Kapcsolattartói</value>
+        <value plural="n" case="a">Kapcsolattartót</value>
+        <value plural="n" case="a" poss="f">Kapcsolattartómat</value>
+        <value plural="n" case="a" poss="s">Kapcsolattartóját</value>
+        <value plural="y" case="a">Kapcsolattartókat</value>
+        <value plural="y" case="a" poss="f">Kapcsolattartóimat</value>
+        <value plural="y" case="a" poss="s">Kapcsolattartóit</value>
+        <value plural="n" case="il">Kapcsolattartóba</value>
+        <value plural="n" case="il" poss="f">Kapcsolattartómba</value>
+        <value plural="n" case="il" poss="s">Kapcsolattartójába</value>
+        <value plural="y" case="il">Kapcsolattartókba</value>
+        <value plural="y" case="il" poss="f">Kapcsolattartóimba</value>
+        <value plural="y" case="il" poss="s">Kapcsolattartóiba</value>
+        <value plural="n" case="ines">Kapcsolattartóban</value>
+        <value plural="n" case="ines" poss="f">Kapcsolattartómban</value>
+        <value plural="n" case="ines" poss="s">Kapcsolattartójában</value>
+        <value plural="y" case="ines">Kapcsolattartókban</value>
+        <value plural="y" case="ines" poss="f">Kapcsolattartóimban</value>
+        <value plural="y" case="ines" poss="s">Kapcsolattartóiban</value>
+        <value plural="n" case="el">Kapcsolattartóból</value>
+        <value plural="n" case="el" poss="f">Kapcsolattartómból</value>
+        <value plural="n" case="el" poss="s">Kapcsolattartójából</value>
+        <value plural="y" case="el">Kapcsolattartókból</value>
+        <value plural="y" case="el" poss="f">Kapcsolattartóimból</value>
+        <value plural="y" case="el" poss="s">Kapcsolattartóiból</value>
+        <value plural="n" case="sub">Kapcsolattartóra</value>
+        <value plural="n" case="sub" poss="f">Kapcsolattartómra</value>
+        <value plural="n" case="sub" poss="s">Kapcsolattartójára</value>
+        <value plural="y" case="sub">Kapcsolattartókra</value>
+        <value plural="y" case="sub" poss="f">Kapcsolattartóimra</value>
+        <value plural="y" case="sub" poss="s">Kapcsolattartóira</value>
+        <value plural="n" case="sup">Kapcsolattartón</value>
+        <value plural="n" case="sup" poss="f">Kapcsolattartómon</value>
+        <value plural="n" case="sup" poss="s">Kapcsolattartóján</value>
+        <value plural="y" case="sup">Kapcsolattartókon</value>
+        <value plural="y" case="sup" poss="f">Kapcsolattartóimon</value>
+        <value plural="y" case="sup" poss="s">Kapcsolattartóin</value>
+        <value plural="n" case="del">Kapcsolattartóról</value>
+        <value plural="n" case="del" poss="f">Kapcsolattartómról</value>
+        <value plural="n" case="del" poss="s">Kapcsolattartójáról</value>
+        <value plural="y" case="del">Kapcsolattartókról</value>
+        <value plural="y" case="del" poss="f">Kapcsolattartóimról</value>
+        <value plural="y" case="del" poss="s">Kapcsolattartóiról</value>
+        <value plural="n" case="al">Kapcsolattartóhoz</value>
+        <value plural="n" case="al" poss="f">Kapcsolattartómhoz</value>
+        <value plural="n" case="al" poss="s">Kapcsolattartójához</value>
+        <value plural="y" case="al">Kapcsolattartókhoz</value>
+        <value plural="y" case="al" poss="f">Kapcsolattartóimhoz</value>
+        <value plural="y" case="al" poss="s">Kapcsolattartóihoz</value>
+        <value plural="n" case="abl">Kapcsolattartótól</value>
+        <value plural="n" case="abl" poss="f">Kapcsolattartómtól</value>
+        <value plural="n" case="abl" poss="s">Kapcsolattartójától</value>
+        <value plural="y" case="abl">Kapcsolattartóktól</value>
+        <value plural="y" case="abl" poss="f">Kapcsolattartóimtól</value>
+        <value plural="y" case="abl" poss="s">Kapcsolattartóitól</value>
+        <value plural="n" case="d">Kapcsolattartónak</value>
+        <value plural="n" case="d" poss="f">Kapcsolattartómnak</value>
+        <value plural="n" case="d" poss="s">Kapcsolattartójának</value>
+        <value plural="y" case="d">Kapcsolattartóknak</value>
+        <value plural="y" case="d" poss="f">Kapcsolattartóimnak</value>
+        <value plural="y" case="d" poss="s">Kapcsolattartóinak</value>
+        <value plural="n" case="in">Kapcsolattartóval</value>
+        <value plural="n" case="in" poss="f">Kapcsolattartómmal</value>
+        <value plural="n" case="in" poss="s">Kapcsolattartójával</value>
+        <value plural="y" case="in">Kapcsolattartókkal</value>
+        <value plural="y" case="in" poss="f">Kapcsolattartóimmal</value>
+        <value plural="y" case="in" poss="s">Kapcsolattartóival</value>
+        <value plural="n" case="tra">Kapcsolattartóvá</value>
+        <value plural="n" case="tra" poss="f">Kapcsolattartómmá</value>
+        <value plural="n" case="tra" poss="s">Kapcsolattartójává</value>
+        <value plural="y" case="tra">Kapcsolattartókká</value>
+        <value plural="y" case="tra" poss="f">Kapcsolattartóimmá</value>
+        <value plural="y" case="tra" poss="s">Kapcsolattartóivá</value>
+        <value plural="n" case="cf">Kapcsolattartóért</value>
+        <value plural="n" case="cf" poss="f">Kapcsolattartómért</value>
+        <value plural="n" case="cf" poss="s">Kapcsolattartójáért</value>
+        <value plural="y" case="cf">Kapcsolattartóiért</value>
+        <value plural="y" case="cf" poss="f">Kapcsolattartóimért</value>
+        <value plural="y" case="cf" poss="s">Kapcsolattartóiért</value>
+        <value plural="n" case="ef">Kapcsolattartóként</value>
+        <value plural="n" case="ef" poss="f">Kapcsolattartómként</value>
+        <value plural="n" case="ef" poss="s">Kapcsolattartójaként</value>
+        <value plural="y" case="ef">Kapcsolattartókként</value>
+        <value plural="y" case="ef" poss="f">Kapcsolattartóimként</value>
+        <value plural="y" case="ef" poss="s">Kapcsolattartóiként</value>
+        <value plural="n" case="t">Kapcsolattartóig</value>
+        <value plural="n" case="t" poss="f">Kapcsolattartómig</value>
+        <value plural="n" case="t" poss="s">Kapcsolattartójáig</value>
+        <value plural="y" case="t">Kapcsolattartókig</value>
+        <value plural="y" case="t" poss="f">Kapcsolattartóimig</value>
+        <value plural="y" case="t" poss="s">Kapcsolattartóiig</value>
+        <value plural="n" case="di">Kapcsolattartónként</value>
+        <value plural="n" case="di" poss="f">Kapcsolattartóimként</value>
+        <value plural="n" case="di" poss="s">Kapcsolattartóiként</value>
+        <value plural="y" case="di">Kapcsolattartók</value>
+        <value plural="y" case="di" poss="f">Kapcsolattartók</value>
+        <value plural="y" case="di" poss="s">Kapcsolattartók</value>
+</noun>        
+
+<!-- Content -->
+        
+	<!-- // Content -->
+
+    <noun name="Contract" entity="Contract" type="entity" alias="Contracts" gender="n" startsWith="c">
+        <value plural="n">Szerződés</value>
+        <value plural="n" poss="f">Szerződésem</value>
+        <value plural="n" poss="s">Szerződése</value>
+        <value plural="y">Szerződések</value>
+        <value plural="y" poss="f">Szerződéseim</value>
+        <value plural="y" poss="s">Szerződései</value>
+        <value plural="n" case="a">Szerződést</value>
+        <value plural="n" case="a" poss="f">Szerződésemet</value>
+        <value plural="n" case="a" poss="s">Szerződését</value>
+        <value plural="y" case="a">Szerződéseket</value>
+        <value plural="y" case="a" poss="f">Szerződéseimet</value>
+        <value plural="y" case="a" poss="s">Szerződéseit</value>
+        <value plural="n" case="il">Szerződésbe</value>
+        <value plural="n" case="il" poss="f">Szerződésembe</value>
+        <value plural="n" case="il" poss="s">Szerződésébe</value>
+        <value plural="y" case="il">Szerződésekbe</value>
+        <value plural="y" case="il" poss="f">Szerződéseimbe</value>
+        <value plural="y" case="il" poss="s">Szerződéseibe</value>
+        <value plural="n" case="ines">Szerződésben</value>
+        <value plural="n" case="ines" poss="f">Szerződésemben</value>
+        <value plural="n" case="ines" poss="s">Szerződésében</value>
+        <value plural="y" case="ines">Szerződésekben</value>
+        <value plural="y" case="ines" poss="f">Szerződéseimben</value>
+        <value plural="y" case="ines" poss="s">Szerződéseiben</value>
+        <value plural="n" case="el">Szerződésből</value>
+        <value plural="n" case="el" poss="f">Szerződésemből</value>
+        <value plural="n" case="el" poss="s">Szerződéséből</value>
+        <value plural="y" case="el">Szerződésekből</value>
+        <value plural="y" case="el" poss="f">Szerződéseimből</value>
+        <value plural="y" case="el" poss="s">Szerződéseiből</value>
+        <value plural="n" case="sub">Szerződésre</value>
+        <value plural="n" case="sub" poss="f">Szerződésemre</value>
+        <value plural="n" case="sub" poss="s">Szerződésére</value>
+        <value plural="y" case="sub">Szerződésekre</value>
+        <value plural="y" case="sub" poss="f">Szerződéseimre</value>
+        <value plural="y" case="sub" poss="s">Szerződéseire</value>
+        <value plural="n" case="sup">Szerződésen</value>
+        <value plural="n" case="sup" poss="f">Szerződésemen</value>
+        <value plural="n" case="sup" poss="s">Szerződésén</value>
+        <value plural="y" case="sup">Szerződéseken</value>
+        <value plural="y" case="sup" poss="f">Szerződéseimen</value>
+        <value plural="y" case="sup" poss="s">Szerződésein</value>
+        <value plural="n" case="del">Szerződésről</value>
+        <value plural="n" case="del" poss="f">Szerződésemről</value>
+        <value plural="n" case="del" poss="s">Szerződéséről</value>
+        <value plural="y" case="del">Szerződésekről</value>
+        <value plural="y" case="del" poss="f">Szerződéseimről</value>
+        <value plural="y" case="del" poss="s">Szerződéseiről</value>
+        <value plural="n" case="al">Szerződéshez</value>
+        <value plural="n" case="al" poss="f">Szerződésemhez</value>
+        <value plural="n" case="al" poss="s">Szerződéséhez</value>
+        <value plural="y" case="al">Szerződésekhez</value>
+        <value plural="y" case="al" poss="f">Szerződéseimhez</value>
+        <value plural="y" case="al" poss="s">Szerződéseihez</value>
+        <value plural="n" case="abl">Szerződéstől</value>
+        <value plural="n" case="abl" poss="f">Szerződésemtől</value>
+        <value plural="n" case="abl" poss="s">Szerződésétől</value>
+        <value plural="y" case="abl">Szerződésektől</value>
+        <value plural="y" case="abl" poss="f">Szerződéseimtől</value>
+        <value plural="y" case="abl" poss="s">Szerződéseitől</value>
+        <value plural="n" case="d">Szerződésnek</value>
+        <value plural="n" case="d" poss="f">Szerződésemnek</value>
+        <value plural="n" case="d" poss="s">Szerződésének</value>
+        <value plural="y" case="d">Szerződéseknek</value>
+        <value plural="y" case="d" poss="f">Szerződéseimnek</value>
+        <value plural="y" case="d" poss="s">Szerződéseinek</value>
+        <value plural="n" case="in">Szerződéssel</value>
+        <value plural="n" case="in" poss="f">Szerződésemmel</value>
+        <value plural="n" case="in" poss="s">Szerződésével</value>
+        <value plural="y" case="in">Szerződésekkel</value>
+        <value plural="y" case="in" poss="f">Szerződéseimmel</value>
+        <value plural="y" case="in" poss="s">Szerződéseivel</value>
+        <value plural="n" case="tra">Szerződéssé</value>
+        <value plural="n" case="tra" poss="f">Szerződésemmé</value>
+        <value plural="n" case="tra" poss="s">Szerződésévé</value>
+        <value plural="y" case="tra">Szerződésekké</value>
+        <value plural="y" case="tra" poss="f">Szerződéseimmé</value>
+        <value plural="y" case="tra" poss="s">Szerződéseivé</value>
+        <value plural="n" case="cf">Szerződésért</value>
+        <value plural="n" case="cf" poss="f">Szerződésemért</value>
+        <value plural="n" case="cf" poss="s">Szerződéséért</value>
+        <value plural="y" case="cf">Szerződésekért</value>
+        <value plural="y" case="cf" poss="f">Szerződéseimért</value>
+        <value plural="y" case="cf" poss="s">Szerződéseiért</value>
+        <value plural="n" case="ef">Szerződésként</value>
+        <value plural="n" case="ef" poss="f">Szerződésemként</value>
+        <value plural="n" case="ef" poss="s">Szerződéseként</value>
+        <value plural="y" case="ef">Szerződésekként</value>
+        <value plural="y" case="ef" poss="f">Szerződéseimként</value>
+        <value plural="y" case="ef" poss="s">Szerződéseiként</value>
+        <value plural="n" case="t">Szerződésig</value>
+        <value plural="n" case="t" poss="f">Szerződésemig</value>
+        <value plural="n" case="t" poss="s">Szerződéséig</value>
+        <value plural="y" case="t">Szerződésekig</value>
+        <value plural="y" case="t" poss="f">Szerződéseimig</value>
+        <value plural="y" case="t" poss="s">Szerződéseiig</value>
+        <value plural="n" case="di">Szerződésenként</value>
+        <value plural="n" case="di" poss="f">Szerződéseimként</value>
+        <value plural="n" case="di" poss="s">Szerződéseiként</value>
+        <value plural="y" case="di">Szerződések</value>
+        <value plural="y" case="di" poss="f">Szerződések</value>
+        <value plural="y" case="di" poss="s">Szerződések</value>       
+</noun>        
+
+    
+    
+    
+    
+    
+<noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">    
+        <value plural="n">Dokumentum</value>
+        <value plural="n" poss="f">Dokumentumom</value>
+        <value plural="n" poss="s">Dokumentuma</value>
+        <value plural="y">Dokumentumok</value>
+        <value plural="y" poss="f">Dokumentumaim</value>
+        <value plural="y" poss="s">Dokumentumai</value>
+        <value plural="n" case="a">Dokumentumot</value>
+        <value plural="n" case="a" poss="f">Dokumentumomat</value>
+        <value plural="n" case="a" poss="s">Dokumentumát</value>
+        <value plural="y" case="a">Dokumentumokat</value>
+        <value plural="y" case="a" poss="f">Dokumentumaimat</value>
+        <value plural="y" case="a" poss="s">Dokumentumait</value>
+        <value plural="n" case="il">Dokumentumba</value>
+        <value plural="n" case="il" poss="f">Dokumentumomba</value>
+        <value plural="n" case="il" poss="s">Dokumentumába</value>
+        <value plural="y" case="il">Dokumentumokba</value>
+        <value plural="y" case="il" poss="f">Dokumentumaimba</value>
+        <value plural="y" case="il" poss="s">Dokumentumaiba</value>
+        <value plural="n" case="ines">Dokumentumban</value>
+        <value plural="n" case="ines" poss="f">Dokumentumomban</value>
+        <value plural="n" case="ines" poss="s">Dokumentumában</value>
+        <value plural="y" case="ines">Dokumentumokban</value>
+        <value plural="y" case="ines" poss="f">Dokumentumaimban</value>
+        <value plural="y" case="ines" poss="s">Dokumentumaiban</value>
+        <value plural="n" case="el">Dokumentumból</value>
+        <value plural="n" case="el" poss="f">Dokumentumomból</value>
+        <value plural="n" case="el" poss="s">Dokumentumából</value>
+        <value plural="y" case="el">Dokumentumokból</value>
+        <value plural="y" case="el" poss="f">Dokumentumaimból</value>
+        <value plural="y" case="el" poss="s">Dokumentumaiból</value>
+        <value plural="n" case="sub">Dokumentumra</value>
+        <value plural="n" case="sub" poss="f">Dokumentumomra</value>
+        <value plural="n" case="sub" poss="s">Dokumentumára</value>
+        <value plural="y" case="sub">Dokumentumokra</value>
+        <value plural="y" case="sub" poss="f">Dokumentumaimra</value>
+        <value plural="y" case="sub" poss="s">Dokumentumaira</value>
+        <value plural="n" case="sup">Dokumentumon</value>
+        <value plural="n" case="sup" poss="f">Dokumentumomon</value>
+        <value plural="n" case="sup" poss="s">Dokumentumán</value>
+        <value plural="y" case="sup">Dokumentumokon</value>
+        <value plural="y" case="sup" poss="f">Dokumentumaimon</value>
+        <value plural="y" case="sup" poss="s">Dokumentumain</value>
+        <value plural="n" case="del">Dokumentumról</value>
+        <value plural="n" case="del" poss="f">Dokumentumomról</value>
+        <value plural="n" case="del" poss="s">Dokumentumáról</value>
+        <value plural="y" case="del">Dokumentumokról</value>
+        <value plural="y" case="del" poss="f">Dokumentumaimról</value>
+        <value plural="y" case="del" poss="s">Dokumentumairól</value>
+        <value plural="n" case="al">Dokumentumhoz</value>
+        <value plural="n" case="al" poss="f">Dokumentumomhoz</value>
+        <value plural="n" case="al" poss="s">Dokumentumához</value>
+        <value plural="y" case="al">Dokumentumokhoz</value>
+        <value plural="y" case="al" poss="f">Dokumentumaimhoz</value>
+        <value plural="y" case="al" poss="s">Dokumentumaihoz</value>
+        <value plural="n" case="abl">Dokumentumtól</value>
+        <value plural="n" case="abl" poss="f">Dokumentumomtól</value>
+        <value plural="n" case="abl" poss="s">Dokumentumától</value>
+        <value plural="y" case="abl">Dokumentumoktól</value>
+        <value plural="y" case="abl" poss="f">Dokumentumaimtól</value>
+        <value plural="y" case="abl" poss="s">Dokumentumaitól</value>
+        <value plural="n" case="d">Dokumentumnak</value>
+        <value plural="n" case="d" poss="f">Dokumentumomnak</value>
+        <value plural="n" case="d" poss="s">Dokumentumának</value>
+        <value plural="y" case="d">Dokumentumoknak</value>
+        <value plural="y" case="d" poss="f">Dokumentumaimnak</value>
+        <value plural="y" case="d" poss="s">Dokumentumainak</value>
+        <value plural="n" case="in">Dokumentummal</value>
+        <value plural="n" case="in" poss="f">Dokumentumommal</value>
+        <value plural="n" case="in" poss="s">Dokumentumával</value>
+        <value plural="y" case="in">Dokumentumokkal</value>
+        <value plural="y" case="in" poss="f">Dokumentumaimmal</value>
+        <value plural="y" case="in" poss="s">Dokumentumaival</value>
+        <value plural="n" case="tra">Dokumentummá</value>
+        <value plural="n" case="tra" poss="f">Dokumentumommá</value>
+        <value plural="n" case="tra" poss="s">Dokumentumává</value>
+        <value plural="y" case="tra">Dokumentumokká</value>
+        <value plural="y" case="tra" poss="f">Dokumentumaimmá</value>
+        <value plural="y" case="tra" poss="s">Dokumentumaivá</value>
+        <value plural="n" case="cf">Dokumentumért</value>
+        <value plural="n" case="cf" poss="f">Dokumentumomért</value>
+        <value plural="n" case="cf" poss="s">Dokumentumáért</value>
+        <value plural="y" case="cf">Dokumentumokért</value>
+        <value plural="y" case="cf" poss="f">Dokumentumaimért</value>
+        <value plural="y" case="cf" poss="s">Dokumentumaiért</value>
+        <value plural="n" case="ef">Dokumentumként</value>
+        <value plural="n" case="ef" poss="f">Dokumentumomként</value>
+        <value plural="n" case="ef" poss="s">Dokumentumaként</value>
+        <value plural="y" case="ef">Dokumentumokként</value>
+        <value plural="y" case="ef" poss="f">Dokumentumaimként</value>
+        <value plural="y" case="ef" poss="s">Dokumentumaiként</value>
+        <value plural="n" case="t">Dokumentumig</value>
+        <value plural="n" case="t" poss="f">Dokumentumomig</value>
+        <value plural="n" case="t" poss="s">Dokumentumáig</value>
+        <value plural="y" case="t">Dokumentumokig</value>
+        <value plural="y" case="t" poss="f">Dokumentumaimig</value>
+        <value plural="y" case="t" poss="s">Dokumentumaiig</value>
+        <value plural="n" case="di">Dokumentumonként</value>
+        <value plural="n" case="di" poss="f">Dokumentumonként</value>
+        <value plural="n" case="di" poss="s">Dokumentumonként</value>
+        <value plural="y" case="di">Dokumentumok</value>
+        <value plural="y" case="di" poss="f">Dokumentumok</value>
+        <value plural="y" case="di" poss="s">Dokumentumok</value>       
+</noun>        
+
+        
+	<noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
+        <value plural="n">Szaktudás</value>
+        <value plural="n" poss="f">Szaktudásom</value>
+        <value plural="n" poss="s">Szaktudása</value>
+        <value plural="y">Szaktudások</value>
+        <value plural="y" poss="f">Szaktudásaim</value>
+        <value plural="y" poss="s">Szaktudásai</value>
+        <value plural="n" case="a">Szaktudást</value>
+        <value plural="n" case="a" poss="f">Szaktudásomat</value>
+        <value plural="n" case="a" poss="s">Szaktudását</value>
+        <value plural="y" case="a">Szaktudásokat</value>
+        <value plural="y" case="a" poss="f">Szaktudásaimat</value>
+        <value plural="y" case="a" poss="s">Szaktudásait</value>
+        <value plural="n" case="il">Szaktudásba</value>
+        <value plural="n" case="il" poss="f">Szaktudásomba</value>
+        <value plural="n" case="il" poss="s">Szaktudásába</value>
+        <value plural="y" case="il">Szaktudásokba</value>
+        <value plural="y" case="il" poss="f">Szaktudásaimba</value>
+        <value plural="y" case="il" poss="s">Szaktudásaiba</value>
+        <value plural="n" case="ines">Szaktudásban</value>
+        <value plural="n" case="ines" poss="f">Szaktudásomban</value>
+        <value plural="n" case="ines" poss="s">Szaktudásában</value>
+        <value plural="y" case="ines">Szaktudásokban</value>
+        <value plural="y" case="ines" poss="f">Szaktudásaimban</value>
+        <value plural="y" case="ines" poss="s">Szaktudásaiban</value>
+        <value plural="n" case="el">Szaktudásból</value>
+        <value plural="n" case="el" poss="f">Szaktudásomból</value>
+        <value plural="n" case="el" poss="s">Szaktudásából</value>
+        <value plural="y" case="el">Szaktudásokból</value>
+        <value plural="y" case="el" poss="f">Szaktudásaimból</value>
+        <value plural="y" case="el" poss="s">Szaktudásaiból</value>
+        <value plural="n" case="sub">Szaktudásra</value>
+        <value plural="n" case="sub" poss="f">Szaktudásomra</value>
+        <value plural="n" case="sub" poss="s">Szaktudására</value>
+        <value plural="y" case="sub">Szaktudásokra</value>
+        <value plural="y" case="sub" poss="f">Szaktudásaimra</value>
+        <value plural="y" case="sub" poss="s">Szaktudásaira</value>
+        <value plural="n" case="sup">Szaktudáson</value>
+        <value plural="n" case="sup" poss="f">Szaktudásomon</value>
+        <value plural="n" case="sup" poss="s">Szaktudásán</value>
+        <value plural="y" case="sup">Szaktudásokon</value>
+        <value plural="y" case="sup" poss="f">Szaktudásaimon</value>
+        <value plural="y" case="sup" poss="s">Szaktudásain</value>
+        <value plural="n" case="del">Szaktudásról</value>
+        <value plural="n" case="del" poss="f">Szaktudásomról</value>
+        <value plural="n" case="del" poss="s">Szaktudásáról</value>
+        <value plural="y" case="del">Szaktudásokról</value>
+        <value plural="y" case="del" poss="f">Szaktudásaimról</value>
+        <value plural="y" case="del" poss="s">Szaktudásairól</value>
+        <value plural="n" case="al">Szaktudáshoz</value>
+        <value plural="n" case="al" poss="f">Szaktudásomhoz</value>
+        <value plural="n" case="al" poss="s">Szaktudásához</value>
+        <value plural="y" case="al">Szaktudásokhoz</value>
+        <value plural="y" case="al" poss="f">Szaktudásaimhoz</value>
+        <value plural="y" case="al" poss="s">Szaktudásaihoz</value>
+        <value plural="n" case="abl">Szaktudástól</value>
+        <value plural="n" case="abl" poss="f">Szaktudásomtól</value>
+        <value plural="n" case="abl" poss="s">Szaktudásától</value>
+        <value plural="y" case="abl">Szaktudásoktól</value>
+        <value plural="y" case="abl" poss="f">Szaktudásaimtól</value>
+        <value plural="y" case="abl" poss="s">Szaktudásaitól</value>
+        <value plural="n" case="d">Szaktudásnak</value>
+        <value plural="n" case="d" poss="f">Szaktudásomnak</value>
+        <value plural="n" case="d" poss="s">Szaktudásának</value>
+        <value plural="y" case="d">Szaktudásoknak</value>
+        <value plural="y" case="d" poss="f">Szaktudásaimnak</value>
+        <value plural="y" case="d" poss="s">Szaktudásainak</value>
+        <value plural="n" case="in">Szaktudással</value>
+        <value plural="n" case="in" poss="f">Szaktudásommal</value>
+        <value plural="n" case="in" poss="s">Szaktudásával</value>
+        <value plural="y" case="in">Szaktudásokkal</value>
+        <value plural="y" case="in" poss="f">Szaktudásaimmal</value>
+        <value plural="y" case="in" poss="s">Szaktudásaival</value>
+        <value plural="n" case="tra">Szaktudássá</value>
+        <value plural="n" case="tra" poss="f">Szaktudásommá</value>
+        <value plural="n" case="tra" poss="s">Szaktudásává</value>
+        <value plural="y" case="tra">Szaktudásokká</value>
+        <value plural="y" case="tra" poss="f">Szaktudásaimmá</value>
+        <value plural="y" case="tra" poss="s">Szaktudásaivá</value>
+        <value plural="n" case="cf">Szaktudásért</value>
+        <value plural="n" case="cf" poss="f">Szaktudásomért</value>
+        <value plural="n" case="cf" poss="s">Szaktudásáért</value>
+        <value plural="y" case="cf">Szaktudásokért</value>
+        <value plural="y" case="cf" poss="f">Szaktudásaimért</value>
+        <value plural="y" case="cf" poss="s">Szaktudásaiért</value>
+        <value plural="n" case="ef">Szaktudásként</value>
+        <value plural="n" case="ef" poss="f">Szaktudásomként</value>
+        <value plural="n" case="ef" poss="s">Szaktudásaként</value>
+        <value plural="y" case="ef">Szaktudásokként</value>
+        <value plural="y" case="ef" poss="f">Szaktudásaimként</value>
+        <value plural="y" case="ef" poss="s">Szaktudásaiként</value>
+        <value plural="n" case="t">Szaktudásig</value>
+        <value plural="n" case="t" poss="f">Szaktudásomig</value>
+        <value plural="n" case="t" poss="s">Szaktudásáig</value>
+        <value plural="y" case="t">Szaktudásokig</value>
+        <value plural="y" case="t" poss="f">Szaktudásaimig</value>
+        <value plural="y" case="t" poss="s">Szaktudásaiig</value>
+        <value plural="n" case="di">Szaktudásonként</value>
+        <value plural="n" case="di" poss="f">Szaktudásaimként</value>
+        <value plural="n" case="di" poss="s">Szaktudásaiként</value>
+        <value plural="y" case="di">Szaktudások</value>
+        <value plural="y" case="di" poss="f">Szaktudások</value>
+        <value plural="y" case="di" poss="s">Szaktudások</value>   
+    </noun>
+
+    
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">    
+        <value plural="n">Esemény</value>
+        <value plural="n" poss="f">Eseményem</value>
+        <value plural="n" poss="s">Eseménye</value>
+        <value plural="y">Események</value>
+        <value plural="y" poss="f">Eseményeim</value>
+        <value plural="y" poss="s">Eseményei</value>
+        <value plural="n" case="a">Eseményt</value>
+        <value plural="n" case="a" poss="f">Eseményemet</value>
+        <value plural="n" case="a" poss="s">Eseményét</value>
+        <value plural="y" case="a">Eseményeket</value>
+        <value plural="y" case="a" poss="f">Eseményeimet</value>
+        <value plural="y" case="a" poss="s">Eseményeit</value>
+        <value plural="n" case="il">Eseménybe</value>
+        <value plural="n" case="il" poss="f">Eseményembe</value>
+        <value plural="n" case="il" poss="s">Eseményébe</value>
+        <value plural="y" case="il">Eseményekbe</value>
+        <value plural="y" case="il" poss="f">Eseményeimbe</value>
+        <value plural="y" case="il" poss="s">Eseményeibe</value>
+        <value plural="n" case="ines">Eseményben</value>
+        <value plural="n" case="ines" poss="f">Eseményemben</value>
+        <value plural="n" case="ines" poss="s">Eseményében</value>
+        <value plural="y" case="ines">Eseményekben</value>
+        <value plural="y" case="ines" poss="f">Eseményeimben</value>
+        <value plural="y" case="ines" poss="s">Eseményeiben</value>
+        <value plural="n" case="el">Eseményből</value>
+        <value plural="n" case="el" poss="f">Eseményemből</value>
+        <value plural="n" case="el" poss="s">Eseményéből</value>
+        <value plural="y" case="el">Eseményekből</value>
+        <value plural="y" case="el" poss="f">Eseményeimből</value>
+        <value plural="y" case="el" poss="s">Eseményeiből</value>
+        <value plural="n" case="sub">Eseményre</value>
+        <value plural="n" case="sub" poss="f">Eseményemre</value>
+        <value plural="n" case="sub" poss="s">Eseményére</value>
+        <value plural="y" case="sub">Eseményekre</value>
+        <value plural="y" case="sub" poss="f">Eseményeimre</value>
+        <value plural="y" case="sub" poss="s">Eseményeire</value>
+        <value plural="n" case="sup">Eseményen</value>
+        <value plural="n" case="sup" poss="f">Eseményemen</value>
+        <value plural="n" case="sup" poss="s">Eseményén</value>
+        <value plural="y" case="sup">Eseményeken</value>
+        <value plural="y" case="sup" poss="f">Eseményeimen</value>
+        <value plural="y" case="sup" poss="s">Eseményein</value>
+        <value plural="n" case="del">Eseményről</value>
+        <value plural="n" case="del" poss="f">Eseményemről</value>
+        <value plural="n" case="del" poss="s">Eseményéről</value>
+        <value plural="y" case="del">Eseményekről</value>
+        <value plural="y" case="del" poss="f">Eseményeimről</value>
+        <value plural="y" case="del" poss="s">Eseményeiről</value>
+        <value plural="n" case="al">Eseményhez</value>
+        <value plural="n" case="al" poss="f">Eseményemhez</value>
+        <value plural="n" case="al" poss="s">Eseményéhez</value>
+        <value plural="y" case="al">Eseményekhez</value>
+        <value plural="y" case="al" poss="f">Eseményeimhez</value>
+        <value plural="y" case="al" poss="s">Eseményeihez</value>
+        <value plural="n" case="abl">Eseménytől</value>
+        <value plural="n" case="abl" poss="f">Eseményemtől</value>
+        <value plural="n" case="abl" poss="s">Eseményétől</value>
+        <value plural="y" case="abl">Eseményektől</value>
+        <value plural="y" case="abl" poss="f">Eseményeimtől</value>
+        <value plural="y" case="abl" poss="s">Eseményeitől</value>
+        <value plural="n" case="d">Eseménynek</value>
+        <value plural="n" case="d" poss="f">Eseményemnek</value>
+        <value plural="n" case="d" poss="s">Eseményének</value>
+        <value plural="y" case="d">Eseményeknek</value>
+        <value plural="y" case="d" poss="f">Eseményeimnek</value>
+        <value plural="y" case="d" poss="s">Eseményeinek</value>
+        <value plural="n" case="in">Eseménnyel</value>
+        <value plural="n" case="in" poss="f">Eseményemmel</value>
+        <value plural="n" case="in" poss="s">Eseményével</value>
+        <value plural="y" case="in">Eseményekkel</value>
+        <value plural="y" case="in" poss="f">Eseményeimmel</value>
+        <value plural="y" case="in" poss="s">Eseményeivel</value>
+        <value plural="n" case="tra">Eseménnyé</value>
+        <value plural="n" case="tra" poss="f">Eseményemmé</value>
+        <value plural="n" case="tra" poss="s">Eseményévé</value>
+        <value plural="y" case="tra">Eseményekké</value>
+        <value plural="y" case="tra" poss="f">Eseményeimmé</value>
+        <value plural="y" case="tra" poss="s">Eseményeivé</value>
+        <value plural="n" case="cf">Eseményért</value>
+        <value plural="n" case="cf" poss="f">Eseményemért</value>
+        <value plural="n" case="cf" poss="s">Eseményéért</value>
+        <value plural="y" case="cf">Eseményekért</value>
+        <value plural="y" case="cf" poss="f">Eseményeimért</value>
+        <value plural="y" case="cf" poss="s">Eseményeiért</value>
+        <value plural="n" case="ef">Eseményként</value>
+        <value plural="n" case="ef" poss="f">Eseményemként</value>
+        <value plural="n" case="ef" poss="s">Eseményeként</value>
+        <value plural="y" case="ef">Eseményekként</value>
+        <value plural="y" case="ef" poss="f">Eseményeimként</value>
+        <value plural="y" case="ef" poss="s">Eseményeiként</value>
+        <value plural="n" case="t">Eseményig</value>
+        <value plural="n" case="t" poss="f">Eseményemig</value>
+        <value plural="n" case="t" poss="s">Eseményéig</value>
+        <value plural="y" case="t">Eseményekig</value>
+        <value plural="y" case="t" poss="f">Eseményeimig</value>
+        <value plural="y" case="t" poss="s">Eseményeiig</value>
+        <value plural="n" case="di">Eseményenként</value>
+        <value plural="n" case="di" poss="f">Eseményeimként</value>
+        <value plural="n" case="di" poss="s">Eseményeiként</value>
+        <value plural="y" case="di">Események</value>
+        <value plural="y" case="di" poss="f">Események</value>
+        <value plural="y" case="di" poss="s">Események</value>       
+</noun>        
+
+    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
+        <value plural="n">Lead</value>
+        <value plural="n" poss="f">Lead-em</value>
+        <value plural="n" poss="s">Lead-je</value>
+        <value plural="y">Lead-ek</value>
+        <value plural="y" poss="f">Lead-jeim</value>
+        <value plural="y" poss="s">Lead-jei</value>
+        <value plural="n" case="a">Lead-et</value>
+        <value plural="n" case="a" poss="f">Lead-emet</value>
+        <value plural="n" case="a" poss="s">Lead-jét</value>
+        <value plural="y" case="a">Lead-eket</value>
+        <value plural="y" case="a" poss="f">Lead-jeimet</value>
+        <value plural="y" case="a" poss="s">Lead-jeit</value>
+        <value plural="n" case="il">Lead-be</value>
+        <value plural="n" case="il" poss="f">Lead-embe</value>
+        <value plural="n" case="il" poss="s">Lead-jébe</value>
+        <value plural="y" case="il">Lead-ekbe</value>
+        <value plural="y" case="il" poss="f">Lead-jeimbe</value>
+        <value plural="y" case="il" poss="s">Lead-jeibe</value>
+        <value plural="n" case="ines">Lead-ben</value>
+        <value plural="n" case="ines" poss="f">Lead-emben</value>
+        <value plural="n" case="ines" poss="s">Lead-jében</value>
+        <value plural="y" case="ines">Lead-ekben</value>
+        <value plural="y" case="ines" poss="f">Lead-jeimben</value>
+        <value plural="y" case="ines" poss="s">Lead-jeiben</value>
+        <value plural="n" case="el">Lead-ből</value>
+        <value plural="n" case="el" poss="f">Lead-emből</value>
+        <value plural="n" case="el" poss="s">Lead-jéből</value>
+        <value plural="y" case="el">Lead-ekből</value>
+        <value plural="y" case="el" poss="f">Lead-jeimből</value>
+        <value plural="y" case="el" poss="s">Lead-jeiből</value>
+        <value plural="n" case="sub">Lead-re</value>
+        <value plural="n" case="sub" poss="f">Lead-emre</value>
+        <value plural="n" case="sub" poss="s">Lead-jére</value>
+        <value plural="y" case="sub">Lead-ekre</value>
+        <value plural="y" case="sub" poss="f">Lead-jeimre</value>
+        <value plural="y" case="sub" poss="s">Lead-jeire</value>
+        <value plural="n" case="sup">Lead-en</value>
+        <value plural="n" case="sup" poss="f">Lead-emen</value>
+        <value plural="n" case="sup" poss="s">Lead-jén</value>
+        <value plural="y" case="sup">Lead-eken</value>
+        <value plural="y" case="sup" poss="f">Lead-jeimen</value>
+        <value plural="y" case="sup" poss="s">Lead-jein</value>
+        <value plural="n" case="del">Lead-ről</value>
+        <value plural="n" case="del" poss="f">Lead-emről</value>
+        <value plural="n" case="del" poss="s">Lead-jéről</value>
+        <value plural="y" case="del">Lead-ekről</value>
+        <value plural="y" case="del" poss="f">Lead-jeimről</value>
+        <value plural="y" case="del" poss="s">Lead-jeiről</value>
+        <value plural="n" case="al">Lead-hez</value>
+        <value plural="n" case="al" poss="f">Lead-emhez</value>
+        <value plural="n" case="al" poss="s">Lead-jéhez</value>
+        <value plural="y" case="al">Lead-ekhez</value>
+        <value plural="y" case="al" poss="f">Lead-jeimhez</value>
+        <value plural="y" case="al" poss="s">Lead-jeihez</value>
+        <value plural="n" case="abl">Lead-től</value>
+        <value plural="n" case="abl" poss="f">Lead-emtől</value>
+        <value plural="n" case="abl" poss="s">Lead-jétől</value>
+        <value plural="y" case="abl">Lead-ektől</value>
+        <value plural="y" case="abl" poss="f">Lead-jeimtől</value>
+        <value plural="y" case="abl" poss="s">Lead-jeitől</value>
+        <value plural="n" case="d">Lead-nek</value>
+        <value plural="n" case="d" poss="f">Lead-emnek</value>
+        <value plural="n" case="d" poss="s">Lead-jének</value>
+        <value plural="y" case="d">Lead-eknek</value>
+        <value plural="y" case="d" poss="f">Lead-jeimnek</value>
+        <value plural="y" case="d" poss="s">Lead-jeinek</value>
+        <value plural="n" case="in">Lead-del</value>
+        <value plural="n" case="in" poss="f">Lead-emmel</value>
+        <value plural="n" case="in" poss="s">Lead-jével</value>
+        <value plural="y" case="in">Lead-ekkel</value>
+        <value plural="y" case="in" poss="f">Lead-jeimmel</value>
+        <value plural="y" case="in" poss="s">Lead-jeivel</value>
+        <value plural="n" case="tra">Lead-dé</value>
+        <value plural="n" case="tra" poss="f">Lead-emmé</value>
+        <value plural="n" case="tra" poss="s">Lead-jévé</value>
+        <value plural="y" case="tra">Lead-ekké</value>
+        <value plural="y" case="tra" poss="f">Lead-jeimmé</value>
+        <value plural="y" case="tra" poss="s">Lead-jeivé</value>
+        <value plural="n" case="cf">Lead-ért</value>
+        <value plural="n" case="cf" poss="f">Lead-emért</value>
+        <value plural="n" case="cf" poss="s">Lead-jéért</value>
+        <value plural="y" case="cf">Lead-ekért</value>
+        <value plural="y" case="cf" poss="f">Lead-jeimért</value>
+        <value plural="y" case="cf" poss="s">Lead-jeiért</value>
+        <value plural="n" case="ef">Lead-ként</value>
+        <value plural="n" case="ef" poss="f">Lead-emként</value>
+        <value plural="n" case="ef" poss="s">Lead-jeként</value>
+        <value plural="y" case="ef">Lead-ekként</value>
+        <value plural="y" case="ef" poss="f">Lead-jeimként</value>
+        <value plural="y" case="ef" poss="s">Lead-jeiként</value>
+        <value plural="n" case="t">Lead-ig</value>
+        <value plural="n" case="t" poss="f">Lead-emig</value>
+        <value plural="n" case="t" poss="s">Lead-jéig</value>
+        <value plural="y" case="t">Lead-ekig</value>
+        <value plural="y" case="t" poss="f">Lead-jeimig</value>
+        <value plural="y" case="t" poss="s">Lead-jeiig</value>
+        <value plural="n" case="di">Lead-enként</value>
+        <value plural="n" case="di" poss="f">Lead-jeimként</value>
+        <value plural="n" case="di" poss="s">Lead-jeiként</value>
+        <value plural="y" case="di">Lead-ek</value>
+        <value plural="y" case="di" poss="f">Lead-ek</value>
+        <value plural="y" case="di" poss="s">Lead-ek</value>       
+        <value plural="n" case="al">Lead-hez</value>
+        <value plural="n" case="al" poss="f">Lead-emhez</value>
+        <value plural="n" case="al" poss="s">Lead-jéhez</value>
+        <value plural="y" case="al">Lead-ekhez</value>
+        <value plural="y" case="al" poss="f">Lead-jeimhez</value>
+        <value plural="y" case="al" poss="s">Lead-jeihez</value>        
+</noun>        
+
+    
+
+
+
+    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="v">
+        <value plural="n">Opportunity</value>
+        <value plural="n" poss="f">Opportunity-m</value>
+        <value plural="n" poss="s">Opportunity-ja</value>
+        <value plural="y">Opportunity-k</value>
+        <value plural="y" poss="f">Opportunity-jaim</value>
+        <value plural="y" poss="s">Opportunity-jai</value>
+        <value plural="n" case="a">Opportunity-t</value>
+        <value plural="n" case="a" poss="f">Opportunity-mat</value>
+        <value plural="n" case="a" poss="s">Opportunity-ját</value>
+        <value plural="y" case="a">Opportunity-kat</value>
+        <value plural="y" case="a" poss="f">Opportunity-jaimat</value>
+        <value plural="y" case="a" poss="s">Opportunity-jait</value>
+        <value plural="n" case="il">Opportunity-ba</value>
+        <value plural="n" case="il" poss="f">Opportunity-mba</value>
+        <value plural="n" case="il" poss="s">Opportunity-jába</value>
+        <value plural="y" case="il">Opportunity-kba</value>
+        <value plural="y" case="il" poss="f">Opportunity-jaimba</value>
+        <value plural="y" case="il" poss="s">Opportunity-jaiba</value>
+        <value plural="n" case="ines">Opportunity-ban</value>
+        <value plural="n" case="ines" poss="f">Opportunity-mban</value>
+        <value plural="n" case="ines" poss="s">Opportunity-jában</value>
+        <value plural="y" case="ines">Opportunity-kban</value>
+        <value plural="y" case="ines" poss="f">Opportunity-jaimban</value>
+        <value plural="y" case="ines" poss="s">Opportunity-jaiban</value>
+        <value plural="n" case="el">Opportunity-ból</value>
+        <value plural="n" case="el" poss="f">Opportunity-mból</value>
+        <value plural="n" case="el" poss="s">Opportunity-jából</value>
+        <value plural="y" case="el">Opportunity-kból</value>
+        <value plural="y" case="el" poss="f">Opportunity-jaimból</value>
+        <value plural="y" case="el" poss="s">Opportunity-jaiból</value>
+        <value plural="n" case="sub">Opportunity-ra</value>
+        <value plural="n" case="sub" poss="f">Opportunity-mra</value>
+        <value plural="n" case="sub" poss="s">Opportunity-jára</value>
+        <value plural="y" case="sub">Opportunity-kra</value>
+        <value plural="y" case="sub" poss="f">Opportunity-jaimra</value>
+        <value plural="y" case="sub" poss="s">Opportunity-jaira</value>
+        <value plural="n" case="sup">Opportunity-n</value>
+        <value plural="n" case="sup" poss="f">Opportunity-mon</value>
+        <value plural="n" case="sup" poss="s">Opportunity-ján</value>
+        <value plural="y" case="sup">Opportunity-kon</value>
+        <value plural="y" case="sup" poss="f">Opportunity-jaimon</value>
+        <value plural="y" case="sup" poss="s">Opportunity-jain</value>
+        <value plural="n" case="del">Opportunity-ról</value>
+        <value plural="n" case="del" poss="f">Opportunity-mról</value>
+        <value plural="n" case="del" poss="s">Opportunity-járól</value>
+        <value plural="y" case="del">Opportunity-król</value>
+        <value plural="y" case="del" poss="f">Opportunity-jaimról</value>
+        <value plural="y" case="del" poss="s">Opportunity-jairól</value>
+        <value plural="n" case="al">Opportunity-hoz</value>
+        <value plural="n" case="al" poss="f">Opportunity-mhoz</value>
+        <value plural="n" case="al" poss="s">Opportunity-jához</value>
+        <value plural="y" case="al">Opportunity-khoz</value>
+        <value plural="y" case="al" poss="f">Opportunity-jaimhoz</value>
+        <value plural="y" case="al" poss="s">Opportunity-jaihoz</value>
+        <value plural="n" case="abl">Opportunity-tól</value>
+        <value plural="n" case="abl" poss="f">Opportunity-mtól</value>
+        <value plural="n" case="abl" poss="s">Opportunity-jától</value>
+        <value plural="y" case="abl">Opportunity-któl</value>
+        <value plural="y" case="abl" poss="f">Opportunity-jaimtól</value>
+        <value plural="y" case="abl" poss="s">Opportunity-jaitól</value>
+        <value plural="n" case="d">Opportunity-nak</value>
+        <value plural="n" case="d" poss="f">Opportunity-mnak</value>
+        <value plural="n" case="d" poss="s">Opportunity-jának</value>
+        <value plural="y" case="d">Opportunity-knak</value>
+        <value plural="y" case="d" poss="f">Opportunity-jaimnak</value>
+        <value plural="y" case="d" poss="s">Opportunity-jainak</value>
+        <value plural="n" case="in">Opportunity-val</value>
+        <value plural="n" case="in" poss="f">Opportunity-mmal</value>
+        <value plural="n" case="in" poss="s">Opportunity-jával</value>
+        <value plural="y" case="in">Opportunity-kkal</value>
+        <value plural="y" case="in" poss="f">Opportunity-jaimmal</value>
+        <value plural="y" case="in" poss="s">Opportunity-jaival</value>
+        <value plural="n" case="tra">Opportunity-vá</value>
+        <value plural="n" case="tra" poss="f">Opportunity-mmá</value>
+        <value plural="n" case="tra" poss="s">Opportunity-jává</value>
+        <value plural="y" case="tra">Opportunity-kká</value>
+        <value plural="y" case="tra" poss="f">Opportunity-jaimmá</value>
+        <value plural="y" case="tra" poss="s">Opportunity-jaivá</value>
+        <value plural="n" case="cf">Opportunity-ért</value>
+        <value plural="n" case="cf" poss="f">Opportunity-mért</value>
+        <value plural="n" case="cf" poss="s">Opportunity-jáért</value>
+        <value plural="y" case="cf">Opportunity-kkért</value>
+        <value plural="y" case="cf" poss="f">Opportunity-jaimért</value>
+        <value plural="y" case="cf" poss="s">Opportunity-jaiért</value>
+        <value plural="n" case="ef">Opportunity-ként</value>
+        <value plural="n" case="ef" poss="f">Opportunity-mként</value>
+        <value plural="n" case="ef" poss="s">Opportunity-jaként</value>
+        <value plural="y" case="ef">Opportunity-ként</value>
+        <value plural="y" case="ef" poss="f">Opportunity-jaimként</value>
+        <value plural="y" case="ef" poss="s">Opportunity-jaiként</value>
+        <value plural="n" case="t">Opportunity-ig</value>
+        <value plural="n" case="t" poss="f">Opportunity-mig</value>
+        <value plural="n" case="t" poss="s">Opportunity-jaig</value>
+        <value plural="y" case="t">Opportunity-kig</value>
+        <value plural="y" case="t" poss="f">Opportunity-jaimig</value>
+        <value plural="y" case="t" poss="s">Opportunity-jaiig</value>
+        <value plural="n" case="di">Opportunity-nként</value>
+        <value plural="n" case="di" poss="f">Opportunity-mként</value>
+        <value plural="n" case="di" poss="s">Opportunity-jaként</value>
+        <value plural="y" case="di">Opportunity-k</value>
+        <value plural="y" case="di" poss="f">Opportunity-k</value>
+        <value plural="y" case="di" poss="s">Opportunity-k</value>       
+</noun>        
+
+
+
+    <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="v">
+        <value plural="n">Árjegyzék</value>
+        <value plural="n" poss="f">Árjegyzékem</value>
+        <value plural="n" poss="s">Árjegyzéke</value>
+        <value plural="y">Árjegyzékek</value>
+        <value plural="y" poss="f">Árjegyzékeim</value>
+        <value plural="y" poss="s">Árjegyzékei</value>
+        <value plural="n" case="a">Árjegyzéket</value>
+        <value plural="n" case="a" poss="f">Árjegyzékemet</value>
+        <value plural="n" case="a" poss="s">Árjegyzékét</value>
+        <value plural="y" case="a">Árjegyzékeket</value>
+        <value plural="y" case="a" poss="f">Árjegyzékeimet</value>
+        <value plural="y" case="a" poss="s">Árjegyzékeit</value>
+        <value plural="n" case="il">Árjegyzékbe</value>
+        <value plural="n" case="il" poss="f">Árjegyzékembe</value>
+        <value plural="n" case="il" poss="s">Árjegyzékébe</value>
+        <value plural="y" case="il">Árjegyzékekbe</value>
+        <value plural="y" case="il" poss="f">Árjegyzékeimbe</value>
+        <value plural="y" case="il" poss="s">Árjegyzékeibe</value>
+        <value plural="n" case="ines">Árjegyzékben</value>
+        <value plural="n" case="ines" poss="f">Árjegyzékemben</value>
+        <value plural="n" case="ines" poss="s">Árjegyzékében</value>
+        <value plural="y" case="ines">Árjegyzékekben</value>
+        <value plural="y" case="ines" poss="f">Árjegyzékeimben</value>
+        <value plural="y" case="ines" poss="s">Árjegyzékeiben</value>
+        <value plural="n" case="el">Árjegyzékből</value>
+        <value plural="n" case="el" poss="f">Árjegyzékemből</value>
+        <value plural="n" case="el" poss="s">Árjegyzékéből</value>
+        <value plural="y" case="el">Árjegyzékekből</value>
+        <value plural="y" case="el" poss="f">Árjegyzékeimből</value>
+        <value plural="y" case="el" poss="s">Árjegyzékeiből</value>
+        <value plural="n" case="sub">Árjegyzékre</value>
+        <value plural="n" case="sub" poss="f">Árjegyzékemre</value>
+        <value plural="n" case="sub" poss="s">Árjegyzékére</value>
+        <value plural="y" case="sub">Árjegyzékekre</value>
+        <value plural="y" case="sub" poss="f">Árjegyzékeimre</value>
+        <value plural="y" case="sub" poss="s">Árjegyzékeire</value>
+        <value plural="n" case="sup">Árjegyzéken</value>
+        <value plural="n" case="sup" poss="f">Árjegyzékemen</value>
+        <value plural="n" case="sup" poss="s">Árjegyzékén</value>
+        <value plural="y" case="sup">Árjegyzékeken</value>
+        <value plural="y" case="sup" poss="f">Árjegyzékeimen</value>
+        <value plural="y" case="sup" poss="s">Árjegyzékein</value>
+        <value plural="n" case="del">Árjegyzékről</value>
+        <value plural="n" case="del" poss="f">Árjegyzékemről</value>
+        <value plural="n" case="del" poss="s">Árjegyzékéről</value>
+        <value plural="y" case="del">Árjegyzékekről</value>
+        <value plural="y" case="del" poss="f">Árjegyzékeimről</value>
+        <value plural="y" case="del" poss="s">Árjegyzékeiről</value>
+        <value plural="n" case="al">Árjegyzékhez</value>
+        <value plural="n" case="al" poss="f">Árjegyzékemhez</value>
+        <value plural="n" case="al" poss="s">Árjegyzékéhez</value>
+        <value plural="y" case="al">Árjegyzékekhez</value>
+        <value plural="y" case="al" poss="f">Árjegyzékeimhez</value>
+        <value plural="y" case="al" poss="s">Árjegyzékeihez</value>
+        <value plural="n" case="abl">Árjegyzéktől</value>
+        <value plural="n" case="abl" poss="f">Árjegyzékemtől</value>
+        <value plural="n" case="abl" poss="s">Árjegyzékétől</value>
+        <value plural="y" case="abl">Árjegyzékektől</value>
+        <value plural="y" case="abl" poss="f">Árjegyzékeimtől</value>
+        <value plural="y" case="abl" poss="s">Árjegyzékeitől</value>
+        <value plural="n" case="d">Árjegyzéknek</value>
+        <value plural="n" case="d" poss="f">Árjegyzékemnek</value>
+        <value plural="n" case="d" poss="s">Árjegyzékének</value>
+        <value plural="y" case="d">Árjegyzékeknek</value>
+        <value plural="y" case="d" poss="f">Árjegyzékeimnek</value>
+        <value plural="y" case="d" poss="s">Árjegyzékeinek</value>
+        <value plural="n" case="in">Árjegyzékkel</value>
+        <value plural="n" case="in" poss="f">Árjegyzékemmel</value>
+        <value plural="n" case="in" poss="s">Árjegyzékével</value>
+        <value plural="y" case="in">Árjegyzékek</value>
+        <value plural="y" case="in" poss="f">Árjegyzékeim</value>
+        <value plural="y" case="in" poss="s">Árjegyzékei</value>
+        <value plural="n" case="tra">Árjegyzékké</value>
+        <value plural="n" case="tra" poss="f">Árjegyzékemmé</value>
+        <value plural="n" case="tra" poss="s">Árjegyzékévé</value>
+        <value plural="y" case="tra">Árjegyzékekké</value>
+        <value plural="y" case="tra" poss="f">Árjegyzékeimmé</value>
+        <value plural="y" case="tra" poss="s">Árjegyzékeivé</value>
+        <value plural="n" case="cf">Árjegyzékért</value>
+        <value plural="n" case="cf" poss="f">Árjegyzékemért</value>
+        <value plural="n" case="cf" poss="s">Árjegyzékéért</value>
+        <value plural="y" case="cf">Árjegyzékekért</value>
+        <value plural="y" case="cf" poss="f">Árjegyzékeimért</value>
+        <value plural="y" case="cf" poss="s">Árjegyzékeiért</value>
+        <value plural="n" case="ef">Árjegyzékként</value>
+        <value plural="n" case="ef" poss="f">Árjegyzékemként</value>
+        <value plural="n" case="ef" poss="s">Árjegyzékeként</value>
+        <value plural="y" case="ef">Árjegyzékekként</value>
+        <value plural="y" case="ef" poss="f">Árjegyzékeimként</value>
+        <value plural="y" case="ef" poss="s">Árjegyzékeiként</value>
+        <value plural="n" case="t">Árjegyzékig</value>
+        <value plural="n" case="t" poss="f">Árjegyzékemig</value>
+        <value plural="n" case="t" poss="s">Árjegyzékéig</value>
+        <value plural="y" case="t">Árjegyzékekig</value>
+        <value plural="y" case="t" poss="f">Árjegyzékeimig</value>
+        <value plural="y" case="t" poss="s">Árjegyzékeiig</value>
+        <value plural="n" case="di">Árjegyzékenként</value>
+        <value plural="n" case="di" poss="f">Árjegyzékeimként</value>
+        <value plural="n" case="di" poss="s">Árjegyzékeiként</value>
+        <value plural="y" case="di">Árjegyzékek</value>
+        <value plural="y" case="di" poss="f">Árjegyzékek</value>
+        <value plural="y" case="di" poss="s">Árjegyzékek</value>       
+</noun>        
+
+    <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
+                <value plural="n">Kérdés</value>
+        <value plural="n" poss="f">Kérdésem</value>
+        <value plural="n" poss="s">Kérdése</value>
+        <value plural="y">Kérdések</value>
+        <value plural="y" poss="f">Kérdéseim</value>
+        <value plural="y" poss="s">Kérdései</value>
+        <value plural="n" case="a">Kérdést</value>
+        <value plural="n" case="a" poss="f">Kérdésemet</value>
+        <value plural="n" case="a" poss="s">Kérdését</value>
+        <value plural="y" case="a">Kérdéseket</value>
+        <value plural="y" case="a" poss="f">Kérdéseimet</value>
+        <value plural="y" case="a" poss="s">Kérdéseit</value>
+        <value plural="n" case="il">Kérdésbe</value>
+        <value plural="n" case="il" poss="f">Kérdésembe</value>
+        <value plural="n" case="il" poss="s">Kérdésébe</value>
+        <value plural="y" case="il">Kérdésekbe</value>
+        <value plural="y" case="il" poss="f">Kérdéseimbe</value>
+        <value plural="y" case="il" poss="s">Kérdéseibe</value>
+        <value plural="n" case="ines">Kérdésben</value>
+        <value plural="n" case="ines" poss="f">Kérdésemben</value>
+        <value plural="n" case="ines" poss="s">Kérdésében</value>
+        <value plural="y" case="ines">Kérdésekben</value>
+        <value plural="y" case="ines" poss="f">Kérdéseimben</value>
+        <value plural="y" case="ines" poss="s">Kérdéseiben</value>
+        <value plural="n" case="el">Kérdésből</value>
+        <value plural="n" case="el" poss="f">Kérdésemből</value>
+        <value plural="n" case="el" poss="s">Kérdéséből</value>
+        <value plural="y" case="el">Kérdésekből</value>
+        <value plural="y" case="el" poss="f">Kérdéseimből</value>
+        <value plural="y" case="el" poss="s">Kérdéseiből</value>
+        <value plural="n" case="sub">Kérdésre</value>
+        <value plural="n" case="sub" poss="f">Kérdésemre</value>
+        <value plural="n" case="sub" poss="s">Kérdésére</value>
+        <value plural="y" case="sub">Kérdésekre</value>
+        <value plural="y" case="sub" poss="f">Kérdéseimre</value>
+        <value plural="y" case="sub" poss="s">Kérdéseire</value>
+        <value plural="n" case="sup">Kérdésen</value>
+        <value plural="n" case="sup" poss="f">Kérdésemen</value>
+        <value plural="n" case="sup" poss="s">Kérdésén</value>
+        <value plural="y" case="sup">Kérdéseken</value>
+        <value plural="y" case="sup" poss="f">Kérdéseimen</value>
+        <value plural="y" case="sup" poss="s">Kérdésein</value>
+        <value plural="n" case="del">Kérdésről</value>
+        <value plural="n" case="del" poss="f">Kérdésemről</value>
+        <value plural="n" case="del" poss="s">Kérdéséről</value>
+        <value plural="y" case="del">Kérdésekről</value>
+        <value plural="y" case="del" poss="f">Kérdéseimről</value>
+        <value plural="y" case="del" poss="s">Kérdéseiről</value>
+        <value plural="n" case="al">Kérdéshez</value>
+        <value plural="n" case="al" poss="f">Kérdésemhez</value>
+        <value plural="n" case="al" poss="s">Kérdéséhez</value>
+        <value plural="y" case="al">Kérdésekhez</value>
+        <value plural="y" case="al" poss="f">Kérdéseimhez</value>
+        <value plural="y" case="al" poss="s">Kérdéseihez</value>
+        <value plural="n" case="abl">Kérdéstől</value>
+        <value plural="n" case="abl" poss="f">Kérdésemtől</value>
+        <value plural="n" case="abl" poss="s">Kérdésétől</value>
+        <value plural="y" case="abl">Kérdésektől</value>
+        <value plural="y" case="abl" poss="f">Kérdéseimtől</value>
+        <value plural="y" case="abl" poss="s">Kérdéseitől</value>
+        <value plural="n" case="d">Kérdésnek</value>
+        <value plural="n" case="d" poss="f">Kérdésemnek</value>
+        <value plural="n" case="d" poss="s">Kérdésének</value>
+        <value plural="y" case="d">Kérdéseknek</value>
+        <value plural="y" case="d" poss="f">Kérdéseimnek</value>
+        <value plural="y" case="d" poss="s">Kérdéseinek</value>
+        <value plural="n" case="in">Kérdéssel</value>
+        <value plural="n" case="in" poss="f">Kérdésemmel</value>
+        <value plural="n" case="in" poss="s">Kérdésével</value>
+        <value plural="y" case="in">Kérdésekkel</value>
+        <value plural="y" case="in" poss="f">Kérdéseimmel</value>
+        <value plural="y" case="in" poss="s">Kérdéseivel</value>
+        <value plural="n" case="tra">Kérdéssé</value>
+        <value plural="n" case="tra" poss="f">Kérdésemmé</value>
+        <value plural="n" case="tra" poss="s">Kérdésévé</value>
+        <value plural="y" case="tra">Kérdésekké</value>
+        <value plural="y" case="tra" poss="f">Kérdéseimmé</value>
+        <value plural="y" case="tra" poss="s">Kérdéseivé</value>
+        <value plural="n" case="cf">Kérdésért</value>
+        <value plural="n" case="cf" poss="f">Kérdésemért</value>
+        <value plural="n" case="cf" poss="s">Kérdéséért</value>
+        <value plural="y" case="cf">Kérdésekért</value>
+        <value plural="y" case="cf" poss="f">Kérdéseimért</value>
+        <value plural="y" case="cf" poss="s">Kérdéseiért</value>
+        <value plural="n" case="ef">Kérdésként</value>
+        <value plural="n" case="ef" poss="f">Kérdésemként</value>
+        <value plural="n" case="ef" poss="s">Kérdéseként</value>
+        <value plural="y" case="ef">Kérdésekként</value>
+        <value plural="y" case="ef" poss="f">Kérdéseimként</value>
+        <value plural="y" case="ef" poss="s">Kérdéseiként</value>
+        <value plural="n" case="t">Kérdésig</value>
+        <value plural="n" case="t" poss="f">Kérdésemig</value>
+        <value plural="n" case="t" poss="s">Kérdéséig</value>
+        <value plural="y" case="t">Kérdésekig</value>
+        <value plural="y" case="t" poss="f">Kérdéseimig</value>
+        <value plural="y" case="t" poss="s">Kérdéseiig</value>
+        <value plural="n" case="di">Kérdésenként</value>
+        <value plural="n" case="di" poss="f">Kérdéseimként</value>
+        <value plural="n" case="di" poss="s">Kérdéseiként</value>
+        <value plural="y" case="di">Kérdés</value>
+        <value plural="y" case="di" poss="f">Kérdés</value>
+        <value plural="y" case="di" poss="s">Kérdés</value>   
+
+    </noun>
+
+
+  <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="v">
+        <value plural="n">Árajánlat</value>
+        <value plural="n" poss="f">Árajánlatom</value>
+        <value plural="n" poss="s">Árajánlata</value>
+        <value plural="y">Árajánlatok</value>
+        <value plural="y" poss="f">Árajánlataim</value>
+        <value plural="y" poss="s">Árajánlatai</value>
+        <value plural="n" case="a">Árajánlatot</value>
+        <value plural="n" case="a" poss="f">Árajánlatomat</value>
+        <value plural="n" case="a" poss="s">Árajánlatát</value>
+        <value plural="y" case="a">Árajánlatokat</value>
+        <value plural="y" case="a" poss="f">Árajánlataimat</value>
+        <value plural="y" case="a" poss="s">Árajánlatait</value>
+        <value plural="n" case="il">Árajánlatba</value>
+        <value plural="n" case="il" poss="f">Árajánlatomba</value>
+        <value plural="n" case="il" poss="s">Árajánlatába</value>
+        <value plural="y" case="il">Árajánlatokba</value>
+        <value plural="y" case="il" poss="f">Árajánlataimba</value>
+        <value plural="y" case="il" poss="s">Árajánlataiba</value>
+        <value plural="n" case="ines">Árajánlatban</value>
+        <value plural="n" case="ines" poss="f">Árajánlatomban</value>
+        <value plural="n" case="ines" poss="s">Árajánlatában</value>
+        <value plural="y" case="ines">Árajánlatokban</value>
+        <value plural="y" case="ines" poss="f">Árajánlataimban</value>
+        <value plural="y" case="ines" poss="s">Árajánlataiban</value>
+        <value plural="n" case="el">Árajánlatból</value>
+        <value plural="n" case="el" poss="f">Árajánlatomból</value>
+        <value plural="n" case="el" poss="s">Árajánlatából</value>
+        <value plural="y" case="el">Árajánlatokból</value>
+        <value plural="y" case="el" poss="f">Árajánlataimból</value>
+        <value plural="y" case="el" poss="s">Árajánlataiból</value>
+        <value plural="n" case="sub">Árajánlatra</value>
+        <value plural="n" case="sub" poss="f">Árajánlatomra</value>
+        <value plural="n" case="sub" poss="s">Árajánlatára</value>
+        <value plural="y" case="sub">Árajánlatokra</value>
+        <value plural="y" case="sub" poss="f">Árajánlataimra</value>
+        <value plural="y" case="sub" poss="s">Árajánlataira</value>
+        <value plural="n" case="sup">Árajánlatra</value>
+        <value plural="n" case="sup" poss="f">Árajánlatomra</value>
+        <value plural="n" case="sup" poss="s">Árajánlatára</value>
+        <value plural="y" case="sup">Árajánlatokra</value>
+        <value plural="y" case="sup" poss="f">Árajánlataimra</value>
+        <value plural="y" case="sup" poss="s">Árajánlataira</value>
+        <value plural="n" case="del">Árajánlatról</value>
+        <value plural="n" case="del" poss="f">Árajánlatomról</value>
+        <value plural="n" case="del" poss="s">Árajánlatáról</value>
+        <value plural="y" case="del">Árajánlatokról</value>
+        <value plural="y" case="del" poss="f">Árajánlataimról</value>
+        <value plural="y" case="del" poss="s">Árajánlatairól</value>
+        <value plural="n" case="al">Árajánlathoz</value>
+        <value plural="n" case="al" poss="f">Árajánlatomhoz</value>
+        <value plural="n" case="al" poss="s">Árajánlatához</value>
+        <value plural="y" case="al">Árajánlatokhoz</value>
+        <value plural="y" case="al" poss="f">Árajánlataimhoz</value>
+        <value plural="y" case="al" poss="s">Árajánlataihoz</value>
+        <value plural="n" case="abl">Árajánlattól</value>
+        <value plural="n" case="abl" poss="f">Árajánlatomtól</value>
+        <value plural="n" case="abl" poss="s">Árajánlatától</value>
+        <value plural="y" case="abl">Árajánlatoktól</value>
+        <value plural="y" case="abl" poss="f">Árajánlataimtól</value>
+        <value plural="y" case="abl" poss="s">Árajánlataitól</value>
+        <value plural="n" case="d">Árajánlatnak</value>
+        <value plural="n" case="d" poss="f">Árajánlatomnak</value>
+        <value plural="n" case="d" poss="s">Árajánlatának</value>
+        <value plural="y" case="d">Árajánlatoknak</value>
+        <value plural="y" case="d" poss="f">Árajánlataimnak</value>
+        <value plural="y" case="d" poss="s">Árajánlatainak</value>
+        <value plural="n" case="in">Árajánlattal</value>
+        <value plural="n" case="in" poss="f">Árajánlatommal</value>
+        <value plural="n" case="in" poss="s">Árajánlatával</value>
+        <value plural="y" case="in">Árajánlatokkal</value>
+        <value plural="y" case="in" poss="f">Árajánlataimmal</value>
+        <value plural="y" case="in" poss="s">Árajánlataival</value>
+        <value plural="n" case="tra">Árajánlattá</value>
+        <value plural="n" case="tra" poss="f">Árajánlattommá</value>
+        <value plural="n" case="tra" poss="s">Árajánlatává</value>
+        <value plural="y" case="tra">Árajánlatokká</value>
+        <value plural="y" case="tra" poss="f">Árajánlataimmá</value>
+        <value plural="y" case="tra" poss="s">Árajánlataivá</value>
+        <value plural="n" case="cf">Árajánlatért</value>
+        <value plural="n" case="cf" poss="f">Árajánlatomért</value>
+        <value plural="n" case="cf" poss="s">Árajánlatáért</value>
+        <value plural="y" case="cf">Árajánlatokért</value>
+        <value plural="y" case="cf" poss="f">Árajánlataimért</value>
+        <value plural="y" case="cf" poss="s">Árajánlataiért</value>
+        <value plural="n" case="ef">Árajánlatként</value>
+        <value plural="n" case="ef" poss="f">Árajánlatomként</value>
+        <value plural="n" case="ef" poss="s">Árajánlataként</value>
+        <value plural="y" case="ef">Árajánlatokként</value>
+        <value plural="y" case="ef" poss="f">Árajánlataimként</value>
+        <value plural="y" case="ef" poss="s">Árajánlataiként</value>
+        <value plural="n" case="t">Árajánlatig</value>
+        <value plural="n" case="t" poss="f">Árajánlatomig</value>
+        <value plural="n" case="t" poss="s">Árajánlatáig</value>
+        <value plural="y" case="t">Árajánlatokig</value>
+        <value plural="y" case="t" poss="f">Árajánlataimig</value>
+        <value plural="y" case="t" poss="s">Árajánlataiig</value>
+        <value plural="n" case="di">Árajánlatonként</value>
+        <value plural="n" case="di" poss="f">Árajánlataimként</value>
+        <value plural="n" case="di" poss="s">Árajánlatiként</value>
+        <value plural="y" case="di">Árajánlat</value>
+        <value plural="y" case="di" poss="f">Árajánlat</value>
+        <value plural="y" case="di" poss="s">Árajánlat</value>   
+    </noun>
+
+      
+    
+    <!-- Special for Custom Objects/Tabs
+         This is actually, not only for custom object but should be considered as template
+         for any unknown entities.
+    -->
+    
+    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+        <value plural="n">{0}</value>
+        <value plural="y">{0}</value>
+    </noun>
+
+    <!--
+        Special nouns - these are not rename-able, but need here for dynamic tag such as
+        <entity/>, <entity_record_type/>
+    -->
+
+    
+
+    <!--==================================================================
+      Other Nouns
+    ======================================================================-->
+
+    <!--******* Accounts *************************************************-->
+
+    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Ügyfél neve</value>
+        <value plural="y">Ügyfél nevei</value>
+	<value plural="n" poss="s" case="d">Ügyfél nevének</value>
+    </noun>
+    
+     
+     <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
+        <value plural="n">Termék pénzneme</value></noun>
+
+    
+				
+    <import file="adjectives.xml"/>
+</names>
+

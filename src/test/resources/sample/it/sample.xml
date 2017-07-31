@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">Casella combinata</param>
+        <param name="select_default">Selezionare di seguito.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Selezionare <a/> {0} di seguito.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Contact/> <primary/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">Accesso</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Gestita)</param>
+        <param name="activity_history">Cronologia attività</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Informazioni aggiuntive</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Assistente</param>
+        <param name="assistant_name">Nome assistente</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telefono assistente</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Telefono assist.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Interno assist.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Data di nascita</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Corpo</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Società</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Creato da</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Creato da ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Creato da Alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Codice ISO valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Campi personalizzati</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Stato predefinito</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Dettaglio {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Reparto</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Modifica {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Reddito previsto</param>
+        <param name="first_name">Nome</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Cognome</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Nome (locale)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Cognome (locale)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Trimestre fiscale</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Anno fiscale</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Nome completo</param> <!-- aliased across app - do not change -->
+        <param name="group">Gruppo</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Nome gruppo</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Nome area di attesa</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Settore</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Ultima modifica di</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">ID ultima modifica di</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Ultima modifica di Alias</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">ID record principale</param>
+        <param name="mobile">Mobile</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Cellulare</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Int. cellulare</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Nuova condivisione</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Alias assegnato</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Elenco disponibili</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Nome della società</param> <!-- aliased across app - do not change -->
+        <param name="activities">Attività</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">nessun allegato</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document/></param>
+        <param name="address_info">Informazioni indirizzo</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Rifiutato</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Predefinito</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Priorità predefinita</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Crea nuova visualizzazione</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Informazioni personalizzate</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Stato duplicato</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Indirizzo email</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Nome email</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Modello di email</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Email:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Link personalizzati</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Dimensioni file</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Nessun dato disponibile</param>
+        <param name="history_event_checked">Campo contrassegnato {0}</param>
+        <param name="history_event_unchecked">Campo non contrassegnato {0}</param>
+        <param name="how_do_i_specify_info">Come specificare le informazioni da acquisire?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Fonte interna</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Intervallo:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Titolo</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Seleziona nuovo titolare</param>
+        <param name="select_a_view">Selezionare una visualizzazione dall&apos;elenco a discesa per visualizzare un elenco dei risultati correlati.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Selezionare una cartella dall&apos;elenco a discesa per visualizzare un elenco dei risultati correlati.</param>
+        <param name="select_the_file">Selezionare il file</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">Selezionare i campi da includere:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Firma</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Oggetto</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Informazioni di sistema</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Sito Web</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">Alias titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Nome titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">ID titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Cognome titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Nome titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Ruolo titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Visualizzazione ruolo titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Nome ruolo titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Principale</param>
+        <param name="primary_contact"><Contact/> <primary/></param>
+        <param name="priority">Priorità</param><!--aliased across labels - do not change -->
+        <param name="private">Privato</param>
+        <param name="role">Ruolo</param> <!--aliased across labels - do not change -->
+        <param name="rating">Valutazione</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Creazione rapida</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Visualizzati recentemente</param>
+        <param name="top5">5 domande più frequenti</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Venditore</param>
+        <param name="customer">Cliente</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Fornitore</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">ID tipo di record</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ID divisione</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Enumerazione o ID tabella</param>
+        <param name="editable">Modificabile</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Nome normalizzato</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Informativa sulla privacy</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Stato gestibile</param>
+        <param name="namespacePrefix">Prefisso spazio dei nomi</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Spazio dei nomi modulo</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Pacchetto installato</param>
+        <param name="initialVersion">Prima versione rilasciata</param>
+        <param name="lastVersion">Ultima versione disponibile</param>
+        <param name="availableInVersions">Disponibile nelle versioni</param>
+        <param name="DeveloperName">Nome sviluppatore</param>
+        <param name="apiName">Nome API</param>
+        <param name="InvalidDeveloperNameOnEntity">Il campo {0} può contenere solo caratteri di sottolineatura e caratteri alfanumerici. Deve essere univoco, iniziare con una lettera, non includere spazi, non terminare con un carattere di sottolineatura e non contenere due caratteri di sottolineatura consecutivi.</param>
+        <param name="missingDevName">È necessario fornire {0}.</param>
+        <param name="duplicateDevName"><This entity="0"/> {0} esiste già o è stato/a utilizzato/a in precedenza.  Scegliere un nome diverso.</param>
+        <param name="manageabilityOverride">Ignora gestibilità</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">Data metriche</param>
+        <param name="MayEdit">Può modificare</param>
+        <param name="IsLocked">È bloccato</param>
+        <param name="LastViewedDate">Data ultima visualizzazione</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">Crea</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Imposta</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Crea nuovo...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">File</param>
+        <param name="new_forecast">Previsione</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Cestino</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Invia email</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Rapporto</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">Modificato da</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Data creazione</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Data modifica</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">Processo automatico</param>
+        <param name="partner_network">Utente connessione</param>
+        <param name="external_who">Utente pubblico</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">Esempio</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Errore: Dati non validi. &lt;br/&gt;Per correggere i dati, esaminare tutti i messaggi di errore riportati di seguito.</param>
+        <param name="EditPageError2">Per correggere i dati, esaminare tutti i messaggi di errore riportati di seguito.</param>
+        <param name="Required">È necessario immettere un valore</param>
+        <param name="RequiredWithFieldList">Mancano le informazioni nei campi obbligatori: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Richiesto per Self-Service</param>
+        <param name="RequiredBy">Richiesto da: {0}</param>
+        <param name="Requires">Richiede: {0}</param>
+        <param name="TooLong">Valore troppo lungo per il campo</param>
+        <param name="CannotExceedXCharacters">Il valore non può superare {0} caratteri</param>
+        <param name="MustBeXCharacters">Il valore deve essere esattamente {0} caratteri</param>
+        <param name="MustBeNumber">Il valore deve essere numerico</param>
+        <param name="StatusCloseRequired">È necessario contrassegnare almeno uno stato come chiuso</param>
+        <param name="StatusDefaultRequired">È necessario contrassegnare almeno uno stato come predefinito</param>
+        <param name="StatusInUse">I seguenti valori di stato sono in uso e non possono essere modificati o eliminati: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Data non valida</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Data non valida. Non è possibile impostare una data oltre {0}</param>
+        <param name="InvalidDateTime">Ora e data non valide</param>
+        <param name="InvalidColor">Colore non valido</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Indirizzo Internet non valido</param>
+        <param name="InvalidOption">È stata scelta un&apos;opzione non valida.</param>
+        <param name="UnsupportedCurrency">Valuta non valida</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL non valido</param>
+        <param name="NoneSelectedInPicklist">-- nessuna selezione --</param>
+        <param name="InvalidTime">Ora non valida</param>
+        <param name="InvalidNumber">Numero non valido</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Numero troppo grande.</param>
+        <param name="TooLargeNumberWithScale">Il numero deve essere minore di {0}.</param>
+        <param name="TooSmallNumberWithScale">Il numero deve essere maggiore di {0}.</param>
+        <param name="NonpositiveError">Deve essere positivo.</param>
+        <param name="NegativeError">Deve essere non negativo.</param>
+        <param name="PositiveError">Deve essere non positivo.</param>
+        <param name="NonnegativeError">Deve essere negativo.</param>
+        <param name="NonzeroError">Deve essere non nullo.</param>
+        <param name="NonintegerError">Deve essere un numero intero.</param>
+        <param name="InvalidPercent">Percentuale non valida</param>
+        <param name="InvalidAfterRoundOff">Il numero {0} non è valido dopo l&apos;&apos;arrotondamento per scalare: {1}</param>
+        <param name="CharactersRemaining">rimanenti</param>
+        <param name="CharactersOver">oltre il limite</param>
+        <param name="TooManySelection">Impossibile selezionare più di {0} voci</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Valore duplicato sul record: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Il valore del campo nascosto (non visualizzato) duplica il valore del record: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} duplica il valore del record con ID: {1}</param>
+        <param name="True">Vero</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Falso</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Dominio non valido</param>
+        <param name="ReadOnly">Impossibile modificare questo campo</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">Se si decide di proseguire con l&apos;importazione, i dati verranno ignorati e il campo sarà vuoto.</param>
+        <param name="extra_DefaultDivision">Se si sceglie di procedere all&apos;importazione, per questi record verrà utilizzata la divisione predefinita del titolare dei record.</param>
+        <param name="extra_DefaultCurrency">Se si decide di procedere all&apos;importazione, a questi record sarà assegnata la valuta predefinita.</param>
+        <param name="InvalidDataType">valore non del tipo richiesto: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">titolare non può essere vuoto</param>
+        <param name="DynamicEnumValue">valore elenco di selezione non attivo: {0}</param>
+        <param name="DynamicEnumValue_extra">Se si decide di proseguire con l&apos;importazione, il valore verrà importato ma non verrà aggiunto all&apos;elenco dei valori attivi per questo elenco di selezione.</param>
+        <param name="InvalidCurrencyCode">codice valuta non valido: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">codice valuta inattivo: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">ora non valida: {0}</param>
+        <param name="InvalidDateValue">data non valida: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">percentuale non valida: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">ID mancante o non valido</param>
+        <param name="Id15Characters">L&apos;ID deve contenere esattamente 15 caratteri</param>
+        <param name="IdMissing_extra">I record verranno ignorati</param>
+        <param name="InvalidDivision">divisione non valida: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">divisione inattiva: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">numero non valido: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">valore non compreso in intervallo valido su campo numerico: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">troppe voci selezionate: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">indirizzo email non valido: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">indirizzo IP non valido: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">tipo non corretto valore ID: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">valore errato per campo elenco di selezione limitato: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">valore non valido per campo vettore di bit: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">valore dei dati troppo grande: {0}</param>
+        <param name="DataTruncated_extra">Se si decide di procedere con l&apos;importazione, i dati verranno troncati per adattarli al campo.</param>
+        <param name="DuplicateExternalId">è stato trovato più di un record per il campo ID esterno: {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">La richiesta è in corso...</param>
+        <param name="InvalidDeveloperNameChars">Il Nome API <Entity entity="0"/> può contenere solo caratteri di sottolineatura e caratteri alfanumerici. Deve essere univoco, iniziare con una lettera, non includere spazi, non terminare con un carattere di sottolineatura e non contenere due caratteri di sottolineatura consecutivi.</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">Interrompi</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Accetta</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Accetta modifiche</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Attiva Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Aggiungi commento</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Aggiungi componenti</param>
+        <param name="add_contacts">Aggiungi <contact plural="y"/></param>
+        <param name="add_leads">Aggiungi <lead plural="y"/></param>
+        <param name="add_more_users">Aggiungi altri utenti</param>
+        <param name="add_multiple_users">Aggiungi più utenti</param>
+        <param name="add_product">Aggiungi <product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Aggiungi voce</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Aggiungi cruscotto digitale di esempio</param>
+        <param name="add_to_call_center">Aggiungi a call center</param>
+        <param name="add_to_campaign">Aggiungi a <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Aggiungi ad Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Aggiungi a <pricebook/></param>
+        <param name="add_remove">Aggiungi/Rimuovi</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Impostazione avanzata</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Approva</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Assegna</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Assegna utenti al ruolo</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Torna a elenco rapporti</param>
+        <param name="billing_and_licenses">Fatturazione e licenze</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Informazioni sulla fatturazione</param>
+        <param name="briefcase_setup">Impostazione del portafoglio</param>
+        <param name="cancel">Annulla</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Annulla invio</param>
+        <param name="cancel_test_instance">Annulla Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Cambia azienda</param>
+        <param name="change_currency">Cambia valuta</param>
+        <param name="change_owner">Cambia titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Accetta e cambia titolare</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Accetta e assegna principale</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Cambia stato</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Verifica disponibilità</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Controlla ortografia</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Scegli <pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Ripulisci</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Panoramica</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Scheda {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Elenco</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Copia dettagli controllante</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Comprimi tutto</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Scegli una voce dall&apos;elenco di selezione</param>
+        <param name="composegmail">Componi messaggio Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Conferma</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Continua</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Continua comunque</param>
+        <param name="convert">Converti</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Converti <lead/></param>
+        <param name="create">Crea</param>
+        <param name="create_follow_up_event">Crea <event/> di follow-up</param>
+        <param name="create_follow_up_task">Crea <task/> di follow-up</param>
+        <param name="create_new">Crea <new/> {0}</param>
+        <param name="create_new_section">Crea nuova sezione</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Crea <opportunity/></param>
+        <param name="create_test_instance">Crea Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Crea database di prova</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Crea modulo Web a lead</param>
+        <param name="create_new_holiday">Crea nuova vacanza</param>
+        <param name="create_new_sla_process">Nuovo processo diritti</param>
+        <param name="create_new_milestone_type">Nuovo punto saliente</param>
+        <param name="currency_setup">Impostazione della valuta</param>
+        <param name="customer_view">Visualizzazione cliente</param>
+        <param name="customize">Personalizza</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Personalizza visualizzazione per tutti gli utenti</param>
+        <param name="page_settings">Impostazioni pagina</param>
+        <param name="customize_page">Personalizza pagina</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Modifica layout</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Elenco cruscotti digitali</param>
+        <param name="data_export">Esportazione dati</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Pulitura</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Rifiuta</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Link personalizzati predefiniti</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Rimuovi accesso Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Chiudi e visualizza anteprima</param>
+        <param name="dont_save">Non salvare</param>
+        <param name="dont_show_page_again">Non visualizzare questa pagina in futuro</param>
+        <param name="download">Scarica</param>
+        <param name="download_now">Scarica ora</param>
+        <param name="download_sample_css_file">Scarica file CSS di esempio</param>
+        <param name="edit">Modifica</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Modifica [beta]</param>
+        <param name="edit_all">Modifica tutto</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Modifica utente(i)</param>
+        <param name="edit_rates">Modifica tariffe</param>
+        <param name="edit_selected">Modifica selezione</param>
+        <param name="editProperties">Modifica proprietà</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Esci da {0}</param>
+        <param name="enable_appstore_user">Concedi accesso Checkout</param>
+        <param name="enable_as_partner">Abilita come partner</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Abilita accesso al Portale partner</param>
+        <param name="enable_self_service">Abilita Self-Service</param>
+        <param name="enable_users">Abilita nuovo(i) utente(i)</param>
+        <param name="enableForecasting">Abilita previsioni personalizzabili</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Accedi alla formazione</param>
+        <param name="erase_test_instance">Cancella Sandbox</param>
+        <param name="establish">Stabilisci</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Espandi tutto</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Esporta dettagli</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Esporta dettagli ora</param>
+        <param name="export_background">Esegui esportazione in background...</param>
+        <param name="fctHistory">Cronologia previsioni</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Riepilogo previsione</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Convalide campi</param>
+        <param name="find">Trova</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Trova rapporto</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Trova <document/></param>
+        <param name="find_pricebooks">Trova <pricebook/></param>
+        <param name="find_products">Trova <product/></param>
+        <param name="find_solution">Trova <solution/></param>
+        <param name="finished">Completato</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Inoltra</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Inoltra a connessioni</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Genera WSDL</param>
+        <param name="generate_login_html">Genera HTML di accesso</param>
+        <param name="getMoreInfo">Ulteriori informazioni</param>
+        <param name="go">Vai</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Guida per questa pagina</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} - Guida</param>
+        <param name="hide">Nascondi dettagli</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Accetto</param>
+        <param name="i_decline">Rifiuto</param>
+        <param name="impactAnalysis">Dove si utilizza?</param>
+        <param name="import">Importa</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Importa <lead plural="y"/></param>
+        <param name="include_offline">Includi Offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Inserisci</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Inserisci selezionati</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Installa ora</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Invita</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Invita a connettersi</param>
+        <param name="jigsawsearch">Ottieni referenti</param>
+        <param name="join_meeting">Partecipa a incontro</param>
+        <param name="jumpstart">Avvio immediato</param>
+        <param name="keep_in_touch">Richiedi aggiornamento</param>
+        <param name="layout_assignment">Assegnazione layout</param>
+        <param name="legal_view">Formato Legal</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Blocca record</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Accedi come utente partner</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Gestisci membri</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Nuova richiesta di incontro</param>
+        <param name="add_members_search">Aggiungi membri - Cerca</param>
+        <param name="add_members_import">Aggiungi membri - Importa file</param>
+        <param name="edit_members_search">Modifica membri - Cerca</param>
+        <param name="update_members_import">Aggiorna e aggiungi membri – Importa file</param>
+        <param name="manage_call_center_users">Gestisci utenti call center</param>
+        <param name="map_lead_fields">Mappa <lead_field plural="y"/></param>
+        <param name="mark_as">Contrassegna come...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Importazione membro</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Modifica promemoria individuali</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Nuovo</param>
+        <param name="newcase">Nuovo</param>
+        <param name="new_addition_order">Nuovo ordine di aggiunta</param>
+        <param name="new_custom_object">Nuovo oggetto personalizzato</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Crea nuovo rapporto personalizzato</param>
+        <param name="new_dashboard">Nuovo cruscotto digitale</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Nuovo componente cruscotto digitale</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Nuovo modello</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Nuovo modello</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Nuova cartella</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Nuovo gruppo</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Nuova area di attesa</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Nuova nota</param>
+        <param name="new_object_custom_tab">Nuova scheda oggetto personalizzato</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Riunione online</param>
+        <param name="new_order">Nuovo ordine</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Nuovo gruppo personale</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Nuovo ordine di riduzione</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Nuovo ruolo</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Nuovo pulsante</param>
+        <param name="new_territory">Nuovo territorio</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Nuovo utente</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Nuova scheda Web</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Esegui un altro aggiornamento</param>
+        <param name="performAnotherMigrate">Migra un altro profilo</param>
+        <param name="preview">Anteprima</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Ricalcola</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Ristabilisci</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Rifiuta</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Rifiuta modifiche</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Rimuovi utenti</param>
+        <param name="remove_from_briefcase">Rimuovi da portafoglio</param>
+        <param name="remove_from_campaign">Rimuovi da <campaign/></param>
+        <param name="reorder">Riordina</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Ripara</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Esegui tutti i test</param>
+        <param name="run_test">Esegui il test</param>
+        <param name="quick_save">Salvataggio rapido</param>
+        <param name="quick_save_hover">Salva e continua con le modifiche</param>
+        <param name="reply">Rispondi</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Rispondi a tutti</param>
+        <param name="reportmanager">Responsabile rapporti</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">Reimposta password</param>
+        <param name="reset_passwords">Reimposta password</param>
+        <param name="retrieve_prices">Recupera prezzi</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Esegui rapporto</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Salva</param> <!-- aliased across labels do not change -->
+        <param name="saving">Salvataggio in corso...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Salva e Aggiungi prezzo</param>
+        <param name="save_and_add_product">Salva e Aggiungi <product/></param>
+        <param name="save_and_clone">Salva e Clona di nuovo</param>
+        <param name="save_and_close">Salva e Chiudi</param>
+        <param name="save_and_attach">Salva e Aggiungi allegato</param>
+        <param name="save_and_continue">Salva e Avanti</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Salva e Altro</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Salva e <new/> <event/></param>
+        <param name="save_and_new_product">Salva e <new/> <product/></param>
+        <param name="save_and_new_task">Salva e <new/> <task/></param>
+        <param name="save_and_refresh">Salva e Aggiorna</param>
+        <param name="save_and_send">Salva e Invia aggiornamento</param>
+        <param name="event_scheduler">Visualizzazione client e team &gt;</param>
+        <param name="saveAs">Salva con nome</param>
+        <param name="schedule_to_email">Pianificato per l&apos;invio di email</param>
+        <param name="schedule_to_print">Pianificato per la stampa</param>
+        <param name="scrutinize">Ispeziona</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Trova <knowledgeArticles/></param>
+        <param name="newArticle">Nuovo</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Seleziona modello</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Avvio immediato Self-Service</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Impostazione Self-Service</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Visualizza/Abilita Self-Service</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Invia</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Invia un messaggio email a <all/> <contacts article="the"/></param>
+        <param name="send_invitation">Salva e Invia invito</param>
+        <param name="set_status">Gestisci stato</param>
+        <param name="setup_and_install">Imposta e Installa</param>
+        <param name="setup_roles">Imposta ruoli</param>
+        <param name="setup_sharing">Imposta condivisione</param>
+        <param name="sfga_instructions">Istruzioni stampabili complete</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Mostra dettagli</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Salta</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Ordina</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Inizia riunione</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Invia</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Invia e Aggiungi allegato</param>
+        <param name="subscribe_now">Abbonati ora</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Aggiorna ora</param>
+        <param name="suggest">Visualizza <solutions/> <suggested/></param>
+        <param name="take_training_now">Iscriviti subito al corso di formazione</param>
+        <param name="terminate">Termina</param>
+        <param name="training_history">Cronologia formazione</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Trasferisci</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Prova ora</param>
+        <param name="undelete">Annulla Elimina</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Annulla</param>
+        <param name="unlock">Sblocca record</param>
+        <param name="update">Aggiorna</param>
+        <param name="update_campaign_history">Aggiorna e aggiungi <campaign_members/></param>
+        <param name="update_now">Aggiorna ora</param>
+        <param name="update_statuses">Aggiorna stati</param>
+        <param name="upload">Carica</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Dipendenze campi</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Visualizza componenti eliminati</param>
+        <param name="view_partnerforce">Visualizza utente partner</param>
+        <param name="view_self_service">Visualizza Self-Service</param>
+        <param name="view_customer_success">Visualizza utente Portale Clienti</param>
+        <param name="enable_customer_success">Abilita utente Portale Clienti</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Di cosa si tratta?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Chiudi questa finestra</param>
+        <param name="runApexRecalc">Ricalcola condivisione Apex</param>
+        <param name="disablecustomerportal">Disabilita utente Portale Clienti</param>
+        <param name="disablepartnerportal">Disabilita utente partner</param>
+        <param name="disablecustomerportalaccount">Disabilita account Portale Clienti</param>
+        <param name="disablepartnerportalaccount">Disabilita account partner</param>
+        <param name="voteup">Vota a favore</param>
+        <param name="votedown">Vota contro</param>
+        <param name="markquestionunanswered">Contrassegna come Senza risposta</param>
+        <param name="markbestanswer">Contrassegna come Migliore risposta</param>
+        <param name="requestUseSfdcAction">Trova connessioni</param>
+        <param name="addPET">Aggiungi modello di diritto</param>
+        <param name="truncate">Tronca</param>
+        <param name="disableprmsuperuser">Disabilita accesso super utente partner</param>
+        <param name="enableprmsuperuser">Abilita accesso super utente partner</param>
+        <param name="purchase_more">Acquista di più</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">Torna all&apos;inizio</param>
+        <param name="descriptionText">Testo troppo lungo. Visualizzare i dettagli.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Visualizza file</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Controllante</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Nessuna informazione correlata</param>
+        <param name="no_records">Nessun record da visualizzare</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Mostra {0} in più &#187;</param>
+        <param name="NextMoreGeneric">Mostra più &#187;</param>
+        <param name="view_more">Vai all&apos;elenco</param>
+        <param name="view_more_tot">Vai all&apos;&apos;elenco ({0})</param>
+        <param name="view_more_tot_plus">Vai all&apos;&apos;elenco ({0}+)</param> <!-- -->
+        <param name="view_more_1">Vai all&apos;elenco con un record in più</param> <!-- Singular -->
+        <param name="view_more_n">Vai all&apos;&apos;elenco con {0} record in più</param> <!-- Plural -->
+        <param name="view_more_n_plus">Vai all&apos;&apos;elenco con {0}+ record</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Altri disponibili; Vai all&apos;elenco</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Probabilità</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Fonte</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Conseguita</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Periodo fiscale</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Trimestre {1} dell&apos;&apos;anno {0}</param>
+        <param name="opportunities_next_step">Fase successiva</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Aggiorna</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <open/></param>
+        <param name="activities_open"><Activities/> <open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Correlato a</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Nota</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google Documento</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Note e allegati</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">Titolo nota</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Allegato</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Allegati</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">Nome file</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Proprietà</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Principale</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/> da visualizzare</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Data</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Titolo</param>
+        <param name="object_title">Titolo</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Nome</param>
+        <param name="object_name">Nome</param>
+        <param name="date">Data</param>
+        <param name="due_date">Scadenza</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">Ultima modifica</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Aggiornato da</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Principale</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Concorrenti</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Nome concorrente</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Punti forti</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Punti deboli</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Probabilità (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Completa</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Contrassegna {0} come Completa</param>
+        <param name="task_date">Data</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Nome</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Approvazione <contract/> in sospeso</param>
+        <param name="task_none">Nessuna <task/> <open/> pianificata per questo periodo.</param>
+        <param name="task_mode_today">Oggi</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Oggi + attività scadute</param>
+        <param name="task_mode_tomorrow">Domani</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Prossimi {0} giorni</param>
+        <param name="task_mode_next_7days_overdue">Prossimi {0} giorni + attività scadute</param>
+        <param name="task_mode_overdue">Scadute</param>
+        <param name="task_mode_this_month">Questo mese</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Tutto aperto</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Cronologia</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Notizie</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Titoli</param>
+        <param name="new_date">Data</param>
+        <param name="news_none">Nessuna notizia disponibile</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Modelli di unione email</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/> <top/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Data aggiunta</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Aggiunto da</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <solution/> allegata</param>
+        <param name="description">Descrizione</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Ticker</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Nessun dato di <activity_history/> da visualizzare.</param>
+        <param name="nonotes">Nessun dato di cronologia note da visualizzare.</param>
+        <param name="noattachments">Nessun dato di cronologia allegati da visualizzare.</param>
+        <param name="viewallattachments">Visualizza tutti gli allegati</param>
+        <param name="viewalldocsattachments">Visualizza tutti i Google Documenti e gli allegati</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Data</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Descrizione riga</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Acquisizioni API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Filtrata in base all&apos;utente</param>
+        <param name="apicapture_filterip">Filtrata in base all&apos;IP</param>
+        <param name="apicatpure_numbers">Acquisizioni</param>
+        <param name="apicapture_soapscope">Visualizza acquisizioni</param>
+        <param name="apicapture_active">Attivo</param>
+        <param name="apicapture_none">Nessuna acquisizione</param>
+        <param name="apicapture_new">Avvia nuova acquisizione</param>
+        <param name="apicapture_view">Visualizza</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Cronologia accessi</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">nessun accesso</param>
+        <param name="login_none">Nessuna cronologia accessi disponibile.</param>
+        <param name="login_username">Nome utente</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Ora di accesso</param>
+        <param name="login_type">Tipo di accesso</param>
+        <param name="login_ip">IP di origine</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N/D</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Browser</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Piattaforma</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Risoluzione</param>
+        <param name="login_clientversion">Versione del client</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Applicazione</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Tipo API</param>
+        <param name="login_apiversion">Versione API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">Operazione riuscita</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Scaricare la cronologia accessi degli ultimi sei mesi, inclusi gli accessi effettuati esternamente al sito Web, ad esempio gli accessi API (file .csv in Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Scaricare la cronologia accessi, includendo solo gli accessi effettuati dal sito Web (file .csv di Excel)</param>
+        <param name="login_history_download_title">Opzioni di download</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">File CSV</param>
+        <param name="login_history_download_file_type_gzip">File GZIP</param>
+        <param name="login_history_download_file_type_help">I file CSV (valori separati da virgola) possono essere visualizzati con svariati fogli di calcolo ed editor di testo. I file GZIP (zip GNU) sono compressi per ridurne le dimensioni.</param>
+        <param name="login_history_download_option_title">Contenuto del file</param>
+        <param name="login_history_download_option_all">Tutti gli accessi</param>
+        <param name="login_history_download_option_ie6_only">SOLO accessi da IE6</param>
+        <param name="login_history_download_option_web_only">SOLO accessi dal sito Web</param>
+        <param name="login_history_download_option_help">"Tutti gli accessi" include gli accessi da tutte le origini, ad esempio il sito Web, Outlook, le integrazioni API, ecc. "Accessi da IE6" include solo gli accessi di utenti che utilizzano Internet Explorer 6. "Accessi dal sito Web" include solo gli accessi dalla pagina di accesso di Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Ancora IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce sta eliminando gradualmente il supporto per IE6. Utilizzare le opzioni di download fornite per scoprire quali browser sono in uso nella propria organizzazione.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL di accesso</param>
+        <param name="order_history">Cronologia ordini</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Nessun ordine</param>
+        <param name="order_number">Numero ordine</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Data ordine</param>
+        <param name="order_currency">Valuta</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Costo totale</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">Venduto a</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Nessun <order_product/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Numero&lt;BR&gt;riga</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Prezzo mensile</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Riferimento fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Frequenza fatturazione&lt;BR&gt;(mesi)</param>
+        <param name="bo_order_items_billing_frequency_text">Frequenza fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Termine ordine&lt;BR&gt;(mesi)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Data</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Fatture</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Nessuna fattura</param>
+        <param name="invoices_invoice_number">Numero fattura</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Data fattura</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Scadenza fattura</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">ID sistema esterno</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Ammontare totale</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Saldo dovuto</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Totale credito</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Totale storno</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Referente per la fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Società di fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Cronologia fatture</param>
+        <param name="revenue_schedule">Pianifica</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Data</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">Reddito</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Commenti</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Cronologia stati</param>
+        <param name="status_none">Nessuna cronologia stati trovata</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Selezione dei servizi</param>
+        <param name="services_none">Nessun servizio</param>
+        <param name="services_description">Servizio</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">Prezzo unitario</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Prezzo totale</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Sconto</param>
+        <param name="training">Cronologia corso di formazione</param>
+        <param name="training_none">Nessuno</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">Nome classe</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Data fissata</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Risposta</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Predefinito</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> definito</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Data iniziale</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Data finale</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">Valore durata</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Con regole di acquisto</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">Frequenza fatturazione&lt;BR&gt;(mesi)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Fatturato fino alla data</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <billed/></param>
+        <param name="event_attending"><Event/> accettato</param>
+        <param name="event_notdecided">Nessuna risposta</param>
+        <param name="event_declined"><Event/> rifiutato</param>
+        <param name="event_attending_none">Nessun partecipante ha accettato</param>
+        <param name="event_notdecided_none">Tutti i partecipanti hanno risposto</param>
+        <param name="event_declined_none">Nessun partecipante ha rifiutato</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Nome</param>
+        <param name="documents_size">Dimensioni</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Autore</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Visualizza itinerario di controllo impostazioni</param>
+        <param name="download">scaricare</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Di seguito sono elencate le ultime 20 voci della propria organizzazione. È possibile {0} l&apos;&apos;itinerario di controllo dell&apos;&apos;impostazione della propria organizzazione per gli ultimi sei mesi (file .csv in Excel).</param>
+        <param name="setup_audit_date">Data</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">Azione</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Sezione</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Utente delegato</param>
+        <param name="setup_audit_proxyinguser_help">Questa colonna elenca il nome utente di un utente che ha apportato una modifica all&apos;impostazione per conto di un utente finale. Ad esempio, se un utente ha concesso l&apos;accesso a un rappresentante dell&apos;assistenza, viene elencato il nome utente di questo rappresentante.</param>
+        <param name="setup_audit_trail_none">Nessuna informazione sull&apos;itinerario di controllo impostazioni disponibile</param>
+        <param name="setup_audit_download_csv">Scarica itinerario di controllo impostazione per gli ultimi sei mesi (file .csv in Excel)</param>
+        <param name="DashboardComponents_title">Componenti cruscotto digitale</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Nessun componente cruscotto digitale</param>
+        <param name="translated_templates_none">Nessun modello di email tradotto</param>
+        <param name="translated_templates_title">Modelli di email tradotti</param>
+        <param name="translated_templates_language">Lingua</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Attivo</param>
+        <param name="desc_pnet_conn_audit_trail">Di seguito sono elencate le ultime 20 voci della propria organizzazione. È possibile {0} l&apos;&apos;intera cronologia dell&apos;&apos;itinerario di controllo delle connessioni come file .csv di Excel.</param>
+        <param name="pnet_conn_audit_trail">Cronologia connessioni</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Data</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Nessuna informazione disponibile sull&apos;itinerario di controllo delle connessioni</param>
+        <param name="pnet_conn_audit_download_csv">Scarica cronologia connessioni (csv)</param>
+        <param name="pnet_entity_conns_title">Condivisione esterna</param>
+        <param name="pnet_entity_conn_stop_sharing">Interrompi condivisione</param>
+        <param name="pnet_pub_title">Oggetti pubblicati</param>
+        <param name="pnet_sub_title">Oggetti di abbonamento</param>
+        <param name="pnet_pubsub_object">Nome oggetto</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Campi</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Pubblica/Annulla pubblicazione</param>
+        <param name="pnet_sub_edit">Abbona/Annulla abbonamento</param>
+        <param name="pnet_pub_edit_object">Oggetto pubblicato.</param>
+        <param name="pnet_pub_edit_field">Fare clic su Modifica qui di seguito per pubblicare i campi disponibili su ciascun oggetto.</param>
+        <param name="pnet_sub_edit_object">Oggetto di abbonamento.</param>
+        <param name="pnet_sub_edit_field">Fare clic su Modifica qui di seguito per abbonarsi ai campi disponibili su ciascun oggetto.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">Contenuto</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Allegati Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Errore nel caricamento di elenchi correlati</param>
+        <param name="ajax_exception_desc">Si è verificato un problema durante la raccolta delle informazioni relative agli elenchi correlati per questo record. Ricaricare la pagina e se il problema non si risolve, rivolgersi all''amministratore o &lt;a href=&quot;{0}&quot; title=&quot;report{1}&quot;&gt;segnalare&lt;/a&gt; il problema al team dell''assistenza clienti.</param>
+        <param name="category_access_title">Impostazioni di visibilità gruppo di categorie</param>
+        <param name="category_access_video_tutorial">Esercitazione video</param>
+        <param name="category_access_name">Gruppo di categorie</param>
+        <param name="category_access_access">Visibilità</param>
+        <param name="category_access_details">Dettagli visibilità</param>
+        <param name="category_access_custom">Personalizzato</param>
+        <param name="category_access_full">Tutto</param>
+        <param name="category_access_inherited">Derivato da {0}</param>
+        <param name="category_access_revoked">Nessuno</param>
+        <param name="category_access_userNodeAndChildren_Profile">profilo</param>
+        <param name="category_access_userNodeAndChildren_UserRole">ruolo e subordinati</param>
+        <param name="category_access_noCategories">Nessuna categoria è visibile a <this entity="0"/> {0}</param>
+        <param name="category_access_allCategories">Tutte le categorie sono visibili a <this entity="0"/> {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} per {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">Generale Stati Uniti e Europa occidentale (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Giapponese (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Giapponese (JIS)</param>
+        <param name="4">Giapponese (EUC)</param>
+        <param name="5">Coreano (ks_c_5601-1987)</param>
+        <param name="6">Cinese tradizionale (Big5)</param>
+        <param name="7">Cinese semplificato (GB2312)</param>
+        <param name="8">Cinese tradizionale Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Giapponese (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Organizzazione in prova</param>
+        <param name="expand">Fare clic per aprire l&apos;intestazione laterale [Alt+S]</param>
+        <param name="collapse">Fare clic per chiudere l&apos;intestazione laterale [Alt+S]</param>
+        <param name="expandNoHotkey">Fare clic per aprire l&apos;intestazione laterale</param>
+        <param name="collapseNoHotkey">Fare clic per chiudere l&apos;intestazione laterale</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">Su</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Giù</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Sposta</param>
+        <param name="top">In alto</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">In basso</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">Completare i campi obbligatori.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">Tutti gli utenti</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">Nuovo</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Aggiungi</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Elimina</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Cambia]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Come...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Visualizza altro</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Registra una chiamata</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Registra una nota</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Stampa unione</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Visualizza tutto</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Allega file</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Come...</param>
+        <param name="send_email">Invia un messaggio email</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Immagine aggiunta dall&apos;utente</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Applicazioni</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">Formato stampa</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Clona</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Condivisione</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">Pagina iniziale</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Ulteriori informazioni</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Selezionare un elemento:</param>
+        <param name="hotlist_mode">Visualizza selezione</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Mostra {0,number,integer} elementi</param>
+        <param name="hotlist_empty_title">Nessun record recente. Fare clic su Vai oppure selezionare una visualizzazione dall&apos;elenco a discesa per visualizzare i record.</param>
+        <param name="hotlist_empty_description">Nessun record disponibile per questi criteri.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Vai a Rapporti</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Centro risorse</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Il Centro risorse consente di cercare clienti potenziali, trovare servizi di altri produttori e altro ancora.</param>
+        <param name="resource_center_link_text">Vai a Centro risorse</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Metodologie di vendita</param>
+        <param name="hotlist_recently_modified">Modificati recentemente</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Creati recentemente</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Visualizzati recentemente</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--Nessuno--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Seleziona--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Predefinito--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Non applicabile**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">Dipende da ""{0}""</param>
+        <param name="dependentFields">Campi dipendenti</param>
+        <param name="controls">Controlla i valori di {0}</param>
+        <param name="dependsOnMultiple">Dipende da {0}</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">L&apos;amministratore non ha definito link personalizzati.</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">Passa a:</param>
+        <param name="JumpToStep">Fase {0}: {1}</param>
+        <param name="CloseWizard">Chiudi procedura guidata</param>
+        <param name="LeftHeader">Fase {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Fase {0} di {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Fase {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Salva e Nuovo</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">Avanti</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Indietro</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Impostazione guidata organizzazione per {0}</param>
+        <param name="ImportWizardTitle">Importazione guidata per {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Centro ordini</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Abbonamento di prova</param>
+        <param name="WizardBody">Corpo procedura guidata</param>
+        <param name="WizardFooter">Piè di pagina procedura guidata</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Indirizzo</param><!-- translators note - this is actually the full address -->
+        <param name="street">Indirizzo</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Città</param><!-- aliased across label files - do not change -->
+        <param name="state">Stato/Provincia</param><!-- aliased across label files - do not change -->
+        <param name="zip">CAP</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">CAP</param> <!-- aliased across label files - do not change -->
+        <param name="country">Paese</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefono</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Interno</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Int. fax</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Email</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Indirizzo spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Via spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Città spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Stato/Provincia spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">CAP spedizioni</param>
+        <param name="shippingzippostalcode">CAP/Codice postale spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Paese spedizioni</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Indirizzo fatturazione</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Città fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Stato/Provincia fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">CAP fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Paese fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Via fatturazione</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Via banca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Indirizzo banca</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">Città banca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Stato/Provincia banca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">CAP banca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Paese banca</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Indirizzo postale</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Via indirizzo postale</param>
+        <param name="mailingcity">Città indirizzo postale</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Stato/Provincia indirizzo postale</param>
+        <param name="mailingzip">CAP indirizzo postale</param>
+        <param name="mailingcountry">Paese indirizzo postale</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Indirizzo postale (riga 1)</param>
+        <param name="mailingaddress2">Indirizzo postale (riga 2)</param>
+        <param name="mailingaddress3">Indirizzo postale (riga 3)</param>
+        <param name="otheraddress">Altro indirizzo</param>
+        <param name="otheraddress1">Altro indirizzo (riga 1)</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Altro indirizzo (riga 2)</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Altro indirizzo (riga 3)</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Altra via</param>
+        <param name="otherstreet2">Altra via 2</param>
+        <param name="otherstreet3">Altra via 3</param>
+        <param name="othercity">Altra città</param>
+        <param name="otherstate">Altro stato/provincia</param>
+        <param name="otherzipcode">Altro CAP</param>
+        <param name="otherpostalcode">Altro codice postale</param>
+        <param name="otherzippostalcode">Altro CAP/codice postale</param>
+        <param name="othercountry">Altro paese</param>
+        <param name="otherphone">Altro telefono</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Altro interno</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Indirizzo 1</param>
+        <param name="address2">Indirizzo 2</param>
+        <param name="address3">Indirizzo 3</param>
+        <param name="home_phone">Telefono (abit.)</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">Caricamento in corso...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Luogo</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Quantità</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contact Manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Sì</param>   <!-- aliased across labels; do not change -->
+        <param name="no">No</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Benvenuto in salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. Tutti i diritti riservati.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. Tutti i diritti riservati.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Conformità 508</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. Tutti i diritti riservati.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Tutti i diritti riservati.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. Tutti i diritti riservati.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Tutti i diritti riservati.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Informativa sulla protezione</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Condizioni di utilizzo</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Grazie per aver scelto salesforce.com.Prima di iniziare a utilizzare salesforce.com, leggere attentamente e accettare le Condizioni di utilizzo riportate di seguito. Una volta terminato, continuare facendo clic sul pulsante "Accetto". Se non si accettano le Condizioni di utilizzo non sarà possibile accedere a Salesforce.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">Chiudi</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Aggiungi ora</param>
+        <param name="remove">Rimuovi</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Nuovo</param>
+        <param name="exciting_and_new">Nuovo!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">qui</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Genera</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Chiudi finestra</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Stampa questa pagina</param>
+        <param name="new_window">(Nuova finestra)</param>
+        <param name="new_focus">(Spostamento attenzione)</param>
+        <param name="pdf_file">PDF Adobe Acrobat</param>
+        <param name="508BackgroundFrame">Frame nascosto &#45; Ignora</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">selezionare tutto</param>
+        <param name="select_shown">Seleziona elementi visualizzati</param>
+        <param name="remove_shown">Rimuovi elementi visualizzati</param>
+        <param name="select_none">Nessuna selezione</param>
+        <param name="all_active">Tutti attivi</param>
+        <param name="all_inactive">Tutti inattivi</param>
+        <param name="are_you_sure">Continuare?</param>
+        <param name="irreversible_are_you_sure">Operazione irreversibile. Continuare?</param>
+        <param name="replace">Sostituisci</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Fine</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} minuti</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Più voci trovate. Selezionare nell&apos;elenco a discesa o fare clic sull&apos;icona per perfezionare la ricerca.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">T{0}-{1}</param>
+        <param name="reset">Reimposta</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Ignora</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Totale</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Fare clic qui</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Note per il webmaster:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">HTML di esempio</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Password</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Non visualizzare questa pagina in futuro</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Nascondi questo messaggio per: </param>
+        <param name="dontShowMessageAgain">Non visualizzare questo messaggio in futuro</param>
+        <param name="dismissMessage">Scarta questo messaggio</param>
+        <param name="allObjects">Tutti gli oggetti</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Premere la barra spaziatrice o il tasto Invio per aprire</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Self-Service: <Case_Detail/></param>
+        <param name="CssEdit">Self-Service: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Feed <case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Commento</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Oggetti personalizzati</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definizione oggetto personalizzato</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Cruscotto digitale</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Cruscotti digitali</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Deseleziona tutto</param>
+        <param name="deselect_shown">Deseleziona elementi visualizzati</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Modello di stampa unione</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Modelli di stampa unione</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Cartella</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Cartelle</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Previsioni</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Previsioni</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Supervisore Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Fattura</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Note</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Ordine</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Ordini</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Voce ordine</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Voci ordine</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Pagamento</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Pagamenti</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">rapporto</param>
+        <param name="Reports">Rapporti</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Registrazione</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Modello</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Modelli</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabella</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Attivo</param>
+        <param name="amount">Ammontare</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Reddito annuale</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Allega documento</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Cambia password</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Chiudi</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Chiuso</param>
+        <param name="closed_date">Data chiusura</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Data chiusura</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Data creazione</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Tipo di dati</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Eliminato</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Informazioni descrizione</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Dipendenti</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">File</param>   <!-- aliased across labels; do not change -->
+        <param name="files">File</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Informazioni generali</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Informazioni preliminari</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Etichetta</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Ultimo accesso</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Data ultima modifica</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Nome</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Nome</param>
+        <param name="new_status">Nuovo stato</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Nessuno</param>
+        <param name="open">Aperto</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organizzazione</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Nessuna corrispondenza trovata.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Tutto</param>
+        <param name="clear">Cancella</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Fare clic sull&apos;icona di ricerca...</param>
+        <param name="click_lookup_icon_info">Fare clic sull&apos;icona di ricerca per selezionare un valore.</param>
+        <param name="clear_all">Cancella tutto</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Fare clic sul pulsante Allega.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Errori</param> <!-- aliased across lables - do not change -->
+        <param name="high">Alta</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Guida</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Portami!</param>
+        <param name="keywords">Parole chiave</param>
+        <param name="length">Lunghezza</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Stato</param> <!-- aliased across lables - do not change -->
+        <param name="title">Titolo</param>
+        <param name="object_title">Titolo</param>
+        <param name="type">Tipo</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Utente</param> <!--aliased across labels - do not change -->
+        <param name="Users">Utenti</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Insieme di autorizzazioni</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profilo</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profili</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Titolare</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">Non visualizzare questa pagina in futuro.</param>
+        <param name="click_here_to_create_new_account">{0} per creare <a/> <new/> <account/> ora.</param>
+        <param name="click_here_to_create_new_contact">{0} per creare <a/> <new/> <contact/> ora.</param>
+        <param name="click_here_to_create_new_lead">{0} per creare <a/> <new/> <lead/> ora.</param>
+        <param name="click_here_to_create_new_opportunity">{0} per creare <a/> <new/> <opportunity/> ora.</param>
+        <param name="click_here_to_create_new_product">{0} per creare <a/> <new/> <product/> ora.</param>
+        <param name="SystemModstamp">Modstamp di sistema</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divisione</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Elaborazione in corso</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Aggiornamento dei record in corso…</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Traduzione statica</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Nascondi questa pagina in futuro</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Caricamento in corso...</param>
+        <param name="uploading_title">Caricamento</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Importazione in corso...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">e </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">Errore: Nessun accesso a questo campo</param>
+        <param name="noReadAccess">Non si dispone di un accesso sufficiente per visualizzare questo record.</param>
+        <param name="noAccessToUser">Non si dispone dell'autorizzazione per accedere a questo utente.</param>
+        <param name="disabledButton">Pulsante disabilitato: {0}</param>
+        <param name="RequiredHeader">Informazioni richieste</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Inserisci immagine</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Eliminare l&apos;intervallo IP di accesso?</param>
+        <param name="AMPM">Voce AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Componente protetto</param>
+        <param name="dialogCloseConfirm">La finestra di conferma che si stava visualizzando potrebbe essersi chiusa prematuramente. Fare clic su OK per accedervi nuovamente o su Annulla per ignorare questo avviso.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Finestra di dialogo Inizio</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">Browser non supportato per il nuovo tema interfaccia utente</param>
+        <param name="DialogHeader">Segnalazione:</param>
+        <param name="DialogContent1">il browser in uso non visualizza il nuovo tema interfaccia utente.</param>
+        <param name="DialogContent2">Salesforce continuerà a visualizzare il tema classico, indicato in alto a sinistra, fino a quando non viene eseguito l&apos;aggiornamento all&apos;ultima versione di un browser supportato:</param>
+        <param name="DialogClassicDesc">Tema classico</param>
+        <param name="DialogAlohaDesc">Nuovo tema</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">Risultati di ricerca</param>
+        <param name="Recent">Visualizzati recentemente</param>
+        <param name="NoMatchHeader">Non è stato trovato alcun record per uno dei seguenti motivi:</param>
+        <param name="BulletOne">Non sono presenti record di questo tipo</param>
+        <param name="BulletTwo">Non si dispone dell&apos;autorizzazione per visualizzare i record</param>
+        <param name="BulletThree">I record non soddisfano i criteri di filtro impostati dall&apos;amministratore</param>
+        <param name="BulletFour">Uno o più campi controllanti sono vuoti o non validi (Campi controllanti:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">Utenti disponibili</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Utenti selezionati</param>
+        <param name="LicensedUsers">Utenti con licenza</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Selezionato per la rimozione</param>
+        <param name="Selected">Selezionato</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Scelto</param>
+        <param name="UnassignedPackages">Pacchetti non assegnati</param>
+        <param name="SelectedPackages">Pacchetti selezionati</param>
+        <param name="InView">nella visualizzazione</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Le dimensioni del file superano il limite massimo di {0}.</param>
+        <param name="no_file_specified">Specificare un file da caricare. Digitare il percorso al file, oppure utilizzare il pulsante &quot;Sfoglia &quot; per individuarlo nel file system locale.</param>
+        <param name="invalid_file_type">Il tipo di file specificato non è attualmente supportato.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Il nome file supera la lunghezza massima consentita, che è di {0} caratteri.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">L&apos;&apos;estensione del nome file supera la lunghezza massima consentita, che è di {0} caratteri.</param>
+        <param name="bytes">byte</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Tipi di file HTML non consentiti per motivi di sicurezza.</param>
+        <param name="attachment_size_exceeded">Il file caricato supera le dimensioni massime.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;Errore:&lt;/b&gt; è necessario selezionare un&apos;immagine da caricare</param>
+        <param name="upload_file_too_large">&lt;b&gt;Errore:&lt;/b&gt; l&apos;immagine supera le dimensioni massime di 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Errore:&lt;/b&gt; è possibile inserire solo file .gif, .jpeg e .png.</param>
+        <param name="upload_failed">&lt;b&gt;Errore:&lt;/b&gt; caricamento non riuscito.Riprovare più tardi.</param>
+        <param name="invalid_file">&lt;b&gt;Errore:&lt;/b&gt; il file non è un file di immagine valido.</param>
+        <param name="invalid_param">&lt;b&gt;Errore:&lt;/b&gt; parametri non validi.</param>
+        <param name="access_failed_alt">Questa immagine non è disponibile in quanto non si dispone dei privilegi per visualizzarla, oppure è stata rimossa dal sistema</param>
+        <param name="weekly_export_folder">Altro materiale collaterale caricato/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">Selettore stile scheda</param>
+        <param name="instructions">Selezionare uno stile per la scheda.</param>
+        <param name="createYourOwn">Crea uno stile personalizzato</param>
+        <param name="defaultCustomStyleDesc">Stile personalizzato</param>
+        <param name="styleIsUsedOn">Questo stile viene utilizzato nelle seguenti schede:</param>
+        <param name="showUsedStyles">Mostra gli stili utilizzati in altre schede</param>
+        <param name="hideUsedStyles">Nascondi gli stili utilizzati in altre schede</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">Selettore colore scheda</param>
+        <param name="instructions">Selezionare un colore</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">Colore:</param>
+        <param name="icon">Icona:</param>
+        <param name="defineNew">Definisci un nuovo stile per il colore</param>
+        <param name="noMotifErr">È necessario selezionare un colore</param>
+        <param name="noIconErr">È necessario selezionare un&apos;icona</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">Creazione di {0} avvenuta correttamente.</param>
+        <param name="Failure_message">Creazione non riuscita.</param>
+        <param name="Common_success_message">Creazione riuscita.</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">Richiedi prodotti aggiuntivi</param>
+        <param name="pageheader">Compilare i campi sottostanti per inviare le proprie richieste di ulteriori prodotti. Utilizzare il campo Descrizione per elencare i prodotti che si desidera ordinare. Se si desidera ordinare i prodotti di un contratto esistente, specificare il numero di contratto come riferimento.</param>
+        <param name="colHeader">Invio della richiesta di acquisto in corso</param>
+        <param name="functionalArea_0">Acquisto della licenza</param>
+        <param name="type_0">Acquista</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">Richiesta di acquisto</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">Grazie per aver inviato la richiesta. La notifica è stata inviata a un incaricato, che La ricontatterà per completare l&apos;ordine.</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">Richiedi riduzione licenze</param>
+        <param name="pageheader">Riempire tutti i campi richiesti per inviare la richiesta di riduzione delle licenze. Questo è il metodo più veloce per l&apos;elaborazione della richiesta.  Non inviare più richieste per le stesse licenze poiché potrebbero verificarsi ritardi inutili.</param>
+        <param name="title_landing">La richiesta è stata ricevuta.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">La richiesta è stata ricevuta e verrà elaborata nell&apos;ordine di ricezione. Si tenga presente che le richieste per ridurre il conteggio delle licenze avranno effetto a partire dal periodo di fatturazione successivo alla richiesta.A questo scopo è necessario notificare a salesforce.com la data della fattura per il successivo periodo di fatturazione con cinque giorni lavorativi di anticipo.</param>
+        <param name="pageheader_landing">La richiesta è stata ricevuta e verrà elaborata nell&apos;ordine di ricezione. Le richieste di riduzione del conteggio delle licenze avranno effetto 30 giorni dopo la data di invio della richiesta. Non inviare più richieste di riduzione per le stesse licenze poiché potrebbero verificarsi ritardi inutili.</param>
+        <param name="title_error">Impossibile elaborare la richiesta.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Non è possibile inviare la richiesta in questo momento. Riprovare più tardi.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Invio della richiesta in corso</param>
+        <param name="reason">Motivo</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Fornire maggiori&lt;br&gt; dettagli</param>
+        <param name="numLicenses">Numero di licenze</param>
+        <param name="potentialResponse">Come riusciamo a mantenere&lt;br&gt; i clienti?</param>
+        <param name="tips_title">Suggerimenti per l&apos;invio delle richieste di riduzione licenze</param>
+        <param name="tip1">Inserire accuratamente tutte le informazioni per garantire un&apos;&apos;elaborazione corretta e rapida della richiesta.  Prima di inviare la presente richiesta, assicurarsi di avere disattivato un numero di utenti sufficiente affinché il conteggio utenti sia minore o uguale al conteggio delle nuove licenze. È possibile eseguire questa operazione mediante la funzione &lt;a href=&quot;{0}&quot;&gt;Gestisci utenti&lt;/a&gt; in &lt;a href=&quot;{0}&quot;&gt;Impostazione personale&lt;/a&gt;.</param>
+        <param name="type1">Cancellazione account</param>
+        <param name="type2">Riduzione licenze utente</param>
+        <param name="type3">Riduzione licenze Offline</param>
+        <param name="type4">Riduzione licenze campagna</param>
+        <param name="type5">Annullamento Mobile Edition for au</param>
+        <param name="type6">Riduzione licenze Mobile Edition for au</param>
+        <param name="type7">Riduzione licenza Force.com Mobile</param>
+        <param name="reason_0">Società acquisita/fusa</param>
+        <param name="reason_1">Scioglimento della società</param>
+        <param name="reason_2">Agente di vendita eliminato</param>
+        <param name="reason_3">Utenti finali non approvano</param>
+        <param name="reason_4">Le funzionalità non hanno rispettato le aspettative</param>
+        <param name="reason_5">La gestione non comprende sufficientemente il valore</param>
+        <param name="reason_6">Esperienza non soddisfacente con i dipendenti di salesforce.com</param>
+        <param name="reason_7">Prezzo troppo elevato</param>
+        <param name="reason_8">Passaggio a un concorrente</param>
+        <param name="reason_9">Licenze non utilizzate</param>
+        <param name="reason_10">Altro</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">Completare i seguenti campi:</param>
+        <param name="title">Invia commenti a salesforce.com</param>
+        <param name="title_upgrade_me">Registrazione di una richiesta di aggiornamento</param>
+        <param name="title_support">Invia commenti</param>
+        <param name="warning_line_too_long">Attenzione: la descrizione è superiore a 4000 caratteri e verrà troncata.\\n</param>
+        <param name="feedback_info">Come contattare l&apos;assistenza clienti</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">L&apos;assistenza clienti è disponibile per rispondere a eventuali domande o commenti. Il vostro riscontro ci è estremamente utile per poter migliorare ulteriormente salesforce.com. Restiamo pertanto in attesa delle vostre idee e dei vostri suggerimenti.</param>
+        <param name="general_info_me">Per ulteriori informazioni sull&apos;aggiornamento dalla versione Personal Edition a una delle versioni aziendali, compilare il modulo seguente. Un incaricato La ricontatterà entro 48 ore lavorative.</param>
+        <param name="general_info_support">L&apos;assistenza clienti è disponibile per rispondere a eventuali domande o commenti. Contiamo sui commenti dei nostri clienti per migliorare i servizi di Salesforce CRM Call Center. Saremo lieti di ascoltare le vostre idee e ci auguriamo che ci contattiate.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Nuovo</param>
+        <param name="functionalArea">Argomento</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Domanda</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Richiesta</param>
+        <param name="type3">Commento</param>
+        <param name="type4">Richiesta funzione</param>
+        <param name="priority1">Emergenza</param>
+        <param name="priority2">Normale</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Bassa</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Desidero abbonarmi ora alla versione Professional Edition</param>
+        <param name="subject_subscribe_me">Desidero eseguire ora l&apos;aggiornamento</param>
+        <param name="subject_subscribe_we">Desidero ulteriori informazioni sulla versione Professional Edition</param>
+        <param name="subject_subscribe_ee">Desidero abbonarmi ora alla versione Enterprise Edition</param>
+        <param name="subject_subscribe_ue">Desidero abbonarmi ora alla versione Unlimited Edition</param>
+        <param name="subject_subscribe_support">Desidero abbonarmi ora</param>
+        <param name="subject_data_export">Desidero richiedere il Servizio di esportazione settimanale</param>
+        <param name="subject_marketing_licenses">Aggiungi licenze Marketing</param>
+        <param name="subject_offline_licenses">Aggiungi licenze Offline</param>
+        <param name="subject_wireless_licenses">Aggiungi licenze Wireless</param>
+        <param name="subject_offlinepda_licenses">Aggiungi licenze Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Aggiungi licenze Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">Aggiungi licenze Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Aggiungi licenze Knowledge</param>
+        <param name="subject_interaction_licenses">Aggiungi licenze Force.com Flow</param>
+        <param name="subject_support_licenses">Aggiungi licenze Service Cloud</param>
+        <param name="subject_jigsaw_licenses">Aggiungi licenze Jigsaw</param>
+        <param name="subject_liveagent_licenses">Aggiungi licenze Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Aggiungi licenze Site.com Contributor</param>
+        <param name="subject_siteforcepublisher_licenses">Aggiungi licenze Site.com Publisher</param>
+        <param name="subject_chatteranswers_licenses">Aggiungi licenze Chatter Answers</param>
+        <param name="subject_license_reduction">Riduzione licenze</param>
+        <param name="functionalArea_0">Amministrazione account/licenze</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Richiesta di informazioni sulla fatturazione</param>
+        <param name="functionalArea_3">Congiunzione dati</param>
+        <param name="functionalArea_4">Email/Email HTML</param>
+        <param name="functionalArea_5">Previsioni e Opportunità</param>
+        <param name="functionalArea_6">Importazione</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Lead</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Prestazioni</param>
+        <param name="functionalArea_9">Rapporti e visualizzazioni</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Abbonati ora</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Sincronizzazione</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Servizio di esportazione settimanale</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Wireless</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Altro</param>
+        <param name="functionalArea_16">Licenza marketing</param>
+        <param name="functionalArea_17">Licenza Offline</param>
+        <param name="functionalArea_18">Profili/Layout pagina/Tipi record</param>
+        <param name="functionalArea_19">Campagne</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Self-Service</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Licenza Wireless</param>
+        <param name="functionalArea_22">Aggiorna ora</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Licenza Sales Anywhere</param>
+        <param name="functionalArea_24">Operazioni/Eventi </param>
+        <param name="functionalArea_25"><Products/> e Rendite / <pricebooks/></param>
+        <param name="functionalArea_26">Avviso di trattativa importante </param>
+        <param name="functionalArea_27">Documenti</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Casi e soluzioni </param>
+        <param name="functionalArea_29">Cerca</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Condivisione</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect per Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">Licenza portale partner</param>
+        <param name="functionalArea_36">Licenza Force.com Mobile</param>
+        <param name="functionalArea_37">Licenza Salesforce CRM Content</param>
+        <param name="functionalArea_38">Licenza Service Cloud</param>
+        <param name="functionalArea_39">Licenza Jigsaw</param>
+        <param name="functionalArea_40">Licenza Live Agent</param>
+        <param name="functionalArea_41">Licenza Site.com Contributor</param>
+        <param name="functionalArea_42">Licenza Site.com Publisher</param>
+        <param name="functionalArea_43">Licenza Chatter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Se si desidera consultare direttamente un rappresentante dell&apos;assistenza clienti, chiamare il numero (415) 901-7010 tra le 6.00 e le 18.00 (ora del Pacifico) dal lunedì al venerdì, oppure chiamare il numero +353-1-2723503 tra le 8.00 e le 18.00 GMT+1 dal lunedì al venerdì.</param>
+        <param name="tips_title">Suggerimenti per l&apos;invio di casi</param>
+        <param name="tip1">Assicurarsi di fornire le informazioni necessarie per consentire di rispondere il più presto possibile al caso inviato.  Di seguito vengono forniti alcuni suggerimenti e promemoria:</param>
+        <param name="tip2">È opportuno informarci sull&apos;operazione che si tenta di eseguire, sul risultato previsto e su quanto è realmente avvenuto.</param>
+        <param name="tip3">È opportuno comunicarci le fasi necessarie per ricreare il problema.</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">Visualizza:</param>
+        <param name="X">X</param>
+        <param name="close">Chiudi</param>
+        <param name="MLclose">Chiudi</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Canc</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Elimina</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Cancella</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Record</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Imposta</param>
+        <param name="activate">Attiva</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Disattiva</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Gestisci</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Esporta</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Pagina successiva</param>
+        <param name="prev">Pagina precedente</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Totale voci visualizzate: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Mostra {0} {1} record per pagina di elenco</param>
+        <param name="number_shown_detail_page">Mostra sempre {0} {1} {2} record per elenco correlato</param>
+        <param name="number_shown_adjust_less_link">meno</param>
+        <param name="number_shown_adjust_more_link">più</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">tutto</param>
+        <param name="last_page">Torna alla pagina precedente</param>
+        <param name="last_list">Torna a elenco</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Torna all&apos;elenco:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Torna all&apos;elenco: <Entity entity="0" plural="y"/> da Connessioni</param>
+        <param name="last_suggested_solution_list">Torna all&apos;elenco <solutions/> <suggested/></param>
+        <param name="last_solution_search_list">Torna a Risultati ricerca <solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Torna a <entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Azioni:</param>
+        <param name="checkboxPrompt">Selezionare almeno una riga</param>
+        <param name="checkboxSinglePrompt">Selezionare una sola riga</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Le selezioni in questa pagina andranno perse. Continuare?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">È necessario selezionare un massimo di {0} righe per eseguire questa operazione.</param>
+        <param name="selectionLimit">Non è possibile selezionare più di {0} righe.</param>
+        <param name="login">Accedi</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Sessione</param>
+        <param name="none">Nessun record da visualizzare.</param>
+        <param name="no_rows">Nessuna riga selezionata</param>
+        <param name="subtotal">Totale parziale:</param>
+        <param name="total">Totale:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Seleziona tutte le voci</param>
+        <param name="clearAllInfo">Deseleziona tutte le voci</param>
+        <param name="rename">Rinomina</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">Seleziona</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Deseleziona</param>
+        <param name="toggleall">Alterna tutte le righe</param>
+        <param name="refresh">Aggiorna</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Selezionare una visualizzazione.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">La visualizzazione specificata supera le dimensioni massime. Restringere i criteri di ricerca modificando la visualizzazione o creare una nuova visualizzazione.</param>
+    <param name="switch_view">Cambia visualizzazione</param>
+    <param name="records_x_to_y">Record visualizzati {0} - {1}</param>
+    <param name="records_x_to_y_more">Record visualizzati {0} - {1}, altri record disponibili</param>
+    <param name="records_x_to_y_more_showing_max">Record visualizzati {0} - {1}. In questa pagina possono essere visualizzati solo i primi 1.000 record, anche se ne è disponibile un numero maggiore. Per mostrare un numero minore di record, restringere i criteri di visualizzazione dell&apos;&apos;elenco. Per stampare più di 1.000 record, eseguire un rapporto e quindi fare clic sul pulsante Formato stampa del rapporto.</param>
+    <param name="number_of_records">Numero di record</param>
+        <param name="createCase">Crea <case/></param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">Fare clic per espandere/comprimere le voci nidificate.</param>
+        <param name="expand">Fare clic per espandere le voci nidificate.</param>
+        <param name="collapse">Fare clic per comprimere le voci nidificate.</param>
+        <param name="shortExpand">Espandi</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Comprimi</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Espansi</param>
+        <param name="collapsed">Compressi</param>
+        <param name="level">Livello</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Gerarchia:</param>
+        <param name="siblings">Stesso livello:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">Ricerca</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Scegli un oggetto</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Chi</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Cosa</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">La ricerca ha restituito un numero di righe superiore al valore massimo ({0}). Perfezionare i criteri di ricerca.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Tutti i diritti riservati.</param>
+        <param name="useWildcards">Per migliorare i risultati della ricerca è possibile utilizzare &apos;*&apos; come carattere jolly accanto ad altri caratteri.  Ad esempio, &quot;ad*&quot; restituisce tutti i record con un nome contenente &quot;ad&quot;.</param>
+        <param name="useWildcardsWithSearch">Per migliorare i risultati della ricerca è possibile utilizzare &quot;*&quot; come carattere jolly accanto ad altri caratteri.</param>
+        <param name="error_lookup_multiple_matches_ile">Più voci trovate.&lt;br&gt;Fare clic sull&apos;icona per perfezionare la ricerca.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">Seleziona un colore</param>
+        <param name="cpFrameTitle">Selettore colori</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">Seleziona un tipo di grafico</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">Espandi elenco</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Elenco espanso</param>
+        <param name="sharing">Condivisione</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Perché?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">Altri filtri &gt;&gt;</param>
+        <param name="less_filters">Meno filtri &lt;&lt;</param>
+        <param name="by_keyword">Per parola chiave</param>
+        <param name="by_filter">Per filtro campo</param>
+        <param name="too_many">La ricerca ha restituito un numero di righe maggiore di {0}. Verranno visualizzate solo le prime {0}. Perfezionare i criteri di ricerca.</param>
+        <param name="Results">Risultati</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">Cerca:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Punteggio</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">Campo</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operatore</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Valore</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">È possibile utilizzare i filtri &quot;o&quot; immettendo più voci nella terza colonna.</param>
+        <param name="tip_1">È possibile immettere fino a 10 voci separate da virgole. Ad esempio: AT, MI, TO, PV consente di cercare AT o MI oppure TO o PV.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Racchiudere tra virgolette i dati che presentano virgole. Ad esempio, &quot;10,02&quot;,&quot;5,3&quot; consente di cercare 10,02 o 5,3.</param>
+        <param name="tip_3">Per i campi caselle di controllo, utilizzare &quot;Falso&quot; e &quot;Vero&quot;.</param>
+        <param name="tip_4">Ad esempio, &quot;Attivo uguale a Vero&quot; oppure &quot;Convertito uguale a Falso&quot;. Le voci di regola basate sugli indicativi di località potrebbero comprendere parentesi, ad esempio un numero di telefono che inizia con (02) o (06).</param>
+        <param name="tip_5">Se si sta utilizzando l&apos;area di lavoro traduzione, immettere tutti i criteri filtro utilizzando i valori principali.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">Disponibile</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Selezioni</param>
+        <param name="assignLicensesDescription">Selezionare la casella di controllo accanto a ogni pacchetto da assegnare all&apos;utente, quindi fare clic su Assegna. La casella di controllo non è presente se un pacchetto non dispone di un numero sufficiente di licenze o se il suo stato è scaduto o sospeso.</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">Visualizzazione orizzontale</param>
+        <param name="vertical_view">Visualizzazione verticale</param>
+        <param name="view_select_title">Seleziona visualizzazione</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Impostazione predefinita Portale</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This entity="0"/><entity entity="0"/> è <managed entity="0"/>, pertanto è possibile modificarne solo determinati attributi.</param>
+        <param name="EntityDeprecated"><This entity="0"/><entity entity="0"/> è <deprecated/>.</param>
+        <param name="UnmanagedDeprecatedByOther"><This entity="0"/><entity entity="0"/> non è ancora stato/a <released/>, ma è dichiarato/a <deprecated/> dal proprio componente principale.</param>
+        <param name="EntityDeprecatedByDev"><This entity="0"/><entity entity="0"/> è stato/a dichiarato/a <deprecated/> dall&apos;autore pubblicazione. Vedere l&apos;autore pubblicazione per maggiori informazioni.</param>
+        <param name="Undeprecate">È possibile annullare l&apos;obsolescenza del componente prima di caricarlo in un pacchetto gestito-rilasciato.</param>
+        <param name="UndeprecateByOther">È possibile annullare l&apos;obsolescenza del controllante di questo componente prima di caricarlo in un pacchetto gestito-rilasciato.</param>
+        <param name="MoreInfo">Visualizza altre informazioni</param>
+        <param name="LessInfo">Nascondi informazioni</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><This entity="0"/><entity entity="0"/> fa parte di un pacchetto aggiornabile che è stato caricato in AppExchange.</param>
+        <param name="BecauseInstalled"><This entity="0"/><entity entity="0"/> fa parte di un pacchetto aggiornabile che è stato installato da AppExchange.</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">Che cosa è possibile modificare?</param>
+        <param name="WhatNone">Non è possibile modificare gli attributi <the_di/> {0} <managed/>, poiché questo facilita l&apos;&apos;esecuzione di aggiornamenti futuri.</param>
+        <param name="WhatTop">Per <the/> {0} <managed/>, è possibile modificare gli elementi indicati di seguito:</param>
+        <param name="WhatBottom">Per facilitare il processo di aggiornamento, tutti gli altri attributi sono bloccati.</param>
+        <param name="WhoCanDelete">Chi può eliminare quale {0}?</param>
+        <param name="Who"><The/> {0} può eliminare {1}.</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">Sovrapposizione dettagli entità</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0} <saved/>.</param>
+        <param name="modified">{0} è stato/a <updated/>.</param>
+        <param name="submitted">{0} è stato/a <submitted/>.</param> <!-- Label swap for Case object -->
+        <param name="attached">Allegato/i aggiunto/i.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">Prova colori</param>
+        <param name="colorHexValue">Valore esadecimale dei colori</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">Conferma</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Informazioni</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Errore</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Avvertenza</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Protetto</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">Frequenza</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Giornaliera</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Settimanale</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Mensile</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Ogni giorno della settimana</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Ogni giorno</param>
+       <param name="lastDay">ultimo</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">primo/a</param>
+    <param name="on2">secondo/a</param>
+    <param name="on3">terzo/a</param>
+    <param name="on4">quarto/a</param>
+    <param name="onLast">ultimo/a</param>
+    <param name="startTime">Inizio</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Fine</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Ora iniziale preferita</param>
+    <param name="noPreference">Nessuna preferenza</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">L&apos;ora iniziale esatta dipenderà dall&apos;attività dell&apos;area di attesa del processo.</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[Il fuso orario per questa impostazione di frequenza mensile è:<br> <strong>{0}</strong><br>Le impostazioni relative alla frequenza vengono visualizzate secondo il fuso orario dell&apos;&apos;utente che le ha modificate per ultimo.<br>Qualsiasi modifica apportata a queste impostazioni verrà aggiornata in modo da corrispondere al proprio fuso orario.]]></param>
+
+      <param name="weeklyRecurrence">Ricorre ogni settimana di {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Ricorre ogni settimana di</param>
+      <param name="monthlyRecurrence1">Il giorno {0} di ogni mese</param>
+      <param name="monthlyRecurrence1LegendLabel">Specifico</param>
+      <param name="monthlyRecurrence2LegendLabel">Personalizzato</param>
+      <param name="monthlyRecurrence2">Il/La {2} {0} {3} {1} di ogni mese</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Il/La {0} {1} di ogni mese</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">In un giorno specifico di ogni mese</param>
+      <param name="accessibleMonthly2">In un giorno personalizzato di ogni mese</param>
+      <param name="accessibleOnDayN">Giorno specifico</param>
+      <param name="accessibleOnDayNOfWeek">Occorrenza</param>
+      <param name="accessibleOnDayName">Giorno</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">Questo semplice test consente di prevenire l&apos;accesso ai propri dati da parte di programmi dannosi.  Il proprio amministratore richiede che sia eseguito questo test per download di grandi dimensioni.  Non verrà mai sottoposto più di una volta per ogni sessione di accesso.</param>
+        <param name="imagePrompt">Inserire i termini sopra, separati da uno spazio:</param>
+        <param name="audioPrompt">Inserire i numeri che si sentono:</param>
+        <param name="refresh">Richiedi una nuova prova</param>
+        <param name="audio">Richiedi una prova audio</param>
+        <param name="image">Richiedi una prova visiva</param>
+        <param name="incorrect">Errato, riprovare.</param>
+        <param name="moreinfo">Altre info &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Meno info</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">Fare clic per altre informazioni...</param>
+        <param name="show">Mostra riquadro evidenziazioni</param>
+        <param name="hide">Nascondi riquadro evidenziazioni</param>
+        <param name="empty">Non vi sono campi evidenziati da visualizzare per questo record.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">Presentazione</param>
+        <param name="closeIntro">No grazie</param>
+        <param name="closeOutro">Chiudi</param>
+        <param name="showLater">Mostra in seguito</param>
+        <param name="replay">Riproduci nuovamente</param>
+        <param name="continue">Continua</param>
+        <param name="previous">Indietro</param>
+        <param name="startTour">Inizia tour</param>
+        <param name="endTour">Termina tour</param>
+        <param name="stepCounter">{0} di {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">Dettaglio</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Consigli</param>
+        <param name="hideBucketTip">&lt;br&gt;Rilascia qui per nascondere elementi&lt;br/&gt;dalla pagina.</param>
+        <param name="hiddenListTip">Per mostrare gli elementi nascosti, trascinarli nuovamente sull&apos;elenco riportato sopra.</param>
+        <param name="hiddenListShowLinkLabel">{0} nascosti</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">Torna all&apos;inizio</param>
+        <param name="multipleItemDragGhost">Più voci (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">Compatibilità browser pagina dei dettagli</param>
+        <param name="compatibilityMsgSubTitle">Oops, questo browser non è supportato</param>
+        <param name="compatibilityMsg1">Impossibile visualizzare la nuova pagina dei dettagli nel browser utilizzato.</param>
+        <param name="compatibilityMsg2">È possibile utilizzare la nuova progettazione quando si esegue l&apos;accesso con uno di questi browser compatibili:</param>
+        <param name="supportedIE">Internet Explorer 7 o 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Grazie.</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Rendi la visualizzazione classica la mia impostazione predefinita</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">Digitare qui per cercare <a/> {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound"><No/> {0} corrisponde alla ricerca.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Pagina {1} di {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">Disattiva menu</param>
+        <param name="confirmTurnOffTitle">Disattivare questo menu?</param>
+        <param name="confirmTurnOffText">Per riattivare questo menu in futuro, accedere alla pagina Informazioni personali nel menu di impostazione e abilitare la preferenza Menu di accesso rapido Force.com.</param>
+        <param name="viewObject">Visualizza oggetto</param>
+        <param name="viewObjectHover">Visualizzare e gestire i dettagli di questo oggetto</param>
+        <param name="viewObjectNewHover">Crea un oggetto</param>
+        <param name="viewFields">Visualizza campi</param>
+        <param name="viewFieldsHover">Visualizzare e gestire i campi di questo oggetto</param>
+        <param name="viewFieldsNewHover">Aggiungere un campo a questo oggetto</param>
+        <param name="viewRecordTypes">Visualizza tipi di record</param>
+        <param name="viewRecordTypesHover">Visualizzare e gestire i tipi di record di questo oggetto</param>
+        <param name="viewRecordTypesNewHover">Aggiungere un tipo di record per questo oggetto</param>
+        <param name="viewValidationRules">Visualizza regole di convalida</param>
+        <param name="viewValidationRulesHover">Visualizzare e gestire le regole di convalida per questo oggetto</param>
+        <param name="viewValidationRulesNewHover">Aggiungere una regola di convalida per questo oggetto</param>
+        <param name="viewApprovals">Visualizza approvazioni</param>
+        <param name="viewApprovalsHover">Visualizzare e gestire i processi di approvazione per questo oggetto</param>
+        <param name="viewApprovalsNewHover">Aggiungere un processo di approvazione per questo oggetto mediante la procedura guidata di avvio immediato</param>
+        <param name="editApp">Modifica applicazione</param>
+        <param name="editAppHover">Personalizzare l'elenco delle schede, le assegnazioni del profilo e altri dettagli di questa applicazione</param>
+        <param name="editTab">Modifica scheda</param>
+        <param name="editTabHover">Personalizzare l'icona, i colori e altri dettagli di questa scheda</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">Personalizzare questo layout di pagina</param>
+        <param name="viewRecordType">Visualizza tipo di record</param>
+        <param name="viewRecordTypeHover">Visualizzare e gestire questo tipo di record, consentendo anche la modifica dei valori degli elenchi di selezione</param>
+        <param name="editColumns">Modifica colonne</param>
+        <param name="editColumnsHover">Personalizzare le colonne dell'elenco</param>
+        <param name="importData">Importa dati</param>
+        <param name="importDataHover">Importare dati in questo oggetto</param>
+    </section>
+</iniFile>

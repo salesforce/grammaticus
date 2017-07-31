@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+<noun>Syntax:
+    Required attributes:
+       name:  name of this noun. use element like:<Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like:</>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and . It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+<values>Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+       <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+   <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+       <value plural="n" article="a">Bir ortak</value>
+       <value plural="n" article="the">Ortak</value>
+       <value plural="y" article="the">Ortaklar</value>
+    =======================================================================-->
+
+
+   <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="n" startsWith="v">
+       <value plural="n">Müşteri</value>
+       <value plural="n" poss="f">Müşterim</value>
+       <value plural="n" poss="s">Müşterin</value>
+       <value plural="y">Müşteriler</value>
+       <value plural="y" poss="f">Müşterilerim</value>
+       <value plural="y" poss="s">Müşterilerin</value>
+       <value plural="n" case="a">Müşterisi</value>
+       <value plural="n" case="a" poss="f">Müşterimi</value>
+       <value plural="n" case="a" poss="s">Müşterini</value>
+       <value plural="y" case="a">Müşterileri</value>
+       <value plural="y" case="a" poss="f">Müşterilerimi</value>
+       <value plural="y" case="a" poss="s">Müşterilerini</value>
+       <value plural="n" case="d">Müşteriye</value>
+       <value plural="n" case="d" poss="f">Müşterime</value>
+       <value plural="n" case="d" poss="s">Müşterine</value>
+       <value plural="y" case="d">Müşterilere</value>
+       <value plural="y" case="d" poss="f">Müşterilerime</value>
+       <value plural="y" case="d" poss="s">Müşterilerine</value>
+       <value plural="y" case="d" poss="f">Müşterilerimize</value>
+       <value plural="y" case="d" poss="s">Müşterilerinize</value>
+       <value plural="n" case="l">Müşteride</value>
+       <value plural="n" case="l" poss="f">Müşterimde</value>
+       <value plural="n" case="l" poss="s">Müşterinde</value>
+       <value plural="y" case="l">Müşterilerde</value>
+       <value plural="y" case="l" poss="f">Müşterilerimde</value>
+       <value plural="y" case="l" poss="s">Müşterilerinde</value>
+       <value plural="n" case="g">Müşterinin</value>
+       <value plural="n" case="g" poss="f">Müşterimin</value>
+       <value plural="n" case="g" poss="s">Müşterinin</value>
+       <value plural="y" case="g">Müşterilerin</value>
+       <value plural="y" case="g" poss="f">Müşterilerimin</value>
+       <value plural="y" case="g" poss="s">Müşterilerinin</value>
+       <value plural="n" case="abl">Müşteriden</value>
+       <value plural="n" case="abl" poss="f">Müşterimden</value>
+       <value plural="n" case="abl" poss="s">Müşterinden</value>
+       <value plural="y" case="abl">Müşterilerden</value>
+       <value plural="y" case="abl" poss="f">Müşterilerimden</value>
+       <value plural="y" case="abl" poss="s">Müşterilerinden</value>
+   </noun>
+    
+   <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="v">
+       <value plural="n">Aktivite</value>
+       <value plural="n" poss="f">Aktivitem</value>
+       <value plural="n" poss="s">Aktiviten</value>
+       <value plural="y">Aktiviteler</value>
+       <value plural="y" poss="f">Aktivitelerim</value>
+       <value plural="y" poss="s">Aktivitelerin</value>
+       <value plural="n" case="a">Aktiviteyi</value>
+       <value plural="n" case="a" poss="f">Aktivitemi</value>
+       <value plural="n" case="a" poss="s">Aktiviteni</value>
+       <value plural="y" case="a">Aktiviteleri</value>
+       <value plural="y" case="a" poss="f">Aktivitelerimi</value>
+       <value plural="y" case="a" poss="s">Aktivitelerini</value>
+       <value plural="n" case="d">Aktiviteye</value>
+       <value plural="n" case="d" poss="f">Aktiviteme</value>
+       <value plural="n" case="d" poss="s">Aktivitene</value>
+       <value plural="y" case="d">Aktivitelere</value>
+       <value plural="y" case="d" poss="f">Aktivitelerime</value>
+       <value plural="y" case="d" poss="s">Aktivitelerine</value>
+       <value plural="n" case="l">Aktivitede</value>
+       <value plural="n" case="l" poss="f">Aktivitemde</value>
+       <value plural="n" case="l" poss="s">Aktivitende</value>
+       <value plural="y" case="l">Aktivitelerde</value>
+       <value plural="y" case="l" poss="f">Aktivitelerimde</value>
+       <value plural="y" case="l" poss="s">Aktivitelerinde</value>
+       <value plural="n" case="g">Aktivitenin</value>
+       <value plural="n" case="g" poss="f">Aktivitemin</value>
+       <value plural="n" case="g" poss="s">Aktivitenin</value>
+       <value plural="y" case="g">Aktiviteler</value>
+       <value plural="y" case="g" poss="f">Aktivitelerimin</value>
+       <value plural="y" case="g" poss="s">Aktivitelerinin</value>
+       <value plural="n" case="abl">Aktiviteden</value>
+       <value plural="n" case="abl" poss="f">Aktivitemden</value>
+       <value plural="n" case="abl" poss="s">Aktivitenden</value>
+       <value plural="y" case="abl">Aktivitelerden</value>
+       <value plural="y" case="abl" poss="f">Aktivitelerimden</value>
+       <value plural="y" case="abl" poss="s">Aktivitelerinden</value>
+   </noun>
+    
+       
+               
+   <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
+       <value plural="n">Kampanya</value>
+       <value plural="n" poss="f">Kampanyam</value>
+       <value plural="n" poss="s">Kampanyan</value>
+       <value plural="y">Kampanyalar</value>
+       <value plural="n" case="a">Kampanyayı</value>
+       <value plural="n" case="a" poss="f">Kampanyamı</value>
+       <value plural="n" case="a" poss="s">Kampanyanı</value>
+       <value plural="y" case="a">Kampanyaları</value>
+       <value plural="y" case="a" poss="f">Kampanyalarımı</value>
+       <value plural="y" case="a" poss="s">Kampanyalarını</value>
+       <value plural="n" case="d">Kampanyaya</value>
+       <value plural="n" case="d" poss="f">Kampanyama</value>
+       <value plural="n" case="d" poss="s">Kampanyana</value>
+       <value plural="y" case="d">Kampanyalara</value>
+       <value plural="y" case="d" poss="f">Kampanyalarıma</value>
+       <value plural="y" case="d" poss="s">Kampanyalarına</value>
+       <value plural="n" case="l">Kampanyada</value>
+       <value plural="n" case="l" poss="f">Kampanyamda</value>
+       <value plural="n" case="l" poss="s">Kampanyanda</value>
+       <value plural="y" case="l">Kampanyalarda</value>
+       <value plural="y" case="l" poss="f">Kampanyalarımda</value>
+       <value plural="y" case="l" poss="s">Kampanyalarında</value>
+       <value plural="n" case="g">Kampanyanın</value>
+       <value plural="n" case="g" poss="f">Kampanyamın</value>
+       <value plural="n" case="g" poss="s">Kampanyanın</value>
+       <value plural="y" case="g">Kampanyaların</value>
+       <value plural="y" case="g" poss="f">Kampanyalarımın</value>
+       <value plural="y" case="g" poss="s">Kampanyalarının</value>
+       <value plural="n" case="abl">Kampanyadan</value>
+       <value plural="n" case="abl" poss="f">Kampanyamdan</value>
+       <value plural="n" case="abl" poss="s">Kampanyandan</value>
+       <value plural="y" case="abl">Kampanyalardan</value>
+       <value plural="y" case="abl" poss="f">Kampanyalarımdan</value>
+       <value plural="y" case="abl" poss="s">Kampanyalarından</value>
+   </noun>
+    
+       
+        
+       
+    
+    
+
+    
+    <!-- Content -->
+    
+
+	<!-- // Content -->
+    
+   
+      
+       
+   <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
+     <value plural="n">Belge</value>
+       <value plural="n" poss="f">Belgem</value>
+       <value plural="n" poss="s">Belgen</value>
+       <value plural="y">Belgeler</value>
+       <value plural="y" poss="f">Belgelerim</value>
+       <value plural="y" poss="s">Belgelerin</value>
+       <value plural="n" case="a">Belgeyi</value>
+       <value plural="n" case="a" poss="f">Belgemi</value>
+       <value plural="n" case="a" poss="s">Belgeni</value>
+       <value plural="y" case="a">Belgeleri</value>
+       <value plural="y" case="a" poss="f">Belgelerimi</value>
+       <value plural="y" case="a" poss="s">Belgelerini</value>
+       <value plural="n" case="d">Belgeye</value>
+       <value plural="n" case="d" poss="f">Belgeme</value>
+       <value plural="n" case="d" poss="s">Belgene</value>
+       <value plural="y" case="d">Belgelere</value>
+       <value plural="y" case="d" poss="f">Belgelerime</value>
+       <value plural="y" case="d" poss="s">Belgelerine</value>
+       <value plural="n" case="l">Belgede</value>
+       <value plural="n" case="l" poss="f">Belgemde</value>
+       <value plural="n" case="l" poss="s">Belgende</value>
+       <value plural="y" case="l">Belgelerde</value>
+       <value plural="y" case="l" poss="f">Belgelerimde</value>
+       <value plural="y" case="l" poss="s">Belgelerinde</value>
+       <value plural="n" case="g">Belgenin</value>
+       <value plural="n" case="g" poss="f">Belgemin</value>
+       <value plural="n" case="g" poss="s">Belgenin</value>
+       <value plural="y" case="g">Belgelerin</value>
+       <value plural="y" case="g" poss="f">Belgelerimin</value>
+       <value plural="y" case="g" poss="s">Belgelerinin</value>
+       <value plural="n" case="abl">Belgeden</value>
+       <value plural="n" case="abl" poss="f">Belgemden</value>
+       <value plural="n" case="abl" poss="s">Belgenden</value>
+       <value plural="y" case="abl">Belgelerden</value>
+       <value plural="y" case="abl" poss="f">Belgelerimden</value>
+       <value plural="y" case="abl" poss="s">Belgelerinden</value>
+   </noun>
+
+    
+    
+
+
+
+    
+
+ <!--******* Entitlement ****************************************************-->
+
+    
+    
+    
+    
+    
+    
+    <!--******* Entitlement Contact ****************************************************-->
+
+
+	
+
+
+   <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">
+     <value plural="n">Etkinlik</value>
+       <value plural="n" poss="f">Etkinliğim</value>
+       <value plural="n" poss="s">Etkinliğin</value>
+       <value plural="y">Etkinlikler</value>
+       <value plural="y" poss="f">Etkinliklerim</value>
+       <value plural="y" poss="s">Etkinliklerin</value>
+       <value plural="n" case="a">Etkinliği</value>
+       <value plural="n" case="a" poss="f">Etkinliğimi</value>
+       <value plural="n" case="a" poss="s">Etkinliğini</value>
+       <value plural="y" case="a">Etkinlikleri</value>
+       <value plural="y" case="a" poss="f">Etkinliklerimi</value>
+       <value plural="y" case="a" poss="s">Etkinliklerini</value>
+       <value plural="n" case="d">Etkinliğe</value>
+       <value plural="n" case="d" poss="f">Etkinliğime</value>
+       <value plural="n" case="d" poss="s">Etkinliğine</value>
+       <value plural="y" case="d">Etkinliklere</value>
+       <value plural="y" case="d" poss="f">Etkinliklerime</value>
+       <value plural="y" case="d" poss="s">Etkinliklerine</value>
+       <value plural="n" case="l">Etkinlikte</value>
+       <value plural="n" case="l" poss="f">Etkinliğimde</value>
+       <value plural="n" case="l" poss="s">Etkinliğinde</value>
+       <value plural="y" case="l">Etkinliklerde</value>
+       <value plural="y" case="l" poss="f">Etkinliklerimde</value>
+       <value plural="y" case="l" poss="s">Etkinliklerinde</value>
+       <value plural="n" case="g">Etkinliğin</value>
+       <value plural="n" case="g" poss="f">Etkinliğimin</value>
+       <value plural="n" case="g" poss="s">Etkinliğinin</value>
+       <value plural="y" case="g">Etkinliklerin</value>
+       <value plural="y" case="g" poss="f">Etkinliklerimin</value>
+       <value plural="y" case="g" poss="s">Etkinliklerinin</value>
+       <value plural="n" case="abl">Etkinlikten</value>
+       <value plural="n" case="abl" poss="f">Etkinliğimden</value>
+       <value plural="n" case="abl" poss="s">Etkinliğinden</value>
+       <value plural="y" case="abl">Etkinliklerden</value>
+       <value plural="y" case="abl" poss="f">Etkinliklerimden</value>
+       <value plural="y" case="abl" poss="s">Etkinliklerinden</value>
+   </noun>
+
+   
+        
+    
+    
+
+   <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
+   <value plural="n">Müşteri Adayı</value>
+       <value plural="n" poss="f">Müşteri Adayım</value>
+       <value plural="n" poss="s">Müşteri Adayın</value>
+       <value plural="y">Müşteri Adayları</value>
+       <value plural="y" poss="f">Müşteri Adaylarım</value>
+       <value plural="y" poss="s">Müşteri Adayların</value>
+       <value plural="n" case="a">Müşteri Adayını</value>
+       <value plural="n" case="a" poss="f">Müşteri Adayımı</value>
+       <value plural="n" case="a" poss="s">Müşteri Adayını</value>
+       <value plural="y" case="a">Müşteri Adayları</value>
+       <value plural="y" case="a" poss="f">Müşteri Adaylarımı</value>
+       <value plural="y" case="a" poss="s">Müşteri Adaylarını</value>
+       <value plural="n" case="d">Müşteri Adayına</value>
+       <value plural="n" case="d" poss="f">Müşteri Adayıma</value>
+       <value plural="n" case="d" poss="s">Müşteri Adayına</value>
+       <value plural="y" case="d">Müşteri Adaylara</value>
+       <value plural="y" case="d" poss="f">Müşteri Adaylarıma</value>
+       <value plural="y" case="d" poss="s">Müşteri Adaylarına</value>
+       <value plural="n" case="l">Müşteri Adayında</value>
+       <value plural="n" case="l" poss="f">Müşteri Adayımda</value>
+       <value plural="n" case="l" poss="s">Müşteri Adayında</value>
+       <value plural="y" case="l">Müşteri Adaylarında</value>
+       <value plural="y" case="l" poss="f">Müşteri Adaylarımda</value>
+       <value plural="y" case="l" poss="s">Müşteri Adaylarında</value>
+       <value plural="n" case="g">Müşteri Adayının</value>
+       <value plural="n" case="g" poss="f">Müşteri Adayımın</value>
+       <value plural="n" case="g" poss="s">Müşteri Adayının</value>
+       <value plural="y" case="g">Müşteri Adayların</value>
+       <value plural="y" case="g" poss="f">Müşteri Adaylarımın</value>
+       <value plural="y" case="g" poss="s">Müşteri Adaylarının</value>
+       <value plural="n" case="abl">Müşteri Adayından</value>
+       <value plural="n" case="abl" poss="f">Müşteri Adayımdan</value>
+       <value plural="n" case="abl" poss="s">Müşteri Adayından</value>
+       <value plural="y" case="abl">Müşteri Adaylardan</value>
+       <value plural="y" case="abl" poss="f">Müşteri Adaylarımdan</value>
+       <value plural="y" case="abl" poss="s">Müşteri Adaylarından</value>
+   </noun>
+   
+   <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
+        <value plural="n">Skill</value>
+        <value plural="y">Skills</value>
+    </noun>
+   
+      
+      
+      
+      
+      
+      
+       
+        
+        
+       
+
+
+    
+
+    
+
+    
+<!--******* Message ****************************************************-->
+
+    
+    
+<!--******* Message Member ****************************************************-->
+    
+    
+   <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="v">
+   <value plural="n">Fırsat</value>
+       <value plural="n" poss="f">Fırsatım</value>
+       <value plural="n" poss="s">Fırsatın</value>
+       <value plural="y">Fırsatlar</value>
+       <value plural="y" poss="f">Fırsatlarım</value>
+       <value plural="y" poss="s">Fırsatların</value>
+       <value plural="n" case="a">Fırsatı</value>
+       <value plural="n" case="a" poss="f">Fırsatımı</value>
+       <value plural="n" case="a" poss="s">Fırsatını</value>
+       <value plural="y" case="a">Fırsatları</value>
+       <value plural="y" case="a" poss="f">Fırsatlarımı</value>
+       <value plural="y" case="a" poss="s">Fırsatlarını</value>
+       <value plural="n" case="d">Fırsata</value>
+       <value plural="n" case="d" poss="f">Fırsatıma</value>
+       <value plural="n" case="d" poss="s">Fırsatına</value>
+       <value plural="y" case="d">Fırsatlara</value>
+       <value plural="y" case="d" poss="f">Fırsatlarıma</value>
+       <value plural="y" case="d" poss="s">Fırsatlarına</value>
+       <value plural="n" case="l">Fırsatta</value>
+       <value plural="n" case="l" poss="f">Fırsatımda</value>
+       <value plural="n" case="l" poss="s">Fırsatında</value>
+       <value plural="y" case="l">Fırsatlarda</value>
+       <value plural="y" case="l" poss="f">Fırsatlarımda</value>
+       <value plural="y" case="l" poss="s">Fırsatlarında</value>
+       <value plural="n" case="g">Fırsatın</value>
+       <value plural="n" case="g" poss="f">Fırsatımın</value>
+       <value plural="n" case="g" poss="s">Fırsatının</value>
+       <value plural="y" case="g" poss="s">Fırsatlarının</value>
+       <value plural="y" case="g">Fırsatların</value>
+       <value plural="y" case="g" poss="f">Fırsatlarımın</value>
+       <value plural="y" case="g" poss="s">Fırsatlarının</value>
+       <value plural="n" case="abl">Fırsattan</value>
+       <value plural="n" case="abl" poss="f">Fırsatımdan</value>
+       <value plural="n" case="abl" poss="s">Fırsatından</value>
+       <value plural="y" case="abl">Fırsatlardan</value>
+       <value plural="y" case="abl" poss="f">Fırsatlarımdan</value>
+       <value plural="y" case="abl" poss="s">Fırsatlarından</value>
+   </noun>
+    
+      
+   
+
+   
+
+    
+  
+
+   <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
+   <value plural="n">Fiyat Rehberi</value>
+       <value plural="n" poss="f">Fiyat Rehberim</value>
+       <value plural="n" poss="s">Fiyat Rehberin</value>
+       <value plural="y">Fiyat Rehberleri</value>
+       <value plural="y" poss="f">Fiyat Rehberlerim</value>
+       <value plural="y" poss="s">Fiyat Rehberlerin</value>
+       <value plural="n" case="a">Fiyat Rehberini</value>
+       <value plural="n" case="a" poss="f">Fiyat Rehberimi</value>
+       <value plural="n" case="a" poss="s">Fiyat Rehberini</value>
+       <value plural="y" case="a">Fiyat Rehberlerini</value>
+       <value plural="y" case="a" poss="f">Fiyat Rehberlerimi</value>
+       <value plural="y" case="a" poss="s">Fiyat Rehberlerini</value>
+       <value plural="n" case="d">Fiyat Rehberine</value>
+       <value plural="n" case="d" poss="f">Fiyat Rehberime</value>
+       <value plural="n" case="d" poss="s">Fiyat Rehberine</value>
+       <value plural="y" case="d">Fiyat Rehberlerine</value>
+       <value plural="y" case="d" poss="f">Fiyat Rehberlerime</value>
+       <value plural="y" case="d" poss="s">Fiyat Rehberlerine</value>
+       <value plural="n" case="l">Fiyat Rehberinde</value>
+       <value plural="n" case="l" poss="f">Fiyat Rehberimde</value>
+       <value plural="n" case="l" poss="s">Fiyat Rehberinde</value>
+       <value plural="y" case="l">Fiyat Rehberlerinde</value>
+       <value plural="y" case="l" poss="f">Fiyat Rehberlerimde</value>
+       <value plural="y" case="l" poss="s">Fiyat Rehberlerinde</value>
+       <value plural="n" case="g">Fiyat Rehberinin</value>
+       <value plural="n" case="g" poss="f">Fiyat Rehberimin</value>
+       <value plural="n" case="g" poss="s">Fiyat Rehberinin</value>
+       <value plural="y" case="g">Fiyat Rehberlerinin</value>
+       <value plural="y" case="g" poss="f">Fiyat Rehberlerimin</value>
+       <value plural="y" case="g" poss="s">Fiyat Rehberlerinin</value>
+       <value plural="n" case="abl">Fiyat Rehberinden</value>
+       <value plural="n" case="abl" poss="f">Fiyat Rehberimden</value>
+       <value plural="n" case="abl" poss="s">Fiyat Rehberinden</value>
+       <value plural="y" case="abl">Fiyat Rehberlerinden</value>
+       <value plural="y" case="abl" poss="f">Fiyat Rehberlerimden</value>
+       <value plural="y" case="abl" poss="s">Fiyat Rehberlerinden</value>
+   </noun>
+
+   
+    <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
+       <value plural="n">Soru</value>
+       <value plural="n" poss="f">Sorum</value>
+       <value plural="n" poss="s">Sorun</value>
+       <value plural="y">Sorular</value>
+       <value plural="y" poss="f">Sorularım</value>
+       <value plural="y" poss="s">Soruların</value>
+       <value plural="n" case="a">Soruyu</value>
+       <value plural="n" case="a" poss="f">Sorumu</value>
+       <value plural="n" case="a" poss="s">Sorumu</value>
+       <value plural="y" case="a">Soruları</value>
+       <value plural="y" case="a" poss="f">Sorularımı</value>
+       <value plural="y" case="a" poss="s">Sorularını</value>
+       <value plural="n" case="d">Soruya</value>
+       <value plural="n" case="d" poss="f">Soruma</value>
+       <value plural="n" case="d" poss="s">Soruna</value>
+       <value plural="y" case="d">Sorulara</value>
+       <value plural="y" case="d" poss="f">Sorularıma</value>
+       <value plural="y" case="d" poss="s">Sorularına</value>
+       <value plural="y" case="d" poss="f">Sorularıma</value>
+       <value plural="y" case="d" poss="s">Sorularına</value>
+       <value plural="n" case="l">Soruda</value>
+       <value plural="n" case="l" poss="f">Sorumda</value>
+       <value plural="n" case="l" poss="s">Sorunda</value>
+       <value plural="y" case="l">Sorularda</value>
+       <value plural="y" case="l" poss="f">Sorularımda</value>
+       <value plural="y" case="l" poss="s">Sorunlarında</value>
+       <value plural="n" case="g">Sorunun</value>
+       <value plural="n" case="g" poss="f">Sorumun</value>
+       <value plural="n" case="g" poss="s">Sorunun</value>
+       <value plural="y" case="g">Soruların</value>
+       <value plural="y" case="g" poss="f">Sorularımın</value>
+       <value plural="y" case="g" poss="s">Sorularının</value>
+       <value plural="n" case="abl">Sorudan</value>
+       <value plural="n" case="abl" poss="f">Sorumdan</value>
+       <value plural="n" case="abl" poss="s">Sorundan</value>
+       <value plural="y" case="abl">Sorulardan</value>
+       <value plural="y" case="abl" poss="f">Sorularımdan</value>
+       <value plural="y" case="abl" poss="s">Sorularından</value>
+    </noun>
+
+    
+    
+        
+
+    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
+       <value plural="n">Teklif</value>
+       <value plural="n" poss="f">Teklifim</value>
+       <value plural="n" poss="s">Teklifin</value>
+       <value plural="y">Teklifler</value>
+       <value plural="y" poss="f">Tekliflerim</value>
+       <value plural="y" poss="s">Tekliflerin</value>
+       <value plural="n" case="a">Teklifi</value>
+       <value plural="n" case="a" poss="f">Teklifimi</value>
+       <value plural="n" case="a" poss="s">Teklifini</value>
+       <value plural="y" case="a">Teklifleri</value>
+       <value plural="y" case="a" poss="f">Teklifleirmi</value>
+       <value plural="y" case="a" poss="s">Tekliflerini</value>
+       <value plural="n" case="d">Teklife</value>
+       <value plural="n" case="d" poss="f">Teklifime</value>
+       <value plural="n" case="d" poss="s">Teklifine</value>
+       <value plural="y" case="d">Tekliflere</value>
+       <value plural="y" case="d" poss="f">Tekliflerime</value>
+       <value plural="y" case="d" poss="s">Tekliflerine</value>
+       <value plural="y" case="d" poss="f">Tekliflerime</value>
+       <value plural="y" case="d" poss="s">Tekliflerine</value>
+       <value plural="n" case="l">Teklifde</value>
+       <value plural="n" case="l" poss="f">Teklifimde</value>
+       <value plural="n" case="l" poss="s">Teklifinde</value>
+       <value plural="y" case="l">Tekliflerde</value>
+       <value plural="y" case="l" poss="f">Tekliflerimde</value>
+       <value plural="y" case="l" poss="s">Tekliflerinde</value>
+       <value plural="n" case="g">Teklifin</value>
+       <value plural="n" case="g" poss="f">Teklifimin</value>
+       <value plural="n" case="g" poss="s">Teklifinin</value>
+       <value plural="y" case="g">Tekliflerin</value>
+       <value plural="y" case="g" poss="f">Tekliflerimin</value>
+       <value plural="y" case="g" poss="s">Tekliflerinin</value>
+       <value plural="n" case="abl">Teklifden</value>
+       <value plural="n" case="abl" poss="f">Teklifimden</value>
+       <value plural="n" case="abl" poss="s">Teklifinden</value>
+       <value plural="y" case="abl">Tekliflerden</value>
+       <value plural="y" case="abl" poss="f">Tekliflerimden</value>
+       <value plural="y" case="abl" poss="s">Tekliflerinden</value>
+    </noun>
+
+
+      
+      
+
+    
+
+
+        
+    
+    
+   
+      
+       
+
+   <!-- Special for Custom Objects/Tabs
+         This is actually, not only for custom object but should be considered as template
+         for any unknown entities.
+    -->
+    
+   <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+       <value plural="n">{0}</value>
+       <value plural="y">{0}</value>
+   </noun>
+
+   <!--
+        Special nouns - these are not rename-able, but need here for dynamic tag such as
+       <entity/>,<entity_record_type/>
+    -->
+
+   
+
+   <!--==================================================================
+      Other Nouns
+    ======================================================================-->
+
+      <!--******* Accounts *************************************************-->
+   
+   <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+       <value plural="n">Müşteri Adı</value>
+       <value plural="y">Müşteri Adları</value>
+   </noun>
+    
+    <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
+       <value plural="n">Ürün Para Birimi</value></noun>
+
+   
+    <import file="adjectives.xml"/>
+</names>
+

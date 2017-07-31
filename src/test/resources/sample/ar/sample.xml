@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">ComboBox</param>
+        <param name="select_default">حدد من القائمة أسفل.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">حدد {0} أسفل.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">الوصول</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(مُدار)</param>
+        <param name="activity_history">محفوظات النشاط</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">معلومات إضافية</param> <!--aliased across labels - do not change-->
+        <param name="alias">اسم مستعار</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">مساعد</param>
+        <param name="assistant_name">اسم المساعد</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">هاتف المساعد</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">هاتف المساعد</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">الرقم الداخلي للهاتف المساعد</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">تاريخ الميلاد</param>   <!-- aliased across labels; do not change -->
+        <param name="body">الموضوع</param>   <!-- aliased across labels; do not change -->
+        <param name="company">الشركة</param> <!--aliased across labels - do not change-->
+        <param name="created_by">تم إنشاؤه بواسطة</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">تم إنشاؤه بواسطة المعرّف</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">تم إنشاؤه بواسطة الاسم المستعار</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">رمز ISO للعملة</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">حقول مخصصة</param> <!--aliased across labels - do not change-->
+        <param name="default_status">الحالة الافتراضية</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">تفاصيل {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">قسم</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">تحرير {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">العائد المتوقع</param>
+        <param name="first_name">الاسم الأول</param> <!-- aliased across app - do not change -->
+        <param name="last_name">الاسم الأخير</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">الاسم الأول (محلي)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">الاسم الأخير (محلي)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">ربع السنة المالي</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">سنة مالية</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">الاسم الكامل</param> <!-- aliased across app - do not change -->
+        <param name="group">مجموعة</param> <!-- aliased across app - do not change -->
+        <param name="group_name">اسم المجموعة</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">اسم قائمة الانتظار</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">الصناعة</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">آخر تعديل بواسطة</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">تم التعديل الأخير بواسطة المعرّف</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">تم التعديل الأخير بواسطة الاسم المستعار</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">معرّف السجل الرئيسي</param>
+        <param name="mobile">هاتف محمول</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">هاتف محمول</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">الرقم الداخلي للهاتف المحمول</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">مشاركة جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">الاسم المستعار المعين</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">القائمة المتوفرة</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">اسم الشركة</param> <!-- aliased across app - do not change -->
+        <param name="activities">نشاطات</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">لا يوجد مرفقات</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <documents/></param>
+        <param name="address_info">معلومات العنوان</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">مرفوض</param>   <!-- aliased across labels; do not change -->
+        <param name="default">افتراضية</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">الأولوية الافتراضية</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">إنشاء عرض جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">معلومات مخصصة</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">حالة التكرارات</param> <!-- aliased across app - do not change -->
+        <param name="email_address">عنوان البريد الإلكتروني</param> <!-- aliased across app - do not change -->
+        <param name="email_name">اسم البريد الإلكتروني</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">قالب البريد الإلكتروني</param>   <!-- aliased across labels; do not change -->
+        <param name="email">البريد الإلكتروني:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">الارتباطات المخصصة</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">حجم الملف</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">لا تتوفر بيانات</param>
+        <param name="history_event_checked">حقل مُحدد {0}</param>
+        <param name="history_event_unchecked">حقل غير محدد {0}</param>
+        <param name="how_do_i_specify_info">كيف أحدد المعلومات المراد التقاطها؟</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">المصدر الداخلي</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">الفاصل الزمني:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">التحية</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">تحديد مالك جديد</param>
+        <param name="select_a_view">حدد طريقة عرض من القائمة المنسدلة لإظهار قائمة بالنتائج المتعلقة.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">حدد مجلدًا من القائمة المنسدلة لإظهار قائمة بالنتائج المتعلقة.</param>
+        <param name="select_the_file">حدد الملف</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">تحديد الحقول المراد تضمينها:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">التوقيع</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">الموضوع</param> <!-- aliased across app - do not change -->
+        <param name="system_info">معلومات النظام</param>   <!-- aliased across labels; do not change -->
+        <param name="website">موقع ويب</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">اسم المالك المستعار</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">الاسم الأول للمالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">معرّف المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">الاسم الأخير للمالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">اسم المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">دور المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">عرض دور المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">اسم دور المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">رئيسي</param>
+        <param name="primary_contact"><Primary/> <Contact/></param>
+        <param name="priority">الأولوية</param><!--aliased across labels - do not change -->
+        <param name="private">خاص</param>
+        <param name="role">دور</param> <!--aliased across labels - do not change -->
+        <param name="rating">تصنيف</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">إنشاء سريع</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">المعروضة حديثًا</param>
+        <param name="top5">أهم 5 أسئلة</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">المورّد</param>
+        <param name="customer">العميل</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">المزوّد</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">معرّف نوع السجل</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">معرّف القسم</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">قائمة تعداد أو معرّف الجدول</param>
+        <param name="editable">قابل للتحرير</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">الاسم المتوافق</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">بيان الخصوصية</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">حالة قابلة للإدارة</param>
+        <param name="namespacePrefix">بادئة مساحة اسم</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">مساحة اسم الوحدة النمطية</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">الحزمة المثبتة</param>
+        <param name="initialVersion">أول إصدار تم طرحه</param>
+        <param name="lastVersion">آخر إصدار متوفر</param>
+        <param name="availableInVersions">متوفر في الإصدارات</param>
+        <param name="DeveloperName">اسم المطور</param>
+        <param name="apiName">اسم API</param>
+        <param name="InvalidDeveloperNameOnEntity">الحقل {0} يمكن فقط أن يتضمن شرط سفلية وحروف أبجدية. كما يجب أن يكون فريدًا، وأن يبدأ بحرف، ولا يتضمن مسافات، ولا ينتهي بشرطة سفلية، ولا يتضمن شرطتين سفليتين متتابعتين.</param>
+        <param name="missingDevName">يجب توفير {0}.</param>
+        <param name="duplicateDevName">يوجد {0} بالفعل أو تم استخدامه مسبقًا.  يُرجى اختيار اسم آخر.</param>
+        <param name="manageabilityOverride">تجاوز الإدارة</param>
+        <param name="AMPMId">معرّف AMPM</param>
+        <param name="MetricsDate">تاريخ المقاييس</param>
+        <param name="MayEdit">تحرير</param>
+        <param name="IsLocked">مُقفل</param>
+        <param name="LastViewedDate">تاريخ آخر عرض</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">إنشاء</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">الإعداد</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">إنشاء جديد...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">الملف</param>
+        <param name="new_forecast">تنبؤ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">سلة المحذوفات</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">إرسال بريد إلكتروني</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">تقرير</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">تم تعديله بواسطة</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">البيانات التي تم إنشاؤها</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">تاريخ التعديل</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">عملية تلقائية</param>
+        <param name="partner_network">مستخدم الاتصال</param>
+        <param name="external_who">مستخدم عام</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">مثال</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">خطأ: بيانات غير صالحة: &lt;br/&gt;قم بمراجعة كافة رسائل الخطأ أسفل لتصحيح بياناتك.</param>
+        <param name="EditPageError2">قم بمراجعة كافة رسائل الخطأ أسفل لتصحيح بياناتك.</param>
+        <param name="Required">يجب أن تدخل قيمة</param>
+        <param name="RequiredWithFieldList">حقول مطلوبة مفقودة: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">مطلوب للخدمة الذاتية</param>
+        <param name="RequiredBy">مطلوب بواسطة: {0}</param>
+        <param name="Requires">يتطلب: {0}</param>
+        <param name="TooLong">القيمة طويلة للغاية بالنسبة للحقل</param>
+        <param name="CannotExceedXCharacters">لا يمكن أن تتجاوز القيمة حروف {0}</param>
+        <param name="MustBeXCharacters">يجب أن تكون القيمة عبارة عن حروف {0} تمامًا</param>
+        <param name="MustBeNumber">يجب أن تكون القيمة عددية</param>
+        <param name="StatusCloseRequired">يجب أن تضع علامة على حالة واحدة على الأقل كمغلق</param>
+        <param name="StatusDefaultRequired">يجب أن تضع علامة على حالة واحدة على الأقل كافتراضي</param>
+        <param name="StatusInUse">قيم الحالة التالية قيد الاستخدام ولا يمكن تحريرها أو حذفها: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">تاريخ غير صالح</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">تاريخ غير صالح. لا يمكنك تعيين التاريخ بعد {0}</param>
+        <param name="InvalidDateTime">تاريخ ووقت غير صالحين</param>
+        <param name="InvalidColor">لون غير صالح</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">عنوان إنترنت غير صالح</param>
+        <param name="InvalidOption">تم تحديد خيار غير صالح.</param>
+        <param name="UnsupportedCurrency">عملة غير صالحة</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">عنوان URL غير صالح</param>
+        <param name="NoneSelectedInPicklist">-- بلا تحديد --</param>
+        <param name="InvalidTime">وقت غير صالح</param>
+        <param name="InvalidNumber">رقم غير صالح</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">الرقم طويل للغاية.</param>
+        <param name="TooLargeNumberWithScale">يجب أن يكون الرقم أقل من {0}.</param>
+        <param name="TooSmallNumberWithScale">يجب أن يكون الرقم أكبر من {0}.</param>
+        <param name="NonpositiveError">يجب أن يكون موجبًا.</param>
+        <param name="NegativeError">يجب أن يكون غير سالب.</param>
+        <param name="PositiveError">يجب أن يكون غير موجب.</param>
+        <param name="NonnegativeError">يجب أن يكون سالبًا.</param>
+        <param name="NonzeroError">يجب أن يكون غير صفري.</param>
+        <param name="NonintegerError">يجب أن يكون رقمًا صحيحًا.</param>
+        <param name="InvalidPercent">نسبة مئوية غير صالحة</param>
+        <param name="InvalidAfterRoundOff">الرقم {0} غير صالح بعد تقريبه إلى المقياس: {1}</param>
+        <param name="CharactersRemaining">الباقي</param>
+        <param name="CharactersOver">تجاوز الحد</param>
+        <param name="TooManySelection">لا يمكنك تحديد أكثر من {0} عنصر</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">قيمة مكررة على السجل: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">تكرر قيمة الحقل المخفي (غير المعروض) القيمة على السجل: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">تكرر {0} القيمة على السجل باستخدام المعرّف: {1}</param>
+        <param name="True">صحيح</param>   <!-- aliased across labels; do not change -->
+        <param name="False">خطأ</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">مجال غير صالح</param>
+        <param name="ReadOnly">لا يمكنك تحرير هذا الحقل.</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">إيقاف قبل الاكتمال</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">قبول</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">قبول التغييرات</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">تنشيط آلية تحديد الوصول</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">إضافة تعليق</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">إضافة مكونات</param>
+        <param name="add_contacts">إضافة <Contacts/></param>
+        <param name="add_leads">إضافة <Leads/></param>
+        <param name="add_more_users">إضافة المزيد من المستخدمين</param>
+        <param name="add_multiple_users">إضافة العديد من المستخدمين</param>
+        <param name="add_product">إضافة <Product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">إضافة عنصر سطر</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">إضافة نموذج لوحة معلومات</param>
+        <param name="add_to_call_center">إضافة إلى مركز الاتصال</param>
+        <param name="add_to_campaign">إضافة إلى <Campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">إضافة إلى Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">إضافة إلى <Pricebook/></param>
+        <param name="add_remove">إضافة/إزالة</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">إعداد متقدم</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">اعتماد</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">تعيين</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">تعيين مستخدمين إلى الدور</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">العودة إلى قائمة التقرير</param>
+        <param name="billing_and_licenses">الفوترة &amp; التراخيص</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">معلومات الفوترة</param>
+        <param name="briefcase_setup">إعداد حقيبة الملفات</param>
+        <param name="cancel">إلغاء</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">إلغاء الإرسال</param>
+        <param name="cancel_test_instance">إلغاء آلية تحديد الوصول</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">تغيير الشركة</param>
+        <param name="change_currency">تغيير العملة</param>
+        <param name="change_owner">تغيير المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">قبول وتغيير المالك</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">قبول وتعيين الشكل الرئيسي</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">تغيير الحالة</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">التأكد من التوفر</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">التدقيق الإملائي</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">اختر <Pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">تنظيف</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">نظرة عامة</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">علامة تبويب {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">قائمة</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: نسخ تفاصيل الأصل</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">طي الكل</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">اختيار عنصر من قائمة الخيارات</param>
+        <param name="composegmail">إنشاء Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">تأكيد</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">متابعة</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">متابعة على أية حال</param>
+        <param name="convert">تحويل</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">تحويل <Lead/></param>
+        <param name="create">إنشاء</param>
+        <param name="create_follow_up_event">إنشاء متابعة <Event/></param>
+        <param name="create_follow_up_task">إنشاء متابعة <Task/></param>
+        <param name="create_new">إنشاء {0} جديد</param>
+        <param name="create_new_section">إنشاء قسم جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">إنشاء <Opportunity/></param>
+        <param name="create_test_instance">إنشاء آلية تحديد الوصول</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">إنشاء قاعدة بيانات اختبارية</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">إنشاء نموذج Web-to-Lead</param>
+        <param name="create_new_holiday">إنشاء يوم عطلة جديد</param>
+        <param name="create_new_sla_process">عملية <Entitlement/> جديدة</param>
+        <param name="create_new_milestone_type">حدث رئيسي جديد</param>
+        <param name="currency_setup">إعداد العملة</param>
+        <param name="customer_view">عرض العميل</param>
+        <param name="customize">تخصيص</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">تخصيص العرض لكل المستخدمين</param>
+        <param name="page_settings">إعدادات الصفحة</param>
+        <param name="customize_page">تخصيص الصفحة</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">تحرير التخطيط</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">قائمة لوحة المعلومات</param>
+        <param name="data_export">تصدير البيانات</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">مسح</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">رفض</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">الارتباطات المخصصة الافتراضية</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">إزالة الوصول إلى فحص المراجعة</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">تمّ مع المعاينة</param>
+        <param name="dont_save">لا تحفظ</param>
+        <param name="dont_show_page_again">عدم عرض هذه الصفحة مرة أخرى</param>
+        <param name="download">تنزيل</param>
+        <param name="download_now">تنزيل الآن</param>
+        <param name="download_sample_css_file">تنزيل عينة ملف CSS</param>
+        <param name="edit">تعديل</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">تحرير [Beta]</param>
+        <param name="edit_all">تحرير الكل</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">تحرير المستخدم (المستخدمين)</param>
+        <param name="edit_rates">تحرير المعدلات</param>
+        <param name="edit_selected">تحرير المُحدد</param>
+        <param name="editProperties">تحرير الخصائص</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">خروج {0}</param>
+        <param name="enable_appstore_user">منح الوصول إلى فحص المراجعة</param>
+        <param name="enable_as_partner">تمكين كشريك</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">تمكين تسجيل الدخول إلى Partner Portal</param>
+        <param name="enable_self_service">تمكين الخدمة الذاتية</param>
+        <param name="enable_users">تمكين مستخدم (مستخدمين) جديد</param>
+        <param name="enableForecasting">تمكين التنبؤ القابل للتخصيص</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">إدخال التدريب</param>
+        <param name="erase_test_instance">محو آلية تحديد الوصول</param>
+        <param name="establish">تأسيس</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">توسيع الكل</param>   <!-- aliased across labels; do not change -->
+        <param name="export">تصدير البيانات</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">تصدير التفاصيل الآن</param>
+        <param name="export_background">تشغيل تصدير الخلفية...</param>
+        <param name="fctHistory">محفوظات التنبؤ</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">ملخص التنبؤ</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">عمليات التحقق من الحقل</param>
+        <param name="find">بحث</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">تقرير البحث</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">العثور على <Document/></param>
+        <param name="find_pricebooks">العثور على <Pricebook/></param>
+        <param name="find_products">العثور على <Product/></param>
+        <param name="find_solution">العثور على <Solution/></param>
+        <param name="finished">انتهى</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">إعادة توجيه</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">إعادة توجيه إلى الاتصالات</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">إنشاء WSDL</param>
+        <param name="generate_login_html">إنشاء HTML تسجيل الدخول</param>
+        <param name="getMoreInfo">الحصول على المزيد من المعلومات</param>
+        <param name="go">انتقال!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">تعليمات لهذه الصفحة</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} تعليمات</param>
+        <param name="hide">إخفاء التفاصيل</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">أوافق</param>
+        <param name="i_decline">أرفض</param>
+        <param name="impactAnalysis">أين اُستخدم هذا؟</param>
+        <param name="import">استيراد</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">استيراد <Leads/></param>
+        <param name="include_offline">تضمين دون اتصال</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">إدراج</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">إدراج المحدد</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">تثبيت الآن</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">دعوة</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">دعوة للاتصال</param>
+        <param name="jigsawsearch">استدعاء جهات الاتصال</param>
+        <param name="join_meeting">ينضم إلى الاجتماع</param>
+        <param name="jumpstart">بدء الانتقال السريع</param>
+        <param name="keep_in_touch">طلب التحديث</param>
+        <param name="layout_assignment">تعيين التخطيط</param>
+        <param name="legal_view">العرض القانوني</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">قفل السجل</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">تسجيل الدخول كمستخدم شريك</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">إدارة الأعضاء</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">طلب اجتماع جديد</param>
+        <param name="add_members_search">إضافة أعضاء - بحث</param>
+        <param name="add_members_import">إضافة أعضاء - استيراد ملف</param>
+        <param name="edit_members_search">تحرير الأعضاء - بحث</param>
+        <param name="update_members_import">تحديث &amp; إضافة الأعضاء - استيراد ملف</param>
+        <param name="manage_call_center_users">إدارة مستخدمي مركز الاتصال</param>
+        <param name="map_lead_fields">مخطط <Lead_Fields/></param>
+        <param name="mark_as">وضع علامة كـ</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">استيراد العضو</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">تعديل التذكيرات الفردية</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">جديدة</param>
+        <param name="newcase">جديدة</param>
+        <param name="new_addition_order">أمر إضافة جديد</param>
+        <param name="new_custom_object">كائن مخصص جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">إنشاء تقرير مخصص جديد</param>
+        <param name="new_dashboard">لوحة معلومات جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">مكون لوحة معلومات جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/> <New/></param>
+        <param name="new_email_template">قالب جديد</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <Entity entity="0"/></param>
+        <param name="new_entitlement_template">قالب جديد</param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="new_folder">مجلد جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">مجموعة جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">قائمة انتظار جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">ملاحظة جديدة</param>
+        <param name="new_object_custom_tab">علامة تبويب كائن مخصص جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">الاجتماع على الإنترنت</param>
+        <param name="new_order">أمر جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">مجموعة شخصية جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><Product/> <New/></param>
+        <param name="new_reduction_order">أمر تخفيض جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">دور جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">زر جديد</param>
+        <param name="new_territory">مقاطعة جديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_user">مستخدم جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">علامة تبويب تكامل ويب جديد</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><Quote/> <New/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">موافق</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">تنفيذ تحديث آخر</param>
+        <param name="performAnotherMigrate">ترحيل ملف تعريف آخر</param>
+        <param name="preview">معاينة</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">إعادة حساب</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">إعادة تأسيس</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">رفض</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">رفض التغييرات</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">إزالة المستخدمين</param>
+        <param name="remove_from_briefcase">إزالة من حقيبة الملفات</param>
+        <param name="remove_from_campaign">إزالة من <Campaign/></param>
+        <param name="reorder">إعادة ترتيب</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">إصلاح</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">تشغيل كل الاختبارات</param>
+        <param name="run_test">تشغيل الاختبار</param>
+        <param name="quick_save">حفظ سريع</param>
+        <param name="quick_save_hover">حفظ ومتابعة التحرير</param>
+        <param name="reply">رد</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">الرد على الكل</param>
+        <param name="reportmanager">مدير التقرير</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">إعادة تعيين كلمة المرور</param>
+        <param name="reset_passwords">إعادة تعيين كلمة المرور (كلمات المرور)</param>
+        <param name="retrieve_prices">استرداد الأسعار</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">تشغيل التقرير</param>   <!-- aliased across labels; do not change -->
+        <param name="save">حفظ</param> <!-- aliased across labels do not change -->
+        <param name="saving">حفظ...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">حفظ &amp; وإضافة سعر</param>
+        <param name="save_and_add_product">حفظ &amp; إضافة <Product/></param>
+        <param name="save_and_clone">حفظ &amp; استنساخ مرة أخرى</param>
+        <param name="save_and_close">حفظ وإغلاق</param>
+        <param name="save_and_attach">حفظ &amp; وإضافة مرفق</param>
+        <param name="save_and_continue">حفظ &amp; التالي</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">حفظ &amp; المزيد</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">حفظ &amp; <Event/> <New/></param>
+        <param name="save_and_new_product">حفظ &amp; <Product/> <New/></param>
+        <param name="save_and_new_task">حفظ &amp; <Task/> <New/></param>
+        <param name="save_and_refresh">حفظ &amp; تحديث</param>
+        <param name="save_and_send">حفظ &amp; إرسال التحديث</param>
+        <param name="event_scheduler">العميل &amp; عرض الفريق &gt;</param>
+        <param name="saveAs">حفظ باسم</param>
+        <param name="schedule_to_email">جدولة للبريد الإلكتروني</param>
+        <param name="schedule_to_print">جدولة للطباعة</param>
+        <param name="scrutinize">يدقق</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">العثور على <KnowledgeArticles/></param>
+        <param name="newArticle">جديدة</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">تحديد قالب</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">بدء الانتقال السريع للخدمة الذاتية</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">إعداد الخدمة الذاتية</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">عرض/تمكين الخدمة الذاتية</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">إرسال</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">إرسال بريد إلكتروني إلى <all/> <contacts/></param>
+        <param name="send_invitation">حفظ &amp; إرسال دعوة</param>
+        <param name="set_status">إدارة الحالة</param>
+        <param name="setup_and_install">إعداد &amp; تثبيت</param>
+        <param name="setup_roles">إعداد الأدوار</param>
+        <param name="setup_sharing">إعداد المشاركة</param>
+        <param name="sfga_instructions">إكمال التعليمات القابلة للطباعة</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">عرض التفاصيل</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">تخطي</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">فرز</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">بدء الاجتماع</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">إرسال</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">إرسال &amp; وإضافة مرفق</param>
+        <param name="subscribe_now">الاشتراك الآن</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">الترقية الآن!</param>
+        <param name="suggest">عرض <Solutions article="the"/> <Suggested gender="f" plural="n"/></param>
+        <param name="take_training_now">تدرب الآن!</param>
+        <param name="terminate">إنهاء</param>
+        <param name="training_history">محفوظات التدريب</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">نقل</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">التجربة الآن!</param>
+        <param name="undelete">إلغاء الحذف</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">تراجع</param>
+        <param name="unlock">إلغاء قفل السجل</param>
+        <param name="update">تحديث</param>
+        <param name="update_campaign_history">تحديث &amp; إضافة <Campaign_Members/></param>
+        <param name="update_now">التحديث الآن</param>
+        <param name="update_statuses">تحديث الحالات</param>
+        <param name="upload">تحميل</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">تبعيات الحقل</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">عرض المكونات المحذوفة</param>
+        <param name="view_partnerforce">عرض مستخدم الشريك</param>
+        <param name="view_self_service">عرض الخدمة الذاتية</param>
+        <param name="view_customer_success">عرض مستخدم مدخل العميل</param>
+        <param name="enable_customer_success">تمكين مستخدم مدخل العميل</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">ما هذا؟</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">غلق هذه النافذة</param>
+        <param name="runApexRecalc">إعادة حساب مشاركة Apex</param>
+        <param name="disablecustomerportal">تعطيل مستخدم مدخل العميل</param>
+        <param name="disablepartnerportal">تعطيل مستخدم المدخل</param>
+        <param name="disablecustomerportalaccount">تعطيل حساب مدخل العميل</param>
+        <param name="disablepartnerportalaccount">تعطيل حساب الشريك</param>
+        <param name="voteup">التصويت لصالح</param>
+        <param name="votedown">التصويت ضد</param>
+        <param name="markquestionunanswered">وضع علامة غير مجاب</param>
+        <param name="markbestanswer">وضع علامة أفضل إجابة</param>
+        <param name="requestUseSfdcAction">بحث في الاتصالات</param>
+        <param name="addPET">إضافة قالب التفويض</param>
+        <param name="truncate">قطع</param>
+        <param name="disableprmsuperuser">تعطيل الوصول المميز للشريك</param>
+        <param name="enableprmsuperuser">تمكين الوصول المميز للشريك</param>
+        <param name="purchase_more">شراء المزيد</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">العودة إلى أعلى</param>
+        <param name="descriptionText">النص الأساسي طويل للغاية. يرجى عرض التفاصيل.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">عرض الملف</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">الأصل</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">لا توجد معلومات متصلة</param>
+        <param name="no_records">لا توجد سجلات للعرض</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">عرض {0} المزيد »</param>
+        <param name="NextMoreGeneric">عرض  المزيد »</param>
+        <param name="view_more">الانتقال إلى القائمة</param>
+        <param name="view_more_tot">الانتقال إلى القائمة ({0})</param>
+        <param name="view_more_tot_plus">الانتقال إلى القائمة ({0}+)</param> <!-- -->
+        <param name="view_more_1">الانتقال إلى القائمة من خلال سجل واحد آخر</param> <!-- Singular -->
+        <param name="view_more_n">الانتقال إلى القائمة من خلال {0} المزيد من السجلات</param> <!-- Plural -->
+        <param name="view_more_n_plus">الانتقال إلى القائمة من خلال سجلات {0}+</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">متوفر المزيد؛ انتقل إلى القائمة</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">الاحتمالية</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">المصدر</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">فاز</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">فترة مالية</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">ربع {1} السنة {0}</param>
+        <param name="opportunities_next_step">الخطوة التالية</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">تحديث</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <Open gender="f" plural="n"/></param>
+        <param name="activities_open"><Activities/> <Open gender="f" plural="n"/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">متعلق بـ</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">ملاحظة</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">مستند Google</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">الملاحظات &amp; المرفقات</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">عنوان الملاحظة</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">مرفق</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">مرفقات</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">اسم الملف</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">الملكية</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">رئيسي</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none">لا يتوفر <No/> <cases/> للعرض</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">التاريخ</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">العنوان</param>
+        <param name="object_title">العنوان</param> <!-- translation note: title of files/attachment -->
+        <param name="name">الاسم</param>
+        <param name="object_name">الاسم</param>
+        <param name="date">التاريخ</param>
+        <param name="due_date">تاريخ الاستحقاق</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">آخر تعديل</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">تم التحديث بواسطة</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">رئيسي</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">المتنافسون</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">اسم المتنافس</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">نقاط القوة</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">نقاط الضعف</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">الاحتمالية (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">مكتمل</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">وضع علامة {0} مكتمل</param>
+        <param name="task_date">التاريخ</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">الاسم</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">تعليق اعتماد <Contract article="the"/></param>
+        <param name="task_none">لا يتوفر لديك <tasks/> <open plural="n"/> مجدولة لهذا المشروع.</param>
+        <param name="task_mode_today">اليوم</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">اليوم + متأخر</param>
+        <param name="task_mode_tomorrow">غدًا</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">الأيام {0} التالية</param>
+        <param name="task_mode_next_7days_overdue">الأيام {0} التالية + متأخر</param>
+        <param name="task_mode_overdue">متأخر</param>
+        <param name="task_mode_this_month">هذا الشهر</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">الكل مفتوح</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">المحفوظات</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partner plural="y"/></param>
+        <param name="news_title">أخبار</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">العنوان</param>
+        <param name="new_date">التاريخ</param>
+        <param name="news_none">لا توجد أخبار متوفرة</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">قوالب دمج البريد الإلكتروني</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">أهم <Solution plural="y"/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">تاريخ الإضافة</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">تمت الإضافة حسب</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none">لم يتم إرفاق <No/> <Solutions/></param>
+        <param name="description">الوصف</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">مؤشر أسهم</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">لا توجد بيانات <Activity_History/> للعرض.</param>
+        <param name="nonotes">لا توجد بيانات محفوظات الملاحظة للعرض.</param>
+        <param name="noattachments">لا توجد بيانات محفوظات المرفق للعرض.</param>
+        <param name="viewallattachments">عرض كل المرفقات</param>
+        <param name="viewalldocsattachments">عرض كافة مستندات &amp; مرفقات Google</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">التاريخ</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">وصف السطر</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">التقاطات API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">تمت تصفيته حسب المستخدم</param>
+        <param name="apicapture_filterip">تمت تصفيته حسب عنوان IP</param>
+        <param name="apicatpure_numbers">التقاطات</param>
+        <param name="apicapture_soapscope">عرض الالتقاطات</param>
+        <param name="apicapture_active">نشطة</param>
+        <param name="apicapture_none">لا يوجد التقاطات</param>
+        <param name="apicapture_new">بدء التقاط جديد</param>
+        <param name="apicapture_view">عرض</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">محفوظات تسجيل الدخول</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">لا يوجد تسجيلات دخول</param>
+        <param name="login_none">لا يوجد محفوظات تسجيل دخول متوفرة.</param>
+        <param name="login_username">اسم المستخدم</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">وقت تسجيل الدخول</param>
+        <param name="login_type">نوع تسجيل الدخول</param>
+        <param name="login_ip">عنوان IP للمصدر</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">غير متوفر</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">المستعرض</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">النظام الأساسي</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">الدقة</param>
+        <param name="login_clientversion">إصدار العميل</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">التطبيق</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">نوع API</param>
+        <param name="login_apiversion">إصدار API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">نجاح</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">تنزيل محفوظات تسجيل الدخول للأشهر الستة الأخيرة، بما في ذلك تسجيلات الدخول من خارج موقع ويب، مثل تسجيل دخول API (مثل ملف .csv في Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">تنزيل محفوظات تسجيل الدخول، بما في ذلك تسجيلات الدخول من موقع ويب فقط (ملف .csv في Excel)</param>
+        <param name="login_history_download_title">خيارات التنزيل</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">ملف CSV</param>
+        <param name="login_history_download_file_type_gzip">ملف GZIP</param>
+        <param name="login_history_download_file_type_help">لا يمكن عرض ملفات CSV (القيمة المفصولة بفاصلة) باستخدام العديد من برامج جدول البيانات ومحررات النصوص. يتم ضغط ملفات GZIP (GNU zip) لتقليل حجمها.</param>
+        <param name="login_history_download_option_title">محتويات الملف</param>
+        <param name="login_history_download_option_all">جميع تسجيلات الدخول</param>
+        <param name="login_history_download_option_ie6_only">تسجيلات دخول IE6 فقط</param>
+        <param name="login_history_download_option_web_only">تسجيلات دخول موقع ويب فقط</param>
+        <param name="login_history_download_option_help">تتضمن "جميع تسجيلات الدخول" تسجيلات دخول من جميع المصادر، مثل موقع الويب، وOutlook، وتكاملات API، وغير ذلك. تتضمن "تسجيلات دخول IE6" فقط تسجيلات الدخول من المستخدمين الذين يستخدمون Internet Explorer 6. تتضمن "تسجيلات دخول موقع ويب" فقط تسجيلات الدخول من صفحة تسجيل دخول Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">هل لا تزال تستخدم IE6؟</param>
+        <param name="login_history_ie6_deprecation_warning_text">لم تعد Salesforce تدعم IE6. استخدم خيارات التنزيل المتوفرة للبحث عن المستعرضات التي يجري استخدامها في مؤسستك.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">عنوان URL لتسجيل الدخول</param>
+        <param name="order_history">محفوظات الأمر</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">لا يوجد أوامر</param>
+        <param name="order_number">رقم الأمر</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">تاريخ الأمر</param>
+        <param name="order_currency">العملة</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">التكلفة الإجمالية</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">تم بيعه لـ</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">لا يتوفر <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">رقم&lt;BR&gt;السطر</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">السعر الشهري</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">مرجع الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">تكرار الفوترة&lt;BR&gt;(أشهر)</param>
+        <param name="bo_order_items_billing_frequency_text">تكرار الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">مدة الأمر&lt;BR&gt;(أشهر)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">التاريخ</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">الفواتير</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">لا توجد فواتير</param>
+        <param name="invoices_invoice_number">رقم الفاتورة</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">تاريخ الفاتورة</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">تاريخ استحقاق الفاتورة</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">معرّف النظام الخارجي</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">المبلغ الإجمالي</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">الرصيد المستحق</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">إجمالي الدائن</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">شطب الإجمالي</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">جهة الاتصال بالفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">شركة الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">محفوظات الفاتورة</param>
+        <param name="revenue_schedule">الجدول الزمني</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">التاريخ</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">العائد</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">التعليقات</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">محفوظات الحالة</param>
+        <param name="status_none">لم يتم العثور على أية محفوظات للحالة</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">تحديد الخدمة</param>
+        <param name="services_none">لا تتوفر خدمات</param>
+        <param name="services_description">خدمة</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">سعر الوحدة</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">السعر الإجمالي</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">خصم</param>
+        <param name="training">محفوظات فئة التدريب</param>
+        <param name="training_none">لا شيء</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">اسم الفئة</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">تاريخ الالتقاط</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">تمت الاستجابة</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">افتراضية</param>
+        <param name="campaign_member_none">تم تحديد <No/> <campaign_member_status/></param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">تاريخ البدء</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">تاريخ الإنهاء</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">قيمة العمر</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">به قواعد شراء</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">تكرار الفوترة&lt;br&gt;(أشهر)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">تمت الفوترة خلال التاريخ</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <Billed gender="f" plural="n"/></param>
+        <param name="event_attending"><Event/> مقبول</param>
+        <param name="event_notdecided">لم تتم الاستجابة</param>
+        <param name="event_declined"><Event/> مرفوض</param>
+        <param name="event_attending_none">لم يتم قبول الحضور</param>
+        <param name="event_notdecided_none">تمت الاستجابة لكافة الحضور</param>
+        <param name="event_declined_none">لم يتم رفض الحضور</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Documents/></param>
+        <param name="documents_title">الاسم</param>
+        <param name="documents_size">الحجم</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">المؤلف</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">عرض سجل مراجعة الإعداد</param>
+        <param name="download">تنزيل</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">تم إدراج آخر 20 إدخالا لمؤسستك أسفل. يمكنك {0} سجل مراجعة الإعداد لمؤسستك لآخر ستة أشهر (ملف .csv في Excel).</param>
+        <param name="setup_audit_date">التاريخ</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">الإجراء</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">القسم</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">المستخدم المفوض</param>
+        <param name="setup_audit_proxyinguser_help">يسرد هذا العمود اسم المستخدم الذي أجرى تغييرًا على الإعداد نيابة عن المستخدم النهائي. فعلى سبيل المثال، إذا تم منح أحد المستخدمين حق الوصول وتسجيل الدخول إلى ممثل الدعم، فسيتم سرد اسم مستخدم ممثل الدعم في القائمة.</param>
+        <param name="setup_audit_trail_none">لا تتوفر معلومات لسجل مراجعة الإعداد</param>
+        <param name="setup_audit_download_csv">تنزيل سجل مراجعة الإعداد لآخر ستة أشهر (ملف .csv في Excel)</param>
+        <param name="DashboardComponents_title">مكونات لوحة المعلومات</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">لا توجد مكونات للوحة المعلومات</param>
+        <param name="translated_templates_none">لا توجد قوالب بريد إلكتروني مترجمة</param>
+        <param name="translated_templates_title">قوالب البريد الإلكتروني المترجمة</param>
+        <param name="translated_templates_language">اللغة</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">نشطة</param>
+        <param name="desc_pnet_conn_audit_trail">تم إدراج آخر 20 إدخالا لمؤسستك أسفل. يمكنك {0} محفوظات سجل مراجعة الاتصال بالكامل كملف .csv في Excel.</param>
+        <param name="pnet_conn_audit_trail">محفوظات الاتصال</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">التاريخ</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">لا تتوفر معلومات لسجل مراجعة الاتصال</param>
+        <param name="pnet_conn_audit_download_csv">تنزيل محفوظات الاتصال (csv)</param>
+        <param name="pnet_entity_conns_title">المشاركة الخارجية</param>
+        <param name="pnet_entity_conn_stop_sharing">إيقاف المشاركة</param>
+        <param name="pnet_pub_title">الكائنات المنشورة</param>
+        <param name="pnet_sub_title">الكائنات المشتركة</param>
+        <param name="pnet_pubsub_object">اسم الكائن</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">الحقول</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">النشر/إلغاء النشر</param>
+        <param name="pnet_sub_edit">الاشتراك/إلغاء الاشتراك</param>
+        <param name="pnet_pub_edit_object">الكائن المنشور.</param>
+        <param name="pnet_pub_edit_field">انقر فوق "تحرير" أسفل للنشر إلى الحقول المتوفرة على كل كائن.</param>
+        <param name="pnet_sub_edit_object">الكائن المشترك.</param>
+        <param name="pnet_sub_edit_field">انقر فوق "تحرير" أسفل للاشتراك إلى الحقول المتوفرة على كل كائن.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">المحتوى</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">مرفقات Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">القوائم المتعلقة بتحميل الخطأ</param>
+        <param name="ajax_exception_desc">هناك مشكلة في تجميع معلومات القائمة المتعلقة لهذا السجل. إذا كان إعادة تحميل الصفحة لا يحل المشكلة، فيرجى الاتصال بالمسؤول أو إرسال &lt;a href="{0}" title="report{1}"&gt;تقرير&lt;/a&gt; بالخطأ إلى فريق دعم العملاء.</param>
+        <param name="category_access_title">إعدادات رؤية مجموعة الفئة</param>
+        <param name="category_access_video_tutorial">فيديو البرنامج التعليمي</param>
+        <param name="category_access_name">مجموعة الفئة</param>
+        <param name="category_access_access">الرؤية</param>
+        <param name="category_access_details">تفاصيل الرؤية</param>
+        <param name="category_access_custom">مخصص</param>
+        <param name="category_access_full">الكل</param>
+        <param name="category_access_inherited">موروث من {0}</param>
+        <param name="category_access_revoked">لا شيء</param>
+        <param name="category_access_userNodeAndChildren_Profile">ملف التعريف</param>
+        <param name="category_access_userNodeAndChildren_UserRole">الدور والمرؤوسون</param>
+        <param name="category_access_noCategories">لا توجد فئة مرئية لهذا {0}</param>
+        <param name="category_access_allCategories">كافة الفئات مرئية لهذا {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} لـ {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">جميع أنحاء الولايات المتحدة &amp; أوروبا الغربية (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">اليابانية (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">اليابانية (JIS)</param>
+        <param name="4">اليابانية (EUC)</param>
+        <param name="5">الكورية (ks_c_5601-1987)</param>
+        <param name="6">الصينية التقليدية (Big5)</param>
+        <param name="7">الصينية المبسطة (GB2312)</param>
+        <param name="8">الصينية التقليدية هونج كونج (Big5-HKSCS)</param>
+        <param name="9">اليابانية (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">مؤسسة تجريبية</param>
+        <param name="expand">انقر لفتح الشريط الجانبي [Alt+S]</param>
+        <param name="collapse">انقر لغلق الشريط الجانبي [Alt+S]</param>
+        <param name="expandNoHotkey">انقر لفتح الشريط الجانبي</param>
+        <param name="collapseNoHotkey">انقر لإغلاق الشريط الجانبي</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">لأعلى</param>   <!-- aliased across labels; do not change -->
+        <param name="down">لأسفل</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">تنقل</param>
+        <param name="top">أعلى</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">أسفل</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">يرجى ملء الحقول المطلوبة.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">كل المستخدمين</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">جديدة</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">إضافة</param>   <!-- aliased across labels; do not change -->
+        <param name="del">حذف</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[تغيير]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">كيف يمكنني...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">عرض المزيد</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <New/></param>
+        <param name="new_event"><Event/> <New/></param>
+        <param name="log_call">تسجيل مكالمة</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">تسجيل ملاحظة</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">دمج البريد الإلكتروني</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">عرض الكل</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">إرفاق ملف</param>   <!-- aliased across labels; do not change -->
+        <param name="help">كيف يمكنني؟</param>
+        <param name="send_email">إرسال بريد إلكتروني</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">صورة مضافة للمستخدم</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">التطبيقات</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">عرض قابل للطباعة</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">استنساخ</param>   <!-- aliased across labels; do not change -->
+       <param name="share">مشاركة</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">الصفحة الرئيسية</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">معرفة المزيد!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">تحديد واحد:</param>
+        <param name="hotlist_mode">عرض التحديد</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">عرض {0,number,integer} العناصر</param>
+        <param name="hotlist_empty_title">لا توجد سجلات حديثة. انقر فوق "انتقال" أو حدد عرضًا من القائمة المنسدلة لعرض السجلات.</param>
+        <param name="hotlist_empty_description">لا يتوفر سجلات لهذه المعايير.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">الانتقال إلى السجلات</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">مركز الموارد</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">من خلال مركز الموارد، يمكنك البحث عن العملاء المتوقعين، والعثور على خدمات الأطراف الخارجية، وغير ذلك المزيد.</param>
+        <param name="resource_center_link_text">الانتقال إلى مركز الموارد</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">أساليب المبيعات</param>
+        <param name="hotlist_recently_modified">تم تعديله مؤخرًا</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">تم إنشاؤه مؤخرًا</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">المعروضة حديثًا</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--لا شيء--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--تحديد--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--افتراضي--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**غير منطبق**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">لم يقم المسؤول لديك بتحديد أي ارتباطات مخصصة.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">الانتقال السريع إلى:</param>
+        <param name="JumpToStep">الخطوة {0}: {1}</param>
+        <param name="CloseWizard">إغلاق المعالج</param>
+        <param name="LeftHeader">الخطوة {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">الخطوة {0} من {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">الخطوة {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">حفظ &amp; جديد</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">التالية</param> <!-- aliased across labels - do not change -->
+        <param name="previous">السابقة</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">معالج إعداد المؤسسة لـ {0}</param>
+        <param name="ImportWizardTitle">استيراد المعالج لـ {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">مركز الأمر</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">تسجيل تجريبي</param>
+        <param name="WizardBody">نص المعالج</param>
+        <param name="WizardFooter">تذييل المعالج</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">العنوان</param><!-- translators note - this is actually the full address -->
+        <param name="street">العنوان</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">المدينة</param><!-- aliased across label files - do not change -->
+        <param name="state">الدولة/المقاطعة</param><!-- aliased across label files - do not change -->
+        <param name="zip">Zip</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">الرمز البريدي</param> <!-- aliased across label files - do not change -->
+        <param name="country">الدولة</param> <!-- aliased across label files - do not change -->
+        <param name="phone">الهاتف</param> <!-- aliased across label files - do not change -->
+        <param name="extension">ملحق</param> <!-- aliased across label files - do not change -->
+        <param name="fax">الفاكس</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">الرقم الداخلي للفاكس</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">بريد إلكتروني</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">عنوان الشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">شارع الشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">مدينة الشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">دولة/مقاطعة الشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">الرمز البريدي للشحن</param>
+        <param name="shippingzippostalcode">الرمز البريدي للشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">دولة الشحن</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">عنوان الفوترة</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">مدينة الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">منطقة/مكان إصدار الفواتير</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">الرمز البريدي للفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">بلد الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">شارع الفوترة</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">شارع البنك</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">عنوان البنك</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">مدينة البنك</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">دولة/مقاطعة البنك</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">الرمز البريدي للبنك</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">بلد البنك</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">عنوان المراسلة</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">شارع المراسلة</param>
+        <param name="mailingcity">مدينة المراسلة</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">دولة/مقاطعة المراسلة</param>
+        <param name="mailingzip">الرمز البريدي للمراسلة</param>
+        <param name="mailingcountry">بلد المراسلة</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">السطر1 لعنوان المراسلة</param>
+        <param name="mailingaddress2">السطر2 لعنوان المراسلة</param>
+        <param name="mailingaddress3">السطر3 لعنوان المراسلة</param>
+        <param name="otheraddress">عنوان آخر</param>
+        <param name="otheraddress1">السطر 1 للعنوان الآخر</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">السطر 2 للعنوان الآخر</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">السطر 3 للعنوان الآخر</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">شارع آخر</param>
+        <param name="otherstreet2">شارع آخر 2</param>
+        <param name="otherstreet3">شارع آخر 3</param>
+        <param name="othercity">مدينة أخرى</param>
+        <param name="otherstate">دولة/مقاطعة أخرى</param>
+        <param name="otherzipcode">رمز بريدي آخر</param>
+        <param name="otherpostalcode">رمز بريدي آخر</param>
+        <param name="otherzippostalcode">رمز بريدي آخر</param>
+        <param name="othercountry">بلد آخر</param>
+        <param name="otherphone">هاتف آخر</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">رقم داخلي آخر للهاتف المحمول</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">عنوان 1</param>
+        <param name="address2">عنوان 2</param>
+        <param name="address3">عنوان 3</param>
+        <param name="home_phone">هاتف المنزل</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">جارٍ التحميل...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">الموقع</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">الكمية</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contact Manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">نعم</param>   <!-- aliased across labels; do not change -->
+        <param name="no">لا</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">مرحبًا بك في salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">حقوق النشر © للأعوام 2000-{0} محفوظة لصالح salesforce.com, inc.‎ كافة الحقوق محفوظة.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">حقوق النشر &amp;copy; 2000-{1} &lt;a href="{0}"&gt;شركة salesforce.com&lt;/a&gt;, inc. كافة الحقوق محفوظة.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">الالتزام بالمادة 508</param>
+        <param name="copyright_nohtml">حقوق النشر (c) 2000-{0} شركة salesforce.com, inc. كافة الحقوق محفوظة.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">حقوق النشر محفوظة لـ {0} {1}. كافة الحقوق محفوظة.</param>
+        <param name="brandedCopyrightWithLink">حقوق نشر النسخة &amp;؛ محفوظة لشركة {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;. كافة الحقوق محفوظة.</param>
+        <param name="brandedCopyright_nohtml">حقوق النشر محفوظة لـ {0} {1}. كافة الحقوق محفوظة.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">بيان الأمان</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">شروط الاستخدام</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">شكرًا على اختيارك salesforce.com. قبل أن يمكنك البدء في استخدام salesforce.com، يجب عليك قراءة شروط الاستخدام أسفل والموافقة عليها. بمجرد الانتهاء، يرجى المتابعة بالنقر فوق الزر "أوافق". يرجى الملاحظة، في حالة عدم موافقتك على شروط الاستخدام، فلن تتمكن من تسجيل الدخول إلى salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">تم</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">إضافة جديد!</param>
+        <param name="remove">إزالة</param>   <!-- aliased across labels; do not change -->
+        <param name="new">جديدة</param>
+        <param name="exciting_and_new">جديد!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">هنا</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">إنشاء</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">غلق النافذة</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">طباعة هذه الصفحة</param>
+        <param name="new_window">(نافذة جديدة)</param>
+        <param name="new_focus">(تحويل التركيز)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">إطار مخفي - تجاهل</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">تحديد الكل</param>
+        <param name="select_shown">حديد العناصر المعروضة</param>
+        <param name="remove_shown">إزالة العناصر المعروضة</param>
+        <param name="select_none">بلا تحديد</param>
+        <param name="all_active">تنشيط الكل</param>
+        <param name="all_inactive">إلغاء تنشيط الكل</param>
+        <param name="are_you_sure">هل أنت متأكد؟</param>
+        <param name="irreversible_are_you_sure">يتعذر التراجع عن هذا الإجراء! هل أنت متأكد؟</param>
+        <param name="replace">استبدال</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">إنهاء</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} دقيقة</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">تم العثور على عناصر متعددة. حدد من القائمة المنسدلة أو انقر فوق الرمز لتدقيق البحث.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">إعادة تعيين</param>   <!-- aliased across labels; do not change -->
+        <param name="override">تجاوز</param>   <!-- aliased across labels; do not change -->
+        <param name="total">الإجمالي</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">انقر هنا</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">ملاحظات إلى مسؤول الويب</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">نموذج لـ HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">كلمة المرور</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">عدم إظهار هذه الصفحة مرة أخرى</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">إخفاء هذه الرسالة لـ: </param>
+        <param name="dontShowMessageAgain">لا تعرض هذه الرسالة مرة أخرى</param>
+        <param name="dismissMessage">استبعاد هذه الرسالة</param>
+        <param name="allObjects">كل الكائنات</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">اضغط على شريط المسافة أو المفتاح Enter للفتح</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">الخدمة الذاتية: <Case_Detail/></param>
+        <param name="CssEdit">الخدمة الذاتية: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">موجز <Case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">تعليق</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">الكائنات المخصصة</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">تعريف الكائن المخصص</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">لوحة المعلومات</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">لوحات المعلومات</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">إلغاء تحديد الكل</param>
+        <param name="deselect_shown">إزالة تحيد العناصر المعروضة</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Documents/></param>
+        <param name="MailmergeTemplate">قالب دمج البريد</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">قوالب دمج البريد</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">المجلد</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">المجلدات</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">التوقعات</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">التوقعات</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">مراقب Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">الفاتورة</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">الملاحظات</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">الترتيب</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">الأوامر</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">عنصر الأمر</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">عناصر الأوامر</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">الدفع</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">المدفوعات</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">التقرير</param>
+        <param name="Reports">التقارير</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">التسجيل</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">القالب</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">القوالب</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">الجدول</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">نشطة</param>
+        <param name="amount">مقدار</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">العائد السنوي</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">إرفاق مستند</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">تغيير كلمة المرور</param>   <!-- aliased across labels; do not change -->
+        <param name="close">إغلاق</param> <!-- aliased across labels; do not change -->
+        <param name="closed">مغلقة</param>
+        <param name="closed_date">تاريخ الإغلاق</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">إغلاق التاريخ</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">تاريخ الإنشاء</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">نوع البيانات</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">محذوف</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">معلومات الوصف</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">الموظفون</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">الملف</param>   <!-- aliased across labels; do not change -->
+        <param name="files">الملفات</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">معلومات عامة</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">احصل على معلومات قبل أن تبدأ</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">التسمية</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">آخر تسجيل دخول</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">آخر تاريخ تعديل</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">الاسم</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">الاسم</param>
+        <param name="new_status">الحالة الجديدة</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">لا شيء</param>
+        <param name="open">مفتوح</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">المؤسسة</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">لم يتم العثور على تطابقات.</param> <!-- aliased across labels - do not change -->
+        <param name="all">الكل</param>
+        <param name="clear">مسح</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">انقر فوق رمز البحث...</param>
+        <param name="click_lookup_icon_info">انقر فوق رمز البحث لتحديد قيمة.</param>
+        <param name="clear_all">مسح الكل</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">انقر فوق زر "إرفاق".</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">أخطاء</param> <!-- aliased across lables - do not change -->
+        <param name="high">مرتفع</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">تعليمات</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">الانتقال إلى هناك!</param>
+        <param name="keywords">الكلمات الأساسية</param>
+        <param name="length">الطول</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">الحالة</param> <!-- aliased across lables - do not change -->
+        <param name="title">العنوان</param>
+        <param name="object_title">العنوان</param>
+        <param name="type">النوع</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">المستخدم</param> <!--aliased across labels - do not change -->
+        <param name="Users">المستخدمون</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">مجموعة الأذونات</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">ملف التعريف</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">ملفات التعريف</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">المالك</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">نجاح الخبرة.</param>
+        <param name="DontShowPage">لا تعرض لي هذه الصفحة مرة أخرى.</param>
+        <param name="click_here_to_create_new_account">{0} لإنشاء <account/> <new/> الآن.</param>
+        <param name="click_here_to_create_new_contact">{0} لإنشاء <contact/> <new/> الآن.</param>
+        <param name="click_here_to_create_new_lead">{0} لإنشاء <lead/> <new/> الآن.</param>
+        <param name="click_here_to_create_new_opportunity">{0} لإنشاء <opportunity/> <new/> الآن.</param>
+        <param name="click_here_to_create_new_product">{0} لإنشاء <product/> <new/> الآن.</param>
+        <param name="SystemModstamp">Modstamp للنظام</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">التقسيم</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">معالجة</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">تحديث السجلات...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">ترجمة ثابتة</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">إخفاء هذه الصفحة في المستقبل</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">تحميل...</param>
+        <param name="uploading_title">تحميل</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">استيراد...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">و </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">خطأ: لا يمكن الوصول إلى هذا الحقل</param>
+        <param name="noReadAccess">ليس لديك حق الوصول لعرض هذا السجل.</param>
+        <param name="noAccessToUser">ليس لديك وصول لهذا المستخدم.</param>
+        <param name="disabledButton">زر التعطيل: {0}</param>
+        <param name="RequiredHeader">المعلومات المطلوبة</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">إدراج صورة</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">هل أنت متأكد من أنك ترغب في حذف نطاق تسجيل دخول عنوان IP</param>
+        <param name="AMPM">إدخال AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">المكون المحمي</param>
+        <param name="dialogCloseConfirm">نافذة التأكيد التي كنت تعرضها للتو ربما تم إغلاقها قبل الأوان. انقر فوق "موافق" للعودة إليها مرة أخرى، أو "إلغاء" لتجاهل هذا التحذير.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">بدء المحادثة</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">نتائج البحث</param>
+        <param name="Recent">المعروضة حديثًا</param>
+        <param name="NoMatchHeader">لم يتم العثور على أي نتائج لأحد الأسباب التالية:</param>
+        <param name="BulletOne">عدم وجود أي نتائج لهذا النوع</param>
+        <param name="BulletTwo">عدم توفر أذن لديك لعرض أي نتائج</param>
+        <param name="BulletThree">عدم ملائمة النتائج لمعايير التصفية المحددة من قبل المسؤول</param>
+        <param name="BulletFour">فراغ أو عدم صلاحية حقل أو أكثر من حقول التحكم (حقول التحكم:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">المستخدمون المتاحون</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">المستخدمون المحددون</param>
+        <param name="LicensedUsers">المستخدمون المرخصون</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">مُحدد للإزالة</param>
+        <param name="Selected">مُحدد</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">مُختار</param>
+        <param name="UnassignedPackages">الحزم غير المعينة</param>
+        <param name="SelectedPackages">الحزم المُحددة</param>
+        <param name="InView">في العرض</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">يتجاوز هذا الملف الحد الأقصى للحجم وهو {0}.</param>
+        <param name="no_file_specified">يرجى تحديد ملف للتحميل. اكتب المسار للملف، أو استخدم زر "استعراض" لتحديد موقعه في نظام الملفات المحلي.</param>
+        <param name="invalid_file_type">نوع الملف الذي قمت بتحديده لا يتم دعمه حاليًا.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">يتجاوز اسم الملف الحد الأقصى للطول المسموح به، وهو {0} حرف.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">يتجاوز امتداد اسم الملف الحد الأقصى للطول المسموح به، وهو {0} حرف.</param>
+        <param name="bytes">بايت</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">كيلو بايت</param>
+        <param name="mbytes">ميجا بايت</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">أنواع ملفات HTML غير مسموح بها لأسباب تتعلق بالأمان.</param>
+        <param name="attachment_size_exceeded">تجاوز الملف الذي تم تحميله الحد الأقصى للحجم.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;خطأ:&lt;/b&gt; يجب عليك تحديد صورة للتحميل</param>
+        <param name="upload_file_too_large">&lt;b&gt;خطأ:&lt;/b&gt; تتجاوز الصورة حد الحجم وهو 1 ميجا بايت.</param>
+        <param name="invalid_file_type">&lt;b&gt;خطأ:&lt;/b&gt; يمكنك فقط إدراج ملفات .gif و.jpeg و.png.</param>
+        <param name="upload_failed">&lt;b&gt;خطأ:&lt;/b&gt; فشل التحميل - الرجاء إعادة المحاولة.</param>
+        <param name="invalid_file">&lt;b&gt;خطأ:&lt;/b&gt; الملف عبارة عن ملف صورة غير صالح.</param>
+        <param name="invalid_param">&lt;b&gt;خطأ:&lt;/b&gt; معلمات غير صالحة.</param>
+        <param name="access_failed_alt">هذه الصورة غير متوفرة لأن: ليس لديك الامتيازات الكافية لعرضها، أو أنه قد تم حذفها من النظام</param>
+        <param name="weekly_export_folder">الوثائق المرفقة الأخرى التي تم تحميلها/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} تم إنشاؤه بنجاح.</param>
+        <param name="Failure_message">فشل الإنشاء</param>
+        <param name="Common_success_message">نجح الإنشاء.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">طلب تخفيض الترخيص</param>
+        <param name="pageheader">الرجاء إكمال كافة الحقول المطلوبة لإرسال طلبك لتخفيض الترخيص. هذه هي أسرع طريقة لمعالجة طلبك.  الرجاء عدم إرسال طلبات متعددة لنفس الترخيص حيث قد يتسبب هذا في تأخيرات غير ضرورية.</param>
+        <param name="title_landing">تم استلام طلبك!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">تم استلام طلبك وستتم معالجته بالترتيب المستلم. الرجاء ملاحظة أن طلبات تخفيض عدد ترخيصك ستسري بداية من فترة الفوترة التالية بعد طلبك طالما قمت بإعلام salesforce.com قبل خمسة أيام عمل من تاريخ الفاتورة بالنسبة لفترة الفوترة التالية لك.</param>
+        <param name="pageheader_landing">تم استلام طلبك وستتم معالجته بالترتيب المستلم. ستسري طلبات تخفيض عدد ترخيصك بعد 20 يومًا من تاريخ إرسال طلبك. الرجاء عدم إرسال طلبات تخفيض تراخيص متعددة لنفس التراخيص، حيث قد يؤدي هذا إلى تأخير معالجة طلبك.</param>
+        <param name="title_error">تعذر معالجة طلبك.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">تعذر علينا إرسال طلبك في هذا الوقت. الرجاء المحاولة مرة أخرى لاحقًا.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">إرسال طلبك</param>
+        <param name="reason">السبب</param>   <!-- aliased across labels; do not change -->
+        <param name="description">الرجاء وصف &lt;br&gt; وصفًا تفصيليًا</param>
+        <param name="numLicenses">عدد التراخيص</param>
+        <param name="potentialResponse">عدد التراخيص كيف يمكننا الاحتفاظ&lt;br&gt; بعملك؟</param>
+        <param name="tips_title">Tips for Submitting License Reduction Requests</param>
+        <param name="tip1">الرجاء إكمال كل المعلومات بدقة لضمان معالجة طلبك بشكل عاجل وصحيح.  وقبل إرسال هذا الطلب، تأكد من إلغاء تنشيط مستخدمين بما يكفي بحيث يقل عدد مستخدميك عن عدد تراخيصك الجديدة أو يساويه. ويمكن إجراء هذا من خلال ميزة &lt;a href="{0}"&gt;إدارة المستخدمين&lt;/a&gt; في &lt;a href="{1}"&gt;إعدادي&lt;/a&gt;.</param>
+        <param name="type1">إلغاء الحساب</param>
+        <param name="type2">تخفيض تراخيص المستخدم</param>
+        <param name="type3">تخفيض التراخيص دون اتصال</param>
+        <param name="type4">تخفيض تراخيص الحمل</param>
+        <param name="type5">Mobile Edition لإلغاء au</param>
+        <param name="type6">Mobile Edition لتخفيض تراخيص au</param>
+        <param name="type7">تخفيض تراخيص Force.com Mobile</param>
+        <param name="reason_0">الشركة المكتسبة/المدمجة</param>
+        <param name="reason_1">حل الشركة</param>
+        <param name="reason_2">مندوبو المبيعات المزالون</param>
+        <param name="reason_3">المستخدمون النهائيون لا يختارون</param>
+        <param name="reason_4">الوظائف لم تفي بالتوقعات</param>
+        <param name="reason_5">الإدارة لا ترى قيمة كافية</param>
+        <param name="reason_6">خبرة ضعيفة مع موظفي salesforce.com</param>
+        <param name="reason_7">السعر عالٍ جدًا</param>
+        <param name="reason_8">التحويل إلى منافس</param>
+        <param name="reason_9">التراخيص المستخدمة</param>
+        <param name="reason_10">آخر</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">يرجى ملء الحقول التالية:</param>
+        <param name="title">إرسال التعليقات إلى salesforce.com</param>
+        <param name="title_upgrade_me">تسجيل طلب ترقية</param>
+        <param name="title_support">إرسال تعليق</param>
+        <param name="warning_line_too_long">تحذير: الوصف يزيد عن 4000 حرف، وسيتم قطعه.\\n</param>
+        <param name="feedback_info">الاتصال بدعم العملاء</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">دعم العملاء متوفر للرد على أية أسئلة أو تعليقات لديك. نعتمد بشكلٍ كبير على التعليقات التي يطرحها عملاؤنا للمساعدة في صياغة وبناء موقع salesforce.com. نستمتع باستقبال أفكارك ونقّدرها، ونتطلع لمراسلاتك.</param>
+        <param name="general_info_me">لمعرفة المزيد حول الترقية من Personal Edition إلى أحد إصدارات corporate Editions، يرجى ملء النموذج المبين أدناه. سيتصل بك أحد ممثلي المبيعات خلال 48 ساعة عمل.</param>
+        <param name="general_info_support">دعم العملاء متوفر للرد على أية أسئلة أو تعليقات لديك. نعتمد بشكلٍ كبير على التعليقات التي يطرحها عملاؤنا للمساعدة في صياغة وبناء Salesforce CRM Call Center. نستمتع باستقبال أفكارك ونقّدرها، ونتطلع لمراسلاتك.</param>
+        <param name="defaultOrigin">ويب</param>
+        <param name="defaultStatus">جديدة</param>
+        <param name="functionalArea">الموضوع</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">السؤال</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">الطلب</param>
+        <param name="type3">التعليق</param>
+        <param name="type4">طلب الميزة</param>
+        <param name="priority1">طوارئ</param>
+        <param name="priority2">عادي</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">منخفض</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">أريد الآن الاشتراك في Professional Edition</param>
+        <param name="subject_subscribe_me">أريد الترقية الآن</param>
+        <param name="subject_subscribe_we">أريد المزيد من المعلومات حول Professional Edition</param>
+        <param name="subject_subscribe_ee">أريد الآن الاشتراك في Enterprise Edition</param>
+        <param name="subject_subscribe_ue">أريد الآن الاشتراك في Unlimited Edition</param>
+        <param name="subject_subscribe_support">أريد الاشتراك الآن</param>
+        <param name="subject_data_export">أريد خدمة التصدير الأسبوعية</param>
+        <param name="subject_marketing_licenses">إضافة تراخيص تسويقية</param>
+        <param name="subject_offline_licenses">إضافة تراخيص دون اتصال</param>
+        <param name="subject_wireless_licenses">إضافة تراخيص لاسلكية</param>
+        <param name="subject_offlinepda_licenses">إضافة تراخيص Sales Anywhere</param>
+        <param name="subject_mobile_licenses">إضافة تراخيص Force.com Mobile</param>
+        <param name="subject_sfcontent_licenses">إضافة تراخيص Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">إضافة تراخيص المعارف</param>
+        <param name="subject_interaction_licenses">إضافة تراخيص Firefly</param>
+        <param name="subject_support_licenses">إضافة تراخيص Service Cloud</param>
+        <param name="subject_jigsaw_licenses">إضافة Jigsaw Licenses</param>
+        <param name="subject_liveagent_licenses">إضافة Live Agent Licenses</param>
+        <param name="subject_siteforcecontributor_licenses">إضافة تراخيص مساهم Site.com</param>
+        <param name="subject_siteforcepublisher_licenses">إضافة تراخيص ناشر Site.com</param>
+        <param name="subject_chatteranswers_licenses">إضافة تراخيص إجابات Chatter</param>
+        <param name="subject_license_reduction">تخفيض الترخيص</param>
+        <param name="functionalArea_0">إدارة الحسابات/التراخيص</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">استعلام الفوترة</param>
+        <param name="functionalArea_3">اتصال البيانات</param>
+        <param name="functionalArea_4">البريد الإلكتروني/البريد الإلكتروني HTML</param>
+        <param name="functionalArea_5">التوقعات &amp; الفرص</param>
+        <param name="functionalArea_6">استيراد</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">العملاء المتوقعون</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">الأداء</param>
+        <param name="functionalArea_9">التقارير &amp; العروض</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">الاشتراك الآن</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">المزامنة</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">خدمة التصدير الأسبوعية</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">لاسلكي</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">آخر</param>
+        <param name="functionalArea_16">رخصة التسويق</param>
+        <param name="functionalArea_17">رخصة دون اتصال</param>
+        <param name="functionalArea_18">ملفات التعريف/تخطيطات الصفحة/أنواع السجل</param>
+        <param name="functionalArea_19">الحملات</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">الخدمة الذاتية</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">رخصة لاسلكية</param>
+        <param name="functionalArea_22">الترقية الآن</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">رخصة Sales Anywhere</param>
+        <param name="functionalArea_24">مهام/أحداث </param>
+        <param name="functionalArea_25"><Products article="the"/> &amp; المرتبات الدورية / <Pricebooks/></param>
+        <param name="functionalArea_26">Big Deal Alert </param>
+        <param name="functionalArea_27">المستندات</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">المشكلات &amp; الحلول </param>
+        <param name="functionalArea_29">بحث</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">مشاركة</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">ترخيص Partner Portal</param>
+        <param name="functionalArea_36">ترخيص Force.com Mobile</param>
+        <param name="functionalArea_37">ترخيص Salesforce CRM Content</param>
+        <param name="functionalArea_38">ترخيص Service Cloud</param>
+        <param name="functionalArea_39">Jigsaw License</param>
+        <param name="functionalArea_40">Live Agent License</param>
+        <param name="functionalArea_41">ترخيص مساهم Site.com</param>
+        <param name="functionalArea_42">ترخيص ناشر Site.com</param>
+        <param name="functionalArea_43">ترخيص إجابات Chatter</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">إذا كنت تفضل التحدث مباشرة مع أحد ممثلي خدمة العملاء، فاتصل بالرقم (415) 901-7010 بين الساعة 6 صباحًا إلى 6 مساءً بتوقيت المحيط الهادي، يوم السبت&amp;#150;الجمعة, أو اتصل بالرقم +353-1-2723503 بين الساعة 8 صباحًا إلى 6 مساءً بتوقيت جرينتش، السبت&amp;#150;الجمعة.</param>
+        <param name="tips_title">تلميحات عند إرسال المشكلات</param>
+        <param name="tip1">يرجى التأكد من توفير المعلومات الكافية لنا لكي نتمكن من الإجابة على مشكلتك بأسرع ما يمكن.  لقد قمنا بتوفير بعض الاقتراحات والتذكيرات القليلة أدناه:</param>
+        <param name="tip2">أخبرنا بما تحاول القيام به، وما تتوقع حدوثه، وما الذي حدث بدلا من ذلك.</param>
+        <param name="tip3">أخبرنا بالخطوات التي كانت سببًا في إعادة ظهور مشكلتك.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">عرض:</param>
+        <param name="X">X</param>
+        <param name="close">إغلاق</param>
+        <param name="MLclose">إغلاق</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">حذف</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">حذف</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">محو</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">السجل</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">إعداد</param>
+        <param name="activate">تنشيط</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">إلغاء تنشيط</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">إدارة</param>   <!-- aliased across labels; do not change -->
+        <param name="export">تصدير</param>   <!-- aliased across labels; do not change -->
+        <param name="next">الصفحة التالية</param>
+        <param name="prev">الصفحة السابقة</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">إجمالي العناصر في العرض: {0,number,integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">أرني سجلات {0} {1} لكل صفحة قائمة</param>
+        <param name="number_shown_detail_page">أرني دائمًا سجلات {0} {1} {2} لكل قائمة مرتبطة</param>
+        <param name="number_shown_adjust_less_link">أقل</param>
+        <param name="number_shown_adjust_more_link">أكثر</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">كل</param>
+        <param name="last_page">العودة إلى الصفحة السابقة</param>
+        <param name="last_list">العودة إلى القائمة</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">العودة إلى القائمة:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">العودة إلى القائمة: <Entity entity="0" plural="y"/> من الاتصالات</param>
+        <param name="last_suggested_solution_list">العودة إلى قائمة <Solutions article="the"/> <Suggested gender="f" plural="n"/></param>
+        <param name="last_solution_search_list">العودة إلى نتائج بحث <Solution article="the"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">العودة إلى <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">الإجراءات:</param>
+        <param name="checkboxPrompt">يرجى تحديد صف واحد على الأقل:</param>
+        <param name="checkboxSinglePrompt">يرجى تحديد صف مفرد</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">ستُفقد تحديداتك على هذه الصفحة. فهل ترغب في المتابعة؟</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">يجب عليك أن تحدد {0} صف أو أقل لإجراء هذه العملية.</param>
+        <param name="selectionLimit">لا يمكنك تحديد أكثر من {0} عنصر.</param>
+        <param name="login">تسجيل الدخول</param>   <!-- aliased across labels; do not change -->
+        <param name="session">جلسة</param>
+        <param name="none">لا توجد سجلات للعرض.</param>
+        <param name="no_rows">لم يتم تحديد صفوف</param>
+        <param name="subtotal">الإجمالي الفرعي</param>
+        <param name="total">الإجمالي:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">تحديد كل العناصر</param>
+        <param name="clearAllInfo">إلغاء تحديد كل العناصر</param>
+        <param name="rename">تغيير الاسم</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">تحديد</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">إلغاء التحديد</param>
+        <param name="toggleall">تبديل كل الصفوف</param>
+        <param name="refresh">تحديث</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">يرجى تحديد عرض.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">العرض الذي قمت بتحديده يتجاوز الأحد الأقصى للحجم. يُرجى تضييق معايير بحثك عن طريق تعديل طريقة العرض أو إنشاء طريقة عرض جديدة.</param>
+    <param name="switch_view">تبديل العرض</param>
+    <param name="records_x_to_y">عرض السجلات {0} - {1}</param>
+    <param name="records_x_to_y_more">عرض السجلات {0} - {1}، يتوفر المزيد من السجلات</param>
+    <param name="records_x_to_y_more_showing_max">عرض السجلات {0} - {1}. يمكن أن تعرض هذه الصفحة أول 1,000 سجل فقط على الرغم من توفر المزيد من السجلات. لعرض سجلات أقل، يرجى تنقية معايير عرض القائمة لديك. لطباعة أكثر من 1,000 سجل، يرجى تشغيل تقرير ما ثم انقر فوق زر "طريقة عرض قابلة للطباعة" على التقرير.</param>
+    <param name="number_of_records">عدد السجلات</param>
+        <param name="createCase">إنشاء <Case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">انقر لتوسيع/لطي العناصر المتداخلة.</param>
+        <param name="expand">انقر لتوسيع العناصر المتداخلة.</param>
+        <param name="collapse">انقر لطي العناصر المتداخلة.</param>
+        <param name="shortExpand">توسيع</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">طي</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">مُوسع</param>
+        <param name="collapsed">مطوي</param>
+        <param name="level">مستوى</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">هيكلي:</param>
+        <param name="siblings">المتشابهات:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">بحث</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">التقاط عنصر</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">من</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">ما</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">نتج عن البحث أكثر من الحد الأقصى لعدد الصفوف ({0}). يرجى تنقية معايير البحث.</param>
+        <param name="Copyright">حقوق النشر &amp;copy; 2000-{0}شركة salesforce.com, inc.</param>
+        <param name="Rights">كافة الحقوق محفوظة.</param>
+        <param name="useWildcards">يمكنك استخدام '*' كحرف بدل بجوار الحروف الأخرى لتحسين نتائج البحث.  على سبيل المثال، يؤدي البحث بـ "ad*" إلى إرجاع كافة السجلات التي يحتوي اسمها على "ad".</param>
+        <param name="useWildcardsWithSearch">يمكنك استخدام "*" كحرف بدل بجوار الحروف الأخرى لتحسين نتائج البحث.</param>
+        <param name="error_lookup_multiple_matches_ile">تم العثور على عناصر متعددة.&lt;br&gt;انقر فوق الرمز لتنقية البحث.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">توسيع القائمة</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">قائمة موسعة</param>
+        <param name="sharing">مشاركة</param>   <!-- aliased across labels; do not change -->
+        <param name="why">لماذا؟</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">عوامل تصفية أكثر &gt;&gt;</param>
+        <param name="less_filters">عوامل تصفية أقل &lt;&lt;</param>
+        <param name="by_keyword">حسب الكلمة الأساسية</param>
+        <param name="by_filter">حسب عامل تصفية الحقل</param>
+        <param name="too_many">أرجع البحث أكثر من {0} صف. يتم عرض أول {0} فقط. يرجى تنقية معايير البحث.</param>
+        <param name="Results">النتائج</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">البحث:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">النقاط</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">الحقل</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">المشغل</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">القيمة</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">يمكنك إضافة عوامل التصفية "أو" عن طريق إدخال عناصر متعددة في العمود الثالث.</param>
+        <param name="tip_1">يمكنك إدخال ما يصل إل 10 عناصر، مفصولة بفاصلة. على سبيل المثال: CA، NY، TX، FL للبحث عن CA أو NY أو TX أو FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">ضع علامات الاقتباس حول البيانات التي تتضمن فواصل. على سبيل المثال، "200,000"، "1,000,000" للبحث عن 200,000 أو 1,000,000.</param>
+        <param name="tip_3">بالنسبة لحقول خانات الاختيار، استخدم "صحيح" أو "خطأ"، على سبيل المثال، "نشط يساوي صح" أو "محول يساوي خطأ."</param>
+        <param name="tip_4">قد تحتاج إدخالات القاعدة التي تستند إلى رموز المناطق إلى تضمين أقواس، على سبيل المثال. هاتف يبدأ بـ (415)، (510).</param>
+        <param name="tip_5">إذا كنت تستخدم طاولة الترجمة، فأدخل كافة معايير التصفية باستخدام القيم الرئيسية.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">متوفر</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">تحديدات</param>
+        <param name="assignLicensesDescription">حدد خانة الاختيار المجاورة لكل حزمة تريد تعيينها لهذا المستخدم، ثم انقر فوق "تعيين". تغيب خانة الاختيار إذا كانت حزمة ما لا يتوفر لها التراخيص الكافية أو إذا كانت حالة الحزمة قد انتهت صلاحيتها أو كانت معلقة.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">المدخل الافتراضي</param>
+        <param name="3">متجر الويب</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">التأكيد</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">معلومات</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">خطأ</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">تحذير</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">آمن</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">تكرار</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">يوميًا</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">أسبوعيًا</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">شهريًا</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">كل يوم عمل</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">كل يوم</param>
+       <param name="lastDay">الأخير</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">الأول</param>
+    <param name="on2">الثاني</param>
+    <param name="on3">الثالث</param>
+    <param name="on4">الرابع</param>
+    <param name="onLast">الأخير</param>
+    <param name="startTime">البدء</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">إنهاء</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">وقت البدء المفضل</param>
+    <param name="noPreference">بلا تفضيل</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">سيستند وقت البدء الفعلي إلى نشاط قائمة انتظار المهام.</param>
+
+    <param name="diffTimeZoneMsg">المنطقة الزمنية لإعداد التكرار الشهري هذا هو:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;تظهر إعدادات التكرار في المنطقة الزمنية للمستخدم الذي قام بتحريرها آخر مرة.&lt;br&gt;سيتم تحديث أي تغييرات قمت بإجرائها على هذه الإعدادات لتطابق منطقتك الزمنية.</param>
+
+      <param name="weeklyRecurrence">يتكرر كل أسبوع في يوم {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">يتكرر كل أسبوع في يوم</param>
+      <param name="monthlyRecurrence1">في يوم  {0} من كل شهر</param>
+      <param name="monthlyRecurrence1LegendLabel">محدد</param>
+      <param name="monthlyRecurrence2LegendLabel">مخصص</param>
+      <param name="monthlyRecurrence2">في يوم  {2} {0} {3} {1} من كل شهر</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">في يوم  {0} {1} من كل شهر</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">في يوم محدد من كل شهر</param>
+      <param name="accessibleMonthly2">في يوم مخصص من كل شهر</param>
+      <param name="accessibleOnDayN">يوم محدد</param>
+      <param name="accessibleOnDayNOfWeek">التكرار</param>
+      <param name="accessibleOnDayName">يوم</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">يساعد هذا الاختبار البسيط على منع وصول البرامج الضارة إلى بياناتك.  يتطلب المسؤول الخاص بك إجراء هذا الاختبار لعمليات التحميل الكبيرة.  لن تحتاج إلى إجراء هذا الاختبار أكثر من مرة بكل جلسة تسجيل دخول.</param>
+        <param name="imagePrompt">أدخل الكلمات أعلاه مفصولة بمسافة:</param>
+        <param name="audioPrompt">أدخل الأرقام التي تسمعها:</param>
+        <param name="refresh">احصل على اختبار جديد</param>
+        <param name="audio">احصل على اختبار صوتي</param>
+        <param name="image">احصل على اختبار صوري</param>
+        <param name="incorrect">غير صحيح، الرجاء المحاولة مرة أخرى</param>
+        <param name="moreinfo">مزيد من المعلومات &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; معلومات أقل</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">انقر لعرض المزيد...</param>
+        <param name="show">إظهار لوحة التمييزات</param>
+        <param name="hide">إخفاء لوحة التمييزات</param>
+        <param name="empty">لا توجد أي حقول مميزة لعرضها لهذا السجل.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">جولة موجه</param>
+        <param name="closeIntro">لا شكرًا</param>
+        <param name="closeOutro">إغلاق</param>
+        <param name="showLater">الإظهار لاحقًا</param>
+        <param name="replay">إعادة التشغيل</param>
+        <param name="continue">متابعة</param>
+        <param name="previous">السابقة</param>
+        <param name="startTour">بدء الجولة</param>
+        <param name="endTour">إنهاء الجولة</param>
+        <param name="stepCounter">{0} من {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">تفاصيل</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">التوصيات</param>
+        <param name="hideBucketTip">&lt;br&gt;أسقط هنا لإخفاء العناصر&lt;br/&gt;من الصفحة.</param>
+        <param name="hiddenListTip">لإظهار العناصر، قم بالسحب للقائمة أعلاه.</param>
+        <param name="hiddenListShowLinkLabel">{0} مخفي/مخفية</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">عودة إلى الأعلى</param>
+        <param name="multipleItemDragGhost">العناصر المتعددة (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">تفاصيل توافق مستعرض الصفحات</param>
+        <param name="compatibilityMsgSubTitle">معذرة، هذا المستعرض غير مدعوم</param>
+        <param name="compatibilityMsg1">يتعذر عرض صفحة التفاصيل الجديدة في مستعرضك الحالي.</param>
+        <param name="compatibilityMsg2">يمكنك استخدام التصميم الجديد في أي وقت تقوم فيه بتسجيل الدخول باستخدام أحد المستعرضات المتوافقة التالية:</param>
+        <param name="supportedIE">Internet Explorer 7 أو 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">شكرًا!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">تعيين طريقة العرض الكلاسيكية طريقة العرض الافتراضية</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">اكتب هنا للبحث عن {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">لا توجد {0} متطابقة مع بحثك.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">الصفحة {1} من {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

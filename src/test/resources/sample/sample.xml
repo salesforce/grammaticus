@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001-2012 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <section name="Sample_Entity" all_languages="yes">
+        <param name="created_by">Created by...</param>
+    </section>
+    <section name="Sample" all_languages="yes">
+        <param name="openAnAccount">Open <a/> <account/></param>
+        <param name="openAnAEntity">Open <a/> <entity entity="0"/></param>
+        <param name="click_here_to_create_new_account">{0} to create <a/> <new/> <account/> now.</param>
+        <param name="created_by" alias="Sample_Entity.created_by"></param>
+        <param name="select">Select a {0} below.</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="EditPageError">Error: Invalid Data. &lt;br/&gt;Review all error messages below to correct your data.</param>
+        <param name="send_invitation">Save &amp; Send Invitation</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="activities"><Open/> <Activities/></param>
+        <param name="hotlist_toggle_list_length">Show {0,number,integer} items</param>
+        <param name="RightHeader">Step {0} of {1}</param>
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. All rights reserved.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. All rights reserved.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <param name="last_type_list">Back to List: <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Back to List: <Entity entity="0" plural="y"/> from Connections</param>
+        <param name="back_detail">Back to <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+    </section>
+</iniFile>

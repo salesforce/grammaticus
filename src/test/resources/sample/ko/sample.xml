@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">콤보 상자</param>
+        <param name="select_default">아래에서 선택하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">아래에서 {0}을(를) 선택하십시오.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">액세스</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(관리됨)</param>
+        <param name="activity_history">활동 내역</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">추가 정보</param> <!--aliased across labels - do not change-->
+        <param name="alias">별칭</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">비서</param>
+        <param name="assistant_name">비서 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">비서 전화</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">비서 전화</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">비서 전화 내선 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">출생년월</param>   <!-- aliased across labels; do not change -->
+        <param name="body">본문</param>   <!-- aliased across labels; do not change -->
+        <param name="company">회사</param> <!--aliased across labels - do not change-->
+        <param name="created_by">작성자</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">작성자 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">작성자 별칭</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">통화 ISO 코드</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">사용자 정의 필드</param> <!--aliased across labels - do not change-->
+        <param name="default_status">기본 상태</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0} 세부 사항</param>   <!-- aliased across labels; do not change -->
+        <param name="department">부서</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0} 편집</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">예상 매출액</param>
+        <param name="first_name">이름</param> <!-- aliased across app - do not change -->
+        <param name="last_name">성</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">이름(로컬)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">성(로컬)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">회계 분기</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">회계 연도</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">전체 이름</param> <!-- aliased across app - do not change -->
+        <param name="group">그룹</param> <!-- aliased across app - do not change -->
+        <param name="group_name">그룹 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">대기열 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">업종</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">최종 수정자</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">최종 수정자 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">최종수정자 별칭</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">마스터 레코드 ID</param>
+        <param name="mobile">모바일</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">휴대폰</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">휴대폰 내선 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">새 공유</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">할당된 별칭</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">사용 가능한 목록</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">회사 이름</param> <!-- aliased across app - do not change -->
+        <param name="activities">활동</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">첨부 파일 없음</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">주소 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">거부됨</param>   <!-- aliased across labels; do not change -->
+        <param name="default">기본값</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">기본 중요도</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">새 보기 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">사용자 정의 정보</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">중복 상태</param> <!-- aliased across app - do not change -->
+        <param name="email_address">이메일 주소</param> <!-- aliased across app - do not change -->
+        <param name="email_name">이메일 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">이메일 템플릿</param>   <!-- aliased across labels; do not change -->
+        <param name="email">이메일:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">사용자 정의 링크</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">파일 크기</param> ><!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">사용 가능한 데이터 없음</param>
+        <param name="history_event_checked">{0} 필드가 선택됨</param>
+        <param name="history_event_unchecked">{0} 필드가 선택 취소 됨</param>
+        <param name="how_do_i_specify_info">수집할 정보를 지정하려면 어떻게 해야 합니까?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">내부 원본</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">간격:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">호칭</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">새 소유자 선택</param>
+        <param name="select_a_view">관련 결과 목록을 보려면 드롭다운 목록에서 이미지를 선택하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">관련 결과 목록을 보려면 드롭다운 목록에서 폴더를 선택하십시오.</param>
+        <param name="select_the_file">파일 선택</param> ><!-- aliased across app - do not change -->
+        <param name="select_the_fields">포함할 필드를 선택합니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">서명</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">제목</param> <!-- aliased across app - do not change -->
+        <param name="system_info">시스템 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="website">웹 사이트</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">소유자 별칭</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">소유자 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">소유자 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">소유자 성</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">소유자 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">소유자 역할</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">소유자 역할 표시</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">소유자 역할 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">기본</param>
+        <param name="primary_contact"><Primary/> <Contact/></param>
+        <param name="priority">우선 순위</param><!--aliased across labels - do not change -->
+        <param name="private">비공개</param>
+        <param name="role">역할</param> <!--aliased across labels - do not change -->
+        <param name="rating">등급</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">빨리 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">최근 조회 항목</param>
+        <param name="top5">Top 5 질문</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">공급업체</param>
+        <param name="customer">고객</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">공급자</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">레코드 유형 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">디비전 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">테이블 열거 또는 ID</param>
+        <param name="editable">편집 가능</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">정규화된 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">개인 정보 보호정책</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">관리 가능 상태</param>
+        <param name="namespacePrefix">네임스페이스 접두사</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">모듈 네임스페이스</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">설치된 패키지</param>
+        <param name="initialVersion">처음 릴리스된 버전</param>
+        <param name="lastVersion">최종 버전</param>
+        <param name="availableInVersions">버전에서 사용 가능</param>
+        <param name="DeveloperName">개발자 이름</param>
+        <param name="apiName">API 이름</param>
+        <param name="InvalidDeveloperNameOnEntity">{0} 필드는 밑줄 문자와 영숫자만 포함할 수 있습니다. 개발자 이름은 고유해야 하며 문자로 시작해야 하며 공백을 포함하거나 밑줄로 끝나거나 두 개의 연속된 밑줄 문자를 포함할 수 없습니다.</param>
+        <param name="missingDevName">{0}을(를) 입력해야 합니다.</param>
+        <param name="duplicateDevName">이 {0}이(가) 이미 있거나 이전에 사용되었습니다.  다른 이름을 선택하십시오.</param>
+        <param name="manageabilityOverride">관리성 재정의</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">메트릭 날짜</param>
+        <param name="MayEdit">편집 가능</param>
+        <param name="IsLocked">잠김</param>
+        <param name="LastViewedDate">마지막으로 본 날짜</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">설정</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">새로 만들기...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">파일</param>
+        <param name="new_forecast">예측</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">휴지통</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">이메일 전송</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">보고서</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">수정자</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">작성 일자</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">수정한 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">자동 프로세스</param>
+        <param name="partner_network">연결 사용자</param>
+        <param name="external_who">공공 사용자</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">예</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">오류: 잘못된 데이터입니다. &lt;br/&gt;데이터를 수정하려면 아래의 모든 오류 메시지를 검토합니다.</param>
+        <param name="EditPageError2">데이터를 수정하려면 아래의 모든 오류 메시지를 검토합니다.</param>
+        <param name="Required">값을 입력해야 합니다.</param>
+        <param name="RequiredWithFieldList">필요한 필드가 없습니다: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">셀프 서비스에 필요함</param>
+        <param name="RequiredBy">요청: {0}</param>
+        <param name="Requires">요청: {0}</param>
+        <param name="TooLong">필드의 값이 너무 깁니다.</param>
+        <param name="CannotExceedXCharacters">값은 {0}자를 초과할 수 없습니다.</param>
+        <param name="MustBeXCharacters">값은 반드시 {0}자로 되어야 합니다.</param>
+        <param name="MustBeNumber">값은 숫자이어야 합니다.</param>
+        <param name="StatusCloseRequired">적어도 하나의 상태를 닫기로 표시해야 합니다.</param>
+        <param name="StatusDefaultRequired">적어도 하나의 상태를 기본 상태로 표시해야 합니다.</param>
+        <param name="StatusInUse">다음 상태 값은 사용 중이며 편집하거나 삭제할 수 없습니다: {0} 잘못된 일자 </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">잘못된 날짜</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">날짜가 잘못되었습니다. {0}을(를) 지난 날짜를 설정할 수 없습니다.</param>
+        <param name="InvalidDateTime">잘못된 일자와 시간</param>
+        <param name="InvalidColor">잘못된 색</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">잘못된 인터넷 주소</param>
+        <param name="InvalidOption">잘못된 옵션을 선택했습니다.</param>
+        <param name="UnsupportedCurrency">잘못된 통화</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">잘못된 URL</param>
+        <param name="NoneSelectedInPicklist">-- 선택되지 않음 --</param>
+        <param name="InvalidTime">유효한 시간이 아님</param>
+        <param name="InvalidNumber">잘못된 숫자</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">숫자가 너무 큽니다.</param>
+        <param name="TooLargeNumberWithScale">숫자는 {0}보다 작아야 합니다.</param>
+        <param name="TooSmallNumberWithScale">숫자는 {0}보다 커야 합니다.</param>
+        <param name="NonpositiveError">양수여야 합니다.</param>
+        <param name="NegativeError">음수가 아니어야 합니다.</param>
+        <param name="PositiveError">양수가 아니어야 합니다.</param>
+        <param name="NonnegativeError">음수여야 합니다.</param>
+        <param name="NonzeroError">0이 아니어야 합니다.</param>
+        <param name="NonintegerError">정수여야 합니다. 잘못된 백분율</param>
+        <param name="InvalidPercent">잘못된 백분율</param>
+        <param name="InvalidAfterRoundOff">확장하기 위해 반올림한 후 번호 {0}이(가) 올바르지 않음: {1}</param>
+        <param name="CharactersRemaining">남음</param>
+        <param name="CharactersOver">제한 초과</param>
+        <param name="TooManySelection">{0}개 이상의 항목을 선택할 수 없습니다.</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">레코드의 중복 값: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">숨겨진 필드 값(표시되지 않음)이 레코드의 값과 중복됩니다. {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0}이(가) ID가 다음과 같은 레코드의 값과 중복됩니다. {1}</param>
+        <param name="True">True</param>   <!-- aliased across labels; do not change -->
+        <param name="False">False</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">잘못된 도메인</param>
+        <param name="ReadOnly">이 필드는 편집할 수 없음</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">가져오기를 계속 실행하면 이 데이터는 무시되며 필드는 공백으로 됩니다.</param>
+        <param name="extra_DefaultDivision">가져오기를 계속 실행하면 레코드 소유자의 기본 상위부서가 이런 레코드에 대해 사용됩니다.</param>
+        <param name="extra_DefaultCurrency">가져오기를 계속 실행하면 이런 레코드가 기본 통화로 지정됩니다.</param>
+        <param name="InvalidDataType">필수적인 유형이 아닌 값: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">소유자는 공백으로 둘 수 없습니다.</param>
+        <param name="DynamicEnumValue">선택목록 값이 활성화되지 않았습니다. {0}</param>
+        <param name="DynamicEnumValue_extra">가져오기를 계속 실행하면 이 값을 가져오게 되지만 이 선택 목록의 활성 값의 목록에는 추가되지 않습니다.</param>
+        <param name="InvalidCurrencyCode">잘못된 통화 코드: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">비활성화  통화 코드: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">잘못된 시간: {0}</param>
+        <param name="InvalidDateValue">잘못된 일자: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">잘못된 백분율: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">없거나 잘못된 ID</param>
+        <param name="Id15Characters">ID는 반드시 15자로 되어야 합니다.</param>
+        <param name="IdMissing_extra">레코드는 무시됩니다.</param>
+        <param name="InvalidDivision">잘못된 상위부서: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">비활성화 상위부서: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">잘못된 숫자: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">숫자 필드의 유효 범위외의 값: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">선택된 항목이 너무 많습니다. {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">잘못된 이메일 주소: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">잘못된 ip 주소: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">올바르지 않은 유형의 id 값: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">제한된 선택 목록 필드의 값이 올바르지 않습니다. {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">비트벡터 필드의 값이 올바르지 않습니다. {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">데이터 값이 너무 큽니다. {0}</param>
+        <param name="DataTruncated_extra">가져오기를 계속 실행하면 이 데이터는 필드에 맞도록 절단됩니다.</param>
+        <param name="DuplicateExternalId">외부 id 필드에 필요한 하나 이상의 레코드가 발견되었습니다. {0}</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">귀하의 요청이 진행 중입니다...</param>
+        <param name="InvalidDeveloperNameChars"><Entity entity="0"/> API 이름에는 밑줄과 영숫자만 포함할 수 있습니다. 또한 고유해야 하며 문자로 시작해야 하며 공백을 포함하거나 밑줄로 끝나거나 두 개의 연속된 밑줄 문자를 포함할 수 없습니다.</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">중단</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">수락</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">변경 사항 수락</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Sandbox 활성화</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">설명 추가</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">구성 요소 추가</param>
+        <param name="add_contacts"><Contacts/>추가</param>
+        <param name="add_leads"><Leads/>추가</param>
+        <param name="add_more_users">더 많은 사용자들을 추가</param>
+        <param name="add_multiple_users">여러 사용자들을 추가</param>
+        <param name="add_product"><Product/>추가</param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">행 항목 추가</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">샘플 대시보드 추가</param>
+        <param name="add_to_call_center">콜 센터에 추가</param>
+        <param name="add_to_campaign"><Campaign/>에 추가</param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Outlook에 추가</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook"><Pricebook/>에 추가</param>
+        <param name="add_remove">추가/제거</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">고급 설정</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">승인</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">할당</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">사용자들에게 기능을 할당</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">보고서 목록으로 돌아가기</param>
+        <param name="billing_and_licenses">요금 청구 및 라이센스</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">요금 청구 정보</param>
+        <param name="briefcase_setup">서류 가방 설정</param>
+        <param name="cancel">취소</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">발송 취소</param>
+        <param name="cancel_test_instance">Sandbox 취소</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">표준통화변경</param>
+        <param name="change_currency">통화 변경</param>
+        <param name="change_owner">소유자 변경</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">소유자 승인 및 변경</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">마스터 승인 및 할당</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">상태 변경</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">가용성 확인</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">맞춤법 확인</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook"><Pricebook/> 선택</param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">자우기</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">개요</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0} 탭</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">목록</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: 상위 세부 사항 복사</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">모두 축소</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">선택 목록에서 항목을 선택합니다.</param>
+        <param name="composegmail">Compose Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">확인</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">계속</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">계속</param>
+        <param name="convert">변환</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead"><Lead/> 변환</param>
+        <param name="create">만들기</param>
+        <param name="create_follow_up_event">후속 <Event/> 만들기</param>
+        <param name="create_follow_up_task">후속 <Task/> 만들기</param>
+        <param name="create_new">새 {0} 만들기</param>
+        <param name="create_new_section">새 섹션 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity"><Opportunity/> 만들기</param>
+        <param name="create_test_instance">Sandbox 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">테스트 데이터베이스 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Web-to-Lead 양식 작성</param>
+        <param name="create_new_holiday">새 휴일 만들기</param>
+        <param name="create_new_sla_process">새 <Entitlement/> 프로세스</param>
+        <param name="create_new_milestone_type">새 중대 사건</param>
+        <param name="currency_setup">통화 설정</param>
+        <param name="customer_view">고객 보기</param>
+        <param name="customize">사용자 정의</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">모든 사용자의 사용자 정의을 표시</param>
+        <param name="page_settings">페이지 설정</param>
+        <param name="customize_page">페이지 사용자 정의</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">레이아웃 편집</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">대시보드 목록</param>
+        <param name="data_export">데이터 내보내기</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">정리</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">거부</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">기본 사용자 정의 링크</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Checkout 액세스 제거</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">미리 보기 완료</param>
+        <param name="dont_save">저장하지&apos; 않음</param>
+        <param name="dont_show_page_again">이 페이지를 다시 표시 안 함</param>
+        <param name="download">다운로드</param>
+        <param name="download_now">지금 다운로드</param>
+        <param name="download_sample_css_file">샘플 CSS 파일 다운로드</param>
+        <param name="edit">편집</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">[베타] 편집</param>
+        <param name="edit_all">모두 편집</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">사용자 편집</param>
+        <param name="edit_rates">환율 편집</param>
+        <param name="edit_selected">선택된 편집</param>
+        <param name="editProperties">속성 편집</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">{0} 끝내기</param>
+        <param name="enable_appstore_user">Checkout 액세스 권한 부여</param>
+        <param name="enable_as_partner">파트너로 사용</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">파트너 포털 로그인 사용</param>
+        <param name="enable_self_service">셀프 서비스 사용</param>
+        <param name="enable_users">새 사용자 사용</param>
+        <param name="enableForecasting">사용자 정의 예측 사용</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">연습에 참가</param>
+        <param name="erase_test_instance">Sandbox 지우기</param>
+        <param name="establish">연결</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">모두 확장</param>   <!-- aliased across labels; do not change -->
+        <param name="export">세부 사항 내보내기</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">지금 세부 사항 내보내기</param>
+        <param name="export_background">배경 내보내기 실행...</param>
+        <param name="fctHistory">예측 내역</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">예측 요약</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">필드 확인</param>
+        <param name="find">찾기</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">찾기 보고서</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document"><Document/> 찾기</param>
+        <param name="find_pricebooks"><Pricebook/>찾기</param>
+        <param name="find_products"><Product/> 찾기</param>
+        <param name="find_solution"><Solution/> 찾기</param>
+        <param name="finished">완료</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">전달</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">연결로 전달</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">WSDL 생성</param>
+        <param name="generate_login_html">로그인 HTML을 생성</param>
+        <param name="getMoreInfo">추가 정보 보기</param>
+        <param name="go">검색</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">이 페이지에 대한 도움말</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} 도움말</param>
+        <param name="hide">세부 사항 숨기기</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">동의함</param>
+        <param name="i_decline">거부함</param>
+        <param name="impactAnalysis">사용되는 위치</param>
+        <param name="import">가져오기</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads"><Leads/> 가져오기</param>
+        <param name="include_offline">오프라인 포함</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">삽입</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">선택 항목 삽입</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">지금 설치</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">초대</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">연결로 초대</param>
+        <param name="jigsawsearch">연락처 가져오기</param>
+        <param name="join_meeting">모임에 참가</param>
+        <param name="jumpstart">점프 시작</param>
+        <param name="keep_in_touch">업데이트 요청</param>
+        <param name="layout_assignment">레이아웃 할당</param>
+        <param name="legal_view">Legal 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">레코드 잠금</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">파트너 사용자로 로그인</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">구성원 관리</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">새 모임 요청</param>
+        <param name="add_members_search">구성원 추가 - 검색</param>
+        <param name="add_members_import">구성원 추가 - 파일 가져오기</param>
+        <param name="edit_members_search">구성원 편집 - 검색</param>
+        <param name="update_members_import">구성원 업데이트 &amp; 추가 - 파일 가져오기</param>
+        <param name="manage_call_center_users">콜 센터 사용자 관리</param>
+        <param name="map_lead_fields">리드 <Lead_Fields/></param>
+        <param name="mark_as">다음으로 표시...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">구성원 가져오기</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">각 미리 알림을 수정</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">새로 만들기</param>
+        <param name="newcase">새로 만들기</param>
+        <param name="new_addition_order">새 추가 주문</param>
+        <param name="new_custom_object">새 사용자 정의 개체</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">새 사용자 정의 보고서 만들기</param>
+        <param name="new_dashboard">새 대시보드</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">새 대시보드 구성 요소</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <Document/></param>
+        <param name="new_email_template">새 템플릿</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <Entity entity="0"/></param>
+        <param name="new_entitlement_template">새 템플릿</param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="new_folder">새 폴더</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">새 그룹</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">새 대기열</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">새 노트</param>
+        <param name="new_object_custom_tab">새 사용자 정의 개체 탭</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">온라인 모임</param>
+        <param name="new_order">새 주문</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">새 개인 그룹</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <Product/></param>
+        <param name="new_reduction_order">새 축소 주문</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">새 역할</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">새 단추</param>
+        <param name="new_territory">새 영역</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_user">새 사용자</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">새 웹 통합 탭</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">확인</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">다른 업데이트 수행</param>
+        <param name="performAnotherMigrate">다른 프로필 마이그레이션</param>
+        <param name="preview">미리 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">다시 계산</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">다시 설정</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">거부</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">변경 사항 거부</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">사용자 제거</param>
+        <param name="remove_from_briefcase">서류 가방에서 제거</param>
+        <param name="remove_from_campaign"><Campaign/>에서 제거</param>
+        <param name="reorder">다시 정렬</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">복구</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">모든 테스트 실행</param>
+        <param name="run_test">테스트 실행</param>
+        <param name="quick_save">빠른 저장</param>
+        <param name="quick_save_hover">저장 및 계속 편집</param>
+        <param name="reply">회신</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">전체 회신</param>
+        <param name="reportmanager">보고서 관리자</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">암호 다시 설정</param>
+        <param name="reset_passwords">암호 다시 설정</param>
+        <param name="retrieve_prices">가격 검색</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">보고서 실행</param>   <!-- aliased across labels; do not change -->
+        <param name="save">저장</param> <!-- aliased across labels do not change -->
+        <param name="saving">저장 중...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">저장 후 가격 추가</param>
+        <param name="save_and_add_product">저장 후 <Product/> 추가</param>
+        <param name="save_and_clone">저장 및 다시 복제</param>
+        <param name="save_and_close">저장 및 닫기</param>
+        <param name="save_and_attach">저장 및 첨부 파일 추가</param>
+        <param name="save_and_continue">저장 및 다음</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">저장 및 추가</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">저장 및 <New/> <Event/></param>
+        <param name="save_and_new_product">저장 및 <New/> <Product/></param>
+        <param name="save_and_new_task">저장 및 <New/> <Task/></param>
+        <param name="save_and_refresh">저장 후 새로 고침</param>
+        <param name="save_and_send">저장 및 업데이트 보내기</param>
+        <param name="event_scheduler">클라이언트 및 팀 보기 &gt;</param>
+        <param name="saveAs">다른 이름으로 저장</param>
+        <param name="schedule_to_email">이메일 일정</param>
+        <param name="schedule_to_print">인쇄 일정</param>
+        <param name="scrutinize">주의 깊게 조사</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles"><KnowledgeArticles/>찾기</param>
+        <param name="newArticle">새로 만들기</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">템플릿 선택</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">셀프 서비스 점프 시작</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">셀프 서비스 설정</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">셀프 서비스 보기/사용</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">보내기</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts"><all/> <contacts/>에 이메일 보내기</param>
+        <param name="send_invitation">저장 및 초청장 보내기</param>
+        <param name="set_status">상태 관리</param>
+        <param name="setup_and_install">설정 및 설치</param>
+        <param name="setup_roles">기능 설정</param>
+        <param name="setup_sharing">공유 설정</param>
+        <param name="sfga_instructions">인쇄 가능한 전체 지침</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">세부 사항 표시</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">건너뛰기</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">정렬</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">모임 시작</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">제출</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">제출 및 첨부 파일 추가</param>
+        <param name="subscribe_now">지금 가입!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">지금 업그레이드!</param>
+        <param name="suggest"><Suggested/> <Solutions/> 보기</param>
+        <param name="take_training_now">지금 연습 수강!</param>
+        <param name="terminate">종료</param>
+        <param name="training_history">연습 내역</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">전송</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">지금 평가!</param>
+        <param name="undelete">삭제 취소</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">실행 취소</param>
+        <param name="unlock">레코드 잠금 해제</param>
+        <param name="update">업데이트</param>
+        <param name="update_campaign_history"><Campaign_Members/> 업데이트 &amp; 추가</param>
+        <param name="update_now">지금 업데이트</param>
+        <param name="update_statuses">상태 업데이트</param>
+        <param name="upload">업로드</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">필드 종속성</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">삭제된 구성 요소 보기</param>
+        <param name="view_partnerforce">파트너 사용자 보기</param>
+        <param name="view_self_service">셀프 서비스 보기</param>
+        <param name="view_customer_success">고객 포털 사용자 보기</param>
+        <param name="enable_customer_success">고객 포털 사용자 활성화</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">이는 무엇입니까?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Close this window</param>
+        <param name="runApexRecalc">Apex 공유 다시 계산</param>
+        <param name="disablecustomerportal">고객 포털 사용자 비활성화</param>
+        <param name="disablepartnerportal">파트너 사용자 비활성화</param>
+        <param name="disablecustomerportalaccount">고객 포털 계정 비활성화</param>
+        <param name="disablepartnerportalaccount">파트너 계정 비활성화</param>
+        <param name="voteup">추천 투표</param>
+        <param name="votedown">투표 부결</param>
+        <param name="markquestionunanswered">답변하지 않음으로 표시</param>
+        <param name="markbestanswer">베스트 답변으로 표시</param>
+        <param name="requestUseSfdcAction">연결 찾기</param>
+        <param name="addPET">권리 템플릿 추가</param>
+        <param name="truncate">자르기</param>
+        <param name="disableprmsuperuser">파트너 슈퍼 액세스 비활성화</param>
+        <param name="enableprmsuperuser">파트너 슈퍼 액세스 활성화</param>
+        <param name="purchase_more">추가 구매</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">맨 위로</param>
+        <param name="descriptionText">본문 텍스트가 너무 깁니다. 세부 사항을 보십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">파일 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">상위</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">관련 정보 없음</param>
+        <param name="no_records">표시할 레코드가 없습니다.</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">{0}개 더 표시 &#187;</param>
+        <param name="NextMoreGeneric">자세히 표시 &#187;</param>
+        <param name="view_more">목록으로 이동</param>
+        <param name="view_more_tot">목록으로 이동({0})</param>
+        <param name="view_more_tot_plus">목록으로 이동({0}+)</param> <!-- -->
+        <param name="view_more_1">하나의 추가 레코드가 있는 목록으로 이동합니다.</param> <!-- Singular -->
+        <param name="view_more_n">{0}개의 추가 레코드가 있는 목록으로 이동합니다.</param> <!-- Plural -->
+        <param name="view_more_n_plus">{0}개 이상의 레코드가 있는 목록으로 이동합니다.</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">추가 사용 가능, 목록으로 이동</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">성공확률</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">소스</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">수주</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">회계 기간</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{0}년의 {1}분기</param>
+        <param name="opportunities_next_step">다음단계</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">업데이트</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <Activities/></param>
+        <param name="activities_open"><Open/> <Activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">관련항목</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">노트</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google 오피스</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">노트 및 첨부 파일</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">참고 직급</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">첨부 파일</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">첨부 파일</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">파일 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">책임자</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">기본</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none">표시할 <No/> <cases/></param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">날짜</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">직급</param>
+        <param name="object_title">제목</param> <!-- translation note: title of files/attachment -->
+        <param name="name">이름</param>
+        <param name="object_name">이름</param>
+        <param name="date">날짜</param>
+        <param name="due_date">기한 날짜</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">최종 수정일</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">업데이트한 사람</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">기본</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">경쟁사</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">경쟁자 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">강점</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">약점</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">성공 확률</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">완료</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">{0} 완료 표시</param>
+        <param name="task_date">날짜</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">이름</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> 승인 미결</param>
+        <param name="task_none">이 기간 동안 예약된 <open/> <tasks/>이 없습니다.</param>
+        <param name="task_mode_today">오늘</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">오늘 + 지연</param>
+        <param name="task_mode_tomorrow">내일</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">앞으로 {0}일</param>
+        <param name="task_mode_next_7days_overdue">앞으로 {0}일 + 지연</param>
+        <param name="task_mode_overdue">지연</param>
+        <param name="task_mode_this_month">이번 달</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">모든 진행 중인 항목</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">내역</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">뉴스</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">헤드라인</param>
+        <param name="new_date">날짜</param>
+        <param name="news_none">사용 가능한 뉴스 없음</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">이메일 병합 템플릿</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">최고 <Solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">추가된 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">추가한 사람</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none">첨부된 <Solutions/>이 없음</param>
+        <param name="description">상세 설명</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">시계</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">표시할 <Activity_History/> 데이터가 없습니다.</param>
+        <param name="nonotes">표시할 참고 내역 데이터가 없습니다.</param>
+        <param name="noattachments">표시할 첨부 파일 내역 데이터가 없습니다.</param>
+        <param name="viewallattachments">모든 첨부 파일 보기</param>
+        <param name="viewalldocsattachments">모든 Google 오피스 및 첨부 파일 보기</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/>({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">날짜</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">상세 설명</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API 수집</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">사용자에서 필터링</param>
+        <param name="apicapture_filterip">IP에서 필터링</param>
+        <param name="apicatpure_numbers">수집</param>
+        <param name="apicapture_soapscope">수집 보기</param>
+        <param name="apicapture_active">활성</param>
+        <param name="apicapture_none">수집 없음</param>
+        <param name="apicapture_new">새 수집 시작</param>
+        <param name="apicapture_view">보기</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">로그인 내역</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">로그인 없음</param>
+        <param name="login_none">사용 가능한 로그인 내역이 없습니다.</param>
+        <param name="login_username">사용자 이름</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">로그인 시간</param>
+        <param name="login_type">로그인 유형</param>
+        <param name="login_ip">소스 IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">해당 없음</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">브라우저</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">플랫폼</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">해상도</param>
+        <param name="login_clientversion">클라이언트 버전</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">응용 프로그램</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API 유형</param>
+        <param name="login_apiversion">API 버전</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">성공</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">API 로그인과 같은 웹 사이트 외부로부터의 로그인을 포함하는 지난 6개월에 대한 로그인 내역 다운로드(Excel .csv 파일)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">웹 사이트로부터의 로그인만 포함하는 로그인 내역 다운로드(Excel .csv 파일)</param>
+        <param name="login_history_download_title">다운로드 옵션</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV 파일</param>
+        <param name="login_history_download_file_type_gzip">GZIP 파일</param>
+        <param name="login_history_download_file_type_help">CSV(쉼표로 분리된 값) 파일은 여러 스프레드 시트, 프로그램 및 텍스트 에디터를 이용하여 볼 수 있습니다. GZIP(GNU zip) 파일은 크기를 줄이기 위해 압축되었습니다.</param>
+        <param name="login_history_download_option_title">파일 콘텐츠</param>
+        <param name="login_history_download_option_all">모든 로그인 정보</param>
+        <param name="login_history_download_option_ie6_only">IE6 로그인 정보만</param>
+        <param name="login_history_download_option_web_only">웹사이트 로그인 정보만</param>
+        <param name="login_history_download_option_help">“모든 로그인 정보”는 웹사이트, 아웃룩, API 인테그레이션과 같은 모든 소스의 로그인 정보를 포함합니다. "IE6 로그인 정보"은 인터넷 익스플로러 6을 사용하는 사용자 로그인 정보를 포함합니다. "웹사이트 로그인 정보"는 Salesforce 로그인 페이지를 통한 로그인 정보를 포함합니다.</param>
+        <param name="login_history_ie6_deprecation_warning_title">아직 IE6을 사용하고 계십니까?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce는 IE6의 지원을 중단해가고 있는 중입니다. 귀하의 조직에 어떤 브라우저가 사용되고 있는지를 찾아보시려면 제공된 다운로드 옵션을 이용하시기 바랍니다.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">로그인 URL</param>
+        <param name="order_history">주문 내역</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">주문 없음</param>
+        <param name="order_number">주문 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">주문 일자</param>
+        <param name="order_currency">통화</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">전체 비용</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">판매 대상</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none"><order_products/> 없음</param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">선 &lt;BR&gt;번호</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">매월 가격</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">요금 청구 참조</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">요금 청구 빈도&lt;BR&gt;(월)</param>
+        <param name="bo_order_items_billing_frequency_text">요금 청구 빈도</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">요금 청구 빈도 주문 기간&lt;BR&gt; (월)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">날짜</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">인보이스</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">인보이스 없음</param>
+        <param name="invoices_invoice_number">인보이스 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">인보이스 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">인보이스 기한</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">외부 시스템 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">총 합계</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">차감 잔액</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">총 신용 금액</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">총 탕감 금액</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">요금 청구 연락처</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">요금 청구 회사</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">인보이스 내역</param>
+        <param name="revenue_schedule">일정</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">날짜</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">매출</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">설명</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">상태 내역</param>
+        <param name="status_none">상태 내역을 찾을 수 없음</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">서비스 선택</param>
+        <param name="services_none">서비스 없음</param>
+        <param name="services_description">서비스</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">단가</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">총액</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">할인</param>
+        <param name="training">교육 강좌 내역</param>
+        <param name="training_none">없음</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">클래스 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">수강한 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">응답됨</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">기본값</param>
+        <param name="campaign_member_none"><campaign_member_status/>가 정의되지 않았습니다.</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">시작 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">종료 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">기간 항목</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">구매 규칙 있음</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">요금 청구 빈도&lt;br&gt; (월)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">요금 청구 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <Products/></param>
+        <param name="event_attending">수락된 <Event/></param>
+        <param name="event_notdecided">응답 없음</param>
+        <param name="event_declined">거부된 <Event/></param>
+        <param name="event_attending_none">수락한 참석자 없음</param>
+        <param name="event_notdecided_none">모든 참석자 응답함</param>
+        <param name="event_declined_none">거절한 참석자 없음</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">이름</param>
+        <param name="documents_size">크기</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">작성자</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">설정 감사 내역 보기</param>
+        <param name="download">다운로드</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">조직의 최근 20개 항목이 아래에 나열되어 있습니다. 지난 6개월 동안의 조직의 설정 감사 내역을 {0}할 수 있습니다(Excel .csv 파일).</param>
+        <param name="setup_audit_date">날짜</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">작업</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">섹션</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">사용자 위임</param>
+        <param name="setup_audit_proxyinguser_help">이 열에 최종 사용자 대신 설정을 변경한 사용자의 사용자 이름이 나열됩니다. 예를 들어, 사용자에게 지원 담당자에 대한 로그인 액세스 권한이 부여된 경우 담당자의 사용자 이름이 나열됩니다.</param>
+        <param name="setup_audit_trail_none">사용 가능한 설정 감사 내역 정보 없음</param>
+        <param name="setup_audit_download_csv">지난 6개월 동안의 설정 감사 내역 다운로드(Excel .csv 파일)</param>
+        <param name="DashboardComponents_title">대시보드 구성 요소</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">대시보드 구성 요소 없음</param>
+        <param name="translated_templates_none">번역된 이메일 템플릿 없음</param>
+        <param name="translated_templates_title">번역된 이메일 템플릿</param>
+        <param name="translated_templates_language">언어</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">활성</param>
+        <param name="desc_pnet_conn_audit_trail">조직의 최근 20개 항목이 아래에 나열되어 있습니다. 전체 연결 감사 내역을 Excel .csv 파일로 {0}할 수 있습니다.</param>
+        <param name="pnet_conn_audit_trail">연결 내역</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">날짜</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">사용 가능한 연결 감사 정보가 없습니다.</param>
+        <param name="pnet_conn_audit_download_csv">연결 내역(csv) 다운로드</param>
+        <param name="pnet_entity_conns_title">외부 공유</param>
+        <param name="pnet_entity_conn_stop_sharing">공유 중지</param>
+        <param name="pnet_pub_title">게시된 개체</param>
+        <param name="pnet_sub_title">가입된 개체</param>
+        <param name="pnet_pubsub_object">개체 이름</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">필드</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">게시/게시 취소</param>
+        <param name="pnet_sub_edit">가입/가입 취소</param>
+        <param name="pnet_pub_edit_object">개체가 게시되었습니다.</param>
+        <param name="pnet_pub_edit_field">각 개체의 사용 가능한 필드에 게시하려면 아래의 편집을 클릭하십시오.</param>
+        <param name="pnet_sub_edit_object">개체가 가입되었습니다.</param>
+        <param name="pnet_sub_edit_field">각 개체의 사용 가능한 필드에 가입하려면 아래의 편집을 클릭하십시오.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">콘텐츠</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce 첨부 파일</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">관련 목록을 로드하는 중 오류</param>
+        <param name="ajax_exception_desc">이 레코드에 대한 관련 목록 정보를 수집하는 동안 문제가 발생했습니다. 페이지를 다시 로드해도 문제가 해결되지 않을 경우 관리자에게 문의하거나 고객 지원 팀에 &lt;a href=&quot;{0}&quot; title=&quot;report{1}&quot;&gt;보고&lt;/a&gt;하십시오. 범주 그룹 가시성 설정</param>
+        <param name="category_access_title">비디오 교육 설명서</param>
+        <param name="category_access_video_tutorial">비디오 교육 설명서</param>
+        <param name="category_access_name">범주 그룹</param>
+        <param name="category_access_access">가시성</param>
+        <param name="category_access_details">사용자 정의</param>
+        <param name="category_access_custom">사용자 정의</param>
+        <param name="category_access_full">모두</param>
+        <param name="category_access_inherited">{0}에서 승계됨</param>
+        <param name="category_access_revoked">없음</param>
+        <param name="category_access_userNodeAndChildren_Profile">프로필</param>
+        <param name="category_access_userNodeAndChildren_UserRole">역할 및 하위 역할</param>
+        <param name="category_access_noCategories">이 {0}에서 볼 수 있는 범주가 없음</param>
+        <param name="category_access_allCategories">이 {0}에서 모든 범주가 보임</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} 대상 {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">유니코드(UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">일반 미국 및 서유럽어(ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">일본어(Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">일본어(JIS)</param>
+        <param name="4">일본어(EUC)</param>
+        <param name="5">한국어(ks_c_5601-1987)</param>
+        <param name="6">중국어 번체(Big5)</param>
+        <param name="7">중국어 간체(GB2312)</param>
+        <param name="8">중국어 번체 홍콩(Big5-HKSCS)</param>
+        <param name="9">일본어(Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">평가 기관</param>
+        <param name="expand">링크 모음을 열려면 클릭하십시오. [Alt+S]</param>
+        <param name="collapse">링크 모음을 닫으려면 클릭하십시오. [Alt+S]</param>
+        <param name="expandNoHotkey">링크 모음을 열려면 클릭</param>
+        <param name="collapseNoHotkey">링크 모음을 닫으려면 클릭</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">위로</param>   <!-- aliased across labels; do not change -->
+        <param name="down">아래로</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">이동</param>
+        <param name="top">맨 위</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">맨 아래</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">필수 필드에 기입하여 주십시오.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">모든 사용자</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">새로 만들기</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">추가</param>   <!-- aliased across labels; do not change -->
+        <param name="del">삭제</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[변경]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">도움말</param>   <!-- aliased across labels; do not change -->
+        <param name="more">자세히 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <Task/></param>
+        <param name="new_event"><New/> <Event/></param>
+        <param name="log_call">방문/통화 기록</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">노트 로그</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">메일 병합</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">모두 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">파일 첨부</param>   <!-- aliased across labels; do not change -->
+        <param name="help">어떻게 해야 합니까?</param>
+        <param name="send_email">이메일 보내기</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">사용자 추가 이미지</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">응용 프로그램</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">인쇄 미리 보기</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">복제</param>   <!-- aliased across labels; do not change -->
+       <param name="share">공유</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">홈</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">추가 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">다음 중 하나 선택:</param>
+        <param name="hotlist_mode">표시 선택</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">{0,number,integer} 항목 표시</param>
+        <param name="hotlist_empty_title">최신 레코드가 없습니다. [검색]을 클릭하거나 드롭다운에서 보기를 선택하여 레코드를 표시하십시오.</param>
+        <param name="hotlist_empty_description">사용 가능한 데이터가 없습니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">보고서로 이동</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">자원 센터</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">자원 센터에서는 예상 고객을 조사하고 다른 회사의 서비스를 찾는 등 여러 정보를 검색할 수 있습니다.</param>
+        <param name="resource_center_link_text">자원 센터로 이동</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">판매 방법</param>
+        <param name="hotlist_recently_modified">최근 수정 항목</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">최근 만든 항목</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">최근 조회 항목</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--없음--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--선택--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--기본값--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**적용할 수 없음**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">&quot;{0}&quot;에 종속</param>
+        <param name="dependentFields">종속 필드</param>
+        <param name="controls">{0}에 대한 값 제어</param>
+        <param name="dependsOnMultiple">{0}에 종속</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">관리자가 사용자 정의 링크를 정의하지 않았습니다.</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">이동:</param>
+        <param name="JumpToStep">{0}단계: {1}</param>
+        <param name="CloseWizard">마법사 닫기</param>
+        <param name="LeftHeader">{0}단계 {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">{0}/{1}단계</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">{0}단계</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">저장 및 새로 만들기</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">다음</param> <!-- aliased across labels - do not change -->
+        <param name="previous">이전</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">{0}을(를) 위한 조직 설정 마법사</param>
+        <param name="ImportWizardTitle">{0}의 가져오기 마법사</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">주문 센터</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">평가 등록</param>
+        <param name="WizardBody">마법사 본문</param>
+        <param name="WizardFooter">마법사 바닥글</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">주소</param><!-- translators note - this is actually the full address -->
+        <param name="street">주소</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">시</param><!-- aliased across label files - do not change -->
+        <param name="state">시/도</param><!-- aliased across label files - do not change -->
+        <param name="zip">우편 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">우편 번호</param> <!-- aliased across label files - do not change -->
+        <param name="country">국가</param> <!-- aliased across label files - do not change -->
+        <param name="phone">전화</param> <!-- aliased across label files - do not change -->
+        <param name="extension">내선 번호</param> <!-- aliased across label files - do not change -->
+        <param name="fax">팩스</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">팩스 내선 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">이메일</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">배송 주소</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">배송지 상세주소</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">배송지 시/군/구</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">배송지 시/도/도</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">배송지 우편번호</param>
+        <param name="shippingzippostalcode">배송지 우편 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">배송지 국가</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">청구 주소</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">요금 요청 도시</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">요금 청구 시/도</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">요금 청구 우편 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">청구지 국가</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">청구지 상세주소</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">은행 상세 주소</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">은행 주소</param> ><!-- aliased across label files - do not change -->
+        <param name="bankcity">은행 도시</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">은행 시/도</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">은행 우편 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">은행 국가</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">주소</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">메일링 상세 주소</param>
+        <param name="mailingcity">메일링 도시</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">메일링 시/도</param>
+        <param name="mailingzip">메일링 우편 번호</param>
+        <param name="mailingcountry">메일링 국가</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">메일링 주소 선 1</param>
+        <param name="mailingaddress2">메일링 주소 선 2</param>
+        <param name="mailingaddress3">메일링 주소 선 3</param>
+        <param name="otheraddress">기타 주소</param>
+        <param name="otheraddress1">기타 주소 선 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">기타 주소 선 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">기타 주소 선 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">기타 주소</param>
+        <param name="otherstreet2">기타 상세 주소 2</param>
+        <param name="otherstreet3">기타 상세 주소 3</param>
+        <param name="othercity">기타 도시</param>
+        <param name="otherstate">기타 시/도</param>
+        <param name="otherzipcode">기타 우편 번호</param>
+        <param name="otherpostalcode">기타 우편 번호</param>
+        <param name="otherzippostalcode">기타 우편 번호</param>
+        <param name="othercountry">기타 국가</param>
+        <param name="otherphone">기타 전화</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">기타 전화 내선 번호</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">주소 1</param>
+        <param name="address2">주소 2</param>
+        <param name="address3">주소 3</param>
+        <param name="home_phone">자택전화</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">로드하는 중...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">위치</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">수량</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contact Manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">예</param>   <!-- aliased across labels; do not change -->
+        <param name="no">아니요</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Salesforce를 방문해 주셔서 감사합니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. All rights reserved.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. All rights reserved.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 규정 준수</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. All rights reserved.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. All rights reserved.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. All rights reserved.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. All rights reserved.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">보안 정책</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">사용 약관</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Salesforce를 이용해주셔서 감사합니다. Salesforce을 이용하기 전에 먼저 아래의 약관을 읽으십시오. 다 읽어보신 후 [동의함] 단추를 눌러 계속하십시오. 이용약관에 동의하지 않으면 Salesforce에 로그인할 수 없습니다.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">완료</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">지금 추가</param>
+        <param name="remove">제거</param>   <!-- aliased across labels; do not change -->
+        <param name="new">새로 만들기</param>
+        <param name="exciting_and_new">새 기능</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">여기</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">생성</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">창 닫기</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">이 페이지 인쇄</param>
+        <param name="new_window">(새 창)</param>
+        <param name="new_focus">(포커스 전환)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">숨겨진 프레임 &#45; 무시</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">모두 선택</param>
+        <param name="select_shown">표시된 항목 선택</param>
+        <param name="remove_shown">표시된 항목 제거</param>
+        <param name="select_none">선택 안 함</param>
+        <param name="all_active">모든 활성</param>
+        <param name="all_inactive">모든 비활성</param>
+        <param name="are_you_sure">계속하시겠습니까?</param>
+        <param name="irreversible_are_you_sure">회복 불능! 계속하시겠습니까?</param>
+        <param name="replace">바꾸기</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">마침</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0}분</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">여러 항목이 발견되었습니다. 드롭다운에서 선택하거나 아이콘을 클릭하여 검색을 세분화하십시오.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Q{0}-{1}</param>
+        <param name="reset">재설정</param>   <!-- aliased across labels; do not change -->
+        <param name="override">덮어쓰기</param>   <!-- aliased across labels; do not change -->
+        <param name="total">전체</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">여기를 클릭하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">웹 마스터에게 전하는 말:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">샘플 HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">암호</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">이 페이지를 다시 보여주지 마십시오.</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">이 메시지 숨기기: </param>
+        <param name="dontShowMessageAgain">이 메시지를 다시 보여주지 마십시오.</param>
+        <param name="dismissMessage">이 메시지 닫기</param>
+        <param name="allObjects">모든 개체</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">스페이스바 또는 Enter 키를 눌러 열기</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">셀프 서비스: <Case_Detail/></param>
+        <param name="CssEdit">셀프 서비스: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/> 피드</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">설명</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">사용자 정의 개체</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">사용자 정의 개체 정의</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">대시보드</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">대시보드</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">모두 선택 취소</param>
+        <param name="deselect_shown">표시된 항목 해제</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">편지 병합 템플릿</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">편지 병합 템플릿</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">폴더</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">폴더</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">예측</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">예측</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent 감독자</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">인보이스</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">노트</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">주문</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">주문</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">주문 항목</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">주문 항목</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">지불</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">지불</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">보고서</param>
+        <param name="Reports">보고서</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">등록</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">템플릿</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">템플릿</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">테이블</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">활성</param>
+        <param name="amount">금액</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">연매출액</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">문서 첨부</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">암호 변경</param>   <!-- aliased across labels; do not change -->
+        <param name="close">닫기</param> <!-- aliased across labels; do not change -->
+        <param name="closed">마감됨</param>
+        <param name="closed_date">마감 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">완료 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">작성한 일자</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">데이터 유형</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">삭제됨</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">설명 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">직원</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">파일</param>   <!-- aliased across labels; do not change -->
+        <param name="files">파일</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">일반 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">시작하기 전 정보 얻기</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">레이블</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">최종 로그인</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">최종 수정 일자</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">이름</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">이름</param>
+        <param name="new_status">새로운 상태</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">없음</param>
+        <param name="open">열기</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">조직</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">일치하는 항목이 없습니다.</param> <!-- aliased across labels - do not change -->
+        <param name="all">모두</param>
+        <param name="clear">지우기</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">검색 아이콘 클릭...</param>
+        <param name="click_lookup_icon_info">검색 아이콘을 클릭하여 값을 선택합니다.</param>
+        <param name="clear_all">모두 지우기</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">[첨부] 단추를 클릭하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">오류</param> <!-- aliased across lables - do not change -->
+        <param name="high">높음</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">도움말</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">그곳으로 이동!</param>
+        <param name="keywords">키워드</param>
+        <param name="length">길이</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">상태</param> <!-- aliased across lables - do not change -->
+        <param name="title">직급</param>
+        <param name="object_title">직급</param>
+        <param name="type">유형</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">사용자</param> <!--aliased across labels - do not change -->
+        <param name="Users">사용자</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">권한 세트</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">프로필</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">프로필</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">소유자</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">체험 성공</param>
+        <param name="DontShowPage">이 페이지를 다시 표시 안 함</param>
+        <param name="click_here_to_create_new_account">{0} 지금 <new/> <account/>을 작성합니다.</param>
+        <param name="click_here_to_create_new_contact">{0} 지금 <new/> <contact/>을 작성합니다.</param>
+        <param name="click_here_to_create_new_lead">{0} 지금 <new/> <lead/>를 작성합니다.</param>
+        <param name="click_here_to_create_new_opportunity">{0} 지금 <new/> <opportunity/>를 작성합니다.</param>
+        <param name="click_here_to_create_new_product">{0} 지금 <new/> <product/>을 작성합니다.</param>
+        <param name="SystemModstamp">시스템 모드 스탬프</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">디비전</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">처리 중</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">레코드를 업데이트하는 중…</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">정적 번역</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">앞으로 이 페이지 숨기기</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">업로드 중...</param>
+        <param name="uploading_title">업로드 중</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">가져오는 중...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">및 </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">오류: 이 필드를 액세스 할 수 없습니다.</param>
+        <param name="noReadAccess">이 레코드를 볼 수 있는 권한이 없습니다.</param>
+        <param name="noAccessToUser">이 사용자에 대한 액세스 권한이 없습니다.</param>
+        <param name="disabledButton">사용 불가능한 단추: {0}</param>
+        <param name="RequiredHeader">필수 정보</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">이미지 삽입</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">IP 로그인 영역을 삭제하시겠습니까?</param>
+        <param name="AMPM">AMPM 항목</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">보호된 구성요소</param>
+        <param name="dialogCloseConfirm">지금 보고 있던 확인 창이 영구히 닫혔을 수 있습니다. 다시 돌아가려면 확인을 클릭하고 이 경고를 무시하려면 취소를 클릭하십시오.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">대화 상자 시작</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">새 사용자 인터페이스 주제에 대해 지원되지 않는 브라우저</param>
+        <param name="DialogHeader">알고 있는 경우...</param>
+        <param name="DialogContent1">최신 사용자 인터페이스 주제가 표시되지 않는 브라우저를 사용하고 있습니다.</param>
+        <param name="DialogContent2">Salesforce에서는 최신 버전의 지원되는 브라우저로 업그레이드할 때까지 왼쪽 위에 표시된 기본 주제를 표시합니다.</param>
+        <param name="DialogClassicDesc">기본 주제</param>
+        <param name="DialogAlohaDesc">새 주제</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">검색 결과</param>
+        <param name="Recent">최근 조회 항목</param>
+        <param name="NoMatchHeader">다음 중 하나로 인해 레코드를 찾을 수 없습니다.</param>
+        <param name="BulletOne">이 유형의 레코드 없음</param>
+        <param name="BulletTwo">레코드를 볼 수 있는 권한이 없음</param>
+        <param name="BulletThree">레코드가 관리자에 의해 설정된 필터 기준에 맞지 않음</param>
+        <param name="BulletFour">하나 이상의 제어 필드가 비어 있거나 유효하지 않음(제어 필드:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> >
+        <param name="AvailableUsers">사용 가능한 사용자</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">선택한 사용자</param>
+        <param name="LicensedUsers">정식 사용자</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">제거를 위해 선택됨</param>
+        <param name="Selected">선택됨</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">선택됨</param>
+        <param name="UnassignedPackages">할당되지 않은 패키지</param>
+        <param name="SelectedPackages">선택한 패키지</param>
+        <param name="InView">보기</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">이 파일은 최대 크기 {0}을(를) 초과합니다.</param>
+        <param name="no_file_specified">업로드할 파일을 지정하십시오. 파일 경로를 입력하거나 &quot;찾아보기&quot; 단추를 사용하여 로컬 파일 시스템에서 해당 파일을 찾아보십시오.</param>
+        <param name="invalid_file_type">지정된 파일 형식이 현재 지원되지 않습니다.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">파일 이름이 최대 허용 길이 {0}자를 초과했습니다.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">파일 이름 확장자가 최대 허용 길이 {0}자를 초과했습니다.</param>
+        <param name="bytes">바이트</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">HTML 파일 형식은 보안 상의 이유로 허용되지 않습니다.</param>
+        <param name="attachment_size_exceeded">최대 크기를 초과한 파일이 업로드되었습니다.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;오류:&lt;/b&gt; 업로드할 이미지를 선택해야 함</param>
+        <param name="upload_file_too_large">&lt;b&gt;오류:&lt;/b&gt; 이미지가 1MB의 크기 제한을 초과합니다.</param>
+        <param name="invalid_file_type">&lt;b&gt;오류:&lt;/b&gt; .gif .jpeg 및 .png 파일만 삽입할 수 있습니다.</param>
+        <param name="upload_failed">&lt;b&gt;오류:&lt;/b&gt; 업로드 실패 - 나중에 다시 시도하십시오.</param>
+        <param name="invalid_file">&lt;b&gt;오류:&lt;/b&gt; 파일은 올바른 이미지 파일이 아닙니다.</param>
+        <param name="invalid_param">&lt;b&gt;오류:&lt;/b&gt; 잘못된 매개변수입니다.</param>
+        <param name="access_failed_alt">다음의 이유로 이 이미지를 사용할 수 없습니다. 확인할 수 있는 권한이 없거나 시스템에서 제거되었습니다.</param>
+        <param name="weekly_export_folder">기타 업로드된 참고 자료</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">탭 스타일 선택기</param>
+        <param name="instructions">탭 스타일을 선택하십시오.</param>
+        <param name="createYourOwn">고유 스타일 만들기</param>
+        <param name="defaultCustomStyleDesc">사용자 정의 스타일</param>
+        <param name="styleIsUsedOn">이 스타일은 다음 탭에 사용됩니다.</param>
+        <param name="showUsedStyles">다른 탭에 사용되는 스타일을 표시합니다.</param>
+        <param name="hideUsedStyles">다른 탭에 사용되는 스타일을 숨깁니다.</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">탭 색상 선택기</param>
+        <param name="instructions">색상을 선택하십시오.</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">색상:</param>
+        <param name="icon">아이콘:</param>
+        <param name="defineNew">새 색상 스타일을 정의합니다.</param>
+        <param name="noMotifErr">색상을 선택해야 합니다.</param>
+        <param name="noIconErr">아이콘을 선택해야 합니다.</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0}이(가) 성공적으로 만들어졌습니다.</param>
+        <param name="Failure_message">만들기에 실패했습니다.</param>
+        <param name="Common_success_message">만들기에 성공했습니다.</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">추가 제품 요청</param>
+        <param name="pageheader">아래 필드를 모두 입력하여 추가 제품에 대한 요청을 전송하십시오. 설명 필드에 주문할 제품을 나열하십시오. 기존 계약에 따라 제품을 주문하려면 참고를 위해 계약 번호를 입력하십시오.</param>
+        <param name="colHeader">구매 요청 전송</param>
+        <param name="functionalArea_0">라이센스 구매</param>
+        <param name="type_0">구매</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">구매 요청</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">요청해 주셔서 감사합니다. 판매 담당자에게 알림 메시지를 보냈으므로 담당자가 사용자에게 연락하여 주문을 완료할 것입니다.</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">라이센스 축소 요청</param>
+        <param name="pageheader">라이센스 축소 요청을 전송하려면 모든 필수 필드를 채우십시오. 이렇게 하면 가장 빨리 요청을 처리할 수 있습니다.  불필요한 지연이 발생할 수 있으니 동일한 라이센스에 대해 여러 요청을 전송하지 마십시오.</param>
+        <param name="title_landing">요청이 수신되었습니다!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">사용자의 주문 요청을 접수하여 처리 중입니다. 라이센스 수 축소에 대한 요청은 다음 요금 청구 기간의 인보이스 일자 5일 전(영업일 기준)에 salesforce.com에 통지하는 경우 다음 요금 청구 기간부터 적용됩니다.</param>
+        <param name="pageheader_landing">사용자의 주문 요청을 접수하여 처리 중입니다. 라이센스 수 축소에 대한 요청은 요청이 전송된 일자로부터 30일 동안 유효합니다. 동일한 라이센스에 대해 여러 번 라이센스 축소 요청을 하면 해당 요청의 처리가 지연될 수 있으므로 여러 번 전송하지 마십시오.</param>
+        <param name="title_error">요청을 처리할 수 없습니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">현재 요청을 전송할 수 없습니다. 나중에 다시 시도하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">요청 전송</param>
+        <param name="reason">이유</param>   <!-- aliased across labels; do not change -->
+        <param name="description">보다 자세히&lt;br&gt; 설명해 주십시오.</param>
+        <param name="numLicenses">라이센스 수</param>
+        <param name="potentialResponse">어떻게 하면 귀사가 저희 서비스를&lt;br&gt; 계속 이용하시겠습니까?</param>
+        <param name="tips_title">라이센스 축소 요청 전송을 위한 팁</param>
+        <param name="tip1">요청이 신속하고 올바르게 처리될 수 있도록 모든 정보를 정확히 기입해 주십시오.  이 요청을 전송하기 전에 먼저 귀사의 사용자 수가 새 라이센스 수 이하가 되도록 사용자를 비활성화하십시오. &lt;a href=&quot;{1}&quot;&gt;내 설정&lt;/a>의 &lt;a href=&quot;{0}&quot;&gt;사용자 관리&lt;/a&gt; 기능을 통해 사용자를 비활성화할 수 있습니다.</param>
+        <param name="type1">고객 취소</param>
+        <param name="type2">사용자 라이센스 축소</param>
+        <param name="type3">오프라인 라이센스 축소</param>
+        <param name="type4">캠페인 라이센스 축소</param>
+        <param name="type5">Mobile Edition for au 취소</param>
+        <param name="type6">Mobile Edition for au 라이센스 축소</param>
+        <param name="type7">Force.com Mobile 라이센스 축소</param>
+        <param name="reason_0">회사가 인수 또는 합병됨</param>
+        <param name="reason_1">회사 청산</param>
+        <param name="reason_2">판매 담당자가 해고됨</param>
+        <param name="reason_3">최종 사용자가 채택하지 않음</param>
+        <param name="reason_4">기능이 기대만큼 만족스럽지 않음</param>
+        <param name="reason_5">관리를 통해 충분한 가치를 얻을 수 없음</param>
+        <param name="reason_6">salesforce.com 직원의 서비스가 형편 없음</param>
+        <param name="reason_7">가격이 너무 높음</param>
+        <param name="reason_8">경쟁사로 전환</param>
+        <param name="reason_9">라이센스를 사용하지 않음</param>
+        <param name="reason_10">기타</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">다음 필드에 기입해 주십시오.</param>
+        <param name="title">salesforce.com에 의견 보내기</param>
+        <param name="title_upgrade_me">업그레이드 요청 로그</param>
+        <param name="title_support">사용자 의견 보내기</param>
+        <param name="warning_line_too_long">경고: 설명이 4000자를 넘으므로 일부 내용이 잘립니다.\\n</param>
+        <param name="feedback_info">고객 지원 문의</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">질문 사항이나 의견이 있으시면 언제든지 고객 지원으로 연락하시기 바랍니다. 저희는 고객이 제공하는 피드백을 바탕으로 Salesforce를 잘 개선하도록 노력합니다. 보내주신 의견에 감사를 드리며 의견을 기다립니다.</param>
+        <param name="general_info_me">Personal Edition에서 Corporate Edition으로 업그레이드하는 것에 대한 자세한 내용을 보려면 아래 양식에 기입하십시오. 판매 담당자가 48시간 내에 전화를 드릴 것입니다.</param>
+        <param name="general_info_support">질문 사항이나 의견이 있으시면 언제든지 고객 지원으로 연락하시기 바랍니다. 보내주신 사용자 의견은 Salesforce CRM Call Center를 개선하는 밑거름이 됩니다. 사용자 아이디어를 보내주신 데 감사드리며 앞으로도 많은 의견 보내주시기 바랍니다.</param>
+        <param name="defaultOrigin">웹</param>
+        <param name="defaultStatus">새로 만들기</param>
+        <param name="functionalArea">항목</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">질문</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">요청</param>
+        <param name="type3">사용자 의견</param>
+        <param name="type4">요청 사항</param>
+        <param name="priority1">비상 시</param>
+        <param name="priority2">보통</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">낮음</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">지금 Professional Edition에 가입하려고 합니다.</param>
+        <param name="subject_subscribe_me">지금 업그레이드합니다.</param>
+        <param name="subject_subscribe_we">Professional Edition에 대한 자세한 정보를 받으려고 합니다.</param>
+        <param name="subject_subscribe_ee">지금 Enterprise Edition에 가입하려고 합니다.</param>
+        <param name="subject_subscribe_ue">지금 Unlimited Edition에 가입하려고 합니다.</param>
+        <param name="subject_subscribe_support">지금 가입하려고 합니다.</param>
+        <param name="subject_data_export">주 단위 내보내기 서비스를 받으려고 합니다.</param>
+        <param name="subject_marketing_licenses">마케팅 라이센스 추가</param>
+        <param name="subject_offline_licenses">오프라인 라이센스 추가</param>
+        <param name="subject_wireless_licenses">무선 라이센스 추가</param>
+        <param name="subject_offlinepda_licenses">Sales Anywhere 라이센스 추가</param>
+        <param name="subject_mobile_licenses">Force.com Mobile 라이센스 추가</param>
+        <param name="subject_sfcontent_licenses">Salesforce CRM Content 라이센스 추가</param>
+        <param name="subject_knowledge_licenses">Knowledge 라이센스 추가</param>
+        <param name="subject_interaction_licenses">Force.com Flow 라이센스 추가</param>
+        <param name="subject_support_licenses">Service Cloud 라이센스 추가</param>
+        <param name="subject_jigsaw_licenses">Jigsaw 라이센스 추가</param>
+        <param name="subject_liveagent_licenses">Live Agent 라이센스 추가</param>
+        <param name="subject_siteforcecontributor_licenses">Site.com Contributor 라이센스 추가</param>
+        <param name="subject_siteforcepublisher_licenses">Site.com Publisher 라이센스 추가</param>
+        <param name="subject_chatteranswers_licenses">Chatter Answers 라이센스 추가</param>
+        <param name="subject_license_reduction">라이센스 축소</param>
+        <param name="functionalArea_0">고객/라이센스 관리</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">요금 청구 문의 사항</param>
+        <param name="functionalArea_3">데이터 연결</param>
+        <param name="functionalArea_4">이메일/HTML 이메일</param>
+        <param name="functionalArea_5">예측 및 기회</param>
+        <param name="functionalArea_6">가져오기</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">리드</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">성능</param>
+        <param name="functionalArea_9">보고서 및 이미지</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">지금 가입</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">동기화</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">주별 내보내기 서비스</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">무선</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">기타</param>
+        <param name="functionalArea_16">마케팅 라이센스</param>
+        <param name="functionalArea_17">오프라인 라이센스</param>
+        <param name="functionalArea_18">프로필 / 페이지 레이아웃 / 레코드 유형</param>
+        <param name="functionalArea_19">캠페인</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">셀프 서비스</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">무선 라이센스</param>
+        <param name="functionalArea_22">지금 업그레이드</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere 라이센스</param>
+        <param name="functionalArea_24">작업 / 행사 </param>
+        <param name="functionalArea_25"><Products/> 및 연금/ <Pricebooks/></param>
+        <param name="functionalArea_26">중요 거래 알림 </param>
+        <param name="functionalArea_27">문서</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">사례 및 솔루션 </param>
+        <param name="functionalArea_29">검색</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">공유</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">파트너 포털 라이센스</param>
+        <param name="functionalArea_36">Force.com Mobile 라이센스</param>
+        <param name="functionalArea_37">Salesforce CRM Content 라이센스</param>
+        <param name="functionalArea_38">Service Cloud 라이센스</param>
+        <param name="functionalArea_39">Jigsaw 라이센스</param>
+        <param name="functionalArea_40">Live Agent 라이센스</param>
+        <param name="functionalArea_41">Site.com Contributor 라이센스</param>
+        <param name="functionalArea_42">Site.com Publisher 라이센스</param>
+        <param name="functionalArea_43">Chatter Answers 라이센스</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">고객 서비스 담당자와 직접 통화하려면 태평양 표준시로 월요일 - 금요일 오전 6시부터 오후 6시까지 (415) 901-7010으로 전화하거나 GMT로 월요일 - 금요일 오전 8시부터 오후 6시까지 +353-1-2723503으로 전화하십시오.</param>
+        <param name="tips_title">사례 전송을 위한 팁</param>
+        <param name="tip1">가능한 한 빨리 사용자의 사례를 해결할 수 있도록 저희에게 충분한 정보를 제공해 주십시오.  아래에 사용자의 기억을 돕기 위한 몇 가지 제안 사항이 제공되어 있습니다.</param>
+        <param name="tip2">하려는 작업, 기대했던 결과 그리고 기대했던 결과 대신 어떤 결과가 발생했는지 알려 주십시오.</param>
+        <param name="tip3">발생한 문제를 재현하기 위한 단계를 알려 주십시오.</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">보기:</param>
+        <param name="X">X</param>
+        <param name="close">닫기</param>
+        <param name="MLclose">닫기</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">삭제</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">삭제</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">지우기</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">레코드</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">설정</param>
+        <param name="activate">활성화</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">비활성화</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">관리</param>   <!-- aliased across labels; do not change -->
+        <param name="export">내보내기</param>   <!-- aliased across labels; do not change -->
+        <param name="next">다음 페이지</param>
+        <param name="prev">이전 페이지</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">이미지의 전체 항목: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">페이지당 목록 {0} {1} 표시</param>
+        <param name="number_shown_detail_page">관련 목록당 {0} {1} {2} 레코드를 표시합니다.</param>
+        <param name="number_shown_adjust_less_link">더 적게</param>
+        <param name="number_shown_adjust_more_link">더 많은</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">모든</param>
+        <param name="last_page">이전 페이지로 돌아가기</param>
+        <param name="last_list">목록으로 돌아가기</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">목록으로 돌아가기: <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">목록으로 돌아가기: <Entity entity="0" plural="y"/> 연결에서</param>
+        <param name="last_suggested_solution_list"><Suggested/> <Solutions/> 목록으로 돌아가기</param>
+        <param name="last_solution_search_list"><Solution plural="n"/> 검색 결과로 돌아가기</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail"><Entity entity="0" plural="n"/>(으)로 돌아가기 {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">조작:</param>
+        <param name="checkboxPrompt">행을 최소한 하나 이상 선택하십시오.</param>
+        <param name="checkboxSinglePrompt">단일 열을 선택해주십시오.</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">이 페이지에서 선택한 내용이 손실됩니다. 계속하시겠습니까?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">이 작업을 수행하려면 {0}개 이하의 행을 선택해야 합니다.</param>
+        <param name="selectionLimit">{0}개 이상의 행을 선택할 수 없습니다.</param>
+        <param name="login">로그인</param>   <!-- aliased across labels; do not change -->
+        <param name="session">세션</param>
+        <param name="none">표시할 레코드가 없습니다.</param>
+        <param name="no_rows">열이 선택되지 않았습니다.</param>
+        <param name="subtotal">부분합:</param>
+        <param name="total">전체:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">모든 항목 선택</param>
+        <param name="clearAllInfo">모든 항목 선택 취소</param>
+        <param name="rename">이름 변경</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">선택</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">선택 취소</param>
+        <param name="toggleall">모든 열 설정/해제</param>
+        <param name="refresh">새로 고침</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">보기를 선택하십시오.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">지정한 보기가 최대 크기를 초과합니다. 보기를 편집하여 검색 조건을 좁히거나 새 보기를 만드십시오.</param>
+    <param name="switch_view">보기 전환</param>
+    <param name="records_x_to_y">{0}에서 {1}까지 레코드 표시</param>
+    <param name="records_x_to_y_more">{0}에서 {1}까지 레코드를 표시합니다. 더 많은 레코드를 사용할 수 있습니다.</param>
+    <param name="records_x_to_y_more_showing_max">{0}에서 {1}까지 레코드 표시. 1,000개 이상의 레코드를 사용할 수 있더라도 이 페이지에는 처음 1,000개의 레코드만 표시할 수 있습니다. 더 적은 수의 레코드를 표시하려면 목록 보기 기준을 세분화하십시오. 1,000개 이상의 레코드를 인쇄하려면 보고서를 실행한 다음 보고서에서 [인쇄 미리 보기] 단추를 클릭합니다.</param>
+    <param name="number_of_records">레코드 수</param>
+        <param name="createCase"><Case/> 만들기</param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">정립된 항목들을 확대/축소하려면 클릭하십시오.</param>
+        <param name="expand">정립된 항목들을 확대하려면 클릭하십시오.</param>
+        <param name="collapse">정립된 항목들을 축소하려면 클릭하십시오.</param>
+        <param name="shortExpand">확대</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">축소</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">확대됨</param>
+        <param name="collapsed">축소됨</param>
+        <param name="level">레벨</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">계층:</param>
+        <param name="siblings">형제:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">조회</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">개체 선택</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">누가</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">대상</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">검색 결과 최대 행 수({0}) 이상이 반환되었습니다. 검색 범위를 좁히십시오.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">All rights reserved.</param>
+        <param name="useWildcards">'*'를 다른 문자 옆에 와일드카드로 사용하여 검색 결과를 향상시킬 수 있습니다.  예를 들어 "ad*"는 "ad"를 포함하는 이름을 가진 레코드를 모두 반환합니다.</param>
+        <param name="useWildcardsWithSearch">"*"를 다른 문자 옆에 와일드카드로 사용하여 검색 결과를 향상시킬 수 있습니다.</param>
+        <param name="error_lookup_multiple_matches_ile">여러 항목을 찾았습니다.&lt;br&gt;검색을 세분화하려면 아이콘을 클릭하십시오.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">색 선택</param>
+        <param name="cpFrameTitle">색 선택기</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">차트 유형 선택</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">목록 확장</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">확장 목록</param>
+        <param name="sharing">공유</param>   <!-- aliased across labels; do not change -->
+        <param name="why">이유?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">더 많은 필터 &gt;&gt;</param>
+        <param name="less_filters">더 적은 필터 &lt;&lt;</param>
+        <param name="by_keyword">키워드로</param>
+        <param name="by_filter">필드 필터로</param>
+        <param name="too_many">{0}행보다 많은 검색 결과가 되돌아옵니다. 첫 {0}개만 표시됩니다. 검색 범위를 좁히십시오.</param>
+        <param name="Results">결과</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">검색:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">점수</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">필드</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">연산자</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">값</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">세 번째 열에 여러 항목을 입력하여 "or" 필터를 사용할 수 있습니다.</param>
+        <param name="tip_1">쉼표로 구분하여 항목을 10개까지 입력할 수 있습니다. 예를 들면, CA, NY, TX, FL은 CA 또는 NY 또는 TX 또는 FL을 검색합니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">쉼표를 포함하는 데이터 주위에 따옴표를 붙입니다. 예를 들어, "200,000","1,000,000"는 200,000 또는 1,000,000을 검색합니다.</param>
+        <param name="tip_3">확인란 필드에서는 "False" 및 "True"를 사용합니다.(예 "Active equals True" 혹은 "Converted equals False")</param>
+        <param name="tip_4">지역 번호를 기준으로 하는 규칙 항목에 괄호가 포함되어야 하는 경우가 있습니다. 예를 들어, 전화는 (415), (510)로 시작됩니다.</param>
+        <param name="tip_5">번역 워크벤치를 사용 중이면 마스터 값을 사용하여 모든 필터 기준을 입력합니다.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">사용 가능</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">선택</param>
+        <param name="assignLicensesDescription">이 사용자에게 할당할 각 패키지 옆에 있는 확인란을 선택한 다음 할당을 클릭합니다. 패키지에 사용할 수 있는 라이센스가 없거나 패키지 상태가 만료되었거나 일시 중지된 경우 확인란이 없습니다.</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">가로 보기</param>
+        <param name="vertical_view">세로 보기</param>
+        <param name="view_select_title">보기 선택</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">Salesforce Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">포털 기본값</param>
+        <param name="3">웹스토어</param>
+        <param name="4">안녕하십니까?</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged"><This/> <Entity entity="0"/>이(가) 관리되며 이는 특정 속성만을 편집할 수 있다는 것을 의미합니다.</param>
+        <param name="EntityDeprecated"><This/> <Entity entity="0"/>은(는) 폐기되었습니다.</param>
+        <param name="UnmanagedDeprecatedByOther"><This/> <Entity entity="0"/>은(는) 아직 릴리스되지 않았지만 상위 구성 요소에서 폐기되었습니다.</param>
+        <param name="EntityDeprecatedByDev"><This/> <Entity entity="0"/>을(를) 패키지 게시자에서 폐기했습니다. 자세한 정보는 게시자를 참조하십시오.</param>
+        <param name="Undeprecate">관리 릴리스된 패키지에서 업로드하기 전에 구성 요소를 폐기 취소할 수 있습니다.</param>
+        <param name="UndeprecateByOther">관리 릴리스된 패키지에서 업로드하기 전에 이 구성 요소의 상위를 폐기 취소할 수 있습니다.</param>
+        <param name="MoreInfo">자세한 정보 표시</param>
+        <param name="LessInfo">정보 숨기기</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded"><This/> <Entity entity="0"/>은(는) AppExchange에 업로드된 업그레이드 가능한 패키지 중 일부입니다.</param>
+        <param name="BecauseInstalled"><This/> <Entity entity="0"/>은(는) AppExchange에서 설치된 업그레이드 가능한 패키지 중 일부입니다.</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">편집할 수 있는 항목</param>
+        <param name="WhatNone">관리되는 {0}의 경우 어떤 속성도 편집할 수 없으며, 이는 이후의 업그레이드를 매끄럽게 진행하는 데 도움이 됩니다.</param>
+        <param name="WhatTop">관리되는 {0}의 경우, 다음 항목을 편집할 수 있습니다.</param>
+        <param name="WhatBottom">업그레이드 절차를 간소화하기 위해 다른 모든 속성이 잠깁니다.</param>
+        <param name="WhoCanDelete">누가 어떤 {0}을(를) 삭제할 수 있습니까?</param>
+        <param name="Who">{0}이(가) {1}을(를) 삭제할 수 있습니다.</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">엔티티 세부 사항 오버레이</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0}이(가) 저장되었습니다.</param>
+        <param name="modified">{0}이(가) 업데이트되었습니다.</param>
+        <param name="submitted">{0}이(가) 제출되었습니다.</param> <!-- Label swap for Case object -->
+        <param name="attached">첨부 파일이 추가되었습니다.</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">색 샘플</param>
+        <param name="colorHexValue">색 16진수 값</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">확인</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">정보</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">오류</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">경고</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">보안</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">주기</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">매일</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">매주</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">매월</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">매일(평일)</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">매일</param>
+       <param name="lastDay">마지막</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">첫번째</param>
+    <param name="on2">2일</param>
+    <param name="on3">3일</param>
+    <param name="on4">4일</param>
+    <param name="onLast">마지막</param>
+    <param name="startTime">시작</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">끝</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">기본 설정 시작 시간</param>
+    <param name="noPreference">기본 설정 없음</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">정확한 시작 시간은 작업 대기열 활동에 따라 다릅니다.</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[이 월간 주기 설정을 위한 시간대는 다음과 같습니다:<br> <strong>{0}</strong><br>마지막으로 편집한 사용자의 시간대로 주기 설정이 표시됩니다.<br>이 설정에 대한 변경 사항은 시간대와 일치하도록 업데이트됩니다.]]></param>
+
+      <param name="weeklyRecurrence">매주 {0}에 반복</param>
+      <param name="weeklyRecurrenceLegendLabel">매주 다음 요일에 반복</param>
+      <param name="monthlyRecurrence1">매월 {0}일</param>
+      <param name="monthlyRecurrence1LegendLabel">특정</param>
+      <param name="monthlyRecurrence2LegendLabel">사용자 정의</param>
+      <param name="monthlyRecurrence2">매월 {2} {0} {3} {1}</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">매월 {0} {1}</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">매월 지정일</param>
+      <param name="accessibleMonthly2">매월 사용자 정의 날짜</param>
+      <param name="accessibleOnDayN">지정일</param>
+      <param name="accessibleOnDayNOfWeek">발생</param>
+      <param name="accessibleOnDayName">요일</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">이 간단한 테스트는 악의적인 프로그램이 데이터에 액세스하는 것을 방지하는 데 도움이 됩니다.  큰 다운로드의 경우 관리자가 이 테스트를 요구합니다.  로그인 세션마다 한 번만 제공됩니다.</param>
+        <param name="imagePrompt">위 단어를 공백으로 구분하여 입력하십시오.</param>
+        <param name="audioPrompt">번호를 여기에 입력:</param>
+        <param name="refresh">새 과제 가져오기</param>
+        <param name="audio">오디오 과제 가져오기</param>
+        <param name="image">이미지 과제 가져오기</param>
+        <param name="incorrect">잘못되었습니다. 다시 시도하십시오.</param>
+        <param name="moreinfo">더 많은 정보 &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; 더 적은 정보</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">자세한 정보...</param>
+        <param name="show">강조 패널 표시</param>
+        <param name="hide">강조 패널 숨기기</param>
+        <param name="empty">이 레코드에 대해 표시할 강조된 필드가 없습니다.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">둘러보기</param>
+        <param name="closeIntro">괜찮습니다</param>
+        <param name="closeOutro">닫기</param>
+        <param name="showLater">나중에 표시</param>
+        <param name="replay">회신</param>
+        <param name="continue">계속</param>
+        <param name="previous">이전</param>
+        <param name="startTour">둘러보기 시작</param>
+        <param name="endTour">둘러보기 종료</param>
+        <param name="stepCounter">{0}/{1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">세부 사항</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">권장 사항</param>
+        <param name="hideBucketTip">&lt;br&gt;페이지에서 항목을 숨기려면&lt;br/&gt;여기로 끌어다 놓으십시오.</param>
+        <param name="hiddenListTip">숨겨진 항목을 표시하려면 위의 목록으로 다시 끌어다 놓으십시오.</param>
+        <param name="hiddenListShowLinkLabel">{0} 숨김</param> <!-- '3 Hidden' -->>
+        <param name="backToTopToolTip">맨 위로</param>
+        <param name="multipleItemDragGhost">다중 항목 (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">세부 사항 페이지 브라우저 호환성</param>
+        <param name="compatibilityMsgSubTitle">죄송합니다. 이 브라우저는 지원되지 않습니다.</param>
+        <param name="compatibilityMsg1">현재 브라우저에 새 세부 사항 페이지를 표시할 수 없습니다.</param>
+        <param name="compatibilityMsg2">호환 가능한 브라우저 중 하나에서 로그인할 때마다 새 디자인을 사용할 수 있습니다.</param>
+        <param name="supportedIE">Internet Explorer 7 또는 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">감사합니다.</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">기본 보기를 기본값으로 설정</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">여기에 입력하여 {0} 검색...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">검색 항목과 일치하는 {0}이(가) 없음</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">{1}/{0}페이지</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">메뉴 끄기</param>
+        <param name="confirmTurnOffTitle">메뉴를 끄시겠습니까?</param>
+        <param name="confirmTurnOffText">나중에 메뉴를 켜려면 설정 메뉴에서 개인 정보 페이지로 이동하고 Force.com 빠른 액세스 메뉴 기본 설정을 활성화하십시오.</param>
+        <param name="viewObject">개체 보기</param>
+        <param name="viewObjectHover">개체에 대한 세부 사항 보기 및 관리</param>
+        <param name="viewObjectNewHover">개체 만들기</param>
+        <param name="viewFields">필드 보기</param>
+        <param name="viewFieldsHover">이 개체에 대한 필드 보기 및 관리</param>
+        <param name="viewFieldsNewHover">이 개체에 필드 추가</param>
+        <param name="viewRecordTypes">레코드 유형 보기</param>
+        <param name="viewRecordTypesHover">이 개체에 대한 레코드 유형 보기 및 관리</param>
+        <param name="viewRecordTypesNewHover">이 개체에 대한 레코드 유형 추가</param>
+        <param name="viewValidationRules">확인 규칙 보기</param>
+        <param name="viewValidationRulesHover">이 개체에 대한 확인 규칙 보기 및 관리</param>
+        <param name="viewValidationRulesNewHover">이 개체에 대한 확인 규칙 추가</param>
+        <param name="viewApprovals">승인 보기</param>
+        <param name="viewApprovalsHover">이 개체에 대한 승인 프로세스 보기 및 관리</param>
+        <param name="viewApprovalsNewHover">점프 시작 마법사를 사용하여 이 개체에 대한 승인 프로세스 추가</param>
+        <param name="editApp">응용 프로그램 편집</param>
+        <param name="editAppHover">이 응용 프로그램의 탭 목록, 프로필 할당 및 기타 세부 사항 사용자 정의</param>
+        <param name="editTab">탭 편집</param>
+        <param name="editTabHover">이 탭의 아이콘, 색상 및 기타 세부 사항 사용자 정의</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">이 페이지 레이아웃 사용자 정의</param>
+        <param name="viewRecordType">레코드 유형 보기</param>
+        <param name="viewRecordTypeHover">선택 목록 값 편집을 포함하여 이 레코드 유형 보기 및 관리</param>
+        <param name="editColumns">열 편집</param>
+        <param name="editColumnsHover">이 목록에서 열 사용자 정의</param>
+        <param name="importData">데이터 가져오기</param>
+        <param name="importDataHover">이 개체로 데이터 가져오기</param>
+    </section>
+</iniFile>

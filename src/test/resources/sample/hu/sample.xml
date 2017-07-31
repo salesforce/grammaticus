@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">Kombinált lista</param>
+        <param name="select_default">Válasszon az alábbiakból.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Válasszon alább egy {0} elemet.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Hozzáférés</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Kezelt)</param>
+        <param name="activity_history">Tevékenységelőzmények</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Egyéb információ</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Helyettes</param>
+        <param name="assistant_name">Helyettes neve</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Helyettes telefonszáma</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Helyett. tel.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Helyett. tel. mell.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Születési dátum</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Törzs</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Cég</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Készítette:</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Létrehozó azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Készítő aliasa</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Pénznem ISO-kódja</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Egyéni mezők</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Alapértelmezett állapot</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0} adatai</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Osztály</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0} szerkesztése</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Várható árbevétel</param>
+        <param name="first_name">Utónév</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Vezetéknév</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Utónév (helyi)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Vezetéknév (helyi)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Pénzügyi negyedév</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Pénzügyi év</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Teljes név</param> <!-- aliased across app - do not change -->
+        <param name="group">Csoport</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Csoport neve</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Sor neve</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Ágazat</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Utoljára módosította:</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Utolsó módosító azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Utolsó módosító aliasa</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Főrekord azonosítója</param>
+        <param name="mobile">Mobiltelefonszám</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Mobiltelefonszám</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Mobiltel. mellék</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Új megosztás</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Hozzárendelt alias</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Elérhető lista</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Cég neve</param> <!-- aliased across app - do not change -->
+        <param name="activities">Tevékenységek</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">nincs melléklet</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document/></param>
+        <param name="address_info">Címadatok</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Elutasítva</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Alapértelmezett</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Alapértelmezett prioritás</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Új nézet létrehozása</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Egyéni információ</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Ismételt státusz</param> <!-- aliased across app - do not change -->
+        <param name="email_address">E-mail cím</param> <!-- aliased across app - do not change -->
+        <param name="email_name">E-mail név</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">E-mail sablon</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-mail:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Egyéni hivatkozások</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Fájlméret</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Nincs adat</param>
+        <param name="history_event_checked">Bejelölt mező: {0}</param>
+        <param name="history_event_unchecked">Bejelöletlen mező: {0}</param>
+        <param name="how_do_i_specify_info">Hogyan adjam meg, mely adatokra van szükség?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Belső forrás</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Időköz:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Üdvözlés</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Új tulajdonos kiválasztása</param>
+        <param name="select_a_view">Válasszon nézetet a legördülő listából, hogy lássa a megjeleníthető eredmények listáját.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Válasszon mappát a legördülő listából, hogy lássa a megjeleníthető eredmények listáját.</param>
+        <param name="select_the_file">Válassza ki a fájlt.</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Válassza ki a felvenni kívánt mezőket:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Aláírás</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Tárgy</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Rendszeradatok</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Webhely</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Tulajdonos aliasa</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Tulajdonos utóneve</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Tulajdonos azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Tulajdonos vezetékneve</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Tulajdonos neve</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Tulajdonos szerepe</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Tulajdonos szerepének megjelenítése</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Tulajdonos szerepének neve</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Elsődleges</param>
+        <param name="primary_contact"><Primary/> <Contact/></param>
+        <param name="priority">Prioritás</param><!--aliased across labels - do not change -->
+        <param name="private">Privát</param>
+        <param name="role">Szerep</param> <!--aliased across labels - do not change -->
+        <param name="rating">Értékelés</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Gyors létrehozás</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Legutóbb megtekintett</param>
+        <param name="top5">5 leggyakoribb kérdés</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Beszállító</param>
+        <param name="customer">Vevő</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Szállító</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Rekordtípus azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">Részleg azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Táblafelsorolás vagy -azonosító</param>
+        <param name="editable">Szerkeszthető</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Normalizált név</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Adatvédelmi nyilatkozat</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Kezelhető állapot</param>
+        <param name="namespacePrefix">Névtér előtagja</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Modul névtere</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Telepített csomag</param>
+        <param name="initialVersion">Elsőként kiadott verzió</param>
+        <param name="lastVersion">Utolsó elérhető verzió</param>
+        <param name="availableInVersions">Elérhető verziói</param>
+        <param name="DeveloperName">Fejlesztő neve</param>
+        <param name="apiName">API-név</param>
+        <param name="InvalidDeveloperNameOnEntity">A(z) {0} mező csak aláhúzásjeleket és alfanumerikus karaktereket tartalmazhat. Egyedinek kell lennie, betűvel kell kezdődnie, nem tartalmazhat szóközt, nem végződhet aláhúzásjellel, valamint nem tartalmazhat egymás után két aláhúzásjelet.</param>
+        <param name="missingDevName">A következőt meg kell adni: {0}</param>
+        <param name="duplicateDevName">Jelen {0} már létezik vagy korábban már használatban volt.  Más egyedi nevet válasszon.</param>
+        <param name="manageabilityOverride">Kezelhetőség felülbírálása</param>
+        <param name="AMPMId">AMPM-azonosító</param>
+        <param name="MetricsDate">Mérőszámok dátuma</param>
+        <param name="MayEdit">Szerkeszthető</param>
+        <param name="IsLocked">Zárolt</param>
+        <param name="LastViewedDate">Utolsó megtekintés dátuma</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Létrehozás</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Beállítás</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Új létrehozása...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Fájl</param>
+        <param name="new_forecast">Előrejelzés</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Lomtár</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">E-mail küldése</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Jelentés</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Módosította</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Létrehozás dátuma</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Módosítás dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Automatikus eljárás</param>
+        <param name="partner_network">Kapcsolódó felhasználó</param>
+        <param name="external_who">Nyilvános felhasználó</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Példa</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Hiba: Érvénytelen adat. &lt;br/&gt;Az adatok javításához tekintse át az összes alábbi hibaüzenetet.</param>
+        <param name="EditPageError2">Az adatok javításához tekintse át az összes alábbi hibaüzenetet.</param>
+        <param name="Required">Meg kell adnia egy értéket.</param>
+        <param name="RequiredWithFieldList">Kötelező mezők hiányoznak: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Az önálló kereséshez szükséges</param>
+        <param name="RequiredBy">Szükséges a következőhöz: {0}</param>
+        <param name="Requires">Kötelező megadni: {0}</param>
+        <param name="TooLong">Az érték túl hosszú a mezőhöz.</param>
+        <param name="CannotExceedXCharacters">Az érték nem haladhatja meg a(z) {0} karaktert.</param>
+        <param name="MustBeXCharacters">Az értéknek pontosan {0} karakternek kell lennie.</param>
+        <param name="MustBeNumber">Az értéknek numerikusnak kell lennie.</param>
+        <param name="StatusCloseRequired">Legalább egy állapotot lezártként kell megjelölni.</param>
+        <param name="StatusDefaultRequired">Legalább egy állapotot alapértelmezettként kell megjelölni.</param>
+        <param name="StatusInUse">A következő állapotértékek használatban vannak, ezeket nem lehet módosítani vagy törölni: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Érvénytelen dátum</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Érvénytelen dátum. Nem állíthat be a következőnél későbbi dátumot: {0}</param>
+        <param name="InvalidDateTime">Érvénytelen dátum és idő</param>
+        <param name="InvalidColor">Érvénytelen szín</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Érvénytelen internetcím</param>
+        <param name="InvalidOption">Érvénytelen beállítás van megadva.</param>
+        <param name="UnsupportedCurrency">Érvénytelen pénznem</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Érvénytelen URL</param>
+        <param name="NoneSelectedInPicklist">-- nincs kijelölve --</param>
+        <param name="InvalidTime">Nem érvényes időpont</param>
+        <param name="InvalidNumber">Érvénytelen szám</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">A szám túl nagy.</param>
+        <param name="TooLargeNumberWithScale">A számnak kisebbnek kell lennie, mint {0}.</param>
+        <param name="TooSmallNumberWithScale">A számnak nagyobbnak kell lennie, mint {0}.</param>
+        <param name="NonpositiveError">Pozitívnak kell lennie.</param>
+        <param name="NegativeError">Nem lehet negatív.</param>
+        <param name="PositiveError">Nem lehet pozitív.</param>
+        <param name="NonnegativeError">Negatívnak kell lennie.</param>
+        <param name="NonzeroError">Nem lehet nulla.</param>
+        <param name="NonintegerError">Egész számnak kell lennie.</param>
+        <param name="InvalidPercent">Érvénytelen százalékos érték</param>
+        <param name="InvalidAfterRoundOff">A(z) {0} szám érvénytelen az arányos kerekítés után: {1}</param>
+        <param name="CharactersRemaining">marad</param>
+        <param name="CharactersOver">a limit felett</param>
+        <param name="TooManySelection">Legfeljebb {0} elem jelölhető ki.</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Ismételt érték a rekordban: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">A rejtett mezőérték (nem jelenik meg) ismétlődő értéket tartalmaz a rekordhoz képest: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">A(z) {0} ismétlődő értéket tartalmaz a következő azonosítójú rekordhoz képest: {1}</param>
+        <param name="True">Igaz</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Hamis</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Érvénytelen tartomány</param>
+        <param name="ReadOnly">Ezt a mezőt nem lehet szerkeszteni</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Megszakítás</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Elfogadás</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Változtatások elfogadása</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Sandbox bekapcsolása</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Megjegyzés felvétele</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Összetevők hozzáadása</param>
+        <param name="add_contacts"><Contacts/> hozzáadása</param>
+        <param name="add_leads"><Leads/> hozzáadása</param>
+        <param name="add_more_users">További felhasználók hozzáadása</param>
+        <param name="add_multiple_users">Több felhasználó hozzáadása</param>
+        <param name="add_product"><Product/> hozzáadása</param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Tétel hozzáadása</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Mintavezérlőpult hozzáadása</param>
+        <param name="add_to_call_center">Hozzáadás Call Centerhez</param>
+        <param name="add_to_campaign">Hozzáadás <campaign case="al"/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Hozzáadás az Outlookhoz</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Hozzáadás <pricebook case="al"/></param>
+        <param name="add_remove">Hozzáadás/eltávolítás</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Speciális beállítások</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Jóváhagyás</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Hozzárendelés</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Felhasználók szerepkörhöz rendelése</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Vissza a jelentéslistára</param>
+        <param name="billing_and_licenses">Számlázás és licencek</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Számlázási adatok</param>
+        <param name="briefcase_setup">Táska beállítása</param>
+        <param name="cancel">Mégse</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Indítás visszavonása</param>
+        <param name="cancel_test_instance">Tesztelés visszavonása</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Vállalati beállítás változtatása</param>
+        <param name="change_currency">Pénznem változtatása</param>
+        <param name="change_owner">Tulajdonos módosítása</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Tulajdonos elfogadása és módosítása</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Elfogadás és felelős hozzárendelése</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Állapot változtatása</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Elérhetőség ellenőrzése</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Helyesírás ellenőrzése</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook"><Pricebook/> választása</param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Tisztítás</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Áttekintés</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0} lap</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Lista</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Szülő adatainak másolása</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Összes összecsukása</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Válasszon elemet az értéklistáról</param>
+        <param name="composegmail">Gmail-üzenet megfogalmazása</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Megerősítés</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Folytatás</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Folytatás mindenképpen</param>
+        <param name="convert">Átváltás</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead"><Lead/> konvertálása</param>
+        <param name="create">Létrehozás</param>
+        <param name="create_follow_up_event">Követő <event/> létrehozása</param>
+        <param name="create_follow_up_task">Követő <task/> létrehozása</param>
+        <param name="create_new">Új {0} létrehozása</param>
+        <param name="create_new_section">Új szakasz létrehozása</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity"><Opportunity/> létrehozása</param>
+        <param name="create_test_instance">Sandbox létrehozása</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Tesztadatbázis létrehozása</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Web -> lead űrlap létrehozása</param>
+        <param name="create_new_holiday">Új szabadnap létrehozása</param>
+        <param name="create_new_sla_process">Új <entitlement/> folyamat</param>
+        <param name="create_new_milestone_type">Új mérföldkő</param>
+        <param name="currency_setup">Pénznem beállítása</param>
+        <param name="customer_view">Ügyfélnézet</param>
+        <param name="customize">Testreszabás</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Megjelenítés testreszabása az összes felhasználóra vonatkozóan</param>
+        <param name="page_settings">Oldalbeállítások</param>
+        <param name="customize_page">Lap testreszabása</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Elrendezés szerkesztése</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Vezérlőpultlista</param>
+        <param name="data_export">Adatexportálás</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Törlés</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Elutasítás</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Alapértelmezett egyéni hivatkozások</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Pénztárhozzáférés eltávolítása</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Kész, előnézettel</param>
+        <param name="dont_save">Nincs mentés</param>
+        <param name="dont_show_page_again">Ne mutassa újra ezt az oldalt.</param>
+        <param name="download">Letöltés</param>
+        <param name="download_now">Azonnali letöltés</param>
+        <param name="download_sample_css_file">CSS-mintafájl letöltése</param>
+        <param name="edit">Szerkesztés</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Szerkesztés [béta]</param>
+        <param name="edit_all">Az összes szerkesztése</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Felhasználók szerkesztése</param>
+        <param name="edit_rates">Árfolyamok szerkesztése</param>
+        <param name="edit_selected">A kijelölt elemek szerkesztése</param>
+        <param name="editProperties">A tulajdonságok szerkesztése</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Kilépés – {0}</param>
+        <param name="enable_appstore_user">Pénztárhozzáférés biztosítása</param>
+        <param name="enable_as_partner">Engedélyezés partnerként</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Partnerportál-bejelentkezés engedélyezése</param>
+        <param name="enable_self_service">Önálló keresés engedélyezése</param>
+        <param name="enable_users">Új felhasználók engedélyezése</param>
+        <param name="enableForecasting">Testreszabható előrejelzés-készítés engedélyezése</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Képzés megadása</param>
+        <param name="erase_test_instance">Sandbox tartalmának törlése</param>
+        <param name="establish">Létrehozás</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Összes kibontása</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Adatok exportálása</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Adatok exportálása most</param>
+        <param name="export_background">Exportálás futtatása a háttérben...</param>
+        <param name="fctHistory">Előrejelzési előzmények</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Előrejelzés-összesítés</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Mezőellenőrzések</param>
+        <param name="find">Keresés</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Jelentés keresése</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document"><Document/> keresése</param>
+        <param name="find_pricebooks"><Pricebook/> keresése</param>
+        <param name="find_products"><Product/> keresése</param>
+        <param name="find_solution"><Solution/> keresése</param>
+        <param name="finished">Befejezve</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Előre</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Továbbítás a kapcsolatokhoz</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">WSDL létrehozása</param>
+        <param name="generate_login_html">Bejelentkezési HTML generálása</param>
+        <param name="getMoreInfo">További információ kérése</param>
+        <param name="go">Mehet!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Oldal súgója</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0} súgó</param>
+        <param name="hide">Részletek elrejtése</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Elfogadom</param>
+        <param name="i_decline">Nem fogadom el</param>
+        <param name="impactAnalysis">Hol van ez használatban?</param>
+        <param name="import">Importálás</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads"><Leads/> importálása</param>
+        <param name="include_offline">Kapcsolat nélküli állapotúakkal együtt</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Beszúrás</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Kijelöltek beszúrása</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Telepítés</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Meghívás</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Meghívás kapcsolódásra</param>
+        <param name="jigsawsearch">Kapcsolattartók lekérése</param>
+        <param name="join_meeting">Bekapcsolódás az értekezletbe</param>
+        <param name="jumpstart">Gyorsindítás</param>
+        <param name="keep_in_touch">Friss tájékoztatás kérése</param>
+        <param name="layout_assignment">Elrendezés hozzárendelése</param>
+        <param name="legal_view">Jogi nézet</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Rekord zárolása</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Bejelentkezés partnerfelhasználóként</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Tagok kezelése</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Új értekezletmeghívó</param>
+        <param name="add_members_search">Tagok felvétele – keresés</param>
+        <param name="add_members_import">Tagok felvétele – fájl importálása</param>
+        <param name="edit_members_search">Tagok módosítása – keresés</param>
+        <param name="update_members_import">Tagok frissítése és felvétele – fájl importálása</param>
+        <param name="manage_call_center_users">Call Center-felhasználók kezelése</param>
+        <param name="map_lead_fields"><Lead_Fields/> összerendelése</param>
+        <param name="mark_as">Megjelölés mint...</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Tagok importálása</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Egyéni emlékeztetők módosítása</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Új</param>
+        <param name="newcase">Új</param>
+        <param name="new_addition_order">Új kiegészítő rendelés</param>
+        <param name="new_custom_object">Új egyéni objektum</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Új egyéni jelentés létrehozása</param>
+        <param name="new_dashboard">Új vezérlőpult</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Új vezérlőpult-összetevő</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <Document/></param>
+        <param name="new_email_template">Új sablon</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <Entity entity="0"/></param>
+        <param name="new_entitlement_template">Új sablon</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Új mappa</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Új csoport</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Új sor</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Új jegyzet</param>
+        <param name="new_object_custom_tab">Új egyéni objektum fül</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Online értekezlet</param>
+        <param name="new_order">Új megrendelés</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Új személyes csoport</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Új mennyiségcsökkentési rendelés</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Új szerepkör</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Új gomb</param>
+        <param name="new_territory">Új terület</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Új felhasználó</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Új webes integráció fül</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Újabb frissítés végrehajtása</param>
+        <param name="performAnotherMigrate">További profil áttelepítése</param>
+        <param name="preview">Előnézet</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Újraszámítás</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Ismételt létrehozás</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Hívás elutasítása</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Változtatások elvetése</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Felhasználók eltávolítása</param>
+        <param name="remove_from_briefcase">Eltávolítás a táskából</param>
+        <param name="remove_from_campaign">Eltávolítás a <campaign case="el"/></param>
+        <param name="reorder">Újrarendelés</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Javítás</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Az összes teszt futtatása</param>
+        <param name="run_test">Teszt futtatása</param>
+        <param name="quick_save">Gyors mentés</param>
+        <param name="quick_save_hover">Mentés és a szerkesztés folytatása</param>
+        <param name="reply">Válasz</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Válasz mindenkinek</param>
+        <param name="reportmanager">Jelentéskezelő</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Jelszó visszaállítása</param>
+        <param name="reset_passwords">Jelszavak visszaállítása</param>
+        <param name="retrieve_prices">Árak beolvasása</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Jelentés futtatása</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Mentés</param> <!-- aliased across labels do not change -->
+        <param name="saving">Mentés folyamatban...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Mentés és ár hozzáadása</param>
+        <param name="save_and_add_product">Mentés és <product/> hozzáadása</param>
+        <param name="save_and_clone">Mentés és ismételt másolás</param>
+        <param name="save_and_close">Mentés és bezárás</param>
+        <param name="save_and_attach">Mentés és melléklet hozzáadása</param>
+        <param name="save_and_continue">Mentés és következő</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Mentés és továbbiak</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Mentés és <new/> <event/></param>
+        <param name="save_and_new_product">Mentés és <new/> <product/></param>
+        <param name="save_and_new_task">Mentés és <new/> <task/></param>
+        <param name="save_and_refresh">Mentés és frissítés</param>
+        <param name="save_and_send">Mentés és frissítés küldése</param>
+        <param name="event_scheduler">Ügyfél- és csapatnézet &gt;</param>
+        <param name="saveAs">Mentés másként</param>
+        <param name="schedule_to_email">Ütemezés e-mailben küldésre</param>
+        <param name="schedule_to_print">Ütemezés nyomtatásra</param>
+        <param name="scrutinize">Vizsgálat</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles"><KnowledgeArticles/> keresése</param>
+        <param name="newArticle">Új</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Sablon választása</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Önálló keresés gyorsindítása</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Önálló keresés beállítása</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Önálló keresés engedélyezése/megtekintése</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Küldés</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">E-mail küldése <all article="the"/> <contact/> számára</param>
+        <param name="send_invitation">Mentés és meghívás küldése</param>
+        <param name="set_status">Állapot kezelése</param>
+        <param name="setup_and_install">Beállítás és telepítés</param>
+        <param name="setup_roles">Szerepkörök beállítása</param>
+        <param name="setup_sharing">Megosztás beállítása</param>
+        <param name="sfga_instructions">Teljes körű nyomtatható útmutatás</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Részletek kijelzése</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Kihagyás</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Rendezés</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Értekezlet megkezdése</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Küldés</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Küldés és melléklet hozzáadása</param>
+        <param name="subscribe_now">Előfizetés most!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Frissítés most!</param>
+        <param name="suggest"><Suggested/> <solutions/> megjelenítése</param>
+        <param name="take_training_now">Oktatás elvégzése most!</param>
+        <param name="terminate">Leállítás</param>
+        <param name="training_history">Oktatás eseményei</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Átadás</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Próba</param>
+        <param name="undelete">Törlés visszavonása</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Visszavonás</param>
+        <param name="unlock">Rekord zárolásának megszüntetése</param>
+        <param name="update">Frissítés</param>
+        <param name="update_campaign_history"><Campaign_Members/> frissítése és hozzáadása</param>
+        <param name="update_now">Frissítés most</param>
+        <param name="update_statuses">Frissítési állapotok</param>
+        <param name="upload">Feltöltés</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Mezőfüggőségek</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Törölt összetevők megtekintése</param>
+        <param name="view_partnerforce">Partnerfelhasználó megtekintése</param>
+        <param name="view_self_service">Önálló keresés megtekintése</param>
+        <param name="view_customer_success">Ügyfélportál-felhasználó megtekintése</param>
+        <param name="enable_customer_success">Ügyfélportál-felhasználó engedélyezése</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Mi ez?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Az ablak bezárása</param>
+        <param name="runApexRecalc">Apex-megosztás újraszámítása</param>
+        <param name="disablecustomerportal">Ügyfélportál-felhasználó letiltása</param>
+        <param name="disablepartnerportal">Partnerfelhasználó letiltása</param>
+        <param name="disablecustomerportalaccount">Ügyfélportál fiókjának letiltása</param>
+        <param name="disablepartnerportalaccount">Partnerfiók letiltása</param>
+        <param name="voteup">Elfogadás</param>
+        <param name="votedown">Elutasítás</param>
+        <param name="markquestionunanswered">Jelölés megválaszolatlanként</param>
+        <param name="markbestanswer">Jelölés legjobb válaszként</param>
+        <param name="requestUseSfdcAction">Kapcsolatok keresése</param>
+        <param name="addPET">Jogosultsági sablon hozzáadása</param>
+        <param name="truncate">Levágás</param>
+        <param name="disableprmsuperuser">Partner kiemelt hozzáférésének letiltása</param>
+        <param name="enableprmsuperuser">Partner kiemelt hozzáférésének engedélyezése</param>
+        <param name="purchase_more">További vásárlás</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Vissza az elejére</param>
+        <param name="descriptionText">A szövegtörzs túl hosszú. Lásd a részleteket.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Fájl megtekintése</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Fölérendelt</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Nincs kapcsolódó információ</param>
+        <param name="no_records">Nincs megjeleníthető rekord</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">{0} további elem megjelenítése »</param>
+        <param name="NextMoreGeneric">További elemek megjelenítése »</param>
+        <param name="view_more">Lista megjelenítése</param>
+        <param name="view_more_tot">Lista megjelenítése ({0})</param>
+        <param name="view_more_tot_plus">Lista megjelenítése ({0}+)</param> <!-- -->
+        <param name="view_more_1">Lista megjelenítése további egy rekorddal</param> <!-- Singular -->
+        <param name="view_more_n">Lista megjelenítése további {0} rekorddal</param> <!-- Plural -->
+        <param name="view_more_n_plus">Lista megjelenítése {0}+ rekorddal</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Továbbiak érhetők el; a lista megjelenítése</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Valószínűség</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Forrás</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Elnyert</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Pénzügyi időszak</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{0}. év, {1}. negyedév</param>
+        <param name="opportunities_next_step">Következő lépés</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Frissítés</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <Activities/></param>
+        <param name="activities_open"><Open/> <Activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Kapcsolódó adat</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Jegyzet</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google-dokumentum</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Jegyzetek és mellékletek</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Jegyzet címe</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Melléklet</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Mellékletek</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Fájlnév</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Tulajdon</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Elsődleges</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> megjeleníthető <cases/></param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Dátum</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Cím</param>
+        <param name="object_title">Cím</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Név</param>
+        <param name="object_name">Név</param>
+        <param name="date">Dátum</param>
+        <param name="due_date">Határidő</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Utolsó módosítás</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Módosította</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Elsődleges</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Versenytársak</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Versenytárs neve</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Erősségek</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Gyengeségek</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Valószínűség (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Befejezés</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">{0} megjelölése befejezettként</param>
+        <param name="task_date">Dátum</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Név</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/> jóváhagyásra vár</param>
+        <param name="task_none">Erre az időszakra nincs <open/> <task/> beütemezve.</param>
+        <param name="task_mode_today">Ma</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Mai + késedelmes</param>
+        <param name="task_mode_tomorrow">Holnap</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Következő {0} napi</param>
+        <param name="task_mode_next_7days_overdue">Következő {0} napi + késedelmes</param>
+        <param name="task_mode_overdue">Késedelmes</param>
+        <param name="task_mode_this_month">E havi</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Minden nyitott</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Előzmények</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Hírek</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Főcím</param>
+        <param name="new_date">Dátum</param>
+        <param name="news_none">Nincsenek hírek</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Körlevélsablonok</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Legjobb <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Hozzáadás dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Hozzáadta:</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <Solutions/> mellékelve</param>
+        <param name="description">Leírás</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Tőzsdei jel</param>
+        <param name="sic">Ágazat besorolási kódja</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Nincsenek megjeleníthető <activity_History/>.</param>
+        <param name="nonotes">Nincsenek megjeleníthető jegyzetelőzmények.</param>
+        <param name="noattachments">Nincsenek megjeleníthető mellékletelőzmények.</param>
+        <param name="viewallattachments">Az összes melléklet megtekintése</param>
+        <param name="viewalldocsattachments">Az összes Google-dokumentum és melléklet megtekintése</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Dátum</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Vonalleírás</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API-átvétel</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Szűrés felhasználó szerint</param>
+        <param name="apicapture_filterip">Szűrés IP szerint</param>
+        <param name="apicatpure_numbers">Átvételek</param>
+        <param name="apicapture_soapscope">Átvételek megjelenítése</param>
+        <param name="apicapture_active">Aktív</param>
+        <param name="apicapture_none">Nincs átvétel</param>
+        <param name="apicapture_new">Új átvétel indítása</param>
+        <param name="apicapture_view">Nézet</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Bejelentkezési előzmények</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">Nincsenek bejelentkezési adatok</param>
+        <param name="login_none">Nincsenek bejelentkezési előzmények.</param>
+        <param name="login_username">Felhasználónév</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Bejelentkezés időpontja</param>
+        <param name="login_type">Bejelentkezés típusa</param>
+        <param name="login_ip">Forrás IP-címe</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">n. a.</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Böngésző</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platform</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Feloldás</param>
+        <param name="login_clientversion">Kliensprogram verziója</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Alkalmazás</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API típusa</param>
+        <param name="login_apiversion">API verziója</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Sikeres</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">A legutóbbi hat hónap bejelentkezési előzményeinek letöltése, beleértve a webhelyen kívülről érkező bejelentkezéseket, például az API-bejelentkezéseket is (Excel .csv fájl)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Bejelentkezési előzmények letöltése, amely tartalmazza a kizárólag a webhelyről történő bejelentkezéseket is (Excel .csv fájl)</param>
+        <param name="login_history_download_title">Letöltési opciók:</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV fájl</param>
+        <param name="login_history_download_file_type_gzip">GZIP fájl</param>
+        <param name="login_history_download_file_type_help">A CSV (vesszővel tagolt értékeket tartalmazó) fájlokat a legtöbb táblázatkezelő és szövegszerkesztő programmal meg lehet nyitni. GZIP (GNU zip) fájlok a helytakarékosság érdekében tömörített méretű fájlok.</param>
+        <param name="login_history_download_option_title">A fájlok tartalma</param>
+        <param name="login_history_download_option_all">Az összes bejelentkezés</param>
+        <param name="login_history_download_option_ie6_only">CSAK az IE6 böngészővel történő bejelentkezések</param>
+        <param name="login_history_download_option_web_only">CSAK a Webhelyről történő bejelentkezések</param>
+        <param name="login_history_download_option_help">„Az összes bejelentkezés” az összes forrásból származó bejelentkezést tartalmazza, amelyeket pl. a Webhelyről, az Outlook alkalmazásból, az API-csatlakozásokból stb. indítottak. Az „IE6 bejelentkezések” csak az Internet Explorer 6 böngészőt használó felhasználók bejelentkezéseit tartalmazza. A „Webhelyi bejelentkezések” csak a Salesforce bejelentkezési oldaláról történő bejelentkezéseket tartalmazza.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Még mindig az IE6 böngészőt használja?</param>
+        <param name="login_history_ie6_deprecation_warning_text">A Salesforce fokozatosan meg fogja szüntetni az IE6 böngésző támogatását. A rendelkezésre álló letöltési opciók segítségével nézze meg, hogy saját szervezetében milyen egyéb böngészők használhatók.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">Bejelentkezési URL</param>
+        <param name="order_history">Rendelési előzmények</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Nincs rendelés</param>
+        <param name="order_number">Megrendelés száma</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Rendelés dátuma</param>
+        <param name="order_currency">Pénznem</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Költség összesen</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Vevő</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Nincs <order_product/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Tétel&lt;BR&gt;száma</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Havi ár</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Számlázási adatok</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Számlázás gyakorisága&lt;BR&gt;(hónap)</param>
+        <param name="bo_order_items_billing_frequency_text">Számlázás gyakorisága</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Megrendelés időszaka&lt;BR&gt;(hónap)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Dátum</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Számlák</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Nincs számla</param>
+        <param name="invoices_invoice_number">Számla száma</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Számla dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Számla esedékességi dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">Külső rendszer azonosítója</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Teljes összeg</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Esedékes összeg</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Jóváírás összesen</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Leírható összesen</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Számlázási kapcsolattartó</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Számlázási cég</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Számlaelőzmények</param>
+        <param name="revenue_schedule">Ütemezés</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Dátum</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Árbevétel</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Megjegyzések</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Státuszelőzmények</param>
+        <param name="status_none">Nincs státuszelőzmény</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Szolgáltatás kiválasztása</param>
+        <param name="services_none">Nincs szolgáltatás</param>
+        <param name="services_description">Szolgáltatás</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Egységár</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Teljes ár</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Kedvezmény</param>
+        <param name="training">Oktatási esemény előzményei</param>
+        <param name="training_none">Nincs</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Esemény neve</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Részvétel dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Válaszolt</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Alapértelmezett</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> meghatározva</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Kezdő dátum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Záró dátum</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Élettartam értéke</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Beszerzési szabályokkal rendelkezik</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Számlázás gyakorisága&lt;br&gt;(hónap)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Számlázott időszak vége</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending"><Event/> elfogadva</param>
+        <param name="event_notdecided">Nem válaszolt</param>
+        <param name="event_declined"><Event/> elutasítva</param>
+        <param name="event_attending_none">Egy résztvevő sem fogadta el</param>
+        <param name="event_notdecided_none">Minden résztvevő válaszolt</param>
+        <param name="event_declined_none">Egy résztvevő sem utasította el</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Név</param>
+        <param name="documents_size">Méret</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Szerző</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Beállításkövetési adatok megtekintése</param>
+        <param name="download">letöltés</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Lent látható a szervezetre vonatkozó legutóbbi 20 bejegyzés. A szervezet legutóbbi hat hónapra vonatkozó beállításkövetési adatai {0} .csv formátumú Excel fájlként.</param>
+        <param name="setup_audit_date">Dátum</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Művelet</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Szakasz</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Képviselő felhasználó</param>
+        <param name="setup_audit_proxyinguser_help">Ebben az oszlopban egy olyan felhasználó felhasználóneve szerepel, aki egy másik felhasználó nevében hajtott végre változtatásokat a beállításokon. Ha például egy felhasználó hozzáférést biztosított egy támogató képviselőjének, akkor a képviselő felhasználóneve megjelenik itt.</param>
+        <param name="setup_audit_trail_none">Nincs beállításkövetési adat</param>
+        <param name="setup_audit_download_csv">Az elmúlt hat hónap beállításkövetési adatainak letöltése .csv formátumú Excel fájlként</param>
+        <param name="DashboardComponents_title">Vezérlőpult-összetevők</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Nincs vezérlőpult-összetevő</param>
+        <param name="translated_templates_none">Nincs lefordított e-mail sablon</param>
+        <param name="translated_templates_title">Lefordított e-mail sablonok</param>
+        <param name="translated_templates_language">Nyelv</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Aktív</param>
+        <param name="desc_pnet_conn_audit_trail">Lent látható a szervezetre vonatkozó legutóbbi 20 bejegyzés. Az összes csatlakozáskövetési előzményadat {0} .csv formátumú Excel-fájlként.</param>
+        <param name="pnet_conn_audit_trail">Kapcsolatelőzmények</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Dátum</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Nincs csatlakozáskövetési adat</param>
+        <param name="pnet_conn_audit_download_csv">Csatlakozási előzmények letöltése (csv)</param>
+        <param name="pnet_entity_conns_title">Külső megosztás</param>
+        <param name="pnet_entity_conn_stop_sharing">Megosztás leállítása</param>
+        <param name="pnet_pub_title">Közzétett objektumok</param>
+        <param name="pnet_sub_title">Előfizetett objektumok</param>
+        <param name="pnet_pubsub_object">Objektum neve</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Mezők</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Közzététel/Közzététel visszavonása</param>
+        <param name="pnet_sub_edit">Előfizetés/Előfizetés lemondása</param>
+        <param name="pnet_pub_edit_object">Objektum közzétéve.</param>
+        <param name="pnet_pub_edit_field">Az egyes objektumok rendelkezésre álló mezőinek közzétételéhez kattintson az alábbi Szerkesztés gombra.</param>
+        <param name="pnet_sub_edit_object">Objektum előfizetve.</param>
+        <param name="pnet_sub_edit_field">Az egyes objektumok rendelkezésre álló mezőinek előfizetéséhez kattintson az alábbi Szerkesztés gombra.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Tartalom</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce-mellékletek</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Hiba a kapcsolódó listák betöltésekor</param>
+        <param name="ajax_exception_desc">Hiba történt a rekord kapcsolódó listáira vonatkozó adatok összegyűjtésekor. Ha az oldal ismételt betöltése nem oldja meg a problémát, forduljon a rendszergazdához, vagy &lt;a href="{0}" title="report{1}"&gt;jelentse&lt;/a&gt; a hibát az ügyfélszolgálatnak.</param>
+        <param name="category_access_title">Kategóriacsoport láthatósági beállításai</param>
+        <param name="category_access_video_tutorial">Oktatóvideó</param>
+        <param name="category_access_name">Kategóriacsoport</param>
+        <param name="category_access_access">Láthatóság</param>
+        <param name="category_access_details">Láthatóság adatai</param>
+        <param name="category_access_custom">Egyéni</param>
+        <param name="category_access_full">Összes</param>
+        <param name="category_access_inherited">Következőtől örökölt: {0}</param>
+        <param name="category_access_revoked">Nincs</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">szerep és alárendelések</param>
+        <param name="category_access_noCategories">{0} számára nincs látható kategória</param>
+        <param name="category_access_allCategories">{0} számára az összes kategória látható</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} a következőhöz: {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">általános USA-beli és nyugat-európai (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">japán (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">japán (JIS)</param>
+        <param name="4">japán (EUC)</param>
+        <param name="5">koreai (ks_c_5601-1987)</param>
+        <param name="6">kínai – hagyományos (Big5)</param>
+        <param name="7">kínai – egyszerűsített (GB2312)</param>
+        <param name="8">kínai – hagyományos Hongkong (Big5-HKSCS)</param>
+        <param name="9">japán (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Szervezet a kipróbáláshoz</param>
+        <param name="expand">Kattintson ide az oldalsáv megnyitásához [Alt+S].</param>
+        <param name="collapse">Kattintson ide az oldalsáv bezárásához [Alt+S].</param>
+        <param name="expandNoHotkey">Kattintson ide az oldalsáv megnyitásához</param>
+        <param name="collapseNoHotkey">Kattintson ide az oldalsáv bezárásához</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Fel</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Le</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Mozgatás</param>
+        <param name="top">Elejére</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">Végére</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Töltse ki a kötelező mezőket.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Minden felhasználó</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Új</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Hozzáadás</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Törlés</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Módosítás]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Hogyan...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Részletek megtekintése</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Hívás naplózása</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Jegyzet naplózása</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Körlevél</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Az összes megtekintése</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Fájl csatolása</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Hogyan?</param>
+        <param name="send_email">E-mail küldése</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Felhasználó által hozzáadott kép</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Alkalmazások</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Nyomtatási nézet</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Másolás</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Megosztás folyamatban</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Kezdőoldal</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">További információ</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Válasszon egyet:</param>
+        <param name="hotlist_mode">Kijelölés megjelenítése</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">{0,number,integer} elem megjelenítése</param>
+        <param name="hotlist_empty_title">Nincsenek aktuális rekordok. A rekordok megjelenítéséhez kattintson az Indítás gombra, vagy válasszon egy megjelenítést a legördülő listából.</param>
+        <param name="hotlist_empty_description">Ezekhez a feltételekhez nincs megjeleníthető rekord.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Ugrás a jelentésekhez</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Erőforrásközpont</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">Az erőforrásközpont segítségével potenciális partnerekkel kapcsolatban informálódhat, külső szolgáltatásokat kereshet, illetve további lehetőségeket használhat.</param>
+        <param name="resource_center_link_text">Az Erőforrásközpont megnyitása</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Értékesítési módszertanok</param>
+        <param name="hotlist_recently_modified">Mostanában módosítva</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Mostanában létrehozva</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Legutóbb megtekintett</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Nincs--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Kiválasztás--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Alapértelmezett--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Nem alkalmazható**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">A rendszergazda nem határozott meg egyéni hivatkozásokat.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Ugrás:</param>
+        <param name="JumpToStep">{0}. lépés: {1}</param>
+        <param name="CloseWizard">Varázsló bezárása</param>
+        <param name="LeftHeader">Lépés: {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">{0}/{1}. lépés</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">{0}. lépés</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Mentés és új</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Következő</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Előző</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">A(z) {0} szervezeti beállításvarázslója</param>
+        <param name="ImportWizardTitle">Importálásvarázsló – {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Rendelésközpont</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Regisztrálás kipróbálásra</param>
+        <param name="WizardBody">Varázsló törzse</param>
+        <param name="WizardFooter">Varázsló lábléce</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Cím</param><!-- translators note - this is actually the full address -->
+        <param name="street">Cím</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Város</param><!-- aliased across label files - do not change -->
+        <param name="state">Megye</param><!-- aliased across label files - do not change -->
+        <param name="zip">Irányítószám</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Irányítószám</param> <!-- aliased across label files - do not change -->
+        <param name="country">Ország</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefonszám</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Mellék</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Faxszám</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Külső fax</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-mail</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Szállítási cím</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Szállítási hely – utca</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Szállítási hely – város</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Szállítási hely – állam/tartomány</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Szállítási hely – irányítószám</param>
+        <param name="shippingzippostalcode">Szállítási hely – irányítószám</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Szállítási hely – ország</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Számlázási cím</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Számlázási hely – város</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Számlázási hely – állam/tartomány</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Számlázási hely – irányítószám</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Számlázási hely – ország</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Számlázási hely – utca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Bank címe – utca</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Bank címe</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Bank címe – város</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Bank címe – állam/tartomány</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Bank címe – irányítószám</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Bank címe – ország</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Levelezési cím</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Levelezési cím – utca</param>
+        <param name="mailingcity">Levelezési cím – város</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Levelezési cím – állam/tartomány</param>
+        <param name="mailingzip">Levelezési cím – irányítószám</param>
+        <param name="mailingcountry">Levelezési cím – ország</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Levelezési cím – 1. címsor</param>
+        <param name="mailingaddress2">Levelezési cím – 2. címsor</param>
+        <param name="mailingaddress3">Levelezési cím – 3. címsor</param>
+        <param name="otheraddress">Egyéb cím</param>
+        <param name="otheraddress1">Egyéb cím 1. sora</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Egyéb cím 2. sora</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Egyéb cím 3. sora</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Egyéb cím – utcacím 1. sora</param>
+        <param name="otherstreet2">Egyéb cím – utcacím 2. sora</param>
+        <param name="otherstreet3">Egyéb cím – utcacím 3. sora</param>
+        <param name="othercity">Egyéb cím – város</param>
+        <param name="otherstate">Egyéb cím – állam/tartomány</param>
+        <param name="otherzipcode">Egyéb cím – irányítószám</param>
+        <param name="otherpostalcode">Egyéb cím – irányítószám</param>
+        <param name="otherzippostalcode">Egyéb cím – irányítószám</param>
+        <param name="othercountry">Egyéb cím – ország</param>
+        <param name="otherphone">Egyéb telefonszám</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Egyéb telefonmellék</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">1. címsor</param>
+        <param name="address2">2. címsor</param>
+        <param name="address3">3. címsor</param>
+        <param name="home_phone">Otthoni telefonszám</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Betöltés...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Hely</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Mennyiség</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Címjegyzékkezelő</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Igen</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Nem</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Üdvözli a salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. Minden jog fenntartva.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Minden jog fenntartva.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Az USA kormányának 508-as ajánlásának való megfelelőség</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. Minden jog fenntartva.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Minden jog fenntartva.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, Inc. Minden jog fenntartva.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Minden jog fenntartva.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Biztonsági nyilatkozat</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Használati feltételek</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Köszönjük, hogy a salesforce.com webhelyet választotta. Mielőtt használni kezdené a salesforce.com oldalait, olvassa el és fogadja el az alábbi használati feltételeket. Ha befejezte, az „Elfogadom” gombra kattintva léphet tovább. Amennyiben nem fogadja el a használati feltételeket, nem lesz lehetősége bejelentkezni a salesforce.com webhelyre.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Kész</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Hozzáadás most!</param>
+        <param name="remove">Eltávolítás</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Új</param>
+        <param name="exciting_and_new">Új!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">itt</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Létrehozás</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Ablak bezárása</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Oldal nyomtatása</param>
+        <param name="new_window">(Új ablak)</param>
+        <param name="new_focus">(Fókusz áthelyezése)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Rejtett keret – figyelmen kívül hagyható</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">összes kijelölése</param>
+        <param name="select_shown">Megjelenítettek kijelölése</param>
+        <param name="remove_shown">Megjelenítettek eltávolítása</param>
+        <param name="select_none">Nincs kijelölés</param>
+        <param name="all_active">Összes aktív</param>
+        <param name="all_inactive">Összes inaktív</param>
+        <param name="are_you_sure">Biztos, hogy ezt választja?</param>
+        <param name="irreversible_are_you_sure">Nem vonható vissza! Biztos, hogy ezt választja?</param>
+        <param name="replace">Csere</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Befejezés</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} perc</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Több találat is van. Válasszon a legördülő listából, vagy kattintson az ikonra a keresés pontosításához.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">{0}–{1}. negyedév</param>
+        <param name="reset">Visszaállítás</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Felülírás</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Összesen</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Kattintson ide</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Megjegyzések a rendszergazda számára:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Minta HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Jelszó</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Ez az oldal ne jelenjen meg többször</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Az üzenet elrejtése a következő esetében: </param>
+        <param name="dontShowMessageAgain">Ez az üzenet ne jelenjen meg többször</param>
+        <param name="dismissMessage">Az üzenet bezárása</param>
+        <param name="allObjects">Mindegyik objektum</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">A megnyitáshoz nyomja le a szóköz vagy az Enter billentyűt</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Önálló keresés: <Case_Detail/></param>
+        <param name="CssEdit">Önálló keresés: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/>-webinfó</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Megjegyzés</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Egyéni objektumok</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Egyéni objektum definíciója</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Vezérlőpult</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Vezérlőpultok</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Mindegyik kijelölés törlése</param>
+        <param name="deselect_shown">Megjelenítettek kijelölésének törlése</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Körlevélsablon</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Körlevélsablonok</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Mappa</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Mappák</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Előrejelzések</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Előrejelzések</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Rendszergazdai jogosultságú Live Agent-felhasználó</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Számla</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Megjegyzések</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Rendelés</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Rendelések</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Tétel</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Tételek</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Kifizetés</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Kifizetések</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">jelentés</param>
+        <param name="Reports">Jelentések</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Feliratkozás</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Sablon</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Sablonok</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Táblázat</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Aktív</param>
+        <param name="amount">Mennyiség</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Éves árbevétel</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Dokumentum csatolása</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Jelszó módosítása</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Bezárás</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Lezárt</param>
+        <param name="closed_date">Lezárás dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Lezárás dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Létrehozás dátuma</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Adattípus</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Törölve</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Leírás adatai</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Alkalmazottak</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Fájl</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Fájlok</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Általános információ</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Info lekérése kezdés előtt</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Címke</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Utolsó bejelentkezés</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Utolsó módosítás dátuma</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Név</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Név</param>
+        <param name="new_status">Új állapot</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Nincs</param>
+        <param name="open">Megnyitás</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Szervezet</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Nincs találat.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Összes</param>
+        <param name="clear">Törlés</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Kattintson a keresési ikonra...</param>
+        <param name="click_lookup_icon_info">Érték választásához kattintson a keresési ikonra.</param>
+        <param name="clear_all">Összes törlése</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Kattintson a Csatolás gombra.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Hibák</param> <!-- aliased across lables - do not change -->
+        <param name="high">Magas</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Súgó</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Ugrás oda</param>
+        <param name="keywords">Kulcsszavak</param>
+        <param name="length">Hosszúság</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Állapot</param> <!-- aliased across lables - do not change -->
+        <param name="title">Cím</param>
+        <param name="object_title">Cím</param>
+        <param name="type">Típus</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Felhasználó</param> <!--aliased across labels - do not change -->
+        <param name="Users">Felhasználók</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Engedélykészlet</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profilok</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Tulajdonos</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">tapasztalja meg a sikert.</param>
+        <param name="DontShowPage">Ne mutassa újra ezt az oldalt.</param>
+        <param name="click_here_to_create_new_account">{0} <new/> <account/> azonnali létrehozásához.</param>
+        <param name="click_here_to_create_new_contact">{0} <new/> <contact/> azonnali létrehozásához.</param>
+        <param name="click_here_to_create_new_lead">{0} <new/> <lead/> azonnali létrehozásához.</param>
+        <param name="click_here_to_create_new_opportunity">{0} <new/> <opportunity/> azonnali létrehozásához.</param>
+        <param name="click_here_to_create_new_product">{0} <new/> <product/> azonnali létrehozásához.</param>
+        <param name="SystemModstamp">System Modstamp</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Részleg</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Feldolgozás</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Rekordok frissítése...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Static Translation</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Oldal elrejtése a jövőben</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Feltöltés…</param>
+        <param name="uploading_title">Feltöltés</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Importálás…</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">és </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Hiba: Ez a mező nem érhető el.</param>
+        <param name="noReadAccess">Erre a rekordra vonatkozóan nincs megtekintési jogosultsága.</param>
+        <param name="noAccessToUser">Nem rendelkezik hozzáféréssel ehhez a felhasználóhoz.</param>
+        <param name="disabledButton">Letiltott gomb: {0}</param>
+        <param name="RequiredHeader">Kötelező adat</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Kép beszúrása</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Biztos, hogy törli a bejelentkezés IP-tartományát?</param>
+        <param name="AMPM">AMPM bejegyzés</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Védett összetevő</param>
+        <param name="dialogCloseConfirm">Lehet, hogy az éppen látható megerősítési ablak idő előtt bezárult. Kattintson az OK gombra a visszalépéshez vagy a Mégse gombra a figyelmeztetés bezárásához.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Párbeszédpanel indítása</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Találatok</param>
+        <param name="Recent">Legutóbb megtekintett</param>
+        <param name="NoMatchHeader">Az egyik alábbi okból kifolyólag nem találhatók rekordok:</param>
+        <param name="BulletOne">Nincsenek ilyen típusú rekordok</param>
+        <param name="BulletTwo">Nincs jogosultsága a rekordok megtekintéséhez</param>
+        <param name="BulletThree">A rekordok nem felelnek meg a rendszergazda által beállított szűrési feltételeknek</param>
+        <param name="BulletFour">Egy vagy több vezérlőmező üres vagy érvénytelen (vezérlőmezők:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Elérhető felhasználók</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Kijelölt felhasználók</param>
+        <param name="LicensedUsers">Licencelt felhasználók</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Eltávolításra kijelölve</param>
+        <param name="Selected">Kiválasztott</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Választott</param>
+        <param name="UnassignedPackages">Hozzá nem rendelt csomagok</param>
+        <param name="SelectedPackages">Kijelölt csomagok</param>
+        <param name="InView">nézetben</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Ez a fájl meghaladja a maximális{0} méret korlátozását.</param>
+        <param name="no_file_specified">Adjon meg egy feltöltendő fájlt. Írja be a fájl elérési útját, vagy a „Tallózás” gombra kattintva keresse meg a helyi fájlrendszerben.</param>
+        <param name="invalid_file_type">A megadott fájltípust a rendszer egyelőre nem támogatja.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">A fájlnév hossza meghaladja a maximális megengedett értéket ({0} karakter).</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">A fájl kiterjesztésének hossza meghaladja a maximális megengedett értéket ({0} karakter).</param>
+        <param name="bytes">bájt</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">A HTML fájltípusok használata biztonsági okokból nem megengedett.</param>
+        <param name="attachment_size_exceeded">A feltöltött fájl mérete meghaladta a felső méretkorlátot.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Hiba:&lt;/b&gt; Ki kell választania a feltölteni kívánt képet</param>
+        <param name="upload_file_too_large">&lt;b&gt;Hiba:&lt;/b&gt; A kép mérete meghaladja az 1 MB-os méretkorlátot.</param>
+        <param name="invalid_file_type">&lt;b&gt;Hiba:&lt;/b&gt; Kizárólag png, gif vagy jpeg formátumú fájlt lehet beszúrni.</param>
+        <param name="upload_failed">&lt;b&gt;Hiba:&lt;/b&gt; A feltöltés nem sikerült, próbálkozzon ismét később.</param>
+        <param name="invalid_file">&lt;b&gt;Hiba:&lt;/b&gt; A fájl nem érvényes képfájl.</param>
+        <param name="invalid_param">&lt;b&gt;Hiba:&lt;/b&gt; Érvénytelen paraméterek.</param>
+        <param name="access_failed_alt">Ez a kép a következő okból kifolyólag nem áll rendelkezésre: Nem rendelkezik jogosultsággal a megtekintéséhez, vagy a képet törölték a rendszerből.</param>
+        <param name="weekly_export_folder">Egyéb feltöltött biztosíték/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0}létrehozása sikeresen megtörtént.</param>
+        <param name="Failure_message">A létrehozási művelet sikertelen volt.</param>
+        <param name="Common_success_message">A létrehozási művelet sikeresen megtörtént.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Licencszám-csökkentés kérése</param>
+        <param name="pageheader">A licencszám-csökkentési kérelem elküldéséhez töltse ki az összes kötelezően kitöltendő mezőt. Ez biztosítja, hogy kérelmének feldolgozása a lehető leggyorsabban megtörténjen.  Ne küldjön be több kérelmet ugyanazon licencekkel kapcsolatban, az ugyanis fölösleges késlekedéshez vezethet.</param>
+        <param name="title_landing">Kérelmét fogadtuk!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Kérelme beérkezett, feldolgozása az érkezés sorrendjében megkezdődik. Vegye figyelembe, hogy a licencek számának csökkentése a kérelem feldolgozása utáni számlázási időszak elejétől lép életbe, amennyiben a következő számlázási időszak számlakiállítási dátuma előtt 5 munkanappal értesíti a salesforce.com vállalatot.</param>
+        <param name="pageheader_landing">Kérelme beérkezett, feldolgozása az érkezés sorrendjében megkezdődik. A licencei számának csökkentésére irányuló kérelmek 30 nappal a kérelem elküldése után lépnek életbe. Ne küldjön több licencszám-csökkentési kérelmet ugyanazon licencekre vonatkozóan, mert az lassúbbá teheti a kérelem feldolgozását.</param>
+        <param name="title_error">Kérelmét nem sikerült feldolgozni.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Nem sikerült elküldeni kérelmét. Próbálja meg újra később.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">A kérelem elküldése</param>
+        <param name="reason">Ok</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Adjon&lt;br&gt; részletesebb leírást.</param>
+        <param name="numLicenses">Licencek száma</param>
+        <param name="potentialResponse">Hogyan őrizhetjük meg&lt;br&gt; az Ön üzletét?</param>
+        <param name="tips_title">Tippek a licencszám-csökkentési kérelmek küldésével kapcsolatban</param>
+        <param name="tip1">Kérelmének gyors és hibátlan feldolgozása érdekében ügyeljen arra, hogy minden információt pontosan adjon meg.  Ezen kérelem elküldése előtt győződjön meg arról, hogy elég felhasználót tiltott le az új licencszám betartásához. Ezt a &lt;a href="{0}"&gt;Felhasználók kezelése&lt;/a&gt; funkcióval hajthatja végre a &lt;a href="{1}"&gt;Saját beállítások&lt;/a&gt; menüben.</param>
+        <param name="type1">Fiók törlése</param>
+        <param name="type2">Felhasználói licencek számának csökkentése</param>
+        <param name="type3">Offline licencek számának csökkentése</param>
+        <param name="type4">Kampánylicencek számának csökkentése</param>
+        <param name="type5">Mobile Edition for au törlése</param>
+        <param name="type6">Mobile Edition for au licencszám-csökkentése</param>
+        <param name="type7">Force.com Mobile licencszámcsökkentés</param>
+        <param name="reason_0">Vállalat felvásárolva/összevonva</param>
+        <param name="reason_1">Vállalat felszámolása</param>
+        <param name="reason_2">Értékesítők elbocsátva</param>
+        <param name="reason_3">Végfelhasználók nem alkalmazzák</param>
+        <param name="reason_4">A működése nem hozza az elvárt szintet</param>
+        <param name="reason_5">A vezetés nem látja kellően értékesnek</param>
+        <param name="reason_6">Rossz tapasztalatok a salesforce.com alkalmazottaival</param>
+        <param name="reason_7">Túl magas ár</param>
+        <param name="reason_8">Áttérés versenytárshoz</param>
+        <param name="reason_9">Felhasználatlan licencek</param>
+        <param name="reason_10">Egyéb</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Töltse ki a következő mezőket:</param>
+        <param name="title">A visszajelzéseket a salesforce.com számára küldheti el</param>
+        <param name="title_upgrade_me">Frissítési kérelem rögzítése</param>
+        <param name="title_support">Visszajelzés küldése</param>
+        <param name="warning_line_too_long">Figyelmeztetés: A Leírás mező 4000-nél több karaktert tartalmaz. A korláton kívüli betűket a rendszer levágja.\\n</param>
+        <param name="feedback_info">Kapcsolatfelvétel az ügyfélszolgálattal</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Az esetlegesen felmerülő kérdéseivel vagy visszajelzéseivel forduljon az Ügyfélszolgálathoz. Ügyfeleink visszajelzéseit nagy mértékben figyelembe vesszük a salesforce.com webhely kialakítása és fejlesztése során. Örömmel vesszük, ha kapcsolatba lép velünk és megosztja ötleteit.</param>
+        <param name="general_info_me">Ha tájékoztatásra van szüksége azzal kapcsolatban, hogy a Personal Edition hogyan fejleszthető tovább valamelyik céges változatra, akkor töltse ki az alábbi űrlapot. Értékesítési képviselőnk két munkanapon belül visszahívja Önt.</param>
+        <param name="general_info_support">Az esetlegesen felmerülő kérdéseivel vagy visszajelzéseivel forduljon az Ügyfélszolgálathoz. A Salesforce CRM hívásközpontjának kialakításakor nagymértékben ügyfeleink észrevételeire támaszkodunk. Nagyra értékeljük és megköszönjük, ha elmondja ötleteit! Reméljük, hamarosan kapcsolatba lép velünk!</param>
+        <param name="defaultOrigin">Internet</param>
+        <param name="defaultStatus">Új</param>
+        <param name="functionalArea">Témakör</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Kérdés</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Kérés</param>
+        <param name="type3">Visszajelzés</param>
+        <param name="type4">Funkció kérése</param>
+        <param name="priority1">Vészhelyzet</param>
+        <param name="priority2">Szokásos</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Alacsony</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Szeretnék most előfizetni a Professional Edition változatra</param>
+        <param name="subject_subscribe_me">Szeretnék most frissíteni</param>
+        <param name="subject_subscribe_we">Szeretnék további tájékoztatást kapni a Professional Edition változattal kapcsolatban</param>
+        <param name="subject_subscribe_ee">Szeretnék most előfizetni a Professional Edition változatra</param>
+        <param name="subject_subscribe_ue">Szeretnék most előfizetni az Unlimited Edition változatra</param>
+        <param name="subject_subscribe_support">Szeretnék most előfizetni</param>
+        <param name="subject_data_export">Igénybe szeretném venni a Heti exportálás szolgáltatást</param>
+        <param name="subject_marketing_licenses">Marketinglicencek hozzáadása</param>
+        <param name="subject_offline_licenses">Offline licencek hozzáadása</param>
+        <param name="subject_wireless_licenses">Vezeték nélküli licencek hozzáadása</param>
+        <param name="subject_offlinepda_licenses">Sales Anywhere licencek hozzáadása</param>
+        <param name="subject_mobile_licenses">Force.com mobillicencek hozzádása</param>
+        <param name="subject_sfcontent_licenses">Salesforce CRM tartalomlicencek hozzáadása</param>
+        <param name="subject_knowledge_licenses">Tudáslicencek hozzáadása</param>
+        <param name="subject_interaction_licenses">Force.com Flow-licencek hozzáadása</param>
+        <param name="subject_support_licenses">Szolgáltatási felhő licencek hozzáadása</param>
+        <param name="subject_jigsaw_licenses">Jigsaw-licencek hozzáadása</param>
+        <param name="subject_liveagent_licenses">Live Agent-licencek hozzáadása</param>
+        <param name="subject_siteforcecontributor_licenses">Site.com-közreműködői licencek hozzáadása</param>
+        <param name="subject_siteforcepublisher_licenses">Site.com-kibocsátói licencek hozzáadása</param>
+        <param name="subject_chatteranswers_licenses">Chatter Answers-licencek hozzáadása</param>
+        <param name="subject_license_reduction">Licencek csökkentése</param>
+        <param name="functionalArea_0">Ügyfél/licencek adminisztrálása</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Számlázási ügyintézés</param>
+        <param name="functionalArea_3">Adatcsatlakozás</param>
+        <param name="functionalArea_4">E-mail/HTML e-mail</param>
+        <param name="functionalArea_5">Előrejelzések és lehetőségek</param>
+        <param name="functionalArea_6">Importálás</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Lead-ek</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Teljesítmény</param>
+        <param name="functionalArea_9">Jelentések és nézetek</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Azonnali feliratkozás</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Szinkronizálás</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Heti exportálás szolgáltatás</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Vezeték nélküli</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Egyéb</param>
+        <param name="functionalArea_16">Marketinglicenc</param>
+        <param name="functionalArea_17">Offline licenc</param>
+        <param name="functionalArea_18">Profilok/oldalelrendezések/rekordtípusok</param>
+        <param name="functionalArea_19">Kampányok</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Önkiszolgáló portál</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Vezeték nélküli licenc</param>
+        <param name="functionalArea_22">Azonnali frissítés</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere licenc</param>
+        <param name="functionalArea_24">Feladatok/események </param>
+        <param name="functionalArea_25"><Products/> &amp; Éves díjak/ <Pricebooks/></param>
+        <param name="functionalArea_26">Nagy üzlettel kapcsolatos riasztás </param>
+        <param name="functionalArea_27">Dokumentumok</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Esetek és megoldások </param>
+        <param name="functionalArea_29">Keresés</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Megosztás</param>
+        <param name="functionalArea_31">Force.com – offline kapcsolódás</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">Partnerportál licenc</param>
+        <param name="functionalArea_36">Force.com Mobile licenc</param>
+        <param name="functionalArea_37">Salesforce CRM tartalomlicenc</param>
+        <param name="functionalArea_38">Szolgáltatási felhő licenc</param>
+        <param name="functionalArea_39">Jigsaw-licenc</param>
+        <param name="functionalArea_40">Live Agent-licenc</param>
+        <param name="functionalArea_41">Site.com-közreműködői licenc</param>
+        <param name="functionalArea_42">Site.com-kibocsátói licenc</param>
+        <param name="functionalArea_43">Chatter Answers-licenc</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Ha közvetlenül szeretne beszélni ügyfélszolgálati munkatársunkkal, akkor hétfőtől péntekig magyar idő szerint 14 és hajnali 2 óra között hívja a (415) 901-7010 számot, vagy hétfőtől péntekig magyar idő szerint 9 és 19 óra között hívja a +353-1-2723503 számot.</param>
+        <param name="tips_title">Esetek bejelentésével kapcsolatos tanácsok</param>
+        <param name="tip1">Kérjük, győződjön meg arról, hogy elegendő információt biztosított számunkra ahhoz, hogy a lehető leggyorsabban járhassunk el ügyében.  Az alábbiakban néhány tanácsot és emlékeztetőt olvashat:</param>
+        <param name="tip2">Mondja el nekünk, mit szeretne elérni, milyen eredményt vár, és ehelyett mi történik.</param>
+        <param name="tip3">Mondja el, milyen lépések végrehajtásával lehet ismét előidézni az Ön által tapasztalt jelenséget.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Nézet:</param>
+        <param name="X">X</param>
+        <param name="close">Bezár.</param>
+        <param name="MLclose">Bezárás</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Törl.</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Törlés</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Megsemm.</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Rekord</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Beállítás</param>
+        <param name="activate">Bekapcsolás</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Kikapcsolás</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Kezelés</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Exportálás</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Következő oldal</param>
+        <param name="prev">Előző oldal</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">A nézetben található összes elem száma: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">{0} {1} rekord jelenjen meg listaoldalanként.</param>
+        <param name="number_shown_detail_page">Mindig {0} {1} {2} rekord jelenjen meg egy kapcsolódó listában.</param>
+        <param name="number_shown_adjust_less_link">kevesebb</param>
+        <param name="number_shown_adjust_more_link">több</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">mind</param>
+        <param name="last_page">Vissza az előző lapra</param>
+        <param name="last_list">Vissza a listához</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Vissza a listához:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Vissza a listához: <Entity entity="0" plural="y"/> a kapcsolatokból</param>
+        <param name="last_suggested_solution_list">Vissza a <suggested/> <solutions/> listájához</param>
+        <param name="last_solution_search_list">Vissza a <solution plural="n"/> keresési eredményeihez</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Vissza a következőhöz: <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Műveletek:</param>
+        <param name="checkboxPrompt">Legalább egy sort jelöljön ki</param>
+        <param name="checkboxSinglePrompt">Egy sort jelöljön ki</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Az oldalon megadott beállítások elvesznek. Folytatja?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">A művelet végrehajtásához {0}vagy kevesebb sort kell kijelölnie.</param>
+        <param name="selectionLimit">Legfeljebb {0} sort jelölhet ki.</param>
+        <param name="login">Belépés</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Munkamenet</param>
+        <param name="none">Nincs megjeleníthető rekord.</param>
+        <param name="no_rows">Nincs kijelölt sor</param>
+        <param name="subtotal">Részösszeg:</param>
+        <param name="total">Összesen:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Az összes elem kijelölése</param>
+        <param name="clearAllInfo">Az összes elem kijelölésének megszüntetése</param>
+        <param name="rename">Átnevezés</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Kiválasztás</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Kijelölés megszüntetése</param>
+        <param name="toggleall">Az összes sor ki- vagy bekapcsolása</param>
+        <param name="refresh">Frissítés</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Válasszon nézetet.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">A megadott nézet meghaladja a maximális méretet. A nézet szerkesztésével vagy új nézet létrehozásával szűkítse a keresési feltételeket.</param>
+    <param name="switch_view">Nézet váltása</param>
+    <param name="records_x_to_y">{0}–{1}. rekord megjelenítése</param>
+    <param name="records_x_to_y_more">{0}–{1}. rekord megjelenítése (további rekordok érhetőek el)</param>
+    <param name="records_x_to_y_more_showing_max">{0}–{1}. rekord megjelenítése. Ezen a lapon csak az első 1000 rekord jeleníthető meg, de további rekordok érhetőek el. Kevesebb rekord megjelenítéséhez adjon meg részletesebb feltételeket a listanézethez. 1000-nél több rekord esetén futtasson jelentést, majd kattintson a jelentés Nyomtatási nézet gombjára.</param>
+    <param name="number_of_records">Rekordok száma</param>
+        <param name="createCase"><Case/> létrehozása</param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Kattintson ide a beágyazott elemek kibontásához/összecsukásához.</param>
+        <param name="expand">Kattintson ide a beágyazott elemek kibontásához.</param>
+        <param name="collapse">Kattintson ide a beágyazott elemek összecsukásához.</param>
+        <param name="shortExpand">Kibontás</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Összecsukás</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Kibontva</param>
+        <param name="collapsed">Összecsukva</param>
+        <param name="level">Szint</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Hierarchia:</param>
+        <param name="siblings">Testvérek:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Keresés</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Válasszon objektumot</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Személy</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Elem</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">A keresés eredménye meghaladja a sorok maximális számát ({0}). Szűkítse a keresési feltételeket.</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Minden jog fenntartva.</param>
+        <param name="useWildcards">A többi karakter mellé beírt helyettesítő karakter (*) használatával javíthatja a keresés eredményességét.  Például az „ad*” kifejezés beírása az összes olyan rekordot adja eredményül, amelynek nevében szerepel az „ad” karakterlánc.</param>
+        <param name="useWildcardsWithSearch">A többi karakter mellé beírt helyettesítő karakter (*) használatával javíthatja a keresés eredményességét.</param>
+        <param name="error_lookup_multiple_matches_ile">Több találat is van.&lt;br&gt;Kattintson az ikonra a keresés pontosításához.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Lista kibontása</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Kibontott lista</param>
+        <param name="sharing">Megosztás folyamatban</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Miért?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Több szűrő &gt;&gt;</param>
+        <param name="less_filters">Kevesebb szűrő &lt;&lt;</param>
+        <param name="by_keyword">Kulcsszó szerint</param>
+        <param name="by_filter">Mezőszűrő szerint</param>
+        <param name="too_many">A keresés több mint {0} sort adott eredményül. Csak az első {0} sor jelenik meg. Szűkítse a keresési feltételeket.</param>
+        <param name="Results">Eredmények</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Keresés:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Eredmény</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Mező</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Logikai operátor</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Érték</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">A szűrők között vagylagosságot alakíthat ki, ha több elemet ír be a harmadik oszlopba.</param>
+        <param name="tip_1">Maximum 10 elemet írhat be egymástól vesszővel elválasztva azokat. Példa: A CA, NY, TX, FL kifejezésnél a keresés a CA vagy NY vagy TX vagy FL rövidítést keresi.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">A vesszőt tartalmazó adatokat tegye zárójelek közé. Például a „200,000”, „1,000,000” keresés a 200,000 vagy a 1,000,000 karakterláncot keresi.</param>
+        <param name="tip_3">Jelölőnégyzetek esetében használható az „Igaz” és a „Hamis” operátor, például „Aktív egyenlő Igaz” vagy „Átalakítva egyenlő Hamis”.</param>
+        <param name="tip_4">A területkódokon alapuló szabálybejegyzések esetében például zárójelek használata lehet szükséges. A telefonszám elején (415), (510) szerepel.</param>
+        <param name="tip_5">Ha a fordítórendszert használja, az összes szűrési feltételt főértékek használatával adja meg.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Elérhető</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Kijelölések</param>
+        <param name="assignLicensesDescription">Jelölje be a felhasználóhoz hozzárendelni kívánt csomagok mellett látható jelölőnégyzeteket, majd kattintson a Hozzárendelés gombra. A jelölőnégyzet nem látható, ha a csomag nem rendelkezik a megfelelő licencekkel, ha a csomag állapota Lejárt vagy Felfüggesztve.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portál alapértelmezése</param>
+        <param name="3">Webáruház</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Elfogadás</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Információ</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Hiba</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Figyelmeztetés</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Biztonságos</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Gyakoriság</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Naponta</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Hetente</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Havonta</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Minden hétköznap</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Mindennap</param>
+       <param name="lastDay">utolsó</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">az első</param>
+    <param name="on2">a második</param>
+    <param name="on3">a harmadik</param>
+    <param name="on4">a negyedik</param>
+    <param name="onLast">az utolsó</param>
+    <param name="startTime">Indítás</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Befejezés</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Preferált kezdési idő</param>
+    <param name="noPreference">Nincs preferencia</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">A pontos kezdési idő a feladatsorban zajló tevékenységtől függ majd.</param>
+
+    <param name="diffTimeZoneMsg">A havonkénti gyakorisági beállítás időzónája:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;A gyakorisági beállítások az azokat legutoljára szerkesztő felhasználó időzónáját jelenítik meg.&lt;br&gt;Az ezeken a beállításokon végrehajtott minden változtatást úgy aktualizál a rendszer, hogy az Ön időzónájának legyen megfelelő.</param>
+
+      <param name="weeklyRecurrence">Az ismétlődés napja minden héten {0}.</param>
+      <param name="weeklyRecurrenceLegendLabel">Az ismétlődés napja minden héten:</param>
+      <param name="monthlyRecurrence1">Az ismétlődés napja minden hónap {0}. napja.</param>
+      <param name="monthlyRecurrence1LegendLabel">Megadott</param>
+      <param name="monthlyRecurrence2LegendLabel">Egyéni</param>
+      <param name="monthlyRecurrence2">Az ismétlődés időpontja minden hónapban: {2} {0} {3} {1}</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">Az ismétlődés időpontja minden hónapban: {0} {1}.</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Minden hónap adott napján</param>
+      <param name="accessibleMonthly2">Minden hónap egyénileg megadott napján</param>
+      <param name="accessibleOnDayN">Adott nap</param>
+      <param name="accessibleOnDayNOfWeek">Előfordulás</param>
+      <param name="accessibleOnDayName">Nap</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Ezzel az egyszerű teszttel megakadályozhatja, hogy rosszindulatú programok hozzáférjenek az adataihoz.  A rendszergazda nagyméretű letöltések esetére kötelezővé tette ezt a tesztet.  Ezt a műveletet minden bejelentkezés esetén csak egyszer kell végrehajtania.</param>
+        <param name="imagePrompt">Írja be a fenti szavakat, szóközzel elválasztva:</param>
+        <param name="audioPrompt">Írja be a hallott számokat:</param>
+        <param name="refresh">Új feladat kérése</param>
+        <param name="audio">Új hangfeladat kérése</param>
+        <param name="image">Új képfeladat kérése</param>
+        <param name="incorrect">Helytelen, próbálkozzon újra</param>
+        <param name="moreinfo">Több információ &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Kevesebb információ</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">További információért kattintson ide...</param>
+        <param name="show">A Kiemelt elemek panel megjelenítése</param>
+        <param name="hide">A Kiemelt elemek panel elrejtése</param>
+        <param name="empty">Ehhez a rekordhoz nem tartoznak kiemelt mezők.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Bemutató</param>
+        <param name="closeIntro">Köszönöm, nem.</param>
+        <param name="closeOutro">Bezárás</param>
+        <param name="showLater">Csak később mutassa meg</param>
+        <param name="replay">Lejátszás</param>
+        <param name="continue">Folytatás</param>
+        <param name="previous">Előző</param>
+        <param name="startTour">Bemutató indítása</param>
+        <param name="endTour">Bemutató befejezése</param>
+        <param name="stepCounter">{0} / {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Adatok</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Ajánlások</param>
+        <param name="hideBucketTip">&lt;br&gt;Az elrejteni kívánt elemeket &lt;br/&gt;húzza ide az oldalról.</param>
+        <param name="hiddenListTip">Ha az elrejtett elemeket szeretné újra megjeleníteni, akkor húzza vissza őket a fenti listába.</param>
+        <param name="hiddenListShowLinkLabel">{0} rejtett</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Vissza az elejére</param>
+        <param name="multipleItemDragGhost">Több elem ({0} db)</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Adatoldal böngésző-kompatibilitása</param>
+        <param name="compatibilityMsgSubTitle">Ez a böngésző itt nem támogatott</param>
+        <param name="compatibilityMsg1">Ezzel a böngészővel nem lehet megnyitni az új adatoldalt.</param>
+        <param name="compatibilityMsg2">Az új funkciók az alábbi kompatibilis böngészők valamelyikének használatakor érhetők el:</param>
+        <param name="supportedIE">Internet Explorer 7 vagy 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Köszönjük!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">A klasszikus nézet beállítása alapértelmezettként</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">{0} kereséséhez írja be ide az elemet...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">A keresési feltételnek egyetlen {0} sem felelt meg.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">{0} oldal, összesen: {1}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

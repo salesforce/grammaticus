@@ -1,0 +1,3243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+<adjectives>
+    <!--=====================================================================
+      Modifier - Adjectives
+
+      <adjective> tag has no attributes.
+      <Values>:
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       plural: (y)es | (n)o                                  - default is n
+
+       Note: The default value of attributes are neutor/singular.
+           <adjective name="">
+              <value>x</value>
+</adjective>
+
+       This element  has only singular form.
+    ======================================================================-->
+
+
+<adjective name="Accessed">
+    <value plural="n" case="n">Käytetty</value>
+    <value plural="y" case="n">Käytetyt</value>
+    <value plural="n" case="g">Käytetyn</value>
+    <value plural="y" case="g">Käytettyjen</value>
+    <value plural="n" case="ines">Käytetyssä</value>
+    <value plural="y" case="ines">Käytetyissä</value>
+    <value plural="n" case="el">Käytetystä</value>
+    <value plural="y" case="el">Käytetyistä</value>
+    <value plural="n" case="il">Käytettyyn</value>
+    <value plural="y" case="il">Käytetettyihin</value>
+    <value plural="n" case="ad">Käytetyllä</value>
+    <value plural="y" case="ad">Käytetyillä</value>
+    <value plural="n" case="abl">Käytetyltä</value>
+    <value plural="y" case="abl">Käytetyiltä</value>
+    <value plural="n" case="al">Käytetylle</value>
+    <value plural="y" case="al">Käytetyille</value>
+    <value plural="n" case="es">Käytettynä</value>
+    <value plural="y" case="es">Käytettyinä</value>
+    <value plural="n" case="tra">Käytetyksi</value>
+    <value plural="y" case="tra">Käytetyiksi</value>
+    <value plural="n" case="par">Käytettyä</value>
+    <value plural="y" case="par">Käytettyjä</value>
+</adjective>
+
+<adjective name="Active">
+    <value plural="n" case="n">Aktiivinen</value>
+    <value plural="y" case="n">Aktiiviset</value>
+    <value plural="n" case="g">Aktiivisen</value>
+    <value plural="y" case="g">Aktiivisten</value>
+    <value plural="n" case="ines">Aktiivisessa</value>
+    <value plural="y" case="ines">Aktiivisissa</value>
+    <value plural="n" case="el">Aktiivisesta</value>
+    <value plural="y" case="el">Aktiivisista</value>
+    <value plural="n" case="il">Aktiiviseen</value>
+    <value plural="y" case="il">Aktiivisiin</value>
+    <value plural="n" case="ad">Aktiivisella</value>
+    <value plural="y" case="ad">Aktiivisilla</value>
+    <value plural="n" case="abl">Aktiiviselta</value>
+    <value plural="y" case="abl">Aktiivisilta</value>
+    <value plural="n" case="al">Aktiiviselle</value>
+    <value plural="y" case="al">Aktiivisille</value>
+    <value plural="n" case="es">Aktiivisena</value>
+    <value plural="y" case="es">Aktiivisina</value>
+    <value plural="n" case="tra">Aktiiviseksi</value>
+    <value plural="y" case="tra">Aktiivisiksi</value>
+    <value plural="n" case="par">Aktiivista</value>
+    <value plural="y" case="par">Aktiivisia</value>
+</adjective>
+
+<adjective name="Additional">
+    <value plural="n" case="n">Lisäkohde</value>
+    <value plural="y" case="n">Lisäkohteet</value>
+    <value plural="n" case="g">Lisäkohteen</value>
+    <value plural="y" case="g">Lisäkohteiden</value>
+    <value plural="n" case="ines">Lisäkohteessa</value>
+    <value plural="y" case="ines">Lisäkohteissa</value>
+    <value plural="n" case="el">Lisäkohteesta</value>
+    <value plural="y" case="el">Lisäkohteista</value>
+    <value plural="n" case="il">Lisäkohteeseen</value>
+    <value plural="y" case="il">Lisäkohteisiin</value>
+    <value plural="n" case="ad">Lisäkohteella</value>
+    <value plural="y" case="ad">Lisäkohteilla</value>
+    <value plural="n" case="abl">Lisäkohteelta</value>
+    <value plural="y" case="abl">Lisäkohteilta</value>
+    <value plural="n" case="al">Lisäkohteelle</value>
+    <value plural="y" case="al">Lisäkohteille</value>
+    <value plural="n" case="es">Lisäkohteena</value>
+    <value plural="y" case="es">Lisäkohteina</value>
+    <value plural="n" case="tra">Lisäkohteeksi</value>
+    <value plural="y" case="tra">Lisäkohteiksi</value>
+    <value plural="n" case="par">Lisäkohdetta</value>
+    <value plural="y" case="par">Lisäkohteita</value>
+</adjective>
+
+<adjective name="All">
+    <value plural="n"  case="n">Kaikki</value>
+    <value plural="y" case="n">Kaikki</value>
+    <value plural="n" case="g">Kaikkien</value>
+    <value plural="y" case="g">Kaikkien</value>
+    <value plural="n" case="ines">Kaikissa</value>
+    <value plural="y" case="ines">Kaikissa</value>
+    <value plural="n" case="el">Kaikista</value>
+    <value plural="y" case="el">Kaikista</value>
+    <value plural="n" case="il">Kaikkiin</value>
+    <value plural="y" case="il">Kaikkiin</value>
+    <value plural="n" case="ad">Kaikilla</value>
+    <value plural="y" case="ad">Kaikilla</value>
+    <value plural="n" case="abl">Kaikilta</value>
+    <value plural="y" case="abl">Kaikilta</value>
+    <value plural="n" case="al">Kaikille</value>
+    <value plural="y" case="al">Kaikille</value>
+    <value plural="n" case="es">Kaikkina</value>
+    <value plural="y" case="es">Kaikkina</value>
+    <value plural="n" case="tra">Kaikiksi</value>
+    <value plural="y" case="tra">Kaikiksi</value>
+    <value plural="n" case="par">Kaikkia</value>
+    <value plural="y" case="par">Kaikkia</value>
+</adjective>
+
+<adjective name="All_Day">
+    <value plural="n" case="n">Kokopäiväinen</value>
+    <value plural="y" case="n">Jokapäiväinen</value>
+    <value plural="n" case="g">Kokopäiväisen</value>
+    <value plural="y" case="g">Jokapäiväisen</value>
+    <value plural="n" case="ines">Kokopäiväisessä</value>
+    <value plural="y" case="ines">Jokapäiväisessä</value>
+    <value plural="n" case="el">Kokopäiväisestä</value>
+    <value plural="y" case="el">Jokapäiväisestä</value>
+    <value plural="n" case="il">Kokopäiväiseen</value>
+    <value plural="y" case="il">Jokapäiväiseen</value>
+    <value plural="n" case="ad">Kokopäiväisellä</value>
+    <value plural="y" case="ad">Jokapäiväisellä</value>
+    <value plural="n" case="abl">Kokopäiväiseltä</value>
+    <value plural="y" case="abl">Jokapäiväiseltä</value>
+    <value plural="n" case="al">Kokopäiväiselle</value>
+    <value plural="y" case="al">Jokapäiväiselle</value>
+    <value plural="n" case="es">Kokopäiväisenä</value>
+    <value plural="y" case="es">Jokapäiväisenä</value>
+    <value plural="n" case="tra">Kokopäiväiseksi</value>
+    <value plural="y" case="tra">Jokapäiväiseksi</value>
+    <value plural="n" case="par">Kokopäiväistä</value>
+    <value plural="y" case="par">Jokapäiväistä</value>
+</adjective>
+
+<adjective name="Alternative">
+    <value plural="n" case="n">Vaihtoehtoinen</value>
+    <value plural="y" case="n">Vaihtoehtoiset</value>
+    <value plural="n" case="g">Vaihtoehtoisen</value>
+    <value plural="y" case="g">Vaihtoehtoisten</value>
+    <value plural="n" case="ines">Vaihtoehtoisessa</value>
+    <value plural="y" case="ines">Vaihtoehtoisissa</value>
+    <value plural="n" case="el">Vaihtoehtoisesta</value>
+    <value plural="y" case="el">Vaihtoehtoisista</value>
+    <value plural="n" case="il">Vaihtoehtoiseen</value>
+    <value plural="y" case="il">Vaihtoehtoisiin</value>
+    <value plural="n" case="ad">Vaihtoehtoisella</value>
+    <value plural="y" case="ad">Vaihtoehtoisilla</value>
+    <value plural="n" case="abl">Vaihtoehtoiselta</value>
+    <value plural="y" case="abl">Vaihtoehtoisilta</value>
+    <value plural="n" case="al">Vaihtoehtoiselle</value>
+    <value plural="y" case="al">Vaihtoehtoisille</value>
+    <value plural="n" case="es">Vaihtoehtoisena</value>
+    <value plural="y" case="es">Vaihtoehtoisina</value>
+    <value plural="n" case="tra">Vaihtoehtoiseksi</value>
+    <value plural="y" case="tra">Vaihtoehtoisiksi</value>
+    <value plural="n" case="par">Vaihtoehtoista</value>
+    <value plural="y" case="par">Vaihtoehtoisia</value>
+</adjective>
+
+    <adjective name="Another">
+    <value plural="n" case="n">Toinen</value>
+    <value plural="y" case="n">Toiset</value>
+    <value plural="n" case="g">Toisen</value>
+    <value plural="y" case="g">Toisten</value>
+    <value plural="n" case="ines">Toisessa</value>
+    <value plural="y" case="ines">Toisissa</value>
+    <value plural="n" case="el">Toisesta</value>
+    <value plural="y" case="el">Toisista</value>
+    <value plural="n" case="il">Toiseen</value>
+    <value plural="y" case="il">Toisiin</value>
+    <value plural="n" case="ad">Toisella</value>
+    <value plural="y" case="ad">Toisilla</value>
+    <value plural="n" case="abl">Toiselta</value>
+    <value plural="y" case="abl">Toisilta</value>
+    <value plural="n" case="al">Toiselle</value>
+    <value plural="y" case="al">Toisille</value>
+    <value plural="n" case="es">Toisena</value>
+    <value plural="y" case="es">Toisina</value>
+    <value plural="n" case="tra">Toiseksi</value>
+    <value plural="y" case="tra">Toisiksi</value>
+    <value plural="n" case="par">Toista</value>
+    <value plural="y" case="par">Toisia</value>
+</adjective>
+        
+<adjective name="Any">        
+    <value plural="n">Any</value>
+</adjective>
+
+<adjective name="Archived">
+    <value plural="n" case="n">Arkistoitu</value>
+    <value plural="y" case="n">Arkistoidut</value>
+    <value plural="n" case="g">Arkistoidun</value>
+    <value plural="y" case="g">Arkistoitujen</value>
+    <value plural="n" case="ines">Arkistoidussa</value>
+    <value plural="y" case="ines">Arkistoiduissa</value>
+    <value plural="n" case="el">Arkistoidusta</value>
+    <value plural="y" case="el">Arkistoiduista</value>
+    <value plural="n" case="il">Arkistoituun</value>
+    <value plural="y" case="il">Arkistoituihin</value>
+    <value plural="n" case="ad">Arkistoidulla</value>
+    <value plural="y" case="ad">Arkistoiduilla</value>
+    <value plural="n" case="abl">Arkistoidulta</value>
+    <value plural="y" case="abl">Arkistoiduilta</value>
+    <value plural="n" case="al">Arkistoidulle</value>
+    <value plural="y" case="al">Arkistoiduille</value>
+    <value plural="n" case="es">Arkistoituna</value>
+    <value plural="y" case="es">Arkistoituina</value>
+    <value plural="n" case="tra">Arkistoiduksi</value>
+    <value plural="y" case="tra">Arkistoiduiksi</value>
+    <value plural="n" case="par">Arkistoitua</value>
+    <value plural="y" case="par">Arkistoituja</value>
+</adjective>
+
+<adjective name="Assigned">
+    <value plural="n" case="n">Määritetty</value>
+    <value plural="y" case="n">Määritetyt</value>
+    <value plural="n" case="g">Määritetyn</value>
+    <value plural="y" case="g">Määritettyjen</value>
+    <value plural="n" case="ines">Määritetyssä</value>
+    <value plural="y" case="ines">Määritetyissä</value>
+    <value plural="n" case="el">Määritetystä</value>
+    <value plural="y" case="el">Määritetyistä</value>
+    <value plural="n" case="il">Määritettyyn</value>
+    <value plural="y" case="il">Määritettyihin</value>
+    <value plural="n" case="ad">Määritetyllä</value>
+    <value plural="y" case="ad">Määritetyillä</value>
+    <value plural="n" case="abl">Määritetyltä</value>
+    <value plural="y" case="abl">Määritetyiltä</value>
+    <value plural="n" case="al">Määritetylle</value>
+    <value plural="y" case="al">Määritetyille</value>
+    <value plural="n" case="es">Määritettynä</value>
+    <value plural="y" case="es">Määritettyinä</value>
+    <value plural="n" case="tra">Määritetyksi</value>
+    <value plural="y" case="tra">Määritetyiksi</value>
+    <value plural="n" case="par">Määritettyä</value>
+    <value plural="y" case="par">Määritettyjä</value>
+</adjective>
+
+    <adjective name="Associated">
+    <value plural="n" case="n">Liittyvä</value>
+    <value plural="y" case="n">Liittyvät</value>
+    <value plural="n" case="g">Liittyvän</value>
+    <value plural="y" case="g">Liittyvien</value>
+    <value plural="n" case="ines">Liittyvässä</value>
+    <value plural="y" case="ines">Liittyvissä</value>
+    <value plural="n" case="el">Liittyvästä</value>
+    <value plural="y" case="el">Liittyvistä</value>
+    <value plural="n" case="il">Liittyvään</value>
+    <value plural="y" case="il">Liittyviin</value>
+    <value plural="n" case="ad">Liittyvällä</value>
+    <value plural="y" case="ad">Liittyvillä</value>
+    <value plural="n" case="abl">Liittyvältä</value>
+    <value plural="y" case="abl">Liittyviltä</value>
+    <value plural="n" case="al">Liittyvälle</value>
+    <value plural="y" case="al">Liittyville</value>
+    <value plural="n" case="es">Liittyvänä</value>
+    <value plural="y" case="es">Liittyvinä</value>
+    <value plural="n" case="tra">Liittyväksi</value>
+    <value plural="y" case="tra">Liittyviksi</value>
+    <value plural="n" case="par">Liittyvää</value>
+    <value plural="y" case="par">Liittyviä</value>
+</adjective>
+
+    <adjective name="Attached">
+    <value plural="n" case="n">Liitetty</value>
+    <value plural="y" case="n">Liitetyt</value>
+    <value plural="n" case="g">Liitetyn</value>
+    <value plural="y" case="g">Liitettyjen</value>
+    <value plural="n" case="ines">Liitetyssä</value>
+    <value plural="y" case="ines">Liitetyissä</value>
+    <value plural="n" case="el">Liitetystä</value>
+    <value plural="y" case="el">Liitetyistä</value>
+    <value plural="n" case="il">Liitettyyn</value>
+    <value plural="y" case="il">Liitettyihin</value>
+    <value plural="n" case="ad">Liitetyllä</value>
+    <value plural="y" case="ad">Liitetyillä</value>
+    <value plural="n" case="abl">Liitetyltä</value>
+    <value plural="y" case="abl">Liitetyiltä</value>
+    <value plural="n" case="al">Liitetylle</value>
+    <value plural="y" case="al">Liitetyille</value>
+    <value plural="n" case="es">Liitettynä</value>
+    <value plural="y" case="es">Liitettyinä</value>
+    <value plural="n" case="tra">Liitetyksi</value>
+    <value plural="y" case="tra">Liitetyiksi</value>
+    <value plural="n" case="par">Liitettyä</value>
+    <value plural="y" case="par">Liitettyjjä</value>
+</adjective>
+
+    <adjective name="Available">
+    <value plural="n" case="n">Käytettävä</value>
+    <value plural="y" case="n">Käytettävät</value>
+    <value plural="n" case="g">Käytettävän</value>
+    <value plural="y" case="g">Käytettävien</value>
+    <value plural="n" case="ines">Käytettävässä</value>
+    <value plural="y" case="ines">Käytettävissä</value>
+    <value plural="n" case="el">Käytettävästä</value>
+    <value plural="y" case="el">Käytettävistä</value>
+    <value plural="n" case="il">Käytettävään</value>
+    <value plural="y" case="il">Käytettäviin</value>
+    <value plural="n" case="ad">Käytettävällä</value>
+    <value plural="y" case="ad">Käytettävillä</value>
+    <value plural="n" case="abl">Käytettävältä</value>
+    <value plural="y" case="abl">Käytettäviltä</value>
+    <value plural="n" case="al">Käytettävälle</value>
+    <value plural="y" case="al">Käytettäville</value>
+    <value plural="n" case="es">Käytettävänä</value>
+    <value plural="y" case="es">Käytettävinä</value>
+    <value plural="n" case="tra">Käytettäväksi</value>
+    <value plural="y" case="tra">Käytettäviksi</value>
+    <value plural="n" case="par">Käytettävää</value>
+    <value plural="y" case="par">Käytettäviä</value>
+</adjective>
+
+<adjective name="Billed">
+    <value plural="n" case="n">Laskutettu</value>
+    <value plural="y" case="n">Laskutetut</value>
+    <value plural="n" case="g">Laskutetun</value>
+    <value plural="y" case="g">Laskutettujen</value>
+    <value plural="n" case="ines">Laskutetussa</value>
+    <value plural="y" case="ines">Laskutetuissa</value>
+    <value plural="n" case="el">Laskutetusta</value>
+    <value plural="y" case="el">Laskutetuista</value>
+    <value plural="n" case="il">Laskutettuun</value>
+    <value plural="y" case="il">Laskutettuihin</value>
+    <value plural="n" case="ad">Laskutetulla</value>
+    <value plural="y" case="ad">Laskutetuilla</value>
+    <value plural="n" case="abl">Laskutetulta</value>
+    <value plural="y" case="abl">Laskutetuilta</value>
+    <value plural="n" case="al">Laskutetulle</value>
+    <value plural="y" case="al">Laskutetuille</value>
+    <value plural="n" case="es">Laskutettuna</value>
+    <value plural="y" case="es">Laskutettuina</value>
+    <value plural="n" case="tra">Laskutetuksi</value>
+    <value plural="y" case="tra">Laskutetuiksi</value>
+    <value plural="n" case="par">Laskutettua</value>
+    <value plural="y" case="par">Laskutettuja</value>
+</adjective>
+        
+    <adjective name="Certain">
+    <value plural="n" case="n">Tietty</value>
+    <value plural="y" case="n">Tietyt</value>
+    <value plural="n" case="g">Tietyn</value>
+    <value plural="y" case="g">Tiettyjen</value>
+    <value plural="n" case="ines">Tietyssä</value>
+    <value plural="y" case="ines">Tietyissä</value>
+    <value plural="n" case="el">Tietystä</value>
+    <value plural="y" case="el">Tietyistä</value>
+    <value plural="n" case="il">Tiettyyn</value>
+    <value plural="y" case="il">Tiettyihin</value>
+    <value plural="n" case="ad">Tietyllä</value>
+    <value plural="y" case="ad">Tietyillä</value>
+    <value plural="n" case="abl">Tietyltä</value>
+    <value plural="y" case="abl">Tietyiltä</value>
+    <value plural="n" case="al">Tietylle</value>
+    <value plural="y" case="al">Tietyille</value>
+    <value plural="n" case="es">Tiettynä</value>
+    <value plural="y" case="es">Tiettyinä</value>
+    <value plural="n" case="tra">Tietyksi</value>
+    <value plural="y" case="tra">Tietyiksi</value>
+    <value plural="n" case="par">Tiettyä</value>
+    <value plural="y" case="par">Tiettyjä</value>
+</adjective>
+
+<adjective name="Closed">
+    <value plural="n" case="n">Suljettu</value>
+    <value plural="y" case="n">Suljetut</value>
+    <value plural="n" case="g">Suljetun</value>
+    <value plural="y" case="g">Suljettujen</value>
+    <value plural="n" case="ines">Suljetussa</value>
+    <value plural="y" case="ines">Suljetuissa</value>
+    <value plural="n" case="el">Suljetusta</value>
+    <value plural="y" case="el">Suljetuista</value>
+    <value plural="n" case="il">Suljettuun</value>
+    <value plural="y" case="il">Suljettuihin</value>
+    <value plural="n" case="ad">Suljetulla</value>
+    <value plural="y" case="ad">Suljetuilla</value>
+    <value plural="n" case="abl">Suljetulta</value>
+    <value plural="y" case="abl">Suljetuilta</value>
+    <value plural="n" case="al">Suljetulle</value>
+    <value plural="y" case="al">Suljetuille</value>
+    <value plural="n" case="es">Suljettuna</value>
+    <value plural="y" case="es">Suljettuina</value>
+    <value plural="n" case="tra">Suljetuksi</value>
+    <value plural="y" case="tra">Suljetuiksi</value>
+    <value plural="n" case="par">Suljettua</value>
+    <value plural="y" case="par">Suljettuja</value>
+</adjective>
+
+<adjective name="Completed">
+    <value plural="n" case="n">Valmis</value>
+    <value plural="y" case="n">Valmiit</value>
+    <value plural="n" case="g">Valmiin</value>
+    <value plural="y" case="g">Valmiiden</value>
+    <value plural="n" case="ines">Valmiissa</value>
+    <value plural="y" case="ines">Valmiissa</value>
+    <value plural="n" case="el">Valmiista</value>
+    <value plural="y" case="el">Valmiista</value>
+    <value plural="n" case="il">Valmiiseen</value>
+    <value plural="y" case="il">Valmiisiin</value>
+    <value plural="n" case="ad">Valmiilla</value>
+    <value plural="y" case="ad">Valmiilla</value>
+    <value plural="n" case="abl">Valmiilta</value>
+    <value plural="y" case="abl">Valmiilta</value>
+    <value plural="n" case="al">Valmiille</value>
+    <value plural="y" case="al">Valmiille</value>
+    <value plural="n" case="es">Valmiina</value>
+    <value plural="y" case="es">Valmiina</value>
+    <value plural="n" case="tra">Valmiiksi</value>
+    <value plural="y" case="tra">Valmiiksi</value>
+    <value plural="n" case="par">Valmista</value>
+    <value plural="y" case="par">Valmiita</value>
+</adjective>
+
+<adjective name="Converted">
+    <value plural="n" case="n">Muunnettu</value>
+    <value plural="y" case="n">Muunnetut</value>
+    <value plural="n" case="g">Muunnetun</value>
+    <value plural="y" case="g">Muunnettujen</value>
+    <value plural="n" case="ines">Muunnetussa</value>
+    <value plural="y" case="ines">Muunnetuissa</value>
+    <value plural="n" case="el">Muunnetusta</value>
+    <value plural="y" case="el">Muunnetuista</value>
+    <value plural="n" case="il">Muunnettuun</value>
+    <value plural="y" case="il">Muunnettuihin</value>
+    <value plural="n" case="ad">Muunnetulla</value>
+    <value plural="y" case="ad">Muunnetuilla</value>
+    <value plural="n" case="abl">Muunnetulta</value>
+    <value plural="y" case="abl">Muunnetuilta</value>
+    <value plural="n" case="al">Muunnetulle</value>
+    <value plural="y" case="al">Muunnetuille</value>
+    <value plural="n" case="es">Muunnettuna</value>
+    <value plural="y" case="es">Muunnettuina</value>
+    <value plural="n" case="tra">Muunnetuksi</value>
+    <value plural="y" case="tra">Muunnetuiksi</value>
+    <value plural="n" case="par">Muunnettua</value>
+    <value plural="y" case="par">Muunnettuja</value>
+</adjective>
+    
+<adjective name="Corresponding">
+    <value plural="n" case="n">Vastaava</value>
+    <value plural="y" case="n">Vastaavat</value>
+    <value plural="n" case="g">Vastaavan</value>
+    <value plural="y" case="g">Vastaavien</value>
+    <value plural="n" case="ines">Vastaavassa</value>
+    <value plural="y" case="ines">Vastaavissa</value>
+    <value plural="n" case="el">Vastaavasta</value>
+    <value plural="y" case="el">Vastaavista</value>
+    <value plural="n" case="il">Vastaaviin</value>
+    <value plural="y" case="il">Vastaavaan</value>
+    <value plural="n" case="ad">Vastaavalla</value>
+    <value plural="y" case="ad">Vastaavilla</value>
+    <value plural="n" case="abl">Vastaavalta</value>
+    <value plural="y" case="abl">Vastaavilta</value>
+    <value plural="n" case="al">Vastaavalle</value>
+    <value plural="y" case="al">Vastaaville</value>
+    <value plural="n" case="es">Vastaavana</value>
+    <value plural="y" case="es">Vastaavina</value>
+    <value plural="n" case="tra">Vastaavaksi</value>
+    <value plural="y" case="tra">Vastaaviksi</value>
+    <value plural="n" case="par">Vastaavaa</value>
+    <value plural="y" case="par">Vastaavia</value>
+</adjective>
+
+<adjective name="Created">            
+    <value plural="n" case="n">Luotu</value>
+    <value plural="y" case="n">Luodut</value>
+    <value plural="n" case="g">Luodun</value>
+    <value plural="y" case="g">Luotujen</value>
+    <value plural="n" case="ines">Luodussa</value>
+    <value plural="y" case="ines">Luoduissa</value>
+    <value plural="n" case="el">Luodusta</value>
+    <value plural="y" case="el">Luoduista</value>
+    <value plural="n" case="il">Luotuun</value>
+    <value plural="y" case="il">Luotuihin</value>
+    <value plural="n" case="ad">Luodulla</value>
+    <value plural="y" case="ad">Luoduilla</value>
+    <value plural="n" case="abl">Luodulta</value>
+    <value plural="y" case="abl">Luoduilta</value>
+    <value plural="n" case="al">Luodulle</value>
+    <value plural="y" case="al">Luoduille</value>
+    <value plural="n" case="es">Luotuna</value>
+    <value plural="y" case="es">Luotuina</value>
+    <value plural="n" case="tra">Luoduksi</value>
+    <value plural="y" case="tra">Luoduiksi</value>
+    <value plural="n" case="par">Luotua</value>
+    <value plural="y" case="par">Luotuja</value>
+</adjective>
+
+<adjective name="Current">
+    <value plural="n" case="n">Nykyinen</value>
+    <value plural="y" case="n">Nykyiset</value>
+    <value plural="n" case="g">Nykyisen</value>
+    <value plural="y" case="g">Nykyisten</value>
+    <value plural="n" case="ines">Nykyisessä</value>
+    <value plural="y" case="ines">Nykyisissä</value>
+    <value plural="n" case="el">Nykyisestä</value>
+    <value plural="y" case="el">Nykyisistä</value>
+    <value plural="n" case="il">Nykyiseen</value>
+    <value plural="y" case="il">Nykyisiin</value>
+    <value plural="n" case="ad">Nykyisellä</value>
+    <value plural="y" case="ad">Nykyisillä</value>
+    <value plural="n" case="abl">Nykyiseltä</value>
+    <value plural="y" case="abl">Nykyisiltä</value>
+    <value plural="n" case="al">Nykyiselle</value>
+    <value plural="y" case="al">Nykyisille</value>
+    <value plural="n" case="es">Nykyisenä</value>
+    <value plural="y" case="es">Nykyisinä</value>
+    <value plural="n" case="tra">Nykyiseksi</value>
+    <value plural="y" case="tra">Nykyisiksi</value>
+    <value plural="n" case="par">Nykyistä</value>
+    <value plural="y" case="par">Nykyisiä</value>
+</adjective>
+
+<adjective name="Custom">
+    <value plural="n" case="n">Mukautettu</value>
+    <value plural="y" case="n">Mukautetut</value>
+    <value plural="n" case="g">Mukautetun</value>
+    <value plural="y" case="g">Mukautettujen</value>
+    <value plural="n" case="ines">Mukautetussa</value>
+    <value plural="y" case="ines">Mukautetuissa</value>
+    <value plural="n" case="el">Mukautetusta</value>
+    <value plural="y" case="el">Mukautetuista</value>
+    <value plural="n" case="il">Mukautettuun</value>
+    <value plural="y" case="il">Mukautettuihin</value>
+    <value plural="n" case="ad">Mukautetulla</value>
+    <value plural="y" case="ad">Mukautetuilla</value>
+    <value plural="n" case="abl">Mukautetulta</value>
+    <value plural="y" case="abl">Mukautetuilta</value>
+    <value plural="n" case="al">Mukautetulle</value>
+    <value plural="y" case="al">Mukautetuille</value>
+    <value plural="n" case="es">Mukautettuna</value>
+    <value plural="y" case="es">Mukautettuina</value>
+    <value plural="n" case="tra">Mukautetuksi</value>
+    <value plural="y" case="tra">Mukautetuiksi</value>
+    <value plural="n" case="par">Mukautettua</value>
+    <value plural="y" case="par">Mukautettuja</value>
+</adjective>
+
+<adjective name="Default">
+    <value plural="n" case="n">Oletusarvoinen</value>
+    <value plural="y" case="n">Oletusarvoiset</value>
+    <value plural="n" case="g">Oletusarvoisen</value>
+    <value plural="y" case="g">Oletusarvoisten</value>
+    <value plural="n" case="ines">Oletusarvoisessa</value>
+    <value plural="y" case="ines">Oletusarvoisissa</value>
+    <value plural="n" case="el">Oletusarvoisesta</value>
+    <value plural="y" case="el">Oletusarvoisista</value>
+    <value plural="n" case="il">Oletusarvoiseen</value>
+    <value plural="y" case="il">Oletusarvoisiin</value>
+    <value plural="n" case="ad">Oletusarvoisella</value>
+    <value plural="y" case="ad">Oletusarvoisilla</value>
+    <value plural="n" case="abl">Oletusarvoiselta</value>
+    <value plural="y" case="abl">Oletusarvoisilta</value>
+    <value plural="n" case="al">Oletusarvoiselle</value>
+    <value plural="y" case="al">Oletusarvoisille</value>
+    <value plural="n" case="es">Oletusarvoisena</value>
+    <value plural="y" case="es">Oletusarvoisina</value>
+    <value plural="n" case="tra">Oletusarvoiseksi</value>
+    <value plural="y" case="tra">Oletusarvoisiksi</value>
+    <value plural="n" case="par">Oletusarvoista</value>
+    <value plural="y" case="par">Oletusarvoisia</value>
+</adjective>
+
+<adjective name="Delegated">
+    <value plural="n" case="n">Delegoitu</value>
+    <value plural="y" case="n">Delegoidut</value>
+    <value plural="n" case="g">Delegoidun</value>
+    <value plural="y" case="g">Delegoitujen</value>
+    <value plural="n" case="ines">Delegoidussa</value>
+    <value plural="y" case="ines">Delegoiduissa</value>
+    <value plural="n" case="el">Delegoidusta</value>
+    <value plural="y" case="el">Delegoiduista</value>
+    <value plural="n" case="il">Delegoituun</value>
+    <value plural="y" case="il">Delegoituihin</value>
+    <value plural="n" case="ad">Delegoidulla</value>
+    <value plural="y" case="ad">Delegoiduilla</value>
+    <value plural="n" case="abl">Delegoidulta</value>
+    <value plural="y" case="abl">Delegoiduilta</value>
+    <value plural="n" case="al">Delegoidulle</value>
+    <value plural="y" case="al">Delegoiduille</value>
+    <value plural="n" case="es">Delegoituna</value>
+    <value plural="y" case="es">Delegoituina</value>
+    <value plural="n" case="tra">Delegoiduksi</value>
+    <value plural="y" case="tra">Delegoiduiksi</value>
+    <value plural="n" case="par">Delegoitua</value>
+    <value plural="y" case="par">Delegoituja</value>
+</adjective>
+
+    <adjective name="Deleted">
+    <value plural="n" case="n">Poistettu</value>
+    <value plural="y" case="n">Poistetut</value>
+    <value plural="n" case="g">Poistetun</value>
+    <value plural="y" case="g">Poistettujen</value>
+    <value plural="n" case="ines">Poistetussa</value>
+    <value plural="y" case="ines">Poistetuissa</value>
+    <value plural="n" case="el">Poistetusta</value>
+    <value plural="y" case="el">Poistetuista</value>
+    <value plural="n" case="il">Poistettuun</value>
+    <value plural="y" case="il">Poistettuihin</value>
+    <value plural="n" case="ad">Poistetulla</value>
+    <value plural="y" case="ad">Poistetuilla</value>
+    <value plural="n" case="abl">Poistetulta</value>
+    <value plural="y" case="abl">Poistetuilta</value>
+    <value plural="n" case="al">Poistetulle</value>
+    <value plural="y" case="al">Poistetuille</value>
+    <value plural="n" case="es">Poistettuna</value>
+    <value plural="y" case="es">Poistettuina</value>
+    <value plural="n" case="tra">Poistetuksi</value>
+    <value plural="y" case="tra">Poistetuiksi</value>
+    <value plural="n" case="par">Poistettua</value>
+    <value plural="y" case="par">Poistettuja</value>
+</adjective>
+
+    <adjective name="Designated">
+        <value plural="n" case="n">Osoitettu</value>
+        <value plural="y" case="n">Osoitetut</value>
+        <value plural="n" case="g">Osoitetun</value>
+        <value plural="y" case="g">Osoitettujen</value>
+        <value plural="n" case="ines">Osoitetussa</value>
+        <value plural="y" case="ines">Osoitetuissa</value>
+        <value plural="n" case="el">Osoitetusta</value>
+        <value plural="y" case="el">Osoitetuista</value>
+        <value plural="n" case="il">Osoitettuun</value>
+        <value plural="y" case="il">Osoitettuihin</value>
+        <value plural="n" case="ad">Osoitetulla</value>
+        <value plural="y" case="ad">Osoitetuilla</value>
+        <value plural="n" case="abl">Osoitetulta</value>
+        <value plural="y" case="abl">Osoitetuilta</value>
+        <value plural="n" case="al">Osoitetulle</value>
+        <value plural="y" case="al">Osoitetuille</value>
+        <value plural="n" case="es">Osoitettuna</value>
+        <value plural="y" case="es">Osoitettuina</value>
+        <value plural="n" case="tra">Osoitetuksi</value>
+        <value plural="y" case="tra">Osoitetuiksi</value>
+        <value plural="n" case="par">Osoitettua</value>
+        <value plural="y" case="par">Osoitettuja</value>
+    </adjective>
+
+    <adjective name="Different">
+        <value plural="n">Different</value>
+</adjective>
+
+<adjective name="Draft">
+     <value plural="n" case="n">Vedos</value>
+     <value plural="y" case="n">Vedokset</value>
+     <value plural="n" case="g">Vedoksen</value>
+     <value plural="y" case="g">Vedoksien</value>
+     <value plural="n" case="ines">Vedoksessa</value>
+     <value plural="y" case="ines">Vedoksissa</value>
+     <value plural="n" case="el">Vedoksesta</value>
+     <value plural="y" case="el">Vedoksista</value>
+     <value plural="n" case="il">Vedokseen</value>
+     <value plural="y" case="il">Vedoksiin</value>
+     <value plural="n" case="ad">Vedoksella</value>
+     <value plural="y" case="ad">Vedoksilla</value>
+     <value plural="n" case="abl">Vedokselta</value>
+     <value plural="y" case="abl">Vedoksilta</value>
+     <value plural="n" case="al">Vedokselle</value>
+     <value plural="y" case="al">Vedoksille</value>
+     <value plural="n" case="es">Vedoksena</value>
+     <value plural="y" case="es">Vedoksina</value>
+     <value plural="n" case="tra">Vedokseksi</value>
+     <value plural="y" case="tra">Vedoksiksi</value>
+     <value plural="n" case="par">Vedosta</value>
+     <value plural="y" case="par">Vedoksia</value>
+ </adjective> 
+
+<adjective name="Duplicate">
+    <value plural="n" case="n">Kaksinkertainen</value>
+    <value plural="y" case="n">Kaksinkertaiset</value>
+    <value plural="n" case="g">Kaksinkertaisen</value>
+    <value plural="y" case="g">Kaksinkertaisten</value>
+    <value plural="n" case="ines">Kaksinkertaisessa</value>
+    <value plural="y" case="ines">Kaksinkertaisissa</value>
+    <value plural="n" case="el">Kaksinkertaisesta</value>
+    <value plural="y" case="el">Kaksinkertaisista</value>
+    <value plural="n" case="il">Kaksinkertaiseen</value>
+    <value plural="y" case="il">Kaksinkertaisiin</value>
+    <value plural="n" case="ad">Kaksinkertaisella</value>
+    <value plural="y" case="ad">Kaksinkertaisilla</value>
+    <value plural="n" case="abl">Kaksinkertaiselta</value>
+    <value plural="y" case="abl">Kaksinkertaisilta</value>
+    <value plural="n" case="al">Kaksinkertaiselle</value>
+    <value plural="y" case="al">Kaksinkertaisille</value>
+    <value plural="n" case="es">Kaksinkertaisena</value>
+    <value plural="y" case="es">Kaksinkertaisina</value>
+    <value plural="n" case="tra">Kaksinkertaiseksi</value>
+    <value plural="y" case="tra">Kaksinkertaisiksi</value>
+    <value plural="n" case="par">Kaksinkertaista</value>
+    <value plural="y" case="par">Kaksinkertaisia</value>
+</adjective>
+
+<adjective name="Each">
+    <value plural="n" case="n">Jokainen</value>
+    <value plural="y" case="n">Jokaiset</value>
+    <value plural="n" case="g">Jokaisen</value>
+    <value plural="y" case="g">Jokaisten</value>
+    <value plural="n" case="ines">Jokaisessa</value>
+    <value plural="y" case="ines">Jokaisissa</value>
+    <value plural="n" case="el">Jokaisesta</value>
+    <value plural="y" case="el">Jokaisista</value>
+    <value plural="n" case="il">Jokaiseen</value>
+    <value plural="y" case="il">Jokaisiin</value>
+    <value plural="n" case="ad">Jokaisella</value>
+    <value plural="y" case="ad">Jokaisilla</value>
+    <value plural="n" case="abl">Jokaiselta</value>
+    <value plural="y" case="abl">Jokaisilta</value>
+    <value plural="n" case="al">Jokaiselle</value>
+    <value plural="y" case="al">Jokaisille</value>
+    <value plural="n" case="es">Jokaisena</value>
+    <value plural="y" case="es">Jokaisina</value>
+    <value plural="n" case="tra">Jokaiseksi</value>
+    <value plural="y" case="tra">Jokaisiksi</value>
+    <value plural="n" case="par">Jokaista</value>
+    <value plural="y" case="par">Jokaisia</value>
+</adjective>
+
+<adjective name="Editable">
+    <value plural="n" case="n">Muokattava</value>
+    <value plural="y" case="n">Muokattavat</value>
+    <value plural="n" case="g">Muokattavan</value>
+    <value plural="y" case="g">Muokattavien</value>
+    <value plural="n" case="ines">Muokattavassa</value>
+    <value plural="y" case="ines">Muokattavissa</value>
+    <value plural="n" case="el">Muokattavasta</value>
+    <value plural="y" case="el">Muokattavista</value>
+    <value plural="n" case="il">Muokattavaan</value>
+    <value plural="y" case="il">Muokattaviin</value>
+    <value plural="n" case="ad">Muokattavalla</value>
+    <value plural="y" case="ad">Muokattavilla</value>
+    <value plural="n" case="abl">Muokattavalta</value>
+    <value plural="y" case="abl">Muokattavilta</value>
+    <value plural="n" case="al">Muokattavalle</value>
+    <value plural="y" case="al">Muokattaville</value>
+    <value plural="n" case="es">Muokattavana</value>
+    <value plural="y" case="es">Muokattavina</value>
+    <value plural="n" case="tra">Muokattavaksi</value>
+    <value plural="y" case="tra">Muokattaviksi</value>
+    <value plural="n" case="par">Muokattavaa</value>
+    <value plural="y" case="par">Muokattavia</value>
+</adjective>
+        
+    <adjective name="Empty">
+    <value plural="n" case="n">Tyhjä</value>
+    <value plural="y" case="n">Tyhjät</value>
+    <value plural="n" case="g">Tyhjän</value>
+    <value plural="y" case="g">Tyhjien</value>
+    <value plural="n" case="ines">Tyhjässä</value>
+    <value plural="y" case="ines">Tyhjissä</value>
+    <value plural="n" case="el">Tyhjästä</value>
+    <value plural="y" case="el">Tyhjistä</value>
+    <value plural="n" case="il">Tyhjään</value>
+    <value plural="y" case="il">Tyhjiin</value>
+    <value plural="n" case="ad">Tyhjällä</value>
+    <value plural="y" case="ad">Tyhjillä</value>
+    <value plural="n" case="abl">Tyhjältä</value>
+    <value plural="y" case="abl">Tyhjiltä</value>
+    <value plural="n" case="al">Tyhjälle</value>
+    <value plural="y" case="al">Tyhjille</value>
+    <value plural="n" case="es">Tyhjänä</value>
+    <value plural="y" case="es">Tyhjinä</value>
+    <value plural="n" case="tra">Tyhjäksi</value>
+    <value plural="y" case="tra">Tyhjiksi</value>
+    <value plural="n" case="par">Tyhjää</value>
+    <value plural="y" case="par">Tyhjiä</value>
+</adjective>
+
+ <adjective name="Every">
+    <value plural="n" case="n">Jokainen</value>
+    <value plural="y" case="n">Jokaiset</value>
+    <value plural="n" case="g">Jokaisen</value>
+    <value plural="y" case="g">Jokaisten</value>
+    <value plural="n" case="ines">Jokaisessa</value>
+    <value plural="y" case="ines">Jokaisissa</value>
+    <value plural="n" case="el">Jokaisesta</value>
+    <value plural="y" case="el">Jokaisista</value>
+    <value plural="n" case="il">Jokaiseen</value>
+    <value plural="y" case="il">Jokaisiin</value>
+    <value plural="n" case="ad">Jokaisella</value>
+    <value plural="y" case="ad">Jokaisilla</value>
+    <value plural="n" case="abl">Jokaiselta</value>
+    <value plural="y" case="abl">Jokaisilta</value>
+    <value plural="n" case="al">Jokaiselle</value>
+    <value plural="y" case="al">Jokaisille</value>
+    <value plural="n" case="es">Jokaisena</value>
+    <value plural="y" case="es">Jokaisina</value>
+    <value plural="n" case="tra">Jokaiseksi</value>
+    <value plural="y" case="tra">Jokaisiksi</value>
+    <value plural="n" case="par">Jokaista</value>
+    <value plural="y" case="par">Jokaisia</value>
+</adjective>
+
+<adjective name="Existing">
+    <value plural="n" case="n">Olemassa oleva</value>
+    <value plural="y" case="n">Olemassa olevat</value>
+    <value plural="n" case="g">Olemassa olevan</value>
+    <value plural="y" case="g">Olemassa olevien</value>
+    <value plural="n" case="ines">Olemassa olevassa</value>
+    <value plural="y" case="ines">Olemassa olevissa</value>
+    <value plural="n" case="el">Olemassa olevasta</value>
+    <value plural="y" case="el">Olemassa olevista</value>
+    <value plural="n" case="il">Olemassa olevaan</value>
+    <value plural="y" case="il">Olemassa oleviin</value>
+    <value plural="n" case="ad">Olemassa olevalla</value>
+    <value plural="y" case="ad">Olemassa olevilla</value>
+    <value plural="n" case="abl">Olemassa olevalta</value>
+    <value plural="y" case="abl">Olemassa olevilta</value>
+    <value plural="n" case="al">Olemassa olevalle</value>
+    <value plural="y" case="al">Olemassa oleville</value>
+    <value plural="n" case="es">Olemassa olevana</value>
+    <value plural="y" case="es">Olemassa olevina</value>
+    <value plural="n" case="tra">Olemassa olevaksi</value>
+    <value plural="y" case="tra">Olemassa oleviksi</value>
+    <value plural="n" case="par">Olemassa olevaa</value>
+    <value plural="y" case="par">Olemassa olevia</value>
+</adjective>
+
+<adjective name="Expected">
+    <value plural="n" case="n">Odotettu</value>
+    <value plural="y" case="n">Odotetut</value>
+    <value plural="n" case="g">Odotetun</value>
+    <value plural="y" case="g">Odotettujen</value>
+    <value plural="n" case="ines">Odotetussa</value>
+    <value plural="y" case="ines">Odotetuissa</value>
+    <value plural="n" case="el">Odotetusta</value>
+    <value plural="y" case="el">Odotetuista</value>
+    <value plural="n" case="il">Odotettuun</value>
+    <value plural="y" case="il">Odotettuihin</value>
+    <value plural="n" case="ad">Odotetulla</value>
+    <value plural="y" case="ad">Odotetuilla</value>
+    <value plural="n" case="abl">Odotetulta</value>
+    <value plural="y" case="abl">Odotetuilta</value>
+    <value plural="n" case="al">Odotetulle</value>
+    <value plural="y" case="al">Odotetuille</value>
+    <value plural="n" case="es">Odotettuna</value>
+    <value plural="y" case="es">Odotettuina</value>
+    <value plural="n" case="tra">Odotetuksi</value>
+    <value plural="y" case="tra">Odotetuiksi</value>
+    <value plural="n" case="par">Odotettua</value>
+    <value plural="y" case="par">Odotettuja</value>
+</adjective>
+
+    <adjective name="First">
+    <value plural="n" case="n">Ensimmäinen</value>
+    <value plural="y" case="n">Ensimmäiset</value>
+    <value plural="n" case="g">Ensimmäisen</value>
+    <value plural="y" case="g">Ensimmäisten</value>
+    <value plural="n" case="ines">Ensimmäisessä</value>
+    <value plural="y" case="ines">Ensimmäisissä</value>
+    <value plural="n" case="el">Ensimmäisestä</value>
+    <value plural="y" case="el">Ensimmäisistä</value>
+    <value plural="n" case="il">Ensimmäiseen</value>
+    <value plural="y" case="il">Ensimmäisiin</value>
+    <value plural="n" case="ad">Ensimmäisellä</value>
+    <value plural="y" case="ad">Ensimmisillä</value>
+    <value plural="n" case="abl">Ensimmäiseltä</value>
+    <value plural="y" case="abl">Ensimmäisiltä</value>
+    <value plural="n" case="al">Ensimmäiselle</value>
+    <value plural="y" case="al">Ensimmäisille</value>
+    <value plural="n" case="es">Ensimmäisenä</value>
+    <value plural="y" case="es">Ensimmäisinä</value>
+    <value plural="n" case="tra">Ensimmäiseksi</value>
+    <value plural="y" case="tra">Ensimmäisiksi</value>
+    <value plural="n" case="par">Ensimmäistä</value>
+    <value plural="y" case="par">Ensimmäisiä</value>
+</adjective>
+
+<adjective name="Following">
+    <value plural="n" case="n">Seuraava</value>
+    <value plural="y" case="n">Seuraavat</value>
+    <value plural="n" case="g"> Seuraavan</value>
+    <value plural="y" case="g"> Seuraavien</value>
+    <value plural="n" case="ines">Seuraavassa</value>
+    <value plural="y" case="ines">Seuraavissa</value>
+    <value plural="n" case="el">Seuraavasta</value>
+    <value plural="y" case="el">Seuraavista</value>
+    <value plural="n" case="il">Seuraavaan</value>
+    <value plural="y" case="il">Seuraaviin</value>
+    <value plural="n" case="ad">Seuraavalla</value>
+    <value plural="y" case="ad">Seuraavilla</value>
+    <value plural="n" case="abl">Seuraavalta</value>
+    <value plural="y" case="abl">Seuraavilta</value>
+    <value plural="n" case="al">Seuraavalle</value>
+    <value plural="y" case="al">Seuraaville</value>
+    <value plural="n" case="es">Seuraavana</value>
+    <value plural="y" case="es">Seuraavina</value>
+    <value plural="n" case="tra">Seuraavaksi</value>
+    <value plural="y" case="tra">Seuraaviksi</value>
+    <value plural="n" case="par">Seuraavaa</value>
+    <value plural="y" case="par">Seuraavia</value>
+</adjective>
+
+<adjective name="Future">
+    <value plural="n" case="n">Tuleva</value>
+    <value plural="y" case="n">Tulevat</value>
+    <value plural="n" case="g">Tulevan</value>
+    <value plural="y" case="g">Tulevien</value>
+    <value plural="n" case="ines">Tulevassa</value>
+    <value plural="y" case="ines">Tulevissa</value>
+    <value plural="n" case="el">Tulevasta</value>
+    <value plural="y" case="el">Tulevista</value>
+    <value plural="n" case="il">Tulevaan</value>
+    <value plural="y" case="il">Tuleviin</value>
+    <value plural="n" case="ad">Tulevalla</value>
+    <value plural="y" case="ad">Tulevilla</value>
+    <value plural="n" case="abl">Tulevalta</value>
+    <value plural="y" case="abl">Tulevilta</value>
+    <value plural="n" case="al">Tulevalle</value>
+    <value plural="y" case="al">Tuleville</value>
+    <value plural="n" case="es">Tulevana</value>
+    <value plural="y" case="es">Tulevina</value>
+    <value plural="n" case="tra">Tulevaksi</value>
+    <value plural="y" case="tra">Tuleviksi</value>
+    <value plural="n" case="par">Tulevaa</value>
+    <value plural="y" case="par">Tulevia</value>
+</adjective>
+
+<adjective name="Helpful">
+    <value plural="n" case="n">Hyödyllinen</value>
+    <value plural="y" case="n">Hyödylliset</value>
+    <value plural="n" case="g">Hyödyllisen</value>
+    <value plural="y" case="g">Hyödyllisten</value>
+    <value plural="n" case="ines">Hyödyllisessä</value>
+    <value plural="y" case="ines">Hyödyllisissä</value>
+    <value plural="n" case="el">Hyödyllisestä</value>
+    <value plural="y" case="el">Hyödyllisistä</value>
+    <value plural="n" case="il">Hyödylliseen</value>
+    <value plural="y" case="il">Hyödyllisiin</value>
+    <value plural="n" case="ad">Hyödyllisellä</value>
+    <value plural="y" case="ad">Hyödyllisillä</value>
+    <value plural="n" case="abl">Hyödylliseltä</value>
+    <value plural="y" case="abl">Hyödyllisiltä</value>
+    <value plural="n" case="al">Hyödylliselle</value>
+    <value plural="y" case="al">Hyödyllisille</value>
+    <value plural="n" case="es">Hyödyllisenä</value>
+    <value plural="y" case="es">Hyödyllisinä</value>
+    <value plural="n" case="tra">Hyödylliseksi</value>
+    <value plural="y" case="tra">Hyödyllisiksi</value>
+    <value plural="n" case="par">Hyödyllistä</value>
+    <value plural="y" case="par">Hyödyllisiä</value>
+</adjective>
+
+<adjective name="Historical">
+    <value plural="n" case="n">Vanha</value>
+    <value plural="y" case="n">Vanhat</value>
+    <value plural="n" case="g">Vanhan</value>
+    <value plural="y" case="g">Vanhojen</value>
+    <value plural="n" case="ines">Vanhassa</value>
+    <value plural="y" case="ines">Vanhoissa</value>
+    <value plural="n" case="el">Vanhasta</value>
+    <value plural="y" case="el">Vanhoista</value>
+    <value plural="n" case="il">Vanhaan</value>
+    <value plural="y" case="il">Vanhoihin</value>
+    <value plural="n" case="ad">Vanhalla</value>
+    <value plural="y" case="ad">Vanhoilla</value>
+    <value plural="n" case="abl">Vanhalta</value>
+    <value plural="y" case="abl">Vanhoilta</value>
+    <value plural="n" case="al">Vanhalle</value>
+    <value plural="y" case="al">Vanhoille</value>
+    <value plural="n" case="es">Vanhana</value>
+    <value plural="y" case="es">Vanhoina</value>
+    <value plural="n" case="tra">Vanhaksi</value>
+    <value plural="y" case="tra">Vanhoiksi</value>
+    <value plural="n" case="par">Vanhaa</value>
+    <value plural="y" case="par">Vanhoja</value>
+</adjective>
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+    <adjective name="Hot">
+        <value plural="n">Hot</value>
+</adjective>
+
+    <adjective name="Ignored">
+        <value plural="n">Ignored</value>
+</adjective>
+
+    <adjective name="Imported">
+        <value plural="n" case="n">Tuotu</value>
+        <value plural="y" case="n">Tuodut</value>
+        <value plural="n" case="g">Tuodun</value>
+        <value plural="y" case="g">Tuotujen</value>
+        <value plural="n" case="ines">Tuodussa</value>
+        <value plural="y" case="ines">Tuoduissa</value>
+        <value plural="n" case="el">Tuodosta</value>
+        <value plural="y" case="el">Tuoduista</value>
+        <value plural="n" case="il">Tuotuun</value>
+        <value plural="y" case="il">Tuotuihin</value>
+        <value plural="n" case="ad">Tuodulla</value>
+        <value plural="y" case="ad">Tuoduilla</value>
+        <value plural="n" case="abl">Tuodulta</value>
+        <value plural="y" case="abl">Tuoduilta</value>
+        <value plural="n" case="al">Tuodulle</value>
+        <value plural="y" case="al">Tuoduille</value>
+        <value plural="n" case="es">Tuotuna</value>
+        <value plural="y" case="es">Tuotuina</value>
+        <value plural="n" case="tra">Tuoduksi</value>
+        <value plural="y" case="tra">Tuoduiksi</value>
+        <value plural="n" case="par">Tuotua</value>
+        <value plural="y" case="par">Tuotuja</value>
+    </adjective>        
+
+<adjective name="Inactive">
+    <value plural="n" case="n">Ei-aktiivinen</value>
+    <value plural="y" case="n">Ei-aktiiviset</value>
+    <value plural="n" case="g">Ei-aktiivisen</value>
+    <value plural="y" case="g">Ei-aktiivisten</value>
+    <value plural="n" case="ines">Ei-aktiivisessa</value>
+    <value plural="y" case="ines">Ei-aktiivisissa</value>
+    <value plural="n" case="el">Ei-aktiivisesta</value>
+    <value plural="y" case="el">Ei-aktiivisista</value>
+    <value plural="n" case="il">Ei-aktiiviseen</value>
+    <value plural="y" case="il">Ei-aktiivisiin</value>
+    <value plural="n" case="ad">Ei-aktiivisella</value>
+    <value plural="y" case="ad">Ei-aktiivisilla</value>
+    <value plural="n" case="abl">Ei-aktiiviselta</value>
+    <value plural="y" case="abl">Ei-aktiivisilta</value>
+    <value plural="n" case="al">Ei-aktiiviselle</value>
+    <value plural="y" case="al">Ei-aktiivisille</value>
+    <value plural="n" case="es">Ei-aktiivisena</value>
+    <value plural="y" case="es">Ei-aktiivisina</value>
+    <value plural="n" case="tra">Ei-aktiiviseksi</value>
+    <value plural="y" case="tra">Ei-aktiivisiksi</value>
+    <value plural="n" case="par">Ei-aktiivista</value>
+    <value plural="y" case="par">Ei-aktiivisia</value>
+</adjective>
+
+<adjective name="Individual">
+    <value plural="n" case="n">Yksittäinen</value>
+    <value plural="y" case="n">Yksittäiset</value>
+    <value plural="n" case="g">Yksittäisen</value>
+    <value plural="y" case="g">Yksittäisten</value>
+    <value plural="n" case="ines">Yksittäisessä</value>
+    <value plural="y" case="ines">Yksittäisissä</value>
+    <value plural="n" case="el">Yksittäisestä</value>
+    <value plural="y" case="el">Yksittäisistä</value>
+    <value plural="n" case="il">Yksittäiseen</value>
+    <value plural="y" case="il">Yksittäisiin</value>
+    <value plural="n" case="ad">Yksittäiselle</value>
+    <value plural="y" case="ad">Yksittäisille</value>
+    <value plural="n" case="abl">Yksittäiseltä</value>
+    <value plural="y" case="abl">Yksittäisiltä</value>
+    <value plural="n" case="al">Yksittäiselle</value>
+    <value plural="y" case="al">Yksittäisille</value>
+    <value plural="n" case="es">Yksittäisenä</value>
+    <value plural="y" case="es">Yksittäisinä</value>
+    <value plural="n" case="tra">Yksittäiseksi</value>
+    <value plural="y" case="tra">Yksittäisiksi</value>
+    <value plural="n" case="par">Yksittäistä</value>
+    <value plural="y" case="par">Yksittäisiä</value>
+</adjective>
+
+<adjective name="Invalid">
+    <value plural="n" case="n">Virheellinen</value>
+    <value plural="y" case="n">Virheelliset</value>
+    <value plural="n" case="g">Virheellisen</value>
+    <value plural="y" case="g">Virheellisten</value>
+    <value plural="n" case="ines">Virheellisessä</value>
+    <value plural="y" case="ines">Virheellisissä</value>
+    <value plural="n" case="el">Virheellisestä</value>
+    <value plural="y" case="el">Virheellisistä</value>
+    <value plural="n" case="il">Virheelliseen</value>
+    <value plural="y" case="il">Virheellisiin</value>
+    <value plural="n" case="ad">Virheellisellä</value>
+    <value plural="y" case="ad">Virheellisillä</value>
+    <value plural="n" case="abl">Virheelliseltä</value>
+    <value plural="y" case="abl">Virheellisiltä</value>
+    <value plural="n" case="al">Virheelliselle</value>
+    <value plural="y" case="al">Virheellisille</value>
+    <value plural="n" case="es">Virheellisenä</value>
+    <value plural="y" case="es">Virheellisinä</value>
+    <value plural="n" case="tra">Virheelliseksi</value>
+    <value plural="y" case="tra">Virheellisiksi</value>
+    <value plural="n" case="par">Virheellistä</value>
+    <value plural="y" case="par">Virheellisiä</value>
+</adjective>
+
+<!--=====================================================================
+    "Key" may no longer be used in the app
+    ======================================================================-->
+ <adjective name="Its">
+     <value plural="n" case="n">Sen</value>
+    <value plural="y" case="n">Niiden</value>
+    <value plural="n" case="g">Sen</value>
+    <value plural="y" case="g">Niiden</value>
+    <value plural="n" case="ines">Sen</value>
+    <value plural="y" case="ines">Niiden</value>
+    <value plural="n" case="el">Sen</value>
+    <value plural="y" case="el">Niiden</value>
+    <value plural="n" case="il">Sen</value>
+    <value plural="y" case="il">Niiden</value>
+    <value plural="n" case="ad">Sen</value>
+    <value plural="y" case="ad">Niiden</value>
+    <value plural="n" case="abl">Sen</value>
+    <value plural="y" case="abl">Niiden</value>
+    <value plural="n" case="al">Sen</value>
+    <value plural="y" case="al">Niiden</value>
+    <value plural="n" case="es">Sen</value>
+    <value plural="y" case="es">Niiden</value>
+    <value plural="n" case="tra">Sen</value>
+    <value plural="y" case="tra">Niiden</value>
+    <value plural="n" case="par">Sen</value>
+    <value plural="y" case="par">Niiden</value>
+</adjective>
+
+    <adjective name="Key">
+        <value plural="n">Key</value>
+</adjective>
+        
+<adjective name="Last">
+    <value plural="n" case="n">Viimeinen</value>
+    <value plural="y" case="n">Viimeiset</value>
+    <value plural="n" case="g">Viimeisen</value>
+    <value plural="y" case="g">Viimeisten</value>
+    <value plural="n" case="ines">Viimeisessä</value>
+    <value plural="y" case="ines">Viimeisissä</value>
+    <value plural="n" case="el">Viimeisestä</value>
+    <value plural="y" case="el">Viimeisistä</value>
+    <value plural="n" case="il">Viimeiseen</value>
+    <value plural="y" case="il">Viimeisiin</value>
+    <value plural="n" case="ad">Viimeisellä</value>
+    <value plural="y" case="ad">Viimeisillä</value>
+    <value plural="n" case="abl">Viimeiseltä</value>
+    <value plural="y" case="abl">Viimeisiltä</value>
+    <value plural="n" case="al">Viimeiselle</value>
+    <value plural="y" case="al">Viimeisille</value>
+    <value plural="n" case="es">Viimeisenä</value>
+    <value plural="y" case="es">Viimeisinä</value>
+    <value plural="n" case="tra">Viimeiseksi</value>
+    <value plural="y" case="tra">Viimeisiksi</value>
+    <value plural="n" case="par">Viimeistä</value>
+    <value plural="y" case="par">Viimeisiä</value>
+</adjective>
+
+<adjective name="Linked">
+    <value plural="n" case="n">Linkitetty</value>
+    <value plural="y" case="n">Linkitetyt</value>
+    <value plural="n" case="g">Linkitetyn</value>
+    <value plural="y" case="g">Linkitettyjen</value>
+    <value plural="n" case="ines">Linkitetyssä</value>
+    <value plural="y" case="ines">Linkitetyissä</value>
+    <value plural="n" case="el">Linkitetystä</value>
+    <value plural="y" case="el">Linkitetyistä</value>
+    <value plural="n" case="il">Linkitettyyn</value>
+    <value plural="y" case="il">Linkitettyihin</value>
+    <value plural="n" case="ad">Linkitetyllä</value>
+    <value plural="y" case="ad">Linkitetyillä</value>
+    <value plural="n" case="abl">Linkitetyltä</value>
+    <value plural="y" case="abl">Linkitetyiltä</value>
+    <value plural="n" case="al">Linkitetylle</value>
+    <value plural="y" case="al">Linkitetyille</value>
+    <value plural="n" case="es">Linkitettynä</value>
+    <value plural="y" case="es">Linkitettyinä</value>
+    <value plural="n" case="tra">Linkitetyksi</value>
+    <value plural="y" case="tra">Linkitetyiksi</value>
+    <value plural="n" case="par">Linkitettyä</value>
+    <value plural="y" case="par">Linkitettyjä</value>
+</adjective>
+
+    <adjective name="Loaded">
+    <value plural="n" case="n">Ladattu</value>
+    <value plural="y" case="n">Ladatut</value>
+    <value plural="n" case="g">Ladatun</value>
+    <value plural="y" case="g">Ladattujen</value>
+    <value plural="n" case="ines">Ladatussa</value>
+    <value plural="y" case="ines">Ladatuissa</value>
+    <value plural="n" case="el">Ladatusta</value>
+    <value plural="y" case="el">Ladatuista</value>
+    <value plural="n" case="il">Ladattuun</value>
+    <value plural="y" case="il">Ladattuihin</value>
+    <value plural="n" case="ad">Ladatulla</value>
+    <value plural="y" case="ad">Ladatuilla</value>
+    <value plural="n" case="abl">Ladatulta</value>
+    <value plural="y" case="abl">Ladatuilta</value>
+    <value plural="n" case="al">Ladatulle</value>
+    <value plural="y" case="al">Ladatuille</value>
+    <value plural="n" case="es">Ladattuna</value>
+    <value plural="y" case="es">Ladattuina</value>
+    <value plural="n" case="tra">Ladatuksi</value>
+    <value plural="y" case="tra">Ladatuiksi</value>
+    <value plural="n" case="par">Ladattua</value>
+    <value plural="y" case="par">Ladattuja</value>
+</adjective>
+
+<adjective name="Locked">
+    <value plural="n" case="n">Lukittu</value>
+    <value plural="y" case="n">Lukitut</value>
+    <value plural="n" case="g">Lukitun</value>
+    <value plural="y" case="g">Lukittujen</value>
+    <value plural="n" case="ines">Lukitussa</value>
+    <value plural="y" case="ines">Lukituissa</value>
+    <value plural="n" case="el">Lukitusta</value>
+    <value plural="y" case="el">Lukituista</value>
+    <value plural="n" case="il">Lukittuun</value>
+    <value plural="y" case="il">Lukittuihin</value>
+    <value plural="n" case="ad">Lukitulla</value>
+    <value plural="y" case="ad">Lukituilla</value>
+    <value plural="n" case="abl">Lukitulta</value>
+    <value plural="y" case="abl">Lukituilta</value>
+    <value plural="n" case="al">Lukitulle</value>
+    <value plural="y" case="al">Lukituille</value>
+    <value plural="n" case="es">Lukittuna</value>
+    <value plural="y" case="es">Lukittuina</value>
+    <value plural="n" case="tra">Lukituksi</value>
+    <value plural="y" case="tra">Lukituiksi</value>
+    <value plural="n" case="par">Lukittua</value>
+    <value plural="y" case="par">Lukittuja</value>
+</adjective>
+
+<adjective name="Managing">
+    <value plural="n" case="n">Hallitseva</value>
+    <value plural="y" case="n">Hallitsevat</value>
+    <value plural="n" case="g">Hallitsevan</value>
+    <value plural="y" case="g">Hallitsevien</value>
+    <value plural="n" case="ines">Hallitsevassa</value>
+    <value plural="y" case="ines">Hallitsevissa</value>
+    <value plural="n" case="el">Hallitsevasta</value>
+    <value plural="y" case="el">Hallitsevista</value>
+    <value plural="n" case="il">Hallitsevaan</value>
+    <value plural="y" case="il">Hallitseviin</value>
+    <value plural="n" case="ad">Hallitsevalla</value>
+    <value plural="y" case="ad">Hallitsevilla</value>
+    <value plural="n" case="abl">Hallitsevalta</value>
+    <value plural="y" case="abl">Hallitsevilta</value>
+    <value plural="n" case="al">Hallitsevalle</value>
+    <value plural="y" case="al">Hallitseville</value>
+    <value plural="n" case="es">Hallitsevana</value>
+    <value plural="y" case="es">Hallitsevina</value>
+    <value plural="n" case="tra">Hallitsevaksi</value>
+    <value plural="y" case="tra">Hallitseviksi</value>
+    <value plural="n" case="par">Hallitsevaa</value>
+    <value plural="y" case="par">Hallitsevia</value>
+</adjective>
+
+    <adjective name="Managed">
+        <value plural="n" case="n">Hallittava</value>
+        <value plural="y" case="n">Hallittavat</value>
+        <value plural="n" case="g">Hallittavan</value>
+        <value plural="y" case="g">Hallittavien</value>
+        <value plural="n" case="ines">Hallittavassa</value>
+        <value plural="y" case="ines">Hallittavissa</value>
+        <value plural="n" case="el">Hallittavasta</value>
+        <value plural="y" case="el">Hallittavista</value>
+        <value plural="n" case="il">Hallittavaan</value>
+        <value plural="y" case="il">Hallittaviin</value>
+        <value plural="n" case="ad">Hallittavalla</value>
+        <value plural="y" case="ad">Hallittavilla</value>
+        <value plural="n" case="abl">Hallittavalta</value>
+        <value plural="y" case="abl">Hallittavilta</value>
+        <value plural="n" case="al">Hallittavalle</value>
+        <value plural="y" case="al">Hallittaville</value>
+        <value plural="n" case="es">Hallittavana</value>
+        <value plural="y" case="es">Hallittavina</value>
+        <value plural="n" case="tra">Hallittavaksi</value>
+        <value plural="y" case="tra">Hallittaviksi</value>
+        <value plural="n" case="par">Hallittavaa</value>
+        <value plural="y" case="par">Hallittavia</value>
+    </adjective>
+
+ <adjective name="Master">
+        <value plural="n" case="n">Pää</value>
+    <value plural="y" case="n">Pää</value>
+    <value plural="n" case="g">Pää</value>
+    <value plural="y" case="g">Pää</value>
+    <value plural="n" case="ines">Pää</value>
+    <value plural="y" case="ines">Pää</value>
+    <value plural="n" case="el">Pää</value>
+    <value plural="y" case="el">Pää</value>
+    <value plural="n" case="il">Pää</value>
+    <value plural="y" case="il">Pää</value>
+    <value plural="n" case="ad">Pää</value>
+    <value plural="y" case="ad">Pää</value>
+    <value plural="n" case="abl">Pää</value>
+    <value plural="y" case="abl">Pää</value>
+    <value plural="n" case="al">Pää</value>
+    <value plural="y" case="al">Pää</value>
+    <value plural="n" case="es">Pää</value>
+    <value plural="y" case="es">Pää</value>
+    <value plural="n" case="tra">Pää</value>
+    <value plural="y" case="tra">Pää</value>
+    <value plural="n" case="par">Pää</value>
+    <value plural="y" case="par">Pää</value>
+</adjective>
+
+<adjective name="Matching">
+    <value plural="n" case="n">Vastaava</value>
+    <value plural="y" case="n">Vastaavat</value>
+    <value plural="n" case="g">Vastaavan</value>
+    <value plural="y" case="g">Vastaavien</value>
+    <value plural="n" case="ines">Vastaavassa</value>
+    <value plural="y" case="ines">Vastaavissa</value>
+    <value plural="n" case="el">Vastaavasta</value>
+    <value plural="y" case="el">Vastaavista</value>
+    <value plural="n" case="il">Vastaavaan</value>
+    <value plural="y" case="il">Vastaaviin</value>
+    <value plural="n" case="ad">Vastaavalla</value>
+    <value plural="y" case="ad">Vastaavilla</value>
+    <value plural="n" case="abl">Vastaavalta</value>
+    <value plural="y" case="abl">Vastaavilta</value>
+    <value plural="n" case="al">Vastaavalle</value>
+    <value plural="y" case="al">Vastaaville</value>
+    <value plural="n" case="es">Vastaavana</value>
+    <value plural="y" case="es">Vastaavina</value>
+    <value plural="n" case="tra">Vastaavaksi</value>
+    <value plural="y" case="tra">Vastaaviksi</value>
+    <value plural="n" case="par">Vastaavaa</value>
+    <value plural="y" case="par">Vastaavia</value>
+</adjective>
+
+<adjective name="Merged">
+    <value plural="n">Yhdistetty</value>
+    <value plural="y">Yhdistetyt</value>
+    <value plural="n" case="g">Yhdistetyn</value>
+    <value plural="y" case="g">Yhdistettyjen</value>
+    <value plural="n" case="ines">Yhdistetyssä</value>
+    <value plural="y" case="ines">Yhdistetyissä</value>
+    <value plural="n" case="el">Yhdistetystä</value>
+    <value plural="y" case="el">Yhdistetyistä</value>
+    <value plural="n" case="il">Yhdistettyyn</value>
+    <value plural="y" case="il">Yhdistettyihin</value>
+    <value plural="n" case="ad">Yhdistetyllä</value>
+    <value plural="y" case="ad">Yhdistetyillä</value>
+    <value plural="n" case="abl">Yhdistetyltä</value>
+    <value plural="y" case="abl">Yhdistetyiltä</value>
+    <value plural="n" case="al">Yhdistetylle</value>
+    <value plural="y" case="al">Yhdistetyille</value>
+    <value plural="n" case="es">Yhdistettynä</value>
+    <value plural="y" case="es">Yhdistettyinä</value>
+    <value plural="n" case="tra">Yhdistetyksi</value>
+    <value plural="y" case="tra">Yhdistetyiksi</value>
+    <value plural="n" case="par">Yhdistettyä</value>
+    <value plural="y" case="par">Yhdistettyjä</value>
+</adjective>
+
+<adjective name="More">
+    <value plural="n" case="n">Lisää</value>
+    <value plural="y" case="n">Lisää</value>
+    <value plural="n" case="g">Lisää</value>
+    <value plural="y" case="g">Lisää</value>
+    <value plural="n" case="ines">Lisää</value>
+    <value plural="y" case="ines">Lisää</value>
+    <value plural="n" case="el">Lisää</value>
+    <value plural="y" case="el">Lisää</value>
+    <value plural="n" case="il">Lisää</value>
+    <value plural="y" case="il">Lisää</value>
+    <value plural="n" case="ad">Lisää</value>
+    <value plural="y" case="ad">Lisää</value>
+    <value plural="n" case="abl">Lisää</value>
+    <value plural="y" case="abl">Lisää</value>
+    <value plural="n" case="al">Lisää</value>
+    <value plural="y" case="al">Lisää</value>
+    <value plural="n" case="es">Lisää</value>
+    <value plural="y" case="es">Lisää</value>
+    <value plural="n" case="tra">Lisää</value>
+    <value plural="y" case="tra">Lisää</value>
+    <value plural="n" case="par">Lisää</value>
+    <value plural="y" case="par">Lisää</value>
+</adjective>
+
+	<adjective name="Multiple">           
+	<value plural="n" case="n">Usea</value>
+    <value plural="y" case="n">Useat</value>
+    <value plural="n" case="g">Usean</value>
+    <value plural="y" case="g">Useiden</value>
+    <value plural="n" case="ines">Useassa</value>
+    <value plural="y" case="ines">Useissa</value>
+    <value plural="n" case="el">Useasta</value>
+    <value plural="y" case="el">Useista</value>
+    <value plural="n" case="il">Useaan</value>
+    <value plural="y" case="il">Useisiin</value>
+    <value plural="n" case="ad">Usealla</value>
+    <value plural="y" case="ad">Useilla</value>
+    <value plural="n" case="abl">Usealta</value>
+    <value plural="y" case="abl">Useilta</value>
+    <value plural="n" case="al">Usealle</value>
+    <value plural="y" case="al">Useille</value>
+    <value plural="n" case="es">Useana</value>
+    <value plural="y" case="es">Useina</value>
+    <value plural="n" case="tra">Useaksi</value>
+    <value plural="y" case="tra">Useiksi</value>
+    <value plural="n" case="par">Useaa</value>
+    <value plural="y" case="par">Useita</value>
+</adjective>
+
+<adjective name="My">
+    <value plural="n" case="n">Oma</value>
+    <value plural="n" case="g">Oman</value>
+    <value plural="y" case="n">Omat</value>
+    <value plural="y" case="g">Omien</value>
+    <value plural="y" case="il">Omiin</value>
+    </adjective>
+
+<adjective name="Neglected">
+    <value plural="n" case="n">Laiminlyöty</value>
+    <value plural="y" case="n">Laiminlyödyt</value>
+    <value plural="n" case="g">Laiminlyödyn</value>
+    <value plural="y" case="g">Laiminlyötyjen</value>
+    <value plural="n" case="ines">Laiminlyödyssä</value>
+    <value plural="y" case="ines">Laiminlyödyissä</value>
+    <value plural="n" case="el">Laiminlyödystä</value>
+    <value plural="y" case="el">Laiminlyödyistä</value>
+    <value plural="n" case="il">Laiminlyötyyn</value>
+    <value plural="y" case="il">Laiminlyötyihin</value>
+    <value plural="n" case="ad">Laiminlyödyllä</value>
+    <value plural="y" case="ad">Laiminlyödyillä</value>
+    <value plural="n" case="abl">Laiminlyödyltä</value>
+    <value plural="y" case="abl">Laiminlyödyiltä</value>
+    <value plural="n" case="al">Laiminlyödylle</value>
+    <value plural="y" case="al">Laiminlyödyille</value>
+    <value plural="n" case="es">Laiminlyötynä</value>
+    <value plural="y" case="es">Laiminlyötyinä</value>
+    <value plural="n" case="tra">Laiminlyödyksi</value>
+    <value plural="y" case="tra">Laiminlyödyiksi</value>
+    <value plural="n" case="par">Laiminlyötyä</value>
+    <value plural="y" case="par">Laiminlyötyjä</value>
+</adjective>
+
+<adjective name="New">
+    <value plural="n" case="n">Uusi</value>
+    <value plural="y" case="n">Uudet</value>
+    <value plural="n" case="g">Uuden</value>
+    <value plural="y" case="g">Uusien</value>
+    <value plural="n" case="ines">Uudessa</value>
+    <value plural="y" case="ines">Uusissa</value>
+    <value plural="n" case="el">Uudesta</value>
+    <value plural="y" case="el">Uusista</value>
+    <value plural="n" case="il">Uuteen</value>
+    <value plural="y" case="il">Uusiin</value>
+    <value plural="n" case="ad">Uudella</value>
+    <value plural="y" case="ad">Uusilla</value>
+    <value plural="n" case="abl">Uudelta</value>
+    <value plural="y" case="abl">Uusilta</value>
+    <value plural="n" case="al">Uudelle</value>
+    <value plural="y" case="al">Uusille</value>
+    <value plural="n" case="es">Uutena</value>
+    <value plural="y" case="es">Uusina</value>
+    <value plural="n" case="tra">Uudeksi</value>
+    <value plural="y" case="tra">Uusiksi</value>
+    <value plural="n" case="par">Uutta</value>
+    <value plural="y" case="par">Uusia</value>
+</adjective>
+
+<adjective name="No">
+    <value plural="n" case="n">Ei</value>
+    <value plural="y" case="n">Ei</value>
+    <value plural="n" case="g">Ei</value>
+    <value plural="y" case="g">Ei</value>
+    <value plural="n" case="ines">Ei</value>
+    <value plural="y" case="ines">Ei</value>
+    <value plural="n" case="el">Ei</value>
+    <value plural="y" case="el">Ei</value>
+    <value plural="n" case="il">Ei</value>
+    <value plural="y" case="il">Ei</value>
+    <value plural="n" case="ad">Ei</value>
+    <value plural="y" case="ad">Ei</value>
+    <value plural="n" case="abl">Ei</value>
+    <value plural="y" case="abl">Ei</value>
+    <value plural="n" case="al">Ei</value>
+    <value plural="y" case="al">Ei</value>
+    <value plural="n" case="es">Ei</value>
+    <value plural="y" case="es">Ei</value>
+    <value plural="n" case="tra">Ei</value>
+    <value plural="y" case="tra">Ei</value>
+    <value plural="n" case="par">Ei</value>
+    <value plural="y" case="par">Ei</value>
+</adjective>
+    
+    <adjective name="Non-primary">
+        <value plural="n" case="n">Ei-ensisijainen</value>
+        <value plural="y" case="n">Ei-ensisijaiset</value>
+        <value plural="n" case="g">Ei-ensisijaisen</value>
+        <value plural="y" case="g">Ei-ensisijaisten</value>
+        <value plural="n" case="ines">Ei-ensisijaisessa</value>
+        <value plural="y" case="ines">Ei-ensisijaisissa</value>
+        <value plural="n" case="el">Ei-ensisijaisesta</value>
+        <value plural="y" case="el">Ei-ensisijaisista</value>
+        <value plural="n" case="il">Ei-ensisijaiseen</value>
+        <value plural="y" case="il">Ei-ensisijaisiin</value>
+        <value plural="n" case="ad">Ei-ensisijaisella</value>
+        <value plural="y" case="ad">Ei-ensisijaisilla</value>
+        <value plural="n" case="abl">Ei-ensisijaiselta</value>
+        <value plural="y" case="abl">Ei-ensisijaisilta</value>
+        <value plural="n" case="al">Ei-ensisijaiselle</value>
+        <value plural="y" case="al">Ei-ensisijaisille</value>
+        <value plural="n" case="es">Ei-ensisijaisena</value>
+        <value plural="y" case="es">Ei-ensisijaisina</value>
+        <value plural="n" case="tra">Ei-ensisijaiseksi</value>
+        <value plural="y" case="tra">Ei-ensisijaisiksi</value>
+        <value plural="n" case="par">Ei-ensisijaista</value>
+        <value plural="y" case="par">Ei-ensisijaisia</value>
+    </adjective>
+
+    <adjective name="Num"> <!-- this is short for number for a space in the UI that is very narrow.  If no appropriate 
+lation exists - use number.  Num won opportunities is the most commonly used phrase --> 
+    <value plural="n" case="n"> Num</value>
+    <value plural="y" case="n">Num</value>
+    <value plural="n" case="g">Num</value>
+    <value plural="y" case="g">Num</value>
+    <value plural="n" case="ines">Num</value>
+    <value plural="y" case="ines">Num</value>
+    <value plural="n" case="el">Num</value>
+    <value plural="y" case="el">Num</value>
+    <value plural="n" case="il">Num</value>
+    <value plural="y" case="il">Num</value>
+    <value plural="n" case="ad">Num</value>
+    <value plural="y" case="ad">Num</value>
+    <value plural="n" case="abl">Num</value>
+    <value plural="y" case="abl">Num</value>
+    <value plural="n" case="al">Num</value>
+    <value plural="y" case="al">Num</value>
+    <value plural="n" case="es">Num</value>
+    <value plural="y" case="es">Num</value>
+    <value plural="n" case="tra">Num</value>
+    <value plural="y" case="tra">Num</value>
+    <value plural="n" case="par">Num</value>
+    <value plural="y" case="par">Num</value>
+</adjective>
+        
+ <adjective name="One">
+     <value plural="n" case="n">Yksi</value>
+    <value plural="y" case="n">Yhdet</value>
+    <value plural="n" case="g">Yhden</value>
+    <value plural="y" case="g">Yksien</value>
+    <value plural="n" case="ines">Yhdessä</value>
+    <value plural="y" case="ines">Yksissä</value>
+    <value plural="n" case="el">Yhdestä</value>
+    <value plural="y" case="el">Yksistä</value>
+    <value plural="n" case="il">Yhteen</value>
+    <value plural="y" case="il">Yksiin</value>
+    <value plural="n" case="ad">Yhdellä</value>
+    <value plural="y" case="ad">Yksillä</value>
+    <value plural="n" case="abl">Yhdeltä</value>
+    <value plural="y" case="abl">Yksiltä</value>
+    <value plural="n" case="al">Yhdelle</value>
+    <value plural="y" case="al">Yksille</value>
+    <value plural="n" case="es">Yhtenä</value>
+    <value plural="y" case="es">Yksinä</value>
+    <value plural="n" case="tra">Yhdeksi</value>
+    <value plural="y" case="tra">Yksiksi</value>
+    <value plural="n" case="par">Yhtä</value>
+    <value plural="y" case="par">Yksiä</value>	
+</adjective>
+
+<adjective name="Older">
+    <value plural="n">Vanhempi</value>
+    <value plural="n" case="n">Vanhempi</value>
+    <value plural="y" case="n">Vanhemmat</value>
+    <value plural="n" case="g">Vanhemman</value>
+    <value plural="y" case="g">Vanhempien</value>
+    <value plural="n" case="ines">Vanhemmassa</value>
+    <value plural="y" case="ines">Vanhemmissa</value>
+    <value plural="n" case="el">Vanhemmasta</value>
+    <value plural="y" case="el">Vanhemmista</value>
+    <value plural="n" case="il">Vanhempaan</value>
+    <value plural="y" case="il">Vanhempiin</value>
+    <value plural="n" case="ad">Vanhemmalla</value>
+    <value plural="y" case="ad">Vanhemmilla</value>
+    <value plural="n" case="abl">Vanhemmalta</value>
+    <value plural="y" case="abl">Vanhemmilta</value>
+    <value plural="n" case="al">Vanhemmalle</value>
+    <value plural="y" case="al">Vanhemmille</value>
+    <value plural="n" case="es">Vanhempana</value>
+    <value plural="y" case="es">Vanhempina</value>
+    <value plural="n" case="tra">Vanhemmaksi</value>
+    <value plural="y" case="tra">Vanhemmiksi</value>
+    <value plural="n" case="par">Vanhempaa</value>
+    <value plural="y" case="par">Vanhempia</value>
+</adjective>
+
+<adjective name="Open">
+	<value plural="n" case="n">Avoin</value>
+	<value plural="y" case="n">Avoimet</value>
+	<value plural="n" case="g">Avoimen</value>
+	<value plural="y" case="g">Avoimien</value>
+	<value plural="n" case="ines">Avoimessa</value>
+	<value plural="y" case="ines">Avoimissa</value>
+	<value plural="n" case="el">Avoimesta</value>
+	<value plural="y" case="el">Avoimista</value>
+	<value plural="n" case="il">Avoimeen</value>
+	<value plural="y" case="il">Avoimiin</value>
+	<value plural="n" case="ad">Avoimella</value>
+	<value plural="y" case="ad">Avoimilla</value>
+	<value plural="n" case="abl">Avoimelta</value>
+	<value plural="y" case="abl">Avoimilta</value>
+	<value plural="n" case="al">Avoimelle</value>
+	<value plural="y" case="al">Avoimille</value>
+	<value plural="n" case="es">Avoimena</value>
+	<value plural="y" case="es">Avoimina</value>
+	<value plural="n" case="tra">Avoimeksi</value>
+	<value plural="y" case="tra">Avoimiksi</value>
+	<value plural="n" case="par">Avointa</value>
+	<value plural="y" case="par">Avoimia</value>
+</adjective>
+
+ <adjective name="Original">
+    <value plural="n" case="n">Alkuperäinen</value>
+    <value plural="y" case="n">Alkuperäiset</value>
+    <value plural="n" case="g">Alkuperäisen</value>
+    <value plural="y" case="g">Alkuperäisten</value>
+    <value plural="n" case="ines">Alkuperäisessä</value>
+    <value plural="y" case="ines">Alkuperäisissä</value>
+    <value plural="n" case="el">Alkuperäisestä</value>
+    <value plural="y" case="el">Alkuperäisistä</value>
+    <value plural="n" case="il">Alkuperäiseen</value>
+    <value plural="y" case="il">Alkuperäisiin</value>
+    <value plural="n" case="ad">Alkuperäisellä</value>
+    <value plural="y" case="ad">Alkuperäisillä</value>
+    <value plural="n" case="abl">Alkuperäiseltä</value>
+    <value plural="y" case="abl">Alkuperäisiltä</value>
+    <value plural="n" case="al">Alkuperäiselle</value>
+    <value plural="y" case="al">Alkuperäisille</value>
+    <value plural="n" case="es">Alkuperäisenä</value>
+    <value plural="y" case="es">Alkuperäisinä</value>
+    <value plural="n" case="tra">Alkuperäiseksi</value>
+    <value plural="y" case="tra">Alkuperäisiksi</value>
+    <value plural="n" case="par">Alkuperäistä</value>
+    <value plural="y" case="par">Alkuperäisiä</value>
+</adjective>
+
+<adjective name="Other">
+    <value plural="n" case="n">Muu</value>
+    <value plural="y" case="n">Muut</value>
+    <value plural="n" case="g">Muun</value>
+    <value plural="y" case="g">Muiden</value>
+    <value plural="n" case="ines">Muussa</value>
+    <value plural="y" case="ines">Muissa</value>
+    <value plural="n" case="el">Muusta</value>
+    <value plural="y" case="el">Muista</value>
+    <value plural="n" case="il">Muuhun</value>
+    <value plural="y" case="il">Muihin</value>
+    <value plural="n" case="ad">Muulla</value>
+    <value plural="y" case="ad">Muilla</value>
+    <value plural="n" case="abl">Muulta</value>
+    <value plural="y" case="abl">Muilta</value>
+    <value plural="n" case="al">Muulle</value>
+    <value plural="y" case="al">Muille</value>
+    <value plural="n" case="es">Muuna</value>
+    <value plural="y" case="es">Muina</value>
+    <value plural="n" case="tra">Muuksi</value>
+    <value plural="y" case="tra">Muiksi</value>
+    <value plural="n" case="par">Muuta</value>
+    <value plural="y" case="par">Muita</value>
+</adjective>
+
+<adjective name="Overdue">
+    <value plural="n" case="n">Viivästynyt</value>
+    <value plural="y" case="n">Viivästyneet</value>
+    <value plural="n" case="g">Viivästyneen</value>
+    <value plural="y" case="g">Viivästyneiden</value>
+    <value plural="n" case="ines">Viivästyneessä</value>
+    <value plural="y" case="ines">Viivästyneissä</value>
+    <value plural="n" case="el">Viivästyneestä</value>
+    <value plural="y" case="el">Viivästyneistä</value>
+    <value plural="n" case="il">Viivästyneeseen</value>
+    <value plural="y" case="il">Viivästyneisiin</value>
+    <value plural="n" case="ad">Viivästyneellä</value>
+    <value plural="y" case="ad">Viivästyneillä</value>
+    <value plural="n" case="abl">Viivästyneeltä</value>
+    <value plural="y" case="abl">Viivästyneiltä</value>
+    <value plural="n" case="al">Viivästyneelle</value>
+    <value plural="y" case="al">Viivästyneille</value>
+    <value plural="n" case="es">Viivästyneenä</value>
+    <value plural="y" case="es">Viivästyneinä</value>
+    <value plural="n" case="tra">Viivästyneeksi</value>
+    <value plural="y" case="tra">Viivästyneiksi</value>
+    <value plural="n" case="par">Viivästynyttä</value>
+    <value plural="y" case="par">Viivästyneitä</value>
+</adjective>
+
+<adjective name="Overridden">
+    <value plural="n" case="n">Ohitettu</value>
+    <value plural="y" case="n">Ohitetut</value>
+    <value plural="n" case="g">Ohitetun</value>
+    <value plural="y" case="g">Ohitettujen</value>
+    <value plural="n" case="ines">Ohitetussa</value>
+    <value plural="y" case="ines">Ohitetuissa</value>
+    <value plural="n" case="el">Ohitetusta</value>
+    <value plural="y" case="el">Ohitetuista</value>
+    <value plural="n" case="il">Ohitettuun</value>
+    <value plural="y" case="il">Ohitettuihin</value>
+    <value plural="n" case="ad">Ohitetulla</value>
+    <value plural="y" case="ad">Ohitetuilla</value>
+    <value plural="n" case="abl">Ohitetulta</value>
+    <value plural="y" case="abl">Ohitetuilta</value>
+    <value plural="n" case="al">Ohitetulle</value>
+    <value plural="y" case="al">Ohitetuille</value>
+    <value plural="n" case="es">Ohitettuna</value>
+    <value plural="y" case="es">Ohitettuina</value>
+    <value plural="n" case="tra">Ohitetuksi</value>
+    <value plural="y" case="tra">Ohitetuiksi</value>
+    <value plural="n" case="par">Ohitettua</value>
+    <value plural="y" case="par">Ohitettuja</value>
+</adjective>
+
+<adjective name="Owning">
+     <value plural="n" case="n">Omistava</value>
+    <value plural="y" case="n">Omistavat</value>
+    <value plural="n" case="g">Omistavan</value>
+    <value plural="y" case="g">Omistavien</value>
+    <value plural="n" case="ines">Omistavassa</value>
+    <value plural="y" case="ines">Omistavissa</value>
+    <value plural="n" case="el">Omistavasta</value>
+    <value plural="y" case="el">Omistavista</value>
+    <value plural="n" case="il">Omistavaan</value>
+    <value plural="y" case="il">Omistaviin</value>
+    <value plural="n" case="ad">Omistavalla</value>
+    <value plural="y" case="ad">Omistavilla</value>
+    <value plural="n" case="abl">Omistavalta</value>
+    <value plural="y" case="abl">Omistavilta</value>
+    <value plural="n" case="al">Omistavalle</value>
+    <value plural="y" case="al">Omistaville</value>
+    <value plural="n" case="es">Omistavana</value>
+    <value plural="y" case="es">Omistavina</value>
+    <value plural="n" case="tra">Omistavaksi</value>
+    <value plural="y" case="tra">Omistaviksi</value>
+    <value plural="n" case="par">Omistavaa</value>
+    <value plural="y" case="par">Omistavia</value>
+</adjective>
+
+<adjective name="Personal">
+    <value plural="n" case="n">Henkilökohtainen</value>
+    <value plural="y" case="n">Henkilökohtaiset</value>
+    <value plural="n" case="g">Henkilökohtaisen</value>
+    <value plural="y" case="g">Henkilökohtaisten</value>
+    <value plural="n" case="ines">Henkilökohtaisessa</value>
+    <value plural="y" case="ines">Henkilökohtaisissa</value>
+    <value plural="n" case="el">Henkilökohtaisesta</value>
+    <value plural="y" case="el">Henkilökohtaisista</value>
+    <value plural="n" case="il">Henkilökohtaiseen</value>
+    <value plural="y" case="il">Henkilökohtaisiin</value>
+    <value plural="n" case="ad">Henkilökohtaisella</value>
+    <value plural="y" case="ad">Henkilökohtaisilla</value>
+    <value plural="n" case="abl">Henkilökohtaiselta</value>
+    <value plural="y" case="abl">Henkilökohtaisilta</value>
+    <value plural="n" case="al">Henkilökohtaiselle</value>
+    <value plural="y" case="al">Henkilökohtaisille</value>
+    <value plural="n" case="es">Henkilökohtaisena</value>
+    <value plural="y" case="es">Henkilökohtaisina</value>
+    <value plural="n" case="tra">Henkilökohtaiseksi</value>
+    <value plural="y" case="tra">Henkilökohtaisiksi</value>
+    <value plural="n" case="par">Henkilökohtaista</value>
+    <value plural="y" case="par">Henkilökohtaisia</value>
+</adjective>
+
+<adjective name="Popular">
+    <value plural="n" case="n">Suosittu</value>
+    <value plural="y" case="n">Suositut</value>
+    <value plural="n" case="g">Suositun</value>
+    <value plural="y" case="g">Suosittujen</value>
+    <value plural="n" case="ines">Suositussa</value>
+    <value plural="y" case="ines">Suosituissa</value>
+    <value plural="n" case="el">Suositusta</value>
+    <value plural="y" case="el">Suosituista</value>
+    <value plural="n" case="il">Suosittuun</value>
+    <value plural="y" case="il">Suosittuihin</value>
+    <value plural="n" case="ad">Suositulla</value>
+    <value plural="y" case="ad">Suosituilla</value>
+    <value plural="n" case="abl">Suositulta</value>
+    <value plural="y" case="abl">Suosituilta</value>
+    <value plural="n" case="al">Suositulle</value>
+    <value plural="y" case="al">Suosituille</value>
+    <value plural="n" case="es">Suosittuna</value>
+    <value plural="y" case="es">Suosittuina</value>
+    <value plural="n" case="tra">Suosituksi</value>
+    <value plural="y" case="tra">Suosituiksi</value>
+    <value plural="n" case="par">Suosittua</value>
+    <value plural="y" case="par">Suosittuja</value>
+</adjective>
+
+<adjective name="Predefined">
+    <value plural="n" case="n">Esimääritetty</value>
+    <value plural="y" case="n">Esimääritetyt</value>
+    <value plural="n" case="g">Esimääritetyn</value>
+    <value plural="y" case="g">Esimääritettyjen</value>
+    <value plural="n" case="ines">Esimääritetyssä</value>
+    <value plural="y" case="ines">Esimääritetyissä</value>
+    <value plural="n" case="el">Esimääritetystä</value>
+    <value plural="y" case="el">Esimääritetyistä</value>
+    <value plural="n" case="il">Esimääritettyyn</value>
+    <value plural="y" case="il">Esimääritettyihin</value>
+    <value plural="n" case="ad">Esimääritetyllä</value>
+    <value plural="y" case="ad">Esimääritetyillä</value>
+    <value plural="n" case="abl">Esimääritetyltä</value>
+    <value plural="y" case="abl">Esimääritetyiltä</value>
+    <value plural="n" case="al">Esimääritetylle</value>
+    <value plural="y" case="al">Esimääritetyille</value>
+    <value plural="n" case="es">Esimääritettynä</value>
+    <value plural="y" case="es">Esimääritettyinä</value>
+    <value plural="n" case="tra">Esimääritetyksi</value>
+    <value plural="y" case="tra">Esimääritetyiksi</value>
+    <value plural="n" case="par">Esimääritettyä</value>
+    <value plural="y" case="par">Esimääritettyjä</value>
+</adjective>
+
+<adjective name="Proposed">
+    <value plural="n" case="n">Ehdotettu</value>
+    <value plural="y" case="n">Ehdotetut</value>
+    <value plural="n" case="g">Ehdotetun</value>
+    <value plural="y" case="g">Ehdotettujen</value>
+    <value plural="n" case="ines">Ehdotetussa</value>
+    <value plural="y" case="ines">Ehdotetuissa</value>
+    <value plural="n" case="el">Ehdotetusta</value>
+    <value plural="y" case="el">Ehdotetuista</value>
+    <value plural="n" case="il">Ehdotettuun</value>
+    <value plural="y" case="il">Ehdotettuihin</value>
+    <value plural="n" case="ad">Ehdotetulle</value>
+    <value plural="y" case="ad">Ehdotetuille</value>
+    <value plural="n" case="abl">Ehdotetulta</value>
+    <value plural="y" case="abl">Ehdotetuilta</value>
+    <value plural="n" case="al">Ehdotetulle</value>
+    <value plural="y" case="al">Ehdotetuille</value>
+    <value plural="n" case="es">Ehdotettuna</value>
+    <value plural="y" case="es">Ehdotettuina</value>
+    <value plural="n" case="tra">Ehdotetuksi</value>
+    <value plural="y" case="tra">Ehdotetuiksi</value>
+    <value plural="n" case="par">Ehdotettua</value>
+    <value plural="y" case="par">Ehdotettuja</value>
+</adjective>
+
+<adjective name="Primary">
+    <value plural="n" case="n">Ensisijainen</value>
+    <value plural="y" case="n">Ensisijaiset</value>
+    <value plural="n" case="g">Ensisijaisen</value>
+    <value plural="y" case="g">Ensisijaisten</value>
+    <value plural="n" case="ines">Ensisijaisessa</value>
+    <value plural="y" case="ines">Ensisijaisissa</value>
+    <value plural="n" case="el">Ensisijaisesta</value>
+    <value plural="y" case="el">Ensisijaisista</value>
+    <value plural="n" case="il">Ensisijaiseen</value>
+    <value plural="y" case="il">Ensisijaisiin</value>
+    <value plural="n" case="ad">Ensisijaisella</value>
+    <value plural="y" case="ad">Ensisijaisilla</value>
+    <value plural="n" case="abl">Ensisijaiselta</value>
+    <value plural="y" case="abl">Ensisijaisilta</value>
+    <value plural="n" case="al">Ensisijaiselle</value>
+    <value plural="y" case="al">Ensisijaisille</value>
+    <value plural="n" case="es">Ensisijaisena</value>
+    <value plural="y" case="es">Ensisijaisina</value>
+    <value plural="n" case="tra">Ensisijaiseksi</value>
+    <value plural="y" case="tra">Ensisijaisiksi</value>
+    <value plural="n" case="par">Ensisijaista</value>
+    <value plural="y" case="par">Ensisijaisia</value>
+</adjective>
+
+<adjective name="Private">
+    <value plural="n" case="n">Yksityinen</value>
+    <value plural="y" case="n">Yksityiset</value>
+    <value plural="n" case="g">Yksityisen</value>
+    <value plural="y" case="g">Yksityisten</value>
+    <value plural="n" case="ines">Yksityisessä</value>
+    <value plural="y" case="ines">Yksityisissä</value>
+    <value plural="n" case="el">Yksityisestä</value>
+    <value plural="y" case="el">Yksityisistä</value>
+    <value plural="n" case="il">Yksityiseen</value>
+    <value plural="y" case="il">Yksityisiin</value>
+    <value plural="n" case="ad">Yksityisellä</value>
+    <value plural="y" case="ad">Yksityisillä</value>
+    <value plural="n" case="abl">Yksityiseltä</value>
+    <value plural="y" case="abl">Yksityisiltä</value>
+    <value plural="n" case="al">Yksityiselle</value>
+    <value plural="y" case="al">Yksityisille</value>
+    <value plural="n" case="es">Yksityisenä</value>
+    <value plural="y" case="es">Yksityisinä</value>
+    <value plural="n" case="tra">Yksityiseksi</value>
+    <value plural="y" case="tra">Yksityisiksi</value>
+    <value plural="n" case="par">Yksityistä</value>
+    <value plural="y" case="par">Yksityisiä</value>
+</adjective>
+
+<adjective name="Public">
+    <value plural="n" case="n">Julkinen</value>
+    <value plural="y" case="n">Julkiset</value>
+    <value plural="n" case="g">Julkisen</value>
+    <value plural="y" case="g">Julkisten</value>
+    <value plural="n" case="ines">Julkisessa</value>
+    <value plural="y" case="ines">Julkisissa</value>
+    <value plural="n" case="el">Julkisesta</value>
+    <value plural="y" case="el">Julkisista</value>
+    <value plural="n" case="il">Julkiseen</value>
+    <value plural="y" case="il">Julkisiin</value>
+    <value plural="n" case="ad">Julkisella</value>
+    <value plural="y" case="ad">Julkisilla</value>
+    <value plural="n" case="abl">Julkiselta</value>
+    <value plural="y" case="abl">Julkisilta</value>
+    <value plural="n" case="al">Julkiselle</value>
+    <value plural="y" case="al">Julkisille</value>
+    <value plural="n" case="es">Julkisena</value>
+    <value plural="y" case="es">Julkisina</value>
+    <value plural="n" case="tra">Julkiseksi</value>
+    <value plural="y" case="tra">Julkisiksi</value>
+    <value plural="n" case="par">Julkista</value>
+    <value plural="y" case="par">Julkisia</value>
+</adjective>
+
+<adjective name="Published">
+     <value plural="n" case="n">Julkaistu</value>
+     <value plural="y" case="n">Julkaistut</value>
+     <value plural="n" case="g">Julkaistun</value>
+     <value plural="y" case="g">Julkaistujen</value>
+     <value plural="n" case="ines">Julkaistussa</value>
+     <value plural="y" case="ines">Julkaistuissa</value>
+     <value plural="n" case="el">Julkaistusta</value>
+     <value plural="y" case="el">Julkaistuista</value>
+     <value plural="n" case="il">Julkaistuun</value>
+     <value plural="y" case="il">Julkaistuihin</value>
+     <value plural="n" case="ad">Julkaistulla</value>
+     <value plural="y" case="ad">Julkaistuilla</value>
+     <value plural="n" case="abl">Julkaistulta</value>
+     <value plural="y" case="abl">Julkaistuilta</value>
+     <value plural="n" case="al">Julkaistulle</value>
+     <value plural="y" case="al">Julkaistuille</value>
+     <value plural="n" case="es">Julkaistuna</value>
+     <value plural="y" case="es">Julkaistuina</value>
+     <value plural="n" case="tra">Julkaistuksi</value>
+     <value plural="y" case="tra">Julkaistuiksi</value>
+     <value plural="n" case="par">Julkaisua</value>
+     <value plural="y" case="par">Julkaisuja</value>
+ </adjective>
+
+    <adjective name="Queue_Owned">
+	<value plural="n" case="n">Jonon omistama</value>
+	<value plural="y" case="n">Jonon omistamat</value>
+	<value plural="n" case="g">Jonon omistaman</value>
+	<value plural="y" case="g">Jonon omistamien</value>
+	<value plural="n" case="ines">Jonon omistamassa</value>
+	<value plural="y" case="ines">Jonon omistamissa</value>
+	<value plural="n" case="el">Jonon omistamasta</value>
+	<value plural="y" case="el">Jonon omistamista</value>
+	<value plural="n" case="il">Jonon omistamaan</value>
+	<value plural="y" case="il">Jonon omistamiin</value>
+	<value plural="n" case="ad">Jonon omistamalla</value>
+	<value plural="y" case="ad">Jonon omistamilla</value>
+	<value plural="n" case="abl">Jonon omistamalta</value>
+	<value plural="y" case="abl">Jonon omistamilta</value>
+	<value plural="n" case="al">Jonon omistamalle</value>
+	<value plural="y" case="al">Jonon omistamille</value>
+	<value plural="n" case="es">Jonon omistamana</value>
+	<value plural="y" case="es">Jonon omistamina</value>
+	<value plural="n" case="tra">Jonon omistamaksi</value>
+	<value plural="y" case="tra">Jonon omistamiksi</value>
+	<value plural="n" case="par">Jonon omistamaa</value>
+	<value plural="y" case="par">Jonon omistamia</value>
+</adjective>
+        
+<adjective name="Recent">
+    <value plural="n" case="n">Viimeisin</value>
+    <value plural="y" case="n">Viimeisimmät</value>
+    <value plural="n" case="g">Viimeisimmän</value>
+    <value plural="y" case="g">Viimeisimpien</value>
+    <value plural="n" case="ines">Viimeisimmässä</value>
+    <value plural="y" case="ines">Viimeisimmissä</value>
+    <value plural="n" case="el">Viimeisimmästä</value>
+    <value plural="y" case="el">Viimeisimmistä</value>
+    <value plural="n" case="il">Viimeisimpään</value>
+    <value plural="y" case="il">Viimeisimpiin</value>
+    <value plural="n" case="ad">Viimeisimmällä</value>
+    <value plural="y" case="ad">Viimeisimmillä</value>
+    <value plural="n" case="abl">Viimeisimmältä</value>
+    <value plural="y" case="abl">Viimeisimmiltä</value>
+    <value plural="n" case="al">Viimeisimmälle</value>
+    <value plural="y" case="al">Viimeisimmille</value>
+    <value plural="n" case="es">Viimeisimpänä</value>
+    <value plural="y" case="es">Viimeisimpinä</value>
+    <value plural="n" case="tra">Viimeisimmäksi</value>
+    <value plural="y" case="tra">Viimeisimmiksi</value>
+    <value plural="n" case="par">Viimeisintä</value>
+    <value plural="y" case="par">Viimeisimpiä</value>
+</adjective>
+
+<adjective name="Recently">
+    <value plural="n" case="n"> Viimeksi</value>
+    <value plural="y" case="n">Viimeksi</value>
+    <value plural="n" case="g">Viimeksi</value>
+    <value plural="y" case="g">Viimeksi</value>
+    <value plural="n" case="ines">Viimeksi</value>
+    <value plural="y" case="ines">Viimeksi</value>
+    <value plural="n" case="el">Viimeksi</value>
+    <value plural="y" case="el">Viimeksi</value>
+    <value plural="n" case="il">Viimeksi</value>
+    <value plural="y" case="il">Viimeksi</value>
+    <value plural="n" case="ad">Viimeksi</value>
+    <value plural="y" case="ad">Viimeksi</value>
+    <value plural="n" case="abl">Viimeksi</value>
+    <value plural="y" case="abl">Viimeksi</value>
+    <value plural="n" case="al">Viimeksi</value>
+    <value plural="y" case="al">Viimeksi</value>
+    <value plural="n" case="es">Viimeksi</value>
+    <value plural="y" case="es">Viimeksi</value>
+    <value plural="n" case="tra">Viimeksi</value>
+    <value plural="y" case="tra">Viimeksi</value>
+    <value plural="n" case="par">Viimeksi</value>
+    <value plural="y" case="par">Viimeksi</value>
+</adjective>
+
+<adjective name="Recurring">
+    <value plural="n" case="n">Toistuva</value>
+    <value plural="y" case="n">Toistuvat</value>
+    <value plural="n" case="g"> Toistuvan</value>
+    <value plural="y" case="g"> Toistuvien</value>
+    <value plural="n" case="ines">Toistuvassa</value>
+    <value plural="y" case="ines">Toistuvissa</value>
+    <value plural="n" case="el">Toistuvasta</value>
+    <value plural="y" case="el">Toistuvista</value>
+    <value plural="n" case="il">Toistuvaan</value>
+    <value plural="y" case="il">Toistuviin</value>
+    <value plural="n" case="ad">Toistuvalla</value>
+    <value plural="y" case="ad">Toistuvilla</value>
+    <value plural="n" case="abl">Toistuvalta</value>
+    <value plural="y" case="abl">Toistuvilta</value>
+    <value plural="n" case="al">Toistuvalle</value>
+    <value plural="y" case="al">Toistuville</value>
+    <value plural="n" case="es">Toistuvana</value>
+    <value plural="y" case="es">Toistuvina</value>
+    <value plural="n" case="tra">Toistuvaksi</value>
+    <value plural="y" case="tra">Toistuviksi</value>
+    <value plural="n" case="par">Toistuvaa</value>
+    <value plural="y" case="par">Toistuvia</value>
+</adjective>
+
+
+<adjective name="Remaining">
+    <value plural="n" case="n">Jäljellä oleva</value>
+    <value plural="y" case="n">Jäljellä olevat</value>
+    <value plural="n" case="g">Jäljellä olevan</value>
+    <value plural="y" case="g">Jäljellä olevien</value>
+    <value plural="n" case="ines">Jäljellä olevissa</value>
+    <value plural="y" case="ines">Jäljellä olevissa</value>
+    <value plural="n" case="el">Jäljellä olevasta</value>
+    <value plural="y" case="el">Jäljellä olevista</value>
+    <value plural="n" case="il">Jäljellä olevaan</value>
+    <value plural="y" case="il">Jäljellä oleviin</value>
+    <value plural="n" case="ad">Jäljellä olevalla</value>
+    <value plural="y" case="ad">Jäljellä olevilla</value>
+    <value plural="n" case="abl">Jäljellä olevalta</value>
+    <value plural="y" case="abl">Jäljellä olevilta</value>
+    <value plural="n" case="al">Jäljellä olevalle</value>
+    <value plural="y" case="al">Jäljellä oleville</value>
+    <value plural="n" case="es">Jäljellä olevana</value>
+    <value plural="y" case="es">Jäljellä olevina</value>
+    <value plural="n" case="tra">Jäljellä olevaksi</value>
+    <value plural="y" case="tra">Jäljellä oleviksi</value>
+    <value plural="n" case="par">Jäljellä olevaa</value>
+    <value plural="y" case="par">Jäljellä olevia</value>
+</adjective>
+
+    <adjective name="Rejected">
+    <value plural="n" case="n">Hylätty</value>
+    <value plural="y" case="n">Hylätyt</value>
+    <value plural="n" case="g">Hylätyn</value>
+    <value plural="y" case="g">Hylättyjen</value>
+    <value plural="n" case="ines">Hylätyssä</value>
+    <value plural="y" case="ines">Hylätyissä</value>
+    <value plural="n" case="el">Hylätystä</value>
+    <value plural="y" case="el">Hylätyistä</value>
+    <value plural="n" case="il">Hylättyyn</value>
+    <value plural="y" case="il">Hylättyihin</value>
+    <value plural="n" case="ad">Hylätyllä</value>
+    <value plural="y" case="ad">Hylätyillä</value>
+    <value plural="n" case="abl">Hylätyltä</value>
+    <value plural="y" case="abl">Hylätyiltä</value>
+    <value plural="n" case="al">Hylätylle</value>
+    <value plural="y" case="al">Hylätyille</value>
+    <value plural="n" case="es">Hylättynä</value>
+    <value plural="y" case="es">Hylättyinä</value>
+    <value plural="n" case="tra">Hylätyksi</value>
+    <value plural="y" case="tra">Hylätyiksi</value>
+    <value plural="n" case="par">Hylättyä</value>
+    <value plural="y" case="par">Hylättyjä</value>
+</adjective>
+
+<adjective name="Related">
+    <value plural="n" case="n">Liittyvä</value>
+    <value plural="y" case="n">Liittyvät</value>
+    <value plural="n" case="g">Liittyvän</value>
+    <value plural="y" case="g">Liittyvien</value>
+    <value plural="n" case="ines">Liittyvässä</value>
+    <value plural="y" case="ines">Liittyvissä</value>
+    <value plural="n" case="el">Liittyvästä</value>
+    <value plural="y" case="el">Liittyvistä</value>
+    <value plural="n" case="il">Liittyvään</value>
+    <value plural="y" case="il">Liittyviin</value>
+    <value plural="n" case="ad">Liittyvällä</value>
+    <value plural="y" case="ad">Liittyvillä</value>
+    <value plural="n" case="abl">Liittyvältä</value>
+    <value plural="y" case="abl">Liittyviltä</value>
+    <value plural="n" case="al">Liittyvälle</value>
+    <value plural="y" case="al">Liittyville</value>
+    <value plural="n" case="es">Liittyvänä</value>
+    <value plural="y" case="es">Liittyvinä</value>
+    <value plural="n" case="tra">Liittyväksi</value>
+    <value plural="y" case="tra">Liittyviksi</value>
+    <value plural="n" case="par">Liittyvää</value>
+    <value plural="y" case="par">Liittyviä</value>
+</adjective>
+
+<adjective name="Relevant">
+    <value plural="n" case="n">Aiheeseen liittyvä</value>
+    <value plural="y" case="n">Aiheeseen liittyvät</value>
+    <value plural="n" case="g">Aiheeseen liittyvän</value>
+    <value plural="y" case="g">Aiheeseen liittyvien</value>
+    <value plural="n" case="ines">Aiheeseen liittyvässä</value>
+    <value plural="y" case="ines">Aiheeseen liittyvissä</value>
+    <value plural="n" case="el">Aiheeseen liittyvästä</value>
+    <value plural="y" case="el">Aiheeseen liittyvistä</value>
+    <value plural="n" case="il">Aiheeseen liittyvään</value>
+    <value plural="y" case="il">Aiheeseen liittyviin</value>
+    <value plural="n" case="ad">Aiheeseen liittyvällä</value>
+    <value plural="y" case="ad">Aiheeseen liittyvillä</value>
+    <value plural="n" case="abl">Aiheeseen liittyvältä</value>
+    <value plural="y" case="abl">Aiheeseen liittyviltä</value>
+    <value plural="n" case="al">Aiheeseen liittyvälle</value>
+    <value plural="y" case="al">Aiheeseen liittyville</value>
+    <value plural="n" case="es">Aiheeseen liittyvänä</value>
+    <value plural="y" case="es">Aiheeseen liittyvinä</value>
+    <value plural="n" case="tra">Aiheeseen liittyväksi</value>
+    <value plural="y" case="tra">Aiheeseen liittyviksi</value>
+    <value plural="n" case="par">Aiheeseen liittyvää</value>
+    <value plural="y" case="par">Aiheeseen liittyviä</value>
+</adjective>
+
+<adjective name="Resulting">
+    <value plural="n" case="n">Johdannainen</value>
+    <value plural="y" case="n">Johdannaiset</value>
+    <value plural="n" case="g">Johdannaisen</value>
+    <value plural="y" case="g">Johdannaisten</value>
+    <value plural="n" case="ines">Johdannaisessa</value>
+    <value plural="y" case="ines">Johdannaisissa</value>
+    <value plural="n" case="el">Johdannaisesta</value>
+    <value plural="y" case="el">Johdannaisista</value>
+    <value plural="n" case="il">Johdannaiseen</value>
+    <value plural="y" case="il">Johdannaisiin</value>
+    <value plural="n" case="ad">Johdannaisella</value>
+    <value plural="y" case="ad">Johdannaisilla</value>
+    <value plural="n" case="abl">Johdannaiselta</value>
+    <value plural="y" case="abl">Johdannaisilta</value>
+    <value plural="n" case="al">Johdannaiselle</value>
+    <value plural="y" case="al">Johdannaisille</value>
+    <value plural="n" case="es">Johdannaisena</value>
+    <value plural="y" case="es">Johdannaisina</value>
+    <value plural="n" case="tra">Johdannaiseksi</value>
+    <value plural="y" case="tra">Johdannaisiksi</value>
+    <value plural="n" case="par">Johdannaista</value>
+    <value plural="y" case="par">Johdannaisia</value>
+</adjective>
+
+<adjective name="Reviewed">
+    <value plural="n" case="n">Tarkistettu</value>
+    <value plural="y" case="n">Tarkistetut</value>
+    <value plural="n" case="g">Tarkistetun</value>
+    <value plural="y" case="g">Tarkistettujen</value>
+    <value plural="n" case="ines">Tarkistetussa</value>
+    <value plural="y" case="ines">Tarkistetuissa</value>
+    <value plural="n" case="el">Tarkistetusta</value>
+    <value plural="y" case="el">Tarkistetuista</value>
+    <value plural="n" case="il">Tarkistettuun</value>
+    <value plural="y" case="il">Tarkistettuihin</value>
+    <value plural="n" case="ad">Tarkistetetulla</value>
+    <value plural="y" case="ad">Tarkistetuilla</value>
+    <value plural="n" case="abl">Tarkistetulta</value>
+    <value plural="y" case="abl">Tarkistuilta</value>
+    <value plural="n" case="al">Tarkistetulle</value>
+    <value plural="y" case="al">Tarkistetuille</value>
+    <value plural="n" case="es">Tarkistettuna</value>
+    <value plural="y" case="es">Tarkistettuina</value>
+    <value plural="n" case="tra">Tarkistetuksi</value>
+    <value plural="y" case="tra">Tarkistetuiksi</value>
+    <value plural="n" case="par">Tarkistettua</value>
+    <value plural="y" case="par">Tarkistettuja</value>
+</adjective>
+
+    <adjective name="Same">
+        <value plural="n">Same</value>
+</adjective>
+
+<adjective name="Sample">
+    <value plural="n" case="n">Esimerkki</value>
+     <value plural="y" case="n">Esimerkki</value>
+    <value plural="n" case="g">Esimerkki</value>
+    <value plural="y" case="g">Esimerkki</value>
+    <value plural="n" case="ines">Esimerkki</value>
+    <value plural="y" case="ines">Esimerkki</value>
+    <value plural="n" case="el">Esimerkki</value>
+    <value plural="y" case="el">Esimerkki</value>
+    <value plural="n" case="il">Esimerkki</value>
+    <value plural="y" case="il">Esimerkki</value>
+    <value plural="n" case="ad">Esimerkki</value>
+    <value plural="y" case="ad">Esimerkki</value>
+    <value plural="n" case="abl">Esimerkki</value>
+    <value plural="y" case="abl">Esimerkki</value>
+    <value plural="n" case="al">Esimerkki</value>
+    <value plural="y" case="al">Esimerkki</value>
+    <value plural="n" case="es">Esimerkki</value>
+    <value plural="y" case="es">Esimerkki</value>
+    <value plural="n" case="tra">Esimerkki</value>
+    <value plural="y" case="tra">Esimerkki</value>
+    <value plural="n" case="par">Esimerkki</value>
+    <value plural="y" case="par">Esimerkki</value>
+</adjective>
+
+ <adjective name="Scheduled">
+        <value plural="n" case="n">Ajoitettu</value>
+    <value plural="y" case="n"> Ajoitetut</value>
+    <value plural="n" case="g">Ajoitetun</value>
+    <value plural="y" case="g">Ajoitettujen</value>
+    <value plural="n" case="ines">Ajoitetussa</value>
+    <value plural="y" case="ines">Ajoitetuissa</value>
+    <value plural="n" case="el">Ajoitetusta</value>
+    <value plural="y" case="el">Ajoitetuista</value>
+    <value plural="n" case="il">Ajoitettuun</value>
+    <value plural="y" case="il">Ajoitettuihin</value>
+    <value plural="n" case="ad">Ajoitetulla</value>
+    <value plural="y" case="ad">Ajoitetuilla</value>
+    <value plural="n" case="abl">Ajoitetulta</value>
+    <value plural="y" case="abl">Ajoitetuilta</value>
+    <value plural="n" case="al">Ajoitetulle</value>
+    <value plural="y" case="al">Ajoitetuille</value>
+    <value plural="n" case="es">Ajoitettuna</value>
+    <value plural="y" case="es">Ajoitettuina</value>
+    <value plural="n" case="tra">Ajoitetuksi</value>
+    <value plural="y" case="tra">Ajoitetuiksi</value>
+    <value plural="n" case="par">Ajoitettua</value>
+    <value plural="y" case="par">Ajoitettuja</value>
+</adjective>
+
+    <adjective name="Second">
+        <value plural="n">Second</value>
+</adjective>
+
+<adjective name="Selected">
+    <value plural="n" case="n">Valittu</value>
+    <value plural="y" case="n">Valitut</value>
+    <value plural="n" case="g">Valitun</value>
+    <value plural="y" case="g">Valittujen</value>
+    <value plural="n" case="ines">Valitussa</value>
+    <value plural="y" case="ines">Valituissa</value>
+    <value plural="n" case="el">Valitusta</value>
+    <value plural="y" case="el">Valituista</value>
+    <value plural="n" case="il">Valittuun</value>
+    <value plural="y" case="il">Valittuihin</value>
+    <value plural="n" case="ad">Valitulla</value>
+    <value plural="y" case="ad">Valituilla</value>
+    <value plural="n" case="abl">Valitulta</value>
+    <value plural="y" case="abl">Valituilta</value>
+    <value plural="n" case="al">Valitulle</value>
+    <value plural="y" case="al">Valituille</value>
+    <value plural="n" case="es">Valittuna</value>
+    <value plural="y" case="es">Valittuina</value>
+    <value plural="n" case="tra">Valituksi</value>
+    <value plural="y" case="tra">Valituiksi</value>
+    <value plural="n" case="par">Valittua</value>
+    <value plural="y" case="par">Valittuja</value>
+</adjective>
+
+<adjective name="Shared">
+    <value plural="n" case="n">Jaettu</value>
+    <value plural="y" case="n">Jaetut</value>
+    <value plural="n" case="g">Jaetun</value>
+    <value plural="y" case="g">Jaettujen</value>
+    <value plural="n" case="ines">Jaetussa</value>
+    <value plural="y" case="ines">Jaetuissa</value>
+    <value plural="n" case="el">Jaetusta</value>
+    <value plural="y" case="el">Jaetuista</value>
+    <value plural="n" case="il">Jaettuun</value>
+    <value plural="y" case="il">Jaettuihin</value>
+    <value plural="n" case="ad">Jaetulla</value>
+    <value plural="y" case="ad">Jaetuilla</value>
+    <value plural="n" case="abl">Jaetulta</value>
+    <value plural="y" case="abl">Jaetuilta</value>
+    <value plural="n" case="al">Jaetulle</value>
+    <value plural="y" case="al">Jaetuille</value>
+    <value plural="n" case="es">Jaettuna</value>
+    <value plural="y" case="es">Jaettuina</value>
+    <value plural="n" case="tra">Jaetuksi</value>
+    <value plural="y" case="tra">Jaetuiksi</value>
+    <value plural="n" case="par">Jaettua</value>
+    <value plural="y" case="par">Jaettuja</value>
+</adjective>
+
+<adjective name="Similar">
+    <value plural="n" case="n">Samanlainen</value>
+    <value plural="y" case="n">Samanlaiset</value>
+    <value plural="n" case="g"> Samanlaisen</value>
+    <value plural="y" case="g"> Samanlaisten</value>
+    <value plural="n" case="ines">Samanlaisessa</value>
+    <value plural="y" case="ines">Samanlaisissa</value>
+    <value plural="n" case="el">Samanlaisesta</value>
+    <value plural="y" case="el">Samanlaisista</value>
+    <value plural="n" case="il">Samanlaiseen</value>
+    <value plural="y" case="il">Samanlaisiin</value>
+    <value plural="n" case="ad">Samanlaisella</value>
+    <value plural="y" case="ad">Samanlaisilla</value>
+    <value plural="n" case="abl">Samanlaiselta</value>
+    <value plural="y" case="abl">Samanlaisilta</value>
+    <value plural="n" case="al">Samanlaiselle</value>
+    <value plural="y" case="al">Samanlaisille</value>
+    <value plural="n" case="es">Samanlaisena</value>
+    <value plural="y" case="es">Samanlaisina</value>
+    <value plural="n" case="tra">Samanlaiseksi</value>
+    <value plural="y" case="tra">Samanlaisiksi</value>
+    <value plural="n" case="par">Samanlaista</value>
+    <value plural="y" case="par">Samanlaisia</value>
+</adjective>
+
+<adjective name="Single">
+    <value plural="n" case="n">Yksittäinen</value>
+    <value plural="y" case="n">Yksittäiset</value>
+    <value plural="n" case="g">Yksittäisen</value>
+    <value plural="y" case="g">Yksittäisten</value>
+    <value plural="n" case="ines">Yksittäisessä</value>
+    <value plural="y" case="ines">Yksittäisissä</value>
+    <value plural="n" case="el">Yksittäisestä</value>
+    <value plural="y" case="el">Yksittäisistä</value>
+    <value plural="n" case="il">Yksittäiseen</value>
+    <value plural="y" case="il">Yksittäisiin</value>
+    <value plural="n" case="ad">Yksittäisellä</value>
+    <value plural="y" case="ad">Yksittäisillä</value>
+    <value plural="n" case="abl">Yksittäiseltä</value>
+    <value plural="y" case="abl">Yksittäsiltä</value>
+    <value plural="n" case="al">Yksittäiselle</value>
+    <value plural="y" case="al">Yksittäisille</value>
+    <value plural="n" case="es">Yksittäisenä</value>
+    <value plural="y" case="es">Yksittäisinä</value>
+    <value plural="n" case="tra">Yksittäiseksi</value>
+    <value plural="y" case="tra">Yksittäisiksi</value>
+    <value plural="n" case="par">Yksittäistä</value>
+    <value plural="y" case="par">Yksittäisiä</value>
+</adjective>
+
+<adjective name="Social">
+    <value plural="n" case="n">Sosiaalinen</value>
+    <value plural="y" case="n">Sosiaaliset</value>
+    <value plural="n" case="g">Sosiaalisen</value>
+    <value plural="y" case="g">Sosiaalisten</value>
+    <value plural="n" case="ines">Sosiaalisessa</value>
+    <value plural="y" case="ines">Sosiaalisissa</value>
+    <value plural="n" case="el">Sosiaalisesta</value>
+    <value plural="y" case="el">Sosiaalisista</value>
+    <value plural="n" case="il">Sosiaaliseen</value>
+    <value plural="y" case="il">Sosiaalisiin</value>
+    <value plural="n" case="ad">Sosiaalisella</value>
+    <value plural="y" case="ad">Sosiaalisilla</value>
+    <value plural="n" case="abl">Sosiaaliselta</value>
+    <value plural="y" case="abl">Sosiaalisilta</value>
+    <value plural="n" case="al">Sosiaaliselle</value>
+    <value plural="y" case="al">Sosiaalisille</value>
+    <value plural="n" case="es">Sosiaalisena</value>
+    <value plural="y" case="es">Sosiaalisina</value>
+    <value plural="n" case="tra">Sosiaaliseksi</value>
+    <value plural="y" case="tra">Sosiaalisiksi</value>
+    <value plural="n" case="par">Sosiaalista</value>
+    <value plural="y" case="par">Sosiaalisia</value>
+</adjective>
+        
+<adjective name="Source">
+    <value plural="n">Lähde</value>
+    <value plural="y" case="n">Lähteenä</value>
+    <value plural="n" case="g">Lähteen</value>
+    <value plural="y" case="g">Lähteiden</value>
+    <value plural="n" case="ines">Lähteessä</value>
+    <value plural="y" case="ines">Lähteissä</value>
+    <value plural="n" case="el">Lähteestä</value>
+    <value plural="y" case="el">Lähteistä</value>
+    <value plural="n" case="il">Lähteeseen</value>
+    <value plural="y" case="il">Lähteisiin</value>
+    <value plural="n" case="ad">Lähteellä</value>
+    <value plural="y" case="ad">Lähteillä</value>
+    <value plural="n" case="abl">Lähteeltä</value>
+    <value plural="y" case="abl">Lähteiltä</value>
+    <value plural="n" case="al">Lähteelle</value>
+    <value plural="y" case="al">Lähteille</value>
+    <value plural="n" case="es">Lähteenä</value>
+    <value plural="y" case="es">Lähteinä</value>
+    <value plural="n" case="tra">Lähteeksi</value>
+    <value plural="y" case="tra">Lähteiksi</value>
+    <value plural="n" case="par">Lähdettä</value>
+    <value plural="y" case="par">Lähteitä</value>
+</adjective>
+
+<adjective name="Specified">
+    <value plural="n" case="n">Määritetty</value>
+    <value plural="y" case="n">Määritetyt</value>
+    <value plural="n" case="g">Määritetyn</value>
+    <value plural="y" case="g">Määritettyjen</value>
+    <value plural="n" case="ines">Määritetyssä</value>
+    <value plural="y" case="ines">Määritetyissä</value>
+    <value plural="n" case="el">Määritetystä</value>
+    <value plural="y" case="el">Määritetyistä</value>
+    <value plural="n" case="il">Määritettyyn</value>
+    <value plural="y" case="il">Määritettyihin</value>
+    <value plural="n" case="ad">Määritetyllä</value>
+    <value plural="y" case="ad">Määritetyillä</value>
+    <value plural="n" case="abl">Määritetyltä</value>
+    <value plural="y" case="abl">Määritetyiltä</value>
+    <value plural="n" case="al">Määritetylle</value>
+    <value plural="y" case="al">Määritetyille</value>
+    <value plural="n" case="es">Määritettynä</value>
+    <value plural="y" case="es">Määritettyinä</value>
+    <value plural="n" case="tra">Määritetyksi</value>
+    <value plural="y" case="tra">Määritetyiksi</value>
+    <value plural="n" case="par">Määritettyä</value>
+    <value plural="y" case="par">Määritettyjä</value>
+</adjective>
+
+<adjective name="Stale">
+    <value plural="n" case="n">Vanhentunut</value>
+    <value plural="y" case="n">Vanhentuneet</value>
+    <value plural="n" case="g">Vanhentuneen</value>
+    <value plural="y" case="g">Vanhentuneiden</value>
+    <value plural="n" case="ines">Vanhentuneessa</value>
+    <value plural="y" case="ines">Vanhentuneissa</value>
+    <value plural="n" case="el">Vanhentuneesta</value>
+    <value plural="y" case="el">Vanhentuneista</value>
+    <value plural="n" case="il">Vanhentuneeseen</value>
+    <value plural="y" case="il">Vanhentuneisiin</value>
+    <value plural="n" case="ad">Vanhentuneella</value>
+    <value plural="y" case="ad">Vanhentuneilla</value>
+    <value plural="n" case="abl">Vanhentuneelta</value>
+    <value plural="y" case="abl">Vanhentuneilta</value>
+    <value plural="n" case="al">Vanhentuneelle</value>
+    <value plural="y" case="al">Vanhentuneille</value>
+    <value plural="n" case="es">Vanhentuneena</value>
+    <value plural="y" case="es">Vanhentuneina</value>
+    <value plural="n" case="tra">Vanhentuneeksi</value>
+    <value plural="y" case="tra">Vanhentuneiksi</value>
+    <value plural="n" case="par">Vanhentunutta</value>
+    <value plural="y" case="par">Vanhentuneita</value>
+</adjective>
+
+<adjective name="Standard">
+    <value plural="n" case="n">Vakio</value>
+     <value plural="y" case="n">Vakio</value>
+    <value plural="n" case="g">Vakio</value>
+    <value plural="y" case="g">Vakio</value>
+    <value plural="n" case="ines">Vakio</value>
+    <value plural="y" case="ines">Vakio</value>
+    <value plural="n" case="el">Vakio</value>
+    <value plural="y" case="el">Vakio</value>
+    <value plural="n" case="il">Vakio</value>
+    <value plural="y" case="il">Vakio</value>
+    <value plural="n" case="ad">Vakio</value>
+    <value plural="y" case="ad">Vakio</value>
+    <value plural="n" case="abl">Vakio</value>
+    <value plural="y" case="abl">Vakio</value>
+    <value plural="n" case="al">Vakio</value>
+    <value plural="y" case="al">Vakio</value>
+    <value plural="n" case="es">Vakio</value>
+    <value plural="y" case="es">Vakio</value>
+    <value plural="n" case="tra">Vakio</value>
+    <value plural="y" case="tra">Vakio</value>
+    <value plural="n" case="par">Vakio</value>
+    <value plural="y" case="par">Vakio</value>
+</adjective>
+
+<adjective name="Stuck">
+    <value plural="n" case="n">Lukkiutunut</value>
+    <value plural="y" case="n">Lukkiutuneet</value>
+    <value plural="n" case="g">Lukkiutuneen</value>
+    <value plural="y" case="g">Lukkiutuneiden</value>
+    <value plural="n" case="ines">Lukkiutuneessa</value>
+    <value plural="y" case="ines">Lukkiutuneissa</value>
+    <value plural="n" case="el">Lukkiutuneesta</value>
+    <value plural="y" case="el">Lukkiutuneista</value>
+    <value plural="n" case="il">Lukkiutuneeseen</value>
+    <value plural="y" case="il">Lukkiutuneisiin</value>
+    <value plural="n" case="ad">Lukkiutuneella</value>
+    <value plural="y" case="ad">Lukkiutuneilla</value>
+    <value plural="n" case="abl">Lukkiutuneelta</value>
+    <value plural="y" case="abl">Lukkiutuneilta</value>
+    <value plural="n" case="al">Lukkiutuneelle</value>
+    <value plural="y" case="al">Lukkiutuneille</value>
+    <value plural="n" case="es">Lukkiutuneena</value>
+    <value plural="y" case="es">Lukkiutuneina</value>
+    <value plural="n" case="tra">Lukkiutuneeksi</value>
+    <value plural="y" case="tra">Lukkiutuneiksi</value>
+    <value plural="n" case="par">Lukkiutunutta</value>
+    <value plural="y" case="par">Lukkiutuneita</value>
+</adjective>
+
+<adjective name="Suggested">
+    <value plural="n" case="n">Ehdotettu</value>
+    <value plural="y" case="n">Ehdotetut</value>
+    <value plural="n" case="g">Ehdotetun</value>
+    <value plural="y" case="g">Ehdotettujen</value>
+    <value plural="n" case="ines">Ehdotetussa</value>
+    <value plural="y" case="ines">Ehdotetuissa</value>
+    <value plural="n" case="el">Ehdotetusta</value>
+    <value plural="y" case="el">Ehdotetuista</value>
+    <value plural="n" case="il">Ehdotettuun</value>
+    <value plural="y" case="il">Ehdotettuihin</value>
+    <value plural="n" case="ad">Ehdotetulla</value>
+    <value plural="y" case="ad">Ehdotetuilla</value>
+    <value plural="n" case="abl">Ehdotetulta</value>
+    <value plural="y" case="abl">Ehdotetuilta</value>
+    <value plural="n" case="al">Ehdotetulle</value>
+    <value plural="y" case="al">Ehdotetuille</value>
+    <value plural="n" case="es">Ehdotettuna</value>
+    <value plural="y" case="es">Ehdotettuina</value>
+    <value plural="n" case="tra">Ehdotetuksi</value>
+    <value plural="y" case="tra">Ehdotetuiksi</value>
+    <value plural="n" case="par">Ehdotettua</value>
+    <value plural="y" case="par">Ehdotettuja</value>
+</adjective>
+
+    <adjective name="Supplementary">
+    <value plural="n" case="n">Ylimääräinen</value>
+    <value plural="y" case="n">Ylimääräiset</value>
+    <value plural="n" case="g">Ylimääräisen</value>
+    <value plural="y" case="g">Ylimääräisien</value>
+    <value plural="n" case="ines">Ylimääräisessä</value>
+    <value plural="y" case="ines">Ylimääräisissä</value>
+    <value plural="n" case="el">Ylimääräisestä</value>
+    <value plural="y" case="el">Ylimääräisistä</value>
+    <value plural="n" case="il">Ylimääräiseen</value>
+    <value plural="y" case="il">Ylimääräisiin</value>
+    <value plural="n" case="ad">Ylimääräisellä</value>
+    <value plural="y" case="ad">Ylimääräisillä</value>
+    <value plural="n" case="abl">Ylimääräiseltä</value>
+    <value plural="y" case="abl">Ylimääräisiltä</value>
+    <value plural="n" case="al">Ylimääräiselle</value>
+    <value plural="y" case="al">Ylimääräisille</value>
+    <value plural="n" case="es">Ylimääräisenä</value>
+    <value plural="y" case="es">Ylimääräisinä</value>
+    <value plural="n" case="tra">Ylimääräiseksi</value>
+    <value plural="y" case="tra">Ylimääräisiksi</value>
+    <value plural="n" case="par">Ylimääräistä</value>
+    <value plural="y" case="par">Ylimääräisiä</value>
+</adjective>
+
+<adjective name="Synced">
+    <value plural="n">Synkronoitu</value>
+    <value plural="y" case="n">Synkronoidut</value>
+    <value plural="n" case="g">Synkronoidun</value>
+    <value plural="y" case="g">Synkronoitujen</value>
+    <value plural="n" case="ines">Synkronoidussa</value>
+    <value plural="y" case="ines">Synkronoiduissa </value>
+    <value plural="n" case="el">Synkronoidusta</value>
+    <value plural="y" case="el">Synkronoiduista </value>
+    <value plural="n" case="il">Synkronoituun</value>
+    <value plural="y" case="il">Synkronoituihin</value>
+    <value plural="n" case="ad">Synkronoidulla</value>
+    <value plural="y" case="ad">Synkronoiduilla </value>
+    <value plural="n" case="abl">Synkronoidulta</value>
+    <value plural="y" case="abl">Synkronoiduilta </value>
+    <value plural="n" case="al">Synkronoidulle</value>
+    <value plural="y" case="al">Synkronoiduille</value>
+    <value plural="n" case="es">Synkronoituna</value>
+    <value plural="y" case="es">Synkronoituina </value>
+    <value plural="n" case="tra">Synkronoiduksi</value>
+    <value plural="y" case="tra">Synkronoiduiksi </value>
+    <value plural="n" case="par">Synkronoidusta</value>
+    <value plural="y" case="par">Synkronoiduista </value>
+</adjective>
+
+<adjective name="That">
+    <value plural="n" case="n">Kyseinen</value>
+    <value plural="y" case="n">Kyseiset</value>
+    <value plural="n" case="g">Kyseisen</value>
+    <value plural="y" case="g">Kyseisten</value>
+    <value plural="n" case="ines">Kyseisessä</value>
+    <value plural="y" case="ines">Kyseisissä</value>
+    <value plural="n" case="el">Kyseisestä</value>
+    <value plural="y" case="el">Kyseisistä</value>
+    <value plural="n" case="il">Kyseiseen</value>
+    <value plural="y" case="il">Kyseisiin</value>
+    <value plural="n" case="ad">Kyseisellä</value>
+    <value plural="y" case="ad">Kyseisillä</value>
+    <value plural="n" case="abl">Kyseiseltä</value>
+    <value plural="y" case="abl">Kyseisiltä</value>
+    <value plural="n" case="al">Kyseiselle</value>
+    <value plural="y" case="al">Kyseisille</value>
+    <value plural="n" case="es">Kyseisenä</value>
+    <value plural="y" case="es">Kyseisinä</value>
+    <value plural="n" case="tra">Kyseiseksi</value>
+    <value plural="y" case="tra">Kyseisiksi</value>
+    <value plural="n" case="par">Kyseistä</value>
+    <value plural="y" case="par">Kyseisiä</value>
+</adjective>
+
+    <adjective name="Their">
+    <value plural="n" case="n">Heidän</value>
+</adjective>
+
+<adjective name="These">
+    <value plural="n"  case="n">Nämä</value>
+    <value plural="y"  case="n">Nämä</value>
+    <value plural="n" case="g">Näiden</value>
+    <value plural="y" case="g">Näiden</value>
+    <value plural="n" case="ines">Näissä</value>
+    <value plural="y" case="ines">Näissä</value>
+    <value plural="n" case="el">Näistä</value>
+    <value plural="y" case="el">Näistä</value>
+    <value plural="n" case="il">Näihin</value>
+    <value plural="y" case="il">Näihin</value>
+    <value plural="n" case="ad">Näillä</value>
+    <value plural="y" case="ad">Näillä</value>
+    <value plural="n" case="abl">Näiltä</value>
+    <value plural="y" case="abl">Näiltä</value>
+    <value plural="n" case="al">Näille</value>
+    <value plural="y" case="al">Näille</value>
+    <value plural="n" case="es">Näinä</value>
+    <value plural="y" case="es">Näinä</value>
+    <value plural="n" case="tra">Näiksi</value>
+    <value plural="y" case="tra">Näiksi</value>
+    <value plural="n" case="par">Näitä</value>
+    <value plural="y" case="par">Näitä</value>
+</adjective>
+
+<adjective name="Those">
+    <value plural="n" case="n">Nuo</value>
+    <value plural="y" case="n">Nuo</value>
+    <value plural="n" case="g">Noiden</value>
+    <value plural="y" case="g">Noiden</value>
+    <value plural="n" case="ines">Noissa</value>
+    <value plural="y" case="ines">Noissa</value>
+    <value plural="n" case="el">Noista</value>
+    <value plural="y" case="el">Noista</value>
+    <value plural="n" case="il">Noihin</value>
+    <value plural="y" case="il">Noihin</value>
+    <value plural="n" case="ad">Noilla</value>
+    <value plural="y" case="ad">Noilla</value>
+    <value plural="n" case="abl">Noilta</value>
+    <value plural="y" case="abl">Noilta</value>
+    <value plural="n" case="al">Noille</value>
+    <value plural="y" case="al">Noille</value>
+    <value plural="n" case="es">Noissa</value>
+    <value plural="y" case="es">Noissa</value>
+    <value plural="n" case="tra">Noiksi</value>
+    <value plural="y" case="tra">Noiksi</value>
+    <value plural="n" case="par">Noita</value>
+    <value plural="y" case="par">Noita</value>
+</adjective>
+
+<adjective name="This">
+    <value plural="n" case="n">Tämä</value>
+    <value plural="n" case="g">Tämän</value>
+    <value plural="n" case="ines">Tässä</value>
+    <value plural="n" case="el">Tästä</value>
+    <value plural="n" case="il">Tähän</value>
+    <value plural="n" case="ad">Tällä</value>
+    <value plural="n" case="abl">Tältä</value>
+    <value plural="n" case="al">Tälle</value>
+    <value plural="n" case="es">Tänä</value>
+    <value plural="n" case="tra">Täksi</value>
+    <value plural="n" case="par">Tätä</value>
+    <value plural="y" case="n">Tämä</value>
+    <value plural="y" case="g">Tämän</value>
+    <value plural="y" case="ines">Tässä</value>
+    <value plural="y" case="el">Tästä</value>
+    <value plural="y" case="il">Tähän</value>
+    <value plural="y" case="ad">Tällä</value>
+    <value plural="y" case="abl">Tältä</value>
+    <value plural="y" case="al">Tälle</value>
+    <value plural="y" case="es">Tänä</value>
+    <value plural="y" case="tra">Täksi</value>
+    <value plural="y" case="par">Tätä</value>
+</adjective>
+        
+    <adjective name="Today">
+        <value plural="n">Today</value>
+</adjective>
+
+    <adjective name="Top">
+    <value plural="n" case="n">Paras</value>
+    <value plural="y" case="n">Parhaat</value>
+    <value plural="n" case="g">Parhaan</value>
+    <value plural="y" case="g">Parhaiden</value>
+    <value plural="n" case="ines">Parhaassa</value>
+    <value plural="y" case="ines">Parhaissa</value>
+    <value plural="n" case="el">Parhaasta</value>
+    <value plural="y" case="el">Parhaista</value>
+    <value plural="n" case="il">Parhaaseen</value>
+    <value plural="y" case="il">Parhaisiin</value>
+    <value plural="n" case="ad">Parhaalla</value>
+    <value plural="y" case="ad">Parhailla</value>
+    <value plural="n" case="abl">Parhaalta</value>
+    <value plural="y" case="abl">Parhailta</value>
+    <value plural="n" case="al">Parhaalle</value>
+    <value plural="y" case="al">Parhaille</value>
+    <value plural="n" case="es">Parhaana</value>
+    <value plural="y" case="es">Parhaina</value>
+    <value plural="n" case="tra">Parhaaksi</value>
+    <value plural="y" case="tra">Parhaiksi</value>
+    <value plural="n" case="par">Parasta</value>
+    <value plural="y" case="par">Parhaita</value>
+</adjective>
+
+<adjective name="Total">
+    <value plural="n" case="n">Yhteensä</value>
+     <value plural="y" case="n">Yhteensä</value>
+    <value plural="n" case="g">Yhteensä</value>
+    <value plural="y" case="g">Yhteensä</value>
+    <value plural="n" case="ines">Yhteensä</value>
+    <value plural="y" case="ines">Yhteensä</value>
+    <value plural="n" case="el">Yhteensä</value>
+    <value plural="y" case="el">Yhteensä</value>
+    <value plural="n" case="il">Yhteensä</value>
+    <value plural="y" case="il">Yhteensä</value>
+    <value plural="n" case="ad">Yhteensä</value>
+    <value plural="y" case="ad">Yhteensä</value>
+    <value plural="n" case="abl">Yhteensä</value>
+    <value plural="y" case="abl">Yhteensä</value>
+    <value plural="n" case="al">Yhteensä</value>
+    <value plural="y" case="al">Yhteensä</value>
+    <value plural="n" case="es">Yhteensä</value>
+    <value plural="y" case="es">Yhteensä</value>
+    <value plural="n" case="tra">Yhteensä</value>
+    <value plural="y" case="tra">Yhteensä</value>
+    <value plural="n" case="par">Yhteensä</value>
+    <value plural="y" case="par">Yhteensä</value>
+</adjective>
+
+    <adjective name="Translated">
+    <value plural="n" case="n">Käännetty</value>
+    <value plural="y" case="n">Käännetyt</value>
+    <value plural="n" case="g">Käännetyn</value>
+    <value plural="y" case="g">Käännettyjen</value>
+    <value plural="n" case="ines">Käännetyssä</value>
+    <value plural="y" case="ines">Käännetyissä</value>
+    <value plural="n" case="el">Käännetystä</value>
+    <value plural="y" case="el">Käännetyistä</value>
+    <value plural="n" case="il">Käännettyyn</value>
+    <value plural="y" case="il">Käännettyihin</value>
+    <value plural="n" case="ad">Käännetyllä</value>
+    <value plural="y" case="ad">Käännetyillä</value>
+    <value plural="n" case="abl">Käännetyltä</value>
+    <value plural="y" case="abl">Käännetyiltä</value>
+    <value plural="n" case="al">Käännetylle</value>
+    <value plural="y" case="al">Käännetyille</value>
+    <value plural="n" case="es">Käännettynä</value>
+    <value plural="y" case="es">Käännettyinä</value>
+    <value plural="n" case="tra">Käännetyksi</value>
+    <value plural="y" case="tra">Käännetyiksi</value>
+    <value plural="n" case="par">Käännettyä</value>
+    <value plural="y" case="par">Käännettyjä</value>
+</adjective>
+
+    <adjective name="Transferable">
+    <value plural="n" case="n">Siirrettävä</value>
+    <value plural="y" case="n">Siirrettävät</value>
+    <value plural="n" case="g">Siirrettävän</value>
+    <value plural="y" case="g">Siirrettävien</value>
+    <value plural="n" case="ines">Siirrettävässä</value>
+    <value plural="y" case="ines">Siirrettävissä</value>
+    <value plural="n" case="el">Siirrettävästä</value>
+    <value plural="y" case="el">Siirrettävistä</value>
+    <value plural="n" case="il">Siirrettävään</value>
+    <value plural="y" case="il">Siirrettäviin</value>
+    <value plural="n" case="ad">Siirrettävällä</value>
+    <value plural="y" case="ad">Siirrettävillä</value>
+    <value plural="n" case="abl">Siirrettävältä</value>
+    <value plural="y" case="abl">Siirrettäviltä</value>
+    <value plural="n" case="al">Siirrettävälle</value>
+    <value plural="y" case="al">Siirrettäville</value>
+    <value plural="n" case="es">Siirrettävänä</value>
+    <value plural="y" case="es">Siirrettävinä</value>
+    <value plural="n" case="tra">Siirrettäväksi</value>
+    <value plural="y" case="tra">Siirrettäviksi</value>
+    <value plural="n" case="par">Siirrettävää</value>
+    <value plural="y" case="par">Siirrettäviä</value>
+</adjective>
+
+<adjective name="Unconverted">
+    <value plural="n" case="n">Muuntamaton</value>
+    <value plural="y" case="n">Muuntamattomat</value>
+    <value plural="n" case="g">Muuntamattoman</value>
+    <value plural="y" case="g">Muuntamattomien</value>
+    <value plural="n" case="ines">Muuntamattomassa</value>
+    <value plural="y" case="ines">Muuntamattomissa</value>
+    <value plural="n" case="el">Muuntamattomasta</value>
+    <value plural="y" case="el">Muuntamattomista</value>
+    <value plural="n" case="il">Muuntamattomaan</value>
+    <value plural="y" case="il">Muuntamattomiin</value>
+    <value plural="n" case="ad">Muuntamattomalla</value>
+    <value plural="y" case="ad">Muuntamattomilla</value>
+    <value plural="n" case="abl">Muuntamattomalta</value>
+    <value plural="y" case="abl">Muuntamattomilta</value>
+    <value plural="n" case="al">Muuntamattomalle</value>
+    <value plural="y" case="al">Muuntamattomille</value>
+    <value plural="n" case="es">Muuntamattomana</value>
+    <value plural="y" case="es">Muuntamattomina</value>
+    <value plural="n" case="tra">Muuntamattomaksi</value>
+    <value plural="y" case="tra">Muuntamattomiksi</value>
+    <value plural="n" case="par">Muuntamatonta</value>
+    <value plural="y" case="par">Muuntamattomia</value>
+</adjective>
+
+<adjective name="Unread">
+    <value plural="n" case="n">Lukematon</value>
+    <value plural="y" case="n">Lukemattomat</value>
+    <value plural="n" case="g">Lukemattoman</value>
+    <value plural="y" case="g">Lukemattomien</value>
+    <value plural="n" case="ines">Lukemattomassa</value>
+    <value plural="y" case="ines">Lukemattomissa</value>
+    <value plural="n" case="el">Lukemattomasta</value>
+    <value plural="y" case="el">Lukemattomista</value>
+    <value plural="n" case="il">Lukemattomaan</value>
+    <value plural="y" case="il">Lukemattomiin</value>
+    <value plural="n" case="ad">Lukemattomalla</value>
+    <value plural="y" case="ad">Lukemattomilla</value>
+    <value plural="n" case="abl">Lukemattomalta</value>
+    <value plural="y" case="abl">Lukemattomilta</value>
+    <value plural="n" case="al">Lukemattomalle</value>
+    <value plural="y" case="al">Lukemattomille</value>
+    <value plural="n" case="es">Lukemattomana</value>
+    <value plural="y" case="es">Lukemattomina</value>
+    <value plural="n" case="tra">Lukemattomaksi</value>
+    <value plural="y" case="tra">Lukemattomiksi</value>
+    <value plural="n" case="par">Lukematonta</value>
+    <value plural="y" case="par">Lukemattomia</value>
+</adjective>
+
+<adjective name="Unreviewed">
+    <value plural="n" case="n">Tarkistamaton</value>
+    <value plural="y" case="n">Tarkistamattomat</value>
+    <value plural="n" case="g">Tarkistamattoman</value>
+    <value plural="y" case="g">Tarkistamattomien</value>
+    <value plural="n" case="ines">Tarkistamattomassa</value>
+    <value plural="y" case="ines">Tarkistamattomissa</value>
+    <value plural="n" case="el">Tarkistamattomasta</value>
+    <value plural="y" case="el">Tarkistamattomista</value>
+    <value plural="n" case="il">Tarkistamattomaan</value>
+    <value plural="y" case="il">Tarkistamattomiin</value>
+    <value plural="n" case="ad">Tarkistamattomalla</value>
+    <value plural="y" case="ad">Tarkistamattomilla</value>
+    <value plural="n" case="abl">Tarkistamattomalta</value>
+    <value plural="y" case="abl">Tarkistamattomilta</value>
+    <value plural="n" case="al">Tarkistamattomalle</value>
+    <value plural="y" case="al">Tarkistamattomille</value>
+    <value plural="n" case="es">Tarkistamattomana</value>
+    <value plural="y" case="es">Tarkistamattomina</value>
+    <value plural="n" case="tra">Tarkistamattomaksi</value>
+    <value plural="y" case="tra">Tarkistamattomiksi</value>
+    <value plural="n" case="par">Tarkistamatonta</value>
+    <value plural="y" case="par">Tarkistamattomia</value>
+</adjective>
+
+<adjective name="Unresolved">
+    <value plural="n">Ratkaisematon</value>
+    <value plural="y" case="n">Ratkaisemattomat</value>
+    <value plural="n" case="g">Ratkaisemattoman</value>
+    <value plural="y" case="g">Ratkaisemattomien</value>
+    <value plural="n" case="ines">Ratkaisemattomassa</value>
+    <value plural="y" case="ines">Ratkaisemattomissa</value>
+    <value plural="n" case="el">Ratkaisemattomasta</value>
+    <value plural="y" case="el">Ratkaisemattomista</value>
+    <value plural="n" case="il">Ratkaisemattomaan</value>
+    <value plural="y" case="il">Ratkaisemattomiin</value>
+    <value plural="n" case="ad">Ratkaisemattomalla</value>
+    <value plural="y" case="ad">Ratkaisemattomilla</value>
+    <value plural="n" case="abl">Ratkaisemattomalta</value>
+    <value plural="y" case="abl">Ratkaisemattomilta</value>
+    <value plural="n" case="al">Ratkaisemattomalle</value>
+    <value plural="y" case="al">Ratkaisemattomille</value>
+    <value plural="n" case="es">Ratkaisemattomana</value>
+    <value plural="y" case="es">Ratkaisemattomina</value>
+    <value plural="n" case="tra">Ratkaisemattomaksi</value>
+    <value plural="y" case="tra">Ratkaisemattomiksi</value>
+    <value plural="n" case="par">Ratkaisemattomasta</value>
+    <value plural="y" case="par">Ratkaisemattomista</value>
+</adjective>
+
+<adjective name="Unused">
+    <value plural="n" case="n">Käyttämätön</value>
+    <value plural="y" case="n">Käyttämättömät</value>
+    <value plural="n" case="g">Käyttämättömän</value>
+    <value plural="y" case="g">Käyttämättömien</value>
+    <value plural="n" case="ines">Käyttämättömässä</value>
+    <value plural="y" case="ines">Käyttämättömissä</value>
+    <value plural="n" case="el">Käyttämättömästä</value>
+    <value plural="y" case="el">Käyttämättömistä</value>
+    <value plural="n" case="il">Käyttämättömään</value>
+    <value plural="y" case="il">Käyttämättömiin</value>
+    <value plural="n" case="ad">Käyttämättömällä</value>
+    <value plural="y" case="ad">Käyttämättömillä</value>
+    <value plural="n" case="abl">Käyttämättömältä</value>
+    <value plural="y" case="abl">Käyttämättömiltä</value>
+    <value plural="n" case="al">Käyttämättömälle</value>
+    <value plural="y" case="al">Käyttämättömille</value>
+    <value plural="n" case="es">Käyttämättömänä</value>
+    <value plural="y" case="es">Käyttämättöminä</value>
+    <value plural="n" case="tra">Käyttämättömäksi</value>
+    <value plural="y" case="tra">Käyttämättömiksi</value>
+    <value plural="n" case="par">Käyttämätöntä</value>
+    <value plural="y" case="par">Käyttämättömiä</value>
+</adjective>
+
+<adjective name="Unfiled">
+    <value plural="n" case="n">Tallentamaton</value>
+    <value plural="y" case="n">Tallentamattomat</value>
+    <value plural="n" case="g">Tallentamattoman</value>
+    <value plural="y" case="g">Tallentamattomien</value>
+    <value plural="n" case="ines">Tallentamattomassa</value>
+    <value plural="y" case="ines">Tallentamattomissa</value>
+    <value plural="n" case="el">Tallentamattomasta</value>
+    <value plural="y" case="el">Tallentamattomista</value>
+    <value plural="n" case="il">Tallentamattomaan</value>
+    <value plural="y" case="il">Tallentamattomiin</value>
+    <value plural="n" case="ad">Tallentamattomalla</value>
+    <value plural="y" case="ad">Tallentamattomilla</value>
+    <value plural="n" case="abl">Tallentamattomalta</value>
+    <value plural="y" case="abl">Tallentamattomilta</value>
+    <value plural="n" case="al">Tallentamattomalle</value>
+    <value plural="y" case="al">Tallentamattomille</value>
+    <value plural="n" case="es">Tallentamattomana</value>
+    <value plural="y" case="es">Tallentamattomina</value>
+    <value plural="n" case="tra">Tallentamattomaksi</value>
+    <value plural="y" case="tra">Tallentamattomiksi</value>
+    <value plural="n" case="par">Tallentamatonta</value>
+    <value plural="y" case="par">Tallentamattomia</value>
+</adjective>
+
+<adjective name="Unshared">
+    <value plural="n" case="n">Jakamaton</value>
+    <value plural="y" case="n">Jakamattomat</value>
+    <value plural="n" case="g">Jakamattoman</value>
+    <value plural="y" case="g">Jakamattomien</value>
+    <value plural="n" case="ines">Jakamattomassa</value>
+    <value plural="y" case="ines">Jakamattomissa</value>
+    <value plural="n" case="el">Jakamattomasta</value>
+    <value plural="y" case="el">Jakamattomista</value>
+    <value plural="n" case="il">Jakamattomaan</value>
+    <value plural="y" case="il">Jakamattomiin</value>
+    <value plural="n" case="ad">Jakamattomalla</value>
+    <value plural="y" case="ad">Jakamattomilla</value>
+    <value plural="n" case="abl">Jakamattomalta</value>
+    <value plural="y" case="abl">Jakamattomilta</value>
+    <value plural="n" case="al">Jakamattomalle</value>
+    <value plural="y" case="al">Jakamattomille</value>
+    <value plural="n" case="es">Jakamattomana</value>
+    <value plural="y" case="es">Jakamattomna</value>
+    <value plural="n" case="tra">Jakamattomaksi</value>
+    <value plural="y" case="tra">Jakamattomiksi</value>
+    <value plural="n" case="par">Jakamatonta</value>
+    <value plural="y" case="par">Jakamattomia</value>
+</adjective>
+
+<adjective name="Updated">
+    <value plural="n" case="n">Päivitetty</value>
+    <value plural="y" case="n">Päivitetyt</value>
+    <value plural="n" case="g">Päivitetyn</value>
+    <value plural="y" case="g">Päivitettyjen</value>
+    <value plural="n" case="ines">Päivitettyssä</value>
+    <value plural="y" case="ines">Päivitetyissä</value>
+    <value plural="n" case="el">Päivitetystä</value>
+    <value plural="y" case="el">Päivitetyistä</value>
+    <value plural="n" case="il">Päivitettyyn</value>
+    <value plural="y" case="il">Päivitettyihin</value>
+    <value plural="n" case="ad">Päivitetyllä</value>
+    <value plural="y" case="ad">Päivitetyillä</value>
+    <value plural="n" case="abl">Päivitetyltä</value>
+    <value plural="y" case="abl">Päivitetyiltä</value>
+    <value plural="n" case="al">Päivitetylle</value>
+    <value plural="y" case="al">Päivitetyille</value>
+    <value plural="n" case="es">Päivitettynä</value>
+    <value plural="y" case="es">Päivitettyinä</value>
+    <value plural="n" case="tra">Päivitetyksi</value>
+    <value plural="y" case="tra">Päivitetyiksi</value>
+    <value plural="n" case="par">Päivitettyä</value>
+    <value plural="y" case="par">Päivitettyjä</value>
+</adjective>
+
+<adjective name="Useful">
+    <value plural="n" case="n">Käyttökelpoinen</value>
+    <value plural="y" case="n">Käyttökelpoiset</value>
+    <value plural="n" case="g">Käyttökelpoisen</value>
+    <value plural="y" case="g">Käyttökelpoisien</value>
+    <value plural="n" case="ines">Käyttökelpoisessa</value>
+    <value plural="y" case="ines">Käyttökelpoisissa</value>
+    <value plural="n" case="el">Käyttökelpoisesta</value>
+    <value plural="y" case="el">Käyttökelpoisista</value>
+    <value plural="n" case="il">Käyttökelpoiseen</value>
+    <value plural="y" case="il">Käyttökelpoisiin</value>
+    <value plural="n" case="ad">Käyttökelpoisella</value>
+    <value plural="y" case="ad">Käyttökelpoisilla</value>
+    <value plural="n" case="abl">Käyttökelpoiselta</value>
+    <value plural="y" case="abl">Käyttökelpoisilta</value>
+    <value plural="n" case="al">Käyttökelpoiselle</value>
+    <value plural="y" case="al">Käyttökelpoisille</value>
+    <value plural="n" case="es">Käyttökelpoisena</value>
+    <value plural="y" case="es">Käyttökelpoisina</value>
+    <value plural="n" case="tra">Käyttökelpoiseksi</value>
+    <value plural="y" case="tra">Käyttökelpoisiksi</value>
+    <value plural="n" case="par">Käyttökelpoista</value>
+    <value plural="y" case="par">Käyttökelpoisia</value>
+</adjective>
+
+<adjective name="User_Owned">
+    <value plural="n" case="n">Käyttäjän omistama</value>
+    <value plural="y" case="n">Käyttäjän omistamat</value>
+    <value plural="n" case="g">Käyttäjän omistaman</value>
+    <value plural="y" case="g">Käyttäjän omistamien</value>
+    <value plural="n" case="ines">Käyttäjän omistamassa</value>
+    <value plural="y" case="ines">Käyttäjän omistamissa</value>
+    <value plural="n" case="el">Käyttäjän omistamasta</value>
+    <value plural="y" case="el">Käyttäjän omistamista</value>
+    <value plural="n" case="il">Käyttäjän omistamaan</value>
+    <value plural="y" case="il">Käyttäjän omistamiin</value>
+    <value plural="n" case="ad">Käyttäjän omistamalla</value>
+    <value plural="y" case="ad">Käyttäjän omistamilla</value>
+    <value plural="n" case="abl">Käyttäjän omistamalta</value>
+    <value plural="y" case="abl">Käyttäjän omistamilta</value>
+    <value plural="n" case="al">Käyttäjän omistamalle</value>
+    <value plural="y" case="al">Käyttäjän omistamille</value>
+    <value plural="n" case="es">Käyttäjän omistamana</value>
+    <value plural="y" case="es">Käyttäjän omistamina</value>
+    <value plural="n" case="tra">Käyttäjän omistamaksi</value>
+    <value plural="y" case="tra">Käyttäjän omistamiksi</value>
+    <value plural="n" case="par">Käyttäjän omistamaa</value>
+    <value plural="y" case="par">Käyttäjän omistamia</value>
+</adjective>
+
+<adjective name="Viewed">
+    <value plural="n" case="n">Tarkasteltu</value>
+    <value plural="y" case="n">Tarkastellut</value>
+    <value plural="n" case="g">Tarkastellun</value>
+    <value plural="y" case="g">Tarkasteltujen</value>
+    <value plural="n" case="ines">Tarkastellussa</value>
+    <value plural="y" case="ines">Tarkastelluissa</value>
+    <value plural="n" case="el">Tarkastellusta</value>
+    <value plural="y" case="el">Tarkastelluista</value>
+    <value plural="n" case="il">Tarkasteltuun</value>
+    <value plural="y" case="il">Tarkasteltuihin</value>
+    <value plural="n" case="ad">Tarkastellulla</value>
+    <value plural="y" case="ad">Tarkastelluilla</value>
+    <value plural="n" case="abl">Tarkastellulta</value>
+    <value plural="y" case="abl">Tarkastelluilta</value>
+    <value plural="n" case="al">Tarkastellulle</value>
+    <value plural="y" case="al">Tarkastelluille</value>
+    <value plural="n" case="es">Tarkasteltuna</value>
+    <value plural="y" case="es">Tarkasteltuina</value>
+    <value plural="n" case="tra">Tarkastelluksi</value>
+    <value plural="y" case="tra">Tarkastelluiksi</value>
+    <value plural="n" case="par">Tarkasteltua</value>
+    <value plural="y" case="par">Tarkasteltuja</value>
+</adjective>
+
+<adjective name="Visible">
+    <value plural="n" case="n">Näkyvä</value>
+    <value plural="y" case="n">Näkyvät</value>
+    <value plural="n" case="g">Näkyvän</value>
+    <value plural="y" case="g">Näkyvien</value>
+    <value plural="n" case="ines">Näkyvässä</value>
+    <value plural="y" case="ines">Näkyvissä</value>
+    <value plural="n" case="el">Näkyvästä</value>
+    <value plural="y" case="el">Näkyvistä</value>
+    <value plural="n" case="il">Näkyvään</value>
+    <value plural="y" case="il">Näkyviin</value>
+    <value plural="n" case="ad">Näkyvällä</value>
+    <value plural="y" case="ad">Näkyvillä</value>
+    <value plural="n" case="abl">Näkyvältä</value>
+    <value plural="y" case="abl">Näkyviltä</value>
+    <value plural="n" case="al">Näkyvälle</value>
+    <value plural="y" case="al">Näkyville</value>
+    <value plural="n" case="es">Näkyvänä</value>
+    <value plural="y" case="es">Näkyvinä</value>
+    <value plural="n" case="tra">Näkyväksi</value>
+    <value plural="y" case="tra">Näkyviksi</value>
+    <value plural="n" case="par">Näkyvää</value>
+    <value plural="y" case="par">Näkyviä</value>
+</adjective>
+
+<adjective name="Won">
+    <value plural="n" case="n">Voitettu</value>
+    <value plural="y" case="n">Voitetut</value>
+    <value plural="n" case="g">Voitetun</value>
+    <value plural="y" case="g">Voitettujen</value>
+    <value plural="n" case="ines">Voitetussa</value>
+    <value plural="y" case="ines">Voitetuissa</value>
+    <value plural="n" case="el">Voitetusta</value>
+    <value plural="y" case="el">Voitetuista</value>
+    <value plural="n" case="il">Voitettuun</value>
+    <value plural="y" case="il">Voitettuihin</value>
+    <value plural="n" case="ad">Voitetulla</value>
+    <value plural="y" case="ad">Voitetuilla</value>
+    <value plural="n" case="abl">Voitetulta</value>
+    <value plural="y" case="abl">Voitetuilta</value>
+    <value plural="n" case="al">Voitetulle</value>
+    <value plural="y" case="al">Voitetuille</value>
+    <value plural="n" case="es">Voitettuna</value>
+    <value plural="y" case="es">Voitettuina</value>
+    <value plural="n" case="tra">Voitetuksi</value>
+    <value plural="y" case="tra">Voitetuiksi</value>
+    <value plural="n" case="par">Voitettua</value>
+    <value plural="y" case="par">Voitettuja</value>
+</adjective>
+
+<adjective name="Your">
+    <value plural="n" case="n">Sinun</value>
+    <value plural="y" case="n">Sinun</value>
+    <value plural="n" case="g">Sinun</value>
+    <value plural="y" case="g">Sinun</value>
+    <value plural="n" case="ines">Sinun</value>
+    <value plural="y" case="ines">Sinun</value>
+    <value plural="n" case="el">Sinun</value>
+    <value plural="y" case="el">Sinun</value>
+    <value plural="n" case="il">Sinun</value>
+    <value plural="y" case="il">Sinun</value>
+    <value plural="n" case="ad">Sinun</value>
+    <value plural="y" case="ad">Sinun</value>
+    <value plural="n" case="abl">Sinun</value>
+    <value plural="y" case="abl">Sinun</value>
+    <value plural="n" case="al">Sinun</value>
+    <value plural="y" case="al">Sinun</value>
+    <value plural="n" case="es">Sinun</value>
+    <value plural="y" case="es">Sinun</value>
+    <value plural="n" case="tra">Sinun</value>
+    <value plural="y" case="tra">Sinun</value>
+    <value plural="n" case="par">Sinun</value>
+    <value plural="y" case="par">Sinun</value>
+</adjective>
+        
+<adjective name="Zero">
+    <value plural="n" case="n">Nolla</value>
+    <value plural="y" case="n">Nollat</value>
+    <value plural="n" case="g">Nollan</value>
+    <value plural="y" case="g">Nollat</value>
+    <value plural="n" case="ines">Nollassa</value>
+    <value plural="y" case="ines">Nollissa</value>
+    <value plural="n" case="el">Nollasta</value>
+    <value plural="y" case="el">Nollista</value>
+    <value plural="n" case="il">Nollaan</value>
+    <value plural="y" case="il">Nolliin</value>
+    <value plural="n" case="ad">Nollalla</value>
+    <value plural="y" case="ad">Nollilla</value>
+    <value plural="n" case="abl">Nollalta</value>
+    <value plural="y" case="abl">Nollilta</value>
+    <value plural="n" case="al">Nollalle</value>
+    <value plural="y" case="al">Nollille</value>
+    <value plural="n" case="es">Nollana</value>
+    <value plural="y" case="es">Nollina</value>
+    <value plural="n" case="tra">Nollaksi</value>
+    <value plural="y" case="tra">Nolliksi</value>
+    <value plural="n" case="par">Nollaa</value>
+    <value plural="y" case="par">Nollia</value>
+</adjective>
+
+	<adjective name="Marked">
+    <value plural="n">Merkitty</value>
+    <value plural="y" case="n">Merkityt</value>
+    <value plural="n" case="g">Merkityn</value>
+    <value plural="y" case="g">Merkittyjen</value>
+    <value plural="n" case="ines">Merkityssä</value>
+    <value plural="y" case="ines">Merkityissä</value>
+    <value plural="n" case="el">Merkitystä</value>
+    <value plural="y" case="el">Merkityistä</value>
+    <value plural="n" case="il">Merkittyyn</value>
+    <value plural="y" case="il">Merkittyihin</value>
+    <value plural="n" case="ad">Merkityllä</value>
+    <value plural="y" case="ad">Merkityillä</value>
+    <value plural="n" case="abl">Merkityltä</value>
+    <value plural="y" case="abl">Merkityiltä</value>
+    <value plural="n" case="al">Merkityksi</value>
+    <value plural="y" case="al">Merkityiksi</value>
+    <value plural="n" case="es">Merkitystä</value>
+    <value plural="y" case="es">Merkityistä</value>
+</adjective>
+
+<adjective name="Posted">
+    <value plural="n" case="n">Lähetetty</value>
+    <value plural="y" case="n">Lähetetyt</value>
+    <value plural="n" case="g">Lähetetyn</value>
+    <value plural="y" case="g">Lähetettyjen</value>
+    <value plural="n" case="ines">Lähetetyssä</value>
+    <value plural="y" case="ines">Lähetetyissä</value>
+    <value plural="n" case="el">Lähetetystä</value>
+    <value plural="y" case="el">Lähetetyistä</value>
+    <value plural="n" case="il">Lähetettyyn</value>
+    <value plural="y" case="il">Lähetettyihin</value>
+    <value plural="n" case="ad">Lähetetyllä</value>
+    <value plural="y" case="ad">Lähetetyillä</value>
+    <value plural="n" case="abl">Lähetetyltä</value>
+    <value plural="y" case="abl">Lähetetyiltä</value>
+    <value plural="n" case="al">Lähetetylle</value>
+    <value plural="y" case="al">Lähetetyille</value>
+    <value plural="n" case="es">Lähetettynä</value>
+    <value plural="y" case="es">Lähetettyinä</value>
+    <value plural="n" case="tra">Lähetetyksi</value>
+    <value plural="y" case="tra">Lähetetyiksi</value>
+    <value plural="n" case="par">Lähetettyä</value>
+    <value plural="y" case="par">Lähetettyjä</value>
+</adjective>
+
+<adjective name="Supported">
+    <value plural="n">Tuettu</value>
+    <value plural="y" case="n">Tuetut</value>
+    <value plural="n" case="g">Tuetun</value>
+    <value plural="y" case="g">Tuettujen</value>
+    <value plural="n" case="ines">Tuetussa</value>
+    <value plural="y" case="ines">Tuetuissa</value>
+    <value plural="n" case="el">Tuetusta</value>
+    <value plural="y" case="el">Tuetuista</value>
+    <value plural="n" case="il">Tuettuun</value>
+    <value plural="y" case="il">Tuettuihin</value>
+    <value plural="n" case="ad">Tuetulla</value>
+    <value plural="y" case="ad">Tuetuilla</value>
+    <value plural="n" case="abl">Tuetulta</value>
+    <value plural="y" case="abl">Tuetuilta</value>
+    <value plural="n" case="al">Tuetulle</value>
+    <value plural="y" case="al">Tuetuille</value>
+    <value plural="n" case="es">Tuettuna</value>
+    <value plural="y" case="es">Tuettuina</value>
+    <value plural="n" case="tra">Tuetuksi</value>
+    <value plural="y" case="tra">Tuetuiksi</value>
+    <value plural="n" case="par">Tuetusta</value>
+    <value plural="y" case="par">Tuetuista</value>
+</adjective>
+
+<adjective name="Valid">
+        <value plural="n" case="n">Käypä</value>
+        <value plural="y" case="n">Käypät</value>
+        <value plural="n" case="g">Käypän</value>
+        <value plural="y" case="g">Käypien</value>
+        <value plural="n" case="ines">Käypässä</value>
+        <value plural="y" case="ines">Käypissä</value>
+        <value plural="n" case="el">Käypästä</value>
+        <value plural="y" case="el">Käypistä</value>
+        <value plural="n" case="il">Käypään</value>
+        <value plural="y" case="il">Käypiin</value>
+        <value plural="n" case="ad">Käypällä</value>
+        <value plural="y" case="ad">Käypillä</value>
+        <value plural="n" case="abl">Käypältä</value>
+        <value plural="y" case="abl">Käypiltä</value>
+        <value plural="n" case="al">Käypälle</value>
+        <value plural="y" case="al">Käypille</value>
+        <value plural="n" case="es">Käypänä</value>
+        <value plural="y" case="es">Käypinä</value>
+        <value plural="n" case="tra">Käypäksi</value>
+        <value plural="y" case="tra">Käypiksi</value>
+        <value plural="n" case="par">Käypää</value>
+        <value plural="y" case="par">Käypiä</value>
+    </adjective>    
+</adjectives>
+

@@ -1,0 +1,134 @@
+<!--
+   SFDC labels DTD
+
+
+-->
+<!--======== parameter-entity to keep ATTLIST def consistent =============-->
+<!-- simple boolean type -->
+<!ENTITY % BOOLEAN    "(true|false)">
+<!ENTITY % YN         "(y|n)">
+
+
+<!--
+An entity type. This could be either %entities; , %compoundNouns; or
+number. If number is specified, that'll be resolved at runtime. -->
+<!ENTITY % entityRef  "entity   CDATA">
+
+
+<!--=================== Root element =====================================-->
+<!ELEMENT iniFile ((section)*, (import)*)>
+
+
+<!--=================== Standard section/param element ===================-->
+<!ELEMENT section (param|image)*>
+<!ATTLIST section
+  name          NMTOKEN     #REQUIRED
+  public        %BOOLEAN;        "false"
+  all_languages %BOOLEAN;   #IMPLIED
+  dnt           %BOOLEAN;   #IMPLIED
+  >
+
+<!--
+alias attribute defines the element as a reference to the other element.
+The type of the element on source and destination must be the same - that means
+you cannot specify param alias to an image tag.
+If this attribute is specified, any other attribute besides name, and
+contents of the element will be ignored.
+    ex: <param name="Test" alias="udd_Account.Entity"/>
+-->
+<!ENTITY % alias      "alias NMTOKEN">
+
+<!--"y" for plural form, "n" for singular form -->
+<!ENTITY % plural     "plural   %YN;">
+
+<!--
+case attribute is to determine:
+    n   nominative (default)
+    a   accusative
+    g   genitive
+    d   dative
+    NOTE: this is required for German
+    -->
+<!ENTITY % case       "case     (n | a | g | d)">
+
+<!--
+article type
+    n     no article (default)
+    a|d   definite article "a" in English
+    the|i indefinite article "the" in English
+-->
+<!ENTITY % article    "article (n|a|the|i|d)">
+
+<!--
+indicates this is for error text. if error="y" is given, and if
+user has overwritten name of the entity, the result would be like
+    Account(Hospital)
+
+this display both only if user has different name in rename tab
+    -->
+<!ENTITY % error      "error   %YN;">
+
+<!-- param element is generic values which contains plain text or compound-type
+     data which is used in the labels file.
+    -->
+<!ELEMENT param (#PCDATA | entity | Entity | modifier)*>
+<!ATTLIST param
+  name          NMTOKEN     #REQUIRED
+  %alias;                   #IMPLIED
+  %entityRef;               #IMPLIED
+  %case;                    #IMPLIED
+  all_languages %BOOLEAN;   #IMPLIED
+  dnt           %BOOLEAN;   #IMPLIED
+  >
+
+<!-- image element is to specify image (usually .gif) -->
+<!ATTLIST image
+  name          NMTOKEN     #REQUIRED
+  %alias;                   #IMPLIED
+  width         CDATA       #IMPLIED
+  height        CDATA       #IMPLIED
+  alt           CDATA       #IMPLIED
+  align         CDATA       #IMPLIED
+  label         CDATA       #IMPLIED
+  >
+
+<!--
+entity element is replacement marker of %entities or %compoundNouns.
+If there is no %entityRef specified, param element MUST have %entityRef
+
+For any <%entities/> tag, there's no definition in this DTD.
+    ATTLIST Account
+    %case;                    #IMPLIED
+    %article;                 #IMPLIED
+    %error;                   #IMPLIED
+    -->
+<!ATTLIST entity
+  %entityRef;               #IMPLIED
+  %case;                    #IMPLIED
+  %article;                 #IMPLIED
+  %plural;                  "n"
+  %error;                   #IMPLIED
+  >
+
+<!-- modifier element is replacement marker of %adjective. If there is no
+     %entityRef specified, it is defaulting to:
+     1) param element's %entityRef
+     2) first entity (entity/Entity/%entities) appears in the same param
+     -->
+<!ATTLIST modifier
+  type          CDATA       #REQUIRED
+  %entityRef;               #IMPLIED
+  %case;                    #IMPLIED
+  >
+
+<!-- import element specifies file to be included as part of the document -->
+<!ELEMENT import EMPTY>
+<!ATTLIST import
+  file          CDATA       #REQUIRED
+  >
+
+<!--=================== Other elements ===================================-->
+<!ELEMENT set (param*, import*, image*)>
+<!ATTLIST set
+  name          NMTOKEN     #REQUIRED
+  >

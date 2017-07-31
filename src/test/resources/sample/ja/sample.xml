@@ -1,0 +1,2119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iniFile SYSTEM "labels.dtd">
+<!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes">
+        <param name="Title">コンボボックス</param>
+        <param name="select_default">選択してください。</param>   <!-- aliased across labels; do not change -->
+        <param name="select">{0}を選択してください。</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/><Contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes">
+        <param name="Access">アクセス</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(管理)</param>
+        <param name="activity_history">活動履歴</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">追加情報</param> <!--aliased across labels - do not change-->
+        <param name="alias">別名</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">アシスタント</param>
+        <param name="assistant_name">アシスタント名</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">アシスタントの電話</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">アシスタント電話</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">アシスタント内線</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">誕生日</param>   <!-- aliased across labels; do not change -->
+        <param name="body">本文</param>   <!-- aliased across labels; do not change -->
+        <param name="company">会社名</param> <!--aliased across labels - do not change-->
+        <param name="created_by">作成者</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">作成者 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">作成者(別名)</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">通貨 ISO コード</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">カスタム項目</param> <!--aliased across labels - do not change-->
+        <param name="default_status">デフォルトの状況</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">{0}の詳細</param>   <!-- aliased across labels; do not change -->
+        <param name="department">部署</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">{0}の編集</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">期待収益</param>
+        <param name="first_name">名</param> <!-- aliased across app - do not change -->
+        <param name="last_name">姓</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">名(ローカル)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">姓(ローカル)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">会計四半期</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">会計年度</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">氏名</param> <!-- aliased across app - do not change -->
+        <param name="group">グループ</param> <!-- aliased across app - do not change -->
+        <param name="group_name">グループ名</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">キュー名</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">業種</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">最終更新者</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">最終更新者 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">最終更新者(別名)</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">マスタレコード ID</param>
+        <param name="mobile">携帯</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">携帯電話</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">携帯(その他)</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">新規共有設定</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">任命先(別名)</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">利用可能なリスト</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">会社名</param> <!-- aliased across app - do not change -->
+        <param name="activities">活動</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">添付ファイルはありません。</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><document plural="n"/>はありません。</param>
+        <param name="address_info">住所情報</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">同意しない</param>   <!-- aliased across labels; do not change -->
+        <param name="default">デフォルト</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">デフォルトの優先度</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">新規ビューの作成</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">カスタム情報</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">重複の状況</param> <!-- aliased across app - do not change -->
+        <param name="email_address">メールアドレス</param> <!-- aliased across app - do not change -->
+        <param name="email_name">差出人</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">メールテンプレート</param>   <!-- aliased across labels; do not change -->
+        <param name="email">メール:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">カスタムリンク</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">ファイルサイズ</param> <!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">データはありません。</param>
+        <param name="history_event_checked">{0} 項目の選択</param>
+        <param name="history_event_unchecked">{0} 項目の選択解除</param>
+        <param name="how_do_i_specify_info">自社の Web サイトから取り込む情報を指定する方法は?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Internal Source</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">期間:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">敬称</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">新規所有者の選択</param>
+        <param name="select_a_view">参照するビューを選択リストから選択してください。</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">参照するフォルダを選択リストから選択してください。</param>
+        <param name="select_the_file">ファイルを選択してください。</param> <!-- aliased across app - do not change -->
+        <param name="select_the_fields">使用する項目を選択してください:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">署名</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">件名</param> <!-- aliased across app - do not change -->
+        <param name="system_info">システム情報</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Web サイト</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="owner_alias">所有者(別名)</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">所有者 名</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">所有者 ID</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">所有者 姓</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">所有者 氏名</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">所有者 ロール</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">所有者 ロール表示名</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">所有者 ロール名</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">主</param>
+        <param name="primary_contact"><Primary/><Contact/></param>
+        <param name="priority">優先度</param><!--aliased across labels - do not change -->
+        <param name="private">非公開</param>
+        <param name="role">ロール</param> <!--aliased across labels - do not change -->
+        <param name="rating">評価</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">簡易作成</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">最近参照したデータ</param>
+        <param name="top5">よくある質問 トップ 5</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">供給メーカー</param>
+        <param name="customer">顧客</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">納入業者</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">レコードタイプ ID</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ディビジョン ID</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">テーブルエミュレーションまたは ID</param>
+        <param name="editable">編集可</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">標準化された名前</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">プライバシーに関する声明</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">管理可能な状態</param>
+        <param name="namespacePrefix">名前空間プレフィックス</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">モジュール名前空間</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">インストール済みパッケージ</param>
+        <param name="initialVersion">初回リリースバージョン</param>
+        <param name="lastVersion">使用可能な最終バージョン</param>
+        <param name="availableInVersions">使用可能なバージョン</param>
+        <param name="DeveloperName">API 参照名</param>
+        <param name="apiName">API 参照名</param>
+        <param name="InvalidDeveloperNameOnEntity">{0} 項目には、アンダースコアと英数字しか使用できません。一意である必要があり、文字から始まり、空白を含まず、アンダースコアで終わったり、連続するアンダースコアを含んだりできません。</param>
+        <param name="missingDevName">{0} を指定してください。</param>
+        <param name="duplicateDevName">この {0} はすでに存在しているか、以前に使用されていました。別の名前を選択してください。</param>
+        <param name="manageabilityOverride">管理可能性の上書き</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">メトリクスの日付</param>
+        <param name="MayEdit">編集可</param>
+        <param name="IsLocked">ロック</param>
+        <param name="LastViewedDate">最終参照日</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes">
+        <param name="title">作成</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">設定</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">新規作成...</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">ファイル</param>
+        <param name="new_forecast">売上予測</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">ごみ箱</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">メールの送信</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">レポート</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes">
+        <param name="created" alias="Global_Entity.created_by"></param>
+        <param name="modified">更新者</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">作成日</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">更新日</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="automated_process">自動化プロセス</param>
+        <param name="partner_network">接続ユーザ</param>
+        <param name="external_who">公開ユーザ</param>
+    </section>
+    <section name="Edit" all_languages="yes">
+        <param name="Example">例</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">エラー: 無効なデータです。&lt;br/&gt;以下のエラーメッセージを参照して修正してください。</param>
+        <param name="EditPageError2">以下のエラーメッセージを参照して修正してください。</param>
+        <param name="Required">値を入力してください</param>
+        <param name="RequiredWithFieldList">値を入力してください: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">セルフサービスユーザのために必要です。</param>
+        <param name="RequiredBy">参照元: {0}</param>
+        <param name="Requires">必須項目: {0}</param>
+        <param name="TooLong">入力した値が長すぎます</param>
+        <param name="CannotExceedXCharacters">{0} 文字を超える文字数の入力はできません。</param>
+        <param name="MustBeXCharacters">値は {0} 文字である必要があります</param>
+        <param name="MustBeNumber">値は数字である必要があります</param>
+        <param name="StatusCloseRequired">少なくとも 1 つ、「完了」にする必要があります。</param>
+        <param name="StatusDefaultRequired">少なくとも 1 つ、「デフォルト」にする必要があります。</param>
+        <param name="StatusInUse">次の状況値は使用されており、編集または削除できません。{0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">無効な日付です</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">無効な日付です。{0} を超える日付は設定できません</param>
+        <param name="InvalidDateTime">無効な日付と時間です</param>
+        <param name="InvalidColor">無効な色です</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">無効なインターネットアドレス</param>
+        <param name="InvalidOption">無効なオプションが選択されました</param>
+        <param name="UnsupportedCurrency">無効な通貨です。</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">無効な URL です</param>
+        <param name="NoneSelectedInPicklist">--なし--</param>
+        <param name="InvalidTime">無効な時間です</param>
+        <param name="InvalidNumber">無効な数値です。</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">数値が大きすぎます。</param>
+        <param name="TooLargeNumberWithScale">数値は {0} 未満である必要があります。</param>
+        <param name="TooSmallNumberWithScale">数値は {0} より大きくある必要があります。</param>
+        <param name="NonpositiveError">整数の値である必要があります</param>
+        <param name="NegativeError">負数以外の値である必要があります</param>
+        <param name="PositiveError">整数以外の値である必要があります</param>
+        <param name="NonnegativeError">負数の値である必要があります</param>
+        <param name="NonzeroError">0 以外の値である必要があります</param>
+        <param name="NonintegerError">整数にしてください。</param>
+        <param name="InvalidPercent">不正な値です</param>
+        <param name="InvalidAfterRoundOff">数値 {0} は、{1} の桁に丸めると無効です。</param>
+        <param name="CharactersRemaining">文字入力可</param>
+        <param name="CharactersOver">制限オーバー</param>
+        <param name="TooManySelection">{0} 個を超える項目を選択することはできません</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">値が重複しているレコード: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">非表示の項目値 (表示されていません) が重複しているレコード: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0}の値が重複しているレコードの ID: {1}</param>
+        <param name="True">True</param>   <!-- aliased across labels; do not change -->
+        <param name="False">False</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">無効なドメインです</param>
+        <param name="ReadOnly">この項目は編集できません</param>
+    </section>
+    <section name="UddValue">
+        <param name="extra_DataIgnored">インポートを続けると、このデータは無視され、項目が空白になります。</param>
+        <param name="extra_DefaultDivision">インポートを続けると、これらのレコードに、レコード所有者のデフォルトディビジョンが使用されます。</param>
+        <param name="extra_DefaultCurrency">インポートを続けると、これらのレコードにはデフォルトの通貨が割り当てられます。</param>
+        <param name="InvalidDataType">必須種別以外の値: {0}</param>
+        <param name="InvalidDataType_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="OwnerEmpty">所有者を空白にしておくことはできません</param>
+        <param name="DynamicEnumValue">選択リスト値が有効ではありません: {0}</param>
+        <param name="DynamicEnumValue_extra">インポートを続けた場合、この値は、インポートはされるものの、この選択リストに登録される有効な値のリストには追加されません。</param>
+        <param name="InvalidCurrencyCode">無効な通貨コード: {0}</param>
+        <param name="InvalidCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InactiveCurrencyCode">無効化された通貨コード: {0}</param>
+        <param name="InactiveCurrencyCode_extra" alias="UddValue.extra_DefaultCurrency"/>
+        <param name="InvalidTimeOnlyValue">無効な時間: {0}</param>
+        <param name="InvalidDateValue">無効な日付: {0}</param>
+        <param name="InvalidDateValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidPercentValue">不正なパーセント: {0}</param>
+        <param name="InvalidPercentValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="IdMissing">ID が無いか、もしくは無効</param>
+        <param name="Id15Characters">ID は 15 文字である必要があります</param>
+        <param name="IdMissing_extra">レコードは無視されます</param>
+        <param name="InvalidDivision">不正なディビジョン: {0}</param>
+        <param name="InvalidDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InactiveDivision">無効化されたディビジョン: {0}</param>
+        <param name="InactiveDivision_extra" alias="UddValue.extra_DefaultDivision"/>
+        <param name="InvalidNumberValue">数値を入力してください: {0}</param>
+        <param name="InvalidNumberValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidNumberRangeValue">数値項目で有効な範囲を逸脱した値: {0}</param>
+        <param name="InvalidNumberRangeValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="TooManyMultiSelection">選択項目が多すぎる: {0}</param>
+        <param name="TooManyMultiSelection_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEmailValue">無効なメールアドレス: {0}</param>
+        <param name="InvalidEmailValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidInetAddressValue">無効な IP アドレス: {0}</param>
+        <param name="InvalidInetAddressValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidForeignKeyValue">不正な種別の ID 値: {0}</param>
+        <param name="InvalidForeignKeyValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidEnumValue">制限つき選択リスト項目の値が不適切: {0}</param>
+        <param name="InvalidEnumValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="InvalidBitVectorValue">ビットベクタ項目の値が無効: {0}</param>
+        <param name="InvalidBitVectorValue_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="DataTruncated">データ値が大きすぎる: {0}</param>
+        <param name="DataTruncated_extra">インポートを続けた場合、このデータは、項目に適合するように切り捨てられます。</param>
+        <param name="DuplicateExternalId">複数の外部 ID 項目 {0} が見つかりました。</param>
+        <param name="DuplicateExternalId_extra" alias="UddValue.extra_DataIgnored"/>
+        <param name="requestProcessMsg">リクエストを処理しています...</param>
+        <param name="InvalidDeveloperNameChars"><Entity entity="0"/> API 名に使用できるのは、アンダースコアと英数字のみです。一意である必要があり、文字から始まり、空白を含まず、アンダースコアで終わったり、連続するアンダースコアを含んだりできません。</param>
+    </section>
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    <section name="UddValueApi" dnt="true">
+        <param name="InvalidRecordTypeForProfile">id value not valid for the users profile: {0}</param>
+        <param name="InvalidRecordTypeForEntity">value not valid for the entity: {0}</param>
+        <param name="RecordTypeCannotBeUpdatedFromEntity">value cannot be updated from this entity</param>
+    </section>
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes">
+        <param name="abort">中止</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">引き受ける</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">変更を受け入れる</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Sandbox の有効化</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign" />
+        <param name="add_comment">コメントを追加</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">コンポーネントを追加</param>
+        <param name="add_contacts"><Contacts/>の追加</param>
+        <param name="add_leads"><Leads/>の追加</param>
+        <param name="add_more_users">ユーザの追加</param>
+        <param name="add_multiple_users">複数のユーザを追加</param>
+        <param name="add_product"><Product/>の追加</param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">商品名の追加</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">サンプルダッシュボードの追加</param>
+        <param name="add_to_call_center">コールセンターに追加</param>
+        <param name="add_to_campaign"><Campaign/>に追加</param>
+        <param name="addcampaign" alias="Buttons.add_campaign" />
+        <param name="addtocampaign" alias="Buttons.add_to_campaign" />
+        <param name="add_to_outlook">Outlook に追加</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook" />
+        <param name="add_to_pricebook"><Pricebook/>に追加</param>
+        <param name="add_remove">追加/削除</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">高度な設定</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">承認</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">割り当て</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">ユーザをロールに割り当て</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">レポート一覧に戻る</param>
+        <param name="billing_and_licenses">請求 &amp; ライセンス</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">請求情報</param>
+        <param name="briefcase_setup">ブリーフケースの設定</param>
+        <param name="cancel">キャンセル</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">スケジュールの取り消し</param>
+        <param name="cancel_test_instance">Sandbox のキャンセル</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select" />
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">マスタ通貨の設定</param>
+        <param name="change_currency">通貨の変更</param>
+        <param name="change_owner">所有者の変更</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">引き受けと所有者の変更</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">引き受けとマスタの割り当て</param>
+        <param name="changeowner" alias="Buttons.change_owner" />
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">状況の変更</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">参加可能か調べる</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">スペルチェック</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook"><Pricebook/>の選択</param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">整理</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">概要</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">{0}タブ</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">リスト</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: 参照先詳細のコピー</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle" />
+        <param name="collapse_all">すべて折りたたむ</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">選択リストからアイテムを選択する</param>
+        <param name="composegmail">Gmail を作成</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">確認</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">次へ</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">続ける</param>
+        <param name="convert">取引の開始</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">取引の開始</param>
+        <param name="create">作成</param>
+        <param name="create_follow_up_event">フォローアップ<Event/>の作成</param>
+        <param name="create_follow_up_task">フォローアップ<Task/>の作成</param>
+        <param name="create_new">{0}の新規作成</param>
+        <param name="create_new_section">新規セクション作成</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity"><Opportunity/>の作成</param>
+        <param name="create_test_instance">Sandbox の作成</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">テストデータベースの作成</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Web-to-リードフォームの作成</param>
+        <param name="create_new_holiday">休日の新規作成</param>
+        <param name="create_new_sla_process">新規<Entitlement/>プロセス</param>
+        <param name="create_new_milestone_type">新規マイルストン</param>
+        <param name="currency_setup">通貨の設定</param>
+        <param name="customer_view">顧客ビュー</param>
+        <param name="customize">カスタマイズ</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">すべてのユーザのディスプレイのカスタマイズ</param>
+        <param name="page_settings">ページの設定</param>
+        <param name="customize_page">ページのカスタマイズ</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">レイアウトを編集する</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">ダッシュボード一覧</param>
+        <param name="data_export">データのエクスポート</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">クリーンアップ</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">参加しない</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">デフォルトのカスタムリンク</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series" />
+        <param name="disable_appstore_user">Checkout アクセス権の削除</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Done with Preview</param>
+        <param name="dont_save">保存しない</param>
+        <param name="dont_show_page_again">次回からこのページを表示しない</param>
+        <param name="download">ダウンロード</param>
+        <param name="download_now">今すぐダウンロード</param>
+        <param name="download_sample_css_file">サンプル CSS ファイルのダウンロード</param>
+        <param name="edit">編集</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">[ベータ] の編集</param>
+        <param name="edit_all">一括編集</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">ユーザの編集</param>
+        <param name="edit_rates">換算レートの編集</param>
+        <param name="edit_selected">選択したものを編集</param>
+        <param name="editProperties">プロパティの編集</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">{0} を終了</param>
+        <param name="enable_appstore_user">Checkout のアクセス権の許可</param>
+        <param name="enable_as_partner">パートナーとして有効化</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">パートナーポータルログインを有効化</param>
+        <param name="enable_self_service">セルフサービスを有効化</param>
+        <param name="enable_users">新規ユーザの有効化</param>
+        <param name="enableForecasting">カスタマイザブル売上予測の有効化</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">トレーニングに参加</param>
+        <param name="erase_test_instance">Sandbox の消去</param>
+        <param name="establish">設定</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler" />
+        <param name="expand_all">すべて展開</param>   <!-- aliased across labels; do not change -->
+        <param name="export">詳細のエクスポート</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">今すぐ詳細をエクスポート</param>
+        <param name="export_background">エクスポートをバックグラウンドで実行...</param>
+        <param name="fctHistory">売上予測履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">売上予測ホーム</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">項目検証</param>
+        <param name="find">検索</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates" />
+        <param name="find_report">レポートの検索</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document"><Document/>の検索</param>
+        <param name="find_pricebooks"><Pricebook/>の検索</param>
+        <param name="find_products"><Product/>の検索</param>
+        <param name="find_solution"><Solution/>の検索</param>
+        <param name="finished">完了</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event" />
+        <param name="followuptask" alias="Buttons.create_follow_up_task" />
+        <param name="forward">転送</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">接続に転送</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">WSDL の作成</param>
+        <param name="generate_login_html">ログイン HTML の生成</param>
+        <param name="getMoreInfo">詳細情報の取得</param>
+        <param name="go">Go!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">このページのヘルプ</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">{0}のヘルプ</param>
+        <param name="hide">詳細を非表示</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">同意する</param>
+        <param name="i_decline">同意しない</param>
+        <param name="impactAnalysis">使用場所</param>
+        <param name="import">インポート</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads"><Leads/>のインポート</param>
+        <param name="include_offline">オフラインで使用</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">挿入</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">選択したものを挿入</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">今すぐインストール</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">招待する</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">接続に招待</param>
+        <param name="jigsawsearch">取引先責任者を取得</param>
+        <param name="join_meeting">ミーティングに参加</param>
+        <param name="jumpstart">ジャンプスタート</param>
+        <param name="keep_in_touch">登録情報照会</param>
+        <param name="layout_assignment">レイアウトの割り当て</param>
+        <param name="legal_view">伝票表示</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">レコードのロック</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">パートナーユーザとしてログイン</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge" />
+        <param name="manage_members">メンバーの管理</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">新規ミーティング要請</param>
+        <param name="add_members_search">メンバーの追加 - 検索</param>
+        <param name="add_members_import">メンバーの追加 - インポートファイル</param>
+        <param name="edit_members_search">メンバーの編集 - 検索</param>
+        <param name="update_members_import">メンバーの更新 &amp; 追加 - インポートファイル</param>
+        <param name="manage_call_center_users">コールセンターユーザの管理</param>
+        <param name="map_lead_fields"><Lead_Fields/>の対応付け</param>
+        <param name="mark_as">マークの値</param>
+        <param name="massclose" alias="Buttons.close" />
+        <param name="member_import">メンバーのインポート</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">個々のアラームを編集</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">新規</param>
+        <param name="newcase">新規</param>
+        <param name="new_addition_order">新規追加注文</param>
+        <param name="new_custom_object">新規カスタムオブジェクト</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">新規カスタムレポート</param>
+        <param name="new_dashboard">新規ダッシュボード</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">新規ダッシュボードコンポーネント</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/><Document/></param>
+        <param name="new_email_template">新規テンプレート</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/><Entity entity="0"/></param>
+        <param name="new_entitlement_template">新規テンプレート</param>
+        <param name="new_event"><New/><Event/></param>
+        <param name="new_folder">新規フォルダ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">新規グループ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">新規キュー</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">新規メモ</param>
+        <param name="new_object_custom_tab">新規カスタムタブ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">オンラインでミーティング</param>
+        <param name="new_order">新規注文</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">新規非公開グループ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/><Product/></param>
+        <param name="new_reduction_order">新規削減注文</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">新規ロール</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">新規ボタン</param>
+        <param name="new_territory">新規テリトリー</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/><Task/></param>
+        <param name="new_user">新規ユーザ</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">新規 Web 統合タブ</param>
+        <param name="newevent" alias="Buttons.new_event" />
+        <param name="newtask" alias="Buttons.new_task" />
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/><Quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">更新を再度実行</param>
+        <param name="performAnotherMigrate">別のプロファイルの移行</param>
+        <param name="preview">プレビュー</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">再計算</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">再設定</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">却下</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">変更を受け入れない</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">ユーザの削除</param>
+        <param name="remove_from_briefcase">ブリーフケースから除く</param>
+        <param name="remove_from_campaign"><Campaign/>から削除</param>
+        <param name="reorder">並び替え</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">修正</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">すべてのテストを実行</param>
+        <param name="run_test">テストを実行</param>
+        <param name="quick_save">適用</param>
+        <param name="quick_save_hover">保存して編集を続行</param>
+        <param name="reply">返信</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">全員に返信</param>
+        <param name="reportmanager">レポートマネージャ</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"></param>
+        <param name="reset_password">パスワードのリセット</param>
+        <param name="reset_passwords">パスワードのリセット</param>
+        <param name="retrieve_prices">価格の検索</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">レポート実行</param>   <!-- aliased across labels; do not change -->
+        <param name="save">保存</param> <!-- aliased across labels do not change -->
+        <param name="saving">保存中...</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">保存 &amp; 価格の追加</param>
+        <param name="save_and_add_product">保存 &amp; <Product/>の追加</param>
+        <param name="save_and_clone">もう一度保存 &amp; コピー</param>
+        <param name="save_and_close">保存して閉じる</param>
+        <param name="save_and_attach">保存 &amp; ファイルを添付</param>
+        <param name="save_and_continue">保存 &amp; 次へ</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">保存 &amp; 追加</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">保存 &amp; <New/><Event/></param>
+        <param name="save_and_new_product">保存 &amp;<New/><Product/></param>
+        <param name="save_and_new_task">保存 &amp; <New/><Task/></param>
+        <param name="save_and_refresh">保存 &amp; 更新</param>
+        <param name="save_and_send">保存 &amp; 更新を通知</param>
+        <param name="event_scheduler">クライアント &amp; チームビュー&gt;</param>
+        <param name="saveAs">別名で保存</param>
+        <param name="schedule_to_email">請求メールのスケジュール</param>
+        <param name="schedule_to_print">請求書印刷のスケジュール</param>
+        <param name="scrutinize">詳細調査</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles"><KnowledgeArticles/>を検索</param>
+        <param name="newArticle">新規</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">テンプレートの選択</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">セルフサービスジャンプスタート</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">セルフサービスの設定</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">セルフサービスを参照 / 有効化</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select" />
+        <param name="send">送信</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts"><all/><contacts/>へのメール送信</param>
+        <param name="send_invitation">メンバーに通知</param>
+        <param name="set_status">状況の管理</param>
+        <param name="setup_and_install">設定とインストール</param>
+        <param name="setup_roles">ロールの設定</param>
+        <param name="setup_sharing">共有の設定</param>
+        <param name="sfga_instructions">印刷用詳細説明</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">詳細の表示</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">スキップ</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">並び替え</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">ミーティングを開始</param>
+        <param name="startmeeting" alias="Buttons.start_meeting" />
+        <param name="submit">登録</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">登録 &amp; ファイルを添付</param>
+        <param name="subscribe_now">正式契約のお申し込み</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">アップグレードはこちら!</param>
+        <param name="suggest"><Suggested/><Solutions/>の参照</param>
+        <param name="take_training_now">今すぐトレーニングを受講!</param>
+        <param name="terminate">終了</param>
+        <param name="training_history">トレーニング履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">移行</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">試用サービス開始</param>
+        <param name="undelete">復元</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">元に戻す</param>
+        <param name="unlock">レコードのロック解除</param>
+        <param name="update">更新</param>
+        <param name="update_campaign_history"><Campaign_Members/>の更新 &amp; 追加</param>
+        <param name="update_now">今すぐ更新</param>
+        <param name="update_statuses">状況の更新</param>
+        <param name="upload">アップロード</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all" />
+        <param name="viewDependencies">項目の連動関係</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">削除したコンポーネントを表示</param>
+        <param name="view_partnerforce">パートナーユーザを参照</param>
+        <param name="view_self_service">セルフサービスを参照</param>
+        <param name="view_customer_success">カスタマーポータルユーザの参照</param>
+        <param name="enable_customer_success">カスタマーポータルユーザの有効化</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">ヒント</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">このウィンドウを閉じる</param>
+        <param name="runApexRecalc">Apex 共有再適用</param>
+        <param name="disablecustomerportal">カスタマーポータルユーザを無効化</param>
+        <param name="disablepartnerportal">パートナーユーザを無効化</param>
+        <param name="disablecustomerportalaccount">カスタマーポータル取引先の無効化</param>
+        <param name="disablepartnerportalaccount">パートナー取引先の無効化</param>
+        <param name="voteup">可決する</param>
+        <param name="votedown">否決する</param>
+        <param name="markquestionunanswered">「未回答」としてマーク</param>
+        <param name="markbestanswer">「最良の回答」としてマーク</param>
+        <param name="requestUseSfdcAction">接続の検索</param>
+        <param name="addPET">エンタイトルメントテンプレートの追加</param>
+        <param name="truncate">切り捨て</param>
+        <param name="disableprmsuperuser">パートナースーパーアクセスを無効化</param>
+        <param name="enableprmsuperuser">パートナースーパーアクセスを有効化</param>
+        <param name="purchase_more">追加購入</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes">
+        <param name="back_to_top">先頭に戻る</param>
+        <param name="descriptionText">本文が長すぎます。詳細を参照してください。</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">ファイルを表示</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">参照先</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">関連情報はありません</param>
+        <param name="no_records">表示するレコードはありません</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">表示件数を{0}件増やす &#187;</param>
+        <param name="NextMoreGeneric">表示件数を増やす &#187;</param>
+        <param name="view_more">一覧を表示</param>
+        <param name="view_more_tot">一覧を表示 ({0})</param>
+        <param name="view_more_tot_plus">一覧を表示 ({0}+)</param> <!-- -->
+        <param name="view_more_1">レコードが存在するリストへ移動</param> <!-- Singular -->
+        <param name="view_more_n">{0} 件を超えるレコードが存在するリストへ移動</param> <!-- Plural -->
+        <param name="view_more_n_plus">{0} 件以上のレコードが存在するリストへ移動</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">その他を含むリストへ移動</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">確度</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">ソース</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">成立</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">会計期間</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{0} 年度 第 {1} 四半期</param>
+        <param name="opportunities_next_step">次のステップ</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"></param>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">更新</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/>予定</param>
+        <param name="activities_open"><Activities/>予定</param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">関連先</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"></param>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">メモ</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google ドキュメント</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">メモ &amp; 添付ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"></param>
+        <param name="notes_title">メモ件名</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">添付ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">添付ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"></param>
+        <param name="attachments_title">ファイル名</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">所有者</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view"  alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="n"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">主</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none">表示する<cases/>がありません</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">日付</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">役職</param>
+        <param name="object_title">題名</param> <!-- translation note: title of files/attachment -->
+        <param name="name">氏名</param>
+        <param name="object_name">名前</param>
+        <param name="date">日付</param>
+        <param name="due_date">期日</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"></param>
+        <param name="status" alias="Global.status"></param>
+        <param name="last_updated">最終更新</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">最終更新者</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"></param>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">主<Partner/></param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">競合</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">会社名</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">強み</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">弱み</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">確度(%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">完了</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">マーク {0} の完了</param>
+        <param name="task_date">日付</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">名前</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending"><Contract/>未承認</param>
+        <param name="task_none">該当の <tasks/> はありません。</param>
+        <param name="task_mode_today">今日</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">今日＋期限切れ</param>
+        <param name="task_mode_tomorrow">明日</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">{0} 日先まで</param>
+        <param name="task_mode_next_7days_overdue">{0} 日先まで＋期限切れ</param>
+        <param name="task_mode_overdue">期限切れ</param>
+        <param name="task_mode_this_month">今月</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">すべての未完了</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">ニュース</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">見出し</param>
+        <param name="new_date">日付</param>
+        <param name="news_none">ニュースはありません</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">メールテンプレートの編集</param>
+        <param name="mail_merge">Microsoft Word&#174;</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">トップ <Solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">追加日</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">追加者</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><Solutions/>は添付されていません。</param>
+        <param name="description">説明</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">株式コード</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities"><Activity_History/>はありません。</param>
+        <param name="nonotes">メモはありません。</param>
+        <param name="noattachments">添付の履歴はありません。</param>
+        <param name="viewallattachments">すべて表示</param>
+        <param name="viewalldocsattachments">すべての Google ドキュメント &amp; 添付ファイルの参照</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/>({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"></param>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">日付</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">明細説明</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API キャプチャ</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">ユーザ条件</param>
+        <param name="apicapture_filterip">IP 条件</param>
+        <param name="apicatpure_numbers">キャプチャ</param>
+        <param name="apicapture_soapscope">キャプチャを参照</param>
+        <param name="apicapture_active">有効</param>
+        <param name="apicapture_none">キャプチャなし</param>
+        <param name="apicapture_new">新規キャプチャ開始</param>
+        <param name="apicapture_view">参照</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">ログイン履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">ログインなし</param>
+        <param name="login_none">ログイン履歴はありません。</param>
+        <param name="login_username">ユーザ名</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">ログイン時刻</param>
+        <param name="login_type">種別</param>
+        <param name="login_ip">アクセス元 IP</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N/A</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">ブラウザ</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">プラットフォーム</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">解像度</param>
+        <param name="login_clientversion">クライアントのバージョン</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">アプリケーション</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API 種別</param>
+        <param name="login_apiversion">API バージョン</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"></param>
+        <param name="login_success">成功</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">API ログインなど、外部の Web サイトからのログインを含む過去 6 か月間のログイン履歴をダウンロード (csv ファイル)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Web サイトからのログインのみを含むログイン履歴をダウンロード (csv ファイル)</param>
+        <param name="login_history_download_title">ダウンロードオプション</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV ファイル</param>
+        <param name="login_history_download_file_type_gzip">GZIP ファイル</param>
+        <param name="login_history_download_file_type_help">CSV (カンマ区切り) 形式のファイルは、各種のスプレッドシートプログラムやテキストエディタで表示できます。GZIP (GNU zip) ファイルは、サイズを縮減するために圧縮されています。</param>
+        <param name="login_history_download_option_title">ファイルの内容</param>
+        <param name="login_history_download_option_all">すべてのログイン</param>
+        <param name="login_history_download_option_ie6_only">IE6 によるログインのみ</param>
+        <param name="login_history_download_option_web_only">Web サイトログインのみ</param>
+        <param name="login_history_download_option_help">「すべてのログイン」には、Web サイトや Outlook、API インテグレーションなど、あらゆるソースからのログインが含まれます。「IE6 によるログイン」には、Internet Explorer 6 を使用したログインのみが含まれます。「Web サイトログイン」には、Salesforce ログインページからのログインのみが含まれます。</param>
+        <param name="login_history_ie6_deprecation_warning_title">まだ IE6 をご使用の場合</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce では段階的に IE6 のサポートを終了する予定です。組織で使用しているブラウザを確認するには、ダウンロードオプションを使用してください。</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">ログイン URL</param>
+        <param name="order_history">注文履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">注文はありません</param>
+        <param name="order_number">注文番号</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">注文日</param>
+        <param name="order_currency">通貨</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">合計</param>
+        <param name="order_status" alias="Global.status"></param>
+        <param name="order_sold_to">販売先</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none"><order_products/>はありません</param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">行&lt;BR&gt;数</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"></param>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">月額料金</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">請求参照先</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">請求サイクル&lt;BR&gt;(月)</param>
+        <param name="bo_order_items_billing_frequency_text">請求サイクル</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">注文期間&lt;BR&gt;(月)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">日付</param>
+        <param name="bo_order_history_user" alias="Global.user"></param>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">請求書</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">請求書なし</param>
+        <param name="invoices_invoice_number">請求書番号</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract_Number/></param>
+        <param name="invoices_invoice_date">請求書発行日</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">お支払期日</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"></param>
+        <param name="invoices_external_system_id">外部システム ID</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">総額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">差引請求額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">クレジット総額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">控除総額</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">取引先責任者(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">会社名(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">請求書履歴</param>
+        <param name="revenue_schedule">スケジュール</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">日付</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"></param>
+        <param name="revenue_schedule_revenue">収益</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">コメント</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">状況の履歴</param>
+        <param name="status_none">状況の履歴はありません</param>
+        <param name="status_status" alias="Global.status"></param>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">サービスの選択</param>
+        <param name="services_none">サービスはありません</param>
+        <param name="services_description">サービス</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"></param>
+        <param name="services_unit_price">単価</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">合計金額</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">割引</param>
+        <param name="training">トレーニングクラスの履歴</param>
+        <param name="training_none">なし</param>
+        <param name="username" alias="Global.user"></param>
+        <param name="class_name">クラス名</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">受講日</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"></param>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">レスポンスあり</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">デフォルト</param>
+        <param name="campaign_member_none"><campaign_member_status/>が定義されていません</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">開始日</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">終了日</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"></param>
+        <param name="contract_lifetime_value">生涯価値</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">購入ルールあり</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"></param>
+        <param name="billed_product_frequency">請求サイクル&lt;br&gt;(月)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">請求有効期限</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/><Products/></param>
+        <param name="event_attending">参加</param>
+        <param name="event_notdecided">未決定</param>
+        <param name="event_declined">不参加</param>
+        <param name="event_attending_none">参加する被招集者はまだいません</param>
+        <param name="event_notdecided_none">すべての被招集者から返答が来ました</param>
+        <param name="event_declined_none">不参加の被招集者はまだいません</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="n"/></param>
+        <param name="documents_title">名前</param>
+        <param name="documents_size">サイズ</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">著者</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">設定変更履歴の参照</param>
+        <param name="download">ダウンロード</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">組織における過去 20 回の履歴は以下のとおりです。過去 6 か月間の組織の設定変更履歴を csv ファイルとして{0}できます。</param>
+        <param name="setup_audit_date">日付</param>
+        <param name="setup_audit_user" alias="Global.user"></param>
+        <param name="setup_audit_action">アクション</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">セクション</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">代理ユーザ</param>
+        <param name="setup_audit_proxyinguser_help">エンドユーザに代わって設定の変更を行ったユーザのユーザ名をリストします。たとえば、ユーザがカスタマーサポート担当者にログインアクセスを許可した場合、担当者のユーザ名がリストされます。</param>
+        <param name="setup_audit_trail_none">設定変更履歴はありません</param>
+        <param name="setup_audit_download_csv">過去 6 か月間の設定変更履歴をダウンロード (csv ファイル)</param>
+        <param name="DashboardComponents_title">ダッシュボードコンポーネント</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">ダッシュボードコンポーネントはありません</param>
+        <param name="translated_templates_none">翻訳メールテンプレートはありません</param>
+        <param name="translated_templates_title">翻訳メールテンプレート</param>
+        <param name="translated_templates_language">言語</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">有効</param>
+        <param name="desc_pnet_conn_audit_trail">組織における過去 20 回の履歴は以下のとおりです。これまでのすべての接続履歴を csv ファイルとして{0}できます。</param>
+        <param name="pnet_conn_audit_trail">接続履歴</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">日付</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"></param>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">接続履歴情報はありません</param>
+        <param name="pnet_conn_audit_download_csv">接続履歴をダウンロード (CSV)</param>
+        <param name="pnet_entity_conns_title">外部共有</param>
+        <param name="pnet_entity_conn_stop_sharing">共有を停止</param>
+        <param name="pnet_pub_title">公開オブジェクト</param>
+        <param name="pnet_sub_title">登録オブジェクト</param>
+        <param name="pnet_pubsub_object">オブジェクト名</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">項目</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">公開 / 非公開</param>
+        <param name="pnet_sub_edit">登録 / 登録解除</param>
+        <param name="pnet_pub_edit_object">オブジェクトが公開されました。</param>
+        <param name="pnet_pub_edit_field">各オブジェクトの項目を公開するには、下の [編集] をクリックします。</param>
+        <param name="pnet_sub_edit_object">オブジェクトが登録されました。</param>
+        <param name="pnet_sub_edit_field">各オブジェクトの項目を登録するには、下の [編集] をクリックします。</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="DOC">コンテンツ</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Visualforce 添付ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">関連リスト読み込み中のエラー</param>
+        <param name="ajax_exception_desc">このレコードの関連リスト情報の収集中に問題が発生しました。ページを再度読み込んでも問題が解決しない場合、管理者に問い合わせるか、弊社カスタマーサポートまで&lt;a href=&quot;{0}&quot; title=&quot;report{1}&quot;&gt;連絡&lt;/a&gt;してください。</param>
+        <param name="category_access_title">カテゴリグループ表示設定</param>
+        <param name="category_access_video_tutorial">ビデオチュートリアル</param>
+        <param name="category_access_name">カテゴリグループ</param>
+        <param name="category_access_access">表示</param>
+        <param name="category_access_details">表示詳細</param>
+        <param name="category_access_custom">カスタム</param>
+        <param name="category_access_full">すべて</param>
+        <param name="category_access_inherited">{0}から継承</param>
+        <param name="category_access_revoked">なし</param>
+        <param name="category_access_userNodeAndChildren_Profile">プロファイル</param>
+        <param name="category_access_userNodeAndChildren_UserRole">ロール &amp; 下位ロール</param>
+        <param name="category_access_noCategories">この{0}に表示されるカテゴリはありません</param>
+        <param name="category_access_allCategories">すべてのカテゴリがこの{0}に表示されます</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{1}の{0}</param>
+    </section>
+    <section name="Encoding" all_languages="yes">
+        <param name="0">Unicode(UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">西ヨーロッパ言語(ISO-8859-1、ISO-LATIN-1)</param>
+        <param name="2">日本語(Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">日本語(JIS)</param>
+        <param name="4">日本語(EUC)</param>
+        <param name="5">韓国語(ks_c_5601-1987)</param>
+        <param name="6">伝統中国語(Big5)</param>
+        <param name="7">簡易中国語(GB2312)</param>
+        <param name="8">伝統中国語香港(Big5-HKSCS)</param>
+        <param name="9">日本語(Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">トライアルの組織</param>
+        <param name="expand">サイドバーを開くにはクリック (Alt+S)</param>
+        <param name="collapse">サイドバーを閉じるにはクリック (Alt+S)</param>
+        <param name="expandNoHotkey">サイドバーを開くにはクリック</param>
+        <param name="collapseNoHotkey">サイドバーを閉じるにはクリック</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes">
+        <param name="up">上へ</param>   <!-- aliased across labels; do not change -->
+        <param name="down">下へ</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">移動</param>
+        <param name="top">最上位へ</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">最下位へ</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes">
+        <param name="fillInRequired">必須項目を入力ください。</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes">
+        <param name="all_users">すべてのユーザ</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes">
+        <param name="new">新規</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">追加</param>   <!-- aliased across labels; do not change -->
+        <param name="del">削除</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[変更]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">こまったときは...</param>   <!-- aliased across labels; do not change -->
+        <param name="more">さらに表示...</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/><Task/></param>
+        <param name="new_event"><New/><Event/></param>
+        <param name="log_call">活動の記録</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">メモの記録</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">差し込み印刷</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">すべて表示</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">ファイル添付</param>   <!-- aliased across labels; do not change -->
+        <param name="help">こまった時は...</param>
+        <param name="send_email">メールの送信</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">ユーザが追加した画像</param>
+    </section>
+    <section name="Titles" all_languages="yes"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">アプリケーション</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes">
+        <param name="printable">印刷用に表示</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">コピー</param>   <!-- aliased across labels; do not change -->
+       <param name="share">共有</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes">
+        <param name="home_area">ホーム</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">詳細はこちら</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">条件を選択:</param>
+        <param name="hotlist_mode">表示の選択</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">{0,number,integer} 件表示する</param>
+        <param name="hotlist_empty_title">最近使ったレコードはありません。[Go!] をクリックするか、ドロップダウンリストからビューを選択してレコードを表示します。</param>
+        <param name="hotlist_empty_description">条件に該当するレコードはありません。</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">レポートのページへ</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">リソースセンター</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">リソースセンターには、様々な情報が盛り込まれています。見込み顧客の調査や他社のサービスの検索など、日々の活動にお役立てください。</param>
+        <param name="resource_center_link_text">リソースセンターへ</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">営業手法</param>
+        <param name="hotlist_recently_modified">最近変更したデータ</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">最近作成したデータ</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">最近参照したデータ</param>
+    </section>
+    <section name="SelectElement" all_languages="yes">
+        <param name="Required">--なし--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--選択--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--デフォルト--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**該当するデータはありません**</param>
+    </section>
+    <section name="DependentElement">
+        <!-- Form fields can depend on other form fields to determine if they are available, editable, visible, or what their allowed values are -->
+        <param name="dependsOn">&quot;{0}&quot; に依存</param>
+        <param name="dependentFields">連動項目</param>
+        <param name="controls">{0} の値を制御</param>
+        <param name="dependsOnMultiple">{0} に依存</param>
+    </section>
+    <section name="CustomLinks" all_languages="yes">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">管理者はカスタムリンクを定義していません。</param>
+    </section>
+    <section name="Wizard" all_languages="yes">
+        <param name="JumpTo">ジャンプ:</param>
+        <param name="JumpToStep">ステップ {0}: {1}</param>
+        <param name="CloseWizard">ウィザードを閉じる</param>
+        <param name="LeftHeader">ステップ {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">ステップ {0}/{1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">ステップ {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">保存 &amp; 新規</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="next">次へ</param> <!-- aliased across labels - do not change -->
+        <param name="previous">前へ</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">組織設定ウィザード - {0}</param>
+        <param name="ImportWizardTitle">{0}のインポートウィザード</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">オーダーセンター</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">トライアルサインアップ</param>
+        <param name="WizardBody">ウィザードの内容</param>
+        <param name="WizardFooter">ウィザードのフッター</param>
+    </section>
+    <section name="Global_Address" all_languages="yes">
+        <param name="first" alias="Global_Entity.first_name"></param>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">住所</param><!-- translators note - this is actually the full address -->
+        <param name="street">町名・番地</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">市区郡</param><!-- aliased across label files - do not change -->
+        <param name="state">都道府県</param><!-- aliased across label files - do not change -->
+        <param name="zip">郵便番号</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">郵便番号</param> <!-- aliased across label files - do not change -->
+        <param name="country">国</param> <!-- aliased across label files - do not change -->
+        <param name="phone">電話</param> <!-- aliased across label files - do not change -->
+        <param name="extension">内線</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Fax 内線</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">メール</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">住所(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">町名・番地(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">市区郡(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">都道府県(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">郵便番号(納入先)</param>
+        <param name="shippingzippostalcode">郵便番号(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">国(納入先)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">住所(請求先)</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">市区郡(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">都道府県(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">郵便番号(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">国(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">町名・番地(請求先)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">町名・番地(銀行)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">住所(銀行)</param> <!-- aliased across label files - do not change -->
+        <param name="bankcity">市区郡(銀行)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">都道府県(銀行)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">郵便番号(銀行)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">国(銀行)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">住所(郵送先)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">町名・番地(郵送先)</param>
+        <param name="mailingcity">市区郡(郵送先)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">都道府県(郵送先)</param>
+        <param name="mailingzip">郵便番号(郵送先)</param>
+        <param name="mailingcountry">国(郵送先)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">町名・番地 1(郵送先)</param>
+        <param name="mailingaddress2">町名・番地 2(郵送先)</param>
+        <param name="mailingaddress3">町名・番地 3(郵送先)</param>
+        <param name="otheraddress">住所(その他)</param>
+        <param name="otheraddress1">町名・番地 1(その他)</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">町名・番地 2(その他)</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">町名・番地 3(その他)</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">町名・番地(その他)</param>
+        <param name="otherstreet2">町名・番地 2(その他)</param>
+        <param name="otherstreet3">町名・番地 3(その他)</param>
+        <param name="othercity">市区郡(その他)</param>
+        <param name="otherstate">都道府県(その他)</param>
+        <param name="otherzipcode">郵便番号(その他)</param>
+        <param name="otherpostalcode">郵便番号(その他)</param>
+        <param name="otherzippostalcode">郵便番号(その他)</param>
+        <param name="othercountry">国(その他)</param>
+        <param name="otherphone">その他の電話</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">その他の内線</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">町名・番地 1</param>
+        <param name="address2">町名・番地 2</param>
+        <param name="address3">町名・番地 3</param>
+        <param name="home_phone">自宅電話</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes">
+        <param name="loading">ダウンロード中...</param>   <!-- aliased across labels; do not change -->
+        <param name="location">保存場所</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">数量</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contact Manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">はい</param>   <!-- aliased across labels; do not change -->
+        <param name="no">いいえ</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Salesforce へようこそ!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Copyright © 2000-{0} salesforce.com, inc. All rights reserved.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Copyright &amp;copy; 2000-{1} &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. All rights reserved.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 準拠</param>
+        <param name="copyright_nohtml">Copyright (c) 2000-{0} salesforce.com, inc. All rights reserved.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. All rights reserved.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href=&quot;{0}&quot;&gt;{2}&lt;/a&gt;, inc. All rights reserved.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. All rights reserved.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">セキュリティに関する声明</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">利用規約</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Salesforce をお選びいただきありがとうございます。Salesforce をご利用いただく前に、下の利用規約をお読みいただき、同意していただく必要があります。同意いただける場合は、『同意する』のボタンをクリックしてください。もし利用規約に同意されない場合は、Salesforce にログインすることはできません。</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"></param>
+        <param name="done">完了</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">今すぐ追加</param>
+        <param name="remove">削除</param>   <!-- aliased across labels; do not change -->
+        <param name="new">新規</param>
+        <param name="exciting_and_new">新機能!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">こちら</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">作成</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">ウィンドウを閉じる</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">このページを印刷</param>
+        <param name="new_window">(新規ウィンドウ)</param>
+        <param name="new_focus">(フォーカスのシフト)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">非表示フレーム &#45; 無視</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">すべて選択</param>
+        <param name="select_shown">表示の選択</param>
+        <param name="remove_shown">表示項目を削除</param>
+        <param name="select_none">選択解除</param>
+        <param name="all_active">すべて有効</param>
+        <param name="all_inactive">すべて無効</param>
+        <param name="are_you_sure">よろしいですか?</param>
+        <param name="irreversible_are_you_sure">元に戻せませんが、よろしいですか?</param>
+        <param name="replace">置換</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">完了</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} 分</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">複数の項目が見つかりました。選択リストから選択するか、アイコンをクリックして検索結果を絞り込んでください。</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">{1} 年度 Q{0}</param>
+        <param name="reset">リセット</param>   <!-- aliased across labels; do not change -->
+        <param name="override">上書き</param>   <!-- aliased across labels; do not change -->
+        <param name="total">総計</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">こちらをクリック</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Web 管理者の方へ:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">サンプル HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">パスワード</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">次回からこのページを表示しない</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">このメッセージを非表示にする対象: </param>
+        <param name="dontShowMessageAgain">次回からこのメッセージを表示しない</param>
+        <param name="dismissMessage">このメッセージを消す</param>
+        <param name="allObjects">すべてのオブジェクト</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">スペースバーまたは Enter キーを押して開いてください</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">セルフサービス<Case_Detail/></param>
+        <param name="CssEdit">セルフサービス<Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction"><Case/>フィード</param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">コメント</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">カスタムオブジェクト</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">カスタムオブジェクトの定義</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">ダッシュボード</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">ダッシュボード</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">選択解除</param>
+        <param name="deselect_shown">表示の選択解除</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="n"/></param>
+        <param name="MailmergeTemplate">差し込み印刷テンプレート</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">差し込み印刷テンプレート</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">フォルダ</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">フォルダ</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">売上予測</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">売上予測</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Live Agent スーパーバイザ</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">請求書</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">メモ</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">順番</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">注文</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">注文品目</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">注文品目</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">支払い</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">支払</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">レポート</param>
+        <param name="Reports">レポート</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">サインアップ</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">テンプレート</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">テンプレート</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">テーブル</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">有効</param>
+        <param name="amount">金額</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">年間売上</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">ドキュメント添付</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">パスワードの変更</param>   <!-- aliased across labels; do not change -->
+        <param name="close">閉じる</param> <!-- aliased across labels; do not change -->
+        <param name="closed">完了フラグ</param>
+        <param name="closed_date">完了日</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">完了予定日</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">作成日</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">データ型</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">削除</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">詳細情報</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">従業員数</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="files">ファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">一般情報</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">始める前に</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">表示ラベル</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">最終ログイン</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">最終更新日</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">名前</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">名前</param>
+        <param name="new_status">新規状況</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">なし</param>
+        <param name="open">オープン</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">組織</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">該当するデータがありません。</param> <!-- aliased across labels - do not change -->
+        <param name="all">すべて選択</param>
+        <param name="clear">クリア</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">ルックアップアイコンをクリックしてください...</param>
+        <param name="click_lookup_icon_info">ルックアップアイコンをクリックして値を選択してください。</param>
+        <param name="clear_all">選択解除</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">添付ボタンをクリックしてください</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">エラー</param> <!-- aliased across lables - do not change -->
+        <param name="high">高</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">ヘルプ</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">移動する</param>
+        <param name="keywords">キーワード</param>
+        <param name="length">文字数</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">状況</param> <!-- aliased across lables - do not change -->
+        <param name="title">役職</param>
+        <param name="object_title">役職</param>
+        <param name="type">種別</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">ユーザ</param> <!--aliased across labels - do not change -->
+        <param name="Users">ユーザ</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">権限セット</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">プロファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">プロファイル</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">所有者</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">次回からはこのページを表示しない</param>
+        <param name="click_here_to_create_new_account">{0}から<new/><account/>を作成できます。</param>
+        <param name="click_here_to_create_new_contact">{0}から<new/><contact/>を作成できます。</param>
+        <param name="click_here_to_create_new_lead">{0}から<new/><Lead/>を作成できます。</param>
+        <param name="click_here_to_create_new_opportunity">{0}から<new/><opportunity/>を作成できます。</param>
+        <param name="click_here_to_create_new_product">{0}から<new/><product/>を作成できます。</param>
+        <param name="SystemModstamp">System Modstamp</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">ディビジョン</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">処理中</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">レコードを更新します...</param>
+        <param name="created_by" alias="Global_Entity.created_by"></param>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">静的翻訳</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">今後このページを表示しない</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">アップロード中...</param>
+        <param name="uploading_title">アップロード中</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">インポート中...</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">かつ </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"></param>
+        <param name="bogus_label">エラー: この項目へのアクセス権がありません</param>
+        <param name="noReadAccess">このレコードへの参照アクセス権がありません。</param>
+        <param name="noAccessToUser">このユーザへのアクセス権がありません。</param>
+        <param name="disabledButton">無効化されたボタン: {0}</param>
+        <param name="RequiredHeader">必須情報</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">画像の挿入</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">ログイン IP アドレスの制限を削除しますか?</param>
+        <param name="AMPM">AMPM エントリ</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">保護コンポーネント</param>
+        <param name="dialogCloseConfirm">表示していた確認ウィンドウは、すぐ閉じられた可能性があります。[OK] をクリックして戻るか、[キャンセル] をクリックしてこの警告を無視します。</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">ダイアログの開始</param>
+    </section>
+    <section name="BrowserWarnings">
+        <param name="DialogTitle">新規ユーザインターフェースのテーマをサポートしていないブラウザ</param>
+        <param name="DialogHeader">注記...</param>
+        <param name="DialogContent1">最新のユーザインターフェースのテーマに対応していないブラウザを使用しています。</param>
+        <param name="DialogContent2">ブラウザをサポート対象のバージョンにアップグレードいただくまで、左の従来のテーマが表示されます:</param>
+        <param name="DialogClassicDesc">従来のテーマ</param>
+        <param name="DialogAlohaDesc">新しいテーマ</param>
+    </section>
+    <section name="LookupDialog" all_languages="yes">
+        <param name="Results">検索結果</param>
+        <param name="Recent">最近参照したデータ</param>
+        <param name="NoMatchHeader">次のいずれかの理由によりレコードが見つかりませんでした:</param>
+        <param name="BulletOne">この種別のレコードがありません</param>
+        <param name="BulletTwo">いずれかのレコードを表示する権限がありません</param>
+        <param name="BulletThree">システム管理者が設定した検索条件にレコードが一致していません</param>
+        <param name="BulletFour">1 つ以上の制御項目が空白または無効になっています (制御項目:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes">
+        <param name="Available" alias="MultiSelectListElement.available"/> 
+        <param name="AvailableUsers">選択可能なユーザ</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">選択済みのユーザ</param>
+        <param name="LicensedUsers">ライセンスを付与したユーザ</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">削除選択済み</param>
+        <param name="Selected">選択済み</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">選択済み</param>
+        <param name="UnassignedPackages">未割り当てパッケージ</param>
+        <param name="SelectedPackages">選択済みパッケージ</param>
+        <param name="InView">表示中</param>
+    </section>
+    <section name="Multipart_Form_Data"  all_languages="yes">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">ファイルが大きすぎます。{0}以下のファイルを指定してください。</param>
+        <param name="no_file_specified">アップロードするファイルを指定してください。ファイル名を入力するか、または参照ボタンをクリックしてファイルを指定してください。</param>
+        <param name="invalid_file_type">この種類のファイルは、現在サポートしていません。</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">ファイル名が長すぎます。ファイル名は、{0} 文字までです。</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">ファイル名の拡張子が長すぎます。拡張子は {0} 文字までです。</param>
+        <param name="bytes">バイト</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">HTML ファイルタイプは、セキュリティの都合上使用できません。</param>
+        <param name="attachment_size_exceeded">アップロードしたファイルは最大サイズを超えています。</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes">
+        <param name="no_file_specified">&lt;b&gt;エラー:&lt;/b&gt; アップロードする画像を選択してください</param>
+        <param name="upload_file_too_large">&lt;b&gt;エラー:&lt;/b&gt; 画像の制限サイズ (1 MB) を超えています</param>
+        <param name="invalid_file_type">&lt;b&gt;エラー:&lt;/b&gt; .gif、.jpeg または .png ファイルのみ挿入できます。</param>
+        <param name="upload_failed">&lt;b&gt;エラー:&lt;/b&gt; アップロードに失敗しました。後でもう一度お試しください。</param>
+        <param name="invalid_file">&lt;b&gt;エラー:&lt;/b&gt; 無効な画像ファイルです。</param>
+        <param name="invalid_param">&lt;b&gt;エラー:&lt;/b&gt; 無効なパラメータです。</param>
+        <param name="access_failed_alt">この画像は次の理由により使用できません: 画像を表示する権限がないか、画像がシステムから削除されている</param>
+        <param name="weekly_export_folder">その他のアップロード済み資料/</param>
+    </section>
+    <section name="MotifPicker">
+        <param name="pageTitle">タブスタイルの選択</param>
+        <param name="instructions">タブスタイルを選択してください。</param>
+        <param name="createYourOwn">独自のスタイルを作成</param>
+        <param name="defaultCustomStyleDesc">カスタムスタイル</param>
+        <param name="styleIsUsedOn">このスタイルは、次のタブで使用されます。</param>
+        <param name="showUsedStyles">他のタブで使用されているスタイルを表示</param>
+        <param name="hideUsedStyles">他のタブで使用されているスタイルを非表示</param>
+    </section>
+    <section name="MotifColorPicker">
+        <param name="pageTitle">タブ色セレクタ</param>
+        <param name="instructions">色を選択してください</param>
+    </section>
+    <section name="CustomMotifDefinitionPage">
+        <param name="color">色:</param>
+        <param name="icon">アイコン:</param>
+        <param name="defineNew">新規の色スタイルを定義します</param>
+        <param name="noMotifErr">色を選択してください</param>
+        <param name="noIconErr">アイコンを選択してください</param>
+    </section>
+    <section name="QuickCreate" all_languages="yes">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0}を作成しました。</param>
+        <param name="Failure_message">新規作成に失敗しました。</param>
+        <param name="Common_success_message">新規に作成しました。</param>
+    </section>
+    <section name="Page_LicenseRequest">
+        <param name="title">商品の追加リクエスト</param>
+        <param name="pageheader">下記の項目を入力して、商品の追加リクエストを登録してください。追加する商品を [説明] 欄にリスト形式で記入してください。既存の契約に対し商品を追加する場合は、契約番号も記入してください。契約番号がおわかりにならない場合は空欄のままで結構です。</param>
+        <param name="colHeader">購入リクエストの送信</param>
+        <param name="functionalArea_0">ライセンス購入</param>
+        <param name="type_0">購入</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="subject_purchase_request">購入リクエスト</param>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="title_landing" alias="Page_ReduceLicense.title_landing"/>
+        <param name="pageheader_landing">ご注文ありがとうございました。弊社のお客様担当営業に通知いたしました。後ほど弊社よりご連絡させていただきます。</param>
+        <param name="title_error" alias="Page_ReduceLicense.title_error"/>
+        <param name="pageheader_error" alias="Page_ReduceLicense.pageheader_error"/>
+    </section>
+    <section name="Page_ReduceLicense" all_languages="yes">
+        <param name="title">ライセンスの削減リクエスト</param>
+        <param name="pageheader">ライセンス削減・解約を行うには、すべての必須項目に記入してください。この方法が、要求が処理される最も速い方法です。不必要な遅延を招くおそれがあるため、同じライセンスについて複数の要求を送信しないでください。</param>
+        <param name="title_landing">リクエストの登録完了</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">リクエストは正常に受け付けられました。ライセンス数の削減リクエストは、次回請求期間の請求日の 5 営業日前までに salesforce.com にご連絡いただければ、次回請求期間より有効となります。</param>
+        <param name="pageheader_landing">リクエストは正常に受け付けられました。なお、ライセンスの削減、解約手続きにつきましては、毎月 25 日の 17:00 を締めとさせていただいております (締日が休祭日の場合は、翌営業日)。締め日を過ぎている場合は翌月まで利用料金が課金されますのであらかじめご了承ください。</param>
+        <param name="title_error">リクエスト手続きは完了できませんでした。</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">リクエストを登録することができませんでした。しばらくしてからもう一度お試しください。</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">リクエストの登録</param>
+        <param name="reason">理由</param>   <!-- aliased across labels; do not change -->
+        <param name="description">詳細を&lt;br&gt; ご記入してください</param>
+        <param name="numLicenses">ライセンス数</param>
+        <param name="potentialResponse">お客様の満足度向上のために&lt;br&gt; 何かご提案はありますか?</param>
+        <param name="tips_title">ライセンス数の削減登録について</param>
+        <param name="tip1">ライセンス数削減手続きを確実に完了するため必要事項はすべて正確に入力してください。登録をする前に、現在有効なユーザ数がライセンス削減後のライセンス数以下になるよう不必要なユーザを必ず無効にしてください。ユーザの無効化は、&lt;a href=&quot;{1}&quot;&gt;設定&lt;/a&gt;ページの&lt;a href=&quot;{0}&quot;&gt;ユーザの管理&lt;/a&gt;から行うことができます。</param>
+        <param name="type1">解約</param>
+        <param name="type2">ユーザライセンスの削減</param>
+        <param name="type3">オフラインライセンスの削減</param>
+        <param name="type4">キャンペーンライセンスの削減</param>
+        <param name="type5">Mobile Edition for au の解約</param>
+        <param name="type6">Mobile Edition for au のライセンスの削減</param>
+        <param name="type7">Force.com Mobile ライセンスの削減</param>
+        <param name="reason_0">自社の組織変更</param>
+        <param name="reason_1">会社の決定</param>
+        <param name="reason_2">人員の削減</param>
+        <param name="reason_3">エンドユーザの使用率が低かった</param>
+        <param name="reason_4">機能が期待したものと合わなかった</param>
+        <param name="reason_5">十分な投資対効果が見られなかった</param>
+        <param name="reason_6">購入したライセンス数が多すぎた</param>
+        <param name="reason_7">価格が高すぎた</param>
+        <param name="reason_8">他の製品を使用することになった</param>
+        <param name="reason_9">使用しないライセンスがあった</param>
+        <param name="reason_10">その他</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes">
+        <param name="errorText">以下の項目に入力してください:</param>
+        <param name="title">サポートに連絡</param>
+        <param name="title_upgrade_me">Log An Upgrade Request</param>
+        <param name="title_support">フィードバックを送信</param>
+        <param name="warning_line_too_long">警告: 説明が 4000 バイト以上あります。超過した分は無視されます。</param>
+        <param name="feedback_info">フィードバック</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">カスタマーサポートにメールで問い合わせをするための入力画面です。入力フォームの 3 つの項目から該当する選択肢を選び、[説明] 項目にはできるだけ詳しくご質問内容を入力してください。&lt;br&gt;後ほど、カスタマーサポートからメールにて回答させていただきます。&lt;br&gt;お客様の会社名や氏名は、ユーザ情報から自動的に添付されますので入力する必要はございません。</param>
+        <param name="general_info_me">Personal EditionからいずれかのCorporate Editionへのアップグレードに関する詳細をお知りになりたい場合は、下のフォームにご記入ください。弊社の営業担当より 48 営業時間以内にご連絡させていただきます。</param>
+        <param name="general_info_support">カスタマーサポートにメールで問い合わせをするための入力画面です。入力フォームの 3 つの項目から該当する選択肢を選び、[説明] 項目にはできるだけ詳しくご質問内容を入力してください。後ほど、カスタマーサポートからメールで回答させていただきます。</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">新規</param>
+        <param name="functionalArea">機能分類</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"></param>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">質問</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">要求</param>
+        <param name="type3">フィードバック</param>
+        <param name="type4">機能要求</param>
+        <param name="priority1">緊急</param>
+        <param name="priority2">通常</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">低</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">正式契約のお申し込み</param>
+        <param name="subject_subscribe_me">アップグレードはこちら!</param>
+        <param name="subject_subscribe_we">Professional Edition に関する情報請求</param>
+        <param name="subject_subscribe_ee">Enterprise Edition に関する情報請求</param>
+        <param name="subject_subscribe_ue">Unlimited Edition に関する情報請求</param>
+        <param name="subject_subscribe_support">今すぐ契約する</param>
+        <param name="subject_data_export">ウィークリーエクスポートサービスを申し込む</param>
+        <param name="subject_marketing_licenses">マーケティングライセンスを追加</param>
+        <param name="subject_offline_licenses">オフラインライセンスを追加</param>
+        <param name="subject_wireless_licenses">ワイヤレスライセンスを追加</param>
+        <param name="subject_offlinepda_licenses">Sales Anywhere ライセンスを追加</param>
+        <param name="subject_mobile_licenses">Force.com Mobile ライセンスを追加</param>
+        <param name="subject_sfcontent_licenses">Salesforce CRM Content ライセンスを追加</param>
+        <param name="subject_knowledge_licenses">ナレッジライセンスを追加</param>
+        <param name="subject_interaction_licenses">Force.com Flow ライセンスを追加</param>
+        <param name="subject_support_licenses">Service Cloud ライセンスを追加</param>
+        <param name="subject_jigsaw_licenses">Jigsaw ライセンスを追加</param>
+        <param name="subject_liveagent_licenses">Live Agent ライセンスを追加</param>
+        <param name="subject_siteforcecontributor_licenses">Site.com Contributor ライセンスを追加</param>
+        <param name="subject_siteforcepublisher_licenses">Site.com Publisher ライセンスを追加</param>
+        <param name="subject_chatteranswers_licenses">Chatter アンサーライセンスを追加</param>
+        <param name="subject_license_reduction">ライセンス数の削減</param>
+        <param name="functionalArea_0">ライセンスに関するお問い合わせ</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">請求に関するお問い合わせ</param>
+        <param name="functionalArea_3">Data Junction</param>
+        <param name="functionalArea_4">メール/HTML メール</param>
+        <param name="functionalArea_5">売上予測/商談</param>
+        <param name="functionalArea_6">インポート</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">リード</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">パフォーマンス</param>
+        <param name="functionalArea_9">レポート</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">正式契約</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">同期</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">ウィークリーエクスポートサービス</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">ワイヤレス</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">その他</param>
+        <param name="functionalArea_16">マーケティングライセンス</param>
+        <param name="functionalArea_17">オフラインライセンス</param>
+        <param name="functionalArea_18">プロファイル/ページレイアウト/レコードタイプ</param>
+        <param name="functionalArea_19">キャンペーン</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">セルフサービス</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">ワイヤレスライセンス</param>
+        <param name="functionalArea_22">アップグレードに関するお問い合わせ</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Sales Anywhere ライセンス</param>
+        <param name="functionalArea_24">行動&amp;ToDo </param>
+        <param name="functionalArea_25"><Products/> &amp;収益/ <Pricebooks/></param>
+        <param name="functionalArea_26">大規模商談アラート </param>
+        <param name="functionalArea_27">ドキュメント</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">ケース/ソリューション </param>
+        <param name="functionalArea_29">検索</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">共有</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com Wireless</param>
+        <param name="functionalArea_33">Force.com Connect for Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition for au</param>
+        <param name="functionalArea_35">パートナーポータルライセンス</param>
+        <param name="functionalArea_36">Force.com Mobile ライセンス</param>
+        <param name="functionalArea_37">Salesforce CRM Content ライセンス</param>
+        <param name="functionalArea_38">Service Cloud ライセンス</param>
+        <param name="functionalArea_39">Jigsaw ライセンス</param>
+        <param name="functionalArea_40">Live Agent ライセンス</param>
+        <param name="functionalArea_41">Site.com Contributor ライセンス</param>
+        <param name="functionalArea_42">Site.com Publisher ライセンス</param>
+        <param name="functionalArea_43">Chatter アンサーライセンス</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">緊急の場合は、カスタマーサポートまでお電話ください。&lt;BR&gt;カスタマーサポート電話番号: 03-5785-8480&lt;BR&gt;&lt;BR&gt;電話サポート対応時間&lt;BR&gt;平日: 10:00&amp;#150;17:00 (祝祭日・年末年始を除く)&lt;BR&gt;&lt;BR&gt;</param>
+        <param name="tips_title">問い合わせ入力のヒント</param>
+        <param name="tip1">弊社ができる限り迅速にお答えできるよう、状況の詳細情報をご入力ください。</param>
+        <param name="tip2">エラーの場合、何を試したときに、どういう現象が起こったのか、正確にご入力ください。</param>
+        <param name="tip3">状況を再現するための手順や、お客様の環境をわかる範囲で詳しくご入力ください。(エラーの場合、ご使用の OS、ブラウザの種類、バージョンなどもご入力ください。)</param>
+    </section>
+    <section name="List" all_languages="yes">
+        <param name="view">ビュー:</param>
+        <param name="X">X</param>
+        <param name="close">完了</param>
+        <param name="MLclose">閉じる</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">削除</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">削除</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">消去</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">レコード</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">設定</param>
+        <param name="activate">有効化</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">無効化</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Manage</param>   <!-- aliased across labels; do not change -->
+        <param name="export">エクスポート</param>   <!-- aliased across labels; do not change -->
+        <param name="next">次のページ</param>
+        <param name="prev">前のページ</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">ビューの総表示件数: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">ページ毎の表示件数を {0} {1}</param>
+        <param name="number_shown_detail_page">関連リスト毎の表示件数を常に {0} {1} {2}</param>
+        <param name="number_shown_adjust_less_link">減らす</param>
+        <param name="number_shown_adjust_more_link">増やす</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">すべて</param>
+        <param name="last_page">前のページに戻る</param>
+        <param name="last_list">最後に開いたビューへ</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">最後に開いたビュー:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">最後に開いたビュー: 接続の<Entity entity="0" plural="y"/></param>
+        <param name="last_suggested_solution_list"><Suggested/><Solutions/>一覧に戻る</param>
+        <param name="last_solution_search_list"><Solution plural="n"/>検索結果へ</param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail"><Entity entity="0" plural="n"/>: {0} に戻る</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">アクション:</param>
+        <param name="checkboxPrompt">一件以上選択してください。</param>
+        <param name="checkboxSinglePrompt">1 行選択してください</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">このページ上の選択が失われます。続けますか?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">この操作を実行するには、{0} 行以下を選択してください。</param>
+        <param name="selectionLimit">選択できる行数は {0} 行までです。</param>
+        <param name="login">ログイン</param>   <!-- aliased across labels; do not change -->
+        <param name="session">セッション</param>
+        <param name="none">表示するレコードはありません。</param>
+        <param name="no_rows">行が選択されていません</param>
+        <param name="subtotal">小計:</param>
+        <param name="total">合計:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">すべての項目を選択</param>
+        <param name="clearAllInfo">すべての項目を選択解除</param>
+        <param name="rename">名前を変更</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"></param>
+        <param name="select">選択</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">選択解除</param>
+        <param name="toggleall">すべての行の切り替え</param>
+        <param name="refresh">更新</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">ビューを選択してください。</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">指定したビューは最大サイズを超えています。ビューを編集または新規作成して、検索条件を絞り込んでください。</param>
+    <param name="switch_view">ビューの切り替え</param>
+    <param name="records_x_to_y">レコード {0} - {1} を表示</param>
+    <param name="records_x_to_y_more">レコード {0} - {1} を表示 (その他にもあり)</param>
+    <param name="records_x_to_y_more_showing_max">レコード {0} - {1} を表示しています。ビューには 1,000 件以上のレコードが存在しますが、このページには最初の 1,000 件しか表示できません。表示するレコード数を減らす場合は、リストビュー条件を変更してください。1,000 件以上のレコードを印刷するには、レポートを実行し、レポートの [印刷用に表示] ボタンをクリックしてください。</param>
+    <param name="number_of_records">レコード数</param>
+        <param name="createCase"><Case/>の作成</param>
+    </section>
+    <section name="Tree" all_languages="yes">
+        <param name="expandCollapse">ネストした項目をクリックすると、展開または折りたたまれます。</param>
+        <param name="expand">クリックするとネストした項目が展開されます。</param>
+        <param name="collapse">クリックするとネストした項目が折りたたまれます。</param>
+        <param name="shortExpand">展開</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">折りたたむ</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">展開済</param>
+        <param name="collapsed">折りたたみ済</param>
+        <param name="level">レベル</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">階層:</param>
+        <param name="siblings">同階層:</param>
+    </section>
+    <section name="Lookup" all_languages="yes">
+        <param name="Title">検索</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">オブジェクトの選択</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">取引先責任者</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">商談</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">検索結果が {0} 件以上存在するため、すべてを表示できません。検索条件を絞ってください。</param>
+        <param name="Copyright">Copyright &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">All rights reserved.</param>
+        <param name="useWildcards">他の文字の横にワイルドカード ('*') を使用してより高度な検索をすることができます。たとえば、「ad*」とすると、名前に｢ad｣が含まれるすべてのレコードが返されます。</param>
+        <param name="useWildcardsWithSearch">他の文字の横にワイルドカード「*」を使用してより高度な検索をすることができます。</param>
+        <param name="error_lookup_multiple_matches_ile">複数の項目が見つかりました。&lt;br&gt;アイコンをクリックして検索結果を絞り込んでください。</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="Title">色を選択してください</param>
+        <param name="cpFrameTitle">カラーピッカー</param>
+    </section>
+    <section name="ChartPicker">
+        <param name="Title">グラフの種類を選択</param>
+    </section>
+    <section name="Sharing" all_languages="yes">
+        <param name="expand">リストの拡張</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">リストの拡張</param>
+        <param name="sharing">共有先</param>   <!-- aliased across labels; do not change -->
+        <param name="why">理由は?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes">
+        <param name="more_filters">条件を増やす &gt;&gt;</param>
+        <param name="less_filters">条件を減らす &lt;&lt;</param>
+        <param name="by_keyword">キーワードによる検索</param>
+        <param name="by_filter">条件指定による検索</param>
+        <param name="too_many">検索結果が、{0} 以上あります。最初の {0} のみ表示します。検索条件を見直してください。</param>
+        <param name="Results">結果</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes">
+        <param name="search">検索:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">スコア</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes">
+        <param name="field_field">項目</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">演算子</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">値</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">3 列目に複数の項目を入力すると、検索条件「or」が適用されます。</param>
+        <param name="tip_1">同じ項目に最大 10 キーワードまで、カンマで区切って入力することも可能です。入力例: 文字項目で「東京」「大阪」「名古屋」のデータを抽出する場合 → 東京,大阪,名古屋</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">カンマを含む場合は、"" (ダブルクォーテーション) で囲みます。たとえば、200,000 または 1,000,000 を検索する場合は、"200,000","1,000,000" とします。</param>
+        <param name="tip_3">チェックボックス項目では、「False」および「True」を使用します。たとえば、「Active equals True」または「Converted equals False」となります</param>
+        <param name="tip_4">局番を基準にしたルールのエントリでは、括弧が必要な場合があります。たとえば、電話番号 [次の文字列で始まる] (415), (510) となります。</param>
+        <param name="tip_5">トランスレーションワークベンチを使用している場合は、マスタ言語の値を条件指定の項目に入力してください。</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes">
+        <param name="available">利用可</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">選択</param>
+        <param name="assignLicensesDescription">このユーザに割り当てる各パッケージの横にあるチェックボックスをオンにし、[割り当て] をクリックします。パッケージに十分なライセンスがない場合や、パッケージが期限切れまたは保留になっている場合は、チェックボックスは表示されません。</param>
+    </section>
+    <section name="TreeMultiSelect">
+        <param name="horizontal_view">横に並べて表示</param>
+        <param name="vertical_view">縦に並べて表示</param>
+        <param name="view_select_title">ビューの選択</param>
+    </section>
+    <section name="UiSkin" all_languages="yes">
+        <param name="0">Salesforce クラシック</param>
+        <param name="1">Salesforce</param>   <!-- aliased across labels; do not change -->
+        <param name="2">ポータルデフォルト</param>
+        <param name="3">Webstore</param>
+        <param name="4">Aloha</param>
+    </section>
+    <section name="ManageableInfo">
+        <param name="EntityManaged">この<Entity entity="0"/>は管理されています。つまり、編集できるのは特定の属性のみです。</param>
+        <param name="EntityDeprecated">この<Entity entity="0"/>は非推奨です。</param>
+        <param name="UnmanagedDeprecatedByOther">この<Entity entity="0"/>はまだリリースされていませんが、参照先コンポーネントにより非推奨にされています。</param>
+        <param name="EntityDeprecatedByDev">この<Entity entity="0"/>は、パッケージ公開者により非推奨にされています。詳細は、公開者を参照してください。</param>
+        <param name="Undeprecate">管理-リリース済みパッケージでのアップロード前に、コンポーネントの非推奨を解除できます。</param>
+        <param name="UndeprecateByOther">管理-リリース済みパッケージでのアップロード前に、このコンポーネントの参照先の非推奨を解除できます。</param>
+        <param name="MoreInfo">詳細情報の表示</param>
+        <param name="LessInfo">情報の非表示</param>
+        <param name="Why" alias="Sharing.why"/>
+        <param name="BecauseUploaded">この<Entity entity="0"/>は、あなたが AppExchange にアップロードしたアップグレード可能パッケージの一部です。</param>
+        <param name="BecauseInstalled">この<Entity entity="0"/>は、AppExchange からインストールしたアップグレード可能パッケージの一部です。</param>   <!-- aliased across labels; do not change -->
+        <param name="WhatCanIEdit">編集できる内容は?</param>
+        <param name="WhatNone">管理されている{0}については、将来のアップグレードを円滑に行うため、属性は編集できません。</param>
+        <param name="WhatTop">管理されている{0}については、次の項目を編集できます。</param>
+        <param name="WhatBottom">アップグレード処理を簡単にするため、それ以外の属性はすべてロックされます。</param>
+        <param name="WhoCanDelete">誰がどの{0}を削除できる?</param>
+        <param name="Who">{0}が{1}を削除できます。</param>
+    </section>
+    <section name="EntityHoverPage">
+        <param name="entity_detail_overlay">エンティティの詳細のフロート表示</param>
+    </section>
+    <section name="ActionConfirmation">
+        <param name="created">{0}が保存されました。</param>
+        <param name="modified">{0}が更新されました。</param>
+        <param name="submitted">{0}が登録されました。</param> <!-- Label swap for Case object -->
+        <param name="attached">添付ファイルが追加されました。</param>
+    </section>
+    <section name="ColorPicker">
+        <param name="colorSample">色見本</param>
+        <param name="colorHexValue">色の 16 進数値</param>
+    </section>
+    <section name="Icon" all_languages="yes">
+        <param name="CONFIRM">確認</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">情報</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">エラー</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">警告</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">安全</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes">
+      <param name="frequency">頻度</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">毎日</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">毎週</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">毎月</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">平日</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">毎日</param>
+       <param name="lastDay">最終</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">第 1</param>
+    <param name="on2">第 2</param>
+    <param name="on3">第 3</param>
+    <param name="on4">第 4</param>
+    <param name="onLast">最終</param>
+    <param name="startTime">開始</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">終了</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">希望開始時刻</param>
+    <param name="noPreference">指定しない</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">正確な開始時刻は、ジョブキューの活動状況によって異なります。</param>
+
+    <param name="diffTimeZoneMsg"><![CDATA[この頻度設定のタイムゾーンは、次のとおりです。<br> <strong>{0}</strong><br>の頻度設定は、最後に編集したユーザのタイムゾーンで表示されます。<br>設定を変更すると、あなたのタイムゾーンに合わせて更新されます。]]></param>
+
+      <param name="weeklyRecurrence">毎週{0}に繰り返し</param>
+      <param name="weeklyRecurrenceLegendLabel">毎週に繰り返し</param>
+      <param name="monthlyRecurrence1">毎月 {0} 日</param>
+      <param name="monthlyRecurrence1LegendLabel">指定</param>
+      <param name="monthlyRecurrence2LegendLabel">カスタム</param>
+      <param name="monthlyRecurrence2">毎月{2} {0} {3} {1}</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">毎月{0} {1}</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">毎月の指定日</param>
+      <param name="accessibleMonthly2">毎月のカスタム日</param>
+      <param name="accessibleOnDayN">指定日</param>
+      <param name="accessibleOnDayNOfWeek">行動</param>
+      <param name="accessibleOnDayName">日付</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes">
+        <param name="dialog">この検証は、悪意のあるプログラムによるデータアクセスの防止に役立ちます。大規模なダウンロードをする場合、システム管理者がこの検証を行う必要があります。1 回のログインセッションで一度のみ表示されます。</param>
+        <param name="imagePrompt">上記の単語をスペースで区切って入力してください。</param>
+        <param name="audioPrompt">聞こえた数字を入力してください。</param>
+        <param name="refresh">新しい検証を入手してください</param>
+        <param name="audio">新しい音声検証を入手してください</param>
+        <param name="image">新しい画像検証を入手してください</param>
+        <param name="incorrect">正しくありません。もう一度お試しください。</param>
+        <param name="moreinfo">詳細情報 &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; 概要</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes">
+        <param name="zoomIconTitle">詳細はこちら...</param>
+        <param name="show">強調表示パネルの表示</param>
+        <param name="hide">強調表示パネルの非表示</param>
+        <param name="empty">このレコード用に表示する強調表示された項目はありません。</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes">
+        <param name="tourLink">ガイド付きツアー</param>
+        <param name="closeIntro">閉じる</param>
+        <param name="closeOutro">閉じる</param>
+        <param name="showLater">後で表示</param>
+        <param name="replay">再実行</param>
+        <param name="continue">次へ</param>
+        <param name="previous">前へ</param>
+        <param name="startTour">ツアーの開始</param>
+        <param name="endTour">ツアーの終了</param>
+        <param name="stepCounter">{0}/{1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes">
+        <param name="detailTabTitle">詳細</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">推奨</param>
+        <param name="hideBucketTip">&lt;br&gt;項目をページから非表示にするには、&lt;br/&gt;ここにドロップします。</param>
+        <param name="hiddenListTip">非表示にされた項目を表示するには、上記のリストにドラッグして戻します。</param>
+        <param name="hiddenListShowLinkLabel">非表示の {0}</param> <!-- '3 Hidden' -->
+        <param name="backToTopToolTip">先頭に戻る</param>
+        <param name="multipleItemDragGhost">複数の項目 (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes">
+        <param name="compatibilityMsgWindowTitle">詳細ページのブラウザ互換性</param>
+        <param name="compatibilityMsgSubTitle">このブラウザはサポートされていません</param>
+        <param name="compatibilityMsg1">現在のブラウザでは新しい詳細ページを表示できません。</param>
+        <param name="compatibilityMsg2">次の互換ブラウザのいずれかでログインしていただくと、デザインが新しくなったページが表示されます。</param>
+        <param name="supportedIE">Internet Explorer 7 または 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">よろしくお願い申し上げます。</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">従来のビューをデフォルトにする</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes">
+        <param name="searchItemMsg">{0} を検索するには、ここに入力してください...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">検索条件に一致する {0} がありません。</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">ページ {1}/{0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    <section name="devContextMenu">
+        <param name="turnOff">メニューを無効にする</param>
+        <param name="confirmTurnOffTitle">このメニューを無効にしますか?</param>
+        <param name="confirmTurnOffText">今後このメニューを有効にするには、設定メニューの [個人情報] ページに移動して、[Force.com クイックアクセスメニュー] 設定を有効にします。</param>
+        <param name="viewObject">オブジェクトを参照する</param>
+        <param name="viewObjectHover">このオブジェクトの詳細を表示および管理する</param>
+        <param name="viewObjectNewHover">オブジェクトを作成する</param>
+        <param name="viewFields">項目を参照する</param>
+        <param name="viewFieldsHover">このオブジェクトの項目を参照および管理する</param>
+        <param name="viewFieldsNewHover">このオブジェクトに項目を追加する</param>
+        <param name="viewRecordTypes">レコードタイプを参照する</param>
+        <param name="viewRecordTypesHover">このオブジェクトのレコードタイプを参照および管理する</param>
+        <param name="viewRecordTypesNewHover">このオブジェクトにレコードタイプを追加する</param>
+        <param name="viewValidationRules">入力規則を参照する</param>
+        <param name="viewValidationRulesHover">このオブジェクトの入力規則を参照および管理する</param>
+        <param name="viewValidationRulesNewHover">このオブジェクトに入力規則を追加する</param>
+        <param name="viewApprovals">承認を参照する</param>
+        <param name="viewApprovalsHover">このオブジェクトの承認プロセスを参照および管理する</param>
+        <param name="viewApprovalsNewHover">ジャンプスタートウィザードを使用して、このオブジェクトに承認プロセスを追加する</param>
+        <param name="editApp">アプリケーションを編集する</param>
+        <param name="editAppHover">このアプリケーションのタブリストやプロファイル割り当てなどの詳細をカスタマイズする</param>
+        <param name="editTab">タブを編集する</param>
+        <param name="editTabHover">このタブのアイコンや色などの詳細をカスタマイズする</param>
+        <param name="editLayout" alias="Buttons.customizeThisLayout"/>
+        <param name="editLayoutHover">このページレイアウトをカスタマイズする</param>
+        <param name="viewRecordType">レコードタイプを参照する</param>
+        <param name="viewRecordTypeHover">選択リスト値の編集など、このレコードタイプを参照および管理する</param>
+        <param name="editColumns">列を編集する</param>
+        <param name="editColumnsHover">このリストの列をカスタマイズする</param>
+        <param name="importData">データをインポートする</param>
+        <param name="importDataHover">このオブジェクトにデータをインポートする</param>
+    </section>
+</iniFile>

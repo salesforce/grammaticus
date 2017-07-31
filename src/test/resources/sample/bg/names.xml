@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Accounts/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">A partner</value>
+        <value plural="n" article="the">The partner</value>
+        <value plural="y" article="the">The partners</value>
+
+     Capitalization within labels
+         <Account/> will display "Account"
+         <account/> will display "account"
+    =======================================================================-->
+
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="m" startsWith="c">
+        <value plural="n">Профил</value>
+        <value plural="y">Профили</value>
+    </noun>
+    <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="f" startsWith="c">
+        <value plural="n">Дейност</value>
+        <value plural="y">Дейности</value>
+    </noun>
+    
+    <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
+        <value plural="n">Кампания</value>
+        <value plural="y">Кампании</value>
+    </noun>
+
+           
+            <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
+        <value plural="n">Документ</value>
+        <value plural="y">Документи</value>
+    </noun>
+
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="c">
+        <value plural="n">Събитие</value>
+        <value plural="y">Събития</value>
+    </noun>
+
+    
+    
+    
+    
+    
+    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="v">
+        <value plural="n">Оферта</value>
+        <value plural="y">Оферти</value>
+      </noun>
+  
+    
+    
+    <noun name="Question" entity="Question" type="entity" alias="Questions" gender="m" startsWith="c">
+        <value plural="n">Въпрос</value>
+        <value plural="y">Въпроси</value>
+    </noun>
+    
+    
+    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
+        <value plural="n">Потенциален клиент</value>
+        <value plural="y">Потенциални клиенти</value>
+    </noun>
+   
+       
+    <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
+        <value plural="n">Умение</value>
+        <value plural="y">Умения</value>
+    </noun>
+     
+   
+    
+    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="c">
+        <value plural="n">Възможност</value>
+        <value plural="y">Възможности</value>
+    </noun>
+
+    
+    <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
+        <value plural="n">Ценоразпис</value>
+        <value plural="y">Ценоразписи</value>
+    </noun>
+
+
+    <!-- Специално за допълнителни обекти/раздели
+         Това в действителност не е само за допълнителен обект, а трябва да се счита за образец
+         за всички неизвестни обекти.
+    -->
+	<noun name="Entity" entity="Entity" type="entity" gender="m" startsWith="c">
+        <value plural="n">Обект</value>
+		<value plural="n" article="the" case="o">Обекта</value> 
+		<value plural="n" article="the">Обектът</value> 
+        <value plural="y">Обекти</value>
+		<value plural="y" article="the">Обектите</value> 
+    </noun>
+        
+    
+
+    <!--==================================================================
+      Други съществителни имена
+    ======================================================================-->
+
+
+    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Име на профила</value>
+        <value plural="y">Имена на профила</value>
+    </noun>
+     
+     <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
+        <value plural="n">Валута на продукта</value></noun>
+
+     <import file="adjectives.xml"/>
+</names>
+

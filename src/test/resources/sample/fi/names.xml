@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE names SYSTEM "names.dtd">
+<names>
+<!--==========================================================================
+ <noun> Syntax:
+    Required attributes:
+       name:  name of this noun. use element like: <Account/>
+       entity: specify which entity this noun belongs to. Must be one of the
+               existing entity.
+
+    Optional attributes:
+       alias: alias to this noun in plural form like: <Accounts/>
+       type:  specify type of noun. mainly used by setup UI. If none specified,
+              the noun is considered like proper noun. just singular value is
+              required.
+        "entity": this noun requires full set of values - combination of
+                  number, article and cases. It is not necessary that this
+                  type of noun should be a real entity (like Account).
+        "field" : this is field name which requires only singular
+                  and plural form. no article or cases
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+       startsWith: (c)onsonant | (v)owel | (s)consonant or Z - default is c
+
+    Note: if no optional attribute is given, it will be:
+        gender="n" startsWith="c"
+
+ <values> Syntax:
+    Optional attributes:
+       case:   (n)moninative | (a)ccusative | (g)enitive | (d)ative
+           or  (o)bjective | (s)ubjective
+       plural: (y)es | (n)o                                       - default is n
+       article: (n)one | (a) | (the) | (d)efinite | (i)ndefinite  - default is n
+
+    Note: if no attributes specified, the default value is equivalent to:
+        <value case="n" plural="n" article="n"></value>
+===========================================================================-->
+
+    <!--======================================================================
+     Standard Object
+        for English, article forms like following are automatically
+        resolved by the label generator. SO it is not necessary to specify here.
+        <value plural="n" article="a">A partner</value>
+        <value plural="n" article="the">The partner</value>
+        <value plural="y" article="the">The partners</value>
+
+     Capitalization within labels
+         <Account/> will display "Account"
+         <account/> will display "account"
+    =======================================================================-->
+
+
+    <noun name="Account" entity="Account" type="entity" alias="Accounts" gender="n" startsWith="c">
+         <value plural="n" case="n">Tili</value>
+          <value plural="n" case="n" poss="f">Tilini</value>
+          <value plural="n" case="n" poss="s">Tilisi</value>
+        <value plural="y" case="n">Tilit</value>
+          <value plural="y" case="n" poss="f">Tilini</value>
+          <value plural="y" case="n" poss="s">Tilisi</value>
+        <value plural="n" case="g">Tilin</value>
+          <value plural="n" case="g" poss="f">Tilini</value>
+          <value plural="n" case="g" poss="s">Tilisi</value>
+        <value plural="y" case="g">Tilien</value>
+          <value plural="y" case="g" poss="f">Tilieni</value>
+          <value plural="y" case="g" poss="s">Tiliesi</value>
+        <value plural="n" case="ines">Tilissä</value>
+          <value plural="n" case="ines" poss="f">Tilissäni</value>
+          <value plural="n" case="ines" poss="s">Tilissäsi</value>
+        <value plural="y" case="ines">Tileissä</value>
+          <value plural="y" case="ines" poss="f">Tileissäni</value>
+          <value plural="y" case="ines" poss="s">Tileissäsi</value>
+        <value plural="n" case="el">Tilistä</value>
+          <value plural="n" case="el" poss="f">Tilistäni</value>
+          <value plural="n" case="el" poss="s">Tilistäsi</value>
+        <value plural="y" case="el">Tileistä</value>
+          <value plural="y" case="el" poss="f">Tileistäni</value>
+          <value plural="y" case="el" poss="s">Tileistäsi</value>
+        <value plural="n" case="il">Tiliin</value>
+          <value plural="n" case="il" poss="f">Tiliini</value>
+          <value plural="n" case="il" poss="s">Tiliisi</value>
+        <value plural="y" case="il">Tileihin</value>
+          <value plural="y" case="il" poss="f">Tileihini</value>
+          <value plural="y" case="il" poss="s">Tileihisi</value>
+        <value plural="n" case="ad">Tilillä</value>
+          <value plural="n" case="ad" poss="f">Tililläni</value>
+          <value plural="n" case="ad" poss="s">Tililläsi</value>
+        <value plural="y" case="ad">Tileillä</value>
+          <value plural="y" case="ad" poss="f">Tileilläni</value>
+          <value plural="y" case="ad" poss="s">Tileilläsi</value>
+        <value plural="n" case="abl">Tililtä</value>
+          <value plural="n" case="abl" poss="f">Tililtäni</value>
+          <value plural="n" case="abl" poss="s">Tililtäsi</value>
+        <value plural="y" case="abl">Tileiltä</value>
+          <value plural="y" case="abl" poss="f">Tileiltäni</value>
+          <value plural="y" case="abl" poss="s">Tileiltäsi</value>
+        <value plural="n" case="al">Tilille</value>
+          <value plural="n" case="al" poss="f">Tililleni</value>
+          <value plural="n" case="al" poss="s">Tilillesi</value>
+        <value plural="y" case="al">Tileille</value>
+          <value plural="y" case="al" poss="f">Tileilleni</value>
+          <value plural="y" case="al" poss="s">Tileillesi</value>
+        <value plural="n" case="es">Tilinä</value>
+          <value plural="n" case="es" poss="f">Tilinäni</value>
+          <value plural="n" case="es" poss="s">Tilinäsi</value>
+        <value plural="y" case="es">Tileinä</value>
+          <value plural="y" case="es" poss="f">Tileinäni</value>
+          <value plural="y" case="es" poss="s">Tileinäsi</value>
+        <value plural="n" case="tra">Tiliksi</value>
+          <value plural="n" case="tra" poss="f">Tilikseni</value>
+          <value plural="n" case="tra" poss="s">Tiliksesi</value>
+        <value plural="y" case="tra">Tileiksi</value>
+          <value plural="y" case="tra" poss="f">Tileikseni</value>
+          <value plural="y" case="tra" poss="s">Tileiksesi</value>
+        <value plural="n" case="par">Tiliä</value>
+          <value plural="n" case="par" poss="f">Tiliäni</value>
+          <value plural="n" case="par" poss="s">Tiliäsi</value>
+        <value plural="y" case="par">Tilejä</value>
+          <value plural="y" case="par" poss="f">Tilejäni</value>
+          <value plural="y" case="par" poss="s">Tilejäsi</value>
+    </noun>
+    <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="c">
+        <value plural="n" case="n">Toiminto</value>
+          <value plural="n" case="n" poss="f">Toimintoni</value>
+          <value plural="n" case="n" poss="s">Toimintosi</value>
+        <value plural="y" case="n">Toiminnot</value>
+          <value plural="y" case="n" poss="f">Toimintoni</value>
+          <value plural="y" case="n" poss="s">Toimintosi</value>
+        <value plural="n" case="g">Toiminnon</value>
+          <value plural="n" case="g" poss="f">Toimintoni</value>
+          <value plural="n" case="g" poss="s">Toimintosi</value>
+        <value plural="y" case="g">Toimintojen</value>
+          <value plural="y" case="g" poss="f">Toimintojeni</value>
+          <value plural="y" case="g" poss="s">Toimintojesi</value>
+        <value plural="n" case="ines">Toiminnossa</value>
+          <value plural="n" case="ines" poss="f">Toiminnossani</value>
+          <value plural="n" case="ines" poss="s">Toiminnossasi</value>
+        <value plural="y" case="ines">Toiminnoissa</value>
+          <value plural="y" case="ines" poss="f">Toiminnoissani</value>
+          <value plural="y" case="ines" poss="s">Toiminnoissasi</value>
+        <value plural="n" case="el">Toiminnosta</value>
+          <value plural="n" case="el" poss="f">Toiminnostani</value>
+          <value plural="n" case="el" poss="s">Toiminnostasi</value>
+        <value plural="y" case="el">Toiminnoista</value>
+          <value plural="y" case="el" poss="f">Toiminnoistani</value>
+          <value plural="y" case="el" poss="s">Toiminnoistasi</value>
+        <value plural="n" case="il">Toimintoon</value>
+          <value plural="n" case="il" poss="f">Toimintooni</value>
+          <value plural="n" case="il" poss="s">Toimintoosi</value>
+        <value plural="y" case="il">Toimintoihin</value>
+          <value plural="y" case="il" poss="f">Toimintoihini</value>
+          <value plural="y" case="il" poss="s">Toimintoihisi</value>
+        <value plural="n" case="ad">Toiminnolla</value>
+          <value plural="n" case="ad" poss="f">Toiminnollani</value>
+          <value plural="n" case="ad" poss="s">Toiminnollasi</value>
+        <value plural="y" case="ad">Toiminnoilla</value>
+          <value plural="y" case="ad" poss="f">Toiminnoillani</value>
+          <value plural="y" case="ad" poss="s">Toiminnoillasi</value>
+        <value plural="n" case="abl">Toiminnolta</value>
+          <value plural="n" case="abl" poss="f">Toiminnoltani</value>
+          <value plural="n" case="abl" poss="s">Toiminnoltasi</value>
+        <value plural="y" case="abl">Toiminnoilta</value>
+          <value plural="y" case="abl" poss="f">Toiminnoiltani</value>
+          <value plural="y" case="abl" poss="s">Toiminnoiltasi</value>
+        <value plural="n" case="al">Toiminnolle</value>
+          <value plural="n" case="al" poss="f">Toiminnolleni</value>
+          <value plural="n" case="al" poss="s">Toiminnollesi</value>
+        <value plural="y" case="al">Toiminnoille</value>
+          <value plural="y" case="al" poss="f">Toiminnoilleni</value>
+          <value plural="y" case="al" poss="s">Toiminnoillesi</value>
+        <value plural="n" case="es">Toimintona</value>
+          <value plural="n" case="es" poss="f">Toimintonani</value>
+          <value plural="n" case="es" poss="s">Toimintonasi</value>
+        <value plural="y" case="es">Toimintoina</value>
+          <value plural="y" case="es" poss="f">Toimintoinani</value>
+          <value plural="y" case="es" poss="s">Toimintoinasi</value>
+        <value plural="n" case="tra">Toiminnoksi</value>
+          <value plural="n" case="tra" poss="f">Toiminnokseni</value>
+          <value plural="n" case="tra" poss="s">Toiminnoksesi</value>
+        <value plural="y" case="tra">Toiminnoiksi</value>
+          <value plural="y" case="tra" poss="f">Toiminnoikseni</value>
+          <value plural="y" case="tra" poss="s">Toiminnoiksesi</value>
+        <value plural="n" case="par">Toimintoa</value>
+          <value plural="n" case="par" poss="f">Toimintoani</value>
+          <value plural="n" case="par" poss="s">Toimintoasi</value>
+        <value plural="y" case="par">Toimintoja</value>
+          <value plural="y" case="par" poss="f">Toimintojani</value>
+          <value plural="y" case="par" poss="s">Toimintojasi</value>
+    </noun>
+    
+
+
+
+
+<!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
+        <value plural="n">Business Hours</value>
+        <value plural="y">Multiple Business Hours</value>
+    </noun>-->
+    <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
+        <value plural="n" case="n">Kampanja</value>
+          <value plural="n" case="n" poss="f">Kampanjani</value>
+          <value plural="n" case="n" poss="s">Kampanjasi</value>
+        <value plural="y" case="n">Kampanjat</value>
+          <value plural="y" case="n" poss="f">Kampanjani</value>
+          <value plural="y" case="n" poss="s">Kampanjasi</value>
+        <value plural="n" case="g">Kampanjan</value>
+          <value plural="n" case="g" poss="f">Kampanjani</value>
+          <value plural="n" case="g" poss="s">Kampanjasi</value>
+        <value plural="y" case="g">Kampanjoiden</value>
+          <value plural="y" case="g" poss="f">Kampanjoideni</value>
+          <value plural="y" case="g" poss="s">Kampanjoidesi</value>
+        <value plural="n" case="ines">Kampanjassa</value>
+          <value plural="n" case="ines" poss="f">Kampanjassani</value>
+          <value plural="n" case="ines" poss="s">Kampanjassasi</value>
+        <value plural="y" case="ines">Kampanjoissa</value>
+          <value plural="y" case="ines" poss="f">Kampanjoissani</value>
+          <value plural="y" case="ines" poss="s">Kampanjoissasi</value>
+        <value plural="n" case="el">Kampanjasta</value>
+          <value plural="n" case="el" poss="f">Kampanjastani</value>
+          <value plural="n" case="el" poss="s">Kampanjastasi</value>
+        <value plural="y" case="el">Kampanjoista</value>
+          <value plural="y" case="el" poss="f">Kampanjoistani</value>
+          <value plural="y" case="el" poss="s">Kampanjoistasi</value>
+        <value plural="n" case="il">Kampanjaan</value>
+          <value plural="n" case="il" poss="f">Kampanjaani</value>
+          <value plural="n" case="il" poss="s">Kampanjaasi</value>
+        <value plural="y" case="il">Kampanjoihin</value>
+          <value plural="y" case="il" poss="f">Kampanjoihini</value>
+          <value plural="y" case="il" poss="s">Kampanjoihisi</value>
+        <value plural="n" case="ad">Kampanjalla</value>
+          <value plural="n" case="ad" poss="f">Kampanjallani</value>
+          <value plural="n" case="ad" poss="s">Kampanjallasi</value>
+        <value plural="y" case="ad">Kampanjoilla</value>
+          <value plural="y" case="ad" poss="f">Kampanjoillani</value>
+          <value plural="y" case="ad" poss="s">Kampanjoillasi</value>
+        <value plural="n" case="abl">Kampanjalta</value>
+          <value plural="n" case="abl" poss="f">Kampanjaltani</value>
+          <value plural="n" case="abl" poss="s">Kampanjaltasi</value>
+        <value plural="y" case="abl">Kampanjoilta</value>
+          <value plural="y" case="abl" poss="f">Kampanjoiltani</value>
+          <value plural="y" case="abl" poss="s">Kampanjoiltasi</value>
+        <value plural="n" case="al">Kampanjalle</value>
+          <value plural="n" case="al" poss="f">Kampanjalleni</value>
+          <value plural="n" case="al" poss="s">Kampanjallesi</value>
+        <value plural="y" case="al">Kampanjoille</value>
+          <value plural="y" case="al" poss="f">Kampanjoilleni</value>
+          <value plural="y" case="al" poss="s">Kampanjoillesi</value>
+        <value plural="n" case="es">Kampanjana</value>
+          <value plural="n" case="es" poss="f">Kampanjanani</value>
+          <value plural="n" case="es" poss="s">Kampanjanasi</value>
+        <value plural="y" case="es">Kampanjoina</value>
+          <value plural="y" case="es" poss="f">Kampanjoinani</value>
+          <value plural="y" case="es" poss="s">Kampanjoinasi</value>
+        <value plural="n" case="tra">Kampanjaksi</value>
+          <value plural="n" case="tra" poss="f">Kampanjakseni</value>
+          <value plural="n" case="tra" poss="s">Kampanjaksesi</value>
+        <value plural="y" case="tra">Kampanjoiksi</value>
+          <value plural="y" case="tra" poss="f">Kampanjoikseni</value>
+          <value plural="y" case="tra" poss="s">Kampanjoiksesi</value>
+        <value plural="n" case="par">Kampanjaa</value>
+          <value plural="n" case="par" poss="f">Kampanjaani</value>
+          <value plural="n" case="par" poss="s">Kampanjaasi</value>
+        <value plural="y" case="par">Kampanjoita</value>
+          <value plural="y" case="par" poss="f">Kampanjoitani</value>
+          <value plural="y" case="par" poss="s">Kampanjoitasi</value>
+    </noun>
+
+    <!-- Content -->
+        <!-- // Content -->
+
+        
+    
+    
+    
+<noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
+          <value plural="n" case="n">Taito</value>
+          <value plural="n" case="n" poss="f">Taitoni</value>
+          <value plural="n" case="n" poss="s">Taitosi</value>
+        <value plural="y" case="n">Taidot</value>
+          <value plural="y" case="n" poss="f">Taitomme</value>
+          <value plural="y" case="n" poss="s">Taitonne</value>
+        <value plural="n" case="g">Taidon</value>
+          <value plural="n" case="g" poss="f">Taitoni</value>
+          <value plural="n" case="g" poss="s">Taitosi</value>
+        <value plural="y" case="g">Taitojen</value>
+          <value plural="y" case="g" poss="f">Taitojemme</value>
+          <value plural="y" case="g" poss="s">Taitojemme</value>
+        <value plural="n" case="ines">Taidossa</value>
+          <value plural="n" case="ines" poss="f">Taidossani</value>
+          <value plural="n" case="ines" poss="s">Taidossasi</value>
+        <value plural="y" case="ines">Taidoissa</value>
+          <value plural="y" case="ines" poss="f">Taidoissamme</value>
+          <value plural="y" case="ines" poss="s">Taidoissanne</value>
+        <value plural="n" case="el">Taidosta</value>
+          <value plural="n" case="el" poss="f">Taidostani</value>
+          <value plural="n" case="el" poss="s">Taidostasi</value>
+        <value plural="y" case="el">Taidoista</value>
+          <value plural="y" case="el" poss="f">Taidoistamme</value>
+          <value plural="y" case="el" poss="s">Taidoistanne</value>
+        <value plural="n" case="il">Taitoon</value>
+          <value plural="n" case="il" poss="f">Taitooni</value>
+          <value plural="n" case="il" poss="s">Taitoosi</value>
+        <value plural="y" case="il">Taitoihin</value>
+          <value plural="y" case="il" poss="f">Taitoihimme</value>
+          <value plural="y" case="il" poss="s">Taitoihinne</value>
+        <value plural="n" case="ad">Taidolle</value>
+          <value plural="n" case="ad" poss="f">Taidolleni</value>
+          <value plural="n" case="ad" poss="s">Taidollesi</value>
+        <value plural="y" case="ad">Taidoille</value>
+          <value plural="y" case="ad" poss="f">Taidoillemme</value>
+          <value plural="y" case="ad" poss="s">Taidoillenne</value>
+        <value plural="n" case="abl">Taidolta</value>
+          <value plural="n" case="abl" poss="f">Taidoltani</value>
+          <value plural="n" case="abl" poss="s">Taidoltani</value>
+        <value plural="y" case="abl">Taidoilta</value>
+          <value plural="y" case="abl" poss="f">Taidoiltamme</value>
+          <value plural="y" case="abl" poss="s">Taidoiltanne</value>
+        <value plural="n" case="al">Taidolle</value>
+          <value plural="n" case="al" poss="f">Taidolleni</value>
+          <value plural="n" case="al" poss="s">Taidollesi</value>
+        <value plural="y" case="al">Taidoille</value>
+          <value plural="y" case="al" poss="f">Taidoillemme</value>
+          <value plural="y" case="al" poss="s">Taidoillenne</value>
+        <value plural="n" case="es">Taitona</value>
+          <value plural="n" case="es" poss="f">Taitonani</value>
+          <value plural="n" case="es" poss="s">Taitonasi</value>
+        <value plural="y" case="es">Taitoina</value>
+          <value plural="y" case="es" poss="f">Taitoinamme</value>
+          <value plural="y" case="es" poss="s">Taitoinanne</value>
+        <value plural="n" case="tra">Taidoksi</value>
+          <value plural="n" case="tra" poss="f">Taidokseni</value>
+          <value plural="n" case="tra" poss="s">Taidoksesi</value>
+        <value plural="y" case="tra">Taidoiksi</value>
+          <value plural="y" case="tra" poss="f">Taidoiksemme</value>
+          <value plural="y" case="tra" poss="s">Taidoiksenne</value>
+        <value plural="n" case="par">Taitoa</value>
+          <value plural="n" case="par" poss="f">Taitoani</value>
+          <value plural="n" case="par" poss="s">Taitoasi</value>
+        <value plural="y" case="par">Taitoja</value>
+          <value plural="y" case="par" poss="f">Taitojamme</value>
+          <value plural="y" case="par" poss="s">Taitojanne</value>
+    </noun>                
+    
+    <noun name="Contract" entity="Contract" type="entity" alias="Contracts" gender="n" startsWith="c">
+        <value plural="n" case="n">Sopimus</value>
+          <value plural="n" case="n" poss="f">Sopimukseni</value>
+          <value plural="n" case="n" poss="s">Sopimuksesi</value>
+        <value plural="y" case="n">Sopimukset</value>
+          <value plural="y" case="n" poss="f">Sopimukseni</value>
+          <value plural="y" case="n" poss="s">Sopimuksesi</value>
+        <value plural="n" case="g">Sopimuksen</value>
+          <value plural="n" case="g" poss="f">Sopimukseni</value>
+          <value plural="n" case="g" poss="s">Sopimuksesi</value>
+        <value plural="y" case="g">Sopimusten</value>
+          <value plural="y" case="g" poss="f">Sopimusteni</value>
+          <value plural="y" case="g" poss="s">Sopimustesi</value>
+        <value plural="n" case="ines">Sopimuksessa</value>
+          <value plural="n" case="ines" poss="f">Sopimuksessani</value>
+          <value plural="n" case="ines" poss="s">Sopimuksessasi</value>
+        <value plural="y" case="ines">Sopimuksissa</value>
+          <value plural="y" case="ines" poss="f">Sopimuksissani</value>
+          <value plural="y" case="ines" poss="s">Sopimuksissasi</value>
+        <value plural="n" case="el">Sopimuksesta</value>
+          <value plural="n" case="el" poss="f">Sopimuksestani</value>
+          <value plural="n" case="el" poss="s">Sopimuksestasi</value>
+        <value plural="y" case="el">Sopimuksista</value>
+          <value plural="y" case="el" poss="f">Sopimuksistani</value>
+          <value plural="y" case="el" poss="s">Sopimuksistasi</value>
+        <value plural="n" case="il">Sopimukseen</value>
+          <value plural="n" case="il" poss="f">Sopimukseeni</value>
+          <value plural="n" case="il" poss="s">Sopimukseesi</value>
+        <value plural="y" case="il">Sopimuksiin</value>
+          <value plural="y" case="il" poss="f">Sopimuksiini</value>
+          <value plural="y" case="il" poss="s">Sopimuksiisi</value>
+        <value plural="n" case="ad">Sopimuksella</value>
+          <value plural="n" case="ad" poss="f">Sopimuksellani</value>
+          <value plural="n" case="ad" poss="s">Sopimuksellasi</value>
+        <value plural="y" case="ad">Sopimuksilla</value>
+          <value plural="y" case="ad" poss="f">Sopimuksillani</value>
+          <value plural="y" case="ad" poss="s">Sopimuksillasi</value>
+        <value plural="n" case="abl">Sopimukselta</value>
+          <value plural="n" case="abl" poss="f">Sopimukseltani</value>
+          <value plural="n" case="abl" poss="s">Sopimukseltasi</value>
+        <value plural="y" case="abl">Sopimuksilta</value>
+          <value plural="y" case="abl" poss="f">Sopimuksiltani</value>
+          <value plural="y" case="abl" poss="s">Sopimuksiltasi</value>
+        <value plural="n" case="al">Sopimukselle</value>
+          <value plural="n" case="al" poss="f">Sopimukselleni</value>
+          <value plural="n" case="al" poss="s">Sopimuksellesi</value>
+        <value plural="y" case="al">Sopimuksille</value>
+          <value plural="y" case="al" poss="f">Sopimuksilleni</value>
+          <value plural="y" case="al" poss="s">Sopimuksillesi</value>
+        <value plural="n" case="es">Sopimuksena</value>
+          <value plural="n" case="es" poss="f">Sopimuksenani</value>
+          <value plural="n" case="es" poss="s">Sopimuksenasi</value>
+        <value plural="y" case="es">Sopimuksina</value>
+          <value plural="y" case="es" poss="f">Sopimuksinani</value>
+          <value plural="y" case="es" poss="s">Sopimuksinasi</value>
+        <value plural="n" case="tra">Sopimukseksi</value>
+          <value plural="n" case="tra" poss="f">Sopimuksekseni</value>
+          <value plural="n" case="tra" poss="s">Sopimukseksesi</value>
+        <value plural="y" case="tra">Sopimuksiksi</value>
+          <value plural="y" case="tra" poss="f">Sopimuksiksini</value>
+          <value plural="y" case="tra" poss="s">Sopimuksiksisi</value>
+        <value plural="n" case="par">Sopimusta</value>
+          <value plural="n" case="par" poss="f">Sopimustani</value>
+          <value plural="n" case="par" poss="s">Sopimustasi</value>
+        <value plural="y" case="par">Sopimuksia</value>
+          <value plural="y" case="par" poss="f">Sopimuksiani</value>
+          <value plural="y" case="par" poss="s">Sopimuksiasi</value>
+    </noun>    
+
+        
+    <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
+        <value plural="n" case="n">Asiakirja</value>
+          <value plural="n" case="n" poss="f">Asiakirjani</value>
+          <value plural="n" case="n" poss="s">Asiakirjasi</value>
+        <value plural="y" case="n">Asiakirjat</value>
+          <value plural="y" case="n" poss="f">Asiakirjani</value>
+          <value plural="y" case="n" poss="s">Asiakirjasi</value>
+        <value plural="n" case="g">Asiakirjan</value>
+          <value plural="n" case="g" poss="f">Asiakirjani</value>
+          <value plural="n" case="g" poss="s">Asiakirjasi</value>
+        <value plural="y" case="g">Asiakirjojen</value>
+          <value plural="y" case="g" poss="f">Asiakirjojeni</value>
+          <value plural="y" case="g" poss="s">Asiakirjojesi</value>
+        <value plural="n" case="ines">Asiakirjassa</value>
+          <value plural="n" case="ines" poss="f">Asiakirjassani</value>
+          <value plural="n" case="ines" poss="s">Asiakirjassasi</value>
+        <value plural="y" case="ines">Asiakirjoissa</value>
+          <value plural="y" case="ines" poss="f">Asiakirjoissani</value>
+          <value plural="y" case="ines" poss="s">Asiakirjoissasi</value>
+        <value plural="n" case="el">Asiakirjasta</value>
+          <value plural="n" case="el" poss="f">Asiakirjastani</value>
+          <value plural="n" case="el" poss="s">Asiakirjastasi</value>
+        <value plural="y" case="el">Asiakirjoista</value>
+          <value plural="y" case="el" poss="f">Asiakirjoistasi</value>
+          <value plural="y" case="el" poss="s">Asiakirjoistani</value>
+        <value plural="n" case="il">Asiakirjaan</value>
+          <value plural="n" case="il" poss="f">Asiakirjaani</value>
+          <value plural="n" case="il" poss="s">Asiakirjaasi</value>
+        <value plural="y" case="il">Asiakirjoihin</value>
+          <value plural="y" case="il" poss="f">Asiakirjoihini</value>
+          <value plural="y" case="il" poss="s">Asiakirjoihisi</value>
+        <value plural="n" case="ad">Asiakirjalla</value>
+          <value plural="n" case="ad" poss="f">Asiakirjallani</value>
+          <value plural="n" case="ad" poss="s">Asiakirjallasi</value>
+        <value plural="y" case="ad">Asiakirjoilla</value>
+          <value plural="y" case="ad" poss="f">Asiakirjoillani</value>
+          <value plural="y" case="ad" poss="s">Asiakirjoillasi</value>
+        <value plural="n" case="abl">Asiakirjalta</value>
+          <value plural="n" case="abl" poss="f">Asiakirjaltani</value>
+          <value plural="n" case="abl" poss="s">Asiakirjaltasi</value>
+        <value plural="y" case="abl">Asiakirjoilta</value>
+          <value plural="y" case="abl" poss="f">Asiakirjoiltani</value>
+          <value plural="y" case="abl" poss="s">Asiakirjoiltasi</value>
+        <value plural="n" case="al">Asiakirjalle</value>
+          <value plural="n" case="al" poss="f">Asiakirjalleni</value>
+          <value plural="n" case="al" poss="s">Asiakirjallesi</value>
+        <value plural="y" case="al">Asiakirjoille</value>
+          <value plural="y" case="al" poss="f">Asiakirjoilleni</value>
+          <value plural="y" case="al" poss="s">Asiakirjoillesi</value>
+        <value plural="n" case="es">Asiakirjana</value>
+          <value plural="n" case="es" poss="f">Asiakirjanani</value>
+          <value plural="n" case="es" poss="s">Asiakirjanasi</value>
+        <value plural="y" case="es">Asiakirjoina</value>
+          <value plural="y" case="es" poss="f">Asiakirjoinani</value>
+          <value plural="y" case="es" poss="s">Asiakirjoinani</value>
+        <value plural="n" case="tra">Asiakirjaksi</value>
+          <value plural="n" case="tra" poss="f">Asiakirjakseni</value>
+          <value plural="n" case="tra" poss="s">Asiakirjakseni</value>
+        <value plural="y" case="tra">Asiakirjoiksi</value>
+          <value plural="y" case="tra" poss="f">Asiakirjoikseni</value>
+          <value plural="y" case="tra" poss="s">Asiakirjoiksesi</value>
+        <value plural="n" case="par">Asiakirjaa</value>
+          <value plural="n" case="par" poss="f">Asiakirjaani</value>
+          <value plural="n" case="par" poss="s">Asiakirjaasi</value>
+        <value plural="y" case="par">Asiakirjoja</value>
+          <value plural="y" case="par" poss="f">Asiakirjojani</value>
+          <value plural="y" case="par" poss="s">Asiakirjojasi</value>
+    </noun>
+
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="c">
+        <value plural="n" case="n">Tapahtuma</value>
+          <value plural="n" case="n" poss="f">Tapahtumani</value>
+          <value plural="n" case="n" poss="s">Tapahtumasi</value>
+        <value plural="y" case="n">Tapahtumat</value>
+          <value plural="y" case="n" poss="f">Tapahtumani</value>
+          <value plural="y" case="n" poss="s">Tapahtumasi</value>
+        <value plural="n" case="g">Tapahtuman</value>
+          <value plural="n" case="g" poss="f">Tapahtumani</value>
+          <value plural="n" case="g" poss="s">Tapahtumasi</value>
+        <value plural="y" case="g">Tapahtumien</value>
+          <value plural="y" case="g" poss="f">Tapahtumieni</value>
+          <value plural="y" case="g" poss="s">Tapahtumiesi</value>
+        <value plural="n" case="ines">Tapahtumassa</value>
+          <value plural="n" case="ines" poss="f">Tapahtumassani</value>
+          <value plural="n" case="ines" poss="s">Tapahtumassasi</value>
+        <value plural="y" case="ines">Tapahtumissa</value>
+          <value plural="y" case="ines" poss="f">Tapahtumissani</value>
+          <value plural="y" case="ines" poss="s">Tapahtumissasi</value>
+        <value plural="n" case="el">Tapahtumasta</value>
+          <value plural="n" case="el" poss="f">Tapahtumastani</value>
+          <value plural="n" case="el" poss="s">Tapahtumastasi</value>
+        <value plural="y" case="el">Tapahtumista</value>
+          <value plural="y" case="el" poss="f">Tapahtumistani</value>
+          <value plural="y" case="el" poss="s">Tapahtumistasi</value>
+        <value plural="n" case="il">Tapahtumaan</value>
+          <value plural="n" case="il" poss="f">Tapahtumaani</value>
+          <value plural="n" case="il" poss="s">Tapahtumaasi</value>
+        <value plural="y" case="il">Tapahtumiin</value>
+          <value plural="y" case="il" poss="f">Tapahtumiini</value>
+          <value plural="y" case="il" poss="s">Tapahtumiisi</value>
+        <value plural="n" case="ad">Tapahtumalla</value>
+          <value plural="n" case="ad" poss="f">Tapahtumallani</value>
+          <value plural="n" case="ad" poss="s">Tapahtumallasi</value>
+        <value plural="y" case="ad">Tapahtumilla</value>
+          <value plural="y" case="ad" poss="f">Tapahtumillani</value>
+          <value plural="y" case="ad" poss="s">Tapahtumillasi</value>
+        <value plural="n" case="abl">Tapahtumalta</value>
+          <value plural="n" case="abl" poss="f">Tapahtumaltani</value>
+          <value plural="n" case="abl" poss="s">Tapahtumaltasi</value>
+        <value plural="y" case="abl">Tapahtumilta</value>
+          <value plural="y" case="abl" poss="f">Tapahtumiltani</value>
+          <value plural="y" case="abl" poss="s">Tapahtumiltasi</value>
+        <value plural="n" case="al">Tapahtumalle</value>
+          <value plural="n" case="al" poss="f">Tapahtumalleni</value>
+          <value plural="n" case="al" poss="s">Tapahtumallesi</value>
+        <value plural="y" case="al">Tapahtumille</value>
+          <value plural="y" case="al" poss="f">Tapahtumilleni</value>
+          <value plural="y" case="al" poss="s">Tapahtumillesi</value>
+        <value plural="n" case="es">Tapahtumana</value>
+          <value plural="n" case="es" poss="f">Tapahtumanani</value>
+          <value plural="n" case="es" poss="s">Tapahtumanasi</value>
+        <value plural="y" case="es">Tapahtumina</value>
+          <value plural="y" case="es" poss="f">Tapahtuminani</value>
+          <value plural="y" case="es" poss="s">Tapahtuminasi</value>
+        <value plural="n" case="tra">Tapahtumaksi</value>
+          <value plural="n" case="tra" poss="f">Tapahtumakseni</value>
+          <value plural="n" case="tra" poss="s">Tapahtumaksesi</value>
+        <value plural="y" case="tra">Tapahtumiksi</value>
+          <value plural="y" case="tra" poss="f">Tapahtumikseni</value>
+          <value plural="y" case="tra" poss="s">Tapahtumiksesi</value>
+        <value plural="n" case="par">Tapahtumaa</value>
+          <value plural="n" case="par" poss="f">Tapahtumaani</value>
+          <value plural="n" case="par" poss="s">Tapahtumaasi</value>
+        <value plural="y" case="par">Tapahtumia</value>
+          <value plural="y" case="par" poss="f">Tapahtumiani</value>
+          <value plural="y" case="par" poss="s">Tapahtumiasi</value>
+    </noun>
+
+     
+
+
+    
+          <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
+        <value plural="n" case="n">Tarjous</value>
+          <value plural="n" case="n" poss="f">Tarjoukseni</value>
+          <value plural="n" case="n" poss="s">Tarjouksesi</value>
+        <value plural="y" case="n">Tarjoukset</value>
+          <value plural="y" case="n" poss="f">Tarjoukseni</value>
+          <value plural="y" case="n" poss="s">Tarjouksesi</value>
+        <value plural="n" case="g">Tarjouksen</value>
+          <value plural="n" case="g" poss="f">Tarjoukseni</value>
+          <value plural="n" case="g" poss="s">Tarjouksesi</value>
+        <value plural="y" case="g">Tarjouksien</value>
+          <value plural="y" case="g" poss="f">Tarjouksieni</value>
+          <value plural="y" case="g" poss="s">Tarjouksiesi</value>
+        <value plural="n" case="ines">Tarjouksessa</value>
+          <value plural="n" case="ines" poss="f">Tarjouksessani</value>
+          <value plural="n" case="ines" poss="s">Tarjouksessasi</value>
+        <value plural="y" case="ines">Tarjouksissa</value>
+          <value plural="y" case="ines" poss="f">Tarjouksissani</value>
+          <value plural="y" case="ines" poss="s">Tarjouksissasi</value>
+        <value plural="n" case="el">Tarjouksesta</value>
+          <value plural="n" case="el" poss="f">Tarjouksestani</value>
+          <value plural="n" case="el" poss="s">Tarjouksestasi</value>
+        <value plural="y" case="el">Tarjouksista</value>
+          <value plural="y" case="el" poss="f">Tarjouksistani</value>
+          <value plural="y" case="el" poss="s">Tarjouksistasi</value>
+        <value plural="n" case="il">Tarjoukseen</value>
+          <value plural="n" case="il" poss="f">Tarjoukseeni</value>
+          <value plural="n" case="il" poss="s">Tarjoukseesi</value>
+        <value plural="y" case="il">Tarjouksiin</value>
+          <value plural="y" case="il" poss="f">Tarjouksiini</value>
+          <value plural="y" case="il" poss="s">Tarjouksiisi</value>
+        <value plural="n" case="ad">Tarjouksella</value>
+          <value plural="n" case="ad" poss="f">Tarjouksellani</value>
+          <value plural="n" case="ad" poss="s">Tarjouksellasi</value>
+        <value plural="y" case="ad">Tarjouksilla</value>
+          <value plural="y" case="ad" poss="f">Tarjouksillani</value>
+          <value plural="y" case="ad" poss="s">Tarjouksillasi</value>
+        <value plural="n" case="abl">Tarjoukselta</value>
+          <value plural="n" case="abl" poss="f">Tarjoukseltani</value>
+          <value plural="n" case="abl" poss="s">Tarjoukseltasi</value>
+        <value plural="y" case="abl">Tarjouksilta</value>
+          <value plural="y" case="abl" poss="f">Tarjouksiltani</value>
+          <value plural="y" case="abl" poss="s">Tarjouksiltasi</value>
+        <value plural="n" case="al">Tarjoukselle</value>
+          <value plural="n" case="al" poss="f">Tarjoukselleni</value>
+          <value plural="n" case="al" poss="s">Tarjouksellesi</value>
+        <value plural="y" case="al">Tarjouksille</value>
+          <value plural="y" case="al" poss="f">Tarjouksilleni</value>
+          <value plural="y" case="al" poss="s">Tarjouksillesi</value>
+        <value plural="n" case="es">Tarjouksena</value>
+          <value plural="n" case="es" poss="f">Tarjouksenani</value>
+          <value plural="n" case="es" poss="s">Tarjouksenasi</value>
+        <value plural="y" case="es">Tarjouksina</value>
+          <value plural="y" case="es" poss="f">Tarjouksinani</value>
+          <value plural="y" case="es" poss="s">Tarjouksinasi</value>
+        <value plural="n" case="tra">Tarjoukseksi</value>
+          <value plural="n" case="tra" poss="f">Tarjouksekseni</value>
+          <value plural="n" case="tra" poss="s">Tarjoukseksesi</value>
+        <value plural="y" case="tra">Tarjouksiksi</value>
+          <value plural="y" case="tra" poss="f">Tarjouksikseni</value>
+          <value plural="y" case="tra" poss="s">Tarjouksiksesi</value>
+        <value plural="n" case="par">Tarjousta</value>
+          <value plural="n" case="par" poss="f">Tarjoustani</value>
+          <value plural="n" case="par" poss="s">Tarjoustasi</value>
+        <value plural="y" case="par">Tarjouksia</value>
+          <value plural="y" case="par" poss="f">Tarjouksiani</value>
+          <value plural="y" case="par" poss="s">Tarjouksiasi</value>
+    </noun>
+
+              <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
+        <value plural="n" case="n">Kysymys</value>
+          <value plural="n" case="n" poss="f">Kysymykseni</value>
+          <value plural="n" case="n" poss="s">Kysymyksesi</value>
+        <value plural="y" case="n">Kysymykset</value>
+          <value plural="y" case="n" poss="f">Kysymykseni</value>
+          <value plural="y" case="n" poss="s">Kysymyksesi</value>
+        <value plural="n" case="g">Kysymyksen</value>
+          <value plural="n" case="g" poss="f">Kysymykseni</value>
+          <value plural="n" case="g" poss="s">Kysymyksesi</value>
+        <value plural="y" case="g">Kysymyksien</value>
+          <value plural="y" case="g" poss="f">Kysymyksieni</value>
+          <value plural="y" case="g" poss="s">Kysymyksiesi</value>
+        <value plural="n" case="ines">Kysymyksessä</value>
+          <value plural="n" case="ines" poss="f">Kysymyksessäni</value>
+          <value plural="n" case="ines" poss="s">Kysymyksessäsi</value>
+        <value plural="y" case="ines">Kysymyksissä</value>
+          <value plural="y" case="ines" poss="f">Kysymyksissäni</value>
+          <value plural="y" case="ines" poss="s">Kysymyksissäsi</value>
+        <value plural="n" case="el">Kysymyksestä</value>
+          <value plural="n" case="el" poss="f">Kysymyksestäni</value>
+          <value plural="n" case="el" poss="s">Kysymyksestäsi</value>
+        <value plural="y" case="el">Kysymyksistä</value>
+          <value plural="y" case="el" poss="f">Kysymyksistäni</value>
+          <value plural="y" case="el" poss="s">Kysymyksistäsi</value>
+        <value plural="n" case="il">Kysymykseen</value>
+          <value plural="n" case="il" poss="f">Kysymykseeni</value>
+          <value plural="n" case="il" poss="s">Kysymykseesi</value>
+        <value plural="y" case="il">Kysymyksiin</value>
+          <value plural="y" case="il" poss="f">Kysymyksiini</value>
+          <value plural="y" case="il" poss="s">Kysymyksiisi</value>
+        <value plural="n" case="ad">Kysymyksellä</value>
+          <value plural="n" case="ad" poss="f">Kysymykselläni</value>
+          <value plural="n" case="ad" poss="s">Kysymykselläsi</value>
+        <value plural="y" case="ad">Kysymyksillä</value>
+          <value plural="y" case="ad" poss="f">Kysymyksillniä</value>
+          <value plural="y" case="ad" poss="s">Kysymyksilläsi</value>
+        <value plural="n" case="abl">Kysymykseltä</value>
+          <value plural="n" case="abl" poss="f">Kysymykseltäni</value>
+          <value plural="n" case="abl" poss="s">Kysymykseltäsi</value>
+        <value plural="y" case="abl">Kysymyksiltä</value>
+          <value plural="y" case="abl" poss="f">Kysymyksiltäni</value>
+          <value plural="y" case="abl" poss="s">Kysymyksiltäsi</value>
+        <value plural="n" case="al">Kysymykselle</value>
+          <value plural="n" case="al" poss="f">Kysymykselleni</value>
+          <value plural="n" case="al" poss="s">Kysymyksellesi</value>
+        <value plural="y" case="al">Kysymyksille</value>
+          <value plural="y" case="al" poss="f">Kysymyksilleni</value>
+          <value plural="y" case="al" poss="s">Kysymyksillesi</value>
+        <value plural="n" case="es">Kysymyksenä</value>
+          <value plural="n" case="es" poss="f">Kysymyksenäni</value>
+          <value plural="n" case="es" poss="s">Kysymykseni</value>
+        <value plural="y" case="es">Kysymyksenäsi</value>
+          <value plural="y" case="es" poss="f">Kysymyksinä</value>
+          <value plural="y" case="es" poss="s">Kysymyksinäni</value>
+        <value plural="n" case="tra">Kysymyksinäsi</value>
+          <value plural="n" case="tra" poss="f">Kysymykseksi</value>
+          <value plural="n" case="tra" poss="s">Kysymyksekseni</value>
+        <value plural="y" case="tra">Kysymykseksesi</value>
+          <value plural="y" case="tra" poss="f">Kysymyksiksi</value>
+          <value plural="y" case="tra" poss="s">Kysymyksikseni</value>
+        <value plural="n" case="par">Kysymyksiksesi</value>
+          <value plural="n" case="par" poss="f">Kysymystä</value>
+          <value plural="n" case="par" poss="s">Kysymystäni</value>
+        <value plural="y" case="par">Kysymystäsi</value>
+          <value plural="y" case="par" poss="f">Kysymyksiä</value>
+          <value plural="y" case="par" poss="s">Kysymyksiäni</value>
+    </noun>
+    
+
+
+    
+
+    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
+        <value plural="n" case="n">Liidi</value>
+          <value plural="n" case="n" poss="f">Liidini</value>
+          <value plural="n" case="n" poss="s">Liidisi</value>
+        <value plural="y" case="n">Liidit</value>
+          <value plural="y" case="n" poss="f">Liidini</value>
+          <value plural="y" case="n" poss="s">Liidisi</value>
+        <value plural="n" case="g">Liidin</value>
+          <value plural="n" case="g" poss="f">Liidini</value>
+          <value plural="n" case="g" poss="s">Liidisi</value>
+        <value plural="y" case="g">Liidien</value>
+          <value plural="y" case="g" poss="f">Liidieni</value>
+          <value plural="y" case="g" poss="s">Liidiesi</value>
+        <value plural="n" case="ines">Liidissä</value>
+          <value plural="n" case="ines" poss="f">Liidissäni</value>
+          <value plural="n" case="ines" poss="s">Liidissäsi</value>
+        <value plural="y" case="ines">Liideissä</value>
+          <value plural="y" case="ines" poss="f">Liideissäni</value>
+          <value plural="y" case="ines" poss="s">Liideissäsi</value>
+        <value plural="n" case="el">Liidistä</value>
+          <value plural="n" case="el" poss="f">Liidistäni</value>
+          <value plural="n" case="el" poss="s">Liidistäsi</value>
+        <value plural="y" case="el">Liideistä</value>
+          <value plural="y" case="el" poss="f">Liideistäni</value>
+          <value plural="y" case="el" poss="s">Liideistäsi</value>
+        <value plural="n" case="il">Liidiin</value>
+          <value plural="n" case="il" poss="f">Liidiini</value>
+          <value plural="n" case="il" poss="s">Liidiisi</value>
+        <value plural="y" case="il">Liideihin</value>
+          <value plural="y" case="il" poss="f">Liideihini</value>
+          <value plural="y" case="il" poss="s">Liideihisi</value>
+        <value plural="n" case="ad">Liidillä</value>
+          <value plural="n" case="ad" poss="f">Liidilläni</value>
+          <value plural="n" case="ad" poss="s">Liidilläsi</value>
+        <value plural="y" case="ad">Liideillä</value>
+          <value plural="y" case="ad" poss="f">Liideilläni</value>
+          <value plural="y" case="ad" poss="s">Liideilläsi</value>
+        <value plural="n" case="abl">Liidiltä</value>
+          <value plural="n" case="abl" poss="f">Liidiltäni</value>
+          <value plural="n" case="abl" poss="s">Liidiltäsi</value>
+        <value plural="y" case="abl">Liideiltä</value>
+          <value plural="y" case="abl" poss="f">Liideiltäni</value>
+          <value plural="y" case="abl" poss="s">Liideiltäsi</value>
+        <value plural="n" case="al">Liidille</value>
+          <value plural="n" case="al" poss="f">Liidilleni</value>
+          <value plural="n" case="al" poss="s">Liidillesi</value>
+        <value plural="y" case="al">Liideille</value>
+          <value plural="y" case="al" poss="f">Liideilleni</value>
+          <value plural="y" case="al" poss="s">Liideillesi</value>
+        <value plural="n" case="es">Liidinä</value>
+          <value plural="n" case="es" poss="f">Liidinäni</value>
+          <value plural="n" case="es" poss="s">Liidinäsi</value>
+        <value plural="y" case="es">Liideinä</value>
+          <value plural="y" case="es" poss="f">Liideinäni</value>
+          <value plural="y" case="es" poss="s">Liideinäsi</value>
+        <value plural="n" case="tra">Liidiksi</value>
+          <value plural="n" case="tra" poss="f">Liidikseni</value>
+          <value plural="n" case="tra" poss="s">Liidiksesi</value>
+        <value plural="y" case="tra">Liideiksi</value>
+          <value plural="y" case="tra" poss="f">Liideikseni</value>
+          <value plural="y" case="tra" poss="s">Liideiksesi</value>
+        <value plural="n" case="par">Liidiä</value>
+          <value plural="n" case="par" poss="f">Liidiäni</value>
+          <value plural="n" case="par" poss="s">Liidiäsi</value>
+        <value plural="y" case="par">Liidejä</value>
+          <value plural="y" case="par" poss="f">Liidejäni</value>
+          <value plural="y" case="par" poss="s">Liidejäsi</value>
+    </noun>
+
+    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="c">
+        <value plural="n" case="n">Mahdollisuus</value>
+          <value plural="n" case="n" poss="f">Mahdollisuuteni</value>
+          <value plural="n" case="n" poss="s">Mahdollisuutesi</value>
+        <value plural="y" case="n">Mahdollisuudet</value>
+          <value plural="y" case="n" poss="f">Mahdollisuuksieni</value>
+          <value plural="y" case="n" poss="s">Mahdollisuuksiesi</value>
+        <value plural="n" case="g">Mahdollisuuden</value>
+          <value plural="n" case="g" poss="f">Mahdollisuuteni</value>
+          <value plural="n" case="g" poss="s">Mahdollisuutesi</value>
+        <value plural="y" case="g">Mahdollisuuksien</value>
+          <value plural="y" case="g" poss="f">Mahdollisuuksieni</value>
+          <value plural="y" case="g" poss="s">Mahdollisuuksiesi</value>
+        <value plural="n" case="ines">Mahdollisuudessa</value>
+          <value plural="n" case="ines" poss="f">Mahdollisuudessani</value>
+          <value plural="n" case="ines" poss="s">Mahdollisuudessasi</value>
+        <value plural="y" case="ines">Mahdollisuuksissa</value>
+          <value plural="y" case="ines" poss="f">Mahdollisuuksissani</value>
+          <value plural="y" case="ines" poss="s">Mahdollisuuksissasi</value>
+        <value plural="n" case="el">Mahdollisuudesta</value>
+          <value plural="n" case="el" poss="f">Mahdollisuudestani</value>
+          <value plural="n" case="el" poss="s">Mahdollisuudestasi</value>
+        <value plural="y" case="el">Mahdollisuuksista</value>
+          <value plural="y" case="el" poss="f">Mahdollisuuksistani</value>
+          <value plural="y" case="el" poss="s">Mahdollisuuksistasi</value>
+        <value plural="n" case="il">Mahdollisuuteen</value>
+          <value plural="n" case="il" poss="f">Mahdollisuuteeni</value>
+          <value plural="n" case="il" poss="s">Mahdollisuuteesi</value>
+        <value plural="y" case="il">Mahdollisuuksiin</value>
+          <value plural="y" case="il" poss="f">Mahdollisuuksiini</value>
+          <value plural="y" case="il" poss="s">Mahdollisuuksiisi</value>
+        <value plural="n" case="ad">Mahdollisuudella</value>
+          <value plural="n" case="ad" poss="f">Mahdollisuudellani</value>
+          <value plural="n" case="ad" poss="s">Mahdollisuudellasi</value>
+        <value plural="y" case="ad">Mahdollisuuksilla</value>
+          <value plural="y" case="ad" poss="f">Mahdollisuuksillani</value>
+          <value plural="y" case="ad" poss="s">Mahdollisuuksillasi</value>
+        <value plural="n" case="abl">Mahdollisuudelta</value>
+          <value plural="n" case="abl" poss="f">Mahdollisuudeltani</value>
+          <value plural="n" case="abl" poss="s">Mahdollisuudeltasi</value>
+        <value plural="y" case="abl">Mahdollisuuksilta</value>
+          <value plural="y" case="abl" poss="f">Mahdollisuuksiltani</value>
+          <value plural="y" case="abl" poss="s">Mahdollisuuksiltasi</value>
+        <value plural="n" case="al">Mahdollisuudelle</value>
+          <value plural="n" case="al" poss="f">Mahdollisuudelleni</value>
+          <value plural="n" case="al" poss="s">Mahdollisuudellesi</value>
+        <value plural="y" case="al">Mahdollisuuksille</value>
+          <value plural="y" case="al" poss="f">Mahdollisuuksilleni</value>
+          <value plural="y" case="al" poss="s">Mahdollisuuksillesi</value>
+        <value plural="n" case="es">Mahdollisuutena</value>
+          <value plural="n" case="es" poss="f">Mahdollisuutenani</value>
+          <value plural="n" case="es" poss="s">Mahdollisuutenasi</value>
+        <value plural="y" case="es">Mahdollisuuksina</value>
+          <value plural="y" case="es" poss="f">Mahdollisuuksinani</value>
+          <value plural="y" case="es" poss="s">Mahdollisuuksinasi</value>
+        <value plural="n" case="tra">Mahdollisuudeksi</value>
+          <value plural="n" case="tra" poss="f">Mahdollisuudekseni</value>
+          <value plural="n" case="tra" poss="s">Mahdollisuudeksesi</value>
+        <value plural="y" case="tra">Mahdollisuuksiksi</value>
+          <value plural="y" case="tra" poss="f">Mahdollisuuksikseni</value>
+          <value plural="y" case="tra" poss="s">Mahdollisuuksiksesi</value>
+        <value plural="n" case="par">Mahdollisuutta</value>
+          <value plural="n" case="par" poss="f">Mahdollisuuttani</value>
+          <value plural="n" case="par" poss="s">Mahdollisuuttasi</value>
+        <value plural="y" case="par">Mahdollisuuksia</value>
+          <value plural="y" case="par" poss="f">Mahdollisuuksiani</value>
+          <value plural="y" case="par" poss="s">Mahdollisuuksiasi</value>
+    </noun>
+
+	
+	
+    
+    <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
+        <value plural="n" case="n">Hintakirja</value>
+          <value plural="n" case="n" poss="f">Hintakirjani</value>
+          <value plural="n" case="n" poss="s">Hintakirjasi</value>
+        <value plural="y" case="n">Hintakirjat</value>
+          <value plural="y" case="n" poss="f">Hintakirjani</value>
+          <value plural="y" case="n" poss="s">Hintakirjasi</value>
+        <value plural="n" case="g">Hintakirjan</value>
+          <value plural="n" case="g" poss="f">Hintakirjani</value>
+          <value plural="n" case="g" poss="s">Hintakirjasi</value>
+        <value plural="y" case="g">Hintakirjojen</value>
+          <value plural="y" case="g" poss="f">Hintakirjojeni</value>
+          <value plural="y" case="g" poss="s">Hintakirjojesi</value>
+        <value plural="n" case="ines">Hintakirjassa</value>
+          <value plural="n" case="ines" poss="f">Hintakirjassani</value>
+          <value plural="n" case="ines" poss="s">Hintakirjassasi</value>
+        <value plural="y" case="ines">Hintakirjoissa</value>
+          <value plural="y" case="ines" poss="f">Hintakirjoissani</value>
+          <value plural="y" case="ines" poss="s">Hintakirjoissasi</value>
+        <value plural="n" case="el">Hintakirjasta</value>
+          <value plural="n" case="el" poss="f">Hintakirjastani</value>
+          <value plural="n" case="el" poss="s">Hintakirjastasi</value>
+        <value plural="y" case="el">Hintakirjoista</value>
+          <value plural="y" case="el" poss="f">Hintakirjoistani</value>
+          <value plural="y" case="el" poss="s">Hintakirjoistasi</value>
+        <value plural="n" case="il">Hintakirjaan</value>
+          <value plural="n" case="il" poss="f">Hintakirjaani</value>
+          <value plural="n" case="il" poss="s">Hintakirjaasi</value>
+        <value plural="y" case="il">Hintakirjoihin</value>
+          <value plural="y" case="il" poss="f">Hintakirjoihini</value>
+          <value plural="y" case="il" poss="s">Hintakirjoihisi</value>
+        <value plural="n" case="ad">Hintakirjalla</value>
+          <value plural="n" case="ad" poss="f">Hintakirjallani</value>
+          <value plural="n" case="ad" poss="s">Hintakirjallasi</value>
+        <value plural="y" case="ad">Hintakirjoilla</value>
+          <value plural="y" case="ad" poss="f">Hintakirjoillani</value>
+          <value plural="y" case="ad" poss="s">Hintakirjoillasi</value>
+        <value plural="n" case="abl">Hintakirjalta</value>
+          <value plural="n" case="abl" poss="f">Hintakirjaltani</value>
+          <value plural="n" case="abl" poss="s">Hintakirjaltasi</value>
+        <value plural="y" case="abl">Hintakirjoilta</value>
+          <value plural="y" case="abl" poss="f">Hintakirjoiltani</value>
+          <value plural="y" case="abl" poss="s">Hintakirjoiltasi</value>
+        <value plural="n" case="al">Hintakirjalle</value>
+          <value plural="n" case="al" poss="f">Hintakirjalleni</value>
+          <value plural="n" case="al" poss="s">Hintakirjallesi</value>
+        <value plural="y" case="al">Hintakirjoille</value>
+          <value plural="y" case="al" poss="f">Hintakirjoilleni</value>
+          <value plural="y" case="al" poss="s">Hintakirjoillesi</value>
+        <value plural="n" case="es">Hintakirjana</value>
+          <value plural="n" case="es" poss="f">Hintakirjanani</value>
+          <value plural="n" case="es" poss="s">Hintakirjanasi</value>
+        <value plural="y" case="es">Hintakirjoina</value>
+          <value plural="y" case="es" poss="f">Hintakirjoinani</value>
+          <value plural="y" case="es" poss="s">Hintakirjoinasi</value>
+        <value plural="n" case="tra">Hintakirjaksi</value>
+          <value plural="n" case="tra" poss="f">Hintakirjakseni</value>
+          <value plural="n" case="tra" poss="s">Hintakirjaksesi</value>
+        <value plural="y" case="tra">Hintakirjoiksi</value>
+          <value plural="y" case="tra" poss="f">Hintakirjoikseni</value>
+          <value plural="y" case="tra" poss="s">Hintakirjoiksesi</value>
+        <value plural="n" case="par">Hintakirjaa</value>
+          <value plural="n" case="par" poss="f">Hintakirjaani</value>
+          <value plural="n" case="par" poss="s">Hintakirjaasi</value>
+        <value plural="y" case="par">Hintakirjoja</value>
+          <value plural="y" case="par" poss="f">Hintakirjojani</value>
+          <value plural="y" case="par" poss="s">Hintakirjojasi</value>
+    </noun>
+
+    
+    
+    <!-- Special for Custom Objects/Tabs
+         This is actually, not only for custom object but should be considered as template
+         for any unknown entities.
+    -->
+    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
+        <value plural="n">{0}</value>
+        <value plural="y">{0}</value>
+    </noun>
+
+
+    <!--
+        Special nouns - these are not rename-able, but need here for dynamic tag such as
+        <entity/>, <entity_record_type/>
+    -->
+
+
+    <!--==================================================================
+      Other Nouns
+    ======================================================================-->
+
+    <!--******* Accounts *************************************************-->
+
+    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Tilin nimi</value>
+        <value plural="y">Tilin nimet</value>
+	<value plural="n" case="g">Tilin nimen</value>
+	<value plural="y" case="g">Tilin nimien</value>
+    </noun>
+     
+     <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
+        <value plural="n">Tuotteen valuutta</value>
+    </noun>
+
+
+     <import file="adjectives.xml"/>
+</names>
+

@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">Разгъващ се списък</param>
+        <param name="select_default">Изберете от възможностите по-долу.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Изберете {0} по-долу.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Primary/> <contact/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Достъп</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Управляван)</param>
+        <param name="activity_history">История на дейността</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Допълнителна информация</param> <!--aliased across labels - do not change-->
+        <param name="alias">Псевдоним</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Асистент</param>
+        <param name="assistant_name">Име на асистента</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Телефон на асистента</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Тел. на асист.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Тел. код на асист.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Дата на раждане</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Текст</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Фирма</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Създател</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Идент. № на „Създадено от“</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Създаден от псевдоним</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">ISO код на валутата</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Допълнителни полета</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Състояние по подразбиране</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Подробност за {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Отдел</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Редактиране на {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Очакван приход</param>
+        <param name="first_name">Собствено име</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Фамилия</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Собствено име (местно)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Фамилия (местна)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Фискално тримесечие</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">Фискална година</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Пълно име</param> <!-- aliased across app - do not change -->
+        <param name="group">Група</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Име на група</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Име на опашката</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Отрасъл</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Последна промяна от</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Последна промяна от идент. №</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Последна промяна от псевдоним</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">Идент. № на главния запис</param>
+        <param name="mobile">Мобилен</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Мобилен телефон</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Код на мобилен телефон</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Ново споделяне</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Присвоен псевдоним</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Наличен списък</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Име на фирмата</param> <!-- aliased across app - do not change -->
+        <param name="activities">Дейности</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">няма прикачени файлове</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document plural="y"/></param>
+        <param name="address_info">Адресна информация</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Отхвърлена</param>   <!-- aliased across labels; do not change -->
+        <param name="default">По подразбиране</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Приоритет по подразбиране</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Създаване на нов изглед</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Допълнителна информация</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Дублиране на състоянието</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Имейл адрес</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Име на имейл</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Образец за имейл</param>   <!-- aliased across labels; do not change -->
+        <param name="email">Имейл:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Допълнителни връзки</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Размер на файл</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Няма налични данни</param>
+        <param name="history_event_checked">Маркирано поле {0}</param>
+        <param name="history_event_unchecked">Немаркирано поле {0}</param>
+        <param name="how_do_i_specify_info">Как да посоча коя информация да се въвежда?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Вътрешен източник</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Интервал:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Привет</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Избор на нов собственик</param>
+        <param name="select_a_view">Изберете изглед от падащия списък, за да видите списък със свързани резултати.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Изберете папка от падащия списък, за да видите списък със свързани резултати.</param>
+        <param name="select_the_file">Изберете файла</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Изберете полетата, които да бъдат включени:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Подпис</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Тема</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Системна информация</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Уебсайт</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Псевдоним на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Собствено име на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">Идент. № на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Фамилия на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Име на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Роля на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Показване ролята на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Наименование на ролята на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Основен</param>
+        <param name="primary_contact"><Primary/> <contact/></param>
+        <param name="priority">Приоритет</param><!--aliased across labels - do not change -->
+        <param name="private">Поверително</param>
+        <param name="role">Роля</param> <!--aliased across labels - do not change -->
+        <param name="rating">Оценка</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Бързо създаване</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Наскоро преглеждани</param>
+        <param name="top5">Най-популярните 5 въпроса</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Търговец</param>
+        <param name="customer">Клиент</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Доставчик</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">Идент. № на вид запис</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ИД на отдел</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Номерация или идент. № на таблица</param>
+        <param name="editable">Редактируемо</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Нормализирано име</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Декларация за поверителност</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Управляемо състояние</param>
+        <param name="namespacePrefix">Префикс към пространството за имената</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Модул „Пространство за имена“</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Инсталиран пакет</param>
+        <param name="initialVersion">Първа издадена версия</param>
+        <param name="lastVersion">Окончателна налична версия</param>
+        <param name="availableInVersions">Налице във версии</param>
+        <param name="DeveloperName">Име на разработчика</param>
+        <param name="apiName">Име на API</param>
+        <param name="InvalidDeveloperNameOnEntity">Полето „{0}“ може да съдържа само долни тирета и буквено-цифрови знаци. Трябва да е уникално, да започва с буква, да не включва интервали, да не завършва с долно тире и да не съдържа две последователни долни тирета.</param>
+        <param name="missingDevName">Трябва да се предостави {0}.</param>
+        <param name="duplicateDevName">Това {0} вече съществува или е било използвано преди.  Моля, изберете различно уникално име.</param>
+        <param name="manageabilityOverride">Отменяне на управляемостта</param>
+        <param name="AMPMId">AMPM ID</param>
+        <param name="MetricsDate">Дата на статистиките</param>
+        <param name="MayEdit">Може да се извършва редакция</param>
+        <param name="IsLocked">Е в заключено състояние</param>
+        <param name="LastViewedDate">Дата на последно преглеждане</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Създаване</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Конфигуриране</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Създаване на нов елемент…</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Файл</param>
+        <param name="new_forecast">Прогноза</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Кошче</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Изпращане на имейл</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Отчет</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Променено от</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Дата на създаване</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Дата на промяна</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Автоматизиран процес</param>
+        <param name="partner_network">Потребител на връзката</param>
+        <param name="external_who">Публичен потребител</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Пример</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Грешка: Невалидни данни. &lt;br/&gt;Прегледайте всички съобщения за грешка по-долу, за да коригирате данните си.</param>
+        <param name="EditPageError2">Прегледайте всички съобщения за грешка по-долу, за да коригирате данните си.</param>
+        <param name="Required">Трябва да въведете стойност</param>
+        <param name="RequiredWithFieldList">Липсват задължителни полета: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Задължително за самообслужването</param>
+        <param name="RequiredBy">Изисква се от: {0}</param>
+        <param name="Requires">Изисква: {0}</param>
+        <param name="TooLong">Стойността е прекалено дълга за полето</param>
+        <param name="CannotExceedXCharacters">Стойността не може да превишава {0} знака</param>
+        <param name="MustBeXCharacters">Стойността трябва да бъде точно {0} знака</param>
+        <param name="MustBeNumber">Стойността трябва да бъде в цифри</param>
+        <param name="StatusCloseRequired">Трябва да маркирате поне едно състояние като приключено</param>
+        <param name="StatusDefaultRequired">Трябва да маркирате поне едно състояние като такова по подразбиране</param>
+        <param name="StatusInUse">Следните стойности за състояние се използват и не могат да бъдат редактирани или изтривани: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Невалидна дата</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Невалидна дата. Не можете да зададете дата извън {0}</param>
+        <param name="InvalidDateTime">Невалидни дата и час</param>
+        <param name="InvalidColor">Невалиден цвят</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Невалиден интернет адрес</param>
+        <param name="InvalidOption">Избрана е невалидна опция.</param>
+        <param name="UnsupportedCurrency">Невалидна валута</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">Невалиден URL адрес</param>
+        <param name="NoneSelectedInPicklist">--няма избрани--</param>
+        <param name="InvalidTime">Не е валиден час</param>
+        <param name="InvalidNumber">Невалидно число</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Числото е прекалено голямо.</param>
+        <param name="TooLargeNumberWithScale">Числото трябва да бъде по-малко от {0}.</param>
+        <param name="TooSmallNumberWithScale">Числото трябва да бъде по-голямо от {0}.</param>
+        <param name="NonpositiveError">Трябва да е положително число.</param>
+        <param name="NegativeError">Не трябва да е отрицателно число.</param>
+        <param name="PositiveError">Не трябва да е положително число.</param>
+        <param name="NonnegativeError">Трябва да е отрицателно число.</param>
+        <param name="NonzeroError">Не трябва да е нула.</param>
+        <param name="NonintegerError">Трябва да е цяло число.</param>
+        <param name="InvalidPercent">Невалиден процент</param>
+        <param name="InvalidAfterRoundOff">Числото {0} не е валидно след закръгляване към скала: {1}</param>
+        <param name="CharactersRemaining">остава</param>
+        <param name="CharactersOver">над лимита</param>
+        <param name="TooManySelection">Не можете да изберете повече от {0} елемента</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Дублирана стойност в записа: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Скрита стойност на полето (не е показана) дублира стойност в записа: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} дублира стойност в запис с идент. №: {1}</param>
+        <param name="True">Вярно</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Грешно</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Невалиден домейн</param>
+        <param name="ReadOnly">Не можете да редактирате това поле</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Прекратяване</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Приемане</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Приемане на промените</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Активиране на Sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Добавяне на коментар</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Добавяне на компоненти</param>
+        <param name="add_contacts">Добавяне на <contacts/></param>
+        <param name="add_leads">Добавяне на <leads/></param>
+        <param name="add_more_users">Добавяне на още потребители</param>
+        <param name="add_multiple_users">Добавяне на множество потребители</param>
+        <param name="add_product">Добавяне на <product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Добавяне на елемент</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Добавяне на примерно табло</param>
+        <param name="add_to_call_center">Добавяне към Call Center</param>
+        <param name="add_to_campaign">Добавяне към <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Добавяне към Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Добавяне към <pricebook/></param>
+        <param name="add_remove">Добавяне/Премахване</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Разширено конфигуриране</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Одобряване</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Присвояване</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Присвояване на потребители към роля</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Обратно към списъка с отчети</param>
+        <param name="billing_and_licenses">Фактуриране и лицензи</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Информация за фактуриране</param>
+        <param name="briefcase_setup">Конфигуриране на куфарче</param>
+        <param name="cancel">Отказ</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Отмяна на разпращането</param>
+        <param name="cancel_test_instance">Отмяна на Sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Промяна на корпоративна</param>
+        <param name="change_currency">Промяна на валутата</param>
+        <param name="change_owner">Промяна на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Приемане и промяна на собственика</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Приемане и присвояване на главен</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Промяна на състоянието</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Проверка на заетостта</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Проверка на правописа</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Избор на <pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Изчистване</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Общ преглед</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Раздел {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Списък</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Копиране на подробности от главното</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Свиване на всички</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Избор на елемент от списъка за избор</param>
+        <param name="composegmail">Съставяне на Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Потвърждаване</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Напред</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Продължаване въпреки това</param>
+        <param name="convert">Преобразуване</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Преобразуване на <lead/></param>
+        <param name="create">Създаване</param>
+        <param name="create_follow_up_event">Създаване на допълнително <event/></param>
+        <param name="create_follow_up_task">Създаване на допълнителна <task/></param>
+        <param name="create_new">Създаване на нов елемент „{0}“</param>
+        <param name="create_new_section">Създаване на нов раздел</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Създаване на <opportunity/></param>
+        <param name="create_test_instance">Създаване на Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Създаване на тестова база данни</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Създаване на форма Web-to-Lead</param>
+        <param name="create_new_holiday">Създаване на нов празник</param>
+        <param name="create_new_sla_process">Нов процес по даване на правомощия</param>
+        <param name="create_new_milestone_type">Ново важно събитие</param>
+        <param name="currency_setup">Конфигуриране на валутата</param>
+        <param name="customer_view">Преглед на клиента</param>
+        <param name="customize">Персонализиране</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Персонализиране на показването за всички потребители</param>
+        <param name="page_settings">Настройки на страницата</param>
+        <param name="customize_page">Персонализиране на страницата</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Редактиране на оформлението</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Списък на таблата</param>
+        <param name="data_export">Експортиране на данни</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Изчистване</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Отказ</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Допълнителни връзки по подразбиране</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Премахване на достъпа до плащане</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Готово с визуализация</param>
+        <param name="dont_save">Да не се запазва</param>
+        <param name="dont_show_page_again">Да не се показва тази страница отново</param>
+        <param name="download">Изтегляне</param>
+        <param name="download_now">Изтегляне сега</param>
+        <param name="download_sample_css_file">Изтегляне на примерен CSS файл</param>
+        <param name="edit">Редактиране</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Редактиране [бета]</param>
+        <param name="edit_all">Редактиране на всички</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Редактиране на потребител(и)</param>
+        <param name="edit_rates">Редактиране на обменни курсове</param>
+        <param name="edit_selected">Редактиране на избраните</param>
+        <param name="editProperties">Редактиране на свойствата</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Изход от {0}</param>
+        <param name="enable_appstore_user">Предоставяне на достъп до плащане</param>
+        <param name="enable_as_partner">Да се активира като партньор</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Да се активира вход в партньорски портал</param>
+        <param name="enable_self_service">Да се активира самообслужване</param>
+        <param name="enable_users">Да се активира нов потребител(и)</param>
+        <param name="enableForecasting">Да се активира персонализирано прогнозиране</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Вход към обучението</param>
+        <param name="erase_test_instance">Изтриване на Sandbox</param>
+        <param name="establish">Създаване</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Разширяване на всички</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Експортиране на подробностите</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Експортиране на подробностите сега</param>
+        <param name="export_background">Извършване на експортиране на заден план…</param>
+        <param name="fctHistory">История на прогнозата</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Резюме на прогнозата</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Проверки на полето</param>
+        <param name="find">Намиране</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Намиране на отчет</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Намиране на <document/></param>
+        <param name="find_pricebooks">Намиране на <pricebook/></param>
+        <param name="find_products">Намиране на <product/></param>
+        <param name="find_solution">Намиране на <solution/></param>
+        <param name="finished">Завършено</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Напред</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Напред към връзки</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Генериране на WSDL</param>
+        <param name="generate_login_html">Генериране на HTML за вход</param>
+        <param name="getMoreInfo">Повече информация</param>
+        <param name="go">Старт!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Помощ за тази страница</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Помощ за {0}</param>
+        <param name="hide">Скриване на подробностите</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Приемам</param>
+        <param name="i_decline">Отказвам</param>
+        <param name="impactAnalysis">Къде се използва това?</param>
+        <param name="import">Импортиране</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Импортиране на <leads/></param>
+        <param name="include_offline">Включване на офлайн</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Вмъкване</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Вмъкване на избраните</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Инсталиране сега</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Покана</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Покани за свързване</param>
+        <param name="jigsawsearch">Получаване на контакти</param>
+        <param name="join_meeting">Присъединяване към среща</param>
+        <param name="jumpstart">Бърз старт</param>
+        <param name="keep_in_touch">Заявка за актуализация</param>
+        <param name="layout_assignment">Присвояване на оформление</param>
+        <param name="legal_view">Преглед на правните</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Заключване на запис</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Влизане като потребител партньор</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Управление на членовете</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Поискайте среща</param>
+        <param name="add_members_search">Добавяне на членове – търсене</param>
+        <param name="add_members_import">Добавяне на членове – импортиране на файл</param>
+        <param name="edit_members_search">Редактиране на членове – търсене</param>
+        <param name="update_members_import">Актуализиране и добавяне на членове – импортиране на файл</param>
+        <param name="manage_call_center_users">Управление на потребителите на Call Center</param>
+        <param name="map_lead_fields">Съотнасяне на <lead_fields/></param>
+        <param name="mark_as">Да се маркира като…</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Импортиране на член</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Промяна на индивидуални напомняния</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Нов</param>
+        <param name="newcase">Нов</param>
+        <param name="new_addition_order">Нова допълнителна поръчка</param>
+        <param name="new_custom_object">Нов допълнителен обект</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Създаване на нов допълнителен отчет</param>
+        <param name="new_dashboard">Ново табло</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Нов компонент от таблото</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><New/> <document/></param>
+        <param name="new_email_template">Нов образец</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><New/> <entity entity="0"/></param>
+        <param name="new_entitlement_template">Нов образец</param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="new_folder">Нова папка</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Нова група</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Нова опашка</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Нова бележка</param>
+        <param name="new_object_custom_tab">Нов раздел за допълнителни обекти</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Онлайн среща</param>
+        <param name="new_order">Нова поръчка</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Нова лична група</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><New/> <product/></param>
+        <param name="new_reduction_order">Нова поръчка с намаление</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Нова роля</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Нов бутон</param>
+        <param name="new_territory">Нова територия</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_user">Нов потребител</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Нов раздел за уебинтеграция</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><New/> <quote/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Извършване на друга актуализация</param>
+        <param name="performAnotherMigrate">Прехвърляне на друг потребителски профил</param>
+        <param name="preview">Визуализиране</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Преизчисляване</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Възобновяване</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Отказване</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Отказване на промените</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Премахване на потребителите</param>
+        <param name="remove_from_briefcase">Премахване от куфарчето</param>
+        <param name="remove_from_campaign">Премахване от <campaign/></param>
+        <param name="reorder">Повторна поръчка</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Поправка</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Изготвяне на всички тестове</param>
+        <param name="run_test">Изготвяне на тест</param>
+        <param name="quick_save">Бързо запазване</param>
+        <param name="quick_save_hover">Запазване и продължаване на редактирането</param>
+        <param name="reply">Отговор</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Отговор на всички</param>
+        <param name="reportmanager">Мениджър отчети</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Повторно задаване на паролата</param>
+        <param name="reset_passwords">Повторно задаване на паролата(ите)</param>
+        <param name="retrieve_prices">Извличане на цени</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Изготвяне на отчет</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Запазване</param> <!-- aliased across labels do not change -->
+        <param name="saving">Запазва се…</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Запазване и добавяне на цена</param>
+        <param name="save_and_add_product">Запазване и добавяне на <product/></param>
+        <param name="save_and_clone">Запазване и клониране отново</param>
+        <param name="save_and_close">Запазване и приключване</param>
+        <param name="save_and_attach">Запазване и добавяне на прикачен файл</param>
+        <param name="save_and_continue">Запазване и напред</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Запазване и още</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Запазване и <new/> <event/></param>
+        <param name="save_and_new_product">Запазване и <new/> <product/></param>
+        <param name="save_and_new_task">Запазване и <new/> <task/></param>
+        <param name="save_and_refresh">Запазване и обновяване</param>
+        <param name="save_and_send">Запазване и изпращане на актуализацията</param>
+        <param name="event_scheduler">Изглед за клиент и екип &gt;</param>
+        <param name="saveAs">Запазване като</param>
+        <param name="schedule_to_email">Планиране на изпращане на имейл</param>
+        <param name="schedule_to_print">Планиране на принтиране</param>
+        <param name="scrutinize">Детайлна проверка</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Намиране на <knowledgeArticles/></param>
+        <param name="newArticle">Нова</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Избор на образец</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Бърз старт на самообслужването</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Конфигуриране на самообслужването</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Преглед/Активиране на самообслужването</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Изпращане</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Изпращане на имейл до <all/> <contacts/></param>
+        <param name="send_invitation">Запазване и изпращане на покана</param>
+        <param name="set_status">Управление на състоянието</param>
+        <param name="setup_and_install">Конфигуриране и инсталиране</param>
+        <param name="setup_roles">Задаване на роли</param>
+        <param name="setup_sharing">Задаване на споделяне</param>
+        <param name="sfga_instructions">Завършване на указания с възможност за разпечатване</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Показване на подробности</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Пропускане</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Сортиране</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Начало на срещата</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Подаване</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Подаване и добавяне на прикачен файл</param>
+        <param name="subscribe_now">Абонирайте се сега!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Надстройте сега!</param>
+        <param name="suggest">Преглед на <suggested article="the"/> <solutions/></param>
+        <param name="take_training_now">Преминете през обучението сега!</param>
+        <param name="terminate">Прекратяване</param>
+        <param name="training_history">История на обучението</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Прехвърляне</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Изпробвайте сега!</param>
+        <param name="undelete">Отмяна на изтриването</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Отмяна</param>
+        <param name="unlock">Отключване на запис</param>
+        <param name="update">Актуализиране</param>
+        <param name="update_campaign_history">Актуализиране и добавяне на <campaign_members/></param>
+        <param name="update_now">Актуализиране сега</param>
+        <param name="update_statuses">Актуализиране на състоянията</param>
+        <param name="upload">Качване</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Зависимости на полето</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Преглед на изтрити компоненти</param>
+        <param name="view_partnerforce">Преглед на потребител-партньор</param>
+        <param name="view_self_service">Преглед на самообслужването</param>
+        <param name="view_customer_success">Преглед на потребител на клиентски портал</param>
+        <param name="enable_customer_success">Активиране на потребител на клиентски портал</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Какво е това?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Затваряне на този прозорец</param>
+        <param name="runApexRecalc">Преизчисляване на Apex споделяне</param>
+        <param name="disablecustomerportal">Деактивиране на потребител на клиентски портал</param>
+        <param name="disablepartnerportal">Деактивиране на потребител-партньор</param>
+        <param name="disablecustomerportalaccount">Деактивиране на профил на клиентски портал</param>
+        <param name="disablepartnerportalaccount">Деактивиране на партньорски профил</param>
+        <param name="voteup">Повишаващ глас</param>
+        <param name="votedown">Понижаващ глас</param>
+        <param name="markquestionunanswered">Да се маркира като неотговорено</param>
+        <param name="markbestanswer">Да се маркира като най-добър отговор</param>
+        <param name="requestUseSfdcAction">Намиране връзки</param>
+        <param name="addPET">Добавяне на образец за правомощие</param>
+        <param name="truncate">Закръгляване</param>
+        <param name="disableprmsuperuser">Деактивиране на супер достъп на партньор</param>
+        <param name="enableprmsuperuser">Активиране на супер достъп на партньор</param>
+        <param name="purchase_more">Закупуване на още</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Обратно към началото</param>
+        <param name="descriptionText">Изложението на текста е прекалено дълго. Моля, вижте подробности.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Преглед на файл</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Главен</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Няма свързана информация</param>
+        <param name="no_records">Няма записи, които да бъдат показани</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Показване на още {0} »</param>
+        <param name="NextMoreGeneric">Показване на още »</param>
+        <param name="view_more">Отиване към списъка</param>
+        <param name="view_more_tot">Отиване към списъка ({0})</param>
+        <param name="view_more_tot_plus">Отиване към списъка ({0}+)</param> <!-- -->
+        <param name="view_more_1">Отиване към списъка с още един запис</param> <!-- Singular -->
+        <param name="view_more_n">Отиване към списъка с още {0} записа</param> <!-- Plural -->
+        <param name="view_more_n_plus">Отиване към списъка с {0}+ записа</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Налични са още; Отиване към списъка</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Вероятност</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Източник</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Спечелена</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Фискален период</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">{1} тримесечие на {0} година</param>
+        <param name="opportunities_next_step">Следваща стъпка</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Актуализиране</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Open/> <activities/></param>
+        <param name="activities_open"><Open/> <activities/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Свързан с/ъс</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Бележка</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Google документ</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Бележки и прикачени файлове</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Заглавие на бележката</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Прикачен файл</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Прикачени файлове</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Име на файла</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Собственост</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Основен</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <cases/>, които да бъдат показани</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Дата</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Заглавие</param>
+        <param name="object_title">Заглавие</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Име</param>
+        <param name="object_name">Име</param>
+        <param name="date">Дата</param>
+        <param name="due_date">Краен срок</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Последна промяна</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Актуализирано от</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Основен</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Конкуренти</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Име на конкурента</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Силни страни</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Слаби страни</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Вероятност (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">В състояние „завършено“</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Да се маркира {0} като завършена</param>
+        <param name="task_date">Дата</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Име</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Предстоящо одобрение на <contract/></param>
+        <param name="task_none">Нямате <open/> <tasks/>, планирани за този период.</param>
+        <param name="task_mode_today">Днес</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Днес + Просрочени</param>
+        <param name="task_mode_tomorrow">Утре</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">Следващите {0} дни</param>
+        <param name="task_mode_next_7days_overdue">Следващите {0} дни + Просрочени</param>
+        <param name="task_mode_overdue">Просрочени</param>
+        <param name="task_mode_this_month">Този месец</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Всички отворени</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">История</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Новини</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Заглавие</param>
+        <param name="new_date">Дата</param>
+        <param name="news_none">Няма налични новини</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Образци за сливане на имейл</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions">Най-добри <solutions/></param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Дата на добавяне</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Добавено от</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> прикачени <solutions/></param>
+        <param name="description">Описание</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Информационна лента</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL адрес</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Няма данни за <activity_history/>, които да бъдат показани.</param>
+        <param name="nonotes">Няма данни за история на бележката, които да бъдат показани.</param>
+        <param name="noattachments">Няма данни за история на прикачения файл, които да бъдат показани.</param>
+        <param name="viewallattachments">Преглед на всички прикачени файлове</param>
+        <param name="viewalldocsattachments">Преглед на всички Google документи и прикачени файлове</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Дата</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Описание на ред</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">API въвеждания</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Филтрирано по потребител</param>
+        <param name="apicapture_filterip">Филтрирано по IP адрес</param>
+        <param name="apicatpure_numbers">Въвеждания</param>
+        <param name="apicapture_soapscope">Преглед на въвежданията</param>
+        <param name="apicapture_active">В състояние „активно“</param>
+        <param name="apicapture_none">Няма въвеждания</param>
+        <param name="apicapture_new">Начало на ново въвеждане</param>
+        <param name="apicapture_view">Изглед</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">История на влизанията</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">няма влизания</param>
+        <param name="login_none">Няма налична история на влизанията.</param>
+        <param name="login_username">Потребителско име</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Време на влизане</param>
+        <param name="login_type">Вид на влизане</param>
+        <param name="login_ip">IP адрес на източника</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">Няма данни</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Браузър</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Платформа</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Разделителна способност</param>
+        <param name="login_clientversion">Версия на клиентската програма</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Приложение</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">API вид</param>
+        <param name="login_apiversion">API версия</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Успешно</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Изтеглете историята на влизанията за последните шест месеца, включително тези, извършени извън уебсайта, като например API влизания (.csv файл в Excel)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Изтеглете историята на влизанията, включително влизания само от уебсайта (.csv файл в Excel)</param>
+        <param name="login_history_download_title">Опции за изтегляне</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">CSV файл</param>
+        <param name="login_history_download_file_type_gzip">GZIP файл</param>
+        <param name="login_history_download_file_type_help">CSV файловете (файлове със стойности, разделени със запетая) могат да бъдат преглеждани с помощта на множество програми за електронни таблици и текстови редактори. GZIP файловете (файлове GNU zip) са компресирани, за да се намали размерът им.</param>
+        <param name="login_history_download_option_title">Съдържание на файла</param>
+        <param name="login_history_download_option_all">Всички влизания</param>
+        <param name="login_history_download_option_ie6_only">САМО влизания с IE6</param>
+        <param name="login_history_download_option_web_only">САМО влизания от уебсайта</param>
+        <param name="login_history_download_option_help">„Всички влизания“ включва влизанията от всички източници, като например уебсайта, Outlook, интегрирания на API и пр. „Влизания с IE6“ включва само влизанията на потребители, използвали Internet Explorer 6. „Влизания от уебсайта“ включва само влизанията от страницата за вход на Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Все още ли използвате IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce започна постепенно да преустановява поддръжката за IE6. Използвайте предоставените опции за изтегляне, за да разберете кои браузъри се използват във вашата организация.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL адрес за вход</param>
+        <param name="order_history">История на поръчката</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Няма поръчки</param>
+        <param name="order_number">Номер на поръчката</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Дата на поръчката</param>
+        <param name="order_currency">Валута</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Общо разходи</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Продадено на</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Няма <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Ред&lt;BR&gt;Номер</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Месечна цена</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Описание (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Честота на фактуриране&lt;BR&gt;(в месеци)</param>
+        <param name="bo_order_items_billing_frequency_text">Честота на фактуриране</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Срок на поръчката&lt;BR&gt;(в месеци)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Дата</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Фактури</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Няма фактури</param>
+        <param name="invoices_invoice_number">Номер на фактурата</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Дата на фактурата</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Краен срок за издаване на фактурата</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">Идент. № на външната система</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Обща сума</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Дължим остатък</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Общ кредит</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Общо брак</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Контакт (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Фирма (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">История на фактурата</param>
+        <param name="revenue_schedule">Планиране</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Дата</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Приходи</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Коментари</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">История на състоянието</param>
+        <param name="status_none">Няма намерена история на състоянието</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Избор на услуга</param>
+        <param name="services_none">Няма услуги</param>
+        <param name="services_description">Услуга</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Единична цена</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Крайна цена</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Отстъпка</param>
+        <param name="training">История на урока от обучението</param>
+        <param name="training_none">Няма</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Име на урока</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Дата на провеждане</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">С получен отговор</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">По подразбиране</param>
+        <param name="campaign_member_none"><No/> определено <campaign_member_status/></param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Начална дата</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Крайна дата</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Обща стойност</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Има правила за закупуване</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Честота на фактуриране&lt;br&gt;(в месеци)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Дата на фактуриране</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Billed/> <products/></param>
+        <param name="event_attending">Прието <event/></param>
+        <param name="event_notdecided">Няма отговор</param>
+        <param name="event_declined">Отказано <event/></param>
+        <param name="event_attending_none">Няма приели присъстващи</param>
+        <param name="event_notdecided_none">Всички присъстващи са отговорили</param>
+        <param name="event_declined_none">Няма отказали присъстващи</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Име</param>
+        <param name="documents_size">Размер</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Автор</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Преглед на конфигурирането на одитен процес</param>
+        <param name="download">изтегляне</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Последните 20 записа за вашата организация са изброени по-долу. Можете да {0} конфигурирането на одитния процес за вашата организация за последните шест месеца (.csv файл в Excel).</param>
+        <param name="setup_audit_date">Дата</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Действие</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Раздел</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Делегиране на потребител</param>
+        <param name="setup_audit_proxyinguser_help">Тази графа включва потребителското име на потребител, който е направил промяна на настройката от името на краен потребител. Например, ако даден потребител е предоставил достъп за вход на представител по поддръжката, потребителското име на представителя е включено.</param>
+        <param name="setup_audit_trail_none">Няма налична информация за конфигуриране на одитния процес</param>
+        <param name="setup_audit_download_csv">Изтегляне на конфигурирането на одитния процес за последните шест месеца (.csv файл в Excel)</param>
+        <param name="DashboardComponents_title">Компоненти от таблото</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Няма компоненти от таблото</param>
+        <param name="translated_templates_none">Няма преведени образци за имейл</param>
+        <param name="translated_templates_title">Преведени образци за имейл</param>
+        <param name="translated_templates_language">Език</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">В състояние „активно“</param>
+        <param name="desc_pnet_conn_audit_trail">Последните 20 записа за вашата организация са изброени по-долу. Можете да {0} пълната история за одитния процес на връзката като .csv файл в Excel.</param>
+        <param name="pnet_conn_audit_trail">История на връзката</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Дата</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Няма налична информация за одитния процес на връзката</param>
+        <param name="pnet_conn_audit_download_csv">Изтегляне на историята на връзката (.csv файл)</param>
+        <param name="pnet_entity_conns_title">Външно споделяне</param>
+        <param name="pnet_entity_conn_stop_sharing">Спиране на споделянето</param>
+        <param name="pnet_pub_title">Публикувани обекти</param>
+        <param name="pnet_sub_title">Обекти, за които сте абонирани</param>
+        <param name="pnet_pubsub_object">Име на обекта</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Полета</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Публикуване/Снемане на публикация</param>
+        <param name="pnet_sub_edit">Абониране/Прекратяване на абонамент</param>
+        <param name="pnet_pub_edit_object">Обектът е публикуван.</param>
+        <param name="pnet_pub_edit_field">Щракнете върху „Редактиране“ по-долу, за да публикувате в наличните полета на всеки обект.</param>
+        <param name="pnet_sub_edit_object">Абонирани сте за обекта.</param>
+        <param name="pnet_sub_edit_field">Щракнете върху „Редактиране“ по-долу, за да се абонирате за наличните полета на всеки обект.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Съдържание</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Прикачени файлове Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Грешка при зареждането на свързани списъци</param>
+        <param name="ajax_exception_desc">Възникна проблем при събирането на информация за свързан списък за този запис. Ако с презареждане на страницата проблемът не се отстрани, моля, свържете се с администратора си или &lt;a href="{0}" title="report{1}"&gt;подайте сигнал&lt;/a&gt; за него на нашия екип за поддръжка на клиенти.</param>
+        <param name="category_access_title">Настройки за видимост на група категории</param>
+        <param name="category_access_video_tutorial">Видеообучение</param>
+        <param name="category_access_name">Група категории</param>
+        <param name="category_access_access">Видимост</param>
+        <param name="category_access_details">Подробности за видимостта</param>
+        <param name="category_access_custom">Персонализирано</param>
+        <param name="category_access_full">Пълен</param>
+        <param name="category_access_inherited">Наследен от {0}</param>
+        <param name="category_access_revoked">Няма</param>
+        <param name="category_access_userNodeAndChildren_Profile">потребителски профил</param>
+        <param name="category_access_userNodeAndChildren_UserRole">роля и подопечни</param>
+        <param name="category_access_noCategories">Няма видими категории за този елемент: {0}</param>
+        <param name="category_access_allCategories">Всички категории са видими за този елемент: {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} за {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">САЩ и Западна Европа (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Японски (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Японски (JIS)</param>
+        <param name="4">Японски (EUC)</param>
+        <param name="5">Корейски (ks_c_5601-1987)</param>
+        <param name="6">Традиционен китайски (Big5)</param>
+        <param name="7">Опростен китайски (GB2312)</param>
+        <param name="8">Традиционен китайски Хонконг (Big5-HKSCS)</param>
+        <param name="9">Японски (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Пробна организация</param>
+        <param name="expand">Щракнете, за да отворите страничната лента [Alt+S]</param>
+        <param name="collapse">Щракнете, за да затворите страничната лента [Alt+S]</param>
+        <param name="expandNoHotkey">Щракнете, за да отворите страничната лента</param>
+        <param name="collapseNoHotkey">Щракнете, за да затворите страничната лента</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Нагоре</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Надолу</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Преместване</param>
+        <param name="top">Горните</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">В долния край</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Моля, попълнете задължителните полета.</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Всички потребители</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Нов</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Добавяне</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Изтриване</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Промяна]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Как да…</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Вижте повече</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><New/> <task/></param>
+        <param name="new_event"><New/> <event/></param>
+        <param name="log_call">Записване на разговор</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Записване на бележка</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Сливане на поща</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Преглед на всички</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Прикачване на файл</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Как да...?</param>
+        <param name="send_email">Изпращане на имейл</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Изображение, добавено от потребител</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Приложения</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Изглед за печат</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Клониране</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Споделяне</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Начало</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Искам повече информация!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Изберете едно:</param>
+        <param name="hotlist_mode">Показване на избора</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Показване на {0,number,integer} елемент(а)</param>
+        <param name="hotlist_empty_title">Няма скорошни записи. Щракнете върху „Старт“ или изберете изглед от падащото меню, за да покажете записите.</param>
+        <param name="hotlist_empty_description">Няма налични записи за тези критерии.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Отиване към „Отчети“</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Ресурсен център</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">С помощта на Ресурсния център можете да изследвате възможности, да намирате услуги на трети страни и много повече.</param>
+        <param name="resource_center_link_text">Отиване към Ресурсния център</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Методологии за продажба</param>
+        <param name="hotlist_recently_modified">Наскоро променени</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Наскоро създадени</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Наскоро преглеждани</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">-- Няма --</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">-- Избор --</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--По подразбиране--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Не е приложимо**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Вашият администратор не е определил никакви допълнителни връзки.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Прескачане към:</param>
+        <param name="JumpToStep">Стъпка {0}: {1}</param>
+        <param name="CloseWizard">Затваряне на помощника</param>
+        <param name="LeftHeader">Стъпка {0}. {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Стъпка {0}/{1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Стъпка {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Запазване и нов елемент</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Напред</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Назад</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Помощник за конфигуриране на организацията за {0}</param>
+        <param name="ImportWizardTitle">Импортиране на помощника за {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Център за поръчки</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Пробна регистрация</param>
+        <param name="WizardBody">Тяло на помощника</param>
+        <param name="WizardFooter">Долен колонтитул на помощника</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Адрес</param><!-- translators note - this is actually the full address -->
+        <param name="street">Адрес</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Град</param><!-- aliased across label files - do not change -->
+        <param name="state">Щат/Област</param><!-- aliased across label files - do not change -->
+        <param name="zip">Пощенски код</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Пощ. код</param> <!-- aliased across label files - do not change -->
+        <param name="country">Държава</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Телефон</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Код</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Факс</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Код на факс</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">Имейл</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Адрес за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Улица за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Град за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Щат/Област за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Пощ. код за доставка</param>
+        <param name="shippingzippostalcode">Пощенски код за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Държава за доставка</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Адрес (фактура)</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Град (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Щат/Област (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Пощ. код (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Държава (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Улица (фактура)</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Улица на банката</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Адрес на банката</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Град на банката</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Щат/Област на банката</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Пощ. код на банката</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Държава на банката</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Адрес за кореспонденция</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Улица (кореспонденция)</param>
+        <param name="mailingcity">Град (кореспонденция)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Щат/Област (кореспонденция)</param>
+        <param name="mailingzip">Пощ. код (кореспонденция)</param>
+        <param name="mailingcountry">Държава (кореспонденция)</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Адрес за кореспонденция ред 1</param>
+        <param name="mailingaddress2">Адрес за кореспонденция ред 2</param>
+        <param name="mailingaddress3">Адрес за кореспонденция ред 3</param>
+        <param name="otheraddress">Друг адрес</param>
+        <param name="otheraddress1">Друг адрес ред 1</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Друг адрес ред 2</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Друг адрес ред 3</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Друга улица</param>
+        <param name="otherstreet2">Друга улица 2</param>
+        <param name="otherstreet3">Друга улица 3</param>
+        <param name="othercity">Друг град</param>
+        <param name="otherstate">Друг щат/област</param>
+        <param name="otherzipcode">Друг пощ. код</param>
+        <param name="otherpostalcode">Друг пощ. код</param>
+        <param name="otherzippostalcode">Друг пощ. код</param>
+        <param name="othercountry">Друга държава</param>
+        <param name="otherphone">Друг телефон</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Друг телефонен код</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Адрес 1</param>
+        <param name="address2">Адрес 2</param>
+        <param name="address3">Адрес 3</param>
+        <param name="home_phone">Домашен телефон</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Зареждане…</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Местоположение</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Количество</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Мениджър контакти</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Да</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Не</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Добре дошли в salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Авторско право © 2000-{0} г. salesforce.com, inc. Всички права запазени.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Копие, защитено с авторско право &amp;copy; 2000-{1} г. &lt;a href=&quot;{0}&quot;&gt;salesforce.com&lt;/a&gt;, inc. Всички права запазени.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">508 Съответствие</param>
+        <param name="copyright_nohtml">Авторско право (c) 2000-{0} г. salesforce.com, inc. Всички права запазени.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Авторско право © {0} {1}. Всички права запазени.</param>
+        <param name="brandedCopyrightWithLink">Копие, защитено с авторско право &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Всички права запазени.</param>
+        <param name="brandedCopyright_nohtml">Авторско право (c) {0} {1}. Всички права запазени.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Декларация за сигурност</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Условия за ползване</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Благодарим ви, че избрахте salesforce.com. Преди да започнете да използвате salesforce.com, трябва да прочетете и да приемете Условията за ползване по-долу. Щом го направите, моля, продължете, като щракнете върху бутона „Приемам“. Моля, обърнете внимание, че ако не приемете тези Условия за ползване, няма да можете да влезете в salesforce.com.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Готово</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Добавяне сега!</param>
+        <param name="remove">Премахване</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Нов</param>
+        <param name="exciting_and_new">Ново!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">тук</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Генериране</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Затваряне на прозореца</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Отпечатване на тази страница</param>
+        <param name="new_window">(Нов прозорец)</param>
+        <param name="new_focus">(Преместване на фокуса)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Скрита рамка - игнориране</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">избор на всички</param>
+        <param name="select_shown">Избор на показаните</param>
+        <param name="remove_shown">Премахване на показаните</param>
+        <param name="select_none">Премахване на избора</param>
+        <param name="all_active">Всички активни</param>
+        <param name="all_inactive">Всички неактивни</param>
+        <param name="are_you_sure">Наистина ли искате това?</param>
+        <param name="irreversible_are_you_sure">Необратимо! Наистина ли искате това?</param>
+        <param name="replace">Заменяне</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Завършване</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} минути</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Намерени са множество елементи. Изберете от падащото меню или щракнете върху икона, за да конкретизирате търсенето.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Тримесечие {0}-{1}</param>
+        <param name="reset">Повторно задаване</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Отменяне</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Общо</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Щракнете тук</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Бележки до уебадминистратора:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Примерен HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Парола</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Да не се показва тази страница отново</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Скриване на това съобщение за: </param>
+        <param name="dontShowMessageAgain">Да не се показва това съобщение отново</param>
+        <param name="dismissMessage">Скриване на това съобщение</param>
+        <param name="allObjects">Всички обекти</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Натиснете интервал или клавиша Enter за отваряне</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Самообслужване: <Case_Detail/></param>
+        <param name="CssEdit">Самообслужване: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Информационен канал за <case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Коментар</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Допълнителни обекти</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Определение на допълнителния обект</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Табло</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Табла</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Премахване на избора от всички</param>
+        <param name="deselect_shown">Премахване на избора от показаните</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Образец за сливане на поща</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Образци за сливане на поща</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Папка</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Папки</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Прогнози</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Прогнози</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Надзорник на Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Фактура</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Бележки</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Поръчка</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Поръчки</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Предмет на поръчката</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Предмети на поръчката</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Плащане</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Плащания</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">отчет</param>
+        <param name="Reports">Отчети</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Регистрация</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Образец</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Образци</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Таблица</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">В състояние „активно“</param>
+        <param name="amount">Сума</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Годишен приход</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Прикачване на документ</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Промяна на паролата</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Приключване</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Приключена</param>
+        <param name="closed_date">Дата на приключване</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Дата на приключване</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Дата на създаване</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Вид данни</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">В състояние „изтрит“</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Информация за описанието</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Служители</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Файл</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Файлове</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Обща информация</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Получете информация, преди да започнете</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Етикет</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Последно влизане</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Дата на последна промяна</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Име</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Име</param>
+        <param name="new_status">Ново състояние</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Няма</param>
+        <param name="open">Отворено</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Организация</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Няма намерени съвпадения.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Всички</param>
+        <param name="clear">Изчистване</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Щракнете върху иконата за справка…</param>
+        <param name="click_lookup_icon_info">Щракнете върху иконата за справка, за да изберете стойност.</param>
+        <param name="clear_all">Изчистване на всички</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Щракнете върху бутона „Прикачване“</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Грешки</param> <!-- aliased across lables - do not change -->
+        <param name="high">Високо</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Помощ</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Прехвърли ме там!</param>
+        <param name="keywords">Ключови думи</param>
+        <param name="length">Дължина</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Състояние</param> <!-- aliased across lables - do not change -->
+        <param name="title">Заглавие</param>
+        <param name="object_title">Заглавие</param>
+        <param name="type">Вид</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Потребител</param> <!--aliased across labels - do not change -->
+        <param name="Users">Потребители</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Набор разрешения</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Потребителски профил</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Профили</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Собственик</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">постигнете успех.</param>
+        <param name="DontShowPage">Да не се показва тази страница отново.</param>
+        <param name="click_here_to_create_new_account">{0}, за да създадете <new/> <account/> сега.</param>
+        <param name="click_here_to_create_new_contact">{0}, за да създадете <new/> <contact/> сега.</param>
+        <param name="click_here_to_create_new_lead">{0}, за да създадете <new/> <lead/> сега.</param>
+        <param name="click_here_to_create_new_opportunity">{0}, за да създадете <new/> <opportunity/> сега.</param>
+        <param name="click_here_to_create_new_product">{0}, за да създадете <new/> <product/> сега.</param>
+        <param name="SystemModstamp">Модел на системата</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Отдел</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Обработване</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Моля, изчакайте, докато записите се актуализират.</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Статичен превод</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Скриване на тази страница занапред</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Извършва се качване… Моля, изчакайте</param>
+        <param name="uploading_title">Качване</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Извършва се импортиране… Моля, изчакайте</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">и </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Грешка: Нямате достъп до това поле</param>
+        <param name="noReadAccess">Нямате достъп да преглеждате този запис.</param>
+        <param name="noAccessToUser">Нямате достъп до този потребител.</param>
+        <param name="disabledButton">Деактивиран бутон: {0}</param>
+        <param name="RequiredHeader">Задължителна информация</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Вмъкване на изображение</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Наистина ли искате да изтриете IP обхвата на влизане?</param>
+        <param name="AMPM">AMPM запис</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Защитен компонент</param>
+        <param name="dialogCloseConfirm">Прозорецът за потвърждение, който току-що преглеждахте, може да се е затворил преждевременно. Щракнете върху „OK“, за да се върнете към него, или върху „Отмяна“, за да не се взема под внимание това предупреждение.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Започване на диалог</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Резултати от търсенето</param>
+        <param name="Recent">Наскоро преглеждани</param>
+        <param name="NoMatchHeader">Няма открити записи поради една от следните причини:</param>
+        <param name="BulletOne">Няма записи от този вид</param>
+        <param name="BulletTwo">Нямате разрешение да видите никой от записите</param>
+        <param name="BulletThree">Записите не отговарят на критериите на филтъра, зададен от администратора ви</param>
+        <param name="BulletFour">Едно или повече контролиращи полета са празни или невалидни (Контролиращи полета:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Налични потребители</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Избрани потребители</param>
+        <param name="LicensedUsers">Лицензирани потребители</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Избрано за премахване</param>
+        <param name="Selected">Избрани</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">В състояние „избрано“</param>
+        <param name="UnassignedPackages">Неприсвоени пакети</param>
+        <param name="SelectedPackages">Избрани пакети</param>
+        <param name="InView">на фокус</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Този файл превишава лимита за максимален размер от {0}.</param>
+        <param name="no_file_specified">Моля, посочете файл за качване. Напишете пътеката до файла или използвайте бутона „Разглеждане“, за да го намерите в локалната си файлова система.</param>
+        <param name="invalid_file_type">Посоченият от вас вид файл не се поддържа към настоящия момент.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Името на файла превишава максималната позволена дължина, която е {0} знака.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Разширението на името на файла превишава максималната позволена дължина, която е {0} знака.</param>
+        <param name="bytes">байта</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Файлове от вида HTML не са разрешени от съображения за сигурност.</param>
+        <param name="attachment_size_exceeded">Каченият файл превиши максималния размер.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Грешка:&lt;/b&gt; Трябва да изберете изображение за качване</param>
+        <param name="upload_file_too_large">&lt;b&gt;Грешка:&lt;/b&gt; Изображението превишава лимита за размер от 1 MB.</param>
+        <param name="invalid_file_type">&lt;b&gt;Грешка:&lt;/b&gt; Можете да вмъквате единствено файлове във формат .gif, .jpeg и .png.</param>
+        <param name="upload_failed">&lt;b&gt;Грешка:&lt;/b&gt; Качването беше неуспешно – Опитайте отново по-късно.</param>
+        <param name="invalid_file">&lt;b&gt;Грешка:&lt;/b&gt; Файлът не е валиден файл с изображение.</param>
+        <param name="invalid_param">&lt;b&gt;Грешка:&lt;/b&gt; Невалидни параметри.</param>
+        <param name="access_failed_alt">Това изображение не е налично, защото: Нямате правата да го видите или е било премахнато от системата</param>
+        <param name="weekly_export_folder">Други качени странични/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">Елементът „{0}“ беше създаден успешно.</param>
+        <param name="Failure_message">Създаването беше неуспешно.</param>
+        <param name="Common_success_message">Създаването беше успешно.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Заявка за намаляване на лиценз</param>
+        <param name="pageheader">Моля, попълнете всички задължителни полета, за да изпратите заявката си за намаляване на лиценз. Това е най-бързият начин да бъде обработена заявката ви.  Моля, не подавайте множество заявки за един и същи лицензи, тъй като това може да предизвика ненужни забавяния.</param>
+        <param name="title_landing">Заявката ви беше получена!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Заявката ви беше получена и ще бъде обработена по реда на получаване. Моля, обърнете внимание, че заявките за намаляване на броя на лицензите ви ще влязат в сила от следващия период на фактуриране след заявката ви, стига да известите salesforce.com пет работни дни преди датата на фактурата за следващия период на фактуриране.</param>
+        <param name="pageheader_landing">Заявката ви беше получена и ще бъде обработена по реда на получаване. Заявки за намаляване на броя на лицензите ви ще влязат в сила 30 дни след датата на получаване на заявката ви. Моля, не изпращайте множество заявки за намаляване на лицензи за едни и същи лицензи, тъй като това може да забави обработването на заявката ви.</param>
+        <param name="title_error">Заявката ви не можа да бъде обработена.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Не можахме да подадем заявката в момента. Моля, опитайте отново по-късно.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Подаване на заявката ви</param>
+        <param name="reason">Причина</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Моля, опишете&lt;br&gt; по-подробно</param>
+        <param name="numLicenses">Брой лицензи</param>
+        <param name="potentialResponse">Как можем да задържим&lt;br&gt; бизнеса ви?</param>
+        <param name="tips_title">Съвети за подаване на заявки за намаляване на лицензи</param>
+        <param name="tip1">Моля, попълнете всичката информация точно, за да се гарантира своевременно и правилно обработване на заявката ви.  Преди да изпратите заявката си, се уверете, че сте деактивирали достатъчно потребители, така че броят на потребителите ви да е по-малък или равен на брой на новите ви лицензи. Това може да бъде направено чрез функцията &lt;a href="{0}"&gt;Управление на потребители&lt;/a&gt; в &lt;a href="{1}"&gt;Моето конфигуриране&lt;/a&gt;.</param>
+        <param name="type1">Закриване на профил</param>
+        <param name="type2">Намаляване на лиценза за потребител</param>
+        <param name="type3">Намаляване на офлайн лицензи</param>
+        <param name="type4">Намаляване на лиценз за кампания</param>
+        <param name="type5">Закриване на мобилна версия за au</param>
+        <param name="type6">Намаляване на лиценз за мобилна версия за au</param>
+        <param name="type7">Намаляване на мобилен лиценз за Force.com</param>
+        <param name="reason_0">Компанията е придобита/слята с</param>
+        <param name="reason_1">Разпускане на компания</param>
+        <param name="reason_2">Елиминирани търговци</param>
+        <param name="reason_3">Крайните потребители не възприемат</param>
+        <param name="reason_4">Функциите не отговарят на очакванията</param>
+        <param name="reason_5">Управлението не вижда достатъчно стойност</param>
+        <param name="reason_6">Лош опит със служители на salesforce.com</param>
+        <param name="reason_7">Цената е твърде висока</param>
+        <param name="reason_8">Промяна към конкурент</param>
+        <param name="reason_9">Неизползвани лицензи</param>
+        <param name="reason_10">Друго</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Моля, попълнете следните полета:</param>
+        <param name="title">Изпратете отзиви на salesforce.com</param>
+        <param name="title_upgrade_me">Записване за заявка за надстройка</param>
+        <param name="title_support">Изпращане на отзиви</param>
+        <param name="warning_line_too_long">Предупреждение: Описанието е по-голямо от 4000 знака и ще бъде отрязано.\\n</param>
+        <param name="feedback_info">Връзка с екипа за поддръжка на клиенти</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Екипът за поддръжка на клиенти е на ваше разположение за отговор на всякакви ваши въпроси или отзиви. Разчитаме изключително много отзивите на нашите клиенти да ни помогнат да изградим и моделираме salesforce.com. Оценяваме и се радваме на вашите идеи и очакваме с нетърпение да ни пишете или да се обадите.</param>
+        <param name="general_info_me">За да научите повече за надграждането от Personal Edition към някое от нашите корпоративни издания, моля, попълнете формата по-долу. Търговски представител ще се свърже с вас в рамките на 48 работни часа.</param>
+        <param name="general_info_support">Екипът за поддръжка на клиенти е на ваше разположение за отговор на всякакви ваши въпроси или отзиви. Разчитаме изключително много отзивите на нашите клиенти да ни помогнат да изградим и моделираме Salesforce CRM Call Center. Оценяваме и се радваме на вашите идеи и очакваме с нетърпение да ни пишете или да се обадите.</param>
+        <param name="defaultOrigin">Интернет</param>
+        <param name="defaultStatus">Нов</param>
+        <param name="functionalArea">Тема</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Въпрос</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Заявка</param>
+        <param name="type3">Отзиви</param>
+        <param name="type4">Заявка за подробности</param>
+        <param name="priority1">Спешно</param>
+        <param name="priority2">Нормално</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Ниско</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Искам да се абонирам сега за Professional Edition</param>
+        <param name="subject_subscribe_me">Искам да надстроя изданието си сега</param>
+        <param name="subject_subscribe_we">Искам повече информация за Professional Edition</param>
+        <param name="subject_subscribe_ee">Искам да се абонирам сега за Enterprise Edition</param>
+        <param name="subject_subscribe_ue">Искам да се абонирам сега за Unlimited Edition</param>
+        <param name="subject_subscribe_support">Искам да се абонирам сега</param>
+        <param name="subject_data_export">Искам услугата за ежеседмично експортиране</param>
+        <param name="subject_marketing_licenses">Добавяне на маркетингови лицензи</param>
+        <param name="subject_offline_licenses">Добавяне на офлайн лицензи</param>
+        <param name="subject_wireless_licenses">Добавяне на безжични лицензи</param>
+        <param name="subject_offlinepda_licenses">Добавяне на лицензи Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Добавяне на мобилни лицензи за Force.com</param>
+        <param name="subject_sfcontent_licenses">Добавяне на лицензи за Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Добавяне на лицензи за Knowledge</param>
+        <param name="subject_interaction_licenses">Добавяне на лицензи за Force.com Flow</param>
+        <param name="subject_support_licenses">Добавяне на лицензи за сервизен облак</param>
+        <param name="subject_jigsaw_licenses">Добавяне на лицензи за Jigsaw</param>
+        <param name="subject_liveagent_licenses">Добавяне на лицензи за Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Добавяне на лицензи за Site.com Contributor</param>
+        <param name="subject_siteforcepublisher_licenses">Добавяне на лицензи за Site.com Publisher</param>
+        <param name="subject_chatteranswers_licenses">Добавяне на лицензи за Chatter Отговори</param>
+        <param name="subject_license_reduction">Намаляване на лиценз</param>
+        <param name="functionalArea_0">Администриране на профил/лиценз</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Запитване за фактуриране</param>
+        <param name="functionalArea_3">Свързване на данни</param>
+        <param name="functionalArea_4">Имейл/Имейл в HTML</param>
+        <param name="functionalArea_5">Прогнози и възможности</param>
+        <param name="functionalArea_6">Импортиране</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Потенциални клиенти</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Ефективност</param>
+        <param name="functionalArea_9">Отчети и прегледи</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Абонирайте се сега</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Синхронизиране</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Услуга за ежеседмично експортиране</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Безжичен</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Друго</param>
+        <param name="functionalArea_16">Лиценз за маркетинг</param>
+        <param name="functionalArea_17">Офлайн лиценз</param>
+        <param name="functionalArea_18">Потребителски профили/Оформления на страници/Видове записи</param>
+        <param name="functionalArea_19">Кампании</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Самообслужване</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Безжичен лиценз</param>
+        <param name="functionalArea_22">Надстройте сега</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Лиценз Sales Anywhere</param>
+        <param name="functionalArea_24">Задачи/Събития </param>
+        <param name="functionalArea_25"><Products/> и Анюитети / <Pricebooks/></param>
+        <param name="functionalArea_26">Предупреждение за крупна сделка </param>
+        <param name="functionalArea_27">Документи</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Досиета и решения </param>
+        <param name="functionalArea_29">Търсене</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Споделяне</param>
+        <param name="functionalArea_31">Force.com Connect Offline</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Безжичен достъп до Force.com</param>
+        <param name="functionalArea_33">Force.com Connect за Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Мобилна версия на Force.com за au</param>
+        <param name="functionalArea_35">Лиценз за партньорски портал</param>
+        <param name="functionalArea_36">Мобилен лиценз за Force.com</param>
+        <param name="functionalArea_37">Лиценз за съдържание Salesforce CRM</param>
+        <param name="functionalArea_38">Лиценз за сервизен облак</param>
+        <param name="functionalArea_39">Лиценз за Jigsaw</param>
+        <param name="functionalArea_40">Лиценз за Live Agent</param>
+        <param name="functionalArea_41">Лиценз за Site.com Contributor</param>
+        <param name="functionalArea_42">Лиценз за Site.com Publisher</param>
+        <param name="functionalArea_43">Лиценз за Chatter Отговори</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">Ако предпочитате да говорите директно с представител за поддръжка на клиенти, обадете се на (415) 901-7010 между 6:00 и 18:00 ч. Тихоокеанско време, от понеделник до петък, или на +353-1-2723503 между 8:00 и 18:00 ч. Средно време по Гринуич (GMT), от понеделник до петък.</param>
+        <param name="tips_title">Съвети за подаване на досиета</param>
+        <param name="tip1">Моля, уверете се, че сте ни предоставили достатъчно информация, за да можем да отговорим на вашето досие възможно най-бързо.  По-долу ви предлагаме няколко предложения и напомняния:</param>
+        <param name="tip2">Кажете ни какво се опитвате да направите, какво очаквате да се случи и какво се случва вместо това.</param>
+        <param name="tip3">Кажете ни какви са стъпките, за да пресъздадем проблема ви.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Изглед:</param>
+        <param name="X">X</param>
+        <param name="close">Прикл.</param>
+        <param name="MLclose">Приключване</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Изтр.</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Изтриване</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Изтриване</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Запис</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Конфигуриране</param>
+        <param name="activate">Активиране</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Деактивиране</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Управление</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Експортиране</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Следваща страница</param>
+        <param name="prev">Предишна страница</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Общо преглеждани елементи: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Да се показват {0} {1} записа на страница от списъка</param>
+        <param name="number_shown_detail_page">Винаги да се показват {0} {1} {2} записи за свързан списък</param>
+        <param name="number_shown_adjust_less_link">по-малко</param>
+        <param name="number_shown_adjust_more_link">повече</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">всички</param>
+        <param name="last_page">Обратно към предишната страница</param>
+        <param name="last_list">Обратно към списъка</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Обратно към списъка:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Обратно към списъка: <Entity entity="0" plural="y"/> от връзки</param>
+        <param name="last_suggested_solution_list">Обратно към списъка с <suggested/> <solutions/></param>
+        <param name="last_solution_search_list">Обратно към резултатите от търсенето на <solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Обратно към <entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Действия:</param>
+        <param name="checkboxPrompt">Моля, изберете поне един ред</param>
+        <param name="checkboxSinglePrompt">Моля, изберете само един ред</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Избраните от вас опции на тази страница ще бъдат загубени. Искате ли да продължите?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Трябва да изберете {0} реда или по-малко, за да извършите тази операция.</param>
+        <param name="selectionLimit">Не можете да изберете повече от {0} реда.</param>
+        <param name="login">Влизане</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Сесия</param>
+        <param name="none">Няма записи, които да бъдат показани.</param>
+        <param name="no_rows">Няма избрани редове</param>
+        <param name="subtotal">Междинна сума:</param>
+        <param name="total">Общо:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Избор на всички елементи</param>
+        <param name="clearAllInfo">Премахване на избора на всички елементи</param>
+        <param name="rename">Преименуване</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Избор</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Премахване на избора</param>
+        <param name="toggleall">Показване на всички редове</param>
+        <param name="refresh">Обновяване</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Моля, изберете изглед.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Посоченият от вас изглед превишава максималния размер. Моля, конкретизирайте критериите си за търсене, като редактирате изгледа или създадете нов изглед.</param>
+    <param name="switch_view">Промяна на изгледа</param>
+    <param name="records_x_to_y">Показване на записи {0} - {1}</param>
+    <param name="records_x_to_y_more">Показване на записи {0} - {1}, налични са още записи</param>
+    <param name="records_x_to_y_more_showing_max">Показване на записи {0} - {1}. Тази страница може да показва само първите 1000 записа, въпреки че са налични повече. За да покажете по-малко записи, моля, конкретизирайте критериите си за преглед на списък. За да отпечатате повече от 1000 записа, моля, изгответе отчет и след това щракнете върху бутона „Изглед за печат“ в отчета.</param>
+    <param name="number_of_records">Брой записи</param>
+        <param name="createCase">Създаване на <case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Щракнете, за да разширите/свиете вмъкнатите елементи.</param>
+        <param name="expand">Щракнете, за да разширите вмъкнатите елементи.</param>
+        <param name="collapse">Щракнете, за да свиете вмъкнатите елементи.</param>
+        <param name="shortExpand">Разширяване</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Свиване</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">В състояние „разширено“</param>
+        <param name="collapsed">В състояние „свито“</param>
+        <param name="level">Ниво</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Йерархия:</param>
+        <param name="siblings">Сродни:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Извършване на справка</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Избор на обект</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Кой</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Какво</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Търсенето изведе повече от максималния брой редове ({0}). Моля, конкретизирайте критериите за търсенето си.</param>
+        <param name="Copyright">Копие, защитено с авторско право &amp;copy; 2000-{0} г. salesforce.com, inc.</param>
+        <param name="Rights">Всички права запазени.</param>
+        <param name="useWildcards">Можете да използвате „*“ като заместващ знак след други знаци, за да подобрите резултатите от търсенето си.  Например „ad*“ ще изведе всички записи, които съдържат в името си „ad“.</param>
+        <param name="useWildcardsWithSearch">Можете да използвате „*“ като заместващ знак след други знаци, за да подобрите резултатите от търсенето си.</param>
+        <param name="error_lookup_multiple_matches_ile">Намерени са множество елементи.&lt;br&gt;Щракнете върху иконата, за да конкретизирате търсенето.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Разширяване на списъка</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Разширен списък</param>
+        <param name="sharing">Споделяне</param>   <!-- aliased across labels; do not change -->
+        <param name="why">Защо?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Повече филтри &gt;&gt;</param>
+        <param name="less_filters">По-малко филтри &lt;&lt;</param>
+        <param name="by_keyword">По ключова дума</param>
+        <param name="by_filter">По филтър на полета</param>
+        <param name="too_many">Вашето търсене изведе повече от {0} реда. Само първите {0} се показват. Моля, конкретизирайте критериите за търсенето.</param>
+        <param name="Results">Резултати</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Търсене:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Оценка</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Поле</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Оператор</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Стойност</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Можете да избирате филтри „или“, като въведете множество елементи в третата графа.</param>
+        <param name="tip_1">Можете да въведете до 10 елемента, отделени със запетаи. Например: CA, NY, TX, FL ще търси CA или NY или TX или FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Оградете с кавички данните, които включват запетаи. Например "2,01","10,5" търси 2,01 или 10,5.</param>
+        <param name="tip_3">За полета с отметки използвайте „Грешно“ и „Вярно“, например „Активно е Вярно“ или „Преобразуван е Грешно“.</param>
+        <param name="tip_4">Базираните на телефонни кодове записи на правила може да се наложи да включат скоби, например: Телефон, започващ с (415), (510).</param>
+        <param name="tip_5">Ако използвате приложението за превод, въведете всички критерии за филтриране, като използвате главни стойности.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Налице</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Избрани</param>
+        <param name="assignLicensesDescription">Отметнете квадратчето до всеки от пакетите, които искате да присвоите на този потребител, след което щракнете върху „Присвояване“. До пакетите, за които не са налични необходимите лицензи или чието състояние е „изтекъл“ или „временно преустановен“, няма такива квадратчета.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Портал по подразбиране</param>
+        <param name="3">Интернет магазин</param>
+        <param name="4">Привет</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Потвърждение</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Информация</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Грешка</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Предупреждение</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Защитен</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Честота</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Ежедневно</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Ежеседмично</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Ежемесечно</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">Всеки работен ден</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">Всеки ден</param>
+       <param name="lastDay">последен</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">първия</param>
+    <param name="on2">втория</param>
+    <param name="on3">третия</param>
+    <param name="on4">четвъртия</param>
+    <param name="onLast">последния</param>
+    <param name="startTime">Начало</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Край</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Предпочитан начален час</param>
+    <param name="noPreference">Без предпочитание</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Точният начален час ще зависи от дейността на опашката за работата.</param>
+
+    <param name="diffTimeZoneMsg">Часовият пояс за тази настройка за месечна честота е:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Настройките за честота се показват в часовия пояс на потребителя, който последно ги е редактирал.&lt;br&gt;Всички промени, които правите по тези настройки, ще бъдат актуализирани, за да съответстват на вашия часови пояс.</param>
+
+      <param name="weeklyRecurrence">Повтаря се всяка седмица в {0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Повтаря се всяка седмица в</param>
+      <param name="monthlyRecurrence1">На всяко {0} число от месеца</param>
+      <param name="monthlyRecurrence1LegendLabel">Конкретен</param>
+      <param name="monthlyRecurrence2LegendLabel">По избор</param>
+      <param name="monthlyRecurrence2">На всеки {2} {0} {3} {1} всеки месец</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">На всеки {0} {1} всеки месец</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">На конкретно число всеки месец</param>
+      <param name="accessibleMonthly2">На различен ден, зададен от потребителя, всеки месец</param>
+      <param name="accessibleOnDayN">Конкретен ден</param>
+      <param name="accessibleOnDayNOfWeek">Повторение</param>
+      <param name="accessibleOnDayName">Ден</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Тази проста проверка спомага предотвратяването на достъпа на злонамерени програми до вашите данни.  Вашият администратор изисква извършването на тази проверка при изтегляне на голям обем данни.  Проверката никога няма да се изисква повече от веднъж за една сесия на влизане.</param>
+        <param name="imagePrompt">Въведете горните думи, разделени с интервал:</param>
+        <param name="audioPrompt">Въведете цифрите, които чувате:</param>
+        <param name="refresh">Нова проверка</param>
+        <param name="audio">Нова аудио проверка</param>
+        <param name="image">Нова проверка с картинки</param>
+        <param name="incorrect">Невярно, опитайте отново</param>
+        <param name="moreinfo">Повече информация &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; По-малко информация</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Щракнете за повече...</param>
+        <param name="show">Показване на панел с откроявания</param>
+        <param name="hide">Скриване на панел с откроявания</param>
+        <param name="empty">За този запис няма откроени полета за показване.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Направлявана обиколка</param>
+        <param name="closeIntro">Не, благодаря</param>
+        <param name="closeOutro">Затваряне</param>
+        <param name="showLater">Да се покаже по-късно</param>
+        <param name="replay">Повторение</param>
+        <param name="continue">Напред</param>
+        <param name="previous">Назад</param>
+        <param name="startTour">Начало на обиколката</param>
+        <param name="endTour">Край на обиколката</param>
+        <param name="stepCounter">{0} от {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Подробности</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Препоръки</param>
+        <param name="hideBucketTip">&lt;br&gt;Пуснете тук за скриване на елементи&lt;br/&gt;от страница.</param>
+        <param name="hiddenListTip">За да се покажат отново дадени скрити елементи, ги плъзнете обратно в горния списък.</param>
+        <param name="hiddenListShowLinkLabel">{0} скрити</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Обратно към началото</param>
+        <param name="multipleItemDragGhost">Множество елементи (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Съвместимост на страница с подробности с браузъри</param>
+        <param name="compatibilityMsgSubTitle">За съжаление не поддържаме този браузър</param>
+        <param name="compatibilityMsg1">Не можем да покажем новата страница с подробности в настоящия ви браузър.</param>
+        <param name="compatibilityMsg2">Можете да използвате новия дизайн винаги, когато влезете в един от тези съвместими браузъри:</param>
+        <param name="supportedIE">Internet Explorer 7 или 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Благодарим ви!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Направи класическия изглед по подразбиране за мен</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Въведете тук {0} за търсене...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Нито едно {0} не отговаря на вашето търсене.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Страница {1} от {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>

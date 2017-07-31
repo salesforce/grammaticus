@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+-->
+<!DOCTYPE iniFile
+  SYSTEM "labels.dtd">
+<iniFile>
+    <!--
+        "Exception" section is now in ex.xml.
+    -->
+    <section name="Combo" all_languages="yes" public="false">
+        <param name="Title">CasetăCombo</param>
+        <param name="select_default">Selectaţi de mai jos.</param>   <!-- aliased across labels; do not change -->
+        <param name="select">Selectaţi o {0} de mai jos.</param>
+        <!-- must sync with ComboBoxElement -->
+        <param name="disp_1"><Subject_Activity/></param>
+        <param name="disp_2" alias="Related_Lists.competitors_name"/>
+        <param name="disp_3"><Contact/> <primary/></param>
+    </section>
+    <section name="Global_Entity" all_languages="yes" public="false">
+        <param name="Access">Acces</param>   <!-- aliased across labels; do not change -->
+        <param name="ManagedHeader">(Gestionat)</param>
+        <param name="activity_history">Istoric activitate</param> <!--aliased across labels - do not change-->
+        <param name="additional_info">Informaţii suplimentare</param> <!--aliased across labels - do not change-->
+        <param name="alias">Alias</param> <!--aliased across labels - do not change-->
+        <param name="assigned_to"><Assigned_To_Activity/></param> <!--aliased across labels - do not change-->
+        <param name="assistant">Asistent</param>
+        <param name="assistant_name">Nume asistent</param>   <!-- aliased across labels; do not change -->
+        <param name="assistant_phone">Telefon asistent</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone">Tel. asist.</param>   <!-- aliased across labels; do not change -->
+        <param name="asst_phone_ext">Interior tel. asist.</param>   <!-- aliased across labels; do not change -->
+        <param name="birthdate">Data naşterii</param>   <!-- aliased across labels; do not change -->
+        <param name="body">Corp</param>   <!-- aliased across labels; do not change -->
+        <param name="company">Companie</param> <!--aliased across labels - do not change-->
+        <param name="created_by">Creat de</param> <!--aliased across labels - do not change-->
+        <param name="created_by_id">Creat de ID</param>   <!-- aliased across labels; do not change -->
+        <param name="created_by_alias">Creat de alias</param> <!--aliased across labels - do not change-->
+        <param name="CurrencyIsoCode">Cod ISO valută</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_fields">Câmpuri personalizate</param> <!--aliased across labels - do not change-->
+        <param name="default_status">Stare implicită</param>   <!-- aliased across labels; do not change -->
+        <param name="detail">Detalii {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="department">Departament</param>   <!-- aliased across labels; do not change -->
+        <param name="edit">Editare {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="expected_revenue">Venit estimat</param>
+        <param name="first_name">Prenume</param> <!-- aliased across app - do not change -->
+        <param name="last_name">Nume</param> <!-- aliased across app - do not change -->
+        <param name="first_name_local">Prenume (Local)</param>   <!-- aliased across labels; do not change -->
+        <param name="last_name_local">Nume (Local)</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_quarter">Trimestru fiscal</param>   <!-- aliased across labels; do not change -->
+        <param name="fiscal_year">An fiscal</param>   <!-- aliased across labels; do not change -->
+        <param name="full_name">Nume complet</param> <!-- aliased across app - do not change -->
+        <param name="group">Grup</param> <!-- aliased across app - do not change -->
+        <param name="group_name">Nume grup</param>   <!-- aliased across labels; do not change -->
+        <param name="queue_name">Nume coadă</param>   <!-- aliased across labels; do not change -->
+        <param name="industry">Industrie</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by">Ultima modificare de</param> <!-- aliased across app - do not change -->
+        <param name="last_modified_by_id">Ultima modificare după ID</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_by_alias">Ultima modificare după alias</param><!-- aliased across app - do not change -->
+        <param name="last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="master_record_id">ID înregistrare coordonatoare</param>
+        <param name="mobile">Mobil</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile_phone">Telefon mobil</param> <!-- aliased across app - do not change -->
+        <param name="mobile_phone_ext">Interior tel. mobil</param>   <!-- aliased across labels; do not change -->
+        <param name="new_sharing">Partajare nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="assigned_alias">Alias atribuit</param>   <!-- aliased across labels; do not change -->
+        <param name="available_list">Listă disponibilă</param>   <!-- aliased across labels; do not change -->
+        <param name="company_name">Nume companie</param> <!-- aliased across app - do not change -->
+        <param name="activities">Activităţi</param>   <!-- aliased across labels; do not change -->
+        <param name="no_attachments">nicio ataşare</param>   <!-- aliased across labels; do not change -->
+        <param name="no_documents"><no/> <document/></param>
+        <param name="address_info">Informaţii adresă</param>   <!-- aliased across labels; do not change -->
+        <param name="declined">Refuzat</param>   <!-- aliased across labels; do not change -->
+        <param name="default">Implicit</param>  <!-- aliased across labels; do not change -->
+        <param name="default_priority">Prioritate implicită</param> <!-- aliased across app - do not change -->
+        <param name="create_new_view">Creare ecran nou</param>   <!-- aliased across labels; do not change -->
+        <param name="custom_info">Informaţii personalizate</param> <!-- aliased across app - do not change -->
+        <param name="duplicate_status">Stare dublată</param> <!-- aliased across app - do not change -->
+        <param name="email_address">Adresă de e-mail</param> <!-- aliased across app - do not change -->
+        <param name="email_name">Nume e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="email_template">Şablon de e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="email">E-mail:</param>   <!-- aliased across labels; do not change -->
+        <param name="enterprise_integration_links">Linkuri personalizate</param>   <!-- aliased across labels; do not change -->
+        <param name="file_size">Dimensiune fişier</param> &gt;<!-- aliased across app - do not change -->
+        <param name="history" alias="Related_Lists.history_title"/>
+        <param name="history_event_unavailable">Nu există date disponibile</param>
+        <param name="history_event_checked">Câmp bifat {0}</param>
+        <param name="history_event_unchecked">Câmp nebifat {0}</param>
+        <param name="how_do_i_specify_info">Cum specific ce informaţii se captează?</param>   <!-- aliased across labels; do not change -->
+        <param name="internal_source">Sursă internă</param>   <!-- aliased across labels; do not change -->
+        <param name="interval">Interval:</param>   <!-- aliased across labels; do not change -->
+        <param name="salutation">Formulă de salut</param>   <!-- aliased across labels; do not change -->
+        <param name="select_new_owner">Selectare proprietar nou</param>
+        <param name="select_a_view">Selectaţi o vizualizare din lista verticală pentru a vizualiza o listă de rezultate asociate.</param>   <!-- aliased across labels; do not change -->
+        <param name="select_a_folder">Selectaţi un folder din lista verticală pentru a vizualiza o listă de rezultate asociate.</param>
+        <param name="select_the_file">Selectare fişier</param> &gt;<!-- aliased across app - do not change -->
+        <param name="select_the_fields">Selectaţi câmpurile pentru de inclus:</param>   <!-- aliased across labels; do not change -->
+        <param name="signature">Semnătură</param>   <!-- aliased across labels; do not change -->
+        <param name="size" alias="Related_Lists.documents_size"/>
+        <param name="subject">Subiect</param> <!-- aliased across app - do not change -->
+        <param name="system_info">Informaţii despre sistem</param>   <!-- aliased across labels; do not change -->
+        <param name="website">Site Web</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="owner_alias">Alias proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_first_name">Prenume proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_id">ID proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_last_name">Nume proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_name">Nume proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role">Rol proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_display">Afişare rol proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="owner_role_name">Nume rol proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="ownership" alias="Related_Lists.attachments_owner"/>
+        <param name="parent" alias="Related_Lists.parent"/>
+        <param name="parent_account"><Parent_Account/></param>
+        <param name="primary">Principal</param>
+        <param name="primary_contact"><Contact/> <primary/></param>
+        <param name="priority">Prioritate</param><!--aliased across labels - do not change -->
+        <param name="private">Privat</param>
+        <param name="role">Rol</param> <!--aliased across labels - do not change -->
+        <param name="rating">Evaluare</param>   <!-- aliased across labels; do not change -->
+        <param name="quick_create">Creare rapidă</param>   <!-- aliased across labels; do not change -->
+        <param name="recently_created" alias="Page_Overviews.hotlist_recently_created"/>
+        <param name="recently_modified" alias="Page_Overviews.hotlist_recently_modified"/>
+        <param name="recently_viewed">Vizualizate recent</param>
+        <param name="top5">Primele 5 întrebări</param>   <!-- aliased across labels; do not change -->
+        <param name="vendor">Distribuitor</param>
+        <param name="customer">Proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="supplier">Furnizor</param>   <!-- aliased across labels; do not change -->
+        <param name="recordTypeId">ID tip înregistrare</param>   <!-- aliased across labels; do not change -->
+        <param name="divisionId">ID divizie</param>   <!-- aliased across labels; do not change -->
+        <param name="tableEnumOrId">Enumerare sau ID tabel</param>
+        <param name="editable">Editabil</param>   <!-- aliased across labels; do not change -->
+        <param name="nameNorm">Nume normalizat</param>   <!-- aliased across labels; do not change -->
+        <param name="privacyStatment">Declaraţie de confidenţialitate</param>   <!-- aliased across labels; do not change -->
+        <param name="manageableState">Stare gestionabilă</param>
+        <param name="namespacePrefix">Prefix spaţiu de nume</param>   <!-- aliased across labels; do not change -->
+        <param name="moduleNamespace">Nume de spaţiu pentru modul</param>   <!-- aliased across labels; do not change -->
+        <param name="InstalledBy">Pachet instalat</param>
+        <param name="initialVersion">Prima versiune lansată</param>
+        <param name="lastVersion">Versiunea finală disponibilă</param>
+        <param name="availableInVersions">Disponibil în versiuni</param>
+        <param name="DeveloperName">Nume dezvoltator</param>
+        <param name="apiName">Nume API</param>
+        <param name="InvalidDeveloperNameOnEntity">Câmpul {0} poate conţine numai caractere de subliniere şi caractere alfanumerice. Trebuie să fie unic, să înceapă cu o literă, să nu conţină spaţii, să nu se termine cu un caracter de subliniere şi să nu conţină două caractere de subliniere consecutive.</param>
+        <param name="missingDevName">{0} trebuie furnizat.</param>
+        <param name="duplicateDevName">{0} există deja sau a fost deja utilizat anterior.  Alegeţi un alt nume unic.</param>
+        <param name="manageabilityOverride">Suprascriere posibilitate de gestionare</param>
+        <param name="AMPMId">ID AMPM</param>
+        <param name="MetricsDate">Dată indicator</param>
+        <param name="MayEdit">Poate să editeze</param>
+        <param name="IsLocked">Este blocat</param>
+        <param name="LastViewedDate">Data ultimei vizualizări</param>
+    </section>
+
+    <section name="Tab_Home" all_languages="yes" public="false">
+        <param name="title">Creare</param>   <!-- aliased across labels; do not change -->
+        <param name="setup">Configurare</param>   <!-- aliased across labels; do not change -->
+        <param name="create_new">Creare nou…</param>
+        <param name="new_account"><Account/></param>
+        <param name="new_contact"><Contact/></param>
+        <param name="new_opportunity"><Opportunity/></param>
+        <param name="new_event"><Event/></param>
+        <param name="new_task"><Task/></param>
+        <param name="new_file">Fişier</param>
+        <param name="new_forecast">Prognoză</param>   <!-- aliased across labels; do not change -->
+        <param name="new_lead"><Lead/></param>
+        <param name="recycle">Coş de reciclare</param>   <!-- aliased across labels; do not change -->
+        <param name="new_case"><Case/></param>
+        <param name="new_solution"><Solution/></param>
+        <param name="new_campaign"><Campaign/></param>
+        <param name="new_contract"><Contract/></param>
+        <param name="send_an_email">Trimitere e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/></param>
+        <param name="new_product"><Product/></param>
+        <param name="new_report">Raport</param>   <!-- aliased across labels; do not change -->
+        <param name="new_idea"><Idea/></param>
+        <param name="new_question"><Question/></param>
+    </section>
+
+    <section name="ModStamp" all_languages="yes" public="false">
+        <param name="created" alias="Global_Entity.created_by"/>
+        <param name="modified">Modificat de</param>   <!-- aliased across labels; do not change -->
+        <param name="created_date">Data creării</param> <!-- aliased across app - do not change -->
+        <param name="modified_date">Data modificării</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="automated_process">Proces automatizat</param>
+        <param name="partner_network">Utilizator conexiune</param>
+        <param name="external_who">Utilizator public</param>
+    </section>
+    <section name="Edit" all_languages="yes" public="false">
+        <param name="Example">Exemplu</param>   <!-- aliased across labels; do not change -->
+        <param name="EditPageError">Eroare: Date incorecte. &lt;br/&gt;Revizuiţi toate mesajele de eroare de mai jos pentru a corecta datele.</param>
+        <param name="EditPageError2">Revizuiţi toate mesajele de eroare de mai jos pentru a corecta datele.</param>
+        <param name="Required">Trebuie să introduceţi o valoare</param>
+        <param name="RequiredWithFieldList">Lipsesc câmpuri obligatorii: {0}</param>
+        <param name="RequiredSymbol">*</param>
+        <param name="RequiredCss">Necesar pentru autoservire</param>
+        <param name="RequiredBy">Solicitat de: {0}</param>
+        <param name="Requires">Necesită: {0}</param>
+        <param name="TooLong">Valoare prea lungă pentru câmp</param>
+        <param name="CannotExceedXCharacters">Valoarea nu poate depăşi {0} caractere</param>
+        <param name="MustBeXCharacters">Valoarea trebuie să aibă exact {0} caractere</param>
+        <param name="MustBeNumber">Valoarea trebuie să fie numerică</param>
+        <param name="StatusCloseRequired">Trebuie să marcaţi minim o stare ca închisă</param>
+        <param name="StatusDefaultRequired">Trebuie să marcaţi minim o stare ca implicită</param>
+        <param name="StatusInUse">Valorile stării următoare sunt în uz şi nu pot fi editate sau şterse: {0} </param>
+        <param name="CustomInfo" alias="Global_Entity.custom_info"/>
+        <param name="InvalidDate">Dată incorectă</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidMaxExpDate">Dată incorectă. Nu puteţi să setaţi o dată care să depăşească {0}</param>
+        <param name="InvalidDateTime">Dată şi oră incorecte</param>
+        <param name="InvalidColor">Culoare incorectă</param>
+        <param name="InvalidCurrency" alias="Edit.UnsupportedCurrency"/>
+        <param name="InvalidInetAddress">Adresă Internet incorectă</param>
+        <param name="InvalidOption">A fost aleasă o opţiune incorectă.</param>
+        <param name="UnsupportedCurrency">Valută incorectă</param>   <!-- aliased across labels; do not change -->
+        <param name="InvalidUrl">URL incorect</param>
+        <param name="NoneSelectedInPicklist">--niciunul selectat--</param>
+        <param name="InvalidTime">Nu este o oră corectă</param>
+        <param name="InvalidNumber">Număr incorect</param>   <!-- aliased across labels; do not change -->
+        <param name="TooLargeNumber">Numărul este prea mare.</param>
+        <param name="TooLargeNumberWithScale">Numărul trebuie să fie mai mic decât {0}.</param>
+        <param name="TooSmallNumberWithScale">Numărul trebuie să fie mai mare decât {0}.</param>
+        <param name="NonpositiveError">Trebuie să fie pozitiv.</param>
+        <param name="NegativeError">Nu trebuie să fie negativ.</param>
+        <param name="PositiveError">Nu trebuie să fie pozitiv.</param>
+        <param name="NonnegativeError">Trebuie să fie negativ.</param>
+        <param name="NonzeroError">Nu trebuie să fie zero.</param>
+        <param name="NonintegerError">Trebuie să fie un număr întreg.</param>
+        <param name="InvalidPercent">Procent incorect</param>
+        <param name="InvalidAfterRoundOff">Numărul {0} este incorect după rotunjirea la scara: {1}</param>
+        <param name="CharactersRemaining">rămas</param>
+        <param name="CharactersOver">peste limită</param>
+        <param name="TooManySelection">Nu puteţi selecta mai mult de {0} elemente</param>
+        <param name="DuplicateValueOnEditOnFieldWithOtherRowLink">Dublare valoare pentru înregistrarea: {0}</param>
+        <param name="DuplicateValueOnEditInHeaderWithOtherRowLink">Valoarea ascunsă (neafişată) a câmpului dublează valoarea pentru înregistrarea: {0}</param>
+        <param name="DuplicateValueOnRowWithFieldNameAndOtherRowId">{0} dublează valoarea pentru înregistrarea cu ID: {1}</param>
+        <param name="True">Adevărat</param>   <!-- aliased across labels; do not change -->
+        <param name="False">Fals</param>   <!-- aliased across labels; do not change -->
+        <param name="MalformedDomain">Domeniu incorect</param>
+        <param name="ReadOnly">Nu puteţi edita acest câmp</param>
+    </section>
+    
+    <!-- Entries in this section are only used by the API and don't need translating -->
+    <!-- Start do not translate -->
+    
+    <!-- End do not translate -->
+
+    <section name="Buttons" all_languages="yes" public="false">
+        <param name="abort">Abandonare</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept">Acceptare</param>
+    <!-- aliased across labels; do not change -->
+        <param name="accept_changes">Acceptare modificări</param>
+        <param name="activate" alias="List.activate"/>
+        <param name="activate_test_instance">Activare sandbox</param>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="add_campaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_comment">Adăugare comentariu</param>   <!-- aliased across labels; do not change -->
+        <param name="add_components">Adăugare componente</param>
+        <param name="add_contacts">Adăugare <contacts/></param>
+        <param name="add_leads">Adăugare <leads/></param>
+        <param name="add_more_users">Adăugare alţi utilizatori</param>
+        <param name="add_multiple_users">Adăugare mai mulţi utilizatori</param>
+        <param name="add_product">Adăugare <product/></param>
+
+        <param name="addproduct" alias="Buttons.add_product"/>
+        <param name="addquoteline">Adăugare element linie</param>
+        <param name="addcontractline" alias="Buttons.addquoteline"/>
+        <param name="add_sample_dashboard">Adăugare exemplu de tablou de bord</param>
+        <param name="add_to_call_center">Adăugare la Call Center</param>
+        <param name="add_to_campaign">Adăugare la <campaign/></param>
+        <param name="addcampaign" alias="Buttons.add_campaign"/>
+        <param name="addtocampaign" alias="Buttons.add_to_campaign"/>
+        <param name="add_to_outlook">Adăugare la Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="addtooutlook" alias="Buttons.add_to_outlook"/>
+        <param name="add_to_pricebook">Adăugare la <pricebook/></param>
+        <param name="add_remove">Adăugare/eliminare</param>
+        <param name="addinfluence" alias="Buttons.addcampaign"/>
+        <param name="advanced_setup">Configurare avansată</param>
+        <param name="advancedsetup" alias="Buttons.advanced_setup"/>
+        <param name="approve">Aprobare</param>   <!-- aliased across labels; do not change -->
+        <param name="assign">Atribuire</param>   <!-- aliased across labels; do not change -->
+        <param name="assign_users_to_role">Atribuire utilizatori la rol</param>
+        <param name="attach_document" alias="Global.attach_document"/>
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="back_dashboard">Înapoi la lista de rapoarte</param>
+        <param name="billing_and_licenses">Facturare şi licenţe</param>   <!-- aliased across labels; do not change -->
+        <param name="billing_info">Informaţii despre facturare</param>
+        <param name="briefcase_setup">Configurare servietă</param>
+        <param name="cancel">Revocare</param> <!-- aliased across labels - do not change -->
+        <param name="cancel_dispatch">Revocare trimitere</param>
+        <param name="cancel_test_instance">Revocare sandbox</param>
+        <param name="caseselect" alias="Page_SolutionSearch.Select"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="change_corporate_currency">Modificare corporaţie</param>
+        <param name="change_currency">Modificare valută</param>
+        <param name="change_owner">Schimbare proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_change_owner">Acceptare şi schimbare proprietar</param>   <!-- aliased across labels; do not change -->
+        <param name="accept_and_assign_master">Acceptare şi atribuire coordonator</param>
+        <param name="changeowner" alias="Buttons.change_owner"/>
+        <param name="change_password" alias="Global.change_password"/>
+        <param name="change_status">Modificare stare</param>   <!-- aliased across labels; do not change -->
+        <param name="changestatus" alias="Buttons.change_status"/>
+        <param name="check_availability">Verificare disponibilitate</param>   <!-- aliased across labels; do not change -->
+        <param name="check_spelling">Verificare ortografie</param>   <!-- aliased across labels; do not change -->
+        <param name="choose_pricebook">Alegere <pricebook/></param>
+        <param name="choosepricebook" alias="Buttons.choose_pricebook"/>
+        <param name="cleanse">Curăţare</param>
+        <param name="clone" alias="Detail_Pages.clone"/>
+        <param name="overview">Prezentare generală</param>   <!-- aliased across labels; do not change -->
+        <param name="overviewActionLabel">Fila {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="listActionLabel">Listă</param>   <!-- aliased across labels; do not change -->
+        <param name="cloneaschild"><Child_Case/>: Copiere detalii părinte</param>
+        <param name="close" alias="List.MLclose"/>
+        <param name="closecase" alias="Page_CaseCloseEdit.TitleSingle"/>
+        <param name="collapse_all">Restrângere totală</param>   <!-- aliased across labels; do not change -->
+        <param name="comboButton">Alegere element din lista de selecţii</param>
+        <param name="composegmail">Scriere mesaj Gmail</param>   <!-- aliased across labels; do not change -->
+        <param name="confirm">Confirmare</param>   <!-- aliased across labels; do not change -->
+        <param name="continue">Continuare</param> <!-- aliased across labels - do not change -->
+        <param name="continueAnyway">Continuare oricum</param>
+        <param name="convert">Conversie</param>   <!-- aliased across labels; do not change -->
+        <param name="convertlead">Conversie <lead/></param>
+        <param name="create">Creare</param>
+        <param name="create_follow_up_event">Creare <event/> de urmărire</param>
+        <param name="create_follow_up_task">Creare <task/> de urmărire</param>
+        <param name="create_new">Creare nou {0}</param>
+        <param name="create_new_section">Creare secţiune nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="create_opportunity">Creare <opportunity/></param>
+        <param name="create_test_instance">Creare Sandbox</param>   <!-- aliased across labels; do not change -->
+        <param name="create_test_instance_db_dot_com">Crearea bază de date de test</param>   <!-- aliased across labels; do not change -->
+        <param name="create_wtl_form">Creare formular Web-la-client potenţial</param>
+        <param name="create_new_holiday">Creare sărbătoare nouă</param>
+        <param name="create_new_sla_process">Proces nou de <entitlement/></param>
+        <param name="create_new_milestone_type">Fază nouă</param>
+        <param name="currency_setup">Configurare valută</param>
+        <param name="customer_view">Vizualizare client</param>
+        <param name="customize">Personalizare</param>   <!-- aliased across labels; do not change -->
+        <param name="customize_columns">Personalizare afişaj pentru toţi utilizatorii</param>
+        <param name="page_settings">Setări pagină</param>
+        <param name="customize_page">Personalizare pagină</param>   <!-- aliased across labels; do not change -->
+        <param name="customizeThisLayout">Editare aspect</param>   <!-- aliased across labels; do not change -->
+        <param name="dashboardmanager">Listă tablou de bord</param>
+        <param name="data_export">Export date</param>   <!-- aliased across labels; do not change -->
+        <param name="datadotcomclean">Ştergere</param>
+        <param name="deactivate" alias="List.deactivate"/>
+        <param name="decline">Refuzare</param>   <!-- aliased across labels; do not change -->
+        <param name="default_integration_links">Linkuri personalizate implicite</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="delete" alias="Image_Alt.del"/>
+        <param name="deleteAll" alias="AccSalesTeam.deleteAll"/>
+        <param name="deleteseries" alias="Page_Event.button_delete_series"/>
+        <param name="disable_appstore_user">Ştergere acces Checkout</param>
+        <param name="done" alias="Global.done"/>
+        <param name="done_dashboard">Examinare finalizată</param>
+        <param name="dont_save">Nu se salvează</param>
+        <param name="dont_show_page_again">Această pagină nu se afişează din nou</param>
+        <param name="download">Descărcare</param>
+        <param name="download_now">Descărcare acum</param>
+        <param name="download_sample_css_file">Descărcare exemplu de fişier CSS</param>
+        <param name="edit">Editare</param> <!-- aliased across labels - do not chage -->
+        <param name="editBeta">Editare [Beta]</param>
+        <param name="edit_all">Editare totală</param>
+        <param name="editallproduct" alias="Buttons.edit_all"/>
+        <param name="editallquoteline" alias="Buttons.edit_all"/>
+        <param name="edit_multiple_users">Editare utilizatori</param>
+        <param name="edit_rates">Editare cursuri</param>
+        <param name="edit_selected">Editare elemente selectate</param>
+        <param name="editProperties">Editare proprietăţi</param>   <!-- aliased across labels; do not change -->
+        <param name="exit_page">Ieşire din {0}</param>
+        <param name="enable_appstore_user">Acordare acces Checkout</param>
+        <param name="enable_as_partner">Activare ca partener</param>
+        <param name="enableaspartner" alias="Buttons.enable_as_partner"/>
+        <param name="enable_partnerforce">Activare conectare portal partener</param>
+        <param name="enable_self_service">Activare autoservire</param>
+        <param name="enable_users">Activare utilizatori noi</param>
+        <param name="enableForecasting">Activare prognoze personalizabile</param>   <!-- aliased across labels; do not change -->
+        <param name="enableselfservice" alias="Buttons.enable_self_service"/>
+        <param name="enter_training">Înscriere instruire</param>
+        <param name="erase_test_instance">Ştergere sandbox</param>
+        <param name="establish">Stabilire</param>
+        <param name="eventscheduler" alias="Buttons.event_scheduler"/>
+        <param name="expand_all">Extindere totală</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Detalii export</param>
+        <param name="export2" alias="List.export"/>
+        <param name="export_now">Export detalii acum</param>
+        <param name="export_background">Executare export în fundal...</param>
+        <param name="fctHistory">Istoric prognoză</param>   <!-- aliased across labels; do not change -->
+        <param name="fctSharing" alias="Sharing.sharing"/>
+        <param name="fctSummary">Rezumat prognoză</param>   <!-- aliased across labels; do not change -->
+        <param name="fieldValidations">Validări câmp</param>
+        <param name="find">Găsire</param>   <!-- aliased across labels; do not change -->
+        <param name="finddup" alias="LeadMerge.findDuplicates"/>
+        <param name="find_report">Găsire raport</param>   <!-- aliased across labels; do not change -->
+        <param name="find_document">Găsire <document/></param>
+        <param name="find_pricebooks">Găsire <pricebook/></param>
+        <param name="find_products">Găsire <product/></param>
+        <param name="find_solution">Găsire <solution/></param>
+        <param name="finished">Finalizat</param>   <!-- aliased across labels; do not change -->
+        <param name="followupevent" alias="Buttons.create_follow_up_event"/>
+        <param name="followuptask" alias="Buttons.create_follow_up_task"/>
+        <param name="forward">Înainte</param>   <!-- aliased across labels; do not change -->
+        <param name="forwardToConnections">Înainte la conexiuni</param>
+        <param name="generate" alias="Global.generate"/>
+        <param name="generate_wsdl">Generare WSDL</param>
+        <param name="generate_login_html">Generare conectare HTML</param>
+        <param name="getMoreInfo">Mai multe informaţii</param>
+        <param name="go">Executare!</param>   <!-- aliased across labels; do not change -->
+        <param name="page_help">Ajutor pentru această pagină</param>
+        <param name="help" alias="Global.how_do_i"/>
+        <param name="help_with_parameter">Ajutor {0}</param>
+        <param name="hide">Ascundere detalii</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="i_accept">Accept</param>
+        <param name="i_decline">Refuz</param>
+        <param name="impactAnalysis">Unde se utilizează?</param>
+        <param name="import">Import</param>   <!-- aliased across labels; do not change -->
+        <param name="import_leads">Import <leads/></param>
+        <param name="include_offline">Includere offline</param>
+        <param name="includeoffline" alias="Buttons.include_offline"/>
+        <param name="ins">Inserare</param>   <!-- aliased across labels; do not change -->
+        <param name="insert_selected">Inserare elemente selectate</param>   <!-- aliased across labels; do not change -->
+        <param name="install_now">Instalare acum</param>   <!-- aliased across labels; do not change -->
+        <param name="invite">Invitare</param>   <!-- aliased across labels; do not change -->
+        <param name="inviteToConnect">Invitaţie la conectare</param>
+        <param name="jigsawsearch">Preluare contacte</param>
+        <param name="join_meeting">Asociere la întâlnire</param>
+        <param name="jumpstart">Început rapid</param>
+        <param name="keep_in_touch">Solicitare actualizare</param>
+        <param name="layout_assignment">Atribuire aspect</param>
+        <param name="legal_view">Vizualizare juridică</param>   <!-- aliased across labels; do not change -->
+        <param name="lock">Blocare înregistrare</param>
+        <param name="log_call" alias="Image_Alt.log_call"/>
+        <param name="logcall" alias="Buttons.log_call"/>
+        <param name="log_note" alias="Image_Alt.log_note"/>
+        <param name="lognote" alias="Buttons.log_note"/>
+        <param name="login_as_partner">Conectare ca utilizator partener</param>
+        <param name="mail_merge" alias="Image_Alt.mail_merge"/>
+        <param name="mailmerge" alias="Buttons.mail_merge"/>
+        <param name="manage_members">Gestionare membri</param>
+        <param name="managemembers" alias="Buttons.manage_members"/>
+        <param name="newproposemeeting">Solicitare nouă de întâlnire</param>
+        <param name="add_members_search">Adăugare membri -  Căutare</param>
+        <param name="add_members_import">Adăugare membri - Import fişier</param>
+        <param name="edit_members_search">Editare membri -  Căutare</param>
+        <param name="update_members_import">Actualizare şi adăugare membri - Import fişier</param>
+        <param name="manage_call_center_users">Gestionare utilizatori Call Center</param>
+        <param name="map_lead_fields">Mapare <Lead_Fields/></param>
+        <param name="mark_as">Marcare ca…</param>
+        <param name="massclose" alias="Buttons.close"/>
+        <param name="member_import">Import membri</param>
+        <param name="merge" alias="ContactMergeWizard.merge"/>
+        <param name="modify_reminders">Modificare mementouri individuale</param>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="new">Nou</param>
+        <param name="newcase">Nou</param>
+        <param name="new_addition_order">Ordine de adăugare nouă</param>
+        <param name="new_custom_object">Obiect personalizat nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_custom_report">Creare raport personalizat nou</param>
+        <param name="new_dashboard">Tablou de bord nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_dashboardcomponent">Componentă nouă tablou de bord</param>   <!-- aliased across labels; do not change -->
+        <param name="new_document"><Document/> <new/></param>
+        <param name="new_email_template">Şablon nou</param> <!-- aliased across labels - do not change -->
+        <param name="new_entity"><Entity entity="0"/> <new/></param>
+        <param name="new_entitlement_template">Şablon nou</param>
+        <param name="new_event"><Event/> <new/></param>
+        <param name="new_folder">Folder nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_group">Grup nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_queue">Coadă nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="new_note">Notă nouă</param>
+        <param name="new_object_custom_tab">Filă nouă obiect personalizat</param>   <!-- aliased across labels; do not change -->
+        <param name="new_online_meeting">Întâlnire online</param>
+        <param name="new_order">Comandă nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="new_personal_group">Grup personal nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_product"><Product/> <new/></param>
+        <param name="new_reduction_order">Comandă reducere nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="new_role">Rol nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_live_chat_button">Buton nou</param>
+        <param name="new_territory">Teritoriu nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <new/></param>
+        <param name="new_user">Utilizator nou</param>   <!-- aliased across labels; do not change -->
+        <param name="new_web_integration_tab">Filă integrare Web nouă</param>
+        <param name="newevent" alias="Buttons.new_event"/>
+        <param name="newtask" alias="Buttons.new_task"/>
+        <param name="newcontact" alias="Buttons.new"/>
+        <param name="newquote"><Quote/> <new/></param>
+        <param name="next" alias="Wizard.next"/>
+        <param name="no" alias="Global.no"/>
+        <param name="ok">OK</param>   <!-- aliased across labels; do not change -->
+        <param name="performAnotherUpdate">Efectuarea unei alte actualizări</param>
+        <param name="performAnotherMigrate">Migrare la alt profil</param>
+        <param name="preview">Examinare</param>   <!-- aliased across labels; do not change -->
+        <param name="previous" alias="Wizard.previous"/>
+        <param name="printview" alias="Detail_Pages.printable"/>
+        <param name="printableView" alias="Detail_Pages.printable"/>
+        <param name="printableview" alias="Buttons.printableView"/>
+        <param name="recalc">Recalculare</param>   <!-- aliased across labels; do not change -->
+        <param name="reestablish">Restabilire</param>
+        <param name="refreshData" alias="List.refresh"/>
+        <param name="reject">Refuzare</param>   <!-- aliased across labels; do not change -->
+        <param name="reject_changes">Refuzare modificări</param>
+        <param name="remove" alias="Global.remove"/>
+        <param name="remove_users">Eliminare utilizatori</param>
+        <param name="remove_from_briefcase">Eliminare din servietă</param>
+        <param name="remove_from_campaign">Eliminare din <campaign/></param>
+        <param name="reorder">Reordonare</param>   <!-- aliased across labels; do not change -->
+        <param name="repair">Reparare</param>   <!-- aliased across labels; do not change -->
+        <param name="replace" alias="Global.replace"/>
+        <param name="run_allTests">Executarea tuturor testelor</param>
+        <param name="run_test">Executare test</param>
+        <param name="quick_save">Salvare rapidă</param>
+        <param name="quick_save_hover">Salvare şi continuare editare</param>
+        <param name="reply">Răspuns</param>   <!-- aliased across labels; do not change -->
+        <param name="replyAll">Se răspunde tuturor</param>
+        <param name="reportmanager">Manager rapoarte</param>   <!-- aliased across labels; do not change -->
+        <param name="requestupdate" alias="Buttons.keep_in_touch"/>
+        <param name="reset_password">Resetare parolă</param>
+        <param name="reset_passwords">Resetare parole</param>
+        <param name="retrieve_prices">Preluare preţuri</param>
+        <param name="run" alias="Buttons.run_report"/>
+        <param name="run_report">Executare raport</param>   <!-- aliased across labels; do not change -->
+        <param name="save">Salvare</param> <!-- aliased across labels do not change -->
+        <param name="saving">Se salvează…</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_add_price">Salvare şi adăugare preţ</param>
+        <param name="save_and_add_product">Salvare şi adăugare <product/></param>
+        <param name="save_and_clone">Salvare şi copiere din nou</param>
+        <param name="save_and_close">Salvare şi închidere</param>
+        <param name="save_and_attach">Salvare şi adăugare ataşare</param>
+        <param name="save_and_continue">Salvare şi următorul</param>   <!-- aliased across labels; do not change -->
+        <param name="save_and_more">Salvare şi mai multe</param>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="save_and_new_event">Salvare şi <event/> <new/></param>
+        <param name="save_and_new_product">Salvare şi <product/> <new/></param>
+        <param name="save_and_new_task">Salvare şi <task/> <new/></param>
+        <param name="save_and_refresh">Salvare şi reîmprospătare</param>
+        <param name="save_and_send">Salvare şi trimitere actualizare</param>
+        <param name="event_scheduler">Vizualizare client şi echipă &gt;</param>
+        <param name="saveAs">Salvare ca</param>
+        <param name="schedule_to_email">Planificare pentru e-mail</param>
+        <param name="schedule_to_print">Planificare pentru imprimare</param>
+        <param name="scrutinize">Analiză</param>   <!-- aliased across labels; do not change -->
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="searchArticles">Găsire <KnowledgeArticles/></param>
+        <param name="newArticle">Nou</param>
+        <param name="select" alias="List.select"/>
+        <param name="select_template">Selectare şablon</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_jumpstart">Pornire rapidă autoservire</param>   <!-- aliased across labels; do not change -->
+        <param name="self_service_setup">Configurare autoservire</param>   <!-- aliased across labels; do not change -->
+        <param name="selfservice">Vizualizare/activare autoservire</param>
+        <param name="selfservselect" alias="Page_SolutionSearch.Select"/>
+        <param name="send">Trimitere</param>   <!-- aliased across labels; do not change -->
+        <param name="send_email" alias="Image_Alt.send_email"/>
+        <param name="sendemail" alias="Buttons.send_email"/>
+        <param name="send_email_all_contacts">Trimitere e-mail la <all/> <contacts article="the"/></param>
+        <param name="send_invitation">Salvare şi trimitere invitaţie</param>
+        <param name="set_status">Gestionare stare</param>
+        <param name="setup_and_install">Configurare şi instalare</param>
+        <param name="setup_roles">Configurare roluri</param>
+        <param name="setup_sharing">Configurare partajare</param>
+        <param name="sfga_instructions">Instrucţiuni imprimabile complet</param>
+        <param name="share" alias="Detail_Pages.share"/>
+        <param name="show">Afişare detalii</param>   <!-- aliased across labels; do not change -->
+        <param name="skip">Ignorare</param>   <!-- aliased across labels; do not change -->
+        <param name="sort">Sortare</param>   <!-- aliased across labels; do not change -->
+        <param name="start_meeting">Începere întâlnire</param>
+        <param name="startmeeting" alias="Buttons.start_meeting"/>
+        <param name="submit">Trimitere</param> <!-- Aliased across labels - do not change -->
+        <param name="submit_and_attach">Trimitere şi adăugare ataşare</param>
+        <param name="subscribe_now">Abonaţi-vă acum!</param> <!-- Aliased across labels - do not change -->
+        <param name="upgrade_now">Actualizaţi acum!</param>
+        <param name="suggest">Vizualizare <solutions/> <suggested/></param>
+        <param name="take_training_now">Începeţi instruirea acum!</param>
+        <param name="terminate">Terminare</param>
+        <param name="training_history">Istoric instruire</param>   <!-- aliased across labels; do not change -->
+        <param name="transfer">Transfer</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_now">Încercaţi acum!</param>
+        <param name="undelete">Anulare ştergere</param>   <!-- aliased across labels; do not change -->
+        <param name="undo">Anulare</param>
+        <param name="unlock">Deblocare înregistrare</param>
+        <param name="update">Actualizare</param>
+        <param name="update_campaign_history">Actualizare şi adăugare <campaign_Members/></param>
+        <param name="update_now">Actualizare acum</param>
+        <param name="update_statuses">Actualizare stări</param>
+        <param name="upload">Încărcare</param>
+        <param name="view" alias="Related_Lists.apicapture_view"/>
+        <param name="view_all" alias="Image_Alt.view_all"/>
+        <param name="viewall" alias="Buttons.view_all"/>
+        <param name="viewDependencies">Dependenţe câmp</param>   <!-- aliased across labels; do not change -->
+        <param name="view_deleted_components">Vizualizare componente şterse</param>
+        <param name="view_partnerforce">Vizualizare utilizator partener</param>
+        <param name="view_self_service">Vizualizare autoservire</param>
+        <param name="view_customer_success">Vizualizare utilizator portal client</param>
+        <param name="enable_customer_success">Actualizare utilizator portal client</param>
+        <param name="viewselfservice" alias="Buttons.view_self_service"/>
+        <param name="whatIsThis">Ce este aceasta?</param>   <!-- aliased across labels; do not change -->
+        <param name="yes" alias="Global.yes"/>
+        <param name="closeWindow">Închidere fereastră</param>
+        <param name="runApexRecalc">Recalculare partajare Apex</param>
+        <param name="disablecustomerportal">Dezactivare utilizator portal client</param>
+        <param name="disablepartnerportal">Dezactivare utilizator partener</param>
+        <param name="disablecustomerportalaccount">Dezactivare cont portal client</param>
+        <param name="disablepartnerportalaccount">Dezactivare cont partener</param>
+        <param name="voteup">Votare promovare</param>
+        <param name="votedown">Votare retrogradare</param>
+        <param name="markquestionunanswered">Marcare ca fiind fără răspuns</param>
+        <param name="markbestanswer">Marcare ca fiind cel mai bun răspuns</param>
+        <param name="requestUseSfdcAction">Găsire conexiuni</param>
+        <param name="addPET">Adăugare şablon drepturi</param>
+        <param name="truncate">Trunchiere</param>
+        <param name="disableprmsuperuser">Dezactivare superacces partener</param>
+        <param name="enableprmsuperuser">Activare superacces partener</param>
+        <param name="purchase_more">Mai multe cumpărături</param>
+    </section>
+    <section name="Related_Lists" all_languages="yes" public="false">
+        <param name="back_to_top">Înapoi la început</param>
+        <param name="descriptionText">Corp text prea lung. Vizualizaţi detaliile.</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view">Vizualizare fişier</param>   <!-- aliased across labels; do not change -->
+        <param name="parent">Părinte</param>   <!-- aliased across labels; do not change -->
+        <param name="no_records_found">Nu există informaţii asociate</param>
+        <param name="no_records">Nu există înregistrări de afişat</param> <!-- aliased across labels - do not change -->
+        <param name="NextMore">Afişare mai multe {0} »</param>
+        <param name="NextMoreGeneric">Afişare mai multe »</param>
+        <param name="view_more">Salt la listă</param>
+        <param name="view_more_tot">Salt la listă ({0})</param>
+        <param name="view_more_tot_plus">Salt la listă ({0}+)</param> <!-- -->
+        <param name="view_more_1">Salt la listă cu încă o înregistrare</param> <!-- Singular -->
+        <param name="view_more_n">Salt la listă cu încă {0} înregistrări</param> <!-- Plural -->
+        <param name="view_more_n_plus">Salt la listă cu încă {0}+ înregistrări</param> <!-- Plural and then some -->
+        <param name="more_available_goto_list">Mai multe disponibile; Salt la lista</param>
+        <param name="opportunities"><Opportunity plural="y"/></param>
+        <param name="opportunities_name"><Opportunity_Name/></param>
+        <param name="opportunities_amount"><Amount_Opportunity/></param>
+        <param name="opportunities_stage"><Stage_Opportunity/></param>
+        <param name="opportunities_close_date"><Close_Date_Opportunity/></param>
+        <param name="opportunities_probability">Probabilitate</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="opportunities_source">Sursă</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_won">Câştigat</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_fiscal_period">Perioadă fiscală</param><!-- aliased across labels - do not change -->
+        <!--  {0} = year; {1} = quarter -->
+        <param name="opportunities_fiscal_period_data">Trimestrul {1} al anului {0}</param>
+        <param name="opportunities_next_step">Pasul următor</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_type" alias="Global.type"/>
+        <param name="opportunities_lead_source"><Lead_Source/></param>
+        <param name="opportunities_update">Actualizare</param>   <!-- aliased across labels; do not change -->
+        <param name="opportunities_none" alias="Related_Lists.no_records"/>
+        <param name="activities"><Activities/> <open/></param>
+        <param name="activities_open"><Activities/> <open/></param>
+        <param name="activities_subject"><Subject_Activity/></param>
+        <param name="activities_contact"><Contact/></param>
+        <param name="activities_type"><Type_Activity/></param>
+        <param name="activities_date"><Date_Activity/></param>
+        <param name="activities_status"><Status_Activity/></param>
+        <param name="activities_priority"><Priority_Activity/></param>
+        <param name="activities_assigned_to"><Assigned_To_Activity/></param>
+        <param name="related_to">Asociat cu</param>  <!-- aliased across files - do not change -->
+        <param name="activities_none" alias="Related_Lists.no_records"/>
+        <param name="activities_open_none" alias="Related_Lists.no_records"/>
+        <param name="activities_history" alias="Global_Entity.activity_history"/>
+        <param name="activities_history_none" alias="Related_Lists.no_records"/>
+        <param name="NOTE">Notă</param>   <!-- aliased across labels; do not change -->
+        <param name="googledoc">Document Google</param>   <!-- aliased across labels; do not change -->
+        <param name="notes">Note şi ataşări</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_type" alias="Global.type"/>
+        <param name="notes_title">Titlu notă</param>   <!-- aliased across labels; do not change -->
+        <param name="notes_last_update" alias="Related_Lists.last_updated"/>
+        <param name="notes_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="ATTACHMENT">Ataşare</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments">Ataşări</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_type" alias="Global.type"/>
+        <param name="attachments_title">Nume fişier</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_last_update" alias="Related_Lists.last_updated"/>
+        <param name="attachments_none" alias="Related_Lists.no_records"/>
+        <param name="attachments_size" alias="Related_Lists.documents_size"/>
+        <param name="attachments_owner">Proprietate</param>   <!-- aliased across labels; do not change -->
+        <param name="attachments_view" alias="Buttons.view"/>
+        <param name="contact_roles"><Contact_Role plural="y"/></param>
+        <param name="contact_roles_name"><Contact_Name/></param>
+        <param name="contact_roles_account"><Account_Name/></param>
+        <param name="contact_roles_email"><Email_Contact/></param>
+        <param name="contact_roles_title" alias="Global.title"/>
+        <param name="contact_roles_phone"><Phone_Contact/></param>
+        <param name="contact_roles_role" alias="Global_Entity.role"/>
+        <param name="contact_roles_primary">Principal</param>
+        <param name="contact_roles_none" alias="Related_Lists.no_records"/>
+        <param name="cases"><Case/></param>
+        <param name="cases_title"><Case plural="y"/></param>
+        <param name="cases_none"><No/> <case/> de afişat</param>
+        <param name="cases_contact"><Contact_Name/></param>
+        <param name="cases_subject"><Subject_Case/></param>
+        <param name="cases_priority"><Priority_Case/></param>
+        <param name="cases_date">Dată</param>
+        <param name="cases_asset"><Asset/></param>
+        <param name="cases_asset_install_date"><Asset_InstallDate/></param>
+        <param name="cases_status"><Status_Case/></param>
+        <param name="cases_owner" alias="Global.owner"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="title">Titlu</param>
+        <param name="object_title">Titlu</param> <!-- translation note: title of files/attachment -->
+        <param name="name">Nume</param>
+        <param name="object_name">Nume</param>
+        <param name="date">Dată</param>
+        <param name="due_date">Dată scadentă</param>
+        <param name="contact"><Contact/></param>
+        <param name="opportunity"><Opportunity/></param>
+        <param name="assigned_to" alias="Global_Entity.assigned_to"/>
+        <param name="status" alias="Global.status"/>
+        <param name="last_updated">Ultima modificare</param> <!-- aliased across labels - do not change -->
+        <param name="last_updated_by">Actualizat de</param>   <!-- aliased across labels; do not change -->
+        <param name="owner" alias="Global.owner"/>
+        <param name="partners"><Partner plural="y"/></param>
+        <param name="partners_name"><Partner/></param>
+        <param name="partners_opportunity"><Opportunity/></param>
+        <param name="partners_role"><Role_Partner/></param>
+        <param name="partners_primary">Principal</param>
+        <param name="partners_none" alias="Related_Lists.no_records"/>
+        <param name="competitors">Competitori</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_name">Nume competitor</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_strengths">Puncte forte</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_weaknesses">Puncte slabe</param>   <!-- aliased across labels; do not change -->
+        <param name="competitors_none" alias="Related_Lists.no_records"/>
+        <param name="stage_history"><Stage_History_Opportunity/></param>
+        <param name="stage_history_stage"><Stage_Opportunity/></param>
+        <param name="stage_history_amount"><Amount_Opportunity/></param>
+        <param name="stage_history_probability">Probabilitate (%)</param>   <!-- aliased across labels; do not change -->
+        <param name="stage_history_expected_revenue"><Expected_Revenue_Opportunity/></param>
+        <param name="stage_history_close_date"><Close_Date_Opportunity/></param>
+        <param name="stage_history_last_update" alias="Related_Lists.last_updated"/>
+        <param name="stage_history_none" alias="Related_Lists.no_records"/>
+        <param name="task_complete">Finalizat</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mark_complete">Marcare {0} drept finalizată</param>
+        <param name="task_date">Dată</param>   <!-- aliased across labels; do not change -->
+        <param name="task_priority"><Priority_Activity/></param>
+        <param name="task_status"><Status_Activity/></param>
+        <param name="task_who">Nume</param>
+        <param name="whowhat"><Related_to_Activity/></param>
+        <param name="task_what"><Related_to_Activity/></param>
+        <param name="task_subject"><Subject_Activity/></param>
+        <param name="task_approval_pending">Aprobare pentru <contract/> în aşteptare</param>
+        <param name="task_none">Nu aveţi <tasks/> <open/> planificate pentru această perioadă.</param>
+        <param name="task_mode_today">Astăzi</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_today_overdue">Astăzi + întârziate</param>
+        <param name="task_mode_tomorrow">Mâine</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} is the actual days in week based on the user's locale calendar -->
+        <param name="task_mode_next_7days">În următoarele {0} zile</param>
+        <param name="task_mode_next_7days_overdue">În următoarele {0} zile + întârziate</param>
+        <param name="task_mode_overdue">Întârziate</param>
+        <param name="task_mode_this_month">Luna aceasta</param>   <!-- aliased across labels; do not change -->
+        <param name="task_mode_all">Toate deschise</param>
+        <param name="comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="history_title">Istoric</param>   <!-- aliased across labels; do not change -->
+        <param name="contacts_title"><Contacts/></param>
+        <param name="contacts_none" alias="Related_Lists.no_records"/>
+        <param name="partners_title"><Partners/></param>
+        <param name="news_title">Ştiri</param>   <!-- aliased across labels; do not change -->
+        <param name="news_headline">Titlu</param>
+        <param name="new_date">Dată</param>
+        <param name="news_none">Nu există ştiri disponibile</param>
+        <param name="body_too_long" alias="Related_Lists.descriptionText"/>
+        <param name="email_merge">Şabloane de îmbinare e-mail</param>
+        <param name="mail_merge">Microsoft Word®</param>
+        <param name="solutions"><Solutions/></param>
+        <param name="topSolutions"><Solutions/> principale</param>
+        <param name="solutionNumber"><Solution_Number/></param>
+        <param name="addDate">Data adăugării</param>   <!-- aliased across labels; do not change -->
+        <param name="addBy">Adăugat de</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.documents_author"/>
+        <param name="solution_none"><No/> <solution/> ataşată</param>
+        <param name="description">Descriere</param> <!-- aliased across labels - do not change -->
+        <param name="ticker">Ticker</param>
+        <param name="sic">SIC</param>   <!-- aliased across labels; do not change -->
+        <param name="url">URL</param>   <!-- aliased across labels; do not change -->
+        <param name="createddate" alias="ModStamp.created_date"/>
+        <param name="contactphone"><Contact_Phone/></param>
+        <param name="contactemail"><Contact_Email/></param>
+        <param name="noactivities">Nu există date <activity_history/> de afişat.</param>
+        <param name="nonotes">Nu există date Istoric note de afişat.</param>
+        <param name="noattachments">Nu există date Istoric ataşări de afişat.</param>
+        <param name="viewallattachments">Vizualizarea tuturor ataşărilor</param>
+        <param name="viewalldocsattachments">Vizualizarea tuturor documentelor şi ataşărilor Google</param>
+        <param name="lineitem"><Products/></param>
+        <!--  {0} = price book name -->
+        <param name="lineitem_pricebook"><Products/> ({0})</param>
+        <param name="lineitem_product"><Product_Name/></param>
+        <param name="lineitem_customer_product_id"><Product_Code/></param>
+        <param name="lineitem_quantity" alias="Global.quantity"/>
+        <param name="lineitem_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="lineitem_service_date">Dată</param>
+        <param name="lineitem_revenue_schedule" alias="Related_Lists.revenue_schedule"/>
+        <param name="lineitem_description" alias="Related_Lists.description"/>
+        <param name="lineitem_line_description">Descriere linie</param>   <!-- aliased across labels; do not change -->
+        <param name="lineitem_product_description"><Product_Description/></param>
+        <param name="lineitem_none" alias="Related_Lists.no_records"/>
+        <param name="apicapture">Capturi API</param>
+        <param name="apicapture_createddate" alias="ModStamp.created_date"/>
+        <param name="apicapture_createdby" alias="ModStamp.created"/>
+        <param name="apicapture_filteruser">Filtrate după utilizator</param>
+        <param name="apicapture_filterip">Filtrate după IP</param>
+        <param name="apicatpure_numbers">Capturi</param>
+        <param name="apicapture_soapscope">Vizualizare capturi</param>
+        <param name="apicapture_active">Active</param>
+        <param name="apicapture_none">Nicio captură</param>
+        <param name="apicapture_new">Pornire captură nouă</param>
+        <param name="apicapture_view">Vizualizare</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history">Istoric conectări</param>   <!-- aliased across labels; do not change -->
+        <param name="login_never">nicio conectare</param>
+        <param name="login_none">Nu există istoric de conectări disponibil.</param>
+        <param name="login_username">Nume utilizator</param> <!-- aliased across labels - do not change -->
+        <param name="login_date">Oră conectare</param>
+        <param name="login_type">Tip conectare</param>
+        <param name="login_ip">IP sursă</param>   <!-- aliased across labels; do not change -->
+        <param name="login_not_applicable">N/A</param>   <!-- aliased across labels; do not change -->
+        <param name="login_browser">Browser</param>   <!-- aliased across labels; do not change -->
+        <param name="login_platform">Platformă</param>   <!-- aliased across labels; do not change -->
+        <param name="login_resolution">Rezoluţie</param>
+        <param name="login_clientversion">Versiune client</param> <!-- aliased across labels - do not change -->
+        <param name="login_application">Aplicaţie</param>   <!-- aliased across labels; do not change -->
+        <param name="login_apitype">Tip API</param>
+        <param name="login_apiversion">Versiune API</param>   <!-- aliased across labels; do not change -->
+        <param name="login_status" alias="Global.status"/>
+        <param name="login_success">Succes</param>   <!-- aliased across labels; do not change -->
+        <param name="login_history_download_csv">Descărcaţi istoricul de conectări pentru ultimele şase luni, inclusiv conectări din afara site-ului Web precum conectări API (fişier Excel .csv)</param>
+        <!-- EWTODO: Delete the label below in 168 -->
+        <param name="login_web_history_download_csv">Descărcaţi istoricul de conectări, inclusiv conectări numai de pe site-ul Web (Excel .csv file)</param>
+        <param name="login_history_download_title">Opţiuni de descărcare</param>
+        <param name="login_history_download_file_type" alias="Global_Document.file_type"/>
+        <param name="login_history_download_file_type_csv">Fişier CSV</param>
+        <param name="login_history_download_file_type_gzip">Fişier GZIP</param>
+        <param name="login_history_download_file_type_help">Fişierele CSV (valori separate prin virgule) se pot vizualiza utilizând mai multe aplicaţii de calcul tabelar şi de procesare de texte. Fişierele GZIP (GNU zip) sunt comprimate pentru reducerea dimensiunii.</param>
+        <param name="login_history_download_option_title">Conţinutul fişierului</param>
+        <param name="login_history_download_option_all">Toate conectările</param>
+        <param name="login_history_download_option_ie6_only">NUMAI conectări IE6</param>
+        <param name="login_history_download_option_web_only">NUMAI conectări prin site-ul Web</param>
+        <param name="login_history_download_option_help">„Toate conectările” conţin conectările de la toate sursele, cum ar fi de pe site-ul Web, din Outlook, din integrări API, etc. „Conectările IE6” conţin numai conectările prin Internet Explorer 6. „Conectările prin site-ul Web” conţin numai conectările prin pagina de conectare Salesforce.</param>
+        <param name="login_history_ie6_deprecation_warning_title">Utilizaţi IE6?</param>
+        <param name="login_history_ie6_deprecation_warning_text">Salesforce nu mai oferă asistenţă pentru IE6. Utilizaţi opţiunile de descărcare pentru a afla ce browsere se folosesc în organizaţia dvs.</param>
+        <param name="login_history_download_section_title" alias="Buttons.download"/>
+        <param name="login_history_download_button" alias="Buttons.download_now"/>
+        <param name="login_url">URL conectare</param>
+        <param name="order_history">Istoric comenzi</param>   <!-- aliased across labels; do not change -->
+        <param name="order_none">Nicio comandă</param>
+        <param name="order_number">Număr comandă</param>   <!-- aliased across labels; do not change -->
+        <param name="order_date">Dată comandă</param>
+        <param name="order_currency">Monedă</param>   <!-- aliased across labels; do not change -->
+        <param name="order_total">Cost total</param>
+        <param name="order_status" alias="Global.status"/>
+        <param name="order_sold_to">Vândut către</param>
+        <param name="bo_order_items_number"><Order_Product_Number/></param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items"><Order_Products/></param>
+        <param name="bo_order_items_pricebook"><Order_Products/> ({0})</param>
+        <param name="bo_order_items_none">Nicio <order_products/></param>
+        <param name="bo_order_items_product"><Product/></param>
+        <param name="bo_order_items_line_number">Linie &lt;BR&gt;număr</param>
+        <param name="bo_order_items_quantity" alias="Global.quantity"/>
+        <param name="bo_order_items_unit_price" alias="Related_Lists.services_unit_price"/>
+        <param name="bo_order_items_monthly_price">Preţ lunar</param>
+        <param name="bo_order_items_total_price" alias="Related_Lists.services_total_price"/>
+        <param name="bo_order_items_billing_reference">Referinţă facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_billing_frequency">Frecvenţă facturare&lt;BR&gt;(luni)</param>
+        <param name="bo_order_items_billing_frequency_text">Frecvenţă facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="bo_order_items_order_term">Termen comandă &lt;BR&gt;(luni)</param>
+        <param name="bo_order_items_description" alias="Related_Lists.description"/>
+        <param name="bo_order_history" alias="Related_Lists.order_history"/>
+        <param name="bo_order_history_none" alias="Related_Lists.no_records"/>
+        <param name="bo_order_history_date">Dată</param>
+        <param name="bo_order_history_user" alias="Global.user"/>
+        <param name="bo_order_history_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="invoices">Facturi</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_none">Nicio factură</param>
+        <param name="invoices_invoice_number">Număr factură</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_contract_number"><Contract/></param>
+        <param name="invoices_invoice_date">Dată factură</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_due_date">Dată scadentă factură</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_status" alias="Global.status"/>
+        <param name="invoices_external_system_id">ID sistem extern</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total">Sumă totală</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_balance_due">Sold scadent</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_credit">Credit total</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_total_writeoff">Total anulare</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_contact">Contract facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_billing_company">Companie facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="invoices_OC">Istoric facturare</param>
+        <param name="revenue_schedule">Planificare</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_date">Dată</param>
+        <param name="revenue_schedule_quantity" alias="Global.quantity"/>
+        <param name="revenue_schedule_revenue">Venit</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_comments">Comentarii</param>   <!-- aliased across labels; do not change -->
+        <param name="revenue_schedule_none" alias="Related_Lists.no_records"/>
+        <param name="status_history">Istoric stare</param>
+        <param name="status_none">Nu a fost găsit niciun istoric de stări</param>
+        <param name="status_status" alias="Global.status"/>
+        <param name="status_last_update" alias="Related_Lists.last_updated"/>
+        <param name="status_last_update_by" alias="Global_Entity.last_modified_by"/>
+        <param name="services">Selecţie servicii</param>
+        <param name="services_none">Niciun serviciu</param>
+        <param name="services_description">Serviciu</param>   <!-- aliased across labels; do not change -->
+        <param name="services_quantity" alias="Global.quantity"/>
+        <param name="services_unit_price">Preţ unitar</param>   <!-- aliased across labels; do not change -->
+        <param name="services_total_price">Preţ total</param>   <!-- aliased across labels; do not change -->
+        <param name="services_discount">Reducere</param>
+        <param name="training">Istoric clasă instruire</param>
+        <param name="training_none">Niciunul</param>
+        <param name="username" alias="Global.user"/>
+        <param name="class_name">Nume clasă</param>   <!-- aliased across labels; do not change -->
+        <param name="date_taken">Data realizării</param>   <!-- aliased across labels; do not change -->
+        <param name="campaign_"/>
+        <param name="campaign_member_status"><Status_Campaign/></param>
+        <param name="campaign_member_responded">Răspuns</param>
+        <param name="campaign_member_status_header"><Member_Status_Values_Campaign/></param>
+        <param name="campaign_member_default">Implicit</param>
+        <param name="campaign_member_none"><No/> <campaign_member_status/> definită</param>
+        <param name="contract"><Contract plural="y"/></param>
+        <param name="contracts_title"><Contract plural="y"/></param>
+        <param name="contract_number"><Contract_Number/></param>
+        <param name="contract_name"><Contract_Name/></param>
+        <param name="contract_start_date">Dată început</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_end_date">Dată sfârşit</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_status" alias="Global.status"/>
+        <param name="contract_lifetime_value">Valoare pe durata vieţii</param>   <!-- aliased across labels; do not change -->
+        <param name="contract_has_rule">Are reguli de achiziţie</param>   <!-- aliased across labels; do not change -->
+        <param name="contracts_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_name"><Product/></param>
+        <param name="billed_product_quantity" alias="Global.quantity"/>
+        <param name="billed_product_frequency">Frecvenţă facturare&lt;br&gt;(luni)</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_billed_through">Facturat până la data</param>   <!-- aliased across labels; do not change -->
+        <param name="billed_product_none" alias="Related_Lists.no_records"/>
+        <param name="billed_product_title"><Products/> <billed/></param>
+        <param name="event_attending"><Event/> acceptat</param>
+        <param name="event_notdecided">Fără răspuns</param>
+        <param name="event_declined"><Event/> refuzat</param>
+        <param name="event_attending_none">Nu a fost acceptat niciun participant</param>
+        <param name="event_notdecided_none">Toţi participanţii au răspuns</param>
+        <param name="event_declined_none">Niciun invitat nu a refuzat</param>
+
+        <param name="DOCUMENT"><Document/></param>
+        <param name="documents"><Document plural="y"/></param>
+        <param name="documents_title">Nume</param>
+        <param name="documents_size">Dimensiune</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_author">Autor</param>   <!-- aliased across labels; do not change -->
+        <param name="documents_view" alias="Buttons.view"/>
+        <param name="documents_last_update" alias="Related_Lists.last_updated"/>
+        <param name="documents_none" alias="Related_Lists.no_records"/>
+        <param name="setup_audit_trail">Vizualizare configurare audit urmărire</param>
+        <param name="download">descărcaţi</param>   <!-- aliased across labels; do not change -->
+        <param name="desc_setup_audit_trail">Ultimele 20 de înregistrări pentru organizaţia dvs. apar în lista de mai jos. Puteţi să {0} configurarea auditului de urmărire al organizaţiei pentru ultimele şase luni (fişier Excel .csv).</param>
+        <param name="setup_audit_date">Dată</param>
+        <param name="setup_audit_user" alias="Global.user"/>
+        <param name="setup_audit_action">Acţiune</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_section">Secţiune</param>   <!-- aliased across labels; do not change -->
+        <param name="setup_audit_proxyinguser">Utilizator delegat</param>
+        <param name="setup_audit_proxyinguser_help">Această coloană afişează numele de utilizator al unui utilizator care a efectuat o modificare de configurare în numele unui utilizator final. De exemplu, dacă un utilizator v-a acordat acces pentru conectare unui reprezentant de asistenţă, se afişează numele de utilizator al reprezentantului.</param>
+        <param name="setup_audit_trail_none">Nu sunt disponibile informaţii despre auditul de urmărire</param>
+        <param name="setup_audit_download_csv">Descărcaţi configurarea auditului de urmărire pentru ultimele şase luni (Excel .csv file)</param>
+        <param name="DashboardComponents_title">Componente tablou de bord</param>   <!-- aliased across labels; do not change -->
+        <param name="DashboardComponents_none">Nu există componente tablou de bord</param>
+        <param name="translated_templates_none">Nu există şabloane de e-mail traduse</param>
+        <param name="translated_templates_title">Şabloane de e-mail traduse</param>
+        <param name="translated_templates_language">Limbă</param>   <!-- aliased across labels; do not change -->
+        <param name="translated_templates_new_button" alias="Buttons.new_email_template"/>
+        <param name="translated_templates_active">Activă</param>
+        <param name="desc_pnet_conn_audit_trail">Ultimele 20 de înregistrări pentru organizaţia dvs. apar în lista de mai jos. Puteţi {0} istoricul complet al conexiunilor de audit ca fişier Excel .csv.</param>
+        <param name="pnet_conn_audit_trail">Istoric de conexiuni</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_conn_audit_date">Dată</param>
+        <param name="pnet_conn_audit_user" alias="Global.user"/>
+        <param name="pnet_conn_audit_action" alias="Related_Lists.setup_audit_action"/>
+        <param name="pnet_conn_audit_trail_none">Nu sunt disponibile informaţii despre conexiunea auditului de urmărire</param>
+        <param name="pnet_conn_audit_download_csv">Descărcare istoric conexiune (csv)</param>
+        <param name="pnet_entity_conns_title">Partajare externă</param>
+        <param name="pnet_entity_conn_stop_sharing">Oprire partajare</param>
+        <param name="pnet_pub_title">Obiecte publicate</param>
+        <param name="pnet_sub_title">Obiecte cu abonament</param>
+        <param name="pnet_pubsub_object">Nume obiect</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pubsub_field">Câmpuri</param>   <!-- aliased across labels; do not change -->
+        <param name="pnet_pub_edit">Publicare/anulare publicare</param>
+        <param name="pnet_sub_edit">Abonare/anulare abonament</param>
+        <param name="pnet_pub_edit_object">Obiect publicat.</param>
+        <param name="pnet_pub_edit_field">Faceţi clic pe Editare mai jos pentru a publica în câmpurile disponibile pentru fiecare obiect.</param>
+        <param name="pnet_sub_edit_object">Obiect cu abonament.</param>
+        <param name="pnet_sub_edit_field">Faceţi clic pe Editare mai jos pentru a vă abona la câmpurile disponibile pentru fiecare obiect.</param>
+        <param name="pnet_pubsub_field_edit" alias="Buttons.edit"/>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="DOC">Conţinut</param>   <!-- aliased across labels; do not change -->
+        <param name="vf_template_attachments_title">Ataşări Visualforce</param>   <!-- aliased across labels; do not change -->
+        <param name="ajax_exception_title">Eroare la încărcarea listelor asociate</param>
+        <param name="ajax_exception_desc">A existat o problemă la adunarea informaţiilor listelor asociate pentru această înregistrare. Dacă reîncărcarea paginii nu rezolvă problema, luaţi legătura cu administratorul sau &lt;a href="{0}" title="report{1}"&gt;raportaţi&lt;/a&gt; problema echipei noastre de Asistenţă clienţi.</param>
+        <param name="category_access_title">Setări vizibilitate grup categorie</param>
+        <param name="category_access_video_tutorial">Tutorial video</param>
+        <param name="category_access_name">Grup categorie</param>
+        <param name="category_access_access">Vizibilitate</param>
+        <param name="category_access_details">Detalii vizibilitate</param>
+        <param name="category_access_custom">Personalizat</param>
+        <param name="category_access_full">Toate</param>
+        <param name="category_access_inherited">Moştenit de la {0}</param>
+        <param name="category_access_revoked">Niciunul</param>
+        <param name="category_access_userNodeAndChildren_Profile">profil</param>
+        <param name="category_access_userNodeAndChildren_UserRole">rol şi roluri subordonate</param>
+        <param name="category_access_noCategories">Nicio categorie vizibilă pentru acest {0}</param>
+        <param name="category_access_allCategories">Toate categoriile sunt vizibile pentru acest {0}</param>
+        <param name="category_access_noRecords" alias="Related_Lists.no_records"/>
+        <param name="related_entity_list_for">{0} pentru {1}</param>
+    </section>
+    <section name="Encoding" all_languages="yes" public="false">
+        <param name="0">Unicode (UTF-8)</param>   <!-- aliased across labels; do not change -->
+        <param name="1">SUA general şi Europa de Vest (ISO-8859-1, ISO-LATIN-1)</param>
+        <param name="2">Japoneză (Shift-JIS)</param>   <!-- aliased across labels; do not change -->
+        <param name="3">Japoneză (JIS)</param>
+        <param name="4">Japoneză (EUC)</param>
+        <param name="5">Coreeană (ks_c_5601-1987)</param>
+        <param name="6">Chineză tradiţională (Big5)</param>
+        <param name="7">Chineză simplificată (GB2312)</param>
+        <param name="8">Chineză Tradiţională Hong Kong (Big5-HKSCS)</param>
+        <param name="9">Japoneză (Shift-JIS_2004)</param>
+    </section>
+    <section name="Sidebar" all_languages="yes" public="false">
+        <param name="ellipses">...</param>   <!-- aliased across labels; do not change -->
+        <param name="trial_header">Organizaţie de încercare</param>
+        <param name="expand">Faceţi clic pentru a deschide bara laterală [Alt+S]</param>
+        <param name="collapse">Faceţi clic pentru a închide bara laterală [Alt+S]</param>
+        <param name="expandNoHotkey">Faceţi clic pentru a deschide bara laterală</param>
+        <param name="collapseNoHotkey">Faceţi clic pentru a închide bara laterală</param>
+    </section>
+    <section name="DuelingListBoxesElement" all_languages="yes" public="false">
+        <param name="up">Sus</param>   <!-- aliased across labels; do not change -->
+        <param name="down">Jos</param>   <!-- aliased across labels; do not change -->
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="move">Mutare</param>
+        <param name="top">La început</param>   <!-- aliased across labels; do not change -->
+        <param name="bottom">La sfârşit</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="IntroElement" all_languages="yes" public="false">
+        <param name="fillInRequired">Completaţi câmpurile obligatorii</param>
+        <param name="submit" alias="Buttons.submit"/>
+    </section>
+    <section name="Global_Users" all_languages="yes" public="false">
+        <param name="all_users">Toţi utilizatorii</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Image_Alt" all_languages="yes" public="false">
+        <param name="new">Nou</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add">Adăugare</param>   <!-- aliased across labels; do not change -->
+        <param name="del">Ştergere</param>   <!-- aliased across labels; do not change -->
+        <param name="change">[Modificare]</param>   <!-- aliased across labels; do not change -->
+        <param name="how">Cum să….</param>   <!-- aliased across labels; do not change -->
+        <param name="more">Vizualizare mai multe</param>   <!-- aliased across labels; do not change -->
+        <param name="new_task"><Task/> <new/></param>
+        <param name="new_event"><Event/> <new/></param>
+        <param name="log_call">Înregistrare apel</param>   <!-- aliased across labels; do not change -->
+        <param name="log_note">Înregistrare notă</param>   <!-- aliased across labels; do not change -->
+        <param name="mail_merge">Îmbinare e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="view_all">Vizualizare totală</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file">Ataşare fişier</param>   <!-- aliased across labels; do not change -->
+        <param name="help">Cum să?</param>
+        <param name="send_email">Trimitere e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="user_added_image">Imagine adăugată de utilizator</param>
+    </section>
+    <section name="Titles" all_languages="yes" public="false"> <!-- Used for TitleAttributes (508 HTML titles) -->
+        <param name="packaging">Aplicaţii</param>
+    </section>
+    <section name="Detail_Pages" all_languages="yes" public="false">
+        <param name="printable">Vizualizare pentru imprimare</param>   <!-- aliased across labels; do not change -->
+        <param name="clone">Copiere</param>   <!-- aliased across labels; do not change -->
+       <param name="share">Partajare</param>
+    </section>
+    <section name="Page_Overviews" all_languages="yes" public="false">
+        <param name="home_area">Pagină de pornire</param>   <!-- aliased across labels; do not change -->
+        <param name="more_info_link">Mai multe informaţii!</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_select_directions">Selectare una:</param>
+        <param name="hotlist_mode">Afişare selecţie</param>
+        <!--  {0} = number of items to show -->
+        <param name="hotlist_toggle_list_length">Afişare {0,number,integer} elemente</param>
+        <param name="hotlist_empty_title">Nu există înregistrări recente. Faceţi clic pe Executare sau selectaţi o vizualizare din lista verticală pentru a afişa înregistrări.</param>
+        <param name="hotlist_empty_description">Nu există înregistrări disponibile pentru aceste criterii.</param>   <!-- aliased across labels; do not change -->
+        <param name="reports_more">Salt la rapoarte</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_title">Centru de resurse</param>   <!-- aliased across labels; do not change -->
+        <param name="resource_center_description">În Centrul de resurse puteţi căuta potenţiali clienţi, găsi servicii oferite de terţe părţi şi multe altele.</param>
+        <param name="resource_center_link_text">Salt la Centrul de resurse</param>   <!-- aliased across labels; do not change -->
+        <param name="sales_methodologies">Metodologii de vânzare</param>
+        <param name="hotlist_recently_modified">Modificat recent</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_created">Creat recent</param>   <!-- aliased across labels; do not change -->
+        <param name="hotlist_recently_accessed">Vizualizate recent</param>
+    </section>
+    <section name="SelectElement" all_languages="yes" public="false">
+        <param name="Required">--Niciunul--</param>   <!-- aliased across labels; do not change -->
+        <param name="Select">--Selectare--</param>   <!-- aliased across labels; do not change -->
+        <param name="Default">--Implicit--</param>   <!-- aliased across labels; do not change -->
+        <param name="NotApplicable">**Nu este aplicabil**</param>
+    </section>
+    
+    <section name="CustomLinks" all_languages="yes" public="false">
+        <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
+        <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
+        <param name="NoCustomLinksMessage">Administratorul nu a definit niciun Link personalizat.</param>
+    </section>
+    <section name="Wizard" all_languages="yes" public="false">
+        <param name="JumpTo">Salt la:</param>
+        <param name="JumpToStep">Pasul {0}: {1}</param>
+        <param name="CloseWizard">Închidere expert</param>
+        <param name="LeftHeader">Pasul {0}: {1}</param>
+        <param name="LeftHeaderNoStep">{0}</param>
+        <param name="RightHeader">Pasul {0} din {1}</param>   <!-- aliased across labels; do not change -->
+        <param name="RightHeaderUnknown">Pasul {0}</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new">Salvare şi nou</param>   <!-- aliased across labels; do not change -->
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="next">Următorul</param> <!-- aliased across labels - do not change -->
+        <param name="previous">Anterior</param>   <!-- aliased across labels; do not change -->
+        <param name="OrgWizardTitle">Expert configurare organizaţie pentru {0}</param>
+        <param name="ImportWizardTitle">Expert de import pentru {0}</param>   <!-- aliased across labels; do not change -->
+        <param name="LicensePurchaseWizardTitle">Centru de comenzi</param>   <!-- aliased across labels; do not change -->
+        <param name="TrialSignupWizardTitle">Înscriere pentru încercare</param>
+        <param name="WizardBody">Corp expert</param>
+        <param name="WizardFooter">Subsol expert</param>
+    </section>
+    <section name="Global_Address" all_languages="yes" public="false">
+        <param name="first" alias="Global_Entity.first_name"/>
+        <param name="last" alias="Global_Entity.last_name"/>
+        <param name="address">Adresă</param><!-- translators note - this is actually the full address -->
+        <param name="street">Adresă</param> <!-- translators note - this is actually just the street address -->
+        <param name="city">Oraş</param><!-- aliased across label files - do not change -->
+        <param name="state">Stat/provincie</param><!-- aliased across label files - do not change -->
+        <param name="zip">Cod ZIP</param>   <!-- aliased across labels; do not change -->
+        <param name="zip_postal_code">Cod ZIP/poştal</param> <!-- aliased across label files - do not change -->
+        <param name="country">Ţară</param> <!-- aliased across label files - do not change -->
+        <param name="phone">Telefon</param> <!-- aliased across label files - do not change -->
+        <param name="extension">Interior</param> <!-- aliased across label files - do not change -->
+        <param name="fax">Fax</param>   <!-- aliased across labels; do not change -->
+        <param name="fax_ext">Interior fax</param>   <!-- aliased across labels; do not change -->
+        <param name="mobile" alias="Global_Entity.mobile"/>
+        <param name="email">E-mail</param> <!-- aliased across label files - do not change -->
+        <param name="salutation" alias="Global_Entity.salutation"/>
+        <param name="shippingaddress">Adresă de livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstreet">Stradă livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcity">Oraş livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingstate">Stat/provincie livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingzip">Cod ZIP livrare</param>
+        <param name="shippingzippostalcode">Cod ZIP/poştal livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="shippingcountry">Ţară livrare</param>   <!-- aliased across labels; do not change -->
+        <param name="billingaddress">Adresă de facturare</param> <!-- aliased across label files - do not change -->
+        <param name="billingcity">Oraş facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstate">Stat/provincie facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="billingzip">Cod ZIP/poştal facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="billingcountry">Ţară facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="billingstreet">Stradă facturare</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstreet">Stradă bancă</param>   <!-- aliased across labels; do not change -->
+        <param name="bankaddress">Adresă bancă</param> &gt;<!-- aliased across label files - do not change -->
+        <param name="bankcity">Oraş bancă</param>   <!-- aliased across labels; do not change -->
+        <param name="bankstate">Stat/provincie bancă</param>   <!-- aliased across labels; do not change -->
+        <param name="bankzip">Cod ZIP/poştal bancă</param>   <!-- aliased across labels; do not change -->
+        <param name="bankcountry">Ţară bancă</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress">Adresă corespondenţă</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstreet">Stradă corespondenţă</param>
+        <param name="mailingcity">Oraş corespondenţă</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingstate">Stat/provincie corespondenţă</param>
+        <param name="mailingzip">Cod ZIP/poştal corespondenţă</param>
+        <param name="mailingcountry">Ţară corespondenţă</param>   <!-- aliased across labels; do not change -->
+        <param name="mailingaddress1">Adresă corespondenţă linia 1</param>
+        <param name="mailingaddress2">Adresă corespondenţă linia 2</param>
+        <param name="mailingaddress3">Adresă corespondenţă linia 3</param>
+        <param name="otheraddress">Altă adresă</param>
+        <param name="otheraddress1">Linia 1 altă adresă</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress2">Linia 2 altă adresă</param>   <!-- aliased across labels; do not change -->
+        <param name="otheraddress3">Linia 3 altă adresă</param>   <!-- aliased across labels; do not change -->
+        <param name="otherstreet">Altă stradă</param>
+        <param name="otherstreet2">Altă stradă 2</param>
+        <param name="otherstreet3">Altă stradă 3</param>
+        <param name="othercity">Alt oraş</param>
+        <param name="otherstate">Alt Stat/provincie</param>
+        <param name="otherzipcode">Alt cod ZIP</param>
+        <param name="otherpostalcode">Alt cod poştal</param>
+        <param name="otherzippostalcode">Alt cod ZIP/poştal</param>
+        <param name="othercountry">Altă ţară</param>
+        <param name="otherphone">Alt telefon</param>   <!-- aliased across labels; do not change -->
+        <param name="otherphoneext">Interior alt telefon</param>   <!-- aliased across labels; do not change -->
+        <param name="address1">Adresă 1</param>
+        <param name="address2">Adresă 2</param>
+        <param name="address3">Adresă 3</param>
+        <param name="home_phone">Telefon domiciliu</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Global" all_languages="yes" public="false">
+        <param name="loading">Se încarcă…</param>   <!-- aliased across labels; do not change -->
+        <param name="location">Locaţie</param>   <!-- aliased across labels; do not change -->
+        <param name="author" alias="Related_Lists.author"/>
+        <param name="select" alias="List.select"/>
+        <param name="quantity">Cantitate</param> <!-- aliased across labels - do not change -->
+        <param name="salesforce" alias="UiSkin.1"/>
+        <param name="supportforce" alias="UiSkin.1"/>
+        <param name="sbase">Customforce</param>
+        <param name="xforce">xforce</param>
+        <param name="BaseEdition">Base Edition</param>   <!-- do not change -->
+        <param name="ContactManagerEdition">Contactare manager</param>   <!-- aliased across labels; do not change -->
+        <param name="EnterpriseEdition">Enterprise Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="ProfessionalEdition">Professional Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="TeamEdition">Group Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="DeveloperEdition">Developer Edition</param>
+        <param name="PersonalEdition">Personal Edition</param>
+        <param name="UnlimitedEdition">Unlimited Edition</param>   <!-- aliased across labels; do not change -->
+        <param name="SbaseTeamEdition" alias="Global.TeamEdition"/>  <!-- displayed to end-users -->
+        <param name="SbaseTeamEditionBulk">Group Edition (customforce.com)</param> <!-- displayed only on bulk_signup.jsp -->
+        <param name="yes">Da</param>   <!-- aliased across labels; do not change -->
+        <param name="no">Nu</param>   <!-- aliased across labels; do not change -->
+        <param name="welcome">Bun venit la salesforce.com!</param>   <!-- aliased across labels; do not change -->
+        <param name="copyright">Drepturi de autor © 2000-{0} salesforce.com, inc. Toate drepturile rezervate.</param>   <!-- aliased across labels; do not change -->
+        <param name="copyrightWithLink">Drepturi de autor &amp;copy; 2000-{1} &lt;a href="{0}"&gt;salesforce.com&lt;/a&gt;, inc. Toate drepturile rezervate.</param>   <!-- 0 = http://www.salesforce.com -->
+        <param name="Accessibility">Conformitate 508</param>
+        <param name="copyright_nohtml">Drepturi de autor (c) 2000-{0} salesforce.com, inc. Toate drepturile rezervate.</param>   <!-- aliased across labels; do not change -->
+        <param name="brandedCopyright">Copyright © {0} {1}. Toate drepturile rezervate.</param>
+        <param name="brandedCopyrightWithLink">Copyright &amp;copy; {1} &lt;a href="{0}"&gt;{2}&lt;/a&gt;, inc. Toate drepturile rezervate.</param>
+        <param name="brandedCopyright_nohtml">Copyright (c) {0} {1}. Toate drepturile rezervate.</param>
+        <param name="privacy" alias="Global_Entity.privacyStatment"/>
+        <param name="security">Declaraţie de securitate</param>   <!-- aliased across labels; do not change -->
+        <param name="terms">Condiţii de utilizare</param>   <!-- aliased across labels; do not change -->
+        <param name="termsNotice">Vă mulţumim pentru că aţi ales Salesforce. Înainte de a începe să utilizaţi Salesforce trebuie să citiţi şi să acceptaţi Condiţiile de utilizare de mai jos. După aceea, continuaţi făcând clic pe butonul „Accept”. Reţineţi că, dacă nu acceptaţi aceste Condiţii de utilizare, nu veţi putea să vă conectaţi la Salesforce.</param>
+        <param name="save" alias="Buttons.save"/>
+        <param name="save_and_new" alias="Wizard.save_and_new"/>
+        <param name="cancel" alias="Buttons.cancel"/>
+        <param name="done">Efectuat</param>   <!-- aliased across labels; do not change -->
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="add" alias="Image_Alt.add"/>
+        <param name="addNow">Adăugare acum!</param>
+        <param name="remove">Eliminare</param>   <!-- aliased across labels; do not change -->
+        <param name="new">Nou</param>
+        <param name="exciting_and_new">Nou!</param>   <!-- aliased across labels; do not change -->
+        <param name="del" alias="Image_Alt.del"/>
+        <param name="change" alias="Image_Alt.change"/>
+        <param name="view" alias="Buttons.view"/>
+        <param name="download" alias="Buttons.download"/>
+        <param name="here">aici</param>   <!-- aliased across labels; do not change -->
+        <param name="generate">Generare</param>   <!-- aliased across labels; do not change -->
+        <param name="how" alias="Image_Alt.how"/>
+        <param name="more" alias="Image_Alt.more"/>
+        <param name="close_window">Închidere fereastră</param>   <!-- aliased across labels; do not change -->
+        <param name="print_window">Imprimare pagină</param>
+        <param name="new_window">(Fereastră nouă)</param>
+        <param name="new_focus">(Comutare focalizare)</param>
+        <param name="pdf_file">Adobe Acrobat PDF</param>
+        <param name="508BackgroundFrame">Cadru ascuns - Ignorare</param>
+        <param name="508ContentFrame" alias="Related_Lists.DOC"/>
+        <param name="select_all">selectare totală</param>
+        <param name="select_shown">Selectare elemente afişate</param>
+        <param name="remove_shown">Eliminare elemente afişate</param>
+        <param name="select_none">Nu se selectează niciunul</param>
+        <param name="all_active">Toate active</param>
+        <param name="all_inactive">Toate inactive</param>
+        <param name="are_you_sure">Sunteţi sigur?</param>
+        <param name="irreversible_are_you_sure">Ireversibil! Sunteţi sigur?</param>
+        <param name="replace">Înlocuire</param>   <!-- aliased across labels; do not change -->
+        <param name="finish">Finalizare</param>   <!-- aliased across labels; do not change -->
+        <!--  {0} = +/- ; {1} = hours ; {2} = minutes -->
+        <param name="timezone_gmt_format">GMT{0}{1,number,00}:{2,number,00}</param>
+        <!--  {0} = GMT (above) ; {1} = name -->
+        <param name="timezone_display_format">({0}) {1}</param>
+        <param name="timezone_display_format_short">{1} ({0})</param>
+        <param name="durationInMinutes">{0} minute</param>   <!-- aliased across labels; do not change -->
+        <param name="action" alias="Related_Lists.setup_audit_action"/>
+        <param name="error_lookup_multiple_matches">Au fost găsite mai multe elemente. Selectaţi din lista verticală sau faceţi clic pe pictogramă pentru a rafina căutarea.</param>
+        <!--  {0} = quarter ; {1} = year -->
+        <param name="quarter_name">Trim.{0}-{1}</param>
+        <param name="reset">Resetare</param>   <!-- aliased across labels; do not change -->
+        <param name="override">Suprascriere</param>   <!-- aliased across labels; do not change -->
+        <param name="total">Total</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here">Faceţi clic aici</param>   <!-- aliased across labels; do not change -->
+        <param name="click_here_to_view" alias="Related_Lists.click_here_to_view"/>
+        <param name="notesToWebMaster">Note pentru webmaster:</param>   <!-- aliased across labels; do not change -->
+        <param name="sampleHTML">Exemplu HTML</param>   <!-- aliased across labels; do not change -->
+        <param name="password">Parolă</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgain">Această pagină nu se afişează din nou</param> <!-- aliased across labels - do not change -->
+        <param name="dontShowAgainFor">Se ascunde acest mesaj pentru: </param>
+        <param name="dontShowMessageAgain">Acest mesaj nu se afişează din nou</param>
+        <param name="dismissMessage">Respingere mesaj</param>
+        <param name="allObjects">Toate obiectele</param>   <!-- aliased across labels; do not change -->
+        <param name="unavailable" alias="CanvasItem.FilteredByInvalidSingle"/>
+        <param name="pressSpaceBarOrEnter">Pentru a deschide, apăsaţi bara de spaţiu sau Enter</param>
+        <!--  Standard definitions for entity labels/titles -->
+        <param name="Account"><Account/></param>
+        <param name="account"><account/></param>
+        <param name="ACCOUNT"><Account/></param>
+        <param name="Accounts"><Accounts/></param>
+        <param name="Activity"><Activity/></param>
+        <param name="ACTIVITY"><Activity/></param>
+        <param name="Activities"><Activities/></param>
+        <param name="activity"><activity/></param>
+        <param name="activities"><activities/></param>
+        <param name="ASSET"><Asset/></param>
+        <param name="Asset"><Asset/></param>
+        <param name="Assets"><Assets/></param>
+        <param name="asset"><asset/></param>
+        <param name="assets"><assets/></param>
+        <param name="Attachment" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Attachments" alias="Related_Lists.attachments"/>
+        <param name="ATTACHMENT" alias="Related_Lists.ATTACHMENT"/>
+        <param name="Campaign"><Campaign/></param>
+        <param name="Campaigns"><Campaign plural="y"/></param>
+        <param name="CAMPAIGN"><Campaign/></param>
+        <param name="CssDetail">Autoservire: <Case_Detail/></param>
+        <param name="CssEdit">Autoservire: <Case_Edit/></param>
+        <param name="CaseClose"><Case_Close/></param>
+        <param name="CaseInteraction">Flux <case/></param>
+        <param name="case"><case/></param>
+        <param name="Case"><Case/></param>
+        <param name="Cases"><Case plural="y"/></param>
+        <param name="CASE"><Case/></param>
+        <param name="CASES"><Case plural="y"/></param>
+        <param name="Comment">Comentariu</param>   <!-- aliased across labels; do not change -->
+        <param name="Comments" alias="Related_Lists.revenue_schedule_comments"/>
+        <param name="COMMENT" alias="Global.Comment"/>
+        <param name="Competitors" alias="Related_Lists.competitors"/>
+        <param name="Contact"><Contact/></param>
+        <param name="contact"><contact/></param>
+        <param name="contacts"><contact plural="y"/></param>
+        <param name="CONTACT"><Contact/></param>
+        <param name="Contacts"><Contact plural="y"/></param>
+        <param name="contract"><contract/></param>
+        <param name="Contract"><Contract/></param>
+        <param name="Contracts"><Contract plural="y"/></param>
+        <param name="CONTRACT"><Contract/></param>
+        <param name="CustomEntities" alias="Global.CustomEntity"/>
+        <param name="CustomEntity">Obiecte personalizate</param>   <!-- aliased across labels; do not change -->
+        <param name="CUSTOM_ENTITY_DEFINITION">Definiţie obiect personalizat</param>
+        <param name="CUSTOM_ENTITY_DATA" alias="Global.CustomEntity"/>
+        <param name="Dashboard">Tablou de bord</param>   <!-- aliased across labels; do not change -->
+        <param name="Dashboards">Tablouri de bord</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect_all">Deselectare totală</param>
+        <param name="deselect_shown">Deselectare elemente afişate</param>
+        <param name="Document"><Document/></param>
+        <param name="DOCUMENT"><Document/></param>
+        <param name="Documents"><Document plural="y"/></param>
+        <param name="MailmergeTemplate">Şablon îmbinare e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="MAILMERGE_TEMPLATE" alias="Global.MailmergeTemplate"/>
+        <param name="MailmergeTemplates">Şabloane îmbinare e-mail</param>   <!-- aliased across labels; do not change -->
+        <param name="Event"><Event/></param>
+        <param name="Events"><Events/></param>
+        <param name="EVENT"><Event/></param>
+        <param name="Folder">Folder</param>   <!-- aliased across labels; do not change -->
+        <param name="Folders">Foldere</param>   <!-- aliased across labels; do not change -->
+        <param name="FOLDER" alias="Global.Folder"/>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Forecasts">Prognoze</param>   <!-- aliased across labels; do not change -->
+        <param name="Forecasting3">Prognoze</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgent">Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="LiveAgentSupervisor">Supervizor Live Agent</param>   <!-- aliased across labels; do not change -->
+        <param name="FORECAST" alias="Tab_Home.new_forecast"/>
+        <param name="Invoice">Factură</param>   <!-- aliased across labels; do not change -->
+        <param name="Invoices" alias="Related_Lists.invoices"/>
+        <param name="INVOICE" alias="Global.Invoice"/>
+        <param name="Lead"><Lead/></param>
+        <param name="LEAD"><Lead/></param>
+        <param name="lead"><lead/></param>
+        <param name="leads"><lead plural="y"/></param>
+        <param name="Leads"><Lead plural="y"/></param>
+        <param name="Note" alias="Related_Lists.NOTE"/>
+        <param name="Notes">Note</param>   <!-- aliased across labels; do not change -->
+        <param name="Notes_Attachments" alias="Related_Lists.notes"/>
+        <param name="NOTE" alias="Related_Lists.NOTE"/>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="opportunity"><opportunity/></param>
+        <param name="OPPORTUNITY"><Opportunity/></param>
+        <param name="Opportunities"><Opportunity plural="y"/></param>
+        <param name="Order">Comandă</param>   <!-- aliased across labels; do not change -->
+        <param name="Orders">Comenzi</param>   <!-- aliased across labels; do not change -->
+        <param name="ORDER" alias="Global.Order"/>
+        <param name="ORDERS" alias="Global.Order"/>
+        <param name="BusopOrder" alias="Global.Order"/>
+        <param name="BusopOrders" alias="Global.Orders"/>
+        <param name="BUSOPORDER" alias="Global.Order"/>
+        <param name="BusopOrderItem">Element comandă</param>   <!-- aliased across labels; do not change -->
+        <param name="BusopOrderItems">Elemente comandă</param>   <!-- aliased across labels; do not change -->
+        <param name="BUSOPORDERITEM" alias="Global.BusopOrderItem"/>
+        <param name="Partner"><Partner/></param>
+        <param name="Partners"><Partner plural="y"/></param>
+        <param name="PARTNER"><Partner/></param>
+        <param name="Payment">Plată</param>   <!-- aliased across labels; do not change -->
+        <param name="Payments">Plăţi</param>   <!-- aliased across labels; do not change -->
+        <param name="PAYMENT" alias="Global.Payment"/>
+        <param name="Product"><Product/></param>
+        <param name="product"><product/></param>
+        <param name="Products"><Products/></param>
+        <param name="PRODUCT"><Product/></param>
+        <param name="Report" alias="Tab_Home.new_report"/>
+        <param name="report">raport</param>
+        <param name="Reports">Rapoarte</param>   <!-- aliased across labels; do not change -->
+        <param name="REPORT" alias="Tab_Home.new_report"/>
+        <param name="Signup">Înscriere</param>   <!-- aliased across labels; do not change -->
+        <param name="Solution"><Solution/></param>
+        <param name="Solutions"><Solutions/></param>
+        <param name="SOLUTION"><Solution/></param>
+        <param name="Task"><Task/></param>
+        <param name="Tasks"><Tasks/></param>
+        <param name="TASK"><Task/></param>
+        <param name="Template">Şablon</param>   <!-- aliased across labels; do not change -->
+        <param name="Templates">Şabloane</param>   <!-- aliased across labels; do not change -->
+        <param name="myCustomObject">Tabel</param>  <!-- aliased across labels; do not change -->
+        <param name="Active">Activ</param>
+        <param name="amount">Valoare</param>   <!-- aliased across labels; do not change -->
+        <param name="annual_revenue">Venit anual</param>   <!-- aliased across labels; do not change -->
+        <param name="attach_file" alias="Image_Alt.attach_file"/>
+        <param name="attach_document">Ataşare document</param>   <!-- aliased across labels; do not change -->
+        <param name="change_password">Modificare parolă</param>   <!-- aliased across labels; do not change -->
+        <param name="close">Închidere</param> <!-- aliased across labels; do not change -->
+        <param name="closed">Închis</param>
+        <param name="closed_date">Data închiderii</param>   <!-- aliased across labels; do not change -->
+        <param name="close_date">Dată închidere</param>   <!-- aliased across labels; do not change -->
+        <param name="create_date">Data creării</param> <!-- aliased across labels - do not change -->
+        <param name="created_date" alias="ModStamp.created_date"/>
+        <param name="datatype">Tip dată</param>   <!-- aliased across labels; do not change -->
+        <param name="date" alias="Related_Lists.task_date"/>
+        <param name="deleted">Ştearsă</param>   <!-- aliased across labels; do not change -->
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="description_info">Informaţii descriere</param>   <!-- aliased across labels; do not change -->
+        <param name="due_date" alias="Related_Lists.due_date"/>
+        <param name="email" alias="Global_Address.email"/>
+        <param name="employees">Angajaţi</param>   <!-- aliased across labels; do not change -->
+        <param name="end_date" alias="Related_Lists.contract_end_date"/>
+        <param name="file">Fişier</param>   <!-- aliased across labels; do not change -->
+        <param name="files">Fişiere</param>   <!-- aliased across labels; do not change -->
+        <param name="file_name" alias="Related_Lists.attachments_title"/>
+        <param name="general_info">Informaţi generale</param>   <!-- aliased across labels; do not change -->
+        <param name="get_info">Obţinere informaţii înainte de începere</param>   <!-- aliased across labels; do not change -->
+        <param name="home" alias="Page_Overviews.home_area"/>
+        <param name="label">Etichetă</param>   <!-- aliased across labels; do not change -->
+        <param name="last_login">Ultima conectare</param>   <!-- aliased across labels; do not change -->
+        <param name="last_modified_date" alias="Global.last_update_date"/>
+        <param name="last_update" alias="Related_Lists.last_updated"/>
+        <param name="last_update_date">Data ultimei modificări</param>   <!-- aliased across labels; do not change -->
+        <param name="last_updated" alias="Related_Lists.last_updated"/>
+        <param name="limit" alias="Page_Org_Storage_Usage.limit"/>
+        <param name="name">Nume</param>   <!-- aliased across labels; do not change -->
+        <param name="object_name">Nume</param>
+        <param name="new_status">Stare nouă</param>   <!-- aliased across labels; do not change -->
+        <param name="next_step" alias="Related_Lists.opportunities_next_step"/>
+        <param name="none">Niciunul</param>
+        <param name="open">Deschisă</param>   <!-- aliased across labels; do not change -->
+        <param name="organization">Organizaţie</param>   <!-- aliased across labels; do not change -->
+        <param name="no_matches_found">Nu a fost găsită nicio potrivire.</param> <!-- aliased across labels - do not change -->
+        <param name="all">Toate</param>
+        <param name="clear">Golire</param>   <!-- aliased across labels; do not change -->
+        <param name="click_lookup_icon">Faceţi clic pe pictograma de căutare...</param>
+        <param name="click_lookup_icon_info">Faceţi clic pe pictograma de căutare pentru a selecta o valoare.</param>
+        <param name="clear_all">Golire totală</param>   <!-- aliased across labels; do not change -->
+        <param name="click_attach_button">Faceţi clic pe butonul Ataşare.</param>   <!-- aliased across labels; do not change -->
+        <param name="complete" alias="Related_Lists.task_complete"/>
+        <param name="error" alias="Icon.ERROR"/>
+        <param name="errors">Erori</param> <!-- aliased across lables - do not change -->
+        <param name="high">Superior</param>   <!-- aliased across labels; do not change -->
+        <param name="how_do_i">Ajutor</param>   <!-- aliased across labels; do not change -->
+        <param name="tell_me_more" alias="Page_Overviews.more_info_link"/>
+        <param name="take_me_there">Salt!</param>
+        <param name="keywords">Cuvinte cheie</param>
+        <param name="length">Lungime</param>   <!-- aliased across labels; do not change -->
+        <param name="low" alias="Page_Log_A_Bug.priority3"/>
+        <param name="search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="status">Stare</param> <!-- aliased across lables - do not change -->
+        <param name="title">Titlu</param>
+        <param name="object_title">Titlu</param>
+        <param name="type">Tip</param> <!--aliased across labels - do not change -->
+        <param name="url" alias="Related_Lists.url"/>
+        <param name="user">Utilizator</param> <!--aliased across labels - do not change -->
+        <param name="Users">Utilizatori</param>   <!-- aliased across labels; do not change -->
+        <param name="User" alias="Global.user"/>
+        <param name="USER" alias="Global.user"/>
+        <param name="PermissionSet">Set de permisiuni</param>   <!-- aliased across labels; do not change -->
+        <param name="Profile">Profil</param>   <!-- aliased across labels; do not change -->
+        <param name="Profiles">Profiluri</param>   <!-- aliased across labels; do not change -->
+        <param name="website" alias="Global_Entity.website"/>
+        <param name="start_date" alias="Related_Lists.contract_start_date"/>
+        <param name="owner">Proprietar</param> <!-- aliased across labels - do not change -->
+        <param name="sfdc_tagline">experience success.</param>
+        <param name="DontShowPage">Această pagină nu se afişează din nou.</param>
+        <param name="click_here_to_create_new_account">{0} pentru a crea un <account/> <new/> acum.</param>
+        <param name="click_here_to_create_new_contact">{0} pentru a crea un <contact/> <new/> acum.</param>
+        <param name="click_here_to_create_new_lead">{0} pentru a crea un <lead/> <new/> acum.</param>
+        <param name="click_here_to_create_new_opportunity">{0} pentru a crea o <opportunity/> <new/> acum.</param>
+        <param name="click_here_to_create_new_product">{0} pentru a crea un <product/> <new/> acum.</param>
+        <param name="SystemModstamp">System Modstamp</param>   <!-- aliased across labels; do not change -->
+        <param name="Division">Divizie</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPageTitle">Procesare</param>   <!-- aliased across labels; do not change -->
+        <param name="ProcessingPleaseWait">Actualizare înregistrări...</param>
+        <param name="created_by" alias="Global_Entity.created_by"/>
+        <param name="last_modified_by" alias="Global_Entity.last_modified_by"/>
+        <param name="owner_name" alias="Global_Entity.owner_name"/>
+        <param name="StaticTranslation">Traducere statică</param>   <!-- aliased across labels; do not change -->
+        <param name="hideMessage">Această pagină se ascunde în viitor</param>   <!-- aliased across labels; do not change -->
+        <param name="please_wait">Se încarcă…</param>
+        <param name="uploading_title">Se încarcă</param>   <!-- aliased across labels; do not change -->
+        <param name="importing_please_wait">Se importă…</param>
+        <param name="importing_title" alias="Page_Log_A_Bug.functionalArea_6"/>
+        <!-- delimiter between a field label and value that needs to exist on its own -->
+        <param name="colon">:</param>
+        <!-- delimiter appended to the field label shown in detail/edit -->
+        <param name="labelWithColon">{0}:</param>
+        <param name="labelWithColonNSpace">{0}: </param>
+        <!-- used for a label that will have text on both sides of a colon.
+            Can accomodate French and Asian languages in which the colon has half-spaces -->
+        <param name="colonSeparatedWords">{0}: {1}</param>
+        <!-- list delimiter for things like apples, oranges, bananas -->
+        <param name="listDelimiter">, </param>
+        <param name="and">şi </param>
+        <param name="sentenceEnder">.</param>
+        <param name="ignoreThisFrameTitle"/>
+        <param name="bogus_label">Eroare: Nu aveţi acces la acest câmp</param>
+        <param name="noReadAccess">Nu aveţi acces pentru a vizualiza această înregistrare.</param>
+        <param name="noAccessToUser">Nu aveţi acces la acest utilizator.</param>
+        <param name="disabledButton">Buton dezactivat: {0}</param>
+        <param name="RequiredHeader">Informaţii obligatorii</param>   <!-- aliased across labels; do not change -->
+        <param name="InsertImage">Inserare imagine</param>
+        <!-- wrapper for labels that should be wrapped in dashes such as in picklists -->
+        <param name="labelInDashes">-- {0} --</param>
+        <param name="ip_range_del_are_you_sure">Sigur ştergeţi intervalul de conectare IP</param>
+        <param name="AMPM">Intrare AMPM</param>
+        <param name="NamespacePrefix" alias="Global_Entity.namespacePrefix"/>
+        <param name="ModuleNamespace" alias="Global_Entity.moduleNamespace"/>
+        <param name="ManageableState" alias="Global_Entity.manageableState"/>
+        <param name="protectedComponent">Componentă protejată</param>
+        <param name="dialogCloseConfirm">Este posibil ca fereastra de confirmare pe care o vizualizaţi să se fi închis prematur. Faceţi clic pe OK pentru a reveni la aceasta sau pe Revocare pentru a ignora această avertizare.</param>
+        <param name="DatabaseDotCom">database.com</param>
+        <param name="startOfDialog">Începutul dialogului</param>
+    </section>
+    
+    <section name="LookupDialog" all_languages="yes" public="false">
+        <param name="Results">Rezultate căutare</param>
+        <param name="Recent">Vizualizate recent</param>
+        <param name="NoMatchHeader">Nu a fost găsită nicio înregistrare din cauza unuia dintre următoarele motive:</param>
+        <param name="BulletOne">Nu există nicio înregistrare de acest tip</param>
+        <param name="BulletTwo">Nu aveţi permisiuni pentru a vedea aceste înregistrări</param>
+        <param name="BulletThree">Înregistrările nu se potrivesc cu criteriile de filtrare setare de administrator</param>
+        <param name="BulletFour">Unul sau mai multe câmpuri de control sunt necompletate sau incorecte (câmpuri de control:</param>
+    </section>
+    <section name="MultiSelectElement" all_languages="yes" public="false">
+        <param name="Available" alias="MultiSelectListElement.available"/> &gt;
+        <param name="AvailableUsers">Utilizatori disponibili</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedUsers">Utilizatori selectaţi</param>
+        <param name="LicensedUsers">Utilizatori cu licenţă</param>   <!-- aliased across labels; do not change -->
+        <param name="SelectedForRemoval">Selectat pentru eliminare</param>
+        <param name="Selected">Selectat</param>   <!-- aliased across labels; do not change -->
+        <param name="Chosen">Ales</param>
+        <param name="UnassignedPackages">Pachete neatribuite</param>
+        <param name="SelectedPackages">Pachete selectate</param>
+        <param name="InView">în vizualizare</param>
+    </section>
+    <section name="Multipart_Form_Data" all_languages="yes" public="false">
+        <!--  {0} = max file size -->
+        <param name="uploaded_file_too_large">Acest câmp depăşeşte limita de dimensiune maximă de {0}.</param>
+        <param name="no_file_specified">Specificaţi un fişier pentru încărcare. Tastaţi calea către fişier sau utilizaţi butonul „Răsfoire” pentru a-l localiza în sistemul de fişiere locale.</param>
+        <param name="invalid_file_type">Tipul de fişier specificat nu este acceptat în prezent.</param>
+        <!--  {0} = max filename length -->
+        <param name="filename_too_long">Numele de fişier depăşeşte lungimea maximă permisă, care este de {0} caractere.</param>
+        <!--  {0} = max filename extension length -->
+        <param name="file_ext_too_long">Extensia numelui de fişier depăşeşte lungimea maximă permisă, care este de {0} caractere.</param>
+        <param name="bytes">octeţi</param>   <!-- aliased across labels; do not change -->
+        <param name="kbytes">KB</param>
+        <param name="mbytes">MB</param>   <!-- aliased across labels; do not change -->
+        <param name="disallow_html_attachments">Tipurile de fişiere HTML nu sunt permise din motive de securitate.</param>
+        <param name="attachment_size_exceeded">Fişierul încărcat a depăşit dimensiunea maximă.</param>
+    </section>
+    <section name="RtaImageUpload" all_languages="yes" public="false">
+        <param name="no_file_specified">&lt;b&gt;Eroare:&lt;/b&gt; Trebuie să selectaţi o imagine pentru încărcare</param>
+        <param name="upload_file_too_large">&lt;b&gt;Eroare:&lt;/b&gt; Imaginea depăşeşte dimensiunea limită (1 MB)</param>
+        <param name="invalid_file_type">&lt;b&gt;Eroare:&lt;/b&gt; Puteţi să inseraţi numai fişiere .gif .jpeg şi .png.</param>
+        <param name="upload_failed">&lt;b&gt;Eroare:&lt;/b&gt; Eroare la încărcare – Încărcaţi din nou mai târziu.</param>
+        <param name="invalid_file">&lt;b&gt;Eroare:&lt;/b&gt; Fişierul nu este un fişier imagine corect.</param>
+        <param name="invalid_param">&lt;b&gt;Eroare:&lt;/b&gt; Parametri incorecţi.</param>
+        <param name="access_failed_alt">Imaginea nu este disponibilă, deoarece: Nu aveţi privilegii pentru a o vedea sau a fost eliminată din sistem</param>
+        <param name="weekly_export_folder">Alt colateral încărcat/</param>
+    </section>
+    
+    
+    
+    <section name="QuickCreate" all_languages="yes" public="false">
+        <param name="Account"><Account/></param>
+        <param name="Opportunity"><Opportunity/></param>
+        <param name="Contact"><Contact/></param>
+        <param name="Lead"><Lead/></param>
+        <param name="Forecast" alias="Tab_Home.new_forecast"/>
+        <param name="Success_message">{0} creat cu succes.</param>
+        <param name="Failure_message">Creare nereuşită.</param>
+        <param name="Common_success_message">Creare reuşită.</param>
+    </section>
+    
+    <section name="Page_ReduceLicense" all_languages="yes" public="false">
+        <param name="title">Solicitarea unei reduceri pentru licenţă</param>
+        <param name="pageheader">Completaţi toate câmpurile obligatorii pentru a trimite solicitarea de reducere a licenţei. Aceasta este metoda cea mai rapidă pentru ca solicitarea dvs. să fie procesată.  Nu trimiteţi mai multe solicitări pentru aceeaşi licenţă, deoarece acest lucru ar produce întârzieri nenecesare.</param>
+        <param name="title_landing">Solicitarea a fost primită!</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_landing_billing">Am primit solicitarea. Solicitările se procesează în ordinea în care le primim. Reţineţi că solicitările de reducerea a numărului de licenţe vor deveni efective începând cu următoarea perioadă de facturare după solicitare, cu condiţia să informaţi salesforce.com cu cinci zile lucrătoare înainte de data facturării pentru următoarea perioadă de facturare.</param>
+        <param name="pageheader_landing">Am primit solicitarea. Solicitările se procesează în ordinea în care le primim. Solicitările de reducerea a numărului de licenţe fi efective la 30 de zile după data la care aţi trimis solicitarea. Nu trimiteţi mai multe solicitări de reducere a numărului de licenţe pentru aceleaşi licenţe, deoarece acest lucru ar putea întârzia procesarea solicitării.</param>
+        <param name="title_error">Solicitarea nu a putut fi procesată.</param>   <!-- aliased across labels; do not change -->
+        <param name="pageheader_error">Nu am putut să trimitem solicitarea în acest moment. Încercaţi din nou mai târziu.</param>   <!-- aliased across labels; do not change -->
+        <param name="colHeader">Trimiterea solicitării</param>
+        <param name="reason">Motiv</param>   <!-- aliased across labels; do not change -->
+        <param name="description">Oferiţi&lt;br&gt; mai multe detalii</param>
+        <param name="numLicenses">Număr de licenţe</param>
+        <param name="potentialResponse">Cum vă putem păstra&lt;br&gt; compania?</param>
+        <param name="tips_title">Sfaturi pentru trimiterea solicitărilor de reducerea a numărului de licenţe</param>
+        <param name="tip1">Completaţi corect toate informaţiile pentru a asigura procesarea promptă şi corespunzătoare a solicitării.  Înainte de trimite această solicitare, asiguraţi-vă că dezactivaţi suficienţi utilizatori, astfel încât numărul de utilizatori să fie mai mic sau egal cu noul număr de licenţe. Acest lucru se poate realiza folosind caracteristica &lt;a href="{0}"&gt;Gestionare utilizatori&lt;/a&gt; din &lt;a href="{1}"&gt;Configurările mele&lt;/a&gt;.</param>
+        <param name="type1">Despre revocare</param>
+        <param name="type2">Reducerea numărului de licenţe pentru utilizatori</param>
+        <param name="type3">Reducerea numărului de licenţe offline</param>
+        <param name="type4">Reducerea numărului de licenţe pentru campanie</param>
+        <param name="type5">Mobile Edition pentru revocare</param>
+        <param name="type6">Mobile Edition pentru reducerea licenţelor</param>
+        <param name="type7">Reducerea licenţelor pentru Force.com Mobile</param>
+        <param name="reason_0">Companie achiziţionată/fuzionată</param>
+        <param name="reason_1">Lichidarea companiei</param>
+        <param name="reason_2">Personal de vânzări disponibilizat</param>
+        <param name="reason_3">Utilizatori finali care nu adoptă</param>
+        <param name="reason_4">Funcţionalitatea nu a întrunit aşteptările</param>
+        <param name="reason_5">Managementul nu consideră că este suficient de util</param>
+        <param name="reason_6">Experienţă neplăcută cu angajaţii salesforce.com</param>
+        <param name="reason_7">Preţ prea mare</param>
+        <param name="reason_8">Alegerea unui competitor</param>
+        <param name="reason_9">Licenţe neutilizate</param>
+        <param name="reason_10">Altul</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_Log_A_Bug" all_languages="yes" public="false">
+        <param name="errorText">Completaţi următoarele câmpuri:</param>
+        <param name="title">Trimiteţi feedback la salesforce.com</param>
+        <param name="title_upgrade_me">Înregistrare solicitare de upgrade</param>
+        <param name="title_support">Trimitere feedback</param>
+        <param name="warning_line_too_long">Avertizare: Descrierea depăşeşte 4000 de caractere şi va fi scurtată.\\n</param>
+        <param name="feedback_info">Contactarea asistenţei pentru clienţi</param>   <!-- aliased across labels; do not change -->
+        <param name="general_info">Asistenţa pentru clienţi este disponibilă pentru a vă răspunde la întrebări şi la feedbackul trimise. Ne bazăm foarte mult pe feedbackul primit de la clienţii noştri pentru a modela Salesforce. Ne bucurăm şi apreciem să primim ideile dvs. şi aşteptăm cu nerăbdare alte reacţii.</param>
+        <param name="general_info_me">Pentru a afla mai multe despre upgrade-ul de la Personal Edition la oricare dintre ediţiile pentru corporaţie, completaţi formularul de mai jos. Un reprezentant de vânzări vă va contacta în decurs de 48 de ore.</param>
+        <param name="general_info_support">Asistenţa pentru clienţi este disponibilă pentru a vă răspunde la întrebări şi la feedbackul trimise. Ne bazăm foarte mult pe feedbackul primit de la clienţii noştri pentru a modela Salesforce CRM Call Center. Ne bucurăm şi apreciem să primim ideile dvs. şi aşteptăm cu nerăbdare alte reacţii.</param>
+        <param name="defaultOrigin">Web</param>
+        <param name="defaultStatus">Nou</param>
+        <param name="functionalArea">Subiect</param>
+        <param name="priority" alias="Global_Entity.priority"/>
+        <param name="type" alias="Global.type"/>
+        <param name="subject" alias="Global_Entity.subject"/>
+        <param name="description" alias="Related_Lists.description"/>
+        <param name="type1">Întrebare</param>   <!-- aliased across labels; do not change -->
+        <param name="type2">Solicitare</param>
+        <param name="type3">Feedback</param>
+        <param name="type4">Solicitare caracteristică</param>
+        <param name="priority1">Urgenţă</param>
+        <param name="priority2">Normală</param>   <!-- aliased across labels; do not change -->
+        <param name="priority3">Scăzută</param>   <!-- aliased across labels; do not change -->
+        <param name="subject_subscribe">Vreau să mă abonez acum la Professional Edition</param>
+        <param name="subject_subscribe_me">Vreau să fac upgrade acum</param>
+        <param name="subject_subscribe_we">Doresc mai multe informaţii despre Professional Edition</param>
+        <param name="subject_subscribe_ee">Vreau să mă abonez acum la Enterprise Edition</param>
+        <param name="subject_subscribe_ue">Vreau să mă abonez acum la Unlimited Edition</param>
+        <param name="subject_subscribe_support">Vreau să mă abonez acum</param>
+        <param name="subject_data_export">Doresc Serviciul de export săptămânal</param>
+        <param name="subject_marketing_licenses">Adăugare licenţe de marketing</param>
+        <param name="subject_offline_licenses">Adăugare licenţe offline</param>
+        <param name="subject_wireless_licenses">Adăugare licenţe fără fir</param>
+        <param name="subject_offlinepda_licenses">Adăugare licenţe Sales Anywhere</param>
+        <param name="subject_mobile_licenses">Adăugare licenţe mobile Force.com</param>
+        <param name="subject_sfcontent_licenses">Adăugare licenţe Salesforce CRM Content</param>
+        <param name="subject_knowledge_licenses">Adăugare licenţe Knowledge</param>
+        <param name="subject_interaction_licenses">Adăugare licenţe flux Force.com</param>
+        <param name="subject_support_licenses">Adăugare licenţe nor de servicii</param>
+        <param name="subject_jigsaw_licenses">Adăugare licenţe Jigsaw</param>
+        <param name="subject_liveagent_licenses">Adăugare licenţe Live Agent</param>
+        <param name="subject_siteforcecontributor_licenses">Adăugare licenţe de colaborator Site.com</param>
+        <param name="subject_siteforcepublisher_licenses">Adăugare licenţe de editor Site.com</param>
+        <param name="subject_chatteranswers_licenses">Adăugare licenţe Chatter Answers</param>
+        <param name="subject_license_reduction">Reducere licenţe</param>
+        <param name="functionalArea_0">Gestionare cont/licenţe</param> <!-- # 0 must be for license issues, because it's reference directly -->
+        <param name="functionalArea_1">AppExchange</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_2">Întrebare facturare</param>
+        <param name="functionalArea_3">Joncţiune date</param>
+        <param name="functionalArea_4">E-mail/e-mail HTML</param>
+        <param name="functionalArea_5">Prognoze şi oportunităţi</param>
+        <param name="functionalArea_6">Se importă</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_7">Clienţi potenţiali</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_8">Performanţă</param>
+        <param name="functionalArea_9">Rapoarte şi vizualizări</param>
+        <param name="functionalArea_10" alias="Tab_Home.setup"/>
+        <param name="functionalArea_11">Abonare acum</param> <!-- # 10 must be for subscribe now, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_12">Sincronizare</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_13">Serviciu export săptămânal</param> <!-- # 12 must be for org export, because it's referenced directly -->   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_14">Fără fir</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_15">Altul</param>
+        <param name="functionalArea_16">Licenţă marketing</param>
+        <param name="functionalArea_17">Licenţă offline</param>
+        <param name="functionalArea_18">Profiluri/aspecte pagină/tipuri înregistrare</param>
+        <param name="functionalArea_19">Campanii</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_20">Autoservire</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_21">Licenţă fără fir</param>
+        <param name="functionalArea_22">Actualizare acum</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_23">Licenţă Sales Anywhere</param>
+        <param name="functionalArea_24">Activităţi/ evenimente </param>
+        <param name="functionalArea_25"><Products/> &amp; Anuităţi/<Pricebooks/></param>
+        <param name="functionalArea_26">Avertizare tranzacţie majoră </param>
+        <param name="functionalArea_27">Documente</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_28">Cazuri şi soluţii </param>
+        <param name="functionalArea_29">Căutare</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_30">Partajare</param>
+        <param name="functionalArea_31">Conectare offline Force.com</param> <!-- aliased across labels - do not change -->
+        <param name="functionalArea_32">Force.com fără fir</param>
+        <param name="functionalArea_33">Conectare Force.com pentru Microsoft Outlook</param>   <!-- aliased across labels; do not change -->
+        <param name="functionalArea_34">Force.com Mobile Edition pentru au</param>
+        <param name="functionalArea_35">Licenţă portal partener</param>
+        <param name="functionalArea_36">Licenţă Force.com Mobile</param>
+        <param name="functionalArea_37">Licenţă Salesforce CRM Content</param>
+        <param name="functionalArea_38">Licenţă nor de servicii</param>
+        <param name="functionalArea_39">Licenţă Jigsaw</param>
+        <param name="functionalArea_40">Licenţă Live Agent</param>
+        <param name="functionalArea_41">Licenţă de colaborator Site.com</param>
+        <param name="functionalArea_42">Licenţă de editor Site.com</param>
+        <param name="functionalArea_43">Licenţe Chatter Answers</param>
+        <!--  If you add a new  functionalarea_xx you have to add the new functionalarea.value_xx in sfdc.xml -->
+        <param name="PhoneNumberInfo">În cazul în care preferaţi să vorbiţi direct cu un reprezentant al departamentului de servicii pentru clienţi, apelaţi (415) 901-7010 între orele 6 şi 18, ora pacificului, de luni până vineri, sau apelaţi +353-1-2723503 între orele 8 şi 18 GMT, de luni până vineri.</param>
+        <param name="tips_title">Sfaturi pentru trimiterea cazurilor</param>
+        <param name="tip1">Asiguraţi-vă că aţi oferit informaţii suficiente pentru ca noi să putem răspunde la cazul dvs. în cel mai scurt timp.  Vă oferim câteva sugestii şi mementouri mai jos:</param>
+        <param name="tip2">Spuneţi-ne ce încercaţi să faceţi, ce vă aşteptaţi să se întâmple şi ce se întâmplă de fapt.</param>
+        <param name="tip3">Spuneţi-ne care sunt paşii pentru a reproduce problema dvs.</param>
+    </section>
+    <section name="List" all_languages="yes" public="false">
+        <param name="view">Vizualizare:</param>
+        <param name="X">X</param>
+        <param name="close">Închidere</param>
+        <param name="MLclose">Închidere</param>   <!-- aliased across labels; do not change -->
+        <param name="delete">Ştergere</param>   <!-- aliased across labels; do not change -->
+        <param name="delete_title_attribute">Ştergere</param> <!-- translator: please translate to the fully spelled out version of "Del" -->
+        <param name="permanentlyDelete">Ştergere</param> <!-- dear translator: if your language has a short word that means "permanently delete" or something similar, please use it. "Erase" isn't a particularly good one in English, but none of us could come up with something better. -->
+        <param name="record">Înregistrare</param> <!--  i.e. row, number -->
+        <param name="detach" alias="Content_documentListColumnATTACH.detach"/>
+        <param name="remove" alias="Global.remove"/>
+        <param name="edit" alias="Buttons.edit"/>
+        <param name="setup">Configurare</param>
+        <param name="activate">Activare</param>   <!-- aliased across labels; do not change -->
+        <param name="deactivate">Dezactivare</param>   <!-- aliased across labels; do not change -->
+        <param name="manage">Gestionare</param>   <!-- aliased across labels; do not change -->
+        <param name="export">Export</param>   <!-- aliased across labels; do not change -->
+        <param name="next">Pagina următoare</param>
+        <param name="prev">Pagina anterioară</param>
+        <param name="generate_wsdl">WSDL</param>
+        <param name="number_shown">Total elemente în vizualizare: {0, number, integer}</param>
+        <!--  {0} = less-link; {1} = more-link; -->
+        <param name="number_shown_adjust">Se afişează {0} {1} înregistrări pe pagina de listă</param>
+        <param name="number_shown_detail_page">Se afişează întotdeauna {0} {1} {2} înregistrări pe lista asociată</param>
+        <param name="number_shown_adjust_less_link">mai puţine</param>
+        <param name="number_shown_adjust_more_link">mai multe</param>   <!-- aliased across labels; do not change -->
+        <param name="number_shown_adjust_all_link">toate</param>
+        <param name="last_page">Înapoi la pagina anterioară</param>
+        <param name="last_list">Înapoi la listă</param>   <!-- aliased across labels; do not change -->
+        <param name="last_type_list">Înapoi la listă:  <Entity entity="0" plural="y"/></param>
+        <param name="last_type_list_conn">Înapoi la listă: <Entity entity="0" plural="y"/> de la conexiuni</param>
+        <param name="last_suggested_solution_list">Înapoi la lista <Solutions/> <suggested/></param>
+        <param name="last_solution_search_list">Înapoi la Rezultate de căutare pentru <solution plural="n"/></param>
+        <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="back_detail">Înapoi la <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
+        <param name="massActions">Acţiuni:</param>
+        <param name="checkboxPrompt">Selectaţi cel puţin un rând</param>
+        <param name="checkboxSinglePrompt">Selectaţi un singur rând</param>
+        <param name="checkboxWarning" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningNext" alias="List.checkboxWarningPrevious"/>
+        <param name="checkboxWarningPrevious">Selecţiile dvs. de pe această pagină se vor pierde. Continuaţi?</param>   <!-- aliased across labels; do not change -->
+        <param name="checkboxWarningFind" alias="List.checkboxWarningPrevious"/>
+        <!-- 0=Max number of selections allowed -->
+        <param name="checkboxLimit">Trebuie să selectaţi {0} rânduri sau mai puţine pentru a efectua această operaţie.</param>
+        <param name="selectionLimit">Nu puteţi selecta mai mult de {0} rânduri.</param>
+        <param name="login">Conectare</param>   <!-- aliased across labels; do not change -->
+        <param name="session">Sesiune</param>
+        <param name="none">Nu există înregistrări de afişat.</param>
+        <param name="no_rows">Niciun rând selectat</param>
+        <param name="subtotal">Subtotal:</param>
+        <param name="total">Total:</param>   <!-- aliased across labels; do not change -->
+        <param name="selectAllInfo">Selectarea tuturor elementelor</param>
+        <param name="clearAllInfo">Deselectarea tuturor elementelor</param>
+        <param name="rename">Redenumire</param>   <!-- aliased across labels; do not change -->
+        <param name="groupType" alias="Global.type"/>
+        <param name="select">Selectare</param>   <!-- aliased across labels; do not change -->
+        <param name="deselect">Deselectare</param>
+        <param name="toggleall">Comutare toate rândurile</param>
+        <param name="refresh">Reîmprospătare</param>   <!-- aliased across labels; do not change -->
+        <param name="must_select_filter">Selectaţi o vizualizare.</param>   <!-- aliased across labels; do not change -->
+        <param name="error_too_many_matches_for_filter">Vizualizarea specificată depăşeşte dimensiunea maximă. Restrângeţi criteriile de căutare prin editarea vizualizării sau creaţi o vizualizare nouă.</param>
+    <param name="switch_view">Comutare vizualizare</param>
+    <param name="records_x_to_y">Afişare înregistrări {0} - {1}</param>
+    <param name="records_x_to_y_more">Afişare înregistrări {0} - {1}, mai multe înregistrări disponibile</param>
+    <param name="records_x_to_y_more_showing_max">Afişare înregistrări {0} - {1}. Pe această pagină se pot afişa 1.000 de înregistrări deşi sunt disponibile mai multe înregistrări. Pentru a afişa mai puţine înregistrări, rafinaţi criteriile de vizualizare a listei. Pentru a imprima mai mult de 1.000 de înregistrări, executaţi un raport, apoi faceţi clic pe butonul Vizualizare versiune pentru imprimantă din raport.</param>
+    <param name="number_of_records">Număr de înregistrări</param>
+        <param name="createCase">Creare <case/></param>
+    </section>
+    <section name="Tree" all_languages="yes" public="false">
+        <param name="expandCollapse">Faceţi clic pentru a extinde/restrânge elementele imbricate.</param>
+        <param name="expand">Faceţi clic pentru a extinde elementele imbricate.</param>
+        <param name="collapse">Faceţi clic pentru a restrânge elementele imbricate.</param>
+        <param name="shortExpand">Extindere</param>   <!-- aliased across labels; do not change -->
+        <param name="shortCollapse">Restrângere</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded">Extins</param>
+        <param name="collapsed">Restrâns</param>
+        <param name="level">Nivel</param>   <!-- aliased across labels; do not change -->
+        <!-- TreePathElement -->
+        <param name="hierarchy">Ierarhie:</param>
+        <param name="siblings">Pe acelaşi nivel:</param>
+    </section>
+    <section name="Lookup" all_languages="yes" public="false">
+        <param name="Title">Căutare</param>   <!-- aliased across labels; do not change -->
+        <param name="Search" alias="Page_Log_A_Bug.functionalArea_29"/>
+        <param name="PickEntity">Alegere obiect</param>
+        <param name="Results" alias="Search_Filter.Results"/>
+        <param name="DefaultWho">Cine</param>   <!-- aliased across labels; do not change -->
+        <param name="DefaultWhat">Ce</param>   <!-- aliased across labels; do not change -->
+        <param name="MaxReachedMessage">Căutarea a returnat mai mult de numărul maxim de rânduri ({0}). Rafinaţi criteriile de căutare.</param>
+        <param name="Copyright">Drepturi de autor &amp;copy; 2000-{0} salesforce.com, inc.</param>
+        <param name="Rights">Toate drepturile rezervate.</param>
+        <param name="useWildcards">Puteţi utiliza „*” ca metacaracter lângă celelalte caractere pentru a îmbunătăţi rezultatele căutării.  De exemplu, „ad*” returnează toate înregistrările cu un nume care conţine „ad”.</param>
+        <param name="useWildcardsWithSearch">Puteţi utiliza „*” ca metacaracter lângă celelalte caractere pentru a îmbunătăţi rezultatele căutării.</param>
+        <param name="error_lookup_multiple_matches_ile">Au fost găsite mai multe elemente.&lt;br&gt;Faceţi clic pe pictogramă pentru a rafina căutarea.</param>
+    </section>
+    
+    
+    <section name="Sharing" all_languages="yes" public="false">
+        <param name="expand">Extindere listă</param>   <!-- aliased across labels; do not change -->
+        <param name="expanded_list">Listă extinsă</param>
+        <param name="sharing">Partajare</param>   <!-- aliased across labels; do not change -->
+        <param name="why">De ce?</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Search_Filter" all_languages="yes" public="false">
+        <param name="more_filters">Mai multe filtre &gt;&gt;</param>
+        <param name="less_filters">Mai puţine filtre &lt;&lt;</param>
+        <param name="by_keyword">După cuvânt cheie</param>
+        <param name="by_filter">După filtru câmp</param>
+        <param name="too_many">Căutarea a returnat mai mult de {0} rânduri. Numai primele {0} sunt afişate. Rafinaţi criteriile de căutare.</param>
+        <param name="Results">Rezultate</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="Page_OverviewSearch" all_languages="yes" public="false">
+        <param name="search">Căutare:</param> <!-- aliased across labels - do not change -->
+        <param name="relevance">Punctaj</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="CriteriaElement" all_languages="yes" public="false">
+        <param name="field_field">Câmp</param>   <!-- aliased across labels; do not change -->
+        <param name="operator_field">Operator</param>   <!-- aliased across labels; do not change -->
+        <param name="value_field">Valoare</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_0">Puteţi utiliza filtre „or” introducând mai multe elemente în a treia coloană.</param>
+        <param name="tip_1">Puteţi introduce maximum 10 elemente separate prin virgulă. De exemplu: CA, NY, TX, FL caută CA sau NY sau TX sau FL.</param>   <!-- aliased across labels; do not change -->
+        <param name="tip_2">Utilizaţi ghilimele pentru datele care conţin virgulele. De exemplu, "200,000","1,000,000" searches for 200,000 sau 1,000,000.</param>
+        <param name="tip_3">Pentru câmpurile casete de selectare, utilizaţi „False” şi „True”, de exemplu, „Activ egal True” sau „Conversie efectuată egal False.”</param>
+        <param name="tip_4">De exemplu, intrările de tip regulă bazate pe prefixe zonale pot necesita includerea de paranteze. Telefonul începe cu (021), (0268).</param>
+        <param name="tip_5">Dacă utilizaţi instrumentul de traducere, introduceţi toate criteriile utilizând valori coordonatoare.</param>   <!-- aliased across labels; do not change -->
+    </section>
+    <section name="MultiSelectListElement" all_languages="yes" public="false">
+        <param name="available">Disponibil</param>   <!-- aliased across labels; do not change -->
+        <param name="selections">Selecţii</param>
+        <param name="assignLicensesDescription">Bifaţi caseta de selectare din dreptul fiecărui pachet pe care doriţi să-l atribuiţi acestui utilizator şi faceţi clic pe Atribuire. Caseta de selectare lipseşte în cazul în care pachetul nu are licenţe suficiente disponibile sau starea pachetului este expirat sau suspendat.</param>
+    </section>
+    
+    <section name="UiSkin" all_languages="yes" public="false">
+        <param name="0">salesforce.com Classic</param>
+        <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
+        <param name="2">Portal implicit</param>
+        <param name="3">Magazin Web</param>
+        <param name="4">Aloha</param>
+    </section>
+    
+    
+    
+    
+    <section name="Icon" all_languages="yes" public="false">
+        <param name="CONFIRM">Confirmare</param>   <!-- aliased across labels; do not change -->
+        <param name="INFO">Informaţii</param>   <!-- aliased across labels; do not change -->
+        <param name="ERROR">Eroare</param>   <!-- aliased across labels; do not change -->
+        <param name="WARNING">Avertizare</param>   <!-- aliased across labels; do not change -->
+        <param name="SECURE">Securizat</param>
+    </section>
+
+    <section name="ScheduleElement" all_languages="yes" public="false">
+      <param name="frequency">Frecvenţă</param>   <!-- aliased across labels; do not change -->
+       <param name="daily">Zilnic</param>   <!-- aliased across labels; do not change -->
+       <param name="weekly">Săptămânal</param>   <!-- aliased across labels; do not change -->
+       <param name="monthly">Lunar</param>   <!-- aliased across labels; do not change -->
+       <param name="everyWeekday">În fiecare zi a săptămânii</param>   <!-- aliased across labels; do not change -->
+       <param name="everyDay">În fiecare zi</param>
+       <param name="lastDay">ultima</param>   <!-- aliased across labels; do not change -->
+       <param name="on1">prima</param>
+    <param name="on2">a doua</param>
+    <param name="on3">a treia</param>
+    <param name="on4">a patra</param>
+    <param name="onLast">ultima</param>
+    <param name="startTime">Pornire</param>   <!-- aliased across labels; do not change -->
+    <param name="endTime">Terminare</param>   <!-- aliased across labels; do not change -->
+    <param name="preferredTime">Ora de începere preferată</param>
+    <param name="noPreference">Nicio preferinţă</param>
+    <param name="edit" alias="Buttons.edit"/>
+    <param name="preferredTimeDescr">Fiecare oră de începere depinde de activitatea cozii de operaţiuni.</param>
+
+    <param name="diffTimeZoneMsg">Fusul orar pentru această frecvenţă lunară este:&lt;br&gt; &lt;strong&gt;{0}&lt;/strong&gt;&lt;br&gt;Setările de frecvenţă se afişează în fusul orar al utilizatorului care le-a editat ultima oară.&lt;br&gt;Orice modificare pe care o efectuaţi la aceste setări va fi actualizată pentru a se potrivi fusului orar al locului în care vă aflaţi.</param>
+
+      <param name="weeklyRecurrence">Se repetă în fiecare săptămână,{0}</param>
+      <param name="weeklyRecurrenceLegendLabel">Se repetă în fiecare săptămână la</param>
+      <param name="monthlyRecurrence1">În ziua de {0} a fiecărei luni</param>
+      <param name="monthlyRecurrence1LegendLabel">Specific</param>
+      <param name="monthlyRecurrence2LegendLabel">Personalizat</param>
+      <param name="monthlyRecurrence2">În ziua de {2} {0} {3} {1} a fiecărei luni</param> <!--  On <label> <element> <label> <element> of every month -->
+      <param name="monthlyRecurrence2Sentence">În ziua de {0} {1} a fiecărei luni</param> <!--  same as label above but without the <label>'s -->
+      <param name="accessibleMonthly1">Într-o anumită zi a fiecărei luni</param>
+      <param name="accessibleMonthly2">Într-o zi personalizată a fiecărei luni</param>
+      <param name="accessibleOnDayN">Zi anumită</param>
+      <param name="accessibleOnDayNOfWeek">Apariţie</param>
+      <param name="accessibleOnDayName">Zi</param>
+    </section>
+    <section name="CaptchaElement" all_languages="yes" public="false">
+        <param name="dialog">Acest test simplu vă ajută să împiedicaţi programele rău intenţionate să vă acceseze datele.  Administratorul dvs. solicită acest test pentru descărcările mari.  Nu vă va fi prezentat decât o singură dată în timpul unei sesiuni de conectare.</param>
+        <param name="imagePrompt">Introduceţi cuvintele de mai sus, separate prin spaţiu:</param>
+        <param name="audioPrompt">Introduceţi numerele pe care le auziţi:</param>
+        <param name="refresh">Preluaţi un nou test</param>
+        <param name="audio">Preluaţi un test audio</param>
+        <param name="image">Preluaţi un test imagine</param>
+        <param name="incorrect">Incorect, încercaţi din nou</param>
+        <param name="moreinfo">Mai multe informaţii &amp;raquo;</param>
+        <param name="lessinfo">&amp;laquo; Mai puţine informaţii</param>
+    </section>
+    <section name="HighlightsPanel" all_languages="yes" public="false">
+        <param name="zoomIconTitle">Faceţi clic pentru informaţii suplimentare...</param>
+        <param name="show">Afişare Panou evidenţieri</param>
+        <param name="hide">Ascundere Panou evidenţieri</param>
+        <param name="empty">Această înregistrare nu conţine câmpuri evidenţiate care pot fi afişate.</param>
+    </section>
+    <section name="GuidedTour" all_languages="yes" public="false">
+        <param name="tourLink">Tur de prezentare</param>
+        <param name="closeIntro">Nu, mulţumesc</param>
+        <param name="closeOutro">Închidere</param>
+        <param name="showLater">Se afişează mai târziu</param>
+        <param name="replay">Reluare</param>
+        <param name="continue">Continuare</param>
+        <param name="previous">Anterior</param>
+        <param name="startTour">Începere tur</param>
+        <param name="endTour">Terminare tur</param>
+        <param name="stepCounter">{0} din {1}</param> <!-- '2 of 4' for example -->
+    </section>
+    <section name="SideTabs" all_languages="yes" public="false">
+        <param name="detailTabTitle">Detalii</param>
+        <param name="feedTabTitle">Chatter</param>
+        <param name="geniusTabTitle">Recomandări</param>
+        <param name="hideBucketTip">&lt;br&gt;Fixaţi aici pentru a ascunde elemente&lt;br/&gt;din pagină.</param>
+        <param name="hiddenListTip">Pentru a afişa elementele ascunse, glisaţi înapoi în lista de mai sus.</param>
+        <param name="hiddenListShowLinkLabel">{0} ascunsă</param> <!-- '3 Hidden' -->&gt;
+        <param name="backToTopToolTip">Înapoi la început</param>
+        <param name="multipleItemDragGhost">Mai multe elemente (x{0})</param> <!-- 'Multiple Items (x4)' -->
+    </section>
+    <section name="NextGenDetail" all_languages="yes" public="false">
+        <param name="compatibilityMsgWindowTitle">Compatibilitate browser pagină de detaliu</param>
+        <param name="compatibilityMsgSubTitle">Hopa! acest browser nu este acceptat</param>
+        <param name="compatibilityMsg1">Nu putem să afişăm noua pagină de detaliu în browserul curent.</param>
+        <param name="compatibilityMsg2">Puteţi să utilizaţi noul aspect ori de câte ori vă conectaţi cu unul dintre aceste browsere compatibile:</param>
+        <param name="supportedIE">Internet Explorer 7 sau 8</param>  <!-- aliased across labels; do not change -->
+        <param name="supportedFF">Firefox 3.0.x</param> <!-- aliased across labels; do not change -->
+        <param name="supportedSafari">Safari 3.2.x</param> <!-- aliased across labels; do not change -->
+        <param name="compatibilityMsg3">Mulţumesc!</param>
+        <param name="closeBtn" alias="Global.close"/>
+        <param name="restoreClassicBtn">Se setează vizualizarea clasică drept vizualizare implicită</param>
+    </section>
+    <section name="AutoCompleteCombo" all_languages="yes" public="false">
+        <param name="searchItemMsg">Tastaţi aici pentru a căuta {0}...</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="itemNotFound">Niciun {0} nu se potriveşte criteriilor de căutare.</param> <!-- {0} = a singular entity name (eg "Account") -->
+        <param name="pagingMessage">Pagina {1} din {0}</param> <!-- {0} =  the number of total pages, {1} == the number of current page -->
+        <param name="nextText" alias="Wizard.next"/>
+        <param name="previousText" alias="Wizard.previous"/>
+    </section>
+    
+</iniFile>
