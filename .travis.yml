@@ -1,0 +1,24 @@
+language: java
+jdk: oraclejdk8
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: ""
+
+addons:
+  coverity_scan:
+    project:
+      name: "salesforce/grammaticus"
+      description: "Build submitted via Travis CI"
+    notification_email: pu.chen@salesforce.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: master
+
+before_script:
+  - pip install --user codecov
+
+after_success:
+  - codecov
