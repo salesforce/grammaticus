@@ -1,3 +1,11 @@
+<a href="https://travis-ci.org/salesforce/grammaticus">
+  <img src="https://travis-ci.org/salesforce/grammaticus.svg?branch=master">
+</a>
+<a href="https://scan.coverity.com/projects/salesforce-grammaticus">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/13659/badge.svg"/>
+</a>
+
 Grammaticus is a grammar engine that allows users to rename nouns while keeping content grammatically correct.
 ----------------------------------------------------------------------------------------------------------------------
 
