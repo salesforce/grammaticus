@@ -1,17 +1,153 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.force.commons</groupId>
+  
+  <groupId>com.salesforce.grammaticus</groupId>
   <artifactId>grammaticus</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
   <name>Grammaticus</name>
-  <description>Localization Framework that allows grammatically correct
-  renaming of nouns</description>
-
+  <description>Localization Framework that allows grammatically correct renaming of nouns</description>
+  <url>https://github.com/salesforce/grammaticus</url>
+  <organization>
+      <name>Salesforce</name>
+      <url>http://www.salesforce.com</url>
+  </organization>
+  
+  <licenses>
+      <license>
+          <name>BSD 3-Clause</name>
+          <url>file://${basedir}/LICENSE.txt</url>
+      </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+        <name>Yoshiyuki Oikawa</name>
+        <roles>
+            <role>Member</role>
+        </roles>
+        <email>yoikawa@salesforce.com</email>
+        <organization>Salesforce</organization>
+    </developer>
+    <developer>
+        <name>Steven Tamm</name>
+        <roles>
+            <role>Member</role>
+        </roles>
+        <email>stamm@salesforce.com </email>
+        <organization>Salesforce</organization>
+    </developer>
+    <developer>
+        <name>Pu Chen</name>
+        <roles>
+            <role>Member</role>
+        </roles>
+        <email>pu.chen@salesforce.com</email>
+        <organization>Salesforce</organization>
+    </developer>
+    <developer>
+        <name>Bo Yang</name>
+        <roles>
+            <role>Member</role>
+        </roles>
+        <email>bo.yang@salesforce.com</email>
+        <organization>Salesforce</organization>
+    </developer>        
+  </developers>
+  
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
+  <profiles>
+    <profile>
+      <!-- This profile uploads to sonatype (which is used to get artifacts into maven central) -->
+      <id>sonatype-staging</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation> 
+      <distributionManagement>
+        <snapshotRepository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>ossrh</id>
+          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+      </distributionManagement>
+      <!-- Nexus Staging -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.7</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
+        </plugins> 
+      </build>
+    </profile>
+    
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <!-- Javadoc JAR settings -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+                <bottom>Copyright (c) 2016-2017, Salesforce.com, Inc. All rights reserved. Licensed under
+                    the BSD 3-Clause license. For full license text, see the LICENSE.txt file in the
+                    repository.
+                </bottom>
+                <additionalparam>-Xdoclint:none</additionalparam>
+            </configuration>
+            <executions>
+                <execution>
+                  <id>attach-javadocs</id>
+                  <goals>
+                     <goal>jar</goal>
+                  </goals>
+                </execution>
+                <execution>
+                  <id>aggregate</id>
+                  <goals>
+                    <goal>aggregate</goal>
+                  </goals>
+                  <phase>site</phase>
+                </execution>
+            </executions>
+          </plugin>
+          
+          <!-- GPG Signed -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.5</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+	  </plugin>       
+        </plugins>
+      </build>
+    </profile>      
+  </profiles>
 
   <build>
     <!-- Include .properties files -->
@@ -26,6 +162,7 @@
         </excludes>
       </resource>
     </resources>
+    
     <plugins>
       <!-- always build source jars -->
       <plugin>
@@ -41,6 +178,8 @@
           </execution>
         </executions>
       </plugin>
+      
+      <!-- Code coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -59,7 +198,27 @@
               </goals>
           </execution>
         </executions>
-      </plugin>      
+      </plugin> 
+	  
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+	  </plugin>
+	   
+	   <!-- Maven Release plugin -->
+	   <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-release-plugin</artifactId>
+	    <version>2.5.3</version>
+	    <configuration>
+	      <autoVersionSubmodules>true</autoVersionSubmodules>
+	      <useReleaseProfile>false</useReleaseProfile>
+	      <releaseProfiles>release</releaseProfiles>
+	      <goals>deploy</goals>
+	    </configuration>
+	  </plugin>
+
     </plugins>
   </build>
   
