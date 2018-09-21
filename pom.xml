@@ -1,253 +1,261 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.salesforce.grammaticus</groupId>
-  <artifactId>grammaticus</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  
-  <name>Grammaticus</name>
-  <description>Localization Framework that allows grammatically correct renaming of nouns</description>
-  <url>https://github.com/salesforce/grammaticus</url>
-  <organization>
-      <name>Salesforce</name>
-      <url>http://www.salesforce.com</url>
-  </organization>
-  
-  <licenses>
-      <license>
-          <name>BSD 3-Clause</name>
-          <url>file://${basedir}/LICENSE.txt</url>
-      </license>
-  </licenses>
-  
-  <developers>
-    <developer>
-        <name>Yoshiyuki Oikawa</name>
-        <roles>
-            <role>Member</role>
-        </roles>
-        <email>yoikawa@salesforce.com</email>
-        <organization>Salesforce</organization>
-    </developer>
-    <developer>
-        <name>Steven Tamm</name>
-        <roles>
-            <role>Member</role>
-        </roles>
-        <email>stamm@salesforce.com </email>
-        <organization>Salesforce</organization>
-    </developer>
-    <developer>
-        <name>Pu Chen</name>
-        <roles>
-            <role>Member</role>
-        </roles>
-        <email>pu.chen@salesforce.com</email>
-        <organization>Salesforce</organization>
-    </developer>
-    <developer>
-        <name>Bo Yang</name>
-        <roles>
-            <role>Member</role>
-        </roles>
-        <email>bo.yang@salesforce.com</email>
-        <organization>Salesforce</organization>
-    </developer>        
-  </developers>
-  
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  
-  <profiles>
-    <profile>
-      <!-- This profile uploads to sonatype (which is used to get artifacts into maven central) -->
-      <id>sonatype-staging</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation> 
-      <distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">   
+    <modelVersion>4.0.0</modelVersion>
+
+    <packaging>jar</packaging>
+    <groupId>com.github.manodj-sfdc</groupId>
+    <artifactId>grammaticus</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+   
+    <name>Grammaticus</name>
+    <description>
+        Localization Framework that allows grammatically correct renaming of nouns
+    </description>
+    <url>https://github.com/salesforce/grammaticus</url> 
+    <organization>
+        <name>Salesforce</name>
+        <url>http://www.salesforce.com</url>
+    </organization>    
+
+
+    <licenses>
+        <license>
+            <name>BSD-3-Clause</name>
+            <url>file://${basedir}/LICENSE.txt</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>Yoshiyuki Oikawa</name>
+            <roles>
+                <role>Member</role>
+            </roles>
+            <email>yoikawa@salesforce.com</email>
+            <organization>Salesforce</organization>
+        </developer>
+        <developer>
+            <name>Steven Tamm</name>
+            <roles>
+                <role>Member</role>
+            </roles>
+            <email>stamm@salesforce.com </email>
+            <organization>Salesforce</organization>
+        </developer>
+        <developer>
+            <name>Pu Chen</name>
+            <roles>
+                <role>Member</role>
+            </roles>
+            <email>pu.chen@salesforce.com</email>
+            <organization>Salesforce</organization>
+        </developer>
+        <developer>
+            <name>Bo Yang</name>
+            <roles>
+                <role>Member</role>
+            </roles>
+            <email>bo.yang@salesforce.com</email>
+            <organization>Salesforce</organization>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>
+            https://github.com/salesforce/grammaticus
+        </url>
+        <connection>
+            scm:git:git@github.com:salesforce/grammaticus.git
+        </connection>
+        <developerConnection>
+            scm:git:https://github.com/salesforce/grammaticus.git
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
         <snapshotRepository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>sonatype-nexus-staging</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-          <id>ossrh</id>
-          <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>sonatype-nexus-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-      </distributionManagement>
-      <!-- Nexus Staging -->
-      <build>
+    </distributionManagement>
+
+    <build>                    
+        <!-- Include .properties files -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
         <plugins>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.7</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-        </plugins> 
-      </build>
-    </profile>
-    
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <!-- Javadoc JAR settings -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-                <bottom>Copyright (c) 2016-2017, Salesforce.com, Inc. All rights reserved. Licensed under
-                    the BSD 3-Clause license. For full license text, see the LICENSE.txt file in the
-                    repository.
-                </bottom>
-                <additionalparam>-Xdoclint:none</additionalparam>
-            </configuration>
-            <executions>
-                <execution>
-                  <id>attach-javadocs</id>
-                  <goals>
-                     <goal>jar</goal>
-                  </goals>
-                </execution>
-                <execution>
-                  <id>aggregate</id>
-                  <goals>
-                    <goal>aggregate</goal>
-                  </goals>
-                  <phase>site</phase>
-                </execution>
-            </executions>
-          </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!-- Code coverage -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>        
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <bottom>
+                        Copyright (c) 2016-2017, Salesforce.com, Inc. All rights reserved. Licensed under the BSD 3-Clause license. For full license text, see the LICENSE.txt file in the
+                        repository.
+                    </bottom>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <additionalJOption>-Xdoclint:none</additionalJOption>
+                    <additionalOptions>-Xdoclint:none</additionalOptions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>aggregate</id>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <configuration>
+                    <file>${project.basedir}/README.md</file>
+                    <replacements>
+                        <replacement>
+                            <token><![CDATA[<version>(.*)</version>]]></token>
+                            <value><![CDATA[<version>${project.version}</version>]]></value>
+                        </replacement>
+                    </replacements>
+                    <regex>true</regex>
+                </configuration>
+            </plugin>
           
-          <!-- GPG Signed -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-	  </plugin>       
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.9.5</version>
+                
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <preparationGoals>replacer:replace </preparationGoals>
+                    <goals>initialize</goals>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <useAgent>false</useAgent>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
-      </build>
-    </profile>      
-  </profiles>
+    </build>
 
-  <build>
-    <!-- Include .properties files -->
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-      </resource>
-      <resource>
-        <directory>src/main/java</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-    </resources>
-    
-    <plugins>
-      <!-- always build source jars -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      
-      <!-- Code coverage -->
-      <plugin>
-        <groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.9</version>
-        <executions>
-          <execution>
-              <goals>
-                  <goal>prepare-agent</goal>
-              </goals>
-          </execution>
-          <execution>
-              <id>report</id>
-              <phase>test</phase>
-              <goals>
-                  <goal>report</goal>
-              </goals>
-          </execution>
-        </executions>
-      </plugin> 
-	  
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.8.2</version>
-	  </plugin>
-	   
-	   <!-- Maven Release plugin -->
-	   <plugin>
-	    <groupId>org.apache.maven.plugins</groupId>
-	    <artifactId>maven-release-plugin</artifactId>
-	    <version>2.5.3</version>
-	    <configuration>
-	      <autoVersionSubmodules>true</autoVersionSubmodules>
-	      <useReleaseProfile>false</useReleaseProfile>
-	      <releaseProfiles>release</releaseProfiles>
-	      <goals>deploy</goals>
-	    </configuration>
-	  </plugin>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency> 
 
-    </plugins>
-  </build>
-  
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>18.0</version>
-    </dependency> 
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  
-  <scm>
-    <connection>
-      scm:git:git://github.com/salesforce/grammaticus.git
-    </connection>
-    <developerConnection>
-      scm:git:ssh://github.com:salesforce/grammaticus.git
-    </developerConnection>
-    <url>
-      https://github.com/salesforce/grammaticus.git
-    </url>
-    <tag>grammaticus-1.0.1</tag>
-  </scm>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>
+
