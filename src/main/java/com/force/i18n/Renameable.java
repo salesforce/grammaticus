@@ -49,7 +49,7 @@ public interface Renameable {
 
     /**
      * @param labelKey the label from the grammar files
-     * @return for the given labelKey, return the DB key that should be used to retreive it.
+     * @return for the given labelKey, return the DB key that should be used to retrieve it.
      * I.e., if labelKey is "Entity" and this is "Account", it should return "Account".
      */
     String getEntitySpecificDbLabelKey(String labelKey);

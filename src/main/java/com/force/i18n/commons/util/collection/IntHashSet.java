@@ -23,7 +23,7 @@ import com.google.common.annotations.Beta;
  * buckets.  Iterating over this set requires time proportional to the sum of
  * the <tt>IntHashSet</tt> instance's size (the number of elements) plus the
  * "capacity" of the backing <tt>IntHashMap</tt> instance (the number of
- * buckets).  Thus, it's very important not to set the intial capacity too
+ * buckets).  Thus, it's very important not to set the initial capacity too
  * high (or the load factor too low) if iteration performance is important.<p>
  *
  * <b>Note that this implementation is not synchronized.</b> If multiple

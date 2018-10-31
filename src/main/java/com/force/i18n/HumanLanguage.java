@@ -22,7 +22,7 @@ import com.force.i18n.commons.text.DeferredStringBuilder;
  * 
  * Usually there is a mapping from the language field of a locale to one of these languages,
  * but due to regional variation, a company may want to use a full locale to represent the human
- * language, especially for variants in Spanish, Portugese, German, and Chinese.
+ * language, especially for variants in Spanish, Portuguese, German, and Chinese.
  * 
  * For the override html language, see this page: http://www.w3.org/International/articles/bcp47/
  * @author stamm
