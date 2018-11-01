@@ -425,7 +425,7 @@ public final class LanguageDictionary implements Serializable {
             } else  if (n.getGender() != gender // Validate that it's the same
                     || n.getStartsWith() != startsWith
                     || n.isStandardField() != isStandardField) {
-                // We go in here when a label file is overriden with another
+                // We go in here when a label file is overridden with another
                 // Ex: when processing Mexican Spanish over regular Spanish OR when using the label renderer
                 n.setGender(gender);
                 n.setStartsWith(startsWith);
