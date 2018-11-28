@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,19 +22,21 @@ import com.google.common.collect.*;
  * @author stamm (from rchen/150)
  */
 public abstract class LabelDebugProvider {
-	// TODO SLT: Switch to an enum
+    // TODO SLT: Switch to an enum
     protected static final String TRACE = "trace";
     protected static final String MASK = "mask";
 
     private volatile static LabelDebugProvider INSTANCE = new DisabledLabelDebugProvider();  // Default to disabled
 
-    public static LabelDebugProvider get() { return INSTANCE; }
+    public static LabelDebugProvider get() {
+        return INSTANCE;
+    }
 
     /**
      * Set the debug provider to be enabled or disabled
      */
     public static void setLabelDebugProviderEnabled(boolean enabled) {
-    	setLabelDebugProviderEnabled(enabled ? new EnabledLabelDebugProvider() : new DisabledLabelDebugProvider());
+        setLabelDebugProviderEnabled(enabled ? new EnabledLabelDebugProvider() : new DisabledLabelDebugProvider());
     }
 
     /**
@@ -42,15 +44,16 @@ public abstract class LabelDebugProvider {
      * rely on the default behavior
      */
     public static void setLabelDebugProviderEnabled(LabelDebugProvider provider) {
-    	Preconditions.checkNotNull(provider);
+        Preconditions.checkNotNull(provider);
         INSTANCE = provider;
     }
 
     /**
      * Given a label reference, and it's text, possibly modify the hint to provide help
-     * @param text the text value of the label
+     *
+     * @param text    the text value of the label
      * @param section the section for the label
-     * @param key the key for the label
+     * @param key     the key for the label
      * @return the text passed in, possibly with some hinting information appended.
      */
     public abstract String makeLabelHintIfRequested(String text, String section, String key);
@@ -88,16 +91,18 @@ public abstract class LabelDebugProvider {
 
     /**
      * Set whether we are tracking label usage or not
-     * @param trackUsage whether usage should be tracked
      *
-     * Note: This is not threadsafe, and you should synchronize on the object before setting.
+     * @param trackUsage whether usage should be tracked
+     *                   <p>
+     *                   Note: This is not threadsafe, and you should synchronize on the object before setting.
      */
     public abstract void setTrackingLabelUsage(boolean trackUsage);
 
     /**
      * Mark the label as being tracked:
+     *
      * @param section the section of the label
-     * @param key the key of the label
+     * @param key     the key of the label
      */
     public abstract void trackLabel(String section, String key);
 
@@ -105,10 +110,11 @@ public abstract class LabelDebugProvider {
      * @return the set of labels used so far in the application, returned
      * as an unmodifiable multimap from section to key
      */
-    public abstract SetMultimap<String,String> getUsedLabels();
+    public abstract SetMultimap<String, String> getUsedLabels();
 
     /**
      * Sets the value of the current request as to whether it
+     *
      * @param value the value of the
      * @return the previous value of the request.
      */
@@ -116,6 +122,7 @@ public abstract class LabelDebugProvider {
 
     /**
      * Set the label hint mode.
+     *
      * @param value either null, TRACE or MASK
      */
     public abstract void setLabelHintMode(String value);
@@ -127,7 +134,8 @@ public abstract class LabelDebugProvider {
     /**
      * Marker interface for a debug continuation so that label hints can survive reestablishing requests
      */
-    public static interface LabelDebugContinuation {}
+    public static interface LabelDebugContinuation {
+    }
 
     /**
      * Implementation of LabelDebugProvider that does nothing
@@ -182,13 +190,16 @@ public abstract class LabelDebugProvider {
 
         // Big f'n switch for whether we're doing label debugging or not.  Gated by Debug.isDebug()
         private static final ThreadLocal<Boolean> IS_DEBUGGING = new ThreadLocal<Boolean>() {
-            @Override protected Boolean initialValue() { return Boolean.FALSE; }
+            @Override
+            protected Boolean initialValue() {
+                return Boolean.FALSE;
+            }
         };
 
         // If true, it means that we're tracking the total set of labels
         private boolean isTracking = false;
         // Yes unsynchronized, to prevent a big map we're going to do something a little fancier in the code itself
-        private final Set<LabelReference> usedLabels = Collections.newSetFromMap(new ConcurrentHashMap<LabelReference,Boolean>(256, .75f, 16));
+        private final Set<LabelReference> usedLabels = Collections.newSetFromMap(new ConcurrentHashMap<LabelReference, Boolean>(256, .75f, 16));
 
         // Keeps track of labels from this Thread (i.e. request)
         private static final ThreadLocal<List<LabelDebug>> LABEL_DEBUGS = new ThreadLocal<List<LabelDebug>>() {
@@ -211,9 +222,9 @@ public abstract class LabelDebugProvider {
         }
 
         /**
-         * @param text Text of the label, to be stored until printed in dev footer
+         * @param text    Text of the label, to be stored until printed in dev footer
          * @param section Section
-         * @param key Key (aka param)
+         * @param key     Key (aka param)
          */
         @Override
         public String makeLabelHintIfRequested(String text, String section, String key) {
@@ -275,7 +286,7 @@ public abstract class LabelDebugProvider {
         public SetMultimap<String, String> getUsedLabels() {
             if (isTracking) {
                 // Make a nice sorted copy
-                TreeMultimap<String,String> result = TreeMultimap.create();
+                TreeMultimap<String, String> result = TreeMultimap.create();
                 for (LabelReference lr : usedLabels) {
                     result.put(lr.getSection(), lr.getKey());
                 }
@@ -295,13 +306,16 @@ public abstract class LabelDebugProvider {
             this.isTracking = trackUsage;
         }
 
-        private static final LabelDebugContinuation NOT_TRACKING = new LabelDebugContinuation() {};
+        private static final LabelDebugContinuation NOT_TRACKING = new LabelDebugContinuation() {
+        };
 
         static final class RealLabelDebugContinuation implements LabelDebugContinuation {
             private final List<LabelDebug> existingDebugs;
+
             public RealLabelDebugContinuation(List<LabelDebug> existingDebugs) {
                 this.existingDebugs = existingDebugs;
             }
+
             public List<LabelDebug> getList() {
                 return this.existingDebugs;
             }
@@ -323,7 +337,7 @@ public abstract class LabelDebugProvider {
             } else {
                 setLabelHintRequest(true);
                 assert continuation instanceof RealLabelDebugContinuation;
-                LABEL_DEBUGS.set(((RealLabelDebugContinuation)continuation).getList());
+                LABEL_DEBUGS.set(((RealLabelDebugContinuation) continuation).getList());
             }
         }
 

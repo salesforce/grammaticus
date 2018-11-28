@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 package com.force.i18n;
@@ -33,7 +33,8 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
 
     /**
      * Construct a label set from the given data and optional labelSectionToFileName
-     * @param data the data
+     *
+     * @param data                   the data
      * @param labelSectionToFilename the map from label section to filename (not super useful)
      */
     protected LabelSetImpl(PropertyFileData data, Map<String, String> labelSectionToFilename) {
@@ -70,7 +71,7 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
         if (result != null) {
             if (result instanceof LabelRef) {
                 // Ensure that aliases can also be correctly resolved
-                LabelRef ref = (LabelRef)result;
+                LabelRef ref = (LabelRef) result;
                 return labelExists(ref.getSection(), ref.getKey());
             }
             return true;
@@ -115,12 +116,12 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
     /**
      * Will either throw an exception or send an error depending on whether we
      * are in production / test running more or note.
-     *
+     * <p>
      * TODO : LabelUtils.java also has a processMissingLabel()
      * method used by other classes. We should have this method just depend
      * on Config.isProduction() and merge the two methods together
      *
-     * @param message the message to return as the label
+     * @param message             the message to return as the label
      * @param allowLabelException - true to always throw an exception for a missing label
      * @throws ParameterNotFoundException if label exception is allowed
      */

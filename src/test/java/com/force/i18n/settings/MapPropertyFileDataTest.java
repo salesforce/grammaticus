@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -38,7 +38,8 @@ public class MapPropertyFileDataTest extends TestCase {
         try {
             propData.getLocale();
             fail("Not allowed to ask for locale when constructed without one");
-        } catch (IllegalStateException expected) { }
+        } catch (IllegalStateException expected) {
+        }
     }
 
     public void testGetSection() throws Exception {
@@ -53,7 +54,8 @@ public class MapPropertyFileDataTest extends TestCase {
         try {
             section.put("another param", "some other value");
             fail("we should have an unmodifiable view");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
     }
 
     public void testSectionNamespaces() throws Exception {
@@ -68,11 +70,13 @@ public class MapPropertyFileDataTest extends TestCase {
         try {
             this.data.getPublicSectionNames().add("another section");
             fail("we should have an unmodifiable view");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
 
         try {
             this.data.setSectionAsPublic("FOO");
-        } catch (RuntimeException expected) {}
+        } catch (RuntimeException expected) {
+        }
     }
 
     public void testEntrySet() throws Exception {
@@ -89,7 +93,8 @@ public class MapPropertyFileDataTest extends TestCase {
             try {
                 iter.remove();
                 fail("we should have an unmodifiable view");
-            } catch (UnsupportedOperationException expected) { }
+            } catch (UnsupportedOperationException expected) {
+            }
         }
     }
 
@@ -104,7 +109,8 @@ public class MapPropertyFileDataTest extends TestCase {
         try {
             sectionNames.add("another section");
             fail("we should have an unmodifiable view");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
     }
 
     public void testContainsSection() throws Exception {
@@ -132,7 +138,7 @@ public class MapPropertyFileDataTest extends TestCase {
     }
 
     public void testRemove() throws Exception {
-         // should be okay to remove a non-existent parameter
+        // should be okay to remove a non-existent parameter
         this.data.remove("doesn't exist", "blah");
 
         this.data.put("section", "param", "value");

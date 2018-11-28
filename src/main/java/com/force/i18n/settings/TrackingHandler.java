@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -58,22 +58,22 @@ public abstract class TrackingHandler extends DefaultHandler {
 
     public static boolean exists(URL url) {
         switch (url.getProtocol()) {
-        case "file":
-            try {
-                File actualFile = new File(url.toURI());
-                return actualFile.exists();
-            } catch (URISyntaxException e) {
-                throw new IllegalArgumentException(e);
-            }
-        case "jar":
-            try {
-                URLConnection conn = url.openConnection();
-                conn.getInputStream().close();
-                return true;
-            } catch (IOException | StringIndexOutOfBoundsException ex) {
-                return false;
-            }
-        default:
+            case "file":
+                try {
+                    File actualFile = new File(url.toURI());
+                    return actualFile.exists();
+                } catch (URISyntaxException e) {
+                    throw new IllegalArgumentException(e);
+                }
+            case "jar":
+                try {
+                    URLConnection conn = url.openConnection();
+                    conn.getInputStream().close();
+                    return true;
+                } catch (IOException | StringIndexOutOfBoundsException ex) {
+                    return false;
+                }
+            default:
         }
         return false;
     }
@@ -85,14 +85,14 @@ public abstract class TrackingHandler extends DefaultHandler {
     public InputSource resolveEntity(String publicId, String systemId) {
         if (systemId != null) {
             try {
-            	String dtdName = new File(systemId).getName();
+                String dtdName = new File(systemId).getName();
                 URL file = getFile() != null ? new URL(getFile(), dtdName)
-                	: new File("config", new File(systemId).getName()).toURI().toURL();
+                        : new File("config", new File(systemId).getName()).toURI().toURL();
                 if (dtdName.endsWith(".dtd")) {  // The labels.dtd isn't copied to all directories (like the names.dtd), so go up the tree to find it
-                	for (int i = DIRECTORY_DEPTH_FOR_DTD; i > 0 && !exists(file); i--) {
-	                	// Import can occasionally get confused
-	                	file = new URL(file, "../" + dtdName);
-                	}
+                    for (int i = DIRECTORY_DEPTH_FOR_DTD; i > 0 && !exists(file); i--) {
+                        // Import can occasionally get confused
+                        file = new URL(file, "../" + dtdName);
+                    }
                 }
 
                 // Check to see if it's in the resource bundle (so you don't have to copy labels.dtd everywhere.
@@ -107,8 +107,7 @@ public abstract class TrackingHandler extends DefaultHandler {
                 }
 
 
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 // probably a problem with the file, just switch over to standard processing.
                 return null;
             }

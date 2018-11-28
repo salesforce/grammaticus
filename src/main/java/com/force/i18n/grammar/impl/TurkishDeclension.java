@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,13 +20,12 @@ import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Turk Turk Turkish! 
- *
+ * Turk Turk Turkish!
+ * <p>
  * Nouns are very complex
  * Adjectives and articles are dead simple.
  *
- *
- * @author jmooney,stamm
+ * @author jmooney, stamm
  */
 class TurkishDeclension extends ArticledDeclension {
     private static final Logger logger = Logger.getLogger(TurkishDeclension.class.getName());
@@ -50,17 +49,22 @@ class TurkishDeclension extends ArticledDeclension {
     }
 
     @Override
-    public boolean hasGender() { return false; }  // Gender's irrelevant in Turkish
+    public boolean hasGender() {
+        return false;
+    }  // Gender's irrelevant in Turkish
 
     @Override
-    public boolean hasStartsWith() { return false; }  // Starts with is irrelevant in turkish (ends with is very important, however)
+    public boolean hasStartsWith() {
+        return false;
+    }  // Starts with is irrelevant in turkish (ends with is very important, however)
+
     @Override
     public boolean hasPossessive() {
         return true;
     }
 
     public TurkishDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<TurkishNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<TurkishNounForm> fieldBuilder = ImmutableList.builder();
@@ -85,10 +89,10 @@ class TurkishDeclension extends ArticledDeclension {
      */
     static class TurkishNounForm extends ComplexNounForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguagePossessive possesive;
 
@@ -99,14 +103,31 @@ class TurkishDeclension extends ArticledDeclension {
             this.possesive = possesive;
         }
 
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return possesive;
+        }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue();
         }
+
         @Override
         public String toString() {
             return "TurkishNF:" + getKey();
@@ -119,17 +140,18 @@ class TurkishDeclension extends ArticledDeclension {
      * See TurkishNounForm for more info
      */
     public static class TurkishNoun extends ComplexArticledNoun<TurkishNounForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         TurkishNoun(TurkishDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
-        
-        @Override
-		protected final Class<TurkishNounForm> getFormClass() {
-        	return TurkishNounForm.class;
-		}
 
-		@Override
+        @Override
+        protected final Class<TurkishNounForm> getFormClass() {
+            return TurkishNounForm.class;
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
@@ -154,7 +176,7 @@ class TurkishDeclension extends ArticledDeclension {
     }
 
     @Override
-    public List< ? extends ArticleForm> getArticleForms() {
+    public List<? extends ArticleForm> getArticleForms() {
         return Collections.singletonList(SimpleModifierForm.SINGULAR);
     }
 
@@ -169,14 +191,14 @@ class TurkishDeclension extends ArticledDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
         // Adjectives in turkish are invariant.  Ya rly.
         return SimpleModifierForm.SINGULAR;
     }
 
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1) {
+                                      LanguageCase case1) {
         return SimpleModifierForm.SINGULAR;
     }
 
@@ -186,29 +208,28 @@ class TurkishDeclension extends ArticledDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return Collections.singletonList(SimpleModifierForm.SINGULAR);
     }
 
 
-
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getFieldForms() {
+    public Collection<? extends NounForm> getFieldForms() {
         return this.fieldForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
 }

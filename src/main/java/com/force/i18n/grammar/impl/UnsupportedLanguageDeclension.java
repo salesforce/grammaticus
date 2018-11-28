@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,10 +21,11 @@ import com.google.common.collect.ImmutableList;
 /**
  * For platform languages that aren't going to be supported, this class provides some simple mechanisms for
  * obtaining a bare minimum of values.
+ *
  * @author stamm
  */
 abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
-	// All the forms you can request
+    // All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(SimpleNounForm.SINGULAR);
@@ -33,11 +34,11 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     static final List<? extends ArticleForm> ARTICLE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public UnsupportedLanguageDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return ALL_FORMS;
     }
 
@@ -57,7 +58,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return ADJECTIVE_FORMS;
     }
 
@@ -103,7 +104,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
         return SimpleModifierForm.SINGULAR;
     }
 
@@ -122,10 +123,10 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
      */
     static class CelticDeclension extends UnsupportedLanguageDeclension {
         public CelticDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public boolean hasGender() {
             return true;
         }
@@ -134,6 +135,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         public EnumSet<LanguageGender> getRequiredGenders() {
             return EnumSet.of(LanguageGender.MASCULINE, LanguageGender.FEMININE);
         }
+
         @Override
         public LanguagePosition getDefaultAdjectivePosition() {
             return LanguagePosition.POST;
@@ -146,10 +148,11 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
      */
     static class IrishDeclension extends CelticDeclension {
         public IrishDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
         static final List<? extends NounForm> GA_ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(IrishNounForm.class));
+
         public static enum IrishNounForm implements NounForm {
             SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
             SINGULAR_GEN(LanguageNumber.SINGULAR, LanguageCase.GENITIVE),
@@ -159,15 +162,32 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
             private final LanguageNumber number;
             private final LanguageCase caseType;
+
             private IrishNounForm(LanguageNumber number, LanguageCase caseType) {
                 this.number = number;
                 this.caseType = caseType;
             }
 
-            @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
-            @Override public LanguageCase getCase() { return this.caseType; }
-            @Override public LanguageNumber getNumber() {return this.number;}
-            @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+            @Override
+            public LanguageArticle getArticle() {
+                return LanguageArticle.ZERO;
+            }
+
+            @Override
+            public LanguageCase getCase() {
+                return this.caseType;
+            }
+
+            @Override
+            public LanguageNumber getNumber() {
+                return this.number;
+            }
+
+            @Override
+            public LanguagePossessive getPossessive() {
+                return LanguagePossessive.NONE;
+            }
+
             @Override
             public String getKey() {
                 return getNumber().getDbValue() + "-" + getCase().getDbValue();
@@ -176,15 +196,15 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
         public static final class IrishNoun extends LegacyArticledNoun {
             /**
-			 *
-			 */
-			private static final long serialVersionUID = 1L;
-			private String singular;
+             *
+             */
+            private static final long serialVersionUID = 1L;
+            private String singular;
             private String plural;
             private String singular_gen;
             private String plural_gen;
 
-            IrishNoun(IrishDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
+            IrishNoun(IrishDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
                 super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
             }
 
@@ -197,16 +217,19 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
                 return enumMapFilterNulls(IrishNounForm.SINGULAR, singular, IrishNounForm.PLURAL, plural, IrishNounForm.SINGULAR_GEN, singular_gen,
                         IrishNounForm.PLURAL_GEN, plural_gen);
             }
+
             @Override
             public String getDefaultString(boolean isPlural) {
                 return isPlural ? (plural != null ? plural : singular) : singular;
             }
+
             @Override
             public String getExactString(NounForm form) {
                 assert form instanceof IrishNounForm : "Trying to trick a leprechaun out of his gold with a non-irish noun form? " + form;
                 return form.getCase() == LanguageCase.GENITIVE ? form.getNumber() == LanguageNumber.PLURAL ? plural_gen : singular_gen
                         : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
             }
+
             @Override
             public void setString(String value, NounForm form) {
                 if (form.getCase() == LanguageCase.GENITIVE) {
@@ -223,6 +246,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
                     }
                 }
             }
+
             @Override
             protected boolean validateValues(String name, LanguageCase _case) {
                 if (this.singular == null) {
@@ -230,8 +254,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
                 }
                 // Default the values for entity nouns, but not for others to make rename fields more specific.
                 if (getNounType() == NounType.ENTITY) {
-                    if (this.plural == null)
-                     {
+                    if (this.plural == null) {
                         this.plural = this.singular;  // Default plural to singular.
                     }
                     // Default the singular/plural definitions to start
@@ -248,7 +271,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
 
         @Override
-        public List< ? extends NounForm> getAllNounForms() {
+        public List<? extends NounForm> getAllNounForms() {
             return GA_ALL_FORMS;
         }
 
@@ -261,7 +284,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
         @Override
         protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
-                LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+                                  LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new IrishNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
         }
 
@@ -283,10 +306,10 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
      */
     static class MalteseDeclension extends UnsupportedLanguageDeclension {
         public MalteseDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public LanguagePosition getDefaultAdjectivePosition() {
             return LanguagePosition.POST;
         }
@@ -299,12 +322,12 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
      */
     static class BasqueDeclension extends UnsupportedLanguageDeclension {
         public BasqueDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		// Unsupported language where plurals are formed using complicated aggutinations.
+        // Unsupported language where plurals are formed using complicated aggutinations.
         @Override
-        public List< ? extends NounForm> getAllNounForms() {
+        public List<? extends NounForm> getAllNounForms() {
             return Collections.singletonList(SimpleNounForm.SINGULAR);
         }
 

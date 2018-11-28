@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -44,13 +44,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     /**
      * Package protected constructor used by the LabelParser.
      *
-     * @param dataFile
-     *            XML file this handler is reading.
-     * @param parser
-     *            parser that is using this handler and thus the overall parse context.
+     * @param dataFile XML file this handler is reading.
+     * @param parser   parser that is using this handler and thus the overall parse context.
      */
     GrammaticalLabelFileHandler(URL dataFile, PropertyFileData data, GrammaticalLabelFileParser parser) {
-    	super(dataFile);
+        super(dataFile);
         assert dataFile != null && data != null && parser != null;
         this.data = data;
         this.parser = parser;
@@ -82,7 +80,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
     /**
      * @see org.xml.sax.ContentHandler#startElement(java.lang.String, java.lang.String, java.lang.String,
-     *      org.xml.sax.Attributes)
+     * org.xml.sax.Attributes)
      */
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -138,8 +136,13 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     static final String YES = "y";
     static final String NO = "n";
 
-    GrammaticalLabelFileParser getParser() { return this.parser; }
-    LanguageDictionary getDictionary() { return getParser().getDictionary(); }
+    GrammaticalLabelFileParser getParser() {
+        return this.parser;
+    }
+
+    LanguageDictionary getDictionary() {
+        return getParser().getDictionary();
+    }
 
     /**
      * The base class for each tag implementation.
@@ -148,7 +151,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         private BaseTag parent = null;
         private String name;
 
-        BaseTag() {}
+        BaseTag() {
+        }
 
         BaseTag(BaseTag parent, Attributes atts) throws SAXParseException {
             this.parent = parent;
@@ -174,17 +178,20 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         /**
          * Pass through the SAX event for characters
          */
-        void characters(char[] ch, int start, int length) {}
+        void characters(char[] ch, int start, int length) {
+        }
 
         /**
          * Pass through the SAX event for starting the element
          */
-        void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {}
+        void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        }
 
         /**
          * Pass through the SAX event for ending the last element
          */
-        void endElement() {}
+        void endElement() {
+        }
 
         /**
          * @return whether the name attribute is required for this tag
@@ -349,7 +356,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 else {
                     this.isAlias = true;
                     getParser().addAlias(parent.getName(), getName(), alias.substring(0, i),
-                        alias.substring(i + 1), getFile(), getLocator().getLineNumber());
+                            alias.substring(i + 1), getFile(), getLocator().getLineNumber());
                 }
             }
 
@@ -407,28 +414,28 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         void endElement() {
             if (this.isAlias) {
                 // register to name only - leave as null at this point
-                ((SectionTag)getParent()).addLabelData(getName(), null);
+                ((SectionTag) getParent()).addLabelData(getName(), null);
 
             } else {
                 // push any remaining string
                 if (this.sb != null && this.sb.length() > 0) {
                     if (getParser().trackDupes()) {
-                        getParser().trackLabel(this.sb.toString(), getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
+                        getParser().trackLabel(this.sb.toString(), getFile().getPath() + ":" + ((SectionTag) getParent()).getName() + "." + getName());
                     }
                     addBufferedText();
                 }
 
                 if (values.isEmpty()) {
-                    ((SectionTag)getParent()).addLabelData(getName(), "");
+                    ((SectionTag) getParent()).addLabelData(getName(), "");
 
                 } else {
 
                     if (this.values.size() == 1) {
-                        ((SectionTag)getParent()).addLabelData(getName(), this.values.get(0));
+                        ((SectionTag) getParent()).addLabelData(getName(), this.values.get(0));
                     } else {
                         List<Object> data;
                         data = finishParsingLabelsNew(this.values);
-                        ((SectionTag)getParent()).addLabelData(getName(), data);
+                        ((SectionTag) getParent()).addLabelData(getName(), data);
                     }
                 }
             }
@@ -461,7 +468,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     phrases.add(curPhrase);  // Once there's a noun, there's a noun phrase
                     curPhrase.setNounLoc(i);
                 } else if (o instanceof AdjectiveRefTag) {
-                    AdjectiveRefTag refTag = (AdjectiveRefTag)o;
+                    AdjectiveRefTag refTag = (AdjectiveRefTag) o;
                     Adjective adj = getDictionary().getAdjective(refTag.getName());
                     LanguagePosition pos = refTag.getDeclensionOverrides().getPosition();  // Allow for position overrides in case it's "different"
                     if (pos == null) pos = adj.getPosition();
@@ -469,7 +476,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                         curPhrase = new NounPhrase(values);  // Demarcate as a new phrase
                     }
                     if (adj.isCopiedFromDefault()) {
-                        logger.log(getSevereProblemLogLevel(), "Adjective copied from english for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
+                        logger.log(getSevereProblemLogLevel(), "Adjective copied from english for " + getFile().getPath() + ":" + ((SectionTag) getParent()).getName() + "." + getName());
                     }
 
                     // add to the last noun phrase
@@ -478,16 +485,16 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             }
             if (!curPhrase.isNounSet()) {
                 if (phrases.size() == 0) {
-                    logger.log(getSevereProblemLogLevel(), "Adjective used without a noun for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
+                    logger.log(getSevereProblemLogLevel(), "Adjective used without a noun for " + getFile().getPath() + ":" + ((SectionTag) getParent()).getName() + "." + getName());
                     return values;  // Don't deal
                 } else {
                     // Chances are we have a dangling adjective (like <Tasks/> (<Open/>))
                     if (phrases.size() > 1) {
                         // Log only if there's an actual issue (multiple nouns)
-                        logger.log(getSevereProblemLogLevel(), "Prepositional Adjective used in post-position for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
+                        logger.log(getSevereProblemLogLevel(), "Prepositional Adjective used in post-position for " + getFile().getPath() + ":" + ((SectionTag) getParent()).getName() + "." + getName());
                     }
                     // Add the adjectives to the last noun phrase and keep going.
-                    NounPhrase lastPhrase = phrases.get(phrases.size()-1);
+                    NounPhrase lastPhrase = phrases.get(phrases.size() - 1);
                     for (Integer i : curPhrase.getAdjectiveLocs()) {
                         lastPhrase.addAdjectiveLoc(i);
                     }
@@ -504,7 +511,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 if (articleRef != null) {
                     // Fix up the article of the noun based on the particle if it's interesting.
                     if (getDictionary().getDeclension().shouldInferNounDefArticleFromParticle()) {
-                        LanguageArticle articleType = ((Article)articleRef.resolveModifier(getDictionary())).getArticleType();
+                        LanguageArticle articleType = ((Article) articleRef.resolveModifier(getDictionary())).getArticleType();
                         // Update the noun with the article
                         if (articleType == LanguageArticle.DEFINITE) {
                             nounRef = nounRef.makeArticled(getDictionary(), articleType);
@@ -541,7 +548,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     AdjectiveRefTag adjTag = (AdjectiveRefTag) values.get(phrase.getAdjectiveLoc(i));
                     // Figure out the "next" object
                     if (i < phrase.getAdjectiveLocs().size() - 1) {
-                        int nextAdjective = phrase.getAdjectiveLoc(i+1);
+                        int nextAdjective = phrase.getAdjectiveLoc(i + 1);
                         values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nextAdjective < phrase.getNounLoc() ? (TermRefTag) values.get(nextAdjective) : nounRef, articleOverride));
                     } else {
                         values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nounRef, articleOverride));
@@ -565,6 +572,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
     /**
      * Represents the locations of various elements of a noun phrase in a label.
+     *
      * @author stamm
      */
     static class NounPhrase {
@@ -595,8 +603,13 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             assert values.get(i) instanceof ArticleRefTag : "Illegal article loc";
         }
 
-        public int getArticleLoc() { return this.articleLoc; }
-        public int getNounLoc() { return this.nounLoc; }
+        public int getArticleLoc() {
+            return this.articleLoc;
+        }
+
+        public int getNounLoc() {
+            return this.nounLoc;
+        }
 
         public void addAdjectiveLoc(int i) {
             this.adjectiveLocs.add(i);
@@ -627,7 +640,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         public int getPhraseEnd() {
             if (adjectiveLocs.size() == 0) return nounLoc;
-            return Math.max(adjectiveLocs.get(adjectiveLocs.size()-1), nounLoc);
+            return Math.max(adjectiveLocs.get(adjectiveLocs.size() - 1), nounLoc);
         }
 
         @Override
@@ -635,7 +648,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             return values.subList(getPhraseStart(), getPhraseEnd() + 1).toString();
         }
     }
-
 
 
     /**
@@ -660,12 +672,12 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             this.nounTag = constructNounTag(entityName, atts, entityAttr);
             if (this.nounTag == null) {
                 logger.log(getProblemLogLevel(), "###\tUnknown entity <" + entityName + "> at " + currentSection.getName() + "."
-                    + parent.getName());
+                        + parent.getName());
                 parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
             }
         }
 
-///CLOVER:OFF
+        ///CLOVER:OFF
         @Override
         void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             // no inner tag is allowed
@@ -676,7 +688,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.nounTag != null)
-                ((ParamTag)getParent()).addTag(this.nounTag);
+                ((ParamTag) getParent()).addTag(this.nounTag);
         }
     }
 
@@ -701,14 +713,14 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             // handle <new entity="0"/> case
             String entityName = atts.getValue(ENTITY);
             NounRefTag refTag = constructNounTag(entityName, atts, entityName == null
-                || !Character.isDigit(entityName.charAt(0)) ? null : entityName);
+                    || !Character.isDigit(entityName.charAt(0)) ? null : entityName);
 
             TermAttributes attributes = new TermAttributes(getDictionary().getDeclension(), atts, false);
             this.modTag = AdjectiveRefTag.getAdjectiveRefTag(lowerName, refTag, refTag,
-                Character.isUpperCase(tagName.charAt(0)), attributes);
+                    Character.isUpperCase(tagName.charAt(0)), attributes);
         }
 
-///CLOVER:OFF
+        ///CLOVER:OFF
         @Override
         void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             // no inner tag is allowed
@@ -719,7 +731,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.modTag != null)
-                ((ParamTag)getParent()).addTag(this.modTag);
+                ((ParamTag) getParent()).addTag(this.modTag);
         }
     }
 
@@ -744,11 +756,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             // handle <new entity="0"/> case
             String entityName = atts.getValue(ENTITY);
             NounRefTag refTag = constructNounTag(entityName, atts, entityName == null
-                || !Character.isDigit(entityName.charAt(0)) ? null : entityName);
+                    || !Character.isDigit(entityName.charAt(0)) ? null : entityName);
 
             TermAttributes attributes = new TermAttributes(getDictionary().getDeclension(), atts, false);
             this.modTag = ArticleRefTag.getArticleRefTag(lowerName, refTag, refTag,
-                Character.isUpperCase(tagName.charAt(0)), attributes);
+                    Character.isUpperCase(tagName.charAt(0)), attributes);
         }
 
         @Override
@@ -760,7 +772,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.modTag != null)
-                ((ParamTag)getParent()).addTag(this.modTag);
+                ((ParamTag) getParent()).addTag(this.modTag);
         }
     }
 
@@ -814,27 +826,27 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 }
                 if (ref == null) {
                     logger.log(getProblemLogLevel(), "###\tCustom entity <" + entityName + "> at " + currentSection.getName() + "."
-                        + currentParam.getName() + " must have entity attribute");
+                            + currentParam.getName() + " must have entity attribute");
                     return null;
                 }
                 return NounRefTag.getNounTag(realEntityName, ref, isCapital, escapeHtml, nid);
             }
 
             // OK, we have a "real" noun for it.
-            if ( n != null) {
+            if (n != null) {
                 // this is %entity/%compoundNouns - check plural="y" in case someone set
                 return NounRefTag.getNounTag(realEntityName, null, isCapital, escapeHtml, nid);
             }
 
             // See if it's a lowercase alias.
             n = getParser().getDictionary().getNounByPluralAlias(lowerName, false);
-            if ( n != null ) {
+            if (n != null) {
                 // Get the "correct" term attribute based on plural overrides
                 NounForm overrideForm = getDictionary().getDeclension().getExactNounForm(LanguageNumber.PLURAL, nid.getCase(), nid.getPossessive(), nid.getArticle());
                 if (overrideForm == null) {
                     // Look for legacy article forms...
                     if (ta.getArticle() != LanguageArticle.ZERO && getDictionary().getDeclension().hasArticle() &&
-                        !getDictionary().getDeclension().hasArticleInNounForm()) {
+                            !getDictionary().getDeclension().hasArticleInNounForm()) {
                         logger.finest("###\tNoun form " + ta + " at " + currentSection.getName() + "."
                                 + currentParam.getName() + " uses antiquated article form.  Stop it.");
                         overrideForm = getDictionary().getDeclension().getApproximateNounForm(LanguageNumber.PLURAL, nid.getCase(), nid.getPossessive(), nid.getArticle());
@@ -849,9 +861,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     /**
      * Convert a Unicode-escaped <code>String</code> (uXXXX) into Unicode.
      *
-     * @throws IllegalArgumentException
-     *         If there is a substring starting with <code>\\uXXXX</code> where the value of XXXX is an invalid one
-     *         for unicode.
+     * @throws IllegalArgumentException If there is a substring starting with <code>\\uXXXX</code> where the value of XXXX is an invalid one
+     *                                  for unicode.
      */
     public static String convertEscapedToUnicode(String str) {
         int len = str.length();
@@ -885,18 +896,15 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                         try {
                             ++i; // need to look at XXXX portion of \\uXXXX escape sequence
 
-                        buf.append((char)Integer.parseInt(str.substring(i, i + 4), 16));
+                            buf.append((char) Integer.parseInt(str.substring(i, i + 4), 16));
                             i += 3;
-                        }
-                        catch (NullPointerException x) {
+                        } catch (NullPointerException x) {
                             throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
                                     + str);
-                        }
-                        catch (StringIndexOutOfBoundsException x) {
+                        } catch (StringIndexOutOfBoundsException x) {
                             throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
                                     + str);
-                        }
-                        catch (NumberFormatException x) {
+                        } catch (NumberFormatException x) {
                             throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
                                     + str);
                         }

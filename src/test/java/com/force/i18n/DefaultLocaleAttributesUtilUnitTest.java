@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -17,6 +17,7 @@ import com.google.common.collect.Lists;
 
 /**
  * Unit tests for {@link DefaultLocaleAttributesUtil}
+ *
  * @author jared.pearson
  */
 public class DefaultLocaleAttributesUtilUnitTest extends TestCase {

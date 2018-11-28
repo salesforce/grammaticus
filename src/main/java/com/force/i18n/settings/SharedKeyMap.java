@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -13,19 +13,19 @@ import java.util.*;
 import com.force.i18n.commons.util.collection.ExpandableArray;
 
 /**
- * SharedKeyMap is an implementation of the Map interface where many SharedKeyMap instances 
+ * SharedKeyMap is an implementation of the Map interface where many SharedKeyMap instances
  * share a single copy of their key mappings. This is useful if you have many maps that all have
  * the same (or nearly the same) keys, because you don't have to store the keys over and over.
- * 
+ * <p>
  * Because SharedKeyMaps only make sense when there are multiple maps in play, the only way
  * to create one is with the static factory methods createSharedKeyMaps and createEmptySharedKeyMaps,
  * which create a List of SharedKeyMaps that all share the same keys.
- * 
+ * <p>
  * Internally, each SharedKeyMap points to a single Map that maps keys to integer indices. Then each
  * SharedKeyMap has its own ArrayList that contains its values, indexed by the indices mentioned above.
  * Removing from an individual SharedKeyMap doesn't affect the shared map, but adding to an individual
  * SharedKeyMap with a key that wasn't in the shared map will add that key to the shared map.
- * 
+ *
  * @author shansma
  */
 public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializable {
@@ -45,7 +45,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     /**
      * Takes a list of Maps and returns a list of SharedKeyMaps with the same mappings and values.
-     * 
+     *
      * @param maps - the maps to re-create as SharedKeyMaps
      */
     public static <K, V> List<SharedKeyMap<K, V>> createSharedKeyMaps(List<Map<K, V>> maps) {
@@ -54,8 +54,8 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     /**
      * Takes a list of Maps and returns a list of SharedKeyMaps with the same mappings and values.
-     * 
-     * @param maps - the maps to re-create as SharedKeyMaps
+     *
+     * @param maps           - the maps to re-create as SharedKeyMaps
      * @param removeFromList - remove the passed-in maps from the list as they are processed, so they can be garbage collected.
      */
     public static <K, V> List<SharedKeyMap<K, V>> createSharedKeyMaps(List<Map<K, V>> maps, final boolean removeFromList) {
@@ -63,7 +63,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
         List<SharedKeyMap<K, V>> results = new ArrayList<SharedKeyMap<K, V>>(maps.size());
 
         // build the shared key maps
-        for (Iterator<Map<K, V>> i = maps.iterator(); i.hasNext();) {
+        for (Iterator<Map<K, V>> i = maps.iterator(); i.hasNext(); ) {
             Map<K, V> values = i.next();
             SharedKeyMap<K, V> newMap = new SharedKeyMap<K, V>(keyToIndex, values);
             results.add(newMap);
@@ -78,8 +78,8 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * Creates a list of empty SharedKeyMaps that all use the specified keys. If you know ahead of time
      * what the keys in your maps will (likely) be, but don't yet have the maps created, you can call this
      * function and then use the maps it returns as you would use normal maps.
-     * 
-     * @param keys - the keys that all your maps will (likely) use
+     *
+     * @param keys         - the keys that all your maps will (likely) use
      * @param numberOfMaps - the number of maps this function will create for you
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(List<K> keys, int numberOfMaps) {
@@ -103,7 +103,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     /**
      * Creates a list of empty SharedKeyMaps that all share a single (empty) key map.
-     * 
+     *
      * @param numberOfMaps - the number of maps this function will create for you
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(int numberOfMaps) {
@@ -121,7 +121,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     /**
      * Creates a list of empty SharedKeyMaps that all use the key map of the specified SharedKeyMap.
-     * 
+     *
      * @param numberOfMaps - the number of maps this function will create for you
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(int numberOfMaps, SharedKeyMap<K, V> map) {
@@ -152,35 +152,35 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     public SharedKeyMap() {
         this(new HashMap<K, Integer>(), 16);
     }
-    
+
     /**
      * Creates an empty, isolated SharedKeyMap, with control over
      * the initial size of the values array. This is useful when you have a SharedKeyMap
      * that you use as the canonical version to "clone" for other SharedKeyMaps
      * and you want to save the overhead of the unnecessary value arrays that would
      * remain empty.
-     * 
+     *
      * @param initialValueCapacity if this is non-negative, then its used as
-     *      the initial size for the values array. If its negative, then
-     *      this SharedKeyMap cannot have any values stored in it.
+     *                             the initial size for the values array. If its negative, then
+     *                             this SharedKeyMap cannot have any values stored in it.
      */
     public SharedKeyMap(int initialValueCapacity) {
         this(new HashMap<K, Integer>(), initialValueCapacity);
     }
-    
+
     /**
      * Creates an empty, isolated SharedKeyMap, with control over
-     * the key-to-index value map and also initial size of the values array. 
+     * the key-to-index value map and also initial size of the values array.
      * This is useful when you have a SharedKeyMap
      * that you use as the canonical version to "clone" for other SharedKeyMaps
      * and you want to save the overhead of the unnecessary value arrays that would
      * remain empty.
-     * 
-     * @param keyToIndex maps keys to their index in the values array. This 
-     *      structure is shared across threads.
+     *
+     * @param keyToIndex           maps keys to their index in the values array. This
+     *                             structure is shared across threads.
      * @param initialValueCapacity if this is non-negative, then its used as
-     *      the initial size for the values array. If its negative, then
-     *      this SharedKeyMap cannot have any values stored in it.
+     *                             the initial size for the values array. If its negative, then
+     *                             this SharedKeyMap cannot have any values stored in it.
      */
     public SharedKeyMap(Map<K, Integer> keyToIndex, int initialValueCapacity) {
         this.keyToIndex = keyToIndex;
@@ -190,7 +190,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
             this.values = null;
         }
     }
-    
+
     private SharedKeyMap(Map<K, Integer> keyToIndex, Map<K, V> values) {
         this.keyToIndex = keyToIndex;
         if (this.keyToIndex.size() > 0) {
@@ -209,7 +209,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     public void trimToSize() {
         this.values.trimToSize();
     }
-    
+
     /**
      * Same as get, but returns NULL_MARKER instead of null
      */
@@ -229,7 +229,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     @Override
     public boolean containsValue(Object value) {
         if (this.values == null) return false;
-        
+
         value = maskNull(value);
         for (int i = 0; i < this.values.size(); i++) {
             if (value.equals(this.values.get(i)))
@@ -281,7 +281,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     private V removeAt(int index) {
         if (this.values == null) throw new UnsupportedOperationException();
-        
+
         this.modCount++;
         V oldValue = this.values.get(index);
         if (oldValue != null) {
@@ -298,7 +298,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     @Override
     public void clear() {
         if (this.values == null) throw new UnsupportedOperationException();
-        
+
         this.modCount++;
         this.size = 0;
         this.values.clear();
@@ -373,7 +373,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     @SuppressWarnings("unchecked")
     private static <T> T maskNull(T o) {
         if (o == null)
-            return (T)NULL_MARKER;
+            return (T) NULL_MARKER;
         return o;
     }
 

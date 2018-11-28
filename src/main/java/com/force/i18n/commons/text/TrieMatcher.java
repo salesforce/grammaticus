@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,11 +14,11 @@ import com.google.common.annotations.Beta;
 
 /**
  * An immutable trie used for fast multiple string search and replace.
- *
+ * <p>
  * It's set of words and replacements are populated at initialization,
  * and the data structure creation is not the cheapest of operations,
  * so it is best used when the object will be used multiple times.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author koliver
@@ -32,10 +32,10 @@ public class TrieMatcher {
     /**
      * This is not the cheapest of operations.
      *
-     * @param strings this is the list of words that make up the Trie.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     * @param strings      this is the list of words that make up the Trie.
+     *                     It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     *                     It is assumed that the lists are not modified once passed into the Trie
      */
     public static TrieMatcher compile(String[] strings, String[] replacements) {
         return TrieMatcher.compile(Arrays.asList(strings), Arrays.asList(replacements));
@@ -44,15 +44,15 @@ public class TrieMatcher {
     /**
      * This is not the cheapest of operations.
      *
-     * @param strings this is the list of words that make up the Trie.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     * @param strings      this is the list of words that make up the Trie.
+     *                     It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     *                     It is assumed that the lists are not modified once passed into the Trie
      */
     public static TrieMatcher compile(List<String> strings, List<String> replacements) {
         return new TrieMatcher(strings, replacements);
     }
-    
+
     /**
      * @param s the term to see if it starts with any terms of the trie
      */
@@ -83,8 +83,8 @@ public class TrieMatcher {
         if (replacements == null) throw new NullPointerException();
 
         if (strings.size() != replacements.size()) {
-            throw new IllegalArgumentException("Replacements must have same size, "+ replacements.size()
-                + ", as search strings " + strings.size());
+            throw new IllegalArgumentException("Replacements must have same size, " + replacements.size()
+                    + ", as search strings " + strings.size());
         }
 
         this.words = Collections.unmodifiableList(strings);
@@ -107,7 +107,7 @@ public class TrieMatcher {
                 current = next.nextChars;
 
                 // if we're at the last char, store it and its replacement...
-                if (i+1 == len) {
+                if (i + 1 == len) {
                     next.word = s;
                     next.replacement = replacements.get(wordIndex);
                 }
@@ -138,10 +138,10 @@ public class TrieMatcher {
 
             if (nextData == null) break;
             if (nextData.word != null) {
-                if (firstMatch == null){
+                if (firstMatch == null) {
                     firstMatch = nextData;
                 } else {
-                    if (matches == null){
+                    if (matches == null) {
                         matches = new LinkedList<TrieData>();
                         matches.add(firstMatch);
                     }

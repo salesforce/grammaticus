@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -28,12 +28,12 @@ import com.google.common.collect.*;
  * The base class of new label set for a language. This class is constructed by
  * LabelSet so each language would share the same instance of LabelInfo through
  * the application.
- * 
+ * <p>
  * This class does: - Construct and keep all generic entity names, nouns
  * (includes "compound noun") and modifier.
  * - format array of (String | LabelTag)+ to string
  *
- * @author yoikawa,stamm
+ * @author yoikawa, stamm
  * @see com.force.i18n.LabelSet
  */
 public final class LanguageDictionary implements Serializable {
@@ -58,7 +58,9 @@ public final class LanguageDictionary implements Serializable {
     // TODO:  Following two map/set *can* be shared across the all
     // instances; but it would have to be concurrent.
     // TODO: "TableEnumOrId" should be stored on each Noun, right?
-    /** For UI support. keyed by TableEnumOrId to HashMap(name, NounType) */
+    /**
+     * For UI support. keyed by TableEnumOrId to HashMap(name, NounType)
+     */
     private final Multimap<String, Noun> nounsByEntityType = ArrayListMultimap.create();
 
     public LanguageDictionary(HumanLanguage language) {
@@ -70,7 +72,7 @@ public final class LanguageDictionary implements Serializable {
     public boolean equals(Object o) {
         if (!(o instanceof LanguageDictionary)) return false;
 
-        LanguageDictionary l = (LanguageDictionary)o;
+        LanguageDictionary l = (LanguageDictionary) o;
 
         return this.language == l.language && this.adjectiveMap.equals(l.adjectiveMap) && this.nounMap.equals(l.nounMap)
                 && this.nounsByEntityType.equals(l.nounsByEntityType);
@@ -110,11 +112,14 @@ public final class LanguageDictionary implements Serializable {
         return createNoun(name, null, type, tableEnumOrId, starts, gen, null, false, false);
     }
 
-    private Map<String,? extends GrammaticalTerm> getTermMap(TermType type) {
+    private Map<String, ? extends GrammaticalTerm> getTermMap(TermType type) {
         switch (type) {
-        case Noun: return this.nounMap;
-        case Adjective: return this.adjectiveMap;
-        case Article: return this.articleMap;
+            case Noun:
+                return this.nounMap;
+            case Adjective:
+                return this.adjectiveMap;
+            case Article:
+                return this.articleMap;
         }
 ///CLOVER:OFF
         throw new AssertionError("Invalid term type");
@@ -156,15 +161,16 @@ public final class LanguageDictionary implements Serializable {
     /**
      * Construct String value from the given Label structure, which could be
      * either String or LabelTag.<br>
-     * @param obj the object to parse
-     * @param entities the renameable objects that are the parameters for the value
+     *
+     * @param obj              the object to parse
+     * @param entities         the renameable objects that are the parameters for the value
      * @param forMessageFormat if the MessageFormat values need to be preserved, such as {0}
-     * @param overrideForms if true, it means that the forms in the term refs in the objects do not match the current dictionary and need to be recalculated
+     * @param overrideForms    if true, it means that the forms in the term refs in the objects do not match the current dictionary and need to be recalculated
      */
-    public String format(Object obj, Renameable[] entities, boolean overrideForms,  boolean forMessageFormat) {
+    public String format(Object obj, Renameable[] entities, boolean overrideForms, boolean forMessageFormat) {
         if (obj instanceof List<?>) {
             StringBuilder sb = new StringBuilder();
-            for (Object o : (List< ? >)obj) {
+            for (Object o : (List<?>) obj) {
                 assert o != null;
 
                 if (!(o instanceof TermRefTag)) {
@@ -174,9 +180,9 @@ public final class LanguageDictionary implements Serializable {
                         sb.append(o);
                     }
                 } else {
-                    String s = ((TermRefTag)o).toString(this, overrideForms, entities);
+                    String s = ((TermRefTag) o).toString(this, overrideForms, entities);
                     if (forMessageFormat) {
-                    	TextUtil.escapeForMessageFormat(s, sb, false);
+                        TextUtil.escapeForMessageFormat(s, sb, false);
                     } else {
                         sb.append(s);
                     }
@@ -185,10 +191,10 @@ public final class LanguageDictionary implements Serializable {
             return sb.toString();
 
         } else if (obj instanceof TermRefTag) {
-            String s = ((TermRefTag)obj).toString(this, overrideForms, entities);
+            String s = ((TermRefTag) obj).toString(this, overrideForms, entities);
             return (!forMessageFormat)
-                ? s
-                : TextUtil.escapeForMessageFormat(s, new StringBuilder(s.length() + 8), false).toString();
+                    ? s
+                    : TextUtil.escapeForMessageFormat(s, new StringBuilder(s.length() + 8), false).toString();
         }
         // nothing related to LabelInfo, just return as String
         return obj.toString();
@@ -236,7 +242,7 @@ public final class LanguageDictionary implements Serializable {
                     }
                 } else if (doFormat) {
                     // Create the forms based on the plural vs. not plural of the "default" noun
-                    for (NounForm form : n.getNounType() == NounType.ENTITY? getDeclension().getAllNounForms() : getDeclension().getFieldForms()) {
+                    for (NounForm form : n.getNounType() == NounType.ENTITY ? getDeclension().getAllNounForms() : getDeclension().getFieldForms()) {
                         // Usually, the strings are of the form "{0} View" or something like that.  If the string's filled in, assume it's a MessageFormat
                         String str = n.getString(form);
                         if (str == null) {
@@ -246,9 +252,9 @@ public final class LanguageDictionary implements Serializable {
                             // Escape the string of { and ' before using MessageFormat
                             // because they are special characters
                             java.text.MessageFormat formatter =
-                                new java.text.MessageFormat(TextUtil.escapeForMessageFormat(str));
+                                    new java.text.MessageFormat(TextUtil.escapeForMessageFormat(str));
                             formatter.setLocale(getLanguage().getLocale());
-                            n.setString(intern(formatter.format(new String[] {form.getNumber().isPlural() ? ei.getLabelPlural() : ei.getLabel()})), form);
+                            n.setString(intern(formatter.format(new String[]{form.getNumber().isPlural() ? ei.getLabelPlural() : ei.getLabel()})), form);
                         }
                     }
                 }
@@ -290,20 +296,21 @@ public final class LanguageDictionary implements Serializable {
         return articleMap.get(name);
     }
 
-    public Multimap<String,Noun> getNounsByEntity() {
+    public Multimap<String, Noun> getNounsByEntity() {
         return Multimaps.unmodifiableMultimap(this.nounsByEntityType);
     }
 
     public void put(String name, GrammaticalTerm term) {
         if (term instanceof Noun) {
             Noun noun = (Noun) term;
-            assert name.equals(((Noun)term).getName()) : "Trying to put a noun into the map at the wrong name";
+            assert name.equals(((Noun) term).getName()) : "Trying to put a noun into the map at the wrong name";
             nounMap.put(name.intern(), noun);
-            if (noun.getPluralAlias() != null) nounMapByPluralAlias.put(noun.getPluralAlias().toLowerCase().intern(), noun);
+            if (noun.getPluralAlias() != null)
+                nounMapByPluralAlias.put(noun.getPluralAlias().toLowerCase().intern(), noun);
         } else if (term instanceof Article) {
-            articleMap.put(name.intern(), (Article)term);
+            articleMap.put(name.intern(), (Article) term);
         } else {
-            adjectiveMap.put(name.intern(), (Adjective)term);
+            adjectiveMap.put(name.intern(), (Adjective) term);
         }
     }
 
@@ -311,8 +318,8 @@ public final class LanguageDictionary implements Serializable {
      * Copy the terms from the other dictionary into this one.
      * Note, this will *not* clone the Grammatical Terms, so changes made to the nouns in the child
      * label set will override the parent.
-     * @param otherDictionary the other dictionary which contains all of the values.
      *
+     * @param otherDictionary the other dictionary which contains all of the values.
      */
     public void putAll(LanguageDictionary otherDictionary) {
         if (otherDictionary.getLanguage() != this.getLanguage()) {
@@ -349,11 +356,11 @@ public final class LanguageDictionary implements Serializable {
         TreeSet<String> list = new TreeSet<String>();
         for (Noun noun : m) {
             String s = noun.getName();
-                // skip for the custom dummy name
-                if (s.equalsIgnoreCase(Renameable.ENTITY_NAME)) continue;
+            // skip for the custom dummy name
+            if (s.equalsIgnoreCase(Renameable.ENTITY_NAME)) continue;
 
             if (noun.getNounType() != NounType.ENTITY || includeEntity) list.add(s);
-            }
+        }
         return list;
     }
 
@@ -392,7 +399,7 @@ public final class LanguageDictionary implements Serializable {
         Collection<Noun> nouns = nounsByEntityType.get(Renameable.ENTITY_NAME);
         for (Noun n : nouns) {
             if (n.getName().equalsIgnoreCase(name)) {
-            	return true;
+                return true;
             }
         }
         return false;
@@ -405,7 +412,7 @@ public final class LanguageDictionary implements Serializable {
     // TODO: We shouldn't allow duplicates. (Although the way that zh_CN works, means we need to support "overrides"
 
     public Noun getOrCreateNoun(String tableEnum, String name, String pluralAlias, NounType type, LanguageGender gender, LanguageStartsWith startsWith,
-            String access, boolean isStandardField) {
+                                String access, boolean isStandardField) {
         // final stage. create Noun if it does not exist yet.
         // note that if localized dictionary is loaded, this is
         // called more than once against the same name. In that
@@ -422,7 +429,7 @@ public final class LanguageDictionary implements Serializable {
                         tableEnum,
                         startsWith == null ? getDeclension().getDefaultStartsWith() : startsWith, gender == null ? getDeclension().getDefaultGender() : gender, access, isStandardField, false);
 
-            } else  if (n.getGender() != gender // Validate that it's the same
+            } else if (n.getGender() != gender // Validate that it's the same
                     || n.getStartsWith() != startsWith
                     || n.isStandardField() != isStandardField) {
                 // We go in here when a label file is overridden with another
@@ -461,18 +468,19 @@ public final class LanguageDictionary implements Serializable {
 
     // Provides access to the language dictionary during the parsing phase.  After parsing is over, this is "shut off"
     public void setString(Noun n, NounForm form, String value) {
-    	if (isSkinny) throw new UnsupportedOperationException("Trying to modify noun " + n + " after made skinny.");
+        if (isSkinny) throw new UnsupportedOperationException("Trying to modify noun " + n + " after made skinny.");
         n.setString(intern(value), form);
     }
 
     public void setString(Adjective m, AdjectiveForm form, String value) {
-    	if (isSkinny) throw new UnsupportedOperationException("Trying to modify adjective " + m + " after made skinny.");
+        if (isSkinny)
+            throw new UnsupportedOperationException("Trying to modify adjective " + m + " after made skinny.");
         m.setString(form, intern(value));
     }
 
 
     public void setString(Article m, ArticleForm form, String value) {
-    	if (isSkinny) throw new UnsupportedOperationException("Trying to modify article " + m + " after made skinny.");
+        if (isSkinny) throw new UnsupportedOperationException("Trying to modify article " + m + " after made skinny.");
         m.setString(form, intern(value));
     }
 
@@ -497,6 +505,6 @@ public final class LanguageDictionary implements Serializable {
         nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
         adjectiveMap = ImmutableSortedMap.copyOf(adjectiveMap);
         articleMap = ImmutableSortedMap.copyOf(articleMap);
-        isSkinny=true;  // Prevent adding anything to this dictionary set.  By assumption, the nouns are skinny.
+        isSkinny = true;  // Prevent adding anything to this dictionary set.  By assumption, the nouns are skinny.
     }
 }

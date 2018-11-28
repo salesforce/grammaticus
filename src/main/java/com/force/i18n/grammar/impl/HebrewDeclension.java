@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * The declension of nouns for Hebrew
- *
+ * <p>
  * Hebrew has only the definite article, but the grammar engine doesn't really need to know about it because
  * the article is never inflected and nothing really cares about it.  However, it can appear in the middle
  * of nouns, so the definite version is auto-derived unless otherwise specified.
@@ -28,10 +28,10 @@ import com.google.common.collect.ImmutableList;
  */
 class HebrewDeclension extends SemiticDeclension {
     public HebrewDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
-	private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
 
     public static enum HebrewNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageArticle.ZERO),
@@ -41,14 +41,32 @@ class HebrewDeclension extends SemiticDeclension {
         ;
         private final LanguageNumber number;
         private final LanguageArticle article;
+
         HebrewNounForm(LanguageNumber number, LanguageArticle article) {
             this.number = number;
             this.article = article;
         }
-        @Override public LanguageArticle getArticle() { return article; }
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-        @Override public LanguageNumber getNumber() {return this.number;}
+
+        @Override
+        public LanguageArticle getArticle() {
+            return article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getArticle().getDbValue();
@@ -72,36 +90,61 @@ class HebrewDeclension extends SemiticDeclension {
         private final LanguageNumber number;
         private final LanguageGender gender;
         private final LanguageArticle article;
+
         private HebrewModifierForm(LanguageNumber number, LanguageGender gender) {
             this(number, gender, LanguageArticle.ZERO);
         }
+
         private HebrewModifierForm(LanguageNumber number, LanguageGender gender, LanguageArticle article) {
             this.number = number;
             this.gender = gender;
             this.article = article;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article;}
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguageNumber getNumber() {return this.number;}
-        @Override public LanguageGender getGender() {return this.gender;}
-        @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return this.gender;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return LanguageStartsWith.CONSONANT;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
     }
 
     private static final String DEFAULT_DEFINITE_PREFIX = "\u05d4";  // ה
 
     public static final class HebrewNoun extends LegacyArticledNoun {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private String singular;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private String singular;
         private String plural;
         private String singular_def;
         private String plural_def;
 
-        HebrewNoun(HebrewDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
+        HebrewNoun(HebrewDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
 
@@ -114,16 +157,19 @@ class HebrewDeclension extends SemiticDeclension {
             return enumMapFilterNulls(HebrewNounForm.SINGULAR, singular, HebrewNounForm.PLURAL, plural, HebrewNounForm.SINGULAR_DEF, singular_def,
                     HebrewNounForm.PLURAL_DEF, plural_def);
         }
+
         @Override
         public String getDefaultString(boolean isPlural) {
             return isPlural ? (plural != null ? plural : singular) : singular;
         }
+
         @Override
         public String getExactString(NounForm form) {
             assert form instanceof HebrewNounForm : "It's not kosher to pass in a non-hebrew noun " + form;
             return form.getArticle() == LanguageArticle.DEFINITE ? form.getNumber() == LanguageNumber.PLURAL ? plural_def : singular_def
                     : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
         }
+
         @Override
         public void setString(String value, NounForm form) {
             if (form.getArticle() == LanguageArticle.DEFINITE) {
@@ -140,6 +186,7 @@ class HebrewDeclension extends SemiticDeclension {
                 }
             }
         }
+
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
@@ -148,8 +195,7 @@ class HebrewDeclension extends SemiticDeclension {
             }
             // Default the values for entity nouns, but not for others to make rename fields more specific.
             if (getNounType() == NounType.ENTITY) {
-                if (this.plural == null)
-                 {
+                if (this.plural == null) {
                     this.plural = this.singular;  // Default plural to singular.
                 }
                 // Default the singular/plural definitions to start
@@ -166,27 +212,32 @@ class HebrewDeclension extends SemiticDeclension {
 
     protected static class HebrewAdjective extends Adjective {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<HebrewModifierForm,String> values = new EnumMap<HebrewModifierForm,String>(HebrewModifierForm.class);
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<HebrewModifierForm, String> values = new EnumMap<HebrewModifierForm, String>(HebrewModifierForm.class);
+
         HebrewAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
+
         @Override
-        public Map< ? extends AdjectiveForm, String> getAllValues() {
+        public Map<? extends AdjectiveForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(AdjectiveForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(AdjectiveForm form, String value) {
             assert form instanceof HebrewModifierForm : "Enough of this mishegas, ask only for hebrew";
-            values.put((HebrewModifierForm)form, intern(value));
+            values.put((HebrewModifierForm) form, intern(value));
         }
+
         @Override
         protected String deriveDefaultString(AdjectiveForm form, String value, AdjectiveForm baseFormed) {
             if (form.getArticle() == LanguageArticle.DEFINITE && baseFormed.getArticle() != LanguageArticle.DEFINITE) {
@@ -216,12 +267,12 @@ class HebrewDeclension extends SemiticDeclension {
 
     @Override
     protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
-            LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+                              LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new HebrewNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return ADJECTIVE_FORMS;
     }
 
@@ -231,12 +282,12 @@ class HebrewDeclension extends SemiticDeclension {
     }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return ALL_FORMS;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return OTHER_FORMS;
     }
 }

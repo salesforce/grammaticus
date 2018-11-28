@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -19,7 +19,7 @@ import com.google.common.collect.ImmutableSortedMap;
  * per entry overheads. The trade of is the cost of get's will go from O(1) to O(logN). So clients that can afford
  * slower gets, and have memory conscious requirements, should consider using this over other {@link PropertyFileData}
  * implementations.
- *
+ * <p>
  * Also, instances of {@link SkinnyMapPropertyFileData} will only be truly immutable if the concrete
  * {@link Object} in 'data' is immutable (i.e. String).
  *

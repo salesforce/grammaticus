@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,7 +12,7 @@ import java.util.Locale;
 
 /**
  * Represents the text direction for a language or set of characters.
- *
+ * <p>
  * Similar to ComponentOrientation, or Bidi, but an enum, which is always better.
  *
  * @author stamm
@@ -39,13 +39,24 @@ public enum TextDirection {
     /**
      * @return the value for css for "canonical" left.  So that in a right to left language, it would be "right"
      */
-    public String getLeft() { return this == LTR ? "left" : "right"; }
-    public String getCapLeft() { return this == LTR ? "Left" : "Right"; }
+    public String getLeft() {
+        return this == LTR ? "left" : "right";
+    }
+
+    public String getCapLeft() {
+        return this == LTR ? "Left" : "Right";
+    }
+
     /**
      * @return the value for css for "canonical" right.  So that in a right to left language, it would be "left"
      */
-    public String getRight() { return this == LTR ? "right" : "left"; }
-    public String getCapRight() { return this == LTR ? "Right" : "Left"; }
+    public String getRight() {
+        return this == LTR ? "right" : "left";
+    }
+
+    public String getCapRight() {
+        return this == LTR ? "Right" : "Left";
+    }
 
     char getEmbeddingChar() {
         return this == LTR ? '\u202A' : '\u202B';
@@ -53,6 +64,7 @@ public enum TextDirection {
 
     /**
      * Surround the string with the appropriate LTR or RTL mark
+     *
      * @param string the string to surround
      * @return the given string surrounded by the unicode embedding char marks
      */
@@ -67,19 +79,23 @@ public enum TextDirection {
 
     /**
      * Make the string display as left to right, if necessary, based on whether this direction needs it (i.e. the code is right to left.)
+     *
      * @param string the string to embed as left to right
      * @return the string with the appropriate embedding marks added.
      */
     public String makeStringLeftToRight(String string) {
         switch (this) {
-        case RTL: return LTR.addEmbeddingMarks(string);
-        default:
-        case LTR: return string;
+            case RTL:
+                return LTR.addEmbeddingMarks(string);
+            default:
+            case LTR:
+                return string;
         }
     }
 
     /**
      * Get the text direction for the given locale.
+     *
      * @param locale the locale to test
      * @return the text direction for that locale's language
      */
@@ -90,13 +106,14 @@ public enum TextDirection {
 
     /**
      * Get the text direction for the given language iso code (2 characters please)
+     *
      * @param lang the language to test
      * @return the text direction for that locale's language
      */
     public static TextDirection getDirection(String lang) {
         // Hebrew, Arabic, Farsi, and Urdu.
-        if( "iw".equals(lang) || "ar".equals(lang)
-                        || "fa".equals(lang) || "ur".equals(lang) ) {
+        if ("iw".equals(lang) || "ar".equals(lang)
+                || "fa".equals(lang) || "ur".equals(lang)) {
             return invertIfNotNormalDirection(RTL);
         } else {
             return invertIfNotNormalDirection(LTR);
@@ -107,6 +124,7 @@ public enum TextDirection {
      * Append this marker next to "weak" characters (numbers and punctuation chars)
      * to provide direction to that and all other neighboring "weak" characters
      * See Sec 7.3, http://www.w3.org/TR/i18n-html-tech-bidi/#ri20030218.135304584
+     *
      * @return the Right-to-Left Marker (RLM) or Left-To-Right Marker (LRM) character
      */
     public char getBaseDirectionChar() {
@@ -118,6 +136,7 @@ public enum TextDirection {
     /**
      * To aid debugging RTL issues, setNormalTextDirection(false) which
      * allows a page to be shown with its text direction inverted.
+     *
      * @param direction the direction to invert
      * @return the reversed direction if setNormalTextDirection has been called with false
      */
@@ -125,7 +144,7 @@ public enum TextDirection {
         if (normalTextDirection) {
             return direction;
         } else {
-            return direction==LTR ? RTL : LTR;
+            return direction == LTR ? RTL : LTR;
         }
     }
 
@@ -134,6 +153,7 @@ public enum TextDirection {
      * as LTR.  Especially helpful for debugging RTL styling issues
      * and staying sane while doing so.  Don't even try to call this
      * on a production configuration.
+     *
      * @param normal what the normal text direction should be
      */
     public static void setNormalTextDirection(boolean normal) {

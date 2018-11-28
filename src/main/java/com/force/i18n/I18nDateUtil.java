@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,10 +14,11 @@ import java.util.Date;
 /**
  * Set of date utils reused throughout the Grammaticus.
  * Mostly for parsing timestamps and the like.
+ *
  * @author stamm
  */
 public class I18nDateUtil {
-	// Dateformats aren't threadsafe.
+    // Dateformats aren't threadsafe.
     private static final ThreadLocal<SimpleDateFormat> dateFormat = new ThreadLocal<SimpleDateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
@@ -35,7 +36,9 @@ public class I18nDateUtil {
         return dateFormat.get().parse(ts);
     }
 
-    /** The Oracle NLS_DATE_FORMAT */
+    /**
+     * The Oracle NLS_DATE_FORMAT
+     */
     public static final String NLS_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     public static Date parseTimestamp(String ts) throws SQLException {

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,10 +16,11 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Fake language used for internal translation.  It appears as a standard language, and reuses whatever code it can.
+ *
  * @author stamm
  */
 public class EsperantoDeclension extends ArticledDeclension {
-	// All the forms you can request
+    // All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(PluralNounForm.SINGULAR);
@@ -28,11 +29,11 @@ public class EsperantoDeclension extends ArticledDeclension {
     static final List<? extends ArticleForm> ARTICLE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public EsperantoDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return ALL_FORMS;
     }
 
@@ -52,7 +53,7 @@ public class EsperantoDeclension extends ArticledDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return ADJECTIVE_FORMS;
     }
 
@@ -84,20 +85,22 @@ public class EsperantoDeclension extends ArticledDeclension {
     @Override
     protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
         switch (articleType) {
-        case DEFINITE: return "La";
-        default: return null;
+            case DEFINITE:
+                return "La";
+            default:
+                return null;
         }
     }
 
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1) {
+                                      LanguageCase case1) {
         return SimpleModifierForm.SINGULAR;
     }
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
         return SimpleModifierForm.SINGULAR;
     }
 

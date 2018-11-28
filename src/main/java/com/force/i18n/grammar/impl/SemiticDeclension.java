@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -15,7 +15,7 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Contains commonalities between the Semitic languages supported by Salesforce (Hebrew, Arabic, and possibly Maltese)
- *
+ * <p>
  * Two genders, simple uninflected article, definite articles in the noun form, default is feminine, etc.
  *
  * @author stamm
@@ -23,10 +23,10 @@ import com.google.common.collect.ImmutableList;
 abstract class SemiticDeclension extends ArticledDeclension {
 
     public SemiticDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
-	// All the forms you can set for articles
+    // All the forms you can set for articles
     private static EnumSet<LanguageGender> GENDER_TYPES = EnumSet.of(LanguageGender.FEMININE, LanguageGender.MASCULINE);
     private static EnumSet<LanguageArticle> ARTICLE_TYPES = EnumSet.of(LanguageArticle.ZERO, LanguageArticle.DEFINITE);
     static final List<? extends ArticleForm> ARTICLE_FORMS = ImmutableList.of(SimpleModifierForm.SINGULAR); // Simple modifier form
@@ -45,12 +45,12 @@ abstract class SemiticDeclension extends ArticledDeclension {
 
     // The entity and compound nouns can be rendered in all forms
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return getAllNounForms();
     }
 
     @Override
-    public Collection< ? extends NounForm> getFieldForms() {
+    public Collection<? extends NounForm> getFieldForms() {
         return getAllNounForms();
     }
 
@@ -87,8 +87,8 @@ abstract class SemiticDeclension extends ArticledDeclension {
     }
 
     /**
-     * @return the definite marker prefix used in the semitic language
      * @param startsWith startsWith parameter (currently unused) in case the form needs to be different based on the next noun.
+     * @return the definite marker prefix used in the semitic language
      */
     protected abstract String getDefiniteArticlePrefix(LanguageStartsWith startsWith);
 
@@ -99,7 +99,7 @@ abstract class SemiticDeclension extends ArticledDeclension {
 
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1) {
+                                      LanguageCase case1) {
         return SimpleModifierForm.SINGULAR;
     }
 

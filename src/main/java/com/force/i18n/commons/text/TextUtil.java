@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -25,16 +25,16 @@ import com.google.common.collect.Iterators;
 
 /**
  * A package of generic text utility functions.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
- * @author davem,pnakada,jjordano,et. al.
+ * @author davem, pnakada, jjordano, et. al.
  */
 @Beta
 public final class TextUtil {
 
     private static final Logger logger = Logger.getLogger(TextUtil.class.getName());
-    
+
     //Various statics for logging long strings undergoing escaping
     private static final int MIN_LOG_LENGTH = 1000000; //1,000,000 character strings are suspicious :P
     public static final int MIN_GACK_LENGTH = 23000000; //23,000,000 character strings are insane
@@ -56,58 +56,61 @@ public final class TextUtil {
         /**
          * Provide the ability for the caller to log/monitor/vomit over a long string.
          * 1M chars+
-         * @param logger the logger for the TextUtil class
-         * @param source the source specified by the caller
-         * @param length the length of the long string
+         *
+         * @param logger         the logger for the TextUtil class
+         * @param source         the source specified by the caller
+         * @param length         the length of the long string
          * @param first1000Chars the first 1000 chars of the string
          */
         void logLongString(Logger logger, String source, int length, String first1000Chars);
+
         /**
          * Provide the ability for the caller to log/monitor/vomit over a gigantic string.
          * 23M chars.  It will call logLongString first.
+         *
          * @param logger the logger for the TextUtil class
          * @param source the source specified by the caller
          * @param length the length of the huge string
-         * @param ex an exception in the logValue method
+         * @param ex     an exception in the logValue method
          */
         void logHugeString(Logger logger, String source, int length, Exception ex);
+
         /**
          * Provide the ability for the caller to log/monitor/vomit over a gigantic string.
          * 23M chars.  It will call logLongString first.
+         *
          * @param logger the logger for the TextUtil class
          * @param source the source specified by the caller
-         * @param ex an exception in the logValue method
+         * @param ex     an exception in the logValue method
          */
-        void logExceptionWhenLogging(Logger logger, String source,  Exception ex);
+        void logExceptionWhenLogging(Logger logger, String source, Exception ex);
     }
 
     protected static void logValue(String source, CharSequence value) {
-        if(value == null) {
+        if (value == null) {
             return;
         }
         try {
             int length = value.length();
-            if(length > MIN_LOG_LENGTH) {
+            if (length > MIN_LOG_LENGTH) {
                 //Only log the first 1000 characters so we don't make logging sad. We just want to know
                 //whether the string is legitimate or if it should be blocked
                 if (SUSPICIOUS_LOGGER != null) {
                     SUSPICIOUS_LOGGER.logLongString(logger, source, length, value.subSequence(0, 1000).toString());
                 }
             }
-            if(length > MIN_GACK_LENGTH) {
+            if (length > MIN_GACK_LENGTH) {
                 if (SUSPICIOUS_LOGGER != null) {
                     SUSPICIOUS_LOGGER.logHugeString(logger, source, length, new Exception());
                 }
             }
-            if(length > MIN_REJECT_LENGTH) {
+            if (length > MIN_REJECT_LENGTH) {
                 throw new IllegalArgumentException(source + LOG_REJECT_MESSAGE + length);
             }
-        }
-        catch(IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             //So this doesn't fall into the exception case below
             throw e;
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             //Catch everything because we don't want any exceptions to bubble up and fail when
             //we're just logging
             if (SUSPICIOUS_LOGGER != null) {
@@ -138,7 +141,7 @@ public final class TextUtil {
     }
 
     public static String escapeToXml(CharSequence input, boolean allowNewLines, boolean convertNulls,
-            boolean escapeApos) {
+                                     boolean escapeApos) {
         return escapeToXml(input, allowNewLines, convertNulls, escapeApos, false);
     }
 
@@ -154,23 +157,19 @@ public final class TextUtil {
      * The convention in the app is that all escaping is done at output time by Elements
      * and output should go through elements when possible. If you are using this method, you should think
      * carefully about what you are doing and decide if it's truly necessary to bypass elements.
-     * @param input
-     *        the text to escape
-     * @param allowNewLines
-     *        if false, newlines (\r or \n) are converted to spaces instead
-     * @param convertNulls
-     *        convert nulls to the empty string if treu
-     * @param escapeApos
-     *        Add a backslash in front of apostrophes to deal with MSXML's nonsense
-     * @param preserveWhitespace
-     *        if true, whitespace chars (as defined by {@link Character#isWhitespace(char)}) are not converted to
-     *        spaces. If false, they may be converted to spaces if they are control characters. This argument is weaker
-     *        than {@code allowNewLines}, so if {@code allowNewLines} is true but this argument is false, newlines will
-     *        be preserved anyway. Since newlines are also whitespace, if {@code allowNewLines} is false but this
-     *        argument is true, then newlines will still be preserved.
+     *
+     * @param input              the text to escape
+     * @param allowNewLines      if false, newlines (\r or \n) are converted to spaces instead
+     * @param convertNulls       convert nulls to the empty string if treu
+     * @param escapeApos         Add a backslash in front of apostrophes to deal with MSXML's nonsense
+     * @param preserveWhitespace if true, whitespace chars (as defined by {@link Character#isWhitespace(char)}) are not converted to
+     *                           spaces. If false, they may be converted to spaces if they are control characters. This argument is weaker
+     *                           than {@code allowNewLines}, so if {@code allowNewLines} is true but this argument is false, newlines will
+     *                           be preserved anyway. Since newlines are also whitespace, if {@code allowNewLines} is false but this
+     *                           argument is true, then newlines will still be preserved.
      */
     public static String escapeToXml(CharSequence input, boolean allowNewLines, boolean convertNulls,
-            boolean escapeApos, boolean preserveWhitespace) {
+                                     boolean escapeApos, boolean preserveWhitespace) {
         if (input == null || input.length() == 0) {
             return convertNulls ? "" : input == null ? null : "";
         }
@@ -266,20 +265,39 @@ public final class TextUtil {
             char c = value.charAt(i);
             // TODO: Is this switch statement faster than an IntHashMap?  I'm guessing it is.
             switch (c) {
-            case '\n':  if (escapeNewline) {
-                buf.append("<br>");
-            } else {
-                buf.appendQuicklyForEscapingWithoutSkips(c);
-            } break;
-            case '<':   buf.append("&lt;"); break;
-            case '>':   buf.append("&gt;"); break;
-            case '&':   buf.appendAsDifferent("&amp;"); break;
-            case '"':   buf.append("&quot;"); break;
-            case '\'':   buf.append("&#39;"); break;
-            case '\u2028':   buf.append("<br>"); break;
-            case '\u2029':   buf.append("<p>"); break;
-            case '\u00a9':   buf.append("&copy;"); break;  // ©
-            default: buf.appendQuicklyForEscapingWithoutSkips(c);
+                case '\n':
+                    if (escapeNewline) {
+                        buf.append("<br>");
+                    } else {
+                        buf.appendQuicklyForEscapingWithoutSkips(c);
+                    }
+                    break;
+                case '<':
+                    buf.append("&lt;");
+                    break;
+                case '>':
+                    buf.append("&gt;");
+                    break;
+                case '&':
+                    buf.appendAsDifferent("&amp;");
+                    break;
+                case '"':
+                    buf.append("&quot;");
+                    break;
+                case '\'':
+                    buf.append("&#39;");
+                    break;
+                case '\u2028':
+                    buf.append("<br>");
+                    break;
+                case '\u2029':
+                    buf.append("<p>");
+                    break;
+                case '\u00a9':
+                    buf.append("&copy;");
+                    break;  // ©
+                default:
+                    buf.appendQuicklyForEscapingWithoutSkips(c);
             }
         }
         return buf.toString();
@@ -287,9 +305,9 @@ public final class TextUtil {
 
     /**
      * @return a copy of the string, with all leading and trailing whitespace characters omitted. This is different from
-     *         <code>java.lang.String.trim()</code>, which only trims characters before <code>'&#92;u0020'</code>
-     *         but not characters like the wide space character in Japanese (<code>'&#92;u3000'</code>). will return
-     *         an empty String if the input String is all whitespace
+     * <code>java.lang.String.trim()</code>, which only trims characters before <code>'&#92;u0020'</code>
+     * but not characters like the wide space character in Japanese (<code>'&#92;u3000'</code>). will return
+     * an empty String if the input String is all whitespace
      */
     public static String trim(String str) {
         return TextUtil.trim(str, false);
@@ -315,12 +333,10 @@ public final class TextUtil {
     }
 
     /**
-     * @param str
-     *        String to be trimmed
-     * @param boolean
-     *        returnNullIfEmptyString
+     * @param str     String to be trimmed
+     * @param boolean returnNullIfEmptyString
      * @return String if input String is null, return null if input String is non-empty after trimming, return the
-     *         trimmed String if input String is empty after trimming, check boolean to determine return value
+     * trimmed String if input String is empty after trimming, check boolean to determine return value
      */
     private static String trim(String str, boolean returnNullIfEmptyString) {
         if (str == null) {
@@ -357,10 +373,8 @@ public final class TextUtil {
      * methods. Be absolutely sure that you get the str and delimiter parameter arguments correct. This may eventually
      * be fixed with a refactoring.
      *
-     * @param delimiter
-     *            The delimiter to split the string using
-     * @param str
-     *            The string to split
+     * @param delimiter The delimiter to split the string using
+     * @param str       The string to split
      * @return String list or, if str was null, then null
      */
     public static List<String> splitSimple(String delimiter, String str) {
@@ -381,14 +395,11 @@ public final class TextUtil {
      * methods. Be absolutely sure that you get the str and delimiter parameter arguments correct. This may eventually
      * be fixed with a refactoring.
      *
-     * @param delimiter
-     *            The delimiter to split the string using
-     * @param str
-     *            The string to split
-     * @param expectedSize
-     *            The expected number of elements in the output list. If you don't know, or if it could be arbitrarily
-     *            large, and if you will only access the returned list sequentially with an iterator, then use 0 to tell
-     *            this method to use a LinkedList
+     * @param delimiter    The delimiter to split the string using
+     * @param str          The string to split
+     * @param expectedSize The expected number of elements in the output list. If you don't know, or if it could be arbitrarily
+     *                     large, and if you will only access the returned list sequentially with an iterator, then use 0 to tell
+     *                     this method to use a LinkedList
      * @return String list or, if str was null, then null
      */
     public static List<String> splitSimple(String delimiter, String str, int expectedSize) {
@@ -405,14 +416,11 @@ public final class TextUtil {
      * <br>
      * This is more efficient than String.split or TextUtil.split because it does not use a regular expression.
      *
-     * @param str
-     *            The string to split
-     * @param delimiter
-     *            The delimiter to split the string using
-     * @param expectedSize
-     *            The expected number of elements in the output list. If you don't know, or if it could be arbitrarily
-     *            large, and if you will only access the returned list sequentially with an iterator, then use 0 to tell
-     *            this method to use a LinkedList
+     * @param str          The string to split
+     * @param delimiter    The delimiter to split the string using
+     * @param expectedSize The expected number of elements in the output list. If you don't know, or if it could be arbitrarily
+     *                     large, and if you will only access the returned list sequentially with an iterator, then use 0 to tell
+     *                     this method to use a LinkedList
      * @return String list or, if str was null, then null
      */
     public static List<String> splitSimpleAndTrim(String str, String delimiter, int expectedSize) {
@@ -427,10 +435,10 @@ public final class TextUtil {
         if (str == null) {
             return null;
         }
-        List<String> result = (expectedSize == 0)? new LinkedList<String>(): new ArrayList<String>(expectedSize);
+        List<String> result = (expectedSize == 0) ? new LinkedList<String>() : new ArrayList<String>(expectedSize);
 
-        if(delimiter.length() == 0) {
-            if(!ignoreTrailingEmpty) {
+        if (delimiter.length() == 0) {
+            if (!ignoreTrailingEmpty) {
                 throw new IllegalArgumentException();
             }
 
@@ -438,14 +446,14 @@ public final class TextUtil {
             char[] chars = new char[str.length()];
             str.getChars(0, str.length(), chars, 0);
             result.add("");
-            for(char c : chars) {
+            for (char c : chars) {
                 result.add(Character.toString(c));
             }
             return result;
         }
 
         //Special case to match java's behavior
-        if(ignoreTrailingEmpty && "".equals(str)) {
+        if (ignoreTrailingEmpty && "".equals(str)) {
             result.add("");
             return result;
         }
@@ -472,13 +480,12 @@ public final class TextUtil {
             }
             result.add(substring);
         }
-        if(ignoreTrailingEmpty && result.size() > 0) {
+        if (ignoreTrailingEmpty && result.size() > 0) {
             //Discard empty substrings at the end
-            for(int i=result.size()-1; i>=0; i--) {
-                if(result.get(i).equals("")) {
+            for (int i = result.size() - 1; i >= 0; i--) {
+                if (result.get(i).equals("")) {
                     result.remove(i);
-                }
-                else {
+                } else {
                     break;
                 }
             }
@@ -588,7 +595,8 @@ public final class TextUtil {
 
     /**
      * Break long words and escape markup to HTML.  This method does not activate links.
-     * @param text the text to break and escape
+     *
+     * @param text                   the text to break and escape
      * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as <br/> tags
      * @return the escaped and broken string
      */
@@ -598,13 +606,14 @@ public final class TextUtil {
 
     /**
      * Break long words and escape markup to HTML.  This method does not activate links.
-     * @param text the text to break and escape
+     *
+     * @param text                   the text to break and escape
      * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as <br/> tags
-     * @param maxWordLength words longer than this will be broken with <wbr/> tags (defaults to 30)
+     * @param maxWordLength          words longer than this will be broken with <wbr/> tags (defaults to 30)
      * @return the escaped and broken string
      */
     public static String breakLongWordsAndEscapeToHTML(String text, boolean preserveNewLinesInHtml, int maxWordLength) {
-        if (text == null){
+        if (text == null) {
             return null;
         }
 
@@ -636,8 +645,8 @@ public final class TextUtil {
      * @param separator - string that will delimit the result.
      * @param strings   - the strings whose values will be concatenated
      */
-    public static String join(String separator, String ... strings) {
-        return join(separator, (Object[])strings);
+    public static String join(String separator, String... strings) {
+        return join(separator, (Object[]) strings);
     }
 
     /**
@@ -646,17 +655,20 @@ public final class TextUtil {
      * @param separator - string that will delimit the result.
      * @param objects   - the objects whose string values will be concatenated
      */
-    public static String join(String separator, Object ... objects) {
+    public static String join(String separator, Object... objects) {
         switch (objects.length) {
-        case 0: return "";
-        case 1: return objects[0].toString();
-        default: return join(separator, Iterators.forArray(objects));
+            case 0:
+                return "";
+            case 1:
+                return objects[0].toString();
+            default:
+                return join(separator, Iterators.forArray(objects));
         }
     }
 
     /**
-     * @return a new fast comparator for strings for the given collator.
      * @param the number of elements to compare (default is 16).
+     * @return a new fast comparator for strings for the given collator.
      */
     public static Comparator<String> getComparator(Collator collator, int size) {
         return new CollatingComparator(collator, size);
@@ -664,6 +676,7 @@ public final class TextUtil {
 
     /**
      * A String comparator that uses the current collation, but
+     *
      * @author stamm
      */
     static class CollatingComparator implements Comparator<String> {

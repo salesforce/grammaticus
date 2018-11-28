@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,38 +16,40 @@ import com.google.common.collect.Lists;
 /**
  * Reference to a specific label in labels.xml (section and key).  Also allows storage
  * of optional arguments.  This is nice if you want to store static references.
- *
+ * <p>
  * For smaller projects, you could auto-generate these from the label files kind of like
  * what eclipse does.  For larger projects you end up killing PermGen
- *
+ * <p>
  * Called LabelRef to save on typing
  *
  * @author nhorne
  */
 public class LabelRef implements Comparable<LabelRef>, LabelReference, Serializable {
-	private static final long serialVersionUID = 1L;
-	private final String section;
+    private static final long serialVersionUID = 1L;
+    private final String section;
     private final String key;
     private final Object[] args;
     private static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
     /**
      * Construct a Labelref for the given section, key, and optional arguments
+     *
      * @param section the section for the label
-     * @param key the key for the label
-     * @param args optional arguments that should be used in message format replacement
+     * @param key     the key for the label
+     * @param args    optional arguments that should be used in message format replacement
      */
     public LabelRef(String section, String key, Object... args) {
-    	assert section != null && key != null;
+        assert section != null && key != null;
         this.section = section;
         this.key = key;
         this.args = args;
     }
-    
+
     /**
      * Construct a Labelref for the given section and key
+     *
      * @param section the section for the label
-     * @param key the key for the label
+     * @param key     the key for the label
      */
     public LabelRef(String section, String key) {
         this(section, key, EMPTY_OBJECT_ARRAY);
@@ -79,7 +81,7 @@ public class LabelRef implements Comparable<LabelRef>, LabelReference, Serializa
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof LabelRef) {
-            LabelRef l = (LabelRef)obj;
+            LabelRef l = (LabelRef) obj;
             return this.section.equals(l.section) && this.key.equals(l.key);
         }
         return false;

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -18,17 +18,17 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
  * Represents a grammatical term; generally one that is declined based on a noun form or other
  * factors.  This provides some default behavior, such as having a transient pointer to the
  * associated declension (but not the dictionary), and dealing with serialization
- *
+ * <p>
  * Currently, a Noun or a Modifier/Adjective.
  *
  * @author stamm
  */
 public abstract class GrammaticalTerm implements Serializable {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private final String name;
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private final String name;
     private transient LanguageDeclension declension;
 
     public enum TermType {
@@ -50,9 +50,10 @@ public abstract class GrammaticalTerm implements Serializable {
     /**
      * After all of the parsing has been done for a noun or modifier, "fix up"
      * any missing values needed.
-     *
+     * <p>
      * TODO: This may not be very necessary.
-     * @param name the name of the term 
+     *
+     * @param name the name of the term
      * @return <tt>true</tt> if the term is valid
      */
     protected abstract boolean validate(String name);
@@ -64,6 +65,7 @@ public abstract class GrammaticalTerm implements Serializable {
 
     /**
      * The "startsWith" is based on the next term in the sequence, not the next noun
+     *
      * @return the startsWith of this grammatical term
      */
     public abstract LanguageStartsWith getStartsWith();

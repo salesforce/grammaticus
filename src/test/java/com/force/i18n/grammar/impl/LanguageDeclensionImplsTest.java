@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,6 +20,7 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * Unit test for LanguageDeclension functionality (no need to parse)
+ *
  * @author stamm
  */
 public class LanguageDeclensionImplsTest extends TestCase {
@@ -50,6 +51,7 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
     /**
      * Validate invariants for declensions (such as defaults must be contained in the set of possible values)
+     *
      * @hierarchy Globalization.Grammar Engine
      * @userStory New Platform languages / locales for Summer '11
      */
@@ -83,14 +85,14 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
     /**
      * Validate that if the declension says something matters for the form, that the form for the noun includes that.
-     *
+     * <p>
      * You can't do the same for modifiers, due to some language not having modifier forms (i.e. Turkish)
      * Also, this test might fail for certain languages due to certain modifiers applying to only certain forms
      */
     public void testNounFormsMatchDeclensionFlags() {
         final Set<String> LANGS_TO_IGNORE_CASE_TEST = ImmutableSet.of(LanguageConstants.BULGARIAN, LanguageConstants.MACEDONIAN,  // Bulgarian case is only in modifier
-        		LanguageConstants.ARABIC
-               ); // Case is autoderived in arabic
+                LanguageConstants.ARABIC
+        ); // Case is autoderived in arabic
 
 
         for (HumanLanguage lang : LanguageProviderFactory.get().getAll()) {
@@ -143,7 +145,7 @@ public class LanguageDeclensionImplsTest extends TestCase {
                 continue;  // Ignore ARABIC since it doesn't use modifier form map.
             }
 
-            EnumMap<LanguageArticle,ModifierFormMap<AdjectiveForm>> forms = ModifierFormMap.getArticleSpecificMap(declension.getAdjectiveForms());
+            EnumMap<LanguageArticle, ModifierFormMap<AdjectiveForm>> forms = ModifierFormMap.getArticleSpecificMap(declension.getAdjectiveForms());
 
             for (AdjectiveForm form : declension.getAdjectiveForms()) {
                 assertEquals("Couldn't get results for form " + form, form, forms.get(form.getArticle()).getForm(form.getStartsWith(), form.getGender(), form.getNumber(), form.getCase()));
@@ -173,14 +175,14 @@ public class LanguageDeclensionImplsTest extends TestCase {
             }
 
             if (declension.hasArticleInNounForm()) {
-                EnumMap<LanguageArticle,NounFormMap<NounForm>> forms = NounFormMap.getArticleSpecificMap(declension.getAllNounForms());
+                EnumMap<LanguageArticle, NounFormMap<NounForm>> forms = NounFormMap.getArticleSpecificMap(declension.getAllNounForms());
 
 
                 for (NounForm form : declension.getAllNounForms()) {
                     assertEquals("Couldn't get results for form " + form, form, forms.get(form.getArticle()).getForm(form.getNumber(), form.getCase()));
                 }
-            } else if (declension.hasPossessive()){
-                EnumMap<LanguagePossessive,NounFormMap<NounForm>> forms = NounFormMap.getPossessiveSpecificMap(declension.getAllNounForms());
+            } else if (declension.hasPossessive()) {
+                EnumMap<LanguagePossessive, NounFormMap<NounForm>> forms = NounFormMap.getPossessiveSpecificMap(declension.getAllNounForms());
 
 
                 for (NounForm form : declension.getAllNounForms()) {

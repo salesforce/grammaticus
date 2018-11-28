@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -17,17 +17,19 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * In an articled declension, this represents the different forms of articles
+ *
  * @author stamm
  */
 public abstract class Article extends NounModifier {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	private static final Logger logger = Logger.getLogger(Article.class.getName());
+    private static final Logger logger = Logger.getLogger(Article.class.getName());
 
     private final LanguageArticle articleType;
+
     protected Article(ArticledDeclension declension, String name, LanguageArticle articleType) {
         super(declension, name);
         this.articleType = articleType;
@@ -56,14 +58,14 @@ public abstract class Article extends NounModifier {
 
     @Override
     public final String getString(ModifierForm form) {
-        return getString((ArticleForm)form);
+        return getString((ArticleForm) form);
     }
 
     @Override
     public String getDefaultValue() {
         return getString(getDeclension().getArticleForm(getDeclension().getDefaultStartsWith(),
-               getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
-               getDeclension().getDefaultCase()));
+                getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
+                getDeclension().getDefaultCase()));
     }
 
     /**
@@ -82,7 +84,8 @@ public abstract class Article extends NounModifier {
 
     /**
      * Set the value of one of the forms of this adjective.
-     * @param form the form to set
+     *
+     * @param form  the form to set
      * @param value the value to set
      */
     protected abstract void setString(ArticleForm form, String value);
@@ -99,6 +102,7 @@ public abstract class Article extends NounModifier {
      * This generally depends on the declensions "return all forms"
      * TODO: This should compare the difference between specified forms and
      * choose the most similar (ie. the smallest Hamming distance)
+     *
      * @param requiredForms the set of required forms for articles in this language
      * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
      */
@@ -117,8 +121,8 @@ public abstract class Article extends NounModifier {
                 ArticleForm baseForm = null;
                 // Next try starts with
                 if (getDeclension().hasStartsWith() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
-                     baseForm = getDeclension().getArticleForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase());
-                     s = getString(baseForm);
+                    baseForm = getDeclension().getArticleForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase());
+                    s = getString(baseForm);
                 }
 
                 // Now gender
@@ -150,14 +154,17 @@ public abstract class Article extends NounModifier {
                         logger.info("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
                     }
                 }
-                
+
                 setString(form, intern(s));
             }
         }
         return true;
     }
 
-    @Override protected TermType getTermType() { return TermType.Article; }
+    @Override
+    protected TermType getTermType() {
+        return TermType.Article;
+    }
 
     @Override
     public String toString() {

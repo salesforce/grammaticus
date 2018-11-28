@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,14 +16,15 @@ import com.force.i18n.grammar.*;
 
 /**
  * A reference to a modifier in a label file.
- * @author yoikawa,stamm
+ *
+ * @author yoikawa, stamm
  */
 abstract class ModifierRefTag extends TermRefTag {
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private final boolean isCapital;
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private final boolean isCapital;
     private final NounRefTag associatedNounRef; // entity that this modifier associated with.
     private final TermRefTag nextTermRef;       // The term that comes after this one
     private final TermAttributes overrides;  // TODO:  Overrides *could* be completely unnecessary
@@ -85,7 +86,7 @@ abstract class ModifierRefTag extends TermRefTag {
             return ""; //This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
         }
 
-        assert modifier != null: "Can't find modifier '" + getName() + "'";
+        assert modifier != null : "Can't find modifier '" + getName() + "'";
 
         if (getAssociatedNounRef() == null) {
             return ""; // This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
@@ -100,7 +101,7 @@ abstract class ModifierRefTag extends TermRefTag {
             n = formatter.getDynamicNoun(associatedNounRef.getName(), ei, true, false);
         } else {
             assert !associatedNounRef.isDynamic() || I18nJavaUtil.isDebugging()
-                : "Only allowed in label debug mode, mode: " + I18nJavaUtil.isDebugging()
+                    : "Only allowed in label debug mode, mode: " + I18nJavaUtil.isDebugging()
                     + " isDynamic: " + associatedNounRef.isDynamic();
             n = formatter.getNoun(associatedNounRef.getName(), true);
         }
@@ -118,7 +119,7 @@ abstract class ModifierRefTag extends TermRefTag {
         String s = modifier.getString(adjForm);
 
         if (s == null) {
-        	logger.warning("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
+            logger.warning("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
             return "";
         }
         if (!isCapital) {
@@ -145,10 +146,10 @@ abstract class ModifierRefTag extends TermRefTag {
     protected boolean equalsValue(TermRefTag obj) {
         ModifierRefTag otherTag = (ModifierRefTag) obj;
         return this.getName().equals(otherTag.getName())
-            && (this.associatedNounRef == null ? otherTag.associatedNounRef  == null : this.associatedNounRef.equals(otherTag.associatedNounRef))
-            && (this.nextTermRef == null ? otherTag.nextTermRef  == null : this.nextTermRef.equals(otherTag.nextTermRef))
-            && this.isCapital == otherTag.isCapital
-            && this.overrides.equals(otherTag.overrides);
+                && (this.associatedNounRef == null ? otherTag.associatedNounRef == null : this.associatedNounRef.equals(otherTag.associatedNounRef))
+                && (this.nextTermRef == null ? otherTag.nextTermRef == null : this.nextTermRef.equals(otherTag.nextTermRef))
+                && this.isCapital == otherTag.isCapital
+                && this.overrides.equals(otherTag.overrides);
     }
 
     public ModifierRefTag fixupModifier(NounRefTag nounTag, TermRefTag nextTermRef) {

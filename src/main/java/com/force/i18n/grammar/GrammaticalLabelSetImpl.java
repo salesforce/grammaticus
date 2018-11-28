@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,22 +23,22 @@ import com.force.i18n.settings.*;
  * A label set that uses a LabelDictionary to provide the ability to
  * rename nouns and use more "generic" functionality.
  *
- * @author yoikawa,stamm
+ * @author yoikawa, stamm
  */
 public class GrammaticalLabelSetImpl extends LabelSetImpl implements GrammaticalLabelSet {
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	private static final Logger logger = Logger.getLogger(GrammaticalLabelSetImpl.class.getName());
+    private static final Logger logger = Logger.getLogger(GrammaticalLabelSetImpl.class.getName());
 
     private final LanguageDictionary dictionary;
     private final Set<String> publicSections;
 
     /**
      * @param dictionary the dictionary that was filled in by the parser
-     * @param p the parser
+     * @param p          the parser
      */
     public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelFileParser p) throws IOException {
         super(p);
@@ -51,11 +51,11 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 
     /**
      * @param dictionary the dictionary that was filled in by the parser
-     * @param p the parser
-     * @param data the data that contains the public section names
+     * @param p          the parser
+     * @param data       the data that contains the public section names
      */
     public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelFileParser p, PropertyFileData data) throws IOException {
-        super(p,data);
+        super(p, data);
         assert dictionary != null : "You must provide a dictionary";
         this.dictionary = dictionary;
         this.publicSections = data.getPublicSectionNames();
@@ -65,11 +65,12 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 
     /**
      * Used by sleepy cat, or other implementations that already have the data specified preparsed
-     * @param dictionary the dictionary associated with this label set
-     * @param data the preloaded data
+     *
+     * @param dictionary             the dictionary associated with this label set
+     * @param data                   the preloaded data
      * @param labelSectionToFilename the labelSectionToFilename
-     * @param publicSections The set of sections to be constructed. Usually comes from the prebuilt english labels.
-     *          We used to use data.getPublicSectionNames(), but when building the non english labels DB, that value is null.
+     * @param publicSections         The set of sections to be constructed. Usually comes from the prebuilt english labels.
+     *                               We used to use data.getPublicSectionNames(), but when building the non english labels DB, that value is null.
      */
     protected GrammaticalLabelSetImpl(LanguageDictionary dictionary, PropertyFileData data, Map<String, String> labelSectionToFilename, Set<String> publicSections) {
         super(data, labelSectionToFilename);
@@ -80,6 +81,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
     /**
      * Use this only for testing or various values.  This doesn't do any caching, and it, ahem.  Evil.
      * However, we provide this capability to our localization team.
+     *
      * @param descriptor the descriptor to use to create the test label set
      * @return a test label set that can be used
      */
@@ -104,9 +106,9 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         if (obj instanceof String) {
             String str = (String) obj;
             return forMessageFormat
-                ? TextUtil.escapeForMessageFormat(
+                    ? TextUtil.escapeForMessageFormat(
                     str, new StringBuilder(str.length()), false).toString()
-                : str;
+                    : str;
         }
 
         if (obj instanceof LabelReference) {
@@ -173,7 +175,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         Object result = inner_get(section, param, true);
         if (result == null) {
             return processMissingLabel(
-                "PropertyFile - val " + param + " not found in section " + section, allowLabelException);
+                    "PropertyFile - val " + param + " not found in section " + section, allowLabelException);
         }
         return result;
     }
@@ -199,7 +201,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         if (o instanceof LabelReference) {
             try {
                 // Bad aliases should return "" to satisfy the old requirements (see LabelParserTest.testRoot)
-                return this.get((LabelReference)o);
+                return this.get((LabelReference) o);
             } catch (SettingsSectionNotFoundException ex) {
                 logger.warning("Invalid label reference, section not found: " + o + " for " + section + "." + param);
                 return "";

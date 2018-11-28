@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -17,10 +17,11 @@ import com.google.common.collect.ImmutableList;
 /**
  * Indonesian is a generally non-inflected language, except for plurals
  * Technically, this should be MalayDeclension, as Indonesian is a form of malay...
+ *
  * @author stamm
  */
- class IndonesianDeclension extends LanguageDeclension {
-	// All the forms you can request
+class IndonesianDeclension extends LanguageDeclension {
+    // All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(PluralNounForm.SINGULAR);
@@ -28,11 +29,11 @@ import com.google.common.collect.ImmutableList;
     static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public IndonesianDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return ALL_FORMS;
     }
 
@@ -52,7 +53,7 @@ import com.google.common.collect.ImmutableList;
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return ADJECTIVE_FORMS;
     }
 

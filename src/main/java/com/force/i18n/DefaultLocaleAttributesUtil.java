@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,6 +14,7 @@ import java.util.Locale;
  * default used.
  * <p>
  * See #createLocaleAttributesUtil() to add more configuration information.
+ *
  * @author jared.pearson
  */
 public enum DefaultLocaleAttributesUtil implements LocaleAttributesUtil {
@@ -60,35 +61,36 @@ public enum DefaultLocaleAttributesUtil implements LocaleAttributesUtil {
          */
 
         return new LocaleAttributesUtilBuilder()
-            .add(forLocale("hu").useEasternNameOrder())
-            .add(forLocale("hu", "HU").useEasternNameOrder().formal())
-            .add(forLocale("in").formal())
-            .add(forLocale("in", "ID").formal())
-            .add(forLocale("ja").useEasternNameOrder().formal())
-            .add(forLocale("ja", "JP").useEasternNameOrder().formal())
-            .add(forLocale("ko").useEasternNameOrder().formal())
-            .add(forLocale("ko", "KP").useEasternNameOrder())
-            .add(forLocale("ko", "KR").useEasternNameOrder().formal())
-            .add(forLocale("th").formal())
-            .add(forLocale("th", "TH").formal())
-            .add(forLocale("vi").useEasternNameOrder().formal())
-            .add(forLocale("vi", "VN").useEasternNameOrder().formal())
-            .add(forLocale("zh").useEasternNameOrder().formal())
-            .add(forLocale("zh", "CN").useEasternNameOrder().formal())
-            .add(forLocale("zh", "HK").useEasternNameOrder().formal())
-            .add(forLocale("zh", "TW").useEasternNameOrder().formal())
-            .add(forLocale("zh", "MO").useEasternNameOrder().formal())
-            .add(forLocale("zh", "SG").useEasternNameOrder().formal())
-            .add(forLocale("zh", "CN", "STROKE").useEasternNameOrder().formal())
-            .add(forLocale("zh", "TW", "STROKE").useEasternNameOrder().formal())
-            .add(forLocale("zh", "HK", "STROKE").useEasternNameOrder().formal())
-            .add(forLocale("zh", "CN", "PINYIN").useEasternNameOrder().formal())
-            .build();
+                .add(forLocale("hu").useEasternNameOrder())
+                .add(forLocale("hu", "HU").useEasternNameOrder().formal())
+                .add(forLocale("in").formal())
+                .add(forLocale("in", "ID").formal())
+                .add(forLocale("ja").useEasternNameOrder().formal())
+                .add(forLocale("ja", "JP").useEasternNameOrder().formal())
+                .add(forLocale("ko").useEasternNameOrder().formal())
+                .add(forLocale("ko", "KP").useEasternNameOrder())
+                .add(forLocale("ko", "KR").useEasternNameOrder().formal())
+                .add(forLocale("th").formal())
+                .add(forLocale("th", "TH").formal())
+                .add(forLocale("vi").useEasternNameOrder().formal())
+                .add(forLocale("vi", "VN").useEasternNameOrder().formal())
+                .add(forLocale("zh").useEasternNameOrder().formal())
+                .add(forLocale("zh", "CN").useEasternNameOrder().formal())
+                .add(forLocale("zh", "HK").useEasternNameOrder().formal())
+                .add(forLocale("zh", "TW").useEasternNameOrder().formal())
+                .add(forLocale("zh", "MO").useEasternNameOrder().formal())
+                .add(forLocale("zh", "SG").useEasternNameOrder().formal())
+                .add(forLocale("zh", "CN", "STROKE").useEasternNameOrder().formal())
+                .add(forLocale("zh", "TW", "STROKE").useEasternNameOrder().formal())
+                .add(forLocale("zh", "HK", "STROKE").useEasternNameOrder().formal())
+                .add(forLocale("zh", "CN", "PINYIN").useEasternNameOrder().formal())
+                .build();
     }
 
     /**
      * Creates a new LocaleInfoBuilder for the Locale with the given language. This is mostly syntactic sugar to make
      * {@link DefaultLocaleAttributesUtil#createLocaleAttributesUtil()} easier to read.
+     *
      * @param language the language for {@link Locale#Locale(String)}.
      * @return a new {@link LocaleInfoBuilder} instance
      */
@@ -99,8 +101,9 @@ public enum DefaultLocaleAttributesUtil implements LocaleAttributesUtil {
     /**
      * Creates a new LocaleInfoBuilder for the Locale with the given language and country. This is mostly syntactic sugar to make
      * {@link DefaultLocaleAttributesUtil#createLocaleAttributesUtil()} easier to read.
+     *
      * @param language the language for {@link Locale#Locale(String, String)}.
-     * @param country the country for {@link Locale#Locale(String, String)}.
+     * @param country  the country for {@link Locale#Locale(String, String)}.
      * @return a new {@link LocaleInfoBuilder} instance
      */
     private static LocaleInfoBuilder forLocale(String language, String country) {
@@ -110,9 +113,10 @@ public enum DefaultLocaleAttributesUtil implements LocaleAttributesUtil {
     /**
      * Creates a new LocaleInfoBuilder for the Locale with the given language, country and variant. This is mostly syntactic sugar to make
      * {@link DefaultLocaleAttributesUtil#createLocaleAttributesUtil()} easier to read.
+     *
      * @param language the language for {@link Locale#Locale(String, String, String)}.
-     * @param country the country for {@link Locale#Locale(String, String, String)}.
-     * @param variant the variant for {@link Locale#Locale(String, String, String)}.
+     * @param country  the country for {@link Locale#Locale(String, String, String)}.
+     * @param variant  the variant for {@link Locale#Locale(String, String, String)}.
      * @return a new {@link LocaleInfoBuilder} instance
      */
     private static LocaleInfoBuilder forLocale(String language, String country, String variant) {

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -39,12 +39,12 @@ public interface LabelSetDescriptor {
      * @return a list of files that override the root file in the order that they should be processed.
      */
     List<URL> getOverridingFiles();
-    
-    /** 
+
+    /**
      * @return true if the label files should be loaded separately instead of through labels.xml.
      */
     boolean hasModularizedFiles();
-    
+
     /**
      * @return a list of files which should be loaded separately instead of through labels.xml
      */

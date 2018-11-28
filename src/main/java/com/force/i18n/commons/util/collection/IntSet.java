@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,28 +16,29 @@ import com.google.common.annotations.Beta;
  * <p>The additional stipulation on constructors is, not surprisingly,
  * that all constructors must create a set that contains no duplicate elements
  * (as defined above).</p>
- *
+ * <p>
  * Note: Great care must be exercised if mutable objects are used as set
  * elements.  The behavior of a set is not specified if the value of an object
  * is changed in a manner that affects equals comparisons while the object is
  * an element in the set.  A special case of this prohibition is that it is
  * not permissible for a set to contain itself as an element.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
- * @author  Based on Sun's java.util.Set (modified by koliver)
+ * @author Based on Sun's java.util.Set (modified by koliver)
  * @see IntHashSet
  * @see IntMap
  */
 @Beta
 public interface IntSet {
-    
+
     /**
      * Create a new empty IntSet with the same impl
+     *
      * @return a new empty IntSet
      */
     IntSet makeEmpty();
-    
+
     /**
      * Gets the ordered array of ints in the IntSet.
      */

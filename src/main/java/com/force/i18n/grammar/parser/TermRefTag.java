@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,15 +16,16 @@ import com.force.i18n.grammar.GrammaticalTerm.TermType;
 /**
  * Base class of Term Reference Tag elements in labels file. This keeps any elements
  * appears in contents of <CODE>param</CODE> element.
+ *
  * @author yoikawa
  */
 public abstract class TermRefTag implements Serializable {
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	private final String name;
+    private final String name;
 
     public static final char SEP = '-';
 
@@ -44,7 +45,7 @@ public abstract class TermRefTag implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        return obj != null && (obj.getClass() == this.getClass()) && name.equals(((TermRefTag)obj).name) && equalsValue((TermRefTag)obj);
+        return obj != null && (obj.getClass() == this.getClass()) && name.equals(((TermRefTag) obj).name) && equalsValue((TermRefTag) obj);
     }
 
     @Override
@@ -54,6 +55,7 @@ public abstract class TermRefTag implements Serializable {
 
     /**
      * Abstract method to force subclasses to correctly implement equals
+     *
      * @param obj the other object being compared.
      * @return <tt>true</tt> if the values of this reference, besides the tag, are equivalent.
      */
@@ -97,10 +99,11 @@ public abstract class TermRefTag implements Serializable {
     /**
      * Format this reference into a user-readable format based on the given dictionary
      * and dynamic entities
-     * @param dictionary the dictionary of language particles.
-     * @param entities the set of dynamic renameable entities
+     *
+     * @param dictionary    the dictionary of language particles.
+     * @param entities      the set of dynamic renameable entities
      * @param overrideForms if the form contained inside this term ref might be a different language than the dictionary provided.
-     * In this case, the implementation must try to find the closest term to the one stored with this term ref.
+     *                      In this case, the implementation must try to find the closest term to the one stored with this term ref.
      * @return a user-readable string for this reference
      */
     public abstract String toString(LanguageDictionary dictionary, boolean overrideForms, Renameable... entities);

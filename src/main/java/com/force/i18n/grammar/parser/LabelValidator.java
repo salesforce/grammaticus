@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -39,15 +39,15 @@ public class LabelValidator {
     Comparator<AliasParam> ALIAS_COMPARATOR = new Comparator<AliasParam>() {
         @Override
         public int compare(AliasParam o1, AliasParam o2) {
-            int fileCompare =  o1.file.getPath().compareTo(o2.file.getPath());
+            int fileCompare = o1.file.getPath().compareTo(o2.file.getPath());
             if (fileCompare == 0) {
-               if (o1.lineNumber<o2.lineNumber) {
-                return -1;
-            } else if (o1.lineNumber==o2.lineNumber) {
-                return 0;
-            } else {
-                return 1;
-            }
+                if (o1.lineNumber < o2.lineNumber) {
+                    return -1;
+                } else if (o1.lineNumber == o2.lineNumber) {
+                    return 0;
+                } else {
+                    return 1;
+                }
             } else {
                 return fileCompare;
             }
@@ -84,6 +84,7 @@ public class LabelValidator {
 
     /**
      * Validate that the referenced case forms exist for the nouns in the label sets
+     *
      * @param sets the label sets to validate
      * @return a set of error messages; if empty, it's all good.
      */
@@ -99,7 +100,7 @@ public class LabelValidator {
             // Unwrap the layers of falling back: NOTE, this only works one level deep which is fine for now.
             GrammaticalLabelSet main = ls;
             if (main instanceof GrammaticalLabelSetFallbackImpl) {
-                main = ((GrammaticalLabelSetFallbackImpl)main).getOverlay();
+                main = ((GrammaticalLabelSetFallbackImpl) main).getOverlay();
             }
 
             // Iterate through the label set
@@ -107,21 +108,22 @@ public class LabelValidator {
                 Map<String, Object> sectionMap = ls.getSection(section);
                 if (sectionMap == null) continue;
 
-                for (Map.Entry<String,Object> entry : sectionMap.entrySet()) {
+                for (Map.Entry<String, Object> entry : sectionMap.entrySet()) {
                     if (!(entry.getValue() instanceof List)) continue;  // Only care if there's an adjective
-                    for (Object o : (List<?>)entry.getValue()) {
-                        if (o instanceof TermRefTag && ((TermRefTag)o).isNoun()) {
+                    for (Object o : (List<?>) entry.getValue()) {
+                        if (o instanceof TermRefTag && ((TermRefTag) o).isNoun()) {
                             TermRefTag nrt = (TermRefTag) o;
                             String name = nrt.getName();
                             if (inheritedNouns.contains(name)) continue;  // We only case about actual values.
                             // TODO SLT: Reenable
                             NounForm form = (NounForm) nrt.getForm(ls.getDictionary(), true);
-                            if (form instanceof LegacyArticledNounForm) form = ((LegacyArticledNounForm)form).getBaseNounForm();  // Unwrap the base form
+                            if (form instanceof LegacyArticledNounForm)
+                                form = ((LegacyArticledNounForm) form).getBaseNounForm();  // Unwrap the base form
                             if (!declension.getEntityForms().contains(form)) continue;  // Ignore autoderived forms
                             Noun noun = ls.getDictionary().getNoun(name, false);
                             if (!noun.getAllDefinedValues().keySet().contains(form)) {
                                 errMsgs.add(ls.getDictionary().getLanguage().getLocaleString() + ":" + section + "." + entry.getKey() + ":" + ls.getLabelSectionToFilename().get(section)
-                                    + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name );
+                                        + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name);
                             }
                         }
                     }
@@ -134,8 +136,8 @@ public class LabelValidator {
 
     /**
      * @param language the language to load for the parser
-     * @throws IOException if there was a problem while parsing
      * @return A fully formed label file parser *after* it has been parser
+     * @throws IOException if there was a problem while parsing
      */
     public GrammaticalLabelFileParser getParser(HumanLanguage language, boolean trackDupes) throws IOException {
         GrammaticalLabelSetDescriptor desc = language == baseDesc.getLanguage() ? baseDesc : baseDesc.getForOtherLanguage(language);
@@ -187,7 +189,6 @@ public class LabelValidator {
             throw new RuntimeException(e);
         }
     }
-
 
 
 }

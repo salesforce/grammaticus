@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,9 +22,9 @@ import com.google.common.annotations.Beta;
  * as efficient, since it uses a regular hashmap instead of a nice IntHashMap
  * to store the trie matches, but it's similar.  If you want to use this
  * for an AST or an enum, you probably want to genericize this to take in
- *
+ * <p>
  * The parameter is the token, it can be an enum or an Id.
- * 
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author stamm
@@ -36,10 +36,10 @@ public class GenericTrieMatcher<T> {
     /**
      * This is not the cheapest of operations.
      *
-     * @param searches this is the list of words that make up the Trie.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     * @param searches     this is the list of words that make up the Trie.
+     *                     It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     *                     It is assumed that the lists are not modified once passed into the Trie
      */
     public static <TOKEN> GenericTrieMatcher<TOKEN> compile(List<? extends List<TOKEN>> searches, List<? extends List<TOKEN>> replacements) {
         return compile(searches, replacements, null);
@@ -49,11 +49,11 @@ public class GenericTrieMatcher<T> {
     /**
      * This is not the cheapest of operations.
      *
-     * @param searches this is the list of words that make up the Trie.
-     *      It is assumed that the lists are not modified once passed into the Trie
+     * @param searches     this is the list of words that make up the Trie.
+     *                     It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
-     *      It is assumed that the lists are not modified once passed into the Trie
-     * @param tokenClass based on the class, a more efficient trie map can be generated
+     *                     It is assumed that the lists are not modified once passed into the Trie
+     * @param tokenClass   based on the class, a more efficient trie map can be generated
      */
     public static <TOKEN> GenericTrieMatcher<TOKEN> compile(List<? extends List<TOKEN>> searches, List<? extends List<TOKEN>> replacements, Class<TOKEN> tokenClass) {
         return new GenericTrieMatcher<TOKEN>(searches, replacements, tokenClass);
@@ -69,10 +69,8 @@ public class GenericTrieMatcher<T> {
      * <p>
      * Note, regexes aren't supported by this, see {@link #replace(String, String[], String[])}.
      *
-     * @param s
-     *        the text you are searching in
-     * @param trieMatcher
-     *        the trie representing the words to search and replace for
+     * @param s           the text you are searching in
+     * @param trieMatcher the trie representing the words to search and replace for
      * @return the text with the search words swapped by the replacements
      */
     public static final <T> List<T> replaceMultiple(List<T> s, GenericTrieMatcher<T> trieMatcher) {
@@ -84,12 +82,10 @@ public class GenericTrieMatcher<T> {
      * Search and replace multiple strings in <code>s</code> given the the words and replacements given in
      * <code>TrieMatcher</code> and a validation strategy
      * <p>
-     * @param s
-     *        the text you are searching in
-     * @param trieMatcher
-     *        the trie representing the words to search and replace for
-     * @param validator
-     *        the optional code that validates whether a match should be accepted or not.
+     *
+     * @param s           the text you are searching in
+     * @param trieMatcher the trie representing the words to search and replace for
+     * @param validator   the optional code that validates whether a match should be accepted or not.
      * @return the text with the search words swapped by the replacements
      */
     public static final <T> List<T> replaceMultiple(List<T> s, GenericTrieMatcher<T> trieMatcher, MatchValidator<T> validator) {
@@ -108,7 +104,7 @@ public class GenericTrieMatcher<T> {
             // Try to find a valid match
             if (match != null && validator != null) {
                 int curPos = pos;  // Start from pos and look for the next one
-                while (match != null && pos < length && !validator.isValidMatch(match,s)) {
+                while (match != null && pos < length && !validator.isValidMatch(match, s)) {
                     match = trieMatcher.match(s, ++curPos);
                 }
             }
@@ -142,9 +138,8 @@ public class GenericTrieMatcher<T> {
      */
     public interface MatchValidator<K> {
         /**
-         *
          * @param match the match found
-         * @param src the original source string being modified (NOTE: the positions may be different.)
+         * @param src   the original source string being modified (NOTE: the positions may be different.)
          * @return <tt>true</tt> if the match in the given src string is valid
          */
         public boolean isValidMatch(GenericTrieMatch<K> match, List<K> src);
@@ -171,7 +166,7 @@ public class GenericTrieMatcher<T> {
     /**
      * Find the next match in <code>s</code>.
      *
-     * @param s the term to search for the terms of the trie in
+     * @param s     the term to search for the terms of the trie in
      * @param start the 0-based position to start the search from.
      * @return null if no match found
      */
@@ -184,15 +179,15 @@ public class GenericTrieMatcher<T> {
     private static class GenericTrieData<K> {
         List<K> word;
         List<K> replacement;
-        final Map<K,GenericTrieData<K>> nextChars;
+        final Map<K, GenericTrieData<K>> nextChars;
 
-        GenericTrieData(Map<K,GenericTrieData<K>> next) {
+        GenericTrieData(Map<K, GenericTrieData<K>> next) {
             this.nextChars = next;
         }
     }
 
     private final List<List<T>> words;
-    private final Map<T,GenericTrieData<T>> root;
+    private final Map<T, GenericTrieData<T>> root;
     private final int minWordLength;
 
     /**
@@ -203,8 +198,8 @@ public class GenericTrieMatcher<T> {
         if (replacements == null) throw new NullPointerException();
 
         if (strings.size() != replacements.size()) {
-            throw new IllegalArgumentException("Replacements must have same size, "+ replacements.size()
-                + ", as search strings " + strings.size());
+            throw new IllegalArgumentException("Replacements must have same size, " + replacements.size()
+                    + ", as search strings " + strings.size());
         }
 
         this.words = Collections.unmodifiableList(strings);
@@ -213,7 +208,7 @@ public class GenericTrieMatcher<T> {
         int minWordLen = Integer.MAX_VALUE;
         int wordIndex = 0;
         for (List<T> s : strings) {
-            Map<T,GenericTrieData<T>> current = this.root;
+            Map<T, GenericTrieData<T>> current = this.root;
 
             int len = s.size();
             minWordLen = Math.min(minWordLen, len);
@@ -227,7 +222,7 @@ public class GenericTrieMatcher<T> {
                 current = next.nextChars;
 
                 // if we're at the last char, store it and its replacement...
-                if (i+1 == len) {
+                if (i + 1 == len) {
                     next.word = s;
                     next.replacement = replacements.get(wordIndex);
                 }
@@ -238,13 +233,13 @@ public class GenericTrieMatcher<T> {
         this.minWordLength = minWordLen;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })  // Conversion to enum can't be done in a way that is safe
-    private Map<T,GenericTrieData<T>> makeMap(Class<T> tokenClass) {
-        if (tokenClass == null) return new HashMap<T,GenericTrieData<T>>(DEFAULT_CAPACITY);
+    @SuppressWarnings({"unchecked", "rawtypes"})  // Conversion to enum can't be done in a way that is safe
+    private Map<T, GenericTrieData<T>> makeMap(Class<T> tokenClass) {
+        if (tokenClass == null) return new HashMap<T, GenericTrieData<T>>(DEFAULT_CAPACITY);
         if (tokenClass.isEnum()) {
             return new EnumMap(tokenClass);
         }
-        return new HashMap<T,GenericTrieData<T>>(DEFAULT_CAPACITY);
+        return new HashMap<T, GenericTrieData<T>>(DEFAULT_CAPACITY);
     }
 
     /**
@@ -286,7 +281,7 @@ public class GenericTrieMatcher<T> {
      * @return null if not found
      */
     private GenericTrieData<T> contains(List<T> s, int offset) {
-        Map<T,GenericTrieData<T>> current = this.root;
+        Map<T, GenericTrieData<T>> current = this.root;
         int len = s.size();
         LinkedList<GenericTrieData<T>> matches = null;
 
@@ -378,7 +373,6 @@ public class GenericTrieMatcher<T> {
         }
 
     }
-
 
 
 }

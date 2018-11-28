@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,7 +22,7 @@ import com.google.common.collect.ImmutableList;
 /**
  * Declension for Armenian, which is unsupported, but is different enough to warrant
  * its own class.  It has 7 cases and no gender.
- *
+ * <p>
  * It has definite article
  *
  * @author stamm
@@ -53,11 +53,13 @@ class ArmenianDeclension extends LanguageDeclension {
     }
 
     @Override
-    public boolean hasGender() { return false; }  // Gender's irrelevant in armenian
+    public boolean hasGender() {
+        return false;
+    }  // Gender's irrelevant in armenian
 
 
     public ArmenianDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
 
         // Generate the different forms from subclass methods
         ImmutableList.Builder<ArmenianNounForm> entityBuilder = ImmutableList.builder();
@@ -83,10 +85,10 @@ class ArmenianDeclension extends LanguageDeclension {
      */
     static class ArmenianNounForm extends ComplexNounForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
 
@@ -97,14 +99,31 @@ class ArmenianDeclension extends LanguageDeclension {
             this.article = article;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
         }
+
         @Override
         public String toString() {
             return "ArmenianNF:" + getKey();
@@ -118,21 +137,25 @@ class ArmenianDeclension extends LanguageDeclension {
      */
     public static class ArmenianNoun extends ComplexNoun<ArmenianNounForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// Store everything for now.
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
+        // Store everything for now.
         ArmenianNoun(ArmenianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
+
         @Override
-		protected final Class<ArmenianNounForm> getFormClass() {
-        	return ArmenianNounForm.class;
-		}
-		@Override
+        protected final Class<ArmenianNounForm> getFormClass() {
+            return ArmenianNounForm.class;
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
+
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER)
@@ -147,20 +170,20 @@ class ArmenianDeclension extends LanguageDeclension {
     }
 
     @Override
-    public List< ? extends ArticleForm> getArticleForms() {
+    public List<? extends ArticleForm> getArticleForms() {
         return Collections.singletonList(SimpleModifierForm.SINGULAR);
     }
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
         // Adjectives in Armenian are invariant.  Ya rly.
         return SimpleModifierForm.SINGULAR;
     }
 
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1) {
+                                      LanguageCase case1) {
         return null;  // There is no article form.
     }
 
@@ -170,27 +193,27 @@ class ArmenianDeclension extends LanguageDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return Collections.singletonList(SimpleModifierForm.SINGULAR);
     }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getFieldForms() {
+    public Collection<? extends NounForm> getFieldForms() {
         return this.fieldForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
 }

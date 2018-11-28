@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,6 +16,7 @@ import com.google.common.base.Preconditions;
 
 /**
  * Performs locale-sensitive formatting of name fields.
+ *
  * @author jared.pearson
  */
 public class LocaleNameFormatter {
@@ -30,6 +31,7 @@ public class LocaleNameFormatter {
 
     /**
      * Creates a new formatter with the given locale information.
+     *
      * @param localeConfig the extra information associated to a locale
      */
     public LocaleNameFormatter(LocaleAttributesUtil localeConfig) {
@@ -39,6 +41,7 @@ public class LocaleNameFormatter {
 
     /**
      * Creates a new formatter with the given locale information.
+     *
      * @param localeInfos the collection of extra information associated to a locale
      * @deprecated Use {@link #LocaleNameFormatter(LocaleAttributesUtil)} instead
      */
@@ -71,9 +74,10 @@ public class LocaleNameFormatter {
      * Performs locale-sensitive formatting of a name using all fields (if they apply in the locale).
      * <p>
      * Might return a <CODE>String</CODE> with a trailing space -- deal with it.
-     * @param locale the locale that the name is displayed in
+     *
+     * @param locale    the locale that the name is displayed in
      * @param firstName the first name of the person
-     * @param lastName the last name of the person
+     * @param lastName  the last name of the person
      * @return String representing the locale-formatted name
      */
     public String format(Locale locale, String firstName, String lastName) {
@@ -84,10 +88,11 @@ public class LocaleNameFormatter {
      * Performs locale-sensitive formatting of a name using all fields (if they apply in the locale).
      * <p>
      * Might return a <CODE>String</CODE> with a trailing space -- deal with it.
-     * @param locale the locale that the name is displayed in
+     *
+     * @param locale     the locale that the name is displayed in
      * @param salutation the salutation of the person or null if not specified
-     * @param firstName the first name of the person
-     * @param lastName the last name of the person
+     * @param firstName  the first name of the person
+     * @param lastName   the last name of the person
      * @return String representing the locale-formatted name
      */
     public String format(Locale locale, String salutation, String firstName, String lastName) {
@@ -98,11 +103,12 @@ public class LocaleNameFormatter {
      * Performs locale-sensitive formatting of a name using all fields (if they apply in the locale).
      * <p>
      * Might return a <CODE>String</CODE> with a trailing space -- deal with it.
-     * @param locale the locale that the name is displayed in
+     *
+     * @param locale     the locale that the name is displayed in
      * @param salutation the salutation of the person or null if not specified
-     * @param firstName the first name of the person
-     * @param lastName the last name of the person
-     * @param casual if true, use first name only, if the locale allows it
+     * @param firstName  the first name of the person
+     * @param lastName   the last name of the person
+     * @param casual     if true, use first name only, if the locale allows it
      * @return String representing the locale-formatted name
      */
     public String format(Locale locale, String salutation, String firstName, String lastName, boolean casual) {
@@ -113,13 +119,14 @@ public class LocaleNameFormatter {
      * Performs locale-sensitive formatting of a name using all fields (if they apply in the locale).
      * <p>
      * Might return a <CODE>String</CODE> with a trailing space -- deal with it.
-     * @param locale the locale that the name is displayed in
-     * @param salutation the salutation of the person or null if not specified
-     * @param firstName the first name of the person
-     * @param lastName the last name of the person
-     * @param middleName the middle name of the person or null if not specified
+     *
+     * @param locale       the locale that the name is displayed in
+     * @param salutation   the salutation of the person or null if not specified
+     * @param firstName    the first name of the person
+     * @param lastName     the last name of the person
+     * @param middleName   the middle name of the person or null if not specified
      * @param informalName the informal name of the person or null if not specified
-     * @param suffix the suffix or null if not specified
+     * @param suffix       the suffix or null if not specified
      * @return String representing the locale-formatted name
      */
     public String format(Locale locale, String salutation, String firstName, String lastName, String middleName, String informalName, String suffix) {
@@ -130,14 +137,15 @@ public class LocaleNameFormatter {
      * Performs locale-sensitive formatting of a name using all fields (if they apply in the locale).
      * <p>
      * Might return a <CODE>String</CODE> with a trailing space -- deal with it.
-     * @param locale the locale that the name is displayed in
-     * @param salutation the salutation of the person or null if not specified
-     * @param firstName the first name of the person
-     * @param lastName the last name of the person
-     * @param middleName the middle name of the person or null if not specified
+     *
+     * @param locale       the locale that the name is displayed in
+     * @param salutation   the salutation of the person or null if not specified
+     * @param firstName    the first name of the person
+     * @param lastName     the last name of the person
+     * @param middleName   the middle name of the person or null if not specified
      * @param informalName the informal name of the person or null if not specified
-     * @param suffix the suffix or null if not specified
-     * @param casual if true, use first name only, if the locale allows it
+     * @param suffix       the suffix or null if not specified
+     * @param casual       if true, use first name only, if the locale allows it
      * @return String representing the locale-formatted name
      */
     public String format(Locale locale, String salutation, String firstName, String lastName, String middleName, String informalName, String suffix, boolean casual) {
@@ -153,18 +161,18 @@ public class LocaleNameFormatter {
         // the better the initial allocation, the less likely a re-allocation
         StringBuilder buf = new StringBuilder(
                 (null == salutation ? 0 : salutation.length())
-            + (null == firstName ? 0 : firstName.length())
-            + (null == lastName ? 0 : lastName.length())
-            + (!canShowMiddleName ? 0 : middleName.length())
-            + (!canShowSuffix ? 0 : suffix.length()) + 10
-            );
+                        + (null == firstName ? 0 : firstName.length())
+                        + (null == lastName ? 0 : lastName.length())
+                        + (!canShowMiddleName ? 0 : middleName.length())
+                        + (!canShowSuffix ? 0 : suffix.length()) + 10
+        );
         if (localeConfig.useEasternNameOrder(locale)) { // format = "last first[ middle][ suffix]"
             appendNamePart(buf, lastName);
             appendNamePart(buf, firstName);
             if (canShowMiddleName) {
                 appendNamePart(buf, middleName);
             }
-       } else { // default format = "salutation first middle last"
+        } else { // default format = "salutation first middle last"
             appendNamePart(buf, salutation);
             appendNamePart(buf, firstName);
             if (canShowMiddleName) {

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -27,7 +27,6 @@ import com.force.i18n.grammar.*;
 
 /**
  * @author stamm
- *
  */
 public class LanguageDictionaryParserTest extends BaseGrammaticalLabelTest {
     public LanguageDictionaryParserTest(String name) {
@@ -502,18 +501,18 @@ public class LanguageDictionaryParserTest extends BaseGrammaticalLabelTest {
         assertNotNull(m);
         assertEquals("Aktiv", m.getString(SINGULAR, EUTER, CONSONANT));
         assertEquals("Aktivt", m.getString(SINGULAR, NEUTER, CONSONANT));
-        assertEquals("Aktiva", m.getString(PLURAL,  EUTER, CONSONANT));
+        assertEquals("Aktiva", m.getString(PLURAL, EUTER, CONSONANT));
         assertEquals("Aktiva", m.getString(PLURAL, NEUTER, CONSONANT));
 
         // A: is same as none
         assertEquals("Aktiv", m.getString(SINGULAR, INDEFINITE, EUTER, CONSONANT));
         assertEquals("Aktivt", m.getString(SINGULAR, INDEFINITE, NEUTER, CONSONANT));
-        assertEquals("Aktiva", m.getString(PLURAL, INDEFINITE,  EUTER, CONSONANT));
+        assertEquals("Aktiva", m.getString(PLURAL, INDEFINITE, EUTER, CONSONANT));
         assertEquals("Aktiva", m.getString(PLURAL, INDEFINITE, NEUTER, CONSONANT));
 
         assertEquals("Aktiv", m.getString(SINGULAR, DEFINITE, EUTER, CONSONANT));
         assertEquals("Aktivt", m.getString(SINGULAR, DEFINITE, NEUTER, CONSONANT));
-        assertEquals("Aktiva", m.getString(PLURAL, DEFINITE,  EUTER, CONSONANT));
+        assertEquals("Aktiva", m.getString(PLURAL, DEFINITE, EUTER, CONSONANT));
         assertEquals("Aktiva", m.getString(PLURAL, DEFINITE, NEUTER, CONSONANT));
     }
 

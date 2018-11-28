@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,11 +12,13 @@ import com.force.i18n.grammar.GrammaticalTerm.TermType;
 
 /**
  * Represents a fully qualified article reference.
+ *
  * @author stamm
  */
 class ArticleRefTag extends ModifierRefTag {
-	private static final long serialVersionUID = 1L;
-	protected static final ConcurrentUniquefy<ArticleRefTag> tagMap = new ConcurrentUniquefy<ArticleRefTag>();
+    private static final long serialVersionUID = 1L;
+    protected static final ConcurrentUniquefy<ArticleRefTag> tagMap = new ConcurrentUniquefy<ArticleRefTag>();
+
     private ArticleRefTag(String name, NounRefTag nounTag, TermRefTag nextTermTag, boolean isCapital, TermAttributes overrides) {
         super(name, nounTag, nextTermTag, isCapital, overrides);
     }

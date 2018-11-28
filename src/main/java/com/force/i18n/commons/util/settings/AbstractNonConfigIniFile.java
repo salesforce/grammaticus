@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -65,14 +65,14 @@ public abstract class AbstractNonConfigIniFile implements NonConfigIniFile {
     @Override
     public float getFloat(String section, String param) {
         Object val = get(section, param);
-        if (val instanceof String ) {
+        if (val instanceof String) {
             try {
                 return Float.parseFloat(getString(section, param));
             } catch (NumberFormatException x) {
                 throw new RuntimeException("Section: " + section + ", Param: " + param, x);
             }
         } else if (val instanceof Float) {
-            return (Float)val;
+            return (Float) val;
         }
         throw new RuntimeException("param " + param + " not found in section " + section);
     }
@@ -88,14 +88,14 @@ public abstract class AbstractNonConfigIniFile implements NonConfigIniFile {
     @Override
     public int getInt(String section, String param) {
         Object val = get(section, param);
-        if (val instanceof String ) {
+        if (val instanceof String) {
             try {
                 return Integer.parseInt(getString(section, param));
             } catch (NumberFormatException x) {
                 throw new RuntimeException("Section: " + section + ", Param: " + param, x);
             }
         } else if (val instanceof Integer) {
-            return (Integer)val;
+            return (Integer) val;
         }
         throw new RuntimeException("param " + param + " not found in section " + section);
     }
@@ -110,25 +110,25 @@ public abstract class AbstractNonConfigIniFile implements NonConfigIniFile {
 
     @Override
     public String getString(String section, String param) {
-        return (String)get(section, param);
+        return (String) get(section, param);
     }
 
     @Override
     public String getCensoredString(String section, String param, String ifNull) {
         String value = getString(section, param, null);
-        if(value == null) return ifNull;
+        if (value == null) return ifNull;
 
         return SettingsUtil.censorValue(section, param, value);
     }
 
     @Override
     public String getStringThrow(String section, String param) {
-        return (String)get(section, param);
+        return (String) get(section, param);
     }
 
     @Override
     public String getString(String section, String param, String ifNull) {
-        return (String)get(section, param, ifNull);
+        return (String) get(section, param, ifNull);
     }
 
     @Override

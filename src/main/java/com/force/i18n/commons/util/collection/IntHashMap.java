@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,7 +22,7 @@ import com.google.common.annotations.Beta;
  * This class makes no guarantees as to
  * the order of the map; in particular, it does not guarantee that the order
  * will remain constant over time.<p>
- *
+ * <p>
  * This implementation provides constant-time performance for the basic
  * operations (<tt>get</tt> and <tt>put</tt>), assuming the hash function
  * disperses the elements properly among the buckets.  Iteration over
@@ -31,7 +31,7 @@ import com.google.common.annotations.Beta;
  * of key-value mappings).  Thus, it's very important not to set the initial
  * capacity too high (or the load factor too low) if iteration performance is
  * important.<p>
- *
+ * <p>
  * An instance of <tt>HashMap</tt> has two parameters that affect its
  * performance: <i>initial capacity</i> and <i>load factor</i>.  The
  * <i>capacity</i> is the number of buckets in the hash table, and the initial
@@ -41,7 +41,7 @@ import com.google.common.annotations.Beta;
  * entries in the hash table exceeds the product of the load factor and the
  * current capacity, the capacity is roughly doubled by calling the
  * <tt>rehash</tt> method.<p>
- *
+ * <p>
  * As a general rule, the default load factor (.75) offers a good tradeoff
  * between time and space costs.  Higher values decrease the space overhead
  * but increase the lookup cost (reflected in most of the operations of the
@@ -51,7 +51,7 @@ import com.google.common.annotations.Beta;
  * number of <tt>rehash</tt> operations.  If the initial capacity is greater
  * than the maximum number of entries divided by the load factor, no
  * <tt>rehash</tt> operations will ever occur.<p>
- *
+ * <p>
  * If many mappings are to be stored in a <tt>IntHashMap</tt> instance, creating
  * it with a sufficiently large capacity will allow the mappings to be stored
  * more efficiently than letting it perform automatic rehashing as needed to
@@ -65,7 +65,7 @@ import com.google.common.annotations.Beta;
  * instance already contains is not a structural modification.)  This is
  * typically accomplished by synchronizing on some object that naturally
  * encapsulates the map.
- *
+ * <p>
  * The iterators returned by all of this class's "collection view methods" are
  * <i>fail-fast</i>: if the map is structurally modified at any time after the
  * iterator is created, in any way except through the iterator's own
@@ -74,13 +74,13 @@ import com.google.common.annotations.Beta;
  * modification, the iterator fails quickly and cleanly, rather than risking
  * arbitrary, non-deterministic behavior at an undetermined time in the
  * future.
- * 
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
- * @author  Based on Sun's java.util.HashMap (modified by koliver)
- * @see	    IntMap
- * @see	    java.util.HashMap
+ * @author Based on Sun's java.util.HashMap (modified by koliver)
  * @note use {@link java.util.HashMap} or {@link java.util.EnumMap} instead.
+ * @see IntMap
+ * @see java.util.HashMap
  */
 @Beta
 @SuppressWarnings("rawtypes") // TODO Fix
@@ -123,10 +123,10 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * Constructs a new, empty map with the specified initial
      * capacity and the specified load factor.
      *
-     * @param      initialCapacity   the initial capacity of the HashMap.
-     * @param      loadFactor        the load factor of the HashMap
-     * @throws     IllegalArgumentException  if the initial capacity is less
-     *               than zero, or if the load factor is nonpositive.
+     * @param initialCapacity the initial capacity of the HashMap.
+     * @param loadFactor      the load factor of the HashMap
+     * @throws IllegalArgumentException if the initial capacity is less
+     *                                  than zero, or if the load factor is nonpositive.
      */
     @SuppressWarnings("unchecked")
     public IntHashMap(int initialCapacity, float loadFactor) {
@@ -138,16 +138,16 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
             initialCapacity = 1;
         this.loadFactor = loadFactor;
         this.table = new IEntry[initialCapacity];
-        this.threshold = (int)(initialCapacity * loadFactor);
+        this.threshold = (int) (initialCapacity * loadFactor);
     }
 
     /**
      * Constructs a new, empty map with the specified initial capacity
      * and default load factor, which is <tt>0.75</tt>.
      *
-     * @param   initialCapacity   the initial capacity of the HashMap.
-     * @throws    IllegalArgumentException if the initial capacity is less
-     *              than zero.
+     * @param initialCapacity the initial capacity of the HashMap.
+     * @throws IllegalArgumentException if the initial capacity is less
+     *                                  than zero.
      */
     public IntHashMap(int initialCapacity) {
         this(initialCapacity, 0.75f);
@@ -188,17 +188,17 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      *
      * @param value value whose presence in this map is to be tested.
      */
-	@Override
+    @Override
     public boolean containsValue(Object value) {
         IEntry[] tab = this.table;
 
         if (value == null) {
-            for (int i = tab.length; i-- > 0;)
+            for (int i = tab.length; i-- > 0; )
                 for (IEntry e = tab[i]; e != null; e = e.next)
                     if (e.value == null)
                         return true;
         } else {
-            for (int i = tab.length; i-- > 0;)
+            for (int i = tab.length; i-- > 0; )
                 for (IEntry e = tab[i]; e != null; e = e.next)
                     if (value.equals(e.value))
                         return true;
@@ -235,8 +235,8 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * explicitly maps the key to <tt>null</tt>.  The <tt>containsKey</tt>
      * operation may be used to distinguish these two cases.
      *
-     * @return the value to which this map maps the specified key.
      * @param key key whose associated value is to be returned.
+     * @return the value to which this map maps the specified key.
      */
     @Override
     public V get(int key) {
@@ -266,11 +266,11 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
         IEntry<V>[] newMap = new IEntry[newCapacity];
 
         this.modCount++;
-        this.threshold = (int)(newCapacity * loadFactor);
+        this.threshold = (int) (newCapacity * loadFactor);
         this.table = newMap;
 
-        for (int i = oldCapacity; i-- > 0;) {
-            for (IEntry<V> old = oldMap[i]; old != null;) {
+        for (int i = oldCapacity; i-- > 0; ) {
+            for (IEntry<V> old = oldMap[i]; old != null; ) {
                 IEntry<V> e = old;
                 old = old.next;
 
@@ -286,12 +286,12 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * If the map previously contained a mapping for this key, the old
      * value is replaced.
      *
-     * @param key key with which the specified value is to be associated.
+     * @param key   key with which the specified value is to be associated.
      * @param value value to be associated with the specified key.
      * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the HashMap previously associated
-     *	       <tt>null</tt> with the specified key.
+     * if there was no mapping for key.  A <tt>null</tt> return can
+     * also indicate that the HashMap previously associated
+     * <tt>null</tt> with the specified key.
      */
     @Override
     public V put(int key, V value) {
@@ -330,9 +330,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      *
      * @param key key whose mapping is to be removed from the map.
      * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the map previously associated <tt>null</tt>
-     *	       with the specified key.
+     * if there was no mapping for key.  A <tt>null</tt> return can
+     * also indicate that the map previously associated <tt>null</tt>
+     * with the specified key.
      */
     @Override
     public V remove(int key) {
@@ -373,7 +373,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     public void clear() {
         IEntry[] tab = this.table;
         modCount++;
-        for (int index = tab.length; --index >= 0;)
+        for (int index = tab.length; --index >= 0; )
             tab[index] = null;
         count = 0;
     }
@@ -468,7 +468,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
                     if (!(o instanceof IntMap.Entry))
                         return false;
                     @SuppressWarnings("unchecked")
-                    IntMap.Entry<V> entry = (IntMap.Entry<V>)o;
+                    IntMap.Entry<V> entry = (IntMap.Entry<V>) o;
                     int key = entry.getKey();
                     IEntry<V>[] tab = IntHashMap.this.table;
 
@@ -485,7 +485,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
                     if (!(o instanceof IntMap.Entry))
                         return false;
                     @SuppressWarnings("unchecked")
-                    IntMap.Entry<V> entry = (IntMap.Entry<V>)o;
+                    IntMap.Entry<V> entry = (IntMap.Entry<V>) o;
                     int key = entry.getKey();
                     IEntry<V>[] tab = IntHashMap.this.table;
 
@@ -549,7 +549,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
                 return false;
 
             @SuppressWarnings("unchecked")
-            IntMap.Entry<IV> e = (IntMap.Entry<IV>)o;
+            IntMap.Entry<IV> e = (IntMap.Entry<IV>) o;
 
             return (this.key == e.getKey() && (value == null ? e.getValue() == null : value.equals(e.getValue())));
         }
@@ -666,9 +666,10 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
 
     private class BackingIntSet extends IntHashSet {
         private static final long serialVersionUID = 1L;
+
         @SuppressWarnings("unchecked")
         BackingIntSet() {
-            this.map = (IntHashMap<Object>)IntHashMap.this;
+            this.map = (IntHashMap<Object>) IntHashMap.this;
         }
 
         @Override
@@ -748,8 +749,8 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
         s.writeInt(size());
 
         // Write out keys and values (alternating)
-        for (Iterator i = entrySet().iterator(); i.hasNext();) {
-            IEntry e = (IEntry)i.next();
+        for (Iterator i = entrySet().iterator(); i.hasNext(); ) {
+            IEntry e = (IEntry) i.next();
             s.writeInt(e.getKey());
             s.writeObject(e.getValue());
         }
@@ -768,7 +769,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
         int size = s.readInt();
         for (int i = 0; i < size; i++) {
             int key = s.readInt();
-            V value = (V)s.readObject();
+            V value = (V) s.readObject();
             put(key, value);
         }
     }

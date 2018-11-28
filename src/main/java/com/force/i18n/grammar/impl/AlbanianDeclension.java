@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,7 +14,7 @@ import com.force.i18n.grammar.*;
 
 /**
  * Semisupported grammar for albanian.
- *
+ * <p>
  * Albanian Grammar
  * Gender : M/F/N
  * Number: S/P
@@ -26,18 +26,18 @@ import com.force.i18n.grammar.*;
  * Definite Singular - Definite article noun endings
  * Definite Plural - Definite article noun endings
  * Adjectives: Agree in gender and number but do not seem to need case. They are post positioned to the nouns.
- *
+ * <p>
  * If upgraded to a non-platform language, you should simplify the modifiers by removing the case modifiers.
  *
  * @author stamm
  */
 public class AlbanianDeclension extends GermanicDeclension {
     public AlbanianDeclension(HumanLanguage language) {
-		super(language);
+        super(language);
         assert language.getLocale().getLanguage().equals("sq") : "Initializing a language that isn't albanian";
-	}
+    }
 
-	@Override
+    @Override
     protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
         return ALL_ARTICLES;
     }

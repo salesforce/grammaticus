@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -18,11 +18,11 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 
 /**
  * Represents the attributes of a term
- *
+ * <p>
  * helper class for LabelfileHandler to keep attributes of
  * <CODE>&lt;value%gt;</CODE> element.
  *
- * @author yoikawa,stamm
+ * @author yoikawa, stamm
  */
 public final class TermAttributes implements Serializable {
     private static final long serialVersionUID = 7466902680249231026L;
@@ -49,14 +49,15 @@ public final class TermAttributes implements Serializable {
     private final LanguagePosition position;
 
     public TermAttributes(LanguageDeclension declension, Attributes atts) {
-         this(declension, atts, true);
+        this(declension, atts, true);
     }
 
 
     /**
      * Initialize the TermAttributes with the given for the given declension and the given attributes.
-     * @param declension the declension being parsed
-     * @param atts the attributes being parsed
+     *
+     * @param declension  the declension being parsed
+     * @param atts        the attributes being parsed
      * @param useDefaults if attributes are missing, should this object contain null, or contain the default values
      */
     public TermAttributes(LanguageDeclension declension, Attributes atts, boolean useDefaults) {
@@ -106,24 +107,31 @@ public final class TermAttributes implements Serializable {
     public boolean isPlural() {
         return this.number.isPlural();
     }
+
     public LanguageNumber getNumber() {
         return number;
     }
+
     public LanguageStartsWith getStartsWith() {
         return startsWith;
     }
+
     public LanguageGender getGender() {
         return gender;
     }
+
     public LanguageCase getCase() {
         return caseType;
     }
+
     public LanguagePossessive getPossessive() {
         return possessive;
     }
+
     public LanguageArticle getArticle() {
         return article;
     }
+
     public LanguagePosition getPosition() {
         return position;
     }
@@ -132,9 +140,11 @@ public final class TermAttributes implements Serializable {
     public NounForm getExactNounForm() {
         return declension.getExactNounForm(getNumber(), getCase(), getPossessive(), getArticle());
     }
+
     public AdjectiveForm getAdjectiveForm() {
         return declension.getAdjectiveForm(getStartsWith(), getGender(), getNumber(), getCase(), getArticle(), getPossessive());
     }
+
     public ArticleForm getArticleForm() {
         return declension.getArticleForm(getStartsWith(), getGender(), getNumber(), getCase());
     }
@@ -147,11 +157,11 @@ public final class TermAttributes implements Serializable {
 
 
     /**
-     * @return the adjective form for the given noun and next lexical element using the current values as "overrides" if necessary
-     * @param decl the declension for the language
-     * @param n the noun associated with the given adjective
-     * @param nounForm the form of the noun associated with this adjective
+     * @param decl               the declension for the language
+     * @param n                  the noun associated with the given adjective
+     * @param nounForm           the form of the noun associated with this adjective
      * @param nextLexicalElement the next lexical element that should be used to determine starts with
+     * @return the adjective form for the given noun and next lexical element using the current values as "overrides" if necessary
      */
     public AdjectiveForm getAdjectiveForm(LanguageDeclension decl, Noun n, NounForm nounForm, GrammaticalTerm nextLexicalElement) {
         LanguageStartsWith actualStartsWith = nextLexicalElement != null && nextLexicalElement.getStartsWith() != null ? nextLexicalElement.getStartsWith() : (n != null ? n.getStartsWith() : decl.getDefaultStartsWith());
@@ -164,11 +174,11 @@ public final class TermAttributes implements Serializable {
     }
 
     /**
-     * @return the adjective form for the given noun and next lexical element using the current values as "overrides" if necessary
-     * @param decl the declension for the language
-     * @param n the noun associated with the given article
-     * @param nounForm the form of the noun associated with this article
+     * @param decl               the declension for the language
+     * @param n                  the noun associated with the given article
+     * @param nounForm           the form of the noun associated with this article
      * @param nextLexicalElement the next lexical element that should be used to determine starts with
+     * @return the adjective form for the given noun and next lexical element using the current values as "overrides" if necessary
      */
     public ArticleForm getArticleForm(LanguageDeclension decl, Noun n, NounForm nounForm, GrammaticalTerm nextLexicalElement) {
         // n and nextLexicalElement may be null, so default appropriately
@@ -184,7 +194,7 @@ public final class TermAttributes implements Serializable {
 
         if (nextLexicalElement != null && nextLexicalElement.getStartsWith() != null) {
             actualStartsWith = nextLexicalElement.getStartsWith();
-        } else if (n != null && n.getStartsWith() != null){
+        } else if (n != null && n.getStartsWith() != null) {
             actualStartsWith = n.getStartsWith();
         } else {
             actualStartsWith = decl.getDefaultStartsWith() != null ? decl.getDefaultStartsWith() : LanguageStartsWith.CONSONANT;
@@ -208,7 +218,7 @@ public final class TermAttributes implements Serializable {
     }
 
     private TermAttributes(LanguageDeclension declension, LanguageStartsWith startsWith, LanguageGender gender,
-            LanguageCase caseType, LanguageArticle article, LanguagePossessive possessive, LanguageNumber number, LanguagePosition position) {
+                           LanguageCase caseType, LanguageArticle article, LanguagePossessive possessive, LanguageNumber number, LanguagePosition position) {
         this.declension = declension;
         this.startsWith = startsWith;
         this.gender = gender;
@@ -236,7 +246,7 @@ public final class TermAttributes implements Serializable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        TermAttributes other = (TermAttributes)obj;
+        TermAttributes other = (TermAttributes) obj;
         if (declension != other.declension) return false;
         if (caseType != other.caseType) return false;
         if (article != other.article) return false;
@@ -250,7 +260,7 @@ public final class TermAttributes implements Serializable {
 
     @Override
     public String toString() {
-        return "TermAttrs:"+toNullStr(getNumber())+":"+toNullStr(this.getGender())+":"+toNullStr(this.getCase())+":"+toNullStr(this.getStartsWith())+":"+toNullStr(this.getArticle())+":"+toNullStr(this.getPossessive());
+        return "TermAttrs:" + toNullStr(getNumber()) + ":" + toNullStr(this.getGender()) + ":" + toNullStr(this.getCase()) + ":" + toNullStr(this.getStartsWith()) + ":" + toNullStr(this.getArticle()) + ":" + toNullStr(this.getPossessive());
     }
 
     private static String toNullStr(Object o) {

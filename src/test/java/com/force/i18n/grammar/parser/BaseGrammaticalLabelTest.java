@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -44,6 +44,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     /**
      * Allow child
+     *
      * @return the label URL set
      * @throws IOException if there's an error
      */
@@ -73,7 +74,9 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     }
 
-    protected URL getBaseDir() { return this.baseDir;}
+    protected URL getBaseDir() {
+        return this.baseDir;
+    }
 
     protected File getBaseCacheDir() throws IOException {
         return new File("target/ignore/these").getCanonicalFile();
@@ -165,10 +168,11 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
     }
 
     private static final String CUSTOM_OBJECT_PREFIX = "01N";  // Needed because we can't refer to the udd here
+
     /**
      * A mock renaming provider, where you provide it with a series of nouns, and it will
      * return those nouns as the "renamed" values when you specify it.
-     *
+     * <p>
      * Make sure you use this in a try finally
      *
      * <pre>
@@ -184,16 +188,17 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
      * @author stamm
      */
     public static class MockRenamingProvider implements RenamingProvider {
-        private final Map<? extends HumanLanguage,Map<String,Noun>> nounMap;
+        private final Map<? extends HumanLanguage, Map<String, Noun>> nounMap;
         private boolean useRenamedNouns = true;
 
-        public MockRenamingProvider(Map<? extends HumanLanguage,Map<String,Noun>> nounMap) {
+        public MockRenamingProvider(Map<? extends HumanLanguage, Map<String, Noun>> nounMap) {
             assert nounMap != null;
             this.nounMap = nounMap;
         }
 
         /**
          * Construct a mock renaming provider based on the given nouns
+         *
          * @param nouns the nouns to use for this mock provider
          */
         public MockRenamingProvider(Noun... nouns) {
@@ -204,18 +209,19 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         /**
          * Convert a series of nouns into a noun map suitable for using in constructing a MockRenameable
+         *
          * @param nouns the test nouns
          * @return a noun map from the given nouns sorted by the language of those nouns
          */
-        static Map<HumanLanguage,Map<String,Noun>> makeNounMap(Noun... nouns) {
-            Map<HumanLanguage,Map<String,Noun>> result = LanguageProviderFactory.get().getNewMap();
+        static Map<HumanLanguage, Map<String, Noun>> makeNounMap(Noun... nouns) {
+            Map<HumanLanguage, Map<String, Noun>> result = LanguageProviderFactory.get().getNewMap();
 
             for (Noun noun : nouns) {
-            	HumanLanguage language = noun.getDeclension().getLanguage();
-                Map<String,Noun> map = result.get(language);
+                HumanLanguage language = noun.getDeclension().getLanguage();
+                Map<String, Noun> map = result.get(language);
                 if (map == null) {
-                    map = new HashMap<String,Noun>(4);
-                    result.put(language,map);
+                    map = new HashMap<String, Noun>(4);
+                    result.put(language, map);
                 }
                 map.put(noun.getName().toLowerCase(), noun);
             }
@@ -224,7 +230,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         @Override
         public Noun getRenamedNoun(HumanLanguage language, String key) {
-            Map<String,Noun> m = nounMap.get(language);
+            Map<String, Noun> m = nounMap.get(language);
             return m != null ? m.get(key.toLowerCase()) : null;
         }
 
@@ -251,7 +257,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         @Override
         public boolean isRenamed(HumanLanguage language, String key) {
-            Map<String,Noun> m = nounMap.get(language);
+            Map<String, Noun> m = nounMap.get(language);
             return m != null && m.containsKey(m);
         }
 
@@ -283,6 +289,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
     /**
      * Abstract renameable object.  Since custom objects and standard objects
      * are quite different; this handles the commonality in getEntitySpecificDbLabelKey.
+     *
      * @author stamm
      */
     public abstract static class MockRenameable implements Renameable {
@@ -313,7 +320,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
             // retranslate them to the right name: For Account, translate to the account_record_type
             String namePrefix = labelKey.toLowerCase();
             return namePrefix.startsWith(Renameable.ENTITY_NAME_PREFIX) ? name.toLowerCase() + "_"
-                + namePrefix.substring(Renameable.ENTITY_NAME_PREFIX.length()) : namePrefix;
+                    + namePrefix.substring(Renameable.ENTITY_NAME_PREFIX.length()) : namePrefix;
         }
 
 
@@ -333,17 +340,18 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     /**
      * Mock Custom Renameable Entity
+     *
      * @author stamm
      */
     public static class MockCustomRenameable extends MockRenameable {
         private final Noun baseNoun;
-        private final Map<HumanLanguage,Noun> standardNouns;
+        private final Map<HumanLanguage, Noun> standardNouns;
 
         public MockCustomRenameable(String name, Noun englishNoun) {
             this(name, ImmutableMap.of(LanguageProviderFactory.get().getBaseLanguage(), englishNoun));
         }
 
-        public MockCustomRenameable(String name, Map<HumanLanguage,Noun> standardNouns) {
+        public MockCustomRenameable(String name, Map<HumanLanguage, Noun> standardNouns) {
             super(name);
             assert standardNouns != null && standardNouns.size() > 0 : "You must provide a standard noun";
             this.standardNouns = standardNouns;
@@ -363,7 +371,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         @Override
         public String getStandardFieldLabel(HumanLanguage language, StandardField field) {
-            return baseNoun + ((MockStandardField)field).getKey();
+            return baseNoun + ((MockStandardField) field).getKey();
         }
 
         @Override
@@ -375,10 +383,12 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     /**
      * Mock Standard Renameable Entity
+     *
      * @author stamm
      */
     public class MockExistingRenameable extends MockRenameable {
         private final Noun baseNoun;
+
         public MockExistingRenameable(String name) {
             super(name);
             baseNoun = loadDictionaryNoThrow(LanguageProviderFactory.get().getBaseLanguage()).getNoun(name, false);
@@ -397,7 +407,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         @Override
         public String getStandardFieldLabel(HumanLanguage language, StandardField field) {
-            return baseNoun + ((MockStandardField)field).getKey();
+            return baseNoun + ((MockStandardField) field).getKey();
         }
 
         @Override
@@ -413,6 +423,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     /**
      * The set of "standard" translateable fields
+     *
      * @author stamm
      */
     public enum MockStandardField implements StandardField {
@@ -421,9 +432,11 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         LAST_NAME(" LastName"),
         ;
         private final String key;
+
         MockStandardField(String key) {
             this.key = key;
         }
+
         public String getKey() {
             return this.key;
         }

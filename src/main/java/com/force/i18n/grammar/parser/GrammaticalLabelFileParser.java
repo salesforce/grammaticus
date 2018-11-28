@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -52,13 +52,14 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
 
     /**
      * Construct a label file parser
+     *
      * @param dictionary the dictionary to fill in with nouns and adjectives
-     * @param labelDesc the descriptor of the location of the label set
+     * @param labelDesc  the descriptor of the location of the label set
      */
     public GrammaticalLabelFileParser(LanguageDictionary dictionary, LabelSetDescriptor labelDesc, GrammaticalLabelSetProvider parentProvider) throws IOException {
         this(dictionary, labelDesc, parentProvider,
-        		dictionary.getLanguage() == LanguageProviderFactory.get().getBaseLanguage()
-        		&& isDupeLabelTrackingEnabled());
+                dictionary.getLanguage() == LanguageProviderFactory.get().getBaseLanguage()
+                        && isDupeLabelTrackingEnabled());
     }
 
     public GrammaticalLabelFileParser(LanguageDictionary dictionary, LabelSetDescriptor labelDesc, GrammaticalLabelSetProvider parentProvider, boolean trackDupes) {
@@ -74,7 +75,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         boolean found = false;
 
         if (this.desc instanceof TestLanguageLabelSetDescriptor) {
-            parseLabels(data, ((TestLanguageLabelSetDescriptor)this.desc).getText());
+            parseLabels(data, ((TestLanguageLabelSetDescriptor) this.desc).getText());
             found = true;
         } else if (this.desc.hasOverridingFiles()) {
             // Parse only non-english labels
@@ -85,12 +86,12 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
                 }
             }
         } else {
-        	if(this.desc.hasModularizedFiles()) {
-        		for(URL modularizedFile : this.desc.getModularizedFiles()) {
-        			found = true;
-        			parseLabels(data, modularizedFile);
-        		}
-        	} else if (TrackingHandler.exists(this.desc.getRootFile())) {
+            if (this.desc.hasModularizedFiles()) {
+                for (URL modularizedFile : this.desc.getModularizedFiles()) {
+                    found = true;
+                    parseLabels(data, modularizedFile);
+                }
+            } else if (TrackingHandler.exists(this.desc.getRootFile())) {
                 // Parse english labels
                 found = true;
                 parseLabels(data, this.desc.getRootFile());
@@ -140,8 +141,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             this.lastModified = Math.max(this.lastModified, connection.getLastModified());
             saxParser.parse(connection.getInputStream(), handler);
 
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException("Error parsing XML file " + handler.getLineNumberString(), ex);
         }
     }
@@ -154,8 +154,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             SAXParser saxParser = spf.newSAXParser();
             saxParser.getXMLReader().setEntityResolver(handler);
             saxParser.parse(source, handler);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException("Error parsing XML file " + handler.getLineNumberString(), ex);
         }
     }
@@ -165,7 +164,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     }
 
     static boolean isDupeLabelTrackingEnabled() {
-    	return false;
+        return false;
     }
 
     String uniquefy(String label) {
@@ -215,8 +214,13 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         }
     }
 
-    List<AliasParam> getIllegalAliases() { return this.illegalAliases; }
-    public Set<? extends LabelReference> getInvalidLabels() { return this.invalidLabels; }
+    List<AliasParam> getIllegalAliases() {
+        return this.illegalAliases;
+    }
+
+    public Set<? extends LabelReference> getInvalidLabels() {
+        return this.invalidLabels;
+    }
 
     // ====================================================================
     // Param alias handler: <param name="nnn" alias="xxx"/>
@@ -337,7 +341,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         }
     }
 
-    Map<String,AliasParam> getAliasMap() {
+    Map<String, AliasParam> getAliasMap() {
         return Collections.unmodifiableMap(this.aliasMap);
     }
 
@@ -351,8 +355,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
      * Resolve all alias value in &lt;param&gt; tag. This param tag suppose to exists in <tt>label</tt>, with null
      * value.
      *
-     * @param labelSet
-     *            LabelSet to resolve alias values
+     * @param labelSet LabelSet to resolve alias values
      * @param writeSet the label set to write to
      */
     void resolveAliases(GrammaticalLabelSet labelSet, GrammaticalLabelSetImpl writeSet) {
@@ -376,10 +379,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
      * resolve single alias value
      *
      * @param labelSet
-     * @param ap
-     *            alias to evaluate. must NOT null
-     * @param refSet
-     *            null if this is top level of alias chain.
+     * @param ap       alias to evaluate. must NOT null
+     * @param refSet   null if this is top level of alias chain.
      * @return resolved value or null otherwise
      */
     private Object resolveAlias(GrammaticalLabelSet labelSet, GrammaticalLabelSetImpl writeSet, AliasParam ap, Set<String> refSet) {

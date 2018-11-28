@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -26,8 +26,8 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
     }
 
     public void testEnglishArticles() throws Exception {
-    	final HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
-    	final HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(Locale.CANADA);
+        final HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+        final HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(Locale.CANADA);
         assertEquals("This quote can't be synced because it has an inactive or archived price book.",
                 renderLabel(ENGLISH, "<This/> <quote/> can't be synced because it has <a/> <inactive/> or <archived/> <pricebook/>.", null));
         assertEquals("Ask a Question", renderLabel(ENGLISH, "Ask <a/> <Question/>", null));
@@ -35,7 +35,7 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
     }
 
     public void testGermanArticles() throws Exception {
-    	final HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage("de");
+        final HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage("de");
         // Validate that the definitiveness passes throughout the whole thing
         assertEquals("Die Neuen Accounts", renderLabel(GERMAN, "<The/> <New/> <Accounts/>", null));
         assertEquals("Der Neue Account", renderLabel(GERMAN, "<The/> <New/> <Account/>", null));
@@ -45,10 +45,10 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
     }
 
     public void testLegacyArticleForm() throws Exception {
-    	final HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
-    	final HumanLanguage ITALIAN = LanguageProviderFactory.get().getLanguage("it");
-    	final HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage("de");
-    	// This tests some old crappy behavior in label files.  Don't use this
+        final HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+        final HumanLanguage ITALIAN = LanguageProviderFactory.get().getLanguage("it");
+        final HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage("de");
+        // This tests some old crappy behavior in label files.  Don't use this
         assertEquals("An account", renderLabel(ENGLISH, "<Account article=\"a\"/>", null));
         assertEquals("The account", renderLabel(ENGLISH, "<Account article=\"the\"/>", null));
         assertEquals("Un account", renderLabel(ITALIAN, "<Account article=\"a\"/>", null));
@@ -67,7 +67,7 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
      * and sfdcadjectives.xml
      */
     public void testGreekSigma() throws Exception {
-    	final HumanLanguage GREEK = LanguageProviderFactory.get().getLanguage(LanguageConstants.GREEK);
+        final HumanLanguage GREEK = LanguageProviderFactory.get().getLanguage(LanguageConstants.GREEK);
         // lowercase sigmas should remain unchanged with case folding
         assertEquals("Ανοιχτές Εργασίες", renderLabel(GREEK, "<Open/> <Tasks case=\"a\"/>"));
         assertEquals("ανοιχτές εργασίες", renderLabel(GREEK, "<open/> <tasks case=\"a\"/>"));
@@ -86,8 +86,8 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
         for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
             if (!LanguageDeclensionFactory.get().getDeclension(language).hasPlural()) continue;
             LanguageDictionary dictionary = loadDictionary(language);
-            Multimap<String,String> nowHasPlural = TreeMultimap.create();
-            Multimap<String,String> missingPlural = TreeMultimap.create();
+            Multimap<String, String> nowHasPlural = TreeMultimap.create();
+            Multimap<String, String> missingPlural = TreeMultimap.create();
 
             for (String entity : new TreeSet<String>(dictionary.getNounsByEntity().keySet())) {
                 for (Noun n : dictionary.getNounsByEntity().get(entity)) {

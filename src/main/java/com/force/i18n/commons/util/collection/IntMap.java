@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,10 +20,10 @@ import java.io.Serializable;
  *
  * <p>Also contains the public inner class interface IntMap.Entry
  * that all implementations of IntMap must also complete.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
- * @author  Based on Sun's java.util.Map (modified by koliver)
+ * @author Based on Sun's java.util.Map (modified by koliver)
  * @see IntHashMap
  * @see IntSet
  */
@@ -63,8 +63,8 @@ public interface IntMap<V> extends Serializable {
      * explicitly maps the key to <tt>null</tt>.  The <tt>containsKey</tt>
      * operation may be used to distinguish these two cases.
      *
-     * @return the value to which this map maps the specified key.
      * @param key key whose associated value is to be returned.
+     * @return the value to which this map maps the specified key.
      */
     V get(int key);
 
@@ -73,12 +73,12 @@ public interface IntMap<V> extends Serializable {
      * If the map previously contained a mapping for this key, the old
      * value is replaced.
      *
-     * @param key key with which the specified value is to be associated.
+     * @param key   key with which the specified value is to be associated.
      * @param value value to be associated with the specified key.
      * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the HashMap previously associated
-     *	       <tt>null</tt> with the specified key.
+     * if there was no mapping for key.  A <tt>null</tt> return can
+     * also indicate that the HashMap previously associated
+     * <tt>null</tt> with the specified key.
      */
     V put(int key, V value);
 
@@ -87,15 +87,15 @@ public interface IntMap<V> extends Serializable {
      *
      * @param key key whose mapping is to be removed from the map.
      * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the map previously associated <tt>null</tt>
-     *	       with the specified key.
+     * if there was no mapping for key.  A <tt>null</tt> return can
+     * also indicate that the map previously associated <tt>null</tt>
+     * with the specified key.
      */
     V remove(int key);
 
     /**
      * Copies all of the mappings from the specified map to this one.
-     *
+     * <p>
      * These mappings replace any mappings that this map had for any of the
      * keys currently in the specified Map.
      *
@@ -182,16 +182,16 @@ public interface IntMap<V> extends Serializable {
          *
          * @param o object to be compared for equality with this map entry.
          * @return <tt>true</tt> if the specified object is equal to this map
-         *         entry.
+         * entry.
          */
         @Override
         boolean equals(Object o); // don't mark this with @Override, it messes up Eclipse -- bfry
-        
+
         /*
-        * IMPORTANT: this intentionally doesn't have the remove() operation because
-        * it makes implementing an unmodifiable IntMap horrifically difficult (see
-        * Collections.unmodifiableMap) and no one was using it. Don't add it.
-        */
-        
+         * IMPORTANT: this intentionally doesn't have the remove() operation because
+         * it makes implementing an unmodifiable IntMap horrifically difficult (see
+         * Collections.unmodifiableMap) and no one was using it. Don't add it.
+         */
+
     }
 }

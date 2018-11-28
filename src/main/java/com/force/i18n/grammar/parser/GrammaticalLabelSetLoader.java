@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -33,7 +33,7 @@ import com.google.common.util.concurrent.UncheckedExecutionException;
  * This has optional support for a parentLoader, however it will share a common dictionary per language
  * if you use it (for performance reasons).
  *
- * @author nveeser,stamm
+ * @author nveeser, stamm
  */
 public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     private static final boolean USE_SHARED_KEYS_DEFAULT = true;  // You really want this, so it isn't an option
@@ -63,10 +63,10 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      */
     @Override
     public void resetMap() {
-    	if(parentProvider != null) { // Invalidate parent loader cache.
-    		parentProvider.resetMap();
-    	}
-    	
+        if (parentProvider != null) { // Invalidate parent loader cache.
+            parentProvider.resetMap();
+        }
+
         if (I18nJavaUtil.isDebugging()) {
             cache.invalidateAll();
         }
@@ -95,8 +95,8 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         this.parentProvider = parent;
         // Share the keys of the parent loader if possible
         if (this.useSharedKeys) {
-            if (parent instanceof GrammaticalLabelSetLoader && ((GrammaticalLabelSetLoader)parent).useSharedKeys) {
-                this.seedKeyMap = new SharedKeyMap<String, SharedKeyMap<String, Object>>(((GrammaticalLabelSetLoader)parent).seedKeyMap);
+            if (parent instanceof GrammaticalLabelSetLoader && ((GrammaticalLabelSetLoader) parent).useSharedKeys) {
+                this.seedKeyMap = new SharedKeyMap<String, SharedKeyMap<String, Object>>(((GrammaticalLabelSetLoader) parent).seedKeyMap);
             } else {
                 this.seedKeyMap = new SharedKeyMap<String, SharedKeyMap<String, Object>>();
             }
@@ -104,8 +104,8 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             this.seedKeyMap = null;
         }
         this.cache = CacheBuilder.newBuilder()
-            .initialCapacity(64)
-            .build(new Loader());
+                .initialCapacity(64)
+                .build(new Loader());
     }
 
     /**
@@ -114,7 +114,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     class Loader extends CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> {
         @Override
         public GrammaticalLabelSet load(GrammaticalLabelSetDescriptor desc) throws Exception {
-                return GrammaticalLabelSetLoader.this.makeSet(desc);
+            return GrammaticalLabelSetLoader.this.makeSet(desc);
         }
     }
 
@@ -132,8 +132,8 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         GrammaticalLabelFileParser parser = new GrammaticalLabelFileParser(dictionary, desc, this.parentProvider);
 
         PropertyFileData propertyFileData = GrammaticalLabelSetLoader.this.useSharedKeys
-            ? new SharedKeyMapPropertyFileData(desc.getLanguage().getLocale(), !desc.hasOverridingFiles(), seedKeyMap, publicSections)
-            : new MapPropertyFileData(desc.getLanguage().getLocale());
+                ? new SharedKeyMapPropertyFileData(desc.getLanguage().getLocale(), !desc.hasOverridingFiles(), seedKeyMap, publicSections)
+                : new MapPropertyFileData(desc.getLanguage().getLocale());
 
         GrammaticalLabelSetImpl result = new GrammaticalLabelSetImpl(parser.getDictionary(), parser, propertyFileData);
         if (useSharedKeys) {
@@ -156,8 +156,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             } else {
                 return cache.get(desc);  // English only!
             }
-        }
-        catch(UncheckedExecutionException | ExecutionException e) {
+        } catch (UncheckedExecutionException | ExecutionException e) {
             Throwables.propagateIfPossible(e);
             throw new RuntimeException("Unable to load label set for " + desc, e);
         }

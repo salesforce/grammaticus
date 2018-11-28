@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -27,18 +27,19 @@ import java.util.logging.Logger;
 public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializable {
 
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-	private static final Logger logger = Logger.getLogger(SharedKeyMapPropertyFileData.class.getName());
+    private static final Logger logger = Logger.getLogger(SharedKeyMapPropertyFileData.class.getName());
 
     private static final class SerializableLock implements Serializable {
 
-		/**
-		 *
-		 */
-		private static final long serialVersionUID = 1L; }
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+    }
 
     private final Locale locale;
 
@@ -55,11 +56,11 @@ public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializa
     private final Set<String> publicSections;
 
     /**
-     * @param locale The locale id should correspond
-     *      to a value that came from the g11n.xml file
+     * @param locale    The locale id should correspond
+     *                  to a value that came from the g11n.xml file
      * @param isPrimary this is the only label set that can define new sections.
-     * @param seed this is the shared key map that is shared across multiple locale's versions
-     *      of the data.
+     * @param seed      this is the shared key map that is shared across multiple locale's versions
+     *                  of the data.
      */
     public SharedKeyMapPropertyFileData(Locale locale, boolean isPrimary, SharedKeyMap<String, SharedKeyMap<String, Object>> seed, Set<String> publicSections) {
         this.locale = locale;
@@ -84,7 +85,7 @@ public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializa
     }
 
     @Override
-    @SuppressWarnings({"unchecked","rawtypes"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     public Set<Entry<String, Map<String, Object>>> entrySet() {
         // This wants to return Entry<String,SharedKeyMap<String,Object>> which is hard to get java to accept here
         Set entrySet = this.data.entrySet();
@@ -174,7 +175,7 @@ public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializa
         // in put, but in put we synchronize on seed to handle that.
         synchronized (this.seedLock) {
             for (SharedKeyMap<String, Object> section : this.data.values()) {
-                   section.trimToSize();
+                section.trimToSize();
             }
         }
     }

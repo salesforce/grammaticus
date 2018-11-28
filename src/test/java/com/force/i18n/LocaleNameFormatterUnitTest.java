@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,6 +16,7 @@ import com.force.i18n.grammar.*;
 
 /**
  * Unit tests for {@link LocaleNameFormatter}
+ *
  * @author jared.pearson
  */
 public class LocaleNameFormatterUnitTest extends TestCase {
@@ -312,6 +313,7 @@ public class LocaleNameFormatterUnitTest extends TestCase {
     /**
      * Simple RenamingProvider that allows for the displayMiddleName and displaySuffix properties to be
      * set. All other methods throw {@link UnsupportedOperationException} when invoked.
+     *
      * @author jared.pearson
      */
     private static class MockRenamingProvider implements RenamingProvider {

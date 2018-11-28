@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -18,43 +18,44 @@ import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
 
 /**
  * @author stamm
- *
  */
 public class GrammaticalLocalizerFactory extends LocalizerFactory {
     private final LabelSetProvider labelSetLoader;
     private final URL labelsDir;
 
 
-	public GrammaticalLocalizerFactory(GrammaticalLabelSetLoader loader) {
+    public GrammaticalLocalizerFactory(GrammaticalLabelSetLoader loader) {
         this.labelSetLoader = loader;
         this.labelsDir = loader.getBaseDesc().getRootDir();
-	}
+    }
 
     private static final Boolean DO_CACHE_LABEL_SETS = !"false".equals(I18nJavaUtil.getProperty("cacheLabelSets"));
-	/**
-	 * Helper method you can use to correctly provide the right "loader" for your labels
-	 * @param desc the label set descriptor to load
-	 * @param parent the optional parent of the label set for fallback labels
-	 * @return the loader for your label set, which will do caching based on configuration
-	 */
-	public static GrammaticalLabelSetLoader getLoader(GrammaticalLabelSetDescriptor desc, GrammaticalLabelSetProvider parent) {
+
+    /**
+     * Helper method you can use to correctly provide the right "loader" for your labels
+     *
+     * @param desc   the label set descriptor to load
+     * @param parent the optional parent of the label set for fallback labels
+     * @return the loader for your label set, which will do caching based on configuration
+     */
+    public static GrammaticalLabelSetLoader getLoader(GrammaticalLabelSetDescriptor desc, GrammaticalLabelSetProvider parent) {
         if (DO_CACHE_LABEL_SETS) {
             return new GrammaticalLabelSetFileCacheLoader(desc, parent);
         } else {
             return new GrammaticalLabelSetLoader(desc, parent);
         }
-	}
+    }
 
     /* (non-Javadoc)
-	 * @see shared.i18n.LocalizerProvider#findLabelSet(i18n.HumanLanguage)
-	 */
+     * @see shared.i18n.LocalizerProvider#findLabelSet(i18n.HumanLanguage)
+     */
     @Override
-	public LabelSet findLabelSet(HumanLanguage language) {
+    public LabelSet findLabelSet(HumanLanguage language) {
         return this.labelSetLoader.getSet(language);
     }
 
     @Override
-	public BaseLocalizer getLocalizer(Locale locale, Locale currencyLocale, HumanLanguage language, TimeZone timeZone) {
+    public BaseLocalizer getLocalizer(Locale locale, Locale currencyLocale, HumanLanguage language, TimeZone timeZone) {
         if (locale == null)
             locale = getDefaultLocale();
         if (language == null)
@@ -81,10 +82,10 @@ public class GrammaticalLocalizerFactory extends LocalizerFactory {
 
 
     /* (non-Javadoc)
-	 * @see shared.i18n.LocalizerProvider#getLabelsDirectory()
-	 */
+     * @see shared.i18n.LocalizerProvider#getLabelsDirectory()
+     */
     @Override
-	public URL getLabelsDirectory() {
+    public URL getLabelsDirectory() {
         return this.labelsDir;
     }
 
@@ -98,7 +99,7 @@ public class GrammaticalLocalizerFactory extends LocalizerFactory {
         }
     }
 
-	public void doLabelProviderPostInit() throws Exception {
+    public void doLabelProviderPostInit() throws Exception {
 
     }
 }

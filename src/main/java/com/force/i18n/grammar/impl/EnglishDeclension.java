@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,20 +16,21 @@ import com.force.i18n.HumanLanguage;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
 import com.google.common.collect.ImmutableList;
+
 /**
  * An implementation of declension of English nouns.
- *
+ * <p>
  * English is fairly simple (
  *
  * @author stamm
  */
 class EnglishDeclension extends ArticledDeclension {
-	private static final Logger logger = Logger.getLogger(EnglishDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(EnglishDeclension.class.getName());
 
-	public EnglishDeclension(HumanLanguage language) {
-		super(language);
+    public EnglishDeclension(HumanLanguage language) {
+        super(language);
         assert language.getLocale().getLanguage().equals("en") : "Initializing a language that isn't english";
-	}
+    }
 
     /**
      * The english articles are distinguished by whether the next noun starts with a vowel
@@ -38,20 +39,36 @@ class EnglishDeclension extends ArticledDeclension {
     public static enum EnglishArticleForm implements ArticleForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageStartsWith.CONSONANT),
         SINGULAR_V(LanguageNumber.SINGULAR, LanguageStartsWith.VOWEL),
-        PLURAL(LanguageNumber.PLURAL, LanguageStartsWith.CONSONANT)
-        ;
+        PLURAL(LanguageNumber.PLURAL, LanguageStartsWith.CONSONANT);
 
         private final LanguageNumber number;
         private final LanguageStartsWith startsWith;
+
         private EnglishArticleForm(LanguageNumber number, LanguageStartsWith startsWith) {
             this.number = number;
             this.startsWith = startsWith;
         }
 
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguageGender getGender() { return LanguageGender.NEUTER; }
-        @Override public LanguageNumber getNumber() { return this.number; }
-        @Override public LanguageStartsWith getStartsWith() {return this.startsWith; }
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return LanguageGender.NEUTER;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return this.startsWith;
+        }
+
         // Helper method to convert from "generic" form to enum
         static EnglishArticleForm getForm(ModifierForm form) {
             return form.getNumber() == LanguageNumber.SINGULAR ?
@@ -83,20 +100,28 @@ class EnglishDeclension extends ArticledDeclension {
         @Override
         public String getString(ArticleForm form) {
             switch (EnglishArticleForm.getForm(form)) {
-            case PLURAL:  return plural;
-            case SINGULAR_V: return singularVowel;
-            default:
-            case SINGULAR:  return singular;
+                case PLURAL:
+                    return plural;
+                case SINGULAR_V:
+                    return singularVowel;
+                default:
+                case SINGULAR:
+                    return singular;
             }
         }
 
         @Override
         protected void setString(ArticleForm form, String value) {
             switch (EnglishArticleForm.getForm(form)) {
-            case PLURAL:  this.plural = intern(value);  break;
-            case SINGULAR_V: this.singularVowel = intern(value);  break;
-            default:
-            case SINGULAR:  this.singular = intern(value);
+                case PLURAL:
+                    this.plural = intern(value);
+                    break;
+                case SINGULAR_V:
+                    this.singularVowel = intern(value);
+                    break;
+                default:
+                case SINGULAR:
+                    this.singular = intern(value);
             }
         }
 
@@ -125,17 +150,35 @@ class EnglishDeclension extends ArticledDeclension {
     // All the forms you can set for articles
     static final List<? extends ArticleForm> ARTICLE_FORMS = ImmutableList.copyOf(EnumSet.of(EnglishArticleForm.SINGULAR, EnglishArticleForm.SINGULAR_V, EnglishArticleForm.PLURAL));
 
-    @Override public List<? extends NounForm> getAllNounForms() { return ALL_FORMS;  }
+    @Override
+    public List<? extends NounForm> getAllNounForms() {
+        return ALL_FORMS;
+    }
 
-    @Override public Collection<? extends NounForm> getEntityForms() { return getAllNounForms();  }
+    @Override
+    public Collection<? extends NounForm> getEntityForms() {
+        return getAllNounForms();
+    }
 
-    @Override public Collection<? extends NounForm> getFieldForms() { return getAllNounForms(); }
+    @Override
+    public Collection<? extends NounForm> getFieldForms() {
+        return getAllNounForms();
+    }
 
-    @Override public Collection<? extends NounForm> getOtherForms() { return OTHER_FORMS; }
+    @Override
+    public Collection<? extends NounForm> getOtherForms() {
+        return OTHER_FORMS;
+    }
 
-    @Override public List< ? extends AdjectiveForm> getAdjectiveForms() { return ADJECTIVE_FORMS; }
+    @Override
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
+        return ADJECTIVE_FORMS;
+    }
 
-    @Override public List< ? extends ArticleForm> getArticleForms() { return ARTICLE_FORMS; }
+    @Override
+    public List<? extends ArticleForm> getArticleForms() {
+        return ARTICLE_FORMS;
+    }
 
 
     @Override
@@ -153,7 +196,7 @@ class EnglishDeclension extends ArticledDeclension {
      */
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case) {
+                                      LanguageCase _case) {
         if (number == LanguageNumber.PLURAL) {
             return EnglishArticleForm.PLURAL;
         }
@@ -162,7 +205,7 @@ class EnglishDeclension extends ArticledDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
         return SimpleModifierForm.SINGULAR;
     }
 
@@ -191,19 +234,22 @@ class EnglishDeclension extends ArticledDeclension {
         EnglishArticleForm e = EnglishArticleForm.getForm(form);
 
         switch (articleType) {
-        case INDEFINITE:
-            switch (e) {
-            case PLURAL:  return null;
-            case SINGULAR_V: return "An ";
-            case SINGULAR:  return "A ";
-            }
-            throw new UnsupportedOperationException("Invalid article");
-        case DEFINITE:
-            return "The ";
-        case ZERO:
-            return null;
-        default:
-            throw new UnsupportedOperationException("Invalid article");
+            case INDEFINITE:
+                switch (e) {
+                    case PLURAL:
+                        return null;
+                    case SINGULAR_V:
+                        return "An ";
+                    case SINGULAR:
+                        return "A ";
+                }
+                throw new UnsupportedOperationException("Invalid article");
+            case DEFINITE:
+                return "The ";
+            case ZERO:
+                return null;
+            default:
+                throw new UnsupportedOperationException("Invalid article");
         }
     }
 }

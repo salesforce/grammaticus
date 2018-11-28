@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -65,7 +65,7 @@ public class BaseLocalizerTest extends TestCase {
 
     public void testFormatLabel() throws Exception {
 
-        Object[] arguments = new Object[] { new Date(), "BaseLocalizerTest was run." };
+        Object[] arguments = new Object[]{new Date(), "BaseLocalizerTest was run."};
 
         String label1 = this.usLocalizer.getLabel("section1", "format1", arguments);
         Assert.assertNotNull(label1);

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -30,31 +30,31 @@ public interface LabelSet extends SharedLabelSet, Serializable {
     Set<String> sectionNames();
 
     /**
-     * @return the values inside the section setified.
      * @param sectionName name of the section
+     * @return the values inside the section setified.
      * @throws com.force.i18n.settings.SettingsSectionNotFoundException if the section does not exist.
      */
     Set<String> getParams(String sectionName);
 
     /**
-     * @return the values inside the section setified.
      * @param sectionName the name of the section
-     * @param ifNull the value to return for the parameters if there is no section with that name
+     * @param ifNull      the value to return for the parameters if there is no section with that name
+     * @return the values inside the section setified.
      */
     Set<String> getParams(String sectionName, Set<String> ifNull);
 
     /**
      * @param sectionName name of the section
-     * @param paramName key for the parameter
+     * @param paramName   key for the parameter
      * @return <tt>true</tt> if the label set contains the given parameter
      */
     boolean containsParam(String sectionName, String paramName);
 
     /**
+     * @param sectionName the key of the section
      * @return <tt>true</tt> if the label set contains a label with the
      * given sectionName.  This should return in quickly in O(1),
      * unlike sectionNames()
-     * @param sectionName the key of the section
      */
     boolean containsSection(String sectionName);
 

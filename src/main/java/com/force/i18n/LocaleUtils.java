@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -17,15 +17,18 @@ import com.google.common.collect.Lists;
 
 /**
  * A collection of utilities for dealing with Locales.
+ *
  * @author stamm
  */
 public enum LocaleUtils {
     INSTANCE;
 
-    public static LocaleUtils get() { return INSTANCE; }
+    public static LocaleUtils get() {
+        return INSTANCE;
+    }
 
     // TODO: The number of locales in the system is rather small, but we should probably use a ConcurrentLruMap just in case.
-    private static final ConcurrentMap<Locale,Locale> uniqueLocaleMap = new ConcurrentHashMap<Locale,Locale>(64, .75f, 2);
+    private static final ConcurrentMap<Locale, Locale> uniqueLocaleMap = new ConcurrentHashMap<Locale, Locale>(64, .75f, 2);
 
     /**
      * Returns a locale for language-only ("en") or language/country ("en_UK")
@@ -54,44 +57,46 @@ public enum LocaleUtils {
         return getLocaleByIsoCode(value);
     }
 
-     /**
-      * HTTP and Java do not use the same locale stuff
-      * HTTP would say "de-de", but Java would want "de_DE".  This handles those kinds of
-      * weirdness things  (like "de-de;q=0.8")
-      * @param str the HTTP language input
-      * @return the java locale from the http language input.  
-      */
-     public Locale getLocaleFromHttpInput(String str) {
-         if ("*".equals(str)) return null;  // Invalid
-         int semiIndex = str.indexOf(';');
-         String locale = str;
-         if (semiIndex > 0) {
-             // We have a "quality" rating.  Ignore it.  It's useless
-             locale = str.substring(0,semiIndex);
-         }
-         // OK, we should have "de" or "de-de";
-         if (locale.length() == 2) {
-             return new Locale(locale.toLowerCase());
-         } else if (locale.length() == 5) {
-             if (locale.charAt(2) != '-') return null;
-             return new Locale(locale.substring(0,2).toLowerCase(), locale.substring(3,5).toUpperCase());
-         } else {
-             return null;
-         }
-     }
+    /**
+     * HTTP and Java do not use the same locale stuff
+     * HTTP would say "de-de", but Java would want "de_DE".  This handles those kinds of
+     * weirdness things  (like "de-de;q=0.8")
+     *
+     * @param str the HTTP language input
+     * @return the java locale from the http language input.
+     */
+    public Locale getLocaleFromHttpInput(String str) {
+        if ("*".equals(str)) return null;  // Invalid
+        int semiIndex = str.indexOf(';');
+        String locale = str;
+        if (semiIndex > 0) {
+            // We have a "quality" rating.  Ignore it.  It's useless
+            locale = str.substring(0, semiIndex);
+        }
+        // OK, we should have "de" or "de-de";
+        if (locale.length() == 2) {
+            return new Locale(locale.toLowerCase());
+        } else if (locale.length() == 5) {
+            if (locale.charAt(2) != '-') return null;
+            return new Locale(locale.substring(0, 2).toLowerCase(), locale.substring(3, 5).toUpperCase());
+        } else {
+            return null;
+        }
+    }
 
-     /**
-      * If you're going to cache a locale, it should call this function so that it caches
-      * @param value the locale to uniquify
-      * @return the unique locale
-      */
-      static Locale uniqueifyLocale(Locale value) {
-         if (value == null)
-             return null;
-         Locale oldValue = uniqueLocaleMap.get(value);
-         if (oldValue != null)
-             return oldValue;
-         uniqueLocaleMap.put(value, value);
-         return value;
-     }
+    /**
+     * If you're going to cache a locale, it should call this function so that it caches
+     *
+     * @param value the locale to uniquify
+     * @return the unique locale
+     */
+    static Locale uniqueifyLocale(Locale value) {
+        if (value == null)
+            return null;
+        Locale oldValue = uniqueLocaleMap.get(value);
+        if (oldValue != null)
+            return oldValue;
+        uniqueLocaleMap.put(value, value);
+        return value;
+    }
 }

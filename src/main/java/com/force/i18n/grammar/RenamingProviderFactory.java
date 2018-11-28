@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -13,6 +13,7 @@ import com.force.i18n.*;
 
 /**
  * Provides access to a "renaming" provider that is global to the application
+ *
  * @author stamm
  */
 public enum RenamingProviderFactory {
@@ -20,7 +21,9 @@ public enum RenamingProviderFactory {
 
     private AtomicReference<RenamingProvider> providerRef = new AtomicReference<RenamingProvider>(new DefaultRenamingProviderImpl()); // Default is nothing
 
-    public static RenamingProviderFactory get() { return INSTANCE; }
+    public static RenamingProviderFactory get() {
+        return INSTANCE;
+    }
 
     public void setProvider(RenamingProvider provider) {
         this.providerRef.set(provider);

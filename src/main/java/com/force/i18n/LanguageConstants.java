@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,6 +9,7 @@ package com.force.i18n;
 
 /**
  * Useful constants for Java 7-style string switch statements.
+ *
  * @author stamm
  */
 public final class LanguageConstants {
@@ -66,9 +67,9 @@ public final class LanguageConstants {
     public static final String GEORGIAN = "ka";
     public static final String ESPERANTO = "eo";  // Esperanto is our "fake" language, always leave it last
     public static final String SERBIAN_CYRILLIC = "sr";  // http://tlt.its.psu.edu/suggestions/international/bylanguage/serbocroatian.html
-    public static final String SERBIAN_LATIN ="sh";  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
+    public static final String SERBIAN_LATIN = "sh";  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
     public static final String CATALAN = "ca";
-    
+
     // platform languages
     public static final String SPANISH_MX = "es_MX"; //Spanish (Mexican), end-user lang prior to 190
     public static final String FRENCH_CA = "fr_CA";

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -24,8 +24,8 @@ public interface BaseNonConfigIniFile {
      * Get the object stored in section/param in the IniFile.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the object to return if no value was found.
+     * @param param   the param name to look for.
+     * @param ifNull  the object to return if no value was found.
      * @return the object, or ifNull if none was found.
      */
     Object get(String section, String param, Object ifNull);
@@ -34,8 +34,8 @@ public interface BaseNonConfigIniFile {
      * Get the list of values stored in section/param in the IniFile.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the list to return if no list was found.
+     * @param param   the param name to look for.
+     * @param ifNull  the list to return if no list was found.
      * @return the list, or ifNull if the list was empty or null.
      */
     List<String> getList(String section, String param, List<String> ifNull);
@@ -44,8 +44,8 @@ public interface BaseNonConfigIniFile {
      * Get the value stored in section/param in the IniFile as a boolean.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the boolean to default to.
+     * @param param   the param name to look for.
+     * @param ifNull  the boolean to default to.
      * @return the boolean value that was found, or ifNull if none was found.
      */
     boolean getBoolean(String section, String param, boolean ifNull);
@@ -54,8 +54,8 @@ public interface BaseNonConfigIniFile {
      * Gets the value stored in the section/param in the IniFile as a float
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the float to default to
+     * @param param   the param name to look for.
+     * @param ifNull  the float to default to
      * @return the float value that was found, or ifNull if none was found
      */
     float getFloat(String section, String param, float ifNull);
@@ -64,8 +64,8 @@ public interface BaseNonConfigIniFile {
      * Get the value stored in section/param in the IniFile as an int.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the int to default to.
+     * @param param   the param name to look for.
+     * @param ifNull  the int to default to.
      * @return the integer value from the section/param, or ifNull if it was not found
      */
     int getInt(String section, String param, int ifNull);
@@ -75,8 +75,8 @@ public interface BaseNonConfigIniFile {
      * value if necessary.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the default value to use.
+     * @param param   the param name to look for.
+     * @param ifNull  the default value to use.
      * @return the String value of the given section/param, or ifNull, or something else if should be censored
      */
     String getCensoredString(String section, String param, String ifNull);
@@ -85,8 +85,8 @@ public interface BaseNonConfigIniFile {
      * Get the value stored in section/param in the IniFile as a string.
      *
      * @param section the section to look in.
-     * @param param the param name to look for.
-     * @param ifNull the default value to use.
+     * @param param   the param name to look for.
+     * @param ifNull  the default value to use.
      * @return the String value of the given section/param, or ifNull.
      */
     String getString(String section, String param, String ifNull);

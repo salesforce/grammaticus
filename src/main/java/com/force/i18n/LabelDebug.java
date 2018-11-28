@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,8 +12,9 @@ import java.util.Map;
 
 /**
  * Represents a single "entry" in the set of label debugs generated for a request.
- * @see LabelDebugProvider
+ *
  * @author RChen
+ * @see LabelDebugProvider
  */
 public final class LabelDebug {
     private final String text;
@@ -23,9 +24,10 @@ public final class LabelDebug {
 
     /**
      * This should only be used internally by makeLabelHintIfRequested(String, String, String).
-     * @param text Text of the label
+     *
+     * @param text    Text of the label
      * @param section Label section name
-     * @param key Label param name
+     * @param key     Label param name
      */
     LabelDebug(String text, String section, String key, String stack) {
         this.text = text;
@@ -51,7 +53,7 @@ public final class LabelDebug {
             throw new IllegalArgumentException("Only available when label hints are available.");
         }
 
-        Map<String,String> fileMap = ((LabelSet)LocalizerFactory.get().getDefaultLocalizer().getLabelSet()).getLabelSectionToFilename();
+        Map<String, String> fileMap = ((LabelSet) LocalizerFactory.get().getDefaultLocalizer().getLabelSet()).getLabelSectionToFilename();
         assert null != fileMap : "Didn't load label section to filename";
         return fileMap.get(getSection());
     }

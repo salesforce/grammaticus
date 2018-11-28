@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -11,17 +11,19 @@ import java.util.*;
 
 /**
  * Represents the gender of an *object* associated with a noun
+ *
  * @author stamm
  */
 public enum LanguageGender {
-    NEUTER ("n", "Neuter"),
-    FEMININE ("f", "Feminine", "c", "e"),   // Dutch = "c", Swedish = "e"
-    MASCULINE ("m", "Masculine"),
-    ANIMATE_MASCULINE ("a", "Animate Masculine"), //West Slavic
+    NEUTER("n", "Neuter"),
+    FEMININE("f", "Feminine", "c", "e"),   // Dutch = "c", Swedish = "e"
+    MASCULINE("m", "Masculine"),
+    ANIMATE_MASCULINE("a", "Animate Masculine"), //West Slavic
     ;
 
-    private static final Map<String,LanguageGender> dbValueMap = new HashMap<String,LanguageGender>(8);
-    private static final Map<String,LanguageGender> labelValueMap = new HashMap<String,LanguageGender>(16);
+    private static final Map<String, LanguageGender> dbValueMap = new HashMap<String, LanguageGender>(8);
+    private static final Map<String, LanguageGender> labelValueMap = new HashMap<String, LanguageGender>(16);
+
     static {
         for (LanguageGender gender : values()) {
             dbValueMap.put(gender.getDbValue(), gender);
@@ -37,17 +39,29 @@ public enum LanguageGender {
     private final String dbValue;
     private final String apiValue;
     private final String[] aliases;
+
     private LanguageGender(String dbValue, String apiValue, String... aliases) {
         this.dbValue = dbValue;
         this.apiValue = apiValue;
         this.aliases = aliases;
     }
-    public String getDbValue() { return this.dbValue; }
-    public String getApiValue() { return this.apiValue; }
-    public boolean isDefault() { return false; }
+
+    public String getDbValue() {
+        return this.dbValue;
+    }
+
+    public String getApiValue() {
+        return this.apiValue;
+    }
+
+    public boolean isDefault() {
+        return false;
+    }
+
     public static LanguageGender fromDbValue(String dbValue) {
         return dbValueMap.get(dbValue);
     }
+
     public List<String> getAliases() {
         return Collections.unmodifiableList(Arrays.asList(this.aliases));
     }

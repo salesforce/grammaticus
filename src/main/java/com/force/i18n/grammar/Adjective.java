@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,18 +14,20 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 import com.google.common.collect.ImmutableSet;
+
 /**
  * An adjective or other noun modifier as stored in a LanguageDictionary.
- *
+ * <p>
  * TODO: Adjectives should be able to declaratively take a "case" that overrides the default case in the parser
- * @author yoikawa,stamm
+ *
+ * @author yoikawa, stamm
  */
 public abstract class Adjective extends NounModifier {
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(Adjective.class.getName());
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    private static final Logger logger = Logger.getLogger(Adjective.class.getName());
     private final LanguagePosition position;
 
     /**
@@ -51,14 +53,14 @@ public abstract class Adjective extends NounModifier {
 
     @Override
     public final String getString(ModifierForm form) {
-        return getString((AdjectiveForm)form);
+        return getString((AdjectiveForm) form);
     }
 
     @Override
     public String getDefaultValue() {
         return getString(getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(),
-               getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
-               getDeclension().getDefaultCase(), getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
+                getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
+                getDeclension().getDefaultCase(), getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
     }
 
     /**
@@ -84,15 +86,17 @@ public abstract class Adjective extends NounModifier {
 
     /**
      * Set the value of one of the forms of this adjective.
-     * @param form the form to set
+     *
+     * @param form  the form to set
      * @param value the value to set
      */
     protected abstract void setString(AdjectiveForm form, String value);
 
     /**
      * Return the appropriate default string for the value, providing the ability for the subclass to munge with the original version
-     * @param form the adjective form
-     * @param value the base form that value comes from
+     *
+     * @param form     the adjective form
+     * @param value    the base form that value comes from
      * @param baseForm the base from that will be assigned
      */
     protected String deriveDefaultString(AdjectiveForm form, String value, AdjectiveForm baseForm) {
@@ -111,6 +115,7 @@ public abstract class Adjective extends NounModifier {
      * This generally depends on the declensions "return all forms"
      * TODO: This should compare the difference between specified forms and
      * choose the most similar (ie. the smallest Hamming distance)
+     *
      * @param requiredForms the set of required forms for adjectives in this language
      * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
      */
@@ -128,32 +133,32 @@ public abstract class Adjective extends NounModifier {
                 AdjectiveForm baseForm = null;
                 // Article form is first to drop
                 if ((getDeclension().hasArticle() || getDeclension().hasArticleInNounForm()) && form.getArticle() != getDeclension().getDefaultArticle()) {
-                     baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), form.getCase(), getDeclension().getDefaultArticle(), form.getPossessive());
-                     s = getString(baseForm);
+                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), form.getCase(), getDeclension().getDefaultArticle(), form.getPossessive());
+                    s = getString(baseForm);
                 }
 
                 // Next try starts with
-                 if (s == null && getDeclension().hasStartsWithInAdjective() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
-                     baseForm = getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), form.getPossessive());
-                     s = getString(baseForm);
-                 }
+                if (s == null && getDeclension().hasStartsWithInAdjective() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
+                    baseForm = getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), form.getPossessive());
+                    s = getString(baseForm);
+                }
 
 
-                 // Now case (case drops before gender because that's how german wants it, i.e. that_acc should be placed into nominative)
-                 // TODO: When german is fixed, this can go back so that gender is dropped before case.
-                 if (s == null && getDeclension().hasAllowedCases() && form.getCase() != getDeclension().getDefaultCase()) {
-                     baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
-                     s = getString(baseForm);
-                 }
+                // Now case (case drops before gender because that's how german wants it, i.e. that_acc should be placed into nominative)
+                // TODO: When german is fixed, this can go back so that gender is dropped before case.
+                if (s == null && getDeclension().hasAllowedCases() && form.getCase() != getDeclension().getDefaultCase()) {
+                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
+                    s = getString(baseForm);
+                }
 
 
-                 // Posssesive form needs to drop after cases due to the way Arabic works.  If this moves around, you'll have to revalidate AutoDerivedDeclensionTest
-                 if (s == null && getDeclension().hasPossessiveInAdjective() && form.getPossessive() != getDeclension().getDefaultPossessive()) {
-                     baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), getDeclension().getDefaultPossessive());
-                     s = getString(baseForm);
-                 }
+                // Posssesive form needs to drop after cases due to the way Arabic works.  If this moves around, you'll have to revalidate AutoDerivedDeclensionTest
+                if (s == null && getDeclension().hasPossessiveInAdjective() && form.getPossessive() != getDeclension().getDefaultPossessive()) {
+                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), getDeclension().getDefaultPossessive());
+                    s = getString(baseForm);
+                }
 
-                 // Now gender
+                // Now gender
                 if (s == null && getDeclension().hasGender() && form.getGender() != getDeclension().getDefaultGender()) {
                     baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), getDeclension().getDefaultGender(), form.getNumber(), form.getCase(), form.getArticle(), form.getPossessive());
                     s = getString(baseForm);
@@ -184,8 +189,10 @@ public abstract class Adjective extends NounModifier {
     }
 
 
-
-    @Override protected TermType getTermType() { return TermType.Adjective; }
+    @Override
+    protected TermType getTermType() {
+        return TermType.Adjective;
+    }
 
     @Override
     public String toString() {

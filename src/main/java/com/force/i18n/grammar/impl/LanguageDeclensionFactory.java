@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,31 +16,36 @@ import com.force.i18n.*;
 import com.force.i18n.grammar.LanguageDeclension;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
+
 /**
  * For a given language, provide the declension associated with it.
- *
+ * <p>
  * This should be the only "public" member in this package
  *
  * @author stamm
  */
 public enum LanguageDeclensionFactory {
     INSTANCE;
-    public static LanguageDeclensionFactory get() { return INSTANCE; }
+
+    public static LanguageDeclensionFactory get() {
+        return INSTANCE;
+    }
+
     private final Map<HumanLanguage, LanguageDeclension> declensions;
     private final LanguageDeclension defaultDeclension;  // English is asked for more than everything else, make it durn quick
     private final HumanLanguage baseLanguage;
 
-    @SuppressWarnings({"rawtypes","unchecked"})  // Don't require humanLanguage is an enum
-	private LanguageDeclensionFactory() {
-    	baseLanguage = LanguageProviderFactory.get().getProvider().getBaseLanguage();
-    	Map<HumanLanguage, LanguageDeclension> map;
-    	if (baseLanguage instanceof Enum) {
-    		// There's no good way to do this
-    		Map eMap = Maps.newEnumMap(baseLanguage.getClass().asSubclass(Enum.class)); 
-    		map = (Map<HumanLanguage, LanguageDeclension>) eMap;
-    	} else {
-    		map = new HashMap<>();
-    	}
+    @SuppressWarnings({"rawtypes", "unchecked"})  // Don't require humanLanguage is an enum
+    private LanguageDeclensionFactory() {
+        baseLanguage = LanguageProviderFactory.get().getProvider().getBaseLanguage();
+        Map<HumanLanguage, LanguageDeclension> map;
+        if (baseLanguage instanceof Enum) {
+            // There's no good way to do this
+            Map eMap = Maps.newEnumMap(baseLanguage.getClass().asSubclass(Enum.class));
+            map = (Map<HumanLanguage, LanguageDeclension>) eMap;
+        } else {
+            map = new HashMap<>();
+        }
         for (HumanLanguage language : LanguageProviderFactory.get().getProvider().getAll()) {
             LanguageDeclension declension = createDeclension(language);
             assert declension.getLanguage() == language : "Programmer error, invalid declension";
@@ -51,9 +56,9 @@ public enum LanguageDeclensionFactory {
     }
 
     /**
-     * @return For the given language, return the associated declension
      * @param language the given language
-     */ 
+     * @return For the given language, return the associated declension
+     */
     public LanguageDeclension getDeclension(HumanLanguage language) {
         if (language == baseLanguage) return defaultDeclension;
         return declensions.get(language);
@@ -64,7 +69,7 @@ public enum LanguageDeclensionFactory {
      * @return
      */
     private LanguageDeclension createDeclension(HumanLanguage language) {
-    	switch (language.getLocale().getLanguage()) {
+        switch (language.getLocale().getLanguage()) {
             case ENGLISH:
                 return new EnglishDeclension(language);
             case ITALIAN:
@@ -167,13 +172,14 @@ public enum LanguageDeclensionFactory {
             case MALTESE:  // More complicated than arabic: complicated starts with, dual form, etc.
                 return new UnsupportedLanguageDeclension.MalteseDeclension(language);
             case CATALAN:
-            	return new CatalanDeclension(language);
+                return new CatalanDeclension(language);
         }
-    	if (FAIL_ON_MISSING) {
-    		throw new UnsupportedOperationException("Language has no defined declension; the build breaker edited UserLanguage");
-    	} else {
-    		return new SimpleDeclension(language);
-    	}
+        if (FAIL_ON_MISSING) {
+            throw new UnsupportedOperationException("Language has no defined declension; the build breaker edited UserLanguage");
+        } else {
+            return new SimpleDeclension(language);
+        }
     }
-    private static final boolean FAIL_ON_MISSING = "true".equals(I18nJavaUtil.getProperty("failOnMissingDeclension"));  
+
+    private static final boolean FAIL_ON_MISSING = "true".equals(I18nJavaUtil.getProperty("failOnMissingDeclension"));
 }

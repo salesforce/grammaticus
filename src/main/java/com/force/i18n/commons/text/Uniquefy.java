@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -19,7 +19,7 @@ import com.google.common.annotations.Beta;
  * same java.lang.String object to represent each unique string value.
  * Thus, when serializing the object, instead of repeating the string values,
  * they become references in the serialized representation.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author swong
@@ -30,11 +30,16 @@ public class Uniquefy {
     // Limit the size of the stringPool to prevent OOM
     private static final int MAX_POOL_SIZE = 100000;
 
-    /** a Uniquefy that doesn't do anything; useful to avoid if (uniquefy != null) checks in code */
+    /**
+     * a Uniquefy that doesn't do anything; useful to avoid if (uniquefy != null) checks in code
+     */
     public static final Uniquefy NO_OP = new Uniquefy() {
-        @Override public String unique(String value) { return value; }
+        @Override
+        public String unique(String value) {
+            return value;
+        }
     };
-    
+
     private final Map<String, String> stringPool;
 
     /**

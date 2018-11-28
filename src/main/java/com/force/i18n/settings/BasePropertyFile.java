@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -205,7 +205,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     /**
      * @return a set of all params in the specified section. You'd best be not
-     *         messing with it.
+     * messing with it.
      */
     public Set<String> getParams(String section) throws SettingsSectionNotFoundException {
         Set<String> result = getParams(section, null);
@@ -231,7 +231,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     /**
      * @return a set of all params in the specified section. You'd best be not
-     *         messing with it.
+     * messing with it.
      */
     public Set<String> getParams(String section, Set<String> ifNull) {
         Map<String, Object> theSect = this.data.getSection(section);
@@ -267,10 +267,8 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * Get the value for a given <b>SectName</b>.<b>ParamName</b> pair.
      *
-     * @param section
-     *            the section name of the desired variable
-     * @param param
-     *            the parameter name with the the given section
+     * @param section the section name of the desired variable
+     * @param param   the parameter name with the the given section
      * @return the value of the parameter
      */
     public Object get(String section, String param) throws ParameterNotFoundException, SettingsSectionNotFoundException {
@@ -316,19 +314,19 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * Censors the value before returning it to the caller.  However, if the value is null, then we will not
      * run the censoring logic and just return the passed in ifNull value directly.
-     *
+     * <p>
      * Note: Do _NOT_ rely the censored value we return always being the same.  The exact censored output
-     *       may change over time.
+     * may change over time.
      *
      * @param section the section for the label
-     * @param param the key for the label
-     * @param ifNull default value to return if null (not set).
+     * @param param   the key for the label
+     * @param ifNull  default value to return if null (not set).
      * @return some number of 'x'ses if the value should be censored.
      */
     @Override
     public String getCensoredString(String section, String param, String ifNull) {
         String value = this.getString(section, param, null);
-        if(value == null) {
+        if (value == null) {
             return ifNull;
         }
 
@@ -402,11 +400,11 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * Outputs XML data to a stream output, either censored or uncensored version depending on
      * doCensor's value.
-     *
+     * <p>
      * Note: outputValueXML vs outputValueXMLCensored will go away in 152 when configuration
-     *       is split out from labels / motifs.
+     * is split out from labels / motifs.
      *
-     * @param os the output stream to write to
+     * @param os       the output stream to write to
      * @param doCensor will censor values like password if set to true
      */
     public void outputXML(OutputStream os, boolean doCensor) throws IOException {
@@ -422,7 +420,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
             for (String paramName : new TreeSet<String>(sectionMap.keySet())) {
                 osw.write("\t\t<param name=\"" + paramName + "\">");
-                if(doCensor) {
+                if (doCensor) {
                     outputValueXMLCensored(osw, sectionName, paramName, sectionMap.get(paramName));
                 } else {
                     outputValueXML(sectionMap.get(paramName), osw);
@@ -438,7 +436,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     protected void outputValueXML(Object value, OutputStreamWriter os) throws IOException {
         if (value != null) {
             if (value instanceof String) {
-                os.write(TextUtil.escapeToXml((String)value, true, true));
+                os.write(TextUtil.escapeToXml((String) value, true, true));
             } else {
                 os.write(value.getClass() + ":" + TextUtil.escapeToXml(value.toString(), true, true));
             }
@@ -448,7 +446,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     protected void outputValueXMLCensored(OutputStreamWriter os, String sectionName, String paramName, Object value) throws IOException {
         if (value != null) {
             if (value instanceof String) {
-                os.write(TextUtil.escapeToXml(SettingsUtil.censorValue(sectionName, paramName, (String)value), true, true));
+                os.write(TextUtil.escapeToXml(SettingsUtil.censorValue(sectionName, paramName, (String) value), true, true));
             } else {
                 os.write(value.getClass() + ":" + TextUtil.escapeToXml(SettingsUtil.censorValue(sectionName, paramName, value.toString()), true, true));
             }
@@ -466,6 +464,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     public void doSubstitutions() throws ParameterNotFoundException, IOException {
         doSubstitutions(null);
     }
+
     public void doSubstitutions(Object referenceConfig) throws ParameterNotFoundException, IOException {
         // we need to queue up our modifications, because some implementations
         // don't support
@@ -491,8 +490,8 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
                         sourceFile = "(unknown)";
                     }
                     String message = "label substitution exception in file: " + sourceFile + ": section: "
-                        + sectionKey + " label: " + parameterName + " on value: " + nfe.getValue() + " for value: "
-                        + nfe.getParam();
+                            + sectionKey + " label: " + parameterName + " on value: " + nfe.getValue() + " for value: "
+                            + nfe.getParam();
 
                     newValue = processMissingLabel(message);
                 }
@@ -519,16 +518,17 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     /**
      * Allow child implementations to substitute values based on an external set of params
-     * @param sectionName the section of the param being replace
-     * @param paramName the key of the param being replace
-     * @param val the value being replaced
-     * @param referenceConfig an object being passed in to parsing for 
+     *
+     * @param sectionName     the section of the param being replace
+     * @param paramName       the key of the param being replace
+     * @param val             the value being replaced
+     * @param referenceConfig an object being passed in to parsing for
      * @return the val with substrings substituted if need be
-     * @throws IOException in case there are any IO Exceptions
+     * @throws IOException           in case there are any IO Exceptions
      * @throws SubstitutionException in case the val has a malformed section/param
      */
     protected Object substitute(String sectionName, String paramName, Object val, Object referenceConfig) throws IOException, SubstitutionException {
-    	return val;
+        return val;
     }
 
     public static class SubstitutionException extends Exception {
@@ -548,8 +548,13 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
             this.val = val;
         }
 
-        public String getParam() { return this.param; }
-        public Object getValue() { return this.val; }
+        public String getParam() {
+            return this.param;
+        }
+
+        public Object getValue() {
+            return this.val;
+        }
 
     }
 
@@ -617,9 +622,9 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
             if (o == null || !(o instanceof MetaDataInfo)) {
                 return false;
             }
-            MetaDataInfo mdi = (MetaDataInfo)o;
+            MetaDataInfo mdi = (MetaDataInfo) o;
             return this.locator.equals(mdi.locator) && this.sourceFile.equals(mdi.sourceFile)
-                && this.deprecated == mdi.deprecated;
+                    && this.deprecated == mdi.deprecated;
         }
 
         @Override
@@ -634,13 +639,13 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     /**
      * Defaults to false if the string does not match one of the following
-     *   - 1
-     *   - true
-     *   - yes
-     *   - on
+     * - 1
+     * - true
+     * - yes
+     * - on
      */
     public static boolean stringToBoolean(String booleanValue) {
-        if("1".equals(booleanValue)
+        if ("1".equals(booleanValue)
                 || "true".equals(booleanValue)
                 || "yes".equals(booleanValue)
                 || "on".equals(booleanValue)) {
@@ -658,6 +663,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      */
     public interface Parser {
         void load(PropertyFileData data, Map<String, Map<String, MetaDataInfo>> metaData) throws IOException;
+
         // used for motif parsing - it helps determine the date that will be used in urls
         long getFileLastModified();
     }

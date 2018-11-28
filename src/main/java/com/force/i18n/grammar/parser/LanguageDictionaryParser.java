@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -34,7 +34,7 @@ import com.force.i18n.settings.TrackingHandler;
  * During parsing, all state is kept in the DictionaryLoaderData object, which annotates
  * the LanguageDictionary with alias information
  *
- * @author nveeser,stamm
+ * @author nveeser, stamm
  */
 public final class LanguageDictionaryParser {
     private final LanguageDictionary dictionary;
@@ -44,6 +44,7 @@ public final class LanguageDictionaryParser {
 
     /**
      * Parse and load the dictionary for the descriptor with the given language
+     *
      * @param dictDesc the description of the location of the grammatical label
      * @param language the dictionary to stat with
      */
@@ -63,7 +64,7 @@ public final class LanguageDictionaryParser {
     }
 
     private void copyFallbackTerms(HumanLanguage fallbackLanguage) throws IOException {
-        assert fallbackLanguage != null && fallbackLanguage != this.dictionary.getLanguage(): "You cannot have fallback terms without a fallback language";
+        assert fallbackLanguage != null && fallbackLanguage != this.dictionary.getLanguage() : "You cannot have fallback terms without a fallback language";
 
         // We need to check for things that haven't yet been translated into this language (or never will be), but may appear in the labels.
         // So, we parse english, see the set of nouns defined in english, and then make sure we have a value in *this* language for all of those nouns by defaulting to the Singular value from english
@@ -150,7 +151,8 @@ public final class LanguageDictionaryParser {
             // Copy over the terms from the parent.
             // For performance and memory reasons, we clone the maps, but we do not clone the terms
             this.dictionary.putAll(parentDictionary);
-            if (!TrackingHandler.exists(rootFile)) return;  // Allow a null root if we only have labels and no additional grammatical terms
+            if (!TrackingHandler.exists(rootFile))
+                return;  // Allow a null root if we only have labels and no additional grammatical terms
         }
         if (this.dictDesc.hasOverridingFiles()) {
             // We're not english
@@ -178,7 +180,7 @@ public final class LanguageDictionaryParser {
 
         // If we have a test language override, then use it to parse the stuff.
         if (this.dictDesc instanceof TestLanguageLabelSetDescriptor) {
-            String grammarOverride = ((TestLanguageLabelSetDescriptor)this.dictDesc).getGrammar();
+            String grammarOverride = ((TestLanguageLabelSetDescriptor) this.dictDesc).getGrammar();
             if (grammarOverride != null) {
                 LanguageDictionaryHandler handler = new LanguageDictionaryHandler(this.dictDesc.getDictionaryFile(), this);
                 SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -203,9 +205,9 @@ public final class LanguageDictionaryParser {
     public LanguageDictionary getDictionary() {
         return this.dictionary;
     }
-    
+
     LanguageDictionary getParentDictionary() {
-    	return this.parentDictionary;
+        return this.parentDictionary;
     }
 
     /**
@@ -213,7 +215,7 @@ public final class LanguageDictionaryParser {
      * Used to proactively clone entities if inherited from parent dictionaries
      */
     boolean hasParentDictionarySameLang() {
-    	return this.parentDictionary != null && this.parentDictionary.getLanguage() == this.getDictionary().getLanguage();
+        return this.parentDictionary != null && this.parentDictionary.getLanguage() == this.getDictionary().getLanguage();
     }
 
     void parseDictionary(URL file) {
@@ -228,8 +230,7 @@ public final class LanguageDictionaryParser {
             SAXParser saxParser = spf.newSAXParser();
             saxParser.parse(file.openStream(), handler);
 
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             throw new RuntimeException("Error parsing XML file " + handler.getLineNumberString(), ex);
         }
     }

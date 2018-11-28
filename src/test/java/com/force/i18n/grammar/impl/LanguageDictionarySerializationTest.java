@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -35,7 +35,7 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
         for (int i = 0; i < list.size(); i++) {
             Object element = list.get(i);
             if (element instanceof ComplexGrammaticalForm) {
-                assertEquals("Invariant for ComplexGrammaticalForm.invariant fails for " + element, i, ((ComplexGrammaticalForm)element).getOrdinal());
+                assertEquals("Invariant for ComplexGrammaticalForm.invariant fails for " + element, i, ((ComplexGrammaticalForm) element).getOrdinal());
             } else {
                 assertTrue("All Grammatical forms must be enums or extends ComplexGrammaticalForm", element.getClass().isEnum());
             }
@@ -45,10 +45,10 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
     /**
      * Group of tests that verify that *all* noun forms, if they are Complex,
      * have the ordinal match the index into the list, or they are an enum.
-     * 
+     * <p>
      * These tests are broken up by language type to avoid test timeouts.
      * Standard languages are further divided since they were flapping.
-     * 
+     * <p>
      * Chances are you should run this again in the production environment, that's why there's
      * a test version so you don't have tests that run forever
      */
@@ -56,11 +56,11 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
         declensionInvariantTester(LanguageProviderFactory.get().getAll());
     }
 
-    
+
     /**
      * Helper method for testDeclensionInvariant* test methods.
-     * 
-     * @param langs - list of languages to test 
+     *
+     * @param langs - list of languages to test
      * @throws Exception
      */
     private void declensionInvariantTester(List<? extends HumanLanguage> langs) throws Exception {
@@ -76,42 +76,41 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
     }
 
     public void testSerializeDictionary() throws Exception {
-    	// TODO: This is slow, so only do the first ten
+        // TODO: This is slow, so only do the first ten
         for (HumanLanguage language : LanguageProviderFactory.get().getAll().subList(0, 10)) {
             LanguageDictionary dictionary = loadDictionary(language);
             File file = File.createTempFile("testSerialDictionary" + language.getLocale(), "");
             try {
                 long start = System.nanoTime();
                 try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file))) {
-                   oos.writeObject(dictionary);
+                    oos.writeObject(dictionary);
                 } catch (NotSerializableException ex) {
                     System.err.println("Failure to serialize " + language);
                     throw ex;
                 }
 
-                logger.info("Wrote " + language + " dictionary in " + (System.nanoTime() - start)/1000000 + " msec of size " + file.length());
+                logger.info("Wrote " + language + " dictionary in " + (System.nanoTime() - start) / 1000000 + " msec of size " + file.length());
                 Noun noun = dictionary.getNoun("account", false);
                 if (noun == null) continue;  // This means the dictionary doesn't exist.  Whatever.
-                IdentityHashMap<NounForm,String> identityValues = new IdentityHashMap<NounForm,String>(noun.getAllDefinedValues());
+                IdentityHashMap<NounForm, String> identityValues = new IdentityHashMap<NounForm, String>(noun.getAllDefinedValues());
 
-                 start = System.nanoTime();
-                 LanguageDictionary copy;
-                 
-                 try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-                     copy = (LanguageDictionary)ois.readObject();
-                 }
-                 logger.info("Read " + language + " dictionary in " + (System.nanoTime() - start)/1000000 + " msec");
-                 // Make sure the noun forms are the same
-                 Noun copyNoun = copy.getNoun("account", false);
-                 IdentityHashMap<NounForm,String> identityCopyValues = new IdentityHashMap<NounForm,String>(noun.getAllDefinedValues());
+                start = System.nanoTime();
+                LanguageDictionary copy;
 
-                 assertEquals("Serialized nouns aren't the same", noun, copyNoun);
-                 assertSame("Serialized declensions are being duplicated", noun.getDeclension(), copyNoun.getDeclension());
-                 assertEquals("Serialized nouns aren't the same", noun.getAllDefinedValues(), copyNoun.getAllDefinedValues());
-                 assertSame("Serialized nouns aren't the same", noun.getDeclension(), copyNoun.getDeclension());
-                 assertEquals("Serialized noun forms aren't the same", identityValues, identityCopyValues);
-            }
-            finally {
+                try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+                    copy = (LanguageDictionary) ois.readObject();
+                }
+                logger.info("Read " + language + " dictionary in " + (System.nanoTime() - start) / 1000000 + " msec");
+                // Make sure the noun forms are the same
+                Noun copyNoun = copy.getNoun("account", false);
+                IdentityHashMap<NounForm, String> identityCopyValues = new IdentityHashMap<NounForm, String>(noun.getAllDefinedValues());
+
+                assertEquals("Serialized nouns aren't the same", noun, copyNoun);
+                assertSame("Serialized declensions are being duplicated", noun.getDeclension(), copyNoun.getDeclension());
+                assertEquals("Serialized nouns aren't the same", noun.getAllDefinedValues(), copyNoun.getAllDefinedValues());
+                assertSame("Serialized nouns aren't the same", noun.getDeclension(), copyNoun.getDeclension());
+                assertEquals("Serialized noun forms aren't the same", identityValues, identityCopyValues);
+            } finally {
                 file.delete();
             }
         }
@@ -126,13 +125,13 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
                 oos.writeObject(dictionary);
             }
 
-            long writeTime = (System.nanoTime() - start)/1000 ;
+            long writeTime = (System.nanoTime() - start) / 1000;
 
             byte[] data = baos.toByteArray();
             start = System.nanoTime();
-             try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data))) {
-             }
-             logger.info("InMemTest: " + language.getLocale() + " dictionary in " + writeTime + "/" + (System.nanoTime() - start)/1000 + " usec; size= " + data.length);
+            try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data))) {
+            }
+            logger.info("InMemTest: " + language.getLocale() + " dictionary in " + writeTime + "/" + (System.nanoTime() - start) / 1000 + " usec; size= " + data.length);
         }
     }
 

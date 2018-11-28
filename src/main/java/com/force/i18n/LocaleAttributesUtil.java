@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -11,6 +11,7 @@ import java.util.Locale;
 
 /**
  * Provides extra attributes about Locale instances.
+ *
  * @author jared.pearson
  */
 public interface LocaleAttributesUtil {
@@ -24,5 +25,5 @@ public interface LocaleAttributesUtil {
      * @return true when the specified locale uses an eastern name order.
      */
     public boolean useEasternNameOrder(Locale locale);
-    
+
 }

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,16 +21,16 @@ import com.google.common.collect.ImmutableList;
 /**
  * Our first Dravidian language. Tamil has cases, plural, gender.
  * Tamil does not have articles, starts with, adj/noun agreement, possession.
- * 
+ *
  * @author cgrabill
  */
 public class TamilDeclension extends LanguageDeclension {
 
     private final List<TamilNounForm> entityForms;
     private final List<TamilNounForm> fieldForms;
-    
+
     public TamilDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<TamilNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<TamilNounForm> fieldBuilder = ImmutableList.builder();
@@ -47,40 +47,55 @@ public class TamilDeclension extends LanguageDeclension {
         this.entityForms = entityBuilder.build();
         this.fieldForms = fieldBuilder.build();
     }
-    
+
     static class TamilNounForm extends ComplexNounForm {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
         private final LanguageCase caseType;
         private final LanguageNumber number;
-        
+
         TamilNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, int ordinal) {
             super(declension, ordinal);
             this.number = number;
             this.caseType = caseType;
         }
 
-        @Override public LanguageNumber getNumber() { return number; }
-        @Override public LanguageCase getCase() { return caseType; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
-        
+        @Override
+        public LanguageNumber getNumber() {
+            return number;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return caseType;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
         @Override
         public String toString() {
             return "TamilNF:" + getKey();
         }
 
     }
-    
+
     /**
      * Represents a Tamil noun. See TamilNounForm for more info.
      */
     public static class TamilNoun extends Noun {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
         //store everything
         private transient Map<TamilNounForm, String> values = new HashMap<TamilNounForm, String>();
 
         TamilNoun(TamilDeclension declension, String name, String pluralAlias, NounType type, String entityName,
-                LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault ) {
+                  LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT,
                     gender, access, isStandardField, isCopiedFromDefault);
         }
@@ -104,7 +119,7 @@ public class TamilDeclension extends LanguageDeclension {
         public void makeSkinny() {
             values = makeSkinny(values);
         }
-        
+
         /**
          * Need to override so that a cloned TamilNoun's values map is a HashMap.
          * Else, if you clone() after makeSkinny() has been called, you won't
@@ -113,7 +128,7 @@ public class TamilDeclension extends LanguageDeclension {
         @Override
         public Noun clone() {
             TamilNoun noun = (TamilNoun) super.clone();
-            noun.values = new HashMap<TamilNounForm,String>(noun.values);
+            noun.values = new HashMap<TamilNounForm, String>(noun.values);
             return noun;
         }
 
@@ -122,12 +137,13 @@ public class TamilDeclension extends LanguageDeclension {
             assert nid instanceof TamilNounForm : "Error: Used non-Tamil noun form to get Tamil noun.";
             return values.get(nid);
         }
-        
+
         // Override read and write, or else you'll get mysterious exception
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
+
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
@@ -161,8 +177,8 @@ public class TamilDeclension extends LanguageDeclension {
 
     @Override
     protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
-            LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
-            boolean isCopied) {
+                              LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
+                              boolean isCopied) {
         return new TamilNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 
@@ -175,12 +191,12 @@ public class TamilDeclension extends LanguageDeclension {
     public boolean hasGender() {
         return true;
     }
-    
+
     @Override
     public EnumSet<LanguageGender> getRequiredGenders() {
         return EnumSet.of(LanguageGender.NEUTER,
-                          LanguageGender.MASCULINE,
-                          LanguageGender.FEMININE);
+                LanguageGender.MASCULINE,
+                LanguageGender.FEMININE);
     }
 
 
@@ -188,18 +204,18 @@ public class TamilDeclension extends LanguageDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
-        return EnumSet.of(LanguageCase.NOMINATIVE, 
-                          LanguageCase.GENITIVE, 
-                          LanguageCase.ACCUSATIVE, 
-                          LanguageCase.DATIVE,
-                          LanguageCase.ABLATIVE,
-                          LanguageCase.INSTRUMENTAL,
-                          LanguageCase.LOCATIVE);
+        return EnumSet.of(LanguageCase.NOMINATIVE,
+                LanguageCase.GENITIVE,
+                LanguageCase.ACCUSATIVE,
+                LanguageCase.DATIVE,
+                LanguageCase.ABLATIVE,
+                LanguageCase.INSTRUMENTAL,
+                LanguageCase.LOCATIVE);
     }
-    
+
     @Override
     public boolean hasArticleInNounForm() {
         return false;

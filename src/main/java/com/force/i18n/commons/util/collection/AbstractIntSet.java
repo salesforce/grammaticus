@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -13,9 +13,9 @@ import com.google.common.annotations.Beta;
 
 /**
  * Abstract implementation of an IntSet.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
- * 
+ *
  * @author stamm
  */
 @Beta
@@ -33,7 +33,7 @@ public abstract class AbstractIntSet implements IntSet {
      * it are maintained by the collection.  (In other words, this method must
      * allocate a new array even if the collection is backed by an Array).
      * The caller is thus free to modify the returned array.<p>
-     *
+     * <p>
      * This implementation allocates the array to be returned, and iterates
      * over the elements in the collection, storing each object reference in
      * the next consecutive element of the array, starting with element 0.
@@ -86,16 +86,14 @@ public abstract class AbstractIntSet implements IntSet {
 
         if (!(o instanceof IntSet))
             return false;
-        IntSet c = (IntSet)o;
+        IntSet c = (IntSet) o;
         if (c.size() != size())
             return false;
         try {
             return containsAll(c);
-        }
-        catch (ClassCastException unused) {
+        } catch (ClassCastException unused) {
             return false;
-        }
-        catch (NullPointerException unused) {
+        } catch (NullPointerException unused) {
             return false;
         }
     }

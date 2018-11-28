@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,7 +22,7 @@ import com.force.i18n.grammar.GrammaticalTerm.TermType;
  * Noun Tag reference implementation.
  * Constructed through LabelHandler, and used by LabelInfo.
  *
- * @author yoikawa,stamm
+ * @author yoikawa, stamm
  */
 class NounRefTag extends TermRefTag {
     private static final long serialVersionUID = 992182143166275835L;
@@ -38,7 +38,7 @@ class NounRefTag extends TermRefTag {
     private final int index;
 
     static NounRefTag getNounTag(String label, Integer refIndex, boolean isCapital, boolean escapeHtml,
-            NounForm form) {
+                                 NounForm form) {
         assert label != null;
         return tagMap.unique(new NounRefTag(label, refIndex, form, isCapital, escapeHtml));
     }
@@ -114,8 +114,8 @@ class NounRefTag extends TermRefTag {
         if (isDynamic()) {
             if (entities == null) {
                 if (!LabelDebug.isLabelHintAllowed()) {
-                        logger.log(Level.SEVERE,
-                                "Calling getLabel that has an <entity> without providing that entity only allowed in label debug mode");
+                    logger.log(Level.SEVERE,
+                            "Calling getLabel that has an <entity> without providing that entity only allowed in label debug mode");
                 }
                 s = frm.getNumber().isPlural() ? "<Entities>" : "<Entity>";
                 return isCapital ? s : dict.getDeclension().formLowercaseNounForm(s, frm);
@@ -131,7 +131,7 @@ class NounRefTag extends TermRefTag {
                     s = n.getCloseButNoCigarString(frm);
                 }
 
-            // For non-renamable standard entity, simply return its label
+                // For non-renamable standard entity, simply return its label
             } else if (ei.hasStandardLabel()) {
                 s = frm.getNumber().isPlural() ? ei.getLabelPlural() : ei.getLabel();
                 if (!isCapital)
@@ -165,10 +165,10 @@ class NounRefTag extends TermRefTag {
 
     @Override
     protected boolean equalsValue(TermRefTag obj) {
-        return this.form == ((NounRefTag)obj).form
-            && this.index == ((NounRefTag)obj).index
-            && this.escapeHtml == ((NounRefTag)obj).escapeHtml
-            && this.isCapital == ((NounRefTag)obj).isCapital;
+        return this.form == ((NounRefTag) obj).form
+                && this.index == ((NounRefTag) obj).index
+                && this.escapeHtml == ((NounRefTag) obj).escapeHtml
+                && this.isCapital == ((NounRefTag) obj).isCapital;
     }
 
     @Override

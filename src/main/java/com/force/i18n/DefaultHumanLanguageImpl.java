@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,8 +12,9 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Default Human Language Provider that's used if there's no other answer
- * 
+ * <p>
  * This is an ok default implementation
+ *
  * @author stamm
  */
 enum DefaultHumanLanguageImpl implements HumanLanguage {
@@ -55,7 +56,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     PORTUGUESE_PT(new Locale("pt", "PT"), LanguageType.END_USER, 172.0), // Portuguese (European)
     CROATIAN(new Locale("hr"), LanguageType.END_USER, 170.0),
     SLOVENE(new Locale("sl"), LanguageType.END_USER, 170.0),
-    
+
     // platform languages
     FRENCH_CA(Locale.CANADA_FRENCH, LanguageType.PLATFORM, 168.0),
     GEORGIAN(new Locale("ka"), LanguageType.PLATFORM, 168.0),
@@ -88,12 +89,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     ARMENIAN(new Locale("hy"), LanguageType.PLATFORM, 174.0),
     HINDI(new Locale("hi"), LanguageType.PLATFORM, 174.0),
     URDU(new Locale("ur"), LanguageType.PLATFORM, 174.0),
-    
+
     BENGALI(new Locale("bn"), LanguageType.PLATFORM, 190.0),
     GERMAN_AT(new Locale("de", "AT"), LanguageType.PLATFORM, 190.0),
     GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
     TAMIL(new Locale("ta"), LanguageType.PLATFORM, 190.0),
-    
+
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ARABIC_BH(new Locale("ar", "BH"), LanguageType.PLATFORM, 194.0), //Arabic Bahrain
     ARABIC_EG(new Locale("ar", "EG"), LanguageType.PLATFORM, 194.0), //Arabic Egypt
@@ -119,15 +120,15 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     ENGLISH_IE(new Locale("en", "IE"), LanguageType.PLATFORM, 194.0), //English Ireland
     ENGLISH_SG(new Locale("en", "SG"), LanguageType.PLATFORM, 194.0), //English Singapore
     ENGLISH_ZA(new Locale("en", "ZA"), LanguageType.PLATFORM, 194.0), //English South Africa
-    
+
     FRENCH_BE(new Locale("fr", "BE"), LanguageType.PLATFORM, 194.0),  //French Belgium
     FRENCH_LU(new Locale("fr", "LU"), LanguageType.PLATFORM, 194.0),  //French Luxembourg
     FRENCH_CH(new Locale("fr", "CH"), LanguageType.PLATFORM, 194.0),  //French Switzerland
-    
+
     GERMAN_LU(new Locale("de", "LU"), LanguageType.PLATFORM, 194.0),  //German Luxembourg
-    
+
     ITALIAN_CH(new Locale("it", "CH"), LanguageType.PLATFORM, 194.0), //Italian Switzerland
-    
+
     SPANISH_AR(new Locale("es", "AR"), LanguageType.PLATFORM, 194.0), //Spanish Argentina
     SPANISH_BO(new Locale("es", "BO"), LanguageType.PLATFORM, 194.0), //Spanish Bolivia
     SPANISH_CL(new Locale("es", "CL"), LanguageType.PLATFORM, 194.0), //Spanish Chile
@@ -206,7 +207,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * @return the locale associated with this user language
      */
     @Override
-	public Locale getLocale() {
+    public Locale getLocale() {
         return this.locale;
     }
 
@@ -214,7 +215,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * @return the string for the locale associated with this user language (convenience method)
      */
     @Override
-	public String getLocaleString() {
+    public String getLocaleString() {
         return this.locale.toString();
     }
 
@@ -229,7 +230,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * @return the text direction of the language (right now just RightToLeft vs LeftToRight)
      */
     @Override
-	public TextDirection getDirection() {
+    public TextDirection getDirection() {
         // invertIfNotNormalDirection checks if we have set a debugging "reverse" flag - to allow
         // a language like English to be shown as an RTL language.
         return TextDirection.invertIfNotNormalDirection(this.direction);
@@ -240,7 +241,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * locale for the language was wrong (dutch), or Java prevents it from being correct
      */
     @Override
-	public String getOverrideLanguage() {
+    public String getOverrideLanguage() {
         return this.overrideLanguage;
     }
 
@@ -248,7 +249,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * @return the language code to use for HTTP communication (see RFC 1766)
      */
     @Override
-	public String getHttpLanguageCode() {
+    public String getHttpLanguageCode() {
         return this.htmlLanguage;
     }
 
@@ -263,7 +264,9 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     /**
      * @return whether this language is supported for end users only and doesn't have full translation files
      */
-    public final LanguageType getLanguageType() {return this.type;}
+    public final LanguageType getLanguageType() {
+        return this.type;
+    }
 
     /**
      * @param type the language type to compare
@@ -280,13 +283,16 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * This handles the special cases for Dutch, English, and Simplified Chinese
      */
     @Override
-	public String getDefaultLabelDirectoryPath() {
+    public String getDefaultLabelDirectoryPath() {
         switch (this) {
-        case ENGLISH: return "";
-        case DUTCH: return "nl";
-        case CHINESE_SIMP: return "zh";
-        default:
-        	return getLocale().toString().replace('_', '/');
+            case ENGLISH:
+                return "";
+            case DUTCH:
+                return "nl";
+            case CHINESE_SIMP:
+                return "zh";
+            default:
+                return getLocale().toString().replace('_', '/');
         }
     }
 
@@ -294,19 +300,20 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * @return the default language encoding charset to use for the language
      */
     @Override
-	public String getDefaultFileEncoding() {
-    	return Helper.getDefaultFileEncoding(this);
+    public String getDefaultFileEncoding() {
+        return Helper.getDefaultFileEncoding(this);
     }
 
     /**
      * Return the user email encoding, which differs from the email encoding for
      * Thai and Korean for reasons I don't understand.
      * TODO: Why is this different from alternate?
+     *
      * @return the default user email encoding charset to use for the language
      */
     @Override
-	public String getDefaultUserEmailEncoding() {
-    	return Helper.getDefaultUserEmailEncoding(this);
+    public String getDefaultUserEmailEncoding() {
+        return Helper.getDefaultUserEmailEncoding(this);
     }
 
     /**
@@ -315,24 +322,27 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * use emails. This is the old behavior from the old localizer
      */
     @Override
-	public String getSystemEmailEncoding() {
-    	return Helper.getSystemEmailEncoding(this);
+    public String getSystemEmailEncoding() {
+        return Helper.getSystemEmailEncoding(this);
     }
 
     /**
      * NOTE: You must ensure that the fallback language returned appears before this language in the
      * enum (i.e. the extension language needs to appear afterwards).  Note, this is usually the same as
      * translationfallbackLanguage, and only differs for mutually intelligible languages, like Malay and Indonesian
+     *
      * @return the language to use as the fallback language for labels that are not available in this language
      */
     @Override
-	public DefaultHumanLanguageImpl getFallbackLanguage() {
+    public DefaultHumanLanguageImpl getFallbackLanguage() {
         switch (this) {
-        case ENGLISH:      return null;  // English has no fallback
-        case MALAY:        return INDONESIAN;  // Indonesian is a dialect of Malay, but shouldn't be used for translations?
-        default:
-            DefaultHumanLanguageImpl translationFallback = getTranslationFallbackLanguage();
-            return translationFallback != null ? translationFallback : DefaultHumanLanguageImpl.ENGLISH;
+            case ENGLISH:
+                return null;  // English has no fallback
+            case MALAY:
+                return INDONESIAN;  // Indonesian is a dialect of Malay, but shouldn't be used for translations?
+            default:
+                DefaultHumanLanguageImpl translationFallback = getTranslationFallbackLanguage();
+                return translationFallback != null ? translationFallback : DefaultHumanLanguageImpl.ENGLISH;
         }
     }
 
@@ -341,11 +351,11 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * The difference between this and fallback language is what the "fallback"
      * for translations.  So French doesn't fall back to English, because that would be wrong,
      * just the fallback for _XX languages.  This is only used for customer translations.
-     *
+     * <p>
      * Summary: Use this only for country language variants, not for anything else.
      */
     @Override
-	public DefaultHumanLanguageImpl getTranslationFallbackLanguage() {
+    public DefaultHumanLanguageImpl getTranslationFallbackLanguage() {
         switch (this) {
             case ARABIC_DZ:
             case ARABIC_BH:
@@ -374,26 +384,26 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             case SPANISH_AR:
             case SPANISH_BO:
             case SPANISH_CL:
-            case SPANISH_CO: 
+            case SPANISH_CO:
             case SPANISH_CR:
-            case SPANISH_DO: 
-            case SPANISH_EC: 
-            case SPANISH_SV:  
-            case SPANISH_GT:  
-            case SPANISH_HN:  
-            case SPANISH_NI:  
-            case SPANISH_PA:   
-            case SPANISH_PY:   
-            case SPANISH_PE:    
-            case SPANISH_PR:    
-            case SPANISH_US:    
-            case SPANISH_UY:    
-            case SPANISH_VE:      
+            case SPANISH_DO:
+            case SPANISH_EC:
+            case SPANISH_SV:
+            case SPANISH_GT:
+            case SPANISH_HN:
+            case SPANISH_NI:
+            case SPANISH_PA:
+            case SPANISH_PY:
+            case SPANISH_PE:
+            case SPANISH_PR:
+            case SPANISH_US:
+            case SPANISH_UY:
+            case SPANISH_VE:
                 return SPANISH;
             case CHINESE_HK:
                 return CHINESE_TRAD;
             case CHINESE_SG:
-                return CHINESE_SIMP ;
+                return CHINESE_SIMP;
             case PORTUGUESE_PT:
                 return PORTUGUESE_BR;
             case ENGLISH_AU:
@@ -428,14 +438,14 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * This differs only to handle the en_US and nl_NL historical anomalies
      */
     @Override
-	public final String getLabelKey() {
+    public final String getLabelKey() {
         switch (this) {
-        case ENGLISH:
-            return "en";
-        case DUTCH:
-            return "nl";
-        default:
-            return getLocaleString();
+            case ENGLISH:
+                return "en";
+            case DUTCH:
+                return "nl";
+            default:
+                return getLocaleString();
         }
     }
 
@@ -454,40 +464,41 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * the dotted/dotless i problem.
      */
     @Override
-	public final boolean hasTurkicCaseFolding() {
+    public final boolean hasTurkicCaseFolding() {
         return this == TURKISH;
     }
 
     /**
      * Return the value with the "case folded" using the unicode algorithm
      * for lowercase based on the current user language
+     *
      * @param input the string to be case folded (i.e. lowercased)
      * @return the string with converted to lowercase
      * @see com.force.i18n.commons.text.CaseFolder#toFoldedCase(String, boolean)
      */
     @Override
-	public String toFoldedCase(String input) {
-    	return Helper.toFoldedCase(this, input);
+    public String toFoldedCase(String input) {
+        return Helper.toFoldedCase(this, input);
     }
 
 
     /**
      * Helper functions for avoiding Java generics garbage while creating an enum map.
      */
-    public static <V> EnumMap<DefaultHumanLanguageImpl,V> newEnumMap() {
+    public static <V> EnumMap<DefaultHumanLanguageImpl, V> newEnumMap() {
         return new EnumMap<>(DefaultHumanLanguageImpl.class);
     }
 
     private static final AtomicReference<DefaultHumanLanguageImpl> DEFAULT_LANGUAGE = new AtomicReference<>();
 
     public static DefaultHumanLanguageImpl getDefaultLanguage() {
-    	DefaultHumanLanguageImpl stored = DEFAULT_LANGUAGE.get();
+        DefaultHumanLanguageImpl stored = DEFAULT_LANGUAGE.get();
         if (stored != null) return stored;
         return DefaultHumanLanguageImpl.ENGLISH;  // Default to english; sorry
     }
-    
+
     public void setDefaultLanguage(DefaultHumanLanguageImpl defaultLanguage) {
-    	DEFAULT_LANGUAGE.set(defaultLanguage);
+        DEFAULT_LANGUAGE.set(defaultLanguage);
     }
 
     /**
@@ -496,15 +507,15 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * Other language types will cause null to be returned
      */
     public static List<DefaultHumanLanguageImpl> getLanguageList(LanguageType type) {
-        switch(type) {
-        case STANDARD:
-            return ALL_STANDARD;
-        case END_USER:
-            return ALL_END_USER;
-        case PLATFORM:
-            return ALL_PLATFORM_ONLY;
-        case HIDDEN:
-            // Do nothing
+        switch (type) {
+            case STANDARD:
+                return ALL_STANDARD;
+            case END_USER:
+                return ALL_END_USER;
+            case PLATFORM:
+                return ALL_PLATFORM_ONLY;
+            case HIDDEN:
+                // Do nothing
         }
         return null;
     }
@@ -518,21 +529,21 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         // Note this case statement is ordered by LanguageType dependency
         // The returned language list should also be ordered so that the most
         // pref-dependent language appears last
-        switch(type) {
-        case HIDDEN:
-            // All languages should be visible with Hidden
-            langs.clear();
-            langs.addAll(Arrays.asList(DefaultHumanLanguageImpl.values()));
-            break;
-        case PLATFORM:
-            langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
-            langs.addAll(DefaultHumanLanguageImpl.ALL_PLATFORM_ONLY);
-            break;
-        case END_USER:
-            langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
-            break;
-        case STANDARD:
-            // Do nothing
+        switch (type) {
+            case HIDDEN:
+                // All languages should be visible with Hidden
+                langs.clear();
+                langs.addAll(Arrays.asList(DefaultHumanLanguageImpl.values()));
+                break;
+            case PLATFORM:
+                langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
+                langs.addAll(DefaultHumanLanguageImpl.ALL_PLATFORM_ONLY);
+                break;
+            case END_USER:
+                langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
+                break;
+            case STANDARD:
+                // Do nothing
         }
 
         return langs;
@@ -557,9 +568,10 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     private static final List<DefaultHumanLanguageImpl> ALL_PLATFORM_ONLY;
 
     // STATIC INITIALIZERS FOR MAGIC MAPS
-    private static final Map<LanguageType,Integer> TYPE_COUNT;
+    private static final Map<LanguageType, Integer> TYPE_COUNT;
+
     static {
-        EnumMap<LanguageType,Integer> languageCount = new EnumMap<>(LanguageType.class);
+        EnumMap<LanguageType, Integer> languageCount = new EnumMap<>(LanguageType.class);
         List<DefaultHumanLanguageImpl> allStandard = new ArrayList<>(32);
         List<DefaultHumanLanguageImpl> allEndUser = new ArrayList<>(64);
         List<DefaultHumanLanguageImpl> allPlatformOnly = new ArrayList<>(64);
@@ -569,15 +581,18 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             LanguageType type = language.getLanguageType();
             languageCount.put(type, languageCount.get(type) + 1);
 
-            switch(type) {
-            case STANDARD:
-                allStandard.add(language); break;
-            case END_USER:
-                allEndUser.add(language); break;
-            case PLATFORM:
-                allPlatformOnly.add(language); break;
-            case HIDDEN:
-                // Do nothing
+            switch (type) {
+                case STANDARD:
+                    allStandard.add(language);
+                    break;
+                case END_USER:
+                    allEndUser.add(language);
+                    break;
+                case PLATFORM:
+                    allPlatformOnly.add(language);
+                    break;
+                case HIDDEN:
+                    // Do nothing
             }
         }
         TYPE_COUNT = Collections.unmodifiableMap(languageCount);
@@ -585,12 +600,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         ALL_END_USER = Collections.unmodifiableList(allEndUser);
         ALL_PLATFORM_ONLY = Collections.unmodifiableList(allPlatformOnly);
     }
-    
-    
+
+
     public static final class DefaultHumanLanguageImplProvider extends LanguageProvider.Helper {
-    	public DefaultHumanLanguageImplProvider() {
-    		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values()));
-    	}
-    	
+        public DefaultHumanLanguageImplProvider() {
+            super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values()));
+        }
+
     }
 }

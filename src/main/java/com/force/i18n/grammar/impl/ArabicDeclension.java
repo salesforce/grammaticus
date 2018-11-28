@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,11 +23,11 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * The declension of nouns and adjectives for Arabic
- *
+ * <p>
  * Arabic has 3 forms of possession, 3 cases (Nom, Acc, & Gen), Gender, plural, and definitiveness.
- *
+ * <p>
  * This leads to 36 forms of nouns and adjectives (since definitiveness applies only to nouns, Gender only to adjectives).
- *
+ * <p>
  * It can be viewed as a form of Arabic with cases
  * Arabic has only the definite article, but the grammar engine doesn't really need to know about it because
  * the article is never inflected and nothing really cares about it.  However, it can appear in the middle
@@ -45,7 +45,7 @@ class ArabicDeclension extends SemiticDeclension {
     private static final String FINAL_ALIF = "\u0627";  // ا   What is added to indefinite nouns
 
     public ArabicDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         assert language.getLocale().getLanguage().equals("ar") : "Initializing a variant Arabic declension for non-arabic";
 
         // Generate the different forms from subclass methods
@@ -57,7 +57,8 @@ class ArabicDeclension extends SemiticDeclension {
                 for (LanguagePossessive possessive : getRequiredPossessive()) {
                     for (LanguageArticle article : getAllowedArticleTypes()) {
                         ArabicNounForm form = new ArabicNounForm(this, number, caseType, possessive, article, ordinal++);
-                        if (caseType == LanguageCase.NOMINATIVE) entityNounBuilder.add(form);  // TODO: Which forms *must* be specified?
+                        if (caseType == LanguageCase.NOMINATIVE)
+                            entityNounBuilder.add(form);  // TODO: Which forms *must* be specified?
                         nounBuilder.add(form);
                     }
                 }
@@ -66,7 +67,7 @@ class ArabicDeclension extends SemiticDeclension {
         this.nounForms = nounBuilder.build();
         this.entityForms = entityNounBuilder.build();
 
-        ordinal=0;
+        ordinal = 0;
         ImmutableList.Builder<ArabicAdjectiveForm> adjBuilder = ImmutableList.builder();
         for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
             for (LanguageGender gender : getRequiredGenders()) {
@@ -84,16 +85,15 @@ class ArabicDeclension extends SemiticDeclension {
     }
 
 
-
     /**
      * Turkish nouns are inflected for case, number, possessive, and article.  Everything that is
      */
     static class ArabicNounForm extends ComplexNounForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguagePossessive possesive;
         private final LanguageArticle article;
@@ -106,10 +106,25 @@ class ArabicDeclension extends SemiticDeclension {
             this.article = article;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return possesive;
+        }
     }
 
     /**
@@ -117,16 +132,16 @@ class ArabicDeclension extends SemiticDeclension {
      */
     static class ArabicAdjectiveForm extends ComplexAdjectiveForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageGender gender;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageGender gender;
         private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
         private final LanguagePossessive possessive;
 
-        public ArabicAdjectiveForm(LanguageDeclension declension, LanguageGender gender, LanguageNumber number, LanguageCase caseType,  LanguageArticle article, LanguagePossessive possessive, int ordinal) {
+        public ArabicAdjectiveForm(LanguageDeclension declension, LanguageGender gender, LanguageNumber number, LanguageCase caseType, LanguageArticle article, LanguagePossessive possessive, int ordinal) {
             super(declension, ordinal);
             this.gender = gender;
             this.number = number;
@@ -135,53 +150,78 @@ class ArabicDeclension extends SemiticDeclension {
             this.possessive = possessive;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
-        @Override public LanguageGender getGender() {  return this.gender; }
-        @Override public LanguagePossessive getPossessive() { return possessive; }
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return LanguageStartsWith.CONSONANT;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return this.gender;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return possessive;
+        }
     }
 
     /**
      * Add a final alif to mark this noun/adjective as indefinite accusative in MSA orthography.
+     *
      * @param str the arabic string passed in
      * @return that noun/adjective marked as accusative
      */
     static String addAlifForAccusative(String str) {
         if (Strings.isNullOrEmpty(str)) return str;
-        char end = str.charAt(str.length()-1);
+        char end = str.charAt(str.length() - 1);
 
         // TODO: Verify from the translators if the alif marker is necessary
         if (Boolean.TRUE) return str;
 
         //private static final String INDEF_ACC_EXCEPTION_LIST = "\u0621";  //  ءة   If noun ends with anything except this, then add final alif in accusative by default
         switch (end) {
-        case '\u0629':
-        case '\u0621':
-            return str;
-        default:
-            return str + FINAL_ALIF;
+            case '\u0629':
+            case '\u0621':
+                return str;
+            default:
+                return str + FINAL_ALIF;
         }
     }
 
     public static final class ArabicNoun extends ComplexArticledNoun<ArabicNounForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(ArabicNoun.class.getName());
-        ArabicNoun(ArabicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender,  String access, boolean isStandardField, boolean isCopied) {
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private static final Logger logger = Logger.getLogger(ArabicNoun.class.getName());
+
+        ArabicNoun(ArabicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopied);
         }
 
         @Override
-		protected final Class<ArabicNounForm> getFormClass() {
-        	return ArabicNounForm.class;
-		}
+        protected final Class<ArabicNounForm> getFormClass() {
+            return ArabicNounForm.class;
+        }
 
 
-		@Override
+        @Override
         public String getExactString(NounForm form) {
             // Autoderive the accusative.
             if (form.getCase() == LanguageCase.ACCUSATIVE) {
@@ -201,7 +241,8 @@ class ArabicDeclension extends SemiticDeclension {
             Collection<? extends NounForm> requiredForms = getDeclension().getFieldForms();
             // Default the definitive case if necessary.
             for (NounForm form : getDeclension().getAllNounForms()) {
-                if (form.getCase() == LanguageCase.ACCUSATIVE) continue;  // Ignore the accusative, since it's autoderived
+                if (form.getCase() == LanguageCase.ACCUSATIVE)
+                    continue;  // Ignore the accusative, since it's autoderived
                 String value = getExactString(form);
                 if (value == null) {
                     if (getNounType() == NounType.ENTITY) {
@@ -239,23 +280,23 @@ class ArabicDeclension extends SemiticDeclension {
     }
 
 
-
     protected static class ArabicAdjective extends ComplexAdjective<ArabicAdjectiveForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
         ArabicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
         @Override
-		protected final Class<ArabicAdjectiveForm> getFormClass() {
-        	return ArabicAdjectiveForm.class;
-		}
+        protected final Class<ArabicAdjectiveForm> getFormClass() {
+            return ArabicAdjectiveForm.class;
+        }
 
-		@Override
+        @Override
         protected String deriveDefaultString(AdjectiveForm form, String value, AdjectiveForm baseFormed) {
             if (form.getPossessive() != LanguagePossessive.NONE) {
                 return value; // Already has the right prefix
@@ -271,7 +312,8 @@ class ArabicDeclension extends SemiticDeclension {
             if (form.getCase() == LanguageCase.ACCUSATIVE) {
                 // Here's where we get the "real" string.
                 if (value == null || value.length() == 0) return value;
-                if (form.getArticle() == LanguageArticle.DEFINITE) return prefix + value;  // Definite articles never take alif.
+                if (form.getArticle() == LanguageArticle.DEFINITE)
+                    return prefix + value;  // Definite articles never take alif.
                 return addAlifForAccusative(prefix + value);
             }
 
@@ -292,7 +334,7 @@ class ArabicDeclension extends SemiticDeclension {
 
     @Override
     protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
-            LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+                              LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new ArabicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 
@@ -334,23 +376,23 @@ class ArabicDeclension extends SemiticDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return adjectiveForms;
     }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return nounForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return nounForms;
     }
-    
+
 }

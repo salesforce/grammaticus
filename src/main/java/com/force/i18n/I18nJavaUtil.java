@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -19,72 +19,75 @@ import com.force.i18n.commons.text.TextUtil;
 
 /**
  * A set of utilities used throughout the Grammaticus project.
- *
+ * <p>
  * This should disappear eventually.
+ *
  * @author stamm
  */
 public class I18nJavaUtil {
-	// For production systems, this should be fine.
-	// TODO: Use a jar properties file to initialize this.
-	private static Level LOG_LEVEL = Level.FINE;
-	private static File CACHE_BASE_DIR = new File(".");
+    // For production systems, this should be fine.
+    // TODO: Use a jar properties file to initialize this.
+    private static Level LOG_LEVEL = Level.FINE;
+    private static File CACHE_BASE_DIR = new File(".");
 
-	/**
-	 * @return the log level to use for internal operations.  The intention is to allow
-	 * different behaviors on production vs development; in development it will throw
-	 * exceptions, on production it will produce log warnings but still function.
-	 * If you set this to more severe than Level.CONFIG, it will have the production behavior.
-	 */
-	public static Level getLogLevel() {
-		return LOG_LEVEL;
-	}
+    /**
+     * @return the log level to use for internal operations.  The intention is to allow
+     * different behaviors on production vs development; in development it will throw
+     * exceptions, on production it will produce log warnings but still function.
+     * If you set this to more severe than Level.CONFIG, it will have the production behavior.
+     */
+    public static Level getLogLevel() {
+        return LOG_LEVEL;
+    }
 
-	/**
-	 * Set the log level to use for internal operations.
-	 * @param level the level to set
-	 */
-	public static void setLogLevel(Level level) {
-		LOG_LEVEL = level;
-	}
+    /**
+     * Set the log level to use for internal operations.
+     *
+     * @param level the level to set
+     */
+    public static void setLogLevel(Level level) {
+        LOG_LEVEL = level;
+    }
 
-	/**
-	 * @return whether to throw exceptions for invalid labels instead of coping.
-	 * Return true if the logLevel is &lt; Level.Config
-	 */
-	public static boolean isDebugging() {
-		return LOG_LEVEL.intValue() < Level.CONFIG.intValue();
-	}
+    /**
+     * @return whether to throw exceptions for invalid labels instead of coping.
+     * Return true if the logLevel is &lt; Level.Config
+     */
+    public static boolean isDebugging() {
+        return LOG_LEVEL.intValue() < Level.CONFIG.intValue();
+    }
 
     /**
      * Given a file (possibly a directory) return the last mod of the file or any recursive children files
      * If includeSubDirs is false then only look in this directory itself, not recursive ones
      */
     public static long dirLastModified(File dir, boolean includeSubDirs) {
-    	return dirLastModified(dir, includeSubDirs, false);
+        return dirLastModified(dir, includeSubDirs, false);
     }
 
 
     /**
      * Given a file (possibly a directory) return the last mod of the file or any recursive children files
      * If includeSubDirs is false then only look in this directory itself, not recursive ones.
+     *
      * @param checkDirectoryTimestampAsWell checks the directory's modification time itself.
      */
     public static long dirLastModified(File dir, boolean includeSubDirs, boolean checkDirectoryTimestampAsWell) {
         long lastModified = checkDirectoryTimestampAsWell ? dir.lastModified() : -1;
         File[] listOfFiles = dir.listFiles();
         if (listOfFiles != null) {  // listFiles is null if directory doesn't exist (i.e. not translated)
-	        for (File child : listOfFiles) {
-	            long childLastMod;
-	            if (child.isDirectory()) {
-	                if (!includeSubDirs)
-	                    continue;
-	                childLastMod = dirLastModified(child, includeSubDirs, checkDirectoryTimestampAsWell);
-	            } else {
-	                childLastMod = child.lastModified();
-	            }
-	            if (childLastMod > lastModified)
-	                lastModified = childLastMod;
-	        }
+            for (File child : listOfFiles) {
+                long childLastMod;
+                if (child.isDirectory()) {
+                    if (!includeSubDirs)
+                        continue;
+                    childLastMod = dirLastModified(child, includeSubDirs, checkDirectoryTimestampAsWell);
+                } else {
+                    childLastMod = child.lastModified();
+                }
+                if (childLastMod > lastModified)
+                    lastModified = childLastMod;
+            }
         }
         return lastModified;
     }
@@ -94,24 +97,24 @@ public class I18nJavaUtil {
      * @return the properties for this object
      */
     public static final String getProperty(String key) {
-    	ResourceBundle defaultProps = getDefaultProperties();
-    	try {
-    		ResourceBundle overrideProps = getOverrideProperties();
-    		if (overrideProps != null && overrideProps.containsKey(key)) {
-    			return overrideProps.getString(key);
-    		}
-    	} catch (MissingResourceException ex) {
-    		// IGNORE
-    	}
-    	return defaultProps.getString(key);
+        ResourceBundle defaultProps = getDefaultProperties();
+        try {
+            ResourceBundle overrideProps = getOverrideProperties();
+            if (overrideProps != null && overrideProps.containsKey(key)) {
+                return overrideProps.getString(key);
+            }
+        } catch (MissingResourceException ex) {
+            // IGNORE
+        }
+        return defaultProps.getString(key);
     }
 
     static final ResourceBundle getDefaultProperties() {
-    	return ResourceBundle.getBundle("com.force.i18n.grammaticus");
+        return ResourceBundle.getBundle("com.force.i18n.grammaticus");
     }
 
     static final ResourceBundle getOverrideProperties() throws MissingResourceException {
-    	return ResourceBundle.getBundle("com.force.i18n.i18n");
+        return ResourceBundle.getBundle("com.force.i18n.i18n");
     }
 
     /**
@@ -122,7 +125,7 @@ public class I18nJavaUtil {
             // Handle maveny things without referencing osgi directly.
             URLConnection connection = url.openConnection();
             try {
-                return(URL) connection.getClass().getMethod("getLocalURL").invoke(connection);
+                return (URL) connection.getClass().getMethod("getLocalURL").invoke(connection);
             } catch (Exception e) {
                 throw new IOException(e);
             }
@@ -142,7 +145,7 @@ public class I18nJavaUtil {
     public static long urlLastModified(URL url) throws URISyntaxException, IOException {
         url = osgiToJar(url);
         if ("jar".equalsIgnoreCase(url.getProtocol())) {
-            JarURLConnection jarEntryConn = (JarURLConnection)url.openConnection();
+            JarURLConnection jarEntryConn = (JarURLConnection) url.openConnection();
             // Check that the jar file actually exists on the file system
             File file = new File(jarEntryConn.getJarFileURL().getPath());
             if (!file.exists()) throw new IOException("Unable to process JAR url. JAR file is missing: " + file);
@@ -153,7 +156,7 @@ public class I18nJavaUtil {
                 JarEntry jarEntry = jarFile.getJarEntry(jarEntryName);
                 return jarEntry != null ? jarEntry.getTime() : -1;
             }
-         }
+        }
 
         return new File(url.toURI()).lastModified();
     }
@@ -161,7 +164,7 @@ public class I18nJavaUtil {
     public static long urlDirLastModified(URL url, boolean includeSubDirs, boolean checkDirectoryTimestampAsWell) throws URISyntaxException, IOException {
         if ("jar".equalsIgnoreCase(url.getProtocol())) {
             long result = -1;
-            JarURLConnection jarEntryConn = (JarURLConnection)url.openConnection();
+            JarURLConnection jarEntryConn = (JarURLConnection) url.openConnection();
             // Check that the jar file actually exists on the file system
             File file = new File(jarEntryConn.getJarFileURL().getPath());
             if (!file.exists()) throw new IOException("Unable to process JAR url. JAR file is missing: " + file);
@@ -169,7 +172,7 @@ public class I18nJavaUtil {
             String jarEntryName = jarEntryConn.getEntryName();
             try (JarFile jarFile = new JarFile(file)) {
                 // See if the directory is there
-                for (Enumeration<JarEntry> e =jarFile.entries(); e.hasMoreElements(); ) {
+                for (Enumeration<JarEntry> e = jarFile.entries(); e.hasMoreElements(); ) {
                     JarEntry entry = e.nextElement();
                     if (entry.getName().startsWith(jarEntryName)) {
                         if (!checkDirectoryTimestampAsWell && entry.getName().equals(jarEntryName)) continue;

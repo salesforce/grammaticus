@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -13,17 +13,19 @@ import java.util.Map;
 
 /**
  * Represents the article (i.e. the type of reference) associated with a noun form.
+ *
  * @author stamm
  */
 public enum LanguageArticle {
-    ZERO ("n", "None"),
-    INDEFINITE ("i", "A", "a"),
-    DEFINITE ("d", "The", "the"),
-    PARTITIVE ("p", "Mass", "mass"),
+    ZERO("n", "None"),
+    INDEFINITE("i", "A", "a"),
+    DEFINITE("d", "The", "the"),
+    PARTITIVE("p", "Mass", "mass"),
     ;
 
-    private static final Map<String,LanguageArticle> dbValueMap = new HashMap<String,LanguageArticle>(8);
-    private static final Map<String,LanguageArticle> labelValueMap = new HashMap<String,LanguageArticle>(16);
+    private static final Map<String, LanguageArticle> dbValueMap = new HashMap<String, LanguageArticle>(8);
+    private static final Map<String, LanguageArticle> labelValueMap = new HashMap<String, LanguageArticle>(16);
+
     static {
         for (LanguageArticle article : values()) {
             dbValueMap.put(article.getDbValue(), article);
@@ -38,18 +40,33 @@ public enum LanguageArticle {
     private final String dbValue;
     private final String apiValue;
     private final String labelValue;
+
     private LanguageArticle(String dbValue, String apiValue) {
         this(dbValue, apiValue, null);
     }
+
     private LanguageArticle(String dbValue, String apiValue, String labelValue) {
         this.dbValue = dbValue;
         this.apiValue = apiValue;
         this.labelValue = labelValue;
     }
-    public String getDbValue() { return this.dbValue; }
-    public String getApiValue() { return this.apiValue; }
-    public String getLabelValue() {return this.labelValue; }
-    public boolean isDefault() { return this == ZERO; }
+
+    public String getDbValue() {
+        return this.dbValue;
+    }
+
+    public String getApiValue() {
+        return this.apiValue;
+    }
+
+    public String getLabelValue() {
+        return this.labelValue;
+    }
+
+    public boolean isDefault() {
+        return this == ZERO;
+    }
+
     public static LanguageArticle fromDbValue(String dbValue) {
         return dbValueMap.get(dbValue);
     }
@@ -65,4 +82,4 @@ public enum LanguageArticle {
         }
         return null;
     }
- }
+}

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,11 +21,11 @@ import com.google.common.collect.*;
 
 /**
  * Provide a declension system for a germanic language.  Generally, there are
- *
+ * <p>
  * four cases: Nominative, Accusative, Dative, Genetive
  * Three genders: Masculine, Feminine, Neuter
  * articles are auto-derived
- *
+ * <p>
  * To "simplify" matters,
  *
  * @author stamm
@@ -37,12 +37,12 @@ abstract class GermanicDeclension extends ArticledDeclension {
     private final List<GermanicNounForm> fieldForms;
     private final List<GermanicAdjectiveForm> adjectiveForms;
     private final List<GermanicArticleForm> articleForms;
-    private final EnumMap<LanguageArticle,NounFormMap<GermanicNounForm>> nounFormMap;
-    private final EnumMap<LanguageArticle,ModifierFormMap<GermanicAdjectiveForm>> adjectiveFormMap;
+    private final EnumMap<LanguageArticle, NounFormMap<GermanicNounForm>> nounFormMap;
+    private final EnumMap<LanguageArticle, ModifierFormMap<GermanicAdjectiveForm>> adjectiveFormMap;
     private final ModifierFormMap<GermanicArticleForm> articleFormMap;
 
     public GermanicDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<GermanicNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<GermanicNounForm> fieldBuilder = ImmutableList.builder();
@@ -96,10 +96,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class GermanicNounForm extends ComplexNounForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
 
@@ -110,30 +110,47 @@ abstract class GermanicDeclension extends ArticledDeclension {
             this.article = article;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
         @Override
         public String getKey() {
-            if (((GermanicDeclension)getDeclension()).getRequiredNounArticles().size() > 1) {
+            if (((GermanicDeclension) getDeclension()).getRequiredNounArticles().size() > 1) {
                 return getNumber().getDbValue() + "-" + getCase().getDbValue() + getArticle().getDbValue();
             } else {
                 return getNumber().getDbValue() + "-" + getCase().getDbValue();
             }
         }
+
         @Override
         public String toString() {
-            return "GermanicNF:"+getKey();
+            return "GermanicNF:" + getKey();
         }
     }
 
     static class GermanicAdjectiveForm extends ComplexAdjectiveForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageNumber number;
         private final LanguageArticle article;
         private final LanguageCase caseType;
         private final LanguageGender gender;
@@ -148,20 +165,43 @@ abstract class GermanicDeclension extends ArticledDeclension {
             this.startsWith = startsWith;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguageStartsWith getStartsWith() {  return this.startsWith; }
-        @Override public LanguageGender getGender() {  return this.gender; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+        @Override
+        public LanguageArticle getArticle() {
+            return this.article;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return this.startsWith;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return this.gender;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
     }
 
     static class GermanicArticleForm extends ComplexArticleForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
         private final LanguageStartsWith startsWith;
@@ -174,10 +214,25 @@ abstract class GermanicDeclension extends ArticledDeclension {
             this.startsWith = startsWith;
         }
 
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguageStartsWith getStartsWith() {  return this.startsWith; }
-        @Override public LanguageGender getGender() {  return this.gender; }
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return this.startsWith;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return this.gender;
+        }
     }
 
     /**
@@ -186,9 +241,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
      */
     public static class GermanicNoun extends ComplexArticledNoun<GermanicNounForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
         GermanicNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
@@ -199,11 +255,11 @@ abstract class GermanicDeclension extends ArticledDeclension {
         }
 
         @Override
-		protected final Class<GermanicNounForm> getFormClass() {
-        	return GermanicNounForm.class;
-		}
+        protected final Class<GermanicNounForm> getFormClass() {
+            return GermanicNounForm.class;
+        }
 
-		@Override
+        @Override
         protected boolean validateGender(String name) {
             if (!getDeclension().getRequiredGenders().contains(getGender())) {
                 logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
@@ -224,21 +280,22 @@ abstract class GermanicDeclension extends ArticledDeclension {
      */
     public static class GermanicAdjective extends ComplexAdjective<GermanicAdjectiveForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
         GermanicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
 
         @Override
-		protected final Class<GermanicAdjectiveForm> getFormClass() {
-        	return GermanicAdjectiveForm.class;
-		}
+        protected final Class<GermanicAdjectiveForm> getFormClass() {
+            return GermanicAdjectiveForm.class;
+        }
 
 
-		@Override
+        @Override
         public boolean validate(String name) {
             defaultValidate(name, ImmutableSet.of(getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.ZERO, LanguagePossessive.NONE)));
             return true;
@@ -250,10 +307,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
      */
     public static class GermanicArticle extends Article {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private Map<GermanicArticleForm, String> values = new HashMap<GermanicArticleForm,String>();
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private Map<GermanicArticleForm, String> values = new HashMap<GermanicArticleForm, String>();
 
         GermanicArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -271,7 +328,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
         @Override
         protected void setString(ArticleForm form, String value) {
-            values.put((GermanicArticleForm)form, intern(value));
+            values.put((GermanicArticleForm) form, intern(value));
         }
 
         @Override
@@ -280,6 +337,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
             return true;
         }
     }
+
     /**
      * @return the set of articles that the adjectives need to define in the label files.
      * Generally, this would be the zero and definite article for adjective agreement rules
@@ -290,8 +348,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
     private static final EnumSet<LanguageArticle> ZERO_ARTICLES = EnumSet.of(LanguageArticle.ZERO);
     static final EnumSet<LanguageArticle> ZERO_AND_DEFARTICLES = EnumSet.of(LanguageArticle.ZERO, LanguageArticle.DEFINITE);
     static final EnumSet<LanguageArticle> ALL_ARTICLES = EnumSet.of(LanguageArticle.ZERO, LanguageArticle.DEFINITE, LanguageArticle.INDEFINITE);
+
     /**
      * NOTE: Only define this for languages where the article is irregular and a suffix (such as Dutch)
+     *
      * @return the set of articles that the adjectives need to define in the label files
      */
     protected EnumSet<LanguageArticle> getRequiredNounArticles() {
@@ -330,22 +390,22 @@ abstract class GermanicDeclension extends ArticledDeclension {
     }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getFieldForms() {
+    public Collection<? extends NounForm> getFieldForms() {
         return this.fieldForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
 
@@ -356,20 +416,20 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
         ModifierFormMap<? extends AdjectiveForm> formMap = this.adjectiveFormMap.get(article);
         return formMap == null ? null : formMap.getForm(startsWith, gender, number, _case);
     }
 
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case) {
+                                      LanguageCase _case) {
         return this.articleFormMap.getForm(startsWith, gender, number, _case);
     }
 
     @Override
     public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive,
-            LanguageArticle article) {
+                                     LanguageArticle article) {
         if (possessive != LanguagePossessive.NONE) return null;
         NounFormMap<? extends NounForm> formMap = this.nounFormMap.get(article);
         return formMap == null ? null : formMap.getForm(number, _case);
@@ -400,69 +460,69 @@ abstract class GermanicDeclension extends ArticledDeclension {
         public GermanDeclension(HumanLanguage language) {
             super(language);
             assert language.getLocale().getLanguage().equals("de") : "Initializing a variant german declension for non-german";
-        } 
-        
-        private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender,String>>> DEFINITE_ARTICLE =
-            ImmutableMap.of(
-                   LanguageCase.NOMINATIVE,
-                            ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Das",
-                                    LanguageGender.FEMININE, "Die",
-                                    LanguageGender.MASCULINE, "Der"
-                                    ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Die",LanguageGender.FEMININE, "Die",LanguageGender.MASCULINE, "Die"
-                                    )),
-                    LanguageCase.ACCUSATIVE,
-                            ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Das",
-                                    LanguageGender.FEMININE, "Die",
-                                    LanguageGender.MASCULINE, "Den"
-                                    ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Die", LanguageGender.FEMININE, "Die", LanguageGender.MASCULINE, "Die"
-                                    )),
-                   LanguageCase.GENITIVE,
-                            ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Des",
-                                    LanguageGender.FEMININE, "Der",
-                                    LanguageGender.MASCULINE, "Des"
-                                    ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Der",LanguageGender.FEMININE, "Der", LanguageGender.MASCULINE, "Der"
-                                    )),
-                   LanguageCase.DATIVE,
-                           ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Dem",
-                                   LanguageGender.FEMININE, "Der",
-                                   LanguageGender.MASCULINE, "Dem"
-                                   ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Den", LanguageGender.FEMININE, "Den", LanguageGender.MASCULINE, "Den"
-                                   )));
+        }
+
+        private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender, String>>> DEFINITE_ARTICLE =
+                ImmutableMap.of(
+                        LanguageCase.NOMINATIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Das",
+                                LanguageGender.FEMININE, "Die",
+                                LanguageGender.MASCULINE, "Der"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Die", LanguageGender.FEMININE, "Die", LanguageGender.MASCULINE, "Die"
+                        )),
+                        LanguageCase.ACCUSATIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Das",
+                                LanguageGender.FEMININE, "Die",
+                                LanguageGender.MASCULINE, "Den"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Die", LanguageGender.FEMININE, "Die", LanguageGender.MASCULINE, "Die"
+                        )),
+                        LanguageCase.GENITIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Des",
+                                LanguageGender.FEMININE, "Der",
+                                LanguageGender.MASCULINE, "Des"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Der", LanguageGender.FEMININE, "Der", LanguageGender.MASCULINE, "Der"
+                        )),
+                        LanguageCase.DATIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Dem",
+                                LanguageGender.FEMININE, "Der",
+                                LanguageGender.MASCULINE, "Dem"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Den", LanguageGender.FEMININE, "Den", LanguageGender.MASCULINE, "Den"
+                        )));
 
         private static final Map<LanguageCase, ImmutableMap<LanguageGender, String>> INDEFINITE_ARTICLE =
-            ImmutableMap.of(
-                   LanguageCase.NOMINATIVE,
-                            ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Ein",
-                                    LanguageGender.FEMININE, "Eine",
-                                    LanguageGender.MASCULINE, "Ein"
-                                    ),
-                    LanguageCase.ACCUSATIVE,
-                            ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Ein",
-                                    LanguageGender.FEMININE, "Eine",
-                                    LanguageGender.MASCULINE, "Einen"
-                                    ),
-                   LanguageCase.GENITIVE,
-                            ImmutableMap.of(
-                                    LanguageGender.NEUTER, "Eines",
-                                    LanguageGender.FEMININE, "Einer",
-                                    LanguageGender.MASCULINE, "Eines"
-                                    ),
-                   LanguageCase.DATIVE,
-                          ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Einem",
-                                   LanguageGender.FEMININE, "Einer",
-                                   LanguageGender.MASCULINE, "Einem"
-                                   ));
+                ImmutableMap.of(
+                        LanguageCase.NOMINATIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "Ein",
+                                LanguageGender.FEMININE, "Eine",
+                                LanguageGender.MASCULINE, "Ein"
+                        ),
+                        LanguageCase.ACCUSATIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "Ein",
+                                LanguageGender.FEMININE, "Eine",
+                                LanguageGender.MASCULINE, "Einen"
+                        ),
+                        LanguageCase.GENITIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "Eines",
+                                LanguageGender.FEMININE, "Einer",
+                                LanguageGender.MASCULINE, "Eines"
+                        ),
+                        LanguageCase.DATIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "Einem",
+                                LanguageGender.FEMININE, "Einer",
+                                LanguageGender.MASCULINE, "Einem"
+                        ));
 
         @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
@@ -472,13 +532,13 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
             switch (articleType) {
-            case DEFINITE:
-                return DEFINITE_ARTICLE.get(form.getCase()).get(form.getNumber()).get(form.getGender());
-            case INDEFINITE:
-                if (form.getNumber() == LanguageNumber.PLURAL) return null;
-                return INDEFINITE_ARTICLE.get(form.getCase()).get(form.getGender());
-            default:
-                return null;
+                case DEFINITE:
+                    return DEFINITE_ARTICLE.get(form.getCase()).get(form.getNumber()).get(form.getGender());
+                case INDEFINITE:
+                    if (form.getNumber() == LanguageNumber.PLURAL) return null;
+                    return INDEFINITE_ARTICLE.get(form.getCase()).get(form.getGender());
+                default:
+                    return null;
             }
         }
 
@@ -511,11 +571,11 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class SwedishDeclension extends GermanicDeclension {
         public SwedishDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("sv") : "Initializing a language that isn't swedish";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("sv") : "Initializing a language that isn't swedish";
+        }
 
-		public static final LanguageGender EUTER = LanguageGender.FEMININE;
+        public static final LanguageGender EUTER = LanguageGender.FEMININE;
 
         @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
@@ -540,11 +600,11 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class DutchDeclension extends GermanicDeclension {
         public DutchDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("nl") : "Initializing a language that isn't dutch";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("nl") : "Initializing a language that isn't dutch";
+        }
 
-		@Override
+        @Override
         protected final EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -557,25 +617,26 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
             switch (articleType) {
-            case DEFINITE:
-                if (form.getNumber() == LanguageNumber.SINGULAR && form.getGender() == LanguageGender.NEUTER) return "Het";
-                return "De";
-            case INDEFINITE:
-                if (form.getNumber() == LanguageNumber.PLURAL) return null;
-                return "Een";
-            default:
-                return null;
+                case DEFINITE:
+                    if (form.getNumber() == LanguageNumber.SINGULAR && form.getGender() == LanguageGender.NEUTER)
+                        return "Het";
+                    return "De";
+                case INDEFINITE:
+                    if (form.getNumber() == LanguageNumber.PLURAL) return null;
+                    return "Een";
+                default:
+                    return null;
             }
         }
     }
 
     static class DanishDeclension extends GermanicDeclension {
         public DanishDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("da") : "Initializing a language that isn't danish";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("da") : "Initializing a language that isn't danish";
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -599,10 +660,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class NorwegianDeclension extends GermanicDeclension {
         public NorwegianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -630,10 +691,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class IcelandicDeclension extends GermanicDeclension {
         public IcelandicDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -667,42 +728,42 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class LuxembourgishDeclension extends GermanicDeclension {
         public LuxembourgishDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender,String>>> DEFINITE_ARTICLE =
-            ImmutableMap.of(
-                   LanguageCase.NOMINATIVE,
-                            ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "D'",
-                                    LanguageGender.FEMININE, "D'",
-                                    LanguageGender.MASCULINE, "Den"
-                                    ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                    LanguageGender.NEUTER, "D'",LanguageGender.FEMININE, "D'",LanguageGender.MASCULINE, "D'"
-                                    )),
-                   LanguageCase.DATIVE,
-                           ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Dem",
-                                   LanguageGender.FEMININE, "Der",
-                                   LanguageGender.MASCULINE, "Dem"
-                                   ), LanguageNumber.PLURAL, ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Den", LanguageGender.FEMININE, "Den", LanguageGender.MASCULINE, "Den"
-                                   )));
+        private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender, String>>> DEFINITE_ARTICLE =
+                ImmutableMap.of(
+                        LanguageCase.NOMINATIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "D'",
+                                LanguageGender.FEMININE, "D'",
+                                LanguageGender.MASCULINE, "Den"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "D'", LanguageGender.FEMININE, "D'", LanguageGender.MASCULINE, "D'"
+                        )),
+                        LanguageCase.DATIVE,
+                        ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Dem",
+                                LanguageGender.FEMININE, "Der",
+                                LanguageGender.MASCULINE, "Dem"
+                        ), LanguageNumber.PLURAL, ImmutableMap.of(
+                                LanguageGender.NEUTER, "Den", LanguageGender.FEMININE, "Den", LanguageGender.MASCULINE, "Den"
+                        )));
 
         private static final Map<LanguageCase, ImmutableMap<LanguageGender, String>> INDEFINITE_ARTICLE =
-            ImmutableMap.of(
-                   LanguageCase.NOMINATIVE,
-                            ImmutableMap.of(
-                                    LanguageGender.NEUTER, "En",
-                                    LanguageGender.FEMININE, "Eng",
-                                    LanguageGender.MASCULINE, "En"
-                                    ),
-                   LanguageCase.DATIVE,
-                          ImmutableMap.of(
-                                   LanguageGender.NEUTER, "Engem",
-                                   LanguageGender.FEMININE, "Enger",
-                                   LanguageGender.MASCULINE, "Engem"
-                                   ));
+                ImmutableMap.of(
+                        LanguageCase.NOMINATIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "En",
+                                LanguageGender.FEMININE, "Eng",
+                                LanguageGender.MASCULINE, "En"
+                        ),
+                        LanguageCase.DATIVE,
+                        ImmutableMap.of(
+                                LanguageGender.NEUTER, "Engem",
+                                LanguageGender.FEMININE, "Enger",
+                                LanguageGender.MASCULINE, "Engem"
+                        ));
 
         @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
@@ -712,13 +773,13 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
             switch (articleType) {
-            case DEFINITE:
-                return DEFINITE_ARTICLE.get(form.getCase()).get(form.getNumber()).get(form.getGender());
-            case INDEFINITE:
-                if (form.getNumber() == LanguageNumber.PLURAL) return null;
-                return INDEFINITE_ARTICLE.get(form.getCase()).get(form.getGender());
-            default:
-                return null;
+                case DEFINITE:
+                    return DEFINITE_ARTICLE.get(form.getCase()).get(form.getNumber()).get(form.getGender());
+                case INDEFINITE:
+                    if (form.getNumber() == LanguageNumber.PLURAL) return null;
+                    return INDEFINITE_ARTICLE.get(form.getCase()).get(form.getGender());
+                default:
+                    return null;
             }
         }
 

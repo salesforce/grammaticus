@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -15,29 +15,45 @@ import java.util.logging.Logger;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
+
 /**
  * An implementation of declension of a language that doesn't use different forms for nouns.
- *
+ * <p>
  * You can think of this as "simple", but english is fairly simple.  This means "one noun form ever"
- *
+ * <p>
  * http://en.wikipedia.org/wiki/Isolating_language
  */
 class SimpleDeclension extends LanguageDeclension {
     private static final Logger logger = Logger.getLogger(SimpleDeclension.class.getName());
 
     public SimpleDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
     }
 
     // Nice classes that can be reused for languages with little or no inflection
     public static enum SimpleNounForm implements NounForm {
-        SINGULAR
-        ;
+        SINGULAR;
 
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-        @Override public LanguageNumber getNumber() {return LanguageNumber.SINGULAR;}
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return LanguageNumber.SINGULAR;
+        }
+
         @Override
         public String getKey() {
             return "s";
@@ -46,19 +62,20 @@ class SimpleDeclension extends LanguageDeclension {
 
     /**
      * Represents an simple noun with no inflection at all.
+     *
      * @author stamm
      */
     public static class SimpleNoun extends Noun {
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		private String value;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private String value;
 
         SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
-        
+
         @Override
         public void makeSkinny() {
         }
@@ -103,7 +120,7 @@ class SimpleDeclension extends LanguageDeclension {
     private static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return ALL_FORMS;
     }
 
@@ -123,7 +140,7 @@ class SimpleDeclension extends LanguageDeclension {
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return ADJECTIVE_FORMS;
     }
 
@@ -156,7 +173,7 @@ class SimpleDeclension extends LanguageDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
         return SimpleModifierForm.SINGULAR;
     }
 

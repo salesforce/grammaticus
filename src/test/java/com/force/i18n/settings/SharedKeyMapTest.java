@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,6 +20,7 @@ public class SharedKeyMapTest extends TestCase {
 
     private static final int MAP_COUNT = 5;
     private static final List<Map<Object, Object>> SAMPLE_MAPS = new ArrayList<Map<Object, Object>>(MAP_COUNT);
+
     static {
         for (int i = 0; i < MAP_COUNT; i++) {
             Map<Object, Object> map = new HashMap<Object, Object>();
@@ -49,7 +50,8 @@ public class SharedKeyMapTest extends TestCase {
         super(name);
     }
 
-    public SharedKeyMapTest() {}
+    public SharedKeyMapTest() {
+    }
 
     @Override
     public void setUp() throws Exception {
@@ -92,8 +94,8 @@ public class SharedKeyMapTest extends TestCase {
             Map<?, ?> map = SAMPLE_MAPS.get(i);
 
             int size = sharedKeyMap.size();
-            for (Iterator<?> j = sharedKeyMap.entrySet().iterator(); j.hasNext();) {
-                Map.Entry<?, ?> entry = (Map.Entry<?, ?>)j.next();
+            for (Iterator<?> j = sharedKeyMap.entrySet().iterator(); j.hasNext(); ) {
+                Map.Entry<?, ?> entry = (Map.Entry<?, ?>) j.next();
                 Assert.assertEquals(map.get(entry.getKey()), entry.getValue());
                 j.remove();
                 Assert.assertEquals(--size, sharedKeyMap.size());
@@ -107,14 +109,13 @@ public class SharedKeyMapTest extends TestCase {
             Map<?, ?> sharedKeyMap = sharedKeyMaps.get(i);
 
             Iterator<?> j = sharedKeyMap.entrySet().iterator();
-            Map.Entry<?, ?> entry = (Map.Entry<?, ?>)j.next();
+            Map.Entry<?, ?> entry = (Map.Entry<?, ?>) j.next();
             sharedKeyMap.remove(entry.getKey());
             try {
-                entry = (Map.Entry<?, ?>)j.next();
+                entry = (Map.Entry<?, ?>) j.next();
                 // it should have thrown an exception
                 Assert.fail();
-            }
-            catch (ConcurrentModificationException e) {
+            } catch (ConcurrentModificationException e) {
                 // good
             }
         }
@@ -127,7 +128,7 @@ public class SharedKeyMapTest extends TestCase {
 
             int size = sharedKeyMap.size();
             for (Object name : map.entrySet()) {
-                Map.Entry<?, ?> entry = (Map.Entry<?, ?>)name;
+                Map.Entry<?, ?> entry = (Map.Entry<?, ?>) name;
                 Object oldValue = sharedKeyMap.remove(entry.getKey());
                 Assert.assertEquals(entry.getValue(), oldValue);
                 Assert.assertEquals(--size, sharedKeyMap.size());
@@ -183,7 +184,7 @@ public class SharedKeyMapTest extends TestCase {
             Map<Object, Object> map = SAMPLE_MAPS.get(i);
 
             int size = sharedKeyMap.size();
-            for (Iterator<Map.Entry<Object, Object>> j = sharedKeyMap.entrySet().iterator(); j.hasNext();) {
+            for (Iterator<Map.Entry<Object, Object>> j = sharedKeyMap.entrySet().iterator(); j.hasNext(); ) {
                 Map.Entry<Object, Object> e = j.next();
                 Assert.assertEquals(map.get(e.getKey()), e.getValue());
                 j.remove();
@@ -204,8 +205,7 @@ public class SharedKeyMapTest extends TestCase {
                 key = j.next();
                 // it should have thrown an exception
                 Assert.fail();
-            }
-            catch (ConcurrentModificationException e) {
+            } catch (ConcurrentModificationException e) {
                 // good
             }
         }
@@ -236,17 +236,20 @@ public class SharedKeyMapTest extends TestCase {
         try {
             skm.put("hi", "bye");
             fail("shouldn't be allowed to modify this SKM");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
 
         try {
             skm.clear();
             fail("shouldn't be allowed to modify this SKM");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
 
         try {
             skm.remove("hi");
             fail("shouldn't be allowed to modify this SKM");
-        } catch (UnsupportedOperationException expected) { }
+        } catch (UnsupportedOperationException expected) {
+        }
     }
 
 }

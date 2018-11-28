@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -16,7 +16,7 @@ import com.google.common.annotations.Beta;
  * (actually a <tt>IntHashMap</tt> instance).  It makes no guarantees as to the
  * iteration order of the set; in particular, it does not guarantee that the
  * order will remain constant over time. <p>
- *
+ * <p>
  * This class offers constant time performance for the basic operations
  * (<tt>add</tt>, <tt>remove</tt>, <tt>contains</tt> and <tt>size</tt>),
  * assuming the hash function disperses the elements properly among the
@@ -29,14 +29,14 @@ import com.google.common.annotations.Beta;
  * <b>Note that this implementation is not synchronized.</b> If multiple
  * threads access a set concurrently, and at least one of the threads modifies
  * the set, it <i>must</i> be synchronized externally.
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
- * @author  Based on Sun's java.util.HashSet (modified by koliver)
- * @see	    IntSet
- * @see	    IntHashMap
- * @see	    IntMap
- * @note  use {@link java.util.HashSet} or {@link java.util.EnumSet} instead.
+ * @author Based on Sun's java.util.HashSet (modified by koliver)
+ * @note use {@link java.util.HashSet} or {@link java.util.EnumSet} instead.
+ * @see IntSet
+ * @see IntHashMap
+ * @see IntMap
  */
 @Beta
 public class IntHashSet extends AbstractIntSet implements Serializable {
@@ -59,10 +59,10 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
      * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
      * the specified initial capacity and the specified load factor.
      *
-     * @param      initialCapacity   the initial capacity of the hash map.
-     * @param      loadFactor        the load factor of the hash map.
-     * @throws     IllegalArgumentException if the initial capacity is less
-     *             than zero, or if the load factor is nonpositive.
+     * @param initialCapacity the initial capacity of the hash map.
+     * @param loadFactor      the load factor of the hash map.
+     * @throws IllegalArgumentException if the initial capacity is less
+     *                                  than zero, or if the load factor is nonpositive.
      */
     public IntHashSet(int initialCapacity, float loadFactor) {
         this.map = new IntHashMap<Object>(initialCapacity, loadFactor);
@@ -73,14 +73,14 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
      * the specified initial capacity and default load factor, which is
      * <tt>0.75</tt>.
      *
-     * @param      initialCapacity   the initial capacity of the hash table.
-     * @throws     IllegalArgumentException if the initial capacity is less
-     *             than zero.
+     * @param initialCapacity the initial capacity of the hash table.
+     * @throws IllegalArgumentException if the initial capacity is less
+     *                                  than zero.
      */
     public IntHashSet(int initialCapacity) {
         this.map = new IntHashMap<Object>(initialCapacity);
     }
-    
+
     @Override
     public IntSet makeEmpty() {
         return new IntHashSet(this.map.capacity(), this.map.loadFactor());

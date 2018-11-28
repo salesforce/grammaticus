@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -15,7 +15,7 @@ import com.google.common.annotations.Beta;
 
 /**
  * An array of Objects that expands as needed to hold new data.<P>
- *
+ * <p>
  * How does this differ from ArrayList, you ask? Well, it behaves like an array and not a list
  * (and thus does not implement List). While an ArrayList will shift values right to fit new
  * values, an ExpandableArray will simply overwrite values. And while if you try to set at a value past the
@@ -23,40 +23,40 @@ import com.google.common.annotations.Beta;
  * ExpandableArray, it will happily set it for you. This is fairly similar to an IntHashMap,
  * but more lightweight. Examples:<P>
  * <PRE>
- *
- *    arrayList.set(0, two);
- *    arrayList.set(0, one);
- *    arrayList.set(0, zero);
- *    arrayList.get(0) == zero
- *    arrayList.get(1) == one
- *    arrayList.get(2) == two
+ * <p>
+ * arrayList.set(0, two);
+ * arrayList.set(0, one);
+ * arrayList.set(0, zero);
+ * arrayList.get(0) == zero
+ * arrayList.get(1) == one
+ * arrayList.get(2) == two
  *
  * </PRE>
  * but:<P>
  * <PRE>
- *
- *    expandableArray.set(0, two);
- *    expandableArray.set(0, one);
- *    expandableArray.set(0, zero);
- *    expandableArray.get(0) == zero
- *    expandableArray.get(1) == null
- *    expandableArray.get(2) == null
+ * <p>
+ * expandableArray.set(0, two);
+ * expandableArray.set(0, one);
+ * expandableArray.set(0, zero);
+ * expandableArray.get(0) == zero
+ * expandableArray.get(1) == null
+ * expandableArray.get(2) == null
  *
  * </PRE>
  * and:<P>
  * <PRE>
- *
- *    arrayList.set(99, ninetyNine);    // throws ArrayIndexOutOfBounds
+ * <p>
+ * arrayList.set(99, ninetyNine);    // throws ArrayIndexOutOfBounds
  *
  * </PRE>
  * but:<P>
  * <PRE>
- *
- *    expandableArray.set(99, ninetyNine);
- *    expandableArray.get(99) == ninetyNine
+ * <p>
+ * expandableArray.set(99, ninetyNine);
+ * expandableArray.get(99) == ninetyNine
  *
  * </PRE>
- * 
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author shansma
@@ -110,7 +110,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
     /**
      * Makes the expandable array immutable. After setting this flag, you can't un-set it,
      * because then it wouldn't be very immutable, would it?
-     *
+     * <p>
      * This is basically because I'm too lazy to make an interface that this
      * implements and then make an UnmodifiableExpandableArray.
      */
@@ -133,7 +133,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
         if (!this.isMutable) {
             throw new UnsupportedOperationException();
         }
-        this.data = (E[])newData;
+        this.data = (E[]) newData;
     }
 
     public void set(int index, E value) {
@@ -144,7 +144,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
             throw new ArrayIndexOutOfBoundsException(index);
         }
         if (index >= this.data.length) {
-            int newLength = (int)(this.data.length * factor);
+            int newLength = (int) (this.data.length * factor);
             if (newLength < index + 8) {
                 newLength = index + 8;
             }
@@ -213,7 +213,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * in the correct order.
      *
      * @return an array containing all of the elements in this list
-     *         in the correct order.
+     * in the correct order.
      */
     public Object[] toArray() {
         Object[] result = new Object[size()];
@@ -227,7 +227,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * specified array.  If the list fits in the specified array, it is
      * returned therein.  Otherwise, a new array is allocated with the runtime
      * type of the specified array and the size of this list.<p>
-     *
+     * <p>
      * If the list fits in the specified array with room to spare (i.e., the
      * array has more elements than the list), the element in the array
      * immediately following the end of the collection is set to
@@ -236,18 +236,18 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * <tt>null</tt> elements.
      *
      * @param a the array into which the elements of the list are to
-     *      be stored, if it is big enough; otherwise, a new array of the
-     *      same runtime type is allocated for this purpose.
+     *          be stored, if it is big enough; otherwise, a new array of the
+     *          same runtime type is allocated for this purpose.
      * @return an array containing the elements of the list.
      * @throws ArrayStoreException if the runtime type of a is not a supertype
-     *         of the runtime type of every element in this list.
+     *                             of the runtime type of every element in this list.
      */
     @SuppressWarnings("unchecked")
     // Bad java, no biscuit
     public <T> T[] toArray(T[] a) {
         int size = size();
         if (a.length < size) {
-            a = (T[])java.lang.reflect.Array.newInstance(a.getClass().getComponentType(), size);
+            a = (T[]) java.lang.reflect.Array.newInstance(a.getClass().getComponentType(), size);
         }
 
         System.arraycopy(data, 0, a, 0, size);
@@ -262,15 +262,15 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * in the correct order.
      *
      * @param clazz the class of the array that should be constructed
-     * to hold the element.
+     *              to hold the element.
      * @return an array containing all of the elements in this list
-     *         in the correct order.
+     * in the correct order.
      */
     @SuppressWarnings("unchecked")
     // Bad java, no biscuit
     public <T> T[] toArray(Class<T> clazz) {
         int size = size();
-        T[] a = (T[])Array.newInstance(clazz, size);
+        T[] a = (T[]) Array.newInstance(clazz, size);
 
         System.arraycopy(data, 0, a, 0, size);
         if (a.length > size) {
@@ -324,7 +324,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * Helper to resize any array. If <code>size</code> is exactly the
      * length of <code>array</code>, it returns <code>array</code>.
      * Otherwise, it will return a new array.
-     *
+     * <p>
      * Returns an array of size <code>size</code> containing the first
      * <code>size</code> elements in <code>array</code>. If <code>size</code> is
      * greater than the length of <code>array</code>, the remaining
@@ -338,10 +338,10 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * Helper to get the sub-array of any array. If <code>start</code> is 0 and
      * <code>end</code> is length of <code>array</code>, it returns <code>array</code>.
      * Otherwise, it will return a new array.
-     *
+     * <p>
      * Returns an array containing the elements from <code>start</code> inclusive
      * to <code>end</code> exclusive. The resulting array will be of size <code>end - start</code>.
-     *
+     * <p>
      * If <code>end</code> is greater than the size of the array, it will create a
      * result array with nulls in those spots.
      */
@@ -361,7 +361,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
         }
 
         int size = end - start;
-        T[] result = (T[])Array.newInstance(array.getClass().getComponentType(), size);
+        T[] result = (T[]) Array.newInstance(array.getClass().getComponentType(), size);
 
         end = Math.min(end, array.length);
         size = end - start;
@@ -385,7 +385,8 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
     }
 
     @Override
-    @SuppressWarnings("unchecked")  // warning on mine.compareTo(theirs). if i type it, then there will be a warning on the cast to Comparable<T>
+    @SuppressWarnings("unchecked")
+    // warning on mine.compareTo(theirs). if i type it, then there will be a warning on the cast to Comparable<T>
     public int compareTo(ExpandableArray other) {
         int len1 = size();
         int len2 = other.size();

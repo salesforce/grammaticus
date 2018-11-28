@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -41,9 +41,9 @@ public class MapPropertyFileData implements PropertyFileData, Serializable {
 
     /**
      * @param locale the locale of this property file data
-     * Only use this constructor if you are dealing with
-     *      data that is specific to a locale. The locale id should correspond
-     *      to a value that came from the global.locale table.
+     *               Only use this constructor if you are dealing with
+     *               data that is specific to a locale. The locale id should correspond
+     *               to a value that came from the global.locale table.
      */
     public MapPropertyFileData(Locale locale) {
         this.locale = locale;

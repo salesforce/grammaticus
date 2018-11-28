@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -11,6 +11,7 @@ import java.util.Locale;
 
 /**
  * Basic implementation of the {@link LocaleInfo}
+ *
  * @author jared.pearson
  */
 class LocaleInfoImpl implements LocaleInfo {
@@ -18,29 +19,29 @@ class LocaleInfoImpl implements LocaleInfo {
     private final Locale locale;
     private final boolean useEasternNameOrder;
     private final boolean formal;
-    
+
     public LocaleInfoImpl(Locale locale, boolean useEasternNameOrder, boolean formal) {
         assert locale != null : "locale should not be null";
         this.locale = locale;
         this.useEasternNameOrder = useEasternNameOrder;
         this.formal = formal;
     }
-    
+
     @Override
     public boolean useEasternNameOrder() {
         return this.useEasternNameOrder;
     }
-    
+
     @Override
     public boolean isFormal() {
         return this.formal;
     }
-    
+
     @Override
     public Locale getLocale() {
         return locale;
     }
-    
+
 
     @Override
     public int hashCode() {
@@ -71,5 +72,5 @@ class LocaleInfoImpl implements LocaleInfo {
         }
         return true;
     }
-    
+
 }

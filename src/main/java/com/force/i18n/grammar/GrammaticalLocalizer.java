@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,17 +23,18 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 public class GrammaticalLocalizer extends BaseLocalizer {
 
     public GrammaticalLocalizer(Locale locale, Locale currencyLocale, TimeZone timeZone, HumanLanguage language,
-            GrammaticalLabelSet labelSet) {
+                                GrammaticalLabelSet labelSet) {
         super(locale, currencyLocale, timeZone, language, labelSet);
     }
 
     @Override
     public GrammaticalLabelSet getLabelSet() {
-        return (GrammaticalLabelSet)this.labelSet;
+        return (GrammaticalLabelSet) this.labelSet;
     }
 
     /**
      * NOTE: This probably shouldn't be here, but for now it's a nice way to kill LabelInfo most places
+     *
      * @return the declension for the current language
      */
     public LanguageDeclension getDeclension() {
@@ -66,18 +67,17 @@ public class GrammaticalLocalizer extends BaseLocalizer {
     /**
      * The following getLabelNotHint(*) methods are special cased label lookups, so even while in
      * label debugging mode the current label request WILL NOT appended the label debug info.
-     *
+     * <p>
      * This is needed for certain labels which aren't truly displayed as text, but rather are
      * label keys to other labels.  Or other weird scenarios where putting the label debug info
      * into the returned String just breaks stuff.
-     *
      */
     public String getLabelNoHint(String section, String name) {
         return super.getLabel(section, name);
     }
 
     public String getLabelNoHint(String section, String name, Object... args) {
-		MessageFormat formatter = getMessageFormat(getLabelNoHint(section, name, true));
+        MessageFormat formatter = getMessageFormat(getLabelNoHint(section, name, true));
         return formatter.format(args);
     }
 
@@ -88,9 +88,10 @@ public class GrammaticalLocalizer extends BaseLocalizer {
     /**
      * Convenience function that calls <CODE>java.text.MessageFormat.format()</CODE> on the label
      * using the <CODE>Object[]</CODE> supplied.
-     * @param    section    same as getLabel(section, key)
-     * @param    key    same as getLabel(section, key)
-     * @param    args    for <CODE>java.text.MessageFormat.format()</CODE>
+     *
+     * @param section same as getLabel(section, key)
+     * @param key     same as getLabel(section, key)
+     * @param args    for <CODE>java.text.MessageFormat.format()</CODE>
      */
     @Override
     public String getLabel(String section, String key, Object... args) {
@@ -122,25 +123,25 @@ public class GrammaticalLocalizer extends BaseLocalizer {
 
     public String getLabelNoThrow(String section, Renameable[] entities, String name) {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, entities, name, null), section,
-            name);
+                name);
     }
 
     public String getLabel(String section, String name, boolean forMessageFormat) {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, name, forMessageFormat), section,
-            name);
+                name);
     }
 
     public String getLabel(String section, Renameable[] entities, String key, boolean forMessageFormat) {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, entities, key, forMessageFormat),
-            section, key);
+                section, key);
     }
 
     public String getLabel(LabelReference ref) {
         Object[] args = ref.getArguments();
         if (args != null && args.length > 0) {
-			MessageFormat formatter = getMessageFormat(getLabelSet().getString(ref.getSection(), null, ref.getKey(), true));
+            MessageFormat formatter = getMessageFormat(getLabelSet().getString(ref.getSection(), null, ref.getKey(), true));
             return LabelDebugProvider.get().makeLabelHintIfRequested(formatter.format(ref.getArguments()),
-                ref.getSection(), ref.getKey());
+                    ref.getSection(), ref.getKey());
         }
         return getLabelSet().getString(ref.getSection(), null, ref.getKey(), false);
     }
@@ -175,8 +176,8 @@ public class GrammaticalLocalizer extends BaseLocalizer {
     }
 
     /**
-     * @return the Collator for the user's locale
      * @param numElements the number of elements in the array
+     * @return the Collator for the user's locale
      */
     public Comparator<String> getComparator(int numElements) {
         return TextUtil.getComparator(getCollator(), numElements);
@@ -186,14 +187,14 @@ public class GrammaticalLocalizer extends BaseLocalizer {
      * @return an instance of a collator that isn't cached locally
      */
     protected Collator makeCollator() {
-    	return Collator.getInstance(getLocale());
+        return Collator.getInstance(getLocale());
     }
 
     /**
      * @return a noncaching comparator that can be reused
      */
     protected Comparator<String> makeComparator() {
-    	return getComparator(16);
+        return getComparator(16);
     }
 
     public static final String CONTEXT_NAME = "Localizer";

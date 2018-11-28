@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,9 +14,9 @@ import com.google.common.annotations.Beta;
 /**
  * This class provides a skeletal implementation of the <tt>IntMap</tt>
  * interface, to minimize the effort required to implement this interface. <p>
- * 
+ * <p>
  * This borrows heavily from java.util.AbstractMap
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author stamm
@@ -49,7 +49,7 @@ public abstract class AbstractIntMap<V> implements IntMap<V> {
         if (!(o instanceof IntMap))
             return false;
         @SuppressWarnings("unchecked")
-        IntMap<V> t = (IntMap<V>)o;
+        IntMap<V> t = (IntMap<V>) o;
         if (t.size() != size())
             return false;
 
@@ -67,11 +67,9 @@ public abstract class AbstractIntMap<V> implements IntMap<V> {
                         return false;
                 }
             }
-        }
-        catch (ClassCastException unused) {
+        } catch (ClassCastException unused) {
             return false;
-        }
-        catch (NullPointerException unused) {
+        } catch (NullPointerException unused) {
             return false;
         }
 
@@ -141,7 +139,7 @@ public abstract class AbstractIntMap<V> implements IntMap<V> {
         public boolean equals(Object o) {
             if (!(o instanceof IntMap.Entry))
                 return false;
-            IntMap.Entry<?> e = (IntMap.Entry<?>)o;
+            IntMap.Entry<?> e = (IntMap.Entry<?>) o;
             return key == e.getKey() && eq(value, e.getValue());
         }
 

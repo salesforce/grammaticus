@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -27,14 +27,13 @@ import com.google.common.collect.*;
 
 /**
  * @author stamm
- *
  */
 public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
-	public GrammaticalLabelTest(String name) {
-		super(name);
-	}
+    public GrammaticalLabelTest(String name) {
+        super(name);
+    }
 
-	public void testEnglishBackup() {
+    public void testEnglishBackup() {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(getDescriptor());
         HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(Locale.CANADA);
         GrammaticalLabelSet set = loader.getSet(ENGLISH_CA);
@@ -44,48 +43,49 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertFalse(set.containsParam("Sample", "invalid"));
         assertFalse(set.containsParam("invalid", "invalid"));
         try {
-        	set.get(new LabelRef("invalid", "invalid", "invalid"));
-        	fail();
-        } catch (SettingsSectionNotFoundException ex) {}
+            set.get(new LabelRef("invalid", "invalid", "invalid"));
+            fail();
+        } catch (SettingsSectionNotFoundException ex) {
+        }
         assertEquals("__MISSING LABEL__ PropertyFile - val invalid not found in section Sample", set.getString(new LabelRef("Sample", "invalid", "invalid")));
-	}
+    }
 
-	/**
-	 * Sample test for validating that the "startsWith" value for a noun is correct.
-	 */
+    /**
+     * Sample test for validating that the "startsWith" value for a noun is correct.
+     */
     public void testEnglishStartsWith() throws IOException {
         LanguageDictionary dictionary = loadDictionary(LanguageProviderFactory.get().getLanguage(Locale.US));
         StringBuilder badLabels = new StringBuilder();
         for (String nounName : dictionary.getAllTermNames(TermType.Noun)) {
-            Noun noun = dictionary.getNoun(nounName,false);
+            Noun noun = dictionary.getNoun(nounName, false);
 
             switch (Character.toLowerCase(noun.getDefaultString(false).charAt(0))) {
-            case 'a':
-            case 'e':
-            case 'i':
-                if (noun.getStartsWith() == LanguageStartsWith.CONSONANT) {
-                    badLabels.append(noun.getName()).append("\n");
-                }
-                break;
-            case 'o':
-                // If this fails, that might be ok.  O sometimes sounds like 'w', but generally, it's 'an opportunity'
-                // same with
-                if (noun.getStartsWith() == LanguageStartsWith.CONSONANT) {
-                    badLabels.append(noun.getName()).append("\n");
-                }
-                break;
-            case 'y':
-            case 'u':
-                // If this fails, that might be ok.  But generally not.  'a usage date'.  not 'an usage date'
-                if (noun.getStartsWith() == LanguageStartsWith.VOWEL) {
-                    badLabels.append(noun.getName()).append("\n");
-                }
-                break;
-            default:
-                if (noun.getStartsWith() == LanguageStartsWith.VOWEL) {
-                    badLabels.append(noun.getName()).append("\n");
-                }
-                break;
+                case 'a':
+                case 'e':
+                case 'i':
+                    if (noun.getStartsWith() == LanguageStartsWith.CONSONANT) {
+                        badLabels.append(noun.getName()).append("\n");
+                    }
+                    break;
+                case 'o':
+                    // If this fails, that might be ok.  O sometimes sounds like 'w', but generally, it's 'an opportunity'
+                    // same with
+                    if (noun.getStartsWith() == LanguageStartsWith.CONSONANT) {
+                        badLabels.append(noun.getName()).append("\n");
+                    }
+                    break;
+                case 'y':
+                case 'u':
+                    // If this fails, that might be ok.  But generally not.  'a usage date'.  not 'an usage date'
+                    if (noun.getStartsWith() == LanguageStartsWith.VOWEL) {
+                        badLabels.append(noun.getName()).append("\n");
+                    }
+                    break;
+                default:
+                    if (noun.getStartsWith() == LanguageStartsWith.VOWEL) {
+                        badLabels.append(noun.getName()).append("\n");
+                    }
+                    break;
 
             }
         }
@@ -97,8 +97,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
             LanguageDeclension declension = LanguageDeclensionFactory.get().getDeclension(language);
-            if (!declension.isInflected())
-             {
+            if (!declension.isInflected()) {
                 continue;  // Don't bother with simple declensions
             }
 
@@ -110,7 +109,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
             // Unwrap the layers of falling back: NOTE, this only works one level deep which is fine for now.
             GrammaticalLabelSet mainSet = ls;
             if (mainSet instanceof GrammaticalLabelSetComposite) {
-                mainSet = ((GrammaticalLabelSetComposite)mainSet).getOverlay();
+                mainSet = ((GrammaticalLabelSetComposite) mainSet).getOverlay();
             }
 
             // Iterate through the label set
@@ -120,32 +119,28 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                     continue;
                 }
 
-                for (Map.Entry<String,Object> entry : sectionMap.entrySet()) {
-                    if (!(entry.getValue() instanceof List))
-                     {
+                for (Map.Entry<String, Object> entry : sectionMap.entrySet()) {
+                    if (!(entry.getValue() instanceof List)) {
                         continue;  // Only care if there's an adjective
                     }
-                    for (Object o : (List<?>)entry.getValue()) {
+                    for (Object o : (List<?>) entry.getValue()) {
                         if (o instanceof NounRefTag) {
                             NounRefTag nrt = (NounRefTag) o;
                             String name = nrt.getName();
-                            if (inheritedNouns.contains(name))
-                             {
+                            if (inheritedNouns.contains(name)) {
                                 continue;  // We only case about actual values.
                             }
                             NounForm form = nrt.getForm();
-                            if (form instanceof LegacyArticledNounForm)
-                             {
-                                form = ((LegacyArticledNounForm)form).getBaseNounForm();  // Unwrap the base form
+                            if (form instanceof LegacyArticledNounForm) {
+                                form = ((LegacyArticledNounForm) form).getBaseNounForm();  // Unwrap the base form
                             }
-                            if (!declension.getEntityForms().contains(form))
-                             {
+                            if (!declension.getEntityForms().contains(form)) {
                                 continue;  // Ignore autoderived forms
                             }
                             Noun noun = mainSet.getDictionary().getNoun(name, false);
                             if (!noun.getAllDefinedValues().keySet().contains(form)) {
                                 errMsgs.add(language.getLocaleString() + ":" + section + "." + entry.getKey() + ":" + ls.getLabelSectionToFilename().get(section)
-                                    + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name );
+                                        + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name);
                             }
                         }
                     }
@@ -214,7 +209,8 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         try {
             set.getParams("notfound");
             fail();
-        } catch (SettingsSectionNotFoundException x) {}
+        } catch (SettingsSectionNotFoundException x) {
+        }
         Assert.assertNotEquals(-1, set.getLastModified());
     }
 
@@ -266,12 +262,12 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         try {
             Renameable pig = makeCustomRenameable("Pig", LanguageStartsWith.CONSONANT, "Pig", "Pigs");
             Renameable emu = makeCustomRenameable("Emu", LanguageStartsWith.VOWEL, "Emu", "Emus");
-        	MockRenamingProvider newProvider = new MockRenamingProvider(pig.getStandardNoun(ENGLISH), emu.getStandardNoun(ENGLISH));
-        	RenamingProviderFactory.get().setProvider(newProvider);
-	        assertEquals("A Pig", set.getString("Global", new Renameable[] {pig}, "aentity"));
-	        assertEquals("An Emu", set.getString("Global", new Renameable[] {emu}, "aentity"));
+            MockRenamingProvider newProvider = new MockRenamingProvider(pig.getStandardNoun(ENGLISH), emu.getStandardNoun(ENGLISH));
+            RenamingProviderFactory.get().setProvider(newProvider);
+            assertEquals("A Pig", set.getString("Global", new Renameable[]{pig}, "aentity"));
+            assertEquals("An Emu", set.getString("Global", new Renameable[]{emu}, "aentity"));
         } finally {
-        	RenamingProviderFactory.get().setProvider(curProvider);
+            RenamingProviderFactory.get().setProvider(curProvider);
         }
     }
 
@@ -279,9 +275,9 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
      * Smoke test of the ImmutableMapUnion
      */
     public void testImmutableMapUnion() {
-        Map<String,String> base = ImmutableMap.of("a", "1", "b", "2");
-        Map<String,String> overlay = ImmutableMap.of("b", "3", "c", "4");
-        Map<String,String> union = new ImmutableMapUnion<>(overlay, base);
+        Map<String, String> base = ImmutableMap.of("a", "1", "b", "2");
+        Map<String, String> overlay = ImmutableMap.of("b", "3", "c", "4");
+        Map<String, String> union = new ImmutableMapUnion<>(overlay, base);
         assertEquals("1", union.get("a"));
         assertEquals("3", union.get("b"));
         assertEquals("4", union.get("c"));
@@ -304,7 +300,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
      * with ImmutableSortableMaps to save on memory
      */
     public void testMultipleOverrides() {
-    	// Go from samples to labels to override.  Make sure it loads correctly
+        // Go from samples to labels to override.  Make sure it loads correctly
         URL base = GrammaticalLabelFileTest.class.getResource("/sample/labels.xml");
         GrammaticalLabelSetLoader baseLoader = new GrammaticalLabelSetLoader(base, "sample", null);
         URL labels = GrammaticalLabelFileTest.class.getResource("/labels/labels.xml");
@@ -312,13 +308,13 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         URL overrides = GrammaticalLabelFileTest.class.getResource("/override/override.xml");
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(overrides, "test2a", labelsLoader);
 
-        
+
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
         HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage(Locale.GERMAN);
 
         GrammaticalLabelSet set = loader.getSet(ENGLISH);
-	assertEquals("New", set.getString("Icons", "new"));
-	set = loader.getSet(GERMAN);
-	assertEquals("Neu", set.getString("Icons", "new"));
+        assertEquals("New", set.getString("Icons", "new"));
+        set = loader.getSet(GERMAN);
+        assertEquals("Neu", set.getString("Icons", "new"));
     }
 }

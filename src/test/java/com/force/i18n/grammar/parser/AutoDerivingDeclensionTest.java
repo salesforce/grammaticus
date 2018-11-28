@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -43,36 +43,35 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
     }
 
     private final static String DA_THE = "    <adjective name=\"The\">\r\n" +
-    		"        <value gender=\"e\" plural=\"n\">Den</value>\r\n" +
-    		"        <value gender=\"n\" plural=\"n\">Det</value>\r\n" +
-    		"        <value gender=\"e\" plural=\"y\">De</value>\r\n" +
-    		"        <value gender=\"n\" plural=\"y\">De</value>\r\n" +
-    		"	</adjective> ";
-    private final static String DA_OLDER= "	<adjective name=\"Elder\">" +  // Use elder instead of older because adding a form to an adjective after closing only affects one form
-    		"        <value gender=\"n\" plural=\"n\">Ældre</value>	" +
-    		"    </adjective>";
+            "        <value gender=\"e\" plural=\"n\">Den</value>\r\n" +
+            "        <value gender=\"n\" plural=\"n\">Det</value>\r\n" +
+            "        <value gender=\"e\" plural=\"y\">De</value>\r\n" +
+            "        <value gender=\"n\" plural=\"y\">De</value>\r\n" +
+            "	</adjective> ";
+    private final static String DA_OLDER = "	<adjective name=\"Elder\">" +  // Use elder instead of older because adding a form to an adjective after closing only affects one form
+            "        <value gender=\"n\" plural=\"n\">Ældre</value>	" +
+            "    </adjective>";
     private final static String DA_ACCOUNT = "    <noun name=\"Account\" entity=\"Account\" type=\"entity\" alias=\"Accounts\" gender=\"e\" startsWith=\"v\">" +
-    		"       <value plural=\"n\">Konto</value>" +
-    		"         <value plural=\"y\">Kontoer</value>" +
-    		"        <value plural=\"n\" article=\"a\">En konto</value>" +
-    		"        <value plural=\"y\" article=\"a\">Konti</value>" +
-    		"        <value plural=\"n\" article=\"the\">Kontoen</value>" +
-    		"        <value plural=\"y\" article=\"the\">Kontiene</value>" +
-    		"        </noun>";
+            "       <value plural=\"n\">Konto</value>" +
+            "         <value plural=\"y\">Kontoer</value>" +
+            "        <value plural=\"n\" article=\"a\">En konto</value>" +
+            "        <value plural=\"y\" article=\"a\">Konti</value>" +
+            "        <value plural=\"n\" article=\"the\">Kontoen</value>" +
+            "        <value plural=\"y\" article=\"the\">Kontiene</value>" +
+            "        </noun>";
 
     /**
      * Test of how we handle general defaulting (adjectives)
      */
     public void testDefaultMissingForms() throws Exception {
-    	final HumanLanguage DANISH = LanguageProviderFactory.get().getLanguage("da");
+        final HumanLanguage DANISH = LanguageProviderFactory.get().getLanguage("da");
         // Make sure "older" (which only has a singular form defined) defaults correctly
-        assertValue(DANISH, "<elder/> <account/>", DA_THE+DA_ACCOUNT+DA_OLDER, "ældre konto");
-        assertValue(DANISH, "<the/> <elder/> <account/>", DA_THE+DA_ACCOUNT+DA_OLDER, "den ældre konto");
-        assertValue(DANISH, "<elder/> <accounts/>", DA_THE+DA_ACCOUNT+DA_OLDER, "ældre kontoer");
-        assertValue(DANISH, "<Elder/> <Accounts article=\"the\"/>", DA_THE+DA_ACCOUNT+DA_OLDER, "Ældre Kontiene");
-        assertValue(DANISH, "<Elder/> <Accounts article=\"a\"/>", DA_THE+DA_ACCOUNT+DA_OLDER, "Ældre Konti");
+        assertValue(DANISH, "<elder/> <account/>", DA_THE + DA_ACCOUNT + DA_OLDER, "ældre konto");
+        assertValue(DANISH, "<the/> <elder/> <account/>", DA_THE + DA_ACCOUNT + DA_OLDER, "den ældre konto");
+        assertValue(DANISH, "<elder/> <accounts/>", DA_THE + DA_ACCOUNT + DA_OLDER, "ældre kontoer");
+        assertValue(DANISH, "<Elder/> <Accounts article=\"the\"/>", DA_THE + DA_ACCOUNT + DA_OLDER, "Ældre Kontiene");
+        assertValue(DANISH, "<Elder/> <Accounts article=\"a\"/>", DA_THE + DA_ACCOUNT + DA_OLDER, "Ældre Konti");
     }
-
 
 
     private final static String BG_THIN = "<adjective name=\"Thin\">\r\n" +
@@ -90,80 +89,80 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
             "<value plural=\"y\">\u041f\u043e\u043b\u0435\u0437\u043d\u0438</value>\r\n" +
             "</adjective>";
 
-    private final static String BG_GRANDFATHER= "<noun name=\"Grandfather\" entity=\"Grandfather\" alias=\"Grandfathers\" gender=\"m\">\r\n" +
+    private final static String BG_GRANDFATHER = "<noun name=\"Grandfather\" entity=\"Grandfather\" alias=\"Grandfathers\" gender=\"m\">\r\n" +
             "  <value plural=\"n\">\u0434\u044f\u0434\u043e</value>\r\n" +
             "  <value plural=\"y\">\u0434\u044f\u0434\u043e</value>\r\n" +
             "</noun>";
-    private final static String BG_MAN= "<noun name=\"Man\" entity=\"Man\" alias=\"Men\" gender=\"m\">\r\n" +
-        "  <value plural=\"n\">\u043c\u044a\u0436</value>\r\n" +
-        "  <value plural=\"y\">\u043c\u044a\u0436\u0435</value>\r\n" +
-        "</noun>";
-    private final static String BG_HERO= "<noun name=\"Hero\" entity=\"Hero\" alias=\"Heroes\" gender=\"m\">\r\n" +
-        "  <value plural=\"n\">\u0433\u0435\u0440\u043e\u0439</value>\r\n" +
-        "  <value plural=\"y\">\u0433\u0435\u0440\u043e\u0438</value>\r\n" +
-        "</noun>";
-    private final static String BG_TABLE= "<noun name=\"Table\" entity=\"Table\" alias=\"Tables\" gender=\"f\">\r\n" +
-        "  <value plural=\"n\">\u043c\u0430\u0441\u0430</value>\r\n" +
-        "  <value plural=\"y\">\u043c\u0430\u0441\u0430\u044f</value>\r\n" +
-        "</noun>";
-    private final static String BG_WHISKY= "<noun name=\"Whisky\" entity=\"Whisky\" alias=\"Whiskys\" gender=\"n\">\r\n" +
-        "  <value plural=\"n\">\u0443\u0438\u0441\u043a\u0438</value>\r\n" +
-        "  <value plural=\"y\">\u0443\u0438\u0441\u043a\u0438\u0442\u0430</value>\r\n" +
-        "</noun>";
+    private final static String BG_MAN = "<noun name=\"Man\" entity=\"Man\" alias=\"Men\" gender=\"m\">\r\n" +
+            "  <value plural=\"n\">\u043c\u044a\u0436</value>\r\n" +
+            "  <value plural=\"y\">\u043c\u044a\u0436\u0435</value>\r\n" +
+            "</noun>";
+    private final static String BG_HERO = "<noun name=\"Hero\" entity=\"Hero\" alias=\"Heroes\" gender=\"m\">\r\n" +
+            "  <value plural=\"n\">\u0433\u0435\u0440\u043e\u0439</value>\r\n" +
+            "  <value plural=\"y\">\u0433\u0435\u0440\u043e\u0438</value>\r\n" +
+            "</noun>";
+    private final static String BG_TABLE = "<noun name=\"Table\" entity=\"Table\" alias=\"Tables\" gender=\"f\">\r\n" +
+            "  <value plural=\"n\">\u043c\u0430\u0441\u0430</value>\r\n" +
+            "  <value plural=\"y\">\u043c\u0430\u0441\u0430\u044f</value>\r\n" +
+            "</noun>";
+    private final static String BG_WHISKY = "<noun name=\"Whisky\" entity=\"Whisky\" alias=\"Whiskys\" gender=\"n\">\r\n" +
+            "  <value plural=\"n\">\u0443\u0438\u0441\u043a\u0438</value>\r\n" +
+            "  <value plural=\"y\">\u0443\u0438\u0441\u043a\u0438\u0442\u0430</value>\r\n" +
+            "</noun>";
 
     //     חשבונות   חשבון
     private final static String IW_MAN =
-        "<noun name=\"Man\" entity=\"Man\" type=\"entity\" alias=\"Men\" gender=\"m\">\r\n"
-            + "  <value plural=\"n\">\u05d7\u05e9\u05d1\u05d5\u05df</value>\r\n"
-            + "  <value plural=\"y\">\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea</value>\r\n"
-            + "</noun>\r\n";
+            "<noun name=\"Man\" entity=\"Man\" type=\"entity\" alias=\"Men\" gender=\"m\">\r\n"
+                    + "  <value plural=\"n\">\u05d7\u05e9\u05d1\u05d5\u05df</value>\r\n"
+                    + "  <value plural=\"y\">\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea</value>\r\n"
+                    + "</noun>\r\n";
 
     private final static String IW_MAN_TYPE_FIELD =
-        "<noun name=\"ManType\" entity=\"Man\" type=\"field\" alias=\"ManTypes\" gender=\"m\">\r\n"
-            + "  <value plural=\"n\">\u05d7\u05e9\u05d1\u05d5\u05df</value>\r\n"
-            + "  <value plural=\"y\">\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea</value>\r\n"
-            + "</noun>\r\n";
+            "<noun name=\"ManType\" entity=\"Man\" type=\"field\" alias=\"ManTypes\" gender=\"m\">\r\n"
+                    + "  <value plural=\"n\">\u05d7\u05e9\u05d1\u05d5\u05df</value>\r\n"
+                    + "  <value plural=\"y\">\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea</value>\r\n"
+                    + "</noun>\r\n";
 
     private final static String IW_TABLE =
-        "<noun name=\"Table\" entity=\"Table\" type=\"entity\" alias=\"Tables\" gender=\"m\">\r\n"
-            + "<value plural=\"n\">מבצע קידום</value>\r\n"
-            + "<value plural=\"y\">מבצעי קידום</value>\r\n"
-            + "<value plural=\"n\" article=\"the\">מבצע הקידום</value>\r\n"
-            + "<value plural=\"y\" article=\"the\">מבצעי הקידום</value>\r\n"
-            + "</noun>";
+            "<noun name=\"Table\" entity=\"Table\" type=\"entity\" alias=\"Tables\" gender=\"m\">\r\n"
+                    + "<value plural=\"n\">מבצע קידום</value>\r\n"
+                    + "<value plural=\"y\">מבצעי קידום</value>\r\n"
+                    + "<value plural=\"n\" article=\"the\">מבצע הקידום</value>\r\n"
+                    + "<value plural=\"y\" article=\"the\">מבצעי הקידום</value>\r\n"
+                    + "</noun>";
 
     private final static String IW_LOTSA = "<adjective name=\"Lotsa\">\r\n" +  // Used to be "more" but that's defined in sfdcjectives.xml now ...
-        "    <value gender=\"m\" plural=\"n\">\u05e0\u05d5\u05e1\u05e3</value>\r\n" +  // נוסף
-        "    <value gender=\"f\" plural=\"n\">\u05e0\u05d5\u05e1\u05e4\u05ea</value>\r\n" +  // נוספת
-        "    <value gender=\"m\" plural=\"y\">\u05e0\u05d5\u05e1\u05e4\u05d9\u05dd</value>\r\n" +  // נוספים
-        "    <value gender=\"f\" plural=\"y\">\u05e0\u05d5\u05e1\u05e4\u05d5\u05ea</value>\r\n" +  // נוספות
-        "</adjective>";
+            "    <value gender=\"m\" plural=\"n\">\u05e0\u05d5\u05e1\u05e3</value>\r\n" +  // נוסף
+            "    <value gender=\"f\" plural=\"n\">\u05e0\u05d5\u05e1\u05e4\u05ea</value>\r\n" +  // נוספת
+            "    <value gender=\"m\" plural=\"y\">\u05e0\u05d5\u05e1\u05e4\u05d9\u05dd</value>\r\n" +  // נוספים
+            "    <value gender=\"f\" plural=\"y\">\u05e0\u05d5\u05e1\u05e4\u05d5\u05ea</value>\r\n" +  // נוספות
+            "</adjective>";
 
 
     // The highly chair (with the translators diacritics...
-    private final static String AR_CHAIR =     "<noun name=\"Chair\" entity=\"Chair\" type=\"entity\" alias=\"Chairs\" gender=\"m\">\r\n"+
-        "<value plural=\"n\">\u0643\u0631\u0633\u064a</value>\r\n"+  // كرسي
-        "<value plural=\"n\" poss=\"f\">\u0643\u0631\u0633\u064a\u0651\u0650\u064a</value>\r\n"+  // كرسيِّي
-        "<value plural=\"n\" poss=\"s\">\u0643\u0631\u0633\u064a\u0651\u064f\u0643\u064e</value>\r\n"+  // كرسيُّكَ
-        "<value plural=\"y\">\u0643\u0631\u0627\u0633\u064a</value>\r\n"+   // كراسي
-        "<value plural=\"y\" poss=\"f\" >\u0643\u0631\u0627\u0633\u064a\u0651\u064e</value>\r\n"+  // كراسيَّ
-        "<value plural=\"y\" poss=\"s\">\u0643\u0631\u0627\u0633\u0650\u064a\u0643\u064e</value>\r\n"+  // كراسِيكَ
-        "<value plural=\"n\" case=\"a\">\u0643\u0631\u0633\u064a</value>\r\n"+ // كرسي
-        "<value plural=\"n\" case=\"a\" poss=\"f\">\u0643\u0631\u0633\u064a\u0651\u0650\u064a</value>\r\n"+  // كرسيِّي
-        "<value plural=\"n\" case=\"a\" poss=\"s\">\u0643\u0631\u0633\u064a\u0651\u064f\u0643\u064e</value>\r\n"+  // كرسيُّكَ
-        "<value plural=\"y\" case=\"a\">\u0643\u0631\u0627\u0633\u064a</value>\r\n"+  // كراسي
-        "<value plural=\"y\" case=\"a\" poss=\"f\" >\u0643\u0631\u0627\u0633\u064a\u0651\u064e</value>\r\n"+  // كراسيَّ
-        "<value plural=\"y\" case=\"a\" poss=\"s\">\u0643\u0631\u0627\u0633\u0650\u064a\u0643\u064e</value>\r\n"+  // كراسِيكَ
-    "</noun>";
+    private final static String AR_CHAIR = "<noun name=\"Chair\" entity=\"Chair\" type=\"entity\" alias=\"Chairs\" gender=\"m\">\r\n" +
+            "<value plural=\"n\">\u0643\u0631\u0633\u064a</value>\r\n" +  // كرسي
+            "<value plural=\"n\" poss=\"f\">\u0643\u0631\u0633\u064a\u0651\u0650\u064a</value>\r\n" +  // كرسيِّي
+            "<value plural=\"n\" poss=\"s\">\u0643\u0631\u0633\u064a\u0651\u064f\u0643\u064e</value>\r\n" +  // كرسيُّكَ
+            "<value plural=\"y\">\u0643\u0631\u0627\u0633\u064a</value>\r\n" +   // كراسي
+            "<value plural=\"y\" poss=\"f\" >\u0643\u0631\u0627\u0633\u064a\u0651\u064e</value>\r\n" +  // كراسيَّ
+            "<value plural=\"y\" poss=\"s\">\u0643\u0631\u0627\u0633\u0650\u064a\u0643\u064e</value>\r\n" +  // كراسِيكَ
+            "<value plural=\"n\" case=\"a\">\u0643\u0631\u0633\u064a</value>\r\n" + // كرسي
+            "<value plural=\"n\" case=\"a\" poss=\"f\">\u0643\u0631\u0633\u064a\u0651\u0650\u064a</value>\r\n" +  // كرسيِّي
+            "<value plural=\"n\" case=\"a\" poss=\"s\">\u0643\u0631\u0633\u064a\u0651\u064f\u0643\u064e</value>\r\n" +  // كرسيُّكَ
+            "<value plural=\"y\" case=\"a\">\u0643\u0631\u0627\u0633\u064a</value>\r\n" +  // كراسي
+            "<value plural=\"y\" case=\"a\" poss=\"f\" >\u0643\u0631\u0627\u0633\u064a\u0651\u064e</value>\r\n" +  // كراسيَّ
+            "<value plural=\"y\" case=\"a\" poss=\"s\">\u0643\u0631\u0627\u0633\u0650\u064a\u0643\u064e</value>\r\n" +  // كراسِيكَ
+            "</noun>";
 
     private final static String AR_TABLE = "    <noun name=\"Table\" entity=\"Table\" type=\"entity\" alias=\"Tables\" gender=\"f\">\r\n" +
-        "    <value plural=\"n\">\u0637\u0627\u0648\u0644\u0629</value>\r\n" +  // طاولة
-        "    <value plural=\"n\" poss=\"f\">\u0637\u0627\u0648\u0644\u062a\u0650\u064a</value>\r\n" + // طاولتِي
-        "    <value plural=\"n\" poss=\"s\">\u0637\u0627\u0648\u0644\u062a\u064f\u0643\u064e</value>\r\n" +  // طاولتُكَ
-        "    <value plural=\"y\">\u0637\u0627\u0648\u0644\u0627\u062a</value>\r\n" +  // طاولات
-        "    <value plural=\"y\" poss=\"f\">???</value>\r\n" +  // TODO: Not back from translators
-        "    <value plural=\"y\" poss=\"s\">???</value>\r\n" +
-        "</noun>";
+            "    <value plural=\"n\">\u0637\u0627\u0648\u0644\u0629</value>\r\n" +  // طاولة
+            "    <value plural=\"n\" poss=\"f\">\u0637\u0627\u0648\u0644\u062a\u0650\u064a</value>\r\n" + // طاولتِي
+            "    <value plural=\"n\" poss=\"s\">\u0637\u0627\u0648\u0644\u062a\u064f\u0643\u064e</value>\r\n" +  // طاولتُكَ
+            "    <value plural=\"y\">\u0637\u0627\u0648\u0644\u0627\u062a</value>\r\n" +  // طاولات
+            "    <value plural=\"y\" poss=\"f\">???</value>\r\n" +  // TODO: Not back from translators
+            "    <value plural=\"y\" poss=\"s\">???</value>\r\n" +
+            "</noun>";
 
     /*
     private final static String AR_NEWOLD = "    <adjective name=\"Neu\">\r\n" +  // Use Neu instead of New to prevent clash with english adjectives
@@ -184,23 +183,23 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
 
     // This is the new that came from the translators...
     private final static String AR_NEW = "    <adjective name=\"Neu\">\r\n" +  // Use Neu instead of New to prevent clash with english adjectives
-    "    <value gender=\"m\" plural=\"n\">\u062c\u062f\u064a\u062f</value>\r\n" +  // جديد
-    "    <value gender=\"m\" plural=\"n\" poss=\"f\">\u0627\u0644\u062c\u062f\u064a\u062f</value>\r\n" +  // الجديد
-    "    <value gender=\"m\" plural=\"n\" poss=\"s\">\u0627\u0644\u062c\u062f\u064a\u062f</value> \r\n" +  // الجديد
-    "    <value gender=\"m\" plural=\"y\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
-    "    <value gender=\"m\" plural=\"y\" poss=\"f\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
-    "    <value gender=\"m\" plural=\"y\" poss=\"s\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
-    "    <value gender=\"f\" plural=\"n\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +   // جديدة
-    "    <value gender=\"f\" plural=\"n\" poss=\"f\">\u0627\u0644\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // الجديدة
-    "    <value gender=\"f\" plural=\"n\" poss=\"s\">\u0627\u0644\u062c\u062f\u064a\u062f\u0629</value> \r\n" + // الجديدة
-    "    <value gender=\"f\" plural=\"y\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
-    "    <value gender=\"f\" plural=\"y\" poss=\"f\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" + // جديدة
-    "    <value gender=\"f\" plural=\"y\" poss=\"s\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
-    "</adjective>";
+            "    <value gender=\"m\" plural=\"n\">\u062c\u062f\u064a\u062f</value>\r\n" +  // جديد
+            "    <value gender=\"m\" plural=\"n\" poss=\"f\">\u0627\u0644\u062c\u062f\u064a\u062f</value>\r\n" +  // الجديد
+            "    <value gender=\"m\" plural=\"n\" poss=\"s\">\u0627\u0644\u062c\u062f\u064a\u062f</value> \r\n" +  // الجديد
+            "    <value gender=\"m\" plural=\"y\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
+            "    <value gender=\"m\" plural=\"y\" poss=\"f\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
+            "    <value gender=\"m\" plural=\"y\" poss=\"s\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
+            "    <value gender=\"f\" plural=\"n\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +   // جديدة
+            "    <value gender=\"f\" plural=\"n\" poss=\"f\">\u0627\u0644\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // الجديدة
+            "    <value gender=\"f\" plural=\"n\" poss=\"s\">\u0627\u0644\u062c\u062f\u064a\u062f\u0629</value> \r\n" + // الجديدة
+            "    <value gender=\"f\" plural=\"y\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
+            "    <value gender=\"f\" plural=\"y\" poss=\"f\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" + // جديدة
+            "    <value gender=\"f\" plural=\"y\" poss=\"s\">\u062c\u062f\u064a\u062f\u0629</value>\r\n" +  // جديدة
+            "</adjective>";
 
 
     public void testBulgarianDerivations() throws Exception {
-    	final HumanLanguage BULGARIAN = LanguageProviderFactory.get().getLanguage("bg");
+        final HumanLanguage BULGARIAN = LanguageProviderFactory.get().getLanguage("bg");
         assertValue(BULGARIAN, "<Man article=\"the\"/>", BG_MAN, "\u043c\u044a\u0436\u044a\u0442");
         assertValue(BULGARIAN, "<Man article=\"the\" case=\"o\"/>", BG_MAN, "\u043c\u044a\u0436\u0430");
         assertValue(BULGARIAN, "<Men article=\"the\"/>", BG_MAN, "\u043c\u044a\u0436\u0435\u0442\u0435");
@@ -230,27 +229,24 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
     private final static Set<String> DIFFERENTLY_DECLINED_ADJECTIVES = ImmutableSet.of("recently", "no", "num", "each", "every", "that", "this", "these", "default", "more", "any", "multiple");
 
     public void testBulgarianAdjectives() throws Exception {
-    	final HumanLanguage BULGARIAN = LanguageProviderFactory.get().getLanguage("bg");
+        final HumanLanguage BULGARIAN = LanguageProviderFactory.get().getLanguage("bg");
         LanguageDictionary dictionary = loadDictionary(BULGARIAN);
         int count = 0;
         StringBuilder sb = new StringBuilder();
         for (String adjName : dictionary.getAllTermNames(TermType.Adjective)) {
             Adjective adj = dictionary.getAdjective(adjName);
             assertNotNull(adj);
-            if (adj.isCopiedFromDefault())
-             {
+            if (adj.isCopiedFromDefault()) {
                 continue;  // Ignore if we're copied from default
             }
-            if (DIFFERENTLY_DECLINED_ADJECTIVES.contains(adjName))
-             {
+            if (DIFFERENTLY_DECLINED_ADJECTIVES.contains(adjName)) {
                 continue;  // Ignore adverbs
             }
             String value = adj.getString(dictionary.getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.MASCULINE,
                     LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.DEFINITE, LanguagePossessive.NONE));
             if (value != null && !value.endsWith("\u0442")) {
                 int index = value.indexOf(' ');
-                if (index > 0 && value.charAt(index-1) == '\u0442')
-                 {
+                if (index > 0 && value.charAt(index - 1) == '\u0442') {
                     continue;  // The first word ends with T, which is ok
                 }
                 sb.append("Bulgarian Adjective " + adj.getName() + " has an incorrect value for the singular masculing definite.  Needs to end with \u0442\n");
@@ -261,7 +257,7 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
     }
 
     public void testHebrewDerivations() throws Exception {
-    	final HumanLanguage HEBREW = LanguageProviderFactory.get().getLanguage("iw");
+        final HumanLanguage HEBREW = LanguageProviderFactory.get().getLanguage("iw");
         // Test autoderiving for entity nouns
         assertValue(HEBREW, "<Man/>", IW_MAN, "\u05d7\u05e9\u05d1\u05d5\u05df");  // חשבון
         assertValue(HEBREW, "<Men/>", IW_MAN, "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea");  // חשבונות
@@ -282,7 +278,7 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
         assertValue(HEBREW, "<ManTypes article=\"the\"/>", IW_MAN_TYPE_FIELD, "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea");  // חשבונות
 
         // Make sure the adjective auto derive the adjective
-        assertValue(HEBREW, "<Man/> <lotsa/>", IW_MAN + IW_LOTSA,  "\u05d7\u05e9\u05d1\u05d5\u05df \u05e0\u05d5\u05e1\u05e3");  //   חשבון נוסף
+        assertValue(HEBREW, "<Man/> <lotsa/>", IW_MAN + IW_LOTSA, "\u05d7\u05e9\u05d1\u05d5\u05df \u05e0\u05d5\u05e1\u05e3");  //   חשבון נוסף
         assertValue(HEBREW, "<Men/> <lotsa/>", IW_MAN + IW_LOTSA, "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea \u05e0\u05d5\u05e1\u05e4\u05d9\u05dd");  // חשבונות נוספים
         assertValue(HEBREW, "<Man article=\"the\"/> <lotsa/>", IW_MAN + IW_LOTSA, "\u05d4\u05d7\u05e9\u05d1\u05d5\u05df \u05d4\u05e0\u05d5\u05e1\u05e3");  // החשבון הנוסף
         assertValue(HEBREW, "<Men article=\"the\"/> <lotsa/>", IW_MAN + IW_LOTSA, "\u05d4\u05d7\u05e9\u05d1\u05d5\u05e0\u05d5\u05ea \u05d4\u05e0\u05d5\u05e1\u05e4\u05d9\u05dd");  // חשבונות הנוספים
@@ -291,7 +287,7 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
     }
 
     public void testArabicDerivations() throws Exception {
-    	final HumanLanguage ARABIC = LanguageProviderFactory.get().getLanguage("ar");
+        final HumanLanguage ARABIC = LanguageProviderFactory.get().getLanguage("ar");
         // Test autoderiving for entity nouns.  These values were provided by the translators
         // TODO: Waiting on next line for resolution to the final alif in the accusative question.
         assertValue(ARABIC, "<Chair case=\"a\"/>", AR_CHAIR, "\u0643\u0631\u0633\u064a");  // كرسي

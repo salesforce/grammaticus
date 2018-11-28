@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,29 +21,29 @@ import com.force.i18n.grammar.Noun.NounType;
  * Represents the Declensions (or Noun Forms and their uses) associated with
  * a language.  This also contains information about the specifics of
  * noun usage in a language, such as whether "starts with" is imports.
- *
+ * <p>
  * Each language (in general) will get its own declension.These classes should be treated like enums.
  *
  * @author stamm
  */
 public abstract class LanguageDeclension {
-	private final HumanLanguage language;
+    private final HumanLanguage language;
 
-	public LanguageDeclension(HumanLanguage language) {
-		this.language = language;
-	}
+    public LanguageDeclension(HumanLanguage language) {
+        this.language = language;
+    }
 
     /**
      * @return the language of this declension
      */
     public final HumanLanguage getLanguage() {
-    	return this.language;
+        return this.language;
     }
 
     /**
      * @return all the forms that are associated with nouns in a list
      */
-    public abstract List< ? extends NounForm> getAllNounForms();
+    public abstract List<? extends NounForm> getAllNounForms();
 
     /**
      * For entities, we need with-article forms, but validation method
@@ -67,9 +67,11 @@ public abstract class LanguageDeclension {
      */
     public abstract List<? extends AdjectiveForm> getAdjectiveForms();
 
-   /**a
-    * @return all of the various forms of articles available in the dictionary
-    */
+    /**
+     * a
+     *
+     * @return all of the various forms of articles available in the dictionary
+     */
     public List<? extends ArticleForm> getArticleForms() {
         throw new UnsupportedOperationException("You can only ask for article forms of a language with articles");
     }
@@ -83,7 +85,7 @@ public abstract class LanguageDeclension {
     /**
      * Accessor for creating custom nouns simply based on all of the forms.  Should be used by the "renaming provider"
      */
-    public Noun createNoun(String name, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, Map<? extends NounForm,String> forms) {
+    public Noun createNoun(String name, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, Map<? extends NounForm, String> forms) {
         Noun noun = createNoun(name, null, type, entityName, startsWith, gender, null, true, false);
         if (forms != null) {
             for (Map.Entry<? extends NounForm, String> entry : forms.entrySet()) {
@@ -95,27 +97,28 @@ public abstract class LanguageDeclension {
 
     /**
      * Helper method for creating a noun from the database
-     * @param name the name of the noun
-     * @param type the noun type
+     *
+     * @param name       the name of the noun
+     * @param type       the noun type
      * @param entityName the name of the standard entity this noun is associated with, or null if it's custom or irrelevant
-     * @param rs a cursor against the label_data or custom_entity_translation tables
+     * @param rs         a cursor against the label_data or custom_entity_translation tables
      */
     public Noun createNoun(String name, NounType type, String entityName, ResultSet rs) throws SQLException {
         String starts = rs.getString("STARTS_WITH");
         String gen = rs.getString("GENDER");
-        return createNoun(name, type, entityName, LanguageStartsWith.fromDbValue(starts), LanguageGender.fromDbValue(gen), Collections.<NounForm,String>emptyMap());
+        return createNoun(name, type, entityName, LanguageStartsWith.fromDbValue(starts), LanguageGender.fromDbValue(gen), Collections.<NounForm, String>emptyMap());
     }
 
     /**
-     * @param name TODO
+     * @param name       TODO
      * @param startsWith TODO
-     * @param position TODO
+     * @param position   TODO
      * @return a language specific implementation for modifiers/adjectives in this language
      */
     protected abstract Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position);
 
     /**
-     * @param name TODO
+     * @param name        TODO
      * @param articleType the type of article
      * @return a language specific implementation for modifiers/adjectives in this language
      */
@@ -144,8 +147,8 @@ public abstract class LanguageDeclension {
 
     /**
      * @return true if adjectives are dependent on whether the noun starts with a vowel. If false, custom objects do not
-     *         need to collect the startsWith information on their names, since we only use their names with simple
-     *         adjectives and we do not compose sentences with them.
+     * need to collect the startsWith information on their names, since we only use their names with simple
+     * adjectives and we do not compose sentences with them.
      */
     public boolean hasStartsWithInAdjective() {
         return hasStartsWith(); // Default to hasStartsWith
@@ -157,6 +160,7 @@ public abstract class LanguageDeclension {
     /**
      * Certain languages have strict rules for determining the starts with of an adjective, such as greek.
      * If this is enabled, the display for "hasStartsWith" in the UI will be suppressed.
+     *
      * @return whether startswith is autoderivable from a given form.
      */
     public boolean hasAutoDerivedStartsWith() {
@@ -177,6 +181,7 @@ public abstract class LanguageDeclension {
      * convenient method to tell that the language has possessive form.
      * In English, it is false. Subclass must override this method to return
      * the correct value.
+     *
      * @return true if the language has concept of possessive (first/second/third person possessive)
      */
     public boolean hasPossessive() {
@@ -327,6 +332,7 @@ public abstract class LanguageDeclension {
     /**
      * Label file processing should change so that any modifier on a noun should move
      * from the noun to the first modifier, if one exists.  For bulgarian.
+     *
      * @return whether this language needs special processing of modifiers in noun phrases
      */
     public boolean moveNounInflectionToFirstModifier() {
@@ -336,6 +342,7 @@ public abstract class LanguageDeclension {
     /**
      * This method is used to determine whether to display a "warning" in rename tabs about there being gramatical issues
      * around renaming gender
+     *
      * @return whether verbs are inflected differently based on the gender of the subject
      */
     public boolean hasSubjectGenderInVerbConjugation() {
@@ -364,7 +371,7 @@ public abstract class LanguageDeclension {
     /**
      * For languages where the noun has a different form based on the article (Nordic), should the
      * article="the" on the noun be inferred from the existence of the &lt;The&gt; particle?
-     *
+     * <p>
      * NOTE: THIS ONLY WORKS FOR THE DEFINITE ARTICLE
      */
     public boolean shouldInferNounDefArticleFromParticle() {
@@ -381,11 +388,11 @@ public abstract class LanguageDeclension {
 
         // RECURSION: Try to use the "Legacy" article support (i.e. there are articles, but no support for them.
         if (baseForm == null && !hasArticleInNounForm() && article != getDefaultArticle()) {
-             baseForm = getApproximateNounForm(number, _case, possessive, getDefaultArticle());
-             if (baseForm != null) {
-                 // TODO: the declension having legacy articles should be explicit.  Using hasArticle()'s weird
-                 return hasArticle() ? new LegacyArticledNounForm(baseForm, article) : baseForm;
-             }
+            baseForm = getApproximateNounForm(number, _case, possessive, getDefaultArticle());
+            if (baseForm != null) {
+                // TODO: the declension having legacy articles should be explicit.  Using hasArticle()'s weird
+                return hasArticle() ? new LegacyArticledNounForm(baseForm, article) : baseForm;
+            }
         }
 
         LanguagePossessive possesiveToTry = hasPossessive() ? possessive : getDefaultPossessive();
@@ -466,8 +473,7 @@ public abstract class LanguageDeclension {
      */
     public AdjectiveForm getApproximateAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number, LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
         AdjectiveForm baseForm = getAdjectiveForm(startsWith, gender, number, _case, article, possessive);
-        if (baseForm != null)
-         {
+        if (baseForm != null) {
             return baseForm;  // Assume success
         }
 
@@ -572,7 +578,7 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * @param s the string to lowercase
+     * @param s    the string to lowercase
      * @param form the form of the noun to lowercase
      * @return the lowercase form of a noun that should be used if a non-capitalized version
      * of the noun was asked for in a Label Ref.  This is used in german to deal with capitalization
@@ -582,23 +588,49 @@ public abstract class LanguageDeclension {
         return hasCapitalization() ? getLanguage().toFoldedCase(s) : s;
     }
 
-    @Override public String toString() { return getClass().getSimpleName(); }
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 
     /**
      * SIMPLE FORMS:
-     *
+     * <p>
      * Often times, complex declension have simple forms of one thing or another.
      * This is the "simple" form types for which there is only one possible declension
      */
     public static enum SimpleModifierForm implements AdjectiveForm, ArticleForm {
-        SINGULAR
-        ;
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguageNumber getNumber() {return LanguageNumber.SINGULAR;}
-        @Override public LanguageGender getGender() {return LanguageGender.NEUTER;}
-        @Override public LanguageStartsWith getStartsWith() {return LanguageStartsWith.CONSONANT;}
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+        SINGULAR;
+
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return LanguageNumber.SINGULAR;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return LanguageGender.NEUTER;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return LanguageStartsWith.CONSONANT;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
     }
 
     /**
@@ -606,10 +638,10 @@ public abstract class LanguageDeclension {
      */
     public static class SimpleAdjective extends Adjective {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(SimpleAdjective.class.getName());
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private static final Logger logger = Logger.getLogger(SimpleAdjective.class.getName());
         private String value;
 
 
@@ -618,7 +650,7 @@ public abstract class LanguageDeclension {
         }
 
         @Override
-        public Map< ? extends AdjectiveForm, String> getAllValues() {
+        public Map<? extends AdjectiveForm, String> getAllValues() {
             return Collections.singletonMap(SimpleModifierForm.SINGULAR, value);
         }
 
@@ -650,14 +682,16 @@ public abstract class LanguageDeclension {
      */
     public static class SimpleAdjectiveWithStartsWith extends SimpleAdjective {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageStartsWith startsWith;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageStartsWith startsWith;
+
         public SimpleAdjectiveWithStartsWith(LanguageDeclension declension, String name, LanguageStartsWith startsWith) {
             super(declension, name);
             this.startsWith = startsWith;
         }
+
         @Override
         public LanguageStartsWith getStartsWith() {
             return startsWith;
@@ -666,6 +700,7 @@ public abstract class LanguageDeclension {
 
     /**
      * Simple noun form with singular and plurals
+     *
      * @author stamm
      */
     public static enum PluralNounForm implements NounForm {
@@ -674,14 +709,31 @@ public abstract class LanguageDeclension {
         ;
 
         private final LanguageNumber number;
+
         private PluralNounForm(LanguageNumber number) {
             this.number = number;
         }
 
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-        @Override public LanguageNumber getNumber() {return this.number;}
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return LanguagePossessive.NONE;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue();
@@ -695,10 +747,10 @@ public abstract class LanguageDeclension {
      */
     public static class SimplePluralNoun extends Noun {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(SimplePluralNoun.class.getName());
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private static final Logger logger = Logger.getLogger(SimplePluralNoun.class.getName());
         private String singular;
         private String plural;
 
@@ -718,7 +770,7 @@ public abstract class LanguageDeclension {
 
         @Override
         public String getDefaultString(boolean isPlural) {
-            return isPlural ?  (plural != null ? plural : singular): singular;
+            return isPlural ? (plural != null ? plural : singular) : singular;
         }
 
         @Override
@@ -732,14 +784,12 @@ public abstract class LanguageDeclension {
             value = intern(value);
             if (form.getNumber().isPlural()) {
                 this.plural = value;
-                if (value != null && value.equals(this.singular))
-                 {
+                if (value != null && value.equals(this.singular)) {
                     this.singular = value; // Keep one reference for serialization
                 }
             } else {
                 this.singular = value;
-                if (value != null && value.equals(this.plural))
-                 {
+                if (value != null && value.equals(this.plural)) {
                     this.plural = value; // Keep one reference for serialization
                 }
             }
@@ -774,7 +824,7 @@ public abstract class LanguageDeclension {
      * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
      */
-    protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2) {
+    protected static <K extends Enum<K>, V> EnumMap<K, V> enumMapFilterNulls(K k1, V v1, K k2, V v2) {
         return enumMapFilterNulls(k1, v1, k2, v2, null, null, null, null);
     }
 
@@ -782,7 +832,7 @@ public abstract class LanguageDeclension {
      * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
      */
-    protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3) {
+    protected static <K extends Enum<K>, V> EnumMap<K, V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3) {
         return enumMapFilterNulls(k1, v1, k2, v2, k3, v3, null, null);
     }
 
@@ -790,23 +840,23 @@ public abstract class LanguageDeclension {
      * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
      */
-    protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
+    protected static <K extends Enum<K>, V> EnumMap<K, V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
         if (k1 == null) {
             throw new NullPointerException("You must pass in a valid enum for the first argument");
         }
         @SuppressWarnings("unchecked") // getClass returns <?> incorrectly
-        EnumMap<K,V> result = new EnumMap<>((Class<K>)k1.getClass());
+                EnumMap<K, V> result = new EnumMap<>((Class<K>) k1.getClass());
         if (v1 != null) {
-            result.put(k1,v1);
+            result.put(k1, v1);
         }
         if (k2 != null && v2 != null) {
-            result.put(k2,v2);
+            result.put(k2, v2);
         }
         if (k3 != null && v3 != null) {
-            result.put(k3,v3);
+            result.put(k3, v3);
         }
         if (k4 != null && v4 != null) {
-            result.put(k4,v4);
+            result.put(k4, v4);
         }
         return result;
     }

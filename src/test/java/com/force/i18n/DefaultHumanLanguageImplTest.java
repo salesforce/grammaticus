@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,7 +12,6 @@ import com.force.i18n.DefaultHumanLanguageImpl;
 import junit.framework.TestCase;
 
 /**
- *
  * General ftests for languages.
  *
  * @author cschell
@@ -28,29 +27,29 @@ public class DefaultHumanLanguageImplTest extends TestCase {
      * test that the correct fallback language, which is used for retrieving
      * labels when the language is not available, is returned. For example, if
      * the DefaultHumanLanguageImpl is French (Canadian), which  is a platform-only language,
-     *  the fallback language is French, since we don't have labels translated
-     *  into French (Canadian).
+     * the fallback language is French, since we don't have labels translated
+     * into French (Canadian).
      */
     public void testDefaultHumanLanguageImplFallbackLanguage() throws Exception {
         assertNull("Did not get the correct fallback language for English",
-            DefaultHumanLanguageImpl.ENGLISH.getFallbackLanguage());
+                DefaultHumanLanguageImpl.ENGLISH.getFallbackLanguage());
         assertNull("Did not get the correct translation fallback language for English",
                 DefaultHumanLanguageImpl.ENGLISH.getTranslationFallbackLanguage());
         assertSame("Did not get the correct fallback language for French (Canadian)", DefaultHumanLanguageImpl.FRENCH,
-            DefaultHumanLanguageImpl.FRENCH_CA.getFallbackLanguage());
+                DefaultHumanLanguageImpl.FRENCH_CA.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Spanish (Mexican)", DefaultHumanLanguageImpl.SPANISH,
-            DefaultHumanLanguageImpl.SPANISH_MX.getFallbackLanguage());
+                DefaultHumanLanguageImpl.SPANISH_MX.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Bulgarian", DefaultHumanLanguageImpl.ENGLISH,
-            DefaultHumanLanguageImpl.BULGARIAN.getFallbackLanguage());
+                DefaultHumanLanguageImpl.BULGARIAN.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Moldovan", DefaultHumanLanguageImpl.ROMANIAN,
-            DefaultHumanLanguageImpl.MOLDOVAN.getFallbackLanguage());
+                DefaultHumanLanguageImpl.MOLDOVAN.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Portuguese (European)", DefaultHumanLanguageImpl.PORTUGUESE_BR,
-            DefaultHumanLanguageImpl.PORTUGUESE_PT.getFallbackLanguage());
+                DefaultHumanLanguageImpl.PORTUGUESE_PT.getFallbackLanguage());
         assertSame("Did not get the correct translation fallback language for Portuguese (European)", DefaultHumanLanguageImpl.PORTUGUESE_BR,
                 DefaultHumanLanguageImpl.PORTUGUESE_PT.getTranslationFallbackLanguage());
         assertNull("Did not get the correct translation fallback language for Portuguese (Brazilian)",
                 DefaultHumanLanguageImpl.PORTUGUESE_BR.getTranslationFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Malaysian",  DefaultHumanLanguageImpl.INDONESIAN,
+        assertSame("Did not get the correct fallback language for Malaysian", DefaultHumanLanguageImpl.INDONESIAN,
                 DefaultHumanLanguageImpl.MALAY.getFallbackLanguage());  // Indonesian is a "register" of Malay
         assertNull("Did not get the correct fallback language for Malaysian",
                 DefaultHumanLanguageImpl.MALAY.getTranslationFallbackLanguage());  // Indonesian is a "register" of Malay
@@ -146,9 +145,7 @@ public class DefaultHumanLanguageImplTest extends TestCase {
                 DefaultHumanLanguageImpl.SPANISH_UY.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Spanish Venezuela", DefaultHumanLanguageImpl.SPANISH,
                 DefaultHumanLanguageImpl.SPANISH_VE.getFallbackLanguage());
-        
-        
-        
-        
+
+
     }
 }

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -25,15 +25,16 @@ import com.google.common.collect.Sets;
  * A GrammaticalLabel set that contains two different sets, one "main"
  * set that, and a fallback set that can be used to retrieve labels that
  * don't exist in the "main" set.
+ *
  * @author stamm
  */
 public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetImpl implements GrammaticalLabelSetComposite {
     /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;  // TODO: Prevent serialization
+     *
+     */
+    private static final long serialVersionUID = 1L;  // TODO: Prevent serialization
 
-	private static final Logger logger = Logger.getLogger(GrammaticalLabelSetFallbackImpl.class.getName());
+    private static final Logger logger = Logger.getLogger(GrammaticalLabelSetFallbackImpl.class.getName());
 
     private final GrammaticalLabelSet main;
     private final GrammaticalLabelSet fallback;
@@ -51,8 +52,10 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
         this.logFallback = I18nJavaUtil.isDebugging() && !sameLanguage && main.getDictionary().getLanguage().shouldLogFallbackStrings();
         // If we're EN_US to EN_US, don't allow other forms.  If we're EN_GB to EN_US (or if the delegates are) then allow it.
         boolean _allowOtherForms = !sameLanguage;
-        if (!_allowOtherForms && main instanceof GrammaticalLabelSetImpl) _allowOtherForms = ((GrammaticalLabelSetImpl)main).allowOtherGrammaticalForms();
-        if (!_allowOtherForms && fallback instanceof GrammaticalLabelSetImpl) _allowOtherForms = ((GrammaticalLabelSetImpl)fallback).allowOtherGrammaticalForms();
+        if (!_allowOtherForms && main instanceof GrammaticalLabelSetImpl)
+            _allowOtherForms = ((GrammaticalLabelSetImpl) main).allowOtherGrammaticalForms();
+        if (!_allowOtherForms && fallback instanceof GrammaticalLabelSetImpl)
+            _allowOtherForms = ((GrammaticalLabelSetImpl) fallback).allowOtherGrammaticalForms();
         allowOtherGrammaticalForms = _allowOtherForms;
         setLastModified(Math.max(main.getLastModified(), fallback.getLastModified()));
     }
@@ -63,7 +66,7 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
      * - LanguageName is the name of the language translated into the language, hence is *already* translated
      */
     static final Set<String> ALLOWED_NONTRANSLATED_SECTIONS =
-    		ImmutableSet.copyOf(Splitter.on(",").split(I18nJavaUtil.getProperty("nonTranslatedSections")));
+            ImmutableSet.copyOf(Splitter.on(",").split(I18nJavaUtil.getProperty("nonTranslatedSections")));
 
     @Override
     public GrammaticalLabelSet getOverlay() {
@@ -83,7 +86,7 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
     protected Object inner_get(String section, String param, boolean throwSettingsSectionNotFoundException) throws SettingsSectionNotFoundException {
         Object result = ask_inner_get(section, param, throwSettingsSectionNotFoundException, logFallback);
         while (result instanceof LabelReference) {
-            result = ask_inner_get(((LabelReference)result).getSection(), ((LabelReference)result).getKey(),
+            result = ask_inner_get(((LabelReference) result).getSection(), ((LabelReference) result).getKey(),
                     throwSettingsSectionNotFoundException, false); // If we fellback for an alias, don't keep doing it.
         }
         return result;
@@ -170,68 +173,82 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
     static class CompositePropertyFileDataImpl implements PropertyFileData {
         private final PropertyFileData overlay;
         private final PropertyFileData fallback;
+
         public CompositePropertyFileDataImpl(PropertyFileData overlay, PropertyFileData fallback) {
             this.overlay = overlay;
             this.fallback = fallback;
         }
+
         @Override
         public Map<String, Object> getSection(String sectionName) {
-            Map<String,Object> mainSection = overlay.getSection(sectionName);
-            Map<String,Object> fallbackSection = fallback.getSection(sectionName);
+            Map<String, Object> mainSection = overlay.getSection(sectionName);
+            Map<String, Object> fallbackSection = fallback.getSection(sectionName);
             if (mainSection != null) {
                 if (fallbackSection == null) {
                     return mainSection;
                 } else {
-                    return new ImmutableMapUnion<String,Object>(mainSection, fallbackSection);
+                    return new ImmutableMapUnion<String, Object>(mainSection, fallbackSection);
                 }
             } else {
                 return fallbackSection;
             }
         }
+
         @Override
         public Set<Entry<String, Map<String, Object>>> entrySet() {
             throw new UnsupportedOperationException("You should not iterate through the entry set of a composite property file");
         }
+
         @Override
         public Object put(String sectionName, String paramName, Object value) {
             return this.overlay.put(sectionName, paramName, value);
         }
+
         @Override
         public Object remove(String sectionName, String paramName) {
             throw new UnsupportedOperationException();
         }
+
         @Override
         public void removeSection(String sectionName) {
             throw new UnsupportedOperationException();
         }
+
         @Override
         public Set<String> getSectionNames() {
             return Sets.union(overlay.getSectionNames(), fallback.getSectionNames());
         }
+
         @Override
         public Set<String> getPublicSectionNames() {
             return Sets.union(overlay.getPublicSectionNames(), fallback.getPublicSectionNames());
         }
+
         @Override
         public void setSectionAsPublic(String section) {
             throw new UnsupportedOperationException();
         }
+
         @Override
         public boolean containsSection(String sectionName) {
             return overlay.containsSection(sectionName) || fallback.containsSection(sectionName);
         }
+
         @Override
         public boolean contains(String sectionName, String paramName) {
             return overlay.contains(sectionName, paramName) || fallback.contains(sectionName, paramName);
         }
+
         @Override
         public Locale getLocale() {
             return overlay.getLocale();
         }
+
         @Override
         public void shareKeys(SharedKeyMap<String, SharedKeyMap<String, Object>> seedKeyMap) {
             overlay.shareKeys(seedKeyMap);
         }
+
         private static final long serialVersionUID = 1L;
     }
 
@@ -240,10 +257,10 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
      * Both must be non null.
      */
     public static final class ImmutableMapUnion<K, V> extends AbstractMap<K, V> {
-        private final Map<K,V> overlay;
-        private final Map<K,V> fallback;
+        private final Map<K, V> overlay;
+        private final Map<K, V> fallback;
 
-        public ImmutableMapUnion(Map<K,V> overlay, Map<K,V> fallback) {
+        public ImmutableMapUnion(Map<K, V> overlay, Map<K, V> fallback) {
             this.overlay = overlay;
             this.fallback = fallback;
         }
@@ -255,7 +272,8 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
 
         @Override
         public V get(Object key) {
-            if (overlay.containsKey(key)) return overlay.get(key); else return fallback.get(key);
+            if (overlay.containsKey(key)) return overlay.get(key);
+            else return fallback.get(key);
         }
 
         @Override
@@ -265,9 +283,9 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
 
         @Override
         public Set<Entry<K, V>> entrySet() {
-            return Sets.union(overlay.entrySet(), Sets.filter(fallback.entrySet(), new Predicate<Entry<K,V>>() {
+            return Sets.union(overlay.entrySet(), Sets.filter(fallback.entrySet(), new Predicate<Entry<K, V>>() {
                 @Override
-                public boolean apply(Entry<K,V> input) {
+                public boolean apply(Entry<K, V> input) {
                     return !overlay.containsKey(input.getKey());
                 }
             }));
@@ -289,10 +307,12 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
         private static final long serialVersionUID = 1L;
         private final GrammaticalLabelSet main;
         private final GrammaticalLabelSet fallback;
+
         public SerializationProxy(GrammaticalLabelSetFallbackImpl impl) {
             this.main = impl.main;
             this.fallback = impl.fallback;
         }
+
         protected Object readResolve() {
             return new GrammaticalLabelSetFallbackImpl(this.main, this.fallback);
         }

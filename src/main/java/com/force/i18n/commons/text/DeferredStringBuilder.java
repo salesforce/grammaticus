@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -15,9 +15,9 @@ import com.google.common.annotations.Beta;
  * the source String.  This class is useful for reducing garbage creation when doing operations
  * like escaping a String, when most Strings are not expected to contain any escapable characters.  In that
  * case, no additional memory is used (as the original String is not actually copied).
- *
+ * <p>
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
- * 
+ *
  * @author davem
  */
 @Beta
@@ -57,6 +57,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
      * parent.  This can only be done for performance reasons,
      * - You must be in a charAt loop for the parent string
      * - You *CAN NEVER SKIP A CHARACTER*.  So you can't use it in StringTypedReader.
+     *
      * @param c the character you're trying to add that came from the and your currently skipping
      */
     public void appendQuicklyForEscapingWithoutSkips(char c) {
@@ -71,6 +72,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
 
     /**
      * Version of appendQuicklyForEscapingWithoutSkips that avoids a downcast in most cases.
+     *
      * @param c
      */
     public void appendQuicklyForEscapingWithoutSkips(int c) {
@@ -79,7 +81,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
             this.pos++;
         } else {
             // we've already got the buf - just add this character
-            this.buf.append((char)c);
+            this.buf.append((char) c);
         }
     }
 
@@ -103,7 +105,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
         } else {
             this.buf.append(csq);
         }
-   }
+    }
 
     public void appendAsDifferent(char c) {
         if (this.buf == null) {
@@ -113,7 +115,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
         } else {
             this.buf.append(c);
         }
-   }
+    }
 
 
     @Override
@@ -170,7 +172,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
     @Override
     public String toString() {
         return (this.buf != null) ? this.buf.toString() : (this.pos == this.source.length() ? this.source.toString() : this.source
-            .subSequence(0, this.pos).toString());
+                .subSequence(0, this.pos).toString());
     }
 
     @Override

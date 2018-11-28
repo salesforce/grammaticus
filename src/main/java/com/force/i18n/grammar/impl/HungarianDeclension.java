@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -22,9 +22,9 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * Hungarian is a Uralic language that has possessives, articles, number, and cases (but no gender)
- *
+ * <p>
  * In the old system, hungarian didn't have articles specified (they were in the code); hence the Noun isn't a "legacy" noun.
- *
+ * <p>
  * Hungarian also didn't have startsWith enabled; however it does have an article that mutates based on whether
  * the next particle starts with a vowel or not.
  *
@@ -34,14 +34,14 @@ class HungarianDeclension extends ArticledDeclension {
     private static final Logger logger = Logger.getLogger(HungarianDeclension.class.getName());
     private final List<HungarianNounForm> entityForms;
     private final List<HungarianNounForm> fieldForms;
-    private final EnumMap<LanguagePossessive,NounFormMap<HungarianNounForm>> nounFormMap;
+    private final EnumMap<LanguagePossessive, NounFormMap<HungarianNounForm>> nounFormMap;
 
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
         // Hungarian uses cases for pretty much everything
         return EnumSet.of(NOMINATIVE, ACCUSATIVE, ILLATIVE, INESSIVE, ELATIVE,
-        SUBLATIVE, SUPERESSIVE, DELATIVE, ALLATIVE, ABLATIVE, DATIVE, INSTRUMENTAL, TRANSLATIVE, CAUSALFINAL,
-        ESSIVEFORMAL, TERMINATIVE, DISTRIBUTIVE);
+                SUBLATIVE, SUPERESSIVE, DELATIVE, ALLATIVE, ABLATIVE, DATIVE, INSTRUMENTAL, TRANSLATIVE, CAUSALFINAL,
+                ESSIVEFORMAL, TERMINATIVE, DISTRIBUTIVE);
     }
 
     @Override
@@ -56,10 +56,15 @@ class HungarianDeclension extends ArticledDeclension {
     }
 
     @Override
-    public boolean hasGender() { return false; }  // Gender's irrelevant in hungarian
+    public boolean hasGender() {
+        return false;
+    }  // Gender's irrelevant in hungarian
 
     @Override
-    public boolean hasStartsWith() { return true; }  // Starting with a vowel is important for the definite article
+    public boolean hasStartsWith() {
+        return true;
+    }  // Starting with a vowel is important for the definite article
+
     @Override
     public boolean hasPossessive() {
         return true;
@@ -69,7 +74,7 @@ class HungarianDeclension extends ArticledDeclension {
 
 
     public HungarianDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<HungarianNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<HungarianNounForm> fieldBuilder = ImmutableList.builder();
@@ -95,10 +100,10 @@ class HungarianDeclension extends ArticledDeclension {
      */
     static class HungarianNounForm extends ComplexNounForm {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguagePossessive possesive;
 
@@ -109,17 +114,34 @@ class HungarianDeclension extends ArticledDeclension {
             this.possesive = possesive;
         }
 
-        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
-        @Override public LanguageCase getCase() {  return this.caseType; }
-        @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override
+        public LanguageArticle getArticle() {
+            return LanguageArticle.ZERO;
+        }
+
+        @Override
+        public LanguageCase getCase() {
+            return this.caseType;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguagePossessive getPossessive() {
+            return possesive;
+        }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue();
         }
+
         @Override
         public String toString() {
-            return "HungarianNF:"+getKey();
+            return "HungarianNF:" + getKey();
         }
     }
 
@@ -131,20 +153,36 @@ class HungarianDeclension extends ArticledDeclension {
         SINGULAR(LanguageNumber.SINGULAR, LanguageStartsWith.CONSONANT),
         SINGULAR_V(LanguageNumber.SINGULAR, LanguageStartsWith.VOWEL),
         PLURAL(LanguageNumber.PLURAL, LanguageStartsWith.CONSONANT),
-        PLURAL_V(LanguageNumber.PLURAL, LanguageStartsWith.VOWEL)
-        ;
+        PLURAL_V(LanguageNumber.PLURAL, LanguageStartsWith.VOWEL);
 
         private final LanguageNumber number;
         private final LanguageStartsWith startsWith;
+
         private HungarianArticleForm(LanguageNumber number, LanguageStartsWith startsWith) {
             this.number = number;
             this.startsWith = startsWith;
         }
 
-        @Override public LanguageCase getCase() { return LanguageCase.NOMINATIVE; }
-        @Override public LanguageGender getGender() { return LanguageGender.NEUTER; }
-        @Override public LanguageNumber getNumber() { return this.number; }
-        @Override public LanguageStartsWith getStartsWith() {return this.startsWith; }
+        @Override
+        public LanguageCase getCase() {
+            return LanguageCase.NOMINATIVE;
+        }
+
+        @Override
+        public LanguageGender getGender() {
+            return LanguageGender.NEUTER;
+        }
+
+        @Override
+        public LanguageNumber getNumber() {
+            return this.number;
+        }
+
+        @Override
+        public LanguageStartsWith getStartsWith() {
+            return this.startsWith;
+        }
+
         static HungarianArticleForm getForm(ModifierForm form) {
             return form.getNumber() == LanguageNumber.SINGULAR ?
                     (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
@@ -159,19 +197,20 @@ class HungarianDeclension extends ArticledDeclension {
      */
     public static class HungarianNoun extends ComplexArticledNoun<HungarianNounForm> {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
         HungarianNoun(HungarianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
-        
-        @Override
-		protected final Class<HungarianNounForm> getFormClass() {
-        	return HungarianNounForm.class;
-		}
 
-		@Override
+        @Override
+        protected final Class<HungarianNounForm> getFormClass() {
+            return HungarianNounForm.class;
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
@@ -190,25 +229,30 @@ class HungarianDeclension extends ArticledDeclension {
      */
     public static class HungarianArticle extends Article {
         /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private Map<HungarianArticleForm, String> values = new HashMap<HungarianArticleForm,String>();
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private Map<HungarianArticleForm, String> values = new HashMap<HungarianArticleForm, String>();
+
         HungarianArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
         }
+
         @Override
         public Map<? extends ArticleForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(ArticleForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(ArticleForm form, String value) {
-            values.put((HungarianArticleForm)form, intern(value));
+            values.put((HungarianArticleForm) form, intern(value));
         }
+
         @Override
         public boolean validate(String name) {
             defaultValidate(name, ImmutableSet.of(getDeclension().getArticleForm(LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE)));
@@ -233,59 +277,60 @@ class HungarianDeclension extends ArticledDeclension {
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
+                                          LanguageCase case1, LanguageArticle article, LanguagePossessive possessive) {
         // TODO: Adjectives in hungarian are invariant?  It seems so
         return SimpleModifierForm.SINGULAR;
     }
 
 
-    /** TODO: Articles don't have cases in hungarian; but the super.getArticleForm doesn't really check for that so
+    /**
+     * TODO: Articles don't have cases in hungarian; but the super.getArticleForm doesn't really check for that so
      * the article form gets missed.
      * If there are more languages that have articles that aren't inflected for case (i.e. you get NPEs), then you the
      * logic in LanguageDeclension should get more complicated
      */
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
-            LanguageCase case1) {
+                                      LanguageCase case1) {
         switch (number) {
-        case PLURAL:
-            return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.PLURAL_V : HungarianArticleForm.PLURAL;
-        case SINGULAR:
-            return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.SINGULAR_V : HungarianArticleForm.SINGULAR;
+            case PLURAL:
+                return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.PLURAL_V : HungarianArticleForm.PLURAL;
+            case SINGULAR:
+                return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.SINGULAR_V : HungarianArticleForm.SINGULAR;
         }
         throw new AssertionError("Invalid article form");
     }
 
     @Override
     public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive,
-            LanguageArticle article) {
+                                     LanguageArticle article) {
         if (article != LanguageArticle.ZERO) return null;
         NounFormMap<? extends NounForm> formMap = this.nounFormMap.get(possessive);
         return formMap == null ? null : formMap.getForm(number, _case);
     }
 
     @Override
-    public List< ? extends AdjectiveForm> getAdjectiveForms() {
+    public List<? extends AdjectiveForm> getAdjectiveForms() {
         return Collections.singletonList(SimpleModifierForm.SINGULAR);
     }
 
     @Override
-    public List< ? extends NounForm> getAllNounForms() {
+    public List<? extends NounForm> getAllNounForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getEntityForms() {
+    public Collection<? extends NounForm> getEntityForms() {
         return this.entityForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getFieldForms() {
+    public Collection<? extends NounForm> getFieldForms() {
         return this.fieldForms;
     }
 
     @Override
-    public Collection< ? extends NounForm> getOtherForms() {
+    public Collection<? extends NounForm> getOtherForms() {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
 
@@ -297,15 +342,15 @@ class HungarianDeclension extends ArticledDeclension {
     @Override
     protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
         switch (articleType) {
-        case INDEFINITE:
-            return form.getNumber() == LanguageNumber.SINGULAR ? "Egy " : null;
-        case DEFINITE:
-            return form.getStartsWith() == LanguageStartsWith.VOWEL ? "Az " : "A ";
+            case INDEFINITE:
+                return form.getNumber() == LanguageNumber.SINGULAR ? "Egy " : null;
+            case DEFINITE:
+                return form.getStartsWith() == LanguageStartsWith.VOWEL ? "Az " : "A ";
 ///CLOVER:OFF
-        case ZERO:
-            return null;
-        default:
-            throw new UnsupportedOperationException("Invalid article");
+            case ZERO:
+                return null;
+            default:
+                throw new UnsupportedOperationException("Invalid article");
 ///CLOVER:ON
         }
     }

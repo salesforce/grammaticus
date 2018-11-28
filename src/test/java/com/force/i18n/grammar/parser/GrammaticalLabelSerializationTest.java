@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
  */
 public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest {
     private static final Logger logger = Logger.getLogger(GrammaticalLabelSerializationTest.class.getName());
+
     public GrammaticalLabelSerializationTest(String name) {
         super(name);
     }
@@ -40,7 +41,7 @@ public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest 
     public void testSerializeDictionary() throws Exception {
         GrammaticalLabelSetLoader loader = getLoader();
         for (String languageStr : ImmutableList.of(LanguageConstants.JAPANESE, LanguageConstants.ENGLISH_US, LanguageConstants.ENGLISH_CA)) {
-        	HumanLanguage language = LanguageProviderFactory.get().getLanguage(languageStr);
+            HumanLanguage language = LanguageProviderFactory.get().getLanguage(languageStr);
             GrammaticalLabelSet labelSet;
             try {
                 labelSet = loader.getSet(language);
@@ -63,7 +64,7 @@ public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest 
                 start = System.nanoTime();
                 GrammaticalLabelSet copy;
                 try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-                    copy = (GrammaticalLabelSet)ois.readObject();
+                    copy = (GrammaticalLabelSet) ois.readObject();
                 }
                 logger.info("Read " + language + " labels in " + (System.nanoTime() - start) / 1000000 + " msec");
                 // Make sure the noun forms are the same
@@ -87,9 +88,9 @@ public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest 
         File f = loader.getCacheDir();
         if (f.exists()) {
             for (File labelFile : f.listFiles()) {
-            	if (labelFile.getName().endsWith(".cache")) {
-            		labelFile.delete();
-            	}
+                if (labelFile.getName().endsWith(".cache")) {
+                    labelFile.delete();
+                }
             }
         }
         _testSerializeDictionarySpeedTest(loader, "CacheTestInit");
@@ -99,7 +100,7 @@ public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest 
 
     protected void _testSerializeDictionarySpeedTest(GrammaticalLabelSetLoader loader, String loggerInfo) throws IOException {
         for (String languageStr : ImmutableList.of(LanguageConstants.JAPANESE, LanguageConstants.ENGLISH_US)) {
-        	HumanLanguage language = LanguageProviderFactory.get().getLanguage(languageStr);
+            HumanLanguage language = LanguageProviderFactory.get().getLanguage(languageStr);
             GrammaticalLabelSet labelSet;
             try {
                 labelSet = loader.getSet(language);
@@ -112,14 +113,14 @@ public class GrammaticalLabelSerializationTest extends BaseGrammaticalLabelTest 
                 oos.writeObject(labelSet);
             }
 
-            long writeTime = (System.nanoTime() - start)/1000 ;
+            long writeTime = (System.nanoTime() - start) / 1000;
 
             byte[] data = baos.toByteArray();
             start = System.nanoTime();
-             try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data))) {
-                 ois.close();
-             }
-             logger.info(loggerInfo + ": " + language.getLocale() + " labels in " + writeTime + "/" + (System.nanoTime() - start)/1000 + " usec; size= " + data.length);
+            try (ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(data))) {
+                ois.close();
+            }
+            logger.info(loggerInfo + ": " + language.getLocale() + " labels in " + writeTime + "/" + (System.nanoTime() - start) / 1000 + " usec; size= " + data.length);
         }
-   }
+    }
 }
