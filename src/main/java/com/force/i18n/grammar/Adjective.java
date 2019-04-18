@@ -133,7 +133,7 @@ public abstract class Adjective extends NounModifier {
                 }
 
                 // Next try starts with
-                 if (s == null && getDeclension().hasStartsWithInAdjective() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
+                 if (s == null && getDeclension().hasStartsWith() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
                      baseForm = getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), form.getPossessive());
                      s = getString(baseForm);
                  }
@@ -161,7 +161,8 @@ public abstract class Adjective extends NounModifier {
 
                 // Now number; singular is the default for all languages
                 if (s == null && getDeclension().hasPlural() && form.getNumber() != LanguageNumber.SINGULAR) {
-                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), LanguageNumber.SINGULAR, getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
+                	LanguageNumber numberToTry = form.getNumber() == LanguageNumber.PLURAL ? LanguageNumber.SINGULAR :  LanguageNumber.PLURAL;  // If we're plural try singular, otherwise, like for dual, try plural
+                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), numberToTry, getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
                     s = getString(baseForm);
                 }
 

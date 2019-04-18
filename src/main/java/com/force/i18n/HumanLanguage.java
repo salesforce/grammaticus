@@ -22,7 +22,7 @@ import com.force.i18n.commons.text.DeferredStringBuilder;
  * 
  * Usually there is a mapping from the language field of a locale to one of these languages,
  * but due to regional variation, a company may want to use a full locale to represent the human
- * language, especially for variants in Spanish, Portuguese, German, and Chinese.
+ * language, especially for variants in Spanish, Portugese, German, and Chinese.
  * 
  * For the override html language, see this page: http://www.w3.org/International/articles/bcp47/
  * @author stamm
@@ -101,6 +101,25 @@ public interface HumanLanguage extends Serializable{
 	 */
 	HumanLanguage getFallbackLanguage();
 	
+	
+	/**
+	 * @return whether this language is used for linguistic testing.  Esperanto is used in 
+	 * grammaticus for this.
+	 */
+	default boolean isTestOnlyLanguage() {
+		return false;
+	}
+
+	/**
+	 * @return whether this language generally has translated values for the applications,
+	 * as opposed to being a country/dialect variant of another language.  This doesn't stop
+	 * an application from translating, but will let you omit the large number of english and
+	 * arabic variants that will fallback to another language.
+	 */
+	default boolean isTranslatedLanguage() {
+		return true;
+	}
+
     /**
      * @return whether use of fallback strings in this language should be considered a problem.
 	 * Note: this should only applies to non-fully translated languages that don't have a fallback

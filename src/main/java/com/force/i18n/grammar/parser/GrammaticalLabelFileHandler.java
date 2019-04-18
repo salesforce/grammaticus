@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -11,13 +11,16 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 import org.xml.sax.*;
 
 import com.force.i18n.*;
 import com.force.i18n.commons.text.DeferredStringBuilder;
+import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.grammar.*;
 import com.force.i18n.settings.PropertyFileData;
 import com.force.i18n.settings.TrackingHandler;
@@ -128,12 +131,19 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     static final String ENTITY = "entity";
     static final String MOD = "modifier";
     static final String ESCAPE_HTML = "escapeHtml";
+    static final String NUM = "num";
+    static final String PLURAL = "plural";
+    static final String GENDER = "gender";
+    static final String COUNTER = "counter";  // Used for classifier
+    static final String WHEN = "when";
 
     // attributes
     static final String NAME = "name";
     static final String ALIAS = "alias";
     static final String ERROR = "error";
     static final String TYPE = "type";
+    static final String VAL = "val";
+    static final String DEFAULT = "default";
 
     static final String YES = "y";
     static final String NO = "n";
@@ -192,6 +202,12 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         boolean isNameRequired() {
             return false;
         }
+
+        /**
+         * hook to remember enclosing tags
+         */
+        void addTag(RefTag tag) {}
+
     }
 
     class BadTag extends BaseTag {
@@ -323,11 +339,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
      * and if there is no nouns defined.
      * </ul>
      */
-    private class ParamTag extends BaseTag {
-        private boolean isAlias;
-        private StringBuilder sb;
-        private final ArrayList<Object> values; // the type is specific (eg not List<>) to allow cloning
-
+    private class ParamTag extends StringTag {
         @Override
         String getTagName() {
             return PARAM;
@@ -335,10 +347,47 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         ParamTag(SectionTag parent, Attributes atts) throws SAXParseException {
             super(parent, atts);
+            currentParam = this;
+        }
+
+
+        @Override
+        boolean isNameRequired() {
+            return true;
+        }
+
+        @Override
+		void endElement() {
+			super.endElement();
+            currentParam = null;
+		}
+
+		@Override
+        void addLabelDataToParent(Object data) {
+            ((SectionTag)getParent()).addLabelData(getName(), data);
+        }
+    }
+
+
+    /**
+     * The param tag - &lt;param name="param1"&gt;. The param tag takes three attributes
+     * <ul>
+     * <li>name: parameter name. this is always required.
+     * <li>alias: Use <i>alias</i> to make this param refers to the other label. e.g. &lt;param name="val1"
+     * alias="sec1.val1"/&gt;
+     * <li>entity: specify default entity name. This is used if modifier tag has no <i>entity</i> attribute specified,
+     * and if there is no nouns defined.
+     * </ul>
+     */
+    private abstract class StringTag extends BaseTag {
+        private boolean isAlias;
+        private StringBuilder sb;
+        private final ArrayList<Object> values; // the type is specific (eg not List<>) to allow cloning
+
+        StringTag(BaseTag parent, Attributes atts) throws SAXParseException {
+            super(parent, atts);
             this.values = new ArrayList<Object>();
             this.isAlias = false;
-
-            currentParam = this;
 
             // if alias is specified, ignore all remaining attributes/contents
             String alias = atts.getValue(ALIAS);
@@ -385,10 +434,16 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             // <entity/> or <Entity/>
             if (ENTITY.equals(lowerName)) {
                 currentTag = new NounTag(this, attributes, localName, true);
+            } else if (PLURAL.equals(lowerName)) {
+            	currentTag = new PluralTag(this, attributes, localName);
+            } else if (GENDER.equals(lowerName)) {
+            	currentTag = new GenderTag(this, attributes, localName);
             } else if (getParser().getDictionary().isAdjective(lowerName)) {
                 currentTag = new AdjTag(this, attributes, localName);
             } else if (getParser().getDictionary().isArticle(lowerName)) {
                 currentTag = new ArtTag(this, attributes, localName);
+            } else if (COUNTER.equals(lowerName)) {
+                currentTag = new CounterTag(this, attributes, localName);
             } else {
                 currentTag = new NounTag(this, attributes, localName, false);
             }
@@ -403,11 +458,17 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             }
         }
 
+        /**
+         * Add the label data to the parent object
+         * @param data
+         */
+        abstract void addLabelDataToParent(Object data);
+
         @Override
         void endElement() {
             if (this.isAlias) {
                 // register to name only - leave as null at this point
-                ((SectionTag)getParent()).addLabelData(getName(), null);
+            	addLabelDataToParent(null);
 
             } else {
                 // push any remaining string
@@ -419,20 +480,19 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 }
 
                 if (values.isEmpty()) {
-                    ((SectionTag)getParent()).addLabelData(getName(), "");
+                	addLabelDataToParent("");
 
                 } else {
 
                     if (this.values.size() == 1) {
-                        ((SectionTag)getParent()).addLabelData(getName(), this.values.get(0));
+                    	addLabelDataToParent(this.values.get(0));
                     } else {
                         List<Object> data;
                         data = finishParsingLabelsNew(this.values);
-                        ((SectionTag)getParent()).addLabelData(getName(), data);
+                    	addLabelDataToParent(data);
                     }
                 }
             }
-            currentParam = null;
         }
 
         protected List<Object> finishParsingLabelsNew(List<Object> values) {
@@ -474,6 +534,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
                     // add to the last noun phrase
                     curPhrase.addAdjectiveLoc(i);
+                } else if (o instanceof AdnominalRefTag) {
+                    if (curPhrase.isNounSet()) {
+                        curPhrase = new NounPhrase(values);  // Demarcate as a new phrase
+                    }
+                    curPhrase.addChoiceLoc(i);
                 }
             }
             if (!curPhrase.isNounSet()) {
@@ -491,9 +556,13 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     for (Integer i : curPhrase.getAdjectiveLocs()) {
                         lastPhrase.addAdjectiveLoc(i);
                     }
+                    for (Integer i : curPhrase.getChoiceLocs()) {
+                        lastPhrase.addChoiceLoc(i);
+                    }
                 }
             }
 
+            boolean isEndsWithLanguage = getDictionary().getDeclension().hasEndsWith();
             for (NounPhrase phrase : phrases) {
                 Object o = values.get(phrase.nounLoc);
                 assert o instanceof NounRefTag : "Invalid noun location " + phrase.nounLoc + " in " + phrase;
@@ -513,7 +582,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     }
                     // Figure out the "next thing"
                     if (phrase.hasAdjectives()) {
-                        int nextAdjective = phrase.getAdjectiveLoc(0);
+                        int nextAdjective = phrase.getAdjectiveLoc(isEndsWithLanguage ? -1 : 0);
                         values.set(phrase.getArticleLoc(), articleRef.fixupModifier(nounRef, nextAdjective < phrase.getNounLoc() ? (TermRefTag) values.get(nextAdjective) : nounRef));
                     } else {
                         values.set(phrase.getArticleLoc(), articleRef.fixupModifier(nounRef, nounRef));
@@ -537,27 +606,42 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
                 // Now go through the adjectives.
                 LanguageArticle articleOverride = articleRef != null ? getDictionary().getArticle(articleRef.getName()).getArticleType() : null;
-                for (int i = 0; i < phrase.getAdjectiveLocs().size(); i++) {
-                    AdjectiveRefTag adjTag = (AdjectiveRefTag) values.get(phrase.getAdjectiveLoc(i));
-                    // Figure out the "next" object
-                    if (i < phrase.getAdjectiveLocs().size() - 1) {
-                        int nextAdjective = phrase.getAdjectiveLoc(i+1);
-                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nextAdjective < phrase.getNounLoc() ? (TermRefTag) values.get(nextAdjective) : nounRef, articleOverride));
-                    } else {
-                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nounRef, articleOverride));
-                    }
+                if (isEndsWithLanguage) {
+	                for (int i = phrase.getAdjectiveLocs().size()-1; i >= 0; i--) {
+	                    AdjectiveRefTag adjTag = (AdjectiveRefTag) values.get(phrase.getAdjectiveLoc(i));
+	                    // Figure out the "next" object
+	                    if (i > 0) {
+	                        int prevAdjective = phrase.getAdjectiveLoc(i-1);
+	                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, prevAdjective > phrase.getNounLoc() ? (TermRefTag) values.get(prevAdjective) : nounRef, articleOverride));
+	                    } else {
+	                    	// TODO: Not sure this is right.
+	                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nounRef, articleOverride));
+	                    }
+	                }
+                } else {
+	                for (int i = 0; i < phrase.getAdjectiveLocs().size(); i++) {
+	                    AdjectiveRefTag adjTag = (AdjectiveRefTag) values.get(phrase.getAdjectiveLoc(i));
+	                    // Figure out the "next" object
+	                    if (i < phrase.getAdjectiveLocs().size() - 1) {
+	                        int nextAdjective = phrase.getAdjectiveLoc(i+1);
+	                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nextAdjective < phrase.getNounLoc() ? (TermRefTag) values.get(nextAdjective) : nounRef, articleOverride));
+	                    } else {
+	                        values.set(phrase.getAdjectiveLoc(i), adjTag.fixupModifier(nounRef, nounRef, articleOverride));
+	                    }
+	                }
+                }
+
+                // Now do choice phrases
+                for (int i = 0; i < phrase.getChoiceLocs().size(); i++) {
+                	AdnominalRefTag choiceTag = (AdnominalRefTag) values.get(phrase.getChoiceLoc(i));
+                    values.set(phrase.getChoiceLoc(i), choiceTag.getWithResolvedNounTag(nounRef));
                 }
             }
             return values;
         }
 
-
         @Override
-        boolean isNameRequired() {
-            return true;
-        }
-
-        void addTag(TermRefTag tag) {
+        void addTag(RefTag tag) {
             values.add(tag);
         }
 
@@ -572,6 +656,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         private int nounLoc = -1;
         private int articleLoc = -1;
         private List<Integer> adjectiveLocs = new ArrayList<Integer>();
+        private List<Integer> choiceLocs = new ArrayList<Integer>();
 
         public NounPhrase(List<Object> values) {
             this.values = values;
@@ -608,7 +693,26 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         }
 
         public int getAdjectiveLoc(int offset) {
+        	if (offset == -1) {  // Support -1 to get the "Last" adjective
+        		return this.adjectiveLocs.get(this.adjectiveLocs.size()-1);
+        	}
             return this.adjectiveLocs.get(offset);
+        }
+
+        public void addChoiceLoc(int i) {
+            this.choiceLocs.add(i);
+            assert values.get(i) instanceof AdnominalRefTag : "Illegal choice loc";
+        }
+
+        public List<Integer> getChoiceLocs() {
+            return this.choiceLocs;
+        }
+
+        public int getChoiceLoc(int offset) {
+        	if (offset == -1) {  // Support -1 to get the "Last" adjective
+        		return this.choiceLocs.get(this.choiceLocs.size()-1);
+        	}
+            return this.choiceLocs.get(offset);
         }
 
         public boolean isNounSet() {
@@ -617,6 +721,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         public boolean hasAdjectives() {
             return this.adjectiveLocs.size() > 0;
+        }
+
+        public boolean hasChoices() {
+            return this.choiceLocs.size() > 0;
         }
 
         public int getPhraseStart() {
@@ -650,7 +758,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             return this.tagName;
         }
 
-        NounTag(ParamTag parent, Attributes atts, String localName, boolean isEntityTag) throws SAXParseException {
+        NounTag(StringTag parent, Attributes atts, String localName, boolean isEntityTag) throws SAXParseException {
             super(parent, atts);
             this.tagName = localName;
 
@@ -676,7 +784,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.nounTag != null)
-                ((ParamTag)getParent()).addTag(this.nounTag);
+                getParent().addTag(this.nounTag);
         }
     }
 
@@ -692,7 +800,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             return this.tagName;
         }
 
-        AdjTag(ParamTag parent, Attributes atts, String localName) throws SAXParseException {
+        AdjTag(StringTag parent, Attributes atts, String localName) throws SAXParseException {
             super(parent, atts);
             this.tagName = localName;
 
@@ -719,7 +827,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.modTag != null)
-                ((ParamTag)getParent()).addTag(this.modTag);
+                getParent().addTag(this.modTag);
         }
     }
 
@@ -735,7 +843,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             return this.tagName;
         }
 
-        ArtTag(ParamTag parent, Attributes atts, String localName) throws SAXParseException {
+        ArtTag(StringTag parent, Attributes atts, String localName) throws SAXParseException {
             super(parent, atts);
             this.tagName = localName;
 
@@ -760,9 +868,229 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             if (this.modTag != null)
-                ((ParamTag)getParent()).addTag(this.modTag);
+                getParent().addTag(this.modTag);
         }
     }
+
+    /**
+     * Conter tag. &lt;Counter/&gt;
+     */
+    class CounterTag extends BaseTag {
+        @Override
+        String getTagName() {
+            return COUNTER;
+        }
+
+        CounterTag(StringTag parent, Attributes atts, String localName) throws SAXParseException {
+            super(parent, atts);
+        }
+
+///CLOVER:OFF
+        @Override
+        void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            // no inner tag is allowed
+            currentTag = new BadTag(this, localName);
+        }
+///CLOVER:ON
+
+        @Override
+        void endElement() {
+            getParent().addTag(new CounterRefTag(null));
+        }
+    }
+
+    /**
+     * Represents a tag that can have "when" tags, or, when the when's are unspecified, a default value.
+     */
+    private abstract class ChoiceTag<E extends Enum<E>> extends StringTag {
+        private Map<E, Object> perCategory;
+        private Object defaultVal;  // Some choices have a default that is a specific categories, others are explicit based on the resolution of the noun.
+        ChoiceTag(StringTag parent, Attributes atts, String localName, Class<E> type) throws SAXParseException {
+            super(parent, atts);
+            perCategory = new EnumMap<>(type);
+            defaultVal = null;
+        }
+
+        @Override
+        void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            if (localName.equalsIgnoreCase(WHEN)) {
+                currentTag = new WhenTag<E>(this, attributes, localName);
+            } else {
+                super.startElement(uri, localName, qName, attributes);
+            }
+        }
+
+        void addLabelData(E val, Object data) {
+            if (val == null) return; // This means we were invalid
+            Object previous = perCategory.put(val, data);
+            if (previous != null) {
+                logger.log(getProblemLogLevel(), "###\tDuplicate when <" + val + "> at " + currentSection.getName()
+                        + "." + getParent().getName());
+                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+
+            }
+        }
+
+        /**
+         * @return the default category to use for the unadorned tags, or when with isDefault="true"
+         * Can be null
+         */
+        abstract E getDefaultCategory();
+
+        abstract Function<String,E> getCategoryFromLabel();
+
+        void setDefault(Object data) {
+            if (getDefaultCategory() == null) {
+                this.defaultVal = data;
+            } else {
+                if (perCategory.containsKey(getDefaultCategory())) {
+                    logger.log(getProblemLogLevel(),
+                            "###\tYou cannot specify " + getDefaultCategory()
+                                    + " for a when and have default values at " + currentSection.getName() + "."
+                                    + getParent().getName());
+                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                } else {
+                    addLabelData(getDefaultCategory(), data);
+                }
+            }
+        }
+
+        Object getDefault() {
+            return getDefaultCategory() != null ? getPerCategory().get(getDefaultCategory()) : this.defaultVal;
+        }
+
+        Map<E, Object> getPerCategory() {
+            return perCategory;
+        }
+
+        @Override
+        void addLabelDataToParent(Object data) {
+            // If it's empty string or just whitespace, meh.
+            if (data == null || (data instanceof String && TextUtil.isNullEmptyOrWhitespace((String)data))) return;
+            setDefault(data);
+        }
+    }
+
+    /**
+     * Plural tag with choices &ltplural val="0"&gt; with embedded choices. The "non" when tags
+     */
+    private class PluralTag extends ChoiceTag<PluralCategory> {
+        private final int num;
+
+        @Override
+        String getTagName() {
+            return PLURAL;
+        }
+
+        PluralTag(StringTag parent, Attributes atts, String localName) throws SAXParseException {
+            super(parent, atts, localName, PluralCategory.class);
+            int _num;
+            try {
+                _num = Integer.parseInt(atts.getValue(NUM));
+            } catch (NumberFormatException ex) {
+                _num = 0;
+                logger.log(getProblemLogLevel(), "###\tBad plural reference <" + atts.getValue(NUM) + "> at "
+                        + currentSection.getName() + "." + parent.getName());
+                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+            }
+            num = _num;
+        }
+
+        @Override
+        PluralCategory getDefaultCategory() {
+            return PluralCategory.OTHER;
+        }
+
+        @Override
+        Function<String, PluralCategory> getCategoryFromLabel() {
+            return a -> PluralCategory.fromLabel(a);
+        }
+
+        @Override
+        void endElement() {
+            super.endElement();
+            getParent().addTag(new PluralRefTag(num, getPerCategory(), getDefault()));
+        }
+    }
+
+    /**
+     * Plural tag with choices &ltplural val="0"&gt; with embedded choices. The "non" when tags
+     */
+    private class GenderTag extends ChoiceTag<LanguageGender> {
+        @Override
+        String getTagName() {
+            return GENDER;
+        }
+
+        GenderTag(StringTag parent, Attributes atts, String localName) throws SAXParseException {
+            super(parent, atts, localName, LanguageGender.class);
+        }
+
+        @Override
+        LanguageGender getDefaultCategory() {
+            return null;
+        }
+
+        @Override
+        Function<String, LanguageGender> getCategoryFromLabel() {
+            return a -> LanguageGender.fromLabelValue(a);
+        }
+
+        @Override
+        void endElement() {
+            super.endElement();
+            getParent().addTag(new GenderRefTag(null, getPerCategory(), getDefault()));
+        }
+    }
+
+    /**
+     * when tag to specify choices &lt;when ="0"&gt; with embedded choices
+     */
+    private class WhenTag<E extends Enum<E>> extends StringTag {
+        private final List<E> categories;
+
+        @Override
+        String getTagName() {
+            return WHEN;
+        }
+
+        WhenTag(ChoiceTag<E> parent, Attributes atts, String localName) throws SAXParseException {
+            super(parent, atts);
+            boolean isDefault;
+            List<String> val = TextUtil.splitSimple(",", atts.getValue(VAL));
+            isDefault = YES.equalsIgnoreCase(atts.getValue(DEFAULT));
+            List<E> categories = val != null
+                    ? val.stream().map(parent.getCategoryFromLabel()).collect(Collectors.toList())
+                    : null;
+            if (categories == null || categories.stream().anyMatch(a -> a == null)) {
+                if (isDefault && categories == null) {
+                    categories = Collections.singletonList(parent.getDefaultCategory());
+                } else {
+                    logger.log(getProblemLogLevel(),
+                            "###\tBad category <" + val + "> at " + currentSection.getName() + "." + parent.getName());
+                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                    categories = Collections.emptyList();
+                }
+            }
+            this.categories = categories;
+        }
+
+        @Override
+        void addLabelDataToParent(Object data) {
+            @SuppressWarnings("unchecked")
+            ChoiceTag<E> parent = (ChoiceTag<E>)getParent();
+            for (E category : categories) {
+                if (category == null) {
+                    // Was default
+                    parent.setDefault(data);
+                } else {
+                    parent.addLabelData(category, data);
+                }
+            }
+        }
+
+    }
+
 
     NounRefTag constructNounTag(String entityName, Attributes atts, String entityElement) {
         boolean isCapital = false;

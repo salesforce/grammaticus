@@ -290,8 +290,8 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
         private final GrammaticalLabelSet main;
         private final GrammaticalLabelSet fallback;
         public SerializationProxy(GrammaticalLabelSetFallbackImpl impl) {
-            this.main = impl.main;
-            this.fallback = impl.fallback;
+            this.main = impl.getOverlay();
+            this.fallback = impl.getFallback();
         }
         protected Object readResolve() {
             return new GrammaticalLabelSetFallbackImpl(this.main, this.fallback);

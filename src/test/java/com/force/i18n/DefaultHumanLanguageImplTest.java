@@ -1,13 +1,13 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n;
 
-import com.force.i18n.DefaultHumanLanguageImpl;
+import org.junit.Test;
 
 import junit.framework.TestCase;
 
@@ -31,6 +31,7 @@ public class DefaultHumanLanguageImplTest extends TestCase {
      *  the fallback language is French, since we don't have labels translated
      *  into French (Canadian).
      */
+    @Test
     public void testDefaultHumanLanguageImplFallbackLanguage() throws Exception {
         assertNull("Did not get the correct fallback language for English",
             DefaultHumanLanguageImpl.ENGLISH.getFallbackLanguage());
@@ -146,9 +147,21 @@ public class DefaultHumanLanguageImplTest extends TestCase {
                 DefaultHumanLanguageImpl.SPANISH_UY.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Spanish Venezuela", DefaultHumanLanguageImpl.SPANISH,
                 DefaultHumanLanguageImpl.SPANISH_VE.getFallbackLanguage());
-        
-        
-        
-        
+    }
+
+    @Test
+    public void testLanugageTag() {
+        assertEquals("he", DefaultHumanLanguageImpl.HEBREW.getHttpLanguageCode());
+        assertEquals("id", DefaultHumanLanguageImpl.INDONESIAN.getHttpLanguageCode());
+        assertEquals("en-US", DefaultHumanLanguageImpl.ENGLISH.getHttpLanguageCode());
+        assertEquals("zh-Hans-CN", DefaultHumanLanguageImpl.CHINESE_SIMP.getHttpLanguageCode());
+        assertEquals("zh-Hant-TW", DefaultHumanLanguageImpl.CHINESE_TRAD.getHttpLanguageCode());
+        assertEquals("zh-Hans-SG", DefaultHumanLanguageImpl.CHINESE_SG.getHttpLanguageCode());
+        assertEquals("zh-Hant-HK", DefaultHumanLanguageImpl.CHINESE_HK.getHttpLanguageCode());
+
+        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.HEBREW.getDirection());
+        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ARABIC_EG.getDirection());
+        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ENGLISH_IL.getDirection());
+        assertEquals(TextDirection.LTR, DefaultHumanLanguageImpl.ESPERANTO.getDirection());
     }
 }

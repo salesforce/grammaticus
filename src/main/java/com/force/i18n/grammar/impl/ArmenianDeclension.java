@@ -63,7 +63,7 @@ class ArmenianDeclension extends LanguageDeclension {
         ImmutableList.Builder<ArmenianNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<ArmenianNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguageArticle articleType : getAllowedArticleTypes()) {
                     ArmenianNounForm form = new ArmenianNounForm(this, number, caseType, articleType, ordinal++);

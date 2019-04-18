@@ -17,6 +17,9 @@ public enum LanguagePosition {
     PRE("b", "Pre"),   // b = before
     POST("a", "Post")  // a = after
     ;
+	
+	public static final char JSON_ATTR_NAME = 'l';  // l for location, since p is posessive 
+
     private final String dbValue;
     private final String apiValue;
     private LanguagePosition(String dbValue, String apiValue) {

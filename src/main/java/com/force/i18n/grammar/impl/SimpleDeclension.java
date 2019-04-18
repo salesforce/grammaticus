@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,10 +9,12 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
+import com.force.i18n.LanguageConstants;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
 /**
@@ -50,15 +52,19 @@ class SimpleDeclension extends LanguageDeclension {
      */
     public static class SimpleNoun extends Noun {
         /**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = 1L;
 		private String value;
 
         SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
-            super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
+            this(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, access, isStandardField, isCopiedFromDefault);
         }
-        
+
+        SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
+        }
+
         @Override
         public void makeSkinny() {
         }
@@ -180,5 +186,105 @@ class SimpleDeclension extends LanguageDeclension {
     @Override
     public final boolean isInflected() {
         return false;  // Simple declensions have no inflection in nouns/adjectives at all
+    }
+
+	@Override
+	public void writeJsonOverrides(Appendable a, String instance) throws IOException {
+		a.append(instance).append(".dont_capitalize=true;");
+	}
+
+    /**
+     * Use this for an uninflected language, but with classifier words
+     * @author stamm
+     * @since 1.1
+     */
+    static class SimpleDeclensionWithClassifiers extends SimpleDeclension implements LanguageDeclension.WithClassifiers {
+        private final String defaultClassifier;
+
+        public SimpleDeclensionWithClassifiers(HumanLanguage language) {
+            this(language, getDefaultClassifier(language));
+        }
+
+
+        public SimpleDeclensionWithClassifiers(HumanLanguage language, String defaultClassifier) {
+            super(language);
+            this.defaultClassifier = defaultClassifier;
+        }
+
+        @Override
+        public final boolean hasClassifiers() {
+            return true;
+        }
+
+        @Override
+        public String getDefaultClassifier() {
+            return defaultClassifier;
+        }
+
+
+        @Override
+        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+                LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
+                boolean isCopied) {
+            return new SimpleNounWithClassifier(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
+        }
+
+    }
+
+    static String getDefaultClassifier(HumanLanguage language) {
+        switch (language.getLocale().getLanguage()) {
+        case LanguageConstants.JAPANESE:
+            return "つ"; // つ
+        case LanguageConstants.CHINESE:
+            switch (language.getLocaleString()) {
+            case LanguageConstants.CHINESE_TW:
+            case LanguageConstants.CHINESE_HK:
+                return "個";  // Traditional: 個
+            }
+            return "个";  // Simplified: 个
+        case LanguageConstants.KOREAN:
+            return "개";  // 개
+
+        // These languages have classifiers, but aren't supported in grammaticus yet.
+        case LanguageConstants.VIETNAMESE:
+            return "cái";  // cái: This isn't super generic
+        case LanguageConstants.BENGALI:
+            return "\u099f\u09be";  // টা
+        case LanguageConstants.MALAY:
+        case LanguageConstants.INDONESIAN:
+            return "buah";  // Often found in compound with 'se-'
+        }
+        return "";
+    }
+
+    /**
+     * Use this for uninflected nouns, but with classifier words
+     * @author stamm
+     * @since 1.1
+     */
+    static class SimpleNounWithClassifier extends SimpleNoun implements Noun.WithClassifier {
+        private static final long serialVersionUID = 1L;
+        private String classifier;
+        public SimpleNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
+                String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField,
+                boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, startsWith, access, isStandardField, isCopiedFromDefault);
+        }
+
+        public SimpleNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
+                String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, access, isStandardField, isCopiedFromDefault);
+        }
+
+
+        @Override
+        public String getClassifier() {
+            return this.classifier;
+        }
+
+        @Override
+        public void setClassifier(String classifier) {
+            this.classifier = classifier;
+        }
     }
 }

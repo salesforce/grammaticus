@@ -20,4 +20,10 @@ public interface GrammaticalForm {
      * @return the grammatical case associated with this adjective form
      */
     LanguageCase getCase();
+    
+    /**
+     * @return a HTML compatible screen that can be used to represent this grammatical
+     * form uniquely when compared to all other forms. 
+     */
+    String getKey();
 }

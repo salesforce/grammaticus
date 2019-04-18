@@ -94,6 +94,20 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
     TAMIL(new Locale("ta"), LanguageType.PLATFORM, 190.0),
     
+    AFRIKAANS(new Locale("af"), LanguageType.PLATFORM, 220.0),
+    SWAHILI(new Locale("sw"), LanguageType.PLATFORM, 220.0),
+    ZULU(new Locale("zu"), LanguageType.PLATFORM, 220.0),
+    XHOSA(new Locale("xh"), LanguageType.PLATFORM, 220.0),
+    
+    TELUGU(new Locale("te"), LanguageType.PLATFORM, 220.0),
+    MALAYALAM(new Locale("ml"), LanguageType.PLATFORM, 220.0),
+    KANNADA(new Locale("kn"), LanguageType.PLATFORM, 220.0),
+    MARATHI(new Locale("mr"), LanguageType.PLATFORM, 220.0),
+    GUJARATI(new Locale("gu"), LanguageType.PLATFORM, 220.0),
+    
+    MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
+    BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
+       
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ARABIC_BH(new Locale("ar", "BH"), LanguageType.PLATFORM, 194.0), //Arabic Bahrain
     ARABIC_EG(new Locale("ar", "EG"), LanguageType.PLATFORM, 194.0), //Arabic Egypt
@@ -147,7 +161,10 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     SPANISH_UY(new Locale("es", "UY"), LanguageType.PLATFORM, 194.0), //Spanish Uruguay
     SPANISH_VE(new Locale("es", "VE"), LanguageType.PLATFORM, 194.0), //Spanish Venezuela
 
+    CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
+    
     ESPERANTO(new Locale("eo"), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
+    ENGLISH_IL(new Locale("en", "IL"), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
     ;
 
     // NOTE: languages are organized according to type and then in chronological order of when they're added within the type. This is so
@@ -407,6 +424,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
                 return ENGLISH_GB;
             case ENGLISH_GB:
             case ENGLISH_CA:
+            case ENGLISH_IL:
                 return ENGLISH;
             case ITALIAN_CH:
                 return ITALIAN;
@@ -471,7 +489,23 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     }
 
 
-    /**
+	@Override
+	public boolean isTestOnlyLanguage() {
+		return getLanguageType() == LanguageType.HIDDEN;
+	}
+
+	@Override
+	public boolean isTranslatedLanguage() {
+		switch (getLanguageType()) {
+			case STANDARD:
+			case END_USER:
+				return true;
+		    default:
+		}
+		return false;
+	}
+
+	/**
      * Helper functions for avoiding Java generics garbage while creating an enum map.
      */
     public static <V> EnumMap<DefaultHumanLanguageImpl,V> newEnumMap() {
@@ -549,7 +583,20 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
     static String getHtmlLanguage(Locale locale, String overrideLanguage) {
         if (overrideLanguage != null) return overrideLanguage;
-        return locale.toString().toLowerCase().replace('_', '-');
+        // zh_CN -> zh-CN, which is ok, but not really what's intended
+        if ("zh".equals(locale.getLanguage())) {
+            String country = locale.getCountry();
+            switch (country) {
+            case "TW":
+            case "HK":
+                return "zh-Hant-"+country;
+            case "SG":
+            case "CN":
+                return "zh-Hans-"+country;
+            default:
+            }
+        }
+        return locale.toLanguageTag();
     }
 
     private static final List<DefaultHumanLanguageImpl> ALL_STANDARD;

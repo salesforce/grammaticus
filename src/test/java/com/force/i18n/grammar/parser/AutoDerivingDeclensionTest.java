@@ -298,6 +298,7 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
         assertValue(ARABIC, "<Chair case=\"a\" article=\"the\"/>", AR_CHAIR, "\u0627\u0644\u0643\u0631\u0633\u064a");  // الكرسي
         assertValue(ARABIC, "<Chairs case=\"a\"/>", AR_CHAIR, "\u0643\u0631\u0627\u0633\u064a");  // كراسي
         assertValue(ARABIC, "<Chairs case=\"a\" article=\"the\"/>", AR_CHAIR, "\u0627\u0644\u0643\u0631\u0627\u0633\u064a");  // الكراسي
+        assertValue(ARABIC, "<Chair case=\"a\" article=\"the\" plural=\"d\"/>", AR_CHAIR, "\u0627\u0644\u0643\u0631\u0627\u0633\u064a");  // الكراسي
 
         assertValue(ARABIC, "<Chair case=\"a\" poss=\"f\"/>", AR_CHAIR, "\u0643\u0631\u0633\u064a\u0651\u0650\u064a");  // كرسيِّي
         assertValue(ARABIC, "<Chair case=\"a\" poss=\"f\" article=\"the\"/>", AR_CHAIR, "\u0627\u0644\u0643\u0631\u0633\u064a\u0651\u0650\u064a");  // الكرسيِّي
@@ -330,8 +331,35 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
         assertValue(ARABIC, "<Tables article=\"the\"/> <Neu/>", AR_TABLE + AR_NEW, "\u0627\u0644\u0637\u0627\u0648\u0644\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629");  // الطاولات الجديدة
         assertValue(ARABIC, "<Table case=\"a\" poss=\"f\"/> <Neu/>", AR_TABLE + AR_NEW, "\u0637\u0627\u0648\u0644\u062a\u0650\u064a \u0627\u0644\u062c\u062f\u064a\u062f\u0629");  // طاولتِي الجديدة
         //assertValue(ARABIC, "<Table case=\"a\" poss=\"s\"/> <Neu/>", AR_TABLE + AR_NEW, "\u0627\u0644\u0637\u0627\u0648\u0644\u062a\u0650\u064a \u0627\u0644\u0627\u0644\u062c\u062f\u064a\u062f\u0629");  // الطاولتِي الالجديدة
+
+        // Assert that duals is the same as plural
+        assertValue(ARABIC, "<Table article=\"the\" plural=\"d\"/> <Neu/>", AR_TABLE + AR_NEW, "\u0627\u0644\u0637\u0627\u0648\u0644\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629");  // الطاولات الجديدة
+        assertValue(ARABIC, "<Table article=\"the\" plural=\"two\"/> <Neu/>", AR_TABLE + AR_NEW, "\u0627\u0644\u0637\u0627\u0648\u0644\u0627\u062a \u0627\u0644\u062c\u062f\u064a\u062f\u0629");  // الطاولات الجديدة
     }
 
+    public void testKoreanEndsWith() throws Exception {
+    	final HumanLanguage KOREAN = LanguageProviderFactory.get().getLanguage("ko");
+
+    	String KO_PARTICLES = "<adjective name=\"Eul\"><value endsWith=\"c\">을</value><value endsWith=\"v\">를</value></adjective>"
+    			+ "<adjective name=\"Euro\"><value endsWith=\"c\">으로</value><value endsWith=\"v\">로</value><value endsWith=\"s\">로</value></adjective>";
+
+    	String KO_NOUN_FORMAT= "<noun name=\"Table\" entity=\"Table\" type=\"entity\" alias=\"Tables\" gender=\"f\"><value plural=\"n\">%s</value></noun>";
+    
+    
+    	// Note
+        assertValue(KOREAN, "<Table/><eul/>", String.format(KO_NOUN_FORMAT, "작업") + KO_PARTICLES, "작업을");  // Jag-eob: Ends with consonant
+        assertValue(KOREAN, "<Table/><euro/>", String.format(KO_NOUN_FORMAT, "작업") + KO_PARTICLES, "작업으로");  // Jag-eob: Ends with consonant
+
+        // Task
+        assertValue(KOREAN, "<Table/><eul/>", String.format(KO_NOUN_FORMAT, "노트") + KO_PARTICLES, "노트를");  // Noteu: Ends with vowel
+        assertValue(KOREAN, "<Table/><euro/>", String.format(KO_NOUN_FORMAT, "노트") + KO_PARTICLES, "노트로");  // Noteu: Ends with vowel
+
+        // Skill
+        assertValue(KOREAN, "<Table/><eul/>", String.format(KO_NOUN_FORMAT, "기술") + KO_PARTICLES, "기술을");  // gisul: Ends with flap
+        assertValue(KOREAN, "<Table/><euro/>", String.format(KO_NOUN_FORMAT, "기술") + KO_PARTICLES, "기술로");  // Gisul: Ends with flap
+        
+    }
+    
     /*
     // This is the above test without the unicode conversion for easy readibility
     private final static String BG_THIN = "<adjective name=\"Thin\">\r\n" +

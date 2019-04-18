@@ -3,7 +3,7 @@
   
   <groupId>com.salesforce.grammaticus</groupId>
   <artifactId>grammaticus</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   
   <name>Grammaticus</name>
@@ -106,7 +106,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
-                <bottom>Copyright (c) 2016-2017, Salesforce.com, Inc. All rights reserved. Licensed under
+                <bottom>Copyright (c) 2016-2019, Salesforce.com, Inc. All rights reserved. Licensed under
                     the BSD 3-Clause license. For full license text, see the LICENSE.txt file in the
                     repository.
                 </bottom>
@@ -226,7 +226,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>18.0</version>
+      <version>26.0-jre</version>
     </dependency> 
 
     <dependency>
@@ -235,6 +235,13 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.ibm.icu</groupId>
+      <artifactId>icu4j</artifactId>
+      <version>64.1</version>
+    </dependency>
+
   </dependencies>
   
   <scm>

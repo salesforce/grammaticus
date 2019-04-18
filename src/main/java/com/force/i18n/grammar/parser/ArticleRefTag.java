@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import java.util.List;
+
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 
@@ -46,5 +48,14 @@ class ArticleRefTag extends ModifierRefTag {
     protected NounModifier resolveModifier(LanguageDictionary dictionary) {
         return dictionary.getArticle(getName());
     }
+    
+	@Override
+    public String toJson(LanguageDictionary dictionary, List<?> list) {
+		// Fallback labels can have articles, but they should be ignored
+		if (!dictionary.getDeclension().hasArticle()) {
+			return "\"\"";
+		}
+		return super.toJson(dictionary, list);
+	}
 
 }

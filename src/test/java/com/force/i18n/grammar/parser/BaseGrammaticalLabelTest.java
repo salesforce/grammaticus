@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -10,6 +10,7 @@ package com.force.i18n.grammar.parser;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -56,11 +57,11 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         }
     }
 
-    protected final URL getLabelDirURL() throws IOException {
+    public static final URL getLabelDirURL() throws IOException {
         return new File("src/test/resources/sample").getCanonicalFile().toURI().toURL();
     }
 
-    protected final URL getLabelJarURL() throws IOException {
+    public static final URL getLabelJarURL() throws IOException {
         return new URL("jar:" + new File("config/labels/sample.jar").getCanonicalFile().toURI() + "!/sample/");  // Assumes this test is run in the "base"
     }
 
@@ -81,6 +82,14 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
     protected GrammaticalLabelSetDescriptor getDescriptor() {
         return getDescriptor(LanguageProviderFactory.get().getBaseLanguage());
+    }
+    
+    public static GrammaticalLabelSetDescriptor getSampleDescriptor(HumanLanguage language) throws IOException {
+        return new LabelSetDescriptorImpl(getLabelJarURL(), language, LABEL_SET_NAME, LABELS_XML, NAMES_XML);
+    }
+
+    public static GrammaticalLabelSetDescriptor getSampleDescriptorDir(HumanLanguage language) throws IOException {
+        return new LabelSetDescriptorImpl(getLabelDirURL(), language, LABEL_SET_NAME, LABELS_XML, NAMES_XML);
     }
 
     protected GrammaticalLabelSetDescriptor getDescriptor(HumanLanguage language) {
@@ -150,7 +159,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
      * @return a Renameable entity for the given noun
      */
     public Renameable getStandardRenameable(String name) {
-        return new MockExistingRenameable(name.toLowerCase());
+        return new MockExistingRenameable(name.toLowerCase(), loadDictionaryNoThrow(LanguageProviderFactory.get().getBaseLanguage()));
     }
 
     protected Renameable makeCustomRenameable(String name, LanguageStartsWith startsWith, String singular, String plural) {
@@ -162,6 +171,22 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         return decl.createNoun(name, type, null, startsWith, LanguageGender.NEUTER,
                 ImmutableMap.of(decl.getNounForm(LanguageNumber.SINGULAR, LanguageArticle.ZERO), singular,
                         decl.getNounForm(LanguageNumber.PLURAL, LanguageArticle.ZERO), plural));
+    }
+
+
+    public String getValue(HumanLanguage language, String label, Renameable[] entities, String grammarSnippet, Object... vals) throws IOException {
+        TestLanguageLabelSetDescriptor testDesc = new TestLanguageLabelSetDescriptor(getDescriptor(language), LabelUtils.getSampleLabelFile(label), LabelUtils.getSampleGrammarFile(grammarSnippet));
+        GrammaticalLabelSet ls = GrammaticalLabelSetImpl.getTestLabelSet(testDesc);
+        return new MessageFormat(ls.getString("Test", "Test", entities, true, vals), language.getLocale()).format(vals);
+    }
+
+    public void assertValue(HumanLanguage language, String label, Renameable[] entities, String expectedResult, Object... vals) throws IOException {
+        String result = getValue(language, label, entities, "", vals);
+        assertEquals("Mismatch for " + label, expectedResult, result);
+    }
+
+    public void assertValue(HumanLanguage language, String label, String expectedResult, Object... vals) throws IOException {
+        assertValue(language, label, null, expectedResult, vals);
     }
 
     private static final String CUSTOM_OBJECT_PREFIX = "01N";  // Needed because we can't refer to the udd here
@@ -252,7 +277,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         @Override
         public boolean isRenamed(HumanLanguage language, String key) {
             Map<String,Noun> m = nounMap.get(language);
-            return m != null && m.containsKey(m);
+            return m != null && m.containsKey(key);
         }
 
         @Override
@@ -377,11 +402,13 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
      * Mock Standard Renameable Entity
      * @author stamm
      */
-    public class MockExistingRenameable extends MockRenameable {
+    public static class MockExistingRenameable extends MockRenameable {
         private final Noun baseNoun;
-        public MockExistingRenameable(String name) {
+        private final LanguageDictionary dict;
+        public MockExistingRenameable(String name, LanguageDictionary dict) {
             super(name);
-            baseNoun = loadDictionaryNoThrow(LanguageProviderFactory.get().getBaseLanguage()).getNoun(name, false);
+            this.dict = dict;
+            baseNoun = dict.getNoun(name.toLowerCase(), false);
             assert this.baseNoun != null : "You must provide a standard english noun";
         }
 
@@ -405,7 +432,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
             if (language == LanguageProviderFactory.get().getBaseLanguage()) {
                 return baseNoun;
             }
-            Noun n = loadDictionaryNoThrow(language).getNoun(getName(), false);
+            Noun n = dict.getNoun(getName(), false);
             return n != null ? n : baseNoun;
         }
     }

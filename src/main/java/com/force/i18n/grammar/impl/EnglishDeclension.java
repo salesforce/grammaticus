@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -58,6 +59,17 @@ class EnglishDeclension extends ArticledDeclension {
                     (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
                     : PLURAL;
         }
+		@Override
+		public String getKey() {
+			return getNumber().getDbValue() + "-" + getStartsWith().getDbValue();
+		}
+
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			// The only variant is in the signular, so we don't want to screw up "the"
+			a.append(termFormVar+".charAt(0)=='"+LanguageNumber.PLURAL.getDbValue()+"'?"+termFormVar+":'"+LanguageNumber.SINGULAR.getDbValue()+"-'+"+startsWithVar);
+		}
     }
 
     /**

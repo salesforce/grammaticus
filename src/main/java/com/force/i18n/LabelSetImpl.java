@@ -128,8 +128,7 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
         if (!isProductionMode() || allowLabelException) {
             throw new ParameterNotFoundException(message);
         } else {
-            logger.log(Level.WARNING, MISSING_LABEL + message,
-                    new ParameterNotFoundException(message));
+            logger.log(Level.WARNING, MISSING_LABEL + message);
             return MISSING_LABEL + message;
         }
     }

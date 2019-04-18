@@ -187,5 +187,4 @@ class GreekDeclension extends GermanicDeclension {
     public String formLowercaseNounForm(String s, NounForm form) {
         return hasCapitalization() ? (s == null ? null : s.toLowerCase()) : s;
     } 
-
 }

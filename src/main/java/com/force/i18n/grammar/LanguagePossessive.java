@@ -23,6 +23,8 @@ public enum LanguagePossessive {
     SECOND_PLURAL ("S", "SecondPersonPlural", "spl"),
     ;
 
+	public static final char JSON_ATTR_NAME = 'p'; 
+
     private static final Map<String,LanguagePossessive> dbValueMap = new HashMap<String,LanguagePossessive>(64);
     static {
         for (LanguagePossessive poss : values()) {

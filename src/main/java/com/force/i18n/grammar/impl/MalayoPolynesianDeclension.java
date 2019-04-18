@@ -15,11 +15,13 @@ import com.force.i18n.grammar.Noun.NounType;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Indonesian is a generally non-inflected language, except for plurals
- * Technically, this should be MalayDeclension, as Indonesian is a form of malay...
+ * Represents a Malayo-Polyesian language.  Generally non-inflected except for plurals, which 
+ * are often formed by reduplication.  Sometimes in Maori it's through vowel
+ * lengthening. 
+ * 
  * @author stamm
  */
- class IndonesianDeclension extends LanguageDeclension {
+ class MalayoPolynesianDeclension extends LanguageDeclension {
 	// All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
@@ -27,7 +29,7 @@ import com.google.common.collect.ImmutableList;
     // All the forms you can set for "other" forms
     static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
-    public IndonesianDeclension(HumanLanguage language) {
+    public MalayoPolynesianDeclension(HumanLanguage language) {
 		super(language);
 	}
 

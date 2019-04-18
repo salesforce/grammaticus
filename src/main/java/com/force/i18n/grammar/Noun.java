@@ -9,12 +9,15 @@ package com.force.i18n.grammar;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
+import com.force.i18n.commons.text.TextUtil;
 import com.google.common.collect.ImmutableSortedMap;
 
 /**
@@ -143,6 +146,15 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
         return s;
     }
 
+
+    /**
+     * @return the classifer word associated with this noun
+     * @see https://en.wikipedia.org/wiki/Classifier_(linguistics)
+     */
+    public String getClassifier() {
+        return "";
+    }
+    
     private boolean equalsAttribute(Object obj) {
         return this.gender == ((Noun)obj).gender && this.startsWith == ((Noun)obj).startsWith;
     }
@@ -233,11 +245,11 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * @param valueOverrides the overrides for values (usually from end-user customization)
      * @return a new clone of this noun with the various values overridden
      */
-    public Noun clone(LanguageGender genderOverride, LanguageStartsWith startsWithOverride, Map<NounForm,String> valueOverrides) {
+    public Noun clone(LanguageGender genderOverride, LanguageStartsWith startsWithOverride, Map<? extends NounForm,String> valueOverrides) {
         Noun n = clone();
         if (genderOverride != null ) n.setGender(genderOverride);
         if (valueOverrides != null) {
-            for (Map.Entry<NounForm,String> entry : valueOverrides.entrySet()) {
+            for (Map.Entry<? extends NounForm,String> entry : valueOverrides.entrySet()) {
                 n.setString(intern(entry.getValue()), entry.getKey());
             }
         }
@@ -325,7 +337,8 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
 
         // Now number
         if (s == null && getDeclension().hasPlural() && form.getNumber() != LanguageNumber.SINGULAR) {
-            baseForm = getDeclension().getExactNounForm(LanguageNumber.SINGULAR, form.getCase(), form.getPossessive(), form.getArticle());
+        	LanguageNumber numberToTry = form.getNumber() == LanguageNumber.PLURAL ? LanguageNumber.SINGULAR :  LanguageNumber.PLURAL;  // If we're plural try singular, otherwise, like for dual, try plural
+            baseForm = getDeclension().getExactNounForm(numberToTry, form.getCase(), form.getPossessive(), form.getArticle());
             s = getString(baseForm);
         }
 
@@ -344,7 +357,24 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      */
     public abstract void makeSkinny();
     
-    /**
+    @Override
+	public void toJson(Appendable appendable) throws IOException {
+    	appendable.append("{\"t\":\"n\",\"l\":\"");
+    	appendable.append(getName());
+    	appendable.append("\",");
+    	if (getDeclension().hasGender()) {
+    		appendable.append("\"g\":\"").append(getGender().getDbValue()).append("\",");
+    	}
+    	if (getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) {
+    		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
+    	}
+    	appendable.append("\"v\":{");
+    	Map<? extends NounForm,String> allValues = getAllDefinedValues();
+    	appendable.append(new TreeMap<>(allValues).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
+    	appendable.append("}}");
+	}
+
+	/**
      * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableSortedMap}.
      * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
      * overhead, that is traditionally high on most {@code Map} implementations.
@@ -359,5 +389,19 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
                 return n1.getKey().compareTo(n2.getKey());
             }
         });
+    }
+
+    /**
+     * Implement this interface on nouns that have associated classifier words.
+     * Note, it is assumed that if the Noun implements WithClassifier, the Declension implements WithClassifiers
+     * @author stamm
+     * @since 1.1
+     */
+    public interface WithClassifier {
+        /**
+         * Set the classifier for this noun to the given word.
+         * @param classifier
+         */
+        void setClassifier(String classifier);
     }
 }

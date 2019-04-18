@@ -31,7 +31,7 @@ import com.google.common.collect.Multimap;
  * ImmutableList.Builder&lt;EsperantoNounForm&gt; fieldBuilder = ImmutableList.builder();
  * int ordinal = 0;
  *  // Iterate through your forms
- *  for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+ *  for (LanguageNumber number : getAllowedNumbers()) {
  *     ///
  *      EsperantoNounForm form = new EsperantoNounForm(this, number, ordinal++);
  *      entityBuilder.add(form);
@@ -40,7 +40,7 @@ import com.google.common.collect.Multimap;
  * </code>
  * @author stamm
  */
-abstract class ComplexGrammaticalForm implements Serializable {
+abstract class ComplexGrammaticalForm implements Serializable, Comparable<ComplexGrammaticalForm> {
     /**
 	 *
 	 */
@@ -67,6 +67,11 @@ abstract class ComplexGrammaticalForm implements Serializable {
     public final boolean equals(Object other) {
         return this==other;
     }
+	@Override
+	public int compareTo(ComplexGrammaticalForm o) {
+		return this.getOrdinal() - o.getOrdinal();
+	}
+
 
     /**
      * Use the serialization proxy for random noun forms (with a 7-ish byte cost)
@@ -152,6 +157,13 @@ abstract class ComplexGrammaticalForm implements Serializable {
         public String toString() {
             return getDeclension().getLanguage() + "Adj:" + getOrdinal() + "-" + getNumber().getDbValue() + "-" + getArticle().getDbValue() + "-" + getCase().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
         }
+        // Assume the 
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			assert getDeclension().hasGender() : "You need to override this for declensions without gender.";
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
     }
 
     /**
@@ -169,8 +181,20 @@ abstract class ComplexGrammaticalForm implements Serializable {
         @Override protected TermType getTermType() { return TermType.Article; }
         @Override
         public String toString() {
-            return getDeclension().getLanguage() + "Art" + getOrdinal() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
+            return getDeclension().getLanguage() + "Art" + getOrdinal() + "-" + getKey();
         }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getStartsWith().getDbValue();
+		}
+		
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			// TODO: Fix greek's articles to have their own complex article form.
+			assert !getDeclension().hasStartsWith() || getDeclension().getLanguage().getLocale().getLanguage().equals("el"): "You need to override this for declensions with startswith";
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
     }
 
 
@@ -251,6 +275,7 @@ abstract class ComplexGrammaticalForm implements Serializable {
     static final class ModifierFormMap<T extends ModifierForm> {
         private final ModifierForm[][][] singularMap;
         private final ModifierForm[][][] pluralMap;
+        private final ModifierForm[][][] dualMap;
 
         private static final int genderLength = LanguageGender.values().length;
         private static final int caseLength = LanguageCase.values().length;
@@ -259,8 +284,21 @@ abstract class ComplexGrammaticalForm implements Serializable {
         public ModifierFormMap(Collection<? extends T> modifiers) {
             ModifierForm[][][] gcs0Map = new ModifierForm[genderLength][][];
             ModifierForm[][][] gcs1Map = new ModifierForm[genderLength][][];
+            ModifierForm[][][] gcs2Map = null;
             for (T modifier : modifiers) {
-                ModifierForm[][][] gcsMap = modifier.getNumber().isPlural() ? gcs1Map : gcs0Map;
+                ModifierForm[][][] gcsMap = gcs0Map;
+                LanguageNumber number = modifier.getNumber();
+                switch (number) {
+                case DUAL:
+                    if (gcs2Map == null) gcs2Map = new ModifierForm[genderLength][][];
+                    gcsMap = gcs2Map;
+                    break;
+                case PLURAL:
+                    gcsMap = gcs1Map;
+                    break;
+                case SINGULAR:
+                    break;
+                }
                 ModifierForm[][] csMap = gcsMap[modifier.getGender().ordinal()];
                 if (csMap == null) {
                     csMap = new ModifierForm[caseLength][];
@@ -278,6 +316,7 @@ abstract class ComplexGrammaticalForm implements Serializable {
             }
             singularMap = gcs0Map;
             pluralMap = gcs1Map;
+            dualMap = gcs2Map;
         }
 
         /**
@@ -300,10 +339,18 @@ abstract class ComplexGrammaticalForm implements Serializable {
             if (number == null) {
                 return null;
             }
-            ModifierForm[][][] gcsMap = number.isPlural() ? pluralMap : singularMap;
-            if (gcsMap == null) {
-                return null;
+            ModifierForm[][][] gcsMap = singularMap;
+            switch (number) {
+            case DUAL:
+                gcsMap = dualMap;
+                break;
+            case PLURAL:
+                gcsMap = pluralMap;
+                break;
+            case SINGULAR:
+                break;
             }
+            assert gcsMap != null;
             ModifierForm[][] csMap = gcsMap[gender.ordinal()];
             if (csMap == null) {
                 return null;
@@ -327,14 +374,28 @@ abstract class ComplexGrammaticalForm implements Serializable {
     static final class NounFormMap<T extends NounForm> {
         private final NounForm[] singularMap;
         private final NounForm[] pluralMap;
+        private final NounForm[] dualMap;
 
         private static final int caseLength = LanguageCase.values().length;
 
         public NounFormMap(Collection<? extends T> modifiers) {
             NounForm[] c0Map = new NounForm[caseLength];
             NounForm[] c1Map = new NounForm[caseLength];
+            NounForm[] c2Map = null;
             for (T modifier : modifiers) {
-                NounForm[] cMap = modifier.getNumber().isPlural() ? c1Map : c0Map;
+                LanguageNumber number = modifier.getNumber();
+                NounForm[] cMap = c0Map;
+                switch (number) {
+                case DUAL:
+                    if (c2Map == null) c2Map = new NounForm[caseLength];
+                    cMap = c2Map;
+                    break;
+                case PLURAL:
+                    cMap = c1Map;
+                    break;
+                case SINGULAR:
+                    break;
+                }
                 if (cMap[modifier.getCase().ordinal()] != null) {
                     throw new IllegalArgumentException("Duplicate noun forms " + modifier + " != " + cMap[modifier.getCase().ordinal()]);
                 }
@@ -342,6 +403,7 @@ abstract class ComplexGrammaticalForm implements Serializable {
             }
             singularMap = c0Map;
             pluralMap = c1Map;
+            dualMap = c2Map;
         }
 
         /**
@@ -380,7 +442,18 @@ abstract class ComplexGrammaticalForm implements Serializable {
             if (number == null) {
                 return null;
             }
-            NounForm[] cMap = number.isPlural() ? pluralMap : singularMap;
+            NounForm[] cMap = singularMap;
+            switch (number) {
+            case DUAL:
+                assert dualMap != null;
+                cMap = dualMap;
+                break;
+            case PLURAL:
+                cMap = pluralMap;
+                break;
+            case SINGULAR:
+                break;
+            }
             return (T) cMap[_case.ordinal()];
         }
     }

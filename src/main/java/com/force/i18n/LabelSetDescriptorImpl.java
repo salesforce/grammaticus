@@ -152,7 +152,7 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
         if (!language.equals(other.language)) {
             return false;
         }
-        if (!rootDirectory.equals(other.rootDirectory)) {
+        if (!rootDirectory.toExternalForm().equals(other.rootDirectory.toExternalForm())) {
             return false;
         }
         return true;

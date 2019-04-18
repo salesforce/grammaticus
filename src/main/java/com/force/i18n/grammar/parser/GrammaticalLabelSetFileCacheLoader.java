@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -37,7 +39,6 @@ import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.GrammaticalLabelSetImpl;
 import com.force.i18n.grammar.GrammaticalLabelSetProvider;
 import com.force.i18n.settings.BasePropertyFile;
-import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 /**
@@ -164,7 +165,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
                 File uddDir = uddFile.getParentFile();
                 result = Math.max(result, I18nJavaUtil.dirLastModified(uddDir, true));
             } catch (URISyntaxException | IOException e) {
-                throw Throwables.propagate(e);
+                throw e;
             }
         }
 
@@ -245,7 +246,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
 
             logger.info("Loading " + labelSetName + " from cache");
             long start = System.currentTimeMillis();
-            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(this.cacheFile))) {
+            try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.cacheFile)))) {
                 GrammaticalLabelSetImpl labelSet = (GrammaticalLabelSetImpl)ois.readObject();
                 logger.info("Loaded " + this.labelSetName + " from cache in " + (System.currentTimeMillis() - start)
                     + " ms");
@@ -269,7 +270,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
 
         public void write(GrammaticalLabelSetImpl labelSet) {
             long startAt = System.currentTimeMillis();
-            try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(this.cacheFile))){
+            try (ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(this.cacheFile)))){
                 oos.writeObject(labelSet);
                 logger.info("Wrote cache for " + this.labelSetName + " in " + (System.currentTimeMillis() - startAt)
                     + " ms");

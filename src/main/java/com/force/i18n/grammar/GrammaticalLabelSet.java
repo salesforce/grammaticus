@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar;
 
+import java.io.IOException;
+import java.util.Collection;
 import java.util.Set;
 
 import com.force.i18n.*;
@@ -46,9 +48,27 @@ public interface GrammaticalLabelSet extends LabelSet {
     String getString(String section, Renameable[] entities, String param, String ifNull) ;
 
     String getString(String section, String param, boolean forMessageFormat);
+    
+    String getStringThrow(String section, String param, boolean forMessageFormat);
 
     String getString(String section, Renameable[] entities, String param, boolean forMessageFormat);
 
+    /**
+	 * NOTE: this doesn't actually replace the message format.
+     */
+    String getString(String section, String param, Renameable[] entities, Object... vals);
+
+    /**
+	 * NOTE: this doesn't actually replace the message format.
+     */
+    String getString(String section, String param, boolean forMessageFormat, Object... vals);
+
+    /**
+	 * NOTE: this doesn't actually replace the message format.
+     */
+    String getString(String section, String param, Renameable[] entities, boolean forMessageFormat, Object... vals);
+
+    
     /**
      * @return the dictionary associated with this label set
      */
@@ -70,6 +90,23 @@ public interface GrammaticalLabelSet extends LabelSet {
      */
     GrammaticalTerm getGrammaticalTerm(String section, String param);
 
+    /**
+     * Write the entire label set to the given appendable as a Map from section.key to label
+     * @param appendable the appendable to write to
+     * @param keys: optional set of section names or section.key names that restrict which labels to include
+     * @param termsInUse: if provided and non null, the set of used terms by all the given labels will be added to it;
+     * @throws IOException
+     */
+    void writeJson(Appendable appendable, Collection<String> keysToInclude, Set<GrammaticalTerm> termsInUse) throws IOException;
+    
+    /**
+     * For a set of labels, determine which Grammatical Terms are in use.  This allows downloading
+     * only a subset of nouns to the client.
+     * @param keysToInclude a non-optional set of String that correspond to labels that are in use
+     * @return a collection of grammatical terms that are referenced in the label.
+     */
+    Collection<? extends GrammaticalTerm> getUsedTerms(Collection<String> keysToInclude);
+    
     /**
      * An interface that is a composite of two GrammaticalLabelSets, a fallback
      * set for any values that are missing from an overlay set

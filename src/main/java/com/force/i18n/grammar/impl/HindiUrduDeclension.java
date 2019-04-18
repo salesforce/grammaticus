@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 
 import com.force.i18n.HumanLanguage;
@@ -20,10 +21,12 @@ import com.google.common.collect.ImmutableList;
  * Represents the declension of Hindi or Urdu, Indo-Iranian languages which
  * have case, gender, number, and complicated post-positions that attach to the noun
  * aggutinatively.
- *
+ * 
  * We support two of each kind of value to support 4 noun and 8 adjective forms.
  *
  * NOTE: We are reusing Nominative and Objective to represent Direct and Oblique,
+ * and because there's only two cases, we store them in Enums.  So, like Bengali,
+ * this isn't under "IndoAryanDeclension" because the implementation is simpler.
  *
  * @author stamm
  */
@@ -66,6 +69,15 @@ class HindiUrduDeclension extends LanguageDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
+		}
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
     }
 
     public static enum HindiUrduNounForm implements NounForm {

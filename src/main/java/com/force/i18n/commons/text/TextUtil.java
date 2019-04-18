@@ -701,4 +701,19 @@ public final class TextUtil {
             return key;
         }
     }
+    
+    private static final String[] JSON_IN = new String[] { "\\",  "\b", "\f", "\n", "\r", "\t", "\"" };
+    private static final String[] JSON_OUT = new String[] { "\\\\", "\\b", "\\f", "\\n", "\\r", "\\t", "\\\""};
+    private static final TrieMatcher JSON_SEARCH_REPLACE = TrieMatcher.compile(JSON_IN, JSON_OUT);
+    
+    /**
+     * Properly escapes strings to be displayed in Json Strings. This means that backslashes and double quotes are
+     * escaped. <br/>
+     * <b>NOTE:</b> refer RFC8259 / ECMA 404. this method does not escape solidus (\x2f) as it seems to be both
+     * acceptable in either slash, or escaped.
+     * @see <a href="https://tools.ietf.org/html/rfc8259#section-7">RFC 8259  #7 Strings</a>
+     */
+    public static String escapeForJsonString(String in) {
+        return TrieMatcher.replaceMultiple(in, JSON_SEARCH_REPLACE);
+    }
 }

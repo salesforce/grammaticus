@@ -8,11 +8,11 @@
 package com.force.i18n.grammar.parser;
 
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.force.i18n.LabelDebug;
-import com.force.i18n.Renameable;
+import com.force.i18n.*;
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
@@ -66,6 +66,7 @@ class NounRefTag extends TermRefTag {
         return this.index >= 0;
     }
 
+    @Override
     public boolean isCapital() {
         return this.isCapital;
     }
@@ -98,15 +99,14 @@ class NounRefTag extends TermRefTag {
     @Override
     public String getKey() {
         StringBuilder sb = new StringBuilder(getName().toLowerCase()).append(SEP);
+        sb.append(getForm().getKey()).append(SEP).append(isCapital ? "1" : "0");
         if (isDynamic())
             sb.append(this.index).append(SEP);
-
-        sb.append(getForm().getKey()).append(SEP).append(isCapital ? "1" : "0");
         return sb.toString();
     }
 
     @Override
-    public String toString(LanguageDictionary dict, boolean overrideForms, Renameable... entities) {
+    public String toString(LanguageDictionary dict, boolean overrideForms, Object[] vals, Renameable... entities) {
         String s = null;
 
         NounForm frm = getForm(dict, overrideForms);
@@ -162,8 +162,17 @@ class NounRefTag extends TermRefTag {
 
         return s;
     }
-
+    
     @Override
+    String extraJson(LanguageDictionary dictionary, List<?> terms) {
+		if (index >= 0) {
+			return ",\"i\":"+index;
+		} else {
+			return "";
+		}
+	}
+
+	@Override
     protected boolean equalsValue(TermRefTag obj) {
         return this.form == ((NounRefTag)obj).form
             && this.index == ((NounRefTag)obj).index
@@ -180,5 +189,21 @@ class NounRefTag extends TermRefTag {
         result = prime * result + (isCapital ? 1231 : 1237);
         result = prime * result + (escapeHtml ? 1231 : 1237);
         return result;
+    }
+    
+    Noun resolveNoun(LanguageDictionary formatter, Renameable[] entities) {
+        // Get the relevant noun to see get the right value for StartsWith/Gender
+        Noun n;
+        if (isDynamic() && entities != null && getReference() < entities.length) {
+            Renameable ei = entities[getReference()];
+            n = formatter.getDynamicNoun(getName(), ei, true, false);
+        } else {
+            assert !isDynamic() || I18nJavaUtil.isDebugging()
+                : "Only allowed in label debug mode, mode: " + I18nJavaUtil.isDebugging()
+                    + " isDynamic: " + isDynamic() + " entities: " + entities.length
+                    + " reference: " + getReference();
+            n = formatter.getNoun(getName(), true);
+        }    
+        return n;
     }
 }

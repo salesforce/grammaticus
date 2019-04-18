@@ -40,7 +40,7 @@ abstract class SlavicDeclension extends LanguageDeclension {
         ImmutableList.Builder<SlavicNounForm> nounBuilder = ImmutableList.builder();
         ImmutableMultimap.Builder<LanguageCase, SlavicNounForm> byCaseBuilder = ImmutableMultimap.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 SlavicNounForm form = new SlavicNounForm(this, number, caseType, ordinal++);
                 byCaseBuilder.put(caseType, form);
@@ -53,7 +53,7 @@ abstract class SlavicDeclension extends LanguageDeclension {
 
         ImmutableList.Builder<SlavicAdjectiveForm> adjBuilder = ImmutableList.builder();
         int adjOrdinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageGender gender : (hasGender() ? getRequiredGenders() : ImmutableSet.of(getDefaultGender()))) {
                 if (gender == LanguageGender.ANIMATE_MASCULINE) continue; //we'll handle it separately, since it only needs a few cases
                 for (LanguageCase caseType : getRequiredCases()) {
@@ -126,6 +126,12 @@ abstract class SlavicDeclension extends LanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
+		}
+		
+
     }
 
     /**
@@ -396,6 +402,11 @@ abstract class SlavicDeclension extends LanguageDeclension {
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
+        }
+        
+        @Override
+        public Set<LanguageNumber> getAllowedNumbers() {
+            return LanguageNumber.DUAL_SET;  // Duals are really required.
         }
     }
 

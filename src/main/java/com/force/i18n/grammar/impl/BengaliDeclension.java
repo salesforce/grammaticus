@@ -21,6 +21,8 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Bengali is our first Indic language. Spec from Localization: 
+ * 
+ * Although this is Indo-Aryan, because of it's use of definite articles, we keep it separate.
  *
  * @author cgrabill
  */
@@ -35,7 +37,7 @@ class BengaliDeclension extends ArticledDeclension {
         ImmutableList.Builder<BengaliNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<BengaliNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguageArticle article : getAllowedArticleTypes()) {
                     BengaliNounForm form = new BengaliNounForm(this, number, caseType, article, ordinal++);
@@ -68,7 +70,10 @@ class BengaliDeclension extends ArticledDeclension {
         @Override public LanguageCase getCase() { return caseType; }
         @Override public LanguageArticle getArticle() { return article; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
+        }
         @Override
         public String toString() {
             return "BengaliNF:" + getKey();
@@ -84,10 +89,10 @@ class BengaliDeclension extends ArticledDeclension {
         private transient Map<BengaliNounForm, String> values = new HashMap<BengaliNounForm, String>();
 
         BengaliNoun(BengaliDeclension declension, String name, String pluralAlias, NounType type, 
-                String entityName, String access, 
+                String entityName, String access, LanguageGender gender, 
                 boolean isStandardField, boolean isCopiedFromDefault ) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT,
-                    LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
+                    gender, access, isStandardField, isCopiedFromDefault);
         }
 
         @Override
@@ -169,7 +174,7 @@ class BengaliDeclension extends ArticledDeclension {
     protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
             boolean isCopied) {
-        return new BengaliNoun(this, name, pluralAlias, type, entityName, access, 
+        return new BengaliNoun(this, name, pluralAlias, type, entityName, access, gender, 
                 isStandardField, isCopied);
     }
 

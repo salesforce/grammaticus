@@ -9,14 +9,15 @@ package com.force.i18n.grammar.impl;
 
 import java.util.*;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
 
 import com.force.i18n.*;
 import com.force.i18n.grammar.*;
-import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ModifierFormMap;
 import com.force.i18n.grammar.impl.ComplexGrammaticalForm.NounFormMap;
 import com.google.common.collect.ImmutableSet;
+
+import junit.framework.TestCase;
 
 /**
  * Unit test for LanguageDeclension functionality (no need to parse)
@@ -61,7 +62,7 @@ public class LanguageDeclensionImplsTest extends TestCase {
                 assertTrue("Default gender isn't contained in the set of genders for " + lang, declension.getRequiredGenders().contains(declension.getDefaultGender()));
             }
 
-            if (declension.hasStartsWith() || declension.hasStartsWithInAdjective()) {
+            if (declension.hasStartsWith()) {
                 assertTrue("Default starts with isn't contained in the set of startsWiths for " + lang, declension.getRequiredStartsWith().contains(declension.getDefaultStartsWith()));
             }
 
@@ -76,6 +77,10 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
             if (declension.hasArticle() || declension.hasArticleInNounForm()) {
                 assertTrue("Default article isn't contained in the set of articles for " + lang, declension.getAllowedArticleTypes().contains(declension.getDefaultArticle()));
+            }
+            
+            if (declension.hasStartsWith() && declension.hasEndsWith()) {
+            	Assert.fail("You cannot have a language with both starts with and ends with phoneme modifier changes at this time.");
             }
 
         }

@@ -48,6 +48,8 @@ public enum LanguageCase {
     ABESSIVE("abe", "Abessive"),
     COMITATIVE("com", "Comitative"),
     ;
+	
+	public static final char JSON_ATTR_NAME = 'c';
 
     private static final Map<String,LanguageCase> dbValueMap = new HashMap<String,LanguageCase>(64);
     static {

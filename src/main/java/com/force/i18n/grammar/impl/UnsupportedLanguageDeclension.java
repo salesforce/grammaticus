@@ -143,6 +143,9 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     /**
      * Irish has been simplified from Old Irish and Celtic, but still has a case system
      * and a special way of handling the definite article for things that start with an S or Z sound (like italian)
+     * 
+     * Note: we don't support the special form for nouns when used with the number ending in two (2 láimh vs 3 lámha) 
+     * taking the lenited singular noun.  Google translate as of 2017 does the same thing when using the number instead of (Dhá).
      */
     static class IrishDeclension extends CelticDeclension {
         public IrishDeclension(HumanLanguage language) {

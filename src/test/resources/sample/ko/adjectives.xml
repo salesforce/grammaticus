@@ -18,6 +18,32 @@
     ======================================================================-->
 
 
+	<!--  These particles are intended right after an entity reference (i.e. directly post />) and will follow the correct
+		  endsWith of the previous noun -->
+
+	<adjective name="Eun">  <!-- Topic Particle -->
+		<value endsWith="c">은</value>
+		<value endsWith="v">는</value>
+	</adjective>
+	<adjective name="I">  <!-- Identifier Particle -->
+		<value endsWith="c">이</value>
+		<value endsWith="v">가</value>
+	</adjective>
+	<adjective name="Eul">  <!-- Object Particle -->
+		<value endsWith="c">을</value>
+		<value endsWith="v">를</value>
+	</adjective>
+	<adjective name="Euro">  <!-- Instrumental Case -->
+		<value endsWith="c">으로</value>
+		<value endsWith="v">로</value>
+		<value endsWith="s">로</value>
+	</adjective>
+	<adjective name="Wa">  <!-- And, With or as -->
+		<value endsWith="c">과</value>
+		<value endsWith="v">와</value>
+	</adjective>
+
+
     <adjective name="Accessed">
         <value plural="n">액세스된</value>
     </adjective>

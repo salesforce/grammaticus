@@ -1,27 +1,24 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.parser;
 
-import java.io.Serializable;
+import java.util.*;
 
-import com.force.i18n.Renameable;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
+import com.force.i18n.grammar.LanguageDictionary;
 
 /**
  * Base class of Term Reference Tag elements in labels file. This keeps any elements
  * appears in contents of <CODE>param</CODE> element.
  * @author yoikawa
  */
-public abstract class TermRefTag implements Serializable {
-    /**
-	 *
-	 */
+public abstract class TermRefTag extends RefTag {
 	private static final long serialVersionUID = 1L;
 
 	private final String name;
@@ -40,6 +37,7 @@ public abstract class TermRefTag implements Serializable {
      * @return a "key" that uniquely identifies all the attributes of the reference tag.
      * Used by toString to provide some usefulness
      */
+    @Override
     public abstract String getKey();
 
     @Override
@@ -86,27 +84,33 @@ public abstract class TermRefTag implements Serializable {
      */
     public abstract GrammaticalForm getForm(LanguageDictionary dictionary, boolean overrideForms);
 
-    /**
-     * @return whether this GrammaticalTerm is "dynamic", i.e. it requires a
-     * Renameable to be used.
-     */
-    public boolean isDynamic() {
-        return false;
-    }
-
-    /**
-     * Format this reference into a user-readable format based on the given dictionary
-     * and dynamic entities
-     * @param dictionary the dictionary of language particles.
-     * @param entities the set of dynamic renameable entities
-     * @param overrideForms if the form contained inside this term ref might be a different language than the dictionary provided.
-     * In this case, the implementation must try to find the closest term to the one stored with this term ref.
-     * @return a user-readable string for this reference
-     */
-    public abstract String toString(LanguageDictionary dictionary, boolean overrideForms, Renameable... entities);
+    protected abstract boolean isCapital();
 
     @Override
     public String toString() {
         return getKey();
     }
+
+    /**
+     * Get the current term ref tag as a JSON object for use in offline mode
+     * @param dictionary the dictionary with all the nouns
+     * @param list the list of the current set of terms being processed (so that for modifiers it can find the associated term by index)
+     */
+    @Override
+	public String toJson(LanguageDictionary dictionary, List<?> list) {
+		// Default implementation uses the key
+        return "{\"t\":\"" + getType().getCharId() + "\",\"l\":\"" + getName().toLowerCase() + "\",\"f\":\""
+                + (getForm(dictionary, true) == null ? "" : getForm(dictionary, true).getKey()) + "\",\"c\":"
+                + isCapital() + extraJson(dictionary, list) + "}";
+	}
+
+	@Override
+	public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
+		GrammaticalTerm term = dictionary.getTerm(getName());
+		//assert term != null : "Reference to invalid term: " + ((TermRefTag)o).getName();
+		return (term != null) ? Collections.singleton(term) : Collections.emptySet();
+	}
+
+	// Extra json for the term
+	abstract String extraJson(LanguageDictionary dictionary, List<?> list);
 }
