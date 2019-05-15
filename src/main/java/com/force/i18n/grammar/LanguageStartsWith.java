@@ -9,6 +9,8 @@ package com.force.i18n.grammar;
 
 /**
  * Represents the different forms of starting phonemes associated with an noun
+ * TODO: Change to LanguagePhonemeType, since in Korean, it isn't startswith, it's endswith.
+ * 
  * @author stamm
  */
 public enum LanguageStartsWith {
@@ -16,6 +18,9 @@ public enum LanguageStartsWith {
     VOWEL ("v", "Vowel"),
     SPECIAL ("s", "Special"),
     ;
+	
+	public static final char JSON_ATTR_NAME = 's'; 
+
     private final String dbValue;
     private final String apiValue;
     private LanguageStartsWith(String dbValue, String apiValue) {

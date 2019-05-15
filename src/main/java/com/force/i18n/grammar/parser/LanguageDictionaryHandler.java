@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -31,8 +31,8 @@ class LanguageDictionaryHandler extends TrackingHandler {
     private static final Logger logger = Logger.getLogger(LanguageDictionaryHandler.class.getName());
     // valid tag names
     static final String ROOT = "names";
-    static final String ALT_ROOT = "sfdcnames";  
-    static final String ADJECTIVE_ROOT = "adjectives"; 
+    static final String ALT_ROOT = "sfdcnames";
+    static final String ADJECTIVE_ROOT = "adjectives";
     static final String ALT_ADJECTIVE_ROOT = "sfdcadjectives";
     static final String NOUN = "noun";
     static final String ADJECTIVE = "adjective";
@@ -41,7 +41,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
     static final String IMPORT = "import";
 
     static final ImmutableSet<String> ROOTS = ImmutableSet.of(ROOT, ALT_ROOT, ADJECTIVE_ROOT, ALT_ADJECTIVE_ROOT);
-    
+
     // attributes
     static final String NAME = "name";
     static final String ENTITY = "entity";
@@ -53,9 +53,11 @@ class LanguageDictionaryHandler extends TrackingHandler {
     static final String TYPE = "type";
     static final String GENDER = "gender";
     static final String STARTS = "startsWith";
+    static final String ENDS = "endsWith";
     static final String POSITION = "position";
     static final String ACCESS = "access";
     static final String STANDARDFIELD = "standardField";
+    static final String COUNTER = "counter";
 
     static final String YES = "y";
     static final String NO = "n";
@@ -242,16 +244,24 @@ class LanguageDictionaryHandler extends TrackingHandler {
             String tableEnum = uniquefy.unique(atts.getValue(ENTITY));
             String access = atts.getValue(ACCESS);
             String alias = uniquefy.unique(atts.getValue(ALIAS));
-            LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
+            LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
             LanguageGender gen = LanguageGender.fromLabelValue(atts.getValue(GENDER));
             boolean isStandardField = (atts.getValue(STANDARDFIELD) == null ? true : atts
                 .getValue(STANDARDFIELD).equals(YES)); // default is YES
 
-            
+
             this.n = parser.getDictionary().getOrCreateNoun(tableEnum, name, alias, type, gen, starts, access, isStandardField);
             // We're reparsing the same noun.  Create it instead
             if (parser.hasParentDictionarySameLang() && this.n == parser.getParentDictionary().getNoun(name, false)) {
             	this.n = this.n.clone(gen, starts);
+            }
+            String classifier = uniquefy.unique(atts.getValue(COUNTER));
+            if (classifier != null) {
+                if (n instanceof Noun.WithClassifier) {
+                    ((Noun.WithClassifier)n).setClassifier(classifier);
+                } else {
+                    logger.fine("Attempting to set a counter word for a language without classifiers for noun " + this.name + " for " + parser.getDictionary().getLanguage());
+                }
             }
         }
 
@@ -294,7 +304,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
 
             // always store as lower case
             this.name = atts.getValue(NAME).toLowerCase().intern();
-            LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
+            LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
             if (starts == null) starts = parser.getDictionary().getDeclension().getDefaultStartsWith();
             LanguagePosition position = LanguagePosition.fromDbValue(atts.getValue(POSITION));
             if (position == null) position = parser.getDictionary().getDeclension().getDefaultAdjectivePosition();
@@ -360,7 +370,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             } else {
                 logger.fine("Attempting to set '" + value + "' with invalid article form " + attrs + " for " + parser.getDictionary().getLanguage());
             }
-            
+
         }
 
         // Article only accepts <value> tag

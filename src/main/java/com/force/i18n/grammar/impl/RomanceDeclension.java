@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 
 import com.force.i18n.HumanLanguage;
@@ -51,6 +52,17 @@ abstract class RomanceDeclension extends ArticledDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getNumber().getDbValue() + "-" + getGender().getDbValue();
+		}
+
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(termFormVar+".substr(0,2)+"+genderVar);
+		}
+		
     }
 
     /**
@@ -200,11 +212,6 @@ abstract class RomanceDeclension extends ArticledDeclension {
     }
 
     @Override
-    public Article createArticle(String name, LanguageArticle articleType) {
-        return new RomanceArticle(this, name, articleType);
-    }
-
-    @Override
     public EnumSet<LanguageGender> getRequiredGenders() {
         return GENDER_TYPES;
     }
@@ -290,11 +297,6 @@ abstract class RomanceDeclension extends ArticledDeclension {
         return false;
     }
 
-    @Override
-    public boolean hasStartsWithInAdjective() {
-        return hasStartsWith();
-    }
-
     static class SpanishDeclension extends RomanceDeclension {
         public SpanishDeclension(HumanLanguage language) {
     		super(language);
@@ -322,6 +324,11 @@ abstract class RomanceDeclension extends ArticledDeclension {
         protected Map<RomanceModifierForm, String> getIndefiniteArticles() {
             return INDEFINITE_ARTICLE;
         }
+        @Override
+        public Article createArticle(String name, LanguageArticle articleType) {
+            return new RomanceArticle(this, name, articleType);
+        }
+
     }
 
     static class PortugueseDeclension extends RomanceDeclension {
@@ -352,5 +359,10 @@ abstract class RomanceDeclension extends ArticledDeclension {
         protected Map<RomanceModifierForm, String> getIndefiniteArticles() {
             return INDEFINITE_ARTICLE;
         }
+        @Override
+        public Article createArticle(String name, LanguageArticle articleType) {
+            return new RomanceArticle(this, name, articleType);
+        }
+
     }
 }

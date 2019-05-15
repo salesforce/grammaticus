@@ -23,7 +23,7 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
  *
  * @author stamm
  */
-public abstract class GrammaticalTerm implements Serializable {
+public abstract class GrammaticalTerm implements Serializable, Comparable<GrammaticalTerm> {
     /**
 	 * 
 	 */
@@ -32,9 +32,14 @@ public abstract class GrammaticalTerm implements Serializable {
     private transient LanguageDeclension declension;
 
     public enum TermType {
-        Noun,
-        Adjective,
-        Article;
+        Noun('n'),
+        Adjective('a'),
+        Article('d');
+    	private final char id;
+    	TermType(char id) {
+    		this.id = id;
+    	}
+    	public char getCharId() {return this.id;}
     }
 
     protected GrammaticalTerm(LanguageDeclension declension, String name) {
@@ -79,6 +84,17 @@ public abstract class GrammaticalTerm implements Serializable {
     public LanguageDeclension getDeclension() {
         return this.declension;
     }
+    
+    @Override
+	public int compareTo(GrammaticalTerm o) {
+    	TermType thisType = getTermType();
+    	TermType oType = o.getTermType();
+    	int typeComp = thisType.compareTo(oType);
+    	return typeComp == 0 ? getName().compareTo(o.getName()) : typeComp;
+	}
+
+
+	public abstract void toJson(Appendable appendable) throws IOException;
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();

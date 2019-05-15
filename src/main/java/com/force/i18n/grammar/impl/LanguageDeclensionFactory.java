@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -36,8 +36,8 @@ public enum LanguageDeclensionFactory {
     	Map<HumanLanguage, LanguageDeclension> map;
     	if (baseLanguage instanceof Enum) {
     		// There's no good way to do this
-    		Map eMap = Maps.newEnumMap(baseLanguage.getClass().asSubclass(Enum.class)); 
-    		map = (Map<HumanLanguage, LanguageDeclension>) eMap;
+    		Map eMap = Maps.newEnumMap(baseLanguage.getClass().asSubclass(Enum.class));
+    		map = eMap;
     	} else {
     		map = new HashMap<>();
     	}
@@ -53,7 +53,7 @@ public enum LanguageDeclensionFactory {
     /**
      * @return For the given language, return the associated declension
      * @param language the given language
-     */ 
+     */
     public LanguageDeclension getDeclension(HumanLanguage language) {
         if (language == baseLanguage) return defaultDeclension;
         return declensions.get(language);
@@ -92,13 +92,18 @@ public enum LanguageDeclensionFactory {
             case CHINESE:
             case JAPANESE:
             case VIETNAMESE:
+            case BURMESE:
+                return new SimpleDeclension.SimpleDeclensionWithClassifiers(language);
             case THAI:
-            case KOREAN:
             case TAGALOG:
+            case AFRIKAANS:
                 return new SimpleDeclension(language);
+            case KOREAN:
+            	return new KoreanDeclension(language);
             case INDONESIAN:
             case MALAY:
-                return new IndonesianDeclension(language);
+            case MAORI:
+                return new MalayoPolynesianDeclension(language);
             case HUNGARIAN:
                 return new HungarianDeclension(language);
             case TURKISH:
@@ -150,13 +155,31 @@ public enum LanguageDeclensionFactory {
                 return new GermanicDeclension.LuxembourgishDeclension(language);
             case ARMENIAN:
                 return new ArmenianDeclension(language);
+            case CATALAN:
+                return new CatalanDeclension(language);
             case HINDI:
             case URDU:
                 return new HindiUrduDeclension(language);
             case BENGALI:
                 return new BengaliDeclension(language);
+            case SWAHILI:
+                return new BantuDeclension.SwahiliDeclension(language);
+            case ZULU:
+                return new BantuDeclension.ZuluDeclension(language);
+            case XHOSA:
+                return new BantuDeclension.XhosaDeclension(language);
             case TAMIL:
-                return new TamilDeclension(language);
+                return new DravidianDeclension.TamilDeclension(language);
+            case TELUGU:
+                return new DravidianDeclension.TeluguDeclension(language);
+            case KANNADA:
+                return new DravidianDeclension.KannadaDeclension(language);
+            case MALAYALAM:
+                return new DravidianDeclension.MalayalamDeclension(language);
+            case GUJARATI:
+                return new IndoAryanDeclension.GujaratiDeclension(language);
+            case MARATHI:
+                return new IndoAryanDeclension.MarathiDeclension(language);
             // Languages too complex to support *EVER*.  Included with ans
             case IRISH:    // Lenition
                 return new UnsupportedLanguageDeclension.IrishDeclension(language);
@@ -166,8 +189,6 @@ public enum LanguageDeclensionFactory {
                 return new UnsupportedLanguageDeclension.BasqueDeclension(language);
             case MALTESE:  // More complicated than arabic: complicated starts with, dual form, etc.
                 return new UnsupportedLanguageDeclension.MalteseDeclension(language);
-            case CATALAN:
-            	return new CatalanDeclension(language);
         }
     	if (FAIL_ON_MISSING) {
     		throw new UnsupportedOperationException("Language has no defined declension; the build breaker edited UserLanguage");
@@ -175,5 +196,5 @@ public enum LanguageDeclensionFactory {
     		return new SimpleDeclension(language);
     	}
     }
-    private static final boolean FAIL_ON_MISSING = "true".equals(I18nJavaUtil.getProperty("failOnMissingDeclension"));  
+    private static final boolean FAIL_ON_MISSING = "true".equals(I18nJavaUtil.getProperty("failOnMissingDeclension"));
 }

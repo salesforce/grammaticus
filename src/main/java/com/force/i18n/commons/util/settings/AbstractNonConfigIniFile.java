@@ -54,7 +54,7 @@ public abstract class AbstractNonConfigIniFile implements NonConfigIniFile {
 
     @Override
     public boolean getBoolean(String section, String param) {
-        return getString(section, param).equals("1");
+        return "1".equals(getString(section, param));
     }
 
     @Override

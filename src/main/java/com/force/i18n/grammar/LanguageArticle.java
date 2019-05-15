@@ -22,6 +22,8 @@ public enum LanguageArticle {
     PARTITIVE ("p", "Mass", "mass"),
     ;
 
+	public static final char JSON_ATTR_NAME = 'd';  // A is for adjective, D is for definitiveness
+	
     private static final Map<String,LanguageArticle> dbValueMap = new HashMap<String,LanguageArticle>(8);
     private static final Map<String,LanguageArticle> labelValueMap = new HashMap<String,LanguageArticle>(16);
     static {

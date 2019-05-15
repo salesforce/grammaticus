@@ -7,9 +7,9 @@
 
 package com.force.i18n.grammar.parser;
 
+import java.util.List;
 import java.util.logging.Logger;
 
-import com.force.i18n.I18nJavaUtil;
 import com.force.i18n.Renameable;
 import com.force.i18n.grammar.*;
 
@@ -59,6 +59,7 @@ abstract class ModifierRefTag extends TermRefTag {
     /**
      * @return whether this modifier was denoted in the label fields with a capital letter
      */
+    @Override
     protected final boolean isCapital() {
         return this.isCapital;
     }
@@ -77,11 +78,11 @@ abstract class ModifierRefTag extends TermRefTag {
     }
 
     @Override
-    public String toString(LanguageDictionary formatter, boolean overrideForms, Renameable... entities) {
+    public String toString(LanguageDictionary formatter, boolean overrideForms, Object[] vals, Renameable... entities) {
         NounModifier modifier = resolveModifier(formatter);
 
         if (modifier == null && overrideForms) {
-            logger.info("Missing modifier " + getName() + " for " + formatter.getLanguage());
+            logger.fine("Missing modifier " + getName() + " for " + formatter.getLanguage());
             return ""; //This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
         }
 
@@ -94,16 +95,7 @@ abstract class ModifierRefTag extends TermRefTag {
         NounForm nounForm = associatedNounRef.getForm(formatter, overrideForms);
 
         // Get the relevant noun to see get the right value for StartsWith/Gender
-        Noun n;
-        if (associatedNounRef.isDynamic() && entities != null) {
-            Renameable ei = entities[associatedNounRef.getReference()];
-            n = formatter.getDynamicNoun(associatedNounRef.getName(), ei, true, false);
-        } else {
-            assert !associatedNounRef.isDynamic() || I18nJavaUtil.isDebugging()
-                : "Only allowed in label debug mode, mode: " + I18nJavaUtil.isDebugging()
-                    + " isDynamic: " + associatedNounRef.isDynamic();
-            n = formatter.getNoun(associatedNounRef.getName(), true);
-        }
+        Noun n = associatedNounRef.resolveNoun(formatter, entities);
 
         TermRefTag nextTermTag = getNextTerm();
         GrammaticalTerm nextTerm = null;
@@ -167,5 +159,35 @@ abstract class ModifierRefTag extends TermRefTag {
         return this;
     }
 
-    abstract ModifierRefTag getNewModifierRef(NounRefTag entity, TermRefTag nextTermRef, LanguageArticle override);
+	@Override
+	String extraJson(LanguageDictionary dictionary, List<?> list) {
+        if (list == null || list.isEmpty()) return "";
+
+		Integer associatedNounIndex = null;
+		Integer nextTermIndex = null;
+		for (int i = 0; i < list.size(); i++) {
+			Object term = list.get(i);
+			if (term != null && term.equals(this.associatedNounRef)) {
+				associatedNounIndex = i;
+			}
+			
+			if (term != null) {
+				if (term.equals(this.nextTermRef)) {
+					nextTermIndex = i;
+				// Since the noun refs have been resolved for modifiers, the associatedNounRef makes the "equalsValue" value false
+			    // But, since the noun has been resolved, we can use that to compare, along with the name of the modifier
+				} else if (this.nextTermRef instanceof ModifierRefTag && term instanceof ModifierRefTag
+						&& ((ModifierRefTag)this.nextTermRef).getName().equals(((ModifierRefTag)term).getName())
+						&& (((ModifierRefTag)term).getAssociatedNounRef().equals(this.associatedNounRef))) {
+					nextTermIndex = i;
+				}
+			}
+		}
+		StringBuilder json = new StringBuilder();
+		if (associatedNounIndex != null) json.append(",\"an\":").append(associatedNounIndex.intValue());
+		if (nextTermIndex != null) json.append(",\"nt\":").append(nextTermIndex.intValue());
+		return json.toString();
+	}
+
+	abstract ModifierRefTag getNewModifierRef(NounRefTag entity, TermRefTag nextTermRef, LanguageArticle override);
 }

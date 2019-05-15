@@ -65,7 +65,7 @@ class TurkishDeclension extends ArticledDeclension {
         ImmutableList.Builder<TurkishNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<TurkishNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguagePossessive possessive : getRequiredPossessive()) {
                     TurkishNounForm form = new TurkishNounForm(this, number, caseType, possessive, ordinal++);

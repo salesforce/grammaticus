@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -47,7 +48,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         ImmutableList.Builder<GermanicNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<GermanicNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguageArticle article : getRequiredNounArticles()) {
                     GermanicNounForm form = new GermanicNounForm(this, number, caseType, article, ordinal++);
@@ -65,7 +66,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         ImmutableList.Builder<GermanicAdjectiveForm> adjBuilder = ImmutableList.builder();
         int adjOrdinal = 0;
         for (LanguageStartsWith startsWith : getRequiredStartsWith()) {
-            for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+            for (LanguageNumber number : getAllowedNumbers()) {
                 for (LanguageGender gender : getRequiredGenders()) {
                     for (LanguageArticle article : getRequiredAdjectiveArticles()) {
                         for (LanguageCase caseType : getRequiredCases()) {
@@ -81,7 +82,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         ImmutableList.Builder<GermanicArticleForm> artBuilder = ImmutableList.builder();
         int artOrdinal = 0;
         for (LanguageStartsWith startsWith : getRequiredStartsWith()) {
-            for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+            for (LanguageNumber number : getAllowedNumbers()) {
                 for (LanguageGender gender : getRequiredGenders()) {
                     for (LanguageCase caseType : getRequiredCases()) {
                         artBuilder.add(new GermanicArticleForm(this, number, gender, caseType, startsWith, artOrdinal++));
@@ -117,7 +118,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         public String getKey() {
             if (((GermanicDeclension)getDeclension()).getRequiredNounArticles().size() > 1) {
-                return getNumber().getDbValue() + "-" + getCase().getDbValue() + getArticle().getDbValue();
+                return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
             } else {
                 return getNumber().getDbValue() + "-" + getCase().getDbValue();
             }
@@ -154,6 +155,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return this.startsWith; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() ;
+		}
     }
 
     static class GermanicArticleForm extends ComplexArticleForm {
@@ -507,6 +512,13 @@ abstract class GermanicDeclension extends ArticledDeclension {
                 return s;
             }
         }
+
+		@Override
+		public void writeJsonOverrides(Appendable a, String inst) throws IOException {
+			// See above
+			super.writeJsonOverrides(a, inst);
+			a.append(inst + ".formLowercaseNoun = function(value, form) {return value;};");
+		}
     }
 
     static class SwedishDeclension extends GermanicDeclension {

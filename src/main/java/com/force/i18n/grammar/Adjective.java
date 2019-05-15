@@ -118,7 +118,7 @@ public abstract class Adjective extends NounModifier {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.info("###\tError: The adjective " + name + " is missing required " + form + " form");
+                    logger.fine("###\tError: The adjective " + name + " is missing required " + form + " form");
                     // TODO: uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -133,7 +133,7 @@ public abstract class Adjective extends NounModifier {
                 }
 
                 // Next try starts with
-                 if (s == null && getDeclension().hasStartsWithInAdjective() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
+                 if (s == null && getDeclension().hasStartsWith() && form.getStartsWith() != getDeclension().getDefaultStartsWith()) {
                      baseForm = getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(), form.getGender(), form.getNumber(), form.getCase(), form.getArticle(), form.getPossessive());
                      s = getString(baseForm);
                  }
@@ -161,7 +161,8 @@ public abstract class Adjective extends NounModifier {
 
                 // Now number; singular is the default for all languages
                 if (s == null && getDeclension().hasPlural() && form.getNumber() != LanguageNumber.SINGULAR) {
-                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), LanguageNumber.SINGULAR, getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
+                	LanguageNumber numberToTry = form.getNumber() == LanguageNumber.PLURAL ? LanguageNumber.SINGULAR :  LanguageNumber.PLURAL;  // If we're plural try singular, otherwise, like for dual, try plural
+                    baseForm = getDeclension().getAdjectiveForm(form.getStartsWith(), form.getGender(), numberToTry, getDeclension().getDefaultCase(), form.getArticle(), form.getPossessive());
                     s = getString(baseForm);
                 }
 
@@ -170,10 +171,10 @@ public abstract class Adjective extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.info("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
+                        logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.info("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
+                        logger.fine("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
                     }
                 }
 

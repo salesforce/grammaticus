@@ -35,6 +35,7 @@ public final class TermAttributes implements Serializable {
     public static final String POSITION = "position";
     public static final String GENDER = "gender";
     public static final String STARTS = "startsWith";
+    public static final String ENDS = "endsWith";
 
     public static final String YES = "y";
     public static final String NO = "n";
@@ -81,8 +82,13 @@ public final class TermAttributes implements Serializable {
 
         String plural = atts.getValue(PLURAL);
         if (plural != null) _number = LanguageNumber.fromLabelValue(plural);
-        LanguageStartsWith st = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
-        if (st != null) _startsWith = st;
+        LanguageStartsWith st = LanguageStartsWith.fromDbValue(atts.getValue(ENDS));
+        if (st != null) {
+        	_startsWith = st;
+        } else {
+	        st = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
+	        if (st != null) _startsWith = st;
+        }
         LanguageGender g = LanguageGender.fromLabelValue(atts.getValue(GENDER));
         if (g != null) _gender = g;
         LanguageCase ct = LanguageCase.fromDbValue(atts.getValue(CASE));
@@ -251,6 +257,21 @@ public final class TermAttributes implements Serializable {
     @Override
     public String toString() {
         return "TermAttrs:"+toNullStr(getNumber())+":"+toNullStr(this.getGender())+":"+toNullStr(this.getCase())+":"+toNullStr(this.getStartsWith())+":"+toNullStr(this.getArticle())+":"+toNullStr(this.getPossessive());
+    }
+    
+    public String toJson() {
+    	StringBuilder sw = new StringBuilder();
+    	sw.append("{");
+    	if (this.caseType != null) sw.append("\""+LanguageCase.JSON_ATTR_NAME+"\":\"").append(this.caseType.getDbValue()).append("\",");
+    	if (this.article != null) sw.append("\""+LanguageArticle.JSON_ATTR_NAME+"\":\"").append(this.article.getDbValue()).append("\",");
+    	if (this.gender != null) sw.append("\""+LanguageGender.JSON_ATTR_NAME+"\":\"").append(this.gender.getDbValue()).append("\",");
+    	if (this.number != null) sw.append("\""+LanguageNumber.JSON_ATTR_NAME+"\":\"").append(this.number.getDbValue()).append("\",");
+    	if (this.possessive != null) sw.append("\""+LanguagePossessive.JSON_ATTR_NAME+"\":\"").append(this.possessive.getDbValue()).append("\",");
+    	if (this.startsWith != null) sw.append("\""+LanguageStartsWith.JSON_ATTR_NAME+"\":\"").append(this.startsWith.getDbValue()).append("\",");
+    	if (this.position != null) sw.append("\""+LanguagePosition.JSON_ATTR_NAME+"\":\"").append(this.position.getDbValue()).append("\",");
+    	if (sw.length()>1) sw.setLength(sw.length() - 1); // Get rid of the last comma
+    	sw.append("}");
+    	return sw.toString();
     }
 
     private static String toNullStr(Object o) {

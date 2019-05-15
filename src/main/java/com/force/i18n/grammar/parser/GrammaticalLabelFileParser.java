@@ -138,7 +138,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             URLConnection connection = file.openConnection();
             connection.connect();
             this.lastModified = Math.max(this.lastModified, connection.getLastModified());
-            saxParser.parse(connection.getInputStream(), handler);
+            saxParser.parse(new BufferedInputStream(connection.getInputStream()), handler);
 
         }
         catch (Exception ex) {

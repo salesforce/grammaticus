@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,13 +9,15 @@ package com.force.i18n.grammar;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Logger;
 
-import com.force.i18n.HumanLanguage;
+import com.force.i18n.*;
 import com.force.i18n.grammar.Noun.NounType;
+import com.force.i18n.grammar.offline.PluralRulesJsImpl;
 
 /**
  * Represents the Declensions (or Noun Forms and their uses) associated with
@@ -143,6 +145,15 @@ public abstract class LanguageDeclension {
     public abstract boolean hasStartsWith();
 
     /**
+     * convenient method to tell that the language has to know the noun, which ends with a vowel or a noun.  Used in particles
+     *
+     * @return true if the language modifier(article/adjective) have different value the previous phoneme ends with a vowel.
+     */
+    public boolean hasEndsWith() {
+    	return false;
+    }
+
+    /**
      * @return true if adjectives are dependent on whether the noun starts with a vowel. If false, custom objects do not
      *         need to collect the startsWith information on their names, since we only use their names with simple
      *         adjectives and we do not compose sentences with them.
@@ -172,6 +183,14 @@ public abstract class LanguageDeclension {
     public boolean hasPlural() {
         return true;  // Default to true because most languages have it
     }
+
+    /**
+     * @return the set of supported LanguageNumbers for this declension.
+     */
+    public Set<LanguageNumber> getAllowedNumbers() {
+    	return hasPlural() ? LanguageNumber.PLURAL_SET : LanguageNumber.SINGULAR_SET;
+    }
+
 
     /**
      * convenient method to tell that the language has possessive form.
@@ -343,6 +362,19 @@ public abstract class LanguageDeclension {
     }
 
     /**
+     * Determine whether the noun can have a "classifier" associated with it when used for counting numbers of things.
+     * You can use a special tag called &lt;Counter/&gt; or &lt;Classifier/&gt; that will be associated with the noun.
+     * This allows the customer to rename the noun *and* change the classifier when doing counting so you it will appear
+     * correct, especially when the counter word needs to match the type of noun.
+     *
+     * It's better to implement the WithClassifiers interface than this directly.
+     * @return whether or not this language uses classifiers.
+     */
+    public boolean hasClassifiers() {
+        return false;
+    }
+
+    /**
      * @return Return the appropriate noun form for this language based on the form parameters provided
      */
     public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
@@ -420,6 +452,10 @@ public abstract class LanguageDeclension {
         if (baseForm == null && number != LanguageNumber.PLURAL) {
             baseForm = getExactNounForm(numberToTry, caseToTry, possesiveToTry, articleToTry);
         }
+        // If you're looking for dual, default to plural if we don't have it.
+        if (baseForm == null && number == LanguageNumber.DUAL) {
+            baseForm = getExactNounForm(LanguageNumber.PLURAL, caseToTry, possesiveToTry, articleToTry);
+        }
 
         // OK, you asked for something that wasn't supported.
         if (baseForm == null) {
@@ -443,6 +479,14 @@ public abstract class LanguageDeclension {
     // Convenience method for retrieving an equivalent nounForm from this declension
     public NounForm getNounForm(NounForm nf) {
         return getExactNounForm(nf.getNumber(), nf.getCase(), nf.getPossessive(), nf.getArticle());
+    }
+
+    /**
+     * @return the maximum distance to look for modifiers associated with the noun
+     * For languages without spaces between works, this should be 0
+     */
+    public int getMaxDistanceForModifiers() {
+    	return isInflected() ? 0 : 5;
     }
 
     // Convenience method for retrieving an equivalent AdjectiveForm from this declension
@@ -471,7 +515,7 @@ public abstract class LanguageDeclension {
             return baseForm;  // Assume success
         }
 
-        LanguageStartsWith startsWithToTry = hasStartsWithInAdjective() ? startsWith : getDefaultStartsWith();
+        LanguageStartsWith startsWithToTry = hasStartsWith() ? startsWith : getDefaultStartsWith();
         LanguageGender genderToTry = hasGender() ? gender : getDefaultGender();
         LanguageNumber numberToTry = hasPlural() ? number : LanguageNumber.SINGULAR;
         LanguageArticle articleToTry = (hasArticle() || hasArticleInNounForm()) && getAllowedArticleTypes().contains(article) ? article : getDefaultArticle();
@@ -490,7 +534,7 @@ public abstract class LanguageDeclension {
             baseForm = getAdjectiveForm(startsWithToTry, genderToTry, numberToTry, caseToTry, getDefaultArticle(), possessiveToTry);
         }
         // Now starts with
-        if (baseForm == null && !hasStartsWithInAdjective() && startsWith != getDefaultStartsWith()) {
+        if (baseForm == null && !hasStartsWith() && startsWith != getDefaultStartsWith()) {
             baseForm = getAdjectiveForm(getDefaultStartsWith(), genderToTry, numberToTry, caseToTry, articleToTry, possessiveToTry);
         }
         // Next drop gender
@@ -512,7 +556,7 @@ public abstract class LanguageDeclension {
             baseForm = getAdjectiveForm(startsWithToTry, genderToTry, numberToTry, caseToTry, getDefaultArticle(), possessiveToTry);
         }
         // Now starts with
-        if (baseForm == null && hasStartsWithInAdjective() && startsWith != getDefaultStartsWith()) {
+        if (baseForm == null && hasStartsWith() && startsWith != getDefaultStartsWith()) {
             baseForm = getAdjectiveForm(getDefaultStartsWith(), genderToTry, numberToTry, caseToTry, articleToTry, possessiveToTry);
         }
         // Next drop gender
@@ -584,6 +628,11 @@ public abstract class LanguageDeclension {
 
     @Override public String toString() { return getClass().getSimpleName(); }
 
+
+    public final LanguagePluralRules getPluralRules() {
+    	return LanguageProviderFactory.get().getPluralRules(getLanguage());
+    }
+
     /**
      * SIMPLE FORMS:
      *
@@ -599,6 +648,10 @@ public abstract class LanguageDeclension {
         @Override public LanguageGender getGender() {return LanguageGender.NEUTER;}
         @Override public LanguageStartsWith getStartsWith() {return LanguageStartsWith.CONSONANT;}
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return "0";
+		}
     }
 
     /**
@@ -693,17 +746,46 @@ public abstract class LanguageDeclension {
      * Pretty much the same as an EnglishNoun, without the legacy article bits
      * See IndonesianNounForm for more info
      */
-    public static class SimplePluralNoun extends Noun {
+    public static class SimplePluralNoun extends SimplePluralNounWithGender {
         /**
 		 *
 		 */
 		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(SimplePluralNoun.class.getName());
+        private static final Logger logger = Logger.getLogger(SimplePluralNoun.class.getName());
+
+        public SimplePluralNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
+        }
+
+        @Override
+        protected boolean validateGender(String name) {
+            if (getGender() != LanguageGender.NEUTER) {
+                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
+            }
+            return super.validateGender(name);  // Let it go
+        }
+
+        @Override
+        public Noun clone() {
+            SimplePluralNoun noun = (SimplePluralNoun) super.clone();
+            return noun;
+        }
+    }
+
+    /**
+     * Represents a simple noun with a singular and plural form, and a gender.
+     */
+    public static class SimplePluralNounWithGender extends Noun {
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+        private static final Logger logger = Logger.getLogger(SimplePluralNounWithGender.class.getName());
         private String singular;
         private String plural;
 
-        public SimplePluralNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
-            super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
+        public SimplePluralNounWithGender(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
 
         @Override
@@ -755,20 +837,11 @@ public abstract class LanguageDeclension {
         }
 
         @Override
-        protected boolean validateGender(String name) {
-            if (getGender() != LanguageGender.NEUTER) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
-            }
-            return super.validateGender(name);  // Let it go
-        }
-
-        @Override
         public Noun clone() {
-            SimplePluralNoun noun = (SimplePluralNoun) super.clone();
+            SimplePluralNounWithGender noun = (SimplePluralNounWithGender) super.clone();
             return noun;
         }
     }
-
 
     /**
      * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
@@ -809,6 +882,67 @@ public abstract class LanguageDeclension {
             result.put(k4,v4);
         }
         return result;
+    }
+
+    /**
+     * Allow the declensions to override the behavior of grammaticus.js
+     * @param a the thing to append
+     * @param the name of the instance variable that has the current engine (for language-specific overrides
+     */
+    public void writeJsonOverrides(Appendable a, String instance) throws IOException {
+        a.append(instance + ".locale='" + getLanguage().getHttpLanguageCode() + "';");
+        String pluralRules = PluralRulesJsImpl.getSelectFunctionOverride(getLanguage().getLocale());
+        if (pluralRules != null) {
+            a.append(instance+".getPluralCategory = " + pluralRules+";");
+        }
+    	if (hasGender() || hasStartsWith() || hasEndsWith()) {
+			a.append(instance + ".getModifierForm = function(termType, termForm, nounForm, noun, nextTerm){");
+			if (hasGender()) {
+				a.append("var gen=noun.g;");
+			}
+			if (hasStartsWith() || hasEndsWith()) {
+				a.append("var sw=nextTerm.s;");  // The next term is the relevant one for starts with
+			}
+			if (hasArticle()) {
+				a.append(" if (termType=='d') {return ");
+				getArticleForms().get(0).appendJsFormReplacement(a, "termForm", "gen", "sw");
+				a.append(";}");
+			}
+			a.append(" return ");
+			getAdjectiveForms().get(0).appendJsFormReplacement(a, "termForm", "gen", "sw");
+			a.append(";};");
+    	}
+    	if (hasClassifiers()) {
+    	    a.append(instance + ".getDefaultCounterWord = function() { return '").append(((WithClassifiers)this).getDefaultClassifier()).append("';};");
+    	}
+    }
+
+    /**
+     * Implement this interface on a declension that has classifier words.
+     * @see https://en.wikipedia.org/wiki/Classifier_(linguistics)
+     * @see https://en.wikipedia.org/wiki/Korean_count_word
+     * @see https://en.wikipedia.org/wiki/Japanese_counter_word
+     *
+     * @author stamm
+     * @since 1.1
+     */
+    public interface WithClassifiers {
+        /**
+         * Determine whether the noun can have a "classifier" associated with it when used for counting numbers of things.
+         * You can use a special tag called &lt;Counter/&gt; or &lt;Classifier/&gt; that will be associated with the noun.
+         * This allows the customer to rename the noun *and* change the classifier when doing counting so you it will appear
+         * correct, especially when the counter word needs to match the type of noun.
+         * @return whether or not this language uses classifiers.
+         */
+        default boolean hasClassifiers() {
+            return true;
+        }
+
+        /**
+         * @return the default Counter Word for this language.
+         * The typical defaults for this are words like Chinese (个/個), Japanese (つ) and in Korean (개).
+         */
+        String getDefaultClassifier();
     }
 
 }

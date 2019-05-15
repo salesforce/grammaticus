@@ -97,6 +97,12 @@ public class GrammaticalLocalizer extends BaseLocalizer {
         MessageFormat formatter = getMessageFormat(getLabel(section, key, true));
         return LabelDebugProvider.get().makeLabelHintIfRequested(formatter.format(args), section, key);
     }
+    
+    @Override
+    public String getLabelThrow(String section, String key, Object... args) {
+        MessageFormat formatter = getMessageFormat(getLabelThrow(section, key, true));
+        return LabelDebugProvider.get().makeLabelHintIfRequested(formatter.format(args), section, key);
+    }
 
     public String getLabel(String section, Renameable[] entities, String key) {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, entities, key), section, key);
@@ -129,6 +135,12 @@ public class GrammaticalLocalizer extends BaseLocalizer {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, name, forMessageFormat), section,
             name);
     }
+    
+    public String getLabelThrow(String section, String name, boolean forMessageFormat) {
+        return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getStringThrow(section, name, forMessageFormat), section,
+            name);
+    }
+    
 
     public String getLabel(String section, Renameable[] entities, String key, boolean forMessageFormat) {
         return LabelDebugProvider.get().makeLabelHintIfRequested(getLabelSet().getString(section, entities, key, forMessageFormat),

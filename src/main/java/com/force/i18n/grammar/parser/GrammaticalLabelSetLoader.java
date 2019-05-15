@@ -158,7 +158,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             }
         }
         catch(UncheckedExecutionException | ExecutionException e) {
-            Throwables.propagateIfPossible(e);
+            Throwables.throwIfUnchecked(e);
             throw new RuntimeException("Unable to load label set for " + desc, e);
         }
     }

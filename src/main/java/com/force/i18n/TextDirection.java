@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -85,6 +85,8 @@ public enum TextDirection {
      */
     public static TextDirection getDirection(Locale locale) {
         if (locale == null) return invertIfNotNormalDirection(LTR);
+        // Special case for "en_IL" to have an english pseudo-RTL language
+        if ("IL".equals(locale.getCountry()) && "en".equals(locale.getLanguage())) return invertIfNotNormalDirection(RTL);
         return getDirection(locale.getLanguage());
     }
 
@@ -94,13 +96,20 @@ public enum TextDirection {
      * @return the text direction for that locale's language
      */
     public static TextDirection getDirection(String lang) {
+        if (lang == null) return invertIfNotNormalDirection(LTR);
         // Hebrew, Arabic, Farsi, and Urdu.
-        if( "iw".equals(lang) || "ar".equals(lang)
-                        || "fa".equals(lang) || "ur".equals(lang) ) {
+        switch (lang) {
+        case "he":
+        case "ar":
+        case "iw":
+        case "fa":
+        case "ur":
+        case "ji":
+        case "yi":
             return invertIfNotNormalDirection(RTL);
-        } else {
-            return invertIfNotNormalDirection(LTR);
+        default:
         }
+        return invertIfNotNormalDirection(LTR);
     }
 
     /**
@@ -120,7 +129,9 @@ public enum TextDirection {
      * allows a page to be shown with its text direction inverted.
      * @param direction the direction to invert
      * @return the reversed direction if setNormalTextDirection has been called with false
+     * @deprecated use en_IL for pseudotranslation
      */
+    @Deprecated
     public static TextDirection invertIfNotNormalDirection(TextDirection direction) {
         if (normalTextDirection) {
             return direction;
@@ -136,6 +147,7 @@ public enum TextDirection {
      * on a production configuration.
      * @param normal what the normal text direction should be
      */
+    @Deprecated
     public static void setNormalTextDirection(boolean normal) {
         // obviously, this method should never be called in production.
         normalTextDirection = normal;
@@ -144,6 +156,7 @@ public enum TextDirection {
     /**
      * @return true if the text direction is normal
      */
+    @Deprecated
     public static boolean getNormalTextDirection() {
         return normalTextDirection;
     }

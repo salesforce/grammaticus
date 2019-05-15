@@ -37,7 +37,7 @@ public final class LegacyArticledNounForm implements NounForm, Serializable {
     @Override public LanguagePossessive getPossessive() { return getBaseNounForm().getPossessive();}
     @Override
     public String getKey() {
-        return "LegacyNounForm-" + getArticle() + "-" + getBaseNounForm().getKey();
+        return getArticle().getDbValue() + "~" + getBaseNounForm().getKey();
     }
     @Override
     public String toString() {

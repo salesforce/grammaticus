@@ -38,5 +38,6 @@ public interface NounForm extends GrammaticalForm {
      * @return a HTML compatible screen that can be used to represent this noun
      * form uniquely when compared to all other noun forms.
      */
+    @Override
     String getKey();
 }

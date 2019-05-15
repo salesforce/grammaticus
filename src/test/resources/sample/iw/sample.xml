@@ -4,6 +4,12 @@
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
+    <section name="Sample" all_languages="yes">
+        <param name="click_here_to_create_new_account">{0} כדי ליצור <account/> <new/> כעת.</param>
+        <param name="openAnAccount"><Account/> <gender><when val="f">נפתחה</when>נפתח</gender></param>  <!--  Really account opened -->
+        <param name="openAnAEntity"><Entity entity="0"/> <gender><when val="f">נפתחה</when>נפתח</gender></param>
+	</section>
+    
     <!--
         "Exception" section is now in ex.xml.
     -->

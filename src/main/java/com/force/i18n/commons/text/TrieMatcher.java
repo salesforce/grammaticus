@@ -114,7 +114,6 @@ public class TrieMatcher {
             }
             wordIndex++;
         }
-
         this.minWordLength = minWordLen;
     }
 
@@ -167,5 +166,83 @@ public class TrieMatcher {
 
         return null;
     }
+    
+    /**
+     * Search and replace multiple strings in <code>s</code> given the the words and replacements given in
+     * <code>TrieMatcher</code>.
+     * <p>
+     * Note, using a Trie for matching multiple strings can be much faster than the using
+     * {@link #replace(String, String[], String[])}, however, due to the cost of creating the Trie, this is best used
+     * when 1) you will reuse the Trie many times 2) you have a large set of strings your are searching on
+     * <p>
+     * Note, regexes aren't supported by this, see {@link #replace(String, String[], String[])}.
+     *
+     * @param s
+     *        the text you are searching in
+     * @param trieMatcher
+     *        the trie representing the words to search and replace for
+     * @return the text with the search words swapped by the replacements
+     */
+    public static final String replaceMultiple(String s, TrieMatcher trieMatcher) {
+        if (s == null || trieMatcher == null || s.length() == 0)
+            return s;
+
+        // we don't use a DeferredStringBuilder because we don't expect to
+        // reuse much of the original string. it's likely all or nothing.
+        // Don't allocate the buffer until it's needed.
+        StringBuilder dsb = null;
+
+        int pos = 0;
+        int length = s.length();
+        boolean foundMatch = false;
+        while (pos < length) {
+            TrieMatch match = trieMatcher.match(s, pos);
+            if (match == null) {
+                if (!foundMatch) {
+                    return s;
+                } else {
+                    // No more matches, so copy the rest and get gone
+                    dsb.append(s, pos, s.length());
+                    break;
+                }
+            }
+            foundMatch = true;
+            if (dsb == null) dsb = new StringBuilder(s.length() + 16);
+
+            // Copy up to the match position
+            if (match.getPosition() > pos)
+                dsb.append(s, pos, match.getPosition());
+
+            // Append the replacement
+            dsb.append(match.getReplacement());
+
+            // Advance our current position
+            pos = match.getPosition() + match.getWord().length();
+        }
+        return dsb.toString();
+    }
+
+    /**
+     * See if the given string matches any of the given words in the Trie
+     *
+     * @param offset where to start looking inside of the given String.
+     * @return null if none are found.
+     */
+    public TrieMatch match(CharSequence s, int offset) {
+        if (s == null || s.length() == 0 || offset < 0) return null;
+
+        int len = s.length();
+        for (int i = offset; i < len; i++) {
+            // optimize the case when we don't have enough room left to contain any matches
+            if (i + this.minWordLength > len) break;
+
+            TrieData data = contains(s, i);
+            if (data != null) return new TrieMatch(i, data.word, data.replacement);
+        }
+
+        return null;
+    }
+
+
 
 }

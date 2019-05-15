@@ -1,5 +1,5 @@
 <!--
-   Dictionary DTD for KOREAN
+   SFDC dictionary DTD for KOREAN
 
    see i18n.grammar.LanguageDeclension for more information
 -->
@@ -13,19 +13,26 @@
 <!ENTITY % noun.type  "type     (entity | field | other)">
 
 <!-- "m" for Masculine, "f" for Feminine, "n" for Neuter,
+     "a" for Animate Masculine (Slavic languages)
      "e" for Euter (Swedish) and "c" for Common (Dutch) -->
 <!ENTITY % gender     "gender   (n)">
 
 <!--
-Specifying the type of first letter(or soft sound) of noun
+Specifing the type of first letter(or soft sound) of noun
     c:  consonant    (default)
     v:  starts with vowel.
     s:  S(consonant) or Z (for Italian)
     -->
-<!ENTITY % starts     "startsWith  (c | v)">
+<!ENTITY % ends     "endsWith  (c | v)">
 
 <!--"y" for plural form, "n" for singular form -->
 <!ENTITY % plural     "plural   %YN;">
+
+<!--
+dnt (Do Not Translate) attribute defines whether the following section or label
+should be translated. Set to "true" to NOT translate.
+-->
+<!ENTITY % dnt      "dnt %BOOLEAN;">
 
 <!--
 standard field
@@ -49,12 +56,13 @@ noun element is used to specify translation of nouns
 <!ELEMENT noun (value)+>
 <!ATTLIST noun
   name          ID          #REQUIRED
+  %dnt;                 #IMPLIED
   alias		CDATA       #IMPLIED
   entity	CDATA	    #IMPLIED
   access        CDATA       #IMPLIED
   %noun.type;               #IMPLIED
   %gender;                   "n"
-  %starts;                  "c"
+  %ends;                  "c"
   %standardField;	    #IMPLIED
   >
 
@@ -66,6 +74,7 @@ adjective element is used to specify translation of adjectives
 <!ELEMENT adjective (value)+>
 <!ATTLIST adjective
   name          ID          #REQUIRED
+  %dnt;                     #IMPLIED
   position      (b|a)       #IMPLIED
   >
 
@@ -76,6 +85,7 @@ article element is used to specify translation of articles and other determiners
 <!ELEMENT article (value)+>
 <!ATTLIST article
   name          ID          #REQUIRED
+  %dnt;                     #IMPLIED
   type          (n|a|the|i|d)     #REQUIRED
   >
 
@@ -92,7 +102,7 @@ value element is shared by both noun/adjective.
     -->
 <!ELEMENT value (#PCDATA)>
 <!ATTLIST value
-
   %plural;                   "n"
+  %ends;                  #IMPLIED
   >
 

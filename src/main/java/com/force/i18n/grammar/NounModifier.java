@@ -7,7 +7,12 @@
 
 package com.force.i18n.grammar;
 
+import java.io.IOException;
 import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+import com.force.i18n.commons.text.TextUtil;
 
 
 /**
@@ -63,4 +68,17 @@ public abstract class NounModifier extends GrammaticalTerm {
      * @return an arbitrary but deterministic value for a specific form for this object.
      */
     public abstract String getDefaultValue();
+    
+    @Override
+	public void toJson(Appendable appendable) throws IOException {
+    	appendable.append("{\"t\":\""+getTermType().getCharId()+"\",\"l\":\"");
+    	appendable.append(getName());
+    	appendable.append("\",");
+    	if (getDeclension().hasStartsWith()) {
+    		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
+    	}
+    	appendable.append("\"v\":{");
+    	appendable.append(new TreeMap<>(getAllValues()).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
+    	appendable.append("}}");
+	}
 }

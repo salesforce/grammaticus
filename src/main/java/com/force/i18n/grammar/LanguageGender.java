@@ -10,7 +10,9 @@ package com.force.i18n.grammar;
 import java.util.*;
 
 /**
- * Represents the gender of an *object* associated with a noun
+ * Represents the gender or noun class of an *object* associated with a noun.
+ * 
+ * Generally, the cloud
  * @author stamm
  */
 public enum LanguageGender {
@@ -18,7 +20,25 @@ public enum LanguageGender {
     FEMININE ("f", "Feminine", "c", "e"),   // Dutch = "c", Swedish = "e"
     MASCULINE ("m", "Masculine"),
     ANIMATE_MASCULINE ("a", "Animate Masculine"), //West Slavic
+    
+    // Bantu Noun Classes.  Swahili noun classes available as aliases
+    // In isiXhosa & isiZulu, class I and Ia, while different for nouns, are the same for adjectives, so are unmarked.
+    // Note: In other Bantu languages, like Tswana, the numbering is different (The plurals are part of the class, not a separate one)
+    // That may cause confusion
+    CLASS_I ("1", "Class I/II", "M-wa", "I"), // Class I/II M-Wa
+    CLASS_III("3", "Class III/IV", "M-mi", "III"), // Class III/IV M-Mi
+    CLASS_V("5", "Class V/VI", "Ma", "V"), // Class V/VI Ma
+    CLASS_VII("7", "Class VII/VIII", "Ki-vi", "VII"), // Class VII/VIII Ki-vi
+    CLASS_IX("9", "Class IX/X", "N", "IX"), // Class IX/X N
+    CLASS_XI("U", "Class XI/XII/XIV", "XI"), // Class XI/XII U Class.  
+    CLASS_XIV("B", "Class XIV", "XIV"), // Class XIV (Zulu/Xhosa ubu-)
+    CLASS_XV("S", "Class XV", "XV"), // Class XV (Zulu/Xhosa uku-)
+    CLASS_XVI("P", "Class XVI", "Pa", "XVI"), // Class XVI Pa Class
+    CLASS_XVII("K", "Class XVII", "Ku", "XVII"), // Class XVII Ku Class
+    CLASS_XVIII("M", "Class XVIII", "Mu", "XVIII"), // Class XVIII Mu Class
     ;
+
+	public static final char JSON_ATTR_NAME = 'g'; 
 
     private static final Map<String,LanguageGender> dbValueMap = new HashMap<String,LanguageGender>(8);
     private static final Map<String,LanguageGender> labelValueMap = new HashMap<String,LanguageGender>(16);
@@ -28,7 +48,8 @@ public enum LanguageGender {
             labelValueMap.put(gender.getDbValue(), gender);
             if (gender.aliases != null) {
                 for (String alias : gender.aliases) {
-                    labelValueMap.put(alias, gender);
+                    LanguageGender old = labelValueMap.put(alias, gender);
+                    assert old == null;
                 }
             }
         }

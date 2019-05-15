@@ -42,7 +42,7 @@ class BalticDeclension extends LanguageDeclension {
         ImmutableList.Builder<SlavicNounForm> nounBuilder = ImmutableList.builder();
         ImmutableMultimap.Builder<LanguageCase, SlavicNounForm> byCaseBuilder = ImmutableMultimap.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 SlavicNounForm form = new SlavicNounForm(this, number, caseType, ordinal++);
                 byCaseBuilder.put(caseType, form);
@@ -55,7 +55,7 @@ class BalticDeclension extends LanguageDeclension {
 
         ImmutableList.Builder<BalticAdjectiveForm> adjBuilder = ImmutableList.builder();
         int adjOrdinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageGender gender : getRequiredGenders()) {
                 for (LanguageCase caseType : getRequiredCases()) {
                     for (LanguageArticle article : getAllowedArticleTypes()) {
@@ -92,6 +92,10 @@ class BalticDeclension extends LanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
+		}
     }
 
     /**

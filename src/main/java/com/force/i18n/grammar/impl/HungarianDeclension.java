@@ -10,6 +10,7 @@ package com.force.i18n.grammar.impl;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 import static com.force.i18n.grammar.LanguageCase.*;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -74,7 +75,7 @@ class HungarianDeclension extends ArticledDeclension {
         ImmutableList.Builder<HungarianNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<HungarianNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguagePossessive possessive : getRequiredPossessive()) {
                     HungarianNounForm form = new HungarianNounForm(this, number, caseType, possessive, ordinal++);
@@ -150,6 +151,17 @@ class HungarianDeclension extends ArticledDeclension {
                     (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
                     : (form.getStartsWith() == LanguageStartsWith.VOWEL ? PLURAL_V : PLURAL);
         }
+		@Override
+		public String getKey() {
+			return getStartsWith().getDbValue() + "-" + getNumber().getDbValue();
+		}
+
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(startsWithVar+"+"+termFormVar+".substr(1)");
+		}
+
     }
 
 
@@ -252,6 +264,7 @@ class HungarianDeclension extends ArticledDeclension {
             return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.PLURAL_V : HungarianArticleForm.PLURAL;
         case SINGULAR:
             return startsWith == LanguageStartsWith.VOWEL ? HungarianArticleForm.SINGULAR_V : HungarianArticleForm.SINGULAR;
+        default:
         }
         throw new AssertionError("Invalid article form");
     }

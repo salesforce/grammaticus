@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.grammar.LanguageCase.*;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -64,7 +65,7 @@ class FinnishDeclension extends LanguageDeclension {
         ImmutableList.Builder<FinnishNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<FinnishNounForm> fieldBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguagePossessive possessive : getRequiredPossessive()) {
                     FinnishNounForm form = new FinnishNounForm(this, number, caseType, possessive, ordinal++);
@@ -80,7 +81,7 @@ class FinnishDeclension extends LanguageDeclension {
 
         ImmutableList.Builder<FinnishAdjectiveForm> adjBuilder = ImmutableList.builder();
         int adjOrdinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 adjBuilder.add(new FinnishAdjectiveForm(this, number, caseType, adjOrdinal++));
             }
@@ -146,6 +147,16 @@ class FinnishDeclension extends LanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return LanguageGender.NEUTER; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getNumber().getDbValue() + "-" + getCase().getDbValue();
+		}
+
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(termFormVar);
+		}
     }
 
     /**

@@ -66,6 +66,15 @@ public interface LanguageProvider {
     <L extends HumanLanguage,T> Map<L,T> getNewMap();
     
     /**
+     * @return the PluralRules for the given language, with the default implementation in
+     * DefaultLanguagePluralRulesImpl.
+     * @param language the language to test.
+     */
+    default LanguagePluralRules getPluralRules(HumanLanguage language) {
+    	return DefaultLanguagePluralRulesImpl.forLanguage(language);
+    }
+    
+    /**
      * Helper class for implementing LanguageProvider 
      */
     public static class Helper implements LanguageProvider {

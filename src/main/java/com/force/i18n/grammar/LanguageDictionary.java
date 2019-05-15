@@ -13,6 +13,7 @@ import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.Renameable;
@@ -21,7 +22,7 @@ import com.force.i18n.commons.text.Uniquefy;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
-import com.force.i18n.grammar.parser.TermRefTag;
+import com.force.i18n.grammar.parser.RefTag;
 import com.google.common.collect.*;
 
 /**
@@ -152,29 +153,30 @@ public final class LanguageDictionary implements Serializable {
         result.setInheritedFromDefault(copiedFromDefault);
         return result;
     }
-
+    
     /**
      * Construct String value from the given Label structure, which could be
      * either String or LabelTag.<br>
      * @param obj the object to parse
      * @param entities the renameable objects that are the parameters for the value
+     * @param vals the values to use when resolving choiceformats.  Mostly for numbers
      * @param forMessageFormat if the MessageFormat values need to be preserved, such as {0}
      * @param overrideForms if true, it means that the forms in the term refs in the objects do not match the current dictionary and need to be recalculated
      */
-    public String format(Object obj, Renameable[] entities, boolean overrideForms,  boolean forMessageFormat) {
+    public String format(Object obj, Renameable[] entities, Object[] vals, boolean overrideForms, boolean forMessageFormat) {
         if (obj instanceof List<?>) {
             StringBuilder sb = new StringBuilder();
             for (Object o : (List< ? >)obj) {
                 assert o != null;
 
-                if (!(o instanceof TermRefTag)) {
+                if (!(o instanceof RefTag)) {
                     if (forMessageFormat) {
                         TextUtil.escapeForMessageFormat(o.toString(), sb, false);
                     } else {
                         sb.append(o);
                     }
                 } else {
-                    String s = ((TermRefTag)o).toString(this, overrideForms, entities);
+                    String s = ((RefTag)o).toString(this, overrideForms, vals, entities);
                     if (forMessageFormat) {
                     	TextUtil.escapeForMessageFormat(s, sb, false);
                     } else {
@@ -184,8 +186,8 @@ public final class LanguageDictionary implements Serializable {
             }
             return sb.toString();
 
-        } else if (obj instanceof TermRefTag) {
-            String s = ((TermRefTag)obj).toString(this, overrideForms, entities);
+        } else if (obj instanceof RefTag) {
+            String s = ((RefTag)obj).toString(this, overrideForms, vals, entities);
             return (!forMessageFormat)
                 ? s
                 : TextUtil.escapeForMessageFormat(s, new StringBuilder(s.length() + 8), false).toString();
@@ -384,6 +386,23 @@ public final class LanguageDictionary implements Serializable {
         return this.nounMap.containsKey(name.toLowerCase()) || this.nounMapByPluralAlias.containsKey(name.toLowerCase());
     }
 
+    /**
+     * For the given term (which should be in lowercase), return the grammatical term it may be
+     * @param name the name of the term (which must be in lowercase
+     * @return  the term associated with the name, or null if there is no such term
+     */
+    public GrammaticalTerm getTerm(String name) {
+    	Noun n = this.nounMap.get(name);
+    	if (n != null) return n;
+    	n = this.nounMapByPluralAlias.get(name);
+    	if (n != null) return n;
+    	Adjective adj = this.adjectiveMap.get(name);
+    	if (adj != null) return adj;
+    	Article art = this.articleMap.get(name);
+    	if (art != null) return art;
+    	return null;
+    }
+    
 
     /**
      * @return true if the given name is for custom entity
@@ -425,7 +444,7 @@ public final class LanguageDictionary implements Serializable {
             } else  if (n.getGender() != gender // Validate that it's the same
                     || n.getStartsWith() != startsWith
                     || n.isStandardField() != isStandardField) {
-                // We go in here when a label file is overridden with another
+                // We go in here when a label file is overriden with another
                 // Ex: when processing Mexican Spanish over regular Spanish OR when using the label renderer
                 n.setGender(gender);
                 n.setStartsWith(startsWith);
@@ -481,11 +500,87 @@ public final class LanguageDictionary implements Serializable {
         return "LanguageDictionary:" + getLanguage();
     }
 
+    /**
+     * Write the grammatical terms associated with the given terms
+     * @param appendable the appendable to write to
+     * @param useRenamedNouns: if true, use the renamed nouns instead of the default ones.  If you're doing work around
+     *        renaming nouns, you often want to pass in false for this
+     * @param terms: optional set of term to include, if omitted all terms are included
+     * @throws IOException
+     */
+    public void writeJson(Appendable appendable, boolean useRenamedNouns, Collection<String> termsToInclude) throws IOException {
+    	writeJsonTerms(appendable, useRenamedNouns, termsToInclude != null ? termsToInclude.stream().map(a->getTerm(a)).collect(Collectors.toList()) : null);
+    }
+    
+    /**
+     * Write the grammatical terms associated with 
+     * @param appendable the appendable to write to
+     * @param useRenamedNouns: if true, use the renamed nouns instead of the default ones.  If you're doing work around
+     *        renaming nouns, you often want to pass in false for this
+     * @param terms: optional set of term to include, if omitted all terms are included
+     * @throws IOException
+     */
+    public void writeJsonTerms(Appendable appendable, boolean useRenamedNouns, Collection<? extends GrammaticalTerm> termsToInclude) throws IOException {
+    	RenamingProvider renamingProvider = useRenamedNouns ? RenamingProviderFactory.get().getProvider() : null;
+        appendable.append("{\"n\":");
+    	writeJsonTerms(appendable, TermType.Noun, renamingProvider, termsToInclude);
+        appendable.append(",\"a\":");
+    	writeJsonTerms(appendable, TermType.Adjective, renamingProvider, termsToInclude);
+    	if (!this.articleMap.isEmpty()) {
+            appendable.append(",\"d\":");
+        	writeJsonTerms(appendable, TermType.Article, renamingProvider, termsToInclude);
+    	}
+    	appendable.append("}");
+    }
+    
+    
+    private void writeJsonTerms(Appendable out, TermType type, RenamingProvider renamingProvider, Collection<? extends GrammaticalTerm> termsToInclude) throws IOException {
+    	out.append('{');
+    	if (termsToInclude != null) {
+    		boolean first = true;
+    		for (GrammaticalTerm term : termsToInclude) {
+    			if (term == null || term.getTermType() != type) continue;
+    			if (!first) {
+    				out.append(',');
+    			} else {
+    				first = false;
+    			}
+    			writeJsonTerm(out, renamingProvider, term);
+    		}
+    	} else {
+    		writeJsonAllTerms(out, renamingProvider, type);
+    	}
+    	out.append('}');
+    }
+    
+    private void writeJsonAllTerms(Appendable out, RenamingProvider renamingProvider, TermType type) throws IOException {
+		boolean first = true;
+		for (GrammaticalTerm term : getTermMap(type).values()) {
+			if (!first) {
+				out.append(',');
+			} else {
+				first = false;
+			}
+			writeJsonTerm(out, renamingProvider, term);
+		}
+    }
+    
+    private void writeJsonTerm(Appendable out, RenamingProvider renamingProvider, GrammaticalTerm term) throws IOException {
+    	if (renamingProvider != null && term instanceof Noun && renamingProvider.useRenamedNouns()) {
+    		Noun renamedNoun = renamingProvider.getRenamedNoun(getLanguage(), ((Noun)term).getName());
+    		if (renamedNoun != null) term = renamedNoun;
+    	}
+        out.append('\"').append(term.getName().toLowerCase()).append("\":");
+		term.toJson(out);
+    }
+    	
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         this.declension = LanguageDeclensionFactory.get().getDeclension(this.language);
     }
-
+       
+    
+    
     /**
      * {@link LanguageDictionary} store metadata in {@link Map}'s that have a high memory per element cost. The various
      * dictionaries are static in nature and would not change after the initial load. {@link ImmutableSortedMap}'s have

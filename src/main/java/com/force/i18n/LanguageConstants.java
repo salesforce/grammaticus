@@ -68,6 +68,18 @@ public final class LanguageConstants {
     public static final String SERBIAN_CYRILLIC = "sr";  // http://tlt.its.psu.edu/suggestions/international/bylanguage/serbocroatian.html
     public static final String SERBIAN_LATIN ="sh";  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
     public static final String CATALAN = "ca";
+    public static final String AFRIKAANS = "af";
+    public static final String SWAHILI = "sw";
+    public static final String ZULU = "zu";
+    public static final String XHOSA = "xh";
+    public static final String TELUGU = "te";
+    public static final String KANNADA = "kn";
+    public static final String MALAYALAM = "ml";
+    public static final String MARATHI = "mr";
+    public static final String GUJARATI = "gu";
+    public static final String MAORI = "mi";
+    public static final String BURMESE = "my";
+    
     
     // platform languages
     public static final String SPANISH_MX = "es_MX"; //Spanish (Mexican), end-user lang prior to 190

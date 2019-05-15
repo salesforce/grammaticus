@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 
 import com.force.i18n.HumanLanguage;
@@ -70,6 +71,16 @@ class CatalanDeclension extends RomanceDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return startsWith; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getNumber().getDbValue() + "-" + getStartsWith().getDbValue() + "-" + getGender().getDbValue();
+		}
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
+		}
+		
     }
 
     protected static class CatalanAdjective extends Adjective {
@@ -237,4 +248,11 @@ class CatalanDeclension extends RomanceDeclension {
     protected Map< ? extends ArticleForm, String> getIndefiniteArticles() {
         return INDEFINITE_ARTICLE;
     }
+    
+    @Override
+    public Article createArticle(String name, LanguageArticle articleType) {
+        return new CatalanArticle(this, name, articleType);
+    }
+
+
 }

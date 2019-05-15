@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
 
-import com.force.i18n.commons.util.collection.IntMap.Entry;
 import com.google.common.annotations.Beta;
 
 /**
@@ -379,9 +378,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     }
 
     // Views
-    private IntSet keySet = null;
-    private Set<Entry<V>> entrySet = null;
-    private Collection<V> values = null;
+    private transient IntSet keySet = null;
+    private transient Set<Entry<V>> entrySet = null;
+    private transient Collection<V> values = null;
 
     /**
      * Returns a set view of the keys contained in this map.  The set is

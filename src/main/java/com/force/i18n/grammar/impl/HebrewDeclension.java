@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -87,6 +88,15 @@ class HebrewDeclension extends SemiticDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getArticle().getDbValue() + "-" + getNumber().getDbValue();
+		}
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
     }
 
     private static final String DEFAULT_DEFINITE_PREFIX = "\u05d4";  // ה

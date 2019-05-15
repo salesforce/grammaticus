@@ -52,7 +52,7 @@ class ArabicDeclension extends SemiticDeclension {
         ImmutableList.Builder<ArabicNounForm> nounBuilder = ImmutableList.builder();
         ImmutableList.Builder<ArabicNounForm> entityNounBuilder = ImmutableList.builder();
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguagePossessive possessive : getRequiredPossessive()) {
                     for (LanguageArticle article : getAllowedArticleTypes()) {
@@ -68,7 +68,7 @@ class ArabicDeclension extends SemiticDeclension {
 
         ordinal=0;
         ImmutableList.Builder<ArabicAdjectiveForm> adjBuilder = ImmutableList.builder();
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageGender gender : getRequiredGenders()) {
                 for (LanguageCase caseType : getRequiredCases()) {
                     for (LanguageArticle article : getAllowedArticleTypes()) {
@@ -141,6 +141,10 @@ class ArabicDeclension extends SemiticDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return possessive; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() + "-" + getPossessive().getDbValue();
+		}
     }
 
     /**
@@ -220,10 +224,16 @@ class ArabicDeclension extends SemiticDeclension {
                             // value in sfdcnames.xml usually only specifies 2 forms
                             String val = getCloseButNoCigarString(form);
                             if (val == null) {
-                                logger.info("###\tError: The noun " + name + " has no " + form
+                                logger.fine("###\tError: The noun " + name + " has no " + form
                                         + " form and no default could be found");
                                 return false;
                             }
+                            setString(val, form);
+                        }
+                    } else if (form.getNumber() == LanguageNumber.DUAL) {
+                    	// Default dual to plural 
+                        String val = getCloseButNoCigarString(form);
+                        if (val != null) {
                             setString(val, form);
                         }
                     } else if (requiredForms.contains(form)) {
@@ -324,6 +334,11 @@ class ArabicDeclension extends SemiticDeclension {
     }
 
     @Override
+	public Set<LanguageNumber> getAllowedNumbers() {
+    	return LanguageNumber.DUAL_SET;  // Written arabic has a compulsory dual form. Will default to normal plural form when needed.
+	}
+
+	@Override
     public boolean hasPossessive() {
         return true;
     }

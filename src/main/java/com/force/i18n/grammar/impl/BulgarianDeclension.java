@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -107,7 +108,16 @@ class BulgarianDeclension extends LanguageDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-    }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
+		}
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
+	}
 
     public static enum BulgarianNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
@@ -135,7 +145,7 @@ class BulgarianDeclension extends LanguageDeclension {
         @Override public LanguageNumber getNumber() {return this.number;}
         @Override
         public String getKey() {
-            return getNumber().getDbValue();
+            return getCase().getDbValue()+"-"+getNumber().getDbValue()+"-"+getArticle().getDbValue();
         }
     }
 
@@ -210,6 +220,8 @@ class BulgarianDeclension extends LanguageDeclension {
                         return baseForm + "\u0442\u0430";  // -ТА always
                     case NEUTER:
                         return baseForm + "\u0442\u043e";  // -то always
+                    default:
+                        throw new UnsupportedOperationException("Invalid Bulgarian Gender");
                     }
                 } else {
                     return baseForm + (baseFormEndsWithA ? "\u0442\u0430" : "\u0442\u0435");  // -TE except if it ends with A
@@ -231,7 +243,7 @@ class BulgarianDeclension extends LanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                logger.fine("###\tError: The noun " + name + " has no singular form");
                 return false;
             }
             return true;
@@ -297,6 +309,9 @@ class BulgarianDeclension extends LanguageDeclension {
                         return value + "\u0442\u043e";  // -то always
                     case MASCULINE:  // fall through
                     case ANIMATE_MASCULINE: // fall through
+                        break;
+                    default:
+                        throw new UnsupportedOperationException("Unsupported Bulgarian Gender");
                     }
                 } else {
                     return value + "\u0442\u0435";  // always ends with -TE except if it ends with A

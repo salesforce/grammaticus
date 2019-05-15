@@ -24,6 +24,7 @@ import java.util.Locale;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.*;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * @author stamm
@@ -646,5 +647,32 @@ public class LanguageDictionaryParserTest extends BaseGrammaticalLabelTest {
         /*
          * Nothing to test yet.
          */
+    } 
+    
+    /**
+     * Unit test for utility methods
+     */
+    public void testDictionaryMethods() throws IOException {
+        LanguageDictionary l1 = loadDictionary(LanguageProviderFactory.get().getLanguage("fi"));
+        LanguageDictionary l2 = loadDictionary(LanguageProviderFactory.get().getLanguage("fi"));
+        LanguageDictionary l3 = loadDictionary(LanguageProviderFactory.get().getLanguage("ru"));
+        assertEquals("Loading isn't equal.", l1, l2);
+        assertEquals(l1.hashCode(), l2.hashCode());
+        assertNotSame(l1.hashCode(), l3.hashCode());
+        assertTrue(l1.isEntity("Account"));
+        assertFalse(l1.isEntity("Accounts"));
+        assertTrue(l1.isEntityPlural("Accounts"));
+        assertTrue(l1.isNoun("Accounts"));
+        assertTrue(l1.isNoun("Account"));
+        assertFalse(l1.isNoun("item"));
+        assertFalse(l1.isEntity("item"));
+        assertFalse(l1.isEntityPlural("item"));
+        
+        // Make sure the names are the same
+        assertEquals(ImmutableSet.of("account", "account_name"), l1.getNames("Account", true));
+        assertEquals(ImmutableSet.of("account_name"), l1.getNames("Account", false));
+        assertEquals(l1.getNames("Account", true), l3.getNames("Account", true));
+        assertEquals(l1.getNames("Account", false), l3.getNames("Account", false));
+        assertNotSame(l1.getNames("Account", true), l3.getNames("Account", false));
     }
 }

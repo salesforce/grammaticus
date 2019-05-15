@@ -8,8 +8,7 @@
 package com.force.i18n.grammar;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
 import com.force.i18n.*;
@@ -95,7 +94,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 
 
     // new version of string formatter.
-    private String formatString(Object obj, Renameable[] entities, boolean forMessageFormat) {
+    private String formatString(Object obj, Renameable[] entities, Object[] vals, boolean forMessageFormat) {
         if (obj == null) {
             return null;
         }
@@ -110,11 +109,11 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         }
 
         if (obj instanceof LabelReference) {
-            return formatString(resolveLabelRef(obj), entities, forMessageFormat);
+            return formatString(resolveLabelRef(obj), entities, vals, forMessageFormat);
         }
 
         // possibly new complex label. let LabelInfo to handle
-        return dictionary.format(obj, entities, allowOtherGrammaticalForms(), forMessageFormat);
+        return dictionary.format(obj, entities, vals, allowOtherGrammaticalForms(), forMessageFormat);
     }
 
     /**
@@ -126,45 +125,65 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 
     @Override
     public String getString(String section, String param) {
-        return formatString(this.get(section, param), null, false);
+        return formatString(this.get(section, param), null, null, false);
     }
 
     @Override
     public String getString(LabelReference ref) {
-        return formatString(this.get(ref), null, false);
+        return formatString(this.get(ref), null, null, false);
     }
 
     @Override
     public String getStringThrow(String section, String param) {
-        return formatString(this.get(section, param, true), null, false);
+        return formatString(this.get(section, param, true), null, null, false);
     }
 
     @Override
     public String getString(String section, String param, String ifNull) {
-        return formatString(this.get(section, param, ifNull), null, false);
+        return formatString(this.get(section, param, ifNull), null, null, false);
     }
 
     @Override
     public String getString(String section, Renameable[] entities, String param) {
-        return formatString(this.get(section, param), entities, false);
+        return formatString(this.get(section, param), entities, null, false);
     }
 
     @Override
     public String getString(String section, Renameable[] entities, String param, String ifNull) {
-        return formatString(this.get(section, param, ifNull), entities, false);
+        return formatString(this.get(section, param, ifNull), entities, null, false);
     }
 
     @Override
     public String getString(String section, String param, boolean forMessageFormat) {
-        return formatString(this.get(section, param), null, forMessageFormat);
+        return formatString(this.get(section, param), null, null, forMessageFormat);
+    }
+
+    public String getStringThrow(String section, String param, boolean forMessageFormat) {
+        return formatString(this.get(section, param, true), null, null, forMessageFormat);
     }
 
     @Override
     public String getString(String section, Renameable[] entities, String param, boolean forMessageFormat) {
-        return formatString(this.get(section, param), entities, forMessageFormat);
+        return formatString(this.get(section, param), entities, null, forMessageFormat);
     }
 
-    /**
+    @Override
+	public String getString(String section, String param, Renameable[] entities, Object... vals) {
+        return formatString(this.get(section, param), entities, vals, false);
+	}
+
+	@Override
+	public String getString(String section, String param, boolean forMessageFormat, Object... vals) {
+        return formatString(this.get(section, param), null, vals, forMessageFormat);
+	}
+
+	@Override
+	public String getString(String section, String param, Renameable[] entities, boolean forMessageFormat,
+			Object... vals) {
+        return formatString(this.get(section, param), entities, vals, forMessageFormat);
+	}
+
+	/**
      * Override so that missing labels don't throw gacks, but are logged instead
      */
     @Override
@@ -241,4 +260,69 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         return this.dictionary;
     }
 
+	@Override
+	public void writeJson(Appendable out, Collection<String> keysToInclude, Set<GrammaticalTerm> termsInUse) throws IOException {
+		boolean first = true;
+		out.append("{");
+		if (keysToInclude == null) {
+			keysToInclude = sectionNames();
+			// Include all of them.
+		} 
+		
+		for (String str : keysToInclude) {
+			if (first) {
+				first = false;
+			} else {
+				out.append(",");
+			}
+			List<String> ref = TextUtil.splitSimple(".", str);
+			if (ref.size() == 1) {
+                boolean firstInSection = true;
+				String section = ref.get(0);
+				for (String key : getParams(section, Collections.emptySet())) {
+					if (firstInSection) {
+						firstInSection = false;
+					} else {
+						out.append(",");
+					}
+					appendLabel(out, section, key, termsInUse);
+				}
+			} else {
+				assert ref.size() == 2 : "Invalid key: " + str;
+				String section = ref.get(0);
+				String key = ref.get(1);
+				appendLabel(out, section, key, termsInUse);
+			}
+		}
+		out.append("}");
+	}
+	
+
+	void appendLabel(Appendable out, String section, String key, Set<GrammaticalTerm> termsInUse) throws IOException {
+		Object value = get(section, key, null);
+		out.append("\"").append(section).append('.').append(key).append("\":");
+		RefTag.appendJsonLabelValue(dictionary, out, value, termsInUse);
+	}
+	
+	@Override
+	public Collection<? extends GrammaticalTerm> getUsedTerms(Collection<String> keysToInclude) {
+		Set<GrammaticalTerm> termsToInclude = new HashSet<>();
+		for (String str : keysToInclude) {
+			List<String> ref = TextUtil.splitSimple(".", str);
+			if (ref.size() == 1) {
+				String section = ref.get(0);
+				for (String key : getParams(section, Collections.emptySet())) {
+					Object value = get(section, key, null);
+					termsToInclude.addAll(RefTag.getTermsFromLabelValue(this.dictionary, value));
+				}
+			} else {
+				assert ref.size() == 2 : "Invalid key: " + str;
+				String section = ref.get(0);
+				String key = ref.get(1);
+				Object value = get(section, key, null);
+				termsToInclude.addAll(RefTag.getTermsFromLabelValue(this.dictionary, value));
+			}
+		}
+		return Collections.unmodifiableSet(termsToInclude);
+	}
 }

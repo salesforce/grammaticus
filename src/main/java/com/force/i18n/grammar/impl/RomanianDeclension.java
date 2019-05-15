@@ -9,6 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -52,7 +53,7 @@ class RomanianDeclension extends RomanceDeclension {
         ImmutableList.Builder<RomanianNounForm> fieldBuilder = ImmutableList.builder();
 
         int ordinal = 0;
-        for (LanguageNumber number : EnumSet.of(LanguageNumber.SINGULAR, LanguageNumber.PLURAL)) {
+        for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageCase caseType : getRequiredCases()) {
                 for (LanguageArticle article : getRequiredNounArticles()) {
                     RomanianNounForm form = new RomanianNounForm(this, number, caseType, article, ordinal++);
@@ -127,6 +128,15 @@ class RomanianDeclension extends RomanceDeclension {
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+		@Override
+		public String getKey() {
+			return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
+		}
+		@Override
+		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+				throws IOException {
+			a.append(genderVar+"+"+termFormVar+".substr(1)");
+		}
     }
 
     /**

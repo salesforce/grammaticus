@@ -45,6 +45,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
 		URL sampleJarUrl = getLabelURL();
 		GrammaticalLabelSetDescriptor desc = new LabelSetDescriptorImpl(sampleJarUrl, LanguageProviderFactory.get().getBaseLanguage(), "sample");
 		LocalizerProvider glf = new GrammaticalLocalizerFactory(GrammaticalLocalizerFactory.getLoader(desc, null));
+		assertEquals(sampleJarUrl, glf.getLabelsDirectory());
     	LocalizerFactory.set(glf);
     	super.setUp();
 	}
@@ -70,6 +71,21 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
     	// Fallbacks resolve all aliases immediately.
     	assertEquals("Created by...", ls.get("Sample", "created_by"));
     	assertEquals("Created by...", ls.getString("Sample", "created_by"));
+    }
+    
+    public void testLabelThrow() {
+        GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
+
+        //Test for valid Label retrieval using LabelThrow
+        Object[] arguments = new Object[] { "1","5" };
+        assertEquals("Step 1 of 5", gl.getLabelThrow("Sample", "RightHeader", arguments));
+        
+        //Test for invalid Label.An exception should be thrown when invalid label is referenced
+         try {
+             assertEquals("Step 1 of 5", gl.getLabelThrow("Sample", "InvalidLabel", arguments));
+             fail("This should not happen!");
+         }
+         catch (Exception expected) {}
     }
 
 
@@ -263,5 +279,13 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         loader = new GrammaticalLabelSetLoader(overrides, "test2a", loader);
         set = (GrammaticalLabelSetFallbackImpl) loader.getSet(GERMAN);
         assertTrue(set.allowOtherGrammaticalForms());
+    }
+    
+    public void testReloading() {
+    	GrammaticalLocalizerFactory factory = (GrammaticalLocalizerFactory) LocalizerFactory.get();
+    	factory.resetLabels();
+    	factory.initEnglishLabelProvider();
+    	factory.resetLabels();
+    	factory.initLabelProvider();
     }
 }
