@@ -82,7 +82,7 @@ abstract class ModifierRefTag extends TermRefTag {
         NounModifier modifier = resolveModifier(formatter);
 
         if (modifier == null && overrideForms) {
-            logger.info("Missing modifier " + getName() + " for " + formatter.getLanguage());
+            logger.fine("Missing modifier " + getName() + " for " + formatter.getLanguage());
             return ""; //This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
         }
 

@@ -243,7 +243,7 @@ class BulgarianDeclension extends LanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                logger.fine("###\tError: The noun " + name + " has no singular form");
                 return false;
             }
             return true;

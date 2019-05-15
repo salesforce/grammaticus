@@ -136,7 +136,7 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
         // Only bother logging if it's a "final" label, as opposed to a LabelRef or TermRef AND we're not in a setup page (i.e. !useRenamedNouns())
         if (((label instanceof String) || (label instanceof List<?>)) && RenamingProviderFactory.get().getProvider().useRenamedNouns()) {
             if (!ALLOWED_NONTRANSLATED_SECTIONS.contains(section)) {
-                logger.warning("FallbackString-" + main.getDictionary().getLanguage().getLocaleString() + ":" + section + "." + key);
+                logger.fine("FallbackString-" + main.getDictionary().getLanguage().getLocaleString() + ":" + section + "." + key);
             }
         }
     }

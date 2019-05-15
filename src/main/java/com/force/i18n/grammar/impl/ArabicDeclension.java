@@ -224,7 +224,7 @@ class ArabicDeclension extends SemiticDeclension {
                             // value in sfdcnames.xml usually only specifies 2 forms
                             String val = getCloseButNoCigarString(form);
                             if (val == null) {
-                                logger.info("###\tError: The noun " + name + " has no " + form
+                                logger.fine("###\tError: The noun " + name + " has no " + form
                                         + " form and no default could be found");
                                 return false;
                             }
