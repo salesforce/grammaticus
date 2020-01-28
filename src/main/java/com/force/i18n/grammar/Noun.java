@@ -288,7 +288,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
                     String value = getCloseButNoCigarString(form);
 
                     if (value == null) {
-                        logger.info("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
+                        logger.config("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
                         return false;
                     }
                     setString(intern(value), form);

@@ -120,7 +120,7 @@ public abstract class Adjective extends NounModifier {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.info("###\tError: The adjective " + name + " is missing required " + form + " form");
+                    logger.fine("###\tError: The adjective " + name + " is missing required " + form + " form");
                     // TODO: uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -173,10 +173,10 @@ public abstract class Adjective extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.info("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
+                        logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.info("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
+                        logger.fine("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
                     }
                 }
 

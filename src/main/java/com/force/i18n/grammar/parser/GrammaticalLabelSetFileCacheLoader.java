@@ -92,7 +92,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
 
             labelSet = super.compute(desc);
 
-            logger.info("Created LabelSet." + desc.getLanguage() + " in " + (System.currentTimeMillis() - start) + " ms");
+            logger.config("Created LabelSet." + desc.getLanguage() + " in " + (System.currentTimeMillis() - start) + " ms");
 
             // Save as a cache file
             final GrammaticalLabelSetImpl writeMe = labelSet;
@@ -234,11 +234,11 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
                 return null;
             }
 
-            logger.info("Loading " + labelSetName + " from cache");
+            logger.config("Loading " + labelSetName + " from cache");
             long start = System.currentTimeMillis();
             try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(this.cacheFile)))) {
                 GrammaticalLabelSetImpl labelSet = (GrammaticalLabelSetImpl)ois.readObject();
-                logger.info("Loaded " + this.labelSetName + " from cache in " + (System.currentTimeMillis() - start)
+                logger.config("Loaded " + this.labelSetName + " from cache in " + (System.currentTimeMillis() - start)
                     + " ms");
                 return labelSet;
             }
@@ -262,7 +262,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
             long startAt = System.currentTimeMillis();
             try (ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(this.cacheFile)))){
                 oos.writeObject(labelSet);
-                logger.info("Wrote cache for " + this.labelSetName + " in " + (System.currentTimeMillis() - startAt)
+                logger.config("Wrote cache for " + this.labelSetName + " in " + (System.currentTimeMillis() - startAt)
                     + " ms");
             }
             catch (Exception e) {

@@ -108,7 +108,7 @@ public abstract class Article extends NounModifier {
         for (ArticleForm form : getDeclension().getArticleForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.info("###\tError: The article " + name + " is missing required " + form + " form");
+                    logger.fine("###\tError: The article " + name + " is missing required " + form + " form");
                     // TODO: Uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -146,10 +146,10 @@ public abstract class Article extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.info("###\tError: The article " + name + " has no " + form + " form and no default could be found");
+                        logger.fine("###\tError: The article " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.info("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
+                        logger.fine("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
                     }
                 }
                 
