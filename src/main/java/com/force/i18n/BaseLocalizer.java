@@ -217,7 +217,7 @@ public class BaseLocalizer {
      * In order to be back-compatible with legacy data, we have to keep these historic formats in place.
      **/
     @Deprecated
-    private static enum JdkFormatFixer implements FormatFixer {
+    static enum JdkFormatFixer implements FormatFixer {
         
         INSTANCE;
 
