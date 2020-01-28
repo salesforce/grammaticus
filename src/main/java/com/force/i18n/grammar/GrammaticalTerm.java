@@ -79,7 +79,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
     public abstract boolean isCopiedFromDefault();
 
     /**
-     * Get the declension associated with the language.  This
+     * @return the declension associated with the language.  This
      */
     public LanguageDeclension getDeclension() {
         return this.declension;

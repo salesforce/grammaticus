@@ -154,18 +154,14 @@ abstract class BantuDeclension extends LanguageDeclension {
     }
 
     @Override
-    public Set<LanguageArticle> getAllowedArticleTypes() {
-        return Collections.singleton(LanguageArticle.ZERO);
-    }
-
-    @Override
     public boolean hasStartsWith() {
         return false;
     }
     
     /**
      * Declension for the Kiswahili language
-     * 
+     * */
+    /*
      * An example of specifying adjectives would be
  
  <adjective name="New">
@@ -223,8 +219,9 @@ abstract class BantuDeclension extends LanguageDeclension {
     /**
      * Declension for the isiZulu language
      * 
+     */
+ /*
      * An example of specifying adjectives would be
- 
  <adjective name="New">
     <value gender="I" plural="n">Omusha</value>
     <value gender="I" plural="y">Abasha</value>

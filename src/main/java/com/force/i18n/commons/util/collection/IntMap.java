@@ -30,17 +30,17 @@ import java.io.Serializable;
 @Beta
 public interface IntMap<V> extends Serializable {
     /**
-     * Returns the number of key-value mappings in this map.
+     * @return the number of key-value mappings in this map.
      */
     int size();
 
     /**
-     * Returns <tt>true</tt> if this map contains no key-value mappings.
+     * @return <tt>true</tt> if this map contains no key-value mappings.
      */
     boolean isEmpty();
 
     /**
-     * Returns <tt>true</tt> if this map maps one or more keys to the
+     * @return <tt>true</tt> if this map maps one or more keys to the
      * specified value.
      *
      * @param value value whose presence in this map is to be tested.
@@ -48,7 +48,7 @@ public interface IntMap<V> extends Serializable {
     boolean containsValue(Object value);
 
     /**
-     * Returns <tt>true</tt> if this map contains a mapping for the specified
+     * @return  <tt>true</tt> if this map contains a mapping for the specified
      * key.
      *
      * @param key key whose presence in this Map is to be tested.
@@ -173,7 +173,7 @@ public interface IntMap<V> extends Serializable {
          * entries <tt>e1</tt> and <tt>e2</tt> represent the same mapping
          * if<pre>
          *     (e1.getKey()==null ?
-         *      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &&
+         *      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &amp;&amp;
          *     (e1.getValue()==null ?
          *      e2.getValue()==null : e1.getValue().equals(e2.getValue()))
          * </pre>

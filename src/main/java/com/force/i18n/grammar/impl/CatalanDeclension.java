@@ -20,14 +20,14 @@ import com.google.common.collect.ImmutableMap;
 /**
  * Declension for Catalan language. General rules as following,
  * 
- * Noun forms : singular & plural
+ * Noun forms : singular &amp; plural
  *       Case : n/a
  *     Gender : masculine, feminine
- *    Article : definite & indefinite; Defined as below,
- *        ---> definite : 
+ *    Article : definite &amp; indefinite; Defined as below,
+ *        ---&gt; definite : 
  *             Masculine: singular: el (l’), plural: els
  *             Feminine: singular: la (l’) plural: les
- *        ---> indefinite : 
+ *        ---&gt; indefinite : 
  *             Masculine: singular: un, plural: uns
  *             Feminine: singular: una, plural: unes
  *Starts with : vowel(includes H), Consonant

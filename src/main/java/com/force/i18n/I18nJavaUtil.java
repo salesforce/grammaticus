@@ -57,7 +57,9 @@ public class I18nJavaUtil {
 
     /**
      * Given a file (possibly a directory) return the last mod of the file or any recursive children files
-     * If includeSubDirs is false then only look in this directory itself, not recursive ones
+     * @param includeSubDirs if false then only look in this directory itself, not recursive ones
+     * @param dir the directory to test
+     * @return the last modified file in the directory
      */
     public static long dirLastModified(File dir, boolean includeSubDirs) {
     	return dirLastModified(dir, includeSubDirs, false);
@@ -66,8 +68,10 @@ public class I18nJavaUtil {
 
     /**
      * Given a file (possibly a directory) return the last mod of the file or any recursive children files
-     * If includeSubDirs is false then only look in this directory itself, not recursive ones.
+     * @param includeSubDirs if false then only look in this directory itself, not recursive ones
+     * @param dir the directory to test
      * @param checkDirectoryTimestampAsWell checks the directory's modification time itself.
+     * @return the last modified file in the directory
      */
     public static long dirLastModified(File dir, boolean includeSubDirs, boolean checkDirectoryTimestampAsWell) {
         long lastModified = checkDirectoryTimestampAsWell ? dir.lastModified() : -1;
@@ -197,6 +201,7 @@ public class I18nJavaUtil {
      * Set the base directory of where the cache may be stored.  This
      * way, if you restart the app, it won't need to recalculate the
      * cache
+     * @param cacheDir the cache directory where the label cache will be stored
      */
     public static void setCacheBaseDir(File cacheDir) {
         CACHE_BASE_DIR = cacheDir;

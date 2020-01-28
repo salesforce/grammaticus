@@ -27,6 +27,7 @@ abstract class ModifierRefTag extends TermRefTag {
     private final NounRefTag associatedNounRef; // entity that this modifier associated with.
     private final TermRefTag nextTermRef;       // The term that comes after this one
     private final TermAttributes overrides;  // TODO:  Overrides *could* be completely unnecessary
+    private final int hashCode;
 
     private static final Logger logger = Logger.getLogger(ModifierRefTag.class.getName());
 
@@ -49,6 +50,24 @@ abstract class ModifierRefTag extends TermRefTag {
         this.nextTermRef = nextTerm;
         this.isCapital = isCapital;
         this.overrides = overrides;
+        this.hashCode = calcHashCode();
+    }
+
+    private int calcHashCode() {
+        int result = super.hashCode();
+        result = calcHashCodeField(result, associatedNounRef);
+        result = calcHashCodeField(result, nextTermRef);
+        result = calcHashCodeField(result, overrides);
+        result = calcHashCodeField(result, isCapital);
+        return result;
+    }
+
+    private int calcHashCodeField(int current, Object obj) {
+        return (obj == null ? current : current << 2 ^ obj.hashCode());
+    }
+
+    private int calcHashCodeField(int current, boolean b) {
+        return current << 1 + ( b ? 1 : 0 );
     }
 
     @Override
@@ -82,7 +101,7 @@ abstract class ModifierRefTag extends TermRefTag {
         NounModifier modifier = resolveModifier(formatter);
 
         if (modifier == null && overrideForms) {
-            logger.fine("Missing modifier " + getName() + " for " + formatter.getLanguage());
+            logger.info("Missing modifier " + getName() + " for " + formatter.getLanguage());
             return ""; //This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
         }
 
@@ -132,16 +151,23 @@ abstract class ModifierRefTag extends TermRefTag {
         return nextTermRef;
     }
 
+    
+    @Override
+    public int hashCode() {
+        return hashCode;
+    }
 
+ 
     @Override
     protected boolean equalsValue(TermRefTag obj) {
         ModifierRefTag otherTag = (ModifierRefTag) obj;
-        return this.getName().equals(otherTag.getName())
+        return this.isCapital == otherTag.isCapital
             && (this.associatedNounRef == null ? otherTag.associatedNounRef  == null : this.associatedNounRef.equals(otherTag.associatedNounRef))
             && (this.nextTermRef == null ? otherTag.nextTermRef  == null : this.nextTermRef.equals(otherTag.nextTermRef))
-            && this.isCapital == otherTag.isCapital
             && this.overrides.equals(otherTag.overrides);
     }
+
+    
 
     public ModifierRefTag fixupModifier(NounRefTag nounTag, TermRefTag nextTermRef) {
         return fixupModifier(nounTag, nextTermRef, null);

@@ -39,7 +39,7 @@ public interface IntSet {
     IntSet makeEmpty();
     
     /**
-     * Gets the ordered array of ints in the IntSet.
+     * @return the ordered array of ints in the IntSet.
      */
     int[] toArray();
 
@@ -77,7 +77,7 @@ public interface IntSet {
     /**
      * Returns <tt>true</tt> if this set contains all of the elements in the specified set
      *
-     * @param o set that is being tested for containment.
+     * @param set set that is being tested for containment.
      * @return <tt>true</tt> if this set is a superset of the given set
      */
     boolean containsAll(IntSet set);

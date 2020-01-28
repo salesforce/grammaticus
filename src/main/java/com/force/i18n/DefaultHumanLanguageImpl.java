@@ -107,6 +107,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     
     MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
     BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
+    PERSIAN(new Locale("fa"), LanguageType.PLATFORM, 224.0),
        
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ARABIC_BH(new Locale("ar", "BH"), LanguageType.PLATFORM, 194.0), //Arabic Bahrain
@@ -245,7 +246,8 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     /**
      * @return the text direction of the language (right now just RightToLeft vs LeftToRight)
      */
-    @Override
+	@Override
+    @SuppressWarnings("deprecation")
 	public TextDirection getDirection() {
         // invertIfNotNormalDirection checks if we have set a debugging "reverse" flag - to allow
         // a language like English to be shown as an RTL language.
@@ -458,7 +460,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     }
 
     /**
-     * @return whether use of fallback strings in this language should be considered a problem.  This only applies to end user & R2L languages that don't have a fallback
+     * @return whether use of fallback strings in this language should be considered a problem.  This only applies to end user and R2L languages that don't have a fallback
      * to a "normal" language.  This means fallbacks in Mexican Spanish and British English will not be logged, since they're not a huge deal.
      */
     @Override

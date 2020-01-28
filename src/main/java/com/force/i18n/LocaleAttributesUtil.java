@@ -17,11 +17,13 @@ public interface LocaleAttributesUtil {
     /**
      * @return true when the specified locale should be considered "formal", in that you should always use the full
      * name when addressing a user.
+     * @param locale the locale to test
      */
     public boolean isFormalLocale(Locale locale);
 
     /**
      * @return true when the specified locale uses an eastern name order.
+     * @param locale the locale to test
      */
     public boolean useEasternNameOrder(Locale locale);
     

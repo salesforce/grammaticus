@@ -42,7 +42,14 @@ public abstract class TermRefTag extends RefTag {
 
     @Override
     public boolean equals(Object obj) {
-        return obj != null && (obj.getClass() == this.getClass()) && name.equals(((TermRefTag)obj).name) && equalsValue((TermRefTag)obj);
+        if (obj == this) return true;
+        if (obj instanceof TermRefTag) {
+            TermRefTag trt=(TermRefTag)obj;
+            return trt.getType() == getType() 
+                && name.equals(trt.name) 
+                && equalsValue(trt);
+        } 
+        return false;
     }
 
     @Override
@@ -80,6 +87,8 @@ public abstract class TermRefTag extends RefTag {
     protected abstract TermType getType();
 
     /**
+     * @param dictionary the dictionary this tag is associated with
+     * @param overrideForms if the forms should be looked up in the dictionary based on the context of this tag 
      * @return the form of this GrammaticalTerm for the given dictionary.
      */
     public abstract GrammaticalForm getForm(LanguageDictionary dictionary, boolean overrideForms);

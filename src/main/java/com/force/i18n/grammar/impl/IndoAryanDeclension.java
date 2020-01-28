@@ -24,9 +24,9 @@ import com.google.common.collect.ImmutableSet;
  * among Marathi native speakers, due to the similarities in the grammar.  Hence
  * the implementation is a lot like an article-less German.
  * 
- * @see https://en.wikipedia.org/wiki/Indo-Aryan_languages
- * @see https://en.wikipedia.org/wiki/Gujarati_grammar#Nouns
- * @see https://en.wikipedia.org/wiki/Marathi_grammar#Nominals
+ * @see <a href="https://en.wikipedia.org/wiki/Indo-Aryan_languages">Wikipedia: Indo-Aryan languages</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Gujarati_grammar#Nouns">Wikipedia: Gujarati Nouns</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marathi_grammar#Nominals">Wikipedia: Marathi Nouns</a>
  * @author stamm
  * @since 1.1
  */

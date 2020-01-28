@@ -49,7 +49,7 @@ public interface Renameable {
 
     /**
      * @param labelKey the label from the grammar files
-     * @return for the given labelKey, return the DB key that should be used to retrieve it.
+     * @return for the given labelKey, return the DB key that should be used to retreive it.
      * I.e., if labelKey is "Entity" and this is "Account", it should return "Account".
      */
     String getEntitySpecificDbLabelKey(String labelKey);
@@ -64,6 +64,7 @@ public interface Renameable {
     /**
      * @return the "standard" noun in the given language.  If you want the renamed version, you should
      * use RenamingProvider.get() or the equivalent
+     * @param language the language for the noun.
      */
     Noun getStandardNoun(HumanLanguage language);
     

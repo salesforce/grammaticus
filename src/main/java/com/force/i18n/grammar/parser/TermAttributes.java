@@ -229,7 +229,9 @@ public final class TermAttributes implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = ((article == null) ? 0 : article.hashCode());
+        result = prime * result + ((declension == null) ? 0 : declension.hashCode());
         result = prime * result + ((caseType == null) ? 0 : caseType.hashCode());
+        result = prime * result + ((article == null) ? 0 : article.hashCode());
         result = prime * result + ((gender == null) ? 0 : gender.hashCode());
         result = prime * result + ((number == null) ? 0 : number.hashCode());
         result = prime * result + ((possessive == null) ? 0 : possessive.hashCode());

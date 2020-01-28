@@ -25,7 +25,12 @@ public interface LocalizerProvider {
 	BaseLocalizer getLabelLocalizer(HumanLanguage language);
 
 	/**
-	 * Get a localizer based on a locale, a currency, a language and a timezone.
+	 * @return a localizer based on a locale, a currency, a language and a timezone.
+	 * @param locale the locale for number and date formatting
+	 * @param currencyLocale the locale for currencies
+	 * @param language the human language 
+	 * @param timeZone the time zone
+	 * 
 	 */
 	BaseLocalizer getLocalizer(Locale locale,
 			Locale currencyLocale, HumanLanguage language, TimeZone timeZone);

@@ -134,6 +134,7 @@ public class LabelValidator {
 
     /**
      * @param language the language to load for the parser
+     * @param trackDupes whether to track and log duplicates
      * @throws IOException if there was a problem while parsing
      * @return A fully formed label file parser *after* it has been parser
      */
@@ -155,6 +156,11 @@ public class LabelValidator {
 
     /**
      * Render the label for the given language with the appropriate override
+     * @param language the language to render
+     * @param text the text of the label to parser
+     * @param grammarOverride the XML set of terms to add to the label set while testing
+     * @return the rendered label
+     * @throws IOException if there is an issue reading from the label set descriptor passed into the constructor 
      */
     public String renderLabel(HumanLanguage language, String text, String grammarOverride) throws IOException {
         return getTestLabelSet(language, text, grammarOverride).getString("Test", "Test");

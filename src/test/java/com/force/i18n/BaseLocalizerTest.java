@@ -7,28 +7,12 @@
 
 package com.force.i18n;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Currency;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.TimeZone;
-import java.util.function.Function;
+import java.text.*;
+import java.util.*;
+import java.util.function.Predicate;
 
 import org.junit.Assert;
 
-import com.force.i18n.BaseLocalizer.FormatFixer;
 import com.force.i18n.commons.util.settings.SimpleNonConfigIniFile;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -45,7 +29,7 @@ public class BaseLocalizerTest extends TestCase {
 
     private BaseLocalizer usLocalizer;
     private BaseLocalizer ukLocalizer;
-    private final Function<Locale,FormatFixer> originalPredicate;
+    private final Predicate<Locale> originalPredicate;
     
     public BaseLocalizerTest(String name) throws Exception {
         super(name);
@@ -66,7 +50,7 @@ public class BaseLocalizerTest extends TestCase {
     
     public void tearDown() {
         if (this.originalPredicate != null) {
-            BaseLocalizer.setLocaleFormatFixer(this.originalPredicate);
+            BaseLocalizer.setLocalePredicate(this.originalPredicate);
         }
     }
 
@@ -115,31 +99,69 @@ public class BaseLocalizerTest extends TestCase {
     public void testJdkDateFormatFixer_JDK() throws Exception {
         
          // set to use JDK locale data.
-        Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocalePredicate();
-        Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.JdkFormatFixer.INSTANCE;
-        BaseLocalizer.setLocaleFormatFixer(predicate);
+        Predicate<Locale> old_predicate = BaseLocalizer.getLocalePredicate();
+        Predicate<Locale> predicate = loc -> false;
+        BaseLocalizer.setLocalePredicate(predicate);
         
-        TimeZone tz = BaseLocalizer.GMT_TZ;
-        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 12:00:00");
-        // In JDK 6, they fixed danish.
-        assertEquals("13-03-2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
-        assertEquals("13-03-2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
-
-        // Validate with US
-        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
-        assertEquals("3/13/2008 12:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
-
-        // Singapore didn't have the "right" time.
-        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
-        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
-        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
-        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
-        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
-        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
-
-        BaseLocalizer.setLocaleFormatFixer(old_predicate);
+        try {        
+	        TimeZone tz = BaseLocalizer.GMT_TZ;
+	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 12:00:00");
+	        // In JDK 6, they fixed danish.
+	        assertEquals("13-03-2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13-03-2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	
+	        // Validate with US
+	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
+	        assertEquals("3/13/2008 12:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
+	
+	        // Singapore didn't have the "right" time.
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
+        } finally {
+        	BaseLocalizer.setLocalePredicate(old_predicate);
+        }
     }
 
+    public void testJdkDateFormatFixer_ICU() throws Exception {
+        // set to use ICU locale data.
+       Predicate<Locale> old_predicate = BaseLocalizer.getLocalePredicate();
+       Predicate<Locale> predicate = loc -> true;
+       BaseLocalizer.setLocalePredicate(predicate);
+       
+       try {
+	        TimeZone tz = BaseLocalizer.GMT_TZ;
+	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 13:00:00");
+	        // In JDK 6, they fixed danish.
+	        assertEquals("13.03.2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13.03.2008 13.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	
+	        // Validate with US
+	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
+	        assertEquals("3/13/2008, 1:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
+	
+	        // Singapore, en_SG
+	        assertEquals("13/3/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	        assertEquals("13/3/2008, 1:00 pm", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	
+	        // Nigeria, en_NG
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
+	
+	        // UK, en_GB
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	
+	        // India, en_ID, override to en_GB
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "ID"), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "ID"), tz).format(sampleDate));
+       } finally {
+    	   BaseLocalizer.setLocalePredicate(old_predicate);
+       }
+    }
 
     // List of overridden locales for date/time
     private static Locale[] DATE_FORMAT_INTERESTING_LOCALES = new Locale[] { //
@@ -175,10 +197,14 @@ public class BaseLocalizerTest extends TestCase {
     }
 
     public void testFormatAndParseDateTimeViaLocalizer() {
-        BaseLocalizer.setLocaleFormatFixer(locale -> BaseLocalizer.JdkFormatFixer.INSTANCE);
+        BaseLocalizer.setLocalePredicate(locale -> false);
         doTestFormatAndParseDateTimeViaLocalizer();
     }
 
+    public void testFormatAndParseDateTimeViaLocalizerIcu() {
+        BaseLocalizer.setLocalePredicate(locale -> true);
+        doTestFormatAndParseDateTimeViaLocalizer();
+    }
 
     private void doTestFormatAndParseDateTimeViaLocalizer() {
         final HumanLanguage lang = HumanLanguage.Helper.get(Locale.US);
@@ -317,6 +343,26 @@ public class BaseLocalizerTest extends TestCase {
     }
 
     /**
+     * Test case to make sure all ICU locale time formats have AM/PM set for 12-hour times.
+     * If this case fails for certain locale, you may consider to have a hot fix.
+     */
+    public void test12HTimeWithAMPM() {
+        for (ULocale u_loc : ULocale.getAvailableLocales()) {
+        	if (u_loc.getLanguage().equals("mi")) continue;  // Ignore maori.
+            for (int style : ImmutableSet.of(DateFormat.SHORT, DateFormat.MEDIUM, DateFormat.LONG)) {
+                com.ibm.icu.text.DateFormat df = com.ibm.icu.text.DateFormat.getTimeInstance(style, u_loc);
+                com.ibm.icu.text.SimpleDateFormat tf = (com.ibm.icu.text.SimpleDateFormat) df;
+                String p = tf.toPattern();
+
+                // H for 24-hours time format, h for 12-hours format.
+                if ((p.indexOf('a') == -1) && (p.indexOf('k') == -1)) {
+                    Assert.assertTrue("Locale:" + u_loc.getName() + " has incorrect time format " + p, p.indexOf('H') != -1);
+                }
+            }
+        }
+    }
+
+    /**
      * Test case to make sure all the JDK time zone can be mapped to ICU time zone.
      *
      */
@@ -337,7 +383,7 @@ public class BaseLocalizerTest extends TestCase {
      */
     public void testICUCurrencyCode2JDK() {
         List<String> res = new ArrayList<String>();
-        ImmutableSet<String> exceptions = ImmutableSet.of("BYN", "STN", "MRU", "VES");
+        ImmutableSet<String> exceptions = ImmutableSet.of("MRU", "VES", "STN");
         for (ULocale u_loc : ULocale.getAvailableLocales()) {
             com.ibm.icu.text.NumberFormat df = com.ibm.icu.text.NumberFormat.getCurrencyInstance(u_loc);
             com.ibm.icu.util.Currency cur = df.getCurrency();
@@ -380,5 +426,40 @@ public class BaseLocalizerTest extends TestCase {
         public boolean labelExists(String section, String param) {
             return getString(section, param, null) != null;
         }
+    }
+    
+    /**
+     * Test case for accounting currency format. 
+     */
+    public void testAccoutingCurrencyFormat() {
+        // set to use ICU locale data.
+       Predicate<Locale> old_predicate = BaseLocalizer.getLocalePredicate();
+       Predicate<Locale> predicate = loc -> true;
+       BaseLocalizer.setLocalePredicate(predicate);
+       
+       NumberFormat nf = usLocalizer.getCurrencyFormat();
+       NumberFormat accounting_nf = usLocalizer.getAccountingCurrencyFormat();
+       
+       // standard format
+       assertEquals("$12,345,678.57", nf.format(12345678.567));
+       assertEquals("-$12,345,678.57", nf.format(-12345678.567));
+       
+       // accounting format
+       assertEquals("$12,345,678.57", accounting_nf.format(12345678.567));
+       assertEquals("($12,345,678.57)", accounting_nf.format(-12345678.567));
+       
+       BaseLocalizer.setLocalePredicate(old_predicate);
+    }
+    
+    public void testParseAccountingCurrencyFormat() throws ParseException {
+        // set to use ICU locale data.
+       Predicate<Locale> old_predicate = BaseLocalizer.getLocalePredicate();
+       Predicate<Locale> predicate = loc -> true;
+       BaseLocalizer.setLocalePredicate(predicate);
+       
+       Number num = usLocalizer.parseAccountingCurrency("($12,345,678.57)");
+       assertEquals(-12345678.57, num.doubleValue(), 0.001);
+       
+       BaseLocalizer.setLocalePredicate(old_predicate);
     }
 }

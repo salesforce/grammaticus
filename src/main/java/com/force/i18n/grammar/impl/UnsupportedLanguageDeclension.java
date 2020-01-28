@@ -29,7 +29,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(SimpleNounForm.SINGULAR);
     // Only the simplest of adjectives and articles
-    static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
+    static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = SimpleDeclension.ADJECTIVE_FORMS;
     static final List<? extends ArticleForm> ARTICLE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public UnsupportedLanguageDeclension(HumanLanguage language) {
@@ -336,6 +336,179 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
             return SimpleNounForm.SINGULAR;
         }
+    }
+    
+    /**
+     * Persian is an Iranian language that has a lot of arabic words added to it, where the grammar of how 
+     * adjectives and plurals are made are based on the source of the word. 
+     * 
+     * We're going with a simplified system where we track single/plural, nom/accusative, and assume adjectives
+     * are unmodified.  There are circumstances with animate and human nouns that break this.  Hence, unsupported.
+     */
+    static class PersianDeclension extends LanguageDeclension {
+        public PersianDeclension(HumanLanguage language) {
+			super(language);
+		}
+
+        static final List<? extends NounForm> FA_ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PersianNounForm.class));
+        static final List<? extends NounForm> FA_SING_FORMS = ImmutableList.of(PersianNounForm.SINGULAR);
+        public static enum PersianNounForm implements NounForm {
+            SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
+            SINGULAR_ACC(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE),
+            PLURAL(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE),
+            PLURAL_ACC(LanguageNumber.PLURAL, LanguageCase.ACCUSATIVE),
+            ;
+
+            private final LanguageNumber number;
+            private final LanguageCase caseType;
+            private PersianNounForm(LanguageNumber number, LanguageCase caseType) {
+                this.number = number;
+                this.caseType = caseType;
+            }
+
+            @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
+            @Override public LanguageCase getCase() { return this.caseType; }
+            @Override public LanguageNumber getNumber() {return this.number;}
+            @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+            @Override
+            public String getKey() {
+                return getNumber().getDbValue() + "-" + getCase().getDbValue();
+            }
+        }
+
+        public static final class PersianNoun extends Noun {
+            /**
+			 *
+			 */
+			private static final long serialVersionUID = 1L;
+			private String singular;
+            private String plural;
+            private String singular_acc;
+            private String plural_acc;
+
+            PersianNoun(PersianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
+                super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
+            }
+
+            @Override
+            public void makeSkinny() {
+            }
+
+            @Override
+            public Map<? extends NounForm, String> getAllDefinedValues() {
+                return enumMapFilterNulls(PersianNounForm.SINGULAR, singular, PersianNounForm.PLURAL, plural, PersianNounForm.SINGULAR_ACC, singular_acc,
+                        PersianNounForm.PLURAL_ACC, plural_acc);
+            }
+            @Override
+            public String getDefaultString(boolean isPlural) {
+                return isPlural ? (plural != null ? plural : singular) : singular;
+            }
+            
+            
+
+			@Override
+			public String getString(NounForm form) {
+                assert form instanceof PersianNounForm : "Persian only: " + form;
+                return form.getCase() == LanguageCase.ACCUSATIVE ? form.getNumber() == LanguageNumber.PLURAL ? plural_acc : singular_acc
+                        : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
+            }
+            @Override
+            public void setString(String value, NounForm form) {
+                if (form.getCase() == LanguageCase.ACCUSATIVE) {
+                    if (form.getNumber().isPlural()) {
+                        this.plural_acc = intern(value);
+                    } else {
+                        this.singular_acc = intern(value);
+                    }
+                } else {
+                    if (form.getNumber().isPlural()) {
+                        this.plural = intern(value);
+                    } else {
+                        this.singular = intern(value);
+                    }
+                }
+            }
+            @Override
+            protected boolean validateValues(String name, LanguageCase _case) {
+                if (this.singular == null) {
+                    return false;
+                }
+                // Default the values for entity nouns, but not for others to make rename fields more specific.
+                if (getNounType() == NounType.ENTITY) {
+                    if (this.plural == null)
+                     {
+                        this.plural = this.singular;  // Default plural to singular.
+                    }
+                    // Default the singular/plural definitions to start
+                    if (this.singular_acc == null) {
+                        this.singular_acc = this.singular;
+                    }
+                    if (this.plural_acc == null) {
+                        this.plural_acc = this.plural;
+                    }
+                }
+                return true;
+            }
+        }
+
+
+        @Override
+        public List< ? extends NounForm> getAllNounForms() {
+            return FA_ALL_FORMS;
+        }
+
+        @Override
+        public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
+            return _case == LanguageCase.ACCUSATIVE ?
+                    (number == LanguageNumber.PLURAL ? PersianNounForm.PLURAL_ACC : PersianNounForm.SINGULAR_ACC) :
+                    number == LanguageNumber.PLURAL ? PersianNounForm.PLURAL : PersianNounForm.SINGULAR;
+        }
+
+        @Override
+        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+                LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+            return new PersianNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
+        }
+
+        @Override
+        public EnumSet<LanguageCase> getRequiredCases() {
+            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE);
+        }
+        
+		@Override
+		public boolean hasStartsWith() {
+			return false;
+		}
+
+        @Override
+        public boolean hasGender() {
+            return false;
+        }
+
+		@Override
+		public Collection<? extends NounForm> getEntityForms() {
+			return getAllNounForms();
+		}
+
+		@Override
+		public Collection<? extends NounForm> getFieldForms() {
+			return FA_SING_FORMS;
+		}
+
+		@Override
+		public Collection<? extends NounForm> getOtherForms() {
+			return FA_SING_FORMS;
+		}
+
+		@Override
+		public List<? extends AdjectiveForm> getAdjectiveForms() {
+			return SimpleDeclension.ADJECTIVE_FORMS;
+		}
+
+		@Override
+		protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+			return new SimpleAdjective(this, name);
+		}
     }
 
 }

@@ -123,12 +123,13 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
      * @param message the message to return as the label
      * @param allowLabelException - true to always throw an exception for a missing label
      * @throws ParameterNotFoundException if label exception is allowed
+     * @return the string to use in the UI if the label is missing
      */
     public String processMissingLabel(String message, boolean allowLabelException) throws ParameterNotFoundException {
         if (!isProductionMode() || allowLabelException) {
             throw new ParameterNotFoundException(message);
         } else {
-            logger.log(Level.WARNING, MISSING_LABEL + message);
+            logger.log(Level.FINE, MISSING_LABEL + message);
             return MISSING_LABEL + message;
         }
     }

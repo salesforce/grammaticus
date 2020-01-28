@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableSet;
 /**
  * The declension of nouns and adjectives for Arabic
  *
- * Arabic has 3 forms of possession, 3 cases (Nom, Acc, & Gen), Gender, plural, and definitiveness.
+ * Arabic has 3 forms of possession, 3 cases (Nom, Acc, &amp; Gen), Gender, plural, and definitiveness.
  *
  * This leads to 36 forms of nouns and adjectives (since definitiveness applies only to nouns, Gender only to adjectives).
  *
@@ -224,7 +224,7 @@ class ArabicDeclension extends SemiticDeclension {
                             // value in sfdcnames.xml usually only specifies 2 forms
                             String val = getCloseButNoCigarString(form);
                             if (val == null) {
-                                logger.fine("###\tError: The noun " + name + " has no " + form
+                                logger.info("###\tError: The noun " + name + " has no " + form
                                         + " form and no default could be found");
                                 return false;
                             }

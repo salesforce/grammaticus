@@ -85,6 +85,8 @@ public class SimpleNonConfigIniFile extends AbstractNonConfigIniFile {
     /**
      * Removes the value at the given section/paramName.
      *
+     * @param section the name of the section
+     * @param paramName the key of the param in the section
      * @return the old value at that configuration.
      *      Will be null if there is nothing specified in the configs.
      */

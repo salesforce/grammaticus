@@ -56,7 +56,7 @@ public abstract class RefTag implements Serializable  {
     public abstract String toString(LanguageDictionary dictionary, boolean overrideForms, Object[] vals, Renameable... entities);
 
     /**
-     * Get the current ref tag as a JSON object for use in offline mode
+     * @return Get the current ref tag as a JSON object for use in offline mode
      * @param dictionary the dictionary with all the nouns
      * @param list the list of the current set of terms being processed (so that for modifiers it can find the associated term by index)
      */
@@ -99,7 +99,7 @@ public abstract class RefTag implements Serializable  {
     /**
      * Given a collection of objects that may come from a grammatical label set (i.e. is a String, List, or RefTag), return the set of terms referenced by the label value
      * @param dictionary the dictionary to use to look up terms
-     * @param labelValue the set of values from which to extract terms
+     * @param labelValues the set of values from which to extract terms
      * @return a non-null set of grammatical terms
      */
     public static Set<GrammaticalTerm> getTermsFromLabels(LanguageDictionary dictionary, Iterable<Object> labelValues) {
@@ -135,6 +135,7 @@ public abstract class RefTag implements Serializable  {
 	 * @param out the thing to write to
 	 * @param value the Label value, a String, List, or RefTag
 	 * @param termsInUse if not null, add the set of terms referenced in value to it
+	 * @throws IOException if there is an issue writing to out.
 	 */
 	public static void appendJsonLabelValue(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) throws IOException {
 		if (value instanceof String) {
@@ -158,7 +159,11 @@ public abstract class RefTag implements Serializable  {
 
 	/**
 	 * NoThrow version of
-	 * @see {{@link #appendJsonLabelValue(LanguageDictionary, Appendable, Object, Set)}
+	 * @see #appendJsonLabelValue(LanguageDictionary, Appendable, Object, Set)
+	 * @param dictionary the current dictionary of nouns.
+	 * @param out the thing to write to
+	 * @param value the Label value, a String, List, or RefTag
+	 * @param termsInUse if not null, add the set of terms referenced in value to it
 	 */
 	public static void appendJsonLabelValueNoThrow(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) {
 		try {

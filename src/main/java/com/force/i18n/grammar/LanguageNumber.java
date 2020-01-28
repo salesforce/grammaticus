@@ -38,7 +38,7 @@ public enum LanguageNumber {
     public String getApiValue() { return this.apiValue; }
 
     /**
-     * Return the CLDR Category value for the given number.
+     * @return the CLDR Category value for the given number.
      */
     public PluralCategory getPluralCategory() { return this.pluralCategory; }
     public boolean isDefault() { return this == SINGULAR; }
@@ -83,8 +83,8 @@ public enum LanguageNumber {
         return null;
     }
 
-    public static Set<LanguageNumber> PLURAL_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR, PLURAL));
-    public static Set<LanguageNumber> SINGULAR_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR));
-    public static Set<LanguageNumber> DUAL_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR, PLURAL, DUAL));
+    public static final Set<LanguageNumber> PLURAL_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR, PLURAL));
+    public static final Set<LanguageNumber> SINGULAR_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR));
+    public static final Set<LanguageNumber> DUAL_SET = ImmutableSet.copyOf(EnumSet.of(SINGULAR, PLURAL, DUAL));
 
 }

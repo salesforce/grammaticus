@@ -12,7 +12,7 @@ import com.force.i18n.grammar.*;
 /**
  * Parser test for plural and gender choice
  * @author stamm
- * @since 1.1
+ * @since 0.6.0
  */
 public class ChoiceLabelTest extends BaseGrammaticalLabelTest {
 

@@ -34,9 +34,11 @@ public interface ModifierForm extends GrammaticalForm {
      * NOTE: This should be a static method on the modifier form, but for simplicity of implementation we make it
      * an instance variable
      * 
+     * @param a where the form should be written.
      * @param termFormVar the variable containing the current form of the term (i.e. what's returned by {@link #getKey()}
      * @param genderVar the variable containing the dbvalue of gender of the noun if applicable in this declension 
      * @param startsWithVar the variable containing the dbvalue of the startsWith phoneme of the noun if applicable in this declension
+     * @throws IOException if there is an issue writing to a
      */
     default void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar) throws IOException {
     	// By default do nothing, since it doesn't need to be replaced.

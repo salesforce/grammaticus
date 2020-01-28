@@ -106,6 +106,14 @@ public enum TextDirection {
         case "ur":
         case "ji":
         case "yi":
+        case "dv":
+        case "ks":
+        case "sd":
+        case "ug":
+        case "ps":
+        case "ckb":
+        case "lrc":
+        case "mzn":
             return invertIfNotNormalDirection(RTL);
         default:
         }

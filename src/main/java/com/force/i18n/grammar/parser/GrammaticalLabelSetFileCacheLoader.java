@@ -7,35 +7,18 @@
 
 package com.force.i18n.grammar.parser;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.force.i18n.HumanLanguage;
-import com.force.i18n.I18nJavaUtil;
-import com.force.i18n.LabelDebug;
+import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.GrammaticalLabelSetImpl;
 import com.force.i18n.grammar.GrammaticalLabelSetProvider;
 import com.force.i18n.settings.BasePropertyFile;
@@ -55,7 +38,9 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
     	File result = new File(I18nJavaUtil.getCacheBaseDir(), I18nJavaUtil.getProperty("cacheDir") + "/" + setName);
     	try {
     	    result = result.getCanonicalFile();
-    	    result.mkdirs();
+    	    if (!result.mkdirs()) {
+    	    	throw new IOException("Couldn't create cache dir " + result);
+    	    }
     	} catch (IOException ex) {
             logger.log(Level.FINE, "Trouble with the cache dir", ex);
     	}
@@ -150,9 +135,12 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
     }
 
     /**
-     * Returns the most recent last modified date for the given language and other metadata files such as the udd.
+     * @return the most recent last modified date for the given language and other metadata files such as the udd.
      *
      * TODO the definition of expired may be wrong for any language other than English
+     * @param languages the set of languages to use for calculating the last modified date
+     * @throws URISyntaxException if the passed in descriptor is invalid or can't be processed
+     * @throws IOException if there is an IOException while reading the labels
      */
     public long getLastModifiedDate(Collection<HumanLanguage> languages) throws URISyntaxException, IOException {
     	long result = -1;
@@ -218,7 +206,9 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
             this.labelSetName = "LabelSet." + labelSetName + "." + language;
 
             if (!cacheDir.exists()) {
-                cacheDir.mkdir();
+            	if (!cacheDir.mkdir()) {
+                    logger.log(Level.FINER, "Could not create cache dir: " + cacheDir);
+            	}
             }
         }
 

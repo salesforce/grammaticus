@@ -50,7 +50,7 @@ public final class TextUtil {
     private static SuspiciousValueLogger SUSPICIOUS_LOGGER = null;
 
     /**
-     * Interface you can i
+     * Interface you can override for logging suspicious values (very long strings).
      */
     public static interface SuspiciousValueLogger {
         /**
@@ -128,6 +128,8 @@ public final class TextUtil {
      * The convention in the app is that all escaping is done at output time by Elements
      * and output should go through elements when possible. If you are using this method, you should think
      * carefully about what you are doing and decide if it's truly necessary to bypass elements.
+     * @param input the text to escape
+     * @return the string after escaping
      */
     public static String escapeToXml(CharSequence input) {
         return escapeToXml(input, false, false);
@@ -154,6 +156,7 @@ public final class TextUtil {
      * The convention in the app is that all escaping is done at output time by Elements
      * and output should go through elements when possible. If you are using this method, you should think
      * carefully about what you are doing and decide if it's truly necessary to bypass elements.
+     * @return the string after escaping
      * @param input
      *        the text to escape
      * @param allowNewLines
@@ -216,7 +219,8 @@ public final class TextUtil {
     }
 
     /**
-     * Determines if the given input char is an iso-control character, undefined, or in an unusable Unicode block.
+     * @return if the given input char is an iso-control character, undefined, or in an unusable Unicode block.
+     * @param c the character to test
      */
     public static boolean isIsoControlOrOddUnicode(char c) {
         Character.UnicodeBlock block = Character.UnicodeBlock.of(c);
@@ -236,6 +240,8 @@ public final class TextUtil {
      * The convention in the app is that all escaping is done at output time by Elements
      * and output should go through elements when possible. If you are using this method, you should think
      * carefully about what you are doing and decide if it's truly necessary to bypass elements.
+     * @param value the string to escape to HTML
+     * @return the escaped string
      */
     public static String escapeToHtml(String value) {
         return TextUtil.escapeToHtml(value, false);
@@ -253,6 +259,9 @@ public final class TextUtil {
      * The convention in the app is that all escaping is done at output time by Elements
      * and output should go through elements when possible. If you are using this method, you should think
      * carefully about what you are doing and decide if it's truly necessary to bypass elements.
+     * @param value the string to escape to HTML
+     * @param escapeNewline if the new lines should be converted to &lt;br&gt;
+     * @return the escaped string
      */
     public static String escapeToHtml(String value, boolean escapeNewline) {
         if (value == null || value.length() == 0) {
@@ -290,6 +299,7 @@ public final class TextUtil {
      *         <code>java.lang.String.trim()</code>, which only trims characters before <code>'&#92;u0020'</code>
      *         but not characters like the wide space character in Japanese (<code>'&#92;u3000'</code>). will return
      *         an empty String if the input String is all whitespace
+     * @param str the string to trim
      */
     public static String trim(String str) {
         return TextUtil.trim(str, false);
@@ -317,7 +327,7 @@ public final class TextUtil {
     /**
      * @param str
      *        String to be trimmed
-     * @param boolean
+     * @param returnNullIfEmptyString
      *        returnNullIfEmptyString
      * @return String if input String is null, return null if input String is non-empty after trimming, return the
      *         trimmed String if input String is empty after trimming, check boolean to determine return value
@@ -488,6 +498,8 @@ public final class TextUtil {
 
     /**
      * Makes the first letter of the input string upper case.
+     * @param in the string to initialized
+     * @return the string with the first character capitalized
      */
     public static String initCap(String in) {
         if (in == null || in.length() == 0 || Character.isUpperCase(in.charAt(0))) {
@@ -509,11 +521,15 @@ public final class TextUtil {
      * Single-quotes and curly brackets are special characters used by Java's MessageFormat class.
      * Specify check = true to only escape if a numbered param (eg. {0}) is specified
      * The escaping rules are:
-     * 1) All single quotes => ''
+     * 1) All single quotes =&gt; ''
      * 2) All left curly brackets that are not part of a numbered param need
-     * to be wrapped with single quotes => '{'
+     * to be wrapped with single quotes =&gt; '{'
      * NOTE: There's only support for wrapping left curly brackets with single-quotes; any
      * other use of single-quotes will be escaped
+     * @param src the source string
+     * @param sb the string buider to append to
+     * @param check should we check first for whether there's a curly brace.  Performance improvement if you know there is one. 
+     * @return sb
      */
     public static StringBuilder escapeForMessageFormat(String src, StringBuilder sb, boolean check) {
         if (check && src.indexOf('{') < 0) {
@@ -589,7 +605,7 @@ public final class TextUtil {
     /**
      * Break long words and escape markup to HTML.  This method does not activate links.
      * @param text the text to break and escape
-     * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as <br/> tags
+     * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as &lt;br&gt; tags
      * @return the escaped and broken string
      */
     public static String breakLongWordsAndEscapeToHTML(String text, boolean preserveNewLinesInHtml) {
@@ -599,8 +615,8 @@ public final class TextUtil {
     /**
      * Break long words and escape markup to HTML.  This method does not activate links.
      * @param text the text to break and escape
-     * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as <br/> tags
-     * @param maxWordLength words longer than this will be broken with <wbr/> tags (defaults to 30)
+     * @param preserveNewLinesInHtml whether to preserve new line characters (\n) as &lt;br&gt; tags
+     * @param maxWordLength words longer than this will be broken with &lt;br&gt; tags (defaults to 30)
      * @return the escaped and broken string
      */
     public static String breakLongWordsAndEscapeToHTML(String text, boolean preserveNewLinesInHtml, int maxWordLength) {
@@ -633,6 +649,7 @@ public final class TextUtil {
     /**
      * Concatenate the string values of zero or more strings.
      *
+     * @return the concatenated strings
      * @param separator - string that will delimit the result.
      * @param strings   - the strings whose values will be concatenated
      */
@@ -643,6 +660,7 @@ public final class TextUtil {
     /**
      * Concatenate the string values of zero or more objects.
      *
+     * @return the concatenated objects
      * @param separator - string that will delimit the result.
      * @param objects   - the objects whose string values will be concatenated
      */
@@ -656,7 +674,8 @@ public final class TextUtil {
 
     /**
      * @return a new fast comparator for strings for the given collator.
-     * @param the number of elements to compare (default is 16).
+     * @param size the number of elements to compare (default is 16).
+     * @param collator the collator to use for comparison
      */
     public static Comparator<String> getComparator(Collator collator, int size) {
         return new CollatingComparator(collator, size);
@@ -708,10 +727,12 @@ public final class TextUtil {
     
     /**
      * Properly escapes strings to be displayed in Json Strings. This means that backslashes and double quotes are
-     * escaped. <br/>
+     * escaped. <br>
      * <b>NOTE:</b> refer RFC8259 / ECMA 404. this method does not escape solidus (\x2f) as it seems to be both
      * acceptable in either slash, or escaped.
      * @see <a href="https://tools.ietf.org/html/rfc8259#section-7">RFC 8259  #7 Strings</a>
+     * @param in the string to escape
+     * @return the escaped string for json
      */
     public static String escapeForJsonString(String in) {
         return TrieMatcher.replaceMultiple(in, JSON_SEARCH_REPLACE);

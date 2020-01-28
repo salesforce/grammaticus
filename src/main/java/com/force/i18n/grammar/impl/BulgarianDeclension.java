@@ -49,13 +49,13 @@ import com.google.common.collect.ImmutableList;
  *
  * names.xml will have to specify the following forms
  *
- * <adjective name="Thin">
- *      <value gender="m" plural="n">слаб</value>
- *      <value gender="m" plural="n" article="the">слабият</value>
- *      <value gender="f" plural="n">слаба</value>
- *      <value gender="n" plural="n">слабо</value>
- *      <value gender="n" plural="y">слаби</value>
- * </adjective>
+ * &lt;adjective name="Thin"&gt;
+ *      &lt;value gender="m" plural="n"&gt;слаб&lt;/value&gt;
+ *      &lt;value gender="m" plural="n" article="the"&gt;слабият&lt;/value&gt;
+ *      &lt;value gender="f" plural="n"&gt;слаба&lt;/value&gt;
+ *      &lt;value gender="n" plural="n"&gt;слабо&lt;/value&gt;
+ *      &lt;value gender="n" plural="y"&gt;слаби&lt;/value&gt;
+ * &lt;/adjective&gt;
  *
  * The rest of the forms will be autoderived:  NOTE: The plural must have the gender omitted or marked as neuter
  *
@@ -243,7 +243,7 @@ class BulgarianDeclension extends LanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.fine("###\tError: The noun " + name + " has no singular form");
+                logger.info("###\tError: The noun " + name + " has no singular form");
                 return false;
             }
             return true;

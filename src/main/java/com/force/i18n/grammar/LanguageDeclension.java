@@ -48,13 +48,14 @@ public abstract class LanguageDeclension {
     public abstract List< ? extends NounForm> getAllNounForms();
 
     /**
+     * @return the set of noun forms for entities (which need all the information for adjective modification)
      * For entities, we need with-article forms, but validation method
      * will fix those values automatically. See Noun.fixValueWithArticle
      */
     public abstract Collection<? extends NounForm> getEntityForms();
 
     /**
-     * @return the forms that can be associated with "fields"
+     * @return the forms that can be associated with "fields", where full declension isn't needed
      */
     public abstract Collection<? extends NounForm> getFieldForms();
 
@@ -77,13 +78,28 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * @param entityName TODO
      * @return Return the noun implementation for this language
+     * @param name the key to the noun
+     * @param pluralAlias the alias to use in the XML for the plural version of this noun for readability
+     * @param type NounType (entity/field)
+     * @param entityName grouping for which entity this noun is in for display
+     * @param startsWith startsWith/endsWith soung
+     * @param gender linguistic gender
+     * @param access a string to evaluate if the noun isn't available to all users
+     * @param isStandardField if it's a field (i.e don't need the whole set of declensions)
+     * @param isCopied whether this is copied from another dictionary (i.e. inherited from English)
      */
     protected abstract Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied);
 
     /**
      * Accessor for creating custom nouns simply based on all of the forms.  Should be used by the "renaming provider"
+     * @param name the key to the noun
+     * @param type NounType (entity/field)
+     * @param entityName grouping for which entity this noun is in for display
+     * @param startsWith startsWith/endsWith soung
+     * @param gender linguistic gender
+     * @param forms the forms of the noun by noun form
+     * @return Return the noun implementation for this language
      */
     public Noun createNoun(String name, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, Map<? extends NounForm,String> forms) {
         Noun noun = createNoun(name, null, type, entityName, startsWith, gender, null, true, false);
@@ -101,6 +117,8 @@ public abstract class LanguageDeclension {
      * @param type the noun type
      * @param entityName the name of the standard entity this noun is associated with, or null if it's custom or irrelevant
      * @param rs a cursor against the label_data or custom_entity_translation tables
+     * @return Return the noun implementation for this language
+     * @throws SQLException if there is a database error
      */
     public Noun createNoun(String name, NounType type, String entityName, ResultSet rs) throws SQLException {
         String starts = rs.getString("STARTS_WITH");
@@ -109,15 +127,15 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * @param name TODO
-     * @param startsWith TODO
-     * @param position TODO
+     * @param name the key for the adjective
+     * @param startsWith startsWith/endsWith sound
+     * @param position whether the adjective is a pre or postposition
      * @return a language specific implementation for modifiers/adjectives in this language
      */
     protected abstract Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position);
 
     /**
-     * @param name TODO
+     * @param name the key for the article
      * @param articleType the type of article
      * @return a language specific implementation for modifiers/adjectives in this language
      */
@@ -376,6 +394,10 @@ public abstract class LanguageDeclension {
 
     /**
      * @return Return the appropriate noun form for this language based on the form parameters provided
+     * @param number the linguistic number
+     * @param _case the linguistic case
+     * @param possessive the possessive type
+     * @param article the associated article 
      */
     public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
         for (NounForm nf : getAllNounForms()) {
@@ -398,6 +420,7 @@ public abstract class LanguageDeclension {
      * article="the" on the noun be inferred from the existence of the &lt;The&gt; particle?
      *
      * NOTE: THIS ONLY WORKS FOR THE DEFINITE ARTICLE
+     * @return whether article="the" should be inferred from a &lt;The&gt; particle
      */
     public boolean shouldInferNounDefArticleFromParticle() {
         return false;
@@ -407,6 +430,10 @@ public abstract class LanguageDeclension {
     /**
      * @return Return the appropriate noun form for this language based on the form parameters provided.
      * Simple languages should reimplement this to provide a quicker and more direct response
+     * @param number the linguistic number
+     * @param _case the linguistic case
+     * @param possessive the possessive type
+     * @param article the associated article 
      */
     public NounForm getApproximateNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
         NounForm baseForm = getExactNounForm(number, _case, possessive, article);
@@ -504,7 +531,12 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * @param possessive TODO
+     * @param startsWith the startsWith/endsWith of the adjective
+     * @param gender the linguistic gender of the adjective
+     * @param number the linguistic number
+     * @param _case the linguistic case
+     * @param possessive the possessive type
+     * @param article the associated article 
      * @return Return the appropriate noun form for this language based on the form parameters provided.
      * Simple languages should reimplement this to provide a quicker and more direct response
      */
@@ -844,24 +876,48 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
+     * @return a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
+     * @param <K> the enum type
+     * @param <V> the key type
+     * @param k1 firstKey
+     * @param v1 firstValue
+     * @param k2 secondKey
+     * @param v2 secondValue
      */
     protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2) {
         return enumMapFilterNulls(k1, v1, k2, v2, null, null, null, null);
     }
 
     /**
-     * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
+     * @return a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
+     * @param <K> the enum type
+     * @param <V> the key type
+     * @param k1 firstKey
+     * @param v1 firstValue
+     * @param k2 secondKey
+     * @param v2 secondValue
+     * @param k3 thirdKey
+     * @param v3 thirdValue
      */
     protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3) {
         return enumMapFilterNulls(k1, v1, k2, v2, k3, v3, null, null);
     }
 
     /**
-     * Create a new EnumMap with the given keys and values, only including an entry if the value and key are not null
+     * @return a new EnumMap with the given keys and values, only including an entry if the value and key are not null
      * This is used instead of ImmutableMap, because that doesn't allow null values
+     * @param <K> the enum type
+     * @param <V> the key type
+     * @param k1 firstKey
+     * @param v1 firstValue
+     * @param k2 secondKey
+     * @param v2 secondValue
+     * @param k3 thirdKey
+     * @param v3 thirdValue
+     * @param k4 fourthKey
+     * @param v4 fourthValue
      */
     protected static <K extends Enum<K>,V> EnumMap<K,V> enumMapFilterNulls(K k1, V v1, K k2, V v2, K k3, V v3, K k4, V v4) {
         if (k1 == null) {
@@ -887,7 +943,8 @@ public abstract class LanguageDeclension {
     /**
      * Allow the declensions to override the behavior of grammaticus.js
      * @param a the thing to append
-     * @param the name of the instance variable that has the current engine (for language-specific overrides
+     * @param instance the name of the instance variable that has the current engine (for language-specific overrides
+     * @throws IOException if there's an issue with the appendable
      */
     public void writeJsonOverrides(Appendable a, String instance) throws IOException {
         a.append(instance + ".locale='" + getLanguage().getHttpLanguageCode() + "';");
@@ -919,12 +976,12 @@ public abstract class LanguageDeclension {
 
     /**
      * Implement this interface on a declension that has classifier words.
-     * @see https://en.wikipedia.org/wiki/Classifier_(linguistics)
-     * @see https://en.wikipedia.org/wiki/Korean_count_word
-     * @see https://en.wikipedia.org/wiki/Japanese_counter_word
+     * @see <a href="https://en.wikipedia.org/wiki/Classifier_(linguistics)">Wikpedia: Classifier</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Korean_count_word">Wikpedia: Korean Counter Word</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Japanese_counter_word">Wikpedia: Japanese Counter Word</a>
      *
      * @author stamm
-     * @since 1.1
+     * @since 0.6.0
      */
     public interface WithClassifiers {
         /**

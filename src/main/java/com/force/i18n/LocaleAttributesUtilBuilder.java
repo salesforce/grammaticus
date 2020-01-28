@@ -28,9 +28,7 @@ class LocaleAttributesUtilBuilder {
         Preconditions.checkArgument(localeInfoBuilder != null, "localeInfoBuilder should not be null");
         
         final LocaleInfo localeInfo = localeInfoBuilder.build();
-        if (localeInfo == null) {
-            throw new IllegalStateException("Unable to add locale info since the localeInfoBuilder returned null: " + localeInfoBuilder.getClass().getName());
-        }
+        assert localeInfo != null;
         
         localeInfoListBuilder.add(localeInfo);
         return this;

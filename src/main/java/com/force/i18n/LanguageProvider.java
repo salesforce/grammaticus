@@ -37,31 +37,38 @@ public interface LanguageProvider {
 	
     /**
      * @return the User Language associated directly with a locale (including country and variant)
+     * @param loc the locale to convert to a language
      */
     HumanLanguage getLanguage(Locale loc);
 
     /**
      * @return the User Language associated directly with a locale (including country and variant)
+     * @param isoCode the isoCode to convert to a human language
      */
     HumanLanguage getLanguage(String isoCode);
 
     /**
      * @return <tt>true</tt> if the given locale is a support user language locale
+     * @param loc the locale to test
      */
     boolean isSupportedLanguageLocale(Locale loc);
 
     /**
      * @return the closest HumanLanguage to the given locale string, taking into account various factors
+     * @param localeString the java locale string
      */
     HumanLanguage getLanguageForLocale(String localeString);
 
     /**
      * @return the closest HumanLanguage to the given locale, taking into account various factors
+     * @param loc the locale
      */
     HumanLanguage getLanguageForLocale(Locale loc);
     
     /**
      * @return a map with an optimized implementation for the given map
+     * @param <L> the human language type
+     * @param <T> the type for the value of the map
      */
     <L extends HumanLanguage,T> Map<L,T> getNewMap();
     

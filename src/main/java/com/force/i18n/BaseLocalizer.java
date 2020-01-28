@@ -9,19 +9,8 @@ package com.force.i18n;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DateFormat;
-import java.text.MessageFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import java.util.TimeZone;
+import java.text.*;
+import java.util.*;
 import java.util.function.Function;
 
 import com.force.i18n.commons.text.TextUtil;
@@ -127,7 +116,6 @@ public class BaseLocalizer {
         return BaseLocalizer.LocaleFixerFunction;
     }
     
-
     private static final ThreadLocal<SimpleDateFormat> ISO8601_FORMATTER = new ThreadLocal<SimpleDateFormat>() { 
         @Override 
         public SimpleDateFormat initialValue() { 
@@ -158,6 +146,10 @@ public class BaseLocalizer {
         return aLocale;
     }
     
+    /**
+     * Allow custom overriding of formats for certain locales, where the ICU or JDK may change and cause
+     * unwanted customer impact due to CDLR updates.
+     */
     static interface FormatFixer {
         /**
          * Returns the date formatter with the given formatting style for the given locale.
@@ -223,11 +215,9 @@ public class BaseLocalizer {
      * Other unsupported JDK locales will use the english date format (which is a good way to figure out that they are unsupported)
      * 
      * In order to be back-compatible with legacy data, we have to keep these historic formats in place.
-     * 
-     * You should override this with ICU data, but to not require the ICULocale
      **/
     @Deprecated
-    static enum JdkFormatFixer implements FormatFixer {
+    private static enum JdkFormatFixer implements FormatFixer {
         
         INSTANCE;
 
@@ -347,11 +337,14 @@ public class BaseLocalizer {
     private static FormatFixer getFormatProvider(Locale locale) {
     	return LocaleFixerFunction.apply(locale);
     }
-
+    
     /** This constructor is used to create a BaseLocalizer
      *
      * @param locale is the user's locale data
-     * @param currencyLocale is org's currency locale ,
+     * @param currencyLocale is org's currency locale
+     * @param timeZone the timeZone associated with this localizer
+     * @param language the human language for this localizer
+     * @param labelSet the set of labels for this language
      */
     public BaseLocalizer(Locale locale, Locale currencyLocale, TimeZone timeZone, HumanLanguage language,
             SharedLabelSet labelSet) {
@@ -405,7 +398,7 @@ public class BaseLocalizer {
      * Returns a JDK calendar type for given locale and time zone.
      * 
      * @param tz time zone
-     * @param l locale
+     * @param locale locale
      * @return a calendar for given locale and time zone.
      */
     public Calendar getCalendar(TimeZone tz, Locale locale) {
@@ -435,6 +428,7 @@ public class BaseLocalizer {
      * @param input date string
      * @param tz time zone
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */
     public Date parseDate(String input, LocalOrGmt tz) throws ParseException {
         return BaseLocalizer.doParseDate(input, getInputDateFormat(tz));
@@ -448,6 +442,7 @@ public class BaseLocalizer {
      * @param input date string
      * @param style DateFormat style
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */    
     public Date parseDate(String input, int style) throws ParseException {
         return BaseLocalizer.doParseDate(input, getInputDateFormat(style));
@@ -461,9 +456,10 @@ public class BaseLocalizer {
      * 
      * @param input date string
      * @param style DateFormat style
-     * @param Locale locale
+     * @param locale locale
      * @param tz TimeZone
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */    
     public static Date parseDate(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseDate(input, getLocaleInputDateFormat(locale, style, tz));
@@ -477,6 +473,7 @@ public class BaseLocalizer {
      * 
      * @param input date-time string
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */
     public Date parseDateTime(String input) throws ParseException {
         return BaseLocalizer.doParseDate(input, getInputDateTimeFormat());
@@ -489,9 +486,10 @@ public class BaseLocalizer {
      * 
      * @param input date string
      * @param style DateFormat style
-     * @param Locale locale
+     * @param locale Locale
      * @param tz TimeZone
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */      
     public static Date parseDateTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseDate(input, getLocaleInputDateTimeFormat(locale, style, tz));
@@ -505,6 +503,7 @@ public class BaseLocalizer {
      * @param input date-time string
      * @param style DateFormat style
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */
     public Date parseDateTime(String input, int style) throws ParseException {
         return BaseLocalizer.doParseDate(input, getInputDateTimeFormat(style));
@@ -513,7 +512,9 @@ public class BaseLocalizer {
     /**
      * Parses a time input string. Local time zone..
      * @param input time string
+     * @param style DateFormat style
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */
     public Date parseTime(String input, int style) throws ParseException {
         return BaseLocalizer.doParseTime(input, getInputTimeFormat(style));
@@ -524,9 +525,10 @@ public class BaseLocalizer {
      *
      * @param input date string
      * @param style DateFormat style
-     * @param Locale locale
+     * @param locale Locale
      * @param tz TimeZone
      * @return a parsed date type.
+     * @throws ParseException on an invalid date string
      */   
     public static Date parseTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseTime(input, getLocaleInputTimeFormat(locale, style, tz));
@@ -536,6 +538,7 @@ public class BaseLocalizer {
      * Get date only DateFormat for input based on style.
      * Local time zone.
      * 
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's locale and time zone
      */  
     public DateFormat getInputDateFormat(int style) {
@@ -697,6 +700,7 @@ public class BaseLocalizer {
      * Long date-time format uses short Date and long Time formats
      * Local time zone.
      * 
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's locale and time zone
      */  
     public DateFormat getInputDateTimeFormat(int style) {
@@ -836,6 +840,7 @@ public class BaseLocalizer {
      * Get time only DateFormat for input based on style.
      * Local time zone.
      * 
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's locale and time zone
      */  
     public DateFormat getInputTimeFormat(int style) {
@@ -918,6 +923,7 @@ public class BaseLocalizer {
      * @param input date string
      * @param df DateFormat used to parse the date
      * @return a parsed date.
+     * @throws ParseException on an invalid input
      */
     public static Date doParseDate(String input, DateFormat df) throws ParseException {
         Date date = doParseTime(input, df);
@@ -946,6 +952,7 @@ public class BaseLocalizer {
      * @param input date string
      * @param tf DateFormat used to parse the date
      * @return a parsed date.
+     * @throws ParseException on an invalid input
      */
     public static Date doParseTime(String input, DateFormat tf) throws ParseException {
         if (input == null) {
@@ -973,7 +980,7 @@ public class BaseLocalizer {
      * Formats a date-only Date.
      * 
      * @param date a Date
-     * @style tz local or GMT time zone
+     * @param style tz local or GMT time zone
      * @return a formatted date string.
      */
     public String formatTime(Date date, int style) {
@@ -982,9 +989,9 @@ public class BaseLocalizer {
     
     /**
      * @param date a Date
-     * @style DateFormat style
-     * @locale Locale
-     * @tz TimeZone
+     * @param style DateFormat style
+     * @param locale Locale
+     * @param tz TimeZone
      * @return a formatted date string.
      */
     public static String formatTime(Date date, int style, Locale locale, TimeZone tz) {
@@ -1006,7 +1013,7 @@ public class BaseLocalizer {
      * Formats a date-only Date.
      * 
      * @param date a Date
-     * @style tz local or GMT time zone
+     * @param style tz local or GMT time zone
      * @return a formatted date string.
      */
     public String formatDate(Date date, int style) {
@@ -1015,9 +1022,9 @@ public class BaseLocalizer {
     
     /**
      * @param date a Date
-     * @style DateFormat style
-     * @locale Locale
-     * @tz TimeZone
+     * @param style DateFormat style
+     * @param locale Locale
+     * @param tz TimeZone
      * @return a formatted date string.
      */
     public static String formatDate(Date date, int style, Locale locale, TimeZone tz) {
@@ -1039,6 +1046,7 @@ public class BaseLocalizer {
      * Formats a date-time Date.  Local time zone.
      * 
      * @param date a Date
+     * @param style DateFormat style
      * @return a formatted date string.
      */
 
@@ -1048,9 +1056,9 @@ public class BaseLocalizer {
     
     /**
      * @param date a Date
-     * @style DateFormat style
-     * @locale Locale
-     * @tz TimeZone
+     * @param style DateFormat style
+     * @param locale Locale
+     * @param tz TimeZone
      * @return a formatted date string.
      */
     public static String formatDateTime(Date date, int style, Locale locale, TimeZone tz) {
@@ -1090,7 +1098,7 @@ public class BaseLocalizer {
     /**
      * Get date-only DateFormat for output based on style. 4-digit year 
      *
-     * @param style
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's locale and time zone
      */   
     public DateFormat getDateFormat(int style) {
@@ -1223,6 +1231,7 @@ public class BaseLocalizer {
      * Get time-only DateFormat based on style for output.
      * Local time zone.
      * 
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's time zone and cached  
      */
     public DateFormat getTimeFormat(int style) {
@@ -1368,6 +1377,7 @@ public class BaseLocalizer {
      * Long date-time format uses short Date and long Time formats
      * Local time zone.
      * 
+     * @param style DateFormat style
      * @return a DateFormat based on localizer's locale and time zone
      */  
     public DateFormat getDateTimeFormat(int style) {
@@ -1451,11 +1461,19 @@ public class BaseLocalizer {
     /**
      * Returns a string in ISO8601 format, with both date and time
      * e.g. 2011-01-31T22:59:48Z
+     * @param date the date to format
+     * @return the data in ISO8601 format
      */
     public static String formatISO8601(Date date) {
         return ISO8601_FORMATTER.get().format(date);
     }
-    
+
+    /**
+     * Returns a string in ISO8601 format, with both date and time with millis
+     * e.g. 2011-01-31T22:59:48.000Z
+     * @param date the date to format
+     * @return the data in ISO8601 format with milliseconds
+     */
     public static String formatISO8601WithMilliSeconds(Date date) {
         return ISO8601_MILLISECOND_FORMATTER.get().format(date);
     }
@@ -1554,6 +1572,8 @@ public class BaseLocalizer {
      * Gets a NumberFormat, using the given precision and scale settings.
      * Caller must use doParseNumber() to handle trailing garbage in input string.
      * @param scale number of digits to the right of the decimal that will be shown
+     * @param scaleSpecified if you want the scale to be fixed (i.e. show exactly that number of trailing digits)
+     * @return the NumberFormat for this localizer with the given scale.
      */
     public NumberFormat getNumberFormat(int scale, boolean scaleSpecified) {
         // don't use the cached NumberFormat because we are altering it
@@ -1677,7 +1697,7 @@ public class BaseLocalizer {
      * @param input String to be parsed
      * @param nf NumberFormat to parse the string
      * @return a parsed Number instance
-     * @throws ParseException
+     * @throws ParseException if the input isn't valid against the NumberFormat
      */
     public static Number doParseNumber(String input, NumberFormat nf) throws ParseException {
         if (input == null) {
@@ -1770,6 +1790,7 @@ public class BaseLocalizer {
      * @param    section    same as getLabel(section, key)
      * @param    key    same as getLabel(section, key)
      * @param    args    for <CODE>java.text.MessageFormat.format()</CODE>
+     * @return the label in the label set at the given section and key
      */
     public String getLabel(String section, String key, Object... args) {
         String labelText = TextUtil.escapeForMessageFormat(getLabel(section, key)).toString();
@@ -1790,6 +1811,7 @@ public class BaseLocalizer {
     /**
      * Retrieve the locale associated with this localizer. A setter shouldn't be added because it's
      * assumed the locale is set on instantiation; otherwise, we'd need to fix getMessageFormat()
+     * @return the locale associated with this localizer
      */
     public Locale getLocale() {
         return this.locale;

@@ -47,6 +47,8 @@ public class Uniquefy {
     /**
      * Look to see if the given value is already in the given string pool.
      * If so, return the one already in the pool.  Otherwise, add it to the pool.
+     * @param value the value to uniquefy
+     * @return the exact same string or the equivalent string the pool
      */
     public String unique(String value) {
         if (value == null)
@@ -60,7 +62,8 @@ public class Uniquefy {
     }
 
     /**
-     * unique all of the values in the array
+     * @return unique all of the values in the array
+     * @param values the values in the array to uniquefy
      */
     public String[] unique(String[] values) {
         for (int i = 0; i < values.length; i++) {

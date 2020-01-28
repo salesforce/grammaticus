@@ -26,7 +26,7 @@ public enum DefaultLocaleAttributesUtil implements LocaleAttributesUtil {
     }
 
     /**
-     * Gets the singleton instance of the {@link LocaleAttributesUtil}.
+     * @return the singleton instance of the {@link LocaleAttributesUtil}.
      */
     public static DefaultLocaleAttributesUtil get() {
         return INSTANCE;

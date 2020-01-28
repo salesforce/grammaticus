@@ -46,6 +46,8 @@ public final class LanguageDictionaryParser {
      * Parse and load the dictionary for the descriptor with the given language
      * @param dictDesc the description of the location of the grammatical label
      * @param language the dictionary to stat with
+     * @param parentProvider the parentProvider if this parser is for overriding labels from a different labelset
+     * @throws IOException if there is a parsing exception.
      */
     public LanguageDictionaryParser(GrammaticalLabelSetDescriptor dictDesc, HumanLanguage language, GrammaticalLabelSetProvider parentProvider) throws IOException {
         this(new LanguageDictionary(language), dictDesc, parentProvider);

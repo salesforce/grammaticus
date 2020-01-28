@@ -32,6 +32,7 @@ public class TrieMatcher {
     /**
      * This is not the cheapest of operations.
      *
+     * @return a new TrieMatcher
      * @param strings this is the list of words that make up the Trie.
      *      It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
@@ -44,6 +45,7 @@ public class TrieMatcher {
     /**
      * This is not the cheapest of operations.
      *
+     * @return a new TrieMatcher
      * @param strings this is the list of words that make up the Trie.
      *      It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
@@ -54,6 +56,7 @@ public class TrieMatcher {
     }
     
     /**
+     * @return whether the string begins with any of the terms in the trie
      * @param s the term to see if it starts with any terms of the trie
      */
     public boolean begins(CharSequence s) {
@@ -76,7 +79,9 @@ public class TrieMatcher {
     private final int minWordLength;
 
     /**
-     * Use the factory {@link #compile()} instead.
+     * Use the factory {@link #compile(String[], String[])} instead.
+     * @param strings strings
+     * @param replacements parallel replacements
      */
     private TrieMatcher(List<String> strings, List<String> replacements) {
         if (strings == null) throw new NullPointerException();
@@ -124,6 +129,8 @@ public class TrieMatcher {
 
     /**
      * @return null if not found
+     * @param s the string to check
+     * @param offset the offset in the string
      */
     private TrieData contains(CharSequence s, int offset) {
         IntHashMap<TrieData> current = this.root;
@@ -171,11 +178,9 @@ public class TrieMatcher {
      * Search and replace multiple strings in <code>s</code> given the the words and replacements given in
      * <code>TrieMatcher</code>.
      * <p>
-     * Note, using a Trie for matching multiple strings can be much faster than the using
-     * {@link #replace(String, String[], String[])}, however, due to the cost of creating the Trie, this is best used
-     * when 1) you will reuse the Trie many times 2) you have a large set of strings your are searching on
+     * Note, this is best used when 1) you will reuse the Trie many times 2) you have a large set of strings your are searching on
      * <p>
-     * Note, regexes aren't supported by this, see {@link #replace(String, String[], String[])}.
+     * Note, regexes aren't supported by this
      *
      * @param s
      *        the text you are searching in
@@ -225,6 +230,7 @@ public class TrieMatcher {
     /**
      * See if the given string matches any of the given words in the Trie
      *
+     * @param s the string to look for
      * @param offset where to start looking inside of the given String.
      * @return null if none are found.
      */

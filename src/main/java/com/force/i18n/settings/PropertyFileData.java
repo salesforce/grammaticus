@@ -21,8 +21,9 @@ import java.util.Map.Entry;
 public interface PropertyFileData extends Serializable {
 
     /**
-     * Returns an unmodifiable map of all the values for a particular sectionName.
+     * @return an unmodifiable map of all the values for a particular sectionName.
      * If, that section does not exist, will return <code>null</code>.
+     * @param sectionName the section name
      */
     Map<String, Object> getSection(String sectionName);
 
@@ -34,28 +35,34 @@ public interface PropertyFileData extends Serializable {
     /**
      * Adds a value to the data.
      * @return the old value for this section/parameter key, or null if no value existed.
+     * @param sectionName the section name
+     * @param paramName the param name
+     * @param value the value to set for that section/parameter
      */
     Object put(String sectionName, String paramName, Object value);
 
     /**
      * Removes the value for a section/parameter key,
      * @return the old value for this section/parameter key, or null if no value existed.
+     * @param sectionName the section name
+     * @param paramName the param name
      */
     Object remove(String sectionName, String paramName);
 
     /**
      * Removes all properties for the given section name.
+     * @param sectionName the section name
      */
     void removeSection(String sectionName);
 
     /**
-     * Returns an unmodifiable set of section names in the data.
+     * @return an unmodifiable set of section names in the data.
      */
     Set<String> getSectionNames();
 
 
     /**
-     * Returns an unmodifiable map of section names that are "namespaced"
+     * @return an unmodifiable map of section names that are "namespaced"
      * in that they are publicly accessible and versioned.  The keys of the namespaces
      * are all "lowercase", unlike normal section names, which are the associated values
      */
@@ -69,6 +76,7 @@ public interface PropertyFileData extends Serializable {
 
     /**
      * @return whether or not the section exists.
+     * @param sectionName the section to mark as "public"
      * @see #contains(String, String)
      */
     boolean containsSection(String sectionName);
@@ -76,6 +84,8 @@ public interface PropertyFileData extends Serializable {
     /**
      * @return whether or not the property exists.
      * @see #containsSection(String)
+     * @param sectionName the section name
+     * @param paramName the param name
      */
     boolean contains(String sectionName, String paramName);
 
@@ -96,6 +106,7 @@ public interface PropertyFileData extends Serializable {
      * support it, it should be considered a no-op.
      *
      * @see SharedKeyMapPropertyFileData
+     * @param seedKeyMap the seed key map to share keys with
      */
     void shareKeys(SharedKeyMap<String, SharedKeyMap<String, Object>> seedKeyMap);
 

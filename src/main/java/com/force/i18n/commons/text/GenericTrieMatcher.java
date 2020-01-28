@@ -36,10 +36,12 @@ public class GenericTrieMatcher<T> {
     /**
      * This is not the cheapest of operations.
      *
+     * @param <TOKEN> the type of object being matched
      * @param searches this is the list of words that make up the Trie.
      *      It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
      *      It is assumed that the lists are not modified once passed into the Trie
+     * @return a new GenericTrieMatcher
      */
     public static <TOKEN> GenericTrieMatcher<TOKEN> compile(List<? extends List<TOKEN>> searches, List<? extends List<TOKEN>> replacements) {
         return compile(searches, replacements, null);
@@ -49,11 +51,13 @@ public class GenericTrieMatcher<T> {
     /**
      * This is not the cheapest of operations.
      *
+     * @param <TOKEN> the type of object being matched
      * @param searches this is the list of words that make up the Trie.
      *      It is assumed that the lists are not modified once passed into the Trie
      * @param replacements the list of words that can be used to replace those words.
      *      It is assumed that the lists are not modified once passed into the Trie
      * @param tokenClass based on the class, a more efficient trie map can be generated
+     * @return a new GenericTrieMatcher
      */
     public static <TOKEN> GenericTrieMatcher<TOKEN> compile(List<? extends List<TOKEN>> searches, List<? extends List<TOKEN>> replacements, Class<TOKEN> tokenClass) {
         return new GenericTrieMatcher<TOKEN>(searches, replacements, tokenClass);
@@ -63,12 +67,11 @@ public class GenericTrieMatcher<T> {
      * Search and replace multiple strings in <code>s</code> given the the words and replacements given in
      * <code>TrieMatcher</code>.
      * <p>
-     * Note, using a Trie for matching multiple strings can be much faster than the using
-     * {@link #replace(String, String[], String[])}, however, due to the cost of creating the Trie, this is best used
-     * when 1) you will reuse the Trie many times 2) you have a large set of strings your are searching on
+     * This is best used when 1) you will reuse the Trie many times 2) you have a large set of strings your are searching on
      * <p>
-     * Note, regexes aren't supported by this, see {@link #replace(String, String[], String[])}.
+     * Note, regexes aren't supported by this
      *
+     * @param <T> the type of object being matched
      * @param s
      *        the text you are searching in
      * @param trieMatcher
@@ -84,6 +87,7 @@ public class GenericTrieMatcher<T> {
      * Search and replace multiple strings in <code>s</code> given the the words and replacements given in
      * <code>TrieMatcher</code> and a validation strategy
      * <p>
+     * @param <T> the type of object being matched
      * @param s
      *        the text you are searching in
      * @param trieMatcher
@@ -162,6 +166,7 @@ public class GenericTrieMatcher<T> {
 
     /**
      * @param s the term to see if it starts with any terms of the trie
+     * @return whether the list begins with any of the matches in this trie
      */
     public boolean begins(List<T> s) {
         GenericTrieData<T> match = begins(s, 0);
@@ -196,7 +201,7 @@ public class GenericTrieMatcher<T> {
     private final int minWordLength;
 
     /**
-     * Use the factory {@link #compile()} instead.
+     * Use the factory {@link #compile(List, List, Class)} instead.
      */
     private GenericTrieMatcher(List<? extends List<T>> strings, List<? extends List<T>> replacements, Class<T> tokenClass) {
         if (strings == null) throw new NullPointerException();
@@ -250,6 +255,7 @@ public class GenericTrieMatcher<T> {
     /**
      * See if the given string matches any of the given words in the Trie
      *
+     * @param s the list of objects to search
      * @return null if none are found.
      */
     GenericTrieMatch<T> match(List<T> s) {
@@ -259,6 +265,7 @@ public class GenericTrieMatcher<T> {
     /**
      * See if the given string matches any of the given words in the Trie
      *
+     * @param s the list of objects to search
      * @param offset where to start looking inside of the given String.
      * @return null if none are found.
      */
@@ -321,7 +328,7 @@ public class GenericTrieMatcher<T> {
 
 
     /**
-     * Struct returned by {@link TrieMatcher#match(String)} to represent a match.
+     * Struct returned by {@link GenericTrieMatcher#match(List)} to represent a match.
      *
      * @author koliver
      * @see TrieMatcher
@@ -342,7 +349,7 @@ public class GenericTrieMatcher<T> {
         }
 
         /**
-         * The position of where the match was in the source.
+         * @return The position of where the match was in the source.
          * Eg, <pre>
          *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
          *    TrieMatch match = trie.match("abcxdef");
@@ -354,7 +361,7 @@ public class GenericTrieMatcher<T> {
         }
 
         /**
-         * The word in the trie that matched.
+         * @return The word in the trie that matched.
          * Eg, <pre>
          *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
          *    TrieMatch match = trie.match("abcxdef");
@@ -366,7 +373,7 @@ public class GenericTrieMatcher<T> {
         }
 
         /**
-         * The replacement for word in the trie that matched.
+         * @return The replacement for word in the trie that matched.
          * Eg, <pre>
          *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
          *    TrieMatch match = trie.match("abcxdef");

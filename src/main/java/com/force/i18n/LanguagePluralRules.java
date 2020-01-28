@@ -31,10 +31,9 @@ public interface LanguagePluralRules {
 	}
 
 	/**
-	 * 
-	 * @param value
-	 * @param numberType
-	 * @return
+	 * @param value  the number to test
+	 * @param numberType Cardinal or Ordinal number
+	 * @return the plural category for the number
 	 */
 	PluralCategory getPluralCategory(Number value, NumberType numberType);
 

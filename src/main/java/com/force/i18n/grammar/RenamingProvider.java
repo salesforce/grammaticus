@@ -1,13 +1,14 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.Renameable;
 
 /**
  * Interface for something that provides nouns that are renamed for the given request
@@ -43,13 +44,16 @@ public interface RenamingProvider {
     Noun getNoun(HumanLanguage language, Renameable key);
 
 
-    /**     *
+    /**
      * @return true if the noun identified by "key" is renamed in the given language
+     * @param language the language to test
+     * @param key the name of the noun to check
      */
     boolean isRenamed(HumanLanguage language, String key);
 
-    /**     *
+    /**  
      * @return true if the noun identified by "key" is "custom"
+     * @param key he name of the noun to check
      */
     boolean isCustomKey(String key);
 
@@ -58,14 +62,24 @@ public interface RenamingProvider {
      * @return <tt>true</tt> if renaming should be checked for standard nouns (i.e. not)
      */
     boolean useRenamedNouns();
-    
+
     /**
      * Grammar engine switched in 164
      * @return <tt>true</tt> if API version is less than 164
      */
     boolean supportOldGrammarEngine();
-    
-    
+
+    /**
+     * @return the version to use for the name of labels.
+     *
+     * This allows the strings of a noun to be versioned in a way that, if the
+     * noun isn't overridden, will provide a different value based on the
+     * version
+     */
+    default double getLabelVersion() {
+    	return 0.0;
+    }
+
     /**
      * @return <tt>true</tt> if the current User Context's Perm and Prefs allow them to see the Middle Name in
      *         calculated full people's names
@@ -79,4 +93,6 @@ public interface RenamingProvider {
      */
     // TODO - Not the best class name or place to put this method but this is the best we can do for now.
     boolean displaySuffixInCalculatedPersonName();
+
+
 }

@@ -74,7 +74,7 @@ public abstract class NounModifier extends GrammaticalTerm {
     	appendable.append("{\"t\":\""+getTermType().getCharId()+"\",\"l\":\"");
     	appendable.append(getName());
     	appendable.append("\",");
-    	if (getDeclension().hasStartsWith()) {
+    	if (getDeclension().hasStartsWith() && getStartsWith() != null) {
     		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
     	}
     	appendable.append("\"v\":{");

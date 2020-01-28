@@ -39,14 +39,6 @@
         <organization>Salesforce</organization>
     </developer>
     <developer>
-        <name>Pu Chen</name>
-        <roles>
-            <role>Member</role>
-        </roles>
-        <email>pu.chen@salesforce.com</email>
-        <organization>Salesforce</organization>
-    </developer>
-    <developer>
         <name>Bo Yang</name>
         <roles>
             <role>Member</role>
@@ -222,6 +214,30 @@
     </plugins>
   </build>
   
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.5</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <!-- Optional directory to put findbugs xdoc xml report -->
+          <xmlOutputDirectory>target/site</xmlOutputDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.1</version>
+		<configuration>
+		  <doclint>none</doclint>
+		</configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+  
+  
   <dependencies>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -239,7 +255,7 @@
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
-      <version>64.1</version>
+      <version>64.2</version>
     </dependency>
 
   </dependencies>

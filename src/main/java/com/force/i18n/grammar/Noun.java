@@ -149,7 +149,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
 
     /**
      * @return the classifer word associated with this noun
-     * @see https://en.wikipedia.org/wiki/Classifier_(linguistics)
+     * @see <a href="https://en.wikipedia.org/wiki/Classifier_(linguistics)">Wikipedia: Classifier</a>
      */
     public String getClassifier() {
         return "";
@@ -181,6 +181,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * called by validate(String, LanguageDictionary. <br>
      * Override this method if you need more validation. or fixup gender and startsWith values. For English, we may
      * be able to figure out Vowel letter, but can't do that for vowel sounds like "Hour".
+     * @return true if the gender is valid
      */
     protected boolean validateGender(String name) {
         return true;
@@ -362,10 +363,10 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     	appendable.append("{\"t\":\"n\",\"l\":\"");
     	appendable.append(getName());
     	appendable.append("\",");
-    	if (getDeclension().hasGender()) {
+    	if (getDeclension().hasGender() && getGender() != null) {
     		appendable.append("\"g\":\"").append(getGender().getDbValue()).append("\",");
     	}
-    	if (getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) {
+    	if ((getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) && getStartsWith() != null) {
     		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
     	}
     	appendable.append("\"v\":{");
@@ -379,6 +380,8 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
      * overhead, that is traditionally high on most {@code Map} implementations.
      * 
+     * @param <T> the type of the noun form for this noun
+     * @param map the map to make skinny
      * @return A {@link ImmutableSortedMap} created from a {@link Map} of {@link NounForm}'s (key) to {@link String}'s
      *         (value).
      */
@@ -395,12 +398,12 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * Implement this interface on nouns that have associated classifier words.
      * Note, it is assumed that if the Noun implements WithClassifier, the Declension implements WithClassifiers
      * @author stamm
-     * @since 1.1
+     * @since 0.6.0
      */
     public interface WithClassifier {
         /**
          * Set the classifier for this noun to the given word.
-         * @param classifier
+         * @param classifier the classifer word for the noun
          */
         void setClassifier(String classifier);
     }

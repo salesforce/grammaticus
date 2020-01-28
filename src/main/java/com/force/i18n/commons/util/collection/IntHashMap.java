@@ -27,7 +27,7 @@ import com.google.common.annotations.Beta;
  * disperses the elements properly among the buckets.  Iteration over
  * collection views requires time proportional to the "capacity" of the
  * <tt>IntHashMap</tt> instance (the number of buckets) plus its size (the number
- * of key-value mappings).  Thus, it's very important not to set the initial
+ * of key-value mappings).  Thus, it's very important not to set the intial
  * capacity too high (or the load factor too low) if iteration performance is
  * important.<p>
  *
@@ -74,12 +74,11 @@ import com.google.common.annotations.Beta;
  * arbitrary, non-deterministic behavior at an undetermined time in the
  * future.
  * 
- * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
+ * Beta class. Generally use {@link java.util.HashMap} or {@link java.util.EnumMap} instead.
  *
  * @author  Based on Sun's java.util.HashMap (modified by koliver)
  * @see	    IntMap
  * @see	    java.util.HashMap
- * @note use {@link java.util.HashMap} or {@link java.util.EnumMap} instead.
  */
 @Beta
 @SuppressWarnings("rawtypes") // TODO Fix

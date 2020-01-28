@@ -189,7 +189,9 @@ public enum LanguageDeclensionFactory {
                 return new UnsupportedLanguageDeclension.BasqueDeclension(language);
             case MALTESE:  // More complicated than arabic: complicated starts with, dual form, etc.
                 return new UnsupportedLanguageDeclension.MalteseDeclension(language);
-        }
+            case PERSIAN:  // Arabic vs Persian native words have different declensions
+            	return new UnsupportedLanguageDeclension.PersianDeclension(language);
+    	}
     	if (FAIL_ON_MISSING) {
     		throw new UnsupportedOperationException("Language has no defined declension; the build breaker edited UserLanguage");
     	} else {

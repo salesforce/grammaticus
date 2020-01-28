@@ -42,6 +42,9 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
         assertEquals("Ein Neuer Account", renderLabel(GERMAN, "<A/> <New/> <Account/>", null));
         assertEquals("Ein Neuer Account und Ein Neues Dokument und Eine Neue Kampagne", renderLabel(GERMAN, "<A/> <New/> <Account/> und <A/> <New/> <Document/> und <A/> <New/> <Campaign/>", null));
         assertEquals("Einem neuem Account und Einem neuem Dokument und Einer neuer Kampagne", renderLabel(GERMAN, "<A/> <New/> <Account case='d'/> und <A/> <New/> <Document case='d'/> und <A/> <New/> <Campaign case='d'/>", null));
+
+        // tests article override in adjectives
+        assertEquals("Ein Anderer Account", renderLabel(GERMAN, "<A/> <Other article=\"the\"/> <Account/>", null));
     }
 
     public void testLegacyArticleForm() throws Exception {

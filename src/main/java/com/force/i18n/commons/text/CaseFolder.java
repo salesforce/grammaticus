@@ -873,9 +873,10 @@ public class CaseFolder {
     /**
      * Case fold a single character, returning null if no
      * folding isn't necessary and the char array of the
-     * replacement chars if it is necessary.  Currently
-     * used by Vampire to in-place case folding to prevent
-     * allocating new strings.
+     * replacement chars if it is necessary.  C
+     * @param c the character to test
+     * @param turkic should the dotted i be handled.
+     * @return the folded char
      */
     public static char[] toFoldedCase(char c, boolean turkic) {
         int mapBlockIdx = c >> 8;

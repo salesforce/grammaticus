@@ -51,8 +51,6 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
     /**
      * Validate invariants for declensions (such as defaults must be contained in the set of possible values)
-     * @hierarchy Globalization.Grammar Engine
-     * @userStory New Platform languages / locales for Summer '11
      */
     public void testDeclensionInvariants() {
         for (HumanLanguage lang : LanguageProviderFactory.get().getAll()) {
@@ -60,23 +58,37 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
             if (declension.hasGender()) {
                 assertTrue("Default gender isn't contained in the set of genders for " + lang, declension.getRequiredGenders().contains(declension.getDefaultGender()));
+            } else {
+                assertNull("Required Genders should be null for " + lang, declension.getRequiredGenders());
             }
 
-            if (declension.hasStartsWith()) {
+            if (declension.hasStartsWith() || declension.hasEndsWith()) {
                 assertTrue("Default starts with isn't contained in the set of startsWiths for " + lang, declension.getRequiredStartsWith().contains(declension.getDefaultStartsWith()));
+                assertTrue("Required startsWith should be greater than 1 for " + lang, declension.getRequiredStartsWith().size() > 1);  // None
+            } else {
+                assertEquals("Required startsWith should be 1 for " + lang, 1, declension.getRequiredStartsWith().size());  // None
             }
 
             if (declension.getAllowedCases() != null) {
                 assertTrue("Default case isn't contained in the allowed set of cases for " + lang, declension.getAllowedCases().contains(declension.getDefaultCase()));
                 assertTrue("Required cases aren't in the set of allowed cases", declension.getAllowedCases().containsAll(declension.getRequiredCases()));
+            	assertEquals("Declension shouldn't mark allowed cases for " + lang, declension.hasAllowedCases(), declension.getAllowedCases().size() > 1);
+            } else {
+            	assertFalse("Declension should have no cases for " + lang, declension.hasAllowedCases());
             }
 
             if (declension.hasPossessive() || declension.hasPossessiveInAdjective()) {
                 assertTrue("Default possessive isn't contained in the set of possessives for " + lang, declension.getRequiredPossessive().contains(declension.getDefaultPossessive()));
+                assertTrue("Required possessive should be greater than 1 for " + lang, declension.getRequiredPossessive().size() > 1);  // None
+            } else {
+                assertEquals("Required possessive should be 1 for " + lang, 1, declension.getRequiredPossessive().size());  // None
             }
 
             if (declension.hasArticle() || declension.hasArticleInNounForm()) {
                 assertTrue("Default article isn't contained in the set of articles for " + lang, declension.getAllowedArticleTypes().contains(declension.getDefaultArticle()));
+                assertTrue(declension.getAllowedArticleTypes().size() > 1);
+            } else {
+                assertEquals("Required articles should be empty for " + lang, 0, declension.getAllowedArticleTypes().size());            	
             }
             
             if (declension.hasStartsWith() && declension.hasEndsWith()) {
