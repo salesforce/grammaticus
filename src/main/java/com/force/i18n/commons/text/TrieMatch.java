@@ -1,14 +1,14 @@
-/* 
- * Copyright (c) 2019, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright, 1999-2008, salesforce.com
+ * All Rights Reserved
+ * Company Confidential
  */
 package com.force.i18n.commons.text;
 
 /**
- * Struct returned by {@link TrieMatcher#match(String)} to represent a match.
+ * Struct returned by {@link TrieMatcher#match(CharSequence, int)} to represent a match.
  * 
+ * @author koliver
  * @see TrieMatcher
  */
 public class TrieMatch {
@@ -27,7 +27,7 @@ public class TrieMatch {
     }
     
     /**
-     * The position of where the match was in the source.
+     * @return position of where the match was in the source.
      * Eg, <pre>
      *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
      *    TrieMatch match = trie.match("abcxdef");
@@ -39,7 +39,7 @@ public class TrieMatch {
     }
 
     /**
-     * The word in the trie that matched.
+     * @return word in the trie that matched.
      * Eg, <pre>
      *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
      *    TrieMatch match = trie.match("abcxdef");
@@ -51,7 +51,7 @@ public class TrieMatch {
     }
     
     /**
-     * The replacement for word in the trie that matched.
+     * @return the replacement for word in the trie that matched.
      * Eg, <pre>
      *    Trie trie = new Trie(String[]{"x"}, String[]{"Y"});
      *    TrieMatch match = trie.match("abcxdef");

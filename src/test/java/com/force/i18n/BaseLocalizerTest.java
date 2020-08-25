@@ -116,7 +116,8 @@ public class BaseLocalizerTest extends TestCase {
         
          // set to use JDK locale data.
         Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocalePredicate();
-        Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.JdkFormatFixer.INSTANCE;
+        @SuppressWarnings("deprecation")
+		Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.JdkFormatFixer.INSTANCE;
         BaseLocalizer.setLocaleFormatFixer(predicate);
         
         TimeZone tz = BaseLocalizer.GMT_TZ;
@@ -174,7 +175,8 @@ public class BaseLocalizerTest extends TestCase {
         }
     }
 
-    public void testFormatAndParseDateTimeViaLocalizer() {
+    @SuppressWarnings("deprecation")
+	public void testFormatAndParseDateTimeViaLocalizer() {
         BaseLocalizer.setLocaleFormatFixer(locale -> BaseLocalizer.JdkFormatFixer.INSTANCE);
         doTestFormatAndParseDateTimeViaLocalizer();
     }

@@ -60,6 +60,7 @@ public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializa
      * @param isPrimary this is the only label set that can define new sections.
      * @param seed this is the shared key map that is shared across multiple locale's versions
      *      of the data.
+     * @param publicSections the names of the sections that are exposed externally (think global), so that they can be used in an API
      */
     public SharedKeyMapPropertyFileData(Locale locale, boolean isPrimary, SharedKeyMap<String, SharedKeyMap<String, Object>> seed, Set<String> publicSections) {
         this.locale = locale;

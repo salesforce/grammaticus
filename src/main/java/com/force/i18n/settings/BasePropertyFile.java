@@ -35,7 +35,6 @@ import com.force.i18n.commons.util.settings.SettingsUtil;
  * Forward and multi-level references are allowed, but circular are not.
  * <p>
  * Values may also contain references to system parameters.
- * <p>
  * <h3> Example </h3>
  * <pre><code>
  *                                     &lt;section name=&quot;sectionName&quot;&gt;
@@ -119,7 +118,9 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Whether the section contains an enum list with the baseParam.
+     * @return Whether the section contains an enum list with the baseParam.
+     * @param section the label section
+     * @param baseParam the prefix for all the keys in the label section.
      */
     public boolean containsListParam(String section, String baseParam) {
         // check if the list param exists by attempting to get the first one
@@ -127,16 +128,19 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Gets all values of parameters that were in the section for a build config
+     * @return all values of parameters that were in the section for a build config
      * file
+     * @param section the label section
      */
     public List<String> getListConfigValues(String section) throws SettingsSectionNotFoundException {
         return getList(section, section);
     }
 
     /**
-     * Gets all values of parameters that begin with baseParam_xx, where xx is a
+     * @return all values of parameters that begin with baseParam_xx, where xx is a
      * number starting from 0.
+     * @param section the label section
+     * @param baseParam the prefix for all the keys in the label section.
      */
     public List<String> getList(String section, String baseParam) throws SettingsSectionNotFoundException {
         // try to get the first one as a way to find whether the section exists
@@ -145,8 +149,11 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Gets all values of parameters that begin with baseParam_xx, where xx is a
+     * @return all values of parameters that begin with baseParam_xx, where xx is a
      * number starting from 0.
+     * @param section the label section
+     * @param baseParam the prefix for all the keys in the label section.
+     * @param ifNull what to return if there are no parameters
      */
     @Override
     public List<String> getList(String section, String baseParam, List<String> ifNull) {
@@ -168,8 +175,10 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Gets a List of all values whose parameters start with
+     * @return a List of all values whose parameters start with
      * <code>baseParam_x</code>, where x is number starting from 0.
+     * @param section the label section
+     * @param baseParam the prefix for all the keys in the label section.
      */
     private List<String> getParamList(String section, String baseParam) {
         List<String> list = new ArrayList<String>();
@@ -184,7 +193,9 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Get the number of enumItems within an enum list param.
+     * @return the number of enumItems within an enum list param.
+     * @param section the label section
+     * @param baseParam the prefix for all the keys in the label section.
      */
     public int getNumListEntryParams(String section, String baseParam) {
         for (int i = 0; true; i++) {
@@ -206,6 +217,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * @return a set of all params in the specified section. You'd best be not
      *         messing with it.
+     * @param section the label section
      */
     public Set<String> getParams(String section) throws SettingsSectionNotFoundException {
         Set<String> result = getParams(section, null);
@@ -232,6 +244,8 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * @return a set of all params in the specified section. You'd best be not
      *         messing with it.
+     * @param section the label section
+     * @param ifNull the params to use if the section is missing or has no keys
      */
     public Set<String> getParams(String section, Set<String> ifNull) {
         Map<String, Object> theSect = this.data.getSection(section);
@@ -383,9 +397,10 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     /**
-     * Returns an unmodifiable <code>Map</code> of all the values for a
+     * @return an unmodifiable <code>Map</code> of all the values for a
      * particular sectionName. If, that section does not exist, will return
      * <code>null</code>.
+     * @param sectionName the label section
      */
     public Map<String, Object> getSection(String sectionName) {
         return this.data.getSection(sectionName);
@@ -394,6 +409,8 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * Output XML data to a stream output is for set.dtd. This will not give an
      * exact copy of what was read in.
+     * @param os the output stream to write to
+     * @throws IOException if an error happens while streaming
      */
     public void outputXML(OutputStream os) throws IOException {
         outputXML(os, false);
@@ -408,6 +425,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      *
      * @param os the output stream to write to
      * @param doCensor will censor values like password if set to true
+     * @throws IOException if an error happens while streaming
      */
     public void outputXML(OutputStream os, boolean doCensor) throws IOException {
         OutputStreamWriter osw = new OutputStreamWriter(os, "utf-8");
@@ -560,6 +578,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     /**
      * Allows for some implementations to save a great deal of memory by sharing
      * maps across various language versions of the "same" properties/labels.
+     * @param seedKeyMap the shared seedKeyMap to share keys to reduce memory
      */
     public void attachSharedKeyMap(SharedKeyMap<String, SharedKeyMap<String, Object>> seedKeyMap) {
         if (seedKeyMap == null) {
@@ -638,6 +657,8 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      *   - true
      *   - yes
      *   - on
+     *   @param booleanValue the string to test
+     *   @return the booleanValue string as a boolean
      */
     public static boolean stringToBoolean(String booleanValue) {
         if("1".equals(booleanValue)

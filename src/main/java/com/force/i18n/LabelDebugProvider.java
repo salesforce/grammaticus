@@ -32,6 +32,7 @@ public abstract class LabelDebugProvider {
 
     /**
      * Set the debug provider to be enabled or disabled
+     * @param enabled should the defaut debug provider be enabled
      */
     public static void setLabelDebugProviderEnabled(boolean enabled) {
     	setLabelDebugProviderEnabled(enabled ? new EnabledLabelDebugProvider() : new DisabledLabelDebugProvider());
@@ -40,6 +41,7 @@ public abstract class LabelDebugProvider {
     /**
      * Set the debug provider to be used.  Generally you want to use the boolean value and
      * rely on the default behavior
+     * @param provider the labeldebugprovider to use globally
      */
     public static void setLabelDebugProviderEnabled(LabelDebugProvider provider) {
     	Preconditions.checkNotNull(provider);
@@ -61,7 +63,7 @@ public abstract class LabelDebugProvider {
     public abstract boolean isAllowed();
 
     /**
-     * Determines if the current Request should show the Label Debugging images.
+     * @return if the current Request should show the Label Debugging images.
      */
     public boolean isLabelHintRequest() {
         return false;

@@ -54,6 +54,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
      * Construct a label file parser
      * @param dictionary the dictionary to fill in with nouns and adjectives
      * @param labelDesc the descriptor of the location of the label set
+     * @param parentProvider the parent labelset if this is overriding the labels and is a child labelset
+     * @throws IOException if there is an exception while parsing
      */
     public GrammaticalLabelFileParser(LanguageDictionary dictionary, LabelSetDescriptor labelDesc, GrammaticalLabelSetProvider parentProvider) throws IOException {
         this(dictionary, labelDesc, parentProvider,
@@ -298,6 +300,21 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         }
 
         @Override
+		public int hashCode() {
+			return Objects.hash(file, lineNumber);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null || getClass() != obj.getClass())
+				return false;
+			AliasParam other = (AliasParam) obj;
+			return Objects.equals(file, other.file) && lineNumber == other.lineNumber;
+		}
+
+		@Override
         public int compareTo(AliasParam o) {
             int fileCompare = this.file.getPath().compareTo(o.file.getPath());
             if (fileCompare == 0) {

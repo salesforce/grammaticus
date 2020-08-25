@@ -46,6 +46,7 @@ public abstract class Adjective extends NounModifier {
 
     /**
      * @return the value of this adjective for the given form
+     * @param form the get the string from
      */
     protected abstract String getString(AdjectiveForm form);
 
@@ -90,7 +91,7 @@ public abstract class Adjective extends NounModifier {
     protected abstract void setString(AdjectiveForm form, String value);
 
     /**
-     * Return the appropriate default string for the value, providing the ability for the subclass to munge with the original version
+     * @return the appropriate default string for the value, providing the ability for the subclass to munge with the original version
      * @param form the adjective form
      * @param value the base form that value comes from
      * @param baseForm the base from that will be assigned
@@ -111,6 +112,7 @@ public abstract class Adjective extends NounModifier {
      * This generally depends on the declensions "return all forms"
      * TODO: This should compare the difference between specified forms and
      * choose the most similar (ie. the smallest Hamming distance)
+     * @param name the name of the key for logging
      * @param requiredForms the set of required forms for adjectives in this language
      * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
      */

@@ -107,8 +107,7 @@ public abstract class TrackingHandler extends DefaultHandler {
                 }
 
 
-            }
-            catch (Exception e) {
+            } catch (IOException e) {
                 // probably a problem with the file, just switch over to standard processing.
                 return null;
             }

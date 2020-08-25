@@ -54,17 +54,31 @@ public interface GrammaticalLabelSet extends LabelSet {
     String getString(String section, Renameable[] entities, String param, boolean forMessageFormat);
 
     /**
+     * @return the label and replace the renameable entities and values
 	 * NOTE: this doesn't actually replace the message format.
+	 * @param section the section of the label
+	 * @param param the param of the label
+	 * @param entities the renamable entities for replace
+	 * @param vals the {n} values to replace
      */
     String getString(String section, String param, Renameable[] entities, Object... vals);
 
     /**
-	 * NOTE: this doesn't actually replace the message format.
+     * @return the label and replace the values and optionally double the single quotes
+	 * @param section the section of the label
+	 * @param param the param of the label
+	 * @param forMessageFormat whether this will be put into message format and the single quotes need to be doubled
+	 * @param vals the {n} values to replace
      */
     String getString(String section, String param, boolean forMessageFormat, Object... vals);
 
     /**
-	 * NOTE: this doesn't actually replace the message format.
+     * @return the label and replace the renameable entities and values and optionally double the single quotes
+	 * @param section the section of the label
+	 * @param param the param of the label
+	 * @param entities the renamable entities for replace
+	 * @param forMessageFormat whether this will be put into message format and the single quotes need to be doubled
+	 * @param vals the {n} values to replace
      */
     String getString(String section, String param, Renameable[] entities, boolean forMessageFormat, Object... vals);
 
@@ -93,9 +107,9 @@ public interface GrammaticalLabelSet extends LabelSet {
     /**
      * Write the entire label set to the given appendable as a Map from section.key to label
      * @param appendable the appendable to write to
-     * @param keys: optional set of section names or section.key names that restrict which labels to include
-     * @param termsInUse: if provided and non null, the set of used terms by all the given labels will be added to it;
-     * @throws IOException
+     * @param keysToInclude optional set of section names or section.key names that restrict which labels to include
+     * @param termsInUse if provided and non null, the set of used terms by all the given labels will be added to it;
+     * @throws IOException if there's an error writing to appendable
      */
     void writeJson(Appendable appendable, Collection<String> keysToInclude, Set<GrammaticalTerm> termsInUse) throws IOException;
     

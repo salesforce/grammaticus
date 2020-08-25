@@ -15,7 +15,7 @@ import com.force.i18n.grammar.Noun;
  * Test of classifiers in various languages that support classifier words.
  *
  * @author stamm
- * @since 1.1
+ * @since 0.6.0
  */
 public class ClassifierLabelTest extends BaseGrammaticalLabelTest {
     public ClassifierLabelTest(String name) {

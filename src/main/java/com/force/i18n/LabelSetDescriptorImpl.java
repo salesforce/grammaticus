@@ -7,9 +7,9 @@
 
 package com.force.i18n;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 import java.util.List;
+import java.util.Objects;
 
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.google.common.base.Function;
@@ -60,6 +60,11 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
 
     /**
      * Constructor to override the default file basename with the specified basename.
+     * @param rootDirectory the rootDirectory of the labels
+     * @param language the language associated with the labels
+     * @param setName the debug name for the set in logs
+     * @param basename the name without extension of the XML file containing the labels
+     * @param dictionaryName the name without extension of the XML file containing the nouns
      */
     public LabelSetDescriptorImpl(URL rootDirectory, HumanLanguage language, String setName, String basename, String dictionaryName) {
         assert language != null : "You must provide a language";
@@ -129,7 +134,11 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
         int result = 1;
         result = prime * result + ((basename == null) ? 0 : basename.hashCode());
         result = prime * result + language.hashCode();
-        result = prime * result + rootDirectory.hashCode();
+        try {
+			result = prime * result + rootDirectory.toURI().hashCode();
+		} catch (URISyntaxException e) {
+			// rootDirectory does DNS resolution.
+		}
         return result;
     }
 
@@ -179,6 +188,7 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
      * @param setName the name of the label set
      * @param basename the "labels.xml" or equivalent for the set
      * @param dictionaryName the "names.xml" or equivalent for the set
+     * @return a LabelSetDescriptor with the multiple roots
      */
     public static LabelSetDescriptorImpl getWithMultipleRoots(Function<HumanLanguage,URL> rootMap, HumanLanguage baseLanguage, String setName, String basename, String dictionaryName) {
         return new MultipleRoots(baseLanguage, setName, basename, dictionaryName, rootMap);
@@ -213,6 +223,21 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
             }
             return new MultipleRoots(otherLanguage, getLabelSetName(), getBaseName(), getDictionaryName(), this.rootMap);
         }
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(rootMap);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (!super.equals(obj) || getClass() != obj.getClass())
+				return false;
+			MultipleRoots other = (MultipleRoots) obj;
+			return Objects.equals(rootMap, other.rootMap);
+		}
     }
 
     /**

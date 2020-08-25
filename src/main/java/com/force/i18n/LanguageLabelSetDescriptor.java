@@ -35,7 +35,7 @@ public interface LanguageLabelSetDescriptor extends LabelSetDescriptor {
     LanguageLabelSetDescriptor getForOtherLanguage(HumanLanguage otherLanguage);
 
     /**
-     * Interface for grammatical label sets (i.e. have a dictionary file)
+     * Interface for grammatical label sets (that is have a dictionary file)
      */
     public interface GrammaticalLabelSetDescriptor extends LanguageLabelSetDescriptor {
         /**

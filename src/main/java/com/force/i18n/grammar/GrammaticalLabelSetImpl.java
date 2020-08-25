@@ -38,6 +38,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
     /**
      * @param dictionary the dictionary that was filled in by the parser
      * @param p the parser
+     * @throws IOException if there's an error with the parser
      */
     public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelFileParser p) throws IOException {
         super(p);
@@ -52,6 +53,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
      * @param dictionary the dictionary that was filled in by the parser
      * @param p the parser
      * @param data the data that contains the public section names
+     * @throws IOException if there's an error with the parser
      */
     public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelFileParser p, PropertyFileData data) throws IOException {
         super(p,data);
@@ -81,6 +83,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
      * However, we provide this capability to our localization team.
      * @param descriptor the descriptor to use to create the test label set
      * @return a test label set that can be used
+     * @throws IOException if there's an error with the parser
      */
     public static GrammaticalLabelSet getTestLabelSet(GrammaticalLabelSetDescriptor descriptor) throws IOException {
         return getTestLabelSet(descriptor, null);

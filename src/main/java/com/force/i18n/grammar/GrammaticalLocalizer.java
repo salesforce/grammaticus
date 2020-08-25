@@ -71,6 +71,9 @@ public class GrammaticalLocalizer extends BaseLocalizer {
      * label keys to other labels.  Or other weird scenarios where putting the label debug info
      * into the returned String just breaks stuff.
      *
+     * @param section the section name of the label
+     * @param name the key of the label
+     * @return the label without any hint, if hints are enabled.
      */
     public String getLabelNoHint(String section, String name) {
         return super.getLabel(section, name);
@@ -91,6 +94,7 @@ public class GrammaticalLocalizer extends BaseLocalizer {
      * @param    section    same as getLabel(section, key)
      * @param    key    same as getLabel(section, key)
      * @param    args    for <CODE>java.text.MessageFormat.format()</CODE>
+     * @return the formatted label
      */
     @Override
     public String getLabel(String section, String key, Object... args) {

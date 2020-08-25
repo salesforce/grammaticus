@@ -29,6 +29,8 @@ public class ConcurrentUniquefy<T> {
     /**
      * Look to see if the given value is already in the given string pool.
      * If so, return the one already in the pool.  Otherwise, add it to the pool.
+     * @param value the value to make unique
+     * @return the value or an equivalent already in the pool.
      */
     public T unique(T value) {
         if (value == null) return null;

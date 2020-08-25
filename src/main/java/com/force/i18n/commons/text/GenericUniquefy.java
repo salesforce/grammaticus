@@ -55,6 +55,8 @@ public class GenericUniquefy<T> {
     /**
      * Look to see if the given value is already in the given pool.
      * If so, return the one already in the pool.  Otherwise, add it to the pool.
+     * @param value the value to uniquefy
+     * @return the exact same object or the equivalent object the pool
      */
     public T unique(T value) {
         if (value == null) {

@@ -161,7 +161,7 @@ abstract class DravidianDeclension extends LanguageDeclension {
 
     @Override
     public List<? extends AdjectiveForm> getAdjectiveForms() {
-        return Collections.singletonList(SimpleModifierForm.SINGULAR);
+        return SimpleDeclension.ADJECTIVE_FORMS;
     }
 
     @Override
@@ -218,7 +218,7 @@ abstract class DravidianDeclension extends LanguageDeclension {
     }
 
     /**
-     * @see https://en.wikipedia.org/wiki/Telugu_language#Grammar
+     * @see <a href="https://en.wikipedia.org/wiki/Telugu_language#Grammar">Wikipedia: Telugu grammar</a>
      */
     static final class TeluguDeclension extends DravidianDeclension {
         public TeluguDeclension(HumanLanguage language) {
@@ -237,7 +237,7 @@ abstract class DravidianDeclension extends LanguageDeclension {
     }
 
     /**
-     * @see https://en.wikipedia.org/wiki/Kannada_grammar
+     * @see <a href="https://en.wikipedia.org/wiki/Kannada_grammar">Wikipedia: Kannada grammar</a>
      */
     static final class KannadaDeclension extends DravidianDeclension {
         public KannadaDeclension(HumanLanguage language) {
@@ -257,7 +257,7 @@ abstract class DravidianDeclension extends LanguageDeclension {
     }
 
     /**
-     * @see https://en.wikipedia.org/wiki/Malayalam_grammar
+     * @see <a href="https://en.wikipedia.org/wiki/Malayalam_grammar">Wikipedia: Malayalam grammar</a>
      */
     static final class MalayalamDeclension extends DravidianDeclension {
         public MalayalamDeclension(HumanLanguage language) {

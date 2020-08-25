@@ -105,8 +105,8 @@ class SimpleDeclension extends LanguageDeclension {
     }
 
     // All the forms you can request
-    private static final List<? extends NounForm> ALL_FORMS = Collections.singletonList(SimpleNounForm.SINGULAR);
-    private static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
+    static final List<? extends NounForm> ALL_FORMS = Collections.singletonList(SimpleNounForm.SINGULAR);
+    static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     @Override
     public List< ? extends NounForm> getAllNounForms() {
@@ -196,7 +196,7 @@ class SimpleDeclension extends LanguageDeclension {
     /**
      * Use this for an uninflected language, but with classifier words
      * @author stamm
-     * @since 1.1
+     * @since 0.6.0
      */
     static class SimpleDeclensionWithClassifiers extends SimpleDeclension implements LanguageDeclension.WithClassifiers {
         private final String defaultClassifier;
@@ -260,11 +260,11 @@ class SimpleDeclension extends LanguageDeclension {
     /**
      * Use this for uninflected nouns, but with classifier words
      * @author stamm
-     * @since 1.1
+     * @since 0.6.0
      */
     static class SimpleNounWithClassifier extends SimpleNoun implements Noun.WithClassifier {
-        private static final long serialVersionUID = 1L;
-        private String classifier;
+		private static final long serialVersionUID = 1L;
+		private String classifier;
         public SimpleNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
                 String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField,
                 boolean isCopiedFromDefault) {

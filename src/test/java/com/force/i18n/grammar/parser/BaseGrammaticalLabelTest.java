@@ -15,8 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import junit.framework.TestCase;
-
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.Renameable.StandardField;
@@ -26,6 +24,8 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.MapPropertyFileData;
 import com.force.i18n.settings.TrackingHandler;
 import com.google.common.collect.ImmutableMap;
+
+import junit.framework.TestCase;
 
 /**
  * @author stamm
@@ -71,7 +71,6 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
 
         baseDir = getLabelURL();
         assert TrackingHandler.exists(baseDir);
-
     }
 
     protected URL getBaseDir() { return this.baseDir;}
@@ -83,7 +82,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
     protected GrammaticalLabelSetDescriptor getDescriptor() {
         return getDescriptor(LanguageProviderFactory.get().getBaseLanguage());
     }
-    
+
     public static GrammaticalLabelSetDescriptor getSampleDescriptor(HumanLanguage language) throws IOException {
         return new LabelSetDescriptorImpl(getLabelJarURL(), language, LABEL_SET_NAME, LABELS_XML, NAMES_XML);
     }
@@ -211,6 +210,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
     public static class MockRenamingProvider implements RenamingProvider {
         private final Map<? extends HumanLanguage,Map<String,Noun>> nounMap;
         private boolean useRenamedNouns = true;
+        private double version = 0.0;
 
         public MockRenamingProvider(Map<? extends HumanLanguage,Map<String,Noun>> nounMap) {
             assert nounMap != null;
@@ -223,9 +223,7 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
          */
         public MockRenamingProvider(Noun... nouns) {
             this(makeNounMap(nouns));
-            assert nouns.length > 0;
         }
-
 
         /**
          * Convert a series of nouns into a noun map suitable for using in constructing a MockRenameable
@@ -302,6 +300,15 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         @Override
         public boolean displaySuffixInCalculatedPersonName() {
             return false;
+        }
+
+        public void setLabelVersion(double version) {
+        	this.version = version;
+        }
+
+        @Override
+        public double getLabelVersion() {
+            return this.version;
         }
     }
 
@@ -456,5 +463,4 @@ public abstract class BaseGrammaticalLabelTest extends TestCase {
         }
 
     }
-
 }

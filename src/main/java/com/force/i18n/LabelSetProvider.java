@@ -8,7 +8,7 @@
 package com.force.i18n;
 
 /**
- * @author shansma, stamm
+ * @author shansma, stamm, sgeneix
  */
 public interface LabelSetProvider {
     LabelSet getSet(HumanLanguage language);
@@ -20,7 +20,6 @@ public interface LabelSetProvider {
     void init();
 
     /**
-     * @author sgeneix
      * Used to initialize english labels only. To initialize other languages, use init method
      */
     void initEnglish();

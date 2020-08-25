@@ -10,20 +10,20 @@ package com.force.i18n;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.force.i18n.commons.text.*;
+import javax.annotation.Nullable;
+
+import com.force.i18n.commons.text.GenericTrieMatcher;
 import com.force.i18n.commons.text.GenericTrieMatcher.GenericTrieMatch;
+import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.settings.BasePropertyFile;
 import com.force.i18n.settings.ParameterNotFoundException;
 import com.google.common.base.Joiner;
-import com.google.common.base.Strings;
 import com.google.common.collect.*;
 
 /**
@@ -36,20 +36,17 @@ public enum LabelUtils {
 
     public static LabelUtils get() { return INSTANCE; }
 
-    private static final Logger logger = Logger.getLogger(LabelSetImpl.class.getName());
-
     /**
      * Will either throw an exception or log the missing label, depending on
      * whether or not we're in production
      *
      * @param message - String to return and log with
+     * @return the message with a prefix
      */
     public String processMissingLabel(String message) {
         if (I18nJavaUtil.isDebugging()) {
             throw new ParameterNotFoundException(message);
         } else {
-            logger.log(Level.WARNING, BasePropertyFile.MISSING_LABEL + message,
-                new ParameterNotFoundException(message));
             return BasePropertyFile.MISSING_LABEL + message;
         }
     }
@@ -106,8 +103,8 @@ public enum LabelUtils {
      * @param grammar XML snippet
      * @return a sample dictionary file containing the xml snippet inside the "names" tag
      */
-    public static String getSampleGrammarFile(String grammar) {
-        if (Strings.isNullOrEmpty(grammar)) {
+    public static String getSampleGrammarFile(@Nullable String grammar) {
+        if (grammar == null || grammar.isEmpty()) {
             return null;
         } else {
             // If they pasted in a whole file, it's fine.
@@ -155,6 +152,8 @@ public enum LabelUtils {
      * Given a non-nounified input, try to replace nouns and adjectives from the dictionary
      * with the appropriate noun xml tags.
      * @return the input string with Nouns and Articles converted to tags if possible
+     * @param input the string to nounify
+     * @param dictionary the dictionary with the nouns to use to match
      */
     public String nounify(String input, LanguageDictionary dictionary) {
         return new Nounifier(dictionary).nounifyString(input);

@@ -16,7 +16,7 @@ import com.google.common.collect.Maps;
  * Representation of the Plural Category as used in CLDR.  Each language needs to define how to manage
  * it.
  * @author stamm
- * @see http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
+ * @see <a href="http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html">CLDR Plural Rules</a>
  */
 public enum PluralCategory {
 	ZERO("0"),

@@ -51,6 +51,7 @@ public abstract class Article extends NounModifier {
 
     /**
      * @return the value of this adjective for the given form
+     * @param form the form to retrieve
      */
     protected abstract String getString(ArticleForm form);
 
@@ -99,6 +100,7 @@ public abstract class Article extends NounModifier {
      * This generally depends on the declensions "return all forms"
      * TODO: This should compare the difference between specified forms and
      * choose the most similar (ie. the smallest Hamming distance)
+     * @param name the name of the article, just for logging
      * @param requiredForms the set of required forms for articles in this language
      * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
      */
@@ -147,7 +149,7 @@ public abstract class Article extends NounModifier {
                         logger.fine("###\tError: The article " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.finer("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
+                        logger.fine("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
                     }
                 }
                 

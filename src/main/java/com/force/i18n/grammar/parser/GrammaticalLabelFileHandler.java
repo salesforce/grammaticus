@@ -224,6 +224,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             super(parent, null);
             this.tagName = localName;
             logger.log(getLabelLogLevel(), "###\tBad tag <" + localName + "> found, ignored: " + getLineNumberString());
+            parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
         }
 
         @Override
@@ -405,7 +406,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     logger.log(getLabelLogLevel(), "###\tBad alias name " + alias + " at " + parent.getName() + "." + getName() + " in " + getDictionary().getLanguage());
                     parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
                 } else {
-                    this.isAlias = true;
+                	this.isAlias = true;
                     getParser().addAlias(parent.getName(), getName(), alias.substring(0, i),
                         alias.substring(i + 1), getFile(), getLocator().getLineNumber());
                 }
@@ -983,7 +984,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     }
 
     /**
-     * Plural tag with choices &ltplural val="0"&gt; with embedded choices. The "non" when tags
+     * Plural tag with choices &lt;plural val="0"&gt; with embedded choices. The "non" when tags
      */
     private class PluralTag extends ChoiceTag<PluralCategory> {
         private final int num;
@@ -1025,7 +1026,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     }
 
     /**
-     * Plural tag with choices &ltplural val="0"&gt; with embedded choices. The "non" when tags
+     * Plural tag with choices &lt;plural val="0"&gt; with embedded choices. The "non" when tags
      */
     private class GenderTag extends ChoiceTag<LanguageGender> {
         @Override
@@ -1138,7 +1139,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 } else {
                     logger.log(getLabelLogLevel(), "###\tNoun form " + ta + " at " + currentSection.getName() + "."
                             + currentParam.getName() + " not defined for this type of language");
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
                 }
                 nid = ta.getApproximateNounForm();
             }
@@ -1155,7 +1155,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 if (ref == null) {
                     logger.log(getLabelLogLevel(), "###\tCustom entity <" + entityName + "> at " + currentSection.getName() + "."
                         + currentParam.getName() + " must have entity attribute");
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
                     return null;
                 }
                 return NounRefTag.getNounTag(realEntityName, ref, isCapital, escapeHtml, nid);
@@ -1254,6 +1253,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     // -----------------------------------------------------------
     // Label Debugger support
     // ----------------------------------------------------------
-    private static String BASE_FILE = null;
+    private String BASE_FILE = null;
     static final Map<String, String> SECTION_TO_FILENAME = new ConcurrentHashMap<String, String>();
 }

@@ -279,7 +279,7 @@ class HungarianDeclension extends ArticledDeclension {
 
     @Override
     public List< ? extends AdjectiveForm> getAdjectiveForms() {
-        return Collections.singletonList(SimpleModifierForm.SINGULAR);
+        return SimpleDeclension.ADJECTIVE_FORMS;
     }
 
     @Override

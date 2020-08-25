@@ -11,15 +11,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXNotSupportedException;
+import org.xml.sax.*;
 
-import com.google.common.collect.ImmutableSet;
 import com.force.i18n.commons.text.Uniquefy;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.settings.TrackingHandler;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * DictionaryParser class for the dictionary data file - sfdcnames.xml.
@@ -59,6 +57,10 @@ class LanguageDictionaryHandler extends TrackingHandler {
     static final String STANDARDFIELD = "standardField";
     static final String COUNTER = "counter";
 
+    static final String VERSION = "version";
+    static final String ATLEAST = "atLeast";
+
+
     static final String YES = "y";
     static final String NO = "n";
 
@@ -73,7 +75,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
      * package private ctor
      */
     LanguageDictionaryHandler(URL file, LanguageDictionaryParser parser) {
-    	super(file);
+        super(file);
         this.parser = parser;
         this.currentTag = null;
 
@@ -253,7 +255,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             this.n = parser.getDictionary().getOrCreateNoun(tableEnum, name, alias, type, gen, starts, access, isStandardField);
             // We're reparsing the same noun.  Create it instead
             if (parser.hasParentDictionarySameLang() && this.n == parser.getParentDictionary().getNoun(name, false)) {
-            	this.n = this.n.clone(gen, starts);
+                this.n = this.n.clone(gen, starts);
             }
             String classifier = uniquefy.unique(atts.getValue(COUNTER));
             if (classifier != null) {
@@ -265,9 +267,21 @@ class LanguageDictionaryHandler extends TrackingHandler {
             }
         }
 
-        // Noun only accepts <value> tag
+        Noun getNoun() {
+            return this.n;
+        }
+
+        Noun cloneNoun(LanguageGender genderOverride, LanguageStartsWith startsWithOverride) {
+            return this.n.clone(genderOverride, startsWithOverride);
+        }
+
+        // Noun only accepts <value> and <version> tag
         @Override
         void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            if (VERSION.equals(localName)) {
+                currentTag = new NounVersionOverrideTag(this, attributes);
+                return;
+            }
             if (!VALUE.equals(localName))
                 throw new SAXNotSupportedException("bad tag:" + localName);
 
@@ -293,7 +307,53 @@ class LanguageDictionaryHandler extends TrackingHandler {
     }
 
     /**
-     * <adjective> tag implementation
+     * &lt;noun&gt; tag implementation
+     */
+    class NounVersionOverrideTag extends BaseTag {
+        private double version;
+        private Noun parentNoun;
+        private Noun override;
+
+        NounVersionOverrideTag(NounTag parent, Attributes atts) {
+            super(parent, atts);
+
+            this.version = Double.parseDouble(atts.getValue(ATLEAST));
+
+            LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
+            LanguageGender gen = LanguageGender.fromLabelValue(atts.getValue(GENDER));
+            this.parentNoun = parent.getNoun();
+            this.override = parent.cloneNoun(gen, starts);
+        }
+
+        // Version only accepts <value> tag
+        @Override
+        void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            if (!VALUE.equals(localName))
+                throw new SAXNotSupportedException("bad tag:" + localName);
+
+            currentTag = new ValueTag(this, attributes);
+        }
+
+        @Override
+        void endElement() {
+            assert getParent() != null;
+            parser.getDictionary().setNounOverride(parentNoun, override, version);
+        }
+
+        @Override
+        void setString(String value, TermAttributes attrs) {
+            NounForm form = attrs.getExactNounForm();
+            if (form != null) {
+                parser.getDictionary().setString(this.override, form, value);
+            } else {
+                logger.fine("Attempting to set override '" + value + "' with invalid noun form " + attrs + " for " + parser.getDictionary().getLanguage());
+            }
+        }
+    }
+
+
+    /**
+     * &lt;adjective&gt; tag implementation
      */
     class AdjectiveTag extends BaseTag {
         private String name;
@@ -343,7 +403,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
     }
 
     /**
-     * <article> tag implementation
+     * &lt;article&gt; tag implementation
      */
     class ArticleTag extends BaseTag {
         private String name;
@@ -358,7 +418,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             this.art = parser.getDictionary().getOrCreateArticle(name, articleType);
             // We're reparsing the same noun.  Create it instead
             if (parser.hasParentDictionarySameLang() && this.art == parser.getParentDictionary().getArticle(name)) {
-            	this.art = parser.getDictionary().createArticle(name, articleType, false);
+                this.art = parser.getDictionary().createArticle(name, articleType, false);
             }
         }
 

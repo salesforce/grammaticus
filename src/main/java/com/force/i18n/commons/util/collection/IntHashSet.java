@@ -23,7 +23,7 @@ import com.google.common.annotations.Beta;
  * buckets.  Iterating over this set requires time proportional to the sum of
  * the <tt>IntHashSet</tt> instance's size (the number of elements) plus the
  * "capacity" of the backing <tt>IntHashMap</tt> instance (the number of
- * buckets).  Thus, it's very important not to set the initial capacity too
+ * buckets).  Thus, it's very important not to set the intial capacity too
  * high (or the load factor too low) if iteration performance is important.<p>
  *
  * <b>Note that this implementation is not synchronized.</b> If multiple
@@ -36,7 +36,7 @@ import com.google.common.annotations.Beta;
  * @see	    IntSet
  * @see	    IntHashMap
  * @see	    IntMap
- * @note  use {@link java.util.HashSet} or {@link java.util.EnumSet} instead.
+ * Note: use {@link java.util.HashSet} or {@link java.util.EnumSet} instead.
  */
 @Beta
 public class IntHashSet extends AbstractIntSet implements Serializable {

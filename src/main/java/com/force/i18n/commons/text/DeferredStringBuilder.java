@@ -71,7 +71,7 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
 
     /**
      * Version of appendQuicklyForEscapingWithoutSkips that avoids a downcast in most cases.
-     * @param c
+     * @param c the character to append
      */
     public void appendQuicklyForEscapingWithoutSkips(int c) {
         if (this.buf == null) {
@@ -92,7 +92,8 @@ public final class DeferredStringBuilder implements Appendable, CharSequence {
 
     /**
      * Call this if the first character of the sequence may be the same as the given sequence.
-     * Mostly, this applies to & becoming &amp;
+     * Mostly, this applies to &amp; becoming &amp;amp;
+     * @param csq the string to append
      */
     public void appendAsDifferent(CharSequence csq) {
         if (csq == null) return;

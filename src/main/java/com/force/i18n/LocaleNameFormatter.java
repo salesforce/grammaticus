@@ -51,6 +51,7 @@ public class LocaleNameFormatter {
     /**
      * @return true when the specified locale should be considered "formal", in that you should always use the full
      * name when addressing a user.
+     * @param locale the locale to test
      * @deprecated Use {@link LocaleAttributesUtil#isFormalLocale(Locale)} instead
      */
     @Deprecated
@@ -60,6 +61,7 @@ public class LocaleNameFormatter {
 
     /**
      * @return true when the specified locale uses an eastern name order.
+     * @param locale the locale to test
      * @deprecated Use {@link LocaleAttributesUtil#useEasternNameOrder(Locale)} instead
      */
     @Deprecated
@@ -180,7 +182,7 @@ public class LocaleNameFormatter {
     }
 
     /**
-     * Appends the name part specified to the buffer. If the buffer already contains characters (length > 0)
+     * Appends the name part specified to the buffer. If the buffer already contains characters (length &gt; 0)
      * then a space is appended before the part. The part is not appended if it is null. The value is also trimmed
      * of any leading or trailing white spaces.
      */

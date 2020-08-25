@@ -47,7 +47,7 @@ Specifing the type of first letter(or soft sound) of noun
     -->
 <#if decl.hasEndsWith()>
 <!ENTITY % ends     "endsWith  (${startsWithOrs})">
-<#else>    
+<#else>
 <!ENTITY % starts     "startsWith  (${startsWithOrs})">
 </#if>
 
@@ -111,10 +111,10 @@ noun element is used to specify translation of nouns
               other forms are not required, but can be specified and renamed
 <#if decl.hasGender()>    gender:  The gender of the noun as defined here
 </#if>
-<#if decl.hasStartsWith()>    endsWith: What kind of sound does this noun ends with
+<#if decl.hasEndsWith()>    endsWith: What kind of sound does this noun ends with
 <#elseif decl.hasStartsWith()>    startsWith: What kind of sound does this noun start with
 </#if>    -->
-<!ELEMENT noun (value)+>
+<!ELEMENT noun (value|version)+>
 <!ATTLIST noun
   name          ID          #REQUIRED
   %dnt;                 #IMPLIED
@@ -127,6 +127,24 @@ noun element is used to specify translation of nouns
 </#if>  %starts;                 <#if decl.hasStartsWith() && !decl.hasAutoDerivedStartsWith()> #REQUIRED
 <#else> "${decl.defaultStartsWith.dbValue}"
 </#if>  %standardField;	    #IMPLIED
+  >
+  
+<!--
+version element is used to specify noun translation override based on version
+    atLeast:   the version number that this should be used after.
+<#if decl.hasGender()>    gender:  The gender of the noun as defined here
+</#if>
+<#if decl.hasEndsWith()>    endsWith: What kind of sound does this noun ends with
+<#elseif decl.hasStartsWith()>    startsWith: What kind of sound does this noun start with
+</#if>    -->  
+<!ELEMENT version (value)+>
+<!ATTLIST version
+  atLeast   CDATA            #REQUIRED
+  %gender;                  <#if decl.hasGender()> #REQUIRED
+<#else> "${decl.defaultGender.dbValue}"
+</#if>  %starts;                 <#if decl.hasStartsWith() && !decl.hasAutoDerivedStartsWith()> #REQUIRED
+<#else> "${decl.defaultStartsWith.dbValue}"
+</#if>
   >
 
 </#if>

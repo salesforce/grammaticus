@@ -36,6 +36,7 @@ class NounRefTag extends TermRefTag {
     private final boolean escapeHtml;  // Should the entity name be "pre-escaped"
     // used if this is dynamic reference to entity like <entity entity="0"/>
     private final int index;
+    private final int hashCode;
 
     static NounRefTag getNounTag(String label, Integer refIndex, boolean isCapital, boolean escapeHtml,
             NounForm form) {
@@ -50,6 +51,17 @@ class NounRefTag extends TermRefTag {
         this.form = form;
         this.escapeHtml = escapeHtml;
         this.isCapital = isCapital;
+        this.hashCode = calcHashCode();
+    }
+
+    private int calcHashCode() {
+        int result = super.hashCode();
+        final int PRIME = 37;
+        result = result * PRIME + (form == null ? 0 : form.hashCode());
+        result = result * PRIME + index;
+        result = result<<2 + (isCapital ? 2 : 0)
+             + (escapeHtml ? 1 : 0);
+        return result;
     }
 
     public Integer getReference() {
@@ -182,13 +194,7 @@ class NounRefTag extends TermRefTag {
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = prime * result + (form == null ? 0 : form.hashCode());
-        result = prime * result + index;
-        result = prime * result + (isCapital ? 1231 : 1237);
-        result = prime * result + (escapeHtml ? 1231 : 1237);
-        return result;
+        return hashCode;
     }
     
     Noun resolveNoun(LanguageDictionary formatter, Renameable[] entities) {

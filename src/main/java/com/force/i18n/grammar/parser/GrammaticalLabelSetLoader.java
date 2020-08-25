@@ -144,7 +144,8 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     }
 
     /**
-     * Return a LabelSet based on the supplied descriptor.
+     * @return a LabelSet based on the supplied descriptor.
+     * @param desc the descriptor to load
      */
     protected GrammaticalLabelSet getSetByDescriptor(GrammaticalLabelSetDescriptor desc) {
         try {

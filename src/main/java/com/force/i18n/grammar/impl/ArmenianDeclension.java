@@ -23,7 +23,11 @@ import com.google.common.collect.ImmutableList;
  * Declension for Armenian, which is unsupported, but is different enough to warrant
  * its own class.  It has 7 cases and no gender.
  *
- * It has definite article
+ * TODO: It has definite article, but the definitiveness is dependent on the endsWith of the current
+ * word, along with the startsWith of the next word, and some special rules depending on dialect.  
+ * File an issue if you need better Armenian support, and we can look into supporting all of this.
+ * 
+ * There is an unchanging indefinite article, մի, so it isn't included in the grammar yet
  *
  * @author stamm
  */
@@ -171,7 +175,7 @@ class ArmenianDeclension extends LanguageDeclension {
 
     @Override
     public List< ? extends AdjectiveForm> getAdjectiveForms() {
-        return Collections.singletonList(SimpleModifierForm.SINGULAR);
+        return SimpleDeclension.ADJECTIVE_FORMS;
     }
 
     @Override

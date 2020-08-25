@@ -27,6 +27,8 @@ import com.force.i18n.commons.util.collection.ExpandableArray;
  * SharedKeyMap with a key that wasn't in the shared map will add that key to the shared map.
  * 
  * @author shansma
+ * @param <K> type for the key that will be shared
+ * @param <V> type for the value
  */
 public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializable {
 
@@ -47,6 +49,9 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * Takes a list of Maps and returns a list of SharedKeyMaps with the same mappings and values.
      * 
      * @param maps - the maps to re-create as SharedKeyMaps
+	 * @param <K> type for the key that will be shared
+	 * @param <V> type for the value
+	 * @return a new shareKeyMap
      */
     public static <K, V> List<SharedKeyMap<K, V>> createSharedKeyMaps(List<Map<K, V>> maps) {
         return createSharedKeyMaps(maps, false);
@@ -57,6 +62,9 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * 
      * @param maps - the maps to re-create as SharedKeyMaps
      * @param removeFromList - remove the passed-in maps from the list as they are processed, so they can be garbage collected.
+	 * @param <K> type for the key that will be shared
+	 * @param <V> type for the value
+	 * @return a new shareKeyMap
      */
     public static <K, V> List<SharedKeyMap<K, V>> createSharedKeyMaps(List<Map<K, V>> maps, final boolean removeFromList) {
         Map<K, Integer> keyToIndex = new HashMap<K, Integer>();
@@ -81,6 +89,9 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * 
      * @param keys - the keys that all your maps will (likely) use
      * @param numberOfMaps - the number of maps this function will create for you
+	 * @param <K> type for the key that will be shared
+	 * @param <V> type for the value
+	 * @return a new shareKeyMap
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(List<K> keys, int numberOfMaps) {
         Map<K, Integer> keyToIndex = new HashMap<K, Integer>(keys.size() * 3 / 2);
@@ -105,6 +116,9 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * Creates a list of empty SharedKeyMaps that all share a single (empty) key map.
      * 
      * @param numberOfMaps - the number of maps this function will create for you
+	 * @param <K> type for the key that will be shared
+	 * @param <V> type for the value
+	 * @return a new shareKeyMap
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(int numberOfMaps) {
         Map<K, Integer> keyToIndex = new HashMap<K, Integer>();
@@ -123,6 +137,10 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
      * Creates a list of empty SharedKeyMaps that all use the key map of the specified SharedKeyMap.
      * 
      * @param numberOfMaps - the number of maps this function will create for you
+     * @param map the key map with which to share keys
+	 * @param <K> type for the key that will be shared
+	 * @param <V> type for the value
+	 * @return a new shareKeyMap
      */
     public static <K, V> List<SharedKeyMap<K, V>> createEmptySharedKeyMaps(int numberOfMaps, SharedKeyMap<K, V> map) {
         if (map == null)
@@ -140,6 +158,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
 
     /**
      * Creates a new shared key map that shares the keymap of map.
+     * @param map the shared key map
      */
     public SharedKeyMap(SharedKeyMap<K, ? extends V> map) {
         this.keyToIndex = map.keyToIndex;
@@ -431,7 +450,7 @@ public class SharedKeyMap<K, V> extends AbstractMap<K, V> implements Serializabl
     }
 
     /**
-     * Returns the number of entries in the keymap. This isn't something you should generally care about,
+     * @return the number of entries in the keymap. This isn't something you should generally care about,
      * but if you're the curious type, here it is. It's also useful if you're serializing SharedKeyMaps
      * one by one -- since the keymap is always appended to, and entries are never modified or removed,
      * keyMapSize() will change whenever the contents of the keymap have changed (and thus need to be

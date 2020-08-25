@@ -187,6 +187,7 @@ public interface HumanLanguage extends Serializable{
     	/**
     	 * @return <tt>true</tt> if the language is simplified chinese (which is
     	 * signified by the country, and not the language)
+    	 * @param language the language to test
     	 */
     	public static boolean isSimplifiedChinese(HumanLanguage language) {
     		switch (language.getLocaleString()) {
@@ -199,6 +200,7 @@ public interface HumanLanguage extends Serializable{
     	}
     	
     	/**
+    	 * @param language the language to test
     	 * @return <tt>true</tt> if the language needs dotted i case folding
     	 * (turkish)
     	 */
@@ -210,6 +212,7 @@ public interface HumanLanguage extends Serializable{
 
     	
         /**
+    	 * @param language the language to test
          * @return the default language encoding charset to use for the language
          */
         public static String getDefaultFileEncoding(HumanLanguage language) {
@@ -238,6 +241,7 @@ public interface HumanLanguage extends Serializable{
 
         /**
          * Method used to make sure that file names are encoded specially for japanese users on AP0
+    	 * @param language the language to test
          * @param forWindows is the file being downloaded on a windows device, where MS932 should be used for japanese
          * @return the encoding used for the file name in the servlet
          */
@@ -253,6 +257,7 @@ public interface HumanLanguage extends Serializable{
          * Return the user email encoding, which differs from the email encoding for
          * Thai and Korean for reasons I don't understand.
          * TODO: Why is this different from alternate?  Really.  What the hell
+    	 * @param language the language to test
          * @return the default user email encoding charset to use for the language
          */
         public static String getDefaultUserEmailEncoding(HumanLanguage language) {
@@ -280,6 +285,7 @@ public interface HumanLanguage extends Serializable{
         }
 
         /**
+    	 * @param language the language to test
          * @return the email encoding to use when sending out emails in the given language
          * Same as file encoding, except it wants to use UTF-8 whenever possible, unlike
          * use emails. This is the old behavior from the old localizer
@@ -297,6 +303,7 @@ public interface HumanLanguage extends Serializable{
         /**
          * Return the value with the "case folded" using the unicode algorithm
          * for lowercase based on the current user language
+    	 * @param language the language to test
          * @param input the string to be case folded (i.e. lowercased)
          * @return the string with converted to lowercase
          * @see CaseFolder#toFoldedCase(String, boolean)

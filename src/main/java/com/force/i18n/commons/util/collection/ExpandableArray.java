@@ -9,6 +9,7 @@ package com.force.i18n.commons.util.collection;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import com.google.common.annotations.Beta;
@@ -21,7 +22,7 @@ import com.google.common.annotations.Beta;
  * values, an ExpandableArray will simply overwrite values. And while if you try to set at a value past the
  * end of an array list, you'll get an ArrayIndexOutOfBounds exception, if you do it on an
  * ExpandableArray, it will happily set it for you. This is fairly similar to an IntHashMap,
- * but more lightweight. Examples:<P>
+ * but more lightweight. Examples:
  * <PRE>
  *
  *    arrayList.set(0, two);
@@ -32,7 +33,7 @@ import com.google.common.annotations.Beta;
  *    arrayList.get(2) == two
  *
  * </PRE>
- * but:<P>
+ * but
  * <PRE>
  *
  *    expandableArray.set(0, two);
@@ -43,13 +44,13 @@ import com.google.common.annotations.Beta;
  *    expandableArray.get(2) == null
  *
  * </PRE>
- * and:<P>
+ * and:
  * <PRE>
  *
  *    arrayList.set(99, ninetyNine);    // throws ArrayIndexOutOfBounds
  *
  * </PRE>
- * but:<P>
+ * but:
  * <PRE>
  *
  *    expandableArray.set(99, ninetyNine);
@@ -193,6 +194,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
     /**
      * Returns 1 + the index of the highest non-null value. This is useful as an upper bound in a
      * for loop to iterate through the values in this ExpandableArray.
+     * @return the size of the expandable array
      */
     public int size() {
         return this.maxNonNullIndex + 1;
@@ -235,6 +237,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * <i>only</i> if the caller knows that the list does not contain any
      * <tt>null</tt> elements.
      *
+     * @param <T> the type of the array to return
      * @param a the array into which the elements of the list are to
      *      be stored, if it is big enough; otherwise, a new array of the
      *      same runtime type is allocated for this purpose.
@@ -261,6 +264,7 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * Returns an array containing all of the elements in this list
      * in the correct order.
      *
+     * @param <T> the type of the array to return
      * @param clazz the class of the array that should be constructed
      * to hold the element.
      * @return an array containing all of the elements in this list
@@ -329,6 +333,10 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * <code>size</code> elements in <code>array</code>. If <code>size</code> is
      * greater than the length of <code>array</code>, the remaining
      * elements in the resulting array will be null.
+     * @param array the array to slice
+     * @param size the size of the array to keep
+     * @param <T> the type of the array
+     * @return a subarray of the array starts with 0 and ending with size
      */
     public static <T> T[] resizeArray(T[] array, int size) {
         return subArray(array, 0, size);
@@ -344,6 +352,12 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      *
      * If <code>end</code> is greater than the size of the array, it will create a
      * result array with nulls in those spots.
+     * @param array the array to slice
+     * @param start the position to start with
+     * @param end the position to end with
+     * @param <T> the type of the array
+     * @return a subarray of the array
+     * @see Arrays#copyOfRange(Object[], int, int)
      */
     @SuppressWarnings("unchecked")
     public static <T> T[] subArray(T[] array, int start, int end) {

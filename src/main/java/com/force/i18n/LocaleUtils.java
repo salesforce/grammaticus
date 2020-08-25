@@ -25,27 +25,33 @@ public enum LocaleUtils {
     public static LocaleUtils get() { return INSTANCE; }
 
     // TODO: The number of locales in the system is rather small, but we should probably use a ConcurrentLruMap just in case.
-    private static final ConcurrentMap<Locale,Locale> uniqueLocaleMap = new ConcurrentHashMap<Locale,Locale>(64, .75f, 2);
+    private static final ConcurrentMap<String,Locale> uniqueLocaleMap = new ConcurrentHashMap<String,Locale>(64, .75f, 2);
 
     /**
-     * Returns a locale for language-only ("en") or language/country ("en_UK")
+     * @return a locale for language-only ("en") or language/country ("en_UK")
      * iso codes
+     * @param isoCode the isoCode to search
      */
     public Locale getLocaleByIsoCode(String isoCode) {
         if (isoCode == null) return null;
+        Locale oldValue = uniqueLocaleMap.get(isoCode);
+        if (oldValue != null) return oldValue;
+        Locale newValue=null;
         if (isoCode.length() == 2) {
-            return uniqueifyLocale(new Locale(isoCode));
+            newValue = new Locale(isoCode);
         } else if (isoCode.length() == 5) {
             String countryIsoCode = isoCode.substring(3, 5);
             String langIsoCode = isoCode.substring(0, 2);
-            return uniqueifyLocale(new Locale(langIsoCode, countryIsoCode));
+            newValue = new Locale(langIsoCode, countryIsoCode);
         } else {
             List<String> split = Lists.newArrayList(Splitter.on('_').split(isoCode));
             String language = split.get(0);
             String country = split.size() > 1 ? split.get(1) : "";
             String variant = split.size() > 2 ? split.get(2) : "";
-            return uniqueifyLocale(new Locale(language, country, variant));
+            newValue = new Locale(language, country, variant);
         }
+        if (newValue != null) uniqueLocaleMap.put(isoCode, newValue);
+        return newValue;
     }
 
     public Locale getLocaleFromDbString(String value) {
@@ -78,20 +84,5 @@ public enum LocaleUtils {
          } else {
              return null;
          }
-     }
-
-     /**
-      * If you're going to cache a locale, it should call this function so that it caches
-      * @param value the locale to uniquify
-      * @return the unique locale
-      */
-      static Locale uniqueifyLocale(Locale value) {
-         if (value == null)
-             return null;
-         Locale oldValue = uniqueLocaleMap.get(value);
-         if (oldValue != null)
-             return oldValue;
-         uniqueLocaleMap.put(value, value);
-         return value;
      }
 }

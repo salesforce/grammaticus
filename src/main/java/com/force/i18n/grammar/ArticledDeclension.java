@@ -104,6 +104,7 @@ public abstract class ArticledDeclension extends LanguageDeclension {
      * TODO: Remove this when it's unnecessary (i.e. when these are all in the sfdcnames.xml file)
      * TODO: This isn't super useful for languages that postpend articles.
      * @param form the article form to return
+     * @param articleType the article type you want (indefinite/definite)
      * @return the default article string from java
      */
     protected abstract String getDefaultArticleString(ArticleForm form, LanguageArticle articleType);

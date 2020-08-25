@@ -91,6 +91,11 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
 
     /**
      * @return the object for the section and param in either the main or fallback, logging bad label feedback if necessary
+     * @param section the section name of the label
+     * @param param the param key of the label
+     * @param throwSettingsSectionNotFoundException throw SettingsSectionNotFoundException
+     * @param doLogFallback create a warning to log for use of fallback string (which is bad for translated languages, but fine for language variants)
+     * @throws SettingsSectionNotFoundException if the section isn't found and throwSettingsSectionNotFoundException is true.
      */
     protected Object ask_inner_get(String section, String param, boolean throwSettingsSectionNotFoundException, boolean doLogFallback) throws SettingsSectionNotFoundException {
         if (doLogFallback) {
@@ -275,7 +280,7 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
     }
 
     /**
-     * Use the serialization proxy for random noun forms (with a 7-ish byte cost)
+     * @return the serialization proxy for random noun forms (with a 7-ish byte cost)
      * If you have a map, using SerializeMap below is *much* better
      */
     protected final Object writeReplace() {

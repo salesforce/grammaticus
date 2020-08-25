@@ -32,7 +32,6 @@ public interface IntIterator {
      * Returns the next element in the iteration.
      *
      * @return the next element in the iteration.
-     * @exception NoSuchElementException iteration has no more elements.
      */
     int next();
     

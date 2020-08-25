@@ -58,9 +58,7 @@ class BalticDeclension extends LanguageDeclension {
         for (LanguageNumber number : getAllowedNumbers()) {
             for (LanguageGender gender : getRequiredGenders()) {
                 for (LanguageCase caseType : getRequiredCases()) {
-                    for (LanguageArticle article : getAllowedArticleTypes()) {
-                        adjBuilder.add(new BalticAdjectiveForm(this, number, gender, caseType, article, adjOrdinal++));
-                    }
+                    adjBuilder.add(new BalticAdjectiveForm(this, number, gender, caseType, adjOrdinal++));
                 }
             }
         }
@@ -76,17 +74,15 @@ class BalticDeclension extends LanguageDeclension {
 		private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
-        private final LanguageArticle article;
 
-        public BalticAdjectiveForm(LanguageDeclension declension, LanguageNumber number, LanguageGender gender,LanguageCase caseType, LanguageArticle article, int ordinal) {
+        public BalticAdjectiveForm(LanguageDeclension declension, LanguageNumber number, LanguageGender gender,LanguageCase caseType, int ordinal) {
             super(declension, ordinal);
             this.number = number;
             this.gender = gender;
             this.caseType = caseType;
-            this.article = article;
         }
 
-        @Override public LanguageArticle getArticle() { return this.article; }
+        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
@@ -94,7 +90,7 @@ class BalticDeclension extends LanguageDeclension {
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
 		@Override
 		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
+			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
 		}
     }
 
@@ -192,11 +188,6 @@ class BalticDeclension extends LanguageDeclension {
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
         return SlavicDeclension.WEST_SLAVIC_CASES_NO_VOC;
-    }
-
-    @Override
-    public Set<LanguageArticle> getAllowedArticleTypes() {
-        return Collections.singleton(LanguageArticle.ZERO);
     }
 
     @Override
