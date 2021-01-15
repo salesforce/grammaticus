@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -29,8 +29,8 @@ public interface LanguageLabelSetDescriptor extends LabelSetDescriptor {
      * Return a label set descriptor for the other language.  This allows the
      * roots of different languages to be different for different languages
      * @param otherLanguage the other language for which to return the descriptor
-     * @return a LabelSetDescriptor suitable for using the other language, or <tt>this</tt>
-     * if getLanguage() == otherLanguage
+     * @return a LabelSetDescriptor suitable for using the other language, or {@code this}
+     * if {@code getLanguage() == otherLanguage}
      */
     LanguageLabelSetDescriptor getForOtherLanguage(HumanLanguage otherLanguage);
 

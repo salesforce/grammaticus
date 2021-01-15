@@ -114,13 +114,13 @@ public abstract class Adjective extends NounModifier {
      * choose the most similar (ie. the smallest Hamming distance)
      * @param name the name of the key for logging
      * @param requiredForms the set of required forms for adjectives in this language
-     * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
+     * @return {@code true} if the forms provided are valid.  Also fills in missing forms if necessary
      */
     public boolean defaultValidate(String name, Set<? extends AdjectiveForm> requiredForms) {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.fine("###\tError: The adjective " + name + " is missing required " + form + " form");
+                    logger.info("###\tError: The adjective " + name + " is missing required " + form + " form");
                     // TODO: uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -173,10 +173,10 @@ public abstract class Adjective extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
+                        logger.info("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.fine("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
+                        logger.info("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
                     }
                 }
 

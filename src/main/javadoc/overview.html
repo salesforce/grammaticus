@@ -4,8 +4,8 @@
     <TITLE>Grammaticus API Overview</TITLE>
   </HEAD>
   <BODY>
-<h4>Grammaticus is a localization library that allows the end users the ability
-to rename nouns while maintaining grammatical correctness. </h4>
+<h1>Grammaticus is a localization library that allows the end users the ability
+to rename nouns while maintaining grammatical correctness. </h1>
 This library was
 built to support the needs of allowing an end-user or customer to change the
 names of things used in an application. Those things are referred to as
@@ -14,12 +14,12 @@ names of things used in an application. Those things are referred to as
 Salesforce has a feature called "Rename Tabs &amp; Labels" which lets
 administrators change the name of standard Salesforce objects such as
 Account, Contact, and Task. However, the application often wants to display a
-string such as <tt>Open an Account</tt>tt>, which if you renamed <tt>Account</tt> to <tt>Client</tt>, would
+string such as <code>Open an Account</code>, which if you renamed <code>Account</code> to <code>Client</code>, would
 look strange and grammatically incorrect: Open an Client. In order to support
 this feature, a custom label file format used. To easy the burden of
 translators and the use of translation memory, the label file format is XML
 and split into sections and keys. Use XML entities to represent the nouns,
-adjectives, and articles, such as <tt>Open &lt;a/&gt; &lt;Account/&gt;</tt> for the label above.
+adjectives, and articles, such as <code>Open &lt;a/&gt; &lt;Account/&gt;</code> for the label above.
 
 Use of this library puts extra burden on your developers and localizers to
 make sure that you neither hard-code names of renameable nouns nor use string
@@ -58,7 +58,7 @@ customers will be allowed to change in each form for the language</li>
 may need to conjugate for your customers </li>
 <li>labels.xml (and imports): The labels
 themselves.</li>
-</ul> 
+</ul>
 
 You can load labels from a file system, from a jar file, or from
 a known URL. Some helpful classes around managing IniFiles are included as

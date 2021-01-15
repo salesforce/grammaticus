@@ -237,10 +237,10 @@
         <param name="MalformedDomain">Neplatná doména</param>
         <param name="ReadOnly">Toto pole nemůžete upravovat.</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1088,7 @@
         <param name="Default">--Výchozí--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Nelze použít**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1517,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Spuštění dialogu</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Výsledky hledání</param>
         <param name="Recent">Nedávno zobrazené</param>
@@ -1564,9 +1564,9 @@
         <param name="access_failed_alt">Obrázek není dostupný z následující důvodů: Nemáte oprávnění k jeho zobrazení nebo byl ze systému odebrán.</param>
         <param name="weekly_export_folder">Jiná načtená majetková záruka/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1577,7 @@
         <param name="Failure_message">Vytváření se nezdařilo.</param>
         <param name="Common_success_message">Vytváření bylo úspěšné.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Požádat o omezení licence</param>
         <param name="pageheader">Vyplňte prosím všechna požadovaná políčka pro odeslání vaší žádosti o omezení licence. Je to nejrychlejší způsob zpracování vaší žádosti.  Nezadávejte více požadavků o tytéž licence, mohlo by dojít ke zbytečným prodlevám.</param>
@@ -1738,8 +1738,8 @@
         <param name="number_shown_adjust_all_link">vše</param>
         <param name="last_page">Zpět na předchozí stránku</param>
         <param name="last_list">Zpět na seznam</param>   <!-- aliased across labels; do not change -->
-        <param name="last_type_list">Zpět na seznam:  <Entities/></param>
-        <param name="last_type_list_conn">Zpět na seznam: položky <Entities/> od klientel</param>
+        <param name="last_type_list">Zpět na seznam:  <Entity plural="y"/></param>
+        <param name="last_type_list_conn">Zpět na seznam: položky <Entity plural="y"/> od klientel</param>
         <param name="last_suggested_solution_list">Zpět na seznam doporučených <solutions case="g"/></param>
         <param name="last_solution_search_list">Zpět na výsledky vyhledávání <solution case="g"/></param>
         <param name="last_detail">{0}: {1}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
@@ -1804,8 +1804,8 @@
         <param name="useWildcardsWithSearch">Použitím zástupného znaku „*“ vedle jiného znaku lze dosáhnout lepších výsledků při vyhledávání.</param>
         <param name="error_lookup_multiple_matches_ile">Bylo nalezeno několik položek.&lt;br&gt;Klepněte na ikonu a upřesněte vyhledávání.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Rozbalit seznam</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Rozbalený seznam</param>
@@ -1840,7 +1840,7 @@
         <param name="selections">Výběry</param>
         <param name="assignLicensesDescription">Zaškrtněte políčko vedle každého balíčku, který chcete přidělit k tomuto uživateli a klepněte na položku Přidělit. Zaškrtávací políčko chybí, pokud balíček nemá dostatek oprávnění, pokud platnost balíčku vypršela nebo byla pozastavena.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1848,10 @@
         <param name="3">Internetový obchod</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Potvrzení</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Informace</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1953,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

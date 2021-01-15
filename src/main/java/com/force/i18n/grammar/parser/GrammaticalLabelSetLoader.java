@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,8 +9,10 @@ package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
@@ -36,6 +38,8 @@ import com.google.common.util.concurrent.UncheckedExecutionException;
  * @author nveeser,stamm
  */
 public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
+    private static final Logger logger = Logger.getLogger(GrammaticalLabelSetLoader.class.getName());
+
     private static final boolean USE_SHARED_KEYS_DEFAULT = true;  // You really want this, so it isn't an option
 
     //@GuardedBy("itself") // this is passed as seed data to multiple threads and modifications need to be synchronized
@@ -63,10 +67,10 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      */
     @Override
     public void resetMap() {
-    	if(parentProvider != null) { // Invalidate parent loader cache.
-    		parentProvider.resetMap();
-    	}
-    	
+        if (parentProvider != null) { // Invalidate parent loader cache.
+            parentProvider.resetMap();
+        }
+
         if (I18nJavaUtil.isDebugging()) {
             cache.invalidateAll();
         }
@@ -127,6 +131,8 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     }
 
     GrammaticalLabelSetImpl compute(GrammaticalLabelSetDescriptor desc) throws IOException {
+        long start = System.currentTimeMillis();
+
         LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, desc.getLanguage(), this.parentProvider);
         LanguageDictionary dictionary = dictParser.getDictionary();
         GrammaticalLabelFileParser parser = new GrammaticalLabelFileParser(dictionary, desc, this.parentProvider);
@@ -140,6 +146,11 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             ((SharedKeyMapPropertyFileData) propertyFileData).compact();
         }
         result.setLabelSectionToFilename(GrammaticalLabelFileHandler.SECTION_TO_FILENAME);
+
+        logger.info(this.getClass().getSimpleName() + ": " + desc.getLabelSetName() + ":  Created LabelSet."
+                + desc.getLanguage() + " in " + (System.currentTimeMillis() - start) + " ms. ("
+                + desc.getDictionaryFile().getPath() + ")");
+
         return result;
     }
 

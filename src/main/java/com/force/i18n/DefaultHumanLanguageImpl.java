@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Default Human Language Provider that's used if there's no other answer
- * 
+ *
  * This is an ok default implementation
  * @author stamm
  */
@@ -55,7 +55,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     PORTUGUESE_PT(new Locale("pt", "PT"), LanguageType.END_USER, 172.0), // Portuguese (European)
     CROATIAN(new Locale("hr"), LanguageType.END_USER, 170.0),
     SLOVENE(new Locale("sl"), LanguageType.END_USER, 170.0),
-    
+
     // platform languages
     FRENCH_CA(Locale.CANADA_FRENCH, LanguageType.PLATFORM, 168.0),
     GEORGIAN(new Locale("ka"), LanguageType.PLATFORM, 168.0),
@@ -88,27 +88,35 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     ARMENIAN(new Locale("hy"), LanguageType.PLATFORM, 174.0),
     HINDI(new Locale("hi"), LanguageType.PLATFORM, 174.0),
     URDU(new Locale("ur"), LanguageType.PLATFORM, 174.0),
-    
+
     BENGALI(new Locale("bn"), LanguageType.PLATFORM, 190.0),
     GERMAN_AT(new Locale("de", "AT"), LanguageType.PLATFORM, 190.0),
     GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
     TAMIL(new Locale("ta"), LanguageType.PLATFORM, 190.0),
-    
+
     AFRIKAANS(new Locale("af"), LanguageType.PLATFORM, 220.0),
     SWAHILI(new Locale("sw"), LanguageType.PLATFORM, 220.0),
     ZULU(new Locale("zu"), LanguageType.PLATFORM, 220.0),
     XHOSA(new Locale("xh"), LanguageType.PLATFORM, 220.0),
-    
+
     TELUGU(new Locale("te"), LanguageType.PLATFORM, 220.0),
     MALAYALAM(new Locale("ml"), LanguageType.PLATFORM, 220.0),
     KANNADA(new Locale("kn"), LanguageType.PLATFORM, 220.0),
     MARATHI(new Locale("mr"), LanguageType.PLATFORM, 220.0),
     GUJARATI(new Locale("gu"), LanguageType.PLATFORM, 220.0),
-    
+
     MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
     BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
     PERSIAN(new Locale("fa"), LanguageType.PLATFORM, 224.0),
-       
+    KHMER(new Locale("km"), LanguageType.PLATFORM, 228.0),
+    AMHARIC(new Locale("am"), LanguageType.PLATFORM, 230.0),
+
+    KAZAKH(new Locale("kk"), LanguageType.PLATFORM, 232.0),
+    HAITIAN_CREOLE(new Locale("ht"), LanguageType.PLATFORM, 232.0),
+    SAMOAN(new Locale("sm"), LanguageType.PLATFORM, 232.0),
+    HAWAIIAN(new Locale("haw"), LanguageType.PLATFORM, 232.0),
+
+    
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ARABIC_BH(new Locale("ar", "BH"), LanguageType.PLATFORM, 194.0), //Arabic Bahrain
     ARABIC_EG(new Locale("ar", "EG"), LanguageType.PLATFORM, 194.0), //Arabic Egypt
@@ -129,20 +137,21 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
     CHINESE_SG(new Locale("zh", "SG"), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
     CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong
+    CHINESE_MY(new Locale("zh", "MY"), LanguageType.PLATFORM, 232.0), //Chinese (Traditional) Malaysian
 
     ENGLISH_HK(new Locale("en", "HK"), LanguageType.PLATFORM, 194.0), //English Hong Kong
     ENGLISH_IE(new Locale("en", "IE"), LanguageType.PLATFORM, 194.0), //English Ireland
     ENGLISH_SG(new Locale("en", "SG"), LanguageType.PLATFORM, 194.0), //English Singapore
     ENGLISH_ZA(new Locale("en", "ZA"), LanguageType.PLATFORM, 194.0), //English South Africa
-    
+
     FRENCH_BE(new Locale("fr", "BE"), LanguageType.PLATFORM, 194.0),  //French Belgium
     FRENCH_LU(new Locale("fr", "LU"), LanguageType.PLATFORM, 194.0),  //French Luxembourg
     FRENCH_CH(new Locale("fr", "CH"), LanguageType.PLATFORM, 194.0),  //French Switzerland
-    
+
     GERMAN_LU(new Locale("de", "LU"), LanguageType.PLATFORM, 194.0),  //German Luxembourg
-    
+
     ITALIAN_CH(new Locale("it", "CH"), LanguageType.PLATFORM, 194.0), //Italian Switzerland
-    
+
     SPANISH_AR(new Locale("es", "AR"), LanguageType.PLATFORM, 194.0), //Spanish Argentina
     SPANISH_BO(new Locale("es", "BO"), LanguageType.PLATFORM, 194.0), //Spanish Bolivia
     SPANISH_CL(new Locale("es", "CL"), LanguageType.PLATFORM, 194.0), //Spanish Chile
@@ -164,6 +173,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
     CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
     
+    
+    RUSSIAN_LT(new Locale("ru", "LT"), LanguageType.PLATFORM, 232.0), //Russian Lithuania
+    RUSSIAN_PL(new Locale("ru", "PL"), LanguageType.PLATFORM, 232.0), //Russian Poland
+    RUSSIAN_AM(new Locale("ru", "AM"), LanguageType.PLATFORM, 232.0), //Russian Armenia
+    
+
     ESPERANTO(new Locale("eo"), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
     ENGLISH_IL(new Locale("en", "IL"), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
     ;
@@ -393,25 +408,26 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             case SPANISH_AR:
             case SPANISH_BO:
             case SPANISH_CL:
-            case SPANISH_CO: 
+            case SPANISH_CO:
             case SPANISH_CR:
-            case SPANISH_DO: 
-            case SPANISH_EC: 
-            case SPANISH_SV:  
-            case SPANISH_GT:  
-            case SPANISH_HN:  
-            case SPANISH_NI:  
-            case SPANISH_PA:   
-            case SPANISH_PY:   
-            case SPANISH_PE:    
-            case SPANISH_PR:    
-            case SPANISH_US:    
-            case SPANISH_UY:    
-            case SPANISH_VE:      
+            case SPANISH_DO:
+            case SPANISH_EC:
+            case SPANISH_SV:
+            case SPANISH_GT:
+            case SPANISH_HN:
+            case SPANISH_NI:
+            case SPANISH_PA:
+            case SPANISH_PY:
+            case SPANISH_PE:
+            case SPANISH_PR:
+            case SPANISH_US:
+            case SPANISH_UY:
+            case SPANISH_VE:
                 return SPANISH;
             case CHINESE_HK:
                 return CHINESE_TRAD;
             case CHINESE_SG:
+            case CHINESE_MY:
                 return CHINESE_SIMP ;
             case PORTUGUESE_PT:
                 return PORTUGUESE_BR;
@@ -427,6 +443,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             case ENGLISH_GB:
             case ENGLISH_CA:
             case ENGLISH_IL:
+            case HAWAIIAN:
                 return ENGLISH;
             case ITALIAN_CH:
                 return ITALIAN;
@@ -438,6 +455,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             case GERMAN_LU:
             case GERMAN_CH:
                 return GERMAN;
+            case RUSSIAN_LT:
+            case RUSSIAN_PL:
+            case RUSSIAN_AM:
+            	return RUSSIAN;
+            case HAITIAN_CREOLE:
+            	return FRENCH;
             default:
                 return null;
         }
@@ -521,7 +544,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         if (stored != null) return stored;
         return DefaultHumanLanguageImpl.ENGLISH;  // Default to english; sorry
     }
-    
+
     public void setDefaultLanguage(DefaultHumanLanguageImpl defaultLanguage) {
     	DEFAULT_LANGUAGE.set(defaultLanguage);
     }
@@ -634,12 +657,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         ALL_END_USER = Collections.unmodifiableList(allEndUser);
         ALL_PLATFORM_ONLY = Collections.unmodifiableList(allPlatformOnly);
     }
-    
-    
+
+
     public static final class DefaultHumanLanguageImplProvider extends LanguageProvider.Helper {
     	public DefaultHumanLanguageImplProvider() {
     		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values()));
     	}
-    	
+
     }
 }

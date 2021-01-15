@@ -47,7 +47,7 @@ public abstract class NounModifier extends GrammaticalTerm {
 
     /**
      * @param form the form to return
-     * @return the defined string for this modifier for the given form, or <tt>null</tt> if there is no string for that form
+     * @return the defined string for this modifier for the given form, or {@code null} if there is no string for that form
      */
     public abstract String getString(ModifierForm form);
 

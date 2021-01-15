@@ -60,7 +60,7 @@ public abstract class TermRefTag extends RefTag {
     /**
      * Abstract method to force subclasses to correctly implement equals
      * @param obj the other object being compared.
-     * @return <tt>true</tt> if the values of this reference, besides the tag, are equivalent.
+     * @return {@code true} if the values of this reference, besides the tag, are equivalent.
      */
     protected abstract boolean equalsValue(TermRefTag obj);
 

@@ -80,6 +80,12 @@ public final class LanguageConstants {
     public static final String MAORI = "mi";
     public static final String BURMESE = "my";
     public static final String PERSIAN = "fa";
+    public static final String KHMER = "km";
+    public static final String AMHARIC = "am";
+    public static final String KAZAKH = "kk";
+    public static final String SAMOAN = "sm";
+    public static final String HAWAIIAN = "haw";
+    public static final String HAITIAN_CREOLE = "ht";
     
     
     // platform languages

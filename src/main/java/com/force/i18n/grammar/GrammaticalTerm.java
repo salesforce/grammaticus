@@ -58,7 +58,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
      *
      * TODO: This may not be very necessary.
      * @param name the name of the term 
-     * @return <tt>true</tt> if the term is valid
+     * @return {@code true} if the term is valid
      */
     protected abstract boolean validate(String name);
 

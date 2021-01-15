@@ -297,6 +297,17 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
 
     /**
+     * Haitian Creole is a language based on french, but creolized to remove some complexity, but the 
+     * definite article is a very very complicated post-position based on 5 different ends-with variants.
+     */
+    static class HaitianCreoleDeclension extends UnsupportedLanguageDeclension {
+        public HaitianCreoleDeclension(HumanLanguage language) {
+			super(language);
+		}
+    }
+
+    
+    /**
      * Basque is a language isolate that uses agglutination to form most of the words.  Our grammar
      * engine is not designed to handle it.
      */

@@ -12,17 +12,17 @@ import java.io.Serializable;
 import com.google.common.annotations.Beta;
 
 /**
- * This class implements the <tt>IntSet</tt> interface, backed by a hash table
- * (actually a <tt>IntHashMap</tt> instance).  It makes no guarantees as to the
+ * This class implements the {@code IntSet} interface, backed by a hash table
+ * (actually a {@code IntHashMap} instance).  It makes no guarantees as to the
  * iteration order of the set; in particular, it does not guarantee that the
  * order will remain constant over time. <p>
  *
  * This class offers constant time performance for the basic operations
- * (<tt>add</tt>, <tt>remove</tt>, <tt>contains</tt> and <tt>size</tt>),
+ * ({@code add}, {@code remove}, {@code contains} and {@code size}),
  * assuming the hash function disperses the elements properly among the
  * buckets.  Iterating over this set requires time proportional to the sum of
- * the <tt>IntHashSet</tt> instance's size (the number of elements) plus the
- * "capacity" of the backing <tt>IntHashMap</tt> instance (the number of
+ * the {@code IntHashSet} instance's size (the number of elements) plus the
+ * "capacity" of the backing {@code IntHashMap} instance (the number of
  * buckets).  Thus, it's very important not to set the intial capacity too
  * high (or the load factor too low) if iteration performance is important.<p>
  *
@@ -48,15 +48,15 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
     private static final Object PRESENT = new Object();
 
     /**
-     * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
-     * default capacity and load factor, which is <tt>0.75</tt>.
+     * Constructs a new, empty set; the backing {@code HashMap} instance has
+     * default capacity and load factor, which is {@code 0.75}.
      */
     public IntHashSet() {
         this.map = new IntHashMap<Object>();
     }
 
     /**
-     * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
+     * Constructs a new, empty set; the backing {@code HashMap} instance has
      * the specified initial capacity and the specified load factor.
      *
      * @param      initialCapacity   the initial capacity of the hash map.
@@ -69,9 +69,9 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
     }
 
     /**
-     * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
+     * Constructs a new, empty set; the backing {@code HashMap} instance has
      * the specified initial capacity and default load factor, which is
-     * <tt>0.75</tt>.
+     * {@code 0.75}.
      *
      * @param      initialCapacity   the initial capacity of the hash table.
      * @throws     IllegalArgumentException if the initial capacity is less
@@ -102,10 +102,10 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
     }
 
     /**
-     * Returns <tt>true</tt> if this set contains the specified element.
+     * Returns {@code true} if this set contains the specified element.
      *
      * @param o element whose presence in this set is to be tested.
-     * @return <tt>true</tt> if this set contains the specified element.
+     * @return {@code true} if this set contains the specified element.
      */
     @Override
     public boolean contains(int o) {
@@ -117,7 +117,7 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
      * present.
      *
      * @param o element to be added to this set.
-     * @return <tt>true</tt> if the set did not already contain the specified
+     * @return {@code true} if the set did not already contain the specified
      * element.
      */
     @Override
@@ -129,7 +129,7 @@ public class IntHashSet extends AbstractIntSet implements Serializable {
      * Removes the given element from this set if it is present.
      *
      * @param o object to be removed from this set, if present.
-     * @return <tt>true</tt> if the set contained the specified element.
+     * @return {@code true} if the set contained the specified element.
      */
     @Override
     public boolean remove(int o) {

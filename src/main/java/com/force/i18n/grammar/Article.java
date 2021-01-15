@@ -102,13 +102,13 @@ public abstract class Article extends NounModifier {
      * choose the most similar (ie. the smallest Hamming distance)
      * @param name the name of the article, just for logging
      * @param requiredForms the set of required forms for articles in this language
-     * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
+     * @return {@code true} if the forms provided are valid.  Also fills in missing forms if necessary
      */
     public boolean defaultValidate(String name, Set<? extends ArticleForm> requiredForms) {
         for (ArticleForm form : getDeclension().getArticleForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.fine("###\tError: The article " + name + " is missing required " + form + " form");
+                    logger.info("###\tError: The article " + name + " is missing required " + form + " form");
                     // TODO: Uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -146,10 +146,10 @@ public abstract class Article extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.fine("###\tError: The article " + name + " has no " + form + " form and no default could be found");
+                        logger.info("###\tError: The article " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.fine("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
+                        logger.info("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
                     }
                 }
                 

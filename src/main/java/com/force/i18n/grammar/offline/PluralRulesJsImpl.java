@@ -1,5 +1,5 @@
 /* 
- * Copyright (c) 2019, salesforce.com, inc.
+ * Copyright (c) 2021, salesforce.com, inc.
  * All rights reserved.
  * Licensed under the BSD 3-Clause license. 
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
@@ -37,7 +37,7 @@ public class PluralRulesJsImpl {
              case KANNADA:
              case GUJARATI:
              case PERSIAN:
-             case "am":return "function am(n) {return n >= 0 && n <= 1 ? 'one' : 'other';}";
+             case AMHARIC:return "function am(n) {return n >= 0 && n <= 1 ? 'one' : 'other';}";
              case MARATHI: // above function < ICU64
             	 return ONE;
             	 
@@ -89,6 +89,7 @@ public class PluralRulesJsImpl {
                      "return (n == 1) ? 'one' : (n == 2) ? 'two': ((t0 && n >= 3 && n <= 6)) ? 'few' : ((t0 && n >= 7 && n <= 10)) ? 'many' : 'other'}";
              case ITALIAN: return EXACT_ONE;
 
+             case HAWAIIAN: return EXACT_ONE;
              case "he":
              case HEBREW:return "function he(n) {\n"+
              	"var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n, n10 = t0 && s[0].slice(-1);\n"+
@@ -106,6 +107,7 @@ public class PluralRulesJsImpl {
              //case "jv":return noDiff;
              //case "jw":return noDiff;
              case GEORGIAN:return ONE;
+             case KAZAKH: return ONE;
              //case "km":return noDiff;
              //case "ko":return noDiff;
              //case "ky":return ONE;

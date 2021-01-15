@@ -91,23 +91,30 @@ public enum LanguageDeclensionFactory {
                 return new SlavicDeclension.RussianDeclension(language);
             case CHINESE:
             case JAPANESE:
-            case VIETNAMESE:
             case BURMESE:
                 return new SimpleDeclension.SimpleDeclensionWithClassifiers(language);
+            case VIETNAMESE:
+                return new SimpleDeclension.VietnameseDeclension(language);
             case THAI:
             case TAGALOG:
             case AFRIKAANS:
+            case KHMER:
                 return new SimpleDeclension(language);
             case KOREAN:
             	return new KoreanDeclension(language);
             case INDONESIAN:
             case MALAY:
             case MAORI:
+            case SAMOAN:
                 return new MalayoPolynesianDeclension(language);
+            case HAWAIIAN:
+                return new MalayoPolynesianDeclension.HawaiianDeclension(language);
             case HUNGARIAN:
                 return new HungarianDeclension(language);
             case TURKISH:
-                return new TurkishDeclension(language);
+                return new TurkicDeclension.TurkishDeclension(language);
+            case KAZAKH:
+                return new TurkicDeclension.KazakhDeclension(language);
             case FINNISH:
                 return new FinnishDeclension(language);
             case ROMANIAN:
@@ -118,6 +125,8 @@ public enum LanguageDeclensionFactory {
                 return new HebrewDeclension(language);
             case ARABIC:
                 return new ArabicDeclension(language);
+            case AMHARIC:
+            	return new AmharicDeclension(language);
             case GREEK:
                 return new GreekDeclension(language);
             case BULGARIAN:
@@ -191,6 +200,8 @@ public enum LanguageDeclensionFactory {
                 return new UnsupportedLanguageDeclension.MalteseDeclension(language);
             case PERSIAN:  // Arabic vs Persian native words have different declensions
             	return new UnsupportedLanguageDeclension.PersianDeclension(language);
+            case HAITIAN_CREOLE:
+            	return new UnsupportedLanguageDeclension.HaitianCreoleDeclension(language);
     	}
     	if (FAIL_ON_MISSING) {
     		throw new UnsupportedOperationException("Language has no defined declension; the build breaker edited UserLanguage");

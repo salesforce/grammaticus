@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -19,11 +19,11 @@ import com.force.i18n.commons.text.DeferredStringBuilder;
  * Interface for a Human Spoken Language, into which an application should be localized.
  * The assumption is that an enum (or enum-like object) will be created to support the set
  * of supported languages.
- * 
+ *
  * Usually there is a mapping from the language field of a locale to one of these languages,
  * but due to regional variation, a company may want to use a full locale to represent the human
  * language, especially for variants in Spanish, Portugese, German, and Chinese.
- * 
+ *
  * For the override html language, see this page: http://www.w3.org/International/articles/bcp47/
  * @author stamm
  */
@@ -82,7 +82,7 @@ public interface HumanLanguage extends Serializable{
      * user emails.
      */
     String getSystemEmailEncoding();
-	
+
     /**
      * @return the language to use as the fallback language for translations
      * The difference between this and fallback language is what the "fallback"
@@ -100,10 +100,10 @@ public interface HumanLanguage extends Serializable{
 	 * @return the language to use as the fallback language for labels that are not available in this language
 	 */
 	HumanLanguage getFallbackLanguage();
-	
-	
+
+
 	/**
-	 * @return whether this language is used for linguistic testing.  Esperanto is used in 
+	 * @return whether this language is used for linguistic testing.  Esperanto is used in
 	 * grammaticus for this.
 	 */
 	default boolean isTestOnlyLanguage() {
@@ -123,7 +123,7 @@ public interface HumanLanguage extends Serializable{
     /**
      * @return whether use of fallback strings in this language should be considered a problem.
 	 * Note: this should only applies to non-fully translated languages that don't have a fallback
-     * to a "normal" language. 
+     * to a "normal" language.
      */
 	boolean shouldLogFallbackStrings();
 
@@ -147,14 +147,16 @@ public interface HumanLanguage extends Serializable{
 	 * @see CaseFolder#toFoldedCase(String, boolean)
 	 */
 	String toFoldedCase(String input);
-	
+
     // Comparison and hashing
 
     /**
-     * @return <tt>true</tt> if the object 
      * Note: this library assumes that the set of human languages is finite and
      * established at the beginning of the application lifecycle (like an Enum).
      * So equality comparisons in this library may be made using ==.
+     *
+     * @param o the reference object with which to compare.
+     * @return {@code true} if this object is the same as the {@code o} argument; {@code false} otherwise.
      */
     @Override
 	boolean equals(Object o);
@@ -162,15 +164,15 @@ public interface HumanLanguage extends Serializable{
     /**
      * @return an integer that represents this language in the total set of human values.
      * The ordering of languages should be by ordinal.
-     * 
+     *
      * The "List" returned by the {@link LanguageProvider#getAll()} requires the
      * ordinal is the index in that list.
-     * 
-     * Note: this does assume that an Enum implements HumanLanguage.  I would recommend this. 
+     *
+     * Note: this does assume that an Enum implements HumanLanguage.  I would recommend this.
      * In any case, t
      */
     int ordinal();
-    
+
     /**
      * Helper methods for implementations of HumanLanguage.  In JDK8, this would be the
      * implementation for the interface, but alas, we support JDK7.
@@ -185,7 +187,7 @@ public interface HumanLanguage extends Serializable{
     	}
 
     	/**
-    	 * @return <tt>true</tt> if the language is simplified chinese (which is
+    	 * @return {@code true} if the language is simplified chinese (which is
     	 * signified by the country, and not the language)
     	 * @param language the language to test
     	 */
@@ -198,10 +200,10 @@ public interface HumanLanguage extends Serializable{
     		}
     		return false;
     	}
-    	
+
     	/**
     	 * @param language the language to test
-    	 * @return <tt>true</tt> if the language needs dotted i case folding
+    	 * @return {@code true} if the language needs dotted i case folding
     	 * (turkish)
     	 */
         public static boolean hasTurkicCaseFolding(HumanLanguage language) {
@@ -210,7 +212,7 @@ public interface HumanLanguage extends Serializable{
             		|| langStr.equals("az");
         }
 
-    	
+
         /**
     	 * @param language the language to test
          * @return the default language encoding charset to use for the language
@@ -232,8 +234,9 @@ public interface HumanLanguage extends Serializable{
             case SLOVAK:  case HEBREW: case ARABIC: case URDU: case GEORGIAN:
             case BOSNIAN: case MOLDOVAN: case SLOVENE: case MACEDONIAN: case CROATIAN:
             case LATVIAN: case LITHUANIAN: case MALTESE:
-            case RUSSIAN: 
+            case RUSSIAN:
             case BENGALI:
+            case KHMER:
             case TAMIL: return "UTF-8";
             default: return "ISO-8859-1";
             }
@@ -277,9 +280,10 @@ public interface HumanLanguage extends Serializable{
             case GEORGIAN:
             case BOSNIAN: case MOLDOVAN: case SLOVENE: case MACEDONIAN: case CROATIAN:
             case LATVIAN: case LITHUANIAN: case MALTESE: case MONTENEGRIN:
-            case RUSSIAN: 
+            case RUSSIAN:
             case BENGALI:
-            case TAMIL: return "UTF-8";
+            case TAMIL:
+            case KHMER: return "UTF-8";
             default: return "ISO-8859-1";
             }
         }
@@ -299,7 +303,7 @@ public interface HumanLanguage extends Serializable{
             default: return "UTF-8";
             }
         }
-        
+
         /**
          * Return the value with the "case folded" using the unicode algorithm
          * for lowercase based on the current user language
@@ -310,7 +314,7 @@ public interface HumanLanguage extends Serializable{
          */
         public static String toFoldedCase(HumanLanguage language, String input) {
             if (language.getLocale().getLanguage().equals(GREEK)) {
-                // TODO: This should be removed when we move CaseFolder.java into i18n 
+                // TODO: This should be removed when we move CaseFolder.java into i18n
                 // The grammatically correct handling of case folding (to lowercase)
                 // Greek sigma differs from the Unicode case folding mapping.
                 // There are two valid forms of lowercase sigma, σ and ς, and should be
@@ -330,7 +334,7 @@ public interface HumanLanguage extends Serializable{
                         // don't fold lowercase sigma
                         remap = CaseFolder.toFoldedCase(c, false);
                     }
-                    
+
                     if (remap == null) {
                         buf.append(c);
                     } else {
@@ -342,7 +346,7 @@ public interface HumanLanguage extends Serializable{
                 }
                 return buf.toString();
             }
-            
+
             return CaseFolder.toFoldedCase(input, language.hasTurkicCaseFolding());
         }
     }

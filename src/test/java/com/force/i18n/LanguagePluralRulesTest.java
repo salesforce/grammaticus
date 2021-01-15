@@ -6,7 +6,6 @@
  */
 package com.force.i18n;
 
-import java.math.BigDecimal;
 import java.util.Locale;
 
 import org.junit.Assert;
@@ -14,6 +13,7 @@ import org.junit.Test;
 
 import com.force.i18n.LanguagePluralRules.NumberType;
 import com.google.common.collect.ImmutableSet;
+import com.ibm.icu.math.BigDecimal;
 
 
 /**

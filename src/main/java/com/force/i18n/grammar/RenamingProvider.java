@@ -59,13 +59,13 @@ public interface RenamingProvider {
 
 
     /**
-     * @return <tt>true</tt> if renaming should be checked for standard nouns (i.e. not)
+     * @return {@code true} if renaming should be checked for standard nouns (i.e. not)
      */
     boolean useRenamedNouns();
 
     /**
      * Grammar engine switched in 164
-     * @return <tt>true</tt> if API version is less than 164
+     * @return {@code true} if API version is less than 164
      */
     boolean supportOldGrammarEngine();
 
@@ -81,14 +81,14 @@ public interface RenamingProvider {
     }
 
     /**
-     * @return <tt>true</tt> if the current User Context's Perm and Prefs allow them to see the Middle Name in
+     * @return {@code true} if the current User Context's Perm and Prefs allow them to see the Middle Name in
      *         calculated full people's names
      */
     // TODO - Not the best class name or place to put this method but this is the best we can do for now.
     boolean displayMiddleNameInCalculatedPersonName();
 
     /**
-     * @return <tt>true</tt> if the current User Context's Perm and Prefs allow them to see the Suffix in calculated
+     * @return {@code true} if the current User Context's Perm and Prefs allow them to see the Suffix in calculated
      *         full people's names
      */
     // TODO - Not the best class name or place to put this method but this is the best we can do for now.
