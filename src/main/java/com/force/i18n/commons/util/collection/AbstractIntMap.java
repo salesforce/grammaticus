@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,9 +12,9 @@ import java.util.Iterator;
 import com.google.common.annotations.Beta;
 
 /**
- * This class provides a skeletal implementation of the <tt>IntMap</tt>
+ * This class provides a skeletal implementation of the {@code IntMap}
  * interface, to minimize the effort required to implement this interface. <p>
- * 
+ *
  * This borrows heavily from java.util.AbstractMap
  *
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.

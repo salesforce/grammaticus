@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -15,7 +15,7 @@ import com.google.common.collect.ImmutableList;
 
 /**
  * Interface for the provider of the "set" of HumanLanguage
- * 
+ *
  * @author stamm
  */
 public interface LanguageProvider {
@@ -23,18 +23,18 @@ public interface LanguageProvider {
 	 * @return the set of all languages supported by this provider
 	 */
 	List<? extends HumanLanguage> getAll();
-	
+
 	/**
 	 * @return the language that is the "base" for all labels.  This assumes
 	 * that the entire application is localized into a single language, and then
-	 * translated into the others. 
-	 * 
+	 * translated into the others.
+	 *
 	 * If this language isn't "English", some things might not work.
-	 * 
+	 *
 	 * Note: This doesn't apply to "Renameable" things
 	 */
 	HumanLanguage getBaseLanguage();
-	
+
     /**
      * @return the User Language associated directly with a locale (including country and variant)
      * @param loc the locale to convert to a language
@@ -48,7 +48,7 @@ public interface LanguageProvider {
     HumanLanguage getLanguage(String isoCode);
 
     /**
-     * @return <tt>true</tt> if the given locale is a support user language locale
+     * @return {@code true} if the given locale is a support user language locale
      * @param loc the locale to test
      */
     boolean isSupportedLanguageLocale(Locale loc);
@@ -64,14 +64,14 @@ public interface LanguageProvider {
      * @param loc the locale
      */
     HumanLanguage getLanguageForLocale(Locale loc);
-    
+
     /**
      * @return a map with an optimized implementation for the given map
      * @param <L> the human language type
      * @param <T> the type for the value of the map
      */
     <L extends HumanLanguage,T> Map<L,T> getNewMap();
-    
+
     /**
      * @return the PluralRules for the given language, with the default implementation in
      * DefaultLanguagePluralRulesImpl.
@@ -80,9 +80,9 @@ public interface LanguageProvider {
     default LanguagePluralRules getPluralRules(HumanLanguage language) {
     	return DefaultLanguagePluralRulesImpl.forLanguage(language);
     }
-    
+
     /**
-     * Helper class for implementing LanguageProvider 
+     * Helper class for implementing LanguageProvider
      */
     public static class Helper implements LanguageProvider {
         // STATIC INITIALIZERS FOR MAGIC MAPS
@@ -95,7 +95,7 @@ public interface LanguageProvider {
         	if (base == null) throw new NullPointerException();
         	this.base = base;
         	this.languages = ImmutableList.copyOf(languages);
-        	
+
             Map<Locale,HumanLanguage> byLocale = new HashMap<Locale,HumanLanguage>(128);
             Map<String,HumanLanguage> byString = new HashMap<String,HumanLanguage>(128);
             for (HumanLanguage language : languages) {
@@ -110,7 +110,7 @@ public interface LanguageProvider {
             for (HumanLanguage language : languages) {
                 if (language.getOverrideLanguage() != null) {
                     // Handle any language overrides: note that this doesn't do anything for hebrew (since the locale gets mapped to "iw")
-                    langByFuzzyLocale.put(new Locale(language.getOverrideLanguage()), language);  
+                    langByFuzzyLocale.put(new Locale(language.getOverrideLanguage()), language);
                 }
             }
         }
@@ -170,8 +170,8 @@ public interface LanguageProvider {
 	        langByFuzzyLocale.put(loc, result);
 	        return result;
 	   }
-		
-	
+
+
 		@Override
 	    @SuppressWarnings({ "rawtypes", "unchecked" }) // Fake enum checks
 		public <L extends HumanLanguage,T> Map<L,T> getNewMap() {
@@ -180,7 +180,7 @@ public interface LanguageProvider {
 	    	} else {
 	    		return new HashMap<L,T>();
 	    	}
-	    	
+
 	    }
 
     }

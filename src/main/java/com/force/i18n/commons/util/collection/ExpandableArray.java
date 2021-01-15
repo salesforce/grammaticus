@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -57,7 +57,7 @@ import com.google.common.annotations.Beta;
  *    expandableArray.get(99) == ninetyNine
  *
  * </PRE>
- * 
+ *
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author shansma
@@ -182,9 +182,9 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
     }
 
     /**
-     * Trims the capacity of this <tt>ExpandableArray</tt> instance to be the
+     * Trims the capacity of this {@code ExpandableArray} instance to be the
      * arrays's current size.  An application can use this operation to minimize
-     * the storage of an <tt>ExpandableArray</tt> instance.
+     * the storage of an {@code ExpandableArray} instance.
      */
     public void trimToSize() {
         // no need to check mutability, because this isn't actually modifying the data
@@ -233,9 +233,9 @@ public class ExpandableArray<E> implements Serializable, Iterable<E>, Comparable
      * If the list fits in the specified array with room to spare (i.e., the
      * array has more elements than the list), the element in the array
      * immediately following the end of the collection is set to
-     * <tt>null</tt>.  This is useful in determining the length of the list
+     * {@code null}.  This is useful in determining the length of the list
      * <i>only</i> if the caller knows that the list does not contain any
-     * <tt>null</tt> elements.
+     * {@code null} elements.
      *
      * @param <T> the type of the array to return
      * @param a the array into which the elements of the list are to

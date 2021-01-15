@@ -243,10 +243,9 @@ Grammaticus.prototype = {
 		return value;
 	},
 
-	formatArgs: function(msg) {
-		var parameters = arguments;
+	formatArgs: function(msg, parameters) {
 		var f = function(str, match, offset, all) {
-			var obj = parameters[parseInt(match, 10)+1];
+			var obj = parameters[parseInt(match, 10)];
 			return Array.isArray(obj) ? obj[0] : obj;  // rhino issue
 		};
 		var res = msg.replace(/\{([0-9]*)\}/g, f);

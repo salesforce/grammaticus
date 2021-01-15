@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -14,24 +14,24 @@ import java.util.*;
 import com.google.common.annotations.Beta;
 
 /**
- * Hash table based implementation of the <tt>IntMap</tt> interface.  This
+ * Hash table based implementation of the {@code IntMap} interface.  This
  * implementation provides all of the optional map operations, and permits
- * <tt>null</tt> values.  (The <tt>IntHashMap</tt> class is roughly
- * equivalent to <tt>HashMap</tt>, except that it uses <tt>int</tt>s as its keys.
+ * {@code null} values.  (The {@code IntHashMap} class is roughly
+ * equivalent to {@code HashMap}, except that it uses {@code int}s as its keys.
  * This class makes no guarantees as to
  * the order of the map; in particular, it does not guarantee that the order
  * will remain constant over time.<p>
  *
  * This implementation provides constant-time performance for the basic
- * operations (<tt>get</tt> and <tt>put</tt>), assuming the hash function
+ * operations ({@code get} and {@code put}), assuming the hash function
  * disperses the elements properly among the buckets.  Iteration over
  * collection views requires time proportional to the "capacity" of the
- * <tt>IntHashMap</tt> instance (the number of buckets) plus its size (the number
+ * {@code IntHashMap} instance (the number of buckets) plus its size (the number
  * of key-value mappings).  Thus, it's very important not to set the intial
  * capacity too high (or the load factor too low) if iteration performance is
  * important.<p>
  *
- * An instance of <tt>HashMap</tt> has two parameters that affect its
+ * An instance of {@code HashMap} has two parameters that affect its
  * performance: <i>initial capacity</i> and <i>load factor</i>.  The
  * <i>capacity</i> is the number of buckets in the hash table, and the initial
  * capacity is simply the capacity at the time the hash table is created.  The
@@ -39,19 +39,19 @@ import com.google.common.annotations.Beta;
  * get before its capacity is automatically increased.  When the number of
  * entries in the hash table exceeds the product of the load factor and the
  * current capacity, the capacity is roughly doubled by calling the
- * <tt>rehash</tt> method.<p>
+ * {@code rehash} method.<p>
  *
  * As a general rule, the default load factor (.75) offers a good tradeoff
  * between time and space costs.  Higher values decrease the space overhead
  * but increase the lookup cost (reflected in most of the operations of the
- * <tt>IntHashMap</tt> class, including <tt>get</tt> and <tt>put</tt>).  The
+ * {@code IntHashMap} class, including {@code get} and {@code put}).  The
  * expected number of entries in the map and its load factor should be taken
  * into account when setting its initial capacity, so as to minimize the
- * number of <tt>rehash</tt> operations.  If the initial capacity is greater
+ * number of {@code rehash} operations.  If the initial capacity is greater
  * than the maximum number of entries divided by the load factor, no
- * <tt>rehash</tt> operations will ever occur.<p>
+ * {@code rehash} operations will ever occur.<p>
  *
- * If many mappings are to be stored in a <tt>IntHashMap</tt> instance, creating
+ * If many mappings are to be stored in a {@code IntHashMap} instance, creating
  * it with a sufficiently large capacity will allow the mappings to be stored
  * more efficiently than letting it perform automatic rehashing as needed to
  * grow the table.<p>
@@ -68,12 +68,12 @@ import com.google.common.annotations.Beta;
  * The iterators returned by all of this class's "collection view methods" are
  * <i>fail-fast</i>: if the map is structurally modified at any time after the
  * iterator is created, in any way except through the iterator's own
- * <tt>remove</tt> or <tt>add</tt> methods, the iterator will throw a
- * <tt>ConcurrentModificationException</tt>.  Thus, in the face of concurrent
+ * {@code remove} or {@code add} methods, the iterator will throw a
+ * {@code ConcurrentModificationException}.  Thus, in the face of concurrent
  * modification, the iterator fails quickly and cleanly, rather than risking
  * arbitrary, non-deterministic behavior at an undetermined time in the
  * future.
- * 
+ *
  * Beta class. Generally use {@link java.util.HashMap} or {@link java.util.EnumMap} instead.
  *
  * @author  Based on Sun's java.util.HashMap (modified by koliver)
@@ -113,7 +113,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * Structural modifications are those that change the number of mappings in
      * the HashMap or otherwise modify its internal structure (e.g.,
      * rehash).  This field is used to make iterators on Collection-views of
-     * the HashMap fail-fast.  (See ConcurrentModificationException).
+     * the HashMap fail-fast.  (See {@code ConcurrentModificationException}).
      */
     private transient int modCount = 0;
 
@@ -141,7 +141,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
 
     /**
      * Constructs a new, empty map with the specified initial capacity
-     * and default load factor, which is <tt>0.75</tt>.
+     * and default load factor, which is {@code 0.75}.
      *
      * @param   initialCapacity   the initial capacity of the HashMap.
      * @throws    IllegalArgumentException if the initial capacity is less
@@ -152,8 +152,8 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     }
 
     /**
-     * Constructs a new, empty map with a default capacity, <tt>101</tt>, and load
-     * factor, which is <tt>0.75</tt>.
+     * Constructs a new, empty map with a default capacity, {@code 101}, and load
+     * factor, which is {@code 0.75}.
      */
     public IntHashMap() {
         this(DEFAULT_CAPACITY, 0.75f);
@@ -163,7 +163,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * Constructs a new map with the same mappings as the given map.  The
      * map is created with a capacity of twice the number of mappings in
      * the given map or 101 (whichever is greater), and a default load factor,
-     * which is <tt>0.75</tt>.
+     * which is {@code 0.75}.
      *
      * @param t the map whose mappings are to be placed in this map.
      */
@@ -181,7 +181,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     }
 
     /**
-     * Returns <tt>true</tt> if this map maps one or more keys to the
+     * Returns {@code true} if this map maps one or more keys to the
      * specified value.
      *
      * @param value value whose presence in this map is to be tested.
@@ -206,7 +206,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     }
 
     /**
-     * Returns <tt>true</tt> if this map contains a mapping for the specified
+     * Returns {@code true} if this map contains a mapping for the specified
      * key.
      *
      * @param key key whose presence in this Map is to be tested.
@@ -227,10 +227,10 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
 
     /**
      * Returns the value to which this map maps the specified key.  Returns
-     * <tt>null</tt> if the map contains no mapping for this key.  A return
-     * value of <tt>null</tt> does not <i>necessarily</i> indicate that the
+     * {@code null} if the map contains no mapping for this key.  A return
+     * value of {@code null} does not <i>necessarily</i> indicate that the
      * map contains no mapping for the key; it's also possible that the map
-     * explicitly maps the key to <tt>null</tt>.  The <tt>containsKey</tt>
+     * explicitly maps the key to {@code null}.  The {@code containsKey}
      * operation may be used to distinguish these two cases.
      *
      * @return the value to which this map maps the specified key.
@@ -251,7 +251,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
     }
 
     /**
-     * Rehashes the contents of this map into a new <tt>HashMap</tt> instance
+     * Rehashes the contents of this map into a new {@code HashMap} instance
      * with a larger capacity. This method is called automatically when the
      * number of keys in this map exceeds its capacity and load factor.
      */
@@ -286,10 +286,10 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      *
      * @param key key with which the specified value is to be associated.
      * @param value value to be associated with the specified key.
-     * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
+     * @return previous value associated with specified key, or {@code null}
+     *	       if there was no mapping for key.  A {@code null} return can
      *	       also indicate that the HashMap previously associated
-     *	       <tt>null</tt> with the specified key.
+     *	       {@code null} with the specified key.
      */
     @Override
     public V put(int key, V value) {
@@ -327,9 +327,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * Removes the mapping for this key from this map if present.
      *
      * @param key key whose mapping is to be removed from the map.
-     * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the map previously associated <tt>null</tt>
+     * @return previous value associated with specified key, or {@code null}
+     *	       if there was no mapping for key.  A {@code null} return can
+     *	       also indicate that the map previously associated {@code null}
      *	       with the specified key.
      */
     @Override
@@ -385,10 +385,10 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * Returns a set view of the keys contained in this map.  The set is
      * backed by the map, so changes to the map are reflected in the set, and
      * vice-versa.  The set supports element removal, which removes the
-     * corresponding mapping from this map, via the <tt>Iterator.remove</tt>,
-     * <tt>Set.remove</tt>, <tt>removeAll</tt>, <tt>retainAll</tt>, and
-     * <tt>clear</tt> operations.  It does not support the <tt>add</tt> or
-     * <tt>addAll</tt> operations.
+     * corresponding mapping from this map, via the {@code Iterator.remove},
+     * {@code Set.remove}, {@code removeAll}, {@code retainAll}, and
+     * {@code clear} operations.  It does not support the {@code add} or
+     * {@code addAll} operations.
      *
      * @return a set view of the keys contained in this map.
      */
@@ -405,9 +405,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * collection is backed by the map, so changes to the map are reflected in
      * the collection, and vice-versa.  The collection supports element
      * removal, which removes the corresponding mapping from this map, via the
-     * <tt>Iterator.remove</tt>, <tt>Collection.remove</tt>,
-     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt> operations.
-     * It does not support the <tt>add</tt> or <tt>addAll</tt> operations.
+     * {@code Iterator.remove}, {@code Collection.remove},
+     * {@code removeAll}, {@code retainAll}, and {@code clear} operations.
+     * It does not support the {@code add} or {@code addAll} operations.
      *
      * @return a collection view of the values contained in this map.
      */
@@ -441,13 +441,13 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
 
     /**
      * Returns a collection view of the mappings contained in this map.  Each
-     * element in the returned collection is a <tt>IntMap.Entry</tt>.  The
+     * element in the returned collection is a {@code IntMap.Entry}.  The
      * collection is backed by the map, so changes to the map are reflected in
      * the collection, and vice-versa.  The collection supports element
      * removal, which removes the corresponding mapping from the map, via the
-     * <tt>Iterator.remove</tt>, <tt>Collection.remove</tt>,
-     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt> operations.
-     * It does not support the <tt>add</tt> or <tt>addAll</tt> operations.
+     * {@code Iterator.remove}, {@code Collection.remove},
+     * {@code removeAll}, {@code retainAll}, and {@code clear} operations.
+     * It does not support the {@code add} or {@code addAll} operations.
      *
      * @return a collection view of the mappings contained in this map.
      * @see IntMap.Entry

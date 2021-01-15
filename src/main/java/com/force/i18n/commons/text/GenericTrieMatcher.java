@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -24,7 +24,7 @@ import com.google.common.annotations.Beta;
  * for an AST or an enum, you probably want to genericize this to take in
  *
  * The parameter is the token, it can be an enum or an Id.
- * 
+ *
  * Beta class. Classes under com.force.i18n.commons package will be moved into a dedicated project.
  *
  * @author stamm
@@ -149,7 +149,7 @@ public class GenericTrieMatcher<T> {
          *
          * @param match the match found
          * @param src the original source string being modified (NOTE: the positions may be different.)
-         * @return <tt>true</tt> if the match in the given src string is valid
+         * @return {@code true} if the match in the given src string is valid
          */
         public boolean isValidMatch(GenericTrieMatch<K> match, List<K> src);
     }

@@ -52,7 +52,6 @@ Known Limitations:
 * Partitive articles are not available.
 * Many incomplete or unsupported declensions are provided for certain languages, because Salesforce doesn't translate into them. See `UnsupportedLanguageDeclension.java`.
 * US English is the base language. Specifying a different base language is supported, but hasn't been tested.
-* BaseLocalizer doesn't include a ICU-based number format fixer.
 
 1.1 Improvements
 * New Languages: Afrikaans, Burmese, Gujarati, Kannada, Malayalam, Maori, Marathi, Swahili, Telugu, Xhosa, Zulu.
@@ -62,3 +61,10 @@ Known Limitations:
 * Classifier/counting word support on nouns with the `<counter/`> tag.
 * Support of Korean postpositions through endsWith tag, along with some defaults.
 * Dual number support for Arabic and Slovenian.
+
+1.2 Improvements
+* New Languages: Amhartic, Khmer, Samoan, Hawaiian, Kazakh, Haitian Creole
+* Support for ICU in BaseLocalizer for date and number formatting as an optional dependency.  
+  Include icu4j-localespi as a dependency and call `BaseLocalizer.setLocaleFormatFixer(loc->BaseLocalizer.getICUFormatFixer())`
+* Support graal.js for javascript testing
+* Reduce logging for invalid labels

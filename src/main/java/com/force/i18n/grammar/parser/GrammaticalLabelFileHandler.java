@@ -22,6 +22,8 @@ import com.force.i18n.*;
 import com.force.i18n.commons.text.DeferredStringBuilder;
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.parser.GrammaticalLabelFileParser.ErrorInfo;
+import com.force.i18n.grammar.parser.GrammaticalLabelFileParser.ErrorType;
 import com.force.i18n.settings.PropertyFileData;
 import com.force.i18n.settings.TrackingHandler;
 import com.google.common.collect.ImmutableSet;
@@ -65,20 +67,22 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         }
     }
 
-    /**
-     * @return Level for label problems that can be handled, but may provide grammatically incorrect labels
-     */
-    final Level getLabelLogLevel() {
-        return LanguageProviderFactory.get().getBaseLanguage() == parser.getDictionary().getLanguage() ? Level.FINE : Level.FINER;
+    final Level getProblemLogLevel() {
+        return LanguageProviderFactory.get().getBaseLanguage() == parser.getDictionary().getLanguage() ? Level.INFO : Level.FINE; // TODO: This should turn into INFO;
     }
 
-    /**
-     * @return Level for label problems that will cause empty or invalid labels to be generated
-     */
-    final Level getLabelWarningLogLevel() {
-        return LanguageProviderFactory.get().getBaseLanguage() == parser.getDictionary().getLanguage() ? Level.INFO : Level.FINER;
+    final Level getSevereProblemLogLevel() {
+        return LanguageProviderFactory.get().getBaseLanguage() == parser.getDictionary().getLanguage() ? Level.SEVERE : Level.FINE; // TODO: This should turn into INFO for other langs;
     }
 
+    int getLineNumber() {
+        Locator loc = super.getLocator();
+        return loc == null ? 0 : loc.getLineNumber();
+    }
+
+    URL getFileURL() {
+        return super.getFile();
+    }
 
     /**
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
@@ -117,8 +121,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 this.currentTag = this.currentTag.getParent();
 ///CLOVER:OFF
             } else {
-                logger.log(getLabelLogLevel(), "###\tBad end tag <" + localName + "> found, ignored: " + getLineNumberString());
-                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                logger.log(getProblemLogLevel(), "###\tBad end tag <" + localName + "> found, ignored: " + getLineNumberString());
 ///CLOVER:ON
             }
         }
@@ -223,8 +226,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         BadTag(BaseTag parent, String localName) throws SAXParseException {
             super(parent, null);
             this.tagName = localName;
-            logger.log(getLabelLogLevel(), "###\tBad tag <" + localName + "> found, ignored: " + getLineNumberString());
-            parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+            logger.log(getProblemLogLevel(), "###\tBad tag <" + localName + "> found, ignored: " + getLineNumberString());
         }
 
         @Override
@@ -325,9 +327,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     HumanLanguage lang = LanguageProviderFactory.get().getProvider().getLanguage(GrammaticalLabelFileHandler.this.data.getLocale());
                     // TODO SLT: fix this.
                     if (!ImmutableSet.of(LanguageConstants.CHINESE_TW, LanguageConstants.SPANISH_MX).contains(lang.getLocaleString())) {
-                        logger.log(getLabelLogLevel(), "Redundant label found: " + name + " in section: " + getName()
+                        logger.log(getProblemLogLevel(), "Redundant label found: " + name + " in section: " + getName()
                                 + ", Existing Value: " + existingValue);
-                        parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
                     }
                 }
 ///CLOVER:ON
@@ -402,11 +403,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             String alias = atts.getValue(ALIAS);
             if (alias != null) {
                 int i = alias.indexOf('.');
-                if (i <= 0) {
-                    logger.log(getLabelLogLevel(), "###\tBad alias name " + alias + " at " + parent.getName() + "." + getName() + " in " + getDictionary().getLanguage());
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
-                } else {
-                	this.isAlias = true;
+                if (i <= 0)
+                    logger.log(getProblemLogLevel(), "###\tBad alias name " + alias + " at " + parent.getName() + "." + getName() + " in " + getDictionary().getLanguage());
+                else {
+                    this.isAlias = true;
                     getParser().addAlias(parent.getName(), getName(), alias.substring(0, i),
                         alias.substring(i + 1), getFile(), getLocator().getLineNumber());
                 }
@@ -539,7 +539,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                         curPhrase = new NounPhrase(values);  // Demarcate as a new phrase
                     }
                     if (adj.isCopiedFromDefault()) {
-                        logger.log(getLabelWarningLogLevel(), "Adjective copied from english for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
+                        logger.log(getSevereProblemLogLevel(), "Adjective copied from english for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
                     }
 
                     // add to the last noun phrase
@@ -553,15 +553,13 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             }
             if (!curPhrase.isNounSet()) {
                 if (phrases.size() == 0) {
-                    logger.log(getLabelLogLevel(), "Adjective used without a noun for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                    logger.log(getSevereProblemLogLevel(), "Adjective used without a noun for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
                     return values;  // Don't deal
                 } else {
                     // Chances are we have a dangling adjective (like <Tasks/> (<Open/>))
                     if (phrases.size() > 1) {
                         // Log only if there's an actual issue (multiple nouns)
-                        logger.log(getLabelWarningLogLevel(), "Prepositional Adjective used in post-position for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
-                        parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                        logger.log(getSevereProblemLogLevel(), "Prepositional Adjective used in post-position for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
                     }
                     // Add the adjectives to the last noun phrase and keep going.
                     NounPhrase lastPhrase = phrases.get(phrases.size()-1);
@@ -779,9 +777,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
             this.nounTag = constructNounTag(entityName, atts, entityAttr);
             if (this.nounTag == null) {
-                logger.log(getLabelLogLevel(), "###\tUnknown entity <" + entityName + "> at " + currentSection.getName() + "."
-                    + parent.getName());
-                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                ErrorInfo error = parser.addInvalidLabel(ErrorType.UnknownEntity, currentSection.getName(),
+                        currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
+                        GrammaticalLabelFileHandler.this.getLineNumber(), entityName);
+                logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
             }
         }
 
@@ -936,10 +935,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             if (val == null) return; // This means we were invalid
             Object previous = perCategory.put(val, data);
             if (previous != null) {
-                logger.log(getLabelLogLevel(), "###\tDuplicate when <" + val + "> at " + currentSection.getName()
-                        + "." + getParent().getName());
-                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
-
+                ErrorInfo error = parser.addInvalidLabel(ErrorType.DuplicateWhen, currentSection.getName(),
+                        currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
+                        GrammaticalLabelFileHandler.this.getLineNumber(), val);
+                logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
             }
         }
 
@@ -956,11 +955,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 this.defaultVal = data;
             } else {
                 if (perCategory.containsKey(getDefaultCategory())) {
-                    logger.log(getLabelLogLevel(),
-                            "###\tYou cannot specify " + getDefaultCategory()
-                                    + " for a when and have default values at " + currentSection.getName() + "."
-                                    + getParent().getName());
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                    ErrorInfo error = parser.addInvalidLabel(ErrorType.BadDefault, currentSection.getName(),
+                            currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
+                            GrammaticalLabelFileHandler.this.getLineNumber(), getDefaultCategory());
+                    logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
                 } else {
                     addLabelData(getDefaultCategory(), data);
                 }
@@ -1001,9 +999,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 _num = Integer.parseInt(atts.getValue(NUM));
             } catch (NumberFormatException ex) {
                 _num = 0;
-                logger.log(getLabelLogLevel(), "###\tBad plural reference <" + atts.getValue(NUM) + "> at "
-                        + currentSection.getName() + "." + parent.getName());
-                parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                ErrorInfo error = parser.addInvalidLabel(ErrorType.BadPluralReference, currentSection.getName(),
+                        currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
+                        GrammaticalLabelFileHandler.this.getLineNumber(), atts.getValue(NUM));
+                logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
+
             }
             num = _num;
         }
@@ -1078,9 +1078,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 if (isDefault && categories == null) {
                     categories = Collections.singletonList(parent.getDefaultCategory());
                 } else {
-                    logger.log(getLabelLogLevel(),
-                            "###\tBad category <" + val + "> at " + currentSection.getName() + "." + parent.getName());
-                    parser.addInvalidLabel(currentSection.getName(), currentParam.getName());
+                    ErrorInfo error = parser.addInvalidLabel(ErrorType.BadCategory, currentSection.getName(),
+                            currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
+                            GrammaticalLabelFileHandler.this.getLineNumber(), val);
+                    logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
+
                     categories = Collections.emptyList();
                 }
             }
@@ -1137,7 +1139,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     logger.finest("###\tNoun form " + ta + " at " + currentSection.getName() + "."
                             + currentParam.getName() + " uses antiquated article form.  Stop it.");
                 } else {
-                    logger.log(getLabelLogLevel(), "###\tNoun form " + ta + " at " + currentSection.getName() + "."
+                    logger.log(getProblemLogLevel(), "###\tNoun form " + ta + " at " + currentSection.getName() + "."
                             + currentParam.getName() + " not defined for this type of language");
                 }
                 nid = ta.getApproximateNounForm();
@@ -1153,7 +1155,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     // Yeah, this should be NPE || NumberFormatException.  This is simpler.
                 }
                 if (ref == null) {
-                    logger.log(getLabelLogLevel(), "###\tCustom entity <" + entityName + "> at " + currentSection.getName() + "."
+                    logger.log(getProblemLogLevel(), "###\tCustom entity <" + entityName + "> at " + currentSection.getName() + "."
                         + currentParam.getName() + " must have entity attribute");
                     return null;
                 }

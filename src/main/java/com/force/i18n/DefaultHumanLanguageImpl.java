@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Default Human Language Provider that's used if there's no other answer
- * 
+ *
  * This is an ok default implementation
  * @author stamm
  */
@@ -55,17 +55,11 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     PORTUGUESE_PT(new Locale("pt", "PT"), LanguageType.END_USER, 172.0), // Portuguese (European)
     CROATIAN(new Locale("hr"), LanguageType.END_USER, 170.0),
     SLOVENE(new Locale("sl"), LanguageType.END_USER, 170.0),
-    
+
     // platform languages
-    FRENCH_CA(Locale.CANADA_FRENCH, LanguageType.PLATFORM, 168.0),
     GEORGIAN(new Locale("ka"), LanguageType.PLATFORM, 168.0),
     SERBIAN_CYRILLIC(new Locale("sr"), LanguageType.PLATFORM, 168.0),  // http://tlt.its.psu.edu/suggestions/international/bylanguage/serbocroatian.html
     SERBIAN_LATIN(new Locale("sh"), LanguageType.PLATFORM, "sr-Latn", 168.0),  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
-    ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_MY(new Locale("en", "MY"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_IN(new Locale("en", "IN"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_PH(new Locale("en", "PH"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_CA(new Locale("en", "CA"), LanguageType.PLATFORM, 168.0),
     MOLDOVAN(new Locale("ro", "MD"), LanguageType.PLATFORM, 170.0),  // Note, this is just a variant, but called Moldovan for various reasons.
     BOSNIAN(new Locale("bs"), LanguageType.PLATFORM, 170.0),
     MACEDONIAN(new Locale("mk"), LanguageType.PLATFORM, 170.0),
@@ -88,82 +82,54 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     ARMENIAN(new Locale("hy"), LanguageType.PLATFORM, 174.0),
     HINDI(new Locale("hi"), LanguageType.PLATFORM, 174.0),
     URDU(new Locale("ur"), LanguageType.PLATFORM, 174.0),
-    
+
     BENGALI(new Locale("bn"), LanguageType.PLATFORM, 190.0),
-    GERMAN_AT(new Locale("de", "AT"), LanguageType.PLATFORM, 190.0),
-    GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
     TAMIL(new Locale("ta"), LanguageType.PLATFORM, 190.0),
-    
+
     AFRIKAANS(new Locale("af"), LanguageType.PLATFORM, 220.0),
     SWAHILI(new Locale("sw"), LanguageType.PLATFORM, 220.0),
     ZULU(new Locale("zu"), LanguageType.PLATFORM, 220.0),
     XHOSA(new Locale("xh"), LanguageType.PLATFORM, 220.0),
-    
+
     TELUGU(new Locale("te"), LanguageType.PLATFORM, 220.0),
     MALAYALAM(new Locale("ml"), LanguageType.PLATFORM, 220.0),
     KANNADA(new Locale("kn"), LanguageType.PLATFORM, 220.0),
     MARATHI(new Locale("mr"), LanguageType.PLATFORM, 220.0),
     GUJARATI(new Locale("gu"), LanguageType.PLATFORM, 220.0),
-    
+
     MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
     BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
     PERSIAN(new Locale("fa"), LanguageType.PLATFORM, 224.0),
-       
+    KHMER(new Locale("km"), LanguageType.PLATFORM, 228.0),
+    AMHARIC(new Locale("am"), LanguageType.PLATFORM, 230.0),
+
+    KAZAKH(new Locale("kk"), LanguageType.PLATFORM, 232.0),
+    HAITIAN_CREOLE(new Locale("ht"), LanguageType.PLATFORM, 232.0),
+    SAMOAN(new Locale("sm"), LanguageType.PLATFORM, 232.0),
+    HAWAIIAN(new Locale("haw"), LanguageType.PLATFORM, 232.0),
+
+    CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
+    
+    // Sample use of variants for testing
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
-    ARABIC_BH(new Locale("ar", "BH"), LanguageType.PLATFORM, 194.0), //Arabic Bahrain
-    ARABIC_EG(new Locale("ar", "EG"), LanguageType.PLATFORM, 194.0), //Arabic Egypt
-    ARABIC_IQ(new Locale("ar", "IQ"), LanguageType.PLATFORM, 194.0), //Arabic Iraq
-    ARABIC_JO(new Locale("ar", "JO"), LanguageType.PLATFORM, 194.0), //Arabic Jordan
-    ARABIC_KW(new Locale("ar", "KW"), LanguageType.PLATFORM, 194.0), //Arabic Kuwait
-    ARABIC_LB(new Locale("ar", "LB"), LanguageType.PLATFORM, 194.0), //Arabic Lebanon
-    ARABIC_LY(new Locale("ar", "LY"), LanguageType.PLATFORM, 194.0), //Arabic Libya
-    ARABIC_MA(new Locale("ar", "MA"), LanguageType.PLATFORM, 194.0), //Arabic Morocco
-    ARABIC_OM(new Locale("ar", "OM"), LanguageType.PLATFORM, 194.0), //Arabic Oman
-    ARABIC_QA(new Locale("ar", "QA"), LanguageType.PLATFORM, 194.0), //Arabic Quatar
-    ARABIC_SA(new Locale("ar", "SA"), LanguageType.PLATFORM, 194.0), //Arabic Saudi Arabia
-    ARABIC_SD(new Locale("ar", "SD"), LanguageType.PLATFORM, 194.0), //Arabic Sudan
-    ARABIC_SY(new Locale("ar", "SY"), LanguageType.PLATFORM, 194.0), //Arabic Syria
-    ARABIC_TN(new Locale("ar", "TN"), LanguageType.PLATFORM, 194.0), //Arabic Tunisia
-    ARABIC_AE(new Locale("ar", "AE"), LanguageType.PLATFORM, 194.0), //Arabic United Arab Emirates
-    ARABIC_YE(new Locale("ar", "YE"), LanguageType.PLATFORM, 194.0), //Arabic Yemen
-
-    CHINESE_SG(new Locale("zh", "SG"), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
-    CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong
-
+    ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),
+    ENGLISH_IN(new Locale("en", "IN"), LanguageType.PLATFORM, 168.0),
+    ENGLISH_PH(new Locale("en", "PH"), LanguageType.PLATFORM, 168.0),
+    ENGLISH_CA(new Locale("en", "CA"), LanguageType.PLATFORM, 168.0),
     ENGLISH_HK(new Locale("en", "HK"), LanguageType.PLATFORM, 194.0), //English Hong Kong
     ENGLISH_IE(new Locale("en", "IE"), LanguageType.PLATFORM, 194.0), //English Ireland
     ENGLISH_SG(new Locale("en", "SG"), LanguageType.PLATFORM, 194.0), //English Singapore
     ENGLISH_ZA(new Locale("en", "ZA"), LanguageType.PLATFORM, 194.0), //English South Africa
-    
-    FRENCH_BE(new Locale("fr", "BE"), LanguageType.PLATFORM, 194.0),  //French Belgium
-    FRENCH_LU(new Locale("fr", "LU"), LanguageType.PLATFORM, 194.0),  //French Luxembourg
+    FRENCH_CA(Locale.CANADA_FRENCH, LanguageType.PLATFORM, 168.0),
+    GERMAN_AT(new Locale("de", "AT"), LanguageType.PLATFORM, 190.0),
+    GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
     FRENCH_CH(new Locale("fr", "CH"), LanguageType.PLATFORM, 194.0),  //French Switzerland
-    
-    GERMAN_LU(new Locale("de", "LU"), LanguageType.PLATFORM, 194.0),  //German Luxembourg
-    
     ITALIAN_CH(new Locale("it", "CH"), LanguageType.PLATFORM, 194.0), //Italian Switzerland
-    
     SPANISH_AR(new Locale("es", "AR"), LanguageType.PLATFORM, 194.0), //Spanish Argentina
-    SPANISH_BO(new Locale("es", "BO"), LanguageType.PLATFORM, 194.0), //Spanish Bolivia
-    SPANISH_CL(new Locale("es", "CL"), LanguageType.PLATFORM, 194.0), //Spanish Chile
-    SPANISH_CO(new Locale("es", "CO"), LanguageType.PLATFORM, 194.0), //Spanish Colombia
-    SPANISH_CR(new Locale("es", "CR"), LanguageType.PLATFORM, 194.0), //Spanish Costa Rica
-    SPANISH_DO(new Locale("es", "DO"), LanguageType.PLATFORM, 194.0), //Spanish Dominican Republic
-    SPANISH_EC(new Locale("es", "EC"), LanguageType.PLATFORM, 194.0), //Spanish Ecuador
-    SPANISH_SV(new Locale("es", "SV"), LanguageType.PLATFORM, 194.0), //Spanish El Salvador
-    SPANISH_GT(new Locale("es", "GT"), LanguageType.PLATFORM, 194.0), //Spanish Guatemala
-    SPANISH_HN(new Locale("es", "HN"), LanguageType.PLATFORM, 194.0), //Spanish Honduras
-    SPANISH_NI(new Locale("es", "NI"), LanguageType.PLATFORM, 194.0), //Spanish Nicaragua
-    SPANISH_PA(new Locale("es", "PA"), LanguageType.PLATFORM, 194.0), //Spanish Panama
-    SPANISH_PY(new Locale("es", "PY"), LanguageType.PLATFORM, 194.0), //Spanish Paraguay
-    SPANISH_PE(new Locale("es", "PE"), LanguageType.PLATFORM, 194.0), //Spanish Peru
-    SPANISH_PR(new Locale("es", "PR"), LanguageType.PLATFORM, 194.0), //Spanish Puerto Rico
-    SPANISH_US(new Locale("es", "US"), LanguageType.PLATFORM, 194.0), //Spanish United States
-    SPANISH_UY(new Locale("es", "UY"), LanguageType.PLATFORM, 194.0), //Spanish Uruguay
-    SPANISH_VE(new Locale("es", "VE"), LanguageType.PLATFORM, 194.0), //Spanish Venezuela
-
-    CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
-    
+    RUSSIAN_IL(new Locale("ru", "IL"), LanguageType.PLATFORM, 232.0), //Russian Israel
+    CHINESE_SG(new Locale("zh", "SG"), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
+    CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong
+ 
     ESPERANTO(new Locale("eo"), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
     ENGLISH_IL(new Locale("en", "IL"), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
     ;
@@ -184,7 +150,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
          * Return the count of languages of the given type.
          */
         public int getCount() {
-            return TYPE_COUNT.get(this);
+            return getLangProvider().getTypeCount(this);
         }
     }
 
@@ -365,82 +331,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      */
     @Override
 	public DefaultHumanLanguageImpl getTranslationFallbackLanguage() {
-        switch (this) {
-            case ARABIC_DZ:
-            case ARABIC_BH:
-            case ARABIC_EG:
-            case ARABIC_IQ:
-            case ARABIC_JO:
-            case ARABIC_KW:
-            case ARABIC_LB:
-            case ARABIC_LY:
-            case ARABIC_MA:
-            case ARABIC_OM:
-            case ARABIC_QA:
-            case ARABIC_SA:
-            case ARABIC_SD:
-            case ARABIC_SY:
-            case ARABIC_TN:
-            case ARABIC_AE:
-            case ARABIC_YE:
-                return ARABIC;
-            case FRENCH_CA:
-            case FRENCH_BE:
-            case FRENCH_LU:
-            case FRENCH_CH:
-                return FRENCH;
-            case SPANISH_MX:
-            case SPANISH_AR:
-            case SPANISH_BO:
-            case SPANISH_CL:
-            case SPANISH_CO: 
-            case SPANISH_CR:
-            case SPANISH_DO: 
-            case SPANISH_EC: 
-            case SPANISH_SV:  
-            case SPANISH_GT:  
-            case SPANISH_HN:  
-            case SPANISH_NI:  
-            case SPANISH_PA:   
-            case SPANISH_PY:   
-            case SPANISH_PE:    
-            case SPANISH_PR:    
-            case SPANISH_US:    
-            case SPANISH_UY:    
-            case SPANISH_VE:      
-                return SPANISH;
-            case CHINESE_HK:
-                return CHINESE_TRAD;
-            case CHINESE_SG:
-                return CHINESE_SIMP ;
-            case PORTUGUESE_PT:
-                return PORTUGUESE_BR;
-            case ENGLISH_AU:
-            case ENGLISH_MY:
-            case ENGLISH_PH:
-            case ENGLISH_IN:
-            case ENGLISH_HK:
-            case ENGLISH_IE:
-            case ENGLISH_SG:
-            case ENGLISH_ZA:
-                return ENGLISH_GB;
-            case ENGLISH_GB:
-            case ENGLISH_CA:
-            case ENGLISH_IL:
-                return ENGLISH;
-            case ITALIAN_CH:
-                return ITALIAN;
-            case MONTENEGRIN:
-                return SERBIAN_LATIN;  // Montenegrin is the same as serbian latin.
-            case MOLDOVAN:
-                return ROMANIAN;  // They are the same language
-            case GERMAN_AT:
-            case GERMAN_LU:
-            case GERMAN_CH:
-                return GERMAN;
-            default:
-                return null;
-        }
+    	return getLangProvider().getTranslationFallbackLanguage(this);
     }
 
     /**
@@ -521,9 +412,13 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         if (stored != null) return stored;
         return DefaultHumanLanguageImpl.ENGLISH;  // Default to english; sorry
     }
-    
+
     public void setDefaultLanguage(DefaultHumanLanguageImpl defaultLanguage) {
     	DEFAULT_LANGUAGE.set(defaultLanguage);
+    }
+    
+    static DefaultHumanLanguageImplProvider getLangProvider() {
+    	return (DefaultHumanLanguageImplProvider)LanguageProviderFactory.get().getProvider();
     }
 
     /**
@@ -532,17 +427,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * Other language types will cause null to be returned
      */
     public static List<DefaultHumanLanguageImpl> getLanguageList(LanguageType type) {
-        switch(type) {
-        case STANDARD:
-            return ALL_STANDARD;
-        case END_USER:
-            return ALL_END_USER;
-        case PLATFORM:
-            return ALL_PLATFORM_ONLY;
-        case HIDDEN:
-            // Do nothing
-        }
-        return null;
+    	return getLangProvider().getLanguageList(type);
     }
 
     /**
@@ -550,28 +435,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
      * given the specified language type
      */
     public static List<DefaultHumanLanguageImpl> getAllLanguagesList(LanguageType type) {
-        List<DefaultHumanLanguageImpl> langs = new ArrayList<>(DefaultHumanLanguageImpl.ALL_STANDARD);
-        // Note this case statement is ordered by LanguageType dependency
-        // The returned language list should also be ordered so that the most
-        // pref-dependent language appears last
-        switch(type) {
-        case HIDDEN:
-            // All languages should be visible with Hidden
-            langs.clear();
-            langs.addAll(Arrays.asList(DefaultHumanLanguageImpl.values()));
-            break;
-        case PLATFORM:
-            langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
-            langs.addAll(DefaultHumanLanguageImpl.ALL_PLATFORM_ONLY);
-            break;
-        case END_USER:
-            langs.addAll(DefaultHumanLanguageImpl.ALL_END_USER);
-            break;
-        case STANDARD:
-            // Do nothing
-        }
-
-        return langs;
+    	return getLangProvider().getAllLanguagesList(type);
     }
 
     /**
@@ -600,46 +464,149 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         }
         return locale.toLanguageTag();
     }
+    
+	
+    /**
+     * Helper method for determining which language to use for "variant" languages with some opinions
+     * when there might be a conflict, as in Simplified vs Traditional Chines.
+     * 
+     * @return the language to use as the fallback language for translations
+     * The difference between this and fallback language is what the "fallback"
+     * for translations.  So French doesn't fall back to English, because that would be wrong,
+     * just the fallback for _XX languages.  This is only used for customer translations.
+     *
+     * Summary: Use this only for country language variants, not for anything else.
+     */
+	static Locale getTranslationFallbackLanguageLocale(Locale locale) {
+		String country = locale.getCountry();
+		if (country.length() > 0) {
+			switch (locale.getLanguage()) {
+			case "pt":
+				switch (country) {
+				case "BR":
+					return null;
+				default:
+					return new Locale("pt", "BR");  // No "pt" language
+				}
+			case "nl":
+				switch (country) {
+				case "NL":
+					return null;
+				default:
+					return new Locale("nl", "NL");  // No "nl" language
+				}
+			}
+		}
+		return HumanLanguage.Helper.getTranslationFallbackLanguageLocale(locale);
+    }
 
-    private static final List<DefaultHumanLanguageImpl> ALL_STANDARD;
-    private static final List<DefaultHumanLanguageImpl> ALL_END_USER;
-    private static final List<DefaultHumanLanguageImpl> ALL_PLATFORM_ONLY;
 
-    // STATIC INITIALIZERS FOR MAGIC MAPS
-    private static final Map<LanguageType,Integer> TYPE_COUNT;
-    static {
-        EnumMap<LanguageType,Integer> languageCount = new EnumMap<>(LanguageType.class);
-        List<DefaultHumanLanguageImpl> allStandard = new ArrayList<>(32);
-        List<DefaultHumanLanguageImpl> allEndUser = new ArrayList<>(64);
-        List<DefaultHumanLanguageImpl> allPlatformOnly = new ArrayList<>(64);
-        for (LanguageType type : LanguageType.values()) languageCount.put(type, 0);  // Initialize to 0
+    /**
+     * Default HumanLanguageProvider with some helpful features for categorizing languages and 
+     * determining fallback behavior.
+     * 
+     * @author stamm
+     */
+    public static final class DefaultHumanLanguageImplProvider extends LanguageProvider.Helper {
+        private final List<DefaultHumanLanguageImpl> ALL_STANDARD;
+        private final List<DefaultHumanLanguageImpl> ALL_END_USER;
+        private final List<DefaultHumanLanguageImpl> ALL_PLATFORM_ONLY;
+        private final Map<DefaultHumanLanguageImpl,DefaultHumanLanguageImpl> TRANS_FALLBACK;
+        private final Map<LanguageType,Integer> TYPE_COUNT;
+    	
+    	public DefaultHumanLanguageImplProvider() {
+    		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values())); 
+    		
+            EnumMap<LanguageType,Integer> languageCount = new EnumMap<>(LanguageType.class);
+            List<DefaultHumanLanguageImpl> allStandard = new ArrayList<>(32);
+            List<DefaultHumanLanguageImpl> allEndUser = new ArrayList<>(64);
+            List<DefaultHumanLanguageImpl> allPlatformOnly = new ArrayList<>(64);
+            EnumMap<DefaultHumanLanguageImpl,DefaultHumanLanguageImpl> fallback = new EnumMap<>(DefaultHumanLanguageImpl.class);
+            for (LanguageType type : LanguageType.values()) languageCount.put(type, 0);  // Initialize to 0
 
-        for (DefaultHumanLanguageImpl language : values()) {
-            LanguageType type = language.getLanguageType();
-            languageCount.put(type, languageCount.get(type) + 1);
+            for (DefaultHumanLanguageImpl language : values()) {
+                LanguageType type = language.getLanguageType();
+                languageCount.put(type, languageCount.get(type) + 1);
 
+                switch(type) {
+                case STANDARD:
+                    allStandard.add(language); break;
+                case END_USER:
+                    allEndUser.add(language); break;
+                case PLATFORM:
+                    allPlatformOnly.add(language); break;
+                case HIDDEN:
+                    // Do nothing
+                }
+                
+                Locale fallbackLocale = getTranslationFallbackLanguageLocale(language.getLocale());
+                DefaultHumanLanguageImpl fallbackLanguage = (DefaultHumanLanguageImpl) getLanguage(fallbackLocale);
+                fallback.put(language, fallbackLanguage);
+            }
+            
+            
+            TYPE_COUNT = Collections.unmodifiableMap(languageCount);
+            ALL_STANDARD = Collections.unmodifiableList(allStandard);
+            ALL_END_USER = Collections.unmodifiableList(allEndUser);
+            ALL_PLATFORM_ONLY = Collections.unmodifiableList(allPlatformOnly);
+            TRANS_FALLBACK = Collections.unmodifiableMap(fallback);
+    	
+    	}
+
+        /**
+         * Return a list of DefaultHumanLanguageImpls that are of the specified LanguageType
+         * NOTE: Only standard, end user, and platform only languages are supported
+         * Other language types will cause null to be returned
+         */
+        List<DefaultHumanLanguageImpl> getLanguageList(LanguageType type) {
             switch(type) {
             case STANDARD:
-                allStandard.add(language); break;
+                return ALL_STANDARD;
             case END_USER:
-                allEndUser.add(language); break;
+                return ALL_END_USER;
             case PLATFORM:
-                allPlatformOnly.add(language); break;
+                return ALL_PLATFORM_ONLY;
             case HIDDEN:
                 // Do nothing
             }
+            return null;
         }
-        TYPE_COUNT = Collections.unmodifiableMap(languageCount);
-        ALL_STANDARD = Collections.unmodifiableList(allStandard);
-        ALL_END_USER = Collections.unmodifiableList(allEndUser);
-        ALL_PLATFORM_ONLY = Collections.unmodifiableList(allPlatformOnly);
-    }
-    
-    
-    public static final class DefaultHumanLanguageImplProvider extends LanguageProvider.Helper {
-    	public DefaultHumanLanguageImplProvider() {
-    		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values()));
-    	}
-    	
+
+        /**
+         * Returns a list of all DefaultHumanLanguageImpls that a user would have access to
+         * given the specified language type
+         */
+        List<DefaultHumanLanguageImpl> getAllLanguagesList(LanguageType type) {
+            List<DefaultHumanLanguageImpl> langs = new ArrayList<>(ALL_STANDARD);
+            // Note this case statement is ordered by LanguageType dependency
+            // The returned language list should also be ordered so that the most
+            // pref-dependent language appears last
+            switch(type) {
+            case HIDDEN:
+                // All languages should be visible with Hidden
+                langs.clear();
+                langs.addAll(Arrays.asList(DefaultHumanLanguageImpl.values()));
+                break;
+            case PLATFORM:
+                langs.addAll(ALL_END_USER);
+                langs.addAll(ALL_PLATFORM_ONLY);
+                break;
+            case END_USER:
+                langs.addAll(ALL_END_USER);
+                break;
+            case STANDARD:
+                // Do nothing
+            }
+            return langs;
+        }
+
+        
+        int getTypeCount(LanguageType type) {
+        	return TYPE_COUNT.get(type);
+        }
+        
+		DefaultHumanLanguageImpl getTranslationFallbackLanguage(DefaultHumanLanguageImpl lang) {
+			return TRANS_FALLBACK.get(lang);
+		}
     }
 }

@@ -62,6 +62,13 @@
         <value plural="n">Campaign</value>
         <value plural="y">Campaigns</value>
     </noun>
+    <noun name="Chatter" entity="Chatter" type="entity" gender="n" startsWith="c">
+        <value plural="n">Chatter</value>
+    </noun>
+    <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="n" startsWith="c">
+        <value plural="n">Contact</value>
+        <value plural="y">Contacts</value>
+    </noun>
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Skill</value>
         <value plural="y">Skills</value>
@@ -80,29 +87,62 @@
         <value plural="n">Question</value>
         <value plural="y">Questions</value>
     </noun>
-    
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n">Lead</value>
         <value plural="y">Leads</value>
+    </noun>
+
+    <noun name="Network" entity="Network" type="entity" alias="Networks" gender="n" startsWith="c">
+        <value plural="n">Community</value>
+        <value plural="y">Communities</value>
     </noun>
 
     <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="v">
         <value plural="n">Opportunity</value>
         <value plural="y">Opportunities</value>
     </noun>
-    
+
+    <noun name="Order" entity="Order" type="entity" alias="Orders" gender="n" startsWith="v">
+        <value plural="n">Order</value>
+        <value plural="y">Orders</value>
+    </noun>
+
+    <noun name="Partner" entity="Partner" type="entity" alias="Partners" gender="n" startsWith="c">
+        <value plural="n">Partner</value>
+        <value plural="y">Partners</value>
+    </noun>
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">Quote</value>
         <value plural="y">Quotes</value>
     </noun>
-    
-    
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
         <value plural="n">Price Book</value>
         <value plural="y">Price Books</value>
     </noun>
-    
-    
+
+    <noun name="Product" entity="Product" type="entity" alias="Products" gender="n" startsWith="c">
+        <value plural="n">Product</value>
+        <value plural="y">Products</value>
+    </noun>
+
+    <noun name="Report" entity="Report" type="entity" alias="Reports" gender="n" startsWith="c">
+        <value plural="n">Report</value>
+        <value plural="y">Reports</value>
+    </noun>
+
+    <noun name="Solution" entity="Solution" type="entity" alias="Solutions" gender="n" startsWith="c">
+        <value plural="n">Solution</value>
+        <value plural="y">Solutions</value>
+    </noun>
+
+    <noun name="Task" entity="Task" type="entity" alias="Tasks" gender="n" startsWith="c">
+        <value plural="n">Task</value>
+        <value plural="y">Tasks</value>
+    </noun>
+
    <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -111,7 +151,7 @@
         <value plural="n">{0}</value>
         <value plural="y">{0}</value>
     </noun>
-    
+
 
     <!--==================================================================
       Other Nouns
@@ -122,11 +162,98 @@
         <value plural="n">Account Name</value>
         <value plural="y">Account Names</value>
     </noun>
-    
-     <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
+
+    <noun name="Assigned_To_Activity" entity="Activity" gender="n" startsWith="v" standardField="y" type="field">
+        <value plural="n">Assigned To</value></noun>
+
+    <noun name="Campaign_Member" alias="Campaign_Members" entity="Campaign" type="field" gender="n" startsWith="c" standardField="n">
+        <value plural="n">Campaign Member</value>
+        <value plural="y">Campaign Members</value></noun>
+
+    <noun name="Child_Case" alias="Child_Cases" entity="Case" type="field" gender="n" startsWith="c" standardField="n">
+        <value plural="n">Related Case</value>
+        <value plural="y">Related Cases</value>
+    </noun>
+
+    <noun name="Contact_Role" entity="Contact" alias="contact_roles" type="field" gender="n" startsWith="c" standardField="n">
+        <value plural="n">Contact Role</value>
+        <value plural="y">Contact Roles</value>
+    </noun>
+
+    <noun name="CustomerPortalUser" gender="n" startsWith="c" standardField="n" type="entity" entity="PortalUser" alias="CustomerPortalUsers">
+        <value plural="n">Customer User</value>
+        <value plural="y">Customer Users</value>
+       </noun>
+
+    <noun name="Dashboard" entity="Dashboard" type="entity" alias="Dashboards" gender="n" startsWith="c">
+        <value plural="n">Dashboard</value>
+        <value plural="y">Dashboards</value>
+    </noun>
+
+    <noun name="Entitlement" entity="Entitlement" type="entity" alias="Entitlements" gender="n" startsWith="v">
+        <value plural="n">Entitlement</value>
+        <value plural="y">Entitlements</value>
+    </noun>
+
+    <noun name="Idea" entity="Idea" type="entity" alias="Ideas" gender="n" startsWith="v">
+        <value plural="n">Idea</value>
+        <value plural="y">Ideas</value>
+    </noun>
+
+    <noun name="IdeaTheme" entity="IdeaTheme" type="entity" alias="IdeaThemes" gender="n" startsWith="v">
+        <value plural="n">Idea Theme</value>
+        <value plural="y">Idea Themes</value>
+    </noun>
+
+    <noun name="KnowledgeArticle" alias="KnowledgeArticles" gender="n" startsWith="v" standardField="n" type="entity" entity="KnowledgeArticle">
+        <value plural="n">Article</value>
+        <value plural="y">Articles</value>
+    </noun>
+
+    <noun name="Lead_Field" alias="Lead_Fields" entity="Lead" type="field" gender="n" startsWith="c" standardField="n" >
+        <value plural="n">Lead Field</value>
+        <value plural="y">Lead Fields</value></noun>
+
+    <noun name="Opportunity_Name" entity="Opportunity" type="field" gender="n" startsWith="v" standardField="y">
+        <value plural="n">Opportunity Name</value>
+        <value plural="y">Opportunity Names</value></noun>
+
+    <noun name="Parent_Account" alias="Parent_Accounts" entity="Account" type="field" gender="n" startsWith="c" standardField="y">
+        <value plural="n">Parent Account</value>
+        <value plural="y">Parent Accounts</value>
+    </noun>
+
+    <noun name="PartnerPortalUser" gender="n" startsWith="c" standardField="n" type="entity" entity="PortalUser" alias="PartnerPortalUsers">
+        <value plural="n">Partner User</value>
+        <value plural="y">Partner Users</value>
+    </noun>
+
+    <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">Product Currency</value></noun>
 
-    
+    <noun name="PowerInsight" entity="PowerInsight" type="entity" gender="n" startsWith="v" alias="PowerInsights">
+        <value plural="n">Einstein Data Insight</value>
+        <value plural="y">Einstein Data Insights</value>
+    </noun>
+
+    <noun name="SalesforceAloha" entity="SalesforceClassic" type="other" gender="n" startsWith="c">
+        <value plural="n">Salesforce Classic</value>
+    </noun>
+
+    <!--==================================================================
+      Setup Only Name: DO NOT TRANSLATE!  Shared across all languages
+    ======================================================================-->
+    <!-- Custom platform -->
+   <noun name="CustomMetadataType" entity="CustomEntityDefinition" type="entity" alias="CustomMetadataTypes" gender="n" startsWith="c">
+        <value plural="n">Custom Metadata Type</value>
+        <value plural="y">Custom Metadata Types</value>
+    </noun>
+
+    <noun name="Territory2Type" entity="Territory2Type" alias="Territory2Types" gender="n" startsWith="c" type="entity">
+        <value plural="n">Territory Type</value>
+        <value plural="y">Territory Types</value>
+    </noun>
+
 
      <import file="adjectives.xml"/>
 </names>

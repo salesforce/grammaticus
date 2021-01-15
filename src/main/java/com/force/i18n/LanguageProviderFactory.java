@@ -7,6 +7,7 @@
 
 package com.force.i18n;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
@@ -27,10 +28,10 @@ public enum LanguageProviderFactory implements LanguageProvider {
 	    	String provider = I18nJavaUtil.getProperty("LanguageProvider");
 	    	if (provider != null) {
 				try {
-					providerRef.set(Class.forName(provider).asSubclass(LanguageProvider.class).newInstance());
+					providerRef.set(Class.forName(provider).asSubclass(LanguageProvider.class).getDeclaredConstructor().newInstance());
 					return;
-				} catch (InstantiationException | IllegalAccessException
-						| ClassNotFoundException e) {
+				} catch (InstantiationException | IllegalAccessException | InvocationTargetException
+						| NoSuchMethodException | ClassNotFoundException e) {
 					logger.log(Level.INFO, "Couldn't find provider", e);
 				}
 	    	}

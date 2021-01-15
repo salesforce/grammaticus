@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -36,7 +36,7 @@ public interface Renameable {
     String getLabelPlural();
 
     /**
-     * @return <tt>True</tt> if the object has a "standard" label (i.e. isn't custom)
+     * @return {@code true} if the object has a "standard" label (i.e. isn't custom)
      */
     boolean hasStandardLabel();
 
@@ -53,8 +53,8 @@ public interface Renameable {
      * I.e., if labelKey is "Entity" and this is "Account", it should return "Account".
      */
     String getEntitySpecificDbLabelKey(String labelKey);
-    
-    
+
+
     /**
      * @param labelKey the DB-specific key that may or may not be a field
      * @return the field for the labelKey if appropriate, or null if it does not exist.
@@ -67,7 +67,7 @@ public interface Renameable {
      * @param language the language for the noun.
      */
     Noun getStandardNoun(HumanLanguage language);
-    
+
     /**
      * Marker interface for StandardFields.  It's assumed it will be implemented by an enum.
      * @author stamm

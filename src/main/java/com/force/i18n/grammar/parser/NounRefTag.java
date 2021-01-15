@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -174,15 +174,21 @@ class NounRefTag extends TermRefTag {
 
         return s;
     }
-    
+
     @Override
     String extraJson(LanguageDictionary dictionary, List<?> terms) {
-		if (index >= 0) {
-			return ",\"i\":"+index;
-		} else {
-			return "";
-		}
-	}
+        // grammaticus.js no longer supports 'legacy' article form such as <account article="a"/>
+        if (this.form instanceof LegacyArticledNounForm) {
+            logger.log(Level.SEVERE, "Noun reference in label files with legacy article directive for " + getName()
+                    + ". this is no longer supported in Javascript. please use proper article tag such as \"<a/>\".");
+        }
+
+        if (index >= 0) {
+            return ",\"i\":" + index;
+        } else {
+            return "";
+        }
+    }
 
 	@Override
     protected boolean equalsValue(TermRefTag obj) {
@@ -196,7 +202,7 @@ class NounRefTag extends TermRefTag {
     public int hashCode() {
         return hashCode;
     }
-    
+
     Noun resolveNoun(LanguageDictionary formatter, Renameable[] entities) {
         // Get the relevant noun to see get the right value for StartsWith/Gender
         Noun n;
@@ -209,7 +215,7 @@ class NounRefTag extends TermRefTag {
                     + " isDynamic: " + isDynamic() + " entities: " + entities.length
                     + " reference: " + getReference();
             n = formatter.getNoun(getName(), true);
-        }    
+        }
         return n;
     }
 }

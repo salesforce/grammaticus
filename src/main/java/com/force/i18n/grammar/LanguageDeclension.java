@@ -83,7 +83,7 @@ public abstract class LanguageDeclension {
      * @param pluralAlias the alias to use in the XML for the plural version of this noun for readability
      * @param type NounType (entity/field)
      * @param entityName grouping for which entity this noun is in for display
-     * @param startsWith startsWith/endsWith soung
+     * @param startsWith startsWith/endsWith sound
      * @param gender linguistic gender
      * @param access a string to evaluate if the noun isn't available to all users
      * @param isStandardField if it's a field (i.e don't need the whole set of declensions)
@@ -222,14 +222,14 @@ public abstract class LanguageDeclension {
 
 
     /**
-     * @return <tt>true</tt> if there are different adjective forms based on the possessive
+     * @return {@code true} if there are different adjective forms based on the possessive
      */
     public boolean hasPossessiveInAdjective() {
         return false;
     }
 
     /**
-     * @return <tt>true</tt> if the language has a different form based on article
+     * @return {@code true} if the language has a different form based on article
      * NOTE: If you override this, you pretty much have to extend from ArticledDeclension.
      */
     public boolean hasArticle() {
@@ -237,7 +237,7 @@ public abstract class LanguageDeclension {
     }
 
     /**
-     * @return <tt>true</tt> if there are different noun forms based on the article (i.e. the article isn't a modifier, but is an irregular suffix)
+     * @return {@code true} if there are different noun forms based on the article (i.e. the article isn't a modifier, but is an irregular suffix)
      */
     public boolean hasArticleInNounForm() {
         return false;
@@ -252,7 +252,7 @@ public abstract class LanguageDeclension {
 
 
     /**
-     * @return <tt>true</tt> if the language has different form based on cases
+     * @return {@code true} if the language has different form based on cases
      */
     public boolean hasRequiredCases() {
         return getRequiredCases().size() > 1;
@@ -260,14 +260,14 @@ public abstract class LanguageDeclension {
 
 
     /**
-     * @return <tt>true</tt> if the language has different form based on cases
+     * @return {@code true} if the language has different form based on cases
      */
     public boolean hasAllowedCases() {
         return getAllowedCases().size() > 1;
     }
 
     /**
-     * @return <tt>true</tt> if the language has a distinction between capital and lowercase letters.
+     * @return {@code true} if the language has a distinction between capital and lowercase letters.
      * If false, most of the lowercasing is ignored globally.
      */
     public boolean hasCapitalization() {

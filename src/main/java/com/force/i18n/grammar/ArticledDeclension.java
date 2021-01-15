@@ -75,7 +75,7 @@ public abstract class ArticledDeclension extends LanguageDeclension {
         /**
          * Subclasses implement this class to support auto-appending of the article.
          * @param form the form of the noun for which the exact string is needed (without adding an article)
-         * @return the exact string for the form, nor <tt>null</tt> if the form isn't specified
+         * @return the exact string for the form, nor {@code null} if the form isn't specified
          */
         public abstract String getExactString(NounForm form);
     }

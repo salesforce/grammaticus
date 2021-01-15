@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -154,7 +154,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     public String getClassifier() {
         return "";
     }
-    
+
     private boolean equalsAttribute(Object obj) {
         return this.gender == ((Noun)obj).gender && this.startsWith == ((Noun)obj).startsWith;
     }
@@ -288,7 +288,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
                     String value = getCloseButNoCigarString(form);
 
                     if (value == null) {
-                        logger.config("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
+                        logger.info("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
                         return false;
                     }
                     setString(intern(value), form);
@@ -357,7 +357,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * Provides clients the capability of indicating when members of Noun's can be converted to space efficient data structures.
      */
     public abstract void makeSkinny();
-    
+
     @Override
 	public void toJson(Appendable appendable) throws IOException {
     	appendable.append("{\"t\":\"n\",\"l\":\"");
@@ -369,6 +369,9 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     	if ((getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) && getStartsWith() != null) {
     		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
     	}
+    	if (getDeclension().hasClassifiers() && getClassifier() != null) {
+    	    appendable.append("\"c\":\"").append(getClassifier()).append("\",");
+    	}
     	appendable.append("\"v\":{");
     	Map<? extends NounForm,String> allValues = getAllDefinedValues();
     	appendable.append(new TreeMap<>(allValues).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
@@ -379,7 +382,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
      * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableSortedMap}.
      * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
      * overhead, that is traditionally high on most {@code Map} implementations.
-     * 
+     *
      * @param <T> the type of the noun form for this noun
      * @param map the map to make skinny
      * @return A {@link ImmutableSortedMap} created from a {@link Map} of {@link NounForm}'s (key) to {@link String}'s
