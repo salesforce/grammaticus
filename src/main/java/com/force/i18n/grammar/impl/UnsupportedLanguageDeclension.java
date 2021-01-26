@@ -297,25 +297,15 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
 
     /**
-     * Haitian Creole is a language based on french, but creolized to remove some complexity, but the 
-     * definite article is a very very complicated post-position based on 5 different ends-with variants.
+     * Some languages have complicated grammars, but we will treat them as analytical/simple declension
+     * for non-grammatical translation.  
+     * @author stamm
      */
-    static class HaitianCreoleDeclension extends UnsupportedLanguageDeclension {
-        public HaitianCreoleDeclension(HumanLanguage language) {
+    abstract static class UnsupportedAsSimpleDeclension extends UnsupportedLanguageDeclension {
+        public UnsupportedAsSimpleDeclension(HumanLanguage language) {
 			super(language);
 		}
-    }
-
-    
-    /**
-     * Basque is a language isolate that uses agglutination to form most of the words.  Our grammar
-     * engine is not designed to handle it.
-     */
-    static class BasqueDeclension extends UnsupportedLanguageDeclension {
-        public BasqueDeclension(HumanLanguage language) {
-			super(language);
-		}
-
+        
 		// Unsupported language where plurals are formed using complicated aggutinations.
         @Override
         public List< ? extends NounForm> getAllNounForms() {
@@ -324,7 +314,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
         @Override
         public boolean hasPlural() {
-            return false;  // Basque has an "unmarked" form, to which you add singular or plural endings.
+            return false; 
         }
 
 
@@ -347,6 +337,32 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive, LanguageArticle article) {
             return SimpleNounForm.SINGULAR;
         }
+    }
+
+    
+    /**
+     * Haitian Creole is a language based on French, but creolized to remove some complexity from declensions, as it does not
+     * have gender or plurals.
+     * However, it has a definite article that is a very very complicated post-position based on 5 different ends-with variants.
+     * So we consider it unsupported.
+     */
+    static class HaitianCreoleDeclension extends UnsupportedAsSimpleDeclension {
+        public HaitianCreoleDeclension(HumanLanguage language) {
+			super(language);
+		}
+    }
+
+    
+    /**
+     * Basque is a language isolate that uses agglutination to form most of the words.  Our grammar
+     * engine is not designed to handle it at this time.
+     * Basque has an "unmarked" noun form, to which you add singular or plural endings.
+     */
+    static class BasqueDeclension extends UnsupportedAsSimpleDeclension {
+        public BasqueDeclension(HumanLanguage language) {
+			super(language);
+		}
+
     }
     
     /**
