@@ -129,7 +129,7 @@ abstract class ModifierRefTag extends TermRefTag {
         String s = modifier.getString(adjForm);
 
         if (s == null) {
-        	logger.warning("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
+        	logger.info("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
             return "";
         }
         if (!isCapital) {

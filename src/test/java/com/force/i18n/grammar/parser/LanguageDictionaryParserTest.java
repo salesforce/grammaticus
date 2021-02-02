@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -647,8 +647,8 @@ public class LanguageDictionaryParserTest extends BaseGrammaticalLabelTest {
         /*
          * Nothing to test yet.
          */
-    } 
-    
+    }
+
     /**
      * Unit test for utility methods
      */
@@ -667,10 +667,10 @@ public class LanguageDictionaryParserTest extends BaseGrammaticalLabelTest {
         assertFalse(l1.isNoun("item"));
         assertFalse(l1.isEntity("item"));
         assertFalse(l1.isEntityPlural("item"));
-        
+
         // Make sure the names are the same
-        assertEquals(ImmutableSet.of("account", "account_name"), l1.getNames("Account", true));
-        assertEquals(ImmutableSet.of("account_name"), l1.getNames("Account", false));
+        assertEquals(ImmutableSet.of("account", "account_name", "parent_account"), l1.getNames("Account", true));
+        assertEquals(ImmutableSet.of("account_name", "parent_account"), l1.getNames("Account", false));
         assertEquals(l1.getNames("Account", true), l3.getNames("Account", true));
         assertEquals(l1.getNames("Account", false), l3.getNames("Account", false));
         assertNotSame(l1.getNames("Account", true), l3.getNames("Account", false));

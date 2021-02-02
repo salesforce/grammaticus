@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -84,40 +84,55 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
         assertEquals("συσχετισμένη εκστρατεία", renderLabel(GREEK, "<associated/> <campaign/>"));
     }
 
-    public void testDifferenceInRenameTabs() throws Exception {
-        StringBuilder diffs = new StringBuilder();
-        for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
-            if (!LanguageDeclensionFactory.get().getDeclension(language).hasPlural()) continue;
-            LanguageDictionary dictionary = loadDictionary(language);
-            Multimap<String,String> nowHasPlural = TreeMultimap.create();
-            Multimap<String,String> missingPlural = TreeMultimap.create();
+    public void testVietnamese() throws Exception {
+        final HumanLanguage VIETNAMESE = LanguageProviderFactory.get().getLanguage(LanguageConstants.VIETNAMESE);
+        // Unlike other asian language, Vietnamese has upper/lower case letters
+        assertEquals("Khách Hàng Tiềm Năng", renderLabel(VIETNAMESE, "<Lead/>"));
+        assertEquals("khách hàng tiềm năng", renderLabel(VIETNAMESE, "<lead/>"));
 
-            for (String entity : new TreeSet<String>(dictionary.getNounsByEntity().keySet())) {
-                for (Noun n : dictionary.getNounsByEntity().get(entity)) {
-                    if (n.getNounType() == NounType.ENTITY) continue;
-                    boolean hasPluralForm = false;
-                    for (NounForm form : n.getAllDefinedValues().keySet()) {
-                        if (form.getNumber() == LanguageNumber.PLURAL && form.getCase() == LanguageCase.NOMINATIVE) {
-                            hasPluralForm = true;
-                            break;
-                        }
-                    }
-                    if (hasPluralForm != (n.getNounType() == NounType.FIELD)) {
-                        if (hasPluralForm) {
-                            nowHasPlural.put(entity, n.getName());
-                        } else {
-                            missingPlural.put(entity, n.getName());
-                        }
-                    }
-                }
-            }
-            if (nowHasPlural.size() > 0) {
-                diffs.append(language).append(" can rename plural fields for: ").append(nowHasPlural).append('\n');
-            }
-            if (missingPlural.size() > 0) {
-                diffs.append(language).append(" has these plural fields removed for rename: ").append(missingPlural).append('\n');
-            }
-        }
-        System.out.println(diffs.toString());
+        assertEquals("Khách Hàng Tiềm Năng", renderDynamicLabel(VIETNAMESE, "<Entity entity=\"0\"/>", getStandardRenameable("lead")));
+        assertEquals("khách hàng tiềm năng", renderDynamicLabel(VIETNAMESE, "<entity entity=\"0\"/>", getStandardRenameable("lead")));
+
+        assertEquals("Tài Liệu", renderLabel(VIETNAMESE, "<Document/>"));
+        assertEquals("Các Tài Liệu", renderLabel(VIETNAMESE, "<Documents/>"));
     }
+
+    // TODO: what is this for?  seems like its just reporting on terminal for missing plural form in names.xml. 
+    //       it's not validatin/asserting; disable it for now.
+    // public void testDifferenceInRenameTabs() throws Exception {
+    //     StringBuilder diffs = new StringBuilder();
+    //     for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
+    //         if (!LanguageDeclensionFactory.get().getDeclension(language).hasPlural()) continue;
+    //         LanguageDictionary dictionary = loadDictionary(language);
+    //         Multimap<String,String> nowHasPlural = TreeMultimap.create();
+    //         Multimap<String,String> missingPlural = TreeMultimap.create();
+
+    //         for (String entity : new TreeSet<String>(dictionary.getNounsByEntity().keySet())) {
+    //             for (Noun n : dictionary.getNounsByEntity().get(entity)) {
+    //                 if (n.getNounType() == NounType.ENTITY) continue;
+    //                 boolean hasPluralForm = false;
+    //                 for (NounForm form : n.getAllDefinedValues().keySet()) {
+    //                     if (form.getNumber() == LanguageNumber.PLURAL && form.getCase() == LanguageCase.NOMINATIVE) {
+    //                         hasPluralForm = true;
+    //                         break;
+    //                     }
+    //                 }
+    //                 if (hasPluralForm != (n.getNounType() == NounType.FIELD)) {
+    //                     if (hasPluralForm) {
+    //                         nowHasPlural.put(entity, n.getName());
+    //                     } else {
+    //                         missingPlural.put(entity, n.getName());
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         if (nowHasPlural.size() > 0) {
+    //             diffs.append(language).append(" can rename plural fields for: ").append(nowHasPlural).append('\n');
+    //         }
+    //         if (missingPlural.size() > 0) {
+    //             diffs.append(language).append(" has these plural fields removed for rename: ").append(missingPlural).append('\n');
+    //         }
+    //     }
+    //     System.out.println(diffs.toString());
+    // }
 }

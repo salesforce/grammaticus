@@ -66,9 +66,9 @@
         <value plural="y" article="the">les activités</value>
         <value plural="y" article="a">des activités</value>
     </noun>
-    
 
-    
+
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -87,10 +87,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
-    
-  
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f" startsWith="c">
         <value plural="n">Compétence</value>
        <value plural="n" article="a">une compétence</value>
@@ -100,23 +100,23 @@
        <value plural="y" article="a">des compétences</value>
     </noun>
 
-    
-    
-        
-        
-    
-      
-        
-    
-     
-    
-    
- 
-        
-                    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Document</value>
         <value plural="n" article="a">un document</value>
@@ -135,10 +135,10 @@
         <value plural="y" article="a">des événements</value>
     </noun>
 
-    
-   
-    
-    
+
+
+
+
      <noun name="Quote" entity="Quote" alias="Quotes" type="entity" gender="m" startsWith="c">
         <value plural="n">Devis</value>
         <value plural="n" article="a">Un devis</value>
@@ -148,18 +148,18 @@
         <value plural="y" article="a">Des devis</value>
       </noun>
 
-      
-      
-    
-    
 
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
 
-    
+
         <noun name="Question" entity="Question" type="entity" alias="Questions" gender="f" startsWith="c">
         <value plural="n">Question</value>
         <value plural="n" article="a">Une question</value>
@@ -168,11 +168,11 @@
         <value plural="y" article="the">Les questions</value>
         <value plural="y" article="a">Des questions</value>
       </noun>
-    
 
-	
-       
- 
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="f" startsWith="c">
         <value plural="n">Piste</value>
         <value plural="n" article="a">une piste</value>
@@ -191,9 +191,9 @@
         <value plural="y" article="a">des opportunités</value>
     </noun>
 
-   	
-	
-	
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
         <value plural="n">Catalogue de prix</value>
         <value plural="n" article="a">un catalogue de prix</value>
@@ -202,7 +202,13 @@
         <value plural="y" article="the">les catalogues de prix</value>
         <value plural="y" article="a">des catalogues de prix</value>
     </noun>
-     
+
+    <noun name="Product" entity="Product" type="entity" alias="Products" gender="m" startsWith="c">
+        <value plural="n">Produit</value>
+        <value plural="y">Produits</value>
+    </noun>
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -213,14 +219,7 @@
     </noun>
 
 
-    <!--
-        Special nouns - these are not rename-able, but need here for dynamic tag such as
-        <entity/>, <entity_record_type/>
-    -->
 
-
-        
-    
     <!--==================================================================
       Other Nouns
     ======================================================================-->
@@ -231,7 +230,7 @@
         <value plural="n">Nom du compte</value>
         <value plural="y">Noms du compte</value>
     </noun>
-     
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Devise du produit</value>
     </noun>

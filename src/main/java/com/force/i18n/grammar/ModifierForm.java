@@ -29,7 +29,7 @@ public interface ModifierForm extends GrammaticalForm {
      * Return a javascript string that will return the value of termFormVar with the gender or startsWith replaces
      * with the variable (if applicable for the declension).  This should return the form to use, so, by default it will
      * append termFormVar.  If you do anything it should probably use the appropriate substr
-     * <tt>a.append(termFormVar).append(".substr(0,3)+").append(genderVar).append("+").append(termFormVar).append(".substr(4)");</tt>
+     * {@code a.append(termFormVar).append(".substr(0,3)+").append(genderVar).append("+").append(termFormVar).append(".substr(4)");}
      * 
      * NOTE: This should be a static method on the modifier form, but for simplicity of implementation we make it
      * an instance variable

@@ -86,7 +86,7 @@ public class LanguageDeclensionImplsTest extends TestCase {
 
             if (declension.hasArticle() || declension.hasArticleInNounForm()) {
                 assertTrue("Default article isn't contained in the set of articles for " + lang, declension.getAllowedArticleTypes().contains(declension.getDefaultArticle()));
-                assertTrue(declension.getAllowedArticleTypes().size() > 1);
+                assertTrue("hasArticle doesn't match number of article types for " + lang, declension.getAllowedArticleTypes().size() > 1);
             } else {
                 assertEquals("Required articles should be empty for " + lang, 0, declension.getAllowedArticleTypes().size());            	
             }

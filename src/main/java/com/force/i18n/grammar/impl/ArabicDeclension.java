@@ -86,7 +86,7 @@ class ArabicDeclension extends SemiticDeclension {
 
 
     /**
-     * Turkish nouns are inflected for case, number, possessive, and article.  Everything that is
+     * Arabic nouns are inflected for case, number, possessive, and article.  Everything that is
      */
     static class ArabicNounForm extends ComplexNounForm {
         /**

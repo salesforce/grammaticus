@@ -22,11 +22,9 @@ import com.force.i18n.grammar.LanguageDictionary;
  * @author stamm
  */
 public abstract class RefTag implements Serializable  {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-    public RefTag() {
+    private static final long serialVersionUID = 1L;
+
+	public RefTag() {
     }
 
     /**
@@ -60,14 +58,14 @@ public abstract class RefTag implements Serializable  {
      * @param dictionary the dictionary with all the nouns
      * @param list the list of the current set of terms being processed (so that for modifiers it can find the associated term by index)
      */
-	public abstract String toJson(LanguageDictionary dictionary, List<?> list);
+    public abstract String toJson(LanguageDictionary dictionary, List<?> list);
 
-	/**
-	 * Get all the terms referenced by this reference tag
-	 * @param dictionary the dictionary to use to look up terms
-	 * @return the set of terms references.  Will not be null
-	 */
-	public abstract Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary);
+    /**
+     * Get all the terms referenced by this reference tag
+     * @param dictionary the dictionary to use to look up terms
+     * @return the set of terms references.  Will not be null
+     */
+    public abstract Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary);
 
     @Override
     public String toString() {
@@ -81,19 +79,19 @@ public abstract class RefTag implements Serializable  {
      * @return a non-null set of grammatical terms
      */
     public static Set<GrammaticalTerm> getTermsFromLabelValue(LanguageDictionary dictionary, Object labelValue) {
-		if (labelValue == null || labelValue instanceof String) return Collections.emptySet();
+        if (labelValue == null || labelValue instanceof String) return Collections.emptySet();
 
-		Set<GrammaticalTerm> result = new HashSet<>();
-		if (labelValue instanceof List) {
-			for (Object part : (List<?>)labelValue) {
-				if (part instanceof RefTag) {
-					result.addAll(((RefTag)part).getTermsInUse(dictionary));
-				}
-			}
-		} else if (labelValue instanceof RefTag) {
-			result.addAll(((RefTag)labelValue).getTermsInUse(dictionary));
-		}
-		return result;
+        Set<GrammaticalTerm> result = new HashSet<>();
+        if (labelValue instanceof List) {
+            for (Object part : (List<?>)labelValue) {
+                if (part instanceof RefTag) {
+                    result.addAll(((RefTag)part).getTermsInUse(dictionary));
+                }
+            }
+        } else if (labelValue instanceof RefTag) {
+            result.addAll(((RefTag)labelValue).getTermsInUse(dictionary));
+        }
+        return result;
     }
 
     /**
@@ -103,15 +101,15 @@ public abstract class RefTag implements Serializable  {
      * @return a non-null set of grammatical terms
      */
     public static Set<GrammaticalTerm> getTermsFromLabels(LanguageDictionary dictionary, Iterable<Object> labelValues) {
-    	Set<GrammaticalTerm> result = null;
-    	for (Object labelValue : labelValues) {
-    		Set<GrammaticalTerm> val = getTermsFromLabelValue(dictionary, labelValue);
-    		if (!val.isEmpty()) {
-    			if (result == null) result = new HashSet<>();
-    			result.addAll(val);
-    		}
-    	}
-    	return result != null ? result : Collections.emptySet();
+        Set<GrammaticalTerm> result = null;
+        for (Object labelValue : labelValues) {
+            Set<GrammaticalTerm> val = getTermsFromLabelValue(dictionary, labelValue);
+            if (!val.isEmpty()) {
+                if (result == null) result = new HashSet<>();
+                result.addAll(val);
+            }
+        }
+        return result != null ? result : Collections.emptySet();
     }
 
     /**
@@ -121,55 +119,56 @@ public abstract class RefTag implements Serializable  {
      * @param list the list of *all* of the labels to look up, to make sure you get the right reference
      * @return o as a json value
      */
-	static String refToJson(LanguageDictionary dictionary, Object o, List<?> list) {
-		if (o instanceof RefTag) {
-			return ((RefTag)o).toJson(dictionary, list);
-		} else {
-			return "\""+TextUtil.escapeForJsonString(String.valueOf(o))+"\"";
-		}
-	}
+    static String refToJson(LanguageDictionary dictionary, Object o, List<?> list) {
+        if (o instanceof RefTag) {
+            return ((RefTag)o).toJson(dictionary, list);
+        } else {
+            return "\"" + TextUtil.escapeForJsonString(String.valueOf(o)) + "\"";
+        }
+    }
 
-	/**
-	 * Append the label value as json to appendable.  Converts IOException to
-	 * @param dictionary the current dictionary of nouns.
-	 * @param out the thing to write to
-	 * @param value the Label value, a String, List, or RefTag
-	 * @param termsInUse if not null, add the set of terms referenced in value to it
-	 * @throws IOException if there is an issue writing to out.
-	 */
-	public static void appendJsonLabelValue(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) throws IOException {
-		if (value instanceof String) {
-			out.append("\"").append(TextUtil.escapeForJsonString((String)value)).append("\"");
-		} else if (value instanceof List) {
-			// Stream out the list.
-			out.append("[");
-			out.append(((List<?>)value).stream().map(a->refToJson(dictionary, a, (List<?>)value)).collect(Collectors.joining(",")));
-			out.append("]");
-			if (termsInUse != null) termsInUse.addAll(getTermsFromLabelValue(dictionary, value));
-		} else if (value instanceof RefTag) {
-			// Simplification for offline, where we'll have only a single value.
-			out.append("[");
-			out.append(((RefTag)value).toJson(dictionary, null));
-			out.append("]");
-			if (termsInUse != null) termsInUse.addAll(((RefTag)value).getTermsInUse(dictionary));
-		} else {
-			out.append("\"\"");
-		}
-	}
+    /**
+     * Append the label value as json to appendable.  Converts IOException to
+     * @param dictionary the current dictionary of nouns.
+     * @param out the thing to write to
+     * @param value the Label value, a String, List, or RefTag
+     * @param termsInUse if not null, add the set of terms referenced in value to it
+     * @throws IOException if there is an issue writing to out.
+     */
+    public static void appendJsonLabelValue(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) throws IOException {
+        if (value instanceof String) {
+            out.append("\"").append(TextUtil.escapeForJsonString((String)value)).append("\"");
+        } else if (value instanceof List) {
+            // Stream out the list.
+            out.append("[");
+            out.append(((List<?>)value).stream().map(a -> refToJson(dictionary, a, (List<?>)value))
+                    .collect(Collectors.joining(",")));
+            out.append("]");
+            if (termsInUse != null) termsInUse.addAll(getTermsFromLabelValue(dictionary, value));
+        } else if (value instanceof RefTag) {
+            // Simplification for offline, where we'll have only a single value.
+            out.append("[");
+            out.append(((RefTag)value).toJson(dictionary, null));
+            out.append("]");
+            if (termsInUse != null) termsInUse.addAll(((RefTag)value).getTermsInUse(dictionary));
+        } else {
+            out.append("\"\"");
+        }
+    }
 
-	/**
-	 * NoThrow version of
-	 * @see #appendJsonLabelValue(LanguageDictionary, Appendable, Object, Set)
-	 * @param dictionary the current dictionary of nouns.
-	 * @param out the thing to write to
-	 * @param value the Label value, a String, List, or RefTag
-	 * @param termsInUse if not null, add the set of terms referenced in value to it
-	 */
-	public static void appendJsonLabelValueNoThrow(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) {
-		try {
-			appendJsonLabelValue(dictionary, out, value, termsInUse);
-		} catch (IOException ex) {
-			throw new RuntimeException(ex);
-		}
-	}
+    /**
+     * NoThrow version of
+     * @see #appendJsonLabelValue(LanguageDictionary, Appendable, Object, Set)
+     * @param dictionary the current dictionary of nouns.
+     * @param out the thing to write to
+     * @param value the Label value, a String, List, or RefTag
+     * @param termsInUse if not null, add the set of terms referenced in value to it
+     */
+    public static void appendJsonLabelValueNoThrow(LanguageDictionary dictionary, Appendable out, Object value, Set<GrammaticalTerm> termsInUse) {
+        try {
+            appendJsonLabelValue(dictionary, out, value, termsInUse);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
 }

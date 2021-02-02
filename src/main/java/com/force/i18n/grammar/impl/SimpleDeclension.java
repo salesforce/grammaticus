@@ -16,7 +16,10 @@ import java.util.logging.Logger;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageConstants;
 import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.ArticledDeclension.SimpleArticledPluralNoun;
+import com.force.i18n.grammar.LanguageDeclension.PluralNounForm;
 import com.force.i18n.grammar.Noun.NounType;
+import com.google.common.collect.ImmutableList;
 /**
  * An implementation of declension of a language that doesn't use different forms for nouns.
  *
@@ -51,11 +54,8 @@ class SimpleDeclension extends LanguageDeclension {
      * @author stamm
      */
     public static class SimpleNoun extends Noun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private String value;
+        private static final long serialVersionUID = 1L;
+        protected String value;
 
         SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             this(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, access, isStandardField, isCopiedFromDefault);
@@ -182,16 +182,16 @@ class SimpleDeclension extends LanguageDeclension {
         return false;
     }
 
-
     @Override
     public final boolean isInflected() {
         return false;  // Simple declensions have no inflection in nouns/adjectives at all
     }
 
-	@Override
-	public void writeJsonOverrides(Appendable a, String instance) throws IOException {
-		a.append(instance).append(".dont_capitalize=true;");
-	}
+    @Override
+    public void writeJsonOverrides(Appendable a, String instance) throws IOException {
+        super.writeJsonOverrides(a, instance);
+        if (!this.hasCapitalization()) a.append(instance).append(".dont_capitalize=true;");
+    }
 
     /**
      * Use this for an uninflected language, but with classifier words
@@ -221,12 +221,58 @@ class SimpleDeclension extends LanguageDeclension {
             return defaultClassifier;
         }
 
-
         @Override
         protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
                 LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
                 boolean isCopied) {
             return new SimpleNounWithClassifier(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
+        }
+    }
+
+    /**
+     * Vietnamese declension that is similar to SimpleDeclention, but has plural form and classifiers.
+     *
+     * @author yoikawa
+     * @since 138
+     */
+    static class VietnameseDeclension extends SimpleDeclensionWithClassifiers {
+        static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
+
+        public VietnameseDeclension(HumanLanguage language) {
+            super(language);
+        }
+
+        @Override
+        public boolean hasCapitalization() {
+            return true;
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return true;
+        }
+
+        @Override
+        public List<? extends NounForm> getAllNounForms() { return ALL_FORMS; }
+
+        @Override
+        public Collection<? extends NounForm> getEntityForms() { return ALL_FORMS; }
+
+        @Override
+        public Collection<? extends NounForm> getFieldForms() { return ALL_FORMS; }
+
+        @Override
+        public Collection<? extends NounForm> getOtherForms() { return ALL_FORMS; }
+
+        @Override
+        public NounForm getExactNounForm(LanguageNumber number, LanguageCase _case, LanguagePossessive possessive,
+                LanguageArticle article) {
+            return LanguageNumber.SINGULAR == number ? PluralNounForm.SINGULAR : PluralNounForm.PLURAL;
+        }
+
+        @Override
+        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+            return new PluralNounWithClassifier(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
         }
 
     }
@@ -263,8 +309,9 @@ class SimpleDeclension extends LanguageDeclension {
      * @since 0.6.0
      */
     static class SimpleNounWithClassifier extends SimpleNoun implements Noun.WithClassifier {
-		private static final long serialVersionUID = 1L;
-		private String classifier;
+        private static final long serialVersionUID = 1L;
+        private String classifier;
+
         public SimpleNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
                 String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField,
                 boolean isCopiedFromDefault) {
@@ -285,6 +332,58 @@ class SimpleDeclension extends LanguageDeclension {
         @Override
         public void setClassifier(String classifier) {
             this.classifier = classifier;
+        }
+    }
+
+    static class PluralNounWithClassifier extends SimpleNounWithClassifier {
+        private static final long serialVersionUID = 1L;
+        private String plural;
+
+        public PluralNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
+                String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, access, isStandardField, isCopiedFromDefault);
+        }
+
+        @Override
+        public Map<? extends NounForm, String> getAllDefinedValues() {
+            return enumMapFilterNulls(PluralNounForm.SINGULAR, value, PluralNounForm.PLURAL, plural);
+        }
+
+        @Override
+        public String getDefaultString(boolean isPlural) {
+            return isPlural && plural != null ? plural : value;
+        }
+
+        @Override
+        public String getString(NounForm form) {
+            assert form instanceof PluralNounForm;
+            return getDefaultString(form.getNumber().isPlural());
+        }
+
+        @Override
+        protected void setString(String v, NounForm form) {
+            assert form instanceof PluralNounForm;
+            v = intern(v);
+            if (form.getNumber().isPlural()) {
+                this.plural = v;
+                if (v != null && v.equals(this.value)) {
+                    this.value = v; // Keep one reference for serialization
+                }
+            } else {
+                this.value = v;
+                if (v != null && v.equals(this.plural)) {
+                    this.plural = v; // Keep one reference for serialization
+                }
+            }
+        }
+
+        @Override
+        protected boolean validateValues(String name, LanguageCase _case) {
+            if (this.value == null) {
+                logger.info("###\tError: The noun " + name + " has no singular form");
+                return false;
+            }
+            return true;
         }
     }
 }

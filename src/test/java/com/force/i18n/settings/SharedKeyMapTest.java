@@ -144,8 +144,8 @@ public class SharedKeyMapTest extends TestCase {
             Map<Object, Object> refMap = new HashMap<Object, Object>(SAMPLE_MAPS.get(i));
             refMaps.add(refMap);
 
-            sharedKeyMap.put("longVal", new Long(99999999999999999L + i));
-            refMap.put("longVal", new Long(99999999999999999L + i));
+            sharedKeyMap.put("longVal", Long.valueOf(99999999999999999L + i));
+            refMap.put("longVal", Long.valueOf(99999999999999999L + i));
 
             sharedKeyMap.put("overwrite", "ow1" + i);
             sharedKeyMap.put("overwrite", "ow2" + i);

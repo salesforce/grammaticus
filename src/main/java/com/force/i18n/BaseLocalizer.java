@@ -10,16 +10,20 @@ package com.force.i18n;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.*;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.function.Function;
 
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.commons.util.collection.LruCache;
 import com.google.common.collect.ImmutableSet;
+import com.ibm.icu.impl.jdkadapter.NumberFormatICU;
+import com.ibm.icu.impl.jdkadapter.SimpleDateFormatICU;
 
 /**
- * An internationalization and localization utility class
- * Handles locale specific parsing and formatting
+ * An internationalization and localization utility class Handles locale
+ * specific parsing and formatting
  *
  * @author pnakada, smawson, pu.chen
  *
@@ -28,7 +32,10 @@ public class BaseLocalizer {
     /**
      * Simple enum + convenience methods for asking Date questions in Local or GMT.
      */
-    public enum LocalOrGmt { LOCAL ,  GMT }
+    public enum LocalOrGmt {
+        LOCAL, GMT
+    }
+
     public static final LocalOrGmt LOCAL = LocalOrGmt.LOCAL;
     public static final LocalOrGmt GMT = LocalOrGmt.GMT;
 
@@ -38,8 +45,9 @@ public class BaseLocalizer {
     public static final Date LATEST;
     public static final Date OLD_EARLIEST;
     public static final Date OLD_LATEST;
-    
+
     private static Function<Locale,FormatFixer> LocaleFixerFunction;
+
 
     static {
         Calendar c = Calendar.getInstance();
@@ -66,7 +74,7 @@ public class BaseLocalizer {
         c.set(Calendar.MONTH, c.getActualMinimum(Calendar.MONTH));
         c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
         OLD_LATEST = c.getTime();
-        
+
         LocaleFixerFunction = locale -> JdkFormatFixer.INSTANCE; // Use JDK locale data by default.
     }
 
@@ -77,8 +85,10 @@ public class BaseLocalizer {
 
     protected SharedLabelSet labelSet;
 
-    /** these elements aren't initialized on construction.  They are created once
-     *  the first time they are accessed */
+    /**
+     * these elements aren't initialized on construction. They are created once the
+     * first time they are accessed
+     */
     protected DateFormat gmtDateFormat;
     protected DateFormat localDateFormat;
     protected DateFormat localMediumDateFormat;
@@ -103,54 +113,69 @@ public class BaseLocalizer {
     protected NumberFormat numberFormat;
     protected NumberFormat currencyFormat;
     protected NumberFormat accountingCurrencyFormat;
-    protected final LruCache<String,MessageFormat> messageFormatCache = new LruCache<>(10);
+    protected final LruCache<String, MessageFormat> messageFormatCache = new LruCache<>(10);
 
     public static final String ENGLISH_LANGUAGE = "en";
     public static final String JAPANESE_LANGUAGE = "ja";
-    
+
+
     protected static void setLocaleFormatFixer(Function<Locale,FormatFixer> predicate) {
         BaseLocalizer.LocaleFixerFunction = predicate;
     }
     
-    protected static Function<Locale,FormatFixer> getLocalePredicate() {
+    protected static Function<Locale,FormatFixer> getLocaleFormatFixer() {
         return BaseLocalizer.LocaleFixerFunction;
     }
-    
-    private static final ThreadLocal<SimpleDateFormat> ISO8601_FORMATTER = new ThreadLocal<SimpleDateFormat>() { 
-        @Override 
-        public SimpleDateFormat initialValue() { 
-            SimpleDateFormat fmt =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); 
-            fmt.setTimeZone(BaseLocalizer.GMT_TZ); 
+
+    private static final ThreadLocal<SimpleDateFormat> ISO8601_FORMATTER = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        public SimpleDateFormat initialValue() {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+            fmt.setTimeZone(BaseLocalizer.GMT_TZ);
             return fmt;
-    	    } 
+        }
     };
-    
-    private static final ThreadLocal<SimpleDateFormat> ISO8601_MILLISECOND_FORMATTER = new ThreadLocal<SimpleDateFormat>() { 
-	    @Override 
-	    public SimpleDateFormat initialValue() { 
-	        SimpleDateFormat fmt =  new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"); 
-	        fmt.setTimeZone(BaseLocalizer.GMT_TZ); 
-	        return fmt;
-	    } 
+
+    private static final ThreadLocal<SimpleDateFormat> ISO8601_MILLISECOND_FORMATTER = new ThreadLocal<SimpleDateFormat>() {
+        @Override
+        public SimpleDateFormat initialValue() {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+            fmt.setTimeZone(BaseLocalizer.GMT_TZ);
+            return fmt;
+        }
     };
 
     // We have some issues with Saudi Arabia (ar-SA) calendar and
     // date / time formats due to the change in Calendar type to
-    // IslamicCalendar in ICU4J 59.1.  Work around these issues for
+    // IslamicCalendar in ICU4J 59.1. Work around these issues for
     // now by falling back to Arabic (ar) locale which uses
     // GregorianCalendar.
-    private static Locale fixSaudiArabiaLocale(Locale aLocale) {
+    static Locale fixSaudiArabiaLocale(Locale aLocale) {
         if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa")) {
             return new Locale("ar");
         }
         return aLocale;
     }
-    
+
     /**
-     * Allow custom overriding of formats for certain locales, where the ICU or JDK may change and cause
-     * unwanted customer impact due to CDLR updates.
+     * Sets two digit year start date for parsing 2 year dates to
+     * 1959-12-23T23:00 local time or its DST equivalent.
+     * 
+     * @param df DateFormat instance which should extend SimpleDateFormat
+     * @param tz TimeZone instance
      */
-    static interface FormatFixer {
+    protected static void set2DigitYearStart(DateFormat df, TimeZone tz) {
+        if (df instanceof SimpleDateFormat) {
+            // If 1959-12-23T23:00 falls on a DST transition, the DST length is added.
+            // e.g. Asia/Ho_Chi_Minh,Asia/Saigon,VST would be If 1960-01-01T00:00
+            LocalDateTime ldt = LocalDateTime.of(1960, 1, 1, 0, 0);
+            ZonedDateTime zdt = ldt.atZone(tz.toZoneId());
+            Date twoDigitStart = Date.from(zdt.toInstant());
+            ((SimpleDateFormat) df).set2DigitYearStart(twoDigitStart);
+        }
+    }
+
+    public static interface FormatFixer {
         /**
          * Returns the date formatter with the given formatting style for the given locale.
          */
@@ -193,6 +218,20 @@ public class BaseLocalizer {
          */
         public NumberFormat getPercentFormat(Locale locale);
     }
+    
+    /**
+     * @return a format fixer that uses the built-in JDK data
+     */
+    protected static FormatFixer getJDKFormatFixer() {
+    	return JdkFormatFixer.INSTANCE;
+    }
+
+    /**
+     * @return a format fixer that uses ICU4J instead of the JDK
+     */
+    protected static FormatFixer getICUFormatFixer() {
+    	return ICUFormatFixer.INSTANCE;
+    }
 
     /**
      * OLD EXPLANATION
@@ -216,8 +255,7 @@ public class BaseLocalizer {
      * 
      * In order to be back-compatible with legacy data, we have to keep these historic formats in place.
      **/
-    @Deprecated
-    static enum JdkFormatFixer implements FormatFixer {
+    private static enum JdkFormatFixer implements FormatFixer {
         
         INSTANCE;
 
@@ -334,10 +372,85 @@ public class BaseLocalizer {
         }
     }
     
+    /**
+     * Some hot fixes to override locale data. This is ICU version
+     **/
+    private static enum ICUFormatFixer implements FormatFixer {
+        
+        INSTANCE;
+        
+        private static Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("ID");
+        
+        // Override locales.
+        private Locale overrideLocaleFor(Locale alocale) {
+            // Override some locales to en_GB.
+            if (ENGLISH_LANGUAGE.equals(alocale.getLanguage()) && ENGLISH_OVERRIDE_COUNTRIES.contains(alocale.getCountry())) {
+                return Locale.UK;
+            }
+            alocale = fixSaudiArabiaLocale(alocale);
+            
+            return alocale;
+        }
+
+        @Override
+        public DateFormat getDateInstance(int style, Locale aLocale) {
+            aLocale = overrideLocaleFor(aLocale);
+            
+            return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getDateInstance(style, aLocale));
+        }
+
+        @Override
+        public DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
+            aLocale = overrideLocaleFor(aLocale);
+            
+            return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getTimeInstance(timeStyle, aLocale));
+        }
+
+        @Override
+        public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
+            aLocale = overrideLocaleFor(aLocale);
+            
+            return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale));
+        }
+
+        @Override
+        public DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale) {
+            if (dateFormat instanceof SimpleDateFormatICU) {
+                ((SimpleDateFormatICU) dateFormat).applyPattern(pattern);
+                return dateFormat;
+            }
+            return SimpleDateFormatICU.wrap(new com.ibm.icu.text.SimpleDateFormat(pattern, overrideLocaleFor(aLocale)));
+        }
+
+        @Override
+        public NumberFormat getNumberFormat(Locale locale) {
+            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getNumberInstance(locale);
+            return NumberFormatICU.wrap(icu_nf);
+        }
+        
+        @Override
+        public NumberFormat getCurrencyFormat(Locale locale) {
+            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getCurrencyInstance(locale);
+            return NumberFormatICU.wrap(icu_nf);
+        }
+        
+        @Override
+        public NumberFormat getAccountingCurrencyFormat(Locale locale) {
+            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getInstance(locale, com.ibm.icu.text.NumberFormat.ACCOUNTINGCURRENCYSTYLE);
+            return NumberFormatICU.wrap(icu_nf);
+        }
+        
+        @Override
+        public NumberFormat getPercentFormat(Locale locale) {
+            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getPercentInstance(locale);
+            return NumberFormatICU.wrap(icu_nf);
+        }
+    }
+    
     private static FormatFixer getFormatProvider(Locale locale) {
     	return LocaleFixerFunction.apply(locale);
     }
-    
+
     /** This constructor is used to create a BaseLocalizer
      *
      * @param locale is the user's locale data
@@ -402,17 +515,6 @@ public class BaseLocalizer {
      * @return a calendar for given locale and time zone.
      */
     public Calendar getCalendar(TimeZone tz, Locale locale) {
-        /* TODO: uncomment following code once ICU fixes the calendar bugs. Then API versioning.
-         * http://bugs.icu-project.org/trac/ticket/13548
-         * http://bugs.icu-project.org/trac/ticket/13601
-         
-        if (shouldUseICU(locale)) {
-            // Create ICU time zone instance.
-            com.ibm.icu.util.TimeZone icu_tz = com.ibm.icu.util.TimeZone.getTimeZone(tz.getID());
-            // Wrap ICU calendar into Java calendar type.
-            return CalendarICU.wrap(com.ibm.icu.util.Calendar.getInstance(icu_tz, locale));
-        }
-        */
         return Calendar.getInstance(tz, locale);
     }
 
@@ -638,13 +740,7 @@ public class BaseLocalizer {
 
         df.setLenient(false);
         df.setTimeZone(tz);
-        Calendar calendar = df.getCalendar();
-        calendar.set(Calendar.YEAR, 1959);  // 60 means 1960, 59 means 2059; handle potential daylight saving difference
-        calendar.set(Calendar.MONTH, calendar.getActualMaximum(Calendar.MONTH));
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, calendar.getActualMinimum(Calendar.MINUTE));
-        ((SimpleDateFormat)df).set2DigitYearStart(calendar.getTime());
+        set2DigitYearStart(df, tz);
         return df;
     }
     
@@ -658,32 +754,25 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date-only DateFormat.
      */
-    public static DateFormat getLocaleInputDateFormat(Locale locale, int style, TimeZone tz) {   	    
-        DateFormat df ;   
-        
+    public static DateFormat getLocaleInputDateFormat(Locale locale, int style, TimeZone tz) {
+        DateFormat df;
         switch (style) {
-            case DateFormat.SHORT :
+            case DateFormat.SHORT:
                 df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
                 break;
-            case DateFormat.MEDIUM :
+            case DateFormat.MEDIUM:
                 df = getFormatProvider(locale).getDateInstance(DateFormat.MEDIUM, locale);
                 break;
-            case DateFormat.LONG :
+            case DateFormat.LONG:
                 df = getFormatProvider(locale).getDateInstance(DateFormat.LONG, locale);
                 break;
-            default :
+            default:
                 df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
         }
-        
+
         df.setLenient(false);
         df.setTimeZone(tz);
-        Calendar calendar = df.getCalendar();
-        calendar.set(Calendar.YEAR, 1959);  // 60 means 1960, 59 means 2059; handle potential daylight saving difference
-        calendar.set(Calendar.MONTH, calendar.getActualMaximum(Calendar.MONTH));
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, calendar.getActualMinimum(Calendar.MINUTE));
-        ((SimpleDateFormat)df).set2DigitYearStart(calendar.getTime());
+        set2DigitYearStart(df, tz);
         return df;
     }
 
@@ -781,15 +870,7 @@ public class BaseLocalizer {
 
         df.setLenient(false);
         df.setTimeZone(tz);
-        Calendar calendar = df.getCalendar();
-        calendar.set(Calendar.YEAR, 1959);  // 60 means 1960, 59 means 2059
-        calendar.set(Calendar.MONTH, calendar.getActualMaximum(Calendar.MONTH));
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, calendar.getActualMinimum(Calendar.MINUTE));
-        
-        assert (df instanceof SimpleDateFormat);
-        ((SimpleDateFormat)df).set2DigitYearStart(calendar.getTime());
+        set2DigitYearStart(df, tz);
         return df;
     }
     
@@ -806,33 +887,23 @@ public class BaseLocalizer {
      */
     
     public static DateFormat getLocaleInputDateTimeFormat(Locale locale, int style, TimeZone tz) {
-    	    DateFormat df;
-    	    switch (style) {
-            case DateFormat.SHORT :
-                df= getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+        DateFormat df;
+        switch (style) {
+            case DateFormat.SHORT:
+                df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
                 break;
-            case DateFormat.MEDIUM :
+            case DateFormat.MEDIUM:
                 df = getFormatProvider(locale).getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
                 break;
-            case DateFormat.LONG :
+            case DateFormat.LONG:
                 df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.LONG, locale);
                 break;
-            default :
+            default:
                 df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
-    	    
-    	    }
-    	    	 
+        }
         df.setLenient(false);
         df.setTimeZone(tz);
-        Calendar calendar = df.getCalendar();
-        calendar.set(Calendar.YEAR, 1959);  // 60 means 1960, 59 means 2059
-        calendar.set(Calendar.MONTH, calendar.getActualMaximum(Calendar.MONTH));
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, calendar.getActualMinimum(Calendar.MINUTE));
-        
-        assert (df instanceof SimpleDateFormat);
-        ((SimpleDateFormat)df).set2DigitYearStart(calendar.getTime());
+        set2DigitYearStart(df, tz);
         return df;
     }
     
@@ -885,32 +956,26 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date-only DateFormat.
      */
-    public static DateFormat getLocaleInputTimeFormat(Locale locale, int style, TimeZone tz) {   	    
-        DateFormat df ;   
-        
+    public static DateFormat getLocaleInputTimeFormat(Locale locale, int style, TimeZone tz) {
+        DateFormat df;
+
         switch (style) {
-            case DateFormat.SHORT :
+            case DateFormat.SHORT:
                 df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
                 break;
-            case DateFormat.MEDIUM :
+            case DateFormat.MEDIUM:
                 df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
                 break;
-            case DateFormat.LONG :
+            case DateFormat.LONG:
                 df = getFormatProvider(locale).getTimeInstance(DateFormat.LONG, locale);
                 break;
-            default :
+            default:
                 df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
         }
-        
+
         df.setLenient(false);
         df.setTimeZone(tz);
-        Calendar calendar = df.getCalendar();
-        calendar.set(Calendar.YEAR, 1959);  // 60 means 1960, 59 means 2059; handle potential daylight saving difference
-        calendar.set(Calendar.MONTH, calendar.getActualMaximum(Calendar.MONTH));
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.MINUTE, calendar.getActualMinimum(Calendar.MINUTE));
-        ((SimpleDateFormat)df).set2DigitYearStart(calendar.getTime());
+        set2DigitYearStart(df, tz);
         return df;
     }
 

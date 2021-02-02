@@ -57,38 +57,6 @@ public class DefaultHumanLanguageImplTest extends TestCase {
                 DefaultHumanLanguageImpl.MALAY.getTranslationFallbackLanguage());  // Indonesian is a "register" of Malay
         assertSame("Did not get the correct fallback language for Arabic Algerian", DefaultHumanLanguageImpl.ARABIC,
                 DefaultHumanLanguageImpl.ARABIC_DZ.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Bahrain", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_BH.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Egypt", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_EG.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Iraq", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_IQ.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Jordan", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_IQ.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Kuwait", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_KW.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Lebanon", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_LB.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Libya", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_LY.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Morocco", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_MA.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Oman", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_OM.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Quatar", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_QA.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Saudi Arabia", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_SA.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Sudan", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_SD.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Sudan", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_SY.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Algerian", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_TN.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Algerian", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_AE.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Arabic Yemen", DefaultHumanLanguageImpl.ARABIC,
-                DefaultHumanLanguageImpl.ARABIC_YE.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Chineese Singapore", DefaultHumanLanguageImpl.CHINESE_SIMP,
                 DefaultHumanLanguageImpl.CHINESE_SG.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Chineese Hong Kong", DefaultHumanLanguageImpl.CHINESE_TRAD,
@@ -101,52 +69,15 @@ public class DefaultHumanLanguageImplTest extends TestCase {
                 DefaultHumanLanguageImpl.ENGLISH_SG.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for South Africa", DefaultHumanLanguageImpl.ENGLISH_GB,
                 DefaultHumanLanguageImpl.ENGLISH_ZA.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for French Belgium", DefaultHumanLanguageImpl.FRENCH,
-                DefaultHumanLanguageImpl.FRENCH_BE.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for French Luxembourg", DefaultHumanLanguageImpl.FRENCH,
-                DefaultHumanLanguageImpl.FRENCH_LU.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for French Switzerland", DefaultHumanLanguageImpl.FRENCH,
                 DefaultHumanLanguageImpl.FRENCH_CH.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for German Luxembourg", DefaultHumanLanguageImpl.GERMAN,
-                DefaultHumanLanguageImpl.GERMAN_LU.getFallbackLanguage());
+                DefaultHumanLanguageImpl.GERMAN_CH.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Italian Switzerland", DefaultHumanLanguageImpl.ITALIAN,
                 DefaultHumanLanguageImpl.ITALIAN_CH.getFallbackLanguage());
         assertSame("Did not get the correct fallback language for Spanish Argentina", DefaultHumanLanguageImpl.SPANISH,
                 DefaultHumanLanguageImpl.SPANISH_AR.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Bolivia", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_BO.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Chile", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_CL.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Colombia", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_CO.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Costa Rica", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_CR.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Dominican Republic", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_DO.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Ecuador", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_EC.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish El Salvador", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_SV.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Guatemala", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_GT.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Honduras", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_HN.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Nicaragua", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_NI.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Panama", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_PA.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Paraguay", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_PY.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Peru", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_PE.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Puerto Rico", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_PR.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish United States", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_US.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Uruguay", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_UY.getFallbackLanguage());
-        assertSame("Did not get the correct fallback language for Spanish Venezuela", DefaultHumanLanguageImpl.SPANISH,
-                DefaultHumanLanguageImpl.SPANISH_VE.getFallbackLanguage());
+
     }
 
     @Test
@@ -160,7 +91,7 @@ public class DefaultHumanLanguageImplTest extends TestCase {
         assertEquals("zh-Hant-HK", DefaultHumanLanguageImpl.CHINESE_HK.getHttpLanguageCode());
 
         assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.HEBREW.getDirection());
-        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ARABIC_EG.getDirection());
+        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ARABIC_DZ.getDirection());
         assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ENGLISH_IL.getDirection());
         assertEquals(TextDirection.LTR, DefaultHumanLanguageImpl.ESPERANTO.getDirection());
     }

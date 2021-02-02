@@ -114,7 +114,7 @@ public abstract class Adjective extends NounModifier {
      * choose the most similar (ie. the smallest Hamming distance)
      * @param name the name of the key for logging
      * @param requiredForms the set of required forms for adjectives in this language
-     * @return <tt>true</tt> if the forms provided are valid.  Also fills in missing forms if necessary
+     * @return {@code true} if the forms provided are valid.  Also fills in missing forms if necessary
      */
     public boolean defaultValidate(String name, Set<? extends AdjectiveForm> requiredForms) {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
@@ -176,7 +176,7 @@ public abstract class Adjective extends NounModifier {
                         logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.fine("###\tERROR: The adjective " + name + " has no obvious default for " + form + "form");
+                        logger.fine("###\tError: The adjective " + name + " has no obvious default for " + form + "form");
                     }
                 }
 

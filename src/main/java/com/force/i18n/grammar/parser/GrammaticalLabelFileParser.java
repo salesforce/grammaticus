@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -10,6 +10,7 @@ package com.force.i18n.grammar.parser;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.MessageFormat;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -46,7 +47,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     private GenericUniquefy<LabelRef> aliasUniquefy = new GenericUniquefy<LabelRef>();
 
     private List<AliasParam> illegalAliases;
-    private Set<LabelRef> invalidLabels;  // The set of labels that have a "problem" with them
+    private Set<ErrorInfo> invalidLabels;  // The set of labels that have a "problem" with them
 
     private long lastModified = -1;
 
@@ -218,7 +219,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     }
 
     List<AliasParam> getIllegalAliases() { return this.illegalAliases; }
-    public Set<? extends LabelReference> getInvalidLabels() { return this.invalidLabels; }
+    public Set<ErrorInfo> getInvalidLabels() { return this.invalidLabels; }
 
     // ====================================================================
     // Param alias handler: <param name="nnn" alias="xxx"/>
@@ -300,21 +301,19 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         }
 
         @Override
-		public int hashCode() {
-			return Objects.hash(file, lineNumber);
-		}
+        public int hashCode() {
+            return Objects.hash(file, lineNumber);
+        }
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null || getClass() != obj.getClass())
-				return false;
-			AliasParam other = (AliasParam) obj;
-			return Objects.equals(file, other.file) && lineNumber == other.lineNumber;
-		}
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if (obj == null || getClass() != obj.getClass()) return false;
+            AliasParam other = (AliasParam)obj;
+            return Objects.equals(file, other.file) && lineNumber == other.lineNumber;
+        }
 
-		@Override
+        @Override
         public int compareTo(AliasParam o) {
             int fileCompare = this.file.getPath().compareTo(o.file.getPath());
             if (fileCompare == 0) {
@@ -335,9 +334,11 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         return sec + "." + param;
     }
 
-    void addInvalidLabel(String section, String key) {
-        if (this.invalidLabels == null) this.invalidLabels = new TreeSet<LabelRef>();
-        this.invalidLabels.add(new LabelRef(section, key));
+    ErrorInfo addInvalidLabel(ErrorType type, String section, String key, URL file, int lineNumber, Object... args) {
+        ErrorInfo error = new ErrorInfo(type, section, key, file, lineNumber, args);
+        if (this.invalidLabels == null) this.invalidLabels = new TreeSet<ErrorInfo>();
+        this.invalidLabels.add(error);
+        return error;
     }
 
     void addAlias(String srcSection, String srcParam, String dstSection, String dstParam, URL file, int lineNumber) {
@@ -365,7 +366,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     }
 
     /**
-     * Resolve all alias value in &lt;param&gt; tag. This param tag suppose to exists in <tt>label</tt>, with null
+     * Resolve all alias value in &lt;param&gt; tag. This param tag suppose to exists in {@code label}, with null
      * value.
      *
      * @param labelSet
@@ -416,7 +417,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
                 // target key exists in the recursive alias chain, that means this is
                 // circular reference.
                 ap.error("Circular reference at ", t.getKey());
-                addInvalidLabel(ap.srcSection, ap.srcParam);
+                addInvalidLabel(ErrorType.BadAlias, ap.srcSection, ap.srcParam, ap.file, ap.lineNumber, t.getKey());
+
             } else {
                 // recursive reference. Keep tracking down
                 Set<String> localRefSet = refSet;
@@ -448,4 +450,56 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         return retValue;
     }
 
+    public static enum ErrorType {
+        // noun does not exist
+        UnknownEntity("Unknown entity <{0}>"),
+        // bad alias -- circular reference
+        BadAlias("Bad alias: Circular reference \"{0}\""),
+        // bad 'num' value in a plural tag
+        BadPluralReference("Bad plural reference <{0}>"),
+        // duplicate 'val' found in a when tag
+        DuplicateWhen("Duplicate when <{0}>"),
+        // TODO: this would never returned for <plural> or <gender> tags
+        BadDefault("You cannot specify {0} for a when and have default values"),
+        // bad 'val' in a when tag
+        BadCategory("Bad category <{0}>"),
+        // other error -- may be unused
+        Unknown("Unknown Error");
+
+        private final String errorMessage;
+
+        ErrorType(String msg) {
+            this.errorMessage = msg;
+        }
+
+        public String getMessage(ErrorInfo ref) {
+            String ret = (ref.getArguments() == null || ref.getArguments().length == 0) ? errorMessage
+                    : MessageFormat.format(errorMessage, ref.getArguments());
+            return (ref == null) ? ret : ret + " at " + ref.toString();
+        }
+    }
+
+    /**
+     * Container class for parser error.
+     * @see GrammaticalLabelFileParser#getInvalidLabels()
+     * @since 226
+     */
+    public class ErrorInfo extends LabelRef {
+        private static final long serialVersionUID = 1L;
+
+        public final ErrorType type;
+        public final URL file;
+        public final int lineNumber;
+
+        ErrorInfo(ErrorType type, String section, String key, URL file, int lineNumber, Object...args) {
+            super(section, key, args);
+            this.type = type;
+            this.file = file;
+            this.lineNumber = lineNumber;
+        }
+
+        public String getMessage() {
+            return this.type.getMessage(this);
+        }
+    }
 }

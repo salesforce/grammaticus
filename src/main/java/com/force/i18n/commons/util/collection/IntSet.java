@@ -10,8 +10,8 @@ package com.force.i18n.commons.util.collection;
 import com.google.common.annotations.Beta;
 
 /**
- * <p>Modeled closely after the <tt>java.util.Set</tt> class, except it
- * uses <tt>int</tt>s instead of <tt>Object</tt>s.</p>
+ * <p>Modeled closely after the {@code java.util.Set} class, except it
+ * uses {@code int}s instead of {@code Object}s.</p>
  *
  * <p>The additional stipulation on constructors is, not surprisingly,
  * that all constructors must create a set that contains no duplicate elements
@@ -60,25 +60,25 @@ public interface IntSet {
     int size();
 
     /**
-     * Returns <tt>true</tt> if this set contains no elements.
+     * Returns {@code true} if this set contains no elements.
      *
-     * @return <tt>true</tt> if this set contains no elements.
+     * @return {@code true} if this set contains no elements.
      */
     boolean isEmpty();
 
     /**
-     * Returns <tt>true</tt> if this set contains the specified element.
+     * Returns {@code true} if this set contains the specified element.
      *
      * @param o element whose presence in this set is to be tested.
-     * @return <tt>true</tt> if this set contains the specified element.
+     * @return {@code true} if this set contains the specified element.
      */
     boolean contains(int o);
 
     /**
-     * Returns <tt>true</tt> if this set contains all of the elements in the specified set
+     * Returns {@code true} if this set contains all of the elements in the specified set
      *
      * @param set set that is being tested for containment.
-     * @return <tt>true</tt> if this set is a superset of the given set
+     * @return {@code true} if this set is a superset of the given set
      */
     boolean containsAll(IntSet set);
 
@@ -87,7 +87,7 @@ public interface IntSet {
      * present.
      *
      * @param o element to be added to this set.
-     * @return <tt>true</tt> if the set did not already contain the specified
+     * @return {@code true} if the set did not already contain the specified
      * element.
      */
     boolean add(int o);
@@ -96,7 +96,7 @@ public interface IntSet {
      * Removes the given element from this set if it is present.
      *
      * @param o object to be removed from this set, if present.
-     * @return <tt>true</tt> if the set contained the specified element.
+     * @return {@code true} if the set contained the specified element.
      */
     boolean remove(int o);
 

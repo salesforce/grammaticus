@@ -15,8 +15,8 @@ import com.google.common.annotations.Beta;
 import java.io.Serializable;
 
 /**
- * A Map that uses <tt>int</tt>s as its keys.
- * Mostly borrowed from <tt>java.util.HashMap</tt>
+ * A Map that uses {@code int}s as its keys.
+ * Mostly borrowed from {@code java.util.HashMap}
  *
  * <p>Also contains the public inner class interface IntMap.Entry
  * that all implementations of IntMap must also complete.
@@ -35,12 +35,12 @@ public interface IntMap<V> extends Serializable {
     int size();
 
     /**
-     * @return <tt>true</tt> if this map contains no key-value mappings.
+     * @return {@code true} if this map contains no key-value mappings.
      */
     boolean isEmpty();
 
     /**
-     * @return <tt>true</tt> if this map maps one or more keys to the
+     * @return {@code true} if this map maps one or more keys to the
      * specified value.
      *
      * @param value value whose presence in this map is to be tested.
@@ -48,7 +48,7 @@ public interface IntMap<V> extends Serializable {
     boolean containsValue(Object value);
 
     /**
-     * @return  <tt>true</tt> if this map contains a mapping for the specified
+     * @return  {@code true} if this map contains a mapping for the specified
      * key.
      *
      * @param key key whose presence in this Map is to be tested.
@@ -57,10 +57,10 @@ public interface IntMap<V> extends Serializable {
 
     /**
      * Returns the value to which this map maps the specified key.  Returns
-     * <tt>null</tt> if the map contains no mapping for this key.  A return
-     * value of <tt>null</tt> does not <i>necessarily</i> indicate that the
+     * {@code null} if the map contains no mapping for this key.  A return
+     * value of {@code null} does not <i>necessarily</i> indicate that the
      * map contains no mapping for the key; it's also possible that the map
-     * explicitly maps the key to <tt>null</tt>.  The <tt>containsKey</tt>
+     * explicitly maps the key to {@code null}.  The {@code containsKey}
      * operation may be used to distinguish these two cases.
      *
      * @return the value to which this map maps the specified key.
@@ -75,10 +75,10 @@ public interface IntMap<V> extends Serializable {
      *
      * @param key key with which the specified value is to be associated.
      * @param value value to be associated with the specified key.
-     * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
+     * @return previous value associated with specified key, or {@code null}
+     *	       if there was no mapping for key.  A {@code null} return can
      *	       also indicate that the HashMap previously associated
-     *	       <tt>null</tt> with the specified key.
+     *	       {@code null} with the specified key.
      */
     V put(int key, V value);
 
@@ -86,9 +86,9 @@ public interface IntMap<V> extends Serializable {
      * Removes the mapping for this key from this map if present.
      *
      * @param key key whose mapping is to be removed from the map.
-     * @return previous value associated with specified key, or <tt>null</tt>
-     *	       if there was no mapping for key.  A <tt>null</tt> return can
-     *	       also indicate that the map previously associated <tt>null</tt>
+     * @return previous value associated with specified key, or {@code null}
+     *	       if there was no mapping for key.  A {@code null} return can
+     *	       also indicate that the map previously associated {@code null}
      *	       with the specified key.
      */
     V remove(int key);
@@ -112,10 +112,10 @@ public interface IntMap<V> extends Serializable {
      * Returns a set view of the keys contained in this map.  The set is
      * backed by the map, so changes to the map are reflected in the set, and
      * vice-versa.  The set supports element removal, which removes the
-     * corresponding mapping from this map, via the <tt>Iterator.remove</tt>,
-     * <tt>Set.remove</tt>, <tt>removeAll</tt>, <tt>retainAll</tt>, and
-     * <tt>clear</tt> operations.  It does not support the <tt>add</tt> or
-     * <tt>addAll</tt> operations.
+     * corresponding mapping from this map, via the {@code Iterator.remove},
+     * {@code Set.remove}, {@code removeAll}, {@code retainAll}, and
+     * {@code clear} operations.  It does not support the {@code add} or
+     * {@code addAll} operations.
      *
      * @return a set view of the keys contained in this map.
      */
@@ -126,9 +126,9 @@ public interface IntMap<V> extends Serializable {
      * collection is backed by the map, so changes to the map are reflected in
      * the collection, and vice-versa.  The collection supports element
      * removal, which removes the corresponding mapping from this map, via the
-     * <tt>Iterator.remove</tt>, <tt>Collection.remove</tt>,
-     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt> operations.
-     * It does not support the <tt>add</tt> or <tt>addAll</tt> operations.
+     * {@code Iterator.remove}, {@code Collection.remove},
+     * {@code removeAll}, {@code retainAll}, and {@code clear} operations.
+     * It does not support the {@code add} or {@code addAll} operations.
      *
      * @return a collection view of the values contained in this map.
      */
@@ -136,13 +136,13 @@ public interface IntMap<V> extends Serializable {
 
     /**
      * Returns a collection view of the mappings contained in this map.  Each
-     * element in the returned collection is a <tt>IntMap.Entry</tt>.  The
+     * element in the returned collection is a {@code IntMap.Entry}.  The
      * collection is backed by the map, so changes to the map are reflected in
      * the collection, and vice-versa.  The collection supports element
      * removal, which removes the corresponding mapping from the map, via the
-     * <tt>Iterator.remove</tt>, <tt>Collection.remove</tt>,
-     * <tt>removeAll</tt>, <tt>retainAll</tt>, and <tt>clear</tt> operations.
-     * It does not support the <tt>add</tt> or <tt>addAll</tt> operations.
+     * {@code Iterator.remove}, {@code Collection.remove},
+     * {@code removeAll}, {@code retainAll}, and {@code clear} operations.
+     * It does not support the {@code add} or {@code addAll} operations.
      *
      * @return a collection view of the mappings contained in this map.
      * @see IntMap.Entry
@@ -160,7 +160,7 @@ public interface IntMap<V> extends Serializable {
         /**
          * Returns the value corresponding to this entry.  If the mapping
          * has been removed from the backing map (by the iterator's
-         * <tt>remove</tt> operation), the results of this call are undefined.
+         * {@code remove} operation), the results of this call are undefined.
          *
          * @return the value corresponding to this entry.
          */
@@ -168,20 +168,20 @@ public interface IntMap<V> extends Serializable {
 
         /**
          * Compares the specified object with this entry for equality.
-         * Returns <tt>true</tt> if the given object is also a map entry and
+         * Returns {@code true} if the given object is also a map entry and
          * the two entries represent the same mapping.  More formally, two
-         * entries <tt>e1</tt> and <tt>e2</tt> represent the same mapping
+         * entries {@code e1} and {@code e2} represent the same mapping
          * if<pre>
          *     (e1.getKey()==null ?
          *      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &amp;&amp;
          *     (e1.getValue()==null ?
          *      e2.getValue()==null : e1.getValue().equals(e2.getValue()))
          * </pre>
-         * This ensures that the <tt>equals</tt> method works properly across
-         * different implementations of the <tt>Map.Entry</tt> interface.
+         * This ensures that the {@code equals} method works properly across
+         * different implementations of the {@code Map.Entry} interface.
          *
          * @param o object to be compared for equality with this map entry.
-         * @return <tt>true</tt> if the specified object is equal to this map
+         * @return {@code true} if the specified object is equal to this map
          *         entry.
          */
         @Override

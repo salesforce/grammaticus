@@ -30,11 +30,11 @@
         <param name="last_type_list_conn">Back to List: <Entity entity="0" plural="y"/> from Connections</param>
         <param name="back_detail">Back to <Entity entity="0" plural="n"/>: {0}</param>  <!-- 0=EntityTypeName 1=ObjectName-->
         <param name="num_records"><plural num="0"><when val="one">There is {0} record</when>There are {0} records</plural></param>
-        <param name="num_records_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when>There are {0} <entities entity="0"/></plural></param>
+        <param name="num_records_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when>There are {0} <entity entity="0" plural="y"/></plural></param>
         <param name="num_records_zero"><plural num="0"><when val="one">There is {0} record</when><when val="zero">There are no records</when>There are {0} records</plural></param>
-        <param name="num_records_zero_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when><when val="zero">There are no <entities entity="0"/></when>There are {0} <entities entity="0"/></plural></param>
+        <param name="num_records_zero_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when><when val="zero">There are no <entity entity="0" plural="y"/></when>There are {0} <entity entity="0" plural="y"/></plural></param>
     </section>
-    
+
     <section name="Global_Entity" all_languages="yes">
         <param name="Access">Access</param>   <!-- aliased across labels; do not change -->
         <param name="ManagedHeader">(Managed)</param>
@@ -201,7 +201,7 @@
         <param name="addquoteline">Add Line Item</param>
         <param name="add_quotelines">Add Line Items</param>
         <param name="edit_quotelines">Edit Line Items</param>
-        <param name="add_contractlineitems">New Line Items</param> 
+        <param name="add_contractlineitems">New Line Items</param>
         <param name="add_sample_dashboard">Add Sample Dashboard</param>
         <param name="add_to_call_center">Add to Call Center</param>
         <param name="add_to_campaign">Add to <Campaign/></param>
@@ -592,5 +592,5 @@
         <param name="downvotecomment">Downvote Answer</param>
     </section>
 
-    
+
 </iniFile>

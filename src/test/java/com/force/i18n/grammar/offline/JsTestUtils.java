@@ -1,5 +1,5 @@
 /* 
- * Copyright (c) 2019, salesforce.com, inc.
+ * Copyright (c) 2021, salesforce.com, inc.
  * All rights reserved.
  * Licensed under the BSD 3-Clause license. 
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
@@ -7,65 +7,60 @@
 package com.force.i18n.grammar.offline;
 
 import java.io.IOException;
-import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
-import javax.script.Bindings;
-import javax.script.ScriptContext;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
 
 import org.junit.Assert;
 
-import com.force.i18n.HumanLanguage;
-import com.force.i18n.LabelReference;
+import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.Renameable;
 import com.force.i18n.grammar.GrammaticalLabelSet;
 import com.force.i18n.grammar.GrammaticalTerm;
 import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
+import com.ibm.icu.text.MessageFormat;
 
 /**
- * Tools for testing differences between Java and JS evaluation of Labels
+ * Tests for executing JS code inside the JVM. 
+ * Not optimized for Graal. 
  * @author stamm
- * @since 1.1
+ *
  */
 public class JsTestUtils {
+    private static String GRAMMATICUS_JS;
 
-
-    private static AtomicReference<Bindings> BINDINGS = new AtomicReference<>();
+    private static String getGrammaticusJs() throws IOException {
+    	if (GRAMMATICUS_JS == null) {	
+    		GRAMMATICUS_JS = Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), Charsets.UTF_8); 		
+    	}
+    	return GRAMMATICUS_JS;
+    }
+    
     /**
      * @return a script engine with an appropriate global context for $Api so that we don't have to revaluate the functions constantly
      * 
      * If you want to add stuff to bindings while running tests, just comment out the if and the closing brace
      */
     public static ScriptEngine getScriptEngine() {
-        Bindings bindings = BINDINGS.get();
-        if (bindings == null) {
-            // Create an engine just to compile the $AP
-            ScriptEngine compEngine = new ScriptEngineManager().getEngineByName("JavaScript");
-            compEngine.put("out", System.out);
-
-            try {
-                bindings = compEngine.getBindings(ScriptContext.GLOBAL_SCOPE);
-                bindings.put("Grammaticus",  compEngine.eval(Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), Charsets.UTF_8)));
-                BINDINGS.set(bindings);
-            } catch (ScriptException | IOException x) {
-                x.printStackTrace();
-            }
-        }
+        System.setProperty("polyglot.js.nashorn-compat","true");
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
-        engine.setBindings(bindings, ScriptContext.GLOBAL_SCOPE);
+        
+        Bindings engineBindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
+        engineBindings.put("polyglot.js.allowAllAccess", true);
+
+        // Assume graal does the caching, and not us.
+        Bindings bindings = engine.getBindings(ScriptContext.GLOBAL_SCOPE);
+        try {
+            bindings.put("Grammaticus", engine.eval(getGrammaticusJs()));
+        } catch (ScriptException | IOException e) {
+            e.printStackTrace();
+        }
+
+        engine.put("out", System.out);
         return engine;
     }
 
