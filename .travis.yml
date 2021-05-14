@@ -1,24 +1,2 @@
 language: java
 jdk: openjdk8
-
-env:
-  global:
-   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-   #   via the "travis encrypt" command using the project repo's public key
-   - secure: "JcMey2Bs2N4nVFnoePlZ3UkXZ0wNt9TdAkMh2cq3W94wzqyfYldQhJ25ZImTyMMgBR74XEXZWeifkLe3pRT1NyJP+jNXClVeOqboWnIbAvS8BOyt7LGNj++WlnqkGqgaIV8jWy9LS/g89l5oATzCPhiT8vVj+qpzW+6lJQy3T3/cNUiKM22fZyl/L2rkicsjNYVjAs/tNpgCtBpulaRR3p+SyFAFLqo60yX4Ml42WjrsChGpFPCwLUlqMovTBIMU4Zct9mW46X9M8VwtZ4pSwBAq8RZyksSMuy35nSQT3FuY6YK7iWofFUaSdn9tFsgIbkqxByGUn+lYOexDrnRI0te2e5nZLq9i+6/cQVJiJPIhuopAH3JSnQId7nMSWlFAdd4dfGOKVIfMJHz3AZHCJVcyklgVX3p0f4VQ36ybeb1/rDgEYyxojkIfbiEKH0NmAwUK8Y0PzrhaUKThMTKaQ9pmycPQ1XIZSt/zbCFLn4sGRxzu3bNb4RmGk7eUEJSuQDskazCSdLD+y2C9L2cs6YetcOabbXdAXgy0SIbhAF7e+fx4q4CIPKzGoSWlPXKSYGlTD4U1lG9kSyL9C+qPbZNFMkThsgoNwBynQDDh1MwJWaefuZbudGS43WHp3vUAZ1LPgm2bau80gyQgqiZlz5C/h/6mjpMd3TMuciuUmVs="
-
-addons:
-  coverity_scan:
-    project:
-      name: "salesforce/grammaticus"
-      description: "Build submitted via Travis CI"
-    notification_email: bo.yang@salesforce.com
-    build_command_prepend: "mvn clean"
-    build_command:   "mvn -DskipTests=true compile"
-    branch_pattern: master
-
-before_script:
-  - pip install --user codecov
-
-after_success:
-  - codecov
