@@ -148,32 +148,34 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
 
 
     /**
-     * @return the classifer word associated with this noun
+     * @return the classifer word associated with this noun or null otherwise.
      * @see <a href="https://en.wikipedia.org/wiki/Classifier_(linguistics)">Wikipedia: Classifier</a>
      */
     public String getClassifier() {
-        return "";
+        return null;
     }
 
-    private boolean equalsAttribute(Object obj) {
-        return this.gender == ((Noun)obj).gender && this.startsWith == ((Noun)obj).startsWith;
+    private boolean equalsAttribute(Noun n) {
+        return this.gender == n.gender && this.startsWith == n.startsWith;
     }
 
-    protected boolean equalsValue(Object obj) {
-        return ((Noun)obj).getAllDefinedValues().equals(getAllDefinedValues());
+    protected boolean equalsValue(Noun n) {
+        return n.getAllDefinedValues().equals(getAllDefinedValues());
     }
 
     @Override
     public final boolean equals(Object obj) {
-         return obj != null && (obj instanceof Noun) && getName().equals(((Noun)obj).getName()) && equalsAttribute(obj) && equalsValue(obj);
+        if (this == obj) return true;
+        if (obj instanceof Noun) {
+            Noun n = (Noun)obj;
+            return getName().equals(n.getName()) && equalsAttribute(n) && equalsValue(n);
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        return getName().hashCode()
-                + getAllDefinedValues().hashCode()
-                + this.gender.hashCode()
-                + this.startsWith.hashCode();
+        return Objects.hash(getName(), getAllDefinedValues(), gender, startsWith);
     }
 
     /**

@@ -151,12 +151,12 @@ class EnglishDeclension extends ArticledDeclension {
 
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjectiveWithStartsWith(this, name, startsWith);
     }
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new EnglishArticle(this, name, articleType);
     }
 
@@ -194,7 +194,7 @@ class EnglishDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimpleArticledPluralNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
     }
 

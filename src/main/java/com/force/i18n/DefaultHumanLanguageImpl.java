@@ -109,7 +109,9 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     HAWAIIAN(new Locale("haw"), LanguageType.PLATFORM, 232.0),
 
     CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
-    
+
+    GREENLANDIC(new Locale("kl"), LanguageType.PLATFORM, 234.0), //Greenlandic -- no grammar support in 234
+
     // Sample use of variants for testing
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),
@@ -128,8 +130,8 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     SPANISH_AR(new Locale("es", "AR"), LanguageType.PLATFORM, 194.0), //Spanish Argentina
     RUSSIAN_IL(new Locale("ru", "IL"), LanguageType.PLATFORM, 232.0), //Russian Israel
     CHINESE_SG(new Locale("zh", "SG"), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
-    CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong
- 
+    CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong 
+
     ESPERANTO(new Locale("eo"), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
     ENGLISH_IL(new Locale("en", "IL"), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
     ;

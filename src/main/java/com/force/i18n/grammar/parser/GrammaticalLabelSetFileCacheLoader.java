@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
+import com.force.i18n.grammar.GrammaticalLabelSet;
 import com.force.i18n.grammar.GrammaticalLabelSetImpl;
 import com.force.i18n.grammar.GrammaticalLabelSetProvider;
 import com.force.i18n.settings.BasePropertyFile;
@@ -64,10 +65,10 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
     }
 
     @Override
-    public GrammaticalLabelSetImpl compute(GrammaticalLabelSetDescriptor desc) throws IOException {
+    public GrammaticalLabelSet compute(GrammaticalLabelSetDescriptor desc) throws IOException {
         final FileCache cache = new FileCache(desc.getLanguage(), desc.getLabelSetName());
 
-        GrammaticalLabelSetImpl labelSet = null;
+        GrammaticalLabelSet labelSet = null;
         if (cache.exists()) {
             if (cache.expired()) {
                 cache.delete();
@@ -91,7 +92,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
             labelSet = super.compute(desc);
 
             // Save as a cache file
-            final GrammaticalLabelSetImpl writeMe = labelSet;
+            final GrammaticalLabelSet writeMe = labelSet;
             // Wait to serialize english to prevent any funny business because we reload English very quickly afterwards.
             if (desc.getLanguage() == LanguageProviderFactory.get().getBaseLanguage()) {
                 cache.write(labelSet);
@@ -254,7 +255,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
             }
         }
 
-        public void write(GrammaticalLabelSetImpl labelSet) {
+        public void write(GrammaticalLabelSet labelSet) {
             long startAt = System.currentTimeMillis();
             try (ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(this.cacheFile)))){
                 oos.writeObject(labelSet);

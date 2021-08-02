@@ -220,12 +220,12 @@ class HebrewDeclension extends SemiticDeclension {
     static final Set<? extends AdjectiveForm> REQUIRED_ADJECTIVE_FORMS = EnumSet.of(HebrewModifierForm.PLURAL_FEMININE, HebrewModifierForm.PLURAL_MASCULINE, HebrewModifierForm.SINGULAR_FEMININE, HebrewModifierForm.SINGULAR_MASCULINE);
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new HebrewAdjective(this, name, position);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new HebrewNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }

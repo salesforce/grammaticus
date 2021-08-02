@@ -26,7 +26,6 @@ public class TextDirectionTest {
 			TextDirection fromCLDR = locale.getCharacterOrientation().contains("right-to-left") ? TextDirection.RTL : TextDirection.LTR;
 			TextDirection fromCode = TextDirection.getDirection(locale.toLocale());
 			
-			if (locale.toString().contains("Arab")) continue;  // Arabic override script unsupported.
 			if (locale.toString().equals("en_IL")) continue;  // This is used to support RTL pseudolocalization in english
 			
 			Assert.assertEquals( "TextDirection from CLDR doesn't match from JDK for " + locale, fromCLDR, fromCode);

@@ -31,7 +31,9 @@ public class CounterRefTag extends AdnominalRefTag {
     }
 
     String getDefaultClassifier(LanguageDictionary formatter) {
-        return ((LanguageDeclension.WithClassifiers)formatter.getDeclension()).getDefaultClassifier();
+        LanguageDeclension decl = formatter.getDeclension();
+        return (decl instanceof LanguageDeclension.WithClassifiers)
+            ? ((LanguageDeclension.WithClassifiers)decl).getDefaultClassifier() : "";
     }
 
     @Override

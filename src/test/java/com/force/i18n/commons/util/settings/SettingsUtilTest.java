@@ -7,8 +7,6 @@
 
 package com.force.i18n.commons.util.settings;
 
-import com.force.i18n.commons.util.settings.SettingsUtil;
-
 import junit.framework.TestCase;
 
 /**

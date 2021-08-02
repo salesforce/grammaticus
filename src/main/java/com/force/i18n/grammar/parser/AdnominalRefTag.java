@@ -6,6 +6,8 @@
  */
 package com.force.i18n.grammar.parser;
 
+import java.util.Objects;
+
 /**
  * Admonimal = attached to or modifying a noun.  A noun-related tag that isn't a term stored in the
  * dictionary.
@@ -33,6 +35,22 @@ public abstract class AdnominalRefTag extends RefTag {
             return cloneWithResolvedNounTag(nounTag);
         }
         return this;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), associatedNounRef == null ? 0 : associatedNounRef.hashCode());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        return Objects.equals(associatedNounRef, ((AdnominalRefTag)obj).associatedNounRef);
     }
 
     protected abstract AdnominalRefTag cloneWithResolvedNounTag(NounRefTag nounTag);

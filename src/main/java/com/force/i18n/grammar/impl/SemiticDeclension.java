@@ -93,7 +93,7 @@ abstract class SemiticDeclension extends ArticledDeclension {
     protected abstract String getDefiniteArticlePrefix(LanguageStartsWith startsWith);
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new SimpleArticle(this, name, articleType);
     }
 

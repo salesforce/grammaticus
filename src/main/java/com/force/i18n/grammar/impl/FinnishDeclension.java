@@ -26,7 +26,7 @@ import com.google.common.collect.ImmutableSet;
  * see spec at \\moorea\bugs\77879\Finnish Renaming Spec.doc
  * @author yoikawa,stamm
  */
-class FinnishDeclension extends LanguageDeclension {
+class FinnishDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(FinnishDeclension.class.getName());
     private final List<FinnishNounForm> entityForms;
     private final List<FinnishNounForm> fieldForms;
@@ -208,7 +208,7 @@ class FinnishDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new FinnishAdjective(this, name, position);
     }
 
@@ -217,7 +217,7 @@ class FinnishDeclension extends LanguageDeclension {
      * @see i18n.grammar.LanguageDeclension#createNoun(i18n.grammar.Noun.NounType, i18n.grammar.LanguageStartsWith, i18n.grammar.LanguageGender, java.lang.String, boolean)
      */
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new FinnishNoun(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
     }
 

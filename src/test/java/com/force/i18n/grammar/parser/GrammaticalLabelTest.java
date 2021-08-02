@@ -1,26 +1,30 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Logger;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 import com.force.i18n.*;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalLabelSet.GrammaticalLabelSetComposite;
 import com.force.i18n.grammar.GrammaticalLabelSetFallbackImpl.ImmutableMapUnion;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
-import com.force.i18n.grammar.LanguageDeclension.PluralNounForm;
-import com.force.i18n.grammar.LanguageDeclension.SimpleModifierForm;
+import com.force.i18n.grammar.AbstractLanguageDeclension.PluralNounForm;
+import com.force.i18n.grammar.AbstractLanguageDeclension.SimpleModifierForm;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
+import com.force.i18n.settings.PropertyFileData;
 import com.force.i18n.settings.SettingsSectionNotFoundException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.*;
@@ -30,11 +34,13 @@ import com.google.common.collect.*;
  *
  */
 public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
-	public GrammaticalLabelTest(String name) {
-		super(name);
-	}
+    private static final Logger logger = Logger.getLogger(GrammaticalLabelTest.class.getName());
 
-	public void testEnglishBackup() {
+    public GrammaticalLabelTest(String name) {
+        super(name);
+    }
+
+    public void testEnglishBackup() {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(getDescriptor());
         HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(Locale.CANADA);
         GrammaticalLabelSet set = loader.getSet(ENGLISH_CA);
@@ -44,20 +50,21 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertFalse(set.containsParam("Sample", "invalid"));
         assertFalse(set.containsParam("invalid", "invalid"));
         try {
-        	set.get(new LabelRef("invalid", "invalid", "invalid"));
-        	fail();
+            set.get(new LabelRef("invalid", "invalid", "invalid"));
+            fail();
         } catch (SettingsSectionNotFoundException ex) {}
         assertEquals("__MISSING LABEL__ PropertyFile - val invalid not found in section Sample", set.getString(new LabelRef("Sample", "invalid", "invalid")));
-	}
 
-	/**
-	 * Sample test for validating that the "startsWith" value for a noun is correct.
-	 */
+    }
+
+    /**
+     * Sample test for validating that the "startsWith" value for a noun is correct.
+     */
     public void testEnglishStartsWith() throws IOException {
         LanguageDictionary dictionary = loadDictionary(LanguageProviderFactory.get().getLanguage(Locale.US));
         StringBuilder badLabels = new StringBuilder();
         for (String nounName : dictionary.getAllTermNames(TermType.Noun)) {
-            Noun noun = dictionary.getNoun(nounName,false);
+            Noun noun = dictionary.getNoun(nounName, false);
 
             switch (Character.toLowerCase(noun.getDefaultString(false).charAt(0))) {
             case 'a':
@@ -68,7 +75,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                 }
                 break;
             case 'o':
-                // If this fails, that might be ok.  O sometimes sounds like 'w', but generally, it's 'an opportunity'
+                // If this fails, that might be ok. O sometimes sounds like 'w', but generally, it's 'an opportunity'
                 // same with
                 if (noun.getStartsWith() == LanguageStartsWith.CONSONANT) {
                     badLabels.append(noun.getName()).append("\n");
@@ -76,7 +83,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                 break;
             case 'y':
             case 'u':
-                // If this fails, that might be ok.  But generally not.  'a usage date'.  not 'an usage date'
+                // If this fails, that might be ok. But generally not. 'a usage date'. not 'an usage date'
                 if (noun.getStartsWith() == LanguageStartsWith.VOWEL) {
                     badLabels.append(noun.getName()).append("\n");
                 }
@@ -97,9 +104,8 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
             LanguageDeclension declension = LanguageDeclensionFactory.get().getDeclension(language);
-            if (!declension.isInflected())
-             {
-                continue;  // Don't bother with simple declensions
+            if (!declension.isInflected()) {
+                continue; // Don't bother with simple declensions
             }
 
             // Get the set of inherited terms that are verboten
@@ -120,32 +126,30 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                     continue;
                 }
 
-                for (Map.Entry<String,Object> entry : sectionMap.entrySet()) {
-                    if (!(entry.getValue() instanceof List))
-                     {
-                        continue;  // Only care if there's an adjective
+                for (Map.Entry<String, Object> entry : sectionMap.entrySet()) {
+                    if (!(entry.getValue() instanceof List)) {
+                        continue; // Only care if there's an adjective
                     }
                     for (Object o : (List<?>)entry.getValue()) {
                         if (o instanceof NounRefTag) {
-                            NounRefTag nrt = (NounRefTag) o;
+                            NounRefTag nrt = (NounRefTag)o;
                             String name = nrt.getName();
-                            if (inheritedNouns.contains(name))
-                             {
-                                continue;  // We only case about actual values.
+                            if (inheritedNouns.contains(name)) {
+                                continue; // We only case about actual values.
                             }
                             NounForm form = nrt.getForm();
-                            if (form instanceof LegacyArticledNounForm)
-                             {
-                                form = ((LegacyArticledNounForm)form).getBaseNounForm();  // Unwrap the base form
+                            if (form instanceof LegacyArticledNounForm) {
+                                form = ((LegacyArticledNounForm)form).getBaseNounForm(); // Unwrap the base form
                             }
-                            if (!declension.getEntityForms().contains(form))
-                             {
-                                continue;  // Ignore autoderived forms
+                            if (!declension.getEntityForms().contains(form)) {
+                                continue; // Ignore autoderived forms
                             }
                             Noun noun = mainSet.getDictionary().getNoun(name, false);
                             if (!noun.getAllDefinedValues().keySet().contains(form)) {
-                                errMsgs.add(language.getLocaleString() + ":" + section + "." + entry.getKey() + ":" + ls.getLabelSectionToFilename().get(section)
-                                    + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name );
+                                errMsgs.add(language.getLocaleString() + ":" + section + "." + entry.getKey() + ":"
+                                        + ls.getLabelSectionToFilename().get(section) + " form "
+                                        + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun "
+                                        + name);
                             }
                         }
                     }
@@ -153,14 +157,11 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
             }
         }
 
-        if (errMsgs.size() > 0) {
-            System.err.println(Joiner.on("\n").join(errMsgs));
-        }
-        //assertEquals(TextUtil.collectionToString(errMsgs, "\n"), 0, errMsgs.size());
+        assertEquals(Joiner.on("\n").join(errMsgs), 0, errMsgs.size());
     }
 
     /**
-     * Validate that you can provide a parent loader for a set, and it will resolve aliases between
+      * Validate that you can provide a parent loader for a set, and it will resolve aliases between
      * them to the parent set and return the right values.
      */
     public void testLabelSetParents() {
@@ -170,8 +171,6 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(overrides, "test2", baseLoader);
 
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
-        HumanLanguage ENGLISH_GB = LanguageProviderFactory.get().getLanguage(Locale.UK);
-        HumanLanguage JAPANESE = LanguageProviderFactory.get().getLanguage(Locale.JAPANESE);
 
         GrammaticalLabelSet set = loader.getSet(ENGLISH);
         assertEquals("Choose a Color", set.getString("Icons", "colorPicker"));
@@ -189,6 +188,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         }
 
+        HumanLanguage ENGLISH_GB = LanguageProviderFactory.get().getLanguage(Locale.UK);
         set = loader.getSet(ENGLISH_GB);
         assertEquals("New", set.getString("Icons", "new"));
         assertEquals("Choose a Colour", set.getString("Icons", "colorPicker"));
@@ -198,6 +198,15 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertEquals("__MISSING LABEL__ PropertyFile - val unknown not found in section Poker", set.getString("Poker", "unknown"));
         assertEquals(ImmutableSet.of("publicsection"), set.getPublicSectionNames());
 
+        HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(new Locale("en", "CA"));
+        set = loader.getSet(ENGLISH_CA);
+        assertEquals("Choose a Color", set.getString("Icons", "colorPicker"));
+
+        HumanLanguage ENGLISH_IE = LanguageProviderFactory.get().getLanguage(new Locale("en", "IE"));
+        set = loader.getSet(ENGLISH_IE);
+        assertEquals("Choose a Colour", set.getString("Icons", "colorPicker"));
+
+        HumanLanguage JAPANESE = LanguageProviderFactory.get().getLanguage(Locale.JAPANESE);
         set = loader.getSet(JAPANESE);
         assertEquals("__MISSING LABEL__ PropertyFile - val unknown not found in section Poker", set.getString("Poker", "unknown"));
         assertEquals("色の選択", set.getString("Icons", "colorPicker"));
@@ -226,37 +235,37 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         // <Activity/>
         Object dynamic = set.get("Global", "activity");
         assertTrue("this should be a direct tag reference", dynamic instanceof TermRefTag);
-        TermRefTag tag = ((TermRefTag) dynamic);
+        TermRefTag tag = ((TermRefTag)dynamic);
         assertTrue(tag.isNoun());
         assertFalse(tag.isDynamic());
         assertEquals(PluralNounForm.SINGULAR, tag.getForm(set.getDictionary(), false));
 
         // <My/> <Activity/>
-        List<?> list = (List<?>) set.get("Global", "myactivity");
+        List<?> list = (List<?>)set.get("Global", "myactivity");
         assertEquals(3, list.size());
-        TermRefTag my1 = (TermRefTag) list.get(0);
+        TermRefTag my1 = (TermRefTag)list.get(0);
         assertTrue(my1.isAdjective());
         assertFalse(my1.isDynamic());
         assertEquals("my", my1.getName());
         assertEquals(SimpleModifierForm.SINGULAR, my1.getForm(set.getDictionary(), false));
-        TermRefTag noun1 = (TermRefTag) list.get(2);
+        TermRefTag noun1 = (TermRefTag)list.get(2);
         assertTrue(noun1.isNoun());
         assertFalse(noun1.isDynamic());
         assertEquals("activity", noun1.getName());
         assertEquals(PluralNounForm.SINGULAR, noun1.getForm(set.getDictionary(), false));
 
-
         // <My/> <Entity entity="0"/>
-        list = (List<?>) set.get("Global", "aentity");
+        list = (List<?>)set.get("Global", "aentity");
         assertEquals(3, list.size());
-        TermRefTag a1 = (TermRefTag) list.get(0);
+        TermRefTag a1 = (TermRefTag)list.get(0);
         assertTrue(a1.isArticle());
         assertFalse(a1.isDynamic());
         assertEquals("a", a1.getName());
-        ArticleForm articleForm = LanguageDeclensionFactory.get().getDeclension(ENGLISH).getApproximateArticleForm(LanguageStartsWith.CONSONANT,
-                LanguageGender.FEMININE, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE);
+        ArticleForm articleForm = LanguageDeclensionFactory.get().getDeclension(ENGLISH).getApproximateArticleForm(
+                LanguageStartsWith.CONSONANT, LanguageGender.FEMININE, LanguageNumber.SINGULAR,
+                LanguageCase.NOMINATIVE);
         assertEquals(articleForm, a1.getForm(set.getDictionary(), false));
-        TermRefTag noun2 = (TermRefTag) list.get(2);
+        TermRefTag noun2 = (TermRefTag)list.get(2);
         assertTrue(noun2.isNoun());
         assertTrue(noun2.isDynamic());
         assertEquals("entity", noun2.getName());
@@ -267,11 +276,11 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
             Renameable pig = makeCustomRenameable("Pig", LanguageStartsWith.CONSONANT, "Pig", "Pigs");
             Renameable emu = makeCustomRenameable("Emu", LanguageStartsWith.VOWEL, "Emu", "Emus");
         	MockRenamingProvider newProvider = new MockRenamingProvider(pig.getStandardNoun(ENGLISH), emu.getStandardNoun(ENGLISH));
-        	RenamingProviderFactory.get().setProvider(newProvider);
+            RenamingProviderFactory.get().setProvider(newProvider);
 	        assertEquals("A Pig", set.getString("Global", new Renameable[] {pig}, "aentity"));
 	        assertEquals("An Emu", set.getString("Global", new Renameable[] {emu}, "aentity"));
         } finally {
-        	RenamingProviderFactory.get().setProvider(curProvider);
+            RenamingProviderFactory.get().setProvider(curProvider);
         }
     }
 
@@ -312,13 +321,204 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         URL overrides = GrammaticalLabelFileTest.class.getResource("/override/override.xml");
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(overrides, "test2a", labelsLoader);
 
-        
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
         HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage(Locale.GERMAN);
 
         GrammaticalLabelSet set = loader.getSet(ENGLISH);
-	assertEquals("New", set.getString("Icons", "new"));
-	set = loader.getSet(GERMAN);
-	assertEquals("Neu", set.getString("Icons", "new"));
+        assertEquals("New", set.getString("Icons", "new"));
+        set = loader.getSet(GERMAN);
+        assertEquals("Neu", set.getString("Icons", "new"));
+    }
+
+
+    /**
+     * Test behavior of {@link GrammaticalLabelSetLoader#setUseTranslatedLanguage(boolean)}
+     * @throws Exception
+     */
+    @Test
+    public void testUseTranslatedLanguage() throws Exception {
+        final HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+        final HumanLanguage ENGLISH_GB = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_GB);
+        final HumanLanguage ENGLISH_AU = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_AU);
+        final HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_CA);
+        final HumanLanguage ROMANIAN = LanguageProviderFactory.get().getLanguage(LanguageConstants.ROMANIAN);
+        final HumanLanguage MOLDOVAN = LanguageProviderFactory.get().getLanguage(LanguageConstants.MOLDOVAN);
+
+        // check statically defined flag that impacts dictionary construction. if false, don't test dictionary
+        boolean usingProxy = getPrivateField(LanguageDeclensionFactory.class, "USE_PROXY")
+                .getBoolean(LanguageDeclensionFactory.get());
+
+        GrammaticalLabelSetLoader loader = getLoader();
+        loader.setUseTranslatedLanguage(true);
+
+        GrammaticalLabelSet enSet = loader.getSet(ENGLISH);
+        assertTrue(enSet instanceof GrammaticalLabelSetImpl);
+
+        // en_GB fall backs to en_US. dictionary is different, but its fallback set is exactly equal to en-US
+        GrammaticalLabelSet gbSet = loader.getSet(ENGLISH_GB);
+        assertTrue(gbSet instanceof GrammaticalLabelSetFallbackImpl);
+        assertEquals(gbSet.getDictionary().getLanguage(), ENGLISH_GB);
+        if (usingProxy) assertFalse(compareDictionaryExceptLanguage(gbSet.getDictionary(), enSet.getDictionary()));
+        assertSameFallbackSet((GrammaticalLabelSetFallbackImpl)gbSet, enSet);
+
+        // en_AU fall backs to en_GB and shares dictionary/label data
+        GrammaticalLabelSet auSet = loader.getSet(ENGLISH_AU);
+        assertEquals(auSet.getDictionary().getLanguage(), ENGLISH_AU);
+        if (usingProxy) assertTrue(compareDictionaryExceptLanguage(auSet.getDictionary(), gbSet.getDictionary()));
+        assertSameFallbackSet((GrammaticalLabelSetFallbackImpl)auSet, gbSet);
+
+        // en_CA fall backs to en_US and shares dictionary/label data
+        GrammaticalLabelSet caSet = loader.getSet(ENGLISH_CA);
+        assertEquals(caSet.getDictionary().getLanguage(), ENGLISH_CA);
+        if (usingProxy) assertTrue(compareDictionaryExceptLanguage(caSet.getDictionary(), enSet.getDictionary()));
+        assertSameFallbackSet((GrammaticalLabelSetFallbackImpl)caSet, enSet);
+
+        GrammaticalLabelSet roSet = loader.getSet(ROMANIAN);
+        assertEquals(roSet.getDictionary().getLanguage(), ROMANIAN);
+        assertFalse(compareDictionaryExceptLanguage(roSet.getDictionary(), enSet.getDictionary()));
+
+        GrammaticalLabelSet moSet = loader.getSet(MOLDOVAN);
+        assertEquals(moSet.getDictionary().getLanguage(), MOLDOVAN);
+        if (usingProxy) assertTrue(compareDictionaryExceptLanguage(moSet.getDictionary(), roSet.getDictionary()));
+        assertSameFallbackSet((GrammaticalLabelSetFallbackImpl)moSet, roSet);
+
+        // compare every label entries. create another loader w/o 'useTranslatedLanguage', which provides original behavior
+        GrammaticalLabelSetLoader originalLoader = getLoader();
+        loader.setUseTranslatedLanguage(false); // this is the default behavior, but just in case.
+        for (HumanLanguage l : LanguageProviderFactory.get().getAll()) {
+            if (l.isTestOnlyLanguage()) continue;
+            compareLabelSet(l, originalLoader, loader);
+        }
+    }
+
+    private boolean compareDictionaryExceptLanguage(LanguageDictionary src, LanguageDictionary expected) throws Exception {
+        assertNotSame(src.getLanguage(), expected.getLanguage());
+
+        assertNotSame(src.getDeclension(), expected.getDeclension());
+        assertNotSame(src.getDeclension().getLanguage(), expected.getDeclension().getLanguage());
+        assertSame(src.getLanguage(), src.getDeclension().getLanguage());
+
+        // gain access to private fields for comparison
+        Field nounMap = getPrivateField(LanguageDictionary.class, "nounMap");
+        Field nounMapByPluralAlias  = getPrivateField(LanguageDictionary.class, "nounMapByPluralAlias");
+        Field adjectiveMap  = getPrivateField(LanguageDictionary.class, "adjectiveMap");
+        Field articleMap  = getPrivateField(LanguageDictionary.class, "articleMap");
+        Field nounVersionOverrides  = getPrivateField(LanguageDictionary.class, "nounVersionOverrides");
+        Field isSkinny  = getPrivateField(LanguageDictionary.class, "isSkinny");
+
+        // not using assertSame here.  see caller; this method is used by negative test too.
+        return nounMap.get(src) == nounMap.get(expected)
+            && nounMapByPluralAlias.get(src) == nounMapByPluralAlias.get(expected)
+            && adjectiveMap.get(src) == adjectiveMap.get(expected)
+            && articleMap.get(src) == articleMap.get(expected)
+            && nounVersionOverrides.get(src) == nounVersionOverrides.get(expected)
+            && isSkinny.get(src) == isSkinny.get(expected);
+    }
+
+    private void assertSameFallbackSet(GrammaticalLabelSetFallbackImpl src, GrammaticalLabelSet expectedParent)
+            throws Exception {
+        HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+
+        GrammaticalLabelSet srcFallback = src.getFallback();
+        HumanLanguage srcLanguage = src.getDictionary().getLanguage();
+        HumanLanguage srcFallbackLanguage = srcFallback.getDictionary().getLanguage();
+
+        assertNotSame(srcLanguage, srcFallbackLanguage);
+        if (srcFallback instanceof GrammaticalLabelSetComposite)
+            srcFallback = ((GrammaticalLabelSetComposite)srcFallback).getOverlay();
+
+        GrammaticalLabelSet parentMain = expectedParent;
+        if (expectedParent instanceof GrammaticalLabelSetComposite)
+            parentMain = ((GrammaticalLabelSetComposite)expectedParent).getOverlay();
+        assertSame(srcFallback, parentMain);
+
+        // gain access to non-public inner class/fields
+        final String CLASS_NAME = "com.force.i18n.grammar.GrammaticalLabelSetFallbackImpl$CompositePropertyFileDataImpl";
+        ClassLoader clsLoader = ClassLoader.getSystemClassLoader();
+        Class<?> innerClazz = clsLoader.loadClass(CLASS_NAME);
+        Field fOverlay = getPrivateField(innerClazz, "overlay");
+        Field fFallback = getPrivateField(innerClazz, "fallback");
+
+        PropertyFileData d1 = src.getPropertyFileData();
+        assertEquals(CLASS_NAME, d1.getClass().getName());
+        d1 = (PropertyFileData)fFallback.get(d1);
+        if (!srcLanguage.isTranslatedLanguage() && srcFallbackLanguage != ENGLISH) {
+            assertTrue(CLASS_NAME.equals(d1.getClass().getName()));
+            d1 = (PropertyFileData)fOverlay.get(d1);
+        }
+
+        PropertyFileData d2 = expectedParent.getPropertyFileData();
+        if (expectedParent instanceof GrammaticalLabelSetComposite) {
+            assertEquals(CLASS_NAME, d2.getClass().getName());
+            d2 = (PropertyFileData)fOverlay.get(d2);
+        }
+        assertSame(d1, d2);
+    }
+
+    Field getPrivateField(Class<?> clazz, String name) throws Exception {
+        Field f = clazz.getDeclaredField(name);
+        f.setAccessible(true);
+        return f;
+    }
+
+    private void compareLabelSet(HumanLanguage lang, GrammaticalLabelSetProvider expectedLoader, GrammaticalLabelSetProvider testLoader) {
+        HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+        GrammaticalLabelSet enSet = testLoader.getSet(ENGLISH);
+
+        long start = System.currentTimeMillis();
+        logger.info("$$$ LabelSetLoaderTest: START testing language:\t" + lang.getLocaleString());
+
+        GrammaticalLabelSet src = expectedLoader.getSet(lang);
+        GrammaticalLabelSet dst = testLoader.getSet(lang);
+
+        // labels set may have fallback sets that could end up w/ returning merged sections / params from multiple
+        // result. wrap 'em w/ TreeSet here to reduce unnecessary duplicates.
+        Set<String> srcSec = new TreeSet<String>(src.sectionNames());
+        Set<String> dstSec = new TreeSet<String>(dst.sectionNames());
+
+        ArrayList<String> errors = new ArrayList<String>();
+        for (String s : srcSec) {
+            if (!dstSec.contains(s)) errors.add(s);
+        }
+        Assert.assertTrue(lang.getLocaleString() + ": sections does not exits in new set: " + errors.toString(),
+                errors.isEmpty());
+
+        for (String sec : srcSec) {
+            Set<String> srcParams = new TreeSet<String>(src.getParams(sec));
+            for (String p : srcParams) {
+                if (!dst.containsParam(sec, p)) {
+                    // skip if en_US in base labelset doesn't have it
+                    if (!enSet.containsParam(sec, p)) continue;
+
+                    Assert.fail(lang.getLocaleString() + ": " + sec + "." + p + " does not exist");
+                }
+                compareLabel(lang, sec, p, src.get(sec, p, null), dst.get(sec, p, null));
+            }
+        }
+        logger.info("$$$ LabelSetLoaderTest: FIHISH testing language:\t" + lang.getLocaleString() + " in "
+                + ((double)(System.currentTimeMillis() - start) / 1000) + "s");
+    }
+
+    // compare two label entries exactly matches
+    private void compareLabel(HumanLanguage lang, String sec, String param, Object src, Object dst) {
+        String errorMsg = lang.getLocaleString() + ": " + sec + "." + param;
+
+        if (src instanceof List<?>) {
+            Object[] src_array = ((List<?>)src).toArray();
+            Object[] dst_aray = ((List<?>)dst).toArray();
+
+            Assert.assertEquals(errorMsg + " different length.", src_array.length, dst_aray.length);
+            for (int i = 0; i < src_array.length; i++) {
+                if (src_array[i] instanceof RefTag)
+                    Assert.assertEquals(errorMsg, src_array[i].toString(), dst_aray[i].toString());
+                else
+                    Assert.assertEquals(errorMsg, src_array[i], dst_aray[i]);
+            }
+        } else {
+            if (src instanceof RefTag)
+                Assert.assertEquals(errorMsg, src.toString(), dst.toString());
+            else
+                Assert.assertEquals(errorMsg, src, dst);
+        }
     }
 }

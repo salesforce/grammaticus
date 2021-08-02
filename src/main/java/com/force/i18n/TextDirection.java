@@ -87,6 +87,14 @@ public enum TextDirection {
         if (locale == null) return invertIfNotNormalDirection(LTR);
         // Special case for "en_IL" to have an english pseudo-RTL language
         if ("IL".equals(locale.getCountry()) && "en".equals(locale.getLanguage())) return invertIfNotNormalDirection(RTL);
+        String script = locale.getScript();
+        switch (script) {
+        case "Arab":
+        case "Adlm":
+        	return invertIfNotNormalDirection(RTL);
+        case "Deva":
+        	return invertIfNotNormalDirection(LTR);
+        }
         return getDirection(locale.getLanguage());
     }
 

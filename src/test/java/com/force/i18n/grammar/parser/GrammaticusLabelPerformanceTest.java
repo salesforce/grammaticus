@@ -6,11 +6,14 @@
  */
 package com.force.i18n.grammar.parser;
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
-import com.force.i18n.*;
-import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.LanguageConstants;
+import com.force.i18n.LanguageProviderFactory;
 import com.google.common.collect.ImmutableList;
 
 public class GrammaticusLabelPerformanceTest extends BaseGrammaticalLabelTest {
@@ -69,7 +72,7 @@ public class GrammaticusLabelPerformanceTest extends BaseGrammaticalLabelTest {
      * @return
      */
     private double runCollisionCheckOnHash(Map<?,?> map) {
-        double m = (double) map.size();
+        double m = map.size();
         Set<Integer> s = new HashSet<Integer>(map.size() * 3);
         for (Object o : map.keySet()) {
             if (o != null)

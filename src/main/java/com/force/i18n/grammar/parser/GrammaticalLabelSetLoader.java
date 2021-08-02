@@ -8,6 +8,7 @@
 package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
+import java.lang.reflect.Proxy;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,8 +18,8 @@ import java.util.logging.Logger;
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.*;
-import com.google.common.base.Throwables;
 import com.google.common.cache.*;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 
@@ -26,7 +27,7 @@ import com.google.common.util.concurrent.UncheckedExecutionException;
  * GrammaticalLabelSetLoader which loads GrammaticalLabelSets from one or more files, and a dictionary file.
  * <p>
  * The labelset is stored in one or more XML files with the ini-style schema. The dictionary is in an XML file, called
- * sfdcnames.xml. All of these files are organized in the filesystem relative to the locale to which they apply.
+ * names.xml. All of these files are organized in the filesystem relative to the locale to which they apply.
  * <p>
  * This Loader implements an in-memory cache map to prevent loading the same labelset more than once.
  * <p>
@@ -52,9 +53,12 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     final boolean useSharedKeys;
     final Set<String> publicSections = new HashSet<String>();
 
+    // respect HumanLanguage#isTranslatedLanguage. see #compute(GrammaticalLabelSetDescriptor) how it's used.
+    private boolean useTranslatedLanguage = "true".equals(I18nJavaUtil.getProperty("useTranslatedLanguage"));
+
     @Override
     public void init() {
-
+        // do nothing
     }
 
     @Override
@@ -71,9 +75,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             parentProvider.resetMap();
         }
 
-        if (I18nJavaUtil.isDebugging()) {
-            cache.invalidateAll();
-        }
+        cache.invalidateAll();
     }
 
     @Deprecated
@@ -107,6 +109,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         } else {
             this.seedKeyMap = null;
         }
+        // might need to be able to configure -- e.g. set max size
         this.cache = CacheBuilder.newBuilder()
             .initialCapacity(64)
             .build(new Loader());
@@ -130,27 +133,59 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         return GrammaticalLabelSetLoader.this.compute(desc);
     }
 
-    GrammaticalLabelSetImpl compute(GrammaticalLabelSetDescriptor desc) throws IOException {
+    GrammaticalLabelSet compute(GrammaticalLabelSetDescriptor desc) throws IOException {
+        HumanLanguage lang = desc.getLanguage();
         long start = System.currentTimeMillis();
 
-        LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, desc.getLanguage(), this.parentProvider);
+        GrammaticalLabelSetImpl result = null;
+        if (this.useTranslatedLanguage && !lang.isTranslatedLanguage()) {
+            // this is for platform languages. if the requested language has no translation, try creating a (shallow) copy of
+            // LabelSet from its fallback.
+            HumanLanguage fallbackLang = lang.getFallbackLanguage();
+            GrammaticalLabelSet fallback = getSetByDescriptor(desc.getForOtherLanguage(fallbackLang));
+
+            // if declension is proxy (ForwardingLanguageDeclension), good to reuse fallback data
+            if (LanguageDeclensionFactory.get().isForwardingProxy(lang)) {
+                // simply copy all data (except language) from the fallback dictionary
+                LanguageDictionary dictionary = new LanguageDictionary(lang, fallback.getDictionary());
+
+                // use copy constructor for requested language
+                result = new GrammaticalLabelSetImpl(dictionary, fallback);
+            } else {
+                // if declension is unique, do full-parse dictionary/label file
+                result = loadLabels(desc);
+            }
+        } else {
+            // load both dictionary and labels
+            result = loadLabels(desc);
+        }
+
+        logger.fine(this.getClass().getSimpleName() + ": " + desc.getLabelSetName() + ":  Created LabelSet."
+                + lang + " in " + (System.currentTimeMillis() - start) + " ms. ("
+                + desc.getDictionaryFile().getPath() + ")");
+
+        return result;
+    }
+
+    private GrammaticalLabelSetImpl loadLabels(GrammaticalLabelSetDescriptor desc) throws IOException {
+        HumanLanguage lang = desc.getLanguage();
+
+        // dictionaries are always unique for every language because it may use different LanguageDeclension
+        LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, lang, this.parentProvider);
         LanguageDictionary dictionary = dictParser.getDictionary();
+
+        // all standard/end-user languages comes here. Create a parser to read from XML files.
         GrammaticalLabelFileParser parser = new GrammaticalLabelFileParser(dictionary, desc, this.parentProvider);
 
         PropertyFileData propertyFileData = GrammaticalLabelSetLoader.this.useSharedKeys
-            ? new SharedKeyMapPropertyFileData(desc.getLanguage().getLocale(), !desc.hasOverridingFiles(), seedKeyMap, publicSections)
-            : new MapPropertyFileData(desc.getLanguage().getLocale());
+                ? new SharedKeyMapPropertyFileData(lang.getLocale(), !desc.hasOverridingFiles(), seedKeyMap, publicSections)
+                : new MapPropertyFileData(lang.getLocale());
 
         GrammaticalLabelSetImpl result = new GrammaticalLabelSetImpl(parser.getDictionary(), parser, propertyFileData);
         if (useSharedKeys) {
             ((SharedKeyMapPropertyFileData) propertyFileData).compact();
         }
         result.setLabelSectionToFilename(GrammaticalLabelFileHandler.SECTION_TO_FILENAME);
-
-        logger.fine(this.getClass().getSimpleName() + ": " + desc.getLabelSetName() + ":  Created LabelSet."
-                + desc.getLanguage() + " in " + (System.currentTimeMillis() - start) + " ms. ("
-                + desc.getDictionaryFile().getPath() + ")");
-
         return result;
     }
 
@@ -162,19 +197,23 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         try {
             HumanLanguage fallbackLang = desc.getLanguage().getFallbackLanguage();
             if (fallbackLang != null) {
-                // Always load english first.  Note, the cache never includes fallback.
+                // Always load fallbacks first. Note, the cache never includes GrammaticalLabelSetFallbackImpl
                 GrammaticalLabelSet fallback = getSetByDescriptor(desc.getForOtherLanguage(fallbackLang));
                 return new GrammaticalLabelSetFallbackImpl(cache.get(desc), fallback);
             } else {
-                return cache.get(desc);  // English only!
+                return cache.get(desc); // English only!
             }
-        }
-        catch(UncheckedExecutionException | ExecutionException e) {
-            Throwables.throwIfUnchecked(e);
-            throw new RuntimeException("Unable to load label set for " + desc, e);
+        } catch (UncheckedExecutionException | ExecutionException e) {
+            throw new RuntimeException("Unable to load label set for " + desc
+                    + ". This may be caused by bad label/names file. Check application log and search '###\\tError:' for more detail.",
+                    e);
         }
     }
 
+    /**
+     * @param userLanguage a language to load from label dictionary and data.
+     * @return {@link GrammaticalLabelSet} object for a given {@code userLanguage}
+     */
     @Override
     public GrammaticalLabelSet getSet(HumanLanguage userLanguage) {
         return getSetByDescriptor(baseDesc.getLanguage() == userLanguage ? baseDesc : baseDesc.getForOtherLanguage(userLanguage));
@@ -186,5 +225,44 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
 
     protected SharedKeyMap<String, SharedKeyMap<String, Object>> getSeedKeyMap() {
         return this.seedKeyMap;
+    }
+
+    public GrammaticalLabelSetProvider getParent() {
+        return this.parentProvider;
+    }
+
+    protected LoadingCache<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> getCache() {
+        return this.cache;
+    }
+
+    /**
+     * Controls whether to trust {@link HumanLanguage#isTranslatedLanguage}. If {@code true}, and if
+     * {@link HumanLanguage#isTranslatedLanguage} returns {@code false}, the loader will skip parsing XML files for that
+     * particular language. For example, loading {@code en-AU} (Australia English) will simply make an object with
+     * reference to its fallback language, {@code en-GB} instead of copying data from {@code en-GB} LabelSet.
+     * <p>a
+     * This also sets {@code useTranslatedLanguage} to its parent provider.
+     * 
+     * @param useTranslatedLanguage
+     *            Set {@code true} to respect {@link HumanLanguage#isTranslatedLanguage}. Default is {@code false}.
+     * @see HumanLanguage#isTranslatedLanguage
+     * @see #compute(GrammaticalLabelSetDescriptor)
+     * @since 232
+     * @author yoikawa
+     */
+    public void setUseTranslatedLanguage(boolean useTranslatedLanguage) {
+        this.useTranslatedLanguage = useTranslatedLanguage;
+
+        // don't forget parent
+        GrammaticalLabelSetProvider p = this.parentProvider;
+        if (p instanceof GrammaticalLabelSetLoader)
+            ((GrammaticalLabelSetLoader)p).setUseTranslatedLanguage(useTranslatedLanguage);
+    }
+
+    /**
+     * @return {@code true} if the loader is in "useTranslatedLanguage" mode.
+     */
+    public boolean getUseTranslatedLanguage() {
+        return this.useTranslatedLanguage;
     }
 }

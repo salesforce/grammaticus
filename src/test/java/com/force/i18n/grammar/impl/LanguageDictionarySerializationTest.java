@@ -15,8 +15,6 @@ import java.util.logging.Logger;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.*;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm;
-import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest;
 
 /**

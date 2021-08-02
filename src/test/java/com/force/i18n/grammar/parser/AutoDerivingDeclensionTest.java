@@ -13,7 +13,6 @@ import java.util.Set;
 import com.force.i18n.*;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
-import com.force.i18n.grammar.parser.TestLanguageLabelSetDescriptor;
 import com.google.common.collect.ImmutableSet;
 
 /**

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -25,7 +25,7 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
  */
 public abstract class GrammaticalTerm implements Serializable, Comparable<GrammaticalTerm> {
     /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private final String name;
@@ -57,7 +57,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
      * any missing values needed.
      *
      * TODO: This may not be very necessary.
-     * @param name the name of the term 
+     * @param name the name of the term
      * @return {@code true} if the term is valid
      */
     protected abstract boolean validate(String name);
@@ -84,7 +84,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
     public LanguageDeclension getDeclension() {
         return this.declension;
     }
-    
+
     @Override
 	public int compareTo(GrammaticalTerm o) {
     	TermType thisType = getTermType();
@@ -98,14 +98,12 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
-        out.writeShort(this.declension.getLanguage().ordinal());
+        out.writeObject(this.declension.getLanguage().getLocaleString());
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getAll().get(in.readShort());
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
 }
-
-

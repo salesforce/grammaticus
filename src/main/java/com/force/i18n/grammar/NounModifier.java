@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -24,7 +24,7 @@ import com.force.i18n.commons.text.TextUtil;
  */
 public abstract class NounModifier extends GrammaticalTerm {
     /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -68,7 +68,20 @@ public abstract class NounModifier extends GrammaticalTerm {
      * @return an arbitrary but deterministic value for a specific form for this object.
      */
     public abstract String getDefaultValue();
-    
+
+    @Override
+    public final boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj instanceof NounModifier) {
+            NounModifier nm = (NounModifier)obj;
+            return compareTo(nm) == 0
+                    && getStartsWith() == nm.getStartsWith()
+                    && getPosition() == nm.getPosition()
+                    && nm.getAllValues().equals(getAllValues());
+        }
+        return false;
+    }
+
     @Override
 	public void toJson(Appendable appendable) throws IOException {
     	appendable.append("{\"t\":\""+getTermType().getCharId()+"\",\"l\":\"");

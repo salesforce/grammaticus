@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableList;
  *
  * @author stamm
  */
-class HindiUrduDeclension extends LanguageDeclension {
+class HindiUrduDeclension extends AbstractLanguageDeclension {
     private static final LanguageCase DIRECT_CASE = LanguageCase.NOMINATIVE;
     private static final LanguageCase OBLIQUE_CASE = LanguageCase.OBJECTIVE;
 

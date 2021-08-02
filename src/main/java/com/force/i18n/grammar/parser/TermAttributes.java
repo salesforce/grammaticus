@@ -282,12 +282,12 @@ public final class TermAttributes implements Serializable {
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
-        out.writeShort(this.declension.getLanguage().ordinal());
+        out.writeObject(this.declension.getLanguage().getLocaleString());
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        HumanLanguage ul = LanguageProviderFactory.get().getAll().get(in.readShort());
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
 }

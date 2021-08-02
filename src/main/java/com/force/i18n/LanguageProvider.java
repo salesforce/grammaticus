@@ -134,11 +134,17 @@ public interface LanguageProvider {
 		public boolean isSupportedLanguageLocale(Locale loc) {
 	        return langByLoc.containsKey(loc);
 		}
+		/**
+		 * Return the HumanLanguage for the specified locale string
+		 */
 		@Override
 		public HumanLanguage getLanguageForLocale(String localeString) {
 	        Locale loc = LocaleUtils.get().getLocaleByIsoCode(localeString);
 	        return getLanguageForLocale(loc);
 		}
+		/**
+		 * Use 
+		 */
 		@Override
 		public HumanLanguage getLanguageForLocale(Locale loc) {
 	        if (loc == null) return null;
@@ -169,8 +175,7 @@ public interface LanguageProvider {
 	        }
 	        langByFuzzyLocale.put(loc, result);
 	        return result;
-	   }
-
+	    }		
 
 		@Override
 	    @SuppressWarnings({ "rawtypes", "unchecked" }) // Fake enum checks
@@ -182,6 +187,5 @@ public interface LanguageProvider {
 	    	}
 
 	    }
-
     }
 }

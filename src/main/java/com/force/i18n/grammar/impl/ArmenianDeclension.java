@@ -31,7 +31,7 @@ import com.google.common.collect.ImmutableList;
  *
  * @author stamm
  */
-class ArmenianDeclension extends LanguageDeclension {
+class ArmenianDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(ArmenianDeclension.class.getName());
     private final List<ArmenianNounForm> entityForms;
     private final List<ArmenianNounForm> fieldForms;
@@ -146,7 +146,7 @@ class ArmenianDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
@@ -169,7 +169,7 @@ class ArmenianDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new ArmenianNoun(this, name, pluralAlias, type, entityName, startsWith, access, isStandardField, isCopied);
     }
 

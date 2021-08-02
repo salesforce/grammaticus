@@ -20,7 +20,7 @@ import com.force.i18n.LanguageConstants;
  *
  * @author stamm
  */
-public abstract class ArticledDeclension extends LanguageDeclension {
+public abstract class ArticledDeclension extends AbstractLanguageDeclension {
     public ArticledDeclension(HumanLanguage language) {
 		super(language);
 	}
@@ -79,11 +79,12 @@ public abstract class ArticledDeclension extends LanguageDeclension {
          */
         public abstract String getExactString(NounForm form);
     }
+
     /**
      * @return a language specific implementation for modifiers/adjectives in this language
      */
     @Override
-    protected abstract Article createArticle(String name, LanguageArticle articleType);
+    public abstract Article createArticle(String name, LanguageArticle articleType);
 
     /**
      * @return The set of articles allowed in the language.  Some language have no definite article

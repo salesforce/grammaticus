@@ -8,7 +8,6 @@ package com.force.i18n.grammar.offline;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 import javax.script.*;

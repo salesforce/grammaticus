@@ -15,13 +15,20 @@ import com.force.i18n.grammar.LanguageDictionary;
 import com.google.common.collect.Sets;
 
 /**
- * &lt;plural num="0"&gt;&lt;when val="..."/&gt;...&lt;/plural%gt;
+ * Plural Tag reference implementation.
+ * Constructed through LabelHandler, and used by LabelInfo.
+ * <p>
+ * example:
+ * <pre>
+ * &lt;plural num="0"&gt;&lt;when val="..."/&gt;...&lt;/plural&gt;
+ * </pre>
  * @author stamm
  */
 public class PluralRefTag extends RefTag {
     private static final long serialVersionUID = -1L;
+
 	private final int val;
-	private final Map<PluralCategory,Object> when;
+	private final Map<PluralCategory, Object> when;
 	private final Object ifDefault;
 
 	public PluralRefTag(int val, Map<PluralCategory,Object> when, Object ifDefault) {
@@ -32,8 +39,26 @@ public class PluralRefTag extends RefTag {
 
 	@Override
 	public String getKey() {
-		return "Plural"+val;
+		return "Plural" + val + when;
 	}
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), val, when, ifDefault);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        return Objects.equals(val, ((PluralRefTag)obj).val)
+                && Objects.equals(when, ((PluralRefTag)obj).when)
+                && Objects.equals(ifDefault, ((PluralRefTag)obj).ifDefault);
+    }
 
 	Object getData(LanguageDictionary dictionary, Object[] vals) {
 		if (vals == null || vals.length <= val) {

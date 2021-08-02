@@ -10,6 +10,7 @@ package com.force.i18n.grammar.parser;
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Proxy;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
@@ -26,6 +27,7 @@ import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
+import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.TrackingHandler;
 
 /**
@@ -73,8 +75,9 @@ public final class LanguageDictionaryParser {
         fallbackParser.parseAllDictionaries();
         LanguageDictionary fallbackDictionary = fallbackParser.getDictionary();
 
-        // If the declension is a subclass of the parent declesnion, then we should copy over the forms directly
-        boolean copyFormsDirectly = fallbackDictionary.getDeclension().getClass().isAssignableFrom(this.dictionary.getDeclension().getClass());
+        // If the declension is a subclass of the parent declesnion or proxy, then we should copy over the forms directly
+        boolean copyFormsDirectly = LanguageDeclensionFactory.get().isForwardingProxy(this.dictionary.getDeclension())
+            || fallbackDictionary.getDeclension().getClass().isAssignableFrom(this.dictionary.getDeclension().getClass());
 
         Set<String> fallbackNouns = new HashSet<String>(fallbackDictionary.getAllTermNames(TermType.Noun));
         fallbackNouns.removeAll(this.dictionary.getAllTermNames(TermType.Noun));  // Remove all translated nouns
