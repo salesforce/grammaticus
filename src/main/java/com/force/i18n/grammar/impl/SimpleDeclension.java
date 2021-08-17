@@ -16,8 +16,6 @@ import java.util.logging.Logger;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageConstants;
 import com.force.i18n.grammar.*;
-import com.force.i18n.grammar.ArticledDeclension.SimpleArticledPluralNoun;
-import com.force.i18n.grammar.LanguageDeclension.PluralNounForm;
 import com.force.i18n.grammar.Noun.NounType;
 import com.google.common.collect.ImmutableList;
 /**
@@ -27,7 +25,7 @@ import com.google.common.collect.ImmutableList;
  *
  * http://en.wikipedia.org/wiki/Isolating_language
  */
-class SimpleDeclension extends LanguageDeclension {
+class SimpleDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(SimpleDeclension.class.getName());
 
     public SimpleDeclension(HumanLanguage language) {
@@ -167,12 +165,12 @@ class SimpleDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimpleNoun(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
     }
 
@@ -222,7 +220,7 @@ class SimpleDeclension extends LanguageDeclension {
         }
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
                 LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
                 boolean isCopied) {
             return new SimpleNounWithClassifier(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
@@ -271,7 +269,7 @@ class SimpleDeclension extends LanguageDeclension {
         }
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new PluralNounWithClassifier(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
         }
 

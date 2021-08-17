@@ -29,7 +29,7 @@ import com.google.common.collect.ImmutableSet;
  * @author stamm
  * @since 1.1
  */
-abstract class BantuDeclension extends LanguageDeclension {
+abstract class BantuDeclension extends AbstractLanguageDeclension {
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(PluralNounForm.SINGULAR);
     private final List<BantuAdjectiveForm> adjectiveForms;
@@ -101,14 +101,14 @@ abstract class BantuDeclension extends LanguageDeclension {
 
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new BantuAdjective(this, name, position);
     }
 
 
     
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
             LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimplePluralNounWithGender(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }

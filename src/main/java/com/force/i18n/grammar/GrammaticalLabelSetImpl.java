@@ -1,21 +1,34 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
-import com.force.i18n.*;
+import com.force.i18n.LabelDebugProvider;
+import com.force.i18n.LabelReference;
+import com.force.i18n.LabelSetImpl;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
+import com.force.i18n.Renameable;
 import com.force.i18n.commons.text.TextUtil;
-import com.force.i18n.grammar.parser.*;
-import com.force.i18n.settings.*;
+import com.force.i18n.grammar.parser.GrammaticalLabelFileParser;
+import com.force.i18n.grammar.parser.LanguageDictionaryParser;
+import com.force.i18n.grammar.parser.RefTag;
+import com.force.i18n.grammar.parser.TermRefTag;
+import com.force.i18n.settings.ParameterNotFoundException;
+import com.force.i18n.settings.PropertyFileData;
+import com.force.i18n.settings.SettingsSectionNotFoundException;
 
 
 /**
@@ -25,9 +38,6 @@ import com.force.i18n.settings.*;
  * @author yoikawa,stamm
  */
 public class GrammaticalLabelSetImpl extends LabelSetImpl implements GrammaticalLabelSet {
-    /**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger logger = Logger.getLogger(GrammaticalLabelSetImpl.class.getName());
@@ -56,7 +66,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
      * @throws IOException if there's an error with the parser
      */
     public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelFileParser p, PropertyFileData data) throws IOException {
-        super(p,data);
+        super(p, data);
         assert dictionary != null : "You must provide a dictionary";
         this.dictionary = dictionary;
         this.publicSections = data.getPublicSectionNames();
@@ -65,7 +75,21 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
     }
 
     /**
-     * Used by sleepy cat, or other implementations that already have the data specified preparsed
+     * Copy constructor that overrides {@code dictionary} used by {@code GrammaticalLabelSetLoader}.
+     *
+     * @param dictionary the dictionary that is used for this object
+     * @param source the source {@link com.force.i18n.grammar.GrammaticalLabelSet} object to copy from
+     * @see com.force.i18n.grammar.parser.GrammaticalLabelSetLoader#compute
+     */
+    public GrammaticalLabelSetImpl(LanguageDictionary dictionary, GrammaticalLabelSet source) {
+        super(source.getPropertyFileData(), source.getLabelSectionToFilename());
+        this.dictionary = dictionary;
+        this.publicSections = source.getPublicSectionNames();
+        this.setLastModified(source.getLastModified());
+    }
+
+    /**
+     * Used by sleepycat, or other implementations that already have the data specified preparsed
      * @param dictionary the dictionary associated with this label set
      * @param data the preloaded data
      * @param labelSectionToFilename the labelSectionToFilename
@@ -161,6 +185,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
         return formatString(this.get(section, param), null, null, forMessageFormat);
     }
 
+    @Override
     public String getStringThrow(String section, String param, boolean forMessageFormat) {
         return formatString(this.get(section, param, true), null, null, forMessageFormat);
     }
@@ -270,8 +295,8 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 		if (keysToInclude == null) {
 			keysToInclude = sectionNames();
 			// Include all of them.
-		} 
-		
+		}
+
 		for (String str : keysToInclude) {
 			if (first) {
 				first = false;
@@ -299,14 +324,14 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 		}
 		out.append("}");
 	}
-	
+
 
 	void appendLabel(Appendable out, String section, String key, Set<GrammaticalTerm> termsInUse) throws IOException {
 		Object value = get(section, key, null);
 		out.append("\"").append(section).append('.').append(key).append("\":");
 		RefTag.appendJsonLabelValue(dictionary, out, value, termsInUse);
 	}
-	
+
 	@Override
 	public Collection<? extends GrammaticalTerm> getUsedTerms(Collection<String> keysToInclude) {
 		Set<GrammaticalTerm> termsToInclude = new HashSet<>();

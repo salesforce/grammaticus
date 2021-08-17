@@ -25,7 +25,7 @@ import com.google.common.collect.*;
  * In this case, we have a "generic" and non-enum based NounForm and AdjectiveForm
  * @author stamm
  */
-abstract class SlavicDeclension extends LanguageDeclension {
+abstract class SlavicDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(SlavicDeclension.class.getName());
 
     private final List<SlavicNounForm> nounForms;
@@ -180,12 +180,12 @@ abstract class SlavicDeclension extends LanguageDeclension {
 
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SlavicAdjective(this, name, position);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
             LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SlavicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }

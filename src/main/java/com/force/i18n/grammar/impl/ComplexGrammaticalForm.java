@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -41,12 +41,11 @@ import com.google.common.collect.Multimap;
  * @author stamm
  */
 abstract class ComplexGrammaticalForm implements Serializable, Comparable<ComplexGrammaticalForm> {
-    /**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
-	private LanguageDeclension declension;
+
     private int ordinal;  // The order inside "allNounForms"
+	private transient LanguageDeclension declension;   // this isn't serializable.
+
     protected ComplexGrammaticalForm(LanguageDeclension declension, int ordinal) {
         this.declension = declension;
         this.ordinal = ordinal;
@@ -56,17 +55,23 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
     public final LanguageDeclension getDeclension() { return this.declension; }
     protected abstract TermType getTermType();
 
-
-
-    // Implement a *strict* notion of equality, like in an enum
     @Override
-    public final int hashCode() {
-        return super.hashCode();
+    public int hashCode() {
+        return Objects.hash(this.declension, this.ordinal);
     }
+
     @Override
-    public final boolean equals(Object other) {
-        return this==other;
+    public boolean equals(Object other) {
+        if (this == other) return true;
+
+        if (other instanceof ComplexGrammaticalForm) {
+            ComplexGrammaticalForm cgf = (ComplexGrammaticalForm)other;
+            return Objects.equals(declension.getLanguage(), cgf.declension.getLanguage())
+                    && Objects.equals(ordinal, cgf.ordinal);
+        }
+        return false;
     }
+
 	@Override
 	public int compareTo(ComplexGrammaticalForm o) {
 		return this.getOrdinal() - o.getOrdinal();
@@ -114,26 +119,29 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         }
     }
 
-
     /**
      * "Complex" (i.e. non-enumified) noun forms should implement this interface, which is *not* serializable
      * Users that care, should use the declension/ordinal
      * @author stamm
      */
     abstract static class ComplexNounForm extends ComplexGrammaticalForm implements NounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		protected ComplexNounForm(LanguageDeclension declension, int ordinal) {
+        private static final long serialVersionUID = 1L;
+
+        protected ComplexNounForm(LanguageDeclension declension, int ordinal) {
             super(declension, ordinal);
         }
-        @Override protected TermType getTermType() { return TermType.Noun; }
+
+        @Override
+        protected TermType getTermType() {
+            return TermType.Noun;
+        }
+
         @Override
         public String getKey() {
-            // TODO Auto-generated method stub
-            return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue() + "-" + getArticle().getDbValue();
+            return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue() + "-"
+                    + getArticle().getDbValue();
         }
+
         @Override
         public String toString() {
             return getDeclension().getLanguage() + "Noun:" + getOrdinal() + "-" + getKey();
@@ -157,7 +165,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         public String toString() {
             return getDeclension().getLanguage() + "Adj:" + getOrdinal() + "-" + getNumber().getDbValue() + "-" + getArticle().getDbValue() + "-" + getCase().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
         }
-        // Assume the 
+        // Assume the
 		@Override
 		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
 				throws IOException {
@@ -187,7 +195,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 		public String getKey() {
 			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getStartsWith().getDbValue();
 		}
-		
+
 		@Override
 		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
 				throws IOException {
@@ -199,7 +207,8 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 
 
     /*
-     * Some utilities/methods for reducing the cache size of the dictionaries, if you need to.  I ran some tests and it seemed to be not a huge deal.
+     * Some utilities/methods for reducing the cache size of the dictionaries, if you need to.
+     * I ran some tests and it seemed to be not a huge deal.
      *
      * Here's the base line when going to the disk
      * Wrote FINNISH dictionary in 147 msec of size 472940
@@ -213,18 +222,27 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
      *
      *
      * If you feel like trading space for a little speed, make your maps transient add this code to your subclass of ComplexGrammaticalForm
+     *
+     *   private void writeObject(ObjectOutputStream out) throws IOException {
+     *       out.defaultWriteObject();
+     *       ComplexGrammaticalForm.serializeFormMap(out, values);
+     *   }
+     *
+     *   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+     *       in.defaultReadObject();
+     *       this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
+     *   }
+     */
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+        out.writeObject(this.declension.getLanguage().getLocaleString());
+    }
 
-        private void writeObject(ObjectOutputStream out) throws IOException {
-            out.defaultWriteObject();
-            ComplexGrammaticalForm.serializeFormMap(out, values);
-        }
-
-        private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-            in.defaultReadObject();
-            this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
-        }
-
-   */
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
+        this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
+    }
 
     static <T extends ComplexGrammaticalForm> void serializeFormMap(ObjectOutputStream out, Map<T,String> values) throws IOException {
         if (values == null) {
@@ -464,7 +482,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
     abstract static class ComplexAdjective<T extends ComplexAdjectiveForm> extends Adjective {
 		private static final long serialVersionUID = 1L;
 		// The "keys" here are StartsWith, Gender, and Plurality
-        private transient Map<T, String> values = new HashMap<T,String>();
+        private transient Map<T, String> values = new HashMap<T, String>();
 
 		public ComplexAdjective(LanguageDeclension declension, String name,
 				LanguagePosition position) {
@@ -504,7 +522,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
     abstract static class ComplexNoun<T extends ComplexNounForm> extends Noun {
 		private static final long serialVersionUID = 1L;
 		// The "keys" here are StartsWith, Gender, and Plurality
-        private transient Map<T, String> values = new HashMap<T,String>();
+        private transient Map<T, String> values = new HashMap<T, String>();
 
         ComplexNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
         		LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
@@ -514,7 +532,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 		protected abstract Class<T> getFormClass();
 
         @Override
-        public Map<? extends NounForm, String> getAllDefinedValues() {
+        public Map<T, String> getAllDefinedValues() {
             return values;
         }
         @Override
@@ -530,7 +548,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         public Noun clone() {
         	@SuppressWarnings("unchecked") // Clone not generalized
 			ComplexNoun<T> noun = (ComplexNoun<T>) super.clone();
-            noun.values = new HashMap<T,String>(noun.values);
+            noun.values = new HashMap<T, String>(noun.values);
             return noun;
         }
         // Reduce size of noun maps

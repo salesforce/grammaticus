@@ -118,7 +118,7 @@ class GreekDeclension extends GermanicDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new GreekNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 

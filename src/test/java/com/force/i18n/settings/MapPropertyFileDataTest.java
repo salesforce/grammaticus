@@ -10,8 +10,6 @@ package com.force.i18n.settings;
 import java.util.*;
 import java.util.Map.Entry;
 
-import com.force.i18n.settings.MapPropertyFileData;
-
 import junit.framework.TestCase;
 
 /**

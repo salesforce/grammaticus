@@ -11,7 +11,6 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.*;
 
-import com.force.i18n.settings.SharedKeyMapPropertyFileData;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 import junit.framework.TestCase;

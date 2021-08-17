@@ -26,7 +26,7 @@ import com.google.common.collect.ImmutableList;
  *   
  * @author stamm
  */
- class MalayoPolynesianDeclension extends LanguageDeclension {
+ class MalayoPolynesianDeclension extends AbstractLanguageDeclension {
 	// All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
@@ -74,12 +74,12 @@ import com.google.common.collect.ImmutableList;
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimplePluralNoun(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
     }
     
@@ -221,12 +221,12 @@ import com.google.common.collect.ImmutableList;
 
 
         @Override
-        protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+        public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
             return new SimpleAdjectiveWithStartsWith(this, name, startsWith);
         }
 
         @Override
-        protected Article createArticle(String name, LanguageArticle articleType) {
+        public Article createArticle(String name, LanguageArticle articleType) {
             return new HawaiianArticle(this, name, articleType);
         }
 
@@ -264,7 +264,7 @@ import com.google.common.collect.ImmutableList;
         }
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new SimpleArticledPluralNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
         }
 

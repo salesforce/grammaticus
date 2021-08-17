@@ -63,7 +63,7 @@ import com.google.common.collect.ImmutableList;
  * another Balkan Sprachbund language)
  * @author stamm
  */
-class BulgarianDeclension extends LanguageDeclension {
+class BulgarianDeclension extends AbstractLanguageDeclension {
     public BulgarianDeclension(HumanLanguage language) {
 		super(language);
 	}
@@ -365,7 +365,7 @@ class BulgarianDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new BulgarianNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
     }

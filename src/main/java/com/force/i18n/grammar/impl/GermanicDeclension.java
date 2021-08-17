@@ -304,19 +304,18 @@ abstract class GermanicDeclension extends ArticledDeclension {
     }
 
     @Override
-    public
-    final boolean hasArticleInNounForm() {
+    public final boolean hasArticleInNounForm() {
         return getRequiredNounArticles().size() > 1;
     }
 
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new GermanicAdjective(this, name, position);
     }
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new GermanicArticle(this, name, articleType);
     }
 
@@ -325,7 +324,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
      * @see i18n.grammar.LanguageDeclension#createNoun(i18n.grammar.Noun.NounType, i18n.grammar.LanguageStartsWith, i18n.grammar.LanguageGender, java.lang.String, boolean)
      */
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new GermanicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 

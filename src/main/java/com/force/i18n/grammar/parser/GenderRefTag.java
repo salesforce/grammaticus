@@ -20,20 +20,32 @@ import com.google.common.collect.Sets;
  * @since 1.1
  */
 public class GenderRefTag extends AdnominalRefTag {
-	private static final long serialVersionUID = 1L;
-	private final Map<LanguageGender,Object> when;
-	private final Object ifDefault;
+    private static final long serialVersionUID = 1L;
 
-	GenderRefTag(NounRefTag nounTag, Map<LanguageGender,Object> when, Object ifDefault) {
-		super(nounTag);
-		this.when = when;
-		this.ifDefault = ifDefault;
+    private final Map<LanguageGender, Object> when;
+    private final Object ifDefault;
 
+    GenderRefTag(NounRefTag nounTag, Map<LanguageGender, Object> when, Object ifDefault) {
+        super(nounTag);
+        this.when = when;
+        this.ifDefault = ifDefault;
     }
 
     @Override
     public String getKey() {
-        return "Gender:"+when;
+        return "Gender:" + when;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), when, ifDefault);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj)
+                && Objects.equals(when, ((GenderRefTag)obj).when)
+                && Objects.equals(ifDefault, ((GenderRefTag)obj).ifDefault);
     }
 
 	Object getData(LanguageDictionary dictionary, Renameable[] entities) {
@@ -85,5 +97,4 @@ public class GenderRefTag extends AdnominalRefTag {
 		when.entrySet().stream().forEach(e->{forms.append("\""+e.getKey().getDbValue()+"\":");RefTag.appendJsonLabelValueNoThrow(dictionary, forms, e.getValue(), null);});
 		return "{\"t\":\"g\",\"an\":"+associatedNounIndex.intValue()+",\"def\":"+def.toString()+",\"v\":{"+forms.toString()+"}}";
 	}
-
 }

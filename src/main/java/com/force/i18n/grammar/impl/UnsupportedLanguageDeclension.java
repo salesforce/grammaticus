@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -82,17 +82,17 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimpleArticledPluralNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
     }
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new SimpleArticle(this, name, articleType);
     }
 
@@ -143,8 +143,8 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     /**
      * Irish has been simplified from Old Irish and Celtic, but still has a case system
      * and a special way of handling the definite article for things that start with an S or Z sound (like italian)
-     * 
-     * Note: we don't support the special form for nouns when used with the number ending in two (2 láimh vs 3 lámha) 
+     *
+     * Note: we don't support the special form for nouns when used with the number ending in two (2 láimh vs 3 lámha)
      * taking the lenited singular noun.  Google translate as of 2017 does the same thing when using the number instead of (Dhá).
      */
     static class IrishDeclension extends CelticDeclension {
@@ -263,7 +263,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         }
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
                 LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new IrishNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
         }
@@ -298,14 +298,14 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
     /**
      * Some languages have complicated grammars, but we will treat them as analytical/simple declension
-     * for non-grammatical translation.  
+     * for non-grammatical translation.
      * @author stamm
      */
     abstract static class UnsupportedAsSimpleDeclension extends UnsupportedLanguageDeclension {
         public UnsupportedAsSimpleDeclension(HumanLanguage language) {
 			super(language);
 		}
-        
+
 		// Unsupported language where plurals are formed using complicated aggutinations.
         @Override
         public List< ? extends NounForm> getAllNounForms() {
@@ -314,12 +314,12 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
         @Override
         public boolean hasPlural() {
-            return false; 
+            return false;
         }
 
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new SimpleNoun(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
         }
 
@@ -339,7 +339,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         }
     }
 
-    
+
     /**
      * Haitian Creole is a language based on French, but creolized to remove some complexity from declensions, as it does not
      * have gender or plurals.
@@ -352,7 +352,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 		}
     }
 
-    
+
     /**
      * Basque is a language isolate that uses agglutination to form most of the words.  Our grammar
      * engine is not designed to handle it at this time.
@@ -362,17 +362,31 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         public BasqueDeclension(HumanLanguage language) {
 			super(language);
 		}
-
     }
-    
+
     /**
-     * Persian is an Iranian language that has a lot of arabic words added to it, where the grammar of how 
-     * adjectives and plurals are made are based on the source of the word. 
-     * 
+     * Greenlandic is member of Eskimo–Aleut (Inuit) that has highly synthetic with heavy suffixes. Our grammar engine
+     * is not designed to handle it at this time therefore, provide just Singular form for now.
+     * <p>
+     * For example, “They say that it is good”, is “pitsaanirarpaat” in Greenlandic. “There is no one at home” is
+     * “angirlasimasuqanngilaq”, “She is good at singing” is “erinarsullaqqippoq”!
+     * <p>
+     * Greenlandic has 8 cases, two numbers, no gender/article, and with 8 moods.
+     */
+    static class GreenlandicDeclension extends UnsupportedAsSimpleDeclension {
+        public GreenlandicDeclension(HumanLanguage language) {
+			super(language);
+		}
+    }
+
+    /**
+     * Persian is an Iranian language that has a lot of arabic words added to it, where the grammar of how
+     * adjectives and plurals are made are based on the source of the word.
+     *
      * We're going with a simplified system where we track single/plural, nom/accusative, and assume adjectives
      * are unmodified.  There are circumstances with animate and human nouns that break this.  Hence, unsupported.
      */
-    static class PersianDeclension extends LanguageDeclension {
+    static class PersianDeclension extends AbstractLanguageDeclension {
         public PersianDeclension(HumanLanguage language) {
 			super(language);
 		}
@@ -430,8 +444,8 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
             public String getDefaultString(boolean isPlural) {
                 return isPlural ? (plural != null ? plural : singular) : singular;
             }
-            
-            
+
+
 
 			@Override
 			public String getString(NounForm form) {
@@ -492,7 +506,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         }
 
         @Override
-        protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
                 LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new PersianNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
         }
@@ -501,7 +515,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE);
         }
-        
+
 		@Override
 		public boolean hasStartsWith() {
 			return false;
@@ -533,7 +547,7 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 		}
 
 		@Override
-		protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+		public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
 			return new SimpleAdjective(this, name);
 		}
     }

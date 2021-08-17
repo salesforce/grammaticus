@@ -143,12 +143,12 @@ abstract class TurkicDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new SimpleArticle(this, name, articleType);
     }
 
@@ -158,7 +158,7 @@ abstract class TurkicDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
+    public String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
         if (articleType == LanguageArticle.INDEFINITE) {
             return "Bir ";  //
         } else {
@@ -180,7 +180,7 @@ abstract class TurkicDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new TurkishNoun(this, name, pluralAlias, type, entityName, startsWith, access, isStandardField, isCopied);
     }
 
@@ -238,7 +238,7 @@ abstract class TurkicDeclension extends ArticledDeclension {
 	    }
 		
 	    @Override
-	    protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
+	    public String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
 	        if (articleType == LanguageArticle.INDEFINITE) {
 	            return "Бір ";  //
 	        } else {

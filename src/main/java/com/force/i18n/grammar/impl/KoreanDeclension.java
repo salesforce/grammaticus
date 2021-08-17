@@ -27,7 +27,7 @@ import com.google.common.collect.ImmutableList;
  * @author stamm
  * @since 0.5.0
  */
-public class KoreanDeclension extends LanguageDeclension implements WithClassifiers {
+public class KoreanDeclension extends AbstractLanguageDeclension implements WithClassifiers {
 
 	private static final Logger logger = Logger.getLogger(KoreanDeclension.class.getName());
 
@@ -239,7 +239,7 @@ public class KoreanDeclension extends LanguageDeclension implements WithClassifi
     @Override public List< ? extends AdjectiveForm> getAdjectiveForms() { return ADJECTIVE_FORMS; }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
     	// It isn't starts with, it's end with here.
         return new KoreanAdjective(this, name, position);
     }
@@ -291,7 +291,7 @@ public class KoreanDeclension extends LanguageDeclension implements WithClassifi
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new KoreanNoun(this, name, pluralAlias, type, entityName, startsWith, access, isStandardField, isCopied);
     }
 

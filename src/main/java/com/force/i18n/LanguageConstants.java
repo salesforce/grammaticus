@@ -87,8 +87,7 @@ public final class LanguageConstants {
     public static final String HAWAIIAN = "haw";
     public static final String HAITIAN_CREOLE = "ht";
     public static final String AZERBAIJANI = "az";
-    
-    
+    public static final String GREENLANDIC = "kl";
     
     // platform languages
     public static final String SPANISH_MX = "es_MX"; //Spanish (Mexican), end-user lang prior to 190

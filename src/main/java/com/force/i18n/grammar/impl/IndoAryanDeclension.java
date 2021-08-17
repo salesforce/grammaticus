@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableSet;
  * @author stamm
  * @since 1.1
  */
-abstract class IndoAryanDeclension extends LanguageDeclension {
+abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(IndoAryanDeclension.class.getName());
 
     private final List<IndoAryanNounForm> entityForms;
@@ -180,12 +180,12 @@ abstract class IndoAryanDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new IndoAryanAdjective(this, name, position);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new IndoAryanNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 

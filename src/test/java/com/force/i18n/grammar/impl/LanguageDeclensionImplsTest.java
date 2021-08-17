@@ -1,17 +1,22 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.LanguageConstants.*;
+
+import java.lang.reflect.Proxy;
 import java.util.*;
 
 import org.junit.Assert;
+import org.junit.Test;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ModifierFormMap;
 import com.force.i18n.grammar.impl.ComplexGrammaticalForm.NounFormMap;
@@ -88,13 +93,17 @@ public class LanguageDeclensionImplsTest extends TestCase {
                 assertTrue("Default article isn't contained in the set of articles for " + lang, declension.getAllowedArticleTypes().contains(declension.getDefaultArticle()));
                 assertTrue("hasArticle doesn't match number of article types for " + lang, declension.getAllowedArticleTypes().size() > 1);
             } else {
-                assertEquals("Required articles should be empty for " + lang, 0, declension.getAllowedArticleTypes().size());            	
+                assertEquals("Required articles should be empty for " + lang, 0, declension.getAllowedArticleTypes().size());
             }
-            
+
             if (declension.hasStartsWith() && declension.hasEndsWith()) {
             	Assert.fail("You cannot have a language with both starts with and ends with phoneme modifier changes at this time.");
             }
 
+            if (declension.hasClassifiers()) {
+                assertTrue("Declension should implemnt WithClassifiers interface for " + declension.getClass().getSimpleName(), declension instanceof LanguageDeclension.WithClassifiers);
+                assertNotNull("Default classifier should be non-null value for ", ((LanguageDeclension.WithClassifiers)declension).getDefaultClassifier());
+            }
         }
     }
 
@@ -105,8 +114,9 @@ public class LanguageDeclensionImplsTest extends TestCase {
      * Also, this test might fail for certain languages due to certain modifiers applying to only certain forms
      */
     public void testNounFormsMatchDeclensionFlags() {
-        final Set<String> LANGS_TO_IGNORE_CASE_TEST = ImmutableSet.of(LanguageConstants.BULGARIAN, LanguageConstants.MACEDONIAN,  // Bulgarian case is only in modifier
-        		LanguageConstants.ARABIC
+        final Set<String> LANGS_TO_IGNORE_CASE_TEST = ImmutableSet.of(
+                BULGARIAN, MACEDONIAN,  // Bulgarian case is only in modifier
+        		ARABIC
                ); // Case is autoderived in arabic
 
 
@@ -213,4 +223,71 @@ public class LanguageDeclensionImplsTest extends TestCase {
         }
     }
 
+    @Test
+    public void testForwardingDecletion() throws NoSuchMethodException, SecurityException {
+        // check the flag first. if false, there's no forwarding proxy and no need for testing
+        if (!LanguageDeclensionFactory.USE_PROXY) return;
+
+        // ensure all declension reports the expected language, and "translated" language is not proxy
+        for (HumanLanguage l: LanguageProviderFactory.get().getAll()) {
+            LanguageDeclension d = LanguageDeclensionFactory.get().getDeclension(l);
+            assertEquals(d.getLanguage(), l);
+
+            // "translated" languages are always "some" declension (not proxies)
+            // note: for platform languages, it's vary. see LanguageDeclensionFactory
+            if (l.isTranslatedLanguage()) {
+                assertTrue("Language: " + l + " must implement declension", AbstractLanguageDeclension.class.isAssignableFrom(d.getClass()));
+
+                HumanLanguage fallback = l.getFallbackLanguage();
+                if (fallback != null) {
+                    LanguageDeclension fallbackDeclension = LanguageDeclensionFactory.get().getDeclension(fallback);
+                    assertNotSame(d, fallbackDeclension);
+                }
+            }
+        }
+        HumanLanguage EN = LanguageProviderFactory.get().getLanguage(ENGLISH_US);
+        LanguageDeclension en = LanguageDeclensionFactory.get().getDeclension(EN);
+        assertTrue(EN.isTranslatedLanguage());
+
+        // British-English (en_GB) uses EnglishDeclension, but should NOT be the same as en_US
+        HumanLanguage EN_GB = LanguageProviderFactory.get().getLanguage(ENGLISH_GB);
+        LanguageDeclension en_GB = LanguageDeclensionFactory.get().getDeclension(EN_GB);
+        assertEquals(en.getClass(), en_GB.getClass());
+        assertNotSame(en, en_GB);
+
+        // Canadian-English (en_CA) fallbacks to en_US. This should be Proxy declension to en_US too.
+        HumanLanguage EN_CA = LanguageProviderFactory.get().getLanguage(ENGLISH_CA);
+        LanguageDeclension en_CA = LanguageDeclensionFactory.get().getDeclension(EN_CA);
+        assertTrue(LanguageDeclensionFactory.get().isForwardingProxy(en_CA));
+        assertSame(((ForwardingLanguageDeclension)Proxy.getInvocationHandler(en_CA)).getDelegate(),  en);
+
+        // Austrarian-English (en_AU) fallbacks to en_GB. This should be Proxy declension to en_GB too.
+        HumanLanguage EN_AU = LanguageProviderFactory.get().getLanguage(ENGLISH_AU);
+        LanguageDeclension en_AU = LanguageDeclensionFactory.get().getDeclension(EN_AU);
+        assertTrue(LanguageDeclensionFactory.get().isForwardingProxy(en_AU));
+        assertSame(((ForwardingLanguageDeclension)Proxy.getInvocationHandler(en_AU)).getDelegate(),  en_GB);
+
+        HumanLanguage ES = LanguageProviderFactory.get().getLanguage(SPANISH);
+        LanguageDeclension es = LanguageDeclensionFactory.get().getDeclension(ES);
+        assertTrue(ES.isTranslatedLanguage());
+
+        // Mexican-Spanish (es_MX) is standard language with translations. Assigned Spanish declension, but should not be the same instance of Spanish ("es")
+        HumanLanguage ES_MX = LanguageProviderFactory.get().getLanguage(SPANISH_MX);
+        LanguageDeclension es_MX = LanguageDeclensionFactory.get().getDeclension(ES_MX);
+        assertTrue(ES_MX.isTranslatedLanguage());
+        assertFalse(LanguageDeclensionFactory.get().isForwardingProxy(es_MX));
+        assertNotSame(es_MX, es);
+        assertEquals(es_MX.getClass(), es.getClass());
+
+        // Romanian (ro) is platform language, but has its own declension
+        HumanLanguage RO = LanguageProviderFactory.get().getLanguage(ROMANIAN);
+        LanguageDeclension ro = LanguageDeclensionFactory.get().getDeclension(RO);
+        assertFalse(LanguageDeclensionFactory.get().isForwardingProxy(ro));
+
+        // Moldovan (ro_MD) fallbacks to ro. This should be Proxy declension to ro too.
+        HumanLanguage RO_MD = LanguageProviderFactory.get().getLanguage(MOLDOVAN);
+        LanguageDeclension ro_MD = LanguageDeclensionFactory.get().getDeclension(RO_MD);
+        assertTrue(LanguageDeclensionFactory.get().isForwardingProxy(ro_MD));
+        assertSame(((ForwardingLanguageDeclension)Proxy.getInvocationHandler(ro_MD)).getDelegate(),  ro);
+    }
 }

@@ -12,8 +12,6 @@ import java.util.logging.Logger;
 
 import com.force.i18n.*;
 import com.force.i18n.grammar.GrammaticalLabelSet;
-import com.force.i18n.grammar.parser.GrammaticalLabelSetFileCacheLoader;
-import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
 import com.google.common.collect.ImmutableList;
 
 /**

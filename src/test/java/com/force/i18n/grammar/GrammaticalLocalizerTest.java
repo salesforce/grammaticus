@@ -192,7 +192,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         DateFormat df = DateFormat.getDateTimeInstance();
         Date today = new Date();
 
-        SimpleDateFormat formatter = new SimpleDateFormat("MMM d, yyyy h:mm:ss a");
+        SimpleDateFormat formatter = new SimpleDateFormat("MMM d, yyyy, h:mm:ss a");
         String dateNewFormat = formatter.format(today);
 
         Date date = BaseLocalizer.doParseDate(dateNewFormat, df);

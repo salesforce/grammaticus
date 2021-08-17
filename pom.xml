@@ -52,6 +52,10 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <icu4j.version>69.1</icu4j.version>
+    <icu4j-localespi.version>69.1</icu4j-localespi.version>
+    <picocli.version>4.1.4</picocli.version>
+    <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
   </properties>
   
   <profiles>
@@ -175,7 +179,7 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.9</version>
+        <version>0.8.5</version>
         <executions>
           <execution>
               <goals>
@@ -257,7 +261,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>29.0-jre</version>
+      <version>30.0-jre</version>
     </dependency> 
 
     <dependency>
@@ -270,14 +274,41 @@
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j</artifactId>
-      <version>64.2</version>
+      <version>${icu4j.version}</version>
     </dependency>
     
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j-localespi</artifactId>
-      <version>64.2</version>
+      <version>${icu4j-localespi.version}</version>
       <optional>true</optional>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.19</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>info.picocli</groupId>
+      <artifactId>picocli</artifactId>
+      <version>${picocli.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.graalvm.js</groupId>
+      <artifactId>js</artifactId>
+      <version>20.3.0</version>
+      <scope>test</scope>
+    </dependency>  
+    <dependency>
+      <groupId>org.graalvm.js</groupId>
+      <artifactId>js-scriptengine</artifactId>
+      <version>20.3.0</version>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>

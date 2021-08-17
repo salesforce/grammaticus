@@ -118,7 +118,6 @@ public class BaseLocalizerTest extends TestCase {
 
          // set to use JDK locale data.
         Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocaleFormatFixer();
-        @SuppressWarnings("deprecation")
 		Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.getJDKFormatFixer();
         BaseLocalizer.setLocaleFormatFixer(predicate);
         
@@ -126,12 +125,12 @@ public class BaseLocalizerTest extends TestCase {
 	        TimeZone tz = BaseLocalizer.GMT_TZ;
 	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 12:00:00");
 	        // In JDK 11, they fixed danish (again).
-	        assertEquals("13-03-2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
-	        assertEquals("13-03-2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
 
 	        // Validate with US
 	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
-	        assertEquals("3/13/2008 12:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
+	        assertEquals("3/13/2008, 12:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
 
 	        // Singapore didn't have the "right" time.
 	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
@@ -139,7 +138,7 @@ public class BaseLocalizerTest extends TestCase {
 	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
 	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
 	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
         } finally {
         	BaseLocalizer.setLocaleFormatFixer(old_predicate);
         }
@@ -163,8 +162,7 @@ public class BaseLocalizerTest extends TestCase {
     public void testJdkDateFormatFixer_ICU() throws Exception {
         // set to use ICU locale data.
        Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocaleFormatFixer();
-       @SuppressWarnings("deprecation")
-		Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.getICUFormatFixer();
+	   Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.getICUFormatFixer();
        BaseLocalizer.setLocaleFormatFixer(predicate);
 
        try {

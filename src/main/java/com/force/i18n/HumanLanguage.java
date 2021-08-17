@@ -210,7 +210,9 @@ public interface HumanLanguage extends Serializable{
         public static boolean hasTurkicCaseFolding(HumanLanguage language) {
         	String langStr = language.getLocale().getLanguage();
             return langStr.equals(LanguageConstants.TURKISH)
-            		|| langStr.equals(LanguageConstants.AZERBAIJANI);
+            		|| langStr.equals(LanguageConstants.AZERBAIJANI)
+            		|| langStr.equals(LanguageConstants.KAZAKH)
+            		;
         }
 
 
@@ -269,23 +271,7 @@ public interface HumanLanguage extends Serializable{
             case JAPANESE: return "ISO-2022-JP";
             case KOREAN: return "ks_c_5601-1987";
             case CHINESE: return isSimplifiedChinese(language) ? "GB2312" : "Big5";
-            case ARMENIAN: case HINDI:
-            case UKRAINIAN:
-            case BULGARIAN:
-            case SERBIAN_CYRILLIC:
-            case SERBIAN_LATIN:
-            case SLOVAK:
-            case HEBREW:
-            case ARABIC:
-            case URDU:
-            case GEORGIAN:
-            case BOSNIAN: case MOLDOVAN: case SLOVENE: case MACEDONIAN: case CROATIAN:
-            case LATVIAN: case LITHUANIAN: case MALTESE: case MONTENEGRIN:
-            case RUSSIAN:
-            case BENGALI:
-            case TAMIL:
-            case KHMER: return "UTF-8";
-            default: return "ISO-8859-1";
+            default: return "UTF-8";
             }
         }
 
@@ -360,46 +346,40 @@ public interface HumanLanguage extends Serializable{
 	     * for translations.  So French doesn't fall back to English, because that would be wrong,
 	     * just the fallback for _XX languages.  This is only used for customer translations.
 	     *
-	     * Summary: Use this only for country language variants, not for anything else.
+	     * Summary: Use this only for country language variants, not for anything else
+	     * @param locale the locale representing a language where the label may be missing
 	     */
 		public static Locale getTranslationFallbackLanguageLocale(Locale locale) {
-			switch (locale.getLanguage()) {
-			case LanguageConstants.HAWAIIAN:
-				return Locale.US;
-			case LanguageConstants.HAITIAN_CREOLE:
-				return Locale.FRENCH;
-			default:
-				String country = locale.getCountry();
-				if (country.length() > 0) {
-					switch (locale.getLanguage()) {
-					case LanguageConstants.CHINESE:
-						switch (country) {
-						case "TW":
-						case "CN":
-							return null;
-						case "HK":
-							return Locale.TRADITIONAL_CHINESE;
-						default:
-							return Locale.SIMPLIFIED_CHINESE;
-						}
-					case LanguageConstants.ENGLISH:
-						switch (country) {
-						case "US":
-							return null; // English peculiarity, where en_US is for english. 
-						case "GB":
-						case "CA":
-						case "IL":
-							return Locale.US;
-						default:
-							return Locale.UK;
-						}
-				    default:
-				    	return new Locale(locale.getLanguage());
+			String country = locale.getCountry();
+			if (country.length() > 0) {
+				switch (locale.getLanguage()) {
+				case LanguageConstants.CHINESE:
+					switch (country) {
+					case "TW":
+					case "CN":
+						return null;
+					case "HK":
+						return Locale.TRADITIONAL_CHINESE;
+					default:
+						return Locale.SIMPLIFIED_CHINESE;
 					}
+				case LanguageConstants.ENGLISH:
+					switch (country) {
+					case "US":
+						return null; // English peculiarity, where en_US is for english. 
+					case "GB":
+					case "CA":
+					case "IL":
+						return Locale.US;
+					default:
+						return Locale.UK;
+					}
+			    default:
+			    	return new Locale(locale.getLanguage());
 				}
-
-				return null;
 			}
+
+			return null;
 	    }
     }
 }

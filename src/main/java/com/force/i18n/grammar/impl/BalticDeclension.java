@@ -30,7 +30,7 @@ import com.google.common.collect.*;
  *
  * @author stamm
  */
-class BalticDeclension extends LanguageDeclension {
+class BalticDeclension extends AbstractLanguageDeclension {
     private final List<SlavicNounForm> nounForms;
     private final Multimap<LanguageCase, SlavicNounForm> nounFormsByCase;
     private final NounFormMap<SlavicNounForm> nounFormMap;
@@ -121,12 +121,12 @@ class BalticDeclension extends LanguageDeclension {
 
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new BalticAdjective(this, name, position);
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
             LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SlavicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }

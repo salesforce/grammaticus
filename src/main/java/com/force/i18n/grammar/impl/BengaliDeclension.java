@@ -171,7 +171,7 @@ class BengaliDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
             boolean isCopied) {
         return new BengaliNoun(this, name, pluralAlias, type, entityName, access, gender, 
@@ -179,7 +179,7 @@ class BengaliDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 
@@ -212,7 +212,7 @@ class BengaliDeclension extends ArticledDeclension {
     }
 
     @Override
-    protected Article createArticle(String name, LanguageArticle articleType) {
+    public Article createArticle(String name, LanguageArticle articleType) {
         return new SimpleArticle(this, name, articleType);
     }
 
@@ -225,5 +225,4 @@ class BengaliDeclension extends ArticledDeclension {
     protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
         throw new UnsupportedOperationException("Postfixed articles must be defined with the language");
     }
-
 }

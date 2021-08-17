@@ -181,6 +181,7 @@ public class PluralRulesJsImpl {
              case URDU:return EXACT_ONE;
              //case "vi":return noDiff;
              //case "zh":return noDiff;
+             case GREENLANDIC: return EXACT_ONE;
         }
         return null;
     }

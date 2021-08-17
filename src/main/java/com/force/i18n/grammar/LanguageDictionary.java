@@ -70,6 +70,21 @@ public final class LanguageDictionary implements Serializable {
         this.declension = LanguageDeclensionFactory.get().getDeclension(language);
     }
 
+    /**
+     * Copy constructor. Use only if the declention for the {@code language} is proxying to the declension of {@code from}.
+     * @param language language to use
+     * @param from the source {@code LanguageDictionary} to copy from
+     */
+    public LanguageDictionary(HumanLanguage language, LanguageDictionary from) {
+        this(language);
+        this.nounMap = from.nounMap;
+        this.nounMapByPluralAlias = from.nounMapByPluralAlias;
+        this.adjectiveMap = from.adjectiveMap;
+        this.articleMap = from.articleMap;
+        this.nounVersionOverrides = from.nounVersionOverrides;
+        this.isSkinny = from.isSkinny;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof LanguageDictionary)) return false;
@@ -214,7 +229,7 @@ public final class LanguageDictionary implements Serializable {
      * used to resolve custom object name at runtime. For the most case, this is
      * for resolving label like: &lt;entity entity="0"/&gt; &lt;entity_xxxx entity="0"/&gt;
      * @param name the default name of the noun
-     * @param ei the renameable entity 
+     * @param ei the renameable entity
      * @param getRenamedValue return the renamed value if the renaming provider includes a renamed noun
      * @param doFormat if {0}'s in the renameable noun should be replaced
      * @return the noun that should be used for the given renameable entity, or the default under name if not applicable.

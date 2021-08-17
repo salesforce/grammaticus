@@ -26,7 +26,7 @@ import com.google.common.collect.ImmutableList;
  * @author cgrabill, stamm
  * @since 1.1
  */
-abstract class DravidianDeclension extends LanguageDeclension {
+abstract class DravidianDeclension extends AbstractLanguageDeclension {
 
     private final List<DravidianNounForm> entityForms;
     private final List<DravidianNounForm> fieldForms;
@@ -165,14 +165,14 @@ abstract class DravidianDeclension extends LanguageDeclension {
     }
 
     @Override
-    protected Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
+    public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
             boolean isCopied) {
         return new DravidianNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
 
     @Override
-    protected Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new SimpleAdjective(this, name);
     }
 

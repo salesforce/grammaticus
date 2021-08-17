@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -120,56 +120,38 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
 
     @Override
     public List<URL> getOverridingFiles() {
-        return LabelUtils.getFileNames(language,rootDirectory,basename);
+        return LabelUtils.getFileNames(language, rootDirectory, basename);
     }
 
     @Override
     public List<URL> getOverridingDictionaryFiles() {
-        return LabelUtils.getFileNames(language,getDictionaryDir(),dictionaryName);
+        return LabelUtils.getFileNames(language, getDictionaryDir(), dictionaryName);
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((basename == null) ? 0 : basename.hashCode());
-        result = prime * result + language.hashCode();
-        try {
-			result = prime * result + rootDirectory.toURI().hashCode();
-		} catch (URISyntaxException e) {
-			// rootDirectory does DNS resolution.
-		}
-        return result;
+        // ignoring setName and dictionary name
+        return Objects.hash(language, basename, rootDirectory.toExternalForm());
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
             return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
+
+        if (obj == null || getClass() != obj.getClass())
             return false;
-        }
+
+        // ignoring setName and dictionary name
         LabelSetDescriptorImpl other = (LabelSetDescriptorImpl)obj;
-        if (basename == null) {
-            if (other.basename != null) {
-                return false;
-            }
-        } else if (!basename.equals(other.basename)) {
-            return false;
-        }
-        if (!language.equals(other.language)) {
-            return false;
-        }
-        if (!rootDirectory.toExternalForm().equals(other.rootDirectory.toExternalForm())) {
-            return false;
-        }
-        return true;
+        return language.equals(other.language)  // language can't be null
+                && Objects.equals(this.basename, other.basename)
+                && rootDirectory.toExternalForm().equals(other.rootDirectory.toExternalForm());
     }
 
     @Override
     public String toString() {
-        return rootDirectory.getPath() + " - " + basename;
+        return language + ": " + rootDirectory.getPath() + " - " + basename;
     }
 
     String getBaseName() {
@@ -200,7 +182,7 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
      * @param labelName the name of the label file in the directory.
      * @param resourceLocator the relevant classloader to use to find the labels
      */
-    public static Function<HumanLanguage,URL> getLabelRootFunction(String rootPath, String labelName, ClassLoader resourceLocator) {
+    public static Function<HumanLanguage, URL> getLabelRootFunction(String rootPath, String labelName, ClassLoader resourceLocator) {
         return new JarRootFinder(rootPath, labelName, resourceLocator);
     }
 
@@ -208,8 +190,9 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
      * Implementation of LabelSetDescriptorImpl that uses a function to calculate a different root based on language.
      */
     static class MultipleRoots extends LabelSetDescriptorImpl {
-        private final Function<HumanLanguage,URL> rootMap;
-        public MultipleRoots(HumanLanguage language, String setName, String basename, String dictionaryName, Function<HumanLanguage,URL> rootMap) {
+        private final Function<HumanLanguage, URL> rootMap;
+
+        public MultipleRoots(HumanLanguage language, String setName, String basename, String dictionaryName, Function<HumanLanguage, URL> rootMap) {
             super(rootMap.apply(language), language, setName, basename, dictionaryName);
             this.rootMap = rootMap;
         }
@@ -217,40 +200,41 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
         @Override
         public LabelSetDescriptorImpl getForOtherLanguage(HumanLanguage otherLanguage) {
             Preconditions.checkNotNull(otherLanguage);
-            if (getLanguage() == otherLanguage)
-             {
+            if (getLanguage() == otherLanguage) {
                 throw new IllegalArgumentException("You shouldn't ask for the same language"); // In case of recursion
             }
             return new MultipleRoots(otherLanguage, getLabelSetName(), getBaseName(), getDictionaryName(), this.rootMap);
         }
 
-		@Override
-		public int hashCode() {
-			return Objects.hash(rootMap);
-		}
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), rootMap);
+        }
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (!super.equals(obj) || getClass() != obj.getClass())
-				return false;
-			MultipleRoots other = (MultipleRoots) obj;
-			return Objects.equals(rootMap, other.rootMap);
-		}
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (!super.equals(obj) || getClass() != obj.getClass())
+                return false;
+            MultipleRoots other = (MultipleRoots)obj;
+            return Objects.equals(rootMap, other.rootMap);
+        }
     }
 
     /**
      * A class that uses the classpath of the application to find labels.
      */
-    static class JarRootFinder implements Function<HumanLanguage,URL> {
+    static class JarRootFinder implements Function<HumanLanguage, URL> {
         private final String rootPath;
         private final String labelName;
         private final ClassLoader resourceLocator;
 
         public JarRootFinder(String rootPath, String labelName, ClassLoader resourceLocator) {
             super();
-            if (rootPath == null || !rootPath.startsWith("/")) throw new IllegalArgumentException("You must provide an absolute path.");
+            if (rootPath == null || !rootPath.startsWith("/")) {
+                throw new IllegalArgumentException("You must provide an absolute path.");
+            }
             this.rootPath = rootPath;
             this.labelName = labelName;
             this.resourceLocator = resourceLocator;
@@ -260,8 +244,8 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
         public URL apply(HumanLanguage lang) {
             String dirPath = lang.getDefaultLabelDirectoryPath();
             String dir = dirPath.length() > 0 ? dirPath + "/" : dirPath;
-            int levels = dirPath.indexOf('/') > 0 ? 2 : dirPath.length() > 0 ? 1 : 0;  // How many "/"'s are in dir...
-            String path = this.rootPath.substring(1) + "/"+ dir + labelName;  // remove the first "/"
+            int levels = dirPath.indexOf('/') > 0 ? 2 : dirPath.length() > 0 ? 1 : 0; // How many "/"'s are in dir...
+            String path = this.rootPath.substring(1) + "/" + dir + labelName; // remove the first "/"
             URL labelsXml = resourceLocator.getResource(path);
             if (labelsXml == null) {
                 // We might not have labels for this language.
@@ -271,22 +255,22 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
                 }
                 return apply(LanguageProviderFactory.get().getBaseLanguage());
             }
+
             try {
                 return new URL(labelsXml, LabelUtils.getParentLevelPath(levels));
             } catch (MalformedURLException e) {
                 throw new IllegalArgumentException("Could not find " + labelName);
             }
         }
-
     }
 
-	@Override
-	public boolean hasModularizedFiles() {
-		return false;
-	}
+    @Override
+    public boolean hasModularizedFiles() {
+        return false;
+    }
 
-	@Override
-	public List<URL> getModularizedFiles() {
-		throw new IllegalArgumentException("Should not call this function.");
-	}
+    @Override
+    public List<URL> getModularizedFiles() {
+        throw new IllegalArgumentException("Should not call this function.");
+    }
 }

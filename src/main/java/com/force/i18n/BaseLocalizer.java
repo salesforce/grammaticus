@@ -46,6 +46,7 @@ public class BaseLocalizer {
     public static final Date OLD_EARLIEST;
     public static final Date OLD_LATEST;
 
+    private static final FormatFixer JDK_FORMAT_FIXER = new JdkFormatFixer();
     private static Function<Locale,FormatFixer> LocaleFixerFunction;
 
 
@@ -75,7 +76,7 @@ public class BaseLocalizer {
         c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
         OLD_LATEST = c.getTime();
 
-        LocaleFixerFunction = locale -> JdkFormatFixer.INSTANCE; // Use JDK locale data by default.
+        LocaleFixerFunction = locale -> JDK_FORMAT_FIXER; // Use JDK locale data by default.
     }
 
     private final Locale locale;
@@ -145,17 +146,6 @@ public class BaseLocalizer {
         }
     };
 
-    // We have some issues with Saudi Arabia (ar-SA) calendar and
-    // date / time formats due to the change in Calendar type to
-    // IslamicCalendar in ICU4J 59.1. Work around these issues for
-    // now by falling back to Arabic (ar) locale which uses
-    // GregorianCalendar.
-    static Locale fixSaudiArabiaLocale(Locale aLocale) {
-        if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa")) {
-            return new Locale("ar");
-        }
-        return aLocale;
-    }
 
     /**
      * Sets two digit year start date for parsing 2 year dates to
@@ -175,55 +165,120 @@ public class BaseLocalizer {
         }
     }
 
+    /**
+     * The Locale information in ICU and JDK changes often based on which libraries you use,
+     * but often you need different formats based on customer requirements which may differ
+     * from the CLDR information.  This 
+     * 
+     * The default implementations are whatever are in the JDK.  Use {@link JdkFormatFixer}
+     * which does some helpful overridable methods for thinks like having ar_SA to 
+     * use the gregorian calendar.
+     */
     public static interface FormatFixer {
+    	/**
+    	 * Some locales have a different calendar than the business application would prefer.  This allows
+    	 * overriding the locale for obtaining a different calendar.
+         * @param tz the given time zone
+    	 * @param locale the given locale
+         * @return {@code Calender} instance represents given {@code tz} and {@code locale}
+    	 */
+    	default public Calendar getCalendar(TimeZone tz, Locale locale) {
+    		return Calendar.getInstance(tz, locale);
+    	}
+    	
         /**
-         * Returns the date formatter with the given formatting style for the given locale.
+         * @return the date formatter with the given formatting style for the given locale.
+         * @param style the given formatting style
+         * @param aLocale the given locale 
          */
-        public DateFormat getDateInstance(int style, Locale aLocale);
+    	default public DateFormat getDateInstance(int style, Locale aLocale) {
+    		return DateFormat.getDateInstance(style, aLocale);
+        }
         
         /**
-         * Returns the time formatter with the given formatting style for the given locale.
+         * @return the time formatter with the given formatting style for the given locale.
+         * @param timeStyle the given formatting style
+         * @param aLocale the given locale 
          */
-        public DateFormat getTimeInstance(int timeStyle, Locale aLocale);
+        default public DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
+        	return DateFormat.getTimeInstance(timeStyle, aLocale);
+        }
 
         /**
-         * Returns the date and time formatter with the given formatting style for the given locale.
+         * @return the date and time formatter with the given formatting style for the given locale.
+         * @param dateStyle the given date formatting style
+         * @param timeStyle the given time formatting style
+         * @param aLocale the given locale 
          */
-        public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale);
+        default public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
+        	return DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale);
+        }
 
         /**
          * Changes the SimpleDateFormat pattern for given DateFormat instance,
          * or create a new instance if DateFormat is null or not in the
          * expected implementation instance.
+         * @param dateFormat the base format, or null
+         * @param pattern the date pattern to apply
+         * @param aLocale the given locale 
+         * @return the dateFormat with the given pattern applied
          */
-        public DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale);
+        default public DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale) {
+            if (dateFormat instanceof SimpleDateFormat) {
+                ((SimpleDateFormat) dateFormat).applyPattern(pattern);
+                return dateFormat;
+            }
+            return new SimpleDateFormat(pattern, aLocale);
+        }
 
         /**
-         * Return number format for given locale.
+         * @return number format for given locale.
+         * @param locale the given locale 
          */
-        public NumberFormat getNumberFormat(Locale locale);
+        default public NumberFormat getNumberFormat(Locale locale) {
+            return NumberFormat.getNumberInstance(locale);        	
+        }
         
         /**
-         * Return currency format for given locale.
+         * @return currency format for given locale.
+         * @param locale the given locale 
          */
-        public NumberFormat getCurrencyFormat(Locale locale);
+        default public NumberFormat getCurrencyFormat(Locale locale) {
+            return NumberFormat.getCurrencyInstance(locale);
+        	
+        }
         
         /**
-         * Return currency in accounting format for given locale.
+         * @return currency in accounting format for given locale.
+         * @param locale the given locale 
          */
-        public NumberFormat getAccountingCurrencyFormat(Locale locale);
+        default public NumberFormat getAccountingCurrencyFormat(Locale locale) {
+            return NumberFormat.getCurrencyInstance(locale); // JDK doesn't have dedicated accounting format. Default to regular format        	
+        }
         
         /**
-         * Return percentage format for given locale.
+         * @return percentage format for given locale.
+         * @param locale the given locale 
          */
-        public NumberFormat getPercentFormat(Locale locale);
+        default public NumberFormat getPercentFormat(Locale locale) {
+            return NumberFormat.getPercentInstance(locale);        	
+        }
+        
+        /**
+         * @param currencyIsoCode the iso code for the currency 
+         * @param currencyLocale the locale for the symbol to look up
+         * @return the currency symbol for the given isocode locale
+         */
+        default public String getCurrencySymbolFromCurrencyIsoCode(String currencyIsoCode, Locale currencyLocale) {
+			return Currency.getInstance(currencyIsoCode).getSymbol(currencyLocale);
+        }
     }
     
     /**
      * @return a format fixer that uses the built-in JDK data
      */
     protected static FormatFixer getJDKFormatFixer() {
-    	return JdkFormatFixer.INSTANCE;
+    	return JDK_FORMAT_FIXER;
     }
 
     /**
@@ -255,10 +310,7 @@ public class BaseLocalizer {
      * 
      * In order to be back-compatible with legacy data, we have to keep these historic formats in place.
      **/
-    private static enum JdkFormatFixer implements FormatFixer {
-        
-        INSTANCE;
-
+    protected static class JdkFormatFixer implements FormatFixer {
         private static final String BRITISH_DATE_SHORT_FORMAT = "dd/MM/yy";  // Much more proper, eh
         private static final String BRITISH_DATE_MEDIUM_FORMAT = "dd/MM/yyyy";
         private static final String LATVIA_DATE_SHORT_FORMAT = "dd.MM.yy";  
@@ -276,6 +328,18 @@ public class BaseLocalizer {
             return false;
         }
         
+        // We have some issues with Saudi Arabia (ar-SA) calendar and
+        // date / time formats due to the change in Calendar type to
+        // IslamicCalendar in ICU4J 59.1. Work around these issues for
+        // now by falling back to Arabic (ar) locale which uses
+        // GregorianCalendar.  These changes were applied to the JDK as well.
+        Locale overrideDateLocale(Locale aLocale) {
+            if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa")) {
+                return new Locale("ar");
+            }
+            return aLocale;
+        }
+        
         /**
          * The MALAYSIA (MY) (ms_MY) locale returns a time format of the form 'hh:mm' making it impossible to differentiate AM/PM
          * @return a dateformat with either a 24-hour clock or the necessary AM/PM identifier attached
@@ -289,9 +353,9 @@ public class BaseLocalizer {
             return df;
         }
 
-        @Override
+		@Override
         public DateFormat getDateInstance(int style, Locale aLocale) {
-            aLocale = fixSaudiArabiaLocale(aLocale);
+            aLocale = overrideDateLocale(aLocale);
             if (shouldFixJdkDateBug(aLocale)) {
                 String dateFormat;
                 switch (style) {
@@ -311,14 +375,13 @@ public class BaseLocalizer {
         
         @Override
         public DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
-            aLocale = fixSaudiArabiaLocale(aLocale);
-            
+            aLocale = overrideDateLocale(aLocale);
             return checkAM(DateFormat.getTimeInstance(timeStyle, aLocale), aLocale);
         }
 
         @Override
         public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
-            aLocale = fixSaudiArabiaLocale(aLocale);
+            aLocale = overrideDateLocale(aLocale);
             if (shouldFixJdkDateBug(aLocale)) {
                 if (dateStyle == DateFormat.SHORT || dateStyle == DateFormat.MEDIUM) {
                     String dateFormat = (dateStyle == DateFormat.SHORT) ? (LATVIA.equals(aLocale.getCountry()) ? LATVIA_DATE_SHORT_FORMAT : BRITISH_DATE_SHORT_FORMAT) : 
@@ -341,74 +404,84 @@ public class BaseLocalizer {
                 return checkAM(DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale), aLocale);
             }
         }
-
+        
         @Override
         public DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale) {
             if (dateFormat instanceof SimpleDateFormat) {
                 ((SimpleDateFormat) dateFormat).applyPattern(pattern);
                 return dateFormat;
             }
-            return new SimpleDateFormat(pattern, fixSaudiArabiaLocale(aLocale));
+            return new SimpleDateFormat(pattern, overrideDateLocale(aLocale));
         }
+        
 
-        @Override
-        public NumberFormat getNumberFormat(Locale locale) {
-            return NumberFormat.getNumberInstance(locale);
-        }
-        
-        @Override
-        public NumberFormat getCurrencyFormat(Locale locale) {
-            return NumberFormat.getCurrencyInstance(locale);
-        }
-        
-        @Override
-        public NumberFormat getAccountingCurrencyFormat(Locale locale) {
-            return NumberFormat.getCurrencyInstance(locale); // JDK doesn't have dedicated accounting format. Default to regular format
-        }
-        
-        @Override
-        public NumberFormat getPercentFormat(Locale locale) {
-            return NumberFormat.getPercentInstance(locale);
-        }
     }
     
     /**
-     * Some hot fixes to override locale data. This is ICU version
+     * Some hot fixes to override locale data. This is ICU version.
      **/
-    private static enum ICUFormatFixer implements FormatFixer {
-        
-        INSTANCE;
+    protected static class ICUFormatFixer implements FormatFixer {
+    	// Don't use the enum pattern here because we want to allow easy overriding.
+    	static final FormatFixer INSTANCE = new ICUFormatFixer();
         
         private static Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("ID");
         
         // Override locales.
-        private Locale overrideLocaleFor(Locale alocale) {
+        /**
+         * Allow simple overriding of the date locale to use for the given locale.  Used for
+         * ar-SA {@link #overrideCalendarLocale(Locale)} and also for en-ID.  Override this
+         * if you want differing behaviors.
+         * @param alocale the locale to look for
+         * @return the locale to use for 
+         */
+        protected Locale overrideDateLocaleFor(Locale alocale) {
             // Override some locales to en_GB.
             if (ENGLISH_LANGUAGE.equals(alocale.getLanguage()) && ENGLISH_OVERRIDE_COUNTRIES.contains(alocale.getCountry())) {
                 return Locale.UK;
             }
-            alocale = fixSaudiArabiaLocale(alocale);
+            alocale = overrideCalendarLocale(alocale);
             
             return alocale;
         }
 
+        /**
+         * We have some issues with Saudi Arabia (ar-SA) calendar and
+         * date / time formats due to the change in Calendar type to
+	     * IslamicCalendar in ICU4J 59.1. Work around these issues for
+	     * now by falling back to Arabic (ar) locale which uses
+	     * GregorianCalendar.
+         * @param aLocale the locale to look for
+         * @return the locale to use for date formats and calendar.
+         */
+	    protected Locale overrideCalendarLocale(Locale aLocale) {
+	    	if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa") && aLocale.getVariant().length() == 0) {
+	            return new Locale("ar", "SA", "@calendar=gregorian");
+	        }
+	        return aLocale;
+	    }
+        
+        @Override
+		public Calendar getCalendar(TimeZone tz, Locale locale) {
+        	return Calendar.getInstance(tz, overrideCalendarLocale(locale));  // Note, we don't override the english countries here
+		}
+
         @Override
         public DateFormat getDateInstance(int style, Locale aLocale) {
-            aLocale = overrideLocaleFor(aLocale);
+            aLocale = overrideDateLocaleFor(aLocale);
             
             return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getDateInstance(style, aLocale));
         }
 
         @Override
         public DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
-            aLocale = overrideLocaleFor(aLocale);
+            aLocale = overrideDateLocaleFor(aLocale);
             
             return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getTimeInstance(timeStyle, aLocale));
         }
 
         @Override
         public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
-            aLocale = overrideLocaleFor(aLocale);
+            aLocale = overrideDateLocaleFor(aLocale);
             
             return SimpleDateFormatICU.wrap((com.ibm.icu.text.SimpleDateFormat)com.ibm.icu.text.DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale));
         }
@@ -419,7 +492,7 @@ public class BaseLocalizer {
                 ((SimpleDateFormatICU) dateFormat).applyPattern(pattern);
                 return dateFormat;
             }
-            return SimpleDateFormatICU.wrap(new com.ibm.icu.text.SimpleDateFormat(pattern, overrideLocaleFor(aLocale)));
+            return SimpleDateFormatICU.wrap(new com.ibm.icu.text.SimpleDateFormat(pattern, overrideDateLocaleFor(aLocale)));
         }
 
         @Override
@@ -445,6 +518,11 @@ public class BaseLocalizer {
             com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getPercentInstance(locale);
             return NumberFormatICU.wrap(icu_nf);
         }
+
+		@Override
+		public String getCurrencySymbolFromCurrencyIsoCode(String currencyIsoCode, Locale currencyLocale) {
+			return com.ibm.icu.util.Currency.getInstance(currencyIsoCode).getSymbol(currencyLocale);
+		}
     }
     
     private static FormatFixer getFormatProvider(Locale locale) {
@@ -481,9 +559,9 @@ public class BaseLocalizer {
      */
     public Calendar getCalendar(LocalOrGmt tz) {
         if (tz == LOCAL) {
-            return getCalendar(this.timeZone, fixSaudiArabiaLocale(this.locale));
+            return getCalendar(this.timeZone, this.locale);
         } else {
-            return getCalendar(GMT_TZ, fixSaudiArabiaLocale(this.locale));
+            return getCalendar(GMT_TZ, this.locale);
         }
     }
 
@@ -494,7 +572,7 @@ public class BaseLocalizer {
      * @return a calendar for given time zone.
      */
     public Calendar getCalendar(TimeZone tz) {
-        return getCalendar(tz, fixSaudiArabiaLocale(this.locale));
+        return getCalendar(tz, this.locale);
     }
 
     /**
@@ -504,7 +582,7 @@ public class BaseLocalizer {
      * @return a calendar for given locale.
      */
     public Calendar getCalendar(Locale l) {
-        return getCalendar(this.timeZone, fixSaudiArabiaLocale(l));
+        return getFormatProvider(l).getCalendar(this.timeZone, l);
     }
     
     /**
@@ -515,7 +593,7 @@ public class BaseLocalizer {
      * @return a calendar for given locale and time zone.
      */
     public Calendar getCalendar(TimeZone tz, Locale locale) {
-        return Calendar.getInstance(tz, locale);
+        return getFormatProvider(locale).getCalendar(tz, locale);
     }
 
     /*
