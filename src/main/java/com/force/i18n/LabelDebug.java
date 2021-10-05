@@ -9,6 +9,8 @@ package com.force.i18n;
 
 import java.util.Map;
 
+import com.google.common.base.Objects;
+
 
 /**
  * Represents a single "entry" in the set of label debugs generated for a request.
@@ -60,7 +62,30 @@ public final class LabelDebug {
         return this.text;
     }
 
-    // Convenience method
+    @Override
+	public int hashCode() {
+    	return Objects.hashCode(param, section, stack, text);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+		LabelDebug other = (LabelDebug) obj;
+		return Objects.equal(param, other.param)
+				&& Objects.equal(section, other.section)
+				&& Objects.equal(stack, other.stack)
+				&& Objects.equal(text, other.text);
+	}
+
+	@Override
+	public String toString() {
+		return "LabelDebug [" + section + "." + param + ", text=" + text + "]";
+	}
+
+	// Convenience method
     public static boolean isLabelHintAllowed() {
         return LabelDebugProvider.get().isAllowed();
     }

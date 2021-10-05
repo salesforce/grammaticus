@@ -32,4 +32,25 @@ public class TextDirectionTest {
 		}
 	}
 	
+	@Test
+	public void testTokens() {
+		Assert.assertEquals("left", TextDirection.LTR.getToken("left"));
+		Assert.assertEquals("left", TextDirection.RTL.getToken("right"));
+		Assert.assertEquals("Left", TextDirection.LTR.getToken("Left"));
+		Assert.assertEquals("Left", TextDirection.RTL.getToken("Right"));
+		Assert.assertEquals("right", TextDirection.RTL.getToken("left"));
+		Assert.assertEquals("right", TextDirection.LTR.getToken("right"));
+		Assert.assertEquals("Right", TextDirection.RTL.getToken("Left"));
+		Assert.assertEquals("Right", TextDirection.LTR.getToken("Right"));
+	}
+	
+	@Test
+	public void testEmbeddingMarks() {
+		Assert.assertNull(TextDirection.LTR.addEmbeddingMarks(null));
+		Assert.assertEquals("Hi", TextDirection.LTR.makeStringLeftToRight("Hi"));
+		Assert.assertEquals("\u202AHi\u202C", TextDirection.LTR.addEmbeddingMarks("Hi"));
+		Assert.assertEquals("\u202BHi\u202C", TextDirection.RTL.addEmbeddingMarks("Hi"));
+		Assert.assertEquals("\u202AHi\u202C", TextDirection.RTL.makeStringLeftToRight("Hi"));
+	}
+
 }
