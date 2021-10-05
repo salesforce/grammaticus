@@ -234,7 +234,7 @@ public interface HumanLanguage extends Serializable{
             case SERBIAN_CYRILLIC:
             case SERBIAN_LATIN:
             case ARMENIAN: case HINDI:
-            case SLOVAK:  case HEBREW: case ARABIC: case URDU: case GEORGIAN:
+            case SLOVAK:  case HEBREW: case ARABIC: case URDU: case GEORGIAN: case YIDDISH: 
             case BOSNIAN: case MOLDOVAN: case SLOVENE: case MACEDONIAN: case CROATIAN:
             case LATVIAN: case LITHUANIAN: case MALTESE:
             case RUSSIAN:

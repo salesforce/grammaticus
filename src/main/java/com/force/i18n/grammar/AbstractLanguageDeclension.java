@@ -12,11 +12,18 @@ import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
-import com.force.i18n.*;
-import com.force.i18n.grammar.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.LanguagePluralRules;
+import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.offline.PluralRulesJsImpl;
 
@@ -161,9 +168,10 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         return null;  // Default
     }
 
+    final static EnumSet<LanguageCase> NOMINATIVE_SET = EnumSet.of(LanguageCase.NOMINATIVE);
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
-        return EnumSet.of(LanguageCase.NOMINATIVE);  // Nominative is usually required
+        return NOMINATIVE_SET;  // Nominative is usually required
     }
 
     @Override
@@ -171,14 +179,16 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         return getRequiredCases();
     }
 
+    final static EnumSet<LanguageStartsWith> CONSONANT_SET = EnumSet.of(LanguageStartsWith.CONSONANT);
     @Override
     public EnumSet<LanguageStartsWith> getRequiredStartsWith() {
-        return EnumSet.of(LanguageStartsWith.CONSONANT);  // Only generally care about consonant.
+        return CONSONANT_SET;  // Only generally care about consonant.
     }
 
+    final static EnumSet<LanguagePossessive> POSSESSIVE_NONE_SET = EnumSet.of(LanguagePossessive.NONE);
     @Override
     public EnumSet<LanguagePossessive> getRequiredPossessive() {
-        return EnumSet.of(LanguagePossessive.NONE);  // Doesn't matter much.
+        return POSSESSIVE_NONE_SET;  // Doesn't matter much.
     }
 
     @Override

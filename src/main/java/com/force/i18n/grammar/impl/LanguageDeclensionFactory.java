@@ -216,6 +216,9 @@ public enum LanguageDeclensionFactory {
             return new FrenchDeclension.RomanshDeclension(language);
         case LUXEMBOURGISH:
             return new GermanicDeclension.LuxembourgishDeclension(language);
+        case "yi": 
+        case YIDDISH:
+            return new GermanicDeclension.YiddishDeclension(language);
         case ARMENIAN:
             return new ArmenianDeclension(language);
         case CATALAN:

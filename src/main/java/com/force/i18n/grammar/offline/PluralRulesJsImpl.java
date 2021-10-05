@@ -6,9 +6,9 @@
  */
 package com.force.i18n.grammar.offline;
 
-import java.util.Locale;
-
 import static com.force.i18n.LanguageConstants.*;
+
+import java.util.Locale;
 
 /**
  * Relatively Hard-coded implementation of plural rules for the supported declensions.  Only does ordinal.
@@ -182,6 +182,8 @@ public class PluralRulesJsImpl {
              //case "vi":return noDiff;
              //case "zh":return noDiff;
              case GREENLANDIC: return EXACT_ONE;
+             case "yi":
+             case YIDDISH: return ONE;
         }
         return null;
     }

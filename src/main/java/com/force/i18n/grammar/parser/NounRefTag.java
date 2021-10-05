@@ -9,6 +9,7 @@ package com.force.i18n.grammar.parser;
 
 
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -192,7 +193,7 @@ class NounRefTag extends TermRefTag {
 
 	@Override
     protected boolean equalsValue(TermRefTag obj) {
-        return this.form == ((NounRefTag)obj).form
+        return Objects.equals(this.form, ((NounRefTag)obj).form)
             && this.index == ((NounRefTag)obj).index
             && this.escapeHtml == ((NounRefTag)obj).escapeHtml
             && this.isCapital == ((NounRefTag)obj).isCapital;
