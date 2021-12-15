@@ -84,6 +84,7 @@ public class DefaultHumanLanguageImplTest extends TestCase {
     public void testLanugageTag() {
         assertEquals("he", DefaultHumanLanguageImpl.HEBREW.getHttpLanguageCode());
         assertEquals("id", DefaultHumanLanguageImpl.INDONESIAN.getHttpLanguageCode());
+        assertEquals("yi", DefaultHumanLanguageImpl.YIDDISH.getHttpLanguageCode());
         assertEquals("en-US", DefaultHumanLanguageImpl.ENGLISH.getHttpLanguageCode());
         assertEquals("zh-Hans-CN", DefaultHumanLanguageImpl.CHINESE_SIMP.getHttpLanguageCode());
         assertEquals("zh-Hant-TW", DefaultHumanLanguageImpl.CHINESE_TRAD.getHttpLanguageCode());
@@ -92,7 +93,29 @@ public class DefaultHumanLanguageImplTest extends TestCase {
 
         assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.HEBREW.getDirection());
         assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ARABIC_DZ.getDirection());
+        assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.YIDDISH.getDirection());
         assertEquals(TextDirection.RTL, DefaultHumanLanguageImpl.ENGLISH_IL.getDirection());
         assertEquals(TextDirection.LTR, DefaultHumanLanguageImpl.ESPERANTO.getDirection());
+    }
+    
+    @Test
+    public void testDefaults() {
+    	assertFalse(DefaultHumanLanguageImpl.HEBREW.isTestOnlyLanguage());
+    	assertTrue(DefaultHumanLanguageImpl.HEBREW.isTranslatedLanguage());
+    	assertFalse(DefaultHumanLanguageImpl.ENGLISH_IL.isTranslatedLanguage());
+
+    	assertEquals("UTF-8", DefaultHumanLanguageImpl.HEBREW.getDefaultFileEncoding());
+    	assertEquals("UTF-8", DefaultHumanLanguageImpl.HEBREW.getSystemEmailEncoding());
+    	assertEquals("UTF-8", DefaultHumanLanguageImpl.HEBREW.getDefaultUserEmailEncoding());
+    	assertFalse(DefaultHumanLanguageImpl.HEBREW.hasTurkicCaseFolding());
+
+    	assertEquals("MS932", DefaultHumanLanguageImpl.JAPANESE.getDefaultFileEncoding());
+    	assertEquals("ISO-2022-JP", DefaultHumanLanguageImpl.JAPANESE.getSystemEmailEncoding());
+    	assertEquals("ISO-2022-JP", DefaultHumanLanguageImpl.JAPANESE.getDefaultUserEmailEncoding());
+    	assertTrue(DefaultHumanLanguageImpl.TURKISH.hasTurkicCaseFolding());
+
+    	assertEquals("Big5", DefaultHumanLanguageImpl.CHINESE_HK.getDefaultFileEncoding());
+    	assertEquals("GB2312", DefaultHumanLanguageImpl.CHINESE_SG.getDefaultFileEncoding());
+
     }
 }

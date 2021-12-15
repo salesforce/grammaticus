@@ -111,6 +111,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
 
     GREENLANDIC(new Locale("kl"), LanguageType.PLATFORM, 234.0), //Greenlandic -- no grammar support in 234
+    YIDDISH(new Locale("ji"), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
 
     // Sample use of variants for testing
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
@@ -224,7 +225,8 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
     /**
      * @return the "override" language for historical reasons.  Generally, this means that the
-     * locale for the language was wrong (dutch), or Java prevents it from being correct
+     * locale for the language was wrong (dutch), or Java prevents it from being correct because
+     * it used the 1988 ISO 639 spec in 1995.
      */
     @Override
 	public String getOverrideLanguage() {

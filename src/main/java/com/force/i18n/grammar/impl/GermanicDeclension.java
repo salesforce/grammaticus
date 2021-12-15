@@ -195,9 +195,14 @@ abstract class GermanicDeclension extends ArticledDeclension {
 		 */
 		private static final long serialVersionUID = 1L;
         GermanicNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
-            super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
+            this(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
 
+        GermanicNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+            super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
+        }
+
+        
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
@@ -319,10 +324,6 @@ abstract class GermanicDeclension extends ArticledDeclension {
         return new GermanicArticle(this, name, articleType);
     }
 
-
-    /* (non-Javadoc)
-     * @see i18n.grammar.LanguageDeclension#createNoun(i18n.grammar.Noun.NounType, i18n.grammar.LanguageStartsWith, i18n.grammar.LanguageGender, java.lang.String, boolean)
-     */
     @Override
     public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new GermanicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
@@ -736,6 +737,93 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.DATIVE);
+        }
+
+        @Override
+        public EnumSet<LanguageGender> getRequiredGenders() {
+            return EnumSet.of(LanguageGender.NEUTER, LanguageGender.FEMININE, LanguageGender.MASCULINE);
+        }
+    }
+    
+    /**
+     * Yiddish is Germanic, but with English-style starts-with indefinite articles, and no genitive.
+     * 
+     * 
+     * Note: The default article in this declension are derived from <a href="https://www.yivo.org/yiddish-alphabet">YIVO standard</a>
+     * , which may differ from the dialect used for a particular community. 
+     * Modern Hassidic Yiddish often omits diacritics/niqqud that YIVO uses, and the gender system
+     * for the definite article is often simplified to use just "די" regardless of gender for the singular article.
+     * If so desired, implement the appropriate Article tag in the names.xml to override these defaults
+     * 
+     * @see https://en.wikipedia.org/wiki/Yiddish_grammar
+     */
+    static class YiddishDeclension extends GermanicDeclension {
+        static EnumSet<LanguageStartsWith> STARTS_WITH = EnumSet.of(LanguageStartsWith.CONSONANT, LanguageStartsWith.VOWEL);
+        
+        public YiddishDeclension(HumanLanguage language) {
+            super(language);
+        } 
+        
+        private static final Map<LanguageCase, ImmutableMap<LanguageGender,String>> DEFINITE_ARTICLE =
+            ImmutableMap.of(
+                   LanguageCase.NOMINATIVE,
+                           ImmutableMap.of(
+                                    LanguageGender.NEUTER, "דאָס",
+                                    LanguageGender.FEMININE, "די",
+                                    LanguageGender.MASCULINE, "דער"
+                                    ),
+                    LanguageCase.ACCUSATIVE,
+                            ImmutableMap.of(
+                                    LanguageGender.NEUTER, "דאָס",
+                                    LanguageGender.FEMININE, "די",
+                                    LanguageGender.MASCULINE, "דעם"
+                                    ),
+                   LanguageCase.DATIVE,
+                           ImmutableMap.of(
+                                   LanguageGender.NEUTER, "דעם",
+                                   LanguageGender.FEMININE, "דער",
+                                   LanguageGender.MASCULINE, "דעם"
+                                   ));
+
+
+        @Override
+        protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
+            return ZERO_AND_DEFARTICLES;
+        }
+
+        @Override
+        protected String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
+            switch (articleType) {
+            case DEFINITE:
+                if (form.getNumber() == LanguageNumber.PLURAL) return "די";
+                return DEFINITE_ARTICLE.get(form.getCase()).get(form.getGender());
+            case INDEFINITE:
+                if (form.getNumber() == LanguageNumber.PLURAL) return null;
+                return form.getStartsWith() == LanguageStartsWith.VOWEL ? "אַן" : "אַ";
+            default:
+                return null;
+            }
+        }
+        
+        @Override
+        public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+            return new GermanicNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
+        }
+
+        @Override
+        public boolean hasStartsWith() {
+            return true;
+        }
+
+        @Override
+        public EnumSet<LanguageCase> getRequiredCases() {
+            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.DATIVE);
+        }
+
+        // Like english, it has a "startsWith" for indefinite articles.
+        @Override
+        public EnumSet<LanguageStartsWith> getRequiredStartsWith() {
+            return STARTS_WITH; 
         }
 
         @Override
