@@ -1,0 +1,77 @@
+# This workflow will build a package using Maven and then publish it to maven cnetral
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-body:
+        description: 'Text describing the contents of the release.'
+        required: false
+        default: ''
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: Maven
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Apache Maven Central
+      uses: actions/setup-java@v2
+      with: # running setup-java again overwrites the settings.xml
+        distribution: 'zulu'
+        java-version: '8'
+        server-id: sonatype-nexus-staging
+        server-username: MAVEN_USERNAME # env variable for username in deploy
+        server-password: MAVEN_CENTRAL_TOKEN # env variable for token in deploy
+#        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
+#        gpg-passphrase:  MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
+        settings-path: ${{ github.workspace }}/generated-settings
+    - name: Import GPG Key
+      uses: crazy-max/ghaction-import-gpg@v4
+      with:
+          gpg_private_key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+          git_push_gpgsign: false
+    - name: Cache local Maven repository
+      uses: actions/cache@v2
+      with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
+    - name: Prepare Release
+      id: release
+      run: >
+          mvn -V -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:clean release:prepare && 
+          echo "::set-output name=RELEASED_VERSION::$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c2-)"
+      env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+          MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Perform Release
+      run: >
+          mvn -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:perform
+      env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USER }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+          MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Release Entry
+      uses: actions/create-release@v1
+      with:
+          tag_name: v${{ steps.release.outputs.RELEASED_VERSION }}
+          release_name: Grammaticus ${{ steps.release.outputs.RELEASED_VERSION }}
+          body: ${{ github.event.inputs.release-body }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
