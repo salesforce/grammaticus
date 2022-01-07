@@ -71,7 +71,7 @@ jobs:
       uses: actions/create-release@v1
       with:
           tag_name: v${{ steps.release.outputs.RELEASED_VERSION }}
-          release_name: Grammaticus ${{ steps.release.outputs.RELEASED_VERSION }}
+          release_name: ${{ steps.release.outputs.RELEASED_VERSION }}
           body: ${{ github.event.inputs.release-body }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
