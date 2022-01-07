@@ -86,7 +86,7 @@
             <configuration>
               <serverId>ossrh</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
         </plugins> 
@@ -325,7 +325,7 @@
       scm:git:https://github.com/salesforce/grammaticus.git
     </connection>
     <developerConnection>
-      scm:git:ssh://github.com/salesforce/grammaticus.git
+      scm:git:https://github.com/salesforce/grammaticus.git
     </developerConnection>
     <url>
       https://github.com/salesforce/grammaticus.git
