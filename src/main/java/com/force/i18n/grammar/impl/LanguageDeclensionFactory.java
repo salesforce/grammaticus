@@ -12,7 +12,9 @@ import static com.force.i18n.LanguageConstants.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.I18nJavaUtil;
+import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.LanguageDeclension;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
@@ -149,6 +151,8 @@ public enum LanguageDeclensionFactory {
             return new SimpleDeclension.SimpleDeclensionWithClassifiers(language);
         case VIETNAMESE:
             return new SimpleDeclension.VietnameseDeclension(language);
+        case HMONG:
+            return new SimpleDeclension.HmongDeclension(language);
         case THAI:
         case TAGALOG:
         case AFRIKAANS:
@@ -246,6 +250,8 @@ public enum LanguageDeclensionFactory {
             return new IndoAryanDeclension.GujaratiDeclension(language);
         case MARATHI:
             return new IndoAryanDeclension.MarathiDeclension(language);
+        case PUNJABI:
+            return new IndoAryanDeclension.PunjabiDeclension(language);
         // Languages too complex to support *EVER*.  Included with ans
         case IRISH:    // Lenition
             return new UnsupportedLanguageDeclension.IrishDeclension(language);

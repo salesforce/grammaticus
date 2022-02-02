@@ -6,13 +6,33 @@
  */
 package com.force.i18n.grammar.impl;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.AbstractLanguageDeclension;
+import com.force.i18n.grammar.Adjective;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePosition;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.Noun.NounType;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.*;
+import com.force.i18n.grammar.NounForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjective;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjectiveForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNoun;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ModifierFormMap;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.NounFormMap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
@@ -269,6 +289,20 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.DATIVE, LanguageCase.ABLATIVE, LanguageCase.GENITIVE, LanguageCase.LOCATIVE); 
+        }
+    }
+    
+    // https://en.wikipedia.org/wiki/Punjabi_grammar
+    // Nominitive = direct
+    // Accusative = oblique
+    static final class PunjabiDeclension extends IndoAryanDeclension {
+        public PunjabiDeclension(HumanLanguage language) {
+            super(language);
+        }
+        
+        @Override
+        public EnumSet<LanguageCase> getRequiredCases() {
+            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.ABLATIVE, LanguageCase.VOCATIVE); 
         }
     }
 
