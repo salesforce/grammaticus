@@ -97,6 +97,7 @@ public class PluralRulesJsImpl {
 
              case HUNGARIAN:return ONE;
              case ARMENIAN:return "function hy(n) {return n >= 0 && n < 2 ? 'one' : 'other';}";
+             case PUNJABI_WESTERN:
              case PUNJABI:return ONE_OR_ZERO;
              //case "id":return noDiff;
              //case "ig":return noDiff;

@@ -251,6 +251,7 @@ public enum LanguageDeclensionFactory {
         case MARATHI:
             return new IndoAryanDeclension.MarathiDeclension(language);
         case PUNJABI:
+        case PUNJABI_WESTERN:
             return new IndoAryanDeclension.PunjabiDeclension(language);
         // Languages too complex to support *EVER*.  Included with ans
         case IRISH:    // Lenition
