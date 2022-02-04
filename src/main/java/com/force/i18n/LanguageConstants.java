@@ -78,7 +78,7 @@ public final class LanguageConstants {
     public static final String MARATHI = "mr";
     public static final String GUJARATI = "gu";
     public static final String PUNJABI = "pa";
-    public static final String PUNJABI_WESTERN = "pnb";
+    public static final String PUNJABI_WESTERN = "pnb";  // aka pa_Arab
     public static final String MAORI = "mi";
     public static final String BURMESE = "my";
     public static final String PERSIAN = "fa";
