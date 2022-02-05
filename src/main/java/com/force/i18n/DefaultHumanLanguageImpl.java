@@ -7,7 +7,13 @@
 
 package com.force.i18n;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -96,6 +102,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     KANNADA(new Locale("kn"), LanguageType.PLATFORM, 220.0),
     MARATHI(new Locale("mr"), LanguageType.PLATFORM, 220.0),
     GUJARATI(new Locale("gu"), LanguageType.PLATFORM, 220.0),
+    PUNJABI(new Locale("pa"), LanguageType.PLATFORM, 238.0),
 
     MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
     BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
@@ -112,7 +119,9 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
     GREENLANDIC(new Locale("kl"), LanguageType.PLATFORM, 234.0), //Greenlandic -- no grammar support in 234
     YIDDISH(new Locale("ji"), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
+    HMONG(new Locale("hmn"), LanguageType.PLATFORM, 238.0),
 
+    
     // Sample use of variants for testing
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),

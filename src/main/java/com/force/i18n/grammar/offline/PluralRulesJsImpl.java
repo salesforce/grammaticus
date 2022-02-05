@@ -21,7 +21,7 @@ import java.util.Locale;
 public class PluralRulesJsImpl {
     private final static String NO_DIFF = "function (n) {return 'other';}";
     private final static String ONE = "function (n) {return n == 1 || n == -1 ? 'one' : 'other';}";
-    //private final static String ONE_OR_ZERO = "function (n) {return n == 0 || n == 1 || n == -1 ? 'one' : 'other';}";
+    private final static String ONE_OR_ZERO = "function (n) {return n == 0 || n == 1 || n == -1 ? 'one' : 'other';}";
     private final static String EXACT_ONE = "function (n) {return n == 1 && !String(n).split('.')[1] ? 'one' : 'other';}";
 
     public static String getSelectFunction(Locale locale) {
@@ -97,6 +97,8 @@ public class PluralRulesJsImpl {
 
              case HUNGARIAN:return ONE;
              case ARMENIAN:return "function hy(n) {return n >= 0 && n < 2 ? 'one' : 'other';}";
+             case PUNJABI_WESTERN:
+             case PUNJABI:return ONE_OR_ZERO;
              //case "id":return noDiff;
              //case "ig":return noDiff;
              case ICELANDIC:return "function is(n) {"+

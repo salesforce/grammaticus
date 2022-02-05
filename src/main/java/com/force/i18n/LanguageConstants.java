@@ -77,6 +77,8 @@ public final class LanguageConstants {
     public static final String MALAYALAM = "ml";
     public static final String MARATHI = "mr";
     public static final String GUJARATI = "gu";
+    public static final String PUNJABI = "pa";
+    public static final String PUNJABI_WESTERN = "pnb";  // aka pa_Arab
     public static final String MAORI = "mi";
     public static final String BURMESE = "my";
     public static final String PERSIAN = "fa";
@@ -89,6 +91,7 @@ public final class LanguageConstants {
     public static final String AZERBAIJANI = "az";
     public static final String GREENLANDIC = "kl";
     public static final String YIDDISH = "ji"; // Fix java screwup
+    public static final String HMONG = "hmn";
     
     // platform languages
     public static final String SPANISH_MX = "es_MX"; //Spanish (Mexican), end-user lang prior to 190

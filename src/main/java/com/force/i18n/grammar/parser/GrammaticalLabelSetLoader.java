@@ -8,10 +8,8 @@
 package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
-import java.lang.reflect.Proxy;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
@@ -71,11 +69,37 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      */
     @Override
     public void resetMap() {
-        if (parentProvider != null) { // Invalidate parent loader cache.
-            parentProvider.resetMap();
+        // invalidate everything, include parent.
+        resetMap(null, true);
+    }
+
+    /**
+     * Utility method to invalidate cached data. After calling this method, the next {@link #getSet(HumanLanguage)} call
+     * will load label data from the source XML file.
+     *
+     * @param languages
+     *            collection of languages to remove from cache. if {@code languages} is {@code null} or
+     *            {@code languages.isEmpty()} is {@code true}, removes everything from cache.
+     * @param resetParent
+     *            if {@code true}, also calls parent provider to reset, {@code false} otherwise.
+     */
+    public void resetMap(Collection<? extends HumanLanguage> languages, boolean resetParent) {
+        if (resetParent && parentProvider != null) {
+            // Invalidate parent loader cache.
+            if (parentProvider instanceof GrammaticalLabelSetLoader) {
+                ((GrammaticalLabelSetLoader)parentProvider).resetMap(languages, resetParent);
+            } else {
+                parentProvider.resetMap();
+            }
         }
 
-        cache.invalidateAll();
+        if (languages == null || languages.isEmpty()) {
+            cache.invalidateAll();
+        } else {
+            for (HumanLanguage lang: languages) {
+                cache.invalidate(getDescriptor(lang));
+            }
+        }
     }
 
     @Deprecated
@@ -216,7 +240,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      */
     @Override
     public GrammaticalLabelSet getSet(HumanLanguage userLanguage) {
-        return getSetByDescriptor(baseDesc.getLanguage() == userLanguage ? baseDesc : baseDesc.getForOtherLanguage(userLanguage));
+        return getSetByDescriptor(getDescriptor(userLanguage));
     }
 
     public GrammaticalLabelSetDescriptor getBaseDesc() {
@@ -236,13 +260,38 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     }
 
     /**
+     * Returns a {@link GrammaticalLabelSetDescriptor} for the given {@link HumanLanguage}.
+     * This can be used as a key for the {@link #getCache()} such as:
+     * <pre>
+     * HumanLanguage language = LanguageProviderFactory.get().getLanguage(Locale.US);
+     * GrammaticalLabelSet set = getCache().get(getDescriptor(language));
+     * </pre>
+     * @param language a language to return descriptor
+     * @return {@link GrammaticalLabelSetDescriptor}
+     */
+    protected GrammaticalLabelSetDescriptor getDescriptor(HumanLanguage language) {
+        return baseDesc.getLanguage() == language ? baseDesc : baseDesc.getForOtherLanguage(language);
+    }
+
+    /**
+     * Test if the given language is already loaded. Unlike {@link #getSet(HumanLanguage)}, this method will not load
+     * labels if not present in cache.
+     *
+     * @param language a language to test
+     * @return {@code true} if the given {@code userLanguage} is already loaded, {@code false} otherwise.
+     */
+    public boolean isLoaded(HumanLanguage language) {
+        return this.cache.getIfPresent(getDescriptor(language)) != null;
+    }
+
+    /**
      * Controls whether to trust {@link HumanLanguage#isTranslatedLanguage}. If {@code true}, and if
      * {@link HumanLanguage#isTranslatedLanguage} returns {@code false}, the loader will skip parsing XML files for that
      * particular language. For example, loading {@code en-AU} (Australia English) will simply make an object with
      * reference to its fallback language, {@code en-GB} instead of copying data from {@code en-GB} LabelSet.
      * <p>a
      * This also sets {@code useTranslatedLanguage} to its parent provider.
-     * 
+     *
      * @param useTranslatedLanguage
      *            Set {@code true} to respect {@link HumanLanguage#isTranslatedLanguage}. Default is {@code false}.
      * @see HumanLanguage#isTranslatedLanguage
