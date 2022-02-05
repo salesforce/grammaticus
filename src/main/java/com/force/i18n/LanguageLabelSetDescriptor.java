@@ -47,6 +47,7 @@ public interface LanguageLabelSetDescriptor extends LabelSetDescriptor {
 
         /**
          * @return the location of the base dictionary file
+         * Can be null if no grammatical terms are used for these labels (then fallback can be used)
          */
         URL getDictionaryFile();
 
