@@ -8,9 +8,7 @@
 package com.force.i18n.grammar.parser;
 
 import java.io.ByteArrayInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Proxy;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
@@ -23,10 +21,20 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.SAXException;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.grammar.*;
+import com.force.i18n.LanguageProviderFactory;
+import com.force.i18n.grammar.Adjective;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.Article;
+import com.force.i18n.grammar.ArticleForm;
+import com.force.i18n.grammar.GrammaticalLabelSetProvider;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageDictionary;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.NounForm;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.TrackingHandler;
 
@@ -155,7 +163,6 @@ public final class LanguageDictionaryParser {
             // Copy over the terms from the parent.
             // For performance and memory reasons, we clone the maps, but we do not clone the terms
             this.dictionary.putAll(parentDictionary);
-            if (!TrackingHandler.exists(rootFile)) return;  // Allow a null root if we only have labels and no additional grammatical terms
         }
         if (this.dictDesc.hasOverridingFiles()) {
             // We're not english
@@ -170,7 +177,7 @@ public final class LanguageDictionaryParser {
             copyFallbackTerms(this.dictDesc.getLanguage().getFallbackLanguage());
         } else {
             if (!TrackingHandler.exists(rootFile)) {
-                throw new FileNotFoundException("can't read root names file: " + rootFile);
+                return;  // Allow not specifying grammatical terms for overrides
             }
 
             assert this.dictionary.getLanguage() == LanguageProviderFactory.get().getBaseLanguage();
@@ -184,7 +191,7 @@ public final class LanguageDictionaryParser {
         // If we have a test language override, then use it to parse the stuff.
         if (this.dictDesc instanceof TestLanguageLabelSetDescriptor) {
             String grammarOverride = ((TestLanguageLabelSetDescriptor)this.dictDesc).getGrammar();
-            if (grammarOverride != null) {
+            if (grammarOverride != null && this.dictDesc.getDictionaryFile() != null) {
                 LanguageDictionaryHandler handler = new LanguageDictionaryHandler(this.dictDesc.getDictionaryFile(), this);
                 SAXParserFactory spf = SAXParserFactory.newInstance();
                 spf.setNamespaceAware(true);

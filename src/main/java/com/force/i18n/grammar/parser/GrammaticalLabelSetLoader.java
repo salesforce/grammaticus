@@ -9,16 +9,30 @@ package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.I18nJavaUtil;
+import com.force.i18n.LabelSetDescriptorImpl;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.grammar.*;
+import com.force.i18n.LanguageProviderFactory;
+import com.force.i18n.grammar.GrammaticalLabelSet;
+import com.force.i18n.grammar.GrammaticalLabelSetFallbackImpl;
+import com.force.i18n.grammar.GrammaticalLabelSetImpl;
+import com.force.i18n.grammar.GrammaticalLabelSetProvider;
+import com.force.i18n.grammar.LanguageDictionary;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
-import com.force.i18n.settings.*;
-import com.google.common.cache.*;
+import com.force.i18n.settings.MapPropertyFileData;
+import com.force.i18n.settings.PropertyFileData;
+import com.force.i18n.settings.SharedKeyMap;
+import com.force.i18n.settings.SharedKeyMapPropertyFileData;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 
 /**
@@ -186,7 +200,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
 
         logger.fine(this.getClass().getSimpleName() + ": " + desc.getLabelSetName() + ":  Created LabelSet."
                 + lang + " in " + (System.currentTimeMillis() - start) + " ms. ("
-                + desc.getDictionaryFile().getPath() + ")");
+                + (desc.getDictionaryFile() != null ? desc.getDictionaryFile().getPath() : "") + ")");
 
         return result;
     }
