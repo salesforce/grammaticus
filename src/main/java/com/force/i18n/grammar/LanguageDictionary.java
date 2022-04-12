@@ -63,26 +63,33 @@ public final class LanguageDictionary implements Serializable {
     // instances; but it would have to be concurrent.
     // TODO: "TableEnumOrId" should be stored on each Noun, right?
     /** For UI support. keyed by TableEnumOrId to HashMap(name, NounType) */
-    private final Multimap<String, Noun> nounsByEntityType = ArrayListMultimap.create();
+    private final Multimap<String, Noun> nounsByEntityType;
 
     public LanguageDictionary(HumanLanguage language) {
         this.language = language;
         this.declension = LanguageDeclensionFactory.get().getDeclension(language);
+        this.nounsByEntityType = ArrayListMultimap.create();
     }
 
     /**
-     * Copy constructor. Use only if the declention for the {@code language} is proxying to the declension of {@code from}.
+     * Copy constructor. Use only if the declention for the {@code language} is proxying to the declension of
+     * {@code from}.
+     *
      * @param language language to use
      * @param from the source {@code LanguageDictionary} to copy from
      */
     public LanguageDictionary(HumanLanguage language, LanguageDictionary from) {
-        this(language);
+        this.language = language;
+        this.declension = LanguageDeclensionFactory.get().getDeclension(language);
+        this.nounsByEntityType = from.nounsByEntityType;
+
         this.nounMap = from.nounMap;
         this.nounMapByPluralAlias = from.nounMapByPluralAlias;
         this.adjectiveMap = from.adjectiveMap;
         this.articleMap = from.articleMap;
         this.nounVersionOverrides = from.nounVersionOverrides;
         this.isSkinny = from.isSkinny;
+
     }
 
     @Override
