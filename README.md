@@ -9,7 +9,8 @@ At Salesforce, we have a feature called "Rename Tabs & Labels" which lets admini
 
 Grammaticus prevents your application from feeling foreign, and allows the expansion of your application to nouns defined by your customers. Salesforce extensively uses this feature with Custom Objects, allowing standard screens to say `All My Puppies` through the label `<All/> <My/> <Entity entity="0"/>`.  This also includes use of plural rules to correctly handle `Create 1 house` vs `Create 2 houses`.  Such as this example:
 
-```<param name="num_records_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when>There are {0} <entities entity="0"/></plural></param>
+```
+<param name="num_records_entity"><plural num="0"><when val="one">There is {0} <entity entity="0"/></when>There are {0} <entities entity="0"/></plural></param>
 ```
 
 Grammaticus encodes the article, noun, and adjective declensions for over 30 languages, and supports programmatic use of nouns through the `Renameable` interface. The default label files included in /src/test provide a set of adjectives and articles already translated by Salesforce, along with some sample nouns.
