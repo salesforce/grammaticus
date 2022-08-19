@@ -33,10 +33,12 @@ public final class LanguageConstants {
     public static final String CZECH = "cs";
     public static final String TURKISH = "tr";
     public static final String INDONESIAN = "in";  // Fix java screwup
+    public static final String INDONESIAN_ISO = "id"; // Fixed in JDK 17
     public static final String ROMANIAN = "ro";
     public static final String VIETNAMESE = "vi";
     public static final String UKRAINIAN = "uk";
     public static final String HEBREW = "iw"; // Fix java screwup
+    public static final String HEBREW_ISO = "he";  // Fixed in JDK 17
     public static final String GREEK = "el";
     public static final String BULGARIAN = "bg";
     public static final String ARABIC = "ar";
@@ -91,6 +93,7 @@ public final class LanguageConstants {
     public static final String AZERBAIJANI = "az";
     public static final String GREENLANDIC = "kl";
     public static final String YIDDISH = "ji"; // Fix java screwup
+    public static final String YIDDISH_ISO = "yi";  // Fixed in JDK 17
     public static final String HMONG = "hmn";
     
     // platform languages

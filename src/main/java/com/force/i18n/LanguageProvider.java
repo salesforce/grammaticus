@@ -7,7 +7,12 @@
 
 package com.force.i18n;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -101,6 +106,11 @@ public interface LanguageProvider {
             for (HumanLanguage language : languages) {
                 byLocale.put(language.getLocale(), language);
                 byString.put(language.getLocale().toString(), language);
+                if (language.getOverrideLanguage() != null) {
+                	// Allow override codes directly.  So getLanguage("iw") or ("he") work the same regardless of JDK
+                	byString.put(language.getOverrideLanguage(), language);
+                }
+                
             }
             langByLoc = Collections.unmodifiableMap(byLocale);
             langByString = Collections.unmodifiableMap(byString);
