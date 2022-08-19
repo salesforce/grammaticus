@@ -191,6 +191,7 @@ public enum LabelUtils {
         try {
     	    Locale locale = language.getLocale();
             list.add(new URL(rootDirectory,  locale.getLanguage() + '/' + basename));
+            // If the iso code for the language changed between JDK versions, use the old isocode for the directory
             if (JDK_DEPENDENT_LANGUAGE.contains(locale.getLanguage())) {
                 list.add(new URL(rootDirectory,  language.getOverrideLanguage() + '/' + basename));
             }

@@ -487,9 +487,10 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     /** 
      * In JDK 17, the language locale for Yiddish, Hebrew, and Indonesian were corrected to be
      * the valid ISO Code, but not everything has adopted 17 yet, so support the old names.
-     * @param locale
-     * @param overrideLanguage
-     * @return
+     * @param locale the JDK provided locale
+     * @param overrideLanguage the override language
+     * @return the override language that should be used, usually the one provided, unless it is the
+     * same as the locale language.
      */
     static String handleOverrideLanguage(Locale locale, String overrideLanguage) {
     	if (overrideLanguage == null) {
