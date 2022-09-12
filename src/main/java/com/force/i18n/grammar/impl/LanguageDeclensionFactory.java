@@ -161,6 +161,7 @@ public enum LanguageDeclensionFactory {
         case KOREAN:
             return new KoreanDeclension(language);
         case INDONESIAN:
+        case INDONESIAN_ISO:
         case MALAY:
         case MAORI:
         case SAMOAN:
@@ -180,6 +181,7 @@ public enum LanguageDeclensionFactory {
         case UKRAINIAN:
             return new SlavicDeclension.UkrainianDeclension(language);
         case HEBREW:
+        case HEBREW_ISO:
             return new HebrewDeclension(language);
         case ARABIC:
             return new ArabicDeclension(language);
@@ -220,8 +222,8 @@ public enum LanguageDeclensionFactory {
             return new FrenchDeclension.RomanshDeclension(language);
         case LUXEMBOURGISH:
             return new GermanicDeclension.LuxembourgishDeclension(language);
-        case "yi": 
         case YIDDISH:
+        case YIDDISH_ISO: 
             return new GermanicDeclension.YiddishDeclension(language);
         case ARMENIAN:
             return new ArmenianDeclension(language);
@@ -272,7 +274,7 @@ public enum LanguageDeclensionFactory {
 
         if (FAIL_ON_MISSING) {
             throw new UnsupportedOperationException(
-                    "Language has no defined declension; the build breaker edited UserLanguage");
+                    "Language " + language + " has no defined declension; the build breaker edited UserLanguage");
         } else {
             return new SimpleDeclension(language);
         }

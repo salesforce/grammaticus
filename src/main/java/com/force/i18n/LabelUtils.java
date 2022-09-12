@@ -9,7 +9,16 @@ package com.force.i18n;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,13 +27,24 @@ import javax.annotation.Nullable;
 import com.force.i18n.commons.text.GenericTrieMatcher;
 import com.force.i18n.commons.text.GenericTrieMatcher.GenericTrieMatch;
 import com.force.i18n.commons.text.TextUtil;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.GrammaticalLabelSet;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageDictionary;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.ModifierForm;
+import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.Noun.NounType;
+import com.force.i18n.grammar.NounForm;
+import com.force.i18n.grammar.NounModifier;
 import com.force.i18n.settings.BasePropertyFile;
 import com.force.i18n.settings.ParameterNotFoundException;
 import com.google.common.base.Joiner;
-import com.google.common.collect.*;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 
 /**
  * Set of routines to simplify access to LabelUtils
@@ -159,12 +179,22 @@ public enum LabelUtils {
         return new Nounifier(dictionary).nounifyString(input);
     }
 
+    /**
+     * Set of locale langauges strings where the results are JDK dependent
+     */
+    static final Set<String> JDK_DEPENDENT_LANGUAGE = ImmutableSet.of(LanguageConstants.YIDDISH_ISO,
+    		LanguageConstants.HEBREW_ISO, LanguageConstants.INDONESIAN_ISO);
+
 
     public static List<URL> getFileNames(HumanLanguage language,URL rootDirectory, String basename ) {
         List<URL> list = new ArrayList<>();
         try {
     	    Locale locale = language.getLocale();
             list.add(new URL(rootDirectory,  locale.getLanguage() + '/' + basename));
+            // If the iso code for the language changed between JDK versions, use the old isocode for the directory
+            if (JDK_DEPENDENT_LANGUAGE.contains(locale.getLanguage())) {
+                list.add(new URL(rootDirectory,  language.getOverrideLanguage() + '/' + basename));
+            }
     	    if (locale.getCountry().length() > 0) {
     	        /*
     	         * Code required because there is no Chinese traditional locale in jdk Locale.java and taiwan and Hong kong are 2 different countries

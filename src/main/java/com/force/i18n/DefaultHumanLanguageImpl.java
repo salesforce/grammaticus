@@ -193,7 +193,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         this.locale = locale;
         this.type = type;
         this.direction = TextDirection.getDirection(locale);
-        this.overrideLanguage = overrideLanguage;
+        this.overrideLanguage = handleOverrideLanguage(locale, overrideLanguage);
         this.htmlLanguage = getHtmlLanguage(locale, overrideLanguage);
         this.minVersion = minVersion;
     }
@@ -283,6 +283,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         case ENGLISH: return "";
         case DUTCH: return "nl";
         case CHINESE_SIMP: return "zh";
+        
+        // By default, use the old incorrect directories.
+        case HEBREW: return LanguageConstants.HEBREW;
+        case INDONESIAN: return LanguageConstants.INDONESIAN;
+        case YIDDISH: return LanguageConstants.YIDDISH;
+
         default:
         	return getLocale().toString().replace('_', '/');
         }
@@ -478,7 +484,31 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         return locale.toLanguageTag();
     }
     
-	
+    /** 
+     * In JDK 17, the language locale for Yiddish, Hebrew, and Indonesian were corrected to be
+     * the valid ISO Code, but not everything has adopted 17 yet, so support the old names.
+     * @param locale the JDK provided locale
+     * @param overrideLanguage the override language
+     * @return the override language that should be used, usually the one provided, unless it is the
+     * same as the locale language.
+     */
+    static String handleOverrideLanguage(Locale locale, String overrideLanguage) {
+    	if (overrideLanguage == null) {
+    		return null;
+    	}
+    	if (overrideLanguage.equals(locale.toString())) {
+    		switch (overrideLanguage) {
+    		case LanguageConstants.HEBREW_ISO: return LanguageConstants.HEBREW;
+    		case LanguageConstants.YIDDISH_ISO: return LanguageConstants.YIDDISH;
+    		case LanguageConstants.INDONESIAN_ISO: return LanguageConstants.INDONESIAN;
+    		default:
+    			assert false : "An override language isn't required";
+    		}
+    	}
+    	return overrideLanguage;
+    }
+    
+ 	
     /**
      * Helper method for determining which language to use for "variant" languages with some opinions
      * when there might be a conflict, as in Simplified vs Traditional Chines.

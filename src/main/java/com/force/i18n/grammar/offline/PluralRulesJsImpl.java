@@ -90,7 +90,7 @@ public class PluralRulesJsImpl {
              case ITALIAN: return EXACT_ONE;
 
              case HAWAIIAN: return EXACT_ONE;
-             case "he":
+             case HEBREW_ISO:
              case HEBREW:return "function he(n) {\n"+
              	"var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n, n10 = t0 && s[0].slice(-1);\n"+
              	"return n == 1 && v0 ? 'one' : i == 2 && v0 ? 'two' : v0 && (n < 0 || n > 10) && t0 && n10 == 0 ? 'many' : 'other';}";
@@ -184,7 +184,7 @@ public class PluralRulesJsImpl {
              //case "vi":return noDiff;
              //case "zh":return noDiff;
              case GREENLANDIC: return EXACT_ONE;
-             case "yi":
+             case YIDDISH_ISO:
              case YIDDISH: return ONE;
         }
         return null;
