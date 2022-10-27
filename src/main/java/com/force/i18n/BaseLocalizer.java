@@ -876,20 +876,17 @@ public class BaseLocalizer {
      * @return a DateFormat based on localizer's locale and time zone
      */
     public DateFormat getInputDateTimeFormat(int style) {
-        if (this.dateTimeFormat == null) {
-            switch (style) {
-                case DateFormat.SHORT:
-                    return getInputDateTimeFormat();
-                case DateFormat.MEDIUM:
-                    return getInputMediumDateTimeFormat();
-                case DateFormat.LONG:
-                    //Uses short date and and long time formats
-                    return getInputLongDateTimeFormat();
-                default:
-                    return getInputDateTimeFormat();
-            }
+        switch (style) {
+        case DateFormat.SHORT:
+            return getInputDateTimeFormat();
+        case DateFormat.MEDIUM:
+            return getInputMediumDateTimeFormat();
+        case DateFormat.LONG:
+            //Uses short date and and long time formats
+            return getInputLongDateTimeFormat();
+        default:
+            return getInputDateTimeFormat();
         }
-        return this.dateTimeFormat;
     }
 
     /**
