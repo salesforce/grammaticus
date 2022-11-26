@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,17 +21,19 @@ import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
  *
  */
 public class GrammaticalLocalizerFactory extends LocalizerFactory {
-    private final LabelSetProvider labelSetLoader;
+    private final GrammaticalLabelSetProvider labelSetLoader;
     private final URL labelsDir;
 
 
-	public GrammaticalLocalizerFactory(GrammaticalLabelSetLoader loader) {
+    public GrammaticalLocalizerFactory(GrammaticalLabelSetProvider loader) {
         this.labelSetLoader = loader;
-        this.labelsDir = loader.getBaseDesc().getRootDir();
-	}
+        this.labelsDir = loader instanceof GrammaticalLabelSetLoader
+                ? ((GrammaticalLabelSetLoader) loader).getBaseDesc().getRootDir()
+                : null;
+    }
 
     private static final Boolean DO_CACHE_LABEL_SETS = !"false".equals(I18nJavaUtil.getProperty("cacheLabelSets"));
-	/**
+    /**
 	 * Helper method you can use to correctly provide the right "loader" for your labels
 	 * @param desc the label set descriptor to load
 	 * @param parent the optional parent of the label set for fallback labels
