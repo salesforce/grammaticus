@@ -32,6 +32,15 @@ public class GrammaticalLocalizerFactory extends LocalizerFactory {
                 : null;
     }
 
+    /**
+     * @deprecated use {@link #GrammaticalLocalizerFactory(GrammaticalLabelSetProvider)}
+     */
+    @Deprecated
+    public GrammaticalLocalizerFactory(GrammaticalLabelSetLoader loader) {
+        this.labelSetLoader = loader;
+        this.labelsDir = loader.getBaseDesc().getRootDir();
+    }
+
     private static final Boolean DO_CACHE_LABEL_SETS = !"false".equals(I18nJavaUtil.getProperty("cacheLabelSets"));
     /**
 	 * Helper method you can use to correctly provide the right "loader" for your labels
