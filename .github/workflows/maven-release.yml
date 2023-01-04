@@ -20,9 +20,9 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Apache Maven Central
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3
       with: # running setup-java again overwrites the settings.xml
         distribution: 'zulu'
         java-version: '11'
@@ -42,7 +42,7 @@ jobs:
           git_tag_gpgsign: true
           git_push_gpgsign: false
     - name: Cache local Maven repository
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -50,8 +50,9 @@ jobs:
     - name: Prepare Release
       id: release
       run: >
-          mvn -V -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:clean release:prepare && 
-          echo "::set-output name=RELEASED_VERSION::$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c2-)"
+          mvn -V -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:clean release:prepare &&
+          echo "RELEASED_NAME=G$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c2-)" >> $GITHUB_OUTPUT
+          echo "RELEASED_VERSION=$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c13-)" >> $GITHUB_OUTPUT
       env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USER }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
@@ -71,7 +72,7 @@ jobs:
       uses: actions/create-release@v1
       with:
           tag_name: v${{ steps.release.outputs.RELEASED_VERSION }}
-          release_name: ${{ steps.release.outputs.RELEASED_VERSION }}
+          release_name: ${{ steps.release.outputs.RELEASED_NAME }}
           body: ${{ github.event.inputs.release-body }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
