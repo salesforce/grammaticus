@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -96,13 +96,9 @@ class GreekDeclension extends GermanicDeclension {
                                );
 
     public static class GreekNoun extends GermanicNoun {
+        private static final long serialVersionUID = 1L;
 
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		public GreekNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName,
+        public GreekNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName,
                 LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             super(declension, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
         }
@@ -114,7 +110,6 @@ class GreekDeclension extends GermanicDeclension {
                 setStartsWith(startsWithGreekPlosive(value) ? LanguageStartsWith.SPECIAL : LanguageStartsWith.CONSONANT);
             }
         }
-
     }
 
     @Override
@@ -182,9 +177,9 @@ class GreekDeclension extends GermanicDeclension {
     public EnumSet<LanguageGender> getRequiredGenders() {
         return EnumSet.of(LanguageGender.NEUTER, LanguageGender.FEMININE, LanguageGender.MASCULINE);
     }
-    
+
     @Override
     public String formLowercaseNounForm(String s, NounForm form) {
         return hasCapitalization() ? (s == null ? null : s.toLowerCase()) : s;
-    } 
+    }
 }

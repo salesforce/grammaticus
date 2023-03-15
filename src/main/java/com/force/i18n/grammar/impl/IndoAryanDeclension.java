@@ -1,38 +1,18 @@
-/* 
+/*
  * Copyright (c) 2019, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 package com.force.i18n.grammar.impl;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
-import com.force.i18n.grammar.AbstractLanguageDeclension;
-import com.force.i18n.grammar.Adjective;
-import com.force.i18n.grammar.AdjectiveForm;
-import com.force.i18n.grammar.LanguageArticle;
-import com.force.i18n.grammar.LanguageCase;
-import com.force.i18n.grammar.LanguageDeclension;
-import com.force.i18n.grammar.LanguageGender;
-import com.force.i18n.grammar.LanguageNumber;
-import com.force.i18n.grammar.LanguagePosition;
-import com.force.i18n.grammar.LanguagePossessive;
-import com.force.i18n.grammar.LanguageStartsWith;
-import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
-import com.force.i18n.grammar.NounForm;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjective;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjectiveForm;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNoun;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ModifierFormMap;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.NounFormMap;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
@@ -43,7 +23,7 @@ import com.google.common.collect.ImmutableSet;
  * As pointed out in the wiki article, there's a popularity in studying German
  * among Marathi native speakers, due to the similarities in the grammar.  Hence
  * the implementation is a lot like an article-less German.
- * 
+ *
  * @see <a href="https://en.wikipedia.org/wiki/Indo-Aryan_languages">Wikipedia: Indo-Aryan languages</a>
  * @see <a href="https://en.wikipedia.org/wiki/Gujarati_grammar#Nouns">Wikipedia: Gujarati Nouns</a>
  * @see <a href="https://en.wikipedia.org/wiki/Marathi_grammar#Nominals">Wikipedia: Marathi Nouns</a>
@@ -91,9 +71,9 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         this.adjectiveFormMap = new ModifierFormMap<>(this.adjectiveForms);
     }
 
-
     static class IndoAryanNounForm extends ComplexNounForm {
         private static final long serialVersionUID = 1L;
+
         private final LanguageCase caseType;
         private final LanguageNumber number;
 
@@ -107,10 +87,27 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof IndoAryanNounForm) {
+                IndoAryanNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
             return "IndoAryanNF:"+getKey();
@@ -119,6 +116,7 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
 
     static class IndoAryanAdjectiveForm extends ComplexAdjectiveForm {
         private static final long serialVersionUID = 1L;
+
         private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
@@ -140,18 +138,31 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         public String getKey() {
             return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
         }
-    }
 
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.number, this.caseType, this.gender);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof IndoAryanAdjectiveForm) {
+                IndoAryanAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.number == o.number && this.caseType == o.caseType
+                        && this.gender == o.gender;
+            }
+            return false;
+        }
+    }
 
     /**
      * Represents an IndoAryan noun.
      * See IndoAryanNounForm for more info
      */
     public static class IndoAryanNoun extends ComplexNoun<IndoAryanNounForm> {
-        /**
-         *
-         */
         private static final long serialVersionUID = 1L;
+
         IndoAryanNoun(IndoAryanDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
@@ -181,16 +192,15 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
      */
     public static class IndoAryanAdjective extends ComplexAdjective<IndoAryanAdjectiveForm> {
         private static final long serialVersionUID = 1L;
+
         IndoAryanAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
-
 
         @Override
         protected final Class<IndoAryanAdjectiveForm> getFormClass() {
             return IndoAryanAdjectiveForm.class;
         }
-
 
         @Override
         public boolean validate(String name) {
@@ -261,18 +271,17 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
     @Override
     public EnumSet<LanguageGender> getRequiredGenders() {
         return EnumSet.of(LanguageGender.NEUTER, LanguageGender.FEMININE, LanguageGender.MASCULINE);
     }
 
-    
     static final class GujaratiDeclension extends IndoAryanDeclension {
         public GujaratiDeclension(HumanLanguage language) {
             super(language);
         }
-        
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.OBJECTIVE, LanguageCase.LOCATIVE);  // TODO: Locative is questionable.
@@ -283,15 +292,15 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         public MarathiDeclension(HumanLanguage language) {
             super(language);
         }
-        
+
         // https://en.wikipedia.org/wiki/Marathi_grammar#Nominals
         // This needs more study.  In the meantime, I'm making it too many
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.DATIVE, LanguageCase.ABLATIVE, LanguageCase.GENITIVE, LanguageCase.LOCATIVE); 
+            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.DATIVE, LanguageCase.ABLATIVE, LanguageCase.GENITIVE, LanguageCase.LOCATIVE);
         }
     }
-    
+
     // https://en.wikipedia.org/wiki/Punjabi_grammar
     // Nominitive = direct
     // Accusative = oblique
@@ -299,11 +308,10 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         public PunjabiDeclension(HumanLanguage language) {
             super(language);
         }
-        
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.ABLATIVE, LanguageCase.VOCATIVE); 
+            return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ACCUSATIVE, LanguageCase.INSTRUMENTAL, LanguageCase.ABLATIVE, LanguageCase.VOCATIVE);
         }
     }
-
 }

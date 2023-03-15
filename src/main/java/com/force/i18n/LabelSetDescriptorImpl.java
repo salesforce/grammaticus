@@ -131,7 +131,7 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
     @Override
     public int hashCode() {
         // ignoring setName and dictionary name
-        return Objects.hash(language, basename, rootDirectory.toExternalForm());
+        return Objects.hash(language, setName, basename, dictionaryName, rootDirectory.toExternalForm());
     }
 
     @Override
@@ -145,7 +145,9 @@ public class LabelSetDescriptorImpl implements GrammaticalLabelSetDescriptor {
         // ignoring setName and dictionary name
         LabelSetDescriptorImpl other = (LabelSetDescriptorImpl)obj;
         return language.equals(other.language)  // language can't be null
+                && Objects.equals(this.setName, other.setName)
                 && Objects.equals(this.basename, other.basename)
+                && Objects.equals(this.dictionaryName, other.dictionaryName)
                 && rootDirectory.toExternalForm().equals(other.rootDirectory.toExternalForm());
     }
 

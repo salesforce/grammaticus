@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -24,9 +24,9 @@ import com.google.common.collect.ImmutableList;
  * its own class.  It has 7 cases and no gender.
  *
  * TODO: It has definite article, but the definitiveness is dependent on the endsWith of the current
- * word, along with the startsWith of the next word, and some special rules depending on dialect.  
+ * word, along with the startsWith of the next word, and some special rules depending on dialect.
  * File an issue if you need better Armenian support, and we can look into supporting all of this.
- * 
+ *
  * There is an unchanging indefinite article, մի, so it isn't included in the grammar yet
  *
  * @author stamm
@@ -86,11 +86,9 @@ class ArmenianDeclension extends AbstractLanguageDeclension {
      * Armenian nouns are inflected for case, and number
      */
     static class ArmenianNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
 
@@ -105,38 +103,55 @@ class ArmenianDeclension extends AbstractLanguageDeclension {
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.article);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof ArmenianNounForm) {
+                ArmenianNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.article == o.article;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
             return "ArmenianNF:" + getKey();
         }
     }
 
-
     /**
      * Represents an Armenian noun.
      * See ArmenianNounForm for more info
      */
     public static class ArmenianNoun extends ComplexNoun<ArmenianNounForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// Store everything for now.
+        private static final long serialVersionUID = 1L;
+
         ArmenianNoun(ArmenianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
+
         @Override
-		protected final Class<ArmenianNounForm> getFormClass() {
+        protected final Class<ArmenianNounForm> getFormClass() {
         	return ArmenianNounForm.class;
-		}
-		@Override
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
+
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER)

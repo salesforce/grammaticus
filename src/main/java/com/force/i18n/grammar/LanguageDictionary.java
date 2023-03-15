@@ -46,13 +46,13 @@ public final class LanguageDictionary implements Serializable {
 
     // TODO: These could all be made lists when serialized
     // map to Noun
-    private Map<String, Noun> nounMap = new HashMap<String, Noun>();
+    private Map<String, Noun> nounMap = new HashMap<>();
     // map to Noun
-    private Map<String, Noun> nounMapByPluralAlias = new HashMap<String, Noun>();
+    private Map<String, Noun> nounMapByPluralAlias = new HashMap<>();
     // map to Adjective
-    private Map<String, Adjective> adjectiveMap = new HashMap<String, Adjective>();
+    private Map<String, Adjective> adjectiveMap = new HashMap<>();
     // map to Article
-    private Map<String, Article> articleMap = new HashMap<String, Article>();
+    private Map<String, Article> articleMap = new HashMap<>();
     // Override of noun to nounOverrides
     private SortedSetMultimap<Noun, NounVersionOverride> nounVersionOverrides;
     // Whether or not we've been "made skinny".
@@ -733,23 +733,23 @@ public final class LanguageDictionary implements Serializable {
             return atLeast;
         }
 
-		@Override
-		public int hashCode() {
-			return Objects.hash(atLeast, noun);
-		}
+        @Override
+        public int hashCode() {
+            return Objects.hash(atLeast, noun);
+        }
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null || getClass() != obj.getClass())
-				return false;
-			NounVersionOverride other = (NounVersionOverride) obj;
-			return Double.doubleToLongBits(atLeast) == Double.doubleToLongBits(other.atLeast)
-					&& Objects.equals(noun, other.noun);
-		}
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null || getClass() != obj.getClass())
+                return false;
+            NounVersionOverride other = (NounVersionOverride) obj;
+            return Double.doubleToLongBits(atLeast) == Double.doubleToLongBits(other.atLeast)
+                    && Objects.equals(noun, other.noun);
+        }
 
-		@Override
+        @Override
         public int compareTo(NounVersionOverride o) {
             // comparison is reversed... so you can go in order from newest to oldest and ask atLeast
             return Double.compare(o.getAtLeast(), atLeast);

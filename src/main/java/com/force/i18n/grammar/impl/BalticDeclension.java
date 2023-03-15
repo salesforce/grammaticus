@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -67,11 +67,9 @@ class BalticDeclension extends AbstractLanguageDeclension {
 
 
     static class BalticAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
 
@@ -88,35 +86,48 @@ class BalticDeclension extends AbstractLanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
-		}
+
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.gender);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof BalticAdjectiveForm) {
+                BalticAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.gender == o.gender;
+            }
+            return false;
+        }
     }
 
     /**
      * Represents a baltic adjective
      */
     public static class BalticAdjective extends ComplexAdjective<BalticAdjectiveForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
         BalticAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
         @Override
-		protected final Class<BalticAdjectiveForm> getFormClass() {
-        	return BalticAdjectiveForm.class;
-		}
+        protected final Class<BalticAdjectiveForm> getFormClass() {
+            return BalticAdjectiveForm.class;
+        }
 
-		@Override
+        @Override
         public boolean validate(String name) {
             return defaultValidate(name, ImmutableSet.of(getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.FEMININE, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.ZERO, LanguagePossessive.NONE)));
         }
-
    }
 
 

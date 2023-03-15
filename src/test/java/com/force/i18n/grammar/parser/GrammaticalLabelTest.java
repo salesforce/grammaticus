@@ -10,19 +10,20 @@ package com.force.i18n.grammar.parser;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
+import java.time.Duration;
 import java.util.*;
-import java.util.logging.Logger;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.force.i18n.*;
+import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.AbstractLanguageDeclension.PluralNounForm;
+import com.force.i18n.grammar.AbstractLanguageDeclension.SimpleModifierForm;
 import com.force.i18n.grammar.GrammaticalLabelSet.GrammaticalLabelSetComposite;
 import com.force.i18n.grammar.GrammaticalLabelSetFallbackImpl.ImmutableMapUnion;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
-import com.force.i18n.grammar.AbstractLanguageDeclension.PluralNounForm;
-import com.force.i18n.grammar.AbstractLanguageDeclension.SimpleModifierForm;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.PropertyFileData;
 import com.force.i18n.settings.SettingsSectionNotFoundException;
@@ -34,7 +35,6 @@ import com.google.common.collect.*;
  *
  */
 public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
-    private static final Logger logger = Logger.getLogger(GrammaticalLabelTest.class.getName());
 
     public GrammaticalLabelTest(String name) {
         super(name);
@@ -443,7 +443,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertEquals(CLASS_NAME, d1.getClass().getName());
         d1 = (PropertyFileData)fFallback.get(d1);
         if (!srcLanguage.isTranslatedLanguage() && srcFallbackLanguage != ENGLISH) {
-            assertTrue(CLASS_NAME.equals(d1.getClass().getName()));
+            assertEquals(CLASS_NAME, d1.getClass().getName());
             d1 = (PropertyFileData)fOverlay.get(d1);
         }
 
@@ -464,9 +464,6 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
     private void compareLabelSet(HumanLanguage lang, GrammaticalLabelSetProvider expectedLoader, GrammaticalLabelSetProvider testLoader) {
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
         GrammaticalLabelSet enSet = testLoader.getSet(ENGLISH);
-
-        long start = System.currentTimeMillis();
-        logger.info("$$$ LabelSetLoaderTest: START testing language:\t" + lang.getLocaleString());
 
         GrammaticalLabelSet src = expectedLoader.getSet(lang);
         GrammaticalLabelSet dst = testLoader.getSet(lang);
@@ -495,8 +492,6 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                 compareLabel(lang, sec, p, src.get(sec, p, null), dst.get(sec, p, null));
             }
         }
-        logger.info("$$$ LabelSetLoaderTest: FIHISH testing language:\t" + lang.getLocaleString() + " in "
-                + ((double)(System.currentTimeMillis() - start) / 1000) + "s");
     }
 
     // compare two label entries exactly matches
@@ -520,5 +515,68 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
             else
                 Assert.assertEquals(errorMsg, src, dst);
         }
+    }
+
+    @Test
+    public void testLabelSetLoaderConfig() {
+        LabelSetLoaderConfig config = new LabelSetLoaderConfig(null, null);
+
+        // expiration.  any number is fine
+        config.setCacheExpireAfter(Duration.ofMinutes(1));
+        assertEquals(Duration.ofMinutes(1), config.getCacheExpireAfter());
+
+        // max size.  0 or negative becomes 0
+        assertEquals(config, config.setCacheMaxSize(0));
+        assertEquals(0, config.getCacheMaxSize());
+
+        assertEquals(config, config.setCacheMaxSize(-5));
+        assertEquals(0, config.getCacheMaxSize());
+
+        // any other number should be fine
+        assertEquals(config, config.setCacheMaxSize(3));
+        assertEquals(3, config.getCacheMaxSize());
+    }
+
+    @Test
+    public void testCacheConfig() throws InterruptedException {
+        HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
+        HumanLanguage ENGLISH_GB = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_GB);
+        HumanLanguage ENGLISH_AU = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_AU);
+        HumanLanguage FRENCH = LanguageProviderFactory.get().getLanguage(LanguageConstants.FRENCH);
+
+        GrammaticalLabelSetDescriptor desc = getDescriptor();
+
+        // Test expiration
+        LabelSetLoaderConfig config = new LabelSetLoaderConfig(desc, null);
+        config.setCacheExpireAfter(Duration.ofMillis(1));
+
+        GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(config);
+        loader.getSet(ENGLISH);
+        Thread.sleep(1);
+        assertNull(loader.getCache().getIfPresent(desc));
+
+        loader.getSet(FRENCH);
+        Thread.sleep(1);
+        assertNull(loader.getCache().getIfPresent(desc));
+        assertNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(FRENCH)));
+
+        // Test max size of entries
+        config.setCacheExpireAfter(Duration.ZERO); // no time-based eviction
+        config.setCacheMaxSize(3);
+        loader = new GrammaticalLabelSetLoader(config);
+        assertEquals(0, loader.getCache().size());
+
+        loader.getSet(ENGLISH);
+        assertEquals(1, loader.getCache().size());
+
+        loader.getSet(ENGLISH_AU);
+        assertEquals(3, loader.getCache().size());
+        assertNotNull(loader.getCache().getIfPresent(desc));
+        assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(ENGLISH_GB)));
+        assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(ENGLISH_AU)));
+
+        loader.getSet(FRENCH);
+        assertEquals(3, loader.getCache().size());
+        assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(FRENCH)));
     }
 }

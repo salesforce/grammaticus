@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -42,7 +42,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
     private final EnumMap<LanguageArticle,ModifierFormMap<GermanicAdjectiveForm>> adjectiveFormMap;
     private final ModifierFormMap<GermanicArticleForm> articleFormMap;
 
-    public GermanicDeclension(HumanLanguage language) {
+    protected GermanicDeclension(HumanLanguage language) {
     	super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<GermanicNounForm> entityBuilder = ImmutableList.builder();
@@ -91,16 +91,14 @@ abstract class GermanicDeclension extends ArticledDeclension {
             }
         }
         this.articleForms = artBuilder.build();
-        this.articleFormMap = new ModifierFormMap<GermanicArticleForm>(this.articleForms);
+        this.articleFormMap = new ModifierFormMap<>(this.articleForms);
     }
 
 
     static class GermanicNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
 
@@ -115,6 +113,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+
         @Override
         public String getKey() {
             if (((GermanicDeclension)getDeclension()).getRequiredNounArticles().size() > 1) {
@@ -123,18 +122,33 @@ abstract class GermanicDeclension extends ArticledDeclension {
                 return getNumber().getDbValue() + "-" + getCase().getDbValue();
             }
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.article);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof GermanicNounForm) {
+                GermanicNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.article == o.article;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
-            return "GermanicNF:"+getKey();
+            return "GermanicNF:" + getKey();
         }
     }
 
     static class GermanicAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageArticle article;
         private final LanguageCase caseType;
         private final LanguageGender gender;
@@ -155,18 +169,34 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return this.startsWith; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() ;
-		}
+
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() ;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.number, this.article, this.caseType, this.gender,
+                    this.startsWith);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof GermanicAdjectiveForm) {
+                GermanicAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.number == o.number && this.article == o.article
+                        && this.caseType == o.caseType && this.gender == o.gender && this.startsWith == o.startsWith;
+            }
+            return false;
+        }
     }
 
     static class GermanicArticleForm extends ComplexArticleForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
         private final LanguageStartsWith startsWith;
@@ -183,6 +213,22 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguageStartsWith getStartsWith() {  return this.startsWith; }
         @Override public LanguageGender getGender() {  return this.gender; }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.number, this.caseType, this.gender, this.startsWith);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof GermanicArticleForm) {
+                GermanicArticleForm o = this.getClass().cast(other);
+                return super.equals(other) && this.number == o.number && this.caseType == o.caseType
+                        && this.gender == o.gender && this.startsWith == o.startsWith;
+            }
+            return false;
+        }
     }
 
     /**
@@ -190,10 +236,8 @@ abstract class GermanicDeclension extends ArticledDeclension {
      * See GermanicNounForm for more info
      */
     public static class GermanicNoun extends ComplexArticledNoun<GermanicNounForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         GermanicNoun(GermanicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             this(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
@@ -202,18 +246,17 @@ abstract class GermanicDeclension extends ArticledDeclension {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
 
-        
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
 
         @Override
-		protected final Class<GermanicNounForm> getFormClass() {
-        	return GermanicNounForm.class;
-		}
+        protected final Class<GermanicNounForm> getFormClass() {
+            return GermanicNounForm.class;
+        }
 
-		@Override
+        @Override
         protected boolean validateGender(String name) {
             if (!getDeclension().getRequiredGenders().contains(getGender())) {
                 logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
@@ -233,22 +276,18 @@ abstract class GermanicDeclension extends ArticledDeclension {
      * Represents an english adjective
      */
     public static class GermanicAdjective extends ComplexAdjective<GermanicAdjectiveForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         GermanicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
+        @Override
+        protected final Class<GermanicAdjectiveForm> getFormClass() {
+            return GermanicAdjectiveForm.class;
+        }
 
         @Override
-		protected final Class<GermanicAdjectiveForm> getFormClass() {
-        	return GermanicAdjectiveForm.class;
-		}
-
-
-		@Override
         public boolean validate(String name) {
             defaultValidate(name, ImmutableSet.of(getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.ZERO, LanguagePossessive.NONE)));
             return true;
@@ -259,11 +298,9 @@ abstract class GermanicDeclension extends ArticledDeclension {
      * Represents an english adjective
      */
     public static class GermanicArticle extends Article {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private Map<GermanicArticleForm, String> values = new HashMap<GermanicArticleForm,String>();
+        private static final long serialVersionUID = 1L;
+
+        private Map<GermanicArticleForm, String> values = new HashMap<>();
 
         GermanicArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -289,13 +326,18 @@ abstract class GermanicDeclension extends ArticledDeclension {
             defaultValidate(name, ImmutableSet.of(getDeclension().getArticleForm(LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE)));
             return true;
         }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
+        }
     }
+
     /**
      * @return the set of articles that the adjectives need to define in the label files.
      * Generally, this would be the zero and definite article for adjective agreement rules
      */
     protected abstract EnumSet<LanguageArticle> getRequiredAdjectiveArticles();
-
 
     private static final EnumSet<LanguageArticle> ZERO_ARTICLES = EnumSet.of(LanguageArticle.ZERO);
     static final EnumSet<LanguageArticle> ZERO_AND_DEFARTICLES = EnumSet.of(LanguageArticle.ZERO, LanguageArticle.DEFINITE);
@@ -312,7 +354,6 @@ abstract class GermanicDeclension extends ArticledDeclension {
     public final boolean hasArticleInNounForm() {
         return getRequiredNounArticles().size() > 1;
     }
-
 
     @Override
     public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
@@ -400,13 +441,12 @@ abstract class GermanicDeclension extends ArticledDeclension {
         return true;
     }
 
-
     static class GermanDeclension extends GermanicDeclension {
         public GermanDeclension(HumanLanguage language) {
             super(language);
             assert language.getLocale().getLanguage().equals("de") : "Initializing a variant german declension for non-german";
-        } 
-        
+        }
+
         private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender,String>>> DEFINITE_ARTICLE =
             ImmutableMap.of(
                    LanguageCase.NOMINATIVE,
@@ -513,21 +553,21 @@ abstract class GermanicDeclension extends ArticledDeclension {
             }
         }
 
-		@Override
-		public void writeJsonOverrides(Appendable a, String inst) throws IOException {
-			// See above
-			super.writeJsonOverrides(a, inst);
-			a.append(inst + ".formLowercaseNoun = function(value, form) {return value;};");
-		}
+        @Override
+        public void writeJsonOverrides(Appendable a, String inst) throws IOException {
+            // See above
+            super.writeJsonOverrides(a, inst);
+            a.append(inst + ".formLowercaseNoun = function(value, form) {return value;};");
+        }
     }
 
     static class SwedishDeclension extends GermanicDeclension {
         public SwedishDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("sv") : "Initializing a language that isn't swedish";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("sv") : "Initializing a language that isn't swedish";
+        }
 
-		public static final LanguageGender EUTER = LanguageGender.FEMININE;
+        public static final LanguageGender EUTER = LanguageGender.FEMININE;
 
         @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
@@ -744,26 +784,26 @@ abstract class GermanicDeclension extends ArticledDeclension {
             return EnumSet.of(LanguageGender.NEUTER, LanguageGender.FEMININE, LanguageGender.MASCULINE);
         }
     }
-    
+
     /**
      * Yiddish is Germanic, but with English-style starts-with indefinite articles, and no genitive.
-     * 
-     * 
+     *
+     *
      * Note: The default article in this declension are derived from <a href="https://www.yivo.org/yiddish-alphabet">YIVO standard</a>
-     * , which may differ from the dialect used for a particular community. 
+     * , which may differ from the dialect used for a particular community.
      * Modern Hassidic Yiddish often omits diacritics/niqqud that YIVO uses, and the gender system
      * for the definite article is often simplified to use just "די" regardless of gender for the singular article.
      * If so desired, implement the appropriate Article tag in the names.xml to override these defaults
-     * 
+     *
      * @see https://en.wikipedia.org/wiki/Yiddish_grammar
      */
     static class YiddishDeclension extends GermanicDeclension {
         static EnumSet<LanguageStartsWith> STARTS_WITH = EnumSet.of(LanguageStartsWith.CONSONANT, LanguageStartsWith.VOWEL);
-        
+
         public YiddishDeclension(HumanLanguage language) {
             super(language);
-        } 
-        
+        }
+
         private static final Map<LanguageCase, ImmutableMap<LanguageGender,String>> DEFINITE_ARTICLE =
             ImmutableMap.of(
                    LanguageCase.NOMINATIVE,
@@ -804,7 +844,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
                 return null;
             }
         }
-        
+
         @Override
         public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
             return new GermanicNoun(this, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
@@ -823,7 +863,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         // Like english, it has a "startsWith" for indefinite articles.
         @Override
         public EnumSet<LanguageStartsWith> getRequiredStartsWith() {
-            return STARTS_WITH; 
+            return STARTS_WITH;
         }
 
         @Override

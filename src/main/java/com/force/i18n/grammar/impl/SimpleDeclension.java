@@ -69,6 +69,7 @@ class SimpleDeclension extends AbstractLanguageDeclension {
      */
     public static class SimpleNoun extends Noun {
         private static final long serialVersionUID = 1L;
+
         protected String value;
 
         SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
@@ -115,6 +116,13 @@ class SimpleDeclension extends AbstractLanguageDeclension {
             }
 ///CLOVER:ON
             return true;
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.value = intern(this.value);
+            return this;
         }
     }
 
@@ -290,7 +298,7 @@ class SimpleDeclension extends AbstractLanguageDeclension {
         }
 
     }
-    
+
     /**
      * Hmong declension that is similar to SimpleDeclention, but has capitalization and classifiers.
      *
@@ -365,12 +373,20 @@ class SimpleDeclension extends AbstractLanguageDeclension {
 
         @Override
         public void setClassifier(String classifier) {
-            this.classifier = classifier;
+            this.classifier = intern(classifier);
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.classifier = intern(this.classifier);
+            return this;
         }
     }
 
     static class PluralNounWithClassifier extends SimpleNounWithClassifier {
         private static final long serialVersionUID = 1L;
+
         private String plural;
 
         public PluralNounWithClassifier(LanguageDeclension declension, String name, String pluralAlias, NounType type,
@@ -418,6 +434,13 @@ class SimpleDeclension extends AbstractLanguageDeclension {
                 return false;
             }
             return true;
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.plural = intern(this.plural);
+            return this;
         }
     }
 }

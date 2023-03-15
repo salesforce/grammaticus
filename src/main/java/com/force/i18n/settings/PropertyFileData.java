@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -110,4 +110,14 @@ public interface PropertyFileData extends Serializable {
      */
     void shareKeys(SharedKeyMap<String, SharedKeyMap<String, Object>> seedKeyMap);
 
+    /**
+     * @param sectionName the section name
+     * @param paramName the parameter name
+     * @return a raw label value as {@code Object} for the a particular {@code sectionName} and {@code paramName} or
+     * {@code null} if the {@code sectionName} or {@code paramName} does not exist.
+     */
+    default Object get(String sectionName, String paramName) {
+        Map<String, Object> section = getSection(sectionName);
+        return section == null ? null : section.get(paramName);
+    }
 }

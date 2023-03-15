@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -34,7 +34,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
     private final List<SlavicAdjectiveForm> adjectiveForms;
     private final ModifierFormMap<SlavicAdjectiveForm> adjectiveFormMap;
 
-    public SlavicDeclension(HumanLanguage language) {
+    protected SlavicDeclension(HumanLanguage language) {
     	super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<SlavicNounForm> nounBuilder = ImmutableList.builder();
@@ -61,7 +61,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
                 }
             }
         }
-        
+
         if (getMasculineAnimateForms() != null) {
             //add animate masculine forms, if any
             for (Map.Entry<LanguageNumber, EnumSet<LanguageCase>> entry : getMasculineAnimateForms().entrySet()) {
@@ -70,18 +70,15 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
                 }
             }
         }
-        
+
         this.adjectiveForms = adjBuilder.build();
         this.adjectiveFormMap = new ModifierFormMap<SlavicAdjectiveForm>(this.adjectiveForms);
     }
 
-
     static class SlavicNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageCase caseType;
         private final LanguageNumber number;
 
         public SlavicNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, int ordinal) {
@@ -94,22 +91,37 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE;}
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof SlavicNounForm) {
+                SlavicNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
-            return "SlavicNF:"+getKey();
+            return "SlavicNF:" + getKey();
         }
     }
 
     static class SlavicAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageGender gender;
 
@@ -126,12 +138,27 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
-		}
-		
 
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue();
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.gender);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof SlavicAdjectiveForm) {
+                SlavicAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.gender == o.gender;
+            }
+            return false;
+        }
     }
 
     /**
@@ -139,15 +166,18 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
      * See SlavicNounForm for more info
      */
     public static class SlavicNoun extends ComplexNoun<SlavicNounForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         SlavicNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
+
         @Override
-		protected Class<SlavicNounForm> getFormClass() {
-        	return SlavicNounForm.class;
-		}
-		@Override
+        protected Class<SlavicNounForm> getFormClass() {
+            return SlavicNounForm.class;
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
@@ -166,18 +196,17 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
      * Represents an english adjective
      */
     public static class SlavicAdjective extends ComplexAdjective<SlavicAdjectiveForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         SlavicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
-		@Override
-		protected Class<SlavicAdjectiveForm> getFormClass() {
-			return SlavicAdjectiveForm.class;
-		}
-
+        @Override
+        protected Class<SlavicAdjectiveForm> getFormClass() {
+            return SlavicAdjectiveForm.class;
+        }
    }
-
 
     @Override
     public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
@@ -189,7 +218,6 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
             LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SlavicNoun(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
-
 
     @Override
     public List< ? extends AdjectiveForm> getAdjectiveForms() {
@@ -230,7 +258,6 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
         return this.nounFormMap.getForm(number, _case);
     }
 
-
     @Override
     public boolean hasArticle() {
         return false;
@@ -250,7 +277,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
     /**
      * A few slavic adjective forms use the gender masculine animate.
      * @return map of number to list of cases that use that gender
@@ -265,21 +292,21 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
 
     static class CzechDeclension extends SlavicDeclension {
         public CzechDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return WEST_SLAVIC_CASES;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(
                    LanguageNumber.PLURAL, EnumSet.of(NOMINATIVE, VOCATIVE),
                    LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
         }
-        
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
@@ -288,34 +315,33 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
 
     static class PolishDeclension extends SlavicDeclension {
         public PolishDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return WEST_SLAVIC_CASES;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(
                    LanguageNumber.PLURAL, EnumSet.of(NOMINATIVE, ACCUSATIVE),
                    LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
         }
-        
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
         }
     }
 
-
     static class RussianDeclension extends SlavicDeclension {
         public RussianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(NOMINATIVE, ACCUSATIVE, DATIVE, GENITIVE, INSTRUMENTAL, PREPOSITIONAL);
         }
@@ -324,13 +350,13 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
         public boolean shouldLowercaseEntityInCompoundNouns() {
             return true;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(LanguageNumber.PLURAL, EnumSet.of(ACCUSATIVE),
                                   LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
-        }  
-        
+        }
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
@@ -339,21 +365,21 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
 
     static class UkrainianDeclension extends SlavicDeclension {
         public UkrainianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return WEST_SLAVIC_CASES;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(
                    LanguageNumber.PLURAL, EnumSet.of(ACCUSATIVE),
                    LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
-        }   
-        
+        }
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
@@ -363,47 +389,47 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
 
     static class SlovakianDeclension extends SlavicDeclension {
         public SlovakianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return WEST_SLAVIC_CASES_NO_VOC;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(
                    LanguageNumber.PLURAL, EnumSet.of(NOMINATIVE, ACCUSATIVE),
                    LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
-        }       
-        
+        }
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
-        } 
+        }
     }
 
     static class SlovenianDeclension extends SlavicDeclension {
         public SlovenianDeclension(HumanLanguage language) {
-			super(language);
-		}
- 
+            super(language);
+        }
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return WEST_SLAVIC_CASES;
         }
-        
+
         @Override
         public Map<LanguageNumber, EnumSet<LanguageCase>> getMasculineAnimateForms() {
            return ImmutableMap.of(LanguageNumber.SINGULAR, EnumSet.of(ACCUSATIVE));
         }
-        
+
         @Override
         public EnumSet<LanguageGender> getRequiredGenders() {
             return WEST_SLAVIC_GENDERS;
         }
-        
+
         @Override
         public Set<LanguageNumber> getAllowedNumbers() {
             return LanguageNumber.DUAL_SET;  // Duals are really required.
@@ -434,10 +460,10 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
      */
     static class GeorgianDeclension extends SlavicDeclension {
         public GeorgianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguageCase> getRequiredCases() {
             return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.ERGATIVE, LanguageCase.DATIVE,
                     LanguageCase.GENITIVE, LanguageCase.INSTRUMENTAL, LanguageCase.ADVERBIAL);

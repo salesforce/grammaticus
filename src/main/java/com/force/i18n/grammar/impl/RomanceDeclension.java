@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,16 +23,16 @@ import com.google.common.collect.ImmutableMap;
  * @author yoikawa,stamm
  */
 abstract class RomanceDeclension extends ArticledDeclension {
-	private static EnumSet<LanguageGender> GENDER_TYPES = EnumSet.of(LanguageGender.FEMININE, LanguageGender.MASCULINE);
+    private static final EnumSet<LanguageGender> GENDER_TYPES = EnumSet.of(LanguageGender.FEMININE, LanguageGender.MASCULINE);
 
-    public RomanceDeclension(HumanLanguage language) {
-		super(language);
-	}
+    protected RomanceDeclension(HumanLanguage language) {
+        super(language);
+    }
 
     /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum RomanceModifierForm implements AdjectiveForm, ArticleForm {
+    public enum RomanceModifierForm implements AdjectiveForm, ArticleForm {
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE),
         PLURAL_MASCULINE(LanguageNumber.PLURAL, LanguageGender.MASCULINE),
@@ -52,29 +52,26 @@ abstract class RomanceDeclension extends ArticledDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getNumber().getDbValue() + "-" + getGender().getDbValue();
-		}
 
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(termFormVar+".substr(0,2)+"+genderVar);
-		}
-		
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getGender().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(termFormVar + ".substr(0,2)+" + genderVar);
+        }
     }
 
     /**
      * <CODE>Noun</CODE> implementation for the most Latin-1 language
      */
     protected static class RomanceNoun extends SimpleArticledPluralNoun {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		protected RomanceNoun(RomanceDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+        protected RomanceNoun(RomanceDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
 
@@ -104,12 +101,10 @@ abstract class RomanceDeclension extends ArticledDeclension {
     }
 
     protected static class RomanceAdjective extends Adjective {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<RomanceModifierForm,String> values = new EnumMap<RomanceModifierForm,String>(RomanceModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<RomanceModifierForm,String> values = new EnumMap<>(RomanceModifierForm.class);
 
         RomanceAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
@@ -131,20 +126,22 @@ abstract class RomanceDeclension extends ArticledDeclension {
             values.put((RomanceModifierForm)form, intern(value));
         }
 
-
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(RomanceModifierForm.SINGULAR_FEMININE));
         }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
+        }
     }
 
     protected static class RomanceArticle extends Article {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<RomanceModifierForm,String> values = new EnumMap<RomanceModifierForm,String>(RomanceModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<RomanceModifierForm,String> values = new EnumMap<>(RomanceModifierForm.class);
 
         RomanceArticle(RomanceDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -169,6 +166,11 @@ abstract class RomanceDeclension extends ArticledDeclension {
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(RomanceModifierForm.SINGULAR_FEMININE));
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 
@@ -303,27 +305,31 @@ abstract class RomanceDeclension extends ArticledDeclension {
     	}
 
         private static final EnumMap<RomanceModifierForm, String> INDEFINITE_ARTICLE =
-            new EnumMap<RomanceModifierForm, String>(ImmutableMap.of(
+            new EnumMap<>(ImmutableMap.of(
                     RomanceModifierForm.SINGULAR_FEMININE, "Una ",
                     RomanceModifierForm.SINGULAR_MASCULINE, "Un ",
                     RomanceModifierForm.PLURAL_FEMININE, "Unas ",
                     RomanceModifierForm.PLURAL_MASCULINE, "Unos "
                     ));
+
         private static final EnumMap<RomanceModifierForm, String> DEFINITE_ARTICLE =
-            new EnumMap<RomanceModifierForm, String>(ImmutableMap.of(
+            new EnumMap<>(ImmutableMap.of(
                     RomanceModifierForm.SINGULAR_FEMININE, "La ",
                     RomanceModifierForm.SINGULAR_MASCULINE, "El ",
                     RomanceModifierForm.PLURAL_FEMININE, "Las ",
                     RomanceModifierForm.PLURAL_MASCULINE, "Los "
                     ));
+
         @Override
         protected Map<RomanceModifierForm, String> getDefiniteArticles() {
             return DEFINITE_ARTICLE;
         }
+
         @Override
         protected Map<RomanceModifierForm, String> getIndefiniteArticles() {
             return INDEFINITE_ARTICLE;
         }
+
         @Override
         public Article createArticle(String name, LanguageArticle articleType) {
             return new RomanceArticle(this, name, articleType);
@@ -338,31 +344,34 @@ abstract class RomanceDeclension extends ArticledDeclension {
         }
 
         private static final EnumMap<RomanceModifierForm, String> INDEFINITE_ARTICLE =
-            new EnumMap<RomanceModifierForm, String>(ImmutableMap.of(
+            new EnumMap<>(ImmutableMap.of(
                     RomanceModifierForm.SINGULAR_FEMININE, "Uma ",
                     RomanceModifierForm.SINGULAR_MASCULINE, "Um ",
                     RomanceModifierForm.PLURAL_FEMININE, "Umas ",
                     RomanceModifierForm.PLURAL_MASCULINE, "Uns "
                     ));
+
         private static final EnumMap<RomanceModifierForm, String> DEFINITE_ARTICLE =
-            new EnumMap<RomanceModifierForm, String>(ImmutableMap.of(
+            new EnumMap<>(ImmutableMap.of(
                     RomanceModifierForm.SINGULAR_FEMININE, "A ",
                     RomanceModifierForm.SINGULAR_MASCULINE, "O ",
                     RomanceModifierForm.PLURAL_FEMININE, "As ",
                     RomanceModifierForm.PLURAL_MASCULINE, "Os "
                     ));
+
         @Override
         protected Map<RomanceModifierForm, String> getDefiniteArticles() {
             return DEFINITE_ARTICLE;
         }
+
         @Override
         protected Map<RomanceModifierForm, String> getIndefiniteArticles() {
             return INDEFINITE_ARTICLE;
         }
+
         @Override
         public Article createArticle(String name, LanguageArticle articleType) {
             return new RomanceArticle(this, name, articleType);
         }
-
     }
 }

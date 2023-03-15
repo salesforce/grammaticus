@@ -10,7 +10,6 @@ package com.force.i18n.grammar.parser;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,7 +42,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     private BaseTag currentTag = null;
     private BaseTag currentParam = null;
     private SectionTag currentSection = null;
-    private boolean isSectionPublic = false;
 
 
     /**
@@ -64,6 +62,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         if (LabelDebug.isLabelHintAllowed()) {
             BASE_FILE = dataFile.getPath();
+            this.sectionToFileName = parser.getSectionToFileName();
         }
     }
 
@@ -167,16 +166,18 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     abstract class BaseTag {
         private BaseTag parent = null;
         private String name;
+        private Attributes attributes;
 
         BaseTag() {}
 
         BaseTag(BaseTag parent, Attributes atts) throws SAXParseException {
             this.parent = parent;
+            this.attributes = atts;
             if (atts != null) {
                 this.name = getParser().uniquefy(atts.getValue(NAME));
 ///CLOVER:OFF
-                if (this.name == null && isNameRequired())
-                    throw new SAXParseException("Missing required attribuite:" + NAME, getLocator());
+            if (this.name == null && isNameRequired())
+                throw new SAXParseException("Missing required attribuite:" + NAME, getLocator());
 ///CLOVER:ON
             }
         }
@@ -189,6 +190,10 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         final String getName() {
             return this.name;
+        }
+
+        Attributes getAttributes() {
+            return this.attributes;
         }
 
         /**
@@ -289,11 +294,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             super(parent, atts);
 
             if (LabelDebug.isLabelHintAllowed()) {
-                SECTION_TO_FILENAME.put(getName(), BASE_FILE);
+                sectionToFileName.put(getName(), BASE_FILE);
             }
 
             currentSection = this;
-            isSectionPublic = "true".equalsIgnoreCase(atts.getValue(PUBLIC));
+            boolean isSectionPublic = "true".equalsIgnoreCase(atts.getValue(PUBLIC));
             if (isSectionPublic) {
                 GrammaticalLabelFileHandler.this.data.setSectionAsPublic(this.getName());
             }
@@ -311,7 +316,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         @Override
         void endElement() {
             currentSection = null;
-            isSectionPublic = false;
         }
 
         @Override
@@ -396,7 +400,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
         StringTag(BaseTag parent, Attributes atts) throws SAXParseException {
             super(parent, atts);
-            this.values = new ArrayList<Object>();
+            this.values = new ArrayList<>();
             this.isAlias = false;
 
             // if alias is specified, ignore all remaining attributes/contents
@@ -497,9 +501,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                     if (this.values.size() == 1) {
                     	addLabelDataToParent(this.values.get(0));
                     } else {
-                        List<Object> data;
-                        data = finishParsingLabelsNew(this.values);
-                    	addLabelDataToParent(data);
+                        List<Object> rawData = finishParsingLabelsNew(this.values);
+                    	addLabelDataToParent(rawData);
                     }
                 }
             }
@@ -515,7 +518,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             // Possibly fix up the noun based on the article tag for those languages that have a distinct article particle and a distinct form based on definitiveness
 
             // So there's a two pass algorithm.  In the first, we figure out the "noun" phrases
-            List<NounPhrase> phrases = new ArrayList<NounPhrase>();
+            List<NounPhrase> phrases = new ArrayList<>();
             NounPhrase curPhrase = new NounPhrase(values);
             for (int i = 0; i < values.size(); i++) {
                 Object o = values.get(i);
@@ -552,7 +555,7 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 }
             }
             if (!curPhrase.isNounSet()) {
-                if (phrases.size() == 0) {
+                if (phrases.isEmpty()) {
                     logger.log(getSevereProblemLogLevel(), "Adjective used without a noun for " + getFile().getPath() + ":" + ((SectionTag)getParent()).getName() + "." + getName());
                     return values;  // Don't deal
                 } else {
@@ -665,8 +668,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         private final List<Object> values;
         private int nounLoc = -1;
         private int articleLoc = -1;
-        private List<Integer> adjectiveLocs = new ArrayList<Integer>();
-        private List<Integer> choiceLocs = new ArrayList<Integer>();
+        private List<Integer> adjectiveLocs = new ArrayList<>();
+        private List<Integer> choiceLocs = new ArrayList<>();
 
         public NounPhrase(List<Object> values) {
             this.values = values;
@@ -730,21 +733,21 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         }
 
         public boolean hasAdjectives() {
-            return this.adjectiveLocs.size() > 0;
+            return !this.adjectiveLocs.isEmpty();
         }
 
         public boolean hasChoices() {
-            return this.choiceLocs.size() > 0;
+            return !this.choiceLocs.isEmpty();
         }
 
         public int getPhraseStart() {
             if (articleLoc != -1) return articleLoc;
-            if (adjectiveLocs.size() == 0) return nounLoc;
+            if (adjectiveLocs.isEmpty()) return nounLoc;
             return Math.min(adjectiveLocs.get(0), nounLoc);
         }
 
         public int getPhraseEnd() {
-            if (adjectiveLocs.size() == 0) return nounLoc;
+            if (adjectiveLocs.isEmpty()) return nounLoc;
             return Math.max(adjectiveLocs.get(adjectiveLocs.size()-1), nounLoc);
         }
 
@@ -1071,22 +1074,22 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             boolean isDefault;
             List<String> val = TextUtil.splitSimple(",", atts.getValue(VAL));
             isDefault = YES.equalsIgnoreCase(atts.getValue(DEFAULT));
-            List<E> categories = val != null
+            List<E> newCategories = val != null
                     ? val.stream().map(parent.getCategoryFromLabel()).collect(Collectors.toList())
                     : null;
-            if (categories == null || categories.stream().anyMatch(a -> a == null)) {
-                if (isDefault && categories == null) {
-                    categories = Collections.singletonList(parent.getDefaultCategory());
+            if (newCategories == null || newCategories.stream().anyMatch(a -> a == null)) {
+                if (isDefault && newCategories == null) {
+                    newCategories = Collections.singletonList(parent.getDefaultCategory());
                 } else {
                     ErrorInfo error = parser.addInvalidLabel(ErrorType.BadCategory, currentSection.getName(),
                             currentParam.getName(), GrammaticalLabelFileHandler.this.getFileURL(),
                             GrammaticalLabelFileHandler.this.getLineNumber(), val);
                     logger.log(getProblemLogLevel(), "###\t" + error.getMessage());
 
-                    categories = Collections.emptyList();
+                    newCategories = Collections.emptyList();
                 }
             }
-            this.categories = categories;
+            this.categories = newCategories;
         }
 
         @Override
@@ -1102,7 +1105,6 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 }
             }
         }
-
     }
 
 
@@ -1205,46 +1207,38 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 buf.append(c);
             } else {
                 // found an escape char '\\' at the end of the string
-                if (i >= len) {
+                if (++i >= len) {
                     buf.append('\\');
                     break;
                 }
-                c = str.charAt(++i); // look at next character
+                c = str.charAt(i); // look at next character
                 switch (c) {
-                    case 't':
-                        buf.append('\t');
-                        break;
-                    case 'r':
-                        buf.append('\r');
-                        break;
-                    case 'n':
-                        buf.append('\n');
-                        break;
-                    case 'f':
-                        buf.append('\f');
-                        break;
-                    case 'u':
-                        try {
-                            ++i; // need to look at XXXX portion of \\uXXXX escape sequence
+                case 't':
+                    buf.append('\t');
+                    break;
+                case 'r':
+                    buf.append('\r');
+                    break;
+                case 'n':
+                    buf.append('\n');
+                    break;
+                case 'f':
+                    buf.append('\f');
+                    break;
+                case 'u':
+                    try {
+                        ++i; // need to look at XXXX portion of \\uXXXX escape sequence
 
                         buf.append((char)Integer.parseInt(str.substring(i, i + 4), 16));
-                            i += 3;
-                        }
-                        catch (NullPointerException x) {
-                            throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
-                                    + str);
-                        }
-                        catch (StringIndexOutOfBoundsException x) {
-                            throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
-                                    + str);
-                        }
-                        catch (NumberFormatException x) {
-                            throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2) + " in "
-                                    + str);
-                        }
-                        break;
-                    default:
-                        buf.append(c);
+                        i += 3;
+                    }
+                    catch (NullPointerException | StringIndexOutOfBoundsException | NumberFormatException x) {
+                        throw new IllegalArgumentException("Malformed \\uxxxx encoding at position " + (i - 2)
+                                + " in " + str);
+                    }
+                    break;
+                default:
+                    buf.append(c);
                 }
             }
         }
@@ -1256,5 +1250,9 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     // Label Debugger support
     // ----------------------------------------------------------
     private String BASE_FILE = null;
-    static final Map<String, String> SECTION_TO_FILENAME = new ConcurrentHashMap<String, String>();
+    private Map<String, String> sectionToFileName;
+
+    Map<String, String> getSectionToFileName() {
+        return this.sectionToFileName;
+    }
 }

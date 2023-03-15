@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -10,6 +10,7 @@ package com.force.i18n.grammar;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -20,14 +21,12 @@ import com.google.common.collect.ImmutableSet;
  * @author stamm
  */
 public abstract class Article extends NounModifier {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final Logger logger = Logger.getLogger(Article.class.getName());
+    private static final Logger logger = Logger.getLogger(Article.class.getName());
 
     private final LanguageArticle articleType;
+
     protected Article(ArticledDeclension declension, String name, LanguageArticle articleType) {
         super(declension, name);
         this.articleType = articleType;
@@ -41,7 +40,6 @@ public abstract class Article extends NounModifier {
     public LanguageArticle getArticleType() {
         return this.articleType;
     }
-
 
     /**
      * @return all the forms of the adjective
@@ -152,11 +150,26 @@ public abstract class Article extends NounModifier {
                         logger.info("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
                     }
                 }
-                
+
                 setString(form, intern(s));
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), this.articleType);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) return true;
+        if (other instanceof Article) {
+            Article a = (Article)other;
+            return super.equals(a) && this.articleType == a.articleType;
+        }
+        return false;
     }
 
     @Override protected TermType getTermType() { return TermType.Article; }

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,7 +21,7 @@ import com.google.common.collect.ImmutableList;
  * Represents the declension of Hindi or Urdu, Indo-Iranian languages which
  * have case, gender, number, and complicated post-positions that attach to the noun
  * aggutinatively.
- * 
+ *
  * We support two of each kind of value to support 4 noun and 8 adjective forms.
  *
  * NOTE: We are reusing Nominative and Objective to represent Direct and Oblique,
@@ -69,15 +69,15 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
+        }
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
 			a.append(genderVar+"+"+termFormVar+".substr(1)");
-		}
+        }
     }
 
     public static enum HindiUrduNounForm implements NounForm {
@@ -105,11 +105,9 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
     }
 
     public static final class HindiUrduNoun extends Noun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private String singular;
+        private static final long serialVersionUID = 1L;
+
+        private String singular;
         private String plural;
         private String singular_obl;
         private String plural_obl;
@@ -127,16 +125,19 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
             return enumMapFilterNulls(HindiUrduNounForm.SINGULAR, singular, HindiUrduNounForm.PLURAL, plural, HindiUrduNounForm.SINGULAR_OBL, singular_obl,
                     HindiUrduNounForm.PLURAL_OBL, plural_obl);
         }
+
         @Override
         public String getDefaultString(boolean isPlural) {
             return isPlural ? (plural != null ? plural : singular) : singular;
         }
+
         @Override
         public String getString(NounForm form) {
             assert form instanceof HindiUrduNounForm : "Why not hindustani for " + form;
             return form.getCase() == OBLIQUE_CASE ? form.getNumber() == LanguageNumber.PLURAL ? plural_obl : singular_obl
                     : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
         }
+
         @Override
         public void setString(String value, NounForm form) {
             if (form.getCase() == OBLIQUE_CASE) {
@@ -153,6 +154,7 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
                 }
             }
         }
+
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
@@ -174,33 +176,51 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
             }
             return true;
         }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.singular = intern(this.singular);
+            this.plural = intern(this.plural);
+            this.singular_obl = intern(this.singular_obl);
+            this.plural_obl = intern(this.plural_obl);
+            return this;
+        }
     }
 
     static class HindiUrduAdjective extends Adjective {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		EnumMap<HindiUrduModifierForm,String> values = new EnumMap<HindiUrduModifierForm,String>(HindiUrduModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        EnumMap<HindiUrduModifierForm,String> values = new EnumMap<>(HindiUrduModifierForm.class);
+
         HindiUrduAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
+
         @Override
         public Map< ? extends AdjectiveForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(AdjectiveForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(AdjectiveForm form, String value) {
             assert form instanceof HindiUrduModifierForm : "Why not Hindustani?";
             values.put((HindiUrduModifierForm)form, intern(value));
         }
+
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(HindiUrduModifierForm.SINGULAR_FEMININE));
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 

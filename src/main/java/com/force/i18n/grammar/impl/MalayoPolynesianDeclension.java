@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -18,12 +18,12 @@ import com.force.i18n.grammar.Noun.NounType;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Represents a Malayo-Polyesian language.  Generally non-inflected except for plurals, which 
+ * Represents a Malayo-Polyesian language.  Generally non-inflected except for plurals, which
  * are often formed by reduplication.  Sometimes in Maori it's through vowel
- * lengthening. 
- * 
+ * lengthening.
+ *
  * Maori and Somoan have definite and indefinite articles, but are uninflected.
- *   
+ *
  * @author stamm
  */
  class MalayoPolynesianDeclension extends AbstractLanguageDeclension {
@@ -82,19 +82,19 @@ import com.google.common.collect.ImmutableList;
     public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimplePluralNoun(this, name, pluralAlias, type, entityName, access, isStandardField, isCopied);
     }
-    
+
     /**
      * Hawaiian is a MalayoPolynesian language, but has a definite article that
-     * changes based on the next word (ka/ke) vs "nā" plural.  Ke is used with 
+     * changes based on the next word (ka/ke) vs "nā" plural.  Ke is used with
      * works that start with k, e, a, or o, plus a few exceptional words like
      * table (kepākaukau), song (mele) and eating utensils.  See kūʻēlula.
-     * 
+     *
      * Ka is represented as starts with consonant.  Ke is represented as starts with special.
-     * 
+     *
      * Indefinite article is invariant (he).
-     * 
+     *
      * This is similar to English.
-     * 
+     *
      * @author stamm
      */
     static class HawaiianDeclension extends ArticledDeclension {
@@ -102,11 +102,11 @@ import com.google.common.collect.ImmutableList;
         public HawaiianDeclension(HumanLanguage language) {
     		super(language);
     	}
-        
+
         /**
          * The hawaiian articles are distinguished by whether the next noun starts with k,e,a,o,
          * and some changes for starts with ke vs ka.
-         * 
+         *
          */
         public static enum HawaiianArticleForm implements ArticleForm {
             KA(LanguageNumber.SINGULAR, LanguageStartsWith.CONSONANT),
@@ -147,10 +147,11 @@ import com.google.common.collect.ImmutableList;
          * Represents an english adjective
          */
         public static class HawaiianArticle extends Article {
+            private static final long serialVersionUID = 597093332610194996L; // javac generated value. Mandatory for javac/eclipse compatibility
+
             private String singular; // We only store one value
             private String singularVowel; // We only store one value
             private String plural; // We only store one value
-            private static final long serialVersionUID = 597093332610194996L; // javac generated value. Mandatory for javac/eclipse compatibility
 
             HawaiianArticle(HawaiianDeclension declension, String name, LanguageArticle articleType) {
                 super(declension, name, articleType);
@@ -166,10 +167,10 @@ import com.google.common.collect.ImmutableList;
             @Override
             public String getString(ArticleForm form) {
                 switch (HawaiianArticleForm.getForm(form)) {
-                case NA:  return plural;
+                case NA: return plural;
                 case KE: return singularVowel;
                 default:
-                case KA:  return singular;
+                case KA: return singular;
                 }
             }
 
@@ -195,6 +196,13 @@ import com.google.common.collect.ImmutableList;
                     this.plural = this.singular;
                 }
                 return true;
+            }
+
+            protected Object readResolve() {
+                this.singular = intern(this.singular);
+                this.singularVowel = intern(this.singularVowel);
+                this.plural = intern(this.plural);
+                return this;
             }
         }
 

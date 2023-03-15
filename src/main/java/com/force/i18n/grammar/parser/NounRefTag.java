@@ -219,4 +219,9 @@ class NounRefTag extends TermRefTag {
         }
         return n;
     }
+
+    @Override
+    NounRefTag unique() {
+        return tagMap.unique(this);
+    }
 }

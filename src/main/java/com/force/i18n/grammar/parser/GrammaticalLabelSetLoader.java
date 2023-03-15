@@ -9,30 +9,17 @@ package com.force.i18n.grammar.parser;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Duration;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
-import com.force.i18n.HumanLanguage;
-import com.force.i18n.I18nJavaUtil;
-import com.force.i18n.LabelSetDescriptorImpl;
+import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.LanguageProviderFactory;
-import com.force.i18n.grammar.GrammaticalLabelSet;
-import com.force.i18n.grammar.GrammaticalLabelSetFallbackImpl;
-import com.force.i18n.grammar.GrammaticalLabelSetImpl;
-import com.force.i18n.grammar.GrammaticalLabelSetProvider;
-import com.force.i18n.grammar.LanguageDictionary;
+import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
-import com.force.i18n.settings.MapPropertyFileData;
-import com.force.i18n.settings.PropertyFileData;
-import com.force.i18n.settings.SharedKeyMap;
-import com.force.i18n.settings.SharedKeyMapPropertyFileData;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
+import com.force.i18n.settings.*;
+import com.google.common.cache.*;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 
 /**
@@ -61,12 +48,16 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     private final GrammaticalLabelSetProvider parentProvider;
     private final GrammaticalLabelSetDescriptor baseDesc;
     private final LoadingCache<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> cache;
+
     // These leak to the computable above.
-    final boolean useSharedKeys;
-    final Set<String> publicSections = new HashSet<String>();
+    protected final boolean useSharedKeys;
+    protected final Set<String> publicSections = new HashSet<>();
 
     // respect HumanLanguage#isTranslatedLanguage. see #compute(GrammaticalLabelSetDescriptor) how it's used.
-    private boolean useTranslatedLanguage = "true".equals(I18nJavaUtil.getProperty("useTranslatedLanguage"));
+    private boolean useTranslatedLanguage;
+
+    // used only if useTranslatedLanguage is ture. see #compute(GrammaticalLabelSetDescriptor) how it's used.
+    private boolean skipParsingLabelForPlatform  = false;
 
     @Override
     public void init() {
@@ -116,6 +107,9 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         }
     }
 
+    /**
+     * @deprecated use {@link #GrammaticalLabelSetLoader(GrammaticalLabelSetDescriptor)}
+     */
     @Deprecated
     public GrammaticalLabelSetLoader(URL baseDir, String labelSetName) {
         this(baseDir, labelSetName, null);
@@ -134,63 +128,93 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     }
 
     public GrammaticalLabelSetLoader(GrammaticalLabelSetDescriptor baseDesc, boolean useSharedKeys, GrammaticalLabelSetProvider parent) {
-        this.baseDesc = baseDesc;
+        this(new LabelSetLoaderConfig(baseDesc, parent), useSharedKeys);
+    }
+
+    public GrammaticalLabelSetLoader(LabelSetLoaderConfig config) {
+        this(config, USE_SHARED_KEYS_DEFAULT);
+    }
+
+    public GrammaticalLabelSetLoader(LabelSetLoaderConfig config, boolean useSharedKeys) {
+        this.baseDesc = config.getDescriptor();
         this.useSharedKeys = useSharedKeys;
-        this.parentProvider = parent;
+        this.parentProvider = config.getParent();
+        setUseTranslatedLanguage(config.useTranslatedLanguage());
+        setSkipParsingLabelForPlatform(config.skipParsingLabelForPlatform());
+
         // Share the keys of the parent loader if possible
         if (this.useSharedKeys) {
-            if (parent instanceof GrammaticalLabelSetLoader && ((GrammaticalLabelSetLoader)parent).useSharedKeys) {
-                this.seedKeyMap = new SharedKeyMap<String, SharedKeyMap<String, Object>>(((GrammaticalLabelSetLoader)parent).seedKeyMap);
+            if (parentProvider instanceof GrammaticalLabelSetLoader && ((GrammaticalLabelSetLoader) parentProvider).useSharedKeys) {
+                this.seedKeyMap = new SharedKeyMap<>(((GrammaticalLabelSetLoader) parentProvider).seedKeyMap);
             } else {
-                this.seedKeyMap = new SharedKeyMap<String, SharedKeyMap<String, Object>>();
+                this.seedKeyMap = new SharedKeyMap<>();
             }
         } else {
             this.seedKeyMap = null;
         }
-        // might need to be able to configure -- e.g. set max size
-        this.cache = CacheBuilder.newBuilder()
-            .initialCapacity(64)
-            .build(new Loader());
+
+        this.cache = getCacheBuilder(config).build(getCacheLoader());
     }
 
-    /**
-     * Use an inner class for class loading.
-     */
-    class Loader extends CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> {
-        @Override
-        public GrammaticalLabelSet load(GrammaticalLabelSetDescriptor desc) throws Exception {
-                return GrammaticalLabelSetLoader.this.makeSet(desc);
+    protected CacheBuilder<Object, Object> getCacheBuilder(LabelSetLoaderConfig config) {
+        CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().initialCapacity(64);
+
+        Duration expiration = config.getCacheExpireAfter();
+        if (!expiration.isZero() && !expiration.isNegative()) builder.expireAfterAccess(expiration);
+
+        long maxSize = config.getCacheMaxSize();
+        if (maxSize > 0) builder.maximumSize(maxSize);
+
+        if (config.isCacheStatsEnabled()) {
+            builder.recordStats();
         }
+        return builder;
     }
 
-    GrammaticalLabelSet makeSet(GrammaticalLabelSetDescriptor desc) throws IOException {
+    protected CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> getCacheLoader() {
+        return new CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet>() {
+            @Override
+            public GrammaticalLabelSet load(GrammaticalLabelSetDescriptor desc) throws Exception {
+                return GrammaticalLabelSetLoader.this.makeSet(desc);
+            }
+        };
+    }
+
+    protected GrammaticalLabelSet makeSet(GrammaticalLabelSetDescriptor desc) throws IOException {
         if (parentProvider != null) {
             GrammaticalLabelSet parentSet = parentProvider.getSet(desc.getLanguage());
-            return new GrammaticalLabelSetFallbackImpl(GrammaticalLabelSetLoader.this.compute(desc), parentSet);
+            return new GrammaticalLabelSetFallbackImpl(compute(desc), parentSet);
         }
-        return GrammaticalLabelSetLoader.this.compute(desc);
+        return compute(desc);
     }
 
-    GrammaticalLabelSet compute(GrammaticalLabelSetDescriptor desc) throws IOException {
+    protected GrammaticalLabelSet compute(GrammaticalLabelSetDescriptor desc) throws IOException {
         HumanLanguage lang = desc.getLanguage();
         long start = System.currentTimeMillis();
 
-        GrammaticalLabelSetImpl result = null;
+        GrammaticalLabelSet result = null;
         if (this.useTranslatedLanguage && !lang.isTranslatedLanguage()) {
             // this is for platform languages. if the requested language has no translation, try creating a (shallow) copy of
             // LabelSet from its fallback.
             HumanLanguage fallbackLang = lang.getFallbackLanguage();
             GrammaticalLabelSet fallback = getSetByDescriptor(desc.getForOtherLanguage(fallbackLang));
 
-            // if declension is proxy (ForwardingLanguageDeclension), good to reuse fallback data
             if (LanguageDeclensionFactory.get().isForwardingProxy(lang)) {
                 // simply copy all data (except language) from the fallback dictionary
                 LanguageDictionary dictionary = new LanguageDictionary(lang, fallback.getDictionary());
 
                 // use copy constructor for requested language
                 result = new GrammaticalLabelSetImpl(dictionary, fallback);
+
+            } else if (this.skipParsingLabelForPlatform) {
+                // load dictionary because this language has unique declension
+                LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, lang, this.parentProvider);
+                LanguageDictionary dictionary = dictParser.getDictionary();
+
+                // use copy constructor for requested language
+                result = new GrammaticalLabelSetImpl(dictionary, fallback);
             } else {
-                // if declension is unique, do full-parse dictionary/label file
+                // load both dictionary and labels
                 result = loadLabels(desc);
             }
         } else {
@@ -205,7 +229,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         return result;
     }
 
-    private GrammaticalLabelSetImpl loadLabels(GrammaticalLabelSetDescriptor desc) throws IOException {
+    protected GrammaticalLabelSet loadLabels(GrammaticalLabelSetDescriptor desc) throws IOException {
         HumanLanguage lang = desc.getLanguage();
 
         // dictionaries are always unique for every language because it may use different LanguageDeclension
@@ -219,11 +243,13 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
                 ? new SharedKeyMapPropertyFileData(lang.getLocale(), !desc.hasOverridingFiles(), seedKeyMap, publicSections)
                 : new MapPropertyFileData(lang.getLocale());
 
-        GrammaticalLabelSetImpl result = new GrammaticalLabelSetImpl(parser.getDictionary(), parser, propertyFileData);
+        GrammaticalLabelSet result = new GrammaticalLabelSetImpl(parser.getDictionary(), parser, propertyFileData);
         if (useSharedKeys) {
             ((SharedKeyMapPropertyFileData) propertyFileData).compact();
         }
-        result.setLabelSectionToFilename(GrammaticalLabelFileHandler.SECTION_TO_FILENAME);
+        if (result instanceof GrammaticalLabelSetImpl) {
+            ((GrammaticalLabelSetImpl)result).setLabelSectionToFilename(parser.getSectionToFileName());
+        }
         return result;
     }
 
@@ -311,7 +337,6 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      * @see HumanLanguage#isTranslatedLanguage
      * @see #compute(GrammaticalLabelSetDescriptor)
      * @since 232
-     * @author yoikawa
      */
     public void setUseTranslatedLanguage(boolean useTranslatedLanguage) {
         this.useTranslatedLanguage = useTranslatedLanguage;
@@ -327,5 +352,16 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      */
     public boolean getUseTranslatedLanguage() {
         return this.useTranslatedLanguage;
+    }
+
+    /*
+     * see #compute(GrammaticalLabelSetDescriptor)
+     */
+    protected void setSkipParsingLabelForPlatform(boolean skip) {
+        this.skipParsingLabelForPlatform = skip;
+    }
+
+    protected boolean  skipParsingLabelForPlatform() {
+        return this.skipParsingLabelForPlatform;
     }
 }

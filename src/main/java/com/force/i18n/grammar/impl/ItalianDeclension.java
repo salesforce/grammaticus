@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -60,25 +60,23 @@ class ItalianDeclension extends RomanceDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return startsWith; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getNumber().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
-		}
-		
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
 			a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
-		}
+        }
     }
 
     protected static class ItalianAdjective extends Adjective {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        private final EnumMap<ItalianModifierForm,String> values = new EnumMap<ItalianModifierForm,String>(ItalianModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        private final EnumMap<ItalianModifierForm, String> values = new EnumMap<>(ItalianModifierForm.class);
         private final LanguageStartsWith startsWith;
 
         ItalianAdjective(LanguageDeclension declension, String name, LanguageStartsWith startsWith, LanguagePosition position) {
@@ -107,20 +105,22 @@ class ItalianDeclension extends RomanceDeclension {
             values.put((ItalianModifierForm)form, intern(value));
         }
 
-
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(ItalianModifierForm.SINGULAR_FEMININE));
         }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
+        }
     }
 
     protected static class ItalianArticle extends Article {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<ItalianModifierForm,String> values = new EnumMap<ItalianModifierForm,String>(ItalianModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<ItalianModifierForm,String> values = new EnumMap<>(ItalianModifierForm.class);
 
         ItalianArticle(ItalianDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -142,10 +142,14 @@ class ItalianDeclension extends RomanceDeclension {
             values.put((ItalianModifierForm)form, intern(value));
         }
 
-
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(ItalianModifierForm.SINGULAR_FEMININE));
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 
@@ -204,7 +208,7 @@ class ItalianDeclension extends RomanceDeclension {
     }
 
     private static final EnumMap<ItalianModifierForm, String> DEFINITE_ARTICLE =
-        new EnumMap<ItalianModifierForm, String>(ImmutableMap.<ItalianModifierForm,String>builder()
+        new EnumMap<>(ImmutableMap.<ItalianModifierForm,String>builder()
                 .put(ItalianModifierForm.SINGULAR_FEMININE, "La ")
                 .put(ItalianModifierForm.SINGULAR_MASCULINE, "Il ")
                 .put(ItalianModifierForm.PLURAL_FEMININE, "Le ")
@@ -220,7 +224,7 @@ class ItalianDeclension extends RomanceDeclension {
                 .build());
 
     private static final EnumMap<ItalianModifierForm, String> INDEFINITE_ARTICLE =
-        new EnumMap<ItalianModifierForm, String>(ImmutableMap.<ItalianModifierForm,String>builder()
+        new EnumMap<>(ImmutableMap.<ItalianModifierForm,String>builder()
                 .put(ItalianModifierForm.SINGULAR_FEMININE, "Una ")
                 .put(ItalianModifierForm.SINGULAR_MASCULINE, "Un ")
                 .put(ItalianModifierForm.SINGULAR_FEMININE_V, "Un'")
@@ -238,11 +242,9 @@ class ItalianDeclension extends RomanceDeclension {
     protected Map< ? extends ArticleForm, String> getIndefiniteArticles() {
         return INDEFINITE_ARTICLE;
     }
-    
+
     @Override
     public Article createArticle(String name, LanguageArticle articleType) {
         return new ItalianArticle(this, name, articleType);
     }
-
-
 }

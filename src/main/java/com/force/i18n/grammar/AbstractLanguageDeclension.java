@@ -9,21 +9,13 @@ package com.force.i18n.grammar;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.IOException;
+import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
-import com.force.i18n.HumanLanguage;
-import com.force.i18n.LanguagePluralRules;
-import com.force.i18n.LanguageProviderFactory;
+import com.force.i18n.*;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.offline.PluralRulesJsImpl;
 
@@ -37,31 +29,16 @@ import com.force.i18n.grammar.offline.PluralRulesJsImpl;
  * @author stamm
  */
 public abstract class AbstractLanguageDeclension implements LanguageDeclension {
-	private final HumanLanguage language;
+    private final HumanLanguage language;
 
-	public AbstractLanguageDeclension(HumanLanguage language) {
-		this.language = language;
-	}
+    protected AbstractLanguageDeclension(HumanLanguage language) {
+        this.language = language;
+    }
 
     @Override
     public final HumanLanguage getLanguage() {
     	return this.language;
     }
-
-    @Override
-    public abstract List< ? extends NounForm> getAllNounForms();
-
-    @Override
-    public abstract Collection<? extends NounForm> getEntityForms();
-
-    @Override
-    public abstract Collection<? extends NounForm> getFieldForms();
-
-    @Override
-    public abstract Collection<? extends NounForm> getOtherForms();
-
-    @Override
-    public abstract List<? extends AdjectiveForm> getAdjectiveForms();
 
     @Override
     public List<? extends ArticleForm> getArticleForms() {
@@ -126,7 +103,6 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
     public boolean hasPossessive() {
         return false;  // Default to false because few languages have it
     }
-
 
     @Override
     public boolean hasPossessiveInAdjective() {
@@ -508,6 +484,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
     public static class SimpleAdjective extends Adjective {
         private static final long serialVersionUID = 1L;
         private static final Logger logger = Logger.getLogger(SimpleAdjective.class.getName());
+
         private String value;
 
         public SimpleAdjective(LanguageDeclension declension, String name) {
@@ -539,6 +516,11 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
             }
             return true;
         }
+
+        protected Object readResolve() {
+            this.value = intern(this.value);
+            return this;
+        }
     }
 
     /**
@@ -548,6 +530,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
     public static class SimpleAdjectiveWithStartsWith extends SimpleAdjective {
         private static final long serialVersionUID = 1L;
 
+        // no need to implement hashCode() and equals(Object)  superclass takes care this field too
         private final LanguageStartsWith startsWith;
 
         public SimpleAdjectiveWithStartsWith(LanguageDeclension declension, String name, LanguageStartsWith startsWith) {
@@ -678,6 +661,14 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         public Noun clone() {
             SimplePluralNounWithGender noun = (SimplePluralNounWithGender) super.clone();
             return noun;
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.singular = intern(this.singular);
+            this.plural = intern(this.plural);
+            return this;
         }
     }
 

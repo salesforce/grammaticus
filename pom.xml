@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  
+
   <groupId>com.salesforce.grammaticus</groupId>
   <artifactId>grammaticus</artifactId>
   <version>1.2.6-SNAPSHOT</version>
   <packaging>jar</packaging>
-  
+
   <name>Grammaticus</name>
   <description>Localization Framework that allows grammatically correct renaming of nouns</description>
   <url>https://github.com/salesforce/grammaticus</url>
@@ -13,14 +13,14 @@
       <name>Salesforce</name>
       <url>http://www.salesforce.com</url>
   </organization>
-  
+
   <licenses>
       <license>
           <name>BSD 3-Clause</name>
           <url>file://${basedir}/LICENSE.txt</url>
       </license>
   </licenses>
-  
+
   <developers>
     <developer>
         <name>Yoshiyuki Oikawa</name>
@@ -45,9 +45,9 @@
         </roles>
         <email>bo.yang@salesforce.com</email>
         <organization>Salesforce</organization>
-    </developer>        
+    </developer>
   </developers>
-  
+
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
@@ -55,16 +55,15 @@
     <icu4j.version>69.1</icu4j.version>
     <icu4j-localespi.version>69.1</icu4j-localespi.version>
     <picocli.version>4.1.4</picocli.version>
-    <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
   </properties>
-  
+
   <profiles>
     <profile>
       <!-- This profile uploads to sonatype (which is used to get artifacts into maven central) -->
       <id>sonatype-staging</id>
       <activation>
         <activeByDefault>true</activeByDefault>
-      </activation> 
+      </activation>
       <distributionManagement>
         <snapshotRepository>
           <id>ossrh</id>
@@ -79,6 +78,14 @@
       <build>
         <plugins>
           <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M8</version>
+            <configuration>
+              <!-- suppress all loggings for unit test -->
+              <argLine>@{argLine} -Djava.util.logging.config.file=src/test/resources/logging.properties</argLine>
+            </configuration>
+          </plugin>
+          <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
             <version>1.6.7</version>
@@ -89,10 +96,10 @@
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
-        </plugins> 
+        </plugins>
       </build>
     </profile>
-    
+
     <profile>
       <id>release</id>
       <build>
@@ -124,7 +131,7 @@
                 </execution>
             </executions>
           </plugin>
-          
+
           <!-- GPG Signed -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -146,10 +153,10 @@
                 </goals>
               </execution>
             </executions>
-	  </plugin>       
+	  </plugin>
         </plugins>
       </build>
-    </profile>      
+    </profile>
   </profiles>
 
   <build>
@@ -165,7 +172,7 @@
         </excludes>
       </resource>
     </resources>
-    
+
     <plugins>
       <!-- always build source jars -->
       <plugin>
@@ -181,7 +188,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <!-- Code coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -201,9 +208,9 @@
               </goals>
           </execution>
         </executions>
-      </plugin> 
-	  
-	  <plugin>
+      </plugin>
+
+      <plugin>
         <!-- create VersionInfo class -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>templating-maven-plugin</artifactId>
@@ -217,29 +224,28 @@
           </execution>
         </executions>
       </plugin>
-	  
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.8.2</version>
-	  </plugin>
-	   
-	   <!-- Maven Release plugin -->
-	   <plugin>
-	    <groupId>org.apache.maven.plugins</groupId>
-	    <artifactId>maven-release-plugin</artifactId>
-	    <version>2.5.3</version>
-	    <configuration>
-	      <autoVersionSubmodules>true</autoVersionSubmodules>
-	      <useReleaseProfile>false</useReleaseProfile>
-	      <releaseProfiles>release</releaseProfiles>
-	      <goals>deploy</goals>
-	    </configuration>
-	  </plugin>
+      </plugin>
 
+      <!-- Maven Release plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <useReleaseProfile>false</useReleaseProfile>
+          <releaseProfiles>release</releaseProfiles>
+          <goals>deploy</goals>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-  
+
   <reporting>
     <plugins>
       <plugin>
@@ -262,14 +268,14 @@
       </plugin>
     </plugins>
   </reporting>
-  
-  
+
+
   <dependencies>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>30.1.1-jre</version>
-    </dependency> 
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
@@ -283,7 +289,7 @@
       <artifactId>icu4j</artifactId>
       <version>${icu4j.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>com.ibm.icu</groupId>
       <artifactId>icu4j-localespi</artifactId>
@@ -310,7 +316,7 @@
       <artifactId>js</artifactId>
       <version>20.3.0</version>
       <scope>test</scope>
-    </dependency>  
+    </dependency>
     <dependency>
       <groupId>org.graalvm.js</groupId>
       <artifactId>js-scriptengine</artifactId>
@@ -319,7 +325,7 @@
     </dependency>
 
   </dependencies>
-  
+
   <scm>
     <connection>
       scm:git:https://github.com/salesforce/grammaticus.git

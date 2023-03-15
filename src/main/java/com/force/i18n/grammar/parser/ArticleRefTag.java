@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -48,7 +48,7 @@ class ArticleRefTag extends ModifierRefTag {
     protected NounModifier resolveModifier(LanguageDictionary dictionary) {
         return dictionary.getArticle(getName());
     }
-    
+
 	@Override
     public String toJson(LanguageDictionary dictionary, List<?> list) {
 		// Fallback labels can have articles, but they should be ignored
@@ -58,4 +58,8 @@ class ArticleRefTag extends ModifierRefTag {
 		return super.toJson(dictionary, list);
 	}
 
+    @Override
+    ArticleRefTag unique() {
+        return tagMap.unique(this);
+    }
 }

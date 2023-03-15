@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,7 +20,7 @@ import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
 import com.google.common.collect.ImmutableList;
 
 /**
- * Turk Turk Turkish! 
+ * Turk Turk Turkish!
  *
  * Nouns are very complex
  * Adjectives and articles are dead simple.
@@ -83,35 +83,50 @@ abstract class TurkicDeclension extends ArticledDeclension {
      * Turkish nouns are inflected for case, number, and possessive
      */
     static class TurkishNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
-        private final LanguageNumber number;
-        private final LanguagePossessive possesive;
+        private static final long serialVersionUID = 1L;
 
-        public TurkishNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possesive, int ordinal) {
+        private final LanguageCase caseType;
+        private final LanguageNumber number;
+        private final LanguagePossessive possessive;
+
+        public TurkishNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possessive, int ordinal) {
             super(declension, ordinal);
             this.number = number;
             this.caseType = caseType;
-            this.possesive = possesive;
+            this.possessive = possessive;
         }
 
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override public LanguagePossessive getPossessive() { return possessive; }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.possessive);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof TurkishNounForm) {
+                TurkishNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.possessive == o.possessive;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
             return "TurkishNF:" + getKey();
         }
     }
-
 
     /**
      * Represents an Turkish noun.
@@ -119,10 +134,11 @@ abstract class TurkicDeclension extends ArticledDeclension {
      */
     public static class TurkishNoun extends ComplexArticledNoun<TurkishNounForm> {
 		private static final long serialVersionUID = 1L;
+
         TurkishNoun(TurkicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
-        
+
         @Override
 		protected final Class<TurkishNounForm> getFormClass() {
         	return TurkishNounForm.class;
@@ -189,8 +205,6 @@ abstract class TurkicDeclension extends ArticledDeclension {
         return SimpleDeclension.ADJECTIVE_FORMS;
     }
 
-
-
     @Override
     public List< ? extends NounForm> getAllNounForms() {
         return this.entityForms;
@@ -210,40 +224,40 @@ abstract class TurkicDeclension extends ArticledDeclension {
     public Collection< ? extends NounForm> getOtherForms() {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
-    
+
     /**
      * Turkish is the default.
      * @author stamm
      */
     static class TurkishDeclension extends TurkicDeclension {
-		public TurkishDeclension(HumanLanguage language) {
-			super(language);
-		}
+        public TurkishDeclension(HumanLanguage language) {
+            super(language);
+        }
     }
-    
+
     /**
      * Kazakh has an instrumental case, and doesn't have articles.
-     * However, it does use "one" or "bir" to represent indefiniteness, like turkish does.  Sorta.  
-     * 
+     * However, it does use "one" or "bir" to represent indefiniteness, like turkish does.  Sorta.
+     *
      * @author stamm
      */
     static class KazakhDeclension extends TurkicDeclension {
-		public KazakhDeclension(HumanLanguage language) {
-			super(language);
-		}
-		
-	    @Override
-	    public EnumSet<LanguageCase> getRequiredCases() {
-	        return EnumSet.of(NOMINATIVE, ACCUSATIVE, DATIVE, LOCATIVE, GENITIVE, ABLATIVE, INSTRUMENTAL);
-	    }
-		
-	    @Override
-	    public String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
-	        if (articleType == LanguageArticle.INDEFINITE) {
-	            return "Бір ";  //
-	        } else {
-	            return null;
-	        }
-	    }
+        public KazakhDeclension(HumanLanguage language) {
+            super(language);
+        }
+
+        @Override
+        public EnumSet<LanguageCase> getRequiredCases() {
+            return EnumSet.of(NOMINATIVE, ACCUSATIVE, DATIVE, LOCATIVE, GENITIVE, ABLATIVE, INSTRUMENTAL);
+        }
+
+        @Override
+        public String getDefaultArticleString(ArticleForm form, LanguageArticle articleType) {
+            if (articleType == LanguageArticle.INDEFINITE) {
+                return "Бір "; //
+            } else {
+                return null;
+            }
+        }
     }
 }

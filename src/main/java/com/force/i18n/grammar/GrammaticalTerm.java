@@ -10,6 +10,7 @@ package com.force.i18n.grammar;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.*;
+import java.util.Objects;
 
 import com.force.i18n.*;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
@@ -24,11 +25,9 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
  * @author stamm
  */
 public abstract class GrammaticalTerm implements Serializable, Comparable<GrammaticalTerm> {
-    /**
-	 *
-	 */
 	private static final long serialVersionUID = 1L;
-	private final String name;
+
+    private String name; // non-final.  see readObject()
     private transient LanguageDeclension declension;
 
     public enum TermType {
@@ -46,7 +45,6 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
         this.name = intern(name);
         this.declension = declension;
     }
-
 
     public String getName() {
         return this.name;
@@ -93,6 +91,20 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
     	return typeComp == 0 ? getName().compareTo(o.getName()) : typeComp;
 	}
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        return compareTo((GrammaticalTerm)o) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.declension.getLanguage().ordinal(), getTermType(), this.name);
+    }
 
 	public abstract void toJson(Appendable appendable) throws IOException;
 
@@ -103,6 +115,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
+        this.name = intern(name);
         HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
