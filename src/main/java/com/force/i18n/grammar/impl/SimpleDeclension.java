@@ -97,13 +97,11 @@ class SimpleDeclension extends AbstractLanguageDeclension {
 
         @Override
         public String getString(NounForm form) {
-            assert form instanceof SimpleNounForm : "Why are you asking for some random noun form.  Really?";
             return value;
         }
 
         @Override
         protected void setString(String value, NounForm form) {
-            assert form instanceof SimpleNounForm : "Why are you asking for some random noun form.  Really?";
             this.value = intern(value);
         }
 

@@ -19,6 +19,7 @@ import com.force.i18n.HumanLanguage;
 import com.force.i18n.Renameable;
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.commons.text.Uniquefy;
+import com.force.i18n.commons.util.collection.MapSerializer;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
@@ -46,13 +47,13 @@ public final class LanguageDictionary implements Serializable {
 
     // TODO: These could all be made lists when serialized
     // map to Noun
-    private Map<String, Noun> nounMap = new HashMap<>();
+    private transient Map<String, Noun> nounMap = new HashMap<>();
     // map to Noun
-    private Map<String, Noun> nounMapByPluralAlias = new HashMap<>();
+    private transient Map<String, Noun> nounMapByPluralAlias = new HashMap<>();
     // map to Adjective
-    private Map<String, Adjective> adjectiveMap = new HashMap<>();
+    private transient Map<String, Adjective> adjectiveMap = new HashMap<>();
     // map to Article
-    private Map<String, Article> articleMap = new HashMap<>();
+    private transient Map<String, Article> articleMap = new HashMap<>();
     // Override of noun to nounOverrides
     private SortedSetMultimap<Noun, NounVersionOverride> nounVersionOverrides;
     // Whether or not we've been "made skinny".
@@ -89,7 +90,6 @@ public final class LanguageDictionary implements Serializable {
         this.articleMap = from.articleMap;
         this.nounVersionOverrides = from.nounVersionOverrides;
         this.isSkinny = from.isSkinny;
-
     }
 
     @Override
@@ -630,8 +630,26 @@ public final class LanguageDictionary implements Serializable {
         term.toJson(out);
     }
 
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+
+        makeSkinny(); // ensure it's "skinny"
+        out.writeObject(new TermMapSerializer<>(this.nounMap));
+        out.writeObject(new TermMapSerializer<>(this.nounMapByPluralAlias));
+        out.writeObject(new TermMapSerializer<>(this.adjectiveMap));
+        out.writeObject(new TermMapSerializer<>(this.articleMap));
+    }
+
+    @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
+
+        this.nounMap = ((TermMapSerializer<Noun>)in.readObject()).getMap();
+        this.nounMapByPluralAlias = ((TermMapSerializer<Noun>)in.readObject()).getMap();
+        this.adjectiveMap = ((TermMapSerializer<Adjective>)in.readObject()).getMap();
+        this.articleMap = ((TermMapSerializer<Article>)in.readObject()).getMap();
+        this.isSkinny = true;
+
         this.declension = LanguageDeclensionFactory.get().getDeclension(this.language);
     }
 
@@ -753,6 +771,21 @@ public final class LanguageDictionary implements Serializable {
         public int compareTo(NounVersionOverride o) {
             // comparison is reversed... so you can go in order from newest to oldest and ask atLeast
             return Double.compare(o.getAtLeast(), atLeast);
+        }
+    }
+
+    static final class TermMapSerializer<T extends GrammaticalTerm> extends MapSerializer<String, T> {
+        protected TermMapSerializer(Map<String, T> map) {
+            super(map);
+        }
+
+        @Override
+        protected String internKey(String key) {
+            return intern(key);
+        }
+
+        protected Map<String, T> getMap() {
+            return super.map;
         }
     }
 }
