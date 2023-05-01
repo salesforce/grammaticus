@@ -81,10 +81,11 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
      * Represents an english adjective
      */
     public static class KoreanAdjective extends Adjective {
+        private static final long serialVersionUID = -1L;
+
         private String prevEndsWithConsonant;
         private String prevEndsWithVowel;
         private String prevEndsWithSpecial;  // Ends with ㄹ
-        private static final long serialVersionUID = -1L;
 
         KoreanAdjective(KoreanDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
@@ -131,6 +132,13 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
             }
             return true;
         }
+
+        protected Object readResolve() {
+            this.prevEndsWithConsonant = intern(this.prevEndsWithConsonant);
+            this.prevEndsWithVowel = intern(this.prevEndsWithVowel);
+            this.prevEndsWithSpecial = intern(this.prevEndsWithSpecial);
+            return this;
+        }
     }
 
     /**
@@ -138,12 +146,11 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
      * @author stamm
      */
     protected static class KoreanNoun extends Noun implements WithClassifier {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		String value;
-		String classifier;
+        private static final long serialVersionUID = 1L;
+
+        String value;
+        String classifier;
+
         protected KoreanNoun(KoreanDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
@@ -165,7 +172,7 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
 
         @Override
         public void setString(String value, NounForm form) {
-            this.value = value;
+            this.value = intern(value);
             // Calculate endwith
             LanguageStartsWith endsWith = LanguageStartsWith.CONSONANT;  // Assume consonant
             if (value != null) {
@@ -214,12 +221,20 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
 
         @Override
         public void setClassifier(String classifier) {
-            this.classifier = classifier;
+            this.classifier = intern(classifier);
         }
 
         @Override
         public String getClassifier() {
             return this.classifier;
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.value = intern(this.value);
+            this.classifier = intern(this.classifier);
+            return this;
         }
     }
 

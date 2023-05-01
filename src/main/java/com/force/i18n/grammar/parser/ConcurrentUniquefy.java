@@ -1,12 +1,13 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.parser;
 
+import java.io.Serializable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -15,7 +16,7 @@ import java.util.concurrent.ConcurrentMap;
  * "unique", but close enough to prevent leakage.  Use this for fixed-set caches.
  * @author stamm
  */
-public class ConcurrentUniquefy<T> {
+public class ConcurrentUniquefy<T> implements Serializable {
 
     private final ConcurrentMap<T, T> pool;
 
@@ -34,10 +35,10 @@ public class ConcurrentUniquefy<T> {
      */
     public T unique(T value) {
         if (value == null) return null;
-        
+
         T result = this.pool.get(value);
         if (result != null) return result;
-        
+
         result = this.pool.putIfAbsent(value, value);
         assert result == null || result.equals(value) : "There's a flaw in the equals logic associated with " + value.getClass();
         return result == null ? value : result;

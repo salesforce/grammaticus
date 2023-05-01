@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -68,12 +68,10 @@ class FrenchDeclension extends RomanceDeclension {
     }
 
     protected static class FrenchAdjective extends Adjective {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<FrenchModifierForm,String> values = new EnumMap<FrenchModifierForm,String>(FrenchModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<FrenchModifierForm, String> values = new EnumMap<>(FrenchModifierForm.class);
         private final LanguageStartsWith startsWith;
 
         FrenchAdjective(LanguageDeclension declension, String name, LanguageStartsWith startsWith, LanguagePosition position) {
@@ -90,28 +88,36 @@ class FrenchDeclension extends RomanceDeclension {
         public Map< ? extends AdjectiveForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(AdjectiveForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(AdjectiveForm form, String value) {
             assert form instanceof FrenchModifierForm : "The french do not like their language sullied with foreign words";
             values.put((FrenchModifierForm)form, intern(value));
         }
+
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(FrenchModifierForm.SINGULAR_FEMININE));
         }
+
+        protected Object readResolve() {
+            for (Map.Entry<FrenchModifierForm, String> e : this.values.entrySet()) {
+                this.values.put(e.getKey(), intern(e.getValue()));
+            }
+            return this;
+        }
     }
 
     protected static class FrenchArticle extends Article {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<FrenchModifierForm,String> values = new EnumMap<FrenchModifierForm,String>(FrenchModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<FrenchModifierForm, String> values = new EnumMap<>(FrenchModifierForm.class);
 
         FrenchArticle(FrenchDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -121,18 +127,28 @@ class FrenchDeclension extends RomanceDeclension {
         public Map< ? extends ArticleForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(ArticleForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(ArticleForm form, String value) {
             assert form instanceof FrenchModifierForm : "The french do not like their language sullied with foreign words";
             values.put((FrenchModifierForm)form, intern(value));
         }
+
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.of(FrenchModifierForm.SINGULAR_FEMININE));
+        }
+
+        protected Object readResolve() {
+            for (Map.Entry<FrenchModifierForm, String> e : this.values.entrySet()) {
+                this.values.put(e.getKey(), intern(e.getValue()));
+            }
+            return this;
         }
     }
 
@@ -152,7 +168,6 @@ class FrenchDeclension extends RomanceDeclension {
     public List< ? extends AdjectiveForm> getAdjectiveForms() {
         return ALL_MODIFIER_FORMS;
     }
-
 
     @Override
     public List< ? extends ArticleForm> getArticleForms() {
@@ -189,7 +204,7 @@ class FrenchDeclension extends RomanceDeclension {
     }
 
     private static final EnumMap<FrenchModifierForm, String> INDEFINITE_ARTICLE =
-        new EnumMap<FrenchModifierForm, String>(ImmutableMap.<FrenchModifierForm,String>builder()
+        new EnumMap<>(ImmutableMap.<FrenchModifierForm,String>builder()
                 .put(FrenchModifierForm.SINGULAR_FEMININE, "une ")
                 .put(FrenchModifierForm.SINGULAR_MASCULINE, "un ")
                 .put(FrenchModifierForm.PLURAL_FEMININE, "des ")
@@ -200,7 +215,7 @@ class FrenchDeclension extends RomanceDeclension {
                 .put(FrenchModifierForm.PLURAL_MASCULINE_V, "des ").build());
 
     private static final EnumMap<FrenchModifierForm, String> DEFINITE_ARTICLE =
-        new EnumMap<FrenchModifierForm, String>(ImmutableMap.<FrenchModifierForm,String>builder()
+        new EnumMap<>(ImmutableMap.<FrenchModifierForm,String>builder()
                 .put(FrenchModifierForm.SINGULAR_FEMININE, "la ")
                 .put(FrenchModifierForm.SINGULAR_MASCULINE, "le ")
                 .put(FrenchModifierForm.PLURAL_FEMININE, "les ")
@@ -230,7 +245,7 @@ class FrenchDeclension extends RomanceDeclension {
 		}
 
 		private static final EnumMap<FrenchModifierForm, String> RM_INDEFINITE_ARTICLE =
-            new EnumMap<FrenchModifierForm, String>(ImmutableMap.<FrenchModifierForm,String>builder()
+            new EnumMap<>(ImmutableMap.<FrenchModifierForm,String>builder()
                     .put(FrenchModifierForm.SINGULAR_FEMININE, "ina ")
                     .put(FrenchModifierForm.SINGULAR_MASCULINE, "in ")
                     .put(FrenchModifierForm.PLURAL_FEMININE, "")
@@ -241,7 +256,7 @@ class FrenchDeclension extends RomanceDeclension {
                     .put(FrenchModifierForm.PLURAL_MASCULINE_V, "").build());
 
         private static final EnumMap<FrenchModifierForm, String> RM_DEFINITE_ARTICLE =
-            new EnumMap<FrenchModifierForm, String>(ImmutableMap.<FrenchModifierForm,String>builder()
+            new EnumMap<>(ImmutableMap.<FrenchModifierForm,String>builder()
                     .put(FrenchModifierForm.SINGULAR_FEMININE, "la ")
                     .put(FrenchModifierForm.SINGULAR_MASCULINE, "il ")
                     .put(FrenchModifierForm.PLURAL_FEMININE, "las ")
@@ -266,6 +281,4 @@ class FrenchDeclension extends RomanceDeclension {
     public Article createArticle(String name, LanguageArticle articleType) {
         return new FrenchArticle(this, name, articleType);
     }
-
-
 }

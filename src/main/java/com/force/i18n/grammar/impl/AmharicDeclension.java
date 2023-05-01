@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -23,12 +23,12 @@ import com.google.common.collect.ImmutableSet;
  * The declension of nouns for Amharic.  Not fully supported.
  *
  * Amharic has 3 cases (Nom, Acc, &amp; Gen), M/F Gender, plural, and definitiveness.
- * It has bound possessive forms differening based on case, gender, politeness, etc.  
+ * It has bound possessive forms differening based on case, gender, politeness, etc.
  * So we're not going to support it directly.  Definitiveness moves to prepositional
  * adjectives depending.
  *
  * Case endings could be derived, but it would be a fair amount of work to automatically
- * derive the vowel changing endings from the Ethiopic bloc.  
+ * derive the vowel changing endings from the Ethiopic bloc.
  *
  * @author stamm
  * @since 1.2
@@ -82,38 +82,50 @@ class AmharicDeclension extends SemiticDeclension {
      * Amharic nouns are inflected for case, number, possessive, and article.  Everything that is
      */
     static class AmharicNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageCase caseType;
         private final LanguageNumber number;
-        private final LanguagePossessive possesive;
+        private final LanguagePossessive possessive;
         private final LanguageArticle article;
 
-        public AmharicNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possesive, LanguageArticle article, int ordinal) {
+        public AmharicNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possessive, LanguageArticle article, int ordinal) {
             super(declension, ordinal);
             this.number = number;
             this.caseType = caseType;
-            this.possesive = possesive;
+            this.possessive = possessive;
             this.article = article;
         }
 
         @Override public LanguageArticle getArticle() { return this.article; }
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override public LanguagePossessive getPossessive() { return possessive;}
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.possessive, this.article);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof AmharicNounForm) {
+                AmharicNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.possessive == o.possessive && this.article == o.article;
+            }
+            return false;
+        }
     }
 
     /**
      * Amharic nouns are inflected for case, number, gender, and article.  Oh my.
      */
     static class AmharicAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageGender gender;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageGender gender;
         private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
@@ -134,33 +146,47 @@ class AmharicDeclension extends SemiticDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return possessive; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() + "-" + getPossessive().getDbValue();
-		}
+
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() + "-" + getPossessive().getDbValue();
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.gender, this.caseType, this.number, this.article,
+                    this.possessive);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof AmharicAdjectiveForm) {
+                AmharicAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.gender == o.gender && this.caseType == o.caseType
+                        && this.number == o.number && this.article == o.article && this.possessive == o.possessive;
+            }
+            return false;
+        }
     }
 
     public static final class AmharicNoun extends ComplexArticledNoun<AmharicNounForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(AmharicNoun.class.getName());
+        private static final long serialVersionUID = 1L;
+
+        private static final Logger logger = Logger.getLogger(AmharicNoun.class.getName());
         AmharicNoun(AmharicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender,  String access, boolean isStandardField, boolean isCopied) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopied);
         }
 
         @Override
-		protected final Class<AmharicNounForm> getFormClass() {
-        	return AmharicNounForm.class;
-		}
+        protected final Class<AmharicNounForm> getFormClass() {
+            return AmharicNounForm.class;
+        }
 
-
-		@Override
+        @Override
         public String getExactString(NounForm form) {
             return super.getExactString(form);
         }
-
 
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
@@ -178,7 +204,7 @@ class AmharicDeclension extends SemiticDeclension {
                     		logger.info("###\tError: The noun " + name + " has no " + form
                     					+ " form and no default could be found");
                     		return false;
-                        }	
+                        }
                     } else if (requiredForms.contains(form)) {
                         // TODO SLT: This logic seems faulty.  Why'd we bother
                         logger.finest("###\tError: The noun " + name + " has no " + form + " form");
@@ -193,24 +219,22 @@ class AmharicDeclension extends SemiticDeclension {
 
 
     protected static class AmharicAdjective extends ComplexAdjective<AmharicAdjectiveForm> {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
         AmharicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
 
         @Override
-		protected final Class<AmharicAdjectiveForm> getFormClass() {
-        	return AmharicAdjectiveForm.class;
-		}
+        protected final Class<AmharicAdjectiveForm> getFormClass() {
+            return AmharicAdjectiveForm.class;
+        }
 
-		@Override
+        @Override
         protected String deriveDefaultString(AdjectiveForm form, String value, AdjectiveForm baseForm) {
-			// TODO SLT: Derive adjectives where we can
-			return super.deriveDefaultString(form, value, baseForm);
+            // TODO SLT: Derive adjectives where we can
+            return super.deriveDefaultString(form, value, baseForm);
         }
 
         @Override
@@ -232,7 +256,7 @@ class AmharicDeclension extends SemiticDeclension {
     }
 
     static final EnumSet<LanguagePossessive> REQUIRED_POSESSIVES = EnumSet.of(LanguagePossessive.NONE, LanguagePossessive.FIRST, LanguagePossessive.SECOND);
-    static final EnumSet<LanguageCase> ALLOWED_CASES = EnumSet.of(NOMINATIVE, ACCUSATIVE, GENITIVE); 
+    static final EnumSet<LanguageCase> ALLOWED_CASES = EnumSet.of(NOMINATIVE, ACCUSATIVE, GENITIVE);
     static final EnumSet<LanguageCase> REQUIRED_CASES = EnumSet.of(NOMINATIVE);  // Only do nomitive.
 
     @Override
@@ -283,12 +307,12 @@ class AmharicDeclension extends SemiticDeclension {
 	@Override
 	protected String getDefiniteArticlePrefix(LanguageStartsWith startsWith) {
 		// Amharic, unlike the related Tigrinya (እታ), doesn't have a definite article prefix,
-		// but it has a suffix which changes the last character of the word or adds one depending on 
-		// gender and case.  
-		// A boy (ልጅ).  The boy (ልጁ).  
+		// but it has a suffix which changes the last character of the word or adds one depending on
+		// gender and case.
+		// A boy (ልጅ).  The boy (ልጁ).
 		// A dog (ውሻ).  The dog (ውሻው).
 		// When full support is required
 		return "";
 	}
-    
+
 }

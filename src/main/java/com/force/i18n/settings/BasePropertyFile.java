@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -37,18 +37,18 @@ import com.force.i18n.commons.util.settings.SettingsUtil;
  * Values may also contain references to system parameters.
  * <h3> Example </h3>
  * <pre><code>
- *                                     &lt;section name=&quot;sectionName&quot;&gt;
- *
- *                                         &lt;!--  Standard Parameter --&gt;
- *                                         &lt;param name=&quot;paramName1&quot;&gt; paramValue &lt;/param&gt;
- *
- *                                         &lt;!--  Parameter Reference --&gt;
- *                                         &lt;param name=&quot;paramName2&quot;&gt; ${sectionName.paramName1} &lt;/param&gt;
- *
- *                                         &lt;!--  Property Reference --&gt;
- *                                         &lt;param name=&quot;paramName3&quot;&gt; #{user.property} &lt;/param&gt;
- *
- *                                     &lt;/section&gt;
+*  &lt;section name=&quot;sectionName&quot;&gt;
+*
+*      &lt;!--  Standard Parameter --&gt;
+*      &lt;param name=&quot;paramName1&quot;&gt; paramValue &lt;/param&gt;
+*
+*      &lt;!--  Parameter Reference --&gt;
+*      &lt;param name=&quot;paramName2&quot;&gt; ${sectionName.paramName1} &lt;/param&gt;
+*
+*      &lt;!--  Property Reference --&gt;
+*      &lt;param name=&quot;paramName3&quot;&gt; #{user.property} &lt;/param&gt;
+*
+*  &lt;/section&gt;
  * </code></pre>
  *
  * @author nveeser, btsai
@@ -79,7 +79,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     protected BasePropertyFile(int initialCapacity, PropertyFileData data) {
         this.data = data;
-        this.metaData = new HashMap<String, Map<String, MetaDataInfo>>(initialCapacity);
+        this.metaData = new HashMap<>(initialCapacity);
     }
 
     public BasePropertyFile(Parser p) throws IOException {
@@ -181,7 +181,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      * @param baseParam the prefix for all the keys in the label section.
      */
     private List<String> getParamList(String section, String baseParam) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         for (int index = 0; true; ++index) {
             String result = getString(section, makeListEntryParam(baseParam, index), null);
             if (result == null) {
@@ -228,17 +228,17 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
     }
 
     protected Object inner_get(String section, String param, boolean throwSettingsSectionNotFoundException) throws SettingsSectionNotFoundException {
-        Map<String, Object> theSect = this.data.getSection(section);
-        if (theSect == null) {
+        if (!containsSection(section)) {
             if (throwSettingsSectionNotFoundException) {
                 throw new SettingsSectionNotFoundException("PropertyFile - section " + section + " not found.");
             }
             return null;
         }
+
         if (param == null) {
             throw new NullPointerException();
         }
-        return theSect.get(param);
+        return this.data.get(section, param);
     }
 
     /**
@@ -386,7 +386,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
     @Override
     public boolean getBoolean(String section, String param, boolean ifNull) {
-        if (ifNull == true) {
+        if (ifNull) {
             return stringToBoolean(getString(section, param, "true"));
         }
         return stringToBoolean(getString(section, param, "false"));
@@ -540,7 +540,7 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      * @param sectionName the section of the param being replace
      * @param paramName the key of the param being replace
      * @param val the value being replaced
-     * @param referenceConfig an object being passed in to parsing for 
+     * @param referenceConfig an object being passed in to parsing for
      * @return the val with substrings substituted if need be
      * @throws IOException in case there are any IO Exceptions
      * @throws SubstitutionException in case the val has a malformed section/param
@@ -633,12 +633,13 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
 
         @Override
         public boolean equals(Object o) {
-            if (o == null || !(o instanceof MetaDataInfo)) {
-                return false;
+            if (this == o) return true;
+            if (o instanceof MetaDataInfo) {
+                MetaDataInfo mdi = (MetaDataInfo)o;
+                return this.locator.equals(mdi.locator) && this.sourceFile.equals(mdi.sourceFile)
+                        && this.deprecated == mdi.deprecated;
             }
-            MetaDataInfo mdi = (MetaDataInfo)o;
-            return this.locator.equals(mdi.locator) && this.sourceFile.equals(mdi.sourceFile)
-                && this.deprecated == mdi.deprecated;
+            return false;
         }
 
         @Override
@@ -661,14 +662,10 @@ public class BasePropertyFile implements BaseNonConfigIniFile, Serializable {
      *   @return the booleanValue string as a boolean
      */
     public static boolean stringToBoolean(String booleanValue) {
-        if("1".equals(booleanValue)
+        return "1".equals(booleanValue)
                 || "true".equals(booleanValue)
                 || "yes".equals(booleanValue)
-                || "on".equals(booleanValue)) {
-            return true;
-        }
-
-        return false;
+                || "on".equals(booleanValue);
     }
 
     /**

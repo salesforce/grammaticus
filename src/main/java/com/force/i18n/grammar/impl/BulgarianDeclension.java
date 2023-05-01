@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -68,11 +68,12 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
 		super(language);
 	}
 
-	private static final Logger logger = Logger.getLogger(BulgarianDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(BulgarianDeclension.class.getName());
+
     /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum BulgarianModifierForm implements AdjectiveForm {
+    public enum BulgarianModifierForm implements AdjectiveForm {
         // TODO: We're not going to have to ask the translator for all of these forms.
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE),
@@ -108,16 +109,19 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(genderVar+"+"+termFormVar+".substr(1)");
-		}
-	}
+
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-"
+                    + getArticle().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(genderVar + "+" + termFormVar + ".substr(1)");
+        }
+    }
 
     public static enum BulgarianNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
@@ -155,12 +159,11 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
      * @author stamm
      */
     protected static class BulgarianNoun extends Noun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		String singular;
+        private static final long serialVersionUID = 1L;
+
+        String singular;
         String plural;
+
         protected BulgarianNoun(BulgarianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
@@ -258,16 +261,22 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         @Override
         public void makeSkinny() {
         }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.singular = intern(this.singular);
+            this.plural = intern(this.plural);
+            return this;
+        }
     }
 
-
     protected static class BulgarianAdjective extends Adjective {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<BulgarianModifierForm,String> values = new EnumMap<BulgarianModifierForm,String>(BulgarianModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<BulgarianModifierForm, String> values = new EnumMap<>(BulgarianModifierForm.class);
+
         BulgarianAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
@@ -333,6 +342,11 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
                 }
             }
             return value;
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 
@@ -415,7 +429,6 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
     public boolean isArticleInNounFormAutoDerived() {
         return true;
     }
-
 
     // <My/> <Account case="o" article="the"/> must convert into
     // <My case="o" article="the"/> <Account/> for bulgarian

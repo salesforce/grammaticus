@@ -35,8 +35,8 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
 
     private final File cacheDir;
 
-    private File calculateCacheDir(String setName) {
-    	File result = new File(I18nJavaUtil.getCacheBaseDir(), I18nJavaUtil.getProperty("cacheDir") + "/" + setName);
+    private File calculateCacheDir(String dir, String setName) {
+    	File result = new File(I18nJavaUtil.getCacheBaseDir(), Path.of(dir, setName).toString());
     	try {
     	    result = result.getCanonicalFile();
     	    if (!result.mkdirs()) {
@@ -48,6 +48,11 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
     	return result;
     }
 
+    public GrammaticalLabelSetFileCacheLoader(LabelSetLoaderConfig config) {
+        super(config);
+        cacheDir = calculateCacheDir(config.getCacheDir().toString(), config.getDescriptor().getLabelSetName());
+    }
+
     /**
      * Construct a FileCacheLoader that will cache the label set values
      * in the
@@ -55,8 +60,7 @@ public class GrammaticalLabelSetFileCacheLoader extends GrammaticalLabelSetLoade
      * @param parent the optional parent provider for fallback labels
      */
     public GrammaticalLabelSetFileCacheLoader(GrammaticalLabelSetDescriptor desc, GrammaticalLabelSetProvider parent) {
-        super(desc, parent);
-        cacheDir = calculateCacheDir(desc.getLabelSetName());
+        this(new LabelSetLoaderConfig(desc, parent));
     }
 
     // Used for testing

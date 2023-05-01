@@ -31,11 +31,11 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     private static final long serialVersionUID = 1L;
 
     private final NounType nounType;
-    private final String entityName;
-    private final String pluralAlias;
+    private String entityName;              // not final for readResolve()
+    private String pluralAlias;             // not final for readResolve()
     private LanguageGender gender;          // TODO: make final
     private LanguageStartsWith startsWith;  // TODO: make final
-    private final String access;
+    private String access;                  // not final for readResolve()
     private final boolean isStandardField; // specifies whether this label is a standard field or not. For the Rename
     private final boolean isCopied;        // specifies whether this noun was copied from english (or another fallback language)
 
@@ -175,7 +175,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getAllDefinedValues(), gender, startsWith);
+        return Objects.hash(super.hashCode(), getAllDefinedValues(), gender, startsWith);
     }
 
     /**
@@ -397,6 +397,13 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
                 return n1.getKey().compareTo(n2.getKey());
             }
         });
+    }
+
+    protected Object readResolve() {
+        this.entityName = intern(entityName);
+        this.pluralAlias = intern(pluralAlias);
+        this.access = intern(access);
+        return this;
     }
 
     /**

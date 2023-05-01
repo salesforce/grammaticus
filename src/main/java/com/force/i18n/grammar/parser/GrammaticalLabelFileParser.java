@@ -12,12 +12,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.MessageFormat;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.*;
 
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import com.force.i18n.*;
 import com.force.i18n.commons.text.GenericUniquefy;
@@ -41,15 +42,16 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     private final GrammaticalLabelSetProvider parentProvider;
     private final boolean trackDupes;
 
-    private final Map<String, AliasParam> aliasMap = new HashMap<String, AliasParam>();
+    private final Map<String, AliasParam> aliasMap = new HashMap<>();
     private final Multimap<String, String> allLabels = TreeMultimap.create();
     private Uniquefy uniquefy = new Uniquefy();
-    private GenericUniquefy<LabelRef> aliasUniquefy = new GenericUniquefy<LabelRef>();
+    private GenericUniquefy<LabelRef> aliasUniquefy = new GenericUniquefy<>();
 
     private List<AliasParam> illegalAliases;
     private Set<ErrorInfo> invalidLabels;  // The set of labels that have a "problem" with them
 
     private long lastModified = -1;
+    private Map<String, String> sectionToFileName = new ConcurrentHashMap<>();;
 
     /**
      * Construct a label file parser
@@ -123,42 +125,50 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         return this.lastModified;
     }
 
-    void parseLabels(PropertyFileData data, URL file) {
+    public Map<String, String> getSectionToFileName() {
+        return this.sectionToFileName;
+    }
+
+    protected void parseLabels(PropertyFileData data, URL file) {
         GrammaticalLabelFileHandler handler = new GrammaticalLabelFileHandler(file, data, this);
         parse(file, handler);
     }
 
-    void parseLabels(PropertyFileData data, String labelText) {
+    protected void parseLabels(PropertyFileData data, String labelText) {
         GrammaticalLabelFileHandler handler = new GrammaticalLabelFileHandler(this.desc.getRootFile(), data, this);
         parse(new InputSource(new StringReader(labelText)), handler);
     }
 
-    private void parse(URL file, TrackingHandler handler) {
+    protected SAXParser getSAXParser(boolean doValidation) throws ParserConfigurationException, SAXException {
+        SAXParserFactory spf = SAXParserFactory.newInstance();
+        spf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+        spf.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        spf.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        spf.setNamespaceAware(true);
+        if (doValidation) spf.setValidating(false);
+        return spf.newSAXParser();
+    }
+
+    protected void parse(URL file, TrackingHandler handler) {
         try {
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setNamespaceAware(true);
-            SAXParser saxParser = spf.newSAXParser();
+            SAXParser saxParser = getSAXParser(false);
             URLConnection connection = file.openConnection();
             connection.connect();
             this.lastModified = Math.max(this.lastModified, connection.getLastModified());
             saxParser.parse(new BufferedInputStream(connection.getInputStream()), handler);
-
         }
-        catch (Exception ex) {
+        catch (ParserConfigurationException | SAXException | IOException ex) {
             throw new RuntimeException("Error parsing XML file " + handler.getLineNumberString(), ex);
         }
     }
 
-    private void parse(InputSource source, TrackingHandler handler) {
+    protected void parse(InputSource source, TrackingHandler handler) {
         try {
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            spf.setNamespaceAware(true);
-            spf.setValidating(false);
-            SAXParser saxParser = spf.newSAXParser();
+            SAXParser saxParser = getSAXParser(true);
             saxParser.getXMLReader().setEntityResolver(handler);
             saxParser.parse(source, handler);
         }
-        catch (Exception ex) {
+        catch (ParserConfigurationException | SAXException | IOException ex) {
             throw new RuntimeException("Error parsing XML file " + handler.getLineNumberString(), ex);
         }
     }
@@ -240,8 +250,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
 
             this.srcSection = srcSection;
             this.srcParam = srcParam;
-            this.dstSection = dstSection;
-            this.dstParam = dstParam;
+            this.dstSection = dstSection.trim();
+            this.dstParam = dstParam.trim();
             this.srcKey = GrammaticalLabelFileParser.getKey(this.srcSection, this.srcParam);
             this.dstKey = GrammaticalLabelFileParser.getKey(this.dstSection, this.dstParam);
 

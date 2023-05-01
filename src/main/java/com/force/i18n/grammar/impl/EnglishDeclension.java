@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -76,10 +76,11 @@ class EnglishDeclension extends ArticledDeclension {
      * Represents an english adjective
      */
     public static class EnglishArticle extends Article {
+        private static final long serialVersionUID = 597093332610194996L; // javac generated value. Mandatory for javac/eclipse compatibility
+
         private String singular; // We only store one value
         private String singularVowel; // We only store one value
         private String plural; // We only store one value
-        private static final long serialVersionUID = 597093332610194996L; // javac generated value. Mandatory for javac/eclipse compatibility
 
         EnglishArticle(EnglishDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -125,6 +126,13 @@ class EnglishDeclension extends ArticledDeclension {
                 this.plural = this.singular;
             }
             return true;
+        }
+
+        protected Object readResolve() {
+            this.singular = intern(this.singular);
+            this.singularVowel = intern(this.singularVowel);
+            this.plural = intern(this.plural);
+            return this;
         }
     }
 

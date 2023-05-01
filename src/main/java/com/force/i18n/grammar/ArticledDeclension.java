@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -37,12 +37,9 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
      * See EnglishNounForm for more info
      */
     public abstract static class LegacyArticledNoun extends Noun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		protected LegacyArticledNoun(ArticledDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+        protected LegacyArticledNoun(ArticledDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
 
@@ -114,12 +111,11 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
      * Represents a simple adjective with one inflection
      */
     public static class SimpleArticle extends Article {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(SimpleArticle.class.getName());
+        private static final long serialVersionUID = 1L;
+        private static final Logger logger = Logger.getLogger(SimpleArticle.class.getName());
+
         private String value;
+
         public SimpleArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
         }
@@ -143,6 +139,11 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
             }
             return true;
         }
+
+        protected Object readResolve() {
+            this.value = intern(this.value);
+            return this;
+        }
     }
 
     /**
@@ -150,11 +151,9 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
      * Pretty much the same as SimplePluarlNoun, but needing to extend LegacyArticledNoun to support articles
      */
     public static class SimpleArticledPluralNoun extends LegacyArticledNoun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private static final Logger logger = Logger.getLogger(SimpleArticledPluralNoun.class.getName());
+        private static final long serialVersionUID = 1L;
+
+        private static final Logger logger = Logger.getLogger(SimpleArticledPluralNoun.class.getName());
         private String singular;
         private String plural;
 
@@ -218,6 +217,14 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
 
         @Override
         public void makeSkinny() {
+        }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.singular = intern(this.singular);
+            this.plural = intern(this.plural);
+            return this;
         }
     }
 }

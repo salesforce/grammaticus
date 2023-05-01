@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2019, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 package com.force.i18n.grammar.impl;
@@ -22,7 +22,7 @@ import com.google.common.collect.ImmutableList;
  * but do not have articles, starts with, adj/noun agreement, possession.
  *
  * This is generalized from Tamil
- * 
+ *
  * @author cgrabill, stamm
  * @since 1.1
  */
@@ -30,8 +30,8 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
 
     private final List<DravidianNounForm> entityForms;
     private final List<DravidianNounForm> fieldForms;
-    
-    public DravidianDeclension(HumanLanguage language) {
+
+    protected DravidianDeclension(HumanLanguage language) {
         super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<DravidianNounForm> entityBuilder = ImmutableList.builder();
@@ -49,12 +49,13 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
         this.entityForms = entityBuilder.build();
         this.fieldForms = fieldBuilder.build();
     }
-    
+
     static class DravidianNounForm extends ComplexNounForm {
         private static final long serialVersionUID = 1L;
+
         private final LanguageCase caseType;
         private final LanguageNumber number;
-        
+
         DravidianNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, int ordinal) {
             super(declension, ordinal);
             this.number = number;
@@ -65,24 +66,41 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
         @Override public LanguageCase getCase() { return caseType; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof DravidianNounForm) {
+                DravidianNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number;
+            }
+            return false;
+        }
+
         @Override
         public String toString() {
             return "DravNF:" + getKey();
         }
-
     }
-    
+
     /**
      * Represents a Dravidian noun. See DravidianNounForm for more info.
      */
     public static class DravidianNoun extends Noun {
         private static final long serialVersionUID = 1L;
+
         //store everything
-        private transient Map<DravidianNounForm, String> values = new HashMap<DravidianNounForm, String>();
+        private transient Map<DravidianNounForm, String> values = new HashMap<>();
 
         DravidianNoun(DravidianDeclension declension, String name, String pluralAlias, NounType type, String entityName,
                 LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault ) {
@@ -109,7 +127,7 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
         public void makeSkinny() {
             values = makeSkinny(values);
         }
-        
+
         /**
          * Need to override so that a cloned DravidianNoun's values map is a HashMap.
          * Else, if you clone() after makeSkinny() has been called, you won't
@@ -127,12 +145,13 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
             assert nid instanceof DravidianNounForm : "Error: Used non-Dravidian noun form to get Dravidian noun.";
             return values.get(nid);
         }
-        
+
         // Override read and write, or else you'll get mysterious exception
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
+
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
@@ -180,7 +199,7 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     public boolean hasGender() {
         return true;
     }
-    
+
     @Override
     public EnumSet<LanguageGender> getRequiredGenders() {
         return EnumSet.of(LanguageGender.NEUTER,
@@ -193,7 +212,7 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
 
     @Override
     public boolean hasArticleInNounForm() {
@@ -203,13 +222,13 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     static final class TamilDeclension extends DravidianDeclension {
         public TamilDeclension(HumanLanguage language) {
             super(language);
-        }        
-        
+        }
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, 
-                              LanguageCase.GENITIVE, 
-                              LanguageCase.ACCUSATIVE, 
+            return EnumSet.of(LanguageCase.NOMINATIVE,
+                              LanguageCase.GENITIVE,
+                              LanguageCase.ACCUSATIVE,
                               LanguageCase.DATIVE,
                               LanguageCase.ABLATIVE,
                               LanguageCase.INSTRUMENTAL,
@@ -223,13 +242,13 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     static final class TeluguDeclension extends DravidianDeclension {
         public TeluguDeclension(HumanLanguage language) {
             super(language);
-        }        
-        
+        }
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, 
-                              LanguageCase.GENITIVE, 
-                              LanguageCase.ACCUSATIVE, 
+            return EnumSet.of(LanguageCase.NOMINATIVE,
+                              LanguageCase.GENITIVE,
+                              LanguageCase.ACCUSATIVE,
                               LanguageCase.DATIVE,
                               LanguageCase.ABLATIVE,  // Ablative & Instrumental merger
                               LanguageCase.LOCATIVE);
@@ -242,13 +261,13 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     static final class KannadaDeclension extends DravidianDeclension {
         public KannadaDeclension(HumanLanguage language) {
             super(language);
-        }        
-        
+        }
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, 
-                              LanguageCase.GENITIVE, 
-                              LanguageCase.ACCUSATIVE,  
+            return EnumSet.of(LanguageCase.NOMINATIVE,
+                              LanguageCase.GENITIVE,
+                              LanguageCase.ACCUSATIVE,
                               LanguageCase.DATIVE,
                               LanguageCase.ABLATIVE,  // Ablative & Instrumental merger
                               LanguageCase.LOCATIVE);
@@ -262,19 +281,18 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
     static final class MalayalamDeclension extends DravidianDeclension {
         public MalayalamDeclension(HumanLanguage language) {
             super(language);
-        }        
-        
+        }
+
         @Override
         public EnumSet<LanguageCase> getRequiredCases() {
-            return EnumSet.of(LanguageCase.NOMINATIVE, 
-                              LanguageCase.GENITIVE, 
-                              LanguageCase.ACCUSATIVE,  
+            return EnumSet.of(LanguageCase.NOMINATIVE,
+                              LanguageCase.GENITIVE,
+                              LanguageCase.ACCUSATIVE,
                               LanguageCase.DATIVE,
                               LanguageCase.INSTRUMENTAL,  // Ablative & Instrumental merger
-                              LanguageCase.LOCATIVE);  
+                              LanguageCase.LOCATIVE);
             // TODO FIXME: Malayalam has a "Sociative" case that expresses 'together with'.  It's mostly obsolete in Hungarian, so we don't have it anywhere else.
             // Check with linguists?
         }
-
     }
 }

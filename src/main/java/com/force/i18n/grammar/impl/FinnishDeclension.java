@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -28,6 +28,7 @@ import com.google.common.collect.ImmutableSet;
  */
 class FinnishDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(FinnishDeclension.class.getName());
+
     private final List<FinnishNounForm> entityForms;
     private final List<FinnishNounForm> fieldForms;
     private final List<FinnishAdjectiveForm> adjectiveForms;
@@ -57,7 +58,6 @@ class FinnishDeclension extends AbstractLanguageDeclension {
     public boolean hasPossessive() {
         return true;
     }
-
 
     public FinnishDeclension(HumanLanguage language) {
     	super(language);
@@ -94,45 +94,58 @@ class FinnishDeclension extends AbstractLanguageDeclension {
      * Finnish nouns are inflected for case, number, and possessive
      */
     static class FinnishNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageCase caseType;
-        private final LanguageNumber number;
-        private final LanguagePossessive possesive;
+        private static final long serialVersionUID = 1L;
 
-        public FinnishNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possesive, int ordinal) {
+        private final LanguageCase caseType;
+        private final LanguageNumber number;
+        private final LanguagePossessive possessive;
+
+        public FinnishNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, LanguagePossessive possessive, int ordinal) {
             super(declension, ordinal);
             this.number = number;
             this.caseType = caseType;
-            this.possesive = possesive;
+            this.possessive = possessive;
         }
 
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
         @Override public LanguageCase getCase() {  return this.caseType; }
         @Override public LanguageNumber getNumber() {  return this.number; }
-        @Override public LanguagePossessive getPossessive() { return possesive;}
+        @Override public LanguagePossessive getPossessive() { return possessive;}
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getPossessive().getDbValue();
         }
+
         @Override
         public String toString() {
             return "FinnishNF:"+getKey();
         }
-    }
 
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.possessive);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof FinnishNounForm) {
+                FinnishNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number
+                        && this.possessive == o.possessive;
+            }
+            return false;
+        }
+    }
 
     /**
      * Finnish nouns are inflected for case and number
      */
     static class FinnishAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageCase caseType;
 
         public FinnishAdjectiveForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, int ordinal) {
@@ -147,16 +160,32 @@ class FinnishDeclension extends AbstractLanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return LanguageGender.NEUTER; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getNumber().getDbValue() + "-" + getCase().getDbValue();
-		}
 
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(termFormVar);
-		}
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getCase().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(termFormVar);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof FinnishAdjectiveForm) {
+                FinnishAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.caseType == o.caseType && this.number == o.number;
+            }
+            return false;
+        }
     }
 
     /**
@@ -164,20 +193,22 @@ class FinnishDeclension extends AbstractLanguageDeclension {
      * See FinnishNounForm for more info
      */
     public static class FinnishNoun extends ComplexNoun<FinnishNounForm> {
-		private static final long serialVersionUID = 1L;
-		// Store everything for now.
+        private static final long serialVersionUID = 1L;
 
         FinnishNoun(FinnishDeclension declension, String name, String pluralAlias, NounType type, String entityName, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
+
         @Override
-		protected final Class<FinnishNounForm> getFormClass() {
-        	return FinnishNounForm.class;
-		}
-		@Override
+        protected final Class<FinnishNounForm> getFormClass() {
+            return FinnishNounForm.class;
+        }
+
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
+
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER) {
@@ -192,15 +223,18 @@ class FinnishDeclension extends AbstractLanguageDeclension {
      * Represents a finnish adjective
      */
     public static class FinnishAdjective extends ComplexAdjective<FinnishAdjectiveForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         FinnishAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
+
         @Override
-		protected final Class<FinnishAdjectiveForm> getFormClass() {
+        protected final Class<FinnishAdjectiveForm> getFormClass() {
         	return FinnishAdjectiveForm.class;
-		}
-		@Override
+        }
+
+        @Override
         public boolean validate(String name) {
             defaultValidate(name, ImmutableSet.of(getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.NEUTER, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.ZERO, LanguagePossessive.NONE)));
             return true;
@@ -211,7 +245,6 @@ class FinnishDeclension extends AbstractLanguageDeclension {
     public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
         return new FinnishAdjective(this, name, position);
     }
-
 
     /* (non-Javadoc)
      * @see i18n.grammar.LanguageDeclension#createNoun(i18n.grammar.Noun.NounType, i18n.grammar.LanguageStartsWith, i18n.grammar.LanguageGender, java.lang.String, boolean)
@@ -268,5 +301,4 @@ class FinnishDeclension extends AbstractLanguageDeclension {
                     TERMINATIVE, ESSIVE, ABESSIVE, COMITATIVE);
         }
     }
-
 }

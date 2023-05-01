@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -32,7 +32,7 @@ class HebrewDeclension extends SemiticDeclension {
 		super(language);
 	}
 
-	private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
 
     public static enum HebrewNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageArticle.ZERO),
@@ -102,11 +102,9 @@ class HebrewDeclension extends SemiticDeclension {
     private static final String DEFAULT_DEFINITE_PREFIX = "\u05d4";  // ה
 
     public static final class HebrewNoun extends LegacyArticledNoun {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private String singular;
+        private static final long serialVersionUID = 1L;
+
+        private String singular;
         private String plural;
         private String singular_def;
         private String plural_def;
@@ -124,16 +122,19 @@ class HebrewDeclension extends SemiticDeclension {
             return enumMapFilterNulls(HebrewNounForm.SINGULAR, singular, HebrewNounForm.PLURAL, plural, HebrewNounForm.SINGULAR_DEF, singular_def,
                     HebrewNounForm.PLURAL_DEF, plural_def);
         }
+
         @Override
         public String getDefaultString(boolean isPlural) {
             return isPlural ? (plural != null ? plural : singular) : singular;
         }
+
         @Override
         public String getExactString(NounForm form) {
             assert form instanceof HebrewNounForm : "It's not kosher to pass in a non-hebrew noun " + form;
             return form.getArticle() == LanguageArticle.DEFINITE ? form.getNumber() == LanguageNumber.PLURAL ? plural_def : singular_def
                     : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
         }
+
         @Override
         public void setString(String value, NounForm form) {
             if (form.getArticle() == LanguageArticle.DEFINITE) {
@@ -150,6 +151,7 @@ class HebrewDeclension extends SemiticDeclension {
                 }
             }
         }
+
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
@@ -172,31 +174,44 @@ class HebrewDeclension extends SemiticDeclension {
             }
             return true;
         }
+
+        @Override
+        protected Object readResolve() {
+            super.readResolve();
+            this.singular = intern(this.singular);
+            this.plural = intern(this.plural);
+            this.singular_def = intern(this.singular_def);
+            this.plural_def = intern(this.plural_def);
+            return this;
+        }
     }
 
     protected static class HebrewAdjective extends Adjective {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<HebrewModifierForm,String> values = new EnumMap<HebrewModifierForm,String>(HebrewModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<HebrewModifierForm, String> values = new EnumMap<>(HebrewModifierForm.class);
+
         HebrewAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
+
         @Override
         public Map< ? extends AdjectiveForm, String> getAllValues() {
             return values;
         }
+
         @Override
         public String getString(AdjectiveForm form) {
             return values.get(form);
         }
+
         @Override
         protected void setString(AdjectiveForm form, String value) {
             assert form instanceof HebrewModifierForm : "Enough of this mishegas, ask only for hebrew";
             values.put((HebrewModifierForm)form, intern(value));
         }
+
         @Override
         protected String deriveDefaultString(AdjectiveForm form, String value, AdjectiveForm baseFormed) {
             if (form.getArticle() == LanguageArticle.DEFINITE && baseFormed.getArticle() != LanguageArticle.DEFINITE) {
@@ -208,6 +223,11 @@ class HebrewDeclension extends SemiticDeclension {
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, REQUIRED_ADJECTIVE_FORMS);
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 

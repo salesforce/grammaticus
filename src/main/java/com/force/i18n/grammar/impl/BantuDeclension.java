@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2019, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 package com.force.i18n.grammar.impl;
@@ -19,11 +19,11 @@ import com.google.common.collect.ImmutableSet;
 
 /**
  * Declension for Bantu languages, with noun classes.
- * 
+ *
  * For simplicity, we ask for nouns with singular and plural, and then ask for the noun class.
  * So when expressing a translation for "Account", we'll ask for
  * "Akaunti", "Akaunti", N Class (IX/X)
- * 
+ *
 
  *
  * @author stamm
@@ -49,10 +49,8 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
 
 
     static class BantuAdjectiveForm extends ComplexAdjectiveForm {
-        /**
-         *
-         */
         private static final long serialVersionUID = 1L;
+
         private final LanguageNumber number;
         private final LanguageGender gender;
 
@@ -68,9 +66,25 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
         @Override public LanguageStartsWith getStartsWith() {  return LanguageStartsWith.CONSONANT; }
         @Override public LanguageGender getGender() {  return this.gender; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+
         @Override
         public String getKey() {
             return getGender().getDbValue() + "-" + getNumber().getDbValue();
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.number, this.gender);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof BantuAdjectiveForm) {
+                BantuAdjectiveForm o = this.getClass().cast(other);
+                return super.equals(other) && this.number == o.number && this.gender == o.gender;
+            }
+            return false;
         }
     }
 
@@ -78,9 +92,6 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
      * Represents a bantu adjective
      */
     public static class BantuAdjective extends ComplexAdjective<BantuAdjectiveForm> {
-        /**
-         *
-         */
         private static final long serialVersionUID = 1L;
 
         BantuAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
@@ -96,23 +107,18 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
         public boolean validate(String name) {
             return defaultValidate(name, ImmutableSet.of(getDeclension().getAdjectiveForm(LanguageStartsWith.CONSONANT, LanguageGender.CLASS_I, LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.ZERO, LanguagePossessive.NONE)));
         }
-
    }
 
+   @Override
+   public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
+       return new BantuAdjective(this, name, position);
+   }
 
-    @Override
-    public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
-        return new BantuAdjective(this, name, position);
-    }
-
-
-    
     @Override
     public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
             LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
         return new SimplePluralNounWithGender(this, name, pluralAlias, type, entityName, gender, access, isStandardField, isCopied);
     }
-
 
     @Override
     public List< ? extends AdjectiveForm> getAdjectiveForms() {
@@ -157,13 +163,13 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
     /**
      * Declension for the Kiswahili language
      * */
     /*
      * An example of specifying adjectives would be
- 
+
  <adjective name="New">
     <value gender="M-wa" plural="n">Mpya</value>
     <value gender="M-wa" plural="y">Wapya</value>
@@ -200,7 +206,7 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
     <value gender="Mu" plural="y">Mwangu</value>
  </adjective>
 
-     * 
+     *
      *
      * @author stamm
      * @since 220
@@ -218,7 +224,7 @@ abstract class BantuDeclension extends AbstractLanguageDeclension {
 
     /**
      * Declension for the isiZulu language
-     * 
+     *
      */
  /*
      * An example of specifying adjectives would be

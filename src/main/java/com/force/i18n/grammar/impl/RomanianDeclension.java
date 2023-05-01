@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -71,11 +71,9 @@ class RomanianDeclension extends RomanceDeclension {
 
 
     public static class RomanianNounForm extends ComplexNounForm {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		private final LanguageNumber number;
+        private static final long serialVersionUID = 1L;
+
+        private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageArticle article;
 
@@ -95,9 +93,25 @@ class RomanianDeclension extends RomanceDeclension {
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + getArticle().getDbValue();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.number, this.caseType, this.article);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof RomanianNounForm) {
+                RomanianNounForm o = this.getClass().cast(other);
+                return super.equals(other) && this.number == o.number && this.caseType == o.caseType
+                        && this.article == o.article;
+            }
+            return false;
+        }
     }
 
-    public static enum RomanianModifierForm implements ArticleForm, AdjectiveForm {
+    public enum RomanianModifierForm implements ArticleForm, AdjectiveForm {
         // Yeah, I could have generated this, but making it an enum wasn't that big a difference
         SINGULAR_N(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageGender.NEUTER),
         SINGULAR_M(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageGender.MASCULINE),
@@ -128,32 +142,35 @@ class RomanianDeclension extends RomanceDeclension {
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(genderVar+"+"+termFormVar+".substr(1)");
-		}
+
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getCase().getDbValue() + "-" + getNumber().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(genderVar + "+" + termFormVar + ".substr(1)");
+        }
     }
 
     /**
      * <CODE>Noun</CODE> implementation for the most Latin-1 language
      */
     protected static class RomanianNoun extends ComplexArticledNoun<RomanianNounForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         protected RomanianNoun(RomanianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
         }
 
         @Override
-		protected final Class<RomanianNounForm> getFormClass() {
-        	return RomanianNounForm.class;
-		}
+        protected final Class<RomanianNounForm> getFormClass() {
+            return RomanianNounForm.class;
+        }
 
-		@Override
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             for (NounForm form : getDeclension().getAllNounForms()) {
                 if (getString(form) == null) {
@@ -174,12 +191,10 @@ class RomanianDeclension extends RomanceDeclension {
     }
 
     protected static class RomanianAdjective extends Adjective {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<RomanianModifierForm,String> values = new EnumMap<RomanianModifierForm,String>(RomanianModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<RomanianModifierForm, String> values = new EnumMap<>(RomanianModifierForm.class);
 
         RomanianAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
@@ -201,20 +216,22 @@ class RomanianDeclension extends RomanceDeclension {
             values.put((RomanianModifierForm)form, intern(value));
         }
 
-
         @Override
         public boolean validate(String name) {
             return defaultValidate(name, EnumSet.allOf(RomanianModifierForm.class));
         }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
+        }
     }
 
     protected static class RomanianArticle extends Article {
-        /**
-		 *
-		 */
-		private static final long serialVersionUID = 1L;
-		// The "keys" here are StartsWith, Gender, and Plurality
-        EnumMap<RomanianModifierForm,String> values = new EnumMap<RomanianModifierForm,String>(RomanianModifierForm.class);
+        private static final long serialVersionUID = 1L;
+
+        // The "keys" here are StartsWith, Gender, and Plurality
+        EnumMap<RomanianModifierForm, String> values = new EnumMap<>(RomanianModifierForm.class);
 
         RomanianArticle(RomanianDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -243,6 +260,11 @@ class RomanianDeclension extends RomanceDeclension {
                     RomanianModifierForm.PLURAL_N, RomanianModifierForm.SINGULAR_DAT_F,
                     RomanianModifierForm.SINGULAR_DAT_M, RomanianModifierForm.SINGULAR_DAT_N,
                     RomanianModifierForm.PLURAL_DAT_N ));
+        }
+
+        protected Object readResolve() {
+            this.values.replaceAll((k, v) -> intern(v));
+            return this;
         }
     }
 
@@ -289,7 +311,6 @@ class RomanianDeclension extends RomanceDeclension {
         return ALL_MODIFIER_FORMS;
     }
 
-
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
         return EnumSet.of(LanguageCase.NOMINATIVE, LanguageCase.DATIVE);
@@ -300,7 +321,7 @@ class RomanianDeclension extends RomanceDeclension {
         return Collections.singleton(fieldForms.get(0));  // Only need "singular" for other forms
     }
 
-    private static final Map<RomanianModifierForm,String> INDEFINITE_ARTICLES =
+    private static final Map<RomanianModifierForm, String> INDEFINITE_ARTICLES =
         ImmutableMap.<RomanianModifierForm, String>builder()
             .put(RomanianModifierForm.SINGULAR_N, "un ")
             .put(RomanianModifierForm.SINGULAR_F, "o ")
@@ -341,8 +362,6 @@ class RomanianDeclension extends RomanceDeclension {
 
     }
 
-
-
     @Override
     public ArticleForm getArticleForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
             LanguageCase _case) {
@@ -381,7 +400,6 @@ class RomanianDeclension extends RomanceDeclension {
             return getIndefiniteArticles().get(form);
         default:
             return null;
-
         }
     }
 }

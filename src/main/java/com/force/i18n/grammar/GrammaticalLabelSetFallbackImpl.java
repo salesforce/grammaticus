@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -28,12 +28,9 @@ import com.google.common.collect.Sets;
  * @author stamm
  */
 public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetImpl implements GrammaticalLabelSetComposite {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;  // TODO: Prevent serialization
+    private static final long serialVersionUID = 1L;  // TODO: Prevent serialization
 
-	private static final Logger logger = Logger.getLogger(GrammaticalLabelSetFallbackImpl.class.getName());
+    private static final Logger logger = Logger.getLogger(GrammaticalLabelSetFallbackImpl.class.getName());
 
     private final GrammaticalLabelSet main;
     private final GrammaticalLabelSet fallback;
@@ -194,6 +191,13 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
             }
         }
         @Override
+        public Object get(String sectionName, String paramName) {
+            Object overlayValue =  overlay.get(sectionName, paramName);
+            if (overlayValue != null) return overlayValue;
+
+            return fallback.get(sectionName, paramName);
+        }
+        @Override
         public Set<Entry<String, Map<String, Object>>> entrySet() {
             throw new UnsupportedOperationException("You should not iterate through the entry set of a composite property file");
         }
@@ -302,5 +306,4 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
             return new GrammaticalLabelSetFallbackImpl(this.main, this.fallback);
         }
     }
-
 }

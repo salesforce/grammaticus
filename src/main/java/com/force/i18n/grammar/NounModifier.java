@@ -9,6 +9,7 @@ package com.force.i18n.grammar;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
@@ -23,12 +24,9 @@ import com.force.i18n.commons.text.TextUtil;
  * @author stamm
  */
 public abstract class NounModifier extends GrammaticalTerm {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public NounModifier(LanguageDeclension declension, String name) {
+    protected NounModifier(LanguageDeclension declension, String name) {
         super(declension, name);
     }
 
@@ -70,7 +68,12 @@ public abstract class NounModifier extends GrammaticalTerm {
     public abstract String getDefaultValue();
 
     @Override
-    public final boolean equals(Object obj) {
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getStartsWith(), getPosition(), getAllValues());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj instanceof NounModifier) {
             NounModifier nm = (NounModifier)obj;
@@ -84,14 +87,14 @@ public abstract class NounModifier extends GrammaticalTerm {
 
     @Override
 	public void toJson(Appendable appendable) throws IOException {
-    	appendable.append("{\"t\":\""+getTermType().getCharId()+"\",\"l\":\"");
-    	appendable.append(getName());
-    	appendable.append("\",");
-    	if (getDeclension().hasStartsWith() && getStartsWith() != null) {
-    		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
-    	}
-    	appendable.append("\"v\":{");
-    	appendable.append(new TreeMap<>(getAllValues()).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
-    	appendable.append("}}");
-	}
+        appendable.append("{\"t\":\"" + getTermType().getCharId() + "\",\"l\":\"");
+        appendable.append(getName());
+        appendable.append("\",");
+        if (getDeclension().hasStartsWith() && getStartsWith() != null) {
+            appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
+        }
+        appendable.append("\"v\":{");
+        appendable.append(new TreeMap<>(getAllValues()).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
+        appendable.append("}}");
+    }
 }

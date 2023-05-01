@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -20,8 +20,8 @@ import com.google.common.collect.ImmutableList;
 
 
 /**
- * Bengali is our first Indic language. Spec from Localization: 
- * 
+ * Bengali is our first Indic language. Spec from Localization:
+ *
  * Although this is Indo-Aryan, because of it's use of definite articles, we keep it separate.
  *
  * @author cgrabill
@@ -30,7 +30,7 @@ class BengaliDeclension extends ArticledDeclension {
 
     private final List<BengaliNounForm> entityForms;
     private final List<BengaliNounForm> fieldForms;
-    
+
     public BengaliDeclension(HumanLanguage language) {
     	super(language);
         // Generate the different forms from subclass methods
@@ -51,14 +51,15 @@ class BengaliDeclension extends ArticledDeclension {
         this.entityForms = entityBuilder.build();
         this.fieldForms = fieldBuilder.build();
     }
-        
+
     static class BengaliNounForm extends ComplexNounForm {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
+
         private final LanguageCase caseType;
         private final LanguageNumber number;
         private final LanguageArticle article;
-        
-        BengaliNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType, 
+
+        BengaliNounForm(LanguageDeclension declension, LanguageNumber number, LanguageCase caseType,
                 LanguageArticle article, int ordinal) {
             super(declension, ordinal);
             this.number = number;
@@ -70,26 +71,46 @@ class BengaliDeclension extends ArticledDeclension {
         @Override public LanguageCase getCase() { return caseType; }
         @Override public LanguageArticle getArticle() { return article; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+
         @Override
         public String getKey() {
             return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue();
         }
+
         @Override
         public String toString() {
             return "BengaliNF:" + getKey();
         }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.caseType, this.number, this.article);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+
+            if (other instanceof BengaliNounForm) {
+                BengaliNounForm otherNf = BengaliNounForm.class.cast(other);
+                return super.equals(other) && this.caseType == otherNf.caseType && this.number == otherNf.number
+                        && this.article == otherNf.article;
+            }
+            return false;
+        }
     }
-    
+
     /**
      * Represents a Bengali noun. See BengaliNounForm for more info.
      */
     public static class BengaliNoun extends LegacyArticledNoun {
-		private static final long serialVersionUID = 1L;
-        //store everything
-        private transient Map<BengaliNounForm, String> values = new HashMap<BengaliNounForm, String>();
+        private static final long serialVersionUID = 1L;
 
-        BengaliNoun(BengaliDeclension declension, String name, String pluralAlias, NounType type, 
-                String entityName, String access, LanguageGender gender, 
+        //store everything
+        private transient Map<BengaliNounForm, String> values = new HashMap<>();
+
+        BengaliNoun(BengaliDeclension declension, String name, String pluralAlias, NounType type,
+                String entityName, String access, LanguageGender gender,
                 boolean isStandardField, boolean isCopiedFromDefault ) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT,
                     gender, access, isStandardField, isCopiedFromDefault);
@@ -120,7 +141,7 @@ class BengaliDeclension extends ArticledDeclension {
         public void makeSkinny() {
             values = makeSkinny(values);
         }
-        
+
         /**
          * Need to override so that a cloned BengaliNoun's values map is a HashMap.
          * Else, if you clone() after makeSkinny() has been called, you won't
@@ -129,21 +150,22 @@ class BengaliDeclension extends ArticledDeclension {
         @Override
         public Noun clone() {
             BengaliNoun noun = (BengaliNoun) super.clone();
-            noun.values = new HashMap<BengaliNounForm,String>(noun.values);
+            noun.values = new HashMap<>(noun.values);
             return noun;
         }
-        
+
         // Override read and write, or else you'll get mysterious exception
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
+
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
         }
     }
-    
+
     @Override
     public List<? extends NounForm> getAllNounForms() {
         return entityForms;
@@ -161,7 +183,7 @@ class BengaliDeclension extends ArticledDeclension {
 
     @Override
     public Collection<? extends NounForm> getOtherForms() {
-        return getAllNounForms(); //TODO is this close? 
+        return getAllNounForms(); //TODO is this close?
     }
 
     @Override
@@ -174,7 +196,7 @@ class BengaliDeclension extends ArticledDeclension {
     public Noun createNoun(String name, String pluralAlias, NounType type, String entityName,
             LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField,
             boolean isCopied) {
-        return new BengaliNoun(this, name, pluralAlias, type, entityName, access, gender, 
+        return new BengaliNoun(this, name, pluralAlias, type, entityName, access, gender,
                 isStandardField, isCopied);
     }
 
@@ -192,20 +214,20 @@ class BengaliDeclension extends ArticledDeclension {
     public boolean hasStartsWith() {
         return false;
     }
-    
+
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
-        return EnumSet.of(LanguageCase.NOMINATIVE, 
-                          LanguageCase.OBJECTIVE, 
-                          LanguageCase.GENITIVE, 
+        return EnumSet.of(LanguageCase.NOMINATIVE,
+                          LanguageCase.OBJECTIVE,
+                          LanguageCase.GENITIVE,
                           LanguageCase.LOCATIVE);
     }
-    
+
     @Override
     public boolean hasArticleInNounForm() {
         return true;
     }
-    
+
     @Override
     public Set<LanguageArticle> getAllowedArticleTypes() {
         return EnumSet.of(LanguageArticle.ZERO, LanguageArticle.DEFINITE);
