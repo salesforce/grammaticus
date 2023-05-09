@@ -33,7 +33,7 @@ jobs:
 #        gpg-passphrase:  MAVEN_GPG_PASSPHRASE # env variable for GPG private key passphrase
         settings-path: ${{ github.workspace }}/generated-settings
     - name: Import GPG Key
-      uses: crazy-max/ghaction-import-gpg@v4
+      uses: crazy-max/ghaction-import-gpg@v5
       with:
           gpg_private_key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
@@ -49,8 +49,8 @@ jobs:
           restore-keys: ${{ runner.os }}-maven-
     - name: Prepare Release
       id: release
-      run: >
-          mvn -V -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:clean release:prepare &&
+      run: |
+          mvn -V -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:clean release:prepare
           echo "RELEASED_NAME=G$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c2-)" >> $GITHUB_OUTPUT
           echo "RELEASED_VERSION=$(grep scm.tag= release.properties | cut -d'=' -f2 | cut -c13-)" >> $GITHUB_OUTPUT
       env:
@@ -60,7 +60,7 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Perform Release
-      run: >
+      run: |
           mvn -gs $GITHUB_WORKSPACE/generated-settings/settings.xml -B -P sonatype-staging,release -e release:perform
       env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USER }}
@@ -69,10 +69,12 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release Entry
-      uses: actions/create-release@v1
+      uses: actions/checkout@v3
+      uses: ncipollo/release-action@v1
       with:
-          tag_name: v${{ steps.release.outputs.RELEASED_VERSION }}
-          release_name: ${{ steps.release.outputs.RELEASED_NAME }}
+          commit: $GITHUB_SHA
+          tag: v${{ steps.release.outputs.RELEASED_VERSION }}
+          name: ${{ steps.release.outputs.RELEASED_NAME }}
           body: ${{ github.event.inputs.release-body }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
