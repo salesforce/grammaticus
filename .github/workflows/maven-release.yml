@@ -69,12 +69,10 @@ jobs:
           MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release Entry
-      uses: actions/checkout@v3
-      uses: ncipollo/release-action@v1
+      uses: actions/create-release@v1
       with:
-          commit: $GITHUB_SHA
-          tag: v${{ steps.release.outputs.RELEASED_VERSION }}
-          name: ${{ steps.release.outputs.RELEASED_NAME }}
+          tag_name: v${{ steps.release.outputs.RELEASED_VERSION }}
+          release_name: ${{ steps.release.outputs.RELEASED_NAME }}
           body: ${{ github.event.inputs.release-body }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
