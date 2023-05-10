@@ -1,4 +1,4 @@
-![Build Status](https://github.com/salesforce/formula-engine/actions/workflows/ci.yml/badge.svg)
+[![Build Status](https://github.com/salesforce/grammaticus/actions/workflows/ci.yml/badge.svg)](https://github.com/salesforce/grammaticus/actions/workflows/ci.yml)
 
 Grammaticus is a grammar engine that allows users to rename nouns while keeping content grammatically correct.
 ----------------------------------------------------------------------------------------------------------------------
