@@ -91,7 +91,9 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     }
 
     public final LanguageGender getGender() {
-        return this.gender;
+        // this.gender could be initialized with null if noun is only defined in root (English)
+        if (this.gender != null) return this.gender;
+        return this.getDeclension().hasGender() ? this.getDeclension().getDefaultGender() : null;
     }
 
     @Override
