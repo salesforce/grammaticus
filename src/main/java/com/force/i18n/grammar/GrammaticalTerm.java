@@ -10,10 +10,12 @@ package com.force.i18n.grammar;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.*;
-import java.util.Objects;
+import java.util.*;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
+import com.google.common.collect.ImmutableSortedMap;
 
 /**
  * Represents a grammatical term; generally one that is declined based on a noun form or other
@@ -25,7 +27,7 @@ import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
  * @author stamm
  */
 public abstract class GrammaticalTerm implements Serializable, Comparable<GrammaticalTerm> {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private String name; // non-final.  see readObject()
     private transient LanguageDeclension declension;
@@ -34,11 +36,13 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
         Noun('n'),
         Adjective('a'),
         Article('d');
-    	private final char id;
-    	TermType(char id) {
-    		this.id = id;
-    	}
-    	public char getCharId() {return this.id;}
+
+        private final char id;
+
+        TermType(char id) {
+            this.id = id;
+        }
+        public char getCharId() {return this.id;}
     }
 
     protected GrammaticalTerm(LanguageDeclension declension, String name) {
@@ -84,12 +88,12 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
     }
 
     @Override
-	public int compareTo(GrammaticalTerm o) {
-    	TermType thisType = getTermType();
-    	TermType oType = o.getTermType();
-    	int typeComp = thisType.compareTo(oType);
-    	return typeComp == 0 ? getName().compareTo(o.getName()) : typeComp;
-	}
+    public int compareTo(GrammaticalTerm o) {
+        TermType thisType = getTermType();
+        TermType oType = o.getTermType();
+        int typeComp = thisType.compareTo(oType);
+        return typeComp == 0 ? getName().compareTo(o.getName()) : typeComp;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -106,7 +110,7 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
         return Objects.hash(this.declension.getLanguage().ordinal(), getTermType(), this.name);
     }
 
-	public abstract void toJson(Appendable appendable) throws IOException;
+    public abstract void toJson(Appendable appendable) throws IOException;
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
@@ -118,5 +122,36 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
         this.name = intern(name);
         HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
+    }
+
+    /**
+     * Provides clients the capability of indicating when members of Noun's can be converted to space efficient data
+     * structures.
+     */
+    public void makeSkinny() {
+        // the default implementation does nothing
+    }
+
+    /**
+     * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableSortedMap}.
+     * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
+     * overhead, that is traditionally high on most {@code Map} implementations.
+     *
+     * @param <T>
+     *            the type of the grammatical form for this term
+     * @param map
+     *            the map to make skinny
+     * @return A {@link ImmutableSortedMap} created from a {@link Map} of {@link GrammaticalForm}'s (key) to
+     *         {@link String}'s (value).
+     */
+    protected <T extends GrammaticalForm> Map<T, String> makeSkinny(Map<T, String> map) {
+        return ImmutableSortedMap.copyOf(map, new KeyComparator<T>());
+    }
+
+    private static class KeyComparator<T extends GrammaticalForm> implements Comparator<T>, Serializable {
+        @Override
+        public int compare(T o1, T o2) {
+            return o1.getKey().compareTo(o2.getKey());
+        }
     }
 }

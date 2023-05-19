@@ -91,7 +91,7 @@ class RomanianDeclension extends RomanceDeclension {
 
         @Override
         public String getKey() {
-            return getNumber().getDbValue() + "-" + getCase().getDbValue() + getArticle().getDbValue();
+            return getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" +  getArticle().getDbValue();
         }
 
         @Override

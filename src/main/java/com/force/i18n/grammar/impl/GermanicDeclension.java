@@ -9,7 +9,7 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -43,7 +43,8 @@ abstract class GermanicDeclension extends ArticledDeclension {
     private final ModifierFormMap<GermanicArticleForm> articleFormMap;
 
     protected GermanicDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
+
         // Generate the different forms from subclass methods
         ImmutableList.Builder<GermanicNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<GermanicNounForm> fieldBuilder = ImmutableList.builder();
@@ -172,7 +173,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
         @Override
         public String getKey() {
-            return getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-" + getArticle().getDbValue() ;
+            String ret = getGender().getDbValue() + "-" + getNumber().getDbValue() + "-" + getCase().getDbValue() + "-"
+                    + getArticle().getDbValue();
+            if (getDeclension().hasStartsWith()) ret += "-" + getStartsWith().getDbValue();
+            return ret;
         }
 
         @Override
@@ -273,7 +277,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
     }
 
     /**
-     * Represents an english adjective
+     * Represents an Germanic adjective
      */
     public static class GermanicAdjective extends ComplexAdjective<GermanicAdjectiveForm> {
         private static final long serialVersionUID = 1L;
@@ -295,12 +299,12 @@ abstract class GermanicDeclension extends ArticledDeclension {
     }
 
     /**
-     * Represents an english adjective
+     * Represents an Germanic adjective
      */
     public static class GermanicArticle extends Article {
         private static final long serialVersionUID = 1L;
 
-        private Map<GermanicArticleForm, String> values = new HashMap<>();
+        private transient Map<GermanicArticleForm, String> values = new HashMap<>();
 
         GermanicArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);
@@ -327,9 +331,22 @@ abstract class GermanicDeclension extends ArticledDeclension {
             return true;
         }
 
-        protected Object readResolve() {
-            this.values.replaceAll((k, v) -> intern(v));
-            return this;
+        private void writeObject(ObjectOutputStream out) throws IOException {
+            out.defaultWriteObject();
+
+            ComplexGrammaticalForm.serializeFormMap(out, values);
+        }
+
+        private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+            in.defaultReadObject();
+
+            this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Article);
+            makeSkinny();
+        }
+
+        @Override
+        public void makeSkinny() {
+            values = makeSkinny(values);
         }
     }
 
@@ -592,11 +609,11 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class DutchDeclension extends GermanicDeclension {
         public DutchDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("nl") : "Initializing a language that isn't dutch";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("nl") : "Initializing a language that isn't dutch";
+        }
 
-		@Override
+        @Override
         protected final EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -623,11 +640,11 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class DanishDeclension extends GermanicDeclension {
         public DanishDeclension(HumanLanguage language) {
-			super(language);
-	        assert language.getLocale().getLanguage().equals("da") : "Initializing a language that isn't danish";
-		}
+            super(language);
+            assert language.getLocale().getLanguage().equals("da") : "Initializing a language that isn't danish";
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -651,10 +668,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class NorwegianDeclension extends GermanicDeclension {
         public NorwegianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -682,10 +699,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class IcelandicDeclension extends GermanicDeclension {
         public IcelandicDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         protected EnumSet<LanguageArticle> getRequiredAdjectiveArticles() {
             return ZERO_AND_DEFARTICLES;
         }
@@ -719,10 +736,10 @@ abstract class GermanicDeclension extends ArticledDeclension {
 
     static class LuxembourgishDeclension extends GermanicDeclension {
         public LuxembourgishDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender,String>>> DEFINITE_ARTICLE =
+        private static final Map<LanguageCase, ImmutableMap<LanguageNumber, ImmutableMap<LanguageGender,String>>> DEFINITE_ARTICLE =
             ImmutableMap.of(
                    LanguageCase.NOMINATIVE,
                             ImmutableMap.of(LanguageNumber.SINGULAR, ImmutableMap.of(

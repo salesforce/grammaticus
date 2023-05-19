@@ -21,11 +21,11 @@ import com.force.i18n.LanguageConstants;
  * @author stamm
  */
 public abstract class ArticledDeclension extends AbstractLanguageDeclension {
-    public ArticledDeclension(HumanLanguage language) {
-		super(language);
-	}
+    protected ArticledDeclension(HumanLanguage language) {
+        super(language);
+    }
 
-	@Override
+    @Override
     public final boolean hasArticle() {
         return true;
     }
@@ -213,10 +213,6 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
         public Noun clone() {
             SimpleArticledPluralNoun noun = (SimpleArticledPluralNoun) super.clone();
             return noun;
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

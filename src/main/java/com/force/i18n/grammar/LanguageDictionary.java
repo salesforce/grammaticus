@@ -64,12 +64,12 @@ public final class LanguageDictionary implements Serializable {
     // instances; but it would have to be concurrent.
     // TODO: "TableEnumOrId" should be stored on each Noun, right?
     /** For UI support. keyed by TableEnumOrId to HashMap(name, NounType) */
-    private final Multimap<String, Noun> nounsByEntityType;
+    private transient Multimap<String, Noun> nounsByEntityType;
 
     public LanguageDictionary(HumanLanguage language) {
         this.language = language;
         this.declension = LanguageDeclensionFactory.get().getDeclension(language);
-        this.nounsByEntityType = ArrayListMultimap.create();
+        this.nounsByEntityType = HashMultimap.create();
     }
 
     /**
@@ -94,20 +94,29 @@ public final class LanguageDictionary implements Serializable {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof LanguageDictionary)) return false;
+        if (this == o) return true;
 
-        LanguageDictionary l = (LanguageDictionary)o;
+        if (o instanceof LanguageDictionary) {
+            LanguageDictionary l = (LanguageDictionary)o;
 
-        return this.language == l.language && this.adjectiveMap.equals(l.adjectiveMap) && this.nounMap.equals(l.nounMap)
-                && this.nounsByEntityType.equals(l.nounsByEntityType);
+            return this.language == l.language
+                    && this.nounMap.equals(l.nounMap)
+                    && this.adjectiveMap.equals(l.adjectiveMap)
+                    && this.articleMap.equals(l.articleMap)
+                    && this.nounMapByPluralAlias.equals(l.nounMapByPluralAlias)
+                    && this.nounsByEntityType.equals(l.nounsByEntityType);
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
         int hash = super.hashCode();
         hash = 37 * hash + ((null != language) ? language.hashCode() : 0);
-        hash = 37 * hash + ((null != adjectiveMap) ? adjectiveMap.hashCode() : 0);
         hash = 37 * hash + ((null != nounMap) ? nounMap.hashCode() : 0);
+        hash = 37 * hash + ((null != adjectiveMap) ? adjectiveMap.hashCode() : 0);
+        hash = 37 * hash + ((null != articleMap) ? articleMap.hashCode() : 0);
+        hash = 37 * hash + ((null != nounMapByPluralAlias) ? nounMapByPluralAlias.hashCode() : 0);
         hash = 37 * hash + ((null != nounsByEntityType) ? nounsByEntityType.hashCode() : 0);
         return hash;
     }
@@ -121,8 +130,13 @@ public final class LanguageDictionary implements Serializable {
     }
 
     public Noun createNoun(String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender, String access, boolean isStandardField, boolean isCopied) {
+        if (entityName != null && entityName.isEmpty()) entityName = null;
         Noun n = getDeclension().createNoun(name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopied);
-        if (entityName != null) nounsByEntityType.put(intern(entityName.toLowerCase()), n);  // Add to the noun map
+
+        // Add to the noun map
+        if (entityName != null) {
+            nounsByEntityType.put(intern(entityName.toLowerCase()), n);
+        }
         return n;
     }
 
@@ -338,12 +352,12 @@ public final class LanguageDictionary implements Serializable {
         if (term instanceof Noun) {
             Noun noun = (Noun) term;
             assert name.equals(((Noun)term).getName()) : "Trying to put a noun into the map at the wrong name";
-            nounMap.put(name.intern(), noun);
-            if (noun.getPluralAlias() != null) nounMapByPluralAlias.put(noun.getPluralAlias().toLowerCase().intern(), noun);
+            nounMap.put(intern(name), noun);
+            if (noun.getPluralAlias() != null) nounMapByPluralAlias.put(intern(noun.getPluralAlias().toLowerCase()), noun);
         } else if (term instanceof Article) {
-            articleMap.put(name.intern(), (Article)term);
+            articleMap.put(intern(name), (Article)term);
         } else {
-            adjectiveMap.put(name.intern(), (Adjective)term);
+            adjectiveMap.put(intern(name), (Adjective)term);
         }
     }
 
@@ -380,10 +394,12 @@ public final class LanguageDictionary implements Serializable {
 
         for (Map.Entry<String, Adjective> e : adjectiveMap.entrySet()) {
             e.getValue().validate(e.getKey());
+            e.getValue().makeSkinny();
         }
 
         for (Map.Entry<String, Article> e : articleMap.entrySet()) {
             e.getValue().validate(e.getKey());
+            e.getValue().makeSkinny();
         }
 
         if (this.nounVersionOverrides != null) {
@@ -401,14 +417,14 @@ public final class LanguageDictionary implements Serializable {
      */
     public final SortedSet<String> getNames(String tableEnum, boolean includeEntity) {
         Collection<Noun> m = nounsByEntityType.get(tableEnum.toLowerCase());
-        TreeSet<String> list = new TreeSet<String>();
+        TreeSet<String> list = new TreeSet<>();
         for (Noun noun : m) {
             String s = noun.getName();
-                // skip for the custom dummy name
-                if (s.equalsIgnoreCase(Renameable.ENTITY_NAME)) continue;
+            // skip for the custom dummy name
+            if (s.equalsIgnoreCase(Renameable.ENTITY_NAME)) continue;
 
             if (noun.getNounType() != NounType.ENTITY || includeEntity) list.add(s);
-            }
+        }
         return list;
     }
 
@@ -631,9 +647,9 @@ public final class LanguageDictionary implements Serializable {
     }
 
     private void writeObject(ObjectOutputStream out) throws IOException {
-        out.defaultWriteObject();
-
         makeSkinny(); // ensure it's "skinny"
+
+        out.defaultWriteObject();
         out.writeObject(new TermMapSerializer<>(this.nounMap));
         out.writeObject(new TermMapSerializer<>(this.nounMapByPluralAlias));
         out.writeObject(new TermMapSerializer<>(this.adjectiveMap));
@@ -648,9 +664,15 @@ public final class LanguageDictionary implements Serializable {
         this.nounMapByPluralAlias = ((TermMapSerializer<Noun>)in.readObject()).getMap();
         this.adjectiveMap = ((TermMapSerializer<Adjective>)in.readObject()).getMap();
         this.articleMap = ((TermMapSerializer<Article>)in.readObject()).getMap();
-        this.isSkinny = true;
 
         this.declension = LanguageDeclensionFactory.get().getDeclension(this.language);
+
+        this.nounsByEntityType = HashMultimap.create();
+        for (Noun n : this.nounMap.values()) {
+            if (n.getEntityName() != null) this.nounsByEntityType.put(intern(n.getEntityName().toLowerCase()), n);
+        }
+        this.nounsByEntityType = ImmutableSetMultimap.copyOf(nounsByEntityType);
+        this.isSkinny = true;
     }
 
     Noun getNounOverride(Noun n) {
@@ -706,6 +728,9 @@ public final class LanguageDictionary implements Serializable {
         nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
         adjectiveMap = ImmutableSortedMap.copyOf(adjectiveMap);
         articleMap = ImmutableSortedMap.copyOf(articleMap);
+
+        nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
+        nounsByEntityType = ImmutableSetMultimap.copyOf(nounsByEntityType);
 
         isSkinny = true; // Prevent adding anything to this dictionary set. By assumption, the nouns are skinny.
     }

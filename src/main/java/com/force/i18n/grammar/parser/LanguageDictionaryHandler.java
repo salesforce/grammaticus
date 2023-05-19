@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
@@ -363,7 +365,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             super(parent, atts);
 
             // always store as lower case
-            this.name = atts.getValue(NAME).toLowerCase().intern();
+            this.name = intern(atts.getValue(NAME).toLowerCase());
             LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
             if (starts == null) starts = parser.getDictionary().getDeclension().getDefaultStartsWith();
             LanguagePosition position = LanguagePosition.fromDbValue(atts.getValue(POSITION));
@@ -413,7 +415,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             super(parent, atts);
 
             // always store as lower case
-            this.name = atts.getValue(NAME).toLowerCase().intern();
+            this.name = intern(atts.getValue(NAME).toLowerCase());
             LanguageArticle articleType = LanguageArticle.fromLabelValue(atts.getValue(TYPE));
             this.art = parser.getDictionary().getOrCreateArticle(name, articleType);
             // We're reparsing the same noun.  Create it instead

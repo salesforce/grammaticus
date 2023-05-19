@@ -70,7 +70,7 @@ class HungarianDeclension extends ArticledDeclension {
 
 
     public HungarianDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<HungarianNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<HungarianNounForm> fieldBuilder = ImmutableList.builder();
@@ -216,7 +216,7 @@ class HungarianDeclension extends ArticledDeclension {
     public static class HungarianArticle extends Article {
         private static final long serialVersionUID = 1L;
 
-        private Map<HungarianArticleForm, String> values = new HashMap<>();
+        private Map<HungarianArticleForm, String> values = new EnumMap<>(HungarianArticleForm.class);
 
         HungarianArticle(ArticledDeclension declension, String name, LanguageArticle articleType) {
             super(declension, name, articleType);

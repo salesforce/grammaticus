@@ -10,30 +10,15 @@ package com.force.i18n.grammar.impl;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageConstants;
-import com.force.i18n.grammar.AbstractLanguageDeclension;
-import com.force.i18n.grammar.Adjective;
-import com.force.i18n.grammar.AdjectiveForm;
-import com.force.i18n.grammar.LanguageArticle;
-import com.force.i18n.grammar.LanguageCase;
-import com.force.i18n.grammar.LanguageDeclension;
-import com.force.i18n.grammar.LanguageGender;
-import com.force.i18n.grammar.LanguageNumber;
-import com.force.i18n.grammar.LanguagePosition;
-import com.force.i18n.grammar.LanguagePossessive;
-import com.force.i18n.grammar.LanguageStartsWith;
-import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.Noun.NounType;
-import com.force.i18n.grammar.NounForm;
 import com.google.common.collect.ImmutableList;
+
 /**
  * An implementation of declension of a language that doesn't use different forms for nouns.
  *
@@ -49,7 +34,7 @@ class SimpleDeclension extends AbstractLanguageDeclension {
     }
 
     // Nice classes that can be reused for languages with little or no inflection
-    public static enum SimpleNounForm implements NounForm {
+    public enum SimpleNounForm implements NounForm {
         SINGULAR
         ;
 
@@ -78,10 +63,6 @@ class SimpleDeclension extends AbstractLanguageDeclension {
 
         SimpleNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

@@ -190,10 +190,6 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
             }
 
             @Override
-            public void makeSkinny() {
-            }
-
-            @Override
             public Map<? extends NounForm, String> getAllDefinedValues() {
                 return enumMapFilterNulls(IrishNounForm.SINGULAR, singular, IrishNounForm.PLURAL, plural, IrishNounForm.SINGULAR_GEN, singular_gen,
                         IrishNounForm.PLURAL_GEN, plural_gen);
@@ -438,10 +434,6 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
             PersianNoun(PersianDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
                 super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
-            }
-
-            @Override
-            public void makeSkinny() {
             }
 
             @Override

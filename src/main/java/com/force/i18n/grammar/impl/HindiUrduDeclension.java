@@ -37,7 +37,7 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
     private static EnumSet<LanguageGender> GENDER_TYPES = EnumSet.of(LanguageGender.FEMININE, LanguageGender.MASCULINE);
 
     HindiUrduDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
     }
 
     /**
@@ -76,7 +76,7 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
         @Override
         public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
                 throws IOException {
-			a.append(genderVar+"+"+termFormVar+".substr(1)");
+            a.append(genderVar+"+"+termFormVar+".substr(1)");
         }
     }
 
@@ -114,10 +114,6 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
 
         HindiUrduNoun(HindiUrduDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

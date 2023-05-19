@@ -23,13 +23,13 @@ import com.google.common.collect.ImmutableMap;
  */
 class ItalianDeclension extends RomanceDeclension {
     public ItalianDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
-	/**
+    /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum ItalianModifierForm implements AdjectiveForm, ArticleForm {
+    public enum ItalianModifierForm implements AdjectiveForm, ArticleForm {
         // TODO: are all of these necessary?
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE, LanguageStartsWith.CONSONANT),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE, LanguageStartsWith.CONSONANT),
@@ -68,7 +68,7 @@ class ItalianDeclension extends RomanceDeclension {
         @Override
         public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
                 throws IOException {
-			a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
+            a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
         }
     }
 

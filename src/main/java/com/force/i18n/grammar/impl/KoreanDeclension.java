@@ -29,24 +29,25 @@ import com.google.common.collect.ImmutableList;
  */
 public class KoreanDeclension extends AbstractLanguageDeclension implements WithClassifiers {
 
-	private static final Logger logger = Logger.getLogger(KoreanDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(KoreanDeclension.class.getName());
 
-	public KoreanDeclension(HumanLanguage language) {
-		super(language);
+    public KoreanDeclension(HumanLanguage language) {
+        super(language);
         assert language.getLocale().getLanguage().equals("ko") : "Initializing a language that isn't korean";
-	}
+    }
 
     /**
      * Korean particles differ based on whether the previous noun ended with a vowel or a consonant.
      * We use "adjective" for this to be simpler.
      */
-    public static enum KoreanAdjectiveForm implements AdjectiveForm {
+    public enum KoreanAdjectiveForm implements AdjectiveForm {
         PREV_CONSONANT(LanguageStartsWith.CONSONANT),
         PREV_VOWEL(LanguageStartsWith.VOWEL),
         PREV_FLAP(LanguageStartsWith.SPECIAL),  // ㄹ should be treated like a consonant, except with the instrumental case particle
         ;
 
         private final LanguageStartsWith prevEndsWith;
+
         private KoreanAdjectiveForm(LanguageStartsWith prevEndsWith) {
             this.prevEndsWith = prevEndsWith;
         }
@@ -55,26 +56,27 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         @Override public LanguageGender getGender() { return LanguageGender.NEUTER; }
         @Override public LanguageNumber getNumber() { return LanguageNumber.SINGULAR; }
         @Override public LanguageStartsWith getStartsWith() {return this.prevEndsWith; }
-		@Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
-		@Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+        @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO; }
+        @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
         static KoreanAdjectiveForm getForm(ModifierForm form) {
-        	switch (form.getStartsWith()) {
-        	case VOWEL: return PREV_VOWEL;
-        	case SPECIAL: return PREV_FLAP;
-        	case CONSONANT: return PREV_CONSONANT;
-        	}
-        	return PREV_CONSONANT;
+            switch (form.getStartsWith()) {
+            case VOWEL: return PREV_VOWEL;
+            case SPECIAL: return PREV_FLAP;
+            case CONSONANT: return PREV_CONSONANT;
+            }
+            return PREV_CONSONANT;
         }
 
-		@Override
-		public String getKey() {
-			return prevEndsWith.getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(startsWithVar);  // The noun form is the startsWithVar.
-		}
+        @Override
+        public String getKey() {
+            return prevEndsWith.getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(startsWithVar);  // The noun form is the startsWithVar.
+        }
     }
 
     /**
@@ -94,8 +96,8 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         @Override
         public Map<? extends AdjectiveForm, String> getAllValues() {
             return enumMapFilterNulls(KoreanAdjectiveForm.PREV_VOWEL, prevEndsWithVowel,
-            		KoreanAdjectiveForm.PREV_CONSONANT, prevEndsWithConsonant,
-            		KoreanAdjectiveForm.PREV_FLAP, prevEndsWithSpecial);
+                    KoreanAdjectiveForm.PREV_CONSONANT, prevEndsWithConsonant,
+                    KoreanAdjectiveForm.PREV_FLAP, prevEndsWithSpecial);
         }
 
         @Override
@@ -167,7 +169,7 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
 
         @Override
         public final String getString(NounForm form) {
-        	return this.value;
+            return this.value;
         }
 
         @Override
@@ -216,10 +218,6 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         }
 
         @Override
-        public void makeSkinny() {
-        }
-
-        @Override
         public void setClassifier(String classifier) {
             this.classifier = intern(classifier);
         }
@@ -255,19 +253,19 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
 
     @Override
     public Adjective createAdjective(String name, LanguageStartsWith startsWith, LanguagePosition position) {
-    	// It isn't starts with, it's end with here.
+        // It isn't starts with, it's end with here.
         return new KoreanAdjective(this, name, position);
     }
 
     @Override
     public AdjectiveForm getAdjectiveForm(LanguageStartsWith startsWith, LanguageGender gender, LanguageNumber number,
             LanguageCase _case, LanguageArticle article, LanguagePossessive possessive) {
-    	switch (startsWith) {
-    	case VOWEL: return KoreanAdjectiveForm.PREV_VOWEL;
-    	case SPECIAL: return KoreanAdjectiveForm.PREV_FLAP;
-    	default:
-    	}
-    	return KoreanAdjectiveForm.PREV_CONSONANT;
+        switch (startsWith) {
+        case VOWEL: return KoreanAdjectiveForm.PREV_VOWEL;
+        case SPECIAL: return KoreanAdjectiveForm.PREV_FLAP;
+        default:
+        }
+        return KoreanAdjectiveForm.PREV_CONSONANT;
     }
 
     @Override
@@ -286,9 +284,9 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
     }
 
     @Override
-	public boolean hasEndsWith() {
-    	return true;
-	}
+    public boolean hasEndsWith() {
+        return true;
+    }
 
     @Override
     public boolean hasPlural() {
@@ -300,7 +298,7 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         return false;
     }
 
-	@Override
+    @Override
     public EnumSet<LanguageStartsWith> getRequiredStartsWith() {
         return EnumSet.of(LanguageStartsWith.CONSONANT, LanguageStartsWith.VOWEL, LanguageStartsWith.SPECIAL);  // Only generally care about consonant.
     }
