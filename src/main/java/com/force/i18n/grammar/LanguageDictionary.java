@@ -152,7 +152,7 @@ public final class LanguageDictionary implements Serializable {
     public Noun createNoun(String tableEnumOrId, NounType type, ResultSet rs, Uniquefy uniquefy) throws SQLException {
         LanguageStartsWith starts = LanguageStartsWith.fromDbValue(rs.getString("STARTS_WITH"));
         LanguageGender gen = LanguageGender.fromDbValue(rs.getString("GENDER"));
-        String name = uniquefy.unique(rs.getString("NAME"));
+        String name = rs.getString("NAME");
         return createNoun(name, null, type, tableEnumOrId, starts, gen, null, false, false);
     }
 

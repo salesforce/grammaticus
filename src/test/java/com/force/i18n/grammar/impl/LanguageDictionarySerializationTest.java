@@ -53,6 +53,7 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
      * Chances are you should run this again in the production environment, that's why there's
      * a test version so you don't have tests that run forever
      */
+    @Test
     public void testDeclensionInvariants() throws Exception {
         declensionInvariantTester(LanguageProviderFactory.get().getAll());
     }

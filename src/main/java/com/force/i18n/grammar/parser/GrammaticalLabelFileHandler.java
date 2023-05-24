@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -174,10 +176,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             this.parent = parent;
             this.attributes = atts;
             if (atts != null) {
-                this.name = getParser().uniquefy(atts.getValue(NAME));
+                String n = atts.getValue(NAME);
+                this.name = (n != null) ? intern(n.trim()) : null;
 ///CLOVER:OFF
-            if (this.name == null && isNameRequired())
-                throw new SAXParseException("Missing required attribuite:" + NAME, getLocator());
+                if (this.name == null && isNameRequired())
+                    throw new SAXParseException("Missing required attribuite:" + NAME, getLocator());
 ///CLOVER:ON
             }
         }
@@ -364,17 +367,16 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
             currentParam = this;
         }
 
-
         @Override
         boolean isNameRequired() {
             return true;
         }
 
         @Override
-		void endElement() {
-			super.endElement();
+        void endElement() {
+            super.endElement();
             currentParam = null;
-		}
+        }
 
 		@Override
         void addLabelDataToParent(Object data) {
