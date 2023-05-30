@@ -19,6 +19,7 @@ import java.util.TimeZone;
 import org.junit.Assert;
 
 import com.force.i18n.*;
+import com.force.i18n.commons.util.settings.SimpleNonConfigIniFile;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
@@ -33,6 +34,13 @@ import com.google.common.collect.ImmutableMap;
  */
 public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
     private static final Locale chineseLocale = new Locale("zh", "China");
+    
+    private static class TestSimpleIniFile extends SimpleNonConfigIniFile implements SharedLabelSet {
+        @Override
+        public boolean labelExists(String section, String param) {
+            return getString(section, param, null) != null;
+        }
+    }
 
     public GrammaticalLocalizerTest(String name) {
     	super(name);
@@ -56,6 +64,29 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
 		super.tearDown();
 	}
 
+    private SharedLabelSet getIniFile() {
+        //SharedLabelSet ini = new SharedLabelSetImpl("config/labels/localizerLabels.xml");
+
+        TestSimpleIniFile ini = new TestSimpleIniFile();
+
+        ini.set("section1", "label1", "Section1, Label1");
+        ini.set("section1", "label2", "Section1, Label2");
+        ini.set("section1", "label3", "Section1, Label3");
+        ini.set("section1", "test_0", "Foo");
+        ini.set("section1", "test_1", "Bar");
+        ini.set("section1", "format1", "At {0,time} on {0,date,short}, {1}.");
+        ini.set("section2", "bool1", "1");
+        ini.set("section2", "bool2", "0");
+        ini.set("section2", "bool4", true);
+        ini.set("section2", "int1", "1");
+        ini.set("section2", "int2", "-1");
+        ini.set("section2", "int3", 0);
+        ini.set("section2", "real", 3.14f);
+        ini.set("section3", "password", "UseModernCrypto!");
+
+        return ini;
+    }
+    
 	//@NotThreadSafe
     public void testGrammaticalLocalizerFactory() {
     	GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
@@ -181,7 +212,10 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
             chineseLocale)).toPattern();
         Assert.assertTrue(temp.indexOf("yyyy") == -1);
 
-        DateFormat dt = BaseLocalizer.getLocaleDateTimeFormat(chineseLocale, tz);
+        SharedLabelSet lSet = getIniFile();
+        BaseLocalizer chineseLocalizer = new BaseLocalizer(chineseLocale, chineseLocale, tz, HumanLanguage.Helper.get(Locale.US), lSet);
+        
+        DateFormat dt = chineseLocalizer.getLocaleDateTimeFormat(chineseLocale, tz);
         String pattern2 = ((SimpleDateFormat)dt).toPattern();
 
         //Verify that convertToDigitsYear works

@@ -646,7 +646,7 @@ public class BaseLocalizer {
      * @return a parsed date type.
      * @throws ParseException on an invalid date string
      */
-    public static Date parseDate(String input, int style, Locale locale, TimeZone tz) throws ParseException {
+    public Date parseDate(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseDate(input, getLocaleInputDateFormat(locale, style, tz));
     }
 
@@ -676,7 +676,7 @@ public class BaseLocalizer {
      * @return a parsed date type.
      * @throws ParseException on an invalid date string
      */
-    public static Date parseDateTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
+    public Date parseDateTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseDate(input, getLocaleInputDateTimeFormat(locale, style, tz));
     }
 
@@ -715,7 +715,7 @@ public class BaseLocalizer {
      * @return a parsed date type.
      * @throws ParseException on an invalid date string
      */
-    public static Date parseTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
+    public Date parseTime(String input, int style, Locale locale, TimeZone tz) throws ParseException {
         return BaseLocalizer.doParseTime(input, getLocaleInputTimeFormat(locale, style, tz));
     }
 
@@ -751,12 +751,12 @@ public class BaseLocalizer {
     public DateFormat getInputDateFormat(LocalOrGmt tz) {
         if (tz == LOCAL) {
             if (this.inputLocalDateFormat == null) {
-                this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, this.timeZone);
+                this.inputLocalDateFormat = getLocaleInputDateFormat(this.locale, this.timeZone);
             }
             return this.inputLocalDateFormat;
         } else {
             if (this.inputGmtDateFormat == null) {
-                this.inputGmtDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, GMT_TZ);
+                this.inputGmtDateFormat = getLocaleInputDateFormat(this.locale, GMT_TZ);
             }
             return this.inputGmtDateFormat;
         }
@@ -772,7 +772,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputDateFormat() {
         if (this.inputLocalDateFormat == null) {
-            this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, this.timeZone);
+            this.inputLocalDateFormat = getLocaleInputDateFormat(this.locale, this.timeZone);
         }
         return this.inputLocalDateFormat;
     }
@@ -787,7 +787,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputMediumDateFormat() {
         if (this.inputLocalMediumDateFormat == null) {
-            this.inputLocalMediumDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputLocalMediumDateFormat = getLocaleInputDateFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
         }
         return this.inputLocalMediumDateFormat;
     }
@@ -802,7 +802,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputLongDateFormat() {
         if (this.inputLocalLongDateFormat == null) {
-            this.inputLocalLongDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLocalLongDateFormat = getLocaleInputDateFormat(this.locale, DateFormat.LONG, this.timeZone);
         }
         return this.inputLocalLongDateFormat;
     }
@@ -818,7 +818,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date-only DateFormat.
      */
-    public static DateFormat getLocaleInputDateFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleInputDateFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
 
         df.setLenient(false);
@@ -837,7 +837,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date-only DateFormat.
      */
-    public static DateFormat getLocaleInputDateFormat(Locale locale, int style, TimeZone tz) {
+    public DateFormat getLocaleInputDateFormat(Locale locale, int style, TimeZone tz) {
         DateFormat df;
         switch (style) {
             case DateFormat.SHORT:
@@ -899,7 +899,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputDateTimeFormat() {
         if (this.inputDateTimeFormat == null) {
-            this.inputDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, this.timeZone);
+            this.inputDateTimeFormat = getLocaleInputDateTimeFormat(this.locale, this.timeZone);
         }
         return this.inputDateTimeFormat;
     }
@@ -915,7 +915,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputMediumDateTimeFormat() {
         if (this.inputMediumDateTimeFormat == null) {
-            this.inputMediumDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputMediumDateTimeFormat = getLocaleInputDateTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
         }
         return this.inputMediumDateTimeFormat;
     }
@@ -930,7 +930,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputLongDateTimeFormat() {
         if (this.inputLongDateTimeFormat == null) {
-            this.inputLongDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLongDateTimeFormat = getLocaleInputDateTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
         }
         return this.inputLongDateTimeFormat;
     }
@@ -945,7 +945,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date and time DateFormat.
      */
-    public static DateFormat getLocaleInputDateTimeFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleInputDateTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
 
         df.setLenient(false);
@@ -966,7 +966,7 @@ public class BaseLocalizer {
      * @return a date and time DateFormat.
      */
 
-    public static DateFormat getLocaleInputDateTimeFormat(Locale locale, int style, TimeZone tz) {
+    public DateFormat getLocaleInputDateTimeFormat(Locale locale, int style, TimeZone tz) {
         DateFormat df;
         switch (style) {
             case DateFormat.SHORT:
@@ -1009,21 +1009,21 @@ public class BaseLocalizer {
 
     public DateFormat getInputTimeFormat() {
         if (this.inputLocalTimeFormat == null) {
-            this.inputLocalTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.SHORT, this.timeZone);
+            this.inputLocalTimeFormat = getLocaleInputTimeFormat(this.locale, DateFormat.SHORT, this.timeZone);
         }
         return this.inputLocalTimeFormat;
     }
 
     public DateFormat getInputMediumTimeFormat() {
         if (this.inputLocalMediumTimeFormat == null) {
-            this.inputLocalMediumTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputLocalMediumTimeFormat = getLocaleInputTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
         }
         return this.inputLocalMediumTimeFormat;
     }
 
     public DateFormat getInputLongTimeFormat() {
         if (this.inputLocalLongTimeFormat == null) {
-            this.inputLocalLongTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLocalLongTimeFormat = getLocaleInputTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
         }
         return this.inputLocalLongTimeFormat;
     }
@@ -1036,7 +1036,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a date-only DateFormat.
      */
-    public static DateFormat getLocaleInputTimeFormat(Locale locale, int style, TimeZone tz) {
+    public DateFormat getLocaleInputTimeFormat(Locale locale, int style, TimeZone tz) {
         DateFormat df;
 
         switch (style) {
@@ -1139,7 +1139,7 @@ public class BaseLocalizer {
      * @param tz TimeZone
      * @return a formatted date string.
      */
-    public static String formatTime(Date date, int style, Locale locale, TimeZone tz) {
+    public String formatTime(Date date, int style, Locale locale, TimeZone tz) {
         return (date == null) ? null : getLocaleTimeFormat(style, locale, tz).format(date);
     }
 
@@ -1172,7 +1172,7 @@ public class BaseLocalizer {
      * @param tz TimeZone
      * @return a formatted date string.
      */
-    public static String formatDate(Date date, int style, Locale locale, TimeZone tz) {
+    public String formatDate(Date date, int style, Locale locale, TimeZone tz) {
     	    return (date == null) ? null : getLocaleDateFormat(style, locale, tz).format(date);
     }
 
@@ -1206,7 +1206,7 @@ public class BaseLocalizer {
      * @param tz TimeZone
      * @return a formatted date string.
      */
-    public static String formatDateTime(Date date, int style, Locale locale, TimeZone tz) {
+    public String formatDateTime(Date date, int style, Locale locale, TimeZone tz) {
 	    return (date == null) ? null : getLocaleDateTimeFormat(style, locale, tz).format(date);
     }
 
@@ -1218,7 +1218,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat.
      */
-	public static DateFormat getLocaleDateFormat(int style, Locale locale, TimeZone tz) {
+	public DateFormat getLocaleDateFormat(int style, Locale locale, TimeZone tz) {
 		DateFormat df;
 		switch (style) {
 		case DateFormat.SHORT:
@@ -1270,12 +1270,12 @@ public class BaseLocalizer {
     public DateFormat getDateFormat(LocalOrGmt tz) {
         if (tz == LOCAL) {
             if (this.localDateFormat == null) {
-                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, this.timeZone);
+                this.localDateFormat = getLocaleDateFormat(this.locale, this.timeZone);
             }
             return this.localDateFormat;
         } else {
             if (this.gmtDateFormat == null) {
-                this.gmtDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, GMT_TZ);
+                this.gmtDateFormat = getLocaleDateFormat(this.locale, GMT_TZ);
             }
             return this.gmtDateFormat;
         }
@@ -1289,7 +1289,7 @@ public class BaseLocalizer {
      */
     public DateFormat getDateFormat() {
             if (this.localDateFormat == null) {
-                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, this.timeZone);
+                this.localDateFormat = getLocaleDateFormat(this.locale, this.timeZone);
             }
             return this.localDateFormat;
     }
@@ -1303,7 +1303,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat.
      */
-    public static DateFormat getLocaleDateFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleDateFormat(Locale locale, TimeZone tz) {
         DateFormat df = BaseLocalizer.convertTo4DigitYear(getFormatProvider(locale).getDateInstance(DateFormat.SHORT,
             locale), locale);
         df.setLenient(false);
@@ -1350,7 +1350,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat.
      */
-	public static DateFormat getLocaleTimeFormat(int style, Locale locale, TimeZone tz) {
+	public DateFormat getLocaleTimeFormat(int style, Locale locale, TimeZone tz) {
 		DateFormat df;
 		switch (style) {
 		case DateFormat.SHORT:
@@ -1483,7 +1483,7 @@ public class BaseLocalizer {
      */
     public DateFormat getDateTimeFormat() {
         if (this.dateTimeFormat == null) {
-            this.dateTimeFormat = BaseLocalizer.getLocaleDateTimeFormat(this.locale, this.timeZone);
+            this.dateTimeFormat = getLocaleDateTimeFormat(this.locale, this.timeZone);
         }
         return this.dateTimeFormat;
     }
@@ -1496,7 +1496,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat instance
      */
-	public static DateFormat getLocaleDateTimeFormat(int style, Locale locale, TimeZone tz) {
+	public DateFormat getLocaleDateTimeFormat(int style, Locale locale, TimeZone tz) {
 		DateFormat df;
 		switch (style) {
 		case DateFormat.SHORT:
@@ -1547,7 +1547,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat instance with short date and time format
      */
-    public static DateFormat getLocaleDateTimeFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleDateTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = BaseLocalizer.convertTo4DigitYear(getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT,
             DateFormat.SHORT, locale), locale);
         df.setLenient(false);
@@ -1562,7 +1562,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat instance with short time format
      */
-    public static DateFormat getLocaleTimeFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
         df.setLenient(false);
         df.setTimeZone(tz);
@@ -1576,7 +1576,7 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat instance with medium time format
      */
-    public static DateFormat getLocaleMediumTimeFormat(Locale locale, TimeZone tz) {
+    public DateFormat getLocaleMediumTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
         df.setLenient(false);
         df.setTimeZone(tz);
