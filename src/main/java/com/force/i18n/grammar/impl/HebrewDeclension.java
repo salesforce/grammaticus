@@ -29,8 +29,8 @@ import com.google.common.collect.ImmutableList;
  */
 class HebrewDeclension extends SemiticDeclension {
     public HebrewDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
 
@@ -40,8 +40,10 @@ class HebrewDeclension extends SemiticDeclension {
         SINGULAR_DEF(LanguageNumber.SINGULAR, LanguageArticle.DEFINITE),
         PLURAL_DEF(LanguageNumber.PLURAL, LanguageArticle.DEFINITE),
         ;
+
         private final LanguageNumber number;
         private final LanguageArticle article;
+
         HebrewNounForm(LanguageNumber number, LanguageArticle article) {
             this.number = number;
             this.article = article;
@@ -73,6 +75,7 @@ class HebrewDeclension extends SemiticDeclension {
         private final LanguageNumber number;
         private final LanguageGender gender;
         private final LanguageArticle article;
+
         private HebrewModifierForm(LanguageNumber number, LanguageGender gender) {
             this(number, gender, LanguageArticle.ZERO);
         }
@@ -88,15 +91,15 @@ class HebrewDeclension extends SemiticDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return LanguageStartsWith.CONSONANT; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getGender().getDbValue() + "-" + getArticle().getDbValue() + "-" + getNumber().getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(genderVar+"+"+termFormVar+".substr(1)");
-		}
+        @Override
+        public String getKey() {
+            return getGender().getDbValue() + "-" + getArticle().getDbValue() + "-" + getNumber().getDbValue();
+        }
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            a.append(genderVar+"+"+termFormVar+".substr(1)");
+        }
     }
 
     private static final String DEFAULT_DEFINITE_PREFIX = "\u05d4";  // ה
@@ -111,10 +114,6 @@ class HebrewDeclension extends SemiticDeclension {
 
         HebrewNoun(HebrewDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender,String access,  boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

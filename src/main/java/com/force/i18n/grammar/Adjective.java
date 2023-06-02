@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -21,11 +21,9 @@ import com.google.common.collect.ImmutableSet;
  * @author yoikawa,stamm
  */
 public abstract class Adjective extends NounModifier {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(Adjective.class.getName());
+    private static final long serialVersionUID = 1L;
+    private static final Logger logger = Logger.getLogger(Adjective.class.getName());
+
     private final LanguagePosition position;
 
     /**

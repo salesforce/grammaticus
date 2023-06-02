@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
@@ -225,7 +227,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
         @Override
         void endElement() {
             assert getParent() != null;
-            getParent().setString(uniquefy.unique(this.sb.toString()), attribute);
+            getParent().setString(intern(this.sb.toString()), attribute);
         }
     }
 
@@ -240,12 +242,12 @@ class LanguageDictionaryHandler extends TrackingHandler {
             super(parent, atts);
 
             // always store as lower case
-            this.name = uniquefy.unique(atts.getValue(NAME).toLowerCase());
+            this.name = intern(atts.getValue(NAME).toLowerCase());
             NounType type = NounType.getByApiValue(atts.getValue(TYPE));
 
-            String tableEnum = uniquefy.unique(atts.getValue(ENTITY));
+            String tableEnum = intern(atts.getValue(ENTITY));
             String access = atts.getValue(ACCESS);
-            String alias = uniquefy.unique(atts.getValue(ALIAS));
+            String alias = uniquefy.unique(atts.getValue(ALIAS)); // use local uniquefy 'cause it's temporally
             LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
             LanguageGender gen = LanguageGender.fromLabelValue(atts.getValue(GENDER));
             boolean isStandardField = (atts.getValue(STANDARDFIELD) == null ? true : atts
@@ -257,7 +259,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             if (parser.hasParentDictionarySameLang() && this.n == parser.getParentDictionary().getNoun(name, false)) {
                 this.n = this.n.clone(gen, starts);
             }
-            String classifier = uniquefy.unique(atts.getValue(COUNTER));
+            String classifier = intern(atts.getValue(COUNTER));
             if (classifier != null) {
                 if (n instanceof Noun.WithClassifier) {
                     ((Noun.WithClassifier)n).setClassifier(classifier);
@@ -363,7 +365,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             super(parent, atts);
 
             // always store as lower case
-            this.name = atts.getValue(NAME).toLowerCase().intern();
+            this.name = intern(atts.getValue(NAME).toLowerCase());
             LanguageStartsWith starts = LanguageStartsWith.fromDbValue(atts.getValue(ENDS) != null ? atts.getValue(ENDS) : atts.getValue(STARTS));
             if (starts == null) starts = parser.getDictionary().getDeclension().getDefaultStartsWith();
             LanguagePosition position = LanguagePosition.fromDbValue(atts.getValue(POSITION));
@@ -413,7 +415,7 @@ class LanguageDictionaryHandler extends TrackingHandler {
             super(parent, atts);
 
             // always store as lower case
-            this.name = atts.getValue(NAME).toLowerCase().intern();
+            this.name = intern(atts.getValue(NAME).toLowerCase());
             LanguageArticle articleType = LanguageArticle.fromLabelValue(atts.getValue(TYPE));
             this.art = parser.getDictionary().getOrCreateArticle(name, articleType);
             // We're reparsing the same noun.  Create it instead

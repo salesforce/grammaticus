@@ -163,6 +163,7 @@ class BengaliDeclension extends ArticledDeclension {
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
+            makeSkinny();
         }
     }
 

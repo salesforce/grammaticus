@@ -149,12 +149,15 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
         // Override read and write, or else you'll get mysterious exception
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
+
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
 
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
+
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
+            makeSkinny();
         }
     }
 

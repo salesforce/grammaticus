@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
+
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -62,8 +64,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
      */
     public GrammaticalLabelFileParser(LanguageDictionary dictionary, LabelSetDescriptor labelDesc, GrammaticalLabelSetProvider parentProvider) throws IOException {
         this(dictionary, labelDesc, parentProvider,
-        		dictionary.getLanguage() == LanguageProviderFactory.get().getBaseLanguage()
-        		&& isDupeLabelTrackingEnabled());
+                dictionary.getLanguage() == LanguageProviderFactory.get().getBaseLanguage()
+                && isDupeLabelTrackingEnabled());
     }
 
     public GrammaticalLabelFileParser(LanguageDictionary dictionary, LabelSetDescriptor labelDesc, GrammaticalLabelSetProvider parentProvider, boolean trackDupes) {
@@ -90,12 +92,12 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
                 }
             }
         } else {
-        	if(this.desc.hasModularizedFiles()) {
-        		for(URL modularizedFile : this.desc.getModularizedFiles()) {
-        			found = true;
-        			parseLabels(data, modularizedFile);
-        		}
-        	} else if (TrackingHandler.exists(this.desc.getRootFile())) {
+            if(this.desc.hasModularizedFiles()) {
+                for(URL modularizedFile : this.desc.getModularizedFiles()) {
+                    found = true;
+                    parseLabels(data, modularizedFile);
+                }
+            } else if (TrackingHandler.exists(this.desc.getRootFile())) {
                 // Parse english labels
                 found = true;
                 parseLabels(data, this.desc.getRootFile());
@@ -178,11 +180,11 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     }
 
     static boolean isDupeLabelTrackingEnabled() {
-    	return false;
+        return false;
     }
 
     String uniquefy(String label) {
-        return this.uniquefy.unique(label);
+        return uniquefy.unique(label);
     }
 
     void trackLabel(String label, String location) {
@@ -302,7 +304,8 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         }
 
         LabelRef makeLabelRef(String section, String param) {
-            return aliasUniquefy.unique(new LabelRef(uniquefy(section), uniquefy(param)));
+            // use inern(String) for section/param name as these are always reused
+            return aliasUniquefy.unique(new LabelRef(intern(section), intern(param)));
         }
 
         @Override
@@ -357,11 +360,11 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     }
 
     void removeAlias(String srcSection, String srcParam) {
-        if (this.aliasMap != null) {
-            String k = getKey(srcSection, srcParam);
-            if (this.aliasMap.containsKey(k)) {
-                this.aliasMap.remove(k);
-            }
+        assert this.aliasMap != null;
+
+        String k = getKey(srcSection, srcParam);
+        if (this.aliasMap.containsKey(k)) {
+            this.aliasMap.remove(k);
         }
     }
 
@@ -396,7 +399,6 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             }
         }
         assert this.aliasMap.isEmpty() : "Unresolved aliases: " + this.aliasMap;
-        this.uniquefy = null;
         this.aliasUniquefy = null;
     }
 
@@ -434,7 +436,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
                 Set<String> localRefSet = refSet;
                 if (refSet == null) {
                     // means this is the top level (or maybe middle) of alias chain
-                    localRefSet = new HashSet<String>();
+                    localRefSet = new HashSet<>();
                 } else {
                     // recursively called from alias chain. add to the chain list
                     refSet.add(ap.getKey());
@@ -460,7 +462,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         return retValue;
     }
 
-    public static enum ErrorType {
+    public enum ErrorType {
         // noun does not exist
         UnknownEntity("Unknown entity <{0}>"),
         // bad alias -- circular reference

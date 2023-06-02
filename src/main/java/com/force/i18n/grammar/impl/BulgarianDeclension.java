@@ -65,8 +65,8 @@ import com.google.common.collect.ImmutableList;
  */
 class BulgarianDeclension extends AbstractLanguageDeclension {
     public BulgarianDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     private static final Logger logger = Logger.getLogger(BulgarianDeclension.class.getName());
 
@@ -90,6 +90,7 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         private final LanguageGender gender;
         private final LanguageArticle article;
         private final LanguageCase caseType;
+
         private BulgarianModifierForm(LanguageNumber number, LanguageGender gender) {
             this(number, gender, LanguageArticle.ZERO);
         }
@@ -123,7 +124,7 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         }
     }
 
-    public static enum BulgarianNounForm implements NounForm {
+    public enum BulgarianNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
         PLURAL(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE),
         SINGULAR_DEF(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE, LanguageArticle.DEFINITE),
@@ -134,6 +135,7 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         private final LanguageNumber number;
         private final LanguageCase caseType;
         private final LanguageArticle article;
+
         BulgarianNounForm(LanguageNumber number, LanguageCase caseType) {
             this(number, caseType, LanguageArticle.ZERO);
         }
@@ -149,7 +151,7 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         @Override public LanguageNumber getNumber() {return this.number;}
         @Override
         public String getKey() {
-            return getCase().getDbValue()+"-"+getNumber().getDbValue()+"-"+getArticle().getDbValue();
+            return getCase().getDbValue() + "-" + getNumber().getDbValue() + "-" + getArticle().getDbValue();
         }
     }
 
@@ -256,10 +258,6 @@ class BulgarianDeclension extends AbstractLanguageDeclension {
         public Noun clone() {
             BulgarianNoun noun = (BulgarianNoun) super.clone();
             return noun;
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

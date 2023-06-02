@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -33,11 +33,4 @@ public interface NounForm extends GrammaticalForm {
      * @return the possessive associated with this noun form
      */
     LanguagePossessive getPossessive();
-
-    /**
-     * @return a HTML compatible screen that can be used to represent this noun
-     * form uniquely when compared to all other noun forms.
-     */
-    @Override
-    String getKey();
 }

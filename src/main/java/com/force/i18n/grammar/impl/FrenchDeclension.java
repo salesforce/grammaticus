@@ -23,13 +23,13 @@ import com.google.common.collect.ImmutableMap;
  */
 class FrenchDeclension extends RomanceDeclension {
     public FrenchDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
-	/**
+    /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum FrenchModifierForm implements AdjectiveForm, ArticleForm {
+    public enum FrenchModifierForm implements AdjectiveForm, ArticleForm {
         // TODO: are all of these necessary?
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE, LanguageStartsWith.CONSONANT),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE, LanguageStartsWith.CONSONANT),
@@ -56,15 +56,15 @@ class FrenchDeclension extends RomanceDeclension {
         @Override public LanguageGender getGender() {return this.gender;}
         @Override public LanguageStartsWith getStartsWith() { return startsWith; }
         @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
-		@Override
-		public String getKey() {
-			return getNumber().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
-		}
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
-		}
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getGender().getDbValue() + "-" + getStartsWith().getDbValue();
+        }
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+            throws IOException {
+            a.append(termFormVar+".substr(0,2)+"+genderVar+"+'-'+"+startsWithVar);
+        }
     }
 
     protected static class FrenchAdjective extends Adjective {
@@ -241,10 +241,10 @@ class FrenchDeclension extends RomanceDeclension {
      */
     static class RomanshDeclension extends FrenchDeclension {
         public RomanshDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		private static final EnumMap<FrenchModifierForm, String> RM_INDEFINITE_ARTICLE =
+        private static final EnumMap<FrenchModifierForm, String> RM_INDEFINITE_ARTICLE =
             new EnumMap<>(ImmutableMap.<FrenchModifierForm,String>builder()
                     .put(FrenchModifierForm.SINGULAR_FEMININE, "ina ")
                     .put(FrenchModifierForm.SINGULAR_MASCULINE, "in ")

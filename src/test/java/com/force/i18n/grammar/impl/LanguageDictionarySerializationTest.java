@@ -1,21 +1,24 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.impl;
 
 import java.io.*;
-import java.util.IdentityHashMap;
-import java.util.List;
+import java.lang.reflect.Field;
+import java.util.*;
 import java.util.logging.Logger;
+
+import org.junit.Test;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest;
+import com.google.common.collect.Multimap;
 
 /**
  * Test various issues around serialization of Dictionaries and NounForms, along with invariant testing
@@ -43,22 +46,23 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
     /**
      * Group of tests that verify that *all* noun forms, if they are Complex,
      * have the ordinal match the index into the list, or they are an enum.
-     * 
+     *
      * These tests are broken up by language type to avoid test timeouts.
      * Standard languages are further divided since they were flapping.
-     * 
+     *
      * Chances are you should run this again in the production environment, that's why there's
      * a test version so you don't have tests that run forever
      */
+    @Test
     public void testDeclensionInvariants() throws Exception {
         declensionInvariantTester(LanguageProviderFactory.get().getAll());
     }
 
-    
+
     /**
      * Helper method for testDeclensionInvariant* test methods.
-     * 
-     * @param langs - list of languages to test 
+     *
+     * @param langs - list of languages to test
      * @throws Exception
      */
     private void declensionInvariantTester(List<? extends HumanLanguage> langs) throws Exception {
@@ -73,6 +77,43 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
         }
     }
 
+    @SuppressWarnings("unchecked")
+    private <T> T getPrivateField(LanguageDictionary dict, String name) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+        Field f = LanguageDictionary.class.getDeclaredField(name);
+        f.setAccessible(true);
+
+        return (T) f.get(dict);
+    }
+
+    // ensure noun is shared across internal maps
+    private void validateFields(LanguageDictionary dict) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+        final String SINGULAR = "account";
+        final String PLUARL = "accounts";
+
+        Map<String, Noun> nounMap = getPrivateField(dict, "nounMap");
+        Multimap<String, Noun> nounsByEntityType = getPrivateField(dict, "nounsByEntityType");
+
+        Noun expected = nounMap.get(SINGULAR);
+
+        Noun actual = null;
+        for (Noun n : nounsByEntityType.get(SINGULAR)) {
+            if (SINGULAR.equals(n.getName())) {
+                actual = n;
+                break;
+            }
+        }
+        assertNotNull(actual);
+        assertSame(expected, actual);
+
+        if (dict.getDeclension().hasPlural()) {
+            Map<String, Noun> nounMapByPluralAlias = getPrivateField(dict, "nounMapByPluralAlias");
+            actual = nounMapByPluralAlias.get(PLUARL);
+            assertNotNull(actual);
+            assertSame(expected, actual);
+        }
+    }
+
+    @Test
     public void testSerializeDictionary() throws Exception {
     	// TODO: This is slow, so only do the first ten
         for (HumanLanguage language : LanguageProviderFactory.get().getAll().subList(0, 10)) {
@@ -94,14 +135,16 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
 
                  start = System.nanoTime();
                  LanguageDictionary copy;
-                 
+
                  try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
                      copy = (LanguageDictionary)ois.readObject();
                  }
                  logger.info("Read " + language + " dictionary in " + (System.nanoTime() - start)/1000000 + " msec");
+                 validateFields(copy);
+
                  // Make sure the noun forms are the same
                  Noun copyNoun = copy.getNoun("account", false);
-                 IdentityHashMap<NounForm,String> identityCopyValues = new IdentityHashMap<NounForm,String>(noun.getAllDefinedValues());
+                 IdentityHashMap<NounForm, String> identityCopyValues = new IdentityHashMap<>(noun.getAllDefinedValues());
 
                  assertEquals("Serialized nouns aren't the same", noun, copyNoun);
                  assertSame("Serialized declensions are being duplicated", noun.getDeclension(), copyNoun.getDeclension());

@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import com.force.i18n.commons.text.TextUtil;
-import com.google.common.collect.ImmutableSortedMap;
 
 /**
  * A linguistic noun, containing a set of strings associated with the various noun forms
@@ -342,7 +341,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
 
         // Now number
         if (s == null && getDeclension().hasPlural() && form.getNumber() != LanguageNumber.SINGULAR) {
-        	LanguageNumber numberToTry = form.getNumber() == LanguageNumber.PLURAL ? LanguageNumber.SINGULAR :  LanguageNumber.PLURAL;  // If we're plural try singular, otherwise, like for dual, try plural
+            LanguageNumber numberToTry = form.getNumber() == LanguageNumber.PLURAL ? LanguageNumber.SINGULAR :  LanguageNumber.PLURAL;  // If we're plural try singular, otherwise, like for dual, try plural
             baseForm = getDeclension().getExactNounForm(numberToTry, form.getCase(), form.getPossessive(), form.getArticle());
             s = getString(baseForm);
         }
@@ -357,48 +356,24 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
         return "Noun-" + getDeclension().getLanguage().getLocale() + "-'" + getAllDefinedValues().get(getDeclension().getAllNounForms().iterator().next()) + "'";
     }
 
-    /**
-     * Provides clients the capability of indicating when members of Noun's can be converted to space efficient data structures.
-     */
-    public abstract void makeSkinny();
-
     @Override
-	public void toJson(Appendable appendable) throws IOException {
-    	appendable.append("{\"t\":\"n\",\"l\":\"");
-    	appendable.append(getName());
-    	appendable.append("\",");
-    	if (getDeclension().hasGender() && getGender() != null) {
-    		appendable.append("\"g\":\"").append(getGender().getDbValue()).append("\",");
-    	}
-    	if ((getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) && getStartsWith() != null) {
-    		appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
-    	}
-    	if (getDeclension().hasClassifiers() && getClassifier() != null) {
-    	    appendable.append("\"c\":\"").append(getClassifier()).append("\",");
-    	}
-    	appendable.append("\"v\":{");
-    	Map<? extends NounForm,String> allValues = getAllDefinedValues();
-    	appendable.append(new TreeMap<>(allValues).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
-    	appendable.append("}}");
-	}
-
-	/**
-     * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableSortedMap}.
-     * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
-     * overhead, that is traditionally high on most {@code Map} implementations.
-     *
-     * @param <T> the type of the noun form for this noun
-     * @param map the map to make skinny
-     * @return A {@link ImmutableSortedMap} created from a {@link Map} of {@link NounForm}'s (key) to {@link String}'s
-     *         (value).
-     */
-    public <T extends NounForm> Map<T, String> makeSkinny(Map<T, String> map) {
-        return ImmutableSortedMap.copyOf(map, new Comparator<NounForm>() {
-            @Override
-            public int compare(NounForm n1, NounForm n2) {
-                return n1.getKey().compareTo(n2.getKey());
-            }
-        });
+    public void toJson(Appendable appendable) throws IOException {
+        appendable.append("{\"t\":\"n\",\"l\":\"");
+        appendable.append(getName());
+        appendable.append("\",");
+        if (getDeclension().hasGender() && getGender() != null) {
+            appendable.append("\"g\":\"").append(getGender().getDbValue()).append("\",");
+        }
+        if ((getDeclension().hasStartsWith() || getDeclension().hasEndsWith()) && getStartsWith() != null) {
+           appendable.append("\"s\":\"").append(getStartsWith().getDbValue()).append("\",");
+        }
+        if (getDeclension().hasClassifiers() && getClassifier() != null) {
+           appendable.append("\"c\":\"").append(getClassifier()).append("\",");
+        }
+        appendable.append("\"v\":{");
+        Map<? extends NounForm,String> allValues = getAllDefinedValues();
+        appendable.append(new TreeMap<>(allValues).entrySet().stream().map(e->"\""+e.getKey().getKey()+"\":\""+TextUtil.escapeForJsonString(e.getValue())+"\"").collect(Collectors.joining(",")));
+        appendable.append("}}");
     }
 
     protected Object readResolve() {

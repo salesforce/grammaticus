@@ -44,7 +44,7 @@ class CatalanDeclension extends RomanceDeclension {
     /**
      * Adjective for Catalan. It takes care of gender, plurality(number) and startwith.
      */
-    public static enum CatalanModifierForm implements AdjectiveForm, ArticleForm {
+    public enum CatalanModifierForm implements AdjectiveForm, ArticleForm {
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE, LanguageStartsWith.CONSONANT),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE, LanguageStartsWith.CONSONANT),
         PLURAL_MASCULINE(LanguageNumber.PLURAL, LanguageGender.MASCULINE, LanguageStartsWith.CONSONANT),
@@ -59,6 +59,7 @@ class CatalanDeclension extends RomanceDeclension {
         private final LanguageNumber number;
         private final LanguageGender gender;
         private final LanguageStartsWith startsWith;
+
         private CatalanModifierForm(LanguageNumber number, LanguageGender gender, LanguageStartsWith startsWith) {
             this.number = number;
             this.gender = gender;

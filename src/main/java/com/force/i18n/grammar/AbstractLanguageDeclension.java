@@ -37,7 +37,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
     @Override
     public final HumanLanguage getLanguage() {
-    	return this.language;
+        return this.language;
     }
 
     @Override
@@ -72,7 +72,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
     @Override
     public boolean hasEndsWith() {
-    	return false;
+        return false;
     }
 
     @Override
@@ -95,7 +95,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
     @Override
     public Set<LanguageNumber> getAllowedNumbers() {
-    	return hasPlural() ? LanguageNumber.PLURAL_SET : LanguageNumber.SINGULAR_SET;
+        return hasPlural() ? LanguageNumber.PLURAL_SET : LanguageNumber.SINGULAR_SET;
     }
 
 
@@ -144,7 +144,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         return null;  // Default
     }
 
-    final static EnumSet<LanguageCase> NOMINATIVE_SET = EnumSet.of(LanguageCase.NOMINATIVE);
+    static final EnumSet<LanguageCase> NOMINATIVE_SET = EnumSet.of(LanguageCase.NOMINATIVE);
     @Override
     public EnumSet<LanguageCase> getRequiredCases() {
         return NOMINATIVE_SET;  // Nominative is usually required
@@ -155,13 +155,13 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         return getRequiredCases();
     }
 
-    final static EnumSet<LanguageStartsWith> CONSONANT_SET = EnumSet.of(LanguageStartsWith.CONSONANT);
+    static final EnumSet<LanguageStartsWith> CONSONANT_SET = EnumSet.of(LanguageStartsWith.CONSONANT);
     @Override
     public EnumSet<LanguageStartsWith> getRequiredStartsWith() {
         return CONSONANT_SET;  // Only generally care about consonant.
     }
 
-    final static EnumSet<LanguagePossessive> POSSESSIVE_NONE_SET = EnumSet.of(LanguagePossessive.NONE);
+    static final EnumSet<LanguagePossessive> POSSESSIVE_NONE_SET = EnumSet.of(LanguagePossessive.NONE);
     @Override
     public EnumSet<LanguagePossessive> getRequiredPossessive() {
         return POSSESSIVE_NONE_SET;  // Doesn't matter much.
@@ -316,7 +316,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
     @Override
     public int getMaxDistanceForModifiers() {
-    	return isInflected() ? 0 : 5;
+        return isInflected() ? 0 : 5;
     }
 
     // Convenience method for retrieving an equivalent AdjectiveForm from this declension
@@ -399,9 +399,8 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         if (baseForm == null && number != LanguageNumber.SINGULAR) {
             baseForm = getAdjectiveForm(startsWithToTry, genderToTry, LanguageNumber.SINGULAR, caseToTry, articleToTry, possessiveToTry);
         }
-        // OK, you asked for something that wasn't supported.
+        // OK, you asked for something that wasn't supported. simply fallback to the first one in the supported form list
         if (baseForm == null) {
-            assert false : "Programmer error, you asked for an illegal adjective form";
             baseForm = getAdjectiveForms().iterator().next();
         }
         return baseForm;
@@ -453,7 +452,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
     @Override
     public final LanguagePluralRules getPluralRules() {
-    	return LanguageProviderFactory.get().getPluralRules(getLanguage());
+        return LanguageProviderFactory.get().getPluralRules(getLanguage());
     }
 
     /**
@@ -462,7 +461,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
      * Often times, complex declension have simple forms of one thing or another.
      * This is the "simple" form types for which there is only one possible declension
      */
-    public static enum SimpleModifierForm implements AdjectiveForm, ArticleForm {
+    public enum SimpleModifierForm implements AdjectiveForm, ArticleForm {
         SINGULAR
         ;
         @Override public LanguageArticle getArticle() { return LanguageArticle.ZERO;}
@@ -547,12 +546,13 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
      * Simple noun form with singular and plurals
      * @author stamm
      */
-    public static enum PluralNounForm implements NounForm {
+    public enum PluralNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR),
         PLURAL(LanguageNumber.PLURAL),
         ;
 
         private final LanguageNumber number;
+
         private PluralNounForm(LanguageNumber number) {
             this.number = number;
         }
@@ -607,10 +607,6 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
 
         public SimplePluralNounWithGender(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, LanguageStartsWith.CONSONANT, gender, access, isStandardField, isCopiedFromDefault);
-        }
-
-        @Override
-        public void makeSkinny() {
         }
 
         @Override

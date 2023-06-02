@@ -257,9 +257,9 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
     }
 
     @SuppressWarnings("unchecked") // Deserializing a map using trickery
-    static <T extends ComplexGrammaticalForm> Map<T,String> deserializeFormMap(ObjectInputStream in, LanguageDeclension declension, TermType termType) throws IOException, ClassNotFoundException {
+    static <T extends ComplexGrammaticalForm> Map<T, String> deserializeFormMap(ObjectInputStream in, LanguageDeclension declension, TermType termType) throws IOException, ClassNotFoundException {
         int size = in.readByte();
-        Map<T,String> result = new HashMap<T,String>(size << 1);
+        Map<T, String> result = new HashMap<>(size << 1);
         if (size == 0) {
             return result;
         }
@@ -512,6 +512,12 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Adjective);
+            makeSkinny();
+        }
+
+        @Override
+        public void makeSkinny() {
+            values = makeSkinny(values);
         }
     }
 
@@ -525,7 +531,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         private transient Map<T, String> values = new HashMap<>();
 
         ComplexNoun(LanguageDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
-        		LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+                LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
 
@@ -548,8 +554,9 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 
         @Override
         public Noun clone() {
-        	@SuppressWarnings("unchecked") // Clone not generalized
+            @SuppressWarnings("unchecked") // Clone not generalized
             ComplexNoun<T> noun = (ComplexNoun<T>) super.clone();
+
             noun.values = new HashMap<>(noun.values);
             return noun;
         }
@@ -557,12 +564,15 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         // Reduce size of noun maps
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
+
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
 
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
+
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
+            makeSkinny();
         }
 
         @Override
@@ -582,7 +592,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         private transient Map<T, String> values = new HashMap<>();
 
         ComplexArticledNoun(ArticledDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith,
-        		LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
+                LanguageGender gender, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, gender, access, isStandardField, isCopiedFromDefault);
         }
 
@@ -606,21 +616,25 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 
         @Override
         public Noun clone() {
-        	@SuppressWarnings("unchecked") // Clone not generalized
-        	ComplexArticledNoun<T> noun = (ComplexArticledNoun<T>) super.clone();
-            noun.values = new HashMap<T,String>(noun.values);
+            @SuppressWarnings("unchecked") // Clone not generalized
+            ComplexArticledNoun<T> noun = (ComplexArticledNoun<T>) super.clone();
+
+            noun.values = new HashMap<>(noun.values);
             return noun;
         }
 
         // Reduce size of noun maps
         private void writeObject(ObjectOutputStream out) throws IOException {
             out.defaultWriteObject();
+
             ComplexGrammaticalForm.serializeFormMap(out, values);
         }
 
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
+
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
+            makeSkinny();
         }
 
         @Override

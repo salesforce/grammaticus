@@ -141,7 +141,8 @@ public class LabelSetLoaderConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("stats=").append(this.isCacheStatsEnabled)
                 .append(", expire=").append(this.cacheExpireAfter)
-                .append(", size=").append(this.cacheMaxSize);
+                .append(", size=").append(this.cacheMaxSize)
+                .append(", dir=").append(this.cacheDir.toAbsolutePath());
         return sb.toString();
     }
 }
