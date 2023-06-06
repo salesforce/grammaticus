@@ -671,7 +671,6 @@ public final class LanguageDictionary implements Serializable {
         for (Noun n : this.nounMap.values()) {
             if (n.getEntityName() != null) this.nounsByEntityType.put(intern(n.getEntityName().toLowerCase()), n);
         }
-        this.nounsByEntityType = ImmutableSetMultimap.copyOf(nounsByEntityType);
         this.isSkinny = true;
     }
 
@@ -730,7 +729,7 @@ public final class LanguageDictionary implements Serializable {
         articleMap = ImmutableSortedMap.copyOf(articleMap);
 
         nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
-        nounsByEntityType = ImmutableSetMultimap.copyOf(nounsByEntityType);
+        // don't convert nounsByEntityType here. it may be updated by #createNoun
 
         isSkinny = true; // Prevent adding anything to this dictionary set. By assumption, the nouns are skinny.
     }
