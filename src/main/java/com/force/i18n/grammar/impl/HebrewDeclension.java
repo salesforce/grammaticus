@@ -165,10 +165,10 @@ class HebrewDeclension extends SemiticDeclension {
                 }
                 // Default the singular/plural definitions to start
                 if (this.singular_def == null) {
-                    this.singular_def = DEFAULT_DEFINITE_PREFIX + this.singular;
+                    this.singular_def = intern(DEFAULT_DEFINITE_PREFIX + this.singular);
                 }
                 if (this.plural_def == null) {
-                    this.plural_def = DEFAULT_DEFINITE_PREFIX + this.plural;
+                    this.plural_def = intern(DEFAULT_DEFINITE_PREFIX + this.plural);
                 }
             }
             return true;

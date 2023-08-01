@@ -89,6 +89,10 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
 
     @Override
     public int compareTo(GrammaticalTerm o) {
+        int langComp = Integer.compare(getDeclension().getLanguage().ordinal(),
+                o.getDeclension().getLanguage().ordinal());
+        if (langComp != 0) return langComp;
+
         TermType thisType = getTermType();
         TermType oType = o.getTermType();
         int typeComp = thisType.compareTo(oType);
@@ -97,10 +101,11 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
-            return true;
-        if (o == null || getClass() != o.getClass())
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) {
             return false;
+        }
 
         return compareTo((GrammaticalTerm)o) == 0;
     }

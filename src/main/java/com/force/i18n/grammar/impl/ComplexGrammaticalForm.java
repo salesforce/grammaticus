@@ -549,7 +549,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 
         @Override
         public void setString(String value, NounForm form) {
-            values.put(getFormClass().cast(form), value);
+            values.put(getFormClass().cast(form), intern(value));
         }
 
         @Override
@@ -611,7 +611,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
 
         @Override
         public void setString(String value, NounForm form) {
-            values.put(getFormClass().cast(form), value);
+            values.put(getFormClass().cast(form), intern(value));
         }
 
         @Override
