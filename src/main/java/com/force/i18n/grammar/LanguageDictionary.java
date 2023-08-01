@@ -69,7 +69,7 @@ public final class LanguageDictionary implements Serializable {
     public LanguageDictionary(HumanLanguage language) {
         this.language = language;
         this.declension = LanguageDeclensionFactory.get().getDeclension(language);
-        this.nounsByEntityType = HashMultimap.create();
+        this.nounsByEntityType = ArrayListMultimap.create();
     }
 
     /**
@@ -667,7 +667,7 @@ public final class LanguageDictionary implements Serializable {
 
         this.declension = LanguageDeclensionFactory.get().getDeclension(this.language);
 
-        this.nounsByEntityType = HashMultimap.create();
+        this.nounsByEntityType = ArrayListMultimap.create();
         for (Noun n : this.nounMap.values()) {
             if (n.getEntityName() != null) this.nounsByEntityType.put(intern(n.getEntityName().toLowerCase()), n);
         }

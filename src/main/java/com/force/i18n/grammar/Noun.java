@@ -169,7 +169,7 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
         if (this == obj) return true;
         if (obj instanceof Noun) {
             Noun n = (Noun)obj;
-            return getName().equals(n.getName()) && equalsAttribute(n) && equalsValue(n);
+            return super.equals(n) && equalsAttribute(n) && equalsValue(n);
         }
         return false;
     }
