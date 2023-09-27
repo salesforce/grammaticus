@@ -59,10 +59,14 @@ public final class LanguageDictionaryParser {
      * @param parentProvider the parentProvider if this parser is for overriding labels from a different labelset
      * @throws IOException if there is a parsing exception.
      */
-    public LanguageDictionaryParser(GrammaticalLabelSetDescriptor dictDesc, HumanLanguage language, GrammaticalLabelSetProvider parentProvider) throws IOException {
-        this(new LanguageDictionary(language), dictDesc, parentProvider);
+    public LanguageDictionaryParser(GrammaticalLabelSetDescriptor dictDesc, LanguageDictionary dictionary, GrammaticalLabelSetProvider parentProvider) throws IOException {
+        this(dictionary, dictDesc, parentProvider);
         loadDictionary();
         dictionary.makeSkinny();
+    }
+
+    public LanguageDictionaryParser(GrammaticalLabelSetDescriptor dictDesc, HumanLanguage language, GrammaticalLabelSetProvider parentProvider) throws IOException {
+        this(dictDesc, new LanguageDictionary(language), parentProvider);        
     }
 
     // Private constructor used *only* to get default english values for nouns that don't otherwise exist

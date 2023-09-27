@@ -208,7 +208,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
 
             } else if (this.skipParsingLabelForPlatform) {
                 // load dictionary because this language has unique declension
-                LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, lang, this.parentProvider);
+                LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, createNewDictionary(lang), this.parentProvider);
                 LanguageDictionary dictionary = dictParser.getDictionary();
 
                 // use copy constructor for requested language
@@ -229,13 +229,39 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         return result;
     }
 
+    /**
+     * Ger a new LanguageDictionary instance. If need some special, override this to return a subclass of
+     * LanguageDictionary.
+     *
+     * @param language
+     *            the language     
+     */
+    protected LanguageDictionary createNewDictionary(HumanLanguage language) throws IOException {
+        // default : using default LanguageDictionary
+        return new LanguageDictionary(language);
+    }
+
+    /**
+     * Finalize the dictionary after loading. If need something special (e.g. write some data to a file), override this
+     * method.
+     * 
+     * 
+     * @param dictionary the dictionary to be finalized.
+     * @return the finalized dictionary.
+     */
+
+    protected LanguageDictionary finalizeDictionary(LanguageDictionary dictionary) throws IOException {
+        // default : do nothing
+        return dictionary;        
+    }
+
     protected GrammaticalLabelSet loadLabels(GrammaticalLabelSetDescriptor desc) throws IOException {
         HumanLanguage lang = desc.getLanguage();
 
         // dictionaries are always unique for every language because it may use different LanguageDeclension
-        LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, lang, this.parentProvider);
-        LanguageDictionary dictionary = dictParser.getDictionary();
-
+        LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, createNewDictionary(lang), this.parentProvider);
+        LanguageDictionary dictionary = finalizeDictionary(dictParser.getDictionary());
+    
         // all standard/end-user languages comes here. Create a parser to read from XML files.
         GrammaticalLabelFileParser parser = new GrammaticalLabelFileParser(dictionary, desc, this.parentProvider);
 

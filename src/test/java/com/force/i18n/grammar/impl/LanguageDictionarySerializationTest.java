@@ -90,7 +90,7 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
         final String SINGULAR = "account";
         final String PLUARL = "accounts";
 
-        Map<String, Noun> nounMap = getPrivateField(dict, "nounMap");
+        GrammaticalTermMap<Noun> nounMap = dict.getNounMap();
         Multimap<String, Noun> nounsByEntityType = getPrivateField(dict, "nounsByEntityType");
 
         Noun expected = nounMap.get(SINGULAR);
@@ -106,7 +106,7 @@ public class LanguageDictionarySerializationTest extends BaseGrammaticalLabelTes
         assertSame(expected, actual);
 
         if (dict.getDeclension().hasPlural()) {
-            Map<String, Noun> nounMapByPluralAlias = getPrivateField(dict, "nounMapByPluralAlias");
+            GrammaticalTermMap<Noun> nounMapByPluralAlias = dict.getNounByPluralAlias();
             actual = nounMapByPluralAlias.get(PLUARL);
             assertNotNull(actual);
             assertSame(expected, actual);
