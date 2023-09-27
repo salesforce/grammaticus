@@ -150,7 +150,6 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
      * @param in
      * @throws IOException
      */
-    @Override
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         this.map = ((TermMapSerializer<T>)in.readObject()).getMap();
     }
