@@ -46,11 +46,11 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
     public boolean equals(Object obj) {
         if(obj == this) 
             return true;
-        if(!obj instanceof GrammaticalTermMapImpl) 
+        if(!(obj instanceof GrammaticalTermMapImpl)) 
             return false;
 
-            GrammatcalTermMapImpl other = (GrammatcalTermMapImpl)obj;
-        return map.isSkinny == other.isSkinny && map.equals(other.map);
+        GrammaticalTermMapImpl<T> other = (GrammaticalTermMapImpl<T>)obj;
+        return isSkinny == other.isSkinny && map.equals(other.map);
     }
 
     @Override

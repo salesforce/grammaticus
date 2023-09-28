@@ -1,7 +1,7 @@
 package com.force.i18n.grammar;
 
 import java.io.IOException;
-import java.o.Serializable;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
@@ -13,7 +13,7 @@ import java.util.Set;
  * and also sequential access won't work if the implementation is not in-memory one.
  * 
  */
-public interface GrammaticalTermMap<T extends GrammaticalTerm> implements Serializable {
+public interface GrammaticalTermMap<T extends GrammaticalTerm> extends Serializable {
 
     /**
      * Return true is skinny - immutable
