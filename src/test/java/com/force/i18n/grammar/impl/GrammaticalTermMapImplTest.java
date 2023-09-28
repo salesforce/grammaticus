@@ -29,7 +29,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
      * 
      */
     public void testSimpleUpdate() throws Exception{
-        GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<Noun>();
+        GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<>();
         assertTrue(map.isEmpty());
         Noun n1 = createNoun("n1");
         Noun n2 = createNoun("n2");
@@ -47,7 +47,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
      */
 
     public void testSimpleWriteJson() throws Exception {
-        GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<Noun>();
+        GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<>();
         StringBuilder sb = new StringBuilder();
         map.writeJson(sb, null, new LanguageDictionary(US), null);
         assertEquals(sb.toString(), "{}");
@@ -65,7 +65,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
      * Test for makeSkinny
      */
     public void testMakeSkinny() {
-        GrammaticalTermMap<Noun> map = new GrammaticalTermMapImpl<Noun>();
+        GrammaticalTermMap<Noun> map = new GrammaticalTermMapImpl<>();
         assertFalse("Initially false", map.isSkinny());
         Noun n1 = createNoun("n1");
         map.put("one", n1);

@@ -97,10 +97,10 @@ public class LanguageDictionary implements Serializable {
     }
 
     protected void createGrammaticalTermMap() {
-        this.nounMap = new GrammaticalTermMapImpl<Noun>();
-        this.nounMapByPluralAlias = new GrammaticalTermMapImpl<Noun>();
-        this.adjectiveMap = new GrammaticalTermMapImpl<Adjective>();
-        this.articleMap = new GrammaticalTermMapImpl<Article>();
+        this.nounMap = new GrammaticalTermMapImpl<>();
+        this.nounMapByPluralAlias = new GrammaticalTermMapImpl<>();
+        this.adjectiveMap = new GrammaticalTermMapImpl<>();
+        this.articleMap = new GrammaticalTermMapImpl<>();
     }
 
     @Override

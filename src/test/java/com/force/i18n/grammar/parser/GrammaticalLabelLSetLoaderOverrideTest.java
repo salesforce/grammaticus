@@ -25,6 +25,9 @@ public class GrammaticalLabelLSetLoaderOverrideTest extends BaseGrammaticalLabel
         super(name);
     }
 
+    /**
+     * Loader for test
+     */
     public static class TestLoader extends GrammaticalLabelSetLoader { 
         public TestLoader(GrammaticalLabelSetDescriptor dictDesc) {
             super(dictDesc);
@@ -40,7 +43,11 @@ public class GrammaticalLabelLSetLoaderOverrideTest extends BaseGrammaticalLabel
             return new TestFinalizedDic(dictionary.getLanguage());        
         }       
     }
-
+    /**
+     * Teset for overriding LabelSetLoader to create another dictionary specified in TestLoader
+     * 
+     * @throws Exception
+     */
     public void testOverride() throws Exception {
         GrammaticalLabelSetLoader loader = new TestLoader(getDescriptor());
         HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(Locale.CANADA);
