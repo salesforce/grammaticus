@@ -79,7 +79,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
         try {
             map.put("two", n1);
             fail("no update allowed on skinny map");
-        } catch (RuntimeException e) {
+        } catch (IllegalStateException e) {
             // expected
         }     
     }

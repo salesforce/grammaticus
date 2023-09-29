@@ -148,7 +148,7 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
     @Override
     public void put(String k, T v) {
         if(isSkinny)
-            throw new RuntimeException("This map is not able to modify");
+            throw new IllegalStateException("This map is not able to modify");
         map.put(k,v);
     }
     
@@ -156,7 +156,7 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
     @Override 
     public void putAll(GrammaticalTermMap<T> other) {
         if(isSkinny)
-            throw new RuntimeException("This map is not able to modify");
+            throw new IllegalStateException("This map is not able to modify");
         map.putAll(((GrammaticalTermMapImpl<T>)other).map);
     }
     
