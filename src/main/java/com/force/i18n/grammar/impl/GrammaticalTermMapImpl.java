@@ -27,10 +27,13 @@ import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
  * @author ytanida
  */
 public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements GrammaticalTermMap<T>, Serializable {
-    protected Map<String, T> map;
+    private static final long serialVersionUID = 2099717329853215271L;
+
+    protected transient Map<String, T> map;
     private boolean isSkinny = false;
+
     public GrammaticalTermMapImpl() {
-        map = new HashMap<String, T>();        
+        map = new HashMap<>();        
     }
 
     public GrammaticalTermMapImpl(Map<String, T> map, boolean isSkinny) {
@@ -49,6 +52,7 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
         if(!(obj instanceof GrammaticalTermMapImpl)) 
             return false;
 
+        @SuppressWarnings("unchecked")
         GrammaticalTermMapImpl<T> other = (GrammaticalTermMapImpl<T>)obj;
         return isSkinny == other.isSkinny && map.equals(other.map);
     }
@@ -65,12 +69,12 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
 
     @Override
     public GrammaticalTermMap<T> makeSkinny() {
-        return new GrammaticalTermMapImpl<T>(map, true);
+        return new GrammaticalTermMapImpl<>(map, true);
     }
 
     @Override
     public void writeJson(Appendable out, RenamingProvider renamingProvider, LanguageDictionary dictionary, Collection<String> termsToInclude) throws IOException {
-        Set<String> wrote = new HashSet<String>();
+        Set<String> wrote = new HashSet<>();
         out.append('{');
         if (termsToInclude != null) {
             boolean first = true;
@@ -166,7 +170,9 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
      * @param in
      * @throws IOException
      */
+    @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
         this.map = ((TermMapSerializer<T>)in.readObject()).getMap();
     }
 
@@ -176,7 +182,8 @@ public class GrammaticalTermMapImpl<T extends GrammaticalTerm> implements Gramma
      * @throws IOException
      */
     private void writeObject(ObjectOutputStream out) throws IOException {
-        out.writeObject(new TermMapSerializer<T>(map));
+        out.defaultWriteObject();
+        out.writeObject(new TermMapSerializer<>(map));
     }
 
     static final class TermMapSerializer<T extends GrammaticalTerm> extends MapSerializer<String, T> {

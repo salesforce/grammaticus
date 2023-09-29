@@ -7,6 +7,11 @@
 
 package com.force.i18n.grammar.impl;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
 import java.util.HashSet;
 import java.util.Locale;
 import junit.framework.TestCase;
@@ -79,7 +84,62 @@ public class GrammaticalTermMapImplTest extends TestCase {
         }     
     }
 
+    @SuppressWarnings("unchecked")
+    public void testSerialization() throws Exception {
+        GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<>();
+        assertSerializedEquals(map);
+        Noun n1 = createNoun("n1");
+        map.put("one", createNoun("one"));
+        map.put("two", createNoun("two"));
+        assertSerializedEquals(map);
+        assertSerializedEquals((GrammaticalTermMapImpl<Noun>)map.makeSkinny());
+        map.put("n1", n1);
+        map.put("n1_a", n1);
+        GrammaticalTermMapImpl<Noun> serialized = getSerialized(map);
+        // same noun should be same in serialized map 
+        assertTrue(serialized.get("n1") == serialized.get("n1_a"));
+    }
 
+    /**
+     * Verify map is same after serialization
+     * @param orig the original map
+     * @throws Exception
+     */
+    private void assertSerializedEquals(GrammaticalTermMapImpl<Noun> orig) throws Exception {
+        GrammaticalTermMapImpl<Noun> serialized = getSerialized(orig);
+        assertEquals("isEmpty returns differently", orig.isEmpty(), serialized.isEmpty());
+        assertEquals("keySet returns different", orig.keySet().size(), serialized.keySet().size());
+
+        for (String key : orig.keySet()) {
+            assertTrue("serialized map doesn't have "+key, serialized.containsKey(key));
+            assertEquals("serialized map have different noun", orig.get(key), serialized.get(key));
+        }
+        assertEquals("The map returns different isSkinny ", orig.isSkinny(), serialized.isSkinny());            
+    }
+
+    /**
+     * Serialize and deserialize a map.
+     * @param input the map to serialize
+     * @return the serialized map
+     * @throws Exception if there's an error
+     */
+    @SuppressWarnings("unchecked")
+    private GrammaticalTermMapImpl<Noun> getSerialized(GrammaticalTermMapImpl<Noun> input) throws Exception{
+        // Serialize
+        byte[] array = null;
+        try ( ByteArrayOutputStream baos = new ByteArrayOutputStream();
+              ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+            oos.writeObject(input);
+            array = baos.toByteArray();
+        } 
+        assertNotNull(array);
+        // Deserialize
+        try ( ByteArrayInputStream bais = new ByteArrayInputStream(array);
+              ObjectInputStream ois = new ObjectInputStream(bais)){
+            return (GrammaticalTermMapImpl<Noun>) ois.readObject();
+        }
+    }
+        
     /**
      * Create a noun for testing
      */
