@@ -14,15 +14,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.function.BiConsumer;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.Renameable;
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.commons.text.Uniquefy;
-import com.force.i18n.commons.util.collection.MapSerializer;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.Noun.NounType;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
+import com.force.i18n.grammar.impl.GrammaticalTermMapImpl;
 import com.force.i18n.grammar.parser.RefTag;
 import com.google.common.base.Supplier;
 import com.google.common.collect.*;
@@ -39,21 +40,23 @@ import com.google.common.collect.*;
  * @author yoikawa,stamm
  * @see com.force.i18n.LabelSet
  */
-public final class LanguageDictionary implements Serializable {
+public class LanguageDictionary implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private final HumanLanguage language;
     private transient LanguageDeclension declension;  // Details about noun structure
 
     // TODO: These could all be made lists when serialized
+
     // map to Noun
-    private transient Map<String, Noun> nounMap = new HashMap<>();
+    protected GrammaticalTermMap<Noun> nounMap; 
     // map to Noun
-    private transient Map<String, Noun> nounMapByPluralAlias = new HashMap<>();
+    protected GrammaticalTermMap<Noun>  nounMapByPluralAlias;
     // map to Adjective
-    private transient Map<String, Adjective> adjectiveMap = new HashMap<>();
+    protected GrammaticalTermMap<Adjective> adjectiveMap;
     // map to Article
-    private transient Map<String, Article> articleMap = new HashMap<>();
+    protected GrammaticalTermMap<Article> articleMap;
+
     // Override of noun to nounOverrides
     private SortedSetMultimap<Noun, NounVersionOverride> nounVersionOverrides;
     // Whether or not we've been "made skinny".
@@ -70,6 +73,7 @@ public final class LanguageDictionary implements Serializable {
         this.language = language;
         this.declension = LanguageDeclensionFactory.get().getDeclension(language);
         this.nounsByEntityType = ArrayListMultimap.create();
+        createGrammaticalTermMap();
     }
 
     /**
@@ -90,6 +94,13 @@ public final class LanguageDictionary implements Serializable {
         this.articleMap = from.articleMap;
         this.nounVersionOverrides = from.nounVersionOverrides;
         this.isSkinny = from.isSkinny;
+    }
+
+    protected void createGrammaticalTermMap() {
+        this.nounMap = new GrammaticalTermMapImpl<>();
+        this.nounMapByPluralAlias = new GrammaticalTermMapImpl<>();
+        this.adjectiveMap = new GrammaticalTermMapImpl<>();
+        this.articleMap = new GrammaticalTermMapImpl<>();
     }
 
     @Override
@@ -156,19 +167,64 @@ public final class LanguageDictionary implements Serializable {
         return createNoun(name, null, type, tableEnumOrId, starts, gen, null, false, false);
     }
 
-    private Map<String,? extends GrammaticalTerm> getTermMap(TermType type) {
-        switch (type) {
-        case Noun: return this.nounMap;
-        case Adjective: return this.adjectiveMap;
-        case Article: return this.articleMap;
-        }
-///CLOVER:OFF
-        throw new AssertionError("Invalid term type");
-///CLOVER:ON
+    /**
+     * get termMap of Noun
+     */
+    public GrammaticalTermMap<Noun> getNounMap() {
+        return nounMap;
     }
 
+    /**
+     * get termMap of NounByPluralAlias
+     */
+    public GrammaticalTermMap<Noun> getNounByPluralAlias() {
+        return nounMapByPluralAlias;
+    }
+
+    /**
+     * get termMap of Adjective
+     */
+    public GrammaticalTermMap<Adjective> getAdjectiveMap() {
+        return adjectiveMap;
+    }
+    
+    /**
+     * get termMap of Article 
+     */
+    public GrammaticalTermMap<Article> getArticleMap() {
+        return articleMap;
+    }
+
+
+    private void forAllTerms (TermType type, BiConsumer<String, GrammaticalTerm> f) {
+        switch (type) {
+        case Noun: 
+            for(Map.Entry<String, Noun> e : nounMap.entrySet()) f.accept(e.getKey(), e.getValue());
+            break;
+        case Adjective: 
+            for(Map.Entry<String, Adjective> e : adjectiveMap.entrySet()) f.accept(e.getKey(), e.getValue());
+            break;
+        case Article:
+            for(Map.Entry<String, Article> e : articleMap.entrySet()) f.accept(e.getKey(), e.getValue());
+            break;
+        default:
+            throw new AssertionError("Invalid term type " + type);
+        }
+    }
+    
+
+
     public Set<String> getAllTermNames(TermType type) {
-        return Collections.unmodifiableSet(getTermMap(type).keySet());
+        switch (type) {
+        case Noun: 
+            return Collections.unmodifiableSet(nounMap.keySet());
+        case Adjective: 
+            return Collections.unmodifiableSet(adjectiveMap.keySet());
+        case Article:
+            return Collections.unmodifiableSet(articleMap.keySet());
+        default:
+            throw new AssertionError("Invalid term type");
+        }
     }
 
     /**
@@ -176,11 +232,10 @@ public final class LanguageDictionary implements Serializable {
      * @return the names of all the terms of the given type that are copied from the default language
      */
     public Set<String> getAllInheritedTermNames(TermType type) {
-        Map<String, ? extends GrammaticalTerm> terms = getTermMap(type);
         Set<String> result = new HashSet<String>();
-        for (Map.Entry<String, ? extends GrammaticalTerm> term : terms.entrySet()) {
-            if (term.getValue().isCopiedFromDefault()) result.add(term.getKey());
-        }
+        forAllTerms(type, (k,v) -> {
+            if (v.isCopiedFromDefault()) result.add(k);            
+        });                
         return result;
     }
 
@@ -387,21 +442,9 @@ public final class LanguageDictionary implements Serializable {
 
     // validate all modifiers
     public void validateAll() {
-        for (Map.Entry<String, Noun> e : nounMap.entrySet()) {
-            e.getValue().validate(e.getKey());
-            e.getValue().makeSkinny();
-        }
-
-        for (Map.Entry<String, Adjective> e : adjectiveMap.entrySet()) {
-            e.getValue().validate(e.getKey());
-            e.getValue().makeSkinny();
-        }
-
-        for (Map.Entry<String, Article> e : articleMap.entrySet()) {
-            e.getValue().validate(e.getKey());
-            e.getValue().makeSkinny();
-        }
-
+        nounMap.validate();
+        adjectiveMap.validate();
+        articleMap.validate();
         if (this.nounVersionOverrides != null) {
             for (NounVersionOverride nvo : this.nounVersionOverrides.values()) {
                 nvo.getNoun().validate(nvo.getNoun().getName());
@@ -581,8 +624,25 @@ public final class LanguageDictionary implements Serializable {
      * @param termsToInclude optional set of term to include, if omitted all terms are included
      * @throws IOException if an error happens during append
      */
+    /**
+     * Write the grammatical terms associated with the given terms
+     * @param appendable the appendable to write to
+     * @param useRenamedNouns if true, use the renamed nouns instead of the default ones.  If you're doing work around
+     *        renaming nouns, you often want to pass in false for this
+     * @param termsToInclude optional set of term to include, if omitted all terms are included
+     * @throws IOException if an error happens during append
+     */
     public void writeJson(Appendable appendable, boolean useRenamedNouns, Collection<String> termsToInclude) throws IOException {
-        writeJsonTerms(appendable, useRenamedNouns, termsToInclude != null ? termsToInclude.stream().map(a->getTerm(a)).collect(Collectors.toList()) : null);
+        RenamingProvider renamingProvider = useRenamedNouns ? RenamingProviderFactory.get().getProvider() : null;
+        appendable.append("{\"n\":");
+        nounMap.writeJson(appendable, renamingProvider, this, termsToInclude);
+        appendable.append(",\"a\":");
+        adjectiveMap.writeJson(appendable, renamingProvider, this, termsToInclude);
+        if (!this.articleMap.isEmpty()) {
+            appendable.append(",\"d\":");
+            articleMap.writeJson(appendable, renamingProvider, this, termsToInclude);
+        }
+        appendable.append("}");
     }
 
     /**
@@ -593,88 +653,40 @@ public final class LanguageDictionary implements Serializable {
      * @param termsToInclude optional set of term to include, if omitted all terms are included
      * @throws IOException if an error happens during append
      */
-    public void writeJsonTerms(Appendable appendable, boolean useRenamedNouns, Collection<? extends GrammaticalTerm> termsToInclude) throws IOException {
-        RenamingProvider renamingProvider = useRenamedNouns ? RenamingProviderFactory.get().getProvider() : null;
-        appendable.append("{\"n\":");
-        writeJsonTerms(appendable, TermType.Noun, renamingProvider, termsToInclude);
-        appendable.append(",\"a\":");
-        writeJsonTerms(appendable, TermType.Adjective, renamingProvider, termsToInclude);
-        if (!this.articleMap.isEmpty()) {
-            appendable.append(",\"d\":");
-            writeJsonTerms(appendable, TermType.Article, renamingProvider, termsToInclude);
-        }
-        appendable.append("}");
+    public void writeJsonTerms(Appendable out, boolean useRenamedNouns, Collection<GrammaticalTerm> terms) throws IOException {
+        Collection<String> termsToInclude = terms.stream().map((t)->t.getName()).collect(Collectors.toSet());
+        writeJson(out, useRenamedNouns, termsToInclude);
     }
-
-    private void writeJsonTerms(Appendable out, TermType type, RenamingProvider renamingProvider, Collection<? extends GrammaticalTerm> termsToInclude) throws IOException {
-        out.append('{');
-        if (termsToInclude != null) {
-            boolean first = true;
-            for (GrammaticalTerm term : termsToInclude) {
-                if (term == null || term.getTermType() != type) continue;
-                if (!first) {
-                    out.append(',');
-                } else {
-                    first = false;
-                }
-                writeJsonTerm(out, renamingProvider, term);
-            }
-        } else {
-            writeJsonAllTerms(out, renamingProvider, type);
-        }
-        out.append('}');
-    }
-
-    private void writeJsonAllTerms(Appendable out, RenamingProvider renamingProvider, TermType type) throws IOException {
-        boolean first = true;
-        for (GrammaticalTerm term : getTermMap(type).values()) {
-            if (!first) {
-                out.append(',');
-            } else {
-                first = false;
-            }
-            writeJsonTerm(out, renamingProvider, term);
-        }
-    }
-
-    private void writeJsonTerm(Appendable out, RenamingProvider renamingProvider, GrammaticalTerm term) throws IOException {
-        if (renamingProvider != null && term instanceof Noun && renamingProvider.useRenamedNouns()) {
-            Noun renamedNoun = renamingProvider.getRenamedNoun(getLanguage(), ((Noun)term).getName());
-            if (renamedNoun != null) term = renamedNoun;
-        }
-        out.append('\"').append(term.getName().toLowerCase()).append("\":");
-        term.toJson(out);
-    }
+    
 
     private void writeObject(ObjectOutputStream out) throws IOException {
-        makeSkinny(); // ensure it's "skinny"
-
+        makeSkinny();
         out.defaultWriteObject();
-        out.writeObject(new TermMapSerializer<>(this.nounMap));
-        out.writeObject(new TermMapSerializer<>(this.nounMapByPluralAlias));
-        out.writeObject(new TermMapSerializer<>(this.adjectiveMap));
-        out.writeObject(new TermMapSerializer<>(this.articleMap));
+        writeObjectInternal(out);
+    }
+
+    protected void writeObjectInternal(ObjectOutputStream out) throws IOException {
+        // do nothing here - for hook
     }
 
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
 
-        this.nounMap = ((TermMapSerializer<Noun>)in.readObject()).getMap();
-        this.nounMapByPluralAlias = ((TermMapSerializer<Noun>)in.readObject()).getMap();
-        this.adjectiveMap = ((TermMapSerializer<Adjective>)in.readObject()).getMap();
-        this.articleMap = ((TermMapSerializer<Article>)in.readObject()).getMap();
-
         this.declension = LanguageDeclensionFactory.get().getDeclension(this.language);
+        this.readObjectInternal(in);
+    }
 
+    private void readObjectInternal(ObjectInputStream in) throws IOException, ClassNotFoundException {
         this.nounsByEntityType = ArrayListMultimap.create();
         for (Noun n : this.nounMap.values()) {
             if (n.getEntityName() != null) this.nounsByEntityType.put(intern(n.getEntityName().toLowerCase()), n);
         }
         this.isSkinny = true;
+        // do nothing here - for hook
     }
 
-    Noun getNounOverride(Noun n) {
+    public Noun getNounOverride(Noun n) {
         if (n == null) return null;
         if (this.nounVersionOverrides == null) return n;
         SortedSet<NounVersionOverride> overrides = this.nounVersionOverrides.get(n);
@@ -723,12 +735,10 @@ public final class LanguageDictionary implements Serializable {
      * Since {@link LanguageDictionary}'s are static, this make them a perfect candidate for {@link ImmutableSortedMap}.
      */
     public void makeSkinny() {
-        nounMap = ImmutableSortedMap.copyOf(nounMap);
-        nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
-        adjectiveMap = ImmutableSortedMap.copyOf(adjectiveMap);
-        articleMap = ImmutableSortedMap.copyOf(articleMap);
-
-        nounMapByPluralAlias = ImmutableSortedMap.copyOf(nounMapByPluralAlias);
+        nounMap = nounMap.makeSkinny();
+        nounMapByPluralAlias = nounMapByPluralAlias.makeSkinny();
+        adjectiveMap = adjectiveMap.makeSkinny();
+        articleMap = articleMap.makeSkinny();
         // don't convert nounsByEntityType here. it may be updated by #createNoun
 
         isSkinny = true; // Prevent adding anything to this dictionary set. By assumption, the nouns are skinny.
@@ -798,18 +808,4 @@ public final class LanguageDictionary implements Serializable {
         }
     }
 
-    static final class TermMapSerializer<T extends GrammaticalTerm> extends MapSerializer<String, T> {
-        protected TermMapSerializer(Map<String, T> map) {
-            super(map);
-        }
-
-        @Override
-        protected String internKey(String key) {
-            return intern(key);
-        }
-
-        protected Map<String, T> getMap() {
-            return super.map;
-        }
-    }
 }
