@@ -9,12 +9,24 @@ package com.force.i18n.grammar;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.function.BiConsumer;
+import java.util.stream.Collectors;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.Renameable;
@@ -22,11 +34,14 @@ import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.commons.text.Uniquefy;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.Noun.NounType;
-import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.grammar.impl.GrammaticalTermMapImpl;
+import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.grammar.parser.RefTag;
 import com.google.common.base.Supplier;
-import com.google.common.collect.*;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
+import com.google.common.collect.SortedSetMultimap;
 
 /**
  * The base class of new label set for a language. This class is constructed by
@@ -67,7 +82,7 @@ public class LanguageDictionary implements Serializable {
     // instances; but it would have to be concurrent.
     // TODO: "TableEnumOrId" should be stored on each Noun, right?
     /** For UI support. keyed by TableEnumOrId to HashMap(name, NounType) */
-    private transient Multimap<String, Noun> nounsByEntityType;
+    protected transient Multimap<String, Noun> nounsByEntityType;
 
     public LanguageDictionary(HumanLanguage language) {
         this.language = language;
@@ -677,13 +692,12 @@ public class LanguageDictionary implements Serializable {
         this.readObjectInternal(in);
     }
 
-    private void readObjectInternal(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    protected void readObjectInternal(ObjectInputStream in) throws IOException, ClassNotFoundException {
         this.nounsByEntityType = ArrayListMultimap.create();
         for (Noun n : this.nounMap.values()) {
             if (n.getEntityName() != null) this.nounsByEntityType.put(intern(n.getEntityName().toLowerCase()), n);
         }
         this.isSkinny = true;
-        // do nothing here - for hook
     }
 
     public Noun getNounOverride(Noun n) {
