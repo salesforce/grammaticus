@@ -9,14 +9,36 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.Adjective;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.ArticleForm;
+import com.force.i18n.grammar.ArticledDeclension;
 import com.force.i18n.grammar.ArticledDeclension.LegacyArticledNoun;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePosition;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.ModifierForm;
+import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.NounForm;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
@@ -250,8 +272,8 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         } else {
             out.writeByte(values.size());
             for (Map.Entry<T,String> entry : values.entrySet()) {
-                out.writeByte(entry.getKey().getOrdinal());
-                out.writeObject(entry.getValue());  // Serialize the "object" because it's been uniquefied
+                out.writeByte(entry.getKey().getOrdinal());                
+                out.writeUTF(entry.getValue());  // Serialize the "object" because it's been uniquefied
             }
         }
     }
@@ -272,7 +294,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         assert formList != null;
         for (int i = 0; i < size; i++) {
             int ordinal = in.readByte();
-            String value = intern((String) in.readObject());
+            String value = intern(in.readUTF());
             result.put(formList.get(ordinal), value);
         }
         return result;

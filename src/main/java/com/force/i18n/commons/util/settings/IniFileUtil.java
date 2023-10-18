@@ -19,7 +19,7 @@ import com.google.common.collect.Interners;
  */
 public class IniFileUtil {
 	
-	private static final Interner<String> INTERNER = Interners.newWeakInterner();
+	private static final Interner<String> INTERNER = Interners.newBuilder().weak().concurrencyLevel(16).build(); 
 	
     /**
      * For the given {@link String}, return reference to equal String.  Useful for {@link String} deduping.

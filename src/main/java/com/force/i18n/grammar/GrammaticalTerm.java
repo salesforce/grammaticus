@@ -9,13 +9,18 @@ package com.force.i18n.grammar;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Objects;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
-import com.google.common.collect.ImmutableSortedMap;
+import com.ibm.icu.impl.locale.XCldrStub.ImmutableMap;
 
 /**
  * Represents a grammatical term; generally one that is declined based on a noun form or other
@@ -138,19 +143,18 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
     }
 
     /**
-     * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableSortedMap}.
-     * {@link ImmutableSortedMap} have a 8 byte overhead per element and are useful for reducing the per element
-     * overhead, that is traditionally high on most {@code Map} implementations.
+     * Utility method used to convert static {@link Map}'s concrete type to a {@link ImmutableMap}.
+     * This copy could take a lot of cost. Used to use SortedMap but hash is way more cheaper. 
      *
      * @param <T>
      *            the type of the grammatical form for this term
      * @param map
      *            the map to make skinny
-     * @return A {@link ImmutableSortedMap} created from a {@link Map} of {@link GrammaticalForm}'s (key) to
+     * @return A {@link ImmutableMap} created from a {@link Map} of {@link GrammaticalForm}'s (key) to
      *         {@link String}'s (value).
      */
     protected <T extends GrammaticalForm> Map<T, String> makeSkinny(Map<T, String> map) {
-        return ImmutableSortedMap.copyOf(map, new KeyComparator<T>());
+        return ImmutableMap.copyOf(map); 
     }
 
     private static class KeyComparator<T extends GrammaticalForm> implements Comparator<T>, Serializable {
