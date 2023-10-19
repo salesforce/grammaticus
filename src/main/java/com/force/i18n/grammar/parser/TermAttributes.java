@@ -7,13 +7,28 @@
 
 package com.force.i18n.grammar.parser;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import org.xml.sax.Attributes;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.ArticleForm;
+import com.force.i18n.grammar.GrammaticalTerm;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePosition;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.NounForm;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 
 /**
@@ -282,12 +297,12 @@ public final class TermAttributes implements Serializable {
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
-        out.writeObject(this.declension.getLanguage().getLocaleString());
+        out.writeInt(this.declension.getLanguage().ordinal());
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getAll().get(in.readInt());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
 }

@@ -10,9 +10,12 @@ package com.force.i18n.grammar.parser;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.GrammaticalForm;
+import com.force.i18n.grammar.GrammaticalTerm;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.LanguageDictionary;
 
@@ -129,13 +132,13 @@ public abstract class TermRefTag extends RefTag {
     private void writeObject(java.io.ObjectOutputStream s) throws IOException {
         // Write out the threshold, loadfactor, and any hidden stuff
         s.defaultWriteObject();
-        s.writeObject(this.name);
+        s.writeUTF(this.name);
     }
 
     private void readObject(java.io.ObjectInputStream s) throws IOException, ClassNotFoundException {
         // Read in the threshold, loadfactor, and any hidden stuff
         s.defaultReadObject();
-        this.name = intern((String)s.readObject());
+        this.name = intern(s.readUTF());
     }
 
     protected Object readResolve() {
