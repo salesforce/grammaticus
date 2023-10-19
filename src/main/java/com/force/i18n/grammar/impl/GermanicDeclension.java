@@ -9,16 +9,47 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.commons.text.CaseFolder;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.Adjective;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.Article;
+import com.force.i18n.grammar.ArticleForm;
+import com.force.i18n.grammar.ArticledDeclension;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePosition;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.Noun.NounType;
-import com.force.i18n.grammar.impl.ComplexGrammaticalForm.*;
-import com.google.common.collect.*;
+import com.force.i18n.grammar.NounForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjective;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexAdjectiveForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexArticleForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexArticledNoun;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ModifierFormMap;
+import com.force.i18n.grammar.impl.ComplexGrammaticalForm.NounFormMap;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * Provide a declension system for a germanic language.  Generally, there are
@@ -341,12 +372,6 @@ abstract class GermanicDeclension extends ArticledDeclension {
             in.defaultReadObject();
 
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Article);
-            makeSkinny();
-        }
-
-        @Override
-        public void makeSkinny() {
-            values = makeSkinny(values);
         }
     }
 
