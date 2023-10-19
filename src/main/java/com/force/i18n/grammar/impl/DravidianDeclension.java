@@ -285,6 +285,7 @@ abstract class DravidianDeclension extends AbstractLanguageDeclension {
                               LanguageCase.GENITIVE,
                               LanguageCase.ACCUSATIVE,
                               LanguageCase.DATIVE,
+                              LanguageCase.ABLATIVE,  // Ablative & Instrumental merger
                               LanguageCase.LOCATIVE);
         }
 
