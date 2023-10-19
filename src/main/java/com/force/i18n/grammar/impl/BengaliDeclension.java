@@ -9,12 +9,35 @@ package com.force.i18n.grammar.impl;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 
 import com.force.i18n.HumanLanguage;
-import com.force.i18n.grammar.*;
+import com.force.i18n.grammar.Adjective;
+import com.force.i18n.grammar.AdjectiveForm;
+import com.force.i18n.grammar.Article;
+import com.force.i18n.grammar.ArticleForm;
+import com.force.i18n.grammar.ArticledDeclension;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePosition;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.Noun.NounType;
+import com.force.i18n.grammar.NounForm;
 import com.force.i18n.grammar.impl.ComplexGrammaticalForm.ComplexNounForm;
 import com.google.common.collect.ImmutableList;
 
@@ -137,11 +160,6 @@ class BengaliDeclension extends ArticledDeclension {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
 
-        @Override
-        public void makeSkinny() {
-            values = makeSkinny(values);
-        }
-
         /**
          * Need to override so that a cloned BengaliNoun's values map is a HashMap.
          * Else, if you clone() after makeSkinny() has been called, you won't
@@ -163,7 +181,6 @@ class BengaliDeclension extends ArticledDeclension {
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
-            makeSkinny();
         }
     }
 
