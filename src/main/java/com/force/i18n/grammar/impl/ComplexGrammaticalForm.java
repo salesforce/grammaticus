@@ -40,6 +40,7 @@ import com.force.i18n.grammar.ModifierForm;
 import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.NounForm;
 import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Multimap;
 
 /**
@@ -254,12 +255,12 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
      */
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
-        out.writeObject(this.declension.getLanguage().getLocaleString());
+        out.writeInt(this.declension.getLanguage().ordinal());
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
-        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getAll().get(in.readInt());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
 
@@ -281,10 +282,10 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
     @SuppressWarnings("unchecked") // Deserializing a map using trickery
     static <T extends ComplexGrammaticalForm> Map<T, String> deserializeFormMap(ObjectInputStream in, LanguageDeclension declension, TermType termType) throws IOException, ClassNotFoundException {
         int size = in.readByte();
-        Map<T, String> result = new HashMap<>(size << 1);
         if (size == 0) {
-            return result;
+            return ImmutableMap.of();
         }
+        ImmutableMap.Builder<T, String> builder = ImmutableMap.builder();
         List<T> formList = null;
         switch (termType) {
         case Noun: formList = (List<T>)declension.getAllNounForms(); break;
@@ -295,9 +296,9 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         for (int i = 0; i < size; i++) {
             int ordinal = in.readByte();
             String value = intern(in.readUTF());
-            result.put(formList.get(ordinal), value);
+            builder.put(formList.get(ordinal), value);
         }
-        return result;
+        return builder.build();
     }
 
 
@@ -534,12 +535,6 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
             in.defaultReadObject();
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Adjective);
-            makeSkinny();
-        }
-
-        @Override
-        public void makeSkinny() {
-            values = makeSkinny(values);
         }
     }
 
@@ -594,12 +589,6 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
             in.defaultReadObject();
 
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
-            makeSkinny();
-        }
-
-        @Override
-        public void makeSkinny() {
-            values = makeSkinny(values);
         }
     }
 
@@ -656,12 +645,6 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
             in.defaultReadObject();
 
             this.values = ComplexGrammaticalForm.deserializeFormMap(in, getDeclension(), TermType.Noun);
-            makeSkinny();
-        }
-
-        @Override
-        public void makeSkinny() {
-            values = makeSkinny(values);
         }
     }
 }

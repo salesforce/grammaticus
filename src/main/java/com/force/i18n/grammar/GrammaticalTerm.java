@@ -13,14 +13,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.Objects;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageProviderFactory;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
-import com.ibm.icu.impl.locale.XCldrStub.ImmutableMap;
+import com.google.common.collect.ImmutableMap;
 
 /**
  * Represents a grammatical term; generally one that is declined based on a noun form or other
@@ -124,13 +123,13 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
-        out.writeObject(this.declension.getLanguage().getLocaleString());
+        out.writeInt(this.declension.getLanguage().ordinal());
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
         this.name = intern(name);
-        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getLanguage((String)in.readObject());
+        HumanLanguage ul = LanguageProviderFactory.get().getProvider().getAll().get(in.readInt());
         this.declension = LanguageDeclensionFactory.get().getDeclension(ul);
     }
 
@@ -155,12 +154,5 @@ public abstract class GrammaticalTerm implements Serializable, Comparable<Gramma
      */
     protected <T extends GrammaticalForm> Map<T, String> makeSkinny(Map<T, String> map) {
         return ImmutableMap.copyOf(map); 
-    }
-
-    private static class KeyComparator<T extends GrammaticalForm> implements Comparator<T>, Serializable {
-        @Override
-        public int compare(T o1, T o2) {
-            return o1.getKey().compareTo(o2.getKey());
-        }
     }
 }
