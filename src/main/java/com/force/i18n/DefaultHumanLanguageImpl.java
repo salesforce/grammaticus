@@ -121,7 +121,10 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     YIDDISH(new Locale("ji"), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
     HMONG(new Locale("hmn"), LanguageType.PLATFORM, 238.0),
 
-    
+    CHUJ(new Locale("cac"), LanguageType.PLATFORM, 248.0), //Chuj 
+    KICHE(new Locale("quc"), LanguageType.PLATFORM, 248.0), //Kiche
+    KAQCHIKEL(new Locale("cak"), LanguageType.PLATFORM, 248.0), //Kaqchikel
+
     // Sample use of variants for testing
     ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
     ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),

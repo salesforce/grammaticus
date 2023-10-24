@@ -134,6 +134,9 @@ public final class LanguageConstants {
     public static final String CHINESE_SG = "zh_SG"; //Chinese (Simplified) Singapore
     public static final String CHINESE_MY = "zh_MY"; //Chinese (Simplified) Malaysia
     public static final String CHINESE_HK = "zh_HK"; //Chinese (Traditional) Hong Kong
+    public static final String CHUJ = "cac"; //Chuj
+    public static final String KICHE = "quc"; //Kiche
+    public static final String KAQCHIKEL = "cak"; //Kaqchikel
     public static final String ENGLISH_HK = "en_HK"; //English Hong Kong
     public static final String ENGLISH_IE = "en_IE"; //English Ireland
     public static final String ENGLISH_SG = "en_SG"; //English Singapore
