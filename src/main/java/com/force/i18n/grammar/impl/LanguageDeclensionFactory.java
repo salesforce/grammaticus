@@ -270,6 +270,12 @@ public enum LanguageDeclensionFactory {
             return new UnsupportedLanguageDeclension.HaitianCreoleDeclension(language);
         case GREENLANDIC:
             return new UnsupportedLanguageDeclension.GreenlandicDeclension(language);
+        case CHUJ:
+            return new SimpleDeclension(language);
+        case KICHE:
+            return new SimpleDeclension(language);  
+        case KAQCHIKEL:
+            return new SimpleDeclension(language);            
         }
 
         if (FAIL_ON_MISSING) {
