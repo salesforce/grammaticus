@@ -6,7 +6,10 @@
  */
 package com.force.i18n.grammar.offline;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.script.ScriptEngine;
@@ -17,9 +20,18 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-import com.force.i18n.*;
+import com.force.i18n.HumanLanguage;
+import com.force.i18n.LabelRef;
+import com.force.i18n.LabelReference;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
-import com.force.i18n.grammar.*;
+import com.force.i18n.LanguageProviderFactory;
+import com.force.i18n.Renameable;
+import com.force.i18n.grammar.GrammaticalLabelSet;
+import com.force.i18n.grammar.GrammaticalTerm;
+import com.force.i18n.grammar.LanguageDictionary;
+import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.RenamingProvider;
+import com.force.i18n.grammar.RenamingProviderFactory;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest.MockRenamingProvider;
 import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
@@ -56,10 +68,13 @@ public class OfflineProcessingTest {
         set.writeJson(sb, Collections.singleton("Sample.click_here_to_create_new_account"), termsInUse);
         sb.append(";\nvar terms=");
         dict.writeJson(sb, false, termsInUse.stream().map(a->a.getName()).collect(Collectors.toList()));
-
         ScriptEngine engine = JsTestUtils.getScriptEngine();
         engine.eval(sb.toString());
-	}
+        
+        // make sure dict will run with null terms. tests for contents TBD
+        dict.writeJson(new StringBuilder(), false, null);
+	}	
+	
 	
 	@Test 
 	public void compareRenameable() throws Exception {
