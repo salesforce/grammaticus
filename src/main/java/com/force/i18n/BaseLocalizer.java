@@ -7,6 +7,8 @@
 
 package com.force.i18n;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.*;
@@ -47,7 +49,7 @@ public class BaseLocalizer {
     public static final Date OLD_LATEST;
 
     private static final FormatFixer JDK_FORMAT_FIXER = new JdkFormatFixer();
-    private static Function<Locale,FormatFixer> LocaleFixerFunction;
+    private static Function<Locale, FormatFixer> LocaleFixerFunction;
 
 
     static {
@@ -120,15 +122,15 @@ public class BaseLocalizer {
     public static final String JAPANESE_LANGUAGE = "ja";
 
 
-    protected static void setLocaleFormatFixer(Function<Locale,FormatFixer> predicate) {
+    protected static void setLocaleFormatFixer(Function<Locale, FormatFixer> predicate) {
         BaseLocalizer.LocaleFixerFunction = predicate;
     }
 
-    protected static Function<Locale,FormatFixer> getLocaleFormatFixer() {
+    protected static Function<Locale, FormatFixer> getLocaleFormatFixer() {
         return BaseLocalizer.LocaleFixerFunction;
     }
 
-    private static final ThreadLocal<SimpleDateFormat> ISO8601_FORMATTER = new ThreadLocal<SimpleDateFormat>() {
+    private static final ThreadLocal<SimpleDateFormat> ISO8601_FORMATTER = new ThreadLocal<>() {
         @Override
         public SimpleDateFormat initialValue() {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
@@ -137,7 +139,7 @@ public class BaseLocalizer {
         }
     };
 
-    private static final ThreadLocal<SimpleDateFormat> ISO8601_MILLISECOND_FORMATTER = new ThreadLocal<SimpleDateFormat>() {
+    private static final ThreadLocal<SimpleDateFormat> ISO8601_MILLISECOND_FORMATTER = new ThreadLocal<>() {
         @Override
         public SimpleDateFormat initialValue() {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
@@ -175,24 +177,24 @@ public class BaseLocalizer {
      * use the gregorian calendar.
      */
     public static interface FormatFixer {
-    	/**
-    	 * Some locales have a different calendar than the business application would prefer.  This allows
-    	 * overriding the locale for obtaining a different calendar.
+        /**
+         * Some locales have a different calendar than the business application would prefer.  This allows
+         * overriding the locale for obtaining a different calendar.
          * @param tz the given time zone
-    	 * @param locale the given locale
+         * @param locale the given locale
          * @return {@code Calender} instance represents given {@code tz} and {@code locale}
-    	 */
-    	default public Calendar getCalendar(TimeZone tz, Locale locale) {
-    		return Calendar.getInstance(tz, locale);
-    	}
+         */
+        default Calendar getCalendar(TimeZone tz, Locale locale) {
+            return Calendar.getInstance(tz, locale);
+        }
 
         /**
          * @return the date formatter with the given formatting style for the given locale.
          * @param style the given formatting style
          * @param aLocale the given locale
          */
-    	default public DateFormat getDateInstance(int style, Locale aLocale) {
-    		return DateFormat.getDateInstance(style, aLocale);
+        default DateFormat getDateInstance(int style, Locale aLocale) {
+            return DateFormat.getDateInstance(style, aLocale);
         }
 
         /**
@@ -200,8 +202,8 @@ public class BaseLocalizer {
          * @param timeStyle the given formatting style
          * @param aLocale the given locale
          */
-        default public DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
-        	return DateFormat.getTimeInstance(timeStyle, aLocale);
+        default DateFormat getTimeInstance(int timeStyle, Locale aLocale) {
+            return DateFormat.getTimeInstance(timeStyle, aLocale);
         }
 
         /**
@@ -210,8 +212,8 @@ public class BaseLocalizer {
          * @param timeStyle the given time formatting style
          * @param aLocale the given locale
          */
-        default public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
-        	return DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale);
+        default DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale aLocale) {
+            return DateFormat.getDateTimeInstance(dateStyle, timeStyle, aLocale);
         }
 
         /**
@@ -223,7 +225,7 @@ public class BaseLocalizer {
          * @param aLocale the given locale
          * @return the dateFormat with the given pattern applied
          */
-        default public DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale) {
+        default DateFormat applyPattern(DateFormat dateFormat, String pattern, Locale aLocale) {
             if (dateFormat instanceof SimpleDateFormat) {
                 ((SimpleDateFormat) dateFormat).applyPattern(pattern);
                 return dateFormat;
@@ -235,7 +237,7 @@ public class BaseLocalizer {
          * @return number format for given locale.
          * @param locale the given locale
          */
-        default public NumberFormat getNumberFormat(Locale locale) {
+        default NumberFormat getNumberFormat(Locale locale) {
             return NumberFormat.getNumberInstance(locale);
         }
 
@@ -243,7 +245,7 @@ public class BaseLocalizer {
          * @return currency format for given locale.
          * @param locale the given locale
          */
-        default public NumberFormat getCurrencyFormat(Locale locale) {
+        default NumberFormat getCurrencyFormat(Locale locale) {
             return NumberFormat.getCurrencyInstance(locale);
 
         }
@@ -252,7 +254,7 @@ public class BaseLocalizer {
          * @return currency in accounting format for given locale.
          * @param locale the given locale
          */
-        default public NumberFormat getAccountingCurrencyFormat(Locale locale) {
+        default NumberFormat getAccountingCurrencyFormat(Locale locale) {
             return NumberFormat.getCurrencyInstance(locale); // JDK doesn't have dedicated accounting format. Default to regular format
         }
 
@@ -260,7 +262,7 @@ public class BaseLocalizer {
          * @return percentage format for given locale.
          * @param locale the given locale
          */
-        default public NumberFormat getPercentFormat(Locale locale) {
+        default NumberFormat getPercentFormat(Locale locale) {
             return NumberFormat.getPercentInstance(locale);
         }
 
@@ -269,8 +271,8 @@ public class BaseLocalizer {
          * @param currencyLocale the locale for the symbol to look up
          * @return the currency symbol for the given isocode locale
          */
-        default public String getCurrencySymbolFromCurrencyIsoCode(String currencyIsoCode, Locale currencyLocale) {
-			return Currency.getInstance(currencyIsoCode).getSymbol(currencyLocale);
+        default String getCurrencySymbolFromCurrencyIsoCode(String currencyIsoCode, Locale currencyLocale) {
+            return Currency.getInstance(currencyIsoCode).getSymbol(currencyLocale);
         }
     }
 
@@ -278,14 +280,18 @@ public class BaseLocalizer {
      * @return a format fixer that uses the built-in JDK data
      */
     protected static FormatFixer getJDKFormatFixer() {
-    	return JDK_FORMAT_FIXER;
+        return JDK_FORMAT_FIXER;
     }
 
     /**
      * @return a format fixer that uses ICU4J instead of the JDK
      */
     protected static FormatFixer getICUFormatFixer() {
-    	return ICUFormatFixer.INSTANCE;
+        return ICUFormatFixer.INSTANCE;
+    }
+
+    private static boolean isSaudiArabia(Locale aLocale) {
+        return aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa");
     }
 
     /**
@@ -317,15 +323,15 @@ public class BaseLocalizer {
         private static final String LATVIA_DATE_MEDIUM_FORMAT = "dd.MM.yyyy";
         private static final String LATVIA  = "LV";
 
-        private static Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("SG", "NG", "MY", "BB", "BM", "GH", "ID");
+        private static final Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("SG", "NG", "MY", "BB", "BM", "GH", "ID");
 
         // This also applies to singapore and india.
         private static boolean shouldFixJdkDateBug(Locale locale) {
             if (locale == null) return false;
-            String lang = locale.getLanguage();
             if (LATVIA.equals(locale.getCountry())) return true;
-            if (ENGLISH_LANGUAGE.equals(lang) && ENGLISH_OVERRIDE_COUNTRIES.contains(locale.getCountry())) return true;
-            return false;
+
+            return ENGLISH_LANGUAGE.equals(locale.getLanguage())
+                    && ENGLISH_OVERRIDE_COUNTRIES.contains(locale.getCountry());
         }
 
         // We have some issues with Saudi Arabia (ar-SA) calendar and
@@ -334,7 +340,7 @@ public class BaseLocalizer {
         // now by falling back to Arabic (ar) locale which uses
         // GregorianCalendar.  These changes were applied to the JDK as well.
         Locale overrideDateLocale(Locale aLocale) {
-            if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa")) {
+            if (isSaudiArabia(aLocale)) {
                 return new Locale("ar");
             }
             return aLocale;
@@ -353,18 +359,22 @@ public class BaseLocalizer {
             return df;
         }
 
-		@Override
+        private String adjustDateFormat(int style, Locale aLocale) {
+            checkArgument(style == DateFormat.SHORT || style == DateFormat.MEDIUM);
+            if (LATVIA.equals(aLocale.getCountry())) {
+                return style == DateFormat.SHORT ? LATVIA_DATE_SHORT_FORMAT : LATVIA_DATE_MEDIUM_FORMAT;
+            }
+            return style == DateFormat.SHORT ? BRITISH_DATE_SHORT_FORMAT : BRITISH_DATE_MEDIUM_FORMAT;
+        }
+
+        @Override
         public DateFormat getDateInstance(int style, Locale aLocale) {
             aLocale = overrideDateLocale(aLocale);
             if (shouldFixJdkDateBug(aLocale)) {
-                String dateFormat;
                 switch (style) {
                 case DateFormat.SHORT:
-                    dateFormat = LATVIA.equals(aLocale.getCountry()) ? LATVIA_DATE_SHORT_FORMAT : BRITISH_DATE_SHORT_FORMAT;
-                    return new SimpleDateFormat(dateFormat, aLocale);
                 case DateFormat.MEDIUM:
-                    dateFormat = LATVIA.equals(aLocale.getCountry()) ? LATVIA_DATE_MEDIUM_FORMAT : BRITISH_DATE_MEDIUM_FORMAT;
-                    return new SimpleDateFormat(dateFormat, aLocale);
+                    return new SimpleDateFormat(adjustDateFormat(style, aLocale), aLocale);
                 default:
                     return DateFormat.getDateInstance(style, aLocale);
                 }
@@ -384,8 +394,7 @@ public class BaseLocalizer {
             aLocale = overrideDateLocale(aLocale);
             if (shouldFixJdkDateBug(aLocale)) {
                 if (dateStyle == DateFormat.SHORT || dateStyle == DateFormat.MEDIUM) {
-                    String dateFormat = (dateStyle == DateFormat.SHORT) ? (LATVIA.equals(aLocale.getCountry()) ? LATVIA_DATE_SHORT_FORMAT : BRITISH_DATE_SHORT_FORMAT) :
-                        (LATVIA.equals(aLocale.getCountry()) ? LATVIA_DATE_MEDIUM_FORMAT : BRITISH_DATE_MEDIUM_FORMAT);
+                    String dateFormat = adjustDateFormat(dateStyle, aLocale);
                     switch (timeStyle) {
                     case DateFormat.SHORT:
                         return new SimpleDateFormat(dateFormat + " HH:mm", aLocale);
@@ -413,18 +422,16 @@ public class BaseLocalizer {
             }
             return new SimpleDateFormat(pattern, overrideDateLocale(aLocale));
         }
-
-
     }
 
     /**
      * Some hot fixes to override locale data. This is ICU version.
      **/
     protected static class ICUFormatFixer implements FormatFixer {
-    	// Don't use the enum pattern here because we want to allow easy overriding.
-    	static final FormatFixer INSTANCE = new ICUFormatFixer();
+        // Don't use the enum pattern here because we want to allow easy overriding.
+        static final FormatFixer INSTANCE = new ICUFormatFixer();
 
-        private static Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("ID");
+        private static final Set<String> ENGLISH_OVERRIDE_COUNTRIES = ImmutableSet.of("ID");
 
         // Override locales.
         /**
@@ -447,18 +454,23 @@ public class BaseLocalizer {
         /**
          * We have some issues with Saudi Arabia (ar-SA) calendar and
          * date / time formats due to the change in Calendar type to
-	     * IslamicCalendar in ICU4J 59.1. Work around these issues for
-	     * now by falling back to Arabic (ar) locale which uses
-	     * GregorianCalendar.
+         * IslamicCalendar in ICU4J 59.1. Work around these issues for
+         * now by falling back to Arabic (ar) locale which uses
+         * GregorianCalendar.
          * @param aLocale the locale to look for
          * @return the locale to use for date formats and calendar.
          */
-	    protected Locale overrideCalendarLocale(Locale aLocale) {
-	    	if (aLocale.getLanguage().equalsIgnoreCase("ar") && aLocale.getCountry().equalsIgnoreCase("sa") && aLocale.getVariant().length() == 0) {
-	            return new Locale("ar", "SA", "@calendar=gregorian");
+        protected Locale overrideCalendarLocale(Locale aLocale) {
+            if (isSaudiArabia(aLocale) && aLocale.getVariant().length() == 0) {
+                // aLocale may contain other Unicode extension (e.g. "ar-SA-u-nu-latin") Use Locale.Builder to safely
+                // add/overrite "ca" value.
+                Locale.Builder builder = new Locale.Builder();
+                builder.setLanguageTag(aLocale.toLanguageTag());
+                builder.setUnicodeLocaleKeyword("ca", "gregory");
+                return builder.build();
             }
-	        return aLocale;
-	    }
+            return aLocale;
+        }
 
         @Override
         public Calendar getCalendar(TimeZone tz, Locale locale) {
@@ -502,26 +514,26 @@ public class BaseLocalizer {
 
         @Override
         public NumberFormat getNumberFormat(Locale locale) {
-            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getNumberInstance(locale);
-            return NumberFormatICU.wrap(icu_nf);
+            com.ibm.icu.text.NumberFormat nf = com.ibm.icu.text.NumberFormat.getNumberInstance(locale);
+            return NumberFormatICU.wrap(nf);
         }
 
         @Override
         public NumberFormat getCurrencyFormat(Locale locale) {
-            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getCurrencyInstance(locale);
-            return NumberFormatICU.wrap(icu_nf);
+            com.ibm.icu.text.NumberFormat nf = com.ibm.icu.text.NumberFormat.getCurrencyInstance(locale);
+            return NumberFormatICU.wrap(nf);
         }
 
         @Override
         public NumberFormat getAccountingCurrencyFormat(Locale locale) {
-            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getInstance(locale, com.ibm.icu.text.NumberFormat.ACCOUNTINGCURRENCYSTYLE);
-            return NumberFormatICU.wrap(icu_nf);
+            com.ibm.icu.text.NumberFormat nf = com.ibm.icu.text.NumberFormat.getInstance(locale, com.ibm.icu.text.NumberFormat.ACCOUNTINGCURRENCYSTYLE);
+            return NumberFormatICU.wrap(nf);
         }
 
         @Override
         public NumberFormat getPercentFormat(Locale locale) {
-            com.ibm.icu.text.NumberFormat icu_nf = com.ibm.icu.text.NumberFormat.getPercentInstance(locale);
-            return NumberFormatICU.wrap(icu_nf);
+            com.ibm.icu.text.NumberFormat nf = com.ibm.icu.text.NumberFormat.getPercentInstance(locale);
+            return NumberFormatICU.wrap(nf);
         }
 
         @Override
@@ -534,7 +546,8 @@ public class BaseLocalizer {
         return LocaleFixerFunction.apply(locale);
     }
 
-    /** This constructor is used to create a BaseLocalizer
+    /**
+     * This constructor is used to create a BaseLocalizer
      *
      * @param locale is the user's locale data
      * @param currencyLocale is org's currency locale
@@ -564,9 +577,9 @@ public class BaseLocalizer {
      */
     public Calendar getCalendar(LocalOrGmt tz) {
         if (tz == LOCAL) {
-            return getCalendar(this.timeZone, this.locale);
+            return getCalendar(getTimeZone(), getLocale());
         } else {
-            return getCalendar(GMT_TZ, this.locale);
+            return getCalendar(GMT_TZ, getLocale());
         }
     }
 
@@ -577,7 +590,7 @@ public class BaseLocalizer {
      * @return a calendar for given time zone.
      */
     public Calendar getCalendar(TimeZone tz) {
-        return getCalendar(tz, this.locale);
+        return getCalendar(tz, getLocale());
     }
 
     /**
@@ -587,7 +600,7 @@ public class BaseLocalizer {
      * @return a calendar for given locale.
      */
     public Calendar getCalendar(Locale l) {
-        return getFormatProvider(l).getCalendar(this.timeZone, l);
+        return getFormatProvider(l).getCalendar(getTimeZone(), l);
     }
 
     /**
@@ -751,12 +764,12 @@ public class BaseLocalizer {
     public DateFormat getInputDateFormat(LocalOrGmt tz) {
         if (tz == LOCAL) {
             if (this.inputLocalDateFormat == null) {
-                this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, this.timeZone);
+                this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(getLocale(), getTimeZone());
             }
             return this.inputLocalDateFormat;
         } else {
             if (this.inputGmtDateFormat == null) {
-                this.inputGmtDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, GMT_TZ);
+                this.inputGmtDateFormat = BaseLocalizer.getLocaleInputDateFormat(getLocale(), GMT_TZ);
             }
             return this.inputGmtDateFormat;
         }
@@ -772,7 +785,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputDateFormat() {
         if (this.inputLocalDateFormat == null) {
-            this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, this.timeZone);
+            this.inputLocalDateFormat = BaseLocalizer.getLocaleInputDateFormat(getLocale(), getTimeZone());
         }
         return this.inputLocalDateFormat;
     }
@@ -787,7 +800,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputMediumDateFormat() {
         if (this.inputLocalMediumDateFormat == null) {
-            this.inputLocalMediumDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputLocalMediumDateFormat = BaseLocalizer.getLocaleInputDateFormat(getLocale(), DateFormat.MEDIUM, getTimeZone());
         }
         return this.inputLocalMediumDateFormat;
     }
@@ -802,7 +815,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputLongDateFormat() {
         if (this.inputLocalLongDateFormat == null) {
-            this.inputLocalLongDateFormat = BaseLocalizer.getLocaleInputDateFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLocalLongDateFormat = BaseLocalizer.getLocaleInputDateFormat(getLocale(), DateFormat.LONG, getTimeZone());
         }
         return this.inputLocalLongDateFormat;
     }
@@ -899,7 +912,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputDateTimeFormat() {
         if (this.inputDateTimeFormat == null) {
-            this.inputDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, this.timeZone);
+            this.inputDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(getLocale(), getTimeZone());
         }
         return this.inputDateTimeFormat;
     }
@@ -915,7 +928,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputMediumDateTimeFormat() {
         if (this.inputMediumDateTimeFormat == null) {
-            this.inputMediumDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputMediumDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(getLocale(), DateFormat.MEDIUM, getTimeZone());
         }
         return this.inputMediumDateTimeFormat;
     }
@@ -930,7 +943,7 @@ public class BaseLocalizer {
      */
     public DateFormat getInputLongDateTimeFormat() {
         if (this.inputLongDateTimeFormat == null) {
-            this.inputLongDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLongDateTimeFormat = BaseLocalizer.getLocaleInputDateTimeFormat(getLocale(), DateFormat.LONG, getTimeZone());
         }
         return this.inputLongDateTimeFormat;
     }
@@ -1009,21 +1022,21 @@ public class BaseLocalizer {
 
     public DateFormat getInputTimeFormat() {
         if (this.inputLocalTimeFormat == null) {
-            this.inputLocalTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.SHORT, this.timeZone);
+            this.inputLocalTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(getLocale(), DateFormat.SHORT, getTimeZone());
         }
         return this.inputLocalTimeFormat;
     }
 
     public DateFormat getInputMediumTimeFormat() {
         if (this.inputLocalMediumTimeFormat == null) {
-            this.inputLocalMediumTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.MEDIUM, this.timeZone);
+            this.inputLocalMediumTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(getLocale(), DateFormat.MEDIUM, getTimeZone());
         }
         return this.inputLocalMediumTimeFormat;
     }
 
     public DateFormat getInputLongTimeFormat() {
         if (this.inputLocalLongTimeFormat == null) {
-            this.inputLocalLongTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(this.locale, DateFormat.LONG, this.timeZone);
+            this.inputLocalLongTimeFormat = BaseLocalizer.getLocaleInputTimeFormat(getLocale(), DateFormat.LONG, getTimeZone());
         }
         return this.inputLocalLongTimeFormat;
     }
@@ -1173,7 +1186,7 @@ public class BaseLocalizer {
      * @return a formatted date string.
      */
     public static String formatDate(Date date, int style, Locale locale, TimeZone tz) {
-    	    return (date == null) ? null : getLocaleDateFormat(style, locale, tz).format(date);
+        return (date == null) ? null : getLocaleDateFormat(style, locale, tz).format(date);
     }
 
     /**
@@ -1207,7 +1220,7 @@ public class BaseLocalizer {
      * @return a formatted date string.
      */
     public static String formatDateTime(Date date, int style, Locale locale, TimeZone tz) {
-	    return (date == null) ? null : getLocaleDateTimeFormat(style, locale, tz).format(date);
+        return (date == null) ? null : getLocaleDateTimeFormat(style, locale, tz).format(date);
     }
 
     /**
@@ -1218,27 +1231,27 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat.
      */
-	public static DateFormat getLocaleDateFormat(int style, Locale locale, TimeZone tz) {
-		DateFormat df;
-		switch (style) {
-		case DateFormat.SHORT:
-			df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
-			break;
-		case DateFormat.MEDIUM:
-			df = getFormatProvider(locale).getDateInstance(DateFormat.MEDIUM, locale);
-			break;
-		case DateFormat.LONG:
-			df = getFormatProvider(locale).getDateInstance(DateFormat.LONG, locale);
-			break;
-		default:
-			df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
+    public static DateFormat getLocaleDateFormat(int style, Locale locale, TimeZone tz) {
+        DateFormat df;
+        switch (style) {
+        case DateFormat.SHORT:
+            df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
+            break;
+        case DateFormat.MEDIUM:
+            df = getFormatProvider(locale).getDateInstance(DateFormat.MEDIUM, locale);
+            break;
+        case DateFormat.LONG:
+            df = getFormatProvider(locale).getDateInstance(DateFormat.LONG, locale);
+            break;
+        default:
+            df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
 
-		}
-		df = BaseLocalizer.convertTo4DigitYear(df, locale);
-		df.setLenient(false);
-		df.setTimeZone(tz);
-		return df;
-	}
+        }
+        df = BaseLocalizer.convertTo4DigitYear(df, locale);
+        df.setLenient(false);
+        df.setTimeZone(tz);
+        return df;
+    }
 
     /**
      * Get date-only DateFormat for output based on style. 4-digit year
@@ -1270,12 +1283,12 @@ public class BaseLocalizer {
     public DateFormat getDateFormat(LocalOrGmt tz) {
         if (tz == LOCAL) {
             if (this.localDateFormat == null) {
-                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, this.timeZone);
+                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(getLocale(), getTimeZone());
             }
             return this.localDateFormat;
         } else {
             if (this.gmtDateFormat == null) {
-                this.gmtDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, GMT_TZ);
+                this.gmtDateFormat = BaseLocalizer.getLocaleDateFormat(getLocale(), GMT_TZ);
             }
             return this.gmtDateFormat;
         }
@@ -1289,7 +1302,7 @@ public class BaseLocalizer {
      */
     public DateFormat getDateFormat() {
             if (this.localDateFormat == null) {
-                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(this.locale, this.timeZone);
+                this.localDateFormat = BaseLocalizer.getLocaleDateFormat(getLocale(), getTimeZone());
             }
             return this.localDateFormat;
     }
@@ -1319,10 +1332,11 @@ public class BaseLocalizer {
      */
     public DateFormat getMediumDateFormat() {
         if (this.localMediumDateFormat == null) {
-            this.localMediumDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(this.locale).getDateInstance(
-                DateFormat.MEDIUM, this.locale), this.locale);
+            Locale localeToUse = getLocale();
+            this.localMediumDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateInstance(
+                DateFormat.MEDIUM, localeToUse), localeToUse);
             this.localMediumDateFormat.setLenient(false);
-            this.localMediumDateFormat.setTimeZone(this.timeZone);
+            this.localMediumDateFormat.setTimeZone(getTimeZone());
         }
         return this.localMediumDateFormat;
     }
@@ -1335,10 +1349,11 @@ public class BaseLocalizer {
      */
     public DateFormat getLongDateFormat() {
         if (this.localLongDateFormat == null) {
-            this.localLongDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(this.locale).getDateInstance(
-                DateFormat.LONG, this.locale), this.locale);
+            Locale localeToUse = getLocale();
+            this.localLongDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateInstance(
+                DateFormat.LONG, localeToUse), localeToUse);
             this.localLongDateFormat.setLenient(false);
-            this.localLongDateFormat.setTimeZone(this.timeZone);
+            this.localLongDateFormat.setTimeZone(getTimeZone());
         }
         return this.localLongDateFormat;
     }
@@ -1350,27 +1365,27 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat.
      */
-	public static DateFormat getLocaleTimeFormat(int style, Locale locale, TimeZone tz) {
-		DateFormat df;
-		switch (style) {
-		case DateFormat.SHORT:
-			df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
-			break;
-		case DateFormat.MEDIUM:
-			df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
-			break;
-		case DateFormat.LONG:
-			df = getFormatProvider(locale).getTimeInstance(DateFormat.LONG, locale);
-			break;
-		default:
-			df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
+    public static DateFormat getLocaleTimeFormat(int style, Locale locale, TimeZone tz) {
+        DateFormat df;
+        switch (style) {
+        case DateFormat.SHORT:
+            df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
+            break;
+        case DateFormat.MEDIUM:
+            df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
+            break;
+        case DateFormat.LONG:
+            df = getFormatProvider(locale).getTimeInstance(DateFormat.LONG, locale);
+            break;
+        default:
+            df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
 
-		}
-		df = BaseLocalizer.convertTo4DigitYear(df, locale);
-		df.setLenient(false);
-		df.setTimeZone(tz);
-		return df;
-	}
+        }
+        df = BaseLocalizer.convertTo4DigitYear(df, locale);
+        df.setLenient(false);
+        df.setTimeZone(tz);
+        return df;
+    }
 
     /**
      * Get time-only DateFormat based on style for output.
@@ -1399,7 +1414,7 @@ public class BaseLocalizer {
      * @return a DateFormat based on localizer's time zone and cached
      */
     public DateFormat getTimeFormat() {
-        return getTimeFormatHelper(this.localTimeFormat, DateFormat.SHORT, this.timeZone);
+        return getTimeFormatHelper(this.localTimeFormat, DateFormat.SHORT, getTimeZone());
     }
 
     /**
@@ -1409,7 +1424,7 @@ public class BaseLocalizer {
      * @return a DateFormat based on localizer's time zone and cached
      */
     public DateFormat getMediumTimeFormat() {
-        return getTimeFormatHelper(this.localMediumTimeFormat, DateFormat.MEDIUM, this.timeZone);
+        return getTimeFormatHelper(this.localMediumTimeFormat, DateFormat.MEDIUM, getTimeZone());
     }
 
     /**
@@ -1419,7 +1434,7 @@ public class BaseLocalizer {
      * @return a DateFormat based on localizer's time zone and cached
      */
     public DateFormat getLongTimeFormat() {
-        return getTimeFormatHelper(this.localLongTimeFormat, DateFormat.LONG, this.timeZone);
+        return getTimeFormatHelper(this.localLongTimeFormat, DateFormat.LONG, getTimeZone());
     }
 
     /**
@@ -1430,10 +1445,11 @@ public class BaseLocalizer {
      */
     public DateFormat getMediumDateTimeFormat() {
         if (this.mediumDateTimeFormat == null) {
-            this.mediumDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(this.locale).getDateTimeInstance(
-                DateFormat.MEDIUM, DateFormat.MEDIUM, this.locale), this.locale);
+            Locale localeToUse = getLocale();
+            this.mediumDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateTimeInstance(
+                DateFormat.MEDIUM, DateFormat.MEDIUM, localeToUse), localeToUse);
             this.mediumDateTimeFormat.setLenient(false);
-            this.mediumDateTimeFormat.setTimeZone(this.timeZone);
+            this.mediumDateTimeFormat.setTimeZone(getTimeZone());
         }
         return this.mediumDateTimeFormat;
     }
@@ -1446,10 +1462,11 @@ public class BaseLocalizer {
      */
     public DateFormat getLongDateTimeFormat() {
         if (this.longDateTimeFormat == null) {
-            this.longDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(this.locale).getDateTimeInstance(
-                DateFormat.SHORT, DateFormat.LONG, this.locale), this.locale);
+            Locale localeToUse = getLocale();
+            this.longDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateTimeInstance(
+                DateFormat.SHORT, DateFormat.LONG, localeToUse), localeToUse);
             this.longDateTimeFormat.setLenient(false);
-            this.longDateTimeFormat.setTimeZone(this.timeZone);
+            this.longDateTimeFormat.setTimeZone(getTimeZone());
         }
         return this.longDateTimeFormat;
     }
@@ -1467,7 +1484,8 @@ public class BaseLocalizer {
     private DateFormat getTimeFormatHelper(DateFormat timeFormat, int style, TimeZone timeZone) {
         if (timeFormat != null) return timeFormat; // In case the protected variables are set, just used the cached values
 
-        DateFormat newTimeFormat = getFormatProvider(this.locale).getTimeInstance(style, this.locale);;
+        Locale localeToUse = getLocale();
+        DateFormat newTimeFormat = getFormatProvider(localeToUse).getTimeInstance(style, localeToUse);;
         // Explicitly setting to true. This is a fix for Timezones where the certain time doesn't exist.
         // Example: America/Mazatlan, 12:00 AM. Try parsing this with a formatter of h:mm a.
         newTimeFormat.setLenient(true);
@@ -1483,7 +1501,7 @@ public class BaseLocalizer {
      */
     public DateFormat getDateTimeFormat() {
         if (this.dateTimeFormat == null) {
-            this.dateTimeFormat = BaseLocalizer.getLocaleDateTimeFormat(this.locale, this.timeZone);
+            this.dateTimeFormat = BaseLocalizer.getLocaleDateTimeFormat(getLocale(), getTimeZone());
         }
         return this.dateTimeFormat;
     }
@@ -1496,26 +1514,26 @@ public class BaseLocalizer {
      * @param tz time zone
      * @return a DateFormat instance
      */
-	public static DateFormat getLocaleDateTimeFormat(int style, Locale locale, TimeZone tz) {
-		DateFormat df;
-		switch (style) {
-		case DateFormat.SHORT:
-			df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
-			break;
-		case DateFormat.MEDIUM:
-			df = getFormatProvider(locale).getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
-			break;
-		case DateFormat.LONG:
-			df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.LONG, locale);
-			break;
-		default:
-			df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
-		}
-		df = BaseLocalizer.convertTo4DigitYear(df, locale);
-		df.setLenient(false);
-		df.setTimeZone(tz);
-		return df;
-	}
+    public static DateFormat getLocaleDateTimeFormat(int style, Locale locale, TimeZone tz) {
+        DateFormat df;
+        switch (style) {
+        case DateFormat.SHORT:
+            df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+            break;
+        case DateFormat.MEDIUM:
+            df = getFormatProvider(locale).getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
+            break;
+        case DateFormat.LONG:
+            df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.LONG, locale);
+            break;
+        default:
+            df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+        }
+        df = BaseLocalizer.convertTo4DigitYear(df, locale);
+        df.setLenient(false);
+        df.setTimeZone(tz);
+        return df;
+    }
 
     /**
      * Get date-time DateFormat for output based on style. Uses 4-digit year.
@@ -1696,7 +1714,8 @@ public class BaseLocalizer {
      */
     public NumberFormat getNumberFormat() {
         if (this.numberFormat == null) {
-            this.numberFormat = getFormatProvider(this.locale).getNumberFormat(this.locale);
+            Locale localeToUse = getLocale();
+            this.numberFormat = getFormatProvider(localeToUse).getNumberFormat(localeToUse);
         }
         return numberFormat;
     }
@@ -1721,8 +1740,10 @@ public class BaseLocalizer {
      * @return the NumberFormat for this localizer with the given scale.
      */
     public NumberFormat getNumberFormat(int scale, boolean scaleSpecified) {
+        Locale localeToUse = getLocale();
+
         // don't use the cached NumberFormat because we are altering it
-        NumberFormat nf = getFormatProvider(this.locale).getNumberFormat(this.locale);
+        NumberFormat nf = getFormatProvider(localeToUse).getNumberFormat(localeToUse);
 
         // We handle numbers longer than their precision with separate logic...
         // If we make the following call, it does truncation and rounding on the integer part which we do not desire.
@@ -1743,7 +1764,7 @@ public class BaseLocalizer {
      * @return a NumberFormat instance to format currency
      */
     public NumberFormat getCurrencyFormat() {
-        return getCurrencyFormat(this.currencyLocale);
+        return getCurrencyFormat(getCurrencyLocale());
     }
 
     protected NumberFormat getCurrencyFormat(Locale currLocale) {
@@ -1760,7 +1781,7 @@ public class BaseLocalizer {
      * @return a NumberFormat instance to format currency in accounting style
      */
     public NumberFormat getAccountingCurrencyFormat() {
-        return getAccountingCurrencyFormat(this.currencyLocale);
+        return getAccountingCurrencyFormat(getCurrencyLocale());
     }
 
     protected NumberFormat getAccountingCurrencyFormat(Locale currLocale) {
@@ -1778,7 +1799,7 @@ public class BaseLocalizer {
      * @return a NumberFormat instance to format currency
      */
     public NumberFormat getCurrencyFormat(int scale) {
-        return getCurrencyFormat(this.currencyLocale, scale);
+        return getCurrencyFormat(getCurrencyLocale(), scale);
     }
 
     protected NumberFormat getCurrencyFormat(Locale currLocale, int scale)  {
@@ -1796,7 +1817,7 @@ public class BaseLocalizer {
      * @return a NumberFormat instance to format currency in accounting style
      */
     public NumberFormat getAccountingCurrencyFormat(int scale) {
-        return getAccountingCurrencyFormat(this.currencyLocale, scale);
+        return getAccountingCurrencyFormat(getCurrencyLocale(), scale);
     }
 
     protected NumberFormat getAccountingCurrencyFormat(Locale currLocale, int scale)  {
@@ -1826,13 +1847,13 @@ public class BaseLocalizer {
      * @return a NumberFormat instance to format percent
      */
     public NumberFormat getPercentFormat() {
-        /* this was removed to work around a problem in the Decimal format
-         object.
-
-         http://developer.java.sun.com/developer/bugParade/bugs/4252562.html
-         return (NumberFormat)data.percentFormat.clone();
+        /*
+         * this was removed to work around a problem in the Decimal format object.
+         * http://developer.java.sun.com/developer/bugParade/bugs/4252562.html
+         * return NumberFormat)data.percentFormat.clone();
          */
-        return getFormatProvider(this.locale).getPercentFormat(this.locale);
+        Locale localeToUse = getLocale();
+        return getFormatProvider(localeToUse).getPercentFormat(localeToUse);
     }
 
     /**
@@ -1873,7 +1894,7 @@ public class BaseLocalizer {
     public MessageFormat getMessageFormat(String pattern) {
         MessageFormat f = messageFormatCache.get(pattern);
         if (f == null) {
-            f = new MessageFormat(pattern, this.locale);
+            f = new MessageFormat(pattern, getLocale());
             messageFormatCache.put(pattern, f);
         }
         return f;
@@ -1938,13 +1959,13 @@ public class BaseLocalizer {
      * @return the label in the label set at the given section and key
      */
     public String getLabel(String section, String key, Object... args) {
-        String labelText = TextUtil.escapeForMessageFormat(getLabel(section, key)).toString();
+        String labelText = TextUtil.escapeForMessageFormat(getLabel(section, key));
         MessageFormat formatter = getMessageFormat(labelText);
         return formatter.format(args);
     }
 
     public String getLabelThrow(String section, String key, Object... args) {
-        String labelText = TextUtil.escapeForMessageFormat(getLabelThrow(section, key)).toString();
+        String labelText = TextUtil.escapeForMessageFormat(getLabelThrow(section, key));
         MessageFormat formatter = getMessageFormat(labelText);
         return formatter.format(args);
     }
@@ -1968,6 +1989,7 @@ public class BaseLocalizer {
 
     /**
      * @return the locale of the language associated with the localizer
+     * @deprecated use {@link #getUserLanguage()} instead
      */
     @Deprecated
     public Locale getLanguage() {
