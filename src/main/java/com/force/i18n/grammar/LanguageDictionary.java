@@ -669,7 +669,9 @@ public class LanguageDictionary implements Serializable {
      * @throws IOException if an error happens during append
      */
     public void writeJsonTerms(Appendable out, boolean useRenamedNouns, Collection<GrammaticalTerm> terms) throws IOException {
-        Collection<String> termsToInclude = terms.stream().map((t)->t.getName()).collect(Collectors.toSet());
+        Collection<String> termsToInclude = 
+                terms == null ? null : 
+                terms.stream().map((t)->t.getName()).collect(Collectors.toSet());
         writeJson(out, useRenamedNouns, termsToInclude);
     }
     

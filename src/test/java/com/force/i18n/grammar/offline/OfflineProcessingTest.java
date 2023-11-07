@@ -19,6 +19,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
+import com.force.i18n.Renameable;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest;
 import com.force.i18n.grammar.parser.BaseGrammaticalLabelTest.MockRenamingProvider;
@@ -56,10 +57,13 @@ public class OfflineProcessingTest {
         set.writeJson(sb, Collections.singleton("Sample.click_here_to_create_new_account"), termsInUse);
         sb.append(";\nvar terms=");
         dict.writeJson(sb, false, termsInUse.stream().map(a->a.getName()).collect(Collectors.toList()));
-
         ScriptEngine engine = JsTestUtils.getScriptEngine();
         engine.eval(sb.toString());
-	}
+        
+        // make sure dict will run with null terms. tests for contents TBD
+        dict.writeJson(new StringBuilder(), false, null);
+	}	
+	
 	
 	@Test 
 	public void compareRenameable() throws Exception {
