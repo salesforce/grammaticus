@@ -40,7 +40,24 @@ public enum LanguageGender {
     CLASS_XVI("P", "ClassXVI", "Pa", "XVI"), // Class XVI Pa Class
     CLASS_XVII("K", "ClassXVII", "Ku", "XVII"), // Class XVII Ku Class
     CLASS_XVIII("M", "ClassXVIII", "Mu", "XVIII"), // Class XVIII Mu Class
-    ;
+    
+    
+    MAYAN_WATER("a", "Water"),
+    MAYAN_PLANT("anh", "Plant"),
+    MAYAN_SALT("atzʼam", "Salt"),
+    MAYAN_VINE("chanh", "Vine"),
+    MAYAN_FEMALE("ix", "Female"),
+    MAYAN_GRAIN("ixim", "Grain"),
+    MAYAN_CLOTH("kʼak", "Cloth"),
+    MAYAN_METAL("kʼen", "Metal"),
+    MAYAN_EARTH("lum", "Earth"),
+    MAYAN_ANIMAL("nokʼ", "Animal"),
+    MAYAN_WOOD("teʼ", "Wood"),
+    MAYAN_MALE_NAME("waj", "MaleName"),
+    MAYAN_MALE("winh", "Male"),
+
+    ;    
+
 
 	public static final char JSON_ATTR_NAME = 'g';
 
