@@ -33,7 +33,11 @@ public class SettingsUtilTest extends TestCase {
         assertTrue("Expected keyword secret to be considered sensitive",SettingsUtil.isSensitive(SECTION_NAME, "DomainSecret"));
         assertTrue("Expected keyword key to be considered sensitive",SettingsUtil.isSensitive(SECTION_NAME, "DomainKey"));
         assertTrue("Expected keyword authenticationid to be considered sensitive",SettingsUtil.isSensitive(SECTION_NAME, "authenticationid"));
+        assertTrue("Expected keyword token to be considered sensitive", SettingsUtil.isSensitive(SECTION_NAME, "token"));
+        assertTrue("Expected keyword token to be considered sensitive", SettingsUtil.isSensitive(SECTION_NAME, "AccessToken"));
+        assertTrue("Expected keyword token to be considered sensitive", SettingsUtil.isSensitive(SECTION_NAME, "DomainAccounttoken"));
 
         assertFalse("Testing a non-sensitive word",SettingsUtil.isSensitive(SECTION_NAME, "Parameter"));
+        assertFalse("Testing a non-sensitive word",SettingsUtil.isSensitive(SECTION_NAME, "StatusTokeep"));
     }
 }

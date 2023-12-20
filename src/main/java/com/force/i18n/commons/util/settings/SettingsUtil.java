@@ -18,7 +18,7 @@ public class SettingsUtil {
     /**
      * Section keys that correspond to sensitive data which should be redacted in config.jsp
      */
-    static final String[] SENSITIVE_KEYWORDS = {"password", "secret", "key", "authenticationid", "certificates" };
+    static final String[] SENSITIVE_KEYWORDS = {"password", "secret", "key", "authenticationid", "certificates", "token" };
 
     /**
      * @return true if the value is sensitive and should be censored, false otherwise.
