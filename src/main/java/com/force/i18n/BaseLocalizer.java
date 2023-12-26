@@ -462,12 +462,7 @@ public class BaseLocalizer {
          */
         protected Locale overrideCalendarLocale(Locale aLocale) {
             if (isSaudiArabia(aLocale) && aLocale.getVariant().length() == 0) {
-                // aLocale may contain other Unicode extension (e.g. "ar-SA-u-nu-latin") Use Locale.Builder to safely
-                // add/overrite "ca" value.
-                Locale.Builder builder = new Locale.Builder();
-                builder.setLanguageTag(aLocale.toLanguageTag());
-                builder.setUnicodeLocaleKeyword("ca", "gregory");
-                return builder.build();
+                return new Locale("ar", "SA", "@calendar=gregorian");
             }
             return aLocale;
         }
