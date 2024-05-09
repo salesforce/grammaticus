@@ -46,6 +46,7 @@
     <icu4j.version>69.1</icu4j.version>
     <icu4j-localespi.version>69.1</icu4j-localespi.version>
     <picocli.version>4.1.4</picocli.version>
+    <caffeine.version>2.8.0</caffeine.version>
   </properties>
 
   <profiles>
@@ -298,6 +299,16 @@
       <optional>true</optional>
     </dependency>
 
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>caffeine</artifactId>
+      <version>${caffeine.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.ben-manes.caffeine</groupId>
+      <artifactId>guava</artifactId>
+      <version>${caffeine.version}</version>
+    </dependency>
 
     <dependency>
       <groupId>org.freemarker</groupId>

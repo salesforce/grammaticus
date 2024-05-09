@@ -19,6 +19,8 @@ import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.settings.*;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import com.github.benmanes.caffeine.guava.CaffeinatedGuava;
 import com.google.common.cache.*;
 import com.google.common.util.concurrent.UncheckedExecutionException;
 
@@ -153,11 +155,11 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             this.seedKeyMap = null;
         }
 
-        this.cache = getCacheBuilder(config).build(getCacheLoader());
+        this.cache = CaffeinatedGuava.build(getCacheBuilder(config), getCacheLoader());
     }
 
-    protected CacheBuilder<Object, Object> getCacheBuilder(LabelSetLoaderConfig config) {
-        CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().initialCapacity(64);
+    protected Caffeine<Object, Object> getCacheBuilder(LabelSetLoaderConfig config) {
+        Caffeine<Object, Object> builder = Caffeine.newBuilder().initialCapacity(64);
 
         Duration expiration = config.getCacheExpireAfter();
         if (!expiration.isZero() && !expiration.isNegative()) builder.expireAfterAccess(expiration);
@@ -234,7 +236,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
      * LanguageDictionary.
      *
      * @param language
-     *            the language     
+     *            the language
      */
     protected LanguageDictionary createNewDictionary(HumanLanguage language) throws IOException {
         // default : using default LanguageDictionary
@@ -244,15 +246,15 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
     /**
      * Finalize the dictionary after loading. If need something special (e.g. write some data to a file), override this
      * method.
-     * 
-     * 
+     *
+     *
      * @param dictionary the dictionary to be finalized.
      * @return the finalized dictionary.
      */
 
     protected LanguageDictionary finalizeDictionary(LanguageDictionary dictionary) throws IOException {
         // default : do nothing
-        return dictionary;        
+        return dictionary;
     }
 
     protected GrammaticalLabelSet loadLabels(GrammaticalLabelSetDescriptor desc) throws IOException {
@@ -261,7 +263,7 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         // dictionaries are always unique for every language because it may use different LanguageDeclension
         LanguageDictionaryParser dictParser = new LanguageDictionaryParser(desc, createNewDictionary(lang), this.parentProvider);
         LanguageDictionary dictionary = finalizeDictionary(dictParser.getDictionary());
-    
+
         // all standard/end-user languages comes here. Create a parser to read from XML files.
         GrammaticalLabelFileParser parser = new GrammaticalLabelFileParser(dictionary, desc, this.parentProvider);
 
