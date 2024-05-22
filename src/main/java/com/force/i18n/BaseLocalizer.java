@@ -51,6 +51,8 @@ public class BaseLocalizer {
     private static final FormatFixer JDK_FORMAT_FIXER = new JdkFormatFixer();
     private static Function<Locale, FormatFixer> LocaleFixerFunction;
 
+    // controlls leniency of parsing date. using non-lenient mode for not allowing ambiguous date such as "2/30"
+    private static final boolean USE_LENIENT_MODE = false;
 
     static {
         Calendar c = Calendar.getInstance();
@@ -822,6 +824,21 @@ public class BaseLocalizer {
 
 
     /**
+     * Copy over the settings from ICU {@code SimpleDateFormat}.
+     * <p>
+     * ICU-21301 fails to parse the transition date for time zones with daylight saving time.
+
+     * see: https://unicode-org.atlassian.net/browse/ICU-21301
+     */
+    private static DateFormat setJdkDateFormatFromIcu(SimpleDateFormat fmtJdk, SimpleDateFormatICU fmtIcu) {
+        fmtJdk.applyPattern(fmtIcu.toPattern());
+        fmtJdk.setNumberFormat(fmtIcu.getNumberFormat());
+        fmtJdk.setDateFormatSymbols(fmtIcu.getDateFormatSymbols());
+        fmtJdk.set2DigitYearStart(fmtIcu.get2DigitYearStart());
+        return fmtJdk;
+    }
+
+    /**
      * Static method to get date-only DateFormat for input. This is based on a 2 digit year
      * input mask, which also handles 4-digit year, but caller must use doParseDate() to
      * handle single-digit years, out-of-bounds years, and trailing garbage in input string.
@@ -833,8 +850,14 @@ public class BaseLocalizer {
      */
     public static DateFormat getLocaleInputDateFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
+        // ICU-21301 hack: Apply only with an ICU object and when timezone has DST
+        if (!USE_LENIENT_MODE && df instanceof SimpleDateFormatICU && tz.useDaylightTime()) {
+            // (re-)construct JDK's DateFormat object and copy formatting information from ICU
+            DateFormat dfJdk = getJDKFormatFixer().getDateInstance(DateFormat.SHORT, locale);
+            df = setJdkDateFormatFromIcu((SimpleDateFormat)dfJdk, (SimpleDateFormatICU)df);
+        }
 
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         set2DigitYearStart(df, tz);
         return df;
@@ -851,22 +874,25 @@ public class BaseLocalizer {
      * @return a date-only DateFormat.
      */
     public static DateFormat getLocaleInputDateFormat(Locale locale, int style, TimeZone tz) {
-        DateFormat df;
+        int dateStyle;
         switch (style) {
-            case DateFormat.SHORT:
-                df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
-                break;
-            case DateFormat.MEDIUM:
-                df = getFormatProvider(locale).getDateInstance(DateFormat.MEDIUM, locale);
-                break;
-            case DateFormat.LONG:
-                df = getFormatProvider(locale).getDateInstance(DateFormat.LONG, locale);
-                break;
-            default:
-                df = getFormatProvider(locale).getDateInstance(DateFormat.SHORT, locale);
+        case DateFormat.SHORT:
+        case DateFormat.MEDIUM:
+        case DateFormat.LONG:
+            dateStyle = style;
+            break;
+        default:
+            dateStyle = DateFormat.SHORT;
+        }
+        DateFormat df = getFormatProvider(locale).getDateInstance(dateStyle, locale);
+        // ICU-21301 hack: Apply only with an ICU object and when timezone has DST
+        if (!USE_LENIENT_MODE && df instanceof SimpleDateFormatICU && tz.useDaylightTime()) {
+            // (re-)construct JDK's DateFormat object and copy formatting information from ICU
+            DateFormat dfJdk = getJDKFormatFixer().getDateInstance(dateStyle, locale);
+            df = setJdkDateFormatFromIcu((SimpleDateFormat)dfJdk, (SimpleDateFormatICU)df);
         }
 
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         set2DigitYearStart(df, tz);
         return df;
@@ -960,8 +986,14 @@ public class BaseLocalizer {
      */
     public static DateFormat getLocaleInputDateTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+        // ICU-21301 hack: Apply only with an ICU object and when timezone has DST
+        if (!USE_LENIENT_MODE && df instanceof SimpleDateFormatICU && tz.useDaylightTime()) {
+            // (re-)construct JDK's DateFormat object and copy formatting information from ICU
+            DateFormat dfJdk = getJDKFormatFixer().getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+            df = setJdkDateFormatFromIcu((SimpleDateFormat)dfJdk, (SimpleDateFormatICU)df);
+        }
 
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         set2DigitYearStart(df, tz);
         return df;
@@ -980,21 +1012,28 @@ public class BaseLocalizer {
      */
 
     public static DateFormat getLocaleInputDateTimeFormat(Locale locale, int style, TimeZone tz) {
-        DateFormat df;
+        int dateStyle;
+        int timeStyle;
         switch (style) {
-            case DateFormat.SHORT:
-                df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
-                break;
-            case DateFormat.MEDIUM:
-                df = getFormatProvider(locale).getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, locale);
-                break;
-            case DateFormat.LONG:
-                df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.LONG, locale);
-                break;
-            default:
-                df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
+        case DateFormat.MEDIUM:
+            dateStyle = timeStyle = DateFormat.MEDIUM;
+            break;
+        case DateFormat.LONG:
+            dateStyle = DateFormat.SHORT;
+            timeStyle = DateFormat.LONG;
+            break;
+        case DateFormat.SHORT:
+        default:
+            dateStyle = timeStyle = DateFormat.SHORT;
         }
-        df.setLenient(false);
+        DateFormat df = getFormatProvider(locale).getDateTimeInstance(dateStyle, timeStyle, locale);
+        // ICU-21301 hack: Apply only with an ICU object and when timezone has DST
+        if (!USE_LENIENT_MODE && df instanceof SimpleDateFormatICU && tz.useDaylightTime()) {
+            // (re-)construct JDK's DateFormat object and copy formatting information from ICU
+            DateFormat dfJdk = getJDKFormatFixer().getDateTimeInstance(dateStyle, timeStyle, locale);
+            df = setJdkDateFormatFromIcu((SimpleDateFormat)dfJdk, (SimpleDateFormatICU)df);
+        }
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         set2DigitYearStart(df, tz);
         return df;
@@ -1050,23 +1089,26 @@ public class BaseLocalizer {
      * @return a date-only DateFormat.
      */
     public static DateFormat getLocaleInputTimeFormat(Locale locale, int style, TimeZone tz) {
-        DateFormat df;
+        int dateStyle;
 
         switch (style) {
-            case DateFormat.SHORT:
-                df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
-                break;
-            case DateFormat.MEDIUM:
-                df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
-                break;
-            case DateFormat.LONG:
-                df = getFormatProvider(locale).getTimeInstance(DateFormat.LONG, locale);
-                break;
-            default:
-                df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
+        case DateFormat.SHORT:
+        case DateFormat.MEDIUM:
+        case DateFormat.LONG:
+            dateStyle = style;
+            break;
+        default:
+            dateStyle = DateFormat.SHORT;
+        }
+        DateFormat df = getFormatProvider(locale).getTimeInstance(dateStyle, locale);
+        // ICU-21301 hack: Apply only with an ICU object and when timezone has DST
+        if (!USE_LENIENT_MODE && df instanceof SimpleDateFormatICU && tz.useDaylightTime()) {
+            // (re-)construct JDK's DateFormat object and copy formatting information from ICU
+            DateFormat dfJdk = getJDKFormatFixer().getTimeInstance(dateStyle, locale);
+            df = setJdkDateFormatFromIcu((SimpleDateFormat)dfJdk, (SimpleDateFormatICU)df);
         }
 
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         set2DigitYearStart(df, tz);
         return df;
@@ -1248,7 +1290,7 @@ public class BaseLocalizer {
 
         }
         df = BaseLocalizer.convertTo4DigitYear(df, locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1319,7 +1361,7 @@ public class BaseLocalizer {
     public static DateFormat getLocaleDateFormat(Locale locale, TimeZone tz) {
         DateFormat df = BaseLocalizer.convertTo4DigitYear(getFormatProvider(locale).getDateInstance(DateFormat.SHORT,
             locale), locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1335,7 +1377,7 @@ public class BaseLocalizer {
             Locale localeToUse = getLocale();
             this.localMediumDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateInstance(
                 DateFormat.MEDIUM, localeToUse), localeToUse);
-            this.localMediumDateFormat.setLenient(false);
+            this.localMediumDateFormat.setLenient(USE_LENIENT_MODE);
             this.localMediumDateFormat.setTimeZone(getTimeZone());
         }
         return this.localMediumDateFormat;
@@ -1352,7 +1394,7 @@ public class BaseLocalizer {
             Locale localeToUse = getLocale();
             this.localLongDateFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateInstance(
                 DateFormat.LONG, localeToUse), localeToUse);
-            this.localLongDateFormat.setLenient(false);
+            this.localLongDateFormat.setLenient(USE_LENIENT_MODE);
             this.localLongDateFormat.setTimeZone(getTimeZone());
         }
         return this.localLongDateFormat;
@@ -1382,7 +1424,7 @@ public class BaseLocalizer {
 
         }
         df = BaseLocalizer.convertTo4DigitYear(df, locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1448,7 +1490,7 @@ public class BaseLocalizer {
             Locale localeToUse = getLocale();
             this.mediumDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateTimeInstance(
                 DateFormat.MEDIUM, DateFormat.MEDIUM, localeToUse), localeToUse);
-            this.mediumDateTimeFormat.setLenient(false);
+            this.mediumDateTimeFormat.setLenient(USE_LENIENT_MODE);
             this.mediumDateTimeFormat.setTimeZone(getTimeZone());
         }
         return this.mediumDateTimeFormat;
@@ -1465,7 +1507,7 @@ public class BaseLocalizer {
             Locale localeToUse = getLocale();
             this.longDateTimeFormat = BaseLocalizer.convertTo4DigitYear(getFormatProvider(localeToUse).getDateTimeInstance(
                 DateFormat.SHORT, DateFormat.LONG, localeToUse), localeToUse);
-            this.longDateTimeFormat.setLenient(false);
+            this.longDateTimeFormat.setLenient(USE_LENIENT_MODE);
             this.longDateTimeFormat.setTimeZone(getTimeZone());
         }
         return this.longDateTimeFormat;
@@ -1530,7 +1572,7 @@ public class BaseLocalizer {
             df = getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, locale);
         }
         df = BaseLocalizer.convertTo4DigitYear(df, locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1568,7 +1610,7 @@ public class BaseLocalizer {
     public static DateFormat getLocaleDateTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = BaseLocalizer.convertTo4DigitYear(getFormatProvider(locale).getDateTimeInstance(DateFormat.SHORT,
             DateFormat.SHORT, locale), locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1582,7 +1624,7 @@ public class BaseLocalizer {
      */
     public static DateFormat getLocaleTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getTimeInstance(DateFormat.SHORT, locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
@@ -1596,7 +1638,7 @@ public class BaseLocalizer {
      */
     public static DateFormat getLocaleMediumTimeFormat(Locale locale, TimeZone tz) {
         DateFormat df = getFormatProvider(locale).getTimeInstance(DateFormat.MEDIUM, locale);
-        df.setLenient(false);
+        df.setLenient(USE_LENIENT_MODE);
         df.setTimeZone(tz);
         return df;
     }
