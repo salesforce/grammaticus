@@ -553,7 +553,6 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(config);
         loader.getSet(ENGLISH);
-
         Thread.sleep(1);
         assertNull(loader.getCache().getIfPresent(desc));
 
@@ -569,9 +568,11 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertEquals(0, loader.getCache().size());
 
         loader.getSet(ENGLISH);
+        Thread.sleep(1);
         assertEquals(1, loader.getCache().size());
 
         loader.getSet(ENGLISH_AU);
+        Thread.sleep(1);
         assertEquals(3, loader.getCache().size());
         assertNotNull(loader.getCache().getIfPresent(desc));
         assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(ENGLISH_GB)));
@@ -579,11 +580,13 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         // Caffeine does not evict prior the threadshold, but after the size crossed
         loader.getSet(FRENCH);
-        assertEquals(4, loader.getCache().size());
+        Thread.sleep(1);
+        assertEquals(3, loader.getCache().size());
         assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(FRENCH)));
 
         loader.getSet(GERMAN);
-        assertEquals(4, loader.getCache().size());
+        Thread.sleep(1);
+        assertEquals(3, loader.getCache().size());
         assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(GERMAN)));
     }
 }
