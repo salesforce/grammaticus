@@ -7,18 +7,23 @@
 
 package com.force.i18n;
 
+import static org.junit.Assert.assertNotEquals;
+
 import java.text.*;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 import com.force.i18n.BaseLocalizer.FormatFixer;
 import com.force.i18n.BaseLocalizer.LocalOrGmt;
 import com.force.i18n.commons.util.settings.SimpleNonConfigIniFile;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.ibm.icu.impl.jdkadapter.SimpleDateFormatICU;
 import com.ibm.icu.util.ULocale;
 
 import junit.framework.TestCase;
@@ -32,6 +37,7 @@ public class BaseLocalizerTest extends TestCase {
 
     private BaseLocalizer usLocalizer;
     private BaseLocalizer ukLocalizer;
+    private SharedLabelSet lSet;
     private final Function<Locale,FormatFixer> originalPredicate;
 
     public BaseLocalizerTest(String name) throws Exception {
@@ -42,7 +48,7 @@ public class BaseLocalizerTest extends TestCase {
 
         Locale locale = Locale.US;
 
-        SharedLabelSet lSet = getIniFile();
+        this.lSet = getIniFile();
 
         this.usLocalizer = new BaseLocalizer(locale, locale, tz, HumanLanguage.Helper.get(Locale.US), lSet);
         locale = Locale.UK;
@@ -120,12 +126,12 @@ public class BaseLocalizerTest extends TestCase {
         Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocaleFormatFixer();
 		Function<Locale,FormatFixer> predicate = loc -> BaseLocalizer.getJDKFormatFixer();
         BaseLocalizer.setLocaleFormatFixer(predicate);
-        
+
         try {
 	        TimeZone tz = BaseLocalizer.GMT_TZ;
 	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 12:00:00");
 
-	        // In JDK 11, they fixed danish (again).  In JDK 17, they reverted it back to the correct ICU format...  
+	        // In JDK 11, they fixed danish (again).  In JDK 17, they reverted it back to the correct ICU format...
 	        //assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
 	        //assertEquals("13/03/2008 12.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
 
@@ -159,7 +165,7 @@ public class BaseLocalizerTest extends TestCase {
             new Locale("ar"), //
             new Locale("ar", "SA"), //
     };
-    
+
     public void testJdkDateFormatFixer_ICU() throws Exception {
         // set to use ICU locale data.
        Function<Locale,FormatFixer> old_predicate = BaseLocalizer.getLocaleFormatFixer();
@@ -196,7 +202,7 @@ public class BaseLocalizerTest extends TestCase {
     	   BaseLocalizer.setLocaleFormatFixer(old_predicate);
        }
     }
-    
+
     private static Date getDate(int year, int month, int date, int hourOfDay, int minute, int second, TimeZone tz) {
         GregorianCalendar cal = new GregorianCalendar(tz);
         cal.clear();
@@ -460,8 +466,8 @@ public class BaseLocalizerTest extends TestCase {
                 String p = tf.toPattern();
 
                 // H for 24-hours time format, h for 12-hours format.
-                if ((p.indexOf('a') == -1) && (p.indexOf('k') == -1)) {
-                    Assert.assertTrue("Locale:" + u_loc.getName() + " has incorrect time format " + p, p.indexOf('H') != -1);
+                if ((p.indexOf('a') == -1) && (p.indexOf('k') == -1) && (p.indexOf('B') == -1)) {
+                    assertNotEquals("Locale:" + u_loc.getName() + " has incorrect time format " + p, -1, p.indexOf('H'));
                 }
             }
         }
@@ -513,6 +519,38 @@ public class BaseLocalizerTest extends TestCase {
         assertTrue("Following locales don't have 4-digit year patten:" + res, res.isEmpty());
     }
 
+    /*
+     * ICU-21301 failed to parse the transition date (e.g. 6/9/2020 for "America/Santiago")
+     * https://unicode-org.atlassian.net/browse/ICU-21301
+     *
+     * BaseLocalizer returns JDK's DateFormat object instead of ICU for particular time zone
+     */
+    @Test
+    public void testParseDateOnDST() throws Exception {
+        final Locale locale = Locale.GERMANY;
+        final HumanLanguage language = HumanLanguage.Helper.get(Locale.US);
+
+        // set to ICU mode
+        BaseLocalizer.setLocaleFormatFixer(l -> BaseLocalizer.getICUFormatFixer());
+
+        Calendar cal = Calendar.getInstance();
+        cal.clear();
+
+        BaseLocalizer icuLocalizer = new BaseLocalizer(locale, locale, TimeZone.getTimeZone("America/Santiago"), language, lSet);
+        assertFalse(icuLocalizer.getInputDateFormat() instanceof SimpleDateFormatICU);
+        Date date = icuLocalizer.parseDate("06.09.2020", DateFormat.SHORT);
+        cal.setTimeZone(TimeZone.getTimeZone("America/Santiago"));
+        cal.set(2020, 8, 6);
+        assertEquals(cal.getTime(), date);
+
+        icuLocalizer = new BaseLocalizer(locale, locale, TimeZone.getTimeZone("Africa/Cairo"), language, lSet);
+        assertFalse(icuLocalizer.getInputDateFormat() instanceof SimpleDateFormatICU);
+        date = icuLocalizer.parseDate("26.4.2024", DateFormat.SHORT);
+        cal.setTimeZone(TimeZone.getTimeZone("Africa/Cairo"));
+        cal.set(2024, 3, 26);
+        assertEquals(cal.getTime().getTime(), date.getTime());
+    }
+
     private static class TestSimpleIniFile extends SimpleNonConfigIniFile implements SharedLabelSet {
         @Override
         public boolean labelExists(String section, String param) {
@@ -553,6 +591,6 @@ public class BaseLocalizerTest extends TestCase {
        assertEquals(-12345678.57, num.doubleValue(), 0.001);
 
        BaseLocalizer.setLocaleFormatFixer(old_predicate);
-    }    
-    
+    }
+
 }
