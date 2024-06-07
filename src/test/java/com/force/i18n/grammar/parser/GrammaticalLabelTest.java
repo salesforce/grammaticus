@@ -7,6 +7,8 @@
 
 package com.force.i18n.grammar.parser;
 
+import static org.junit.Assert.assertThrows;
+
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.URL;
@@ -547,11 +549,24 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         GrammaticalLabelSetDescriptor desc = getDescriptor();
 
-        // Test expiration
         LabelSetLoaderConfig config = new LabelSetLoaderConfig(desc, null);
-        config.setCacheExpireAfter(Duration.ofMillis(1));
-
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(config);
+        // default is Ceffeine.  comparing with the class name because the class is not public
+        assertEquals("CaffeinatedGuavaLoadingCache", loader.getCache().getClass().getSimpleName());
+
+        // try switching to Guava cache.
+        config.setCaffeine(false);
+        GrammaticalLabelSetLoader guavaLoader = new GrammaticalLabelSetLoader(config);
+        assertEquals("LocalLoadingCache", guavaLoader.getCache().getClass().getSimpleName());
+
+        assertThrows(UnsupportedOperationException.class, () -> guavaLoader.getCacheBuilder(config));
+
+        // Test expiration
+        // re-construct the loader with Caffeine and set expiration period to 1ms
+        config.setCaffeine(true);
+        config.setCacheExpireAfter(Duration.ofMillis(1));
+        loader = new GrammaticalLabelSetLoader(config);
+
         loader.getSet(ENGLISH);
         Thread.sleep(1);
         assertNull(loader.getCache().getIfPresent(desc));
@@ -580,12 +595,12 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
 
         // Caffeine does not evict prior the threadshold, but after the size crossed
         loader.getSet(FRENCH);
-        Thread.sleep(1);
+        Thread.sleep(5);
         assertEquals(3, loader.getCache().size());
         assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(FRENCH)));
 
         loader.getSet(GERMAN);
-        Thread.sleep(1);
+        Thread.sleep(5);
         assertEquals(3, loader.getCache().size());
         assertNotNull(loader.getCache().getIfPresent(desc.getForOtherLanguage(GERMAN)));
     }
