@@ -155,10 +155,48 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
             this.seedKeyMap = null;
         }
 
-        this.cache = CaffeinatedGuava.build(getCacheBuilder(config), getCacheLoader());
+        this.cache = initCache(config);
     }
 
+    /**
+     * initialize internal cache that holds {@link GrammaticalLabelSet}.
+     *
+     * @param config a configuration to initialize this loader
+     * @return a {@code LoadingCache} object to use as a cache
+     */
+    protected LoadingCache<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> initCache(LabelSetLoaderConfig config) {
+        // switch between Caffeine / Guava based on the config
+        return config.useCaffeine()
+                ? CaffeinatedGuava.build(getCaffeineCacheBuilder(config), getCacheLoader())
+                : getGuavaCacheBuilder(config).build(getCacheLoader());
+    }
+
+    /**
+     * @param config
+     *            a configuration to initialize this loader. if the configuration is set to use Guava, the
+     *            {@link UnsupportedOperationException} will be thrown.
+     * @return Caffeine instance to build a cache
+     * @deprecated This method is no longer used. In order to obtain a cache builder to modify cache settings, use
+     *             {@link #getCaffeineCacheBuilder(LabelSetLoaderConfig)} for Caffeine, or
+     *             {@link #getGuavaCacheBuilder(LabelSetLoaderConfig)} for Guava.
+     * @see #initCache(LabelSetLoaderConfig)
+     * @see LabelSetLoaderConfig#setCaffeine(boolean)
+     */
+    @Deprecated(since = "1.2.27", forRemoval = true)
     protected Caffeine<Object, Object> getCacheBuilder(LabelSetLoaderConfig config) {
+        if (!config.useCaffeine()) throw new UnsupportedOperationException();
+        return getCaffeineCacheBuilder(config);
+    }
+
+    /**
+     * Return a Caffeine-based cache builder instance.
+     * Override this method to replace, or edit cache option.
+     *
+     * @param config a config to initialize this loader
+     * @return Caffeine-based builder
+     * @see #initCache(LabelSetLoaderConfig)
+     */
+    protected Caffeine<Object, Object> getCaffeineCacheBuilder(LabelSetLoaderConfig config) {
         Caffeine<Object, Object> builder = Caffeine.newBuilder().initialCapacity(64);
 
         Duration expiration = config.getCacheExpireAfter();
@@ -172,6 +210,30 @@ public class GrammaticalLabelSetLoader implements GrammaticalLabelSetProvider {
         }
         return builder;
     }
+
+    /**
+     * Return a Guava-based cache builder instance.
+     * Override this method to replace, or edit cache option.
+     *
+     * @param config a config to initialize this loader
+     * @return Guava-based builder
+     * @see #initCache(LabelSetLoaderConfig)
+     */
+    protected CacheBuilder<Object, Object> getGuavaCacheBuilder(LabelSetLoaderConfig config) {
+        CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder().initialCapacity(64);
+
+        Duration expiration = config.getCacheExpireAfter();
+        if (!expiration.isZero() && !expiration.isNegative()) builder.expireAfterAccess(expiration);
+
+        long maxSize = config.getCacheMaxSize();
+        if (maxSize > 0) builder.maximumSize(maxSize);
+
+        if (config.isCacheStatsEnabled()) {
+            builder.recordStats();
+        }
+        return builder;
+    }
+
 
     protected CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet> getCacheLoader() {
         return new CacheLoader<GrammaticalLabelSetDescriptor, GrammaticalLabelSet>() {

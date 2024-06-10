@@ -23,6 +23,7 @@ public class LabelSetLoaderConfig {
     public static final String RECORD_STATS = "loader.cache.stats";
     public static final String LOADER_EXPIRE_AFTER = "loader.cache.expireAfter";
     public static final String LOADER_MAX_SIZE = "loader.cache.maxSize";
+    public static final String USE_CAFFEINE = "loader.cache.useCaffeine";
 
     private final GrammaticalLabelSetDescriptor desc;
     private final GrammaticalLabelSetProvider parent;
@@ -33,6 +34,7 @@ public class LabelSetLoaderConfig {
     private boolean isCacheStatsEnabled;
     private Duration cacheExpireAfter; // expiration in minues
     private long cacheMaxSize; // max allowed entires
+    private boolean useCaffeine;
 
     public LabelSetLoaderConfig(GrammaticalLabelSetDescriptor baseDesc, GrammaticalLabelSetProvider parent) {
         this.desc = baseDesc;
@@ -45,6 +47,7 @@ public class LabelSetLoaderConfig {
         setCacheStatsEnabled(BasePropertyFile.stringToBoolean(getProperty(RECORD_STATS)));
         setCacheExpireAfter(Duration.ofMinutes(getPropertyLong(LOADER_EXPIRE_AFTER)));
         setCacheMaxSize(getPropertyLong(LOADER_MAX_SIZE));
+        setCaffeine(BasePropertyFile.stringToBoolean(getProperty(USE_CAFFEINE)));
     }
 
     public LabelSetLoaderConfig(LabelSetLoaderConfig copyFrom) {
@@ -56,6 +59,7 @@ public class LabelSetLoaderConfig {
         setCacheStatsEnabled(copyFrom.isCacheStatsEnabled());
         setCacheExpireAfter(copyFrom.getCacheExpireAfter());
         setCacheMaxSize(copyFrom.getCacheMaxSize());
+        setCaffeine(copyFrom.useCaffeine());
     }
 
     public static String getProperty(String prop) {
@@ -136,13 +140,23 @@ public class LabelSetLoaderConfig {
         return this;
     }
 
+    public LabelSetLoaderConfig setCaffeine(boolean useCaffeine) {
+        this.useCaffeine = useCaffeine;
+        return this;
+    }
+
+    public boolean useCaffeine() {
+        return this.useCaffeine;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("stats=").append(this.isCacheStatsEnabled)
                 .append(", expire=").append(this.cacheExpireAfter)
                 .append(", size=").append(this.cacheMaxSize)
-                .append(", dir=").append(this.cacheDir.toAbsolutePath());
+                .append(", dir=").append(this.cacheDir.toAbsolutePath())
+                .append(", useCaffeine=").append(this.useCaffeine);
         return sb.toString();
     }
 }
