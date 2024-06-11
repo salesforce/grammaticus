@@ -22,6 +22,8 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.checkerframework.checker.nullness.qual.Nullable;
+
 import com.force.i18n.commons.text.GenericTrieMatcher;
 import com.force.i18n.commons.text.GenericTrieMatcher.GenericTrieMatch;
 import com.force.i18n.commons.text.TextUtil;
@@ -44,7 +46,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
 
-import jakarta.annotation.Nullable;
 
 /**
  * Set of routines to simplify access to LabelUtils
