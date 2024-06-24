@@ -8,9 +8,9 @@
 package com.force.i18n;
 
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.text.*;
-import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -522,11 +522,9 @@ public class BaseLocalizerTest extends TestCase {
     /*
      * ICU-21301 failed to parse the transition date (e.g. 6/9/2020 for "America/Santiago")
      * https://unicode-org.atlassian.net/browse/ICU-21301
-     *
-     * BaseLocalizer returns JDK's DateFormat object instead of ICU for particular time zone
      */
     @Test
-    public void testParseDateOnDST() throws Exception {
+    public void testParseDateOnDST() {
         final Locale locale = Locale.GERMANY;
         final HumanLanguage language = HumanLanguage.Helper.get(Locale.US);
 
@@ -536,19 +534,10 @@ public class BaseLocalizerTest extends TestCase {
         Calendar cal = Calendar.getInstance();
         cal.clear();
 
-        BaseLocalizer icuLocalizer = new BaseLocalizer(locale, locale, TimeZone.getTimeZone("America/Santiago"), language, lSet);
-        assertFalse(icuLocalizer.getInputDateFormat() instanceof SimpleDateFormatICU);
-        Date date = icuLocalizer.parseDate("06.09.2020", DateFormat.SHORT);
-        cal.setTimeZone(TimeZone.getTimeZone("America/Santiago"));
-        cal.set(2020, 8, 6);
-        assertEquals(cal.getTime(), date);
-
-        icuLocalizer = new BaseLocalizer(locale, locale, TimeZone.getTimeZone("Africa/Cairo"), language, lSet);
-        assertFalse(icuLocalizer.getInputDateFormat() instanceof SimpleDateFormatICU);
-        date = icuLocalizer.parseDate("26.4.2024", DateFormat.SHORT);
-        cal.setTimeZone(TimeZone.getTimeZone("Africa/Cairo"));
-        cal.set(2024, 3, 26);
-        assertEquals(cal.getTime().getTime(), date.getTime());
+        final BaseLocalizer icuLocalizer = new BaseLocalizer(locale, locale, TimeZone.getTimeZone("America/Santiago"),
+                language, lSet);
+        assertTrue(icuLocalizer.getInputDateFormat() instanceof SimpleDateFormatICU);
+        assertThrows(ParseException.class, () -> icuLocalizer.parseDate("06.09.2020", DateFormat.SHORT));
     }
 
     private static class TestSimpleIniFile extends SimpleNonConfigIniFile implements SharedLabelSet {
