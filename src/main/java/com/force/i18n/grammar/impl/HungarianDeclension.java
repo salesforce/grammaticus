@@ -7,11 +7,13 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 import static com.force.i18n.grammar.LanguageCase.*;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -163,8 +165,8 @@ class HungarianDeclension extends ArticledDeclension {
         @Override public LanguageNumber getNumber() { return this.number; }
         @Override public LanguageStartsWith getStartsWith() {return this.startsWith; }
         static HungarianArticleForm getForm(ModifierForm form) {
-            return form.getNumber() == LanguageNumber.SINGULAR ?
-                    (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
+            return form.getNumber() == LanguageNumber.SINGULAR
+                    ? (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
                     : (form.getStartsWith() == LanguageStartsWith.VOWEL ? PLURAL_V : PLURAL);
         }
 
@@ -205,7 +207,7 @@ class HungarianDeclension extends ArticledDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER)
-                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" must be neuter", name);
             return super.validateGender(name);  // Let it go
         }
     }

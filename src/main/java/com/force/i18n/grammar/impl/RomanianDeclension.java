@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -47,7 +49,7 @@ class RomanianDeclension extends RomanceDeclension {
 
 
     public RomanianDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<RomanianNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<RomanianNounForm> fieldBuilder = ImmutableList.builder();
@@ -173,17 +175,16 @@ class RomanianDeclension extends RomanceDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             for (NounForm form : getDeclension().getAllNounForms()) {
-                if (getString(form) == null) {
-                    // Only do the "defaulting" on entities
-                    if (getNounType() == NounType.ENTITY) {
-                        String value = getCloseButNoCigarString(form);
+                // Only do the "defaulting" on entities
+                if (getString(form) == null && getNounType() == NounType.ENTITY) {
+                    String value = getCloseButNoCigarString(form);
 
-                        if (value == null) {
-                            logger.info("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
-                            return false;
-                        }
-                        setString(value, form);
+                    if (value == null) {
+                        error(logger, Level.INFO, this.getDeclension(),
+                                "The noun \"%s\" has no %s form and no default could be found", name, form);
+                        return false;
                     }
+                    setString(value, form);
                 }
             }
             return true;

@@ -7,12 +7,15 @@
 
 package com.force.i18n.grammar;
 
+import static com.force.i18n.commons.util.LogUtil.error;
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.*;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.*;
@@ -510,7 +513,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         @Override
         public boolean validate(String name) {
             if (this.value == null) {
-                logger.info("###\tError: The adjective " + name + " has no value");
+                error(logger, Level.INFO, this.getDeclension(), "The adjective \"%s\" has no value", name);
                 return false;
             }
             return true;
@@ -583,7 +586,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" must be neuter", name);
             }
             return super.validateGender(name);  // Let it go
         }
@@ -631,14 +634,12 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
             value = intern(value);
             if (form.getNumber().isPlural()) {
                 this.plural = value;
-                if (value != null && value.equals(this.singular))
-                 {
+                if (value != null && value.equals(this.singular)) {
                     this.singular = value; // Keep one reference for serialization
                 }
             } else {
                 this.singular = value;
-                if (value != null && value.equals(this.plural))
-                 {
+                if (value != null && value.equals(this.plural)) {
                     this.plural = value; // Keep one reference for serialization
                 }
             }
@@ -647,7 +648,7 @@ public abstract class AbstractLanguageDeclension implements LanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form for: "  + getDeclension().getLanguage());
+                error(logger, Level.INFO, this.getDeclension(), "The noun \"%s\" has no singular form", name);
                 return false;
             }
             return true;

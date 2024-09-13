@@ -7,13 +7,16 @@
 
 package com.force.i18n.grammar;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.LanguageConstants;
+
 /**
  * Represents a language that has articles, and provides a generic mechanism for
  * handling article creation
@@ -134,7 +137,7 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
         @Override
         public boolean validate(String name) {
             if (this.value == null) {
-                logger.info("###\tError: The article " + name + " has no form");
+                error(logger, Level.INFO, this.getDeclension(), "The article \"%s\" has no form", name);
                 return false;
             }
             return true;
@@ -168,7 +171,10 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
 
         @Override
         public String getDefaultString(boolean isPlural) {
-            return isPlural && plural != null ? plural : singular;
+            if (isPlural && plural != null) return plural;
+
+            // there's a corner case that dictionary has only plural form. try to return non-null
+            return singular != null ? singular : plural;
         }
 
         @Override
@@ -187,14 +193,12 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
             value = intern(value);
             if (form.getNumber().isPlural()) {
                 this.plural = value;
-                if (value != null && value.equals(this.singular))
-                 {
+                if (value != null && value.equals(this.singular)) {
                     this.singular = value; // Keep one reference for serialization
                 }
             } else {
                 this.singular = value;
-                if (value != null && value.equals(this.plural))
-                 {
+                if (value != null && value.equals(this.plural)) {
                     this.plural = value; // Keep one reference for serialization
                 }
             }
@@ -203,7 +207,13 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                if (this.plural != null) {
+                    this.singular = this.plural;
+                    error(logger, Level.INFO, this.getDeclension(),
+                            "The noun \"%s\" has no singular form. reuse value from plural form", name);
+                } else {
+                    error(logger, Level.SEVERE, this.getDeclension(), "The noun \"%s\" has no value", name);
+                }
                 return false;
             }
             return true;

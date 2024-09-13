@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -34,7 +36,7 @@ class HebrewDeclension extends SemiticDeclension {
 
     private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
 
-    public static enum HebrewNounForm implements NounForm {
+    public enum HebrewNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageArticle.ZERO),
         PLURAL(LanguageNumber.PLURAL, LanguageArticle.ZERO),
         SINGULAR_DEF(LanguageNumber.SINGULAR, LanguageArticle.DEFINITE),
@@ -61,7 +63,7 @@ class HebrewDeclension extends SemiticDeclension {
     /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum HebrewModifierForm implements AdjectiveForm {
+    public enum HebrewModifierForm implements AdjectiveForm {
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE),
         PLURAL_MASCULINE(LanguageNumber.PLURAL, LanguageGender.MASCULINE),
@@ -130,8 +132,11 @@ class HebrewDeclension extends SemiticDeclension {
         @Override
         public String getExactString(NounForm form) {
             assert form instanceof HebrewNounForm : "It's not kosher to pass in a non-hebrew noun " + form;
-            return form.getArticle() == LanguageArticle.DEFINITE ? form.getNumber() == LanguageNumber.PLURAL ? plural_def : singular_def
-                    : form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
+            if (form.getArticle() == LanguageArticle.DEFINITE) {
+                return form.getNumber() == LanguageNumber.PLURAL ? plural_def : singular_def;
+            } else {
+                return form.getNumber() == LanguageNumber.PLURAL ? plural : singular;
+            }
         }
 
         @Override
@@ -154,7 +159,7 @@ class HebrewDeclension extends SemiticDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                error(logger, Level.INFO, this.getDeclension(), "The noun \"%s\" has no singular form", name);
                 return false;
             }
             // Default the values for entity nouns, but not for others to make rename fields more specific.

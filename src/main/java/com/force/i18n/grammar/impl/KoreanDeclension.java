@@ -6,10 +6,12 @@
  */
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -123,7 +125,7 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         @Override
         public boolean validate(String name) {
             if (this.prevEndsWithConsonant == null) {
-                logger.info("###\tError: The adjective " + name + " has no form");
+                error(logger, Level.INFO, this.getDeclension(), "The adjective \"%s\" has no form", name);
                 return false;
             }
             if (this.prevEndsWithVowel == null) {
@@ -205,7 +207,7 @@ public class KoreanDeclension extends AbstractLanguageDeclension implements With
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.value == null) {
-                logger.info("###\tError: The noun " + name + " has no value");
+                error(logger, Level.INFO, this.getDeclension(), "The noun \"%s\" has no value", name);
                 return false;
             }
             return true;

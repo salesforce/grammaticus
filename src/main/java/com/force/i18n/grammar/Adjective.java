@@ -7,12 +7,15 @@
 
 package com.force.i18n.grammar;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.force.i18n.commons.text.TextUtil;
 import com.google.common.collect.ImmutableSet;
 /**
  * An adjective or other noun modifier as stored in a LanguageDictionary.
@@ -32,6 +35,9 @@ public abstract class Adjective extends NounModifier {
     @Override
     public abstract Map<? extends AdjectiveForm, String> getAllValues();
 
+    /**
+     * @deprecated use {@link #Adjective(LanguageDeclention, String, LanguagePosition)}
+     */
     @Deprecated
     protected Adjective(LanguageDeclension declension, String name) {
         this(declension, name, declension.getDefaultAdjectivePosition());
@@ -53,11 +59,25 @@ public abstract class Adjective extends NounModifier {
         return getString((AdjectiveForm)form);
     }
 
+    private String getDefaultValue(boolean doFallback) {
+        String defaultValue = getString(getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(),
+                getDeclension().getDefaultGender(), LanguageNumber.SINGULAR, getDeclension().getDefaultCase(),
+                getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
+        if (defaultValue != null || !doFallback) return defaultValue;
+
+        // not perfect, but trying to return something instead of null
+        for (String val : this.getAllValues().values()) {
+            if (!TextUtil.isNullEmptyOrWhitespace(val)) {
+                // error should be already logged by defaultValidate
+                return val;
+            }
+        }
+        return null; // something went wrong
+    }
+
     @Override
     public String getDefaultValue() {
-        return getString(getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(),
-               getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
-               getDeclension().getDefaultCase(), getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
+        return getDefaultValue(true);
     }
 
     /**
@@ -118,7 +138,7 @@ public abstract class Adjective extends NounModifier {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.fine("###\tError: The adjective " + name + " is missing required " + form + " form");
+                    error(logger, Level.FINE, this.getDeclension(), "The adjective \"%s\" is missing required %s form", name, form);
                     // TODO: uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -169,12 +189,14 @@ public abstract class Adjective extends NounModifier {
                 if (s == null) {
                     // There wasn't a specified value with just 1 difference (ie. 1 Hamming distance),
                     // so default to the absolute default value
-                    s = getDefaultValue();
+                    s = getDefaultValue(false);
                     if (s == null) {
-                        logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
+                        error(logger, Level.FINE, this.getDeclension(),
+                                "The adjective \"%s\" has no %s form and no default could be found", name, form);
                         return false;
                     } else {
-                        logger.fine("###\tError: The adjective " + name + " has no obvious default for " + form + "form");
+                        error(logger, Level.FINE, this.getDeclension(),
+                                "The adjective \"%s\" has no obvious default for %s form ", name, form);
                     }
                 }
 

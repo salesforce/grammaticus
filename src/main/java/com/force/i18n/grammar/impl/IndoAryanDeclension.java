@@ -6,7 +6,10 @@
  */
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
+
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -180,7 +183,7 @@ abstract class IndoAryanDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (!getDeclension().getRequiredGenders().contains(getGender())) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" invalid gender", name);
                 setGender(getDeclension().getDefaultGender());
             }
             return true;

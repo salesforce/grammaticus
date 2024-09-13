@@ -15,6 +15,7 @@ import java.net.URLConnection;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.xml.parsers.*;
@@ -25,6 +26,7 @@ import org.xml.sax.SAXException;
 import com.force.i18n.*;
 import com.force.i18n.commons.text.GenericUniquefy;
 import com.force.i18n.commons.text.Uniquefy;
+import com.force.i18n.commons.util.LogUtil;
 import com.force.i18n.grammar.*;
 import com.force.i18n.settings.*;
 import com.force.i18n.settings.BasePropertyFile.MetaDataInfo;
@@ -236,8 +238,6 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     // ====================================================================
     // Param alias handler: <param name="nnn" alias="xxx"/>
     // ====================================================================
-    private static final String BAD_ALIAS = "###\tBad alias: ";
-
     class AliasParam implements Comparable<AliasParam> {
         final URL file;
         final int lineNumber;
@@ -276,16 +276,17 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             if (file != null) {
                 fileMsg = this.file.getPath() + "(" + lineNumber + "): ";
             }
-            String message = BAD_ALIAS + fileMsg + msg + (key == null ? "" : key);
+            String message = fileMsg + msg + (key == null ? "" : key);
             // if we are loading English labels in dev-mode throw an exception here
             if (I18nJavaUtil.isDebugging() && LanguageProviderFactory.get().getBaseLanguage() == GrammaticalLabelFileParser.this.getDictionary().getLanguage()
                     && !(GrammaticalLabelFileParser.this.desc instanceof TestLanguageLabelSetDescriptor)) {
                 throw new IllegalStateException(message);
             } else {
-                if (illegalAliases == null) illegalAliases = new ArrayList<AliasParam>(10);
+                if (illegalAliases == null) illegalAliases = new ArrayList<>(10);
                 illegalAliases.add(this);
                 // Oh, just keep going
-                logger.fine(message);
+                LogUtil.log(logger, Level.FINE, LogUtil.PREFIX, getDictionary().getLanguage(), "Bad alias: %s: %s",
+                        message);
             }
         }
 

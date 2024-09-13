@@ -7,11 +7,13 @@
 
 package com.force.i18n.grammar;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.common.collect.ImmutableSet;
@@ -106,7 +108,8 @@ public abstract class Article extends NounModifier {
         for (ArticleForm form : getDeclension().getArticleForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.fine("###\tError: The article " + name + " is missing required " + form + " form");
+                    error(logger, Level.FINE, this.getDeclension(), "The article \"%s\" is missing required %s form ",
+                            name, form);
                     // TODO: Uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -144,10 +147,12 @@ public abstract class Article extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.info("###\tError: The article " + name + " has no " + form + " form and no default could be found");
+                        error(logger, Level.INFO, this.getDeclension(),
+                                "The article \"%s\" has no %s form and no default could be found", name, form);
                         return false;
                     } else {
-                        logger.info("###\tERROR: The article " + name + " has no obvious default for " + form + "form");
+                        error(logger, Level.INFO, this.getDeclension(), "The article \"%s\" no obvious default for %s form",
+                                name, form);
                     }
                 }
 

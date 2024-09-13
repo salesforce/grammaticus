@@ -7,9 +7,11 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.grammar.LanguageCase.*;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -58,8 +60,8 @@ abstract class TurkicDeclension extends ArticledDeclension {
         return true;
     }
 
-    public TurkicDeclension(HumanLanguage language) {
-    	super(language);
+    protected TurkicDeclension(HumanLanguage language) {
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<TurkishNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<TurkishNounForm> fieldBuilder = ImmutableList.builder();
@@ -133,18 +135,18 @@ abstract class TurkicDeclension extends ArticledDeclension {
      * See TurkishNounForm for more info
      */
     public static class TurkishNoun extends ComplexArticledNoun<TurkishNounForm> {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
         TurkishNoun(TurkicDeclension declension, String name, String pluralAlias, NounType type, String entityName, LanguageStartsWith startsWith, String access, boolean isStandardField, boolean isCopiedFromDefault) {
             super(declension, name, pluralAlias, type, entityName, startsWith, LanguageGender.NEUTER, access, isStandardField, isCopiedFromDefault);
         }
 
         @Override
-		protected final Class<TurkishNounForm> getFormClass() {
-        	return TurkishNounForm.class;
-		}
+        protected final Class<TurkishNounForm> getFormClass() {
+            return TurkishNounForm.class;
+        }
 
-		@Override
+        @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             return defaultValidate(name, getDeclension().getFieldForms());
         }
@@ -152,7 +154,7 @@ abstract class TurkicDeclension extends ArticledDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER)
-                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" must be neuter", name);
             return super.validateGender(name);  // Let it go
         }
 

@@ -7,11 +7,13 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.grammar.LanguageCase.*;
 import static com.force.i18n.grammar.LanguageGender.*;
 import static com.force.i18n.grammar.LanguageNumber.SINGULAR;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -35,7 +37,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
     private final ModifierFormMap<SlavicAdjectiveForm> adjectiveFormMap;
 
     protected SlavicDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<SlavicNounForm> nounBuilder = ImmutableList.builder();
         ImmutableMultimap.Builder<LanguageCase, SlavicNounForm> byCaseBuilder = ImmutableMultimap.builder();
@@ -185,7 +187,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getDeclension().hasGender() && !getDeclension().getRequiredGenders().contains(getGender())) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" invalid gender", name);
                 setGender(getDeclension().getDefaultGender());
             }
             return true;
@@ -442,7 +444,7 @@ abstract class SlavicDeclension extends AbstractLanguageDeclension {
      */
     static class VariantSerboCroatianDeclension extends SlavicDeclension {
         public VariantSerboCroatianDeclension(HumanLanguage language) {
-        	super(language);
+            super(language);
         }
 
         @Override

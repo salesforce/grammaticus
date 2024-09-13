@@ -7,9 +7,11 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.grammar.LanguageCase.*;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -197,17 +199,17 @@ class AmharicDeclension extends SemiticDeclension {
                 String value = getExactString(form);
                 if (value == null) {
                     if (getNounType() == NounType.ENTITY) {
-                    	// Only do the "defaulting" on entities because the "entity"
-                    	// value in sfdcnames.xml usually only specifies 2 forms
-                    	String val = getCloseButNoCigarString(form);
-                    	if (val == null) {
-                    		logger.info("###\tError: The noun " + name + " has no " + form
-                    					+ " form and no default could be found");
-                    		return false;
+                        // Only do the "defaulting" on entities because the "entity"
+                        // value in sfdcnames.xml usually only specifies 2 forms
+                        String val = getCloseButNoCigarString(form);
+                        if (val == null) {
+                            error(logger, Level.INFO, this.getDeclension(),
+                                    "The noun \"%s\" has no %s form and no default could be found", name, form);
+                            return false;
                         }
                     } else if (requiredForms.contains(form)) {
                         // TODO SLT: This logic seems faulty.  Why'd we bother
-                        logger.finest("###\tError: The noun " + name + " has no " + form + " form");
+                        error(logger, Level.FINEST, this.getDeclension(), "The noun \"%s\" has no %s form", name, form);
                         return false;
                     }
                 }
@@ -274,7 +276,7 @@ class AmharicDeclension extends SemiticDeclension {
         return ALLOWED_CASES;
     }
 
-	@Override
+    @Override
     public boolean hasPossessive() {
         return true;
     }
@@ -304,15 +306,14 @@ class AmharicDeclension extends SemiticDeclension {
         return nounForms;
     }
 
-	@Override
-	protected String getDefiniteArticlePrefix(LanguageStartsWith startsWith) {
-		// Amharic, unlike the related Tigrinya (እታ), doesn't have a definite article prefix,
-		// but it has a suffix which changes the last character of the word or adds one depending on
-		// gender and case.
-		// A boy (ልጅ).  The boy (ልጁ).
-		// A dog (ውሻ).  The dog (ውሻው).
-		// When full support is required
-		return "";
-	}
-
+    @Override
+    protected String getDefiniteArticlePrefix(LanguageStartsWith startsWith) {
+        // Amharic, unlike the related Tigrinya (እታ), doesn't have a definite article prefix,
+        // but it has a suffix which changes the last character of the word or adds one depending on
+        // gender and case.
+        // A boy (ልጅ). The boy (ልጁ).
+        // A dog (ውሻ). The dog (ውሻው).
+        // When full support is required
+        return "";
+    }
 }

@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -25,12 +27,12 @@ import com.google.common.collect.ImmutableList;
  * @author stamm
  */
 class EnglishDeclension extends ArticledDeclension {
-	private static final Logger logger = Logger.getLogger(EnglishDeclension.class.getName());
+    private static final Logger logger = Logger.getLogger(EnglishDeclension.class.getName());
 
-	public EnglishDeclension(HumanLanguage language) {
-		super(language);
+    public EnglishDeclension(HumanLanguage language) {
+        super(language);
         assert language.getLocale().getLanguage().equals("en") : "Initializing a language that isn't english";
-	}
+    }
 
     /**
      * The english articles are distinguished by whether the next noun starts with a vowel
@@ -59,17 +61,18 @@ class EnglishDeclension extends ArticledDeclension {
                     (form.getStartsWith() == LanguageStartsWith.VOWEL ? SINGULAR_V : SINGULAR)
                     : PLURAL;
         }
-		@Override
-		public String getKey() {
-			return getNumber().getDbValue() + "-" + getStartsWith().getDbValue();
-		}
 
-		@Override
-		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-				throws IOException {
-			// The only variant is in the signular, so we don't want to screw up "the"
-			a.append(termFormVar+".charAt(0)=='"+LanguageNumber.PLURAL.getDbValue()+"'?"+termFormVar+":'"+LanguageNumber.SINGULAR.getDbValue()+"-'+"+startsWithVar);
-		}
+        @Override
+        public String getKey() {
+            return getNumber().getDbValue() + "-" + getStartsWith().getDbValue();
+        }
+
+        @Override
+        public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                throws IOException {
+            // The only variant is in the signular, so we don't want to screw up "the"
+            a.append(termFormVar+".charAt(0)=='"+LanguageNumber.PLURAL.getDbValue()+"'?"+termFormVar+":'"+LanguageNumber.SINGULAR.getDbValue()+"-'+"+startsWithVar);
+        }
     }
 
     /**
@@ -116,7 +119,7 @@ class EnglishDeclension extends ArticledDeclension {
         @Override
         public boolean validate(String name) {
             if (this.singular == null) {
-                logger.info("###\tError: The article " + name + " has no form");
+                error(logger, Level.INFO, this.getDeclension(), "The article \"%s\" has no form", name);
                 return false;
             }
             if (this.singularVowel == null) {

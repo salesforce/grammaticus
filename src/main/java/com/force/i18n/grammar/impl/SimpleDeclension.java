@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -30,7 +32,7 @@ class SimpleDeclension extends AbstractLanguageDeclension {
     private static final Logger logger = Logger.getLogger(SimpleDeclension.class.getName());
 
     public SimpleDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
     }
 
     // Nice classes that can be reused for languages with little or no inflection
@@ -87,14 +89,14 @@ class SimpleDeclension extends AbstractLanguageDeclension {
         }
 
         @Override
-        protected boolean validateValues(String name, LanguageCase _case) {
-///CLOVER:OFF
+        protected boolean validateValues(String name, LanguageCase languageCase) {
+/// CLOVER:OFF
             if (this.value == null) {
-                // this is wrong.  the noun should have singular form
-                logger.severe("###\tError: The noun " + name + " has no value");
+                // this is wrong. the noun should have singular form
+                error(logger, Level.SEVERE, this.getDeclension(), "The noun \"%s\" has no value", name);
                 return false;
             }
-///CLOVER:ON
+/// CLOVER:ON
             return true;
         }
 
@@ -410,7 +412,7 @@ class SimpleDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.value == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                error(logger, Level.INFO, this.getDeclension(), "The noun \"%s\" has no singular form", name);
                 return false;
             }
             return true;

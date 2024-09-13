@@ -7,6 +7,7 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
@@ -20,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -294,7 +296,7 @@ abstract class GermanicDeclension extends ArticledDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (!getDeclension().getRequiredGenders().contains(getGender())) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" invalid gender", name);
                 setGender(getDeclension().getDefaultGender());
             }
             return true;

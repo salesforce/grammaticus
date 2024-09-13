@@ -81,7 +81,7 @@ abstract class RomanceDeclension extends ArticledDeclension {
                 //$$$ this is right, but temporary disabled because we always load English data
                 //    first and that data may contain neuter. That displays huge warning
                 //    message which is pretty annoying.
-                //                logger.info(VALIDATION_WARNING_HEADER + name + " neuter is not expected");
+                //          LogUtil.warning(logger, Level.INFO, getDeclension(), "\"%s\" neuter is not expected", name);
                 setGender(getDeclension().getDefaultGender());
             }
             return true; // accept any gender
@@ -301,8 +301,8 @@ abstract class RomanceDeclension extends ArticledDeclension {
 
     static class SpanishDeclension extends RomanceDeclension {
         public SpanishDeclension(HumanLanguage language) {
-    		super(language);
-    	}
+            super(language);
+        }
 
         private static final EnumMap<RomanceModifierForm, String> INDEFINITE_ARTICLE =
             new EnumMap<>(ImmutableMap.of(
@@ -339,7 +339,7 @@ abstract class RomanceDeclension extends ArticledDeclension {
 
     static class PortugueseDeclension extends RomanceDeclension {
         public PortugueseDeclension(HumanLanguage language) {
-        	super(language);
+            super(language);
             assert language.getLocale().getLanguage().equals("pt") : "Initializing a variant portuguese declension for non-portuguese";
         }
 

@@ -7,9 +7,11 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.grammar.LanguageCase.*;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -61,7 +63,7 @@ class ArmenianDeclension extends AbstractLanguageDeclension {
 
 
     public ArmenianDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
 
         // Generate the different forms from subclass methods
         ImmutableList.Builder<ArmenianNounForm> entityBuilder = ImmutableList.builder();
@@ -144,7 +146,7 @@ class ArmenianDeclension extends AbstractLanguageDeclension {
 
         @Override
         protected final Class<ArmenianNounForm> getFormClass() {
-        	return ArmenianNounForm.class;
+            return ArmenianNounForm.class;
         }
 
         @Override
@@ -155,7 +157,7 @@ class ArmenianDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER)
-                logger.info(VALIDATION_WARNING_HEADER + name + " must be neuter");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" must be neuter", name);
             return super.validateGender(name);  // Let it go
         }
     }

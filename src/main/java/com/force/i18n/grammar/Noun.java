@@ -7,6 +7,7 @@
 
 package com.force.i18n.grammar;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
 import java.io.IOException;
@@ -220,10 +221,6 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
         return  genderVal && valuesVal;
     }
 
-    // used only by validation
-    protected static final String VALIDATION_ERROR_HEADER = "###\tError:";
-    protected static final String VALIDATION_WARNING_HEADER = "###\tWarning:";
-
     // deep clone
     @Override
     public Noun clone() {
@@ -277,7 +274,8 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
         } else {
             // 99% of the time this is because of the horribleness that was articles in french and italian.
             if (logger.isLoggable(Level.FINER)) {
-                logger.finer("###\tError: The noun " + getName() + " has no exact form in " + declension.getLanguage() + " for " + number +":"+_case+":"+poss+":" + art);
+                error(logger, Level.FINER, declension, "The noun \"%s\" has no exact form for %s:%s:%s:%s", getName(),
+                        number, _case, poss, art);
             }
         }
     }
@@ -291,13 +289,14 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
                     String value = getCloseButNoCigarString(form);
 
                     if (value == null) {
-                        logger.info("###\tError: The noun " + name + " has no " + form + " form and no default could be found");
+                        error(logger, Level.INFO, this.getDeclension(),
+                                "The noun \"%s\" has no %s form and no default could be found", name, form);
                         return false;
                     }
                     setString(intern(value), form);
                 } else if (requiredForms.contains(form)) {
                     // TODO SLT: This logic seems faulty.  Why'd we bother
-                    logger.finest("###\tError: The noun " + name + " has no " + form + " form");
+                    error(logger, Level.FINEST, this.getDeclension(), "The noun \"%s\" has no %s form", name, form);
                     return false;
                 }
             }

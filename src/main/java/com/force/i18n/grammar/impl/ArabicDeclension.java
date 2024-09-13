@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.error;
 import static com.force.i18n.grammar.LanguageCase.ACCUSATIVE;
 import static com.force.i18n.grammar.LanguageCase.NOMINATIVE;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -45,7 +47,7 @@ class ArabicDeclension extends SemiticDeclension {
     private static final String FINAL_ALIF = "\u0627";  // ا   What is added to indefinite nouns
 
     public ArabicDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         assert language.getLocale().getLanguage().equals("ar") : "Initializing a variant Arabic declension for non-arabic";
 
         // Generate the different forms from subclass methods
@@ -251,21 +253,21 @@ class ArabicDeclension extends SemiticDeclension {
                             // value in sfdcnames.xml usually only specifies 2 forms
                             String val = getCloseButNoCigarString(form);
                             if (val == null) {
-                                logger.info("###\tError: The noun " + name + " has no " + form
-                                        + " form and no default could be found");
+                                error(logger, Level.INFO, this.getDeclension(),
+                                        "The noun \"%s\" has no %s form and no default could be found", name, form);
                                 return false;
                             }
                             setString(val, form);
                         }
                     } else if (form.getNumber() == LanguageNumber.DUAL) {
-                    	// Default dual to plural
+                        // Default dual to plural
                         String val = getCloseButNoCigarString(form);
                         if (val != null) {
                             setString(val, form);
                         }
                     } else if (requiredForms.contains(form)) {
                         // TODO SLT: This logic seems faulty.  Why'd we bother
-                        logger.finest("###\tError: The noun " + name + " has no " + form + " form");
+                        error(logger, Level.FINEST, this.getDeclension(), "The noun \"%s\" has no %s form", name, form);
                         return false;
                     }
                 }
@@ -280,7 +282,7 @@ class ArabicDeclension extends SemiticDeclension {
     protected static class ArabicAdjective extends ComplexAdjective<ArabicAdjectiveForm> {
         private static final long serialVersionUID = 1L;
 
-		// The "keys" here are StartsWith, Gender, and Plurality
+        // The "keys" here are StartsWith, Gender, and Plurality
         ArabicAdjective(LanguageDeclension declension, String name, LanguagePosition position) {
             super(declension, name, position);
         }
@@ -356,11 +358,12 @@ class ArabicDeclension extends SemiticDeclension {
     }
 
     @Override
-	public Set<LanguageNumber> getAllowedNumbers() {
-    	return LanguageNumber.DUAL_SET;  // Written arabic has a compulsory dual form. Will default to normal plural form when needed.
-	}
+    public Set<LanguageNumber> getAllowedNumbers() {
+        // Written arabic has a compulsory dual form. Will default to normal plural form when needed.
+        return LanguageNumber.DUAL_SET;
+    }
 
-	@Override
+    @Override
     public boolean hasPossessive() {
         return true;
     }

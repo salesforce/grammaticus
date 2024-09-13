@@ -7,10 +7,12 @@
 
 package com.force.i18n.grammar.impl;
 
+import static com.force.i18n.commons.util.LogUtil.warning;
 import static com.force.i18n.grammar.LanguageCase.*;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.force.i18n.HumanLanguage;
@@ -60,7 +62,7 @@ class FinnishDeclension extends AbstractLanguageDeclension {
     }
 
     public FinnishDeclension(HumanLanguage language) {
-    	super(language);
+        super(language);
         // Generate the different forms from subclass methods
         ImmutableList.Builder<FinnishNounForm> entityBuilder = ImmutableList.builder();
         ImmutableList.Builder<FinnishNounForm> fieldBuilder = ImmutableList.builder();
@@ -212,7 +214,7 @@ class FinnishDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateGender(String name) {
             if (getGender() != LanguageGender.NEUTER) {
-                logger.info(VALIDATION_WARNING_HEADER + name + " invalid gender");
+                warning(logger, Level.INFO, getDeclension(), "\"%s\" invalid gender", name);
                 setGender(getDeclension().getDefaultGender());
             }
             return true;
@@ -231,7 +233,7 @@ class FinnishDeclension extends AbstractLanguageDeclension {
 
         @Override
         protected final Class<FinnishAdjectiveForm> getFormClass() {
-        	return FinnishAdjectiveForm.class;
+            return FinnishAdjectiveForm.class;
         }
 
         @Override
@@ -281,10 +283,10 @@ class FinnishDeclension extends AbstractLanguageDeclension {
 
     static class EstonianDeclension extends FinnishDeclension{
         public EstonianDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public EnumSet<LanguagePossessive> getRequiredPossessive() {
             return EnumSet.of(LanguagePossessive.NONE);
         }
