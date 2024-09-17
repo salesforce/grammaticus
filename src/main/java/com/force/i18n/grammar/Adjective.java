@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import com.force.i18n.commons.text.TextUtil;
 import com.google.common.collect.ImmutableSet;
 /**
  * An adjective or other noun modifier as stored in a LanguageDictionary.
@@ -32,6 +33,9 @@ public abstract class Adjective extends NounModifier {
     @Override
     public abstract Map<? extends AdjectiveForm, String> getAllValues();
 
+    /**
+     * @deprecated use {@link #Adjective(LanguageDeclention, String, LanguagePosition)}
+     */
     @Deprecated
     protected Adjective(LanguageDeclension declension, String name) {
         this(declension, name, declension.getDefaultAdjectivePosition());
@@ -53,11 +57,25 @@ public abstract class Adjective extends NounModifier {
         return getString((AdjectiveForm)form);
     }
 
+    private String getDefaultValue(boolean doFallback) {
+        String defaultValue = getString(getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(),
+                getDeclension().getDefaultGender(), LanguageNumber.SINGULAR, getDeclension().getDefaultCase(),
+                getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
+        if (defaultValue != null || !doFallback) return defaultValue;
+
+        // not perfect, but trying to return something instead of null
+        for (String val : this.getAllValues().values()) {
+            if (!TextUtil.isNullEmptyOrWhitespace(val)) {
+                // error should be already logged by defaultValidate
+                return val;
+            }
+        }
+        return null; // something went wrong
+    }
+
     @Override
     public String getDefaultValue() {
-        return getString(getDeclension().getAdjectiveForm(getDeclension().getDefaultStartsWith(),
-               getDeclension().getDefaultGender(), LanguageNumber.SINGULAR,
-               getDeclension().getDefaultCase(), getDeclension().getDefaultArticle(), getDeclension().getDefaultPossessive()));
+        return getDefaultValue(true);
     }
 
     /**
@@ -118,7 +136,7 @@ public abstract class Adjective extends NounModifier {
         for (AdjectiveForm form : getDeclension().getAdjectiveForms()) {
             if (getString(form) == null) {
                 if (requiredForms.contains(form)) {
-                    logger.fine("###\tError: The adjective " + name + " is missing required " + form + " form");
+                    logger.fine(() -> "###\tError: The adjective " + name + " is missing required " + form + " form");
                     // TODO: uncomment the return false below once we actually handle validation
                     // Presently, the return value is simply ignored
                     // return false;
@@ -171,10 +189,10 @@ public abstract class Adjective extends NounModifier {
                     // so default to the absolute default value
                     s = getDefaultValue();
                     if (s == null) {
-                        logger.fine("###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
+                        logger.fine(() -> "###\tError: The adjective " + name + " has no " + form + " form and no default could be found");
                         return false;
                     } else {
-                        logger.fine("###\tError: The adjective " + name + " has no obvious default for " + form + "form");
+                        logger.fine(() -> "###\tError: The adjective " + name + " has no obvious default for " + form + "form");
                     }
                 }
 

@@ -134,7 +134,8 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
         @Override
         public boolean validate(String name) {
             if (this.value == null) {
-                logger.info("###\tError: The article " + name + " has no form");
+                HumanLanguage language = this.getDeclension().getLanguage();
+                logger.info(() -> "###\tError: " + language + "The article " + name + " has no form");
                 return false;
             }
             return true;
@@ -168,7 +169,10 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
 
         @Override
         public String getDefaultString(boolean isPlural) {
-            return isPlural && plural != null ? plural : singular;
+            if (isPlural && plural != null) return plural;
+
+            // there's a corner case that dictionary has only plural form. try to return non-null
+            return singular != null ? singular : plural;
         }
 
         @Override
@@ -187,14 +191,12 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
             value = intern(value);
             if (form.getNumber().isPlural()) {
                 this.plural = value;
-                if (value != null && value.equals(this.singular))
-                 {
+                if (value != null && value.equals(this.singular)) {
                     this.singular = value; // Keep one reference for serialization
                 }
             } else {
                 this.singular = value;
-                if (value != null && value.equals(this.plural))
-                 {
+                if (value != null && value.equals(this.plural)) {
                     this.plural = value; // Keep one reference for serialization
                 }
             }
@@ -203,7 +205,7 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
         @Override
         protected boolean validateValues(String name, LanguageCase _case) {
             if (this.singular == null) {
-                logger.info("###\tError: The noun " + name + " has no singular form");
+                logger.info(() -> "###\tError: The noun " + name + " has no singular form");
                 return false;
             }
             return true;

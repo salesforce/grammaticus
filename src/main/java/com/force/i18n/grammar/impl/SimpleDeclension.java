@@ -90,8 +90,9 @@ class SimpleDeclension extends AbstractLanguageDeclension {
         protected boolean validateValues(String name, LanguageCase _case) {
 ///CLOVER:OFF
             if (this.value == null) {
-                // this is wrong.  the noun should have singular form
-                logger.severe("###\tError: The noun " + name + " has no value");
+                // this is wrong. the noun should have singular form
+                HumanLanguage language = this.getDeclension().getLanguage();
+                logger.severe(() -> "###\tError: " + language.getLocaleString() + "The noun " + name + " has no value");
                 return false;
             }
 ///CLOVER:ON
