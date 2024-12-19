@@ -130,7 +130,7 @@ public enum LabelUtils {
         } else {
             // If they pasted in a whole file, it's fine.
             if (!grammar.contains("<sfdcnames>") && !grammar.contains("<sfdcadjectives>")
-            		&& !grammar.contains("<names>") && !grammar.contains("<adjectives>")) {
+                    && !grammar.contains("<names>") && !grammar.contains("<adjectives>")) {
                 StringBuilder sb = new StringBuilder(grammar.length() + 100);
                 sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                 sb.append("<names>");
@@ -139,7 +139,7 @@ public enum LabelUtils {
                 return sb.toString();
             } else {
                 // Remove the dtd which confuses the parser
-            	String fixedGrammar = grammar.replace("<!DOCTYPE sfdcnames SYSTEM \"sfdcnames.dtd\">", "");
+                String fixedGrammar = grammar.replace("<!DOCTYPE sfdcnames SYSTEM \"sfdcnames.dtd\">", "");
                 fixedGrammar = fixedGrammar.replace("<!DOCTYPE sfdcadjectives SYSTEM \"sfdcadjectives.dtd\">", "");
                 fixedGrammar = fixedGrammar.replace("<!DOCTYPE names SYSTEM \"names.dtd\">", "");
                 fixedGrammar = fixedGrammar.replace("<!DOCTYPE adjectives SYSTEM \"adjectives.dtd\">", "");
@@ -180,46 +180,63 @@ public enum LabelUtils {
         return new Nounifier(dictionary).nounifyString(input);
     }
 
-    /**
-     * Set of locale langauges strings where the results are JDK dependent
+    /*
+     * Map of locale langauges strings where the results are JDK dependent.
+     * Java 17 fixed legacy language code and autmatically replace it in {@code java.util.Locale} (JDK-8267069). This is
+     * for backward compatibility.
      */
-    static final Set<String> JDK_DEPENDENT_LANGUAGE = ImmutableSet.of(LanguageConstants.YIDDISH_ISO,
-    		LanguageConstants.HEBREW_ISO, LanguageConstants.INDONESIAN_ISO);
+    static final Map<String, String> JDK_DEPENDENT_LANGUAGE = Map.of( //
+           LanguageConstants.YIDDISH_ISO, LanguageConstants.YIDDISH, //
+           LanguageConstants.HEBREW_ISO, LanguageConstants.HEBREW, //
+           LanguageConstants.INDONESIAN_ISO, LanguageConstants.INDONESIAN);
 
-
-    public static List<URL> getFileNames(HumanLanguage language,URL rootDirectory, String basename ) {
+    public static List<URL> getFileNames(HumanLanguage language, URL rootDirectory, String basename ) {
         List<URL> list = new ArrayList<>();
         try {
-    	    Locale locale = language.getLocale();
-            list.add(new URL(rootDirectory,  locale.getLanguage() + '/' + basename));
+            final Locale locale = language.getLocale();
+            final String override = language.getOverrideLanguage();
+            final boolean hasOverride = override != null && !locale.getLanguage().equals(override);
+
+            list.add(getUrl(rootDirectory, locale.getLanguage(), basename));
+            // If the override language is set, add it
+            if (hasOverride) list.add(getUrl(rootDirectory, override, basename));
             // If the iso code for the language changed between JDK versions, use the old isocode for the directory
-            if (JDK_DEPENDENT_LANGUAGE.contains(locale.getLanguage())) {
-                list.add(new URL(rootDirectory,  language.getOverrideLanguage() + '/' + basename));
+            if (JDK_DEPENDENT_LANGUAGE.containsKey(locale.getLanguage())) {
+                list.add(getUrl(rootDirectory, JDK_DEPENDENT_LANGUAGE.get(locale.getLanguage()), basename));
             }
-    	    if (locale.getCountry().length() > 0) {
-    	        /*
-    	         * Code required because there is no Chinese traditional locale in jdk Locale.java and taiwan and Hong kong are 2 different countries
-    	         * We will assume that Hong Kong (HK country code) derive the Traditional Chinese from Taiwan (TW)
-    	         * In the future, to define Hong Kong label, a new directory will need to be created zh/HK.
-    	         */
-    	        if(language.getLocaleString().equals(LanguageConstants.CHINESE_HK)){
-    	            //adding Taiwan as fallback
-    	            list.add(new URL(rootDirectory, locale.getLanguage() + '/'+ Locale.TRADITIONAL_CHINESE.getCountry() +'/'+ basename));
-    	            list.add(new URL(rootDirectory, locale.getLanguage() + '/'+ locale.getCountry() + '/'+ basename));
-    	        }else{
-    	            list.add(new URL(rootDirectory, locale.getLanguage() + '/' + locale.getCountry() + '/' + basename));
-    	            if (locale.getVariant().length() > 0) {
-    	                list.add(new URL(rootDirectory, locale.getLanguage() + '/' + locale.getCountry() + '/' + locale.getVariant() + '/' + basename));
-    	            }
-    	        }
-    	    }
+
+            if (!locale.getCountry().isEmpty()) {
+                /*
+                 * Code required because there is no Chinese traditional locale in jdk Locale.java and taiwan and Hong
+                 * kong are 2 different countries
+                 * We will assume that Hong Kong (HK country code) derive the Traditional Chinese from Taiwan (TW)
+                 * In the future, to define Hong Kong label, a new directory will need to be created zh/HK.
+                 */
+                if (language.getLocaleString().equals(LanguageConstants.CHINESE_HK)) {
+                    // adding Taiwan as fallback. assuming no override, or variant are set for this
+                    list.add(getUrl(rootDirectory, locale.getLanguage(), Locale.TRADITIONAL_CHINESE.getCountry(), basename));
+                    list.add(getUrl(rootDirectory, locale.getLanguage(), locale.getCountry(), basename));
+                } else {
+                    list.add(getUrl(rootDirectory, locale.getLanguage(), locale.getCountry(), basename));
+                    if (hasOverride) list.add(getUrl(rootDirectory, override, locale.getCountry(), basename));
+
+                    if (!locale.getVariant().isEmpty()) {
+                        list.add(getUrl(rootDirectory, locale.getLanguage(), locale.getCountry(), locale.getVariant(), basename));
+                        if (hasOverride) list.add(getUrl(rootDirectory, override, locale.getCountry(), locale.getVariant(), basename));
+                    }
+                }
+            }
         } catch (MalformedURLException e) {
             throw new IllegalArgumentException(e);
         }
-	    return list;
-	}
+        return list;
+    }
 
-	private static final Pattern nonalphaPattern = Pattern.compile("\\W");
+    private static URL getUrl(URL root, String... paths) throws MalformedURLException {
+        return new URL(root, String.join("/", paths));
+    }
+
+    private static final Pattern nonalphaPattern = Pattern.compile("\\W");
 
     // TODO: Switch this to splitter.
     static List<String> tokenize(String input) {
@@ -244,7 +261,7 @@ public enum LabelUtils {
      * to determine if there should be some "tokenization" of the string.
      */
     public static class Nounifier {
-        private final static Set<String> EXCLUDED_NOUNS = ImmutableSet.of("Role", "Email", "Address", "{0}");
+        private static final Set<String> EXCLUDED_NOUNS = ImmutableSet.of("Role", "Email", "Address", "{0}");
 
         private final GenericTrieMatcher<String> nounMatcher;
         private final GenericTrieMatcher<String> adjMatcher;

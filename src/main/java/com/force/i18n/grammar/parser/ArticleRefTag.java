@@ -17,8 +17,9 @@ import com.force.i18n.grammar.GrammaticalTerm.TermType;
  * @author stamm
  */
 class ArticleRefTag extends ModifierRefTag {
-	private static final long serialVersionUID = 1L;
-	protected static final ConcurrentUniquefy<ArticleRefTag> tagMap = new ConcurrentUniquefy<ArticleRefTag>();
+    private static final long serialVersionUID = 1L;
+    protected static final ConcurrentUniquefy<ArticleRefTag> tagMap = new ConcurrentUniquefy<>();
+
     private ArticleRefTag(String name, NounRefTag nounTag, TermRefTag nextTermTag, boolean isCapital, TermAttributes overrides) {
         super(name, nounTag, nextTermTag, isCapital, overrides);
     }
@@ -49,14 +50,14 @@ class ArticleRefTag extends ModifierRefTag {
         return dictionary.getArticle(getName());
     }
 
-	@Override
+    @Override
     public String toJson(LanguageDictionary dictionary, List<?> list) {
-		// Fallback labels can have articles, but they should be ignored
-		if (!dictionary.getDeclension().hasArticle()) {
-			return "\"\"";
-		}
-		return super.toJson(dictionary, list);
-	}
+        // Fallback labels can have articles, but they should be ignored
+        if (!dictionary.getDeclension().hasArticle()) {
+            return "\"\"";
+        }
+        return super.toJson(dictionary, list);
+    }
 
     @Override
     ArticleRefTag unique() {

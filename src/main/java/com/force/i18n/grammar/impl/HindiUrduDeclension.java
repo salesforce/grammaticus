@@ -43,7 +43,7 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
     /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum HindiUrduModifierForm implements AdjectiveForm {
+    public enum HindiUrduModifierForm implements AdjectiveForm {
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE, DIRECT_CASE),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE, DIRECT_CASE),
         PLURAL_MASCULINE(LanguageNumber.PLURAL, LanguageGender.MASCULINE, DIRECT_CASE),
@@ -80,7 +80,7 @@ class HindiUrduDeclension extends AbstractLanguageDeclension {
         }
     }
 
-    public static enum HindiUrduNounForm implements NounForm {
+    public enum HindiUrduNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, DIRECT_CASE),
         SINGULAR_OBL(LanguageNumber.SINGULAR, OBLIQUE_CASE),
         PLURAL(LanguageNumber.PLURAL, DIRECT_CASE),

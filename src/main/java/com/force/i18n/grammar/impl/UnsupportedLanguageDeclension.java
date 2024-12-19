@@ -24,7 +24,7 @@ import com.google.common.collect.ImmutableList;
  * @author stamm
  */
 abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
-	// All the forms you can request
+    // All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(SimpleNounForm.SINGULAR);
@@ -33,8 +33,8 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
     static final List<? extends ArticleForm> ARTICLE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public UnsupportedLanguageDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     @Override
     public List< ? extends NounForm> getAllNounForms() {
@@ -122,10 +122,10 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
      */
     static class CelticDeclension extends UnsupportedLanguageDeclension {
         public CelticDeclension(HumanLanguage language) {
-			super(language);
-		}
+            super(language);
+        }
 
-		@Override
+        @Override
         public boolean hasGender() {
             return true;
         }
@@ -153,7 +153,8 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
         }
 
         static final List<? extends NounForm> GA_ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(IrishNounForm.class));
-        public static enum IrishNounForm implements NounForm {
+
+        public enum IrishNounForm implements NounForm {
             SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
             SINGULAR_GEN(LanguageNumber.SINGULAR, LanguageCase.GENITIVE),
             PLURAL(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE),
@@ -400,7 +401,8 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
         static final List<? extends NounForm> FA_ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PersianNounForm.class));
         static final List<? extends NounForm> FA_SING_FORMS = ImmutableList.of(PersianNounForm.SINGULAR);
-        public static enum PersianNounForm implements NounForm {
+
+        public enum PersianNounForm implements NounForm {
             SINGULAR(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE),
             SINGULAR_ACC(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE),
             PLURAL(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE),

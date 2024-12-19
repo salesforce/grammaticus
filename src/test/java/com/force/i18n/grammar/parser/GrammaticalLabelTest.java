@@ -277,10 +277,10 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         try {
             Renameable pig = makeCustomRenameable("Pig", LanguageStartsWith.CONSONANT, "Pig", "Pigs");
             Renameable emu = makeCustomRenameable("Emu", LanguageStartsWith.VOWEL, "Emu", "Emus");
-        	MockRenamingProvider newProvider = new MockRenamingProvider(pig.getStandardNoun(ENGLISH), emu.getStandardNoun(ENGLISH));
+            MockRenamingProvider newProvider = new MockRenamingProvider(pig.getStandardNoun(ENGLISH), emu.getStandardNoun(ENGLISH));
             RenamingProviderFactory.get().setProvider(newProvider);
-	        assertEquals("A Pig", set.getString("Global", new Renameable[] {pig}, "aentity"));
-	        assertEquals("An Emu", set.getString("Global", new Renameable[] {emu}, "aentity"));
+            assertEquals("A Pig", set.getString("Global", new Renameable[] {pig}, "aentity"));
+            assertEquals("An Emu", set.getString("Global", new Renameable[] {emu}, "aentity"));
         } finally {
             RenamingProviderFactory.get().setProvider(curProvider);
         }
@@ -315,7 +315,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
      * with ImmutableSortableMaps to save on memory
      */
     public void testMultipleOverrides() {
-    	// Go from samples to labels to override.  Make sure it loads correctly
+        // Go from samples to labels to override.  Make sure it loads correctly
         URL base = GrammaticalLabelFileTest.class.getResource("/sample/labels.xml");
         GrammaticalLabelSetLoader baseLoader = new GrammaticalLabelSetLoader(base, "sample", null);
         URL labels = GrammaticalLabelFileTest.class.getResource("/labels/labels.xml");
@@ -540,6 +540,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
     }
 
     @Test
+    @SuppressWarnings("removal")
     public void testCacheConfig() throws InterruptedException {
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
         HumanLanguage ENGLISH_GB = LanguageProviderFactory.get().getLanguage(LanguageConstants.ENGLISH_GB);

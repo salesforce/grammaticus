@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -35,51 +35,53 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
     private static final Locale chineseLocale = new Locale("zh", "China");
 
     public GrammaticalLocalizerTest(String name) {
-    	super(name);
+        super(name);
     }
 
     private LocalizerProvider origProvider;
+
+    @SuppressWarnings("deprecation")
     @Override
-	protected void setUp() throws Exception {
-		origProvider = LocalizerFactory.get();
-		URL sampleJarUrl = getLabelURL();
-		GrammaticalLabelSetDescriptor desc = new LabelSetDescriptorImpl(sampleJarUrl, LanguageProviderFactory.get().getBaseLanguage(), "sample");
-		LocalizerProvider glf = new GrammaticalLocalizerFactory(GrammaticalLocalizerFactory.getLoader(desc, null));
-		assertEquals(sampleJarUrl, glf.getLabelsDirectory());
-    	LocalizerFactory.set(glf);
-    	super.setUp();
-	}
-
-	@Override
-	protected void tearDown() throws Exception {
-		LocalizerFactory.set(origProvider);
-		super.tearDown();
-	}
-
-	//@NotThreadSafe
-    public void testGrammaticalLocalizerFactory() {
-    	GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
-    	SharedLabelSet ls = gl.getLabelSet();
-    	assertEquals(new LabelRef("Sample_Entity","created_by"), ls.get("Sample", "created_by"));
-    	assertEquals("Created by...", ls.getString("Sample", "created_by"));
-    	assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
-    	assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
-    	assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
-
-    	// Try it in a non-translated language that fallsback to ENGLISH_GB, then ENGLISH
-    	ls = LocalizerFactory.get().getLocalizer(new Locale("en", "IN")).getLabelSet();
-    	// Fallbacks resolve all aliases immediately.
-    	assertEquals("Created by...", ls.get("Sample", "created_by"));
-    	assertEquals("Created by...", ls.getString("Sample", "created_by"));
+    protected void setUp() throws Exception {
+        origProvider = LocalizerFactory.get();
+        URL sampleJarUrl = getLabelURL();
+        GrammaticalLabelSetDescriptor desc = new LabelSetDescriptorImpl(sampleJarUrl, LanguageProviderFactory.get().getBaseLanguage(), "sample");
+        LocalizerProvider glf = new GrammaticalLocalizerFactory(GrammaticalLocalizerFactory.getLoader(desc, null));
+        assertEquals(sampleJarUrl, glf.getLabelsDirectory());
+        LocalizerFactory.set(glf);
+        super.setUp();
     }
-    
+
+    @Override
+    protected void tearDown() throws Exception {
+        LocalizerFactory.set(origProvider);
+        super.tearDown();
+    }
+
+    // @NotThreadSafe
+    public void testGrammaticalLocalizerFactory() {
+        GrammaticalLocalizer gl = (GrammaticalLocalizer)LocalizerFactory.get().getLocalizer(Locale.US);
+        SharedLabelSet ls = gl.getLabelSet();
+        assertEquals(new LabelRef("Sample_Entity", "created_by"), ls.get("Sample", "created_by"));
+        assertEquals("Created by...", ls.getString("Sample", "created_by"));
+        assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
+        assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
+        assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
+
+        // Try it in a non-translated language that fallsback to ENGLISH_GB, then ENGLISH
+        ls = LocalizerFactory.get().getLocalizer(new Locale("en", "IN")).getLabelSet();
+        // Fallbacks resolve all aliases immediately.
+        assertEquals("Created by...", ls.get("Sample", "created_by"));
+        assertEquals("Created by...", ls.getString("Sample", "created_by"));
+    }
+
     public void testLabelThrow() {
         GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
 
         //Test for valid Label retrieval using LabelThrow
         Object[] arguments = new Object[] { "1","5" };
         assertEquals("Step 1 of 5", gl.getLabelThrow("Sample", "RightHeader", arguments));
-        
+
         //Test for invalid Label.An exception should be thrown when invalid label is referenced
          try {
              assertEquals("Step 1 of 5", gl.getLabelThrow("Sample", "InvalidLabel", arguments));
@@ -95,7 +97,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
     public void testSampleLabels() throws Exception {
         RenamingProvider curProvider = RenamingProviderFactory.get().getProvider();
         try {
-        	GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
+            GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.US);
             Renameable account = getStandardRenameable("Account");
             assertEquals("Back to List: Accounts", gl.getLabel("Sample", new Renameable[]{account}, "last_type_list"));
             assertEquals("Back to Account: foo", gl.getLabel("Sample", new Renameable[]{account}, "back_detail", "foo"));
@@ -126,31 +128,31 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
     public void testSampleLabelsGerman() throws Exception {
         RenamingProvider curProvider = RenamingProviderFactory.get().getProvider();
         try {
-        	GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.GERMAN);
+            GrammaticalLocalizer gl = (GrammaticalLocalizer) LocalizerFactory.get().getLocalizer(Locale.GERMAN);
             assertEquals("Klicken Sie hier, um jetzt einen neuen Account zu erstellen.", gl.getLabel("Sample", "click_here_to_create_new_account", "Klicken Sie hier"));
 
             // Account in german is "Account", "Konto", or "Kunde" depending on what you want, like client above.  The accusative is used here.
             LanguageDeclension germanDecl = LanguageDeclensionFactory.get().getDeclension(LanguageProviderFactory.get().getLanguage(Locale.GERMAN));
             Map<NounForm,String> KONTO = ImmutableMap.<NounForm,String>builder()
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE), "Konto")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.GENITIVE), "Kontos")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.DATIVE), "Konto")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE), "Konto")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE), "Konten")  // Koni?  Kontos?
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.GENITIVE), "Konten")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.DATIVE), "Konten")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.ACCUSATIVE), "Konten")
-            		.build();
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE), "Konto")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.GENITIVE), "Kontos")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.DATIVE), "Konto")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE), "Konto")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE), "Konten")  // Koni?  Kontos?
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.GENITIVE), "Konten")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.DATIVE), "Konten")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.ACCUSATIVE), "Konten")
+                    .build();
             Map<NounForm,String> KUNDE = ImmutableMap.<NounForm,String>builder()
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE), "Kunde")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.GENITIVE), "Kunden")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.DATIVE), "Kunden")
-            		.put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE), "Kunden")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE), "Kunde")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.GENITIVE), "Kunde")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.DATIVE), "Kunde")
-            		.put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.ACCUSATIVE), "Kunde")
-            		.build();
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE), "Kunde")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.GENITIVE), "Kunden")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.DATIVE), "Kunden")
+                    .put(germanDecl.getNounForm(LanguageNumber.SINGULAR, LanguageCase.ACCUSATIVE), "Kunden")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE), "Kunde")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.GENITIVE), "Kunde")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.DATIVE), "Kunde")
+                    .put(germanDecl.getNounForm(LanguageNumber.PLURAL, LanguageCase.ACCUSATIVE), "Kunde")
+                    .build();
 
             Noun konto = gl.getLabelSet().getDictionary().getNoun("account", false).clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, KONTO);
 
@@ -259,7 +261,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         catch (ParseException expected) {}
     }
 
-    
+
     public void testallowOtherGrammaticalForms() {
         URL base = GrammaticalLabelFileTest.class.getResource("/sample/labels.xml");
         GrammaticalLabelSetLoader baseLoader = new GrammaticalLabelSetLoader(base, "sample", null);
@@ -267,7 +269,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         GrammaticalLabelSetLoader labelsLoader = new GrammaticalLabelSetLoader(labels, "test1a", baseLoader);
         URL overrides = GrammaticalLabelFileTest.class.getResource("/override/override.xml");
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(overrides, "test2a", labelsLoader);
-        
+
         HumanLanguage ENGLISH = LanguageProviderFactory.get().getLanguage(Locale.US);
         HumanLanguage GERMAN = LanguageProviderFactory.get().getLanguage(Locale.GERMAN);
         GrammaticalLabelSetFallbackImpl set = (GrammaticalLabelSetFallbackImpl) loader.getSet(ENGLISH);
@@ -280,12 +282,12 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         set = (GrammaticalLabelSetFallbackImpl) loader.getSet(GERMAN);
         assertTrue(set.allowOtherGrammaticalForms());
     }
-    
+
     public void testReloading() {
-    	GrammaticalLocalizerFactory factory = (GrammaticalLocalizerFactory) LocalizerFactory.get();
-    	factory.resetLabels();
-    	factory.initEnglishLabelProvider();
-    	factory.resetLabels();
-    	factory.initLabelProvider();
+        GrammaticalLocalizerFactory factory = (GrammaticalLocalizerFactory) LocalizerFactory.get();
+        factory.resetLabels();
+        factory.initEnglishLabelProvider();
+        factory.resetLabels();
+        factory.initLabelProvider();
     }
 }

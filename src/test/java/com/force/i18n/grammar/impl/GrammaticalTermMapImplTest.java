@@ -12,7 +12,6 @@ import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-import java.util.HashSet;
 import java.util.Locale;
 import junit.framework.TestCase;
 import com.force.i18n.*;
@@ -21,7 +20,7 @@ import com.force.i18n.grammar.Noun.NounType;
 
 /**
  * Various sanity test for GrammaticalTermMapImpl
- * 
+ *
  */
 public class GrammaticalTermMapImplTest extends TestCase {
     /**
@@ -31,7 +30,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
 
     /**
      * Simple get/ put /isEmpty / sets tests
-     * 
+     *
      */
     public void testSimpleUpdate() throws Exception{
         GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<>();
@@ -81,10 +80,9 @@ public class GrammaticalTermMapImplTest extends TestCase {
             fail("no update allowed on skinny map");
         } catch (IllegalStateException e) {
             // expected
-        }     
+        }
     }
 
-    @SuppressWarnings("unchecked")
     public void testSerialization() throws Exception {
         GrammaticalTermMapImpl<Noun> map = new GrammaticalTermMapImpl<>();
         assertSerializedEquals(map);
@@ -96,7 +94,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
         map.put("n1", n1);
         map.put("n1_a", n1);
         GrammaticalTermMapImpl<Noun> serialized = getSerialized(map);
-        // same noun should be same in serialized map 
+        // same noun should be same in serialized map
         assertTrue(serialized.get("n1") == serialized.get("n1_a"));
     }
 
@@ -114,7 +112,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
             assertTrue("serialized map doesn't have "+key, serialized.containsKey(key));
             assertEquals("serialized map have different noun", orig.get(key), serialized.get(key));
         }
-        assertEquals("The map returns different isSkinny ", orig.isSkinny(), serialized.isSkinny());            
+        assertEquals("The map returns different isSkinny ", orig.isSkinny(), serialized.isSkinny());
     }
 
     /**
@@ -131,7 +129,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
               ObjectOutputStream oos = new ObjectOutputStream(baos)) {
             oos.writeObject(input);
             array = baos.toByteArray();
-        } 
+        }
         assertNotNull(array);
         // Deserialize
         try ( ByteArrayInputStream bais = new ByteArrayInputStream(array);
@@ -139,7 +137,7 @@ public class GrammaticalTermMapImplTest extends TestCase {
             return (GrammaticalTermMapImpl<Noun>) ois.readObject();
         }
     }
-        
+
     /**
      * Create a noun for testing
      */

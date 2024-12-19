@@ -8,6 +8,8 @@
 package com.force.i18n.grammar.parser;
 
 
+import static com.google.common.base.Preconditions.checkState;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -30,7 +32,7 @@ class NounRefTag extends TermRefTag {
 
     private static final Logger logger = Logger.getLogger(NounRefTag.class.getName());
     // map for any LabelTag type to reuse. This must be static so all language can share the same entity
-    protected static final ConcurrentUniquefy<NounRefTag> tagMap = new ConcurrentUniquefy<NounRefTag>();
+    protected static final ConcurrentUniquefy<NounRefTag> tagMap = new ConcurrentUniquefy<>();
 
     private final NounForm form;
     private final boolean isCapital; // capital case
@@ -191,7 +193,7 @@ class NounRefTag extends TermRefTag {
         }
     }
 
-	@Override
+    @Override
     protected boolean equalsValue(TermRefTag obj) {
         return Objects.equals(this.form, ((NounRefTag)obj).form)
             && this.index == ((NounRefTag)obj).index
@@ -211,10 +213,10 @@ class NounRefTag extends TermRefTag {
             Renameable ei = entities[getReference()];
             n = formatter.getDynamicNoun(getName(), ei, true, false);
         } else {
-            assert !isDynamic() || I18nJavaUtil.isDebugging()
-                : "Only allowed in label debug mode, mode: " + I18nJavaUtil.isDebugging()
-                    + " isDynamic: " + isDynamic() + " entities: " + entities.length
-                    + " reference: " + getReference();
+            checkState(!isDynamic() || I18nJavaUtil.isDebugging(),
+                    "Only allowed in label debug mode, mode: %s isDynamic: %s entities: %s reference: %s",
+                    I18nJavaUtil.isDebugging(), isDynamic(),
+                    entities == null ? "null" : Integer.toString(entities.length), getReference());
             n = formatter.getNoun(getName(), true);
         }
         return n;

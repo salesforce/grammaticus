@@ -24,7 +24,7 @@ import com.force.i18n.grammar.LanguageDictionary;
 public abstract class RefTag implements Serializable  {
     private static final long serialVersionUID = 1L;
 
-	public RefTag() {
+    public RefTag() {
     }
 
     /**
@@ -114,7 +114,7 @@ public abstract class RefTag implements Serializable  {
 
     /**
      * Convert a component of a label to a String, either it's a string or a refTag
-	 * @param dictionary the current dictionary of nouns.
+     * @param dictionary the current dictionary of nouns.
      * @param o the label value
      * @param list the list of *all* of the labels to look up, to make sure you get the right reference
      * @return o as a json value

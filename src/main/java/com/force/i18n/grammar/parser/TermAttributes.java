@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -99,10 +99,10 @@ public final class TermAttributes implements Serializable {
         if (plural != null) _number = LanguageNumber.fromLabelValue(plural);
         LanguageStartsWith st = LanguageStartsWith.fromDbValue(atts.getValue(ENDS));
         if (st != null) {
-        	_startsWith = st;
+            _startsWith = st;
         } else {
-	        st = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
-	        if (st != null) _startsWith = st;
+            st = LanguageStartsWith.fromDbValue(atts.getValue(STARTS));
+            if (st != null) _startsWith = st;
         }
         LanguageGender g = LanguageGender.fromLabelValue(atts.getValue(GENDER));
         if (g != null) _gender = g;
@@ -275,20 +275,20 @@ public final class TermAttributes implements Serializable {
     public String toString() {
         return "TermAttrs:"+toNullStr(getNumber())+":"+toNullStr(this.getGender())+":"+toNullStr(this.getCase())+":"+toNullStr(this.getStartsWith())+":"+toNullStr(this.getArticle())+":"+toNullStr(this.getPossessive());
     }
-    
+
     public String toJson() {
-    	StringBuilder sw = new StringBuilder();
-    	sw.append("{");
-    	if (this.caseType != null) sw.append("\""+LanguageCase.JSON_ATTR_NAME+"\":\"").append(this.caseType.getDbValue()).append("\",");
-    	if (this.article != null) sw.append("\""+LanguageArticle.JSON_ATTR_NAME+"\":\"").append(this.article.getDbValue()).append("\",");
-    	if (this.gender != null) sw.append("\""+LanguageGender.JSON_ATTR_NAME+"\":\"").append(this.gender.getDbValue()).append("\",");
-    	if (this.number != null) sw.append("\""+LanguageNumber.JSON_ATTR_NAME+"\":\"").append(this.number.getDbValue()).append("\",");
-    	if (this.possessive != null) sw.append("\""+LanguagePossessive.JSON_ATTR_NAME+"\":\"").append(this.possessive.getDbValue()).append("\",");
-    	if (this.startsWith != null) sw.append("\""+LanguageStartsWith.JSON_ATTR_NAME+"\":\"").append(this.startsWith.getDbValue()).append("\",");
-    	if (this.position != null) sw.append("\""+LanguagePosition.JSON_ATTR_NAME+"\":\"").append(this.position.getDbValue()).append("\",");
-    	if (sw.length()>1) sw.setLength(sw.length() - 1); // Get rid of the last comma
-    	sw.append("}");
-    	return sw.toString();
+        StringBuilder sw = new StringBuilder();
+        sw.append("{");
+        if (this.caseType != null) sw.append("\""+LanguageCase.JSON_ATTR_NAME+"\":\"").append(this.caseType.getDbValue()).append("\",");
+        if (this.article != null) sw.append("\""+LanguageArticle.JSON_ATTR_NAME+"\":\"").append(this.article.getDbValue()).append("\",");
+        if (this.gender != null) sw.append("\""+LanguageGender.JSON_ATTR_NAME+"\":\"").append(this.gender.getDbValue()).append("\",");
+        if (this.number != null) sw.append("\""+LanguageNumber.JSON_ATTR_NAME+"\":\"").append(this.number.getDbValue()).append("\",");
+        if (this.possessive != null) sw.append("\""+LanguagePossessive.JSON_ATTR_NAME+"\":\"").append(this.possessive.getDbValue()).append("\",");
+        if (this.startsWith != null) sw.append("\""+LanguageStartsWith.JSON_ATTR_NAME+"\":\"").append(this.startsWith.getDbValue()).append("\",");
+        if (this.position != null) sw.append("\""+LanguagePosition.JSON_ATTR_NAME+"\":\"").append(this.position.getDbValue()).append("\",");
+        if (sw.length()>1) sw.setLength(sw.length() - 1); // Get rid of the last comma
+        sw.append("}");
+        return sw.toString();
     }
 
     private static String toNullStr(Object o) {

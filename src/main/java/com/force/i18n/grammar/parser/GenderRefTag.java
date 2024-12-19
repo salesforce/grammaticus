@@ -1,10 +1,12 @@
-/* 
+/*
  * Copyright (c) 2019, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 package com.force.i18n.grammar.parser;
+
+import static java.util.Objects.requireNonNull;
 
 import java.util.*;
 
@@ -43,30 +45,31 @@ public class GenderRefTag extends AdnominalRefTag {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj)
+            return super.equals(obj)
                 && Objects.equals(when, ((GenderRefTag)obj).when)
                 && Objects.equals(ifDefault, ((GenderRefTag)obj).ifDefault);
     }
 
-	Object getData(LanguageDictionary dictionary, Renameable[] entities) {
-		if (getAssociatedNounRef() == null) {
-			return ifDefault;
-		}
-		Noun n = getAssociatedNounRef().resolveNoun(dictionary, entities);
-		if (n == null) {
-			return ifDefault;
-		}
-		Object val = when.get(n.getGender());
-		return val != null ? val : ifDefault;
-	}
+    Object getData(LanguageDictionary dictionary, Renameable[] entities) {
+        if (getAssociatedNounRef() == null) {
+            return ifDefault;
+        }
+        Noun n = getAssociatedNounRef().resolveNoun(dictionary, entities);
+        if (n == null) {
+            return ifDefault;
+        }
+        Object val = when.get(n.getGender());
+        return val != null ? val : ifDefault;
+    }
 
     @Override
     public String toString(LanguageDictionary formatter, boolean overrideForms, Object[] vals, Renameable... entities) {
-    	Object data = getData(formatter, entities);
-    	if (data == null) {
-    		return "";
-    	}
-		return formatter.format(getData(formatter, entities), entities, vals, overrideForms, false);  // Don't format for message format, since it'll do it again later.
+        Object data = getData(formatter, entities);
+        if (data == null) {
+            return "";
+        }
+
+        return formatter.format(getData(formatter, entities), entities, vals, overrideForms, false);
     }
 
     @Override
@@ -74,27 +77,31 @@ public class GenderRefTag extends AdnominalRefTag {
         return new GenderRefTag(nounTag, this.when, this.ifDefault);
     }
 
-	@Override
-	public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
-		Set<GrammaticalTerm> whens = RefTag.getTermsFromLabels(dictionary, when.values());
-		return ifDefault != null ? Sets.union(whens, RefTag.getTermsFromLabelValue(dictionary, ifDefault)) : whens;
-	}
+    @Override
+    public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
+        Set<GrammaticalTerm> whens = RefTag.getTermsFromLabels(dictionary, when.values());
+        return ifDefault != null ? Sets.union(whens, RefTag.getTermsFromLabelValue(dictionary, ifDefault)) : whens;
+    }
 
-	@Override
-	public String toJson(LanguageDictionary dictionary, List<?> list) {
-		// Get associated noun ref
-		Integer associatedNounIndex = null;
-		for (int i = 0; i < list.size(); i++) {
-			Object term = list.get(i);
-			if (term != null && term.equals(getAssociatedNounRef())) {
-				associatedNounIndex = i;
-			}
-		}
+    @Override
+    public String toJson(LanguageDictionary dictionary, List<?> list) {
+        // Get associated noun ref
+        Integer associatedNounIndex = null;
+        for (int i = 0; i < list.size(); i++) {
+            Object term = list.get(i);
+            if (term != null && term.equals(getAssociatedNounRef())) {
+                associatedNounIndex = i;
+            }
+        }
+        requireNonNull(associatedNounIndex);
 
-		StringBuilder def = new StringBuilder();
-		RefTag.appendJsonLabelValueNoThrow(dictionary, def, ifDefault, null);
-		StringBuilder forms = new StringBuilder();
-		when.entrySet().stream().forEach(e->{forms.append("\""+e.getKey().getDbValue()+"\":");RefTag.appendJsonLabelValueNoThrow(dictionary, forms, e.getValue(), null);});
-		return "{\"t\":\"g\",\"an\":"+associatedNounIndex.intValue()+",\"def\":"+def.toString()+",\"v\":{"+forms.toString()+"}}";
-	}
+        StringBuilder def = new StringBuilder();
+        RefTag.appendJsonLabelValueNoThrow(dictionary, def, ifDefault, null);
+        StringBuilder forms = new StringBuilder();
+        when.entrySet().stream().forEach(e -> {
+            forms.append("\"" + e.getKey().getDbValue() + "\":");
+            RefTag.appendJsonLabelValueNoThrow(dictionary, forms, e.getValue(), null);
+        });
+        return "{\"t\":\"g\",\"an\":" + associatedNounIndex.intValue() + ",\"def\":" + def.toString() + ",\"v\":{" + forms.toString() + "}}";
+    }
 }

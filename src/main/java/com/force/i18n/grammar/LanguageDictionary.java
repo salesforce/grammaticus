@@ -64,7 +64,7 @@ public class LanguageDictionary implements Serializable {
     // TODO: These could all be made lists when serialized
 
     // map to Noun
-    protected GrammaticalTermMap<Noun> nounMap; 
+    protected GrammaticalTermMap<Noun> nounMap;
     // map to Noun
     protected GrammaticalTermMap<Noun>  nounMapByPluralAlias;
     // map to Adjective
@@ -202,9 +202,9 @@ public class LanguageDictionary implements Serializable {
     public GrammaticalTermMap<Adjective> getAdjectiveMap() {
         return adjectiveMap;
     }
-    
+
     /**
-     * get termMap of Article 
+     * get termMap of Article
      */
     public GrammaticalTermMap<Article> getArticleMap() {
         return articleMap;
@@ -213,10 +213,10 @@ public class LanguageDictionary implements Serializable {
 
     private void forAllTerms (TermType type, BiConsumer<String, GrammaticalTerm> f) {
         switch (type) {
-        case Noun: 
+        case Noun:
             for(Map.Entry<String, Noun> e : nounMap.entrySet()) f.accept(e.getKey(), e.getValue());
             break;
-        case Adjective: 
+        case Adjective:
             for(Map.Entry<String, Adjective> e : adjectiveMap.entrySet()) f.accept(e.getKey(), e.getValue());
             break;
         case Article:
@@ -226,14 +226,14 @@ public class LanguageDictionary implements Serializable {
             throw new AssertionError("Invalid term type " + type);
         }
     }
-    
+
 
 
     public Set<String> getAllTermNames(TermType type) {
         switch (type) {
-        case Noun: 
+        case Noun:
             return Collections.unmodifiableSet(nounMap.keySet());
-        case Adjective: 
+        case Adjective:
             return Collections.unmodifiableSet(adjectiveMap.keySet());
         case Article:
             return Collections.unmodifiableSet(articleMap.keySet());
@@ -249,8 +249,8 @@ public class LanguageDictionary implements Serializable {
     public Set<String> getAllInheritedTermNames(TermType type) {
         Set<String> result = new HashSet<String>();
         forAllTerms(type, (k,v) -> {
-            if (v.isCopiedFromDefault()) result.add(k);            
-        });                
+            if (v.isCopiedFromDefault()) result.add(k);
+        });
         return result;
     }
 
@@ -669,12 +669,12 @@ public class LanguageDictionary implements Serializable {
      * @throws IOException if an error happens during append
      */
     public void writeJsonTerms(Appendable out, boolean useRenamedNouns, Collection<GrammaticalTerm> terms) throws IOException {
-        Collection<String> termsToInclude = 
-                terms == null ? null : 
+        Collection<String> termsToInclude =
+                terms == null ? null :
                 terms.stream().map((t)->t.getName()).collect(Collectors.toSet());
         writeJson(out, useRenamedNouns, termsToInclude);
     }
-    
+
 
     private void writeObject(ObjectOutputStream out) throws IOException {
         makeSkinny();
@@ -686,7 +686,6 @@ public class LanguageDictionary implements Serializable {
         // do nothing here - for hook
     }
 
-    @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         in.defaultReadObject();
 
@@ -720,9 +719,9 @@ public class LanguageDictionary implements Serializable {
     }
 
     private static class TreeSetSupplier<V> implements Supplier<SortedSet<V>>, Serializable {
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		@Override
+        @Override
         public SortedSet<V> get() {
             return new TreeSet<V>();
         }

@@ -434,12 +434,12 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
             } else {
                 // recursive reference. Keep tracking down
                 Set<String> localRefSet = refSet;
-                if (refSet == null) {
+                if (localRefSet == null) {
                     // means this is the top level (or maybe middle) of alias chain
                     localRefSet = new HashSet<>();
                 } else {
                     // recursively called from alias chain. add to the chain list
-                    refSet.add(ap.getKey());
+                    localRefSet.add(ap.getKey());
                 }
 
                 retValue = resolveAlias(labelSet, writeSet, t, localRefSet);
@@ -454,7 +454,6 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
                     }
                 }
             }
-
         }
 
         writeSet.put(ap.srcSection, ap.srcParam, (retValue == null ? "" : retValue));

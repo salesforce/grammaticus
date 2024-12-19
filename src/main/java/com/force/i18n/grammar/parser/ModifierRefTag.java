@@ -1,13 +1,16 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
 package com.force.i18n.grammar.parser;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import com.force.i18n.Renameable;
@@ -19,11 +22,8 @@ import com.force.i18n.grammar.*;
  * @author yoikawa,stamm
  */
 abstract class ModifierRefTag extends TermRefTag {
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private final boolean isCapital;
+    private static final long serialVersionUID = 1L;
+    private final boolean isCapital;
     private final NounRefTag associatedNounRef; // entity that this modifier associated with.
     private final TermRefTag nextTermRef;       // The term that comes after this one
     private final TermAttributes overrides;  // TODO:  Overrides *could* be completely unnecessary
@@ -104,8 +104,7 @@ abstract class ModifierRefTag extends TermRefTag {
             logger.fine("Missing modifier " + getName() + " for " + formatter.getLanguage());
             return ""; //This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
         }
-
-        assert modifier != null: "Can't find modifier '" + getName() + "'";
+        requireNonNull(modifier, () -> "Can't find modifier '" + getName() + "'");
 
         if (getAssociatedNounRef() == null) {
             return ""; // This is the "legacy" behavior, needed for LabelParserComparisonTest.  It should be modifier.getDefaultValue();
@@ -129,7 +128,7 @@ abstract class ModifierRefTag extends TermRefTag {
         String s = modifier.getString(adjForm);
 
         if (s == null) {
-        	logger.info("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
+            logger.info("INFORMATIONAL: Invalid modifier: trying to access " + adjForm + " for modifier " + getName() + " and not defined for " + formatter.getLanguage().getLocaleString());
             return "";
         }
         if (!isCapital) {
@@ -151,23 +150,19 @@ abstract class ModifierRefTag extends TermRefTag {
         return nextTermRef;
     }
 
-    
     @Override
     public int hashCode() {
         return hashCode;
     }
 
- 
     @Override
     protected boolean equalsValue(TermRefTag obj) {
         ModifierRefTag otherTag = (ModifierRefTag) obj;
         return this.isCapital == otherTag.isCapital
-            && (this.associatedNounRef == null ? otherTag.associatedNounRef  == null : this.associatedNounRef.equals(otherTag.associatedNounRef))
-            && (this.nextTermRef == null ? otherTag.nextTermRef  == null : this.nextTermRef.equals(otherTag.nextTermRef))
-            && this.overrides.equals(otherTag.overrides);
+                && Objects.equals(this.associatedNounRef, otherTag.associatedNounRef)
+                && Objects.equals(this.nextTermRef, otherTag.nextTermRef)
+                && Objects.equals(this.overrides, otherTag.overrides);
     }
-
-    
 
     public ModifierRefTag fixupModifier(NounRefTag nounTag, TermRefTag nextTermRef) {
         return fixupModifier(nounTag, nextTermRef, null);
@@ -185,35 +180,35 @@ abstract class ModifierRefTag extends TermRefTag {
         return this;
     }
 
-	@Override
-	String extraJson(LanguageDictionary dictionary, List<?> list) {
+    @Override
+    String extraJson(LanguageDictionary dictionary, List<?> list) {
         if (list == null || list.isEmpty()) return "";
 
-		Integer associatedNounIndex = null;
-		Integer nextTermIndex = null;
-		for (int i = 0; i < list.size(); i++) {
-			Object term = list.get(i);
-			if (term != null && term.equals(this.associatedNounRef)) {
-				associatedNounIndex = i;
-			}
-			
-			if (term != null) {
-				if (term.equals(this.nextTermRef)) {
-					nextTermIndex = i;
-				// Since the noun refs have been resolved for modifiers, the associatedNounRef makes the "equalsValue" value false
-			    // But, since the noun has been resolved, we can use that to compare, along with the name of the modifier
-				} else if (this.nextTermRef instanceof ModifierRefTag && term instanceof ModifierRefTag
-						&& ((ModifierRefTag)this.nextTermRef).getName().equals(((ModifierRefTag)term).getName())
-						&& (((ModifierRefTag)term).getAssociatedNounRef().equals(this.associatedNounRef))) {
-					nextTermIndex = i;
-				}
-			}
-		}
-		StringBuilder json = new StringBuilder();
-		if (associatedNounIndex != null) json.append(",\"an\":").append(associatedNounIndex.intValue());
-		if (nextTermIndex != null) json.append(",\"nt\":").append(nextTermIndex.intValue());
-		return json.toString();
-	}
+        Integer associatedNounIndex = null;
+        Integer nextTermIndex = null;
+        for (int i = 0; i < list.size(); i++) {
+            Object term = list.get(i);
+            if (term != null && term.equals(this.associatedNounRef)) {
+                associatedNounIndex = i;
+            }
 
-	abstract ModifierRefTag getNewModifierRef(NounRefTag entity, TermRefTag nextTermRef, LanguageArticle override);
+            if (term != null) {
+                if (term.equals(this.nextTermRef)) {
+                    nextTermIndex = i;
+                    // Since the noun refs have been resolved for modifiers, the associatedNounRef makes the "equalsValue" value false
+                    // But, since the noun has been resolved, we can use that to compare, along with the name of the modifier
+                } else if (this.nextTermRef instanceof ModifierRefTag && term instanceof ModifierRefTag
+                        && ((ModifierRefTag)this.nextTermRef).getName().equals(((ModifierRefTag)term).getName())
+                        && (((ModifierRefTag)term).getAssociatedNounRef().equals(this.associatedNounRef))) {
+                    nextTermIndex = i;
+                }
+            }
+        }
+        StringBuilder json = new StringBuilder();
+        if (associatedNounIndex != null) json.append(",\"an\":").append(associatedNounIndex.intValue());
+        if (nextTermIndex != null) json.append(",\"nt\":").append(nextTermIndex.intValue());
+        return json.toString();
+    }
+
+    abstract ModifierRefTag getNewModifierRef(NounRefTag entity, TermRefTag nextTermRef, LanguageArticle override);
 }

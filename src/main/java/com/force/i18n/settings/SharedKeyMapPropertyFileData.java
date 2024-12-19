@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -24,21 +24,18 @@ import java.util.logging.Logger;
  *
  * @author koliver
  */
-public class SharedKeyMapPropertyFileData implements PropertyFileData, Serializable {
+public class SharedKeyMapPropertyFileData implements PropertyFileData {
 
-    /**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final Logger logger = Logger.getLogger(SharedKeyMapPropertyFileData.class.getName());
+    private static final Logger logger = Logger.getLogger(SharedKeyMapPropertyFileData.class.getName());
 
     private static final class SerializableLock implements Serializable {
 
-		/**
-		 *
-		 */
-		private static final long serialVersionUID = 1L; }
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L; }
 
     private final Locale locale;
 

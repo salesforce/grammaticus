@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,7 +9,6 @@ package com.force.i18n.settings;
 
 import static com.force.i18n.commons.util.settings.IniFileUtil.intern;
 
-import java.io.Serializable;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -24,7 +23,7 @@ import java.util.Map.Entry;
  * @author koliver
  * @since 146
  */
-public class MapPropertyFileData implements PropertyFileData, Serializable {
+public class MapPropertyFileData implements PropertyFileData {
     private static final long serialVersionUID = 1L;
 
     protected final Locale locale;

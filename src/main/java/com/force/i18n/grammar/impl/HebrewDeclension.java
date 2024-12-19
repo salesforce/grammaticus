@@ -34,7 +34,7 @@ class HebrewDeclension extends SemiticDeclension {
 
     private static final Logger logger = Logger.getLogger(HebrewDeclension.class.getName());
 
-    public static enum HebrewNounForm implements NounForm {
+    public enum HebrewNounForm implements NounForm {
         SINGULAR(LanguageNumber.SINGULAR, LanguageArticle.ZERO),
         PLURAL(LanguageNumber.PLURAL, LanguageArticle.ZERO),
         SINGULAR_DEF(LanguageNumber.SINGULAR, LanguageArticle.DEFINITE),
@@ -61,7 +61,7 @@ class HebrewDeclension extends SemiticDeclension {
     /**
      * Adjective form for languages that don't care about "starts with"
      */
-    public static enum HebrewModifierForm implements AdjectiveForm {
+    public enum HebrewModifierForm implements AdjectiveForm {
         SINGULAR_MASCULINE(LanguageNumber.SINGULAR, LanguageGender.MASCULINE),
         SINGULAR_FEMININE(LanguageNumber.SINGULAR, LanguageGender.FEMININE),
         PLURAL_MASCULINE(LanguageNumber.PLURAL, LanguageGender.MASCULINE),

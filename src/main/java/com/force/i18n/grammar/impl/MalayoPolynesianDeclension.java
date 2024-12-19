@@ -27,7 +27,7 @@ import com.google.common.collect.ImmutableList;
  * @author stamm
  */
  class MalayoPolynesianDeclension extends AbstractLanguageDeclension {
-	// All the forms you can request
+    // All the forms you can request
     static final List<? extends NounForm> ALL_FORMS = ImmutableList.copyOf(EnumSet.allOf(PluralNounForm.class));
     // All the forms you can set for "other" forms
     static final Set<? extends NounForm> OTHER_FORMS = EnumSet.of(PluralNounForm.SINGULAR);
@@ -35,8 +35,8 @@ import com.google.common.collect.ImmutableList;
     static final List<? extends AdjectiveForm> ADJECTIVE_FORMS = Collections.singletonList(SimpleModifierForm.SINGULAR);
 
     public MalayoPolynesianDeclension(HumanLanguage language) {
-		super(language);
-	}
+        super(language);
+    }
 
     @Override
     public List< ? extends NounForm> getAllNounForms() {
@@ -100,15 +100,14 @@ import com.google.common.collect.ImmutableList;
     static class HawaiianDeclension extends ArticledDeclension {
 
         public HawaiianDeclension(HumanLanguage language) {
-    		super(language);
-    	}
+            super(language);
+        }
 
         /**
          * The hawaiian articles are distinguished by whether the next noun starts with k,e,a,o,
          * and some changes for starts with ke vs ka.
-         *
          */
-        public static enum HawaiianArticleForm implements ArticleForm {
+        public enum HawaiianArticleForm implements ArticleForm {
             KA(LanguageNumber.SINGULAR, LanguageStartsWith.CONSONANT),
             KE(LanguageNumber.SINGULAR, LanguageStartsWith.SPECIAL),
             NA(LanguageNumber.PLURAL, LanguageStartsWith.CONSONANT)
@@ -131,16 +130,16 @@ import com.google.common.collect.ImmutableList;
                         (form.getStartsWith() == LanguageStartsWith.SPECIAL ? KE : KA)
                         : NA;
             }
-    		@Override
-    		public String getKey() {
-    			return getNumber().getDbValue() + "-" + getStartsWith().getDbValue();
-    		}
+            @Override
+            public String getKey() {
+                return getNumber().getDbValue() + "-" + getStartsWith().getDbValue();
+            }
 
-    		@Override
-    		public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
-    				throws IOException {
-    			a.append(termFormVar+".charAt(0)=='"+LanguageNumber.PLURAL.getDbValue()+"'?"+termFormVar+":'"+LanguageNumber.SINGULAR.getDbValue()+"-'+"+startsWithVar);
-    		}
+            @Override
+            public void appendJsFormReplacement(Appendable a, String termFormVar, String genderVar, String startsWithVar)
+                    throws IOException {
+                a.append(termFormVar+".charAt(0)=='"+LanguageNumber.PLURAL.getDbValue()+"'?"+termFormVar+":'"+LanguageNumber.SINGULAR.getDbValue()+"-'+"+startsWithVar);
+            }
         }
 
         /**
