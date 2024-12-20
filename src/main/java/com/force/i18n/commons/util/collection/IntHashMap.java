@@ -8,7 +8,6 @@
 package com.force.i18n.commons.util.collection;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.*;
 
 import com.google.common.annotations.Beta;
@@ -77,12 +76,12 @@ import com.google.common.annotations.Beta;
  * Beta class. Generally use {@link java.util.HashMap} or {@link java.util.EnumMap} instead.
  *
  * @author  Based on Sun's java.util.HashMap (modified by koliver)
- * @see	    IntMap
- * @see	    java.util.HashMap
+ * @see        IntMap
+ * @see        java.util.HashMap
  */
 @Beta
 @SuppressWarnings("rawtypes") // TODO Fix
-public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
+public class IntHashMap<V> extends AbstractIntMap<V> {
     private static final long serialVersionUID = 0L;
 
     private static final int DEFAULT_CAPACITY = 101;
@@ -186,7 +185,7 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      *
      * @param value value whose presence in this map is to be tested.
      */
-	@Override
+    @Override
     public boolean containsValue(Object value) {
         IEntry[] tab = this.table;
 
@@ -287,9 +286,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      * @param key key with which the specified value is to be associated.
      * @param value value to be associated with the specified key.
      * @return previous value associated with specified key, or {@code null}
-     *	       if there was no mapping for key.  A {@code null} return can
-     *	       also indicate that the HashMap previously associated
-     *	       {@code null} with the specified key.
+     *           if there was no mapping for key.  A {@code null} return can
+     *           also indicate that the HashMap previously associated
+     *           {@code null} with the specified key.
      */
     @Override
     public V put(int key, V value) {
@@ -328,9 +327,9 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
      *
      * @param key key whose mapping is to be removed from the map.
      * @return previous value associated with specified key, or {@code null}
-     *	       if there was no mapping for key.  A {@code null} return can
-     *	       also indicate that the map previously associated {@code null}
-     *	       with the specified key.
+     *           if there was no mapping for key.  A {@code null} return can
+     *           also indicate that the map previously associated {@code null}
+     *           with the specified key.
      */
     @Override
     public V remove(int key) {
@@ -732,6 +731,20 @@ public class IntHashMap<V> extends AbstractIntMap<V> implements Serializable {
                 throw new NoSuchElementException();
             }
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof IntHashMap) {
+            // super compares table and count. that may be enough
+            return super.equals(other);
+        }
+        return false;
     }
 
     // Serialization

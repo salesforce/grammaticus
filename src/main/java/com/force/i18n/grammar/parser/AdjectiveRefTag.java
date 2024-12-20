@@ -19,7 +19,7 @@ class AdjectiveRefTag extends ModifierRefTag {
     private static final long serialVersionUID = 173630704208474804L;
 
     // Keep the size of serialized maps down to a minimum by reusing tags.
-    protected static final ConcurrentUniquefy<AdjectiveRefTag> tagMap = new ConcurrentUniquefy<AdjectiveRefTag>();
+    protected static final ConcurrentUniquefy<AdjectiveRefTag> tagMap = new ConcurrentUniquefy<>();
 
     private AdjectiveRefTag(String name, NounRefTag nounTag, TermRefTag nextTerm, boolean isCapital,
             TermAttributes overrides) {

@@ -25,9 +25,9 @@ import com.force.i18n.grammar.LanguageDictionary;
  * @author yoikawa
  */
 public abstract class TermRefTag extends RefTag {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private transient String name;  // non-final:  see readObject()
+    private transient String name; // non-final: see readObject()
 
     public static final char SEP = '-';
 
@@ -112,22 +112,22 @@ public abstract class TermRefTag extends RefTag {
      * @param list the list of the current set of terms being processed (so that for modifiers it can find the associated term by index)
      */
     @Override
-	public String toJson(LanguageDictionary dictionary, List<?> list) {
-		// Default implementation uses the key
+    public String toJson(LanguageDictionary dictionary, List<?> list) {
+        // Default implementation uses the key
         return "{\"t\":\"" + getType().getCharId() + "\",\"l\":\"" + getName().toLowerCase() + "\",\"f\":\""
                 + (getForm(dictionary, true) == null ? "" : getForm(dictionary, true).getKey()) + "\",\"c\":"
                 + isCapital() + extraJson(dictionary, list) + "}";
-	}
+    }
 
-	@Override
-	public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
-		GrammaticalTerm term = dictionary.getTerm(getName());
-		//assert term != null : "Reference to invalid term: " + ((TermRefTag)o).getName();
-		return (term != null) ? Collections.singleton(term) : Collections.emptySet();
-	}
+    @Override
+    public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
+        GrammaticalTerm term = dictionary.getTerm(getName());
+        //assert term != null : "Reference to invalid term: " + ((TermRefTag)o).getName();
+        return (term != null) ? Collections.singleton(term) : Collections.emptySet();
+    }
 
-	// Extra json for the term
-	abstract String extraJson(LanguageDictionary dictionary, List<?> list);
+    // Extra json for the term
+    abstract String extraJson(LanguageDictionary dictionary, List<?> list);
 
     private void writeObject(java.io.ObjectOutputStream s) throws IOException {
         // Write out the threshold, loadfactor, and any hidden stuff

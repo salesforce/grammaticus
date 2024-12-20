@@ -39,6 +39,7 @@ import com.force.i18n.grammar.LanguageStartsWith;
 import com.force.i18n.grammar.ModifierForm;
 import com.force.i18n.grammar.Noun;
 import com.force.i18n.grammar.NounForm;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Multimap;
@@ -137,7 +138,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
                 case Adjective: formList = declension.getAdjectiveForms(); break;
                 case Article: formList = declension.getArticleForms(); break;
             }
-            assert formList != null;
+            Preconditions.checkState(formList != null);
             return formList.get(this.ordinal);
         }
     }
@@ -273,7 +274,7 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         } else {
             out.writeByte(values.size());
             for (Map.Entry<T,String> entry : values.entrySet()) {
-                out.writeByte(entry.getKey().getOrdinal());                
+                out.writeByte(entry.getKey().getOrdinal());
                 out.writeUTF(entry.getValue());  // Serialize the "object" because it's been uniquefied
             }
         }
@@ -292,7 +293,8 @@ abstract class ComplexGrammaticalForm implements Serializable, Comparable<Comple
         case Adjective: formList = (List<T>)declension.getAdjectiveForms(); break;
         case Article: formList = (List<T>)declension.getArticleForms(); break;
         }
-        assert formList != null;
+        Preconditions.checkState(formList != null);
+
         for (int i = 0; i < size; i++) {
             int ordinal = in.readByte();
             String value = intern(in.readUTF());

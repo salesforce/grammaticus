@@ -13,11 +13,10 @@ import java.util.Locale;
 import com.force.i18n.*;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.LanguageDictionary;
-import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
 
 /**
- * Test for overriding LabelSetLoader to create another dictionary 
- * 
+ * Test for overriding LabelSetLoader to create another dictionary
+ *
  */
 public class GrammaticalLabelLSetLoaderOverrideTest extends BaseGrammaticalLabelTest{
 
@@ -28,11 +27,11 @@ public class GrammaticalLabelLSetLoaderOverrideTest extends BaseGrammaticalLabel
     /**
      * Loader for test
      */
-    public static class TestLoader extends GrammaticalLabelSetLoader { 
+    public static class TestLoader extends GrammaticalLabelSetLoader {
         public TestLoader(GrammaticalLabelSetDescriptor dictDesc) {
             super(dictDesc);
-        }        
-       
+        }
+
         @Override
         protected LanguageDictionary createNewDictionary(HumanLanguage language) throws IOException {
             return new TestInMemoryDic(language);
@@ -40,12 +39,12 @@ public class GrammaticalLabelLSetLoaderOverrideTest extends BaseGrammaticalLabel
         @Override
         protected LanguageDictionary finalizeDictionary(LanguageDictionary dictionary) throws IOException {
             assertTrue(dictionary instanceof TestInMemoryDic);
-            return new TestFinalizedDic(dictionary.getLanguage());        
-        }       
+            return new TestFinalizedDic(dictionary.getLanguage());
+        }
     }
     /**
      * Teset for overriding LabelSetLoader to create another dictionary specified in TestLoader
-     * 
+     *
      * @throws Exception
      */
     public void testOverride() throws Exception {

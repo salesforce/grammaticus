@@ -27,20 +27,20 @@ import com.google.common.collect.Sets;
 public class PluralRefTag extends RefTag {
     private static final long serialVersionUID = -1L;
 
-	private final int val;
-	private final Map<PluralCategory, Object> when;
-	private final Object ifDefault;
+    private final int val;
+    private final Map<PluralCategory, Object> when;
+    private final Object ifDefault;
 
-	public PluralRefTag(int val, Map<PluralCategory,Object> when, Object ifDefault) {
-		this.val = val;
-		this.when = when;
-		this.ifDefault = ifDefault != null ? ifDefault : "";
-	}
+    public PluralRefTag(int val, Map<PluralCategory, Object> when, Object ifDefault) {
+        this.val = val;
+        this.when = when;
+        this.ifDefault = ifDefault != null ? ifDefault : "";
+    }
 
-	@Override
-	public String getKey() {
-		return "Plural" + val + when;
-	}
+    @Override
+    public String getKey() {
+        return "Plural" + val + when;
+    }
 
     @Override
     public int hashCode() {
@@ -60,49 +60,55 @@ public class PluralRefTag extends RefTag {
                 && Objects.equals(ifDefault, ((PluralRefTag)obj).ifDefault);
     }
 
-	Object getData(LanguageDictionary dictionary, Object[] vals) {
-		if (vals == null || vals.length <= val) {
-			return ifDefault;
-		}
-		Object toTest = vals[val];
-		Number num;
-		if (toTest == null) {
-			return ifDefault;
-		}
-		if (toTest instanceof Number) {
-			num = (Number) toTest;
-		} else {
-			try {
-				num = Double.parseDouble(String.valueOf(toTest));
-			} catch (NumberFormatException ex) {
-				return ifDefault;
-			}
-		}
-		// Zero isn't returned for plural rules in CLDR, but you might want it anyway.
-		PluralCategory category = (num.doubleValue() == 0.0 && when.containsKey(PluralCategory.ZERO)) ? PluralCategory.ZERO : dictionary.getDeclension().getPluralRules().getPluralCategory(num);
-		Object val = when.get(category);
-		return val != null ? val : ifDefault;
-	}
+    Object getData(LanguageDictionary dictionary, Object[] vals) {
+        if (vals == null || vals.length <= val) {
+            return ifDefault;
+        }
+        Object toTest = vals[val];
+        Number num;
+        if (toTest == null) {
+            return ifDefault;
+        }
+        if (toTest instanceof Number) {
+            num = (Number) toTest;
+        } else {
+            try {
+                num = Double.parseDouble(String.valueOf(toTest));
+            } catch (NumberFormatException ex) {
+                return ifDefault;
+            }
+        }
+        // Zero isn't returned for plural rules in CLDR, but you might want it anyway.
+        PluralCategory category = (num.doubleValue() == 0.0 && when.containsKey(PluralCategory.ZERO))
+                ? PluralCategory.ZERO
+                : dictionary.getDeclension().getPluralRules().getPluralCategory(num);
+        Object val = when.get(category);
+        return val != null ? val : ifDefault;
+    }
 
-	@Override
-	public String toString(LanguageDictionary dictionary, boolean overrideForms, Object[] vals,
-			Renameable... entities) {
-		return dictionary.format(getData(dictionary, vals), entities, vals, overrideForms, false);  // Don't format for message format, since it'll do it again later.
-	}
+    @Override
+    public String toString(LanguageDictionary dictionary, boolean overrideForms, Object[] vals,
+            Renameable... entities) {
+        // Don't format for message format, since it'll do it again later.
+        return dictionary.format(getData(dictionary, vals), entities, vals, overrideForms, false);
+    }
 
-	@Override
-	public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
-		Set<GrammaticalTerm> whens = RefTag.getTermsFromLabels(dictionary, when.values());
-		return ifDefault != null ? Sets.union(whens, RefTag.getTermsFromLabelValue(dictionary, ifDefault)) : whens;
-	}
+    @Override
+    public Set<GrammaticalTerm> getTermsInUse(LanguageDictionary dictionary) {
+        Set<GrammaticalTerm> whens = RefTag.getTermsFromLabels(dictionary, when.values());
+        return ifDefault != null ? Sets.union(whens, RefTag.getTermsFromLabelValue(dictionary, ifDefault)) : whens;
+    }
 
-	@Override
-	public String toJson(LanguageDictionary dictionary, List<?> list) {
-		StringBuilder def = new StringBuilder();
-		RefTag.appendJsonLabelValueNoThrow(dictionary, def, ifDefault, null);
-		StringBuilder forms = new StringBuilder();
-		when.entrySet().stream().forEach(e->{forms.append(",\""+e.getKey().getCldrCategory()+"\":");RefTag.appendJsonLabelValueNoThrow(dictionary, forms, e.getValue(), null);});
-		String formsVal = forms.length() > 2 ? forms.substring(1) : "";
-		return "{\"t\":\"p\",\"i\":"+val+",\"def\":"+def.toString()+",\"v\":{"+formsVal+"}}";
-	}
+    @Override
+    public String toJson(LanguageDictionary dictionary, List<?> list) {
+        StringBuilder def = new StringBuilder();
+        RefTag.appendJsonLabelValueNoThrow(dictionary, def, ifDefault, null);
+        StringBuilder forms = new StringBuilder();
+        when.entrySet().stream().forEach(e -> {
+            forms.append(",\"" + e.getKey().getCldrCategory() + "\":");
+            RefTag.appendJsonLabelValueNoThrow(dictionary, forms, e.getValue(), null);
+        });
+        String formsVal = forms.length() > 2 ? forms.substring(1) : "";
+        return "{\"t\":\"p\",\"i\":" + val + ",\"def\":" + def.toString() + ",\"v\":{" + formsVal + "}}";
+    }
 }
