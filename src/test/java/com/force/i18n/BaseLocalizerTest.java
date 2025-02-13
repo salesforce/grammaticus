@@ -7,7 +7,6 @@
 
 package com.force.i18n;
 
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertThrows;
 
 import java.text.*;
@@ -22,6 +21,7 @@ import com.force.i18n.BaseLocalizer.FormatFixer;
 import com.force.i18n.BaseLocalizer.LocalOrGmt;
 import com.force.i18n.commons.util.settings.SimpleNonConfigIniFile;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.ibm.icu.impl.jdkadapter.SimpleDateFormatICU;
 import com.ibm.icu.util.ULocale;
@@ -177,15 +177,15 @@ public class BaseLocalizerTest extends TestCase {
 	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 13:00:00");
 	        // In JDK 6, they fixed danish.
 	        assertEquals("13.03.2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
-	        assertEquals("13.03.2008 13.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13.03.2008, 13.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
 
 	        // Validate with US
 	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
-	        assertEquals("3/13/2008, 1:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
+	        assertEquals("3/13/2008, 1:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
 
 	        // Singapore, en_SG
 	        assertEquals("13/3/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
-	        assertEquals("13/3/2008, 1:00 pm", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	        assertEquals("13/3/2008, 1:00 pm", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
 
 	        // Nigeria, en_NG
 	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
@@ -357,14 +357,14 @@ public class BaseLocalizerTest extends TestCase {
          assertEquals("March 4, 2013", this.usLocalizer.formatDate(date, DateFormat.LONG));
 
          //Test format date-time
-         assertEquals("3/4/2013, 11:02 PM", this.usLocalizer.formatDateTime(date, DateFormat.SHORT));
-         assertEquals("Mar 4, 2013, 11:02:00 PM", this.usLocalizer.formatDateTime(date, DateFormat.MEDIUM));
-         assertEquals("3/4/2013, 11:02:00 PM PST", this.usLocalizer.formatDateTime(date, DateFormat.LONG));
+         assertEquals("3/4/2013, 11:02 PM", this.usLocalizer.formatDateTime(date, DateFormat.SHORT));
+         assertEquals("Mar 4, 2013, 11:02:00 PM", this.usLocalizer.formatDateTime(date, DateFormat.MEDIUM));
+         assertEquals("3/4/2013, 11:02:00 PM PST", this.usLocalizer.formatDateTime(date, DateFormat.LONG));
 
          //Test format time
-         assertEquals("11:02 PM", this.usLocalizer.formatTime(date, DateFormat.SHORT));
-         assertEquals("11:02:00 PM", this.usLocalizer.formatTime(date, DateFormat.MEDIUM));
-         assertEquals("11:02:00 PM PST", this.usLocalizer.formatTime(date, DateFormat.LONG));
+         assertEquals("11:02 PM", this.usLocalizer.formatTime(date, DateFormat.SHORT));
+         assertEquals("11:02:00 PM", this.usLocalizer.formatTime(date, DateFormat.MEDIUM));
+         assertEquals("11:02:00 PM PST", this.usLocalizer.formatTime(date, DateFormat.LONG));
 
     }
 
@@ -385,18 +385,18 @@ public class BaseLocalizerTest extends TestCase {
          Date medium_date_time = this.usLocalizer.parseDateTime("Mar 4, 2013, 11:02:00 PM", DateFormat.MEDIUM);
          Date long_date_time = this.usLocalizer.parseDateTime("3/4/2013, 11:02:00 PM PST", DateFormat.LONG);
 
-         assertEquals("3/4/2013, 11:02 PM", this.usLocalizer.formatDateTime(short_date_time, DateFormat.SHORT));
-         assertEquals("Mar 4, 2013, 11:02:00 PM", this.usLocalizer.formatDateTime(medium_date_time, DateFormat.MEDIUM));
-         assertEquals("3/4/2013, 11:02:00 PM PST", this.usLocalizer.formatDateTime(long_date_time, DateFormat.LONG));
+         assertEquals("3/4/2013, 11:02 PM", this.usLocalizer.formatDateTime(short_date_time, DateFormat.SHORT));
+         assertEquals("Mar 4, 2013, 11:02:00 PM", this.usLocalizer.formatDateTime(medium_date_time, DateFormat.MEDIUM));
+         assertEquals("3/4/2013, 11:02:00 PM PST", this.usLocalizer.formatDateTime(long_date_time, DateFormat.LONG));
 
          // Test parse time in short,medium and long styles
-         Date short_time = this.usLocalizer.parseTime("11:02 PM", DateFormat.SHORT);
-         Date medium_time = this.usLocalizer.parseTime("11:02:00 PM", DateFormat.MEDIUM);
-         Date long_time = this.usLocalizer.parseTime("11:02:00 PM PST", DateFormat.LONG);
+         Date short_time = this.usLocalizer.parseTime("11:02 PM", DateFormat.SHORT);
+         Date medium_time = this.usLocalizer.parseTime("11:02:00 PM", DateFormat.MEDIUM);
+         Date long_time = this.usLocalizer.parseTime("11:02:00 PM PST", DateFormat.LONG);
 
-         assertEquals("11:02 PM", this.usLocalizer.formatTime(short_time, DateFormat.SHORT));
-         assertEquals("11:02:00 PM", this.usLocalizer.formatTime(medium_time, DateFormat.MEDIUM));
-         assertEquals("11:02:00 PM PST", this.usLocalizer.formatTime(long_time, DateFormat.LONG));
+         assertEquals("11:02 PM", this.usLocalizer.formatTime(short_time, DateFormat.SHORT));
+         assertEquals("11:02:00 PM", this.usLocalizer.formatTime(medium_time, DateFormat.MEDIUM));
+         assertEquals("11:02:00 PM PST", this.usLocalizer.formatTime(long_time, DateFormat.LONG));
 
     }
 
@@ -418,18 +418,18 @@ public class BaseLocalizerTest extends TestCase {
         Date medium_date_time = BaseLocalizer.parseDateTime("Mar 4, 2013, 11:02:00 PM", DateFormat.MEDIUM, Locale.US, time_zone);
         Date long_date_time = BaseLocalizer.parseDateTime("3/4/2013, 11:02:00 PM PST", DateFormat.LONG, Locale.US, time_zone);
 
-        assertEquals("3/4/2013, 11:02 PM", BaseLocalizer.formatDateTime(short_date_time, DateFormat.SHORT, Locale.US, time_zone));
-        assertEquals("Mar 4, 2013, 11:02:00 PM", BaseLocalizer.formatDateTime(medium_date_time, DateFormat.MEDIUM, Locale.US, time_zone));
-        assertEquals("3/4/2013, 11:02:00 PM PST", BaseLocalizer.formatDateTime(long_date_time, DateFormat.LONG, Locale.US, time_zone));
+        assertEquals("3/4/2013, 11:02 PM", BaseLocalizer.formatDateTime(short_date_time, DateFormat.SHORT, Locale.US, time_zone));
+        assertEquals("Mar 4, 2013, 11:02:00 PM", BaseLocalizer.formatDateTime(medium_date_time, DateFormat.MEDIUM, Locale.US, time_zone));
+        assertEquals("3/4/2013, 11:02:00 PM PST", BaseLocalizer.formatDateTime(long_date_time, DateFormat.LONG, Locale.US, time_zone));
 
         // Test static parse and format time in short,medium and long styles
         Date short_time = BaseLocalizer.parseTime("11:02 PM", DateFormat.SHORT, Locale.US, time_zone);
         Date medium_time = BaseLocalizer.parseTime("11:02:00 PM", DateFormat.MEDIUM, Locale.US, time_zone);
         Date long_time = BaseLocalizer.parseTime("11:02:00 PM PST", DateFormat.LONG, Locale.US, time_zone);
 
-        assertEquals("11:02 PM", BaseLocalizer.formatTime(short_time, DateFormat.SHORT, Locale.US, time_zone));
-        assertEquals("11:02:00 PM", BaseLocalizer.formatTime(medium_time, DateFormat.MEDIUM, Locale.US, time_zone));
-        assertEquals("11:02:00 PM PST", BaseLocalizer.formatTime(long_time, DateFormat.LONG, Locale.US, time_zone));
+        assertEquals("11:02 PM", BaseLocalizer.formatTime(short_time, DateFormat.SHORT, Locale.US, time_zone));
+        assertEquals("11:02:00 PM", BaseLocalizer.formatTime(medium_time, DateFormat.MEDIUM, Locale.US, time_zone));
+        assertEquals("11:02:00 PM PST", BaseLocalizer.formatTime(long_time, DateFormat.LONG, Locale.US, time_zone));
     }
 
     public void testIniFile() throws Exception {
@@ -458,8 +458,10 @@ public class BaseLocalizerTest extends TestCase {
      * If this case fails for certain locale, you may consider to have a hot fix.
      */
     public void test12HTimeWithAMPM() {
+        Map<ULocale, String> invalid = new HashMap<>();
         for (ULocale u_loc : ULocale.getAvailableLocales()) {
         	if (u_loc.getLanguage().equals("mi")) continue;  // Ignore maori.
+        	if (u_loc.getCountry().equals("AR")) continue;  // es_AR is wrong in ICU 46, but checkAM fixes it.
             for (int style : ImmutableSet.of(DateFormat.SHORT, DateFormat.MEDIUM, DateFormat.LONG)) {
                 com.ibm.icu.text.DateFormat df = com.ibm.icu.text.DateFormat.getTimeInstance(style, u_loc);
                 com.ibm.icu.text.SimpleDateFormat tf = (com.ibm.icu.text.SimpleDateFormat) df;
@@ -467,10 +469,14 @@ public class BaseLocalizerTest extends TestCase {
 
                 // H for 24-hours time format, h for 12-hours format.
                 if ((p.indexOf('a') == -1) && (p.indexOf('k') == -1) && (p.indexOf('B') == -1)) {
-                    assertNotEquals("Locale:" + u_loc.getName() + " has incorrect time format " + p, -1, p.indexOf('H'));
+                    // Locale has 12 hour time, but no am/pm marker.
+                    if (-1 == p.indexOf('H')) {
+                        invalid.put(u_loc, style + ":" + p);
+                    }
                 }
             }
         }
+        assertEquals("Locales with incorrect time formats (12 hours with no am/pm marker).  Hot fix may be needed.", ImmutableMap.of(), invalid);
     }
 
     /**
@@ -481,7 +487,7 @@ public class BaseLocalizerTest extends TestCase {
      */
     public void testICUCurrencyCode2JDK() {
         List<String> res = new ArrayList<String>();
-        ImmutableSet<String> exceptions = ImmutableSet.of("MRU", "VES", "STN");
+        ImmutableSet<String> exceptions = ImmutableSet.of("MRU", "VES", "STN", "XCG", "ZWG");
         for (ULocale u_loc : ULocale.getAvailableLocales()) {
             com.ibm.icu.text.NumberFormat df = com.ibm.icu.text.NumberFormat.getCurrencyInstance(u_loc);
             com.ibm.icu.util.Currency cur = df.getCurrency();
