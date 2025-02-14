@@ -344,7 +344,7 @@ public class BaseLocalizer {
         // GregorianCalendar.  These changes were applied to the JDK as well.
         Locale overrideDateLocale(Locale aLocale) {
             if (isSaudiArabia(aLocale)) {
-                return new Locale("ar");
+                return new Locale.Builder().setLanguage("ar").build();
             }
             return aLocale;
         }

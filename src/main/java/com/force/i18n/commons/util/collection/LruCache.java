@@ -8,7 +8,7 @@
 package com.force.i18n.commons.util.collection;
 
 import java.util.LinkedHashMap;
-import java.util.Map.Entry;
+import java.util.Map;
 
 import com.google.common.annotations.Beta;
 
@@ -50,7 +50,7 @@ public class LruCache<K, V> extends LinkedHashMap<K, V> {
     }
     
     @Override
-    protected boolean removeEldestEntry(Entry<K, V> eldest) {
+    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
         return size() > capacity;
     }
     

@@ -148,7 +148,7 @@ public class SharedKeyMapPropertyFileDataTest extends TestCase {
      * different SharedKeyMapPropertyFileData that shares the first's seed causes a ConcurrentModificationException.
      */
     public void testConcurrentCompaction() throws Exception {
-        final SharedKeyMapPropertyFileData data2 = new SharedKeyMapPropertyFileData(new Locale("fr", "BE"), false, this.seed, this.namespaces);
+        final SharedKeyMapPropertyFileData data2 = new SharedKeyMapPropertyFileData(new Locale.Builder().setLanguage("fr").setRegion("BE").build(), false, this.seed, this.namespaces);
         ThreadFactory tf = new ThreadFactoryBuilder().setDaemon(true).setNameFormat(getName() + "-%s").build();
         ExecutorService executor = Executors.newSingleThreadExecutor(tf);
 

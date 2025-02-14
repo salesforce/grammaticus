@@ -32,7 +32,7 @@ import com.google.common.collect.ImmutableMap;
  * @author cchen
  */
 public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
-    private static final Locale chineseLocale = new Locale("zh", "China");
+    private static final Locale chineseLocale = new Locale.Builder().setLanguage("zh").setRegion("China").build();
 
     public GrammaticalLocalizerTest(String name) {
         super(name);
@@ -69,7 +69,7 @@ public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
         assertEquals("Created by...", gl.getLabel("Sample", "created_by"));
 
         // Try it in a non-translated language that fallsback to ENGLISH_GB, then ENGLISH
-        ls = LocalizerFactory.get().getLocalizer(new Locale("en", "IN")).getLabelSet();
+        ls = LocalizerFactory.get().getLocalizer(new Locale.Builder().setLanguage("en").setRegion("IN").build()).getLabelSet();
         // Fallbacks resolve all aliases immediately.
         assertEquals("Created by...", ls.get("Sample", "created_by"));
         assertEquals("Created by...", ls.getString("Sample", "created_by"));

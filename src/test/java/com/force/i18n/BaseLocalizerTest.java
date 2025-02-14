@@ -132,20 +132,20 @@ public class BaseLocalizerTest extends TestCase {
 	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 12:00:00");
 
 	        // In JDK 11, they fixed danish (again).  In JDK 17, they reverted it back to the correct ICU format...
-	        //assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
-	        //assertEquals("13/03/2008 12.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	        //assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("da").build(), tz).format(sampleDate));
+	        //assertEquals("13/03/2008 12.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("da").build(), tz).format(sampleDate));
 
 	        // Validate with US
 	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
 	        assertEquals("3/13/2008, 12:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
 
 	        // Singapore didn't have the "right" time.
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
-	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008, 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("SG").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("NG").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("GB").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("SG").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("NG").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 12:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("GB").build(), tz).format(sampleDate));
         } finally {
         	BaseLocalizer.setLocaleFormatFixer(old_predicate);
         }
@@ -155,15 +155,15 @@ public class BaseLocalizerTest extends TestCase {
 
     // List of overridden locales for date/time
     private static Locale[] DATE_FORMAT_INTERESTING_LOCALES = new Locale[] { //
-            new Locale("en", "SG"), //
-            new Locale("en", "NG"), //
-            new Locale("en", "MY"), //
-            new Locale("en", "BB"), //
-            new Locale("en", "BM"), //
-            new Locale("en", "GH"), //
-            new Locale("en", "ID"), //
-            new Locale("ar"), //
-            new Locale("ar", "SA"), //
+            new Locale.Builder().setLanguage("en").setRegion("SG").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("NG").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("MY").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("BB").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("BM").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("GH").build(), //
+            new Locale.Builder().setLanguage("en").setRegion("ID").build(), //
+            new Locale.Builder().setLanguage("ar").build(), //
+            new Locale.Builder().setLanguage("ar").setRegion("SA").build(), //
     };
 
     public void testJdkDateFormatFixer_ICU() throws Exception {
@@ -176,28 +176,28 @@ public class BaseLocalizerTest extends TestCase {
 	        TimeZone tz = BaseLocalizer.GMT_TZ;
 	        Date sampleDate = I18nDateUtil.parseTimestamp("2008-03-13 13:00:00");
 	        // In JDK 6, they fixed danish.
-	        assertEquals("13.03.2008", BaseLocalizer.getLocaleDateFormat(new Locale("da"), tz).format(sampleDate));
-	        assertEquals("13.03.2008, 13.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("da"), tz).format(sampleDate));
+	        assertEquals("13.03.2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("da").build(), tz).format(sampleDate));
+	        assertEquals("13.03.2008, 13.00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("da").build(), tz).format(sampleDate));
 
 	        // Validate with US
 	        assertEquals("3/13/2008", BaseLocalizer.getLocaleDateFormat(Locale.US, tz).format(sampleDate));
 	        assertEquals("3/13/2008, 1:00 PM", BaseLocalizer.getLocaleDateTimeFormat(Locale.US, tz).format(sampleDate));
 
 	        // Singapore, en_SG
-	        assertEquals("13/3/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "SG"), tz).format(sampleDate));
-	        assertEquals("13/3/2008, 1:00 pm", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "SG"), tz).format(sampleDate));
+	        assertEquals("13/3/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("SG").build(), tz).format(sampleDate));
+	        assertEquals("13/3/2008, 1:00 pm", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("SG").build(), tz).format(sampleDate));
 
 	        // Nigeria, en_NG
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "NG"), tz).format(sampleDate));
-	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "NG"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("NG").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("NG").build(), tz).format(sampleDate));
 
 	        // UK, en_GB
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "GB"), tz).format(sampleDate));
-	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "GB"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("GB").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("GB").build(), tz).format(sampleDate));
 
 	        // India, en_ID, override to en_GB
-	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale("en", "ID"), tz).format(sampleDate));
-	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale("en", "ID"), tz).format(sampleDate));
+	        assertEquals("13/03/2008", BaseLocalizer.getLocaleDateFormat(new Locale.Builder().setLanguage("en").setRegion("ID").build(), tz).format(sampleDate));
+	        assertEquals("13/03/2008, 13:00", BaseLocalizer.getLocaleDateTimeFormat(new Locale.Builder().setLanguage("en").setRegion("ID").build(), tz).format(sampleDate));
        } finally {
     	   BaseLocalizer.setLocaleFormatFixer(old_predicate);
        }
