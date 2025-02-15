@@ -38,17 +38,17 @@ public enum LocaleUtils {
         if (oldValue != null) return oldValue;
         Locale newValue=null;
         if (isoCode.length() == 2) {
-            newValue = new Locale(isoCode);
+            newValue = new Locale.Builder().setLanguage(isoCode).build();
         } else if (isoCode.length() == 5) {
             String countryIsoCode = isoCode.substring(3, 5);
             String langIsoCode = isoCode.substring(0, 2);
-            newValue = new Locale(langIsoCode, countryIsoCode);
+            newValue = new Locale.Builder().setLanguage(langIsoCode).setRegion(countryIsoCode).build();
         } else {
             List<String> split = Lists.newArrayList(Splitter.on('_').split(isoCode));
             String language = split.get(0);
             String country = split.size() > 1 ? split.get(1) : "";
             String variant = split.size() > 2 ? split.get(2) : "";
-            newValue = new Locale(language, country, variant);
+            newValue = new Locale.Builder().setLanguage(language).setRegion(country).setVariant(variant).build();
         }
         if (newValue != null) uniqueLocaleMap.put(isoCode, newValue);
         return newValue;
@@ -77,10 +77,10 @@ public enum LocaleUtils {
          }
          // OK, we should have "de" or "de-de";
          if (locale.length() == 2) {
-             return new Locale(locale.toLowerCase());
+             return new Locale.Builder().setLanguage(locale.toLowerCase()).build();
          } else if (locale.length() == 5) {
              if (locale.charAt(2) != '-') return null;
-             return new Locale(locale.substring(0,2).toLowerCase(), locale.substring(3,5).toUpperCase());
+             return new Locale.Builder().setLanguage(locale.substring(0,2).toLowerCase()).setRegion(locale.substring(3,5).toUpperCase()).build();
          } else {
              return null;
          }
