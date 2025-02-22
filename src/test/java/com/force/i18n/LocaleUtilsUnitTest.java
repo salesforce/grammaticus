@@ -39,9 +39,9 @@ public class LocaleUtilsUnitTest extends TestCase {
      * Verifies that getLocaleByIsoCode with valid language code, country code and variant returns a valid locale
      */
     public void testGetLocaleByIsoCodeWithLanguageCountryVariant() throws Exception {
-        final String isoCode = "ca_ES_EURO";
+        final String isoCode = "ca_ES_PREEURO";
         final Locale actualLocale = LocaleUtils.get().getLocaleByIsoCode(isoCode);
         assertEquals("Expected getLocaleByIsoCode to return the Catalan Spain Locale with Euro variant", 
-        new Locale.Builder().setLanguage("ca").setRegion("ES").setVariant("EURO"), actualLocale);
+        new Locale.Builder().setLanguage("ca").setRegion("ES").setVariant("PREEURO").build(), actualLocale);
     }
 }

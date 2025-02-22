@@ -32,7 +32,7 @@ import com.google.common.collect.ImmutableMap;
  * @author cchen
  */
 public class GrammaticalLocalizerTest extends BaseGrammaticalLabelTest {
-    private static final Locale chineseLocale = new Locale.Builder().setLanguage("zh").setRegion("China").build();
+    private static final Locale chineseLocale = new Locale.Builder().setLanguage("zh").setRegion("CH").build();
 
     public GrammaticalLocalizerTest(String name) {
         super(name);
