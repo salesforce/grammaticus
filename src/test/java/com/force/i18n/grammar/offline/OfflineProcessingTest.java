@@ -36,7 +36,7 @@ import com.google.common.collect.ImmutableList;
 public class OfflineProcessingTest {
 	@Parameters(name="{0}")
 	public static Collection<Object[]> data() {
-		//Set<Locale> locales = ImmutableSet.of(new Locale("fr"));
+		//Set<Locale> locales = ImmutableSet.of(new Locale.Builder().setLanguage("fr").build());
 		return LanguageProviderFactory.get().getAll().stream().filter(a->a.isTranslatedLanguage())
 		        //.filter(a->locales.contains(a.getLocale()))
 				.map(a->new Object[]{a}).collect(Collectors.toList());

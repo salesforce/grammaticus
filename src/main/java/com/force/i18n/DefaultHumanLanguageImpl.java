@@ -26,127 +26,127 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     // standard languages
     ENGLISH(Locale.US),  // It's a peculiarity that we use en_US as the default for English instead of en.  Complain if need be
     GERMAN(Locale.GERMAN),
-    SPANISH(new Locale("es")),
+    SPANISH(new Locale.Builder().setLanguage("es").build()),
     FRENCH(Locale.FRENCH),
     ITALIAN(Locale.ITALIAN),
     JAPANESE(Locale.JAPANESE),
-    SWEDISH(new Locale("sv")),
+    SWEDISH(new Locale.Builder().setLanguage("sv").build()),
     KOREAN(Locale.KOREAN),
     CHINESE_TRAD(Locale.TRADITIONAL_CHINESE), // Chinese(Traditional)  (this order matters)
     CHINESE_SIMP(Locale.SIMPLIFIED_CHINESE), // Chinese(Simplified)
-    PORTUGUESE_BR(new Locale("pt", "BR")), // Portuguese (Brazilian)
-    DUTCH(new Locale("nl", "NL"), LanguageType.STANDARD, "nl"),  // This is historical, should always have been "nl"
-    DANISH(new Locale("da")),
-    THAI(new Locale("th")),
-    FINNISH(new Locale("fi")),
-    RUSSIAN(new Locale("ru")),
-    SPANISH_MX(new Locale("es", "MX")), //Spanish (Mexican), end-user lang prior to 190
-    NORWEGIAN(new Locale("no"), LanguageType.STANDARD, 168.0),  // Technically, this should be "nb", but that would be confusing to java and HTML
+    PORTUGUESE_BR(new Locale.Builder().setLanguage("pt").setRegion("BR").build()), // Portuguese (Brazilian)
+    DUTCH(new Locale.Builder().setLanguage("nl").setRegion("NL").build(), LanguageType.STANDARD, "nl"),  // This is historical, should always have been "nl"
+    DANISH(new Locale.Builder().setLanguage("da").build()),
+    THAI(new Locale.Builder().setLanguage("th").build()),
+    FINNISH(new Locale.Builder().setLanguage("fi").build()),
+    RUSSIAN(new Locale.Builder().setLanguage("ru").build()),
+    SPANISH_MX(new Locale.Builder().setLanguage("es").setRegion("MX").build()), //Spanish (Mexican), end-user lang prior to 190
+    NORWEGIAN(new Locale.Builder().setLanguage("no").build(), LanguageType.STANDARD, 168.0),  // Technically, this should be "nb", but that would be confusing to java and HTML
 
     // end-user languages
-    HUNGARIAN(new Locale("hu"), LanguageType.END_USER),
-    POLISH(new Locale("pl"), LanguageType.END_USER),
-    CZECH(new Locale("cs"), LanguageType.END_USER),
-    TURKISH(new Locale("tr"), LanguageType.END_USER),
-    INDONESIAN(new Locale("in"), LanguageType.END_USER, "id"),  // Fix java screwup
-    ROMANIAN(new Locale("ro"), LanguageType.END_USER),
-    VIETNAMESE(new Locale("vi"), LanguageType.END_USER),
-    UKRAINIAN(new Locale("uk"), LanguageType.END_USER),
-    HEBREW(new Locale("iw"), LanguageType.END_USER, "he"), // Fix java screwup
-    GREEK(new Locale("el"), LanguageType.END_USER),
-    BULGARIAN(new Locale("bg"), LanguageType.END_USER),
+    HUNGARIAN(new Locale.Builder().setLanguage("hu").build(), LanguageType.END_USER),
+    POLISH(new Locale.Builder().setLanguage("pl").build(), LanguageType.END_USER),
+    CZECH(new Locale.Builder().setLanguage("cs").build(), LanguageType.END_USER),
+    TURKISH(new Locale.Builder().setLanguage("tr").build(), LanguageType.END_USER),
+    INDONESIAN(new Locale.Builder().setLanguage("in").build(), LanguageType.END_USER, "id"),  // Fix java screwup
+    ROMANIAN(new Locale.Builder().setLanguage("ro").build(), LanguageType.END_USER),
+    VIETNAMESE(new Locale.Builder().setLanguage("vi").build(), LanguageType.END_USER),
+    UKRAINIAN(new Locale.Builder().setLanguage("uk").build(), LanguageType.END_USER),
+    HEBREW(new Locale.Builder().setLanguage("iw").build(), LanguageType.END_USER, "he"), // Fix java screwup
+    GREEK(new Locale.Builder().setLanguage("el").build(), LanguageType.END_USER),
+    BULGARIAN(new Locale.Builder().setLanguage("bg").build(), LanguageType.END_USER),
     ENGLISH_GB(Locale.UK, LanguageType.END_USER, 168.0),
-    ARABIC(new Locale("ar"), LanguageType.END_USER, 168.0),
-    SLOVAK(new Locale("sk"), LanguageType.END_USER, 168.0),
-    PORTUGUESE_PT(new Locale("pt", "PT"), LanguageType.END_USER, 172.0), // Portuguese (European)
-    CROATIAN(new Locale("hr"), LanguageType.END_USER, 170.0),
-    SLOVENE(new Locale("sl"), LanguageType.END_USER, 170.0),
+    ARABIC(new Locale.Builder().setLanguage("ar").build(), LanguageType.END_USER, 168.0),
+    SLOVAK(new Locale.Builder().setLanguage("sk").build(), LanguageType.END_USER, 168.0),
+    PORTUGUESE_PT(new Locale.Builder().setLanguage("pt").setRegion("PT").build(), LanguageType.END_USER, 172.0), // Portuguese (European)
+    CROATIAN(new Locale.Builder().setLanguage("hr").build(), LanguageType.END_USER, 170.0),
+    SLOVENE(new Locale.Builder().setLanguage("sl").build(), LanguageType.END_USER, 170.0),
 
     // platform languages
-    GEORGIAN(new Locale("ka"), LanguageType.PLATFORM, 168.0),
-    SERBIAN_CYRILLIC(new Locale("sr"), LanguageType.PLATFORM, 168.0),  // http://tlt.its.psu.edu/suggestions/international/bylanguage/serbocroatian.html
-    SERBIAN_LATIN(new Locale("sh"), LanguageType.PLATFORM, "sr-Latn", 168.0),  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
-    MOLDOVAN(new Locale("ro", "MD"), LanguageType.PLATFORM, 170.0),  // Note, this is just a variant, but called Moldovan for various reasons.
-    BOSNIAN(new Locale("bs"), LanguageType.PLATFORM, 170.0),
-    MACEDONIAN(new Locale("mk"), LanguageType.PLATFORM, 170.0),
-    LATVIAN(new Locale("lv"), LanguageType.PLATFORM, 172.0),
-    LITHUANIAN(new Locale("lt"), LanguageType.PLATFORM, 172.0),
-    ESTONIAN(new Locale("et"), LanguageType.PLATFORM, 172.0),
-    ALBANIAN(new Locale("sq"), LanguageType.PLATFORM, 172.0),
-    MONTENEGRIN(new Locale("sh", "ME"), LanguageType.PLATFORM, 172.0),  // NOTE: this may end up as a "real" language some day.  Until then, it's staying as a serbo-croatian dialect
-    MALTESE(new Locale("mt"), LanguageType.PLATFORM, 172.0),
-    IRISH(new Locale("ga"), LanguageType.PLATFORM, 172.0),
-    BASQUE(new Locale("eu"), LanguageType.PLATFORM, 172.0),
-    WELSH(new Locale("cy"), LanguageType.PLATFORM, 172.0),
-    ICELANDIC(new Locale("is"), LanguageType.PLATFORM, 172.0),
+    GEORGIAN(new Locale.Builder().setLanguage("ka").build(), LanguageType.PLATFORM, 168.0),
+    SERBIAN_CYRILLIC(new Locale.Builder().setLanguage("sr").build(), LanguageType.PLATFORM, 168.0),  // http://tlt.its.psu.edu/suggestions/international/bylanguage/serbocroatian.html
+    SERBIAN_LATIN(new Locale.Builder().setLanguage("sh").build(), LanguageType.PLATFORM, "sr-Latn", 168.0),  // sh is deprecated, but using sr-Latn is only HTML and would confuse Java
+    MOLDOVAN(new Locale.Builder().setLanguage("ro").setRegion("MD").build(), LanguageType.PLATFORM, 170.0),  // Note, this is just a variant, but called Moldovan for various reasons.
+    BOSNIAN(new Locale.Builder().setLanguage("bs").build(), LanguageType.PLATFORM, 170.0),
+    MACEDONIAN(new Locale.Builder().setLanguage("mk").build(), LanguageType.PLATFORM, 170.0),
+    LATVIAN(new Locale.Builder().setLanguage("lv").build(), LanguageType.PLATFORM, 172.0),
+    LITHUANIAN(new Locale.Builder().setLanguage("lt").build(), LanguageType.PLATFORM, 172.0),
+    ESTONIAN(new Locale.Builder().setLanguage("et").build(), LanguageType.PLATFORM, 172.0),
+    ALBANIAN(new Locale.Builder().setLanguage("sq").build(), LanguageType.PLATFORM, 172.0),
+    MONTENEGRIN(new Locale.Builder().setLanguage("sh").setRegion("ME").build(), LanguageType.PLATFORM, 172.0),  // NOTE: this may end up as a "real" language some day.  Until then, it's staying as a serbo-croatian dialect
+    MALTESE(new Locale.Builder().setLanguage("mt").build(), LanguageType.PLATFORM, 172.0),
+    IRISH(new Locale.Builder().setLanguage("ga").build(), LanguageType.PLATFORM, 172.0),
+    BASQUE(new Locale.Builder().setLanguage("eu").build(), LanguageType.PLATFORM, 172.0),
+    WELSH(new Locale.Builder().setLanguage("cy").build(), LanguageType.PLATFORM, 172.0),
+    ICELANDIC(new Locale.Builder().setLanguage("is").build(), LanguageType.PLATFORM, 172.0),
 
-    MALAY(new Locale("ms"), LanguageType.PLATFORM, 172.0),
-    TAGALOG(new Locale("tl"), LanguageType.PLATFORM, 172.0),
+    MALAY(new Locale.Builder().setLanguage("ms").build(), LanguageType.PLATFORM, 172.0),
+    TAGALOG(new Locale.Builder().setLanguage("tl").build(), LanguageType.PLATFORM, 172.0),
 
-    LUXEMBOURGISH(new Locale("lb"), LanguageType.PLATFORM, 174.0),
-    ROMANSH(new Locale("rm"), LanguageType.PLATFORM, 174.0),
-    ARMENIAN(new Locale("hy"), LanguageType.PLATFORM, 174.0),
-    HINDI(new Locale("hi"), LanguageType.PLATFORM, 174.0),
-    URDU(new Locale("ur"), LanguageType.PLATFORM, 174.0),
+    LUXEMBOURGISH(new Locale.Builder().setLanguage("lb").build(), LanguageType.PLATFORM, 174.0),
+    ROMANSH(new Locale.Builder().setLanguage("rm").build(), LanguageType.PLATFORM, 174.0),
+    ARMENIAN(new Locale.Builder().setLanguage("hy").build(), LanguageType.PLATFORM, 174.0),
+    HINDI(new Locale.Builder().setLanguage("hi").build(), LanguageType.PLATFORM, 174.0),
+    URDU(new Locale.Builder().setLanguage("ur").build(), LanguageType.PLATFORM, 174.0),
 
-    BENGALI(new Locale("bn"), LanguageType.PLATFORM, 190.0),
-    TAMIL(new Locale("ta"), LanguageType.PLATFORM, 190.0),
+    BENGALI(new Locale.Builder().setLanguage("bn").build(), LanguageType.PLATFORM, 190.0),
+    TAMIL(new Locale.Builder().setLanguage("ta").build(), LanguageType.PLATFORM, 190.0),
 
-    AFRIKAANS(new Locale("af"), LanguageType.PLATFORM, 220.0),
-    SWAHILI(new Locale("sw"), LanguageType.PLATFORM, 220.0),
-    ZULU(new Locale("zu"), LanguageType.PLATFORM, 220.0),
-    XHOSA(new Locale("xh"), LanguageType.PLATFORM, 220.0),
+    AFRIKAANS(new Locale.Builder().setLanguage("af").build(), LanguageType.PLATFORM, 220.0),
+    SWAHILI(new Locale.Builder().setLanguage("sw").build(), LanguageType.PLATFORM, 220.0),
+    ZULU(new Locale.Builder().setLanguage("zu").build(), LanguageType.PLATFORM, 220.0),
+    XHOSA(new Locale.Builder().setLanguage("xh").build(), LanguageType.PLATFORM, 220.0),
 
-    TELUGU(new Locale("te"), LanguageType.PLATFORM, 220.0),
-    MALAYALAM(new Locale("ml"), LanguageType.PLATFORM, 220.0),
-    KANNADA(new Locale("kn"), LanguageType.PLATFORM, 220.0),
-    MARATHI(new Locale("mr"), LanguageType.PLATFORM, 220.0),
-    GUJARATI(new Locale("gu"), LanguageType.PLATFORM, 220.0),
-    PUNJABI(new Locale("pa"), LanguageType.PLATFORM, 238.0),
+    TELUGU(new Locale.Builder().setLanguage("te").build(), LanguageType.PLATFORM, 220.0),
+    MALAYALAM(new Locale.Builder().setLanguage("ml").build(), LanguageType.PLATFORM, 220.0),
+    KANNADA(new Locale.Builder().setLanguage("kn").build(), LanguageType.PLATFORM, 220.0),
+    MARATHI(new Locale.Builder().setLanguage("mr").build(), LanguageType.PLATFORM, 220.0),
+    GUJARATI(new Locale.Builder().setLanguage("gu").build(), LanguageType.PLATFORM, 220.0),
+    PUNJABI(new Locale.Builder().setLanguage("pa").build(), LanguageType.PLATFORM, 238.0),
 
-    MAORI(new Locale("mi"), LanguageType.PLATFORM, 220.0),
-    BURMESE(new Locale("my"), LanguageType.PLATFORM, 220.0),
-    PERSIAN(new Locale("fa"), LanguageType.PLATFORM, 224.0),
-    KHMER(new Locale("km"), LanguageType.PLATFORM, 228.0),
-    AMHARIC(new Locale("am"), LanguageType.PLATFORM, 230.0),
+    MAORI(new Locale.Builder().setLanguage("mi").build(), LanguageType.PLATFORM, 220.0),
+    BURMESE(new Locale.Builder().setLanguage("my").build(), LanguageType.PLATFORM, 220.0),
+    PERSIAN(new Locale.Builder().setLanguage("fa").build(), LanguageType.PLATFORM, 224.0),
+    KHMER(new Locale.Builder().setLanguage("km").build(), LanguageType.PLATFORM, 228.0),
+    AMHARIC(new Locale.Builder().setLanguage("am").build(), LanguageType.PLATFORM, 230.0),
 
-    KAZAKH(new Locale("kk"), LanguageType.PLATFORM, 232.0),
-    HAITIAN_CREOLE(new Locale("ht"), LanguageType.PLATFORM, 232.0),
-    SAMOAN(new Locale("sm"), LanguageType.PLATFORM, 232.0),
-    HAWAIIAN(new Locale("haw"), LanguageType.PLATFORM, 232.0),
+    KAZAKH(new Locale.Builder().setLanguage("kk").build(), LanguageType.PLATFORM, 232.0),
+    HAITIAN_CREOLE(new Locale.Builder().setLanguage("ht").build(), LanguageType.PLATFORM, 232.0),
+    SAMOAN(new Locale.Builder().setLanguage("sm").build(), LanguageType.PLATFORM, 232.0),
+    HAWAIIAN(new Locale.Builder().setLanguage("haw").build(), LanguageType.PLATFORM, 232.0),
 
-    CATALAN(new Locale("ca"), LanguageType.PLATFORM, 210.0), // Catalan
+    CATALAN(new Locale.Builder().setLanguage("ca").build(), LanguageType.PLATFORM, 210.0), // Catalan
 
-    GREENLANDIC(new Locale("kl"), LanguageType.PLATFORM, 234.0), //Greenlandic -- no grammar support in 234
-    YIDDISH(new Locale("ji"), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
-    HMONG(new Locale("hmn"), LanguageType.PLATFORM, 238.0),
+    GREENLANDIC(new Locale.Builder().setLanguage("kl").build(), LanguageType.PLATFORM, 234.0), //Greenlandic -- no grammar support in 234
+    YIDDISH(new Locale.Builder().setLanguage("ji").build(), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
+    HMONG(new Locale.Builder().setLanguage("hmn").build(), LanguageType.PLATFORM, 238.0),
 
-    CHUJ(new Locale("cac"), LanguageType.PLATFORM, 248.0), //Chuj 
-    KICHE(new Locale("quc"), LanguageType.PLATFORM, 248.0), //Kiche
-    KAQCHIKEL(new Locale("cak"), LanguageType.PLATFORM, 248.0), //Kaqchikel
+    CHUJ(new Locale.Builder().setLanguage("cac").build(), LanguageType.PLATFORM, 248.0), //Chuj 
+    KICHE(new Locale.Builder().setLanguage("quc").build(), LanguageType.PLATFORM, 248.0), //Kiche
+    KAQCHIKEL(new Locale.Builder().setLanguage("cak").build(), LanguageType.PLATFORM, 248.0), //Kaqchikel
 
     // Sample use of variants for testing
-    ARABIC_DZ(new Locale("ar", "DZ"), LanguageType.PLATFORM, 194.0), //Arabic Algerian
-    ENGLISH_AU(new Locale("en", "AU"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_IN(new Locale("en", "IN"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_PH(new Locale("en", "PH"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_CA(new Locale("en", "CA"), LanguageType.PLATFORM, 168.0),
-    ENGLISH_HK(new Locale("en", "HK"), LanguageType.PLATFORM, 194.0), //English Hong Kong
-    ENGLISH_IE(new Locale("en", "IE"), LanguageType.PLATFORM, 194.0), //English Ireland
-    ENGLISH_SG(new Locale("en", "SG"), LanguageType.PLATFORM, 194.0), //English Singapore
-    ENGLISH_ZA(new Locale("en", "ZA"), LanguageType.PLATFORM, 194.0), //English South Africa
+    ARABIC_DZ(new Locale.Builder().setLanguage("ar").setRegion("DZ").build(), LanguageType.PLATFORM, 194.0), //Arabic Algerian
+    ENGLISH_AU(new Locale.Builder().setLanguage("en").setRegion("AU").build(), LanguageType.PLATFORM, 168.0),
+    ENGLISH_IN(new Locale.Builder().setLanguage("en").setRegion("IN").build(), LanguageType.PLATFORM, 168.0),
+    ENGLISH_PH(new Locale.Builder().setLanguage("en").setRegion("PH").build(), LanguageType.PLATFORM, 168.0),
+    ENGLISH_CA(new Locale.Builder().setLanguage("en").setRegion("CA").build(), LanguageType.PLATFORM, 168.0),
+    ENGLISH_HK(new Locale.Builder().setLanguage("en").setRegion("HK").build(), LanguageType.PLATFORM, 194.0), //English Hong Kong
+    ENGLISH_IE(new Locale.Builder().setLanguage("en").setRegion("IE").build(), LanguageType.PLATFORM, 194.0), //English Ireland
+    ENGLISH_SG(new Locale.Builder().setLanguage("en").setRegion("SG").build(), LanguageType.PLATFORM, 194.0), //English Singapore
+    ENGLISH_ZA(new Locale.Builder().setLanguage("en").setRegion("ZA").build(), LanguageType.PLATFORM, 194.0), //English South Africa
     FRENCH_CA(Locale.CANADA_FRENCH, LanguageType.PLATFORM, 168.0),
-    GERMAN_AT(new Locale("de", "AT"), LanguageType.PLATFORM, 190.0),
-    GERMAN_CH(new Locale("de", "CH"), LanguageType.PLATFORM, 190.0),
-    FRENCH_CH(new Locale("fr", "CH"), LanguageType.PLATFORM, 194.0),  //French Switzerland
-    ITALIAN_CH(new Locale("it", "CH"), LanguageType.PLATFORM, 194.0), //Italian Switzerland
-    SPANISH_AR(new Locale("es", "AR"), LanguageType.PLATFORM, 194.0), //Spanish Argentina
-    RUSSIAN_IL(new Locale("ru", "IL"), LanguageType.PLATFORM, 232.0), //Russian Israel
-    CHINESE_SG(new Locale("zh", "SG"), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
-    CHINESE_HK(new Locale("zh", "HK"), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong 
+    GERMAN_AT(new Locale.Builder().setLanguage("de").setRegion("AT").build(), LanguageType.PLATFORM, 190.0),
+    GERMAN_CH(new Locale.Builder().setLanguage("de").setRegion("CH").build(), LanguageType.PLATFORM, 190.0),
+    FRENCH_CH(new Locale.Builder().setLanguage("fr").setRegion("CH").build(), LanguageType.PLATFORM, 194.0),  //French Switzerland
+    ITALIAN_CH(new Locale.Builder().setLanguage("it").setRegion("CH").build(), LanguageType.PLATFORM, 194.0), //Italian Switzerland
+    SPANISH_AR(new Locale.Builder().setLanguage("es").setRegion("AR").build(), LanguageType.PLATFORM, 194.0), //Spanish Argentina
+    RUSSIAN_IL(new Locale.Builder().setLanguage("ru").setRegion("IL").build(), LanguageType.PLATFORM, 232.0), //Russian Israel
+    CHINESE_SG(new Locale.Builder().setLanguage("zh").setRegion("SG").build(), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
+    CHINESE_HK(new Locale.Builder().setLanguage("zh").setRegion("HK").build(), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong 
 
-    ESPERANTO(new Locale("eo"), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
-    ENGLISH_IL(new Locale("en", "IL"), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
+    ESPERANTO(new Locale.Builder().setLanguage("eo").build(), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
+    ENGLISH_IL(new Locale.Builder().setLanguage("en").setRegion("IL").build(), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
     ;
 
     // NOTE: languages are organized according to type and then in chronological order of when they're added within the type. This is so
@@ -532,14 +532,14 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 				case "BR":
 					return null;
 				default:
-					return new Locale("pt", "BR");  // No "pt" language
+					return new Locale.Builder().setLanguage("pt").setRegion("BR").build();  // No "pt" language
 				}
 			case "nl":
 				switch (country) {
 				case "NL":
 					return null;
 				default:
-					return new Locale("nl", "NL");  // No "nl" language
+					return new Locale.Builder().setLanguage("nl").setRegion("NL").build();  // No "nl" language
 				}
 			}
 		}

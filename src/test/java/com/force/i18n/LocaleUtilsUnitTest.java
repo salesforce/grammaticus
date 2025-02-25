@@ -23,7 +23,7 @@ public class LocaleUtilsUnitTest extends TestCase {
     public void testGetLocaleByIsoCodeWithLanguage() throws Exception {
         final String isoCode = "en";
         final Locale actualLocale = LocaleUtils.get().getLocaleByIsoCode(isoCode);
-        assertEquals("Expected getLocaleByIsoCode to return the English Locale", new Locale("en"), actualLocale);
+        assertEquals("Expected getLocaleByIsoCode to return the English Locale", new Locale.Builder().setLanguage("en").build(), actualLocale);
     }
 
     /**
@@ -32,15 +32,16 @@ public class LocaleUtilsUnitTest extends TestCase {
     public void testGetLocaleByIsoCodeWithLanguageCountry() throws Exception {
         final String isoCode = "en_US";
         final Locale actualLocale = LocaleUtils.get().getLocaleByIsoCode(isoCode);
-        assertEquals("Expected getLocaleByIsoCode to return the US English Locale", new Locale("en", "US"), actualLocale);
+        assertEquals("Expected getLocaleByIsoCode to return the US English Locale", new Locale.Builder().setLanguage("en").setRegion("US").build(), actualLocale);
     }
 
     /**
      * Verifies that getLocaleByIsoCode with valid language code, country code and variant returns a valid locale
      */
     public void testGetLocaleByIsoCodeWithLanguageCountryVariant() throws Exception {
-        final String isoCode = "ca_ES_EURO";
+        final String isoCode = "ca_ES_PREEURO";
         final Locale actualLocale = LocaleUtils.get().getLocaleByIsoCode(isoCode);
-        assertEquals("Expected getLocaleByIsoCode to return the Catalan Spain Locale with Euro variant", new Locale("ca", "ES", "EURO"), actualLocale);
+        assertEquals("Expected getLocaleByIsoCode to return the Catalan Spain Locale with Euro variant", 
+        new Locale.Builder().setLanguage("ca").setRegion("ES").setVariant("PREEURO").build(), actualLocale);
     }
 }

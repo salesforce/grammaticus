@@ -375,7 +375,7 @@ public interface HumanLanguage extends Serializable{
 						return Locale.UK;
 					}
 			    default:
-			    	return new Locale(locale.getLanguage());
+			    	return new Locale.Builder().setLanguage(locale.getLanguage()).build();
 				}
 			}
 

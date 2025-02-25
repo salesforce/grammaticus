@@ -15,6 +15,7 @@ import java.util.Locale;
  *
  * Based on an implementation from an Intl polyfill, but with some updates to handle negative numbers
  * @see <a href="https://github.com/eemeli/make-plural.js">make-plural.js</a>
+ * @see <a href="https://www.unicode.org/cldr/charts/46/supplemental/language_plural_rules.html">plural rules from CLDR</a>
  * @author stamm
  * @since 1.1
  */
@@ -23,6 +24,7 @@ public class PluralRulesJsImpl {
     private final static String ONE = "function (n) {return n == 1 || n == -1 ? 'one' : 'other';}";
     private final static String ONE_OR_ZERO = "function (n) {return n == 0 || n == 1 || n == -1 ? 'one' : 'other';}";
     private final static String EXACT_ONE = "function (n) {return n == 1 && !String(n).split('.')[1] ? 'one' : 'other';}";
+    private final static String EXACT_ONE_OR_NEG_ONE = "function (n) {return (n == 1 || n == -1) && !String(n).split('.')[1] ? 'one' : 'other';}";
 
     public static String getSelectFunction(Locale locale) {
         String override = getSelectFunctionOverride(locale);
@@ -75,7 +77,7 @@ public class PluralRulesJsImpl {
              //case "dz":return noDiff;
              //case "ee":return ONE;
              case GREEK:return ONE;
-             case ENGLISH:return EXACT_ONE;
+             case ENGLISH:return EXACT_ONE_OR_NEG_ONE;
              case ESPERANTO:return ONE;
              case SPANISH:return ONE;
              case ESTONIAN:return EXACT_ONE;
@@ -93,7 +95,8 @@ public class PluralRulesJsImpl {
              case HEBREW_ISO:
              case HEBREW:return "function he(n) {\n"+
              	"var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n, n10 = t0 && s[0].slice(-1);\n"+
-             	"return n == 1 && v0 ? 'one' : i == 2 && v0 ? 'two' : v0 && (n < 0 || n > 10) && t0 && n10 == 0 ? 'many' : 'other';}";
+             	// "return n == 1 && v0 ? 'one' : i == 2 && v0 ? 'two' : v0 && (n < 0 || n > 10) && t0 && n10 == 0 ? 'many' : 'other';}";
+             	"return (i == 1 && v0) || (i == 0 && !v0) ? 'one' : i == 2 && v0 ? 'two' : 'other';}"; // ICU > 70
 
              case HUNGARIAN:return ONE;
              case ARMENIAN:return "function hy(n) {return n >= 0 && n < 2 ? 'one' : 'other';}";
@@ -102,8 +105,9 @@ public class PluralRulesJsImpl {
              //case "id":return noDiff;
              //case "ig":return noDiff;
              case ICELANDIC:return "function is(n) {"+
-               "var s = String(n).split('.'),i = s[0],t0 = Number(s[0]) == n, i10 = i.slice(-1), i100 = i.slice(-2);"+
-               "return t0 && i10 == 1 && i100 != 11 || !t0 ? 'one' : 'other';}";
+               "var s = String(n).split('.'),i = s[0],t = Number(s[1]),t0 = Number(s[0]) == n, i10 = i.slice(-1), i100 = i.slice(-2), t10 = t % 10, t100 = t % 100;"+
+               //                "return t0 && i10 == 1 && i100 != 11 || !t0 ? 'one' : 'other';}";  // ICU < 70
+               "return t0 && i10 == 1 && (i100 != 11 || (!t10 != 1 && t100 != 11)) ? 'one' : 'other';}";
              //case "ja":return noDiff;
              //case "ji":return EXACT_ONE;
              //case "jv":return noDiff;
@@ -133,8 +137,8 @@ public class PluralRulesJsImpl {
              //case "ms":return noDiff;
              case MALTESE:return "function mt(n) {\n"+
 	             "var s = String(n).split('.'),t0 = Number(s[0]) == n,n100 = t0 && s[0].slice(-2);\n"+
-	             "return n == 1 ? 'one' : (n == 0 || (n100 >= 2 && n100 <= 10)) ? 'few' : n100 >= 11 && n100 <= 19 ? 'many' : 'other';}";
-
+	             // "return n == 1 ? 'one' : (n == 0 || (n100 >= 2 && n100 <= 10)) ? 'few' : n100 >= 11 && n100 <= 19 ? 'many' : 'other';}"; // ICU < 70
+	             "return n == 1 ? 'one' : n == 2 ? 'two' : (n == 0 || (n100 > 2 && n100 <= 10)) ? 'few' : n100 >= 11 && n100 <= 19 ? 'many' : 'other';}";
              //case "nb":return ONE;
              //case "nd":return ONE;
              //case "ne":return ONE;
@@ -151,10 +155,11 @@ public class PluralRulesJsImpl {
                  }
                  return "function pt(n) {return n >= 0 && n <= 2 && n != 2 ? 'one' : 'other';}";
              case ROMANSH:return ONE;
+             case "mo":
              case ROMANIAN:return "function ro(n) {"+
             "var s = String(n).split('.'),v0 = !s[1],t0 = Number(s[0]) == n, n100 = t0 && s[0].slice(-2);"+
-//            "return n == 1 && v0 ? 'one' : !v0 || n == 0 || n != 1 && (n100 >= 1 && n100 <= 19) ? 'few' : 'other';}";  // <ICU 64
-			"return n == 1 && v0 ? 'one' : !v0 || n == 0 || (n100 >= 2 && n100 <= 19) ? 'few' : 'other';}";  
+            "return n == 1 && v0 ? 'one' : !v0 || n == 0 || n != 1 && (n100 >= 1 && n100 <= 19) ? 'few' : 'other';}";
+			       // "return n == 1 && v0 ? 'one' : !v0 || n == 0 || (n100 >= 2 && n100 <= 19) ? 'few' : 'other';}";  // ICU 64-70
              case RUSSIAN:
              case UKRAINIAN:
              return "function ru(n) {"+

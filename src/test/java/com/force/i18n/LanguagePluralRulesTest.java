@@ -54,7 +54,7 @@ public class LanguagePluralRulesTest {
 	@Test
 	public void testArabicVariants() {
 		// Make sure all arabic is "the same"
-		for (Locale locale : ImmutableSet.of(new Locale("ar"), new Locale("ar", "SA"), new Locale("ar", "TN"), new Locale("ar", "EG"))) {
+		for (Locale locale : ImmutableSet.of(new Locale.Builder().setLanguage("ar").build(), new Locale.Builder().setLanguage("ar").setRegion("SA").build(), new Locale.Builder().setLanguage("ar").setRegion("TN").build(), new Locale.Builder().setLanguage("ar").setRegion("EG").build())) {
 			LanguagePluralRules rules = getRules(locale);
 			Assert.assertEquals(PluralCategory.ZERO, rules.getPluralCategory(BigDecimal.ZERO));
 			Assert.assertEquals(PluralCategory.ONE, rules.getPluralCategory(BigDecimal.ONE));
@@ -69,7 +69,7 @@ public class LanguagePluralRulesTest {
 
 	@Test
 	public void testRussian() {
-		LanguagePluralRules rules = getRules(new Locale("ru"));
+		LanguagePluralRules rules = getRules(new Locale.Builder().setLanguage("ru").build());
 		Assert.assertEquals(PluralCategory.MANY, rules.getPluralCategory(BigDecimal.ZERO));
 		Assert.assertEquals(PluralCategory.ONE, rules.getPluralCategory(BigDecimal.ONE));
 		Assert.assertEquals(PluralCategory.FEW, rules.getPluralCategory(2));

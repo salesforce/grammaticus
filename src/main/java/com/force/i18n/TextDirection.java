@@ -123,6 +123,8 @@ public enum TextDirection {
         case "lrc":
         case "mzn":
         case "pnb":
+        case "nqo":
+        case "syr":
             return invertIfNotNormalDirection(RTL);
         default:
         }

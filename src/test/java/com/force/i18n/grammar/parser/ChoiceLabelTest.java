@@ -33,7 +33,7 @@ public class ChoiceLabelTest extends BaseGrammaticalLabelTest {
             assertValue(ENGLISH, itemsStr, "No items", 0);
             assertValue(ENGLISH, itemsStr, "1 item", 1);
             assertValue(ENGLISH, itemsStr, "2 items", 2);
-            assertValue(ENGLISH, itemsStr, "-1 items", -1);
+            assertValue(ENGLISH, itemsStr, "-1 item", -1); // This is a behavior change in latest ICU.
             assertValue(ENGLISH, itemsStr, "0.5 items", 0.5);
             assertValue(ENGLISH, itemsStr, "{0} items");
             assertValue(ENGLISH, itemsStr, "null items", new Object[] { null });

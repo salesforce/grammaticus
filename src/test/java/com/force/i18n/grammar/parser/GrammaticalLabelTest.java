@@ -200,11 +200,11 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertEquals("__MISSING LABEL__ PropertyFile - val unknown not found in section Poker", set.getString("Poker", "unknown"));
         assertEquals(ImmutableSet.of("publicsection"), set.getPublicSectionNames());
 
-        HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(new Locale("en", "CA"));
+        HumanLanguage ENGLISH_CA = LanguageProviderFactory.get().getLanguage(new Locale.Builder().setLanguage("en").setRegion("CA").build());
         set = loader.getSet(ENGLISH_CA);
         assertEquals("Choose a Color", set.getString("Icons", "colorPicker"));
 
-        HumanLanguage ENGLISH_IE = LanguageProviderFactory.get().getLanguage(new Locale("en", "IE"));
+        HumanLanguage ENGLISH_IE = LanguageProviderFactory.get().getLanguage(new Locale.Builder().setLanguage("en").setRegion("IE").build());
         set = loader.getSet(ENGLISH_IE);
         assertEquals("Choose a Colour", set.getString("Icons", "colorPicker"));
 

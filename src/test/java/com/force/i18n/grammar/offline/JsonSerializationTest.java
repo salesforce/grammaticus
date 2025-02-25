@@ -83,7 +83,7 @@ public class JsonSerializationTest extends BaseGrammaticalLabelTest {
 	
 	@Test
 	public void testLabelSerializationKo() throws Exception {
-		_testLabelSerialization(new Locale("ko"),
+		_testLabelSerialization(new Locale.Builder().setLanguage("ko").build(),
 				"{\"Sample.click_here_to_create_new_account\":[\"{0} 지금 \",{\"t\":\"a\",\"l\":\"new\",\"f\":\"c\",\"c\":false,\"an\":3,\"nt\":3},\" \",{\"t\":\"n\",\"l\":\"account\",\"f\":\"s\",\"c\":false},{\"t\":\"a\",\"l\":\"eul\",\"f\":\"c\",\"c\":false,\"an\":3,\"nt\":3},\" 작성합니다.\"]}",
 				
 				"{\"n\":{\"account\":{\"t\":\"n\",\"l\":\"account\",\"s\":\"c\",\"v\":{\"s\":\"계정\"}}},\"a\":{\"eul\":{\"t\":\"a\",\"l\":\"eul\",\"v\":{\"c\":\"을\",\"v\":\"를\",\"s\":\"을\"}},\"new\":{\"t\":\"a\",\"l\":\"new\",\"v\":{\"c\":\"새\",\"v\":\"새\",\"s\":\"새\"}}}}");

@@ -7,6 +7,7 @@
 package com.force.i18n.grammar.offline;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -19,7 +20,6 @@ import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.grammar.GrammaticalLabelSet;
 import com.force.i18n.grammar.GrammaticalTerm;
 import com.force.i18n.grammar.parser.GrammaticalLabelSetLoader;
-import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import com.ibm.icu.text.MessageFormat;
 
@@ -34,7 +34,7 @@ public class JsTestUtils {
 
     private static String getGrammaticusJs() throws IOException {
     	if (GRAMMATICUS_JS == null) {	
-    		GRAMMATICUS_JS = Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), Charsets.UTF_8); 		
+    		GRAMMATICUS_JS = Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), StandardCharsets.UTF_8); 		
     	}
     	return GRAMMATICUS_JS;
     }
