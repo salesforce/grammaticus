@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -9,6 +9,7 @@ package com.force.i18n;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Locale.LanguageRange;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -60,29 +61,34 @@ public enum LocaleUtils {
         return getLocaleByIsoCode(value);
     }
 
-     /**
-      * HTTP and Java do not use the same locale stuff
-      * HTTP would say "de-de", but Java would want "de_DE".  This handles those kinds of
-      * weirdness things  (like "de-de;q=0.8")
-      * @param str the HTTP language input
-      * @return the java locale from the http language input.  
-      */
-     public Locale getLocaleFromHttpInput(String str) {
-         if ("*".equals(str)) return null;  // Invalid
-         int semiIndex = str.indexOf(';');
-         String locale = str;
-         if (semiIndex > 0) {
-             // We have a "quality" rating.  Ignore it.  It's useless
-             locale = str.substring(0,semiIndex);
-         }
-         // OK, we should have "de" or "de-de";
-         if (locale.length() == 2) {
-             return new Locale.Builder().setLanguage(locale.toLowerCase()).build();
-         } else if (locale.length() == 5) {
-             if (locale.charAt(2) != '-') return null;
-             return new Locale.Builder().setLanguage(locale.substring(0,2).toLowerCase()).setRegion(locale.substring(3,5).toUpperCase()).build();
-         } else {
-             return null;
-         }
-     }
+    /**
+     * Parses an "Accept-Language" header value as defined in
+     * <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-accept-language">RFC 9110</a> and returns the first
+     * value.
+     *
+     * <p>HTTP and Java handle locales differently. For example, HTTP might use {@code "de-de,de;q=0.8"}, while Java expects
+     * "de_DE". This method addresses such discrepancies.
+     *
+     * @param str
+     *            The HTTP language input, which should follow the "language-range" format of the "Accept-Language"
+     *            header as defined in <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-accept-language">RFC
+     *            9110</a>, except for the wildcard '*'. If the wildcard '*' is provided, this method will return
+     *            {@code null}.
+     * @return The Java locale derived from the HTTP language input. If {@code str} contains multiple languages, only
+     *         the first value is considered, and the rest are ignored. Returns {@code null} if an invalid {@code str}
+     *         is provided.
+     */
+    public Locale getLocaleFromHttpInput(String str) {
+        if (str == null || "*".equals(str)) return null; // Invalid
+
+        try {
+            final List<LanguageRange> ranges = Locale.LanguageRange.parse(str);
+            if (ranges != null && !ranges.isEmpty()) {
+                return Locale.forLanguageTag(ranges.get(0).getRange());
+            }
+        } catch (IllegalArgumentException ignore) {
+            // do nothing. let below to return null
+        }
+        return null;
+    }
 }
