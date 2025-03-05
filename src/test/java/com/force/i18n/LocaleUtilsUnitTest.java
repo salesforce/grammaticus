@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -41,7 +41,17 @@ public class LocaleUtilsUnitTest extends TestCase {
     public void testGetLocaleByIsoCodeWithLanguageCountryVariant() throws Exception {
         final String isoCode = "ca_ES_PREEURO";
         final Locale actualLocale = LocaleUtils.get().getLocaleByIsoCode(isoCode);
-        assertEquals("Expected getLocaleByIsoCode to return the Catalan Spain Locale with Euro variant", 
+        assertEquals("Expected getLocaleByIsoCode to return the Catalan Spain Locale with Euro variant",
         new Locale.Builder().setLanguage("ca").setRegion("ES").setVariant("PREEURO").build(), actualLocale);
+    }
+
+    public void testGetLocaleFromHttpStrig() {
+        assertNull(LocaleUtils.get().getLocaleFromHttpInput("*"));
+        assertNull(LocaleUtils.get().getLocaleFromHttpInput(""));
+        assertNull(LocaleUtils.get().getLocaleFromHttpInput(null));
+
+        assertEquals(Locale.ENGLISH, LocaleUtils.get().getLocaleFromHttpInput("en"));
+        assertEquals(Locale.ENGLISH, LocaleUtils.get().getLocaleFromHttpInput("en;q=0.8"));
+        assertEquals(Locale.US, LocaleUtils.get().getLocaleFromHttpInput("en-US,en;q=0.8"));
     }
 }

@@ -486,7 +486,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         public String getMessage(ErrorInfo ref) {
             String ret = (ref.getArguments() == null || ref.getArguments().length == 0) ? errorMessage
                     : MessageFormat.format(errorMessage, ref.getArguments());
-            return (ref == null) ? ret : ret + " at " + ref.toString();
+            return String.format("%s at %s (%s:%d)", ret, ref.toString(), ref.file, ref.lineNumber);
         }
     }
 
@@ -511,6 +511,24 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
 
         public String getMessage() {
             return this.type.getMessage(this);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.type, this.file, this.lineNumber);
+        }
+
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof ErrorInfo) {
+                ErrorInfo o = (ErrorInfo)other;
+                return super.equals(other)
+                    && this.type == o.type
+                    && Objects.equals(this.file, o.file)
+                    && this.lineNumber == o.lineNumber;
+            }
+            return false;
         }
     }
 }

@@ -1,7 +1,7 @@
-/* 
+/*
  * Copyright (c) 2017, salesforce.com, inc.
  * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
+ * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
  */
 
@@ -17,6 +17,7 @@ import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
 import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.grammar.parser.GrammaticalLabelFileParser.AliasParam;
+import com.force.i18n.grammar.parser.GrammaticalLabelFileParser.ErrorInfo;
 import com.force.i18n.settings.MapPropertyFileData;
 
 /**
@@ -72,11 +73,26 @@ public class LabelValidator {
     }
 
     public List<String> getInvalidLabels(HumanLanguage language) throws Exception {
+        return getInvalidLabels(language, true);
+    }
+
+    /**
+     * Validates labels for the speicified language.
+     *
+     * @param language
+     *            the language to validate labels
+     * @param onlyLabelKeys
+     *            {@code true} to return only the label key that has an error;
+     *            {@code false} to return detailed error information including file name and line number.
+     * @return a list of errors; returns an empty list if no errors are found.
+     * @throws IOException if there was a problem while parsing
+     */
+    public List<String> getInvalidLabels(HumanLanguage language, boolean onlyLabelKeys) throws IOException {
         List<String> result = new ArrayList<>();
         GrammaticalLabelFileParser parser = getParser(language, false);
         if (parser.getInvalidLabels() != null) {
-            for (LabelReference ref : parser.getInvalidLabels()) {
-                result.add(ref.toString());
+            for (ErrorInfo ref : parser.getInvalidLabels()) {
+                result.add(onlyLabelKeys ? ref.toString() : ref.getMessage());
             }
         }
         return result;
@@ -95,12 +111,6 @@ public class LabelValidator {
             if (!declension.isInflected()) continue;  // Don't bother with simple declensions
 
             Set<String> inheritedNouns = ls.getDictionary().getAllInheritedTermNames(TermType.Noun);
-
-            // Unwrap the layers of falling back: NOTE, this only works one level deep which is fine for now.
-            GrammaticalLabelSet main = ls;
-            if (main instanceof GrammaticalLabelSetFallbackImpl) {
-                main = ((GrammaticalLabelSetFallbackImpl)main).getOverlay();
-            }
 
             // Iterate through the label set
             for (String section : ls.sectionNames()) {
@@ -160,7 +170,7 @@ public class LabelValidator {
      * @param text the text of the label to parser
      * @param grammarOverride the XML set of terms to add to the label set while testing
      * @return the rendered label
-     * @throws IOException if there is an issue reading from the label set descriptor passed into the constructor 
+     * @throws IOException if there is an issue reading from the label set descriptor passed into the constructor
      */
     public String renderLabel(HumanLanguage language, String text, String grammarOverride) throws IOException {
         return getTestLabelSet(language, text, grammarOverride).getString("Test", "Test");
@@ -193,7 +203,4 @@ public class LabelValidator {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }

@@ -132,6 +132,18 @@ public abstract class ArticledDeclension extends AbstractLanguageDeclension {
             this.value = intern(value);
         }
         @Override
+        public int hashCode() {
+            return Objects.hash(super.hashCode(), this.value);
+        }
+        @Override
+        public boolean equals(Object other) {
+            if (this == other) return true;
+            if (other instanceof SimpleArticle) {
+                return super.equals(other) && Objects.equals(this.value, ((SimpleArticle)other).value);
+            }
+            return false;
+        }
+        @Override
         public boolean validate(String name) {
             if (this.value == null) {
                 HumanLanguage language = this.getDeclension().getLanguage();
