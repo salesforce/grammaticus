@@ -1,8 +1,18 @@
 /*
- * Copyright (c) 2017, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license.
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.force.i18n;
@@ -121,7 +131,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     YIDDISH(new Locale.Builder().setLanguage("ji").build(), LanguageType.PLATFORM, "yi", 236.0),  // Java screwup with iso code.
     HMONG(new Locale.Builder().setLanguage("hmn").build(), LanguageType.PLATFORM, 238.0),
 
-    CHUJ(new Locale.Builder().setLanguage("cac").build(), LanguageType.PLATFORM, 248.0), //Chuj 
+    CHUJ(new Locale.Builder().setLanguage("cac").build(), LanguageType.PLATFORM, 248.0), //Chuj
     KICHE(new Locale.Builder().setLanguage("quc").build(), LanguageType.PLATFORM, 248.0), //Kiche
     KAQCHIKEL(new Locale.Builder().setLanguage("cak").build(), LanguageType.PLATFORM, 248.0), //Kaqchikel
 
@@ -143,7 +153,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     SPANISH_AR(new Locale.Builder().setLanguage("es").setRegion("AR").build(), LanguageType.PLATFORM, 194.0), //Spanish Argentina
     RUSSIAN_IL(new Locale.Builder().setLanguage("ru").setRegion("IL").build(), LanguageType.PLATFORM, 232.0), //Russian Israel
     CHINESE_SG(new Locale.Builder().setLanguage("zh").setRegion("SG").build(), LanguageType.PLATFORM, 194.0), //Chinese (Simplified) Singapore
-    CHINESE_HK(new Locale.Builder().setLanguage("zh").setRegion("HK").build(), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong 
+    CHINESE_HK(new Locale.Builder().setLanguage("zh").setRegion("HK").build(), LanguageType.PLATFORM, 194.0), //Chinese (Traditional) Hong Kong
 
     ESPERANTO(new Locale.Builder().setLanguage("eo").build(), LanguageType.HIDDEN, 172.0),  // Esperanto is our "fake" language, always leave it last
     ENGLISH_IL(new Locale.Builder().setLanguage("en").setRegion("IL").build(), LanguageType.HIDDEN, 214.0),  // en_IL for testing of right-to-left with latin characters
@@ -286,7 +296,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         case ENGLISH: return "";
         case DUTCH: return "nl";
         case CHINESE_SIMP: return "zh";
-        
+
         // By default, use the old incorrect directories.
         case HEBREW: return LanguageConstants.HEBREW;
         case INDONESIAN: return LanguageConstants.INDONESIAN;
@@ -438,7 +448,7 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     public void setDefaultLanguage(DefaultHumanLanguageImpl defaultLanguage) {
     	DEFAULT_LANGUAGE.set(defaultLanguage);
     }
-    
+
     static DefaultHumanLanguageImplProvider getLangProvider() {
     	return (DefaultHumanLanguageImplProvider)LanguageProviderFactory.get().getProvider();
     }
@@ -486,8 +496,8 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         }
         return locale.toLanguageTag();
     }
-    
-    /** 
+
+    /**
      * In JDK 17, the language locale for Yiddish, Hebrew, and Indonesian were corrected to be
      * the valid ISO Code, but not everything has adopted 17 yet, so support the old names.
      * @param locale the JDK provided locale
@@ -510,12 +520,12 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
     	}
     	return overrideLanguage;
     }
-    
- 	
+
+
     /**
      * Helper method for determining which language to use for "variant" languages with some opinions
      * when there might be a conflict, as in Simplified vs Traditional Chines.
-     * 
+     *
      * @return the language to use as the fallback language for translations
      * The difference between this and fallback language is what the "fallback"
      * for translations.  So French doesn't fall back to English, because that would be wrong,
@@ -548,9 +558,9 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
 
 
     /**
-     * Default HumanLanguageProvider with some helpful features for categorizing languages and 
+     * Default HumanLanguageProvider with some helpful features for categorizing languages and
      * determining fallback behavior.
-     * 
+     *
      * @author stamm
      */
     public static final class DefaultHumanLanguageImplProvider extends LanguageProvider.Helper {
@@ -559,10 +569,10 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
         private final List<DefaultHumanLanguageImpl> ALL_PLATFORM_ONLY;
         private final Map<DefaultHumanLanguageImpl,DefaultHumanLanguageImpl> TRANS_FALLBACK;
         private final Map<LanguageType,Integer> TYPE_COUNT;
-    	
+
     	public DefaultHumanLanguageImplProvider() {
-    		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values())); 
-    		
+    		super(DefaultHumanLanguageImpl.ENGLISH, Arrays.asList(DefaultHumanLanguageImpl.values()));
+
             EnumMap<LanguageType,Integer> languageCount = new EnumMap<>(LanguageType.class);
             List<DefaultHumanLanguageImpl> allStandard = new ArrayList<>(32);
             List<DefaultHumanLanguageImpl> allEndUser = new ArrayList<>(64);
@@ -584,19 +594,19 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
                 case HIDDEN:
                     // Do nothing
                 }
-                
+
                 Locale fallbackLocale = getTranslationFallbackLanguageLocale(language.getLocale());
                 DefaultHumanLanguageImpl fallbackLanguage = (DefaultHumanLanguageImpl) getLanguage(fallbackLocale);
                 fallback.put(language, fallbackLanguage);
             }
-            
-            
+
+
             TYPE_COUNT = Collections.unmodifiableMap(languageCount);
             ALL_STANDARD = Collections.unmodifiableList(allStandard);
             ALL_END_USER = Collections.unmodifiableList(allEndUser);
             ALL_PLATFORM_ONLY = Collections.unmodifiableList(allPlatformOnly);
             TRANS_FALLBACK = Collections.unmodifiableMap(fallback);
-    	
+
     	}
 
         /**
@@ -646,11 +656,11 @@ enum DefaultHumanLanguageImpl implements HumanLanguage {
             return langs;
         }
 
-        
+
         int getTypeCount(LanguageType type) {
         	return TYPE_COUNT.get(type);
         }
-        
+
 		DefaultHumanLanguageImpl getTranslationFallbackLanguage(DefaultHumanLanguageImpl lang) {
 			return TRANS_FALLBACK.get(lang);
 		}

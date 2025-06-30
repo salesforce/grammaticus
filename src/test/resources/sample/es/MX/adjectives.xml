@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -22,7 +39,7 @@
         <value gender="m" plural="n">Un</value>
         <value gender="m" plural="y">Unos</value>
         </adjective>
-        
+
     <adjective name="Accessed">
         <value gender="f" plural="n">Accedida</value>
         <value gender="f" plural="y">Accedidas</value>
@@ -41,7 +58,7 @@
         <value gender="f" plural="n">Adicional</value>
         <value gender="f" plural="y">Adicionales</value>
         <value gender="m" plural="n">Adicional</value>
-        <value gender="m" plural="y">Adicionales</value>    
+        <value gender="m" plural="y">Adicionales</value>
 </adjective>
 
     <adjective name="All" position="b">
@@ -55,7 +72,7 @@
         <value gender="f" plural="n">Todo el día</value>
         <value gender="f" plural="y">Todo el día</value>
         <value gender="m" plural="n">Todo el día</value>
-        <value gender="m" plural="y">Todo el día</value>    
+        <value gender="m" plural="y">Todo el día</value>
 </adjective>
 
 <adjective name="Alternative">
@@ -68,10 +85,10 @@
         <value gender="f" plural="n">Otra</value>
         <value gender="f" plural="y">Otras</value>
         <value gender="m" plural="n">Otro</value>
-        <value gender="m" plural="y">Otros</value>    
+        <value gender="m" plural="y">Otros</value>
 </adjective>
 
- <adjective name="Any"> 
+ <adjective name="Any">
         <value gender="m" plural="n">Cualquier</value>
         <value gender="f" plural="n">Cualquier</value>
         <value gender="m" plural="y">Cualquiera</value>
@@ -91,26 +108,26 @@
         <value gender="f" plural="n">Asignada</value>
         <value gender="f" plural="y">Asignadas</value>
     </adjective>
-    
+
     <adjective name="Associated">
         <value gender="f" plural="n">Asociada</value>
         <value gender="f" plural="y">Asociadas</value>
         <value gender="m" plural="n">Asociado</value>
-        <value gender="m" plural="y">Asociados</value>    
+        <value gender="m" plural="y">Asociados</value>
 </adjective>
 
     <adjective name="Attached">
         <value gender="f" plural="n">Adjunta</value>
         <value gender="f" plural="y">Adjuntas</value>
         <value gender="m" plural="n">Adjunto</value>
-        <value gender="m" plural="y">Adjuntos</value>    
+        <value gender="m" plural="y">Adjuntos</value>
 </adjective>
 
     <adjective name="Available">
         <value gender="f" plural="n">Disponible</value>
         <value gender="f" plural="y">Disponibles</value>
         <value gender="m" plural="n">Disponible</value>
-        <value gender="m" plural="y">Disponibles</value>    
+        <value gender="m" plural="y">Disponibles</value>
 </adjective>
 
 
@@ -126,7 +143,7 @@
         <value gender="f" plural="n">Cierta</value>
         <value gender="f" plural="y">Ciertas</value>
         <value gender="m" plural="n">Cierto</value>
-        <value gender="m" plural="y">Ciertos</value>    
+        <value gender="m" plural="y">Ciertos</value>
 </adjective>
 
 
@@ -189,7 +206,7 @@
         <value gender="f" plural="n">Eliminada</value>
         <value gender="f" plural="y">Eliminadas</value>
         <value gender="m" plural="n">Eliminado</value>
-        <value gender="m" plural="y">Eliminados</value>    
+        <value gender="m" plural="y">Eliminados</value>
 </adjective>
 
 	<adjective name="Designated">
@@ -217,7 +234,7 @@
         <value gender="f" plural="n">Borrador</value>
         <value gender="f" plural="y">Borradores</value>
         <value gender="m" plural="n">Borrador</value>
-        <value gender="m" plural="y">Borradores</value>        
+        <value gender="m" plural="y">Borradores</value>
 </adjective>
 
     <adjective name="Each" position="b">
@@ -231,22 +248,22 @@
         <value gender="f" plural="n">Editable</value>
         <value gender="f" plural="y">Editables</value>
         <value gender="m" plural="n">Editable</value>
-        <value gender="m" plural="y">Editables</value> 
-       </adjective>        
+        <value gender="m" plural="y">Editables</value>
+       </adjective>
 
     <adjective name="Empty">
         <value gender="f" plural="n">Vacía</value>
         <value gender="f" plural="y">Vacías</value>
         <value gender="m" plural="n">Vacío</value>
-        <value gender="m" plural="y">Vacíos</value>    
+        <value gender="m" plural="y">Vacíos</value>
 </adjective>
-        
+
 
     <adjective name="Every" position="b">
         <value gender="f" plural="n">Cada</value>
         <value gender="f" plural="y">Cada</value>
         <value gender="m" plural="n">Cada</value>
-        <value gender="m" plural="y">Cada</value>    
+        <value gender="m" plural="y">Cada</value>
 </adjective>
 
 
@@ -270,12 +287,12 @@
         <value gender="m" plural="n">Primero</value>
         <value gender="m" plural="y">Primeros</value>
     </adjective>
-    
+
     <adjective name="Following">
         <value gender="f" plural="n">Siguiente</value>
         <value gender="f" plural="y">Siguientes</value>
         <value gender="m" plural="n">Siguiente</value>
-        <value gender="m" plural="y">Siguientes</value>    
+        <value gender="m" plural="y">Siguientes</value>
 </adjective>
 
 
@@ -319,7 +336,7 @@
         <value gender="f" plural="n">Individual</value>
         <value gender="f" plural="y">Individuales</value>
         <value gender="m" plural="n">Individual</value>
-        <value gender="m" plural="y">Individuales</value>    
+        <value gender="m" plural="y">Individuales</value>
 </adjective>
 
     <adjective name="Invalid">
@@ -329,7 +346,7 @@
         <value gender="m" plural="y">No válidos</value>
     </adjective>
 
-    <adjective name="Its"> 
+    <adjective name="Its">
         <value gender="f" plural="n">Su</value>
 		<value gender="f" plural="y">Sus</value>
 		<value gender="m" plural="n">Su</value>
@@ -342,25 +359,25 @@
         <value gender="f" plural="n">Última</value>
         <value gender="f" plural="y">Últimas</value>
     </adjective>
-    
+
 <adjective name="Linked">
        <value gender="f" plural="n">Vinculada</value>
        <value gender="f" plural="y">Vinculadas</value>
        <value gender="m" plural="n">Vinculado</value>
        <value gender="m" plural="y">Vinculados</value></adjective>
-       
+
     <adjective name="Loaded">
         <value gender="f" plural="n">Cargada</value>
         <value gender="f" plural="y">Cargadas</value>
         <value gender="m" plural="n">Cargado</value>
-        <value gender="m" plural="y">Cargados</value>    
+        <value gender="m" plural="y">Cargados</value>
 </adjective>
-        
+
 <adjective name="Locked">
         <value gender="f" plural="n">Bloqueada</value>
         <value gender="f" plural="y">Bloqueadas</value>
         <value gender="m" plural="n">Bloqueado</value>
-        <value gender="m" plural="y">Bloqueados</value>    
+        <value gender="m" plural="y">Bloqueados</value>
 </adjective>
 
     <adjective name="Recent">
@@ -376,14 +393,14 @@
         <value gender="f" plural="n">Gestionada</value>
         <value gender="f" plural="y">Gestionadas</value>
     </adjective>
-    
+
     <adjective name="Managing">
         <value gender="f" plural="n">Gestionante</value>
         <value gender="f" plural="y">Gestionante</value>
         <value gender="m" plural="n">Gestionante</value>
         <value gender="m" plural="y">Gestionante</value>
     </adjective>
-        
+
     <adjective name="Marked">
 	<value gender="m" plural="n">Marcado</value>
 	<value gender="m" plural="y">Marcados</value>
@@ -397,7 +414,7 @@
         <value gender="m" plural="n">Principal</value>
         <value gender="m" plural="y">Principales</value>
         </adjective>
-	
+
 	<adjective name="Matching">
         <value gender="f" plural="n">Coincidente</value>
         <value gender="f" plural="y">Coincidentes</value>
@@ -413,9 +430,9 @@
         </adjective>
 
 <adjective name="More">
-        <value gender="f" plural="n">Más</value>    
-        <value gender="f" plural="y">Más</value>    
-        <value gender="m" plural="n">Más</value>    
+        <value gender="f" plural="n">Más</value>
+        <value gender="f" plural="y">Más</value>
+        <value gender="m" plural="n">Más</value>
         <value gender="m" plural="y">Más</value></adjective>
 
 	<adjective name="Multiple">
@@ -451,7 +468,7 @@
         <value gender="m" plural="n">Ningún</value>
         <value gender="m" plural="y">Ningunos</value>
     </adjective>
-    
+
     <adjective name="Non-primary">
         <value gender="m" plural="n">No primario</value>
         <value gender="m" plural="y">No primarios</value>
@@ -472,7 +489,7 @@
         <value gender="m" plural="y">Anteriores</value>
         <value gender="f" plural="y">Anteriores</value></adjective>
 
-<adjective name="One"> 
+<adjective name="One">
         <value gender="m" plural="n">Uno</value>
         <value gender="f" plural="n">Una</value>
         <value gender="m" plural="y">Unos</value>
@@ -490,7 +507,7 @@
         <value gender="f" plural="n">Original</value>
         <value gender="f" plural="y">Originales</value>
         <value gender="m" plural="n">Original</value>
-        <value gender="m" plural="y">Originales</value>    
+        <value gender="m" plural="y">Originales</value>
 </adjective>
 
     <adjective name="Overdue">
@@ -504,7 +521,7 @@
         <value gender="f" plural="n">Otra</value>
         <value gender="f" plural="y">Otras</value>
         <value gender="m" plural="n">Otro</value>
-        <value gender="m" plural="y">Otros</value>    
+        <value gender="m" plural="y">Otros</value>
 </adjective>
 
     <adjective name="Overridden">
@@ -519,7 +536,7 @@
         <value gender="f" plural="y">Propietarias</value>
         <value gender="m" plural="n">Propietario</value>
         <value gender="m" plural="y">Propietarios</value></adjective>
-        
+
     <adjective name="Personal">
         <value gender="f" plural="n">Personal</value>
         <value gender="f" plural="y">Personales</value>
@@ -538,7 +555,7 @@
         <value gender="f" plural="n">Publicada</value>
         <value gender="f" plural="y">Publicadas</value>
         <value gender="m" plural="n">Publicado</value>
-        <value gender="m" plural="y">Publicados</value>    
+        <value gender="m" plural="y">Publicados</value>
 </adjective>
 
     <adjective name="Predefined">
@@ -547,7 +564,7 @@
         <value gender="m" plural="n">Predefinido</value>
         <value gender="m" plural="y">Predefinidos</value>
         </adjective>
-	
+
 	<adjective name="Primary">
         <value gender="f" plural="n">Principal</value>
         <value gender="f" plural="y">Principales</value>
@@ -566,7 +583,7 @@
         <value gender="f" plural="n">Propuesta</value>
         <value gender="f" plural="y">Propuestas</value>
         <value gender="m" plural="n">Propuesto</value>
-        <value gender="m" plural="y">Propuestos</value>    
+        <value gender="m" plural="y">Propuestos</value>
 </adjective>
 
     <adjective name="Public">
@@ -587,7 +604,7 @@
         <value gender="f" plural="n">Publicada</value>
         <value gender="f" plural="y">Publicadas</value>
         <value gender="m" plural="n">Publicado</value>
-        <value gender="m" plural="y">Publicados</value>    
+        <value gender="m" plural="y">Publicados</value>
 </adjective>
 
     <adjective name="Recently">
@@ -596,7 +613,7 @@
         <value gender="m" plural="n">Recientemente</value>
         <value gender="m" plural="y">Recientemente</value>
     </adjective>
-    
+
 	<adjective name="Recurring">
         <value gender="f" plural="n">Recurrente</value>
         <value gender="f" plural="y">Recurrentes</value>
@@ -622,21 +639,21 @@
         <value gender="f" plural="n">Rechazada</value>
         <value gender="f" plural="y">Rechazadas</value>
         <value gender="m" plural="n">Rechazado</value>
-        <value gender="m" plural="y">Rechazados</value>    
+        <value gender="m" plural="y">Rechazados</value>
 </adjective>
 
     <adjective name="Remaining">
         <value gender="f" plural="n">Restante</value>
         <value gender="f" plural="y">Restante</value>
         <value gender="m" plural="n">Restante</value>
-        <value gender="m" plural="y">Restante</value>    
+        <value gender="m" plural="y">Restante</value>
 </adjective>
 
     <adjective name="Resulting">
         <value gender="f" plural="n">Resultante</value>
         <value gender="f" plural="y">Resultantes</value>
         <value gender="m" plural="n">Resultante</value>
-        <value gender="m" plural="y">Resultantes</value>    
+        <value gender="m" plural="y">Resultantes</value>
 </adjective>
 
     <adjective name="Reviewed">
@@ -652,14 +669,14 @@
         <value gender="m" plural="n">Ejemplo</value>
         <value gender="m" plural="y">Ejemplos</value>
     </adjective>
- 	
+
  	<adjective name="Scheduled">
         <value gender="f" plural="n">Programada</value>
         <value gender="f" plural="y">Programadas</value>
         <value gender="m" plural="n">Programado</value>
         <value gender="m" plural="y">Programados</value>
         </adjective>
-	
+
     <adjective name="Second">
         <value gender="f" plural="n">Segunda</value>
         <value gender="f" plural="y">Segundas</value>
@@ -673,13 +690,13 @@
         <value gender="m" plural="n">Seleccionado</value>
         <value gender="m" plural="y">Seleccionados</value>
     </adjective>
-    
+
     <adjective name="Shared">
         <value gender="f" plural="n">Compartida</value>
         <value gender="f" plural="y">Compartidas</value>
         <value gender="m" plural="n">Compartido</value>
         <value gender="m" plural="y">Compartidos</value></adjective>
-    
+
 	<adjective name="Similar">
         <value gender="f" plural="n">Similar</value>
         <value gender="f" plural="y">Similares</value>
@@ -698,7 +715,7 @@
 	<value gender="f" plural="n">Fuente</value>
     <value gender="f" plural="y">Fuentes</value>
     <value gender="f" plural="n">Fuente</value>
-    <value gender="f" plural="y">Fuentes</value>   
+    <value gender="f" plural="y">Fuentes</value>
     </adjective>
 
     <adjective name="Social">
@@ -727,7 +744,7 @@
         <value gender="f" plural="y">Estándar</value>
         <value gender="m" plural="n">Estándar</value>
         <value gender="m" plural="y">Estándar</value>
-    </adjective>    
+    </adjective>
 
     <adjective name="Stuck">
         <value gender="f" plural="n">Atascada</value>
@@ -753,8 +770,8 @@
 	<value gender="f" plural="n">Compatible</value>
 	<value gender="f" plural="y">Compatibles</value>
     <value gender="m" plural="n">Compatible</value>
-    <value gender="m" plural="y">Compatibles</value>    
-    </adjective> 
+    <value gender="m" plural="y">Compatibles</value>
+    </adjective>
 
     <adjective name="Synced">
         <value gender="m" plural="n">Sincronizado</value>
@@ -816,7 +833,7 @@
         <value gender="f" plural="n">Esta</value>
         <value gender="f" plural="y">Estas</value>
         <value gender="m" plural="n">Este</value>
-        <value gender="m" plural="y">Estos</value>    
+        <value gender="m" plural="y">Estos</value>
 </adjective>
 
 
@@ -826,7 +843,7 @@
         <value gender="m" plural="n">Total</value>
         <value gender="m" plural="y">Totales</value>
             </adjective>
-    
+
      <adjective name="Top">
         <value gender="f" plural="n">Superior</value>
         <value gender="f" plural="y">Superior</value>
@@ -839,8 +856,8 @@
         <value gender="f" plural="n">Traducida</value>
         <value gender="m" plural="y">Traducidos</value>
         <value gender="f" plural="y">Traducidas</value>
-</adjective>   
-    
+</adjective>
+
 
     <adjective name="Transferable">
         <value gender="f" plural="n">Transferible</value>
@@ -891,7 +908,7 @@
         <value gender="m" plural="n">Sin compartir</value>
         <value gender="m" plural="y">Sin compartir</value>
     </adjective>
-    
+
     <adjective name="Unused">
         <value gender="f" plural="n">Inactiva</value>
         <value gender="f" plural="y">Inactivas</value>
@@ -910,7 +927,7 @@
         <value gender="f" plural="n">Actualizada</value>
         <value gender="f" plural="y">Actualizadas</value>
         <value gender="m" plural="n"> Actualizado</value>
-        <value gender="m" plural="y"> Actualizados</value>    
+        <value gender="m" plural="y"> Actualizados</value>
 </adjective>
 
     <adjective name="Useful">
@@ -966,8 +983,7 @@
         <value gender="f" plural="n">Cero</value>
         <value gender="f" plural="y">Cero</value>
         <value gender="m" plural="n"> Cero</value>
-        <value gender="m" plural="y"> Cero</value>    
+        <value gender="m" plural="y"> Cero</value>
 </adjective>
 
 </adjectives>
-

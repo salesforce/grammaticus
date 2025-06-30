@@ -1,4 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -94,7 +111,7 @@
 	<value gender="n" plural="y">Andere</value>
 	<value gender="c" plural="y">Andere</value>
   </adjective>
-        
+
  <adjective name="Any">
     <value gender="n" plural="n">Een willekeurig</value>
 	<value gender="c" plural="n">Een willekeurige</value>
@@ -171,7 +188,7 @@
 	<value gender="n" plural="y">Gefactureerde</value>
 	<value gender="c" plural="y">Gefactureerde</value>
   </adjective>
-        
+
   <adjective name="Certain">
     <value gender="n" plural="n" article="the">Bepaalde</value>
     <value gender="c" plural="n" article="the">Bepaalde</value>
@@ -215,7 +232,7 @@
 	<value gender="n" plural="y">Geconverteerde</value>
 	<value gender="c" plural="y">Geconverteerde</value>
   </adjective>
-    
+
 <adjective name="Corresponding">
         <value gender="n" plural="n" article="the">Overeenkomend</value>
         <value gender="c" plural="n" article="the">Overeenkomende</value>
@@ -346,8 +363,8 @@
 	<value gender="c" plural="n">Bewerkbare</value>
 	<value gender="n" plural="y">Bewerkbare</value>
 	<value gender="c" plural="y">Bewerkbare</value>
-    </adjective>    
-        
+    </adjective>
+
     <adjective name="Empty">
         <value gender="n" plural="n">Empty</value>
     </adjective>
@@ -510,7 +527,7 @@
     <adjective name="Key">
         <value gender="n" plural="n">Key</value>
     </adjective>
-        
+
 	<adjective name="Last">
         <value gender="n" plural="n" article="the">Nieuwste</value>
         <value gender="c" plural="n" article="the">Nieuwste</value>
@@ -686,8 +703,8 @@
     <value gender="n" plural="y">Niet-primaire</value>
     <value gender="c" plural="y">Niet-primaire</value>
   </adjective>
-  
-  
+
+
   <adjective name="Num"><!--number-->
     <value gender="n" plural="n" article="the">Num</value>
     <value gender="c" plural="n" article="the">Num</value>
@@ -698,7 +715,7 @@
 	<value gender="n" plural="y">Num</value>
 	<value gender="c" plural="y">Num</value>
   </adjective>
-        
+
  <adjective name="One">
          <value gender="n" plural="n">Eén</value>
 		<value gender="c" plural="n">Eén</value>
@@ -874,8 +891,8 @@
     <value gender="n" plural="y">Tot wachtrij behorende</value>
     <value gender="c" plural="y">Tot wachtrij behorende</value>
   </adjective>
-  
-        
+
+
 <adjective name="Recent">
     <value gender="n" plural="n" article="the">Recent</value>
     <value gender="c" plural="n" article="the">Recente</value>
@@ -1059,7 +1076,7 @@
         <value gender="n" plural="y">Sociale</value>
         <value gender="c" plural="y">Sociale</value>
     </adjective>
-        
+
   <adjective name="Source">
 	<value gender="n" plural="n" article="the">Bron</value>
 	<value gender="c" plural="n" article="the">Bron</value>
@@ -1180,7 +1197,7 @@
 	<value gender="n" plural="y">Deze</value>
 	<value gender="c" plural="y">Deze</value>
   </adjective>
-  
+
   <adjective name="Those">
     <value gender="n" plural="n" article="the">Die</value>
     <value gender="c" plural="n" article="the">Die</value>
@@ -1202,7 +1219,7 @@
 	<value gender="n" plural="y">Deze</value>
 	<value gender="c" plural="y">Deze</value>
   </adjective>
-        
+
     <adjective name="Today">
         <value gender="n" plural="n">Today</value>
     </adjective>
@@ -1238,7 +1255,7 @@
 	<value gender="c" plural="n">Vertaalde</value>
 	<value gender="n" plural="y">Vertaalde</value>
 	<value gender="c" plural="y">Vertaalde</value>
-    </adjective>  
+    </adjective>
 
   <adjective name="Transferable">
     <value gender="n" plural="n" article="the">Overdraagbare</value>
@@ -1404,7 +1421,7 @@
 	<value gender="n" plural="y">Uw</value>
 	<value gender="c" plural="y">Uw</value>
   </adjective>
-        
+
   <adjective name="Zero">
     <value gender="n" plural="n" article="the">Nul</value>
     <value gender="c" plural="n" article="the">Nul</value>
@@ -1415,19 +1432,19 @@
     <value gender="n" plural="y">Nul</value>
     <value gender="c" plural="y">Nul</value>
   </adjective>
-  
-  <article name="The" type="the"> 
-    <value gender="n" plural="n">Het</value> 
-    <value gender="c" plural="n">De</value> 
-    <value gender="n" plural="y">De</value> 
-    <value gender="c" plural="y">De</value> 
+
+  <article name="The" type="the">
+    <value gender="n" plural="n">Het</value>
+    <value gender="c" plural="n">De</value>
+    <value gender="n" plural="y">De</value>
+    <value gender="c" plural="y">De</value>
   </article>
 
 
-  <article name="A" type="a"> 
-    <value gender="n" plural="n">Een</value> 
-    <value gender="c" plural="n">Een</value> 
-  </article> 
+  <article name="A" type="a">
+    <value gender="n" plural="n">Een</value>
+    <value gender="c" plural="n">Een</value>
+  </article>
 
   <adjective name="Marked">
     <value gender="n" plural="n" article="the">Aangeduide</value>
@@ -1439,7 +1456,7 @@
     <value gender="n" plural="y">Aangeduide</value>
     <value gender="c" plural="y">Aangeduide</value>
   </adjective>
-  
+
   <adjective name="Supported">
     <value gender="n" plural="n" article="the">Ondersteunde</value>
     <value gender="c" plural="n" article="the">Ondersteunde</value>
@@ -1449,7 +1466,6 @@
     <value gender="c" plural="n">Ondersteunde</value>
     <value gender="n" plural="y">Ondersteunde</value>
     <value gender="c" plural="y">Ondersteunde</value>
-  </adjective>	
-    
-</adjectives>
+  </adjective>
 
+</adjectives>

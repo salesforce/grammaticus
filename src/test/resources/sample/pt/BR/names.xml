@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -64,9 +81,9 @@
         <value plural="n" article="the">A atividade</value>
         <value plural="y" article="the">As atividades</value>
     </noun>
-    
 
-   
+
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -84,10 +101,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
-    
-        
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f" startsWith="c">
         <value plural="n">Habilidade</value>
         <value plural="y">Habilidades</value>
@@ -97,22 +114,22 @@
         <value plural="y" article="the">as Habilidades</value>
     </noun>
 
-    
-        
-        
-    
-     
-        
-    
-    
-    
-    
-    
-    
-                    
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Documento</value>
         <value plural="y">Documentos</value>
@@ -127,12 +144,12 @@
 		<value plural="n" article="a">um compromisso</value>
         <value plural="n" article="the">o compromisso</value>
         <value plural="y" article="the">os compromissos</value>
-    </noun>    
+    </noun>
 
-    
-    
-    
-    
+
+
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
         <value plural="n">Cotação</value>
         <value plural="y">Cotações</value>
@@ -141,13 +158,13 @@
         <value plural="y" article="the">as cotações</value>
     </noun>
 
-    
-    
-    
-    
 
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
@@ -159,11 +176,11 @@
         <value plural="n" article="the">a Pergunta</value>
         <value plural="y" article="the">as Perguntas</value>
      </noun>
-    
-    
-        
-    
-     
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n">Lead</value>
         <value plural="y">Leads</value>
@@ -180,9 +197,9 @@
         <value plural="y" article="the">as Oportunidades</value>
     </noun>
 
-	
-	
-    
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="v">
         <value plural="n">Catálogo de preços</value>
         <value plural="y">Catálogos de preços</value>
@@ -196,7 +213,7 @@
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
+
 
     <noun name="Task" entity="Task" type="entity" alias="Tasks" gender="f" startsWith="c">
         <value plural="n">Tarefa</value>
@@ -204,7 +221,7 @@
         <value plural="n" article="a">uma Tarefa</value>
         <value plural="n" article="the">a Tarefa</value>
         <value plural="y" article="the">as Tarefas</value>
-    </noun>    
+    </noun>
 
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
@@ -222,32 +239,31 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
-     
-    
+
+
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="f" startsWith="v" standardField="y">
         <value plural="n">Nome da conta</value>
         <value plural="y">Nomes da conta</value>
     </noun>
-    
-    
-    
-     
+
+
+
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Moeda do produto</value>
     </noun>
 
-    
-   
+
+
 
      <import file="adjectives.xml"/>
 </names>
-

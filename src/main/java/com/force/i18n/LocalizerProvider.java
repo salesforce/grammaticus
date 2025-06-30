@@ -1,8 +1,18 @@
-/* 
- * Copyright (c) 2017, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.force.i18n;
@@ -28,9 +38,9 @@ public interface LocalizerProvider {
 	 * @return a localizer based on a locale, a currency, a language and a timezone.
 	 * @param locale the locale for number and date formatting
 	 * @param currencyLocale the locale for currencies
-	 * @param language the human language 
+	 * @param language the human language
 	 * @param timeZone the time zone
-	 * 
+	 *
 	 */
 	BaseLocalizer getLocalizer(Locale locale,
 			Locale currencyLocale, HumanLanguage language, TimeZone timeZone);

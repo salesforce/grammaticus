@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -186,7 +203,7 @@
           <value plural="y" case="par" poss="f">Toimintojani</value>
           <value plural="y" case="par" poss="s">Toimintojasi</value>
     </noun>
-    
+
 
 
 
@@ -267,10 +284,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-        
-    
-    
-    
+
+
+
+
 <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
           <value plural="n" case="n">Taito</value>
           <value plural="n" case="n" poss="f">Taitoni</value>
@@ -338,8 +355,8 @@
         <value plural="y" case="par">Taitoja</value>
           <value plural="y" case="par" poss="f">Taitojamme</value>
           <value plural="y" case="par" poss="s">Taitojanne</value>
-    </noun>                
-    
+    </noun>
+
     <noun name="Contract" entity="Contract" type="entity" alias="Contracts" gender="n" startsWith="c">
         <value plural="n" case="n">Sopimus</value>
           <value plural="n" case="n" poss="f">Sopimukseni</value>
@@ -407,9 +424,9 @@
         <value plural="y" case="par">Sopimuksia</value>
           <value plural="y" case="par" poss="f">Sopimuksiani</value>
           <value plural="y" case="par" poss="s">Sopimuksiasi</value>
-    </noun>    
+    </noun>
 
-        
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n" case="n">Asiakirja</value>
           <value plural="n" case="n" poss="f">Asiakirjani</value>
@@ -548,10 +565,10 @@
           <value plural="y" case="par" poss="s">Tapahtumiasi</value>
     </noun>
 
-     
 
 
-    
+
+
           <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n" case="n">Tarjous</value>
           <value plural="n" case="n" poss="f">Tarjoukseni</value>
@@ -689,10 +706,10 @@
           <value plural="y" case="par" poss="f">Kysymyksiä</value>
           <value plural="y" case="par" poss="s">Kysymyksiäni</value>
     </noun>
-    
 
 
-    
+
+
 
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n" case="n">Liidi</value>
@@ -832,9 +849,9 @@
           <value plural="y" case="par" poss="s">Mahdollisuuksiasi</value>
     </noun>
 
-	
-	
-    
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
         <value plural="n" case="n">Hintakirja</value>
           <value plural="n" case="n" poss="f">Hintakirjani</value>
@@ -904,8 +921,8 @@
           <value plural="y" case="par" poss="s">Hintakirjojasi</value>
     </noun>
 
-    
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -934,7 +951,7 @@
 	<value plural="n" case="g">Tilin nimen</value>
 	<value plural="y" case="g">Tilin nimien</value>
     </noun>
-     
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">Tuotteen valuutta</value>
     </noun>
@@ -942,4 +959,3 @@
 
      <import file="adjectives.xml"/>
 </names>
-

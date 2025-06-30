@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -60,7 +77,7 @@
         <value plural="n" case="l">Koncie</value>
         <value plural="y" case="l">Kontach</value>
     </noun>
-    
+
     <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="f" startsWith="v">
         <value plural="n">Czynność</value>
         <value plural="y">Czynności</value>
@@ -75,14 +92,14 @@
         <value plural="n" case="l">Czynności</value>
         <value plural="y" case="l">Czynnościach</value>
     </noun>
-    
-        
-        
+
+
+
     <!-- <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="f" startsWith="c">
         <value plural="n">Godziny firmowe</value>
-        <value plural="y">Wiele godzin firmowych</value> 
+        <value plural="y">Wiele godzin firmowych</value>
             </noun> -->
-            
+
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
         <value plural="n">Kampania</value>
         <value plural="y">Kampanie</value>
@@ -97,7 +114,7 @@
         <value plural="n" case="l">Kampanii</value>
         <value plural="y" case="l">Kampaniach</value>
     </noun>
-    
+
     <noun name="Case" entity="Case" type="entity" alias="Cases" gender="f" startsWith="c">
         <value plural="n">Sprawa</value>
         <value plural="y">Sprawy</value>
@@ -111,19 +128,19 @@
         <value plural="y" case="in">Sprawami</value>
         <value plural="n" case="l">Sprawie</value>
         <value plural="y" case="l">Sprawach</value>
-    </noun> 
-        
-        
-        
-    
+    </noun>
+
+
+
+
 <!-- Content -->
     	<!-- // Content -->
-    
-        
-        
-        
-        
-    
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Dokument</value>
         <value plural="y">Dokumenty</value>
@@ -139,8 +156,8 @@
         <value plural="y" case="l">Dokumentach</value>
     </noun>
 
-  
-        
+
+
 <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Umiejętność</value>
         <value plural="y">Umiejętności</value>
@@ -158,17 +175,17 @@
 
  <!--******* Entitlement ****************************************************-->
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <!--******* Entitlement Contact ****************************************************-->
-		        
+
     <!--******* Folder Access ****************************************************-->
-		
-	
+
+
     <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">
         <value plural="n">Zdarzenie</value>
         <value plural="y">Zdarzenia</value>
@@ -184,15 +201,15 @@
         <value plural="y" case="l">Zdarzeniach</value>
     </noun>
 
-<!--    
-   
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="m" startsWith="c" standardField="n">
         <value plural="n">Poziom dostępu do prognozy</value></noun> -->
 
-        
-    	
-	
-    
+
+
+
+
 
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n">Potencjalny klient</value>
@@ -208,17 +225,17 @@
         <value plural="n" case="l">Potencjalnym klientowi</value>
         <value plural="y" case="l">Potencjalnych klientach</value>
     </noun>
-    
-        
-        
-        
-        
-        
-    <noun name="LiveChatTranscript" entity="LiveChatTranscript" type="entity" alias="LiveChatTranscripts" gender="n" startsWith="c"> 
-        <value plural="n">Transkrypt LiveChat</value> 
-        <value plural="y">Transkrypty LiveChat</value> 
-        <value plural="n" case="a">Transkrypt LiveChat</value> 
-        <value plural="y" case="a">Transkrypty LiveChat</value> 
+
+
+
+
+
+
+    <noun name="LiveChatTranscript" entity="LiveChatTranscript" type="entity" alias="LiveChatTranscripts" gender="n" startsWith="c">
+        <value plural="n">Transkrypt LiveChat</value>
+        <value plural="y">Transkrypty LiveChat</value>
+        <value plural="n" case="a">Transkrypt LiveChat</value>
+        <value plural="y" case="a">Transkrypty LiveChat</value>
         <value plural="n" case="g">Transkryptu LiveChat</value>
         <value plural="y" case="g">Transkryptów LiveChat</value>
         <value plural="n" case="d">Transkryptowi LiveChat</value>
@@ -227,15 +244,15 @@
         <value plural="y" case="in">Transkryptami LiveChat</value>
         <value plural="n" case="l">Transkrypcie LiveChat</value>
         <value plural="y" case="l">Transkryptach LiveChat</value>
-    </noun> 
-    
-        
-        
-        
-        
+    </noun>
 
-    
-    
+
+
+
+
+
+
+
     <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="v">
         <value plural="n">Okazja biznesowa</value>
         <value plural="y">Okazje biznesowe</value>
@@ -250,7 +267,7 @@
         <value plural="n" case="l">Okazji biznesowej</value>
         <value plural="y" case="l">Okazjach biznesowych</value>
     </noun>
-    
+
    <noun name="OpportunityLineItem" entity="OpportunityLineItem" alias="OpportunityLineItems" type="entity" gender="m" startsWith="v">
         <value plural="n">Produkt okazji biznesowej</value>
         <value plural="y">Produkty okazji biznesowej</value>
@@ -264,12 +281,12 @@
         <value plural="y" case="in">Produktami okazji biznesowej</value>
         <value plural="n" case="l">Produkcie okazji biznesowej</value>
         <value plural="y" case="l">Produktach okazji biznesowej</value>
-    </noun> 
-    
-    
-    
-    
-  
+    </noun>
+
+
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
         <value plural="n">Cennik</value>
         <value plural="y">Cenniki</value>
@@ -285,7 +302,7 @@
         <value plural="y" case="l">Cennikach</value>
     </noun>
 
-        
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">Pytanie</value>
         <value plural="y">Pytania</value>
@@ -300,10 +317,10 @@
         <value plural="n" case="l">Pytaniu</value>
         <value plural="y" case="l">Pytaniach</value>
     </noun>
-    
-        
-         
-        
+
+
+
+
      <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
         <value plural="n">Oferta</value>
         <value plural="y">Oferty</value>
@@ -319,28 +336,28 @@
         <value plural="y" case="l">O ofertach</value>
 </noun>
 
-      
-      
-        
-    
+
+
+
+
 
  <!--   <noun name="Report" entity="Report" type="entity" alias="Reports" gender="m" startsWith="c">
         <value plural="n">Raport</value>
         <value plural="y">Raporty</value>
     </noun> -->
 
-    
-      
-    
-    
 
-        
-    
+
+
+
+
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
     -->
-    
+
     <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
         <value plural="n">{0}</value>
         <value plural="y">{0}</value>
@@ -351,27 +368,24 @@
         <entity/>, <entity_record_type/>
     -->
 
-    
-	
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="f" startsWith="v" standardField="y">
         <value plural="n">Nazwa konta</value>
         <value plural="y">Nazwy konta</value>
         <value plural="n" case="g">Nazwy konta</value>
     </noun>
-        
-     
+
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Waluta produktu</value></noun>
 
     <import file="adjectives.xml"/>
 </names>
-
-
-

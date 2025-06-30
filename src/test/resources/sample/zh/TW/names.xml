@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -58,7 +75,7 @@
         <value plural="n">活動</value>
         <value plural="y">活動</value>
     </noun>
-    
+
 
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
         <value plural="n">行銷活動</value>
@@ -68,31 +85,31 @@
     <!-- Content -->
         <!-- // Content -->
 
-   
-    
-        
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">技能</value>
         <value plural="y">技能</value>
     </noun>
 
-    
-    
-        
-    
-      
-        
-    
-    
-    
-    
-    
-     
-                    
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n">文件</value>
         <value plural="y">文件</value>
@@ -103,35 +120,35 @@
         <value plural="y">事件</value>
     </noun>
 
-    
-    
-   
-    
+
+
+
+
         <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">報價單</value>
         <value plural="y">報價單</value>
       </noun>
 
-      
-      
-    
-    
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
 
-     
+
      <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">問題</value>
         <value plural="y">問題</value>
     </noun>
-        
-    
-    
-    
-    
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
 	<value plural="n">商機</value>
 	<value plural="y">商機</value>
@@ -142,22 +159,22 @@
         <value plural="y">機會</value>
     </noun>
 
-    
-	
-    
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
         <value plural="n">價目手冊</value>
         <value plural="y">價目手冊</value>
     </noun>
 
-   
+
  <!--   <noun name="Report" entity="Report" type="entity" alias="Reports" gender="n" startsWith="c">
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
 
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -174,23 +191,22 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
         <value plural="n">帳戶名稱</value>
         <value plural="y">帳戶名稱</value>
     </noun>
-    
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">產品貨幣</value>
     </noun>
 
      <import file="adjectives.xml"/>
 </names>
-

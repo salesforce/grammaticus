@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -65,7 +82,7 @@
         <value plural="y" case="l">Účtech</value>
     </noun>
 
-    
+
 
     <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="f" startsWith="v">
         <value plural="n">Činnost</value>
@@ -82,8 +99,8 @@
         <value plural="y" case="l">Činnostech</value>
     </noun>
 
- 
-            
+
+
 
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
         <value plural="n">Kampaň</value>
@@ -99,10 +116,10 @@
         <value plural="n" case="l">Kampani</value>
         <value plural="y" case="l">Kampaních</value>
     </noun>
-    
 
-    
-    
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Dokument</value>
         <value plural="y">Dokumenty</value>
@@ -132,9 +149,9 @@
         <value plural="y" case="in">Událostmi</value>
         <value plural="n" case="l">Události</value>
         <value plural="y" case="l">Událostech</value>
-    </noun>            
-    
-    
+    </noun>
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n">Prodejní tip</value>
         <value plural="y">Prodejní tipy</value>
@@ -149,8 +166,8 @@
         <value plural="n" case="l">Prodejním tipu</value>
         <value plural="y" case="l">Prodejních tipech</value>
     </noun>
-    
-    
+
+
     <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="v">
         <value plural="n">Příležitost</value>
         <value plural="y">Příležitosti</value>
@@ -194,8 +211,8 @@
         <value plural="n" case="l">Otázce</value>
         <value plural="y" case="l">Otázkách</value>
     </noun>
-    
-    
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
   <value plural="n">Kvóta</value>
         <value plural="y">Kvóty</value>
@@ -210,7 +227,7 @@
         <value plural="n" case="l">Kvótě</value>
         <value plural="y" case="l">Kvótách</value>
     </noun>
-    
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f" startsWith="c">
         <value plural="n">Dovednost</value>
         <value plural="y">Dovednosti</value>
@@ -226,9 +243,9 @@
         <value plural="y" case="l">Dovednostech</value>
     </noun>
 
-    
-    
-	
+
+
+
     <!-- Special for Custom Objects/Tabs
 
          This is actually, not only for custom object but should be considered as template
@@ -244,7 +261,7 @@
 
 
 
-	
+
 
 
     <!--==================================================================
@@ -265,11 +282,8 @@
 
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Měna produktu</value></noun>
-     
-    
+
+
     <import file="adjectives.xml"/>
 
 </names>
-
-
-

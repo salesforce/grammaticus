@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -58,9 +75,9 @@
       <value plural="n">活动</value>
       <value plural="y">活动</value>
     </noun>
-    
 
-    
+
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -75,31 +92,31 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
-    
-   
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">技能</value>
         <value plural="y">技能</value>
     </noun>
 
-        
-        
-        
-    
-    
-        
-    
-    
-    
-    
-    
-    
-                    
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
     <value plural="n">文档</value>
   	<value plural="y">文档</value>
@@ -110,35 +127,35 @@
   	<value plural="y">事件</value>
     </noun>
 
-    
-    
-        
-    
+
+
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
   	<value plural="n">报价</value>
   	<value plural="y">报价</value>
       </noun>
 
-      
-      
-    
-    
 
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value></noun> -->
 
-    
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">问题</value>
         <value plural="y">问题</value>
 	</noun>
-   
-    
-    
-    
-    
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n">潜在客户</value>
 		<value plural="y">潜在客户</value>
@@ -149,22 +166,22 @@
 		<value plural="y">业务机会</value>
     </noun>
 
-    
-	
-    
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
   	<value plural="n">价格手册</value>
   	<value plural="y">价格手册</value>
     </noun>
 
- 
+
  <!--   <noun name="Report" entity="Report" type="entity" alias="Reports" gender="n" startsWith="c">
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
 
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -181,24 +198,23 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
 		<value plural="n">客户名</value>
         <value plural="y">客户名称</value>
     </noun>
-    
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">产品币种</value></noun>
 
-    
+
     <import file="adjectives.xml"/>
 </names>
-

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -129,7 +146,7 @@
         <value gender="f" plural="y" case="l">Додаткових</value>
         <value gender="n" plural="y" case="l">Додаткових</value>
 		</adjective>
-		
+
     <adjective name="All_Day">
         <value gender="m" plural="n">Цілодобовий</value>
         <value gender="f" plural="n">Цілодобова</value>
@@ -168,7 +185,7 @@
         <value gender="f" plural="y" case="l">Цілодобових</value>
         <value gender="n" plural="y" case="l">Цілодобових</value>
 		</adjective>
-        
+
         <adjective name="Alternative">
         <value gender="n" plural="n">Альтернативне</value>
 		<value gender="m" plural="n">Альтернативний</value>
@@ -206,7 +223,7 @@
 		<value gender="n" plural="y" case="l">Альтернативних</value>
 		<value gender="m" plural="y" case="l">Альтернативних</value>
 		<value gender="f" plural="y" case="l">Альтернативних</value></adjective>
-        
+
     <adjective name="Another">
         <value gender="m" plural="n">Інший</value>
         <value gender="f" plural="n">Інша</value>
@@ -245,8 +262,8 @@
         <value gender="f" plural="y" case="l">Інших</value>
         <value gender="n" plural="y" case="l">Інших</value>
 		</adjective>
-		
-	<adjective name="any"> 
+
+	<adjective name="any">
         <value gender="m" plural="n">Будь-який</value>
         <value gender="f" plural="n">Будь-яка</value>
         <value gender="n" plural="n">Будь-яке</value>
@@ -284,7 +301,7 @@
         <value gender="f" plural="y" case="l">Будь-яких</value>
         <value gender="n" plural="y" case="l">Будь-яких</value>
 	</adjective>
-		
+
     <adjective name="Associated">
         <value gender="m" plural="n">Пов’язаний</value>
         <value gender="f" plural="n">Пов’язана</value>
@@ -323,7 +340,7 @@
         <value gender="f" plural="y" case="l">Пов’язаних</value>
         <value gender="n" plural="y" case="l">Пов’язаних</value>
 		</adjective>
-        
+
     <adjective name="Attached">
         <value gender="m" plural="n">Вкладений</value>
         <value gender="f" plural="n">Вкладена</value>
@@ -362,7 +379,7 @@
         <value gender="f" plural="y" case="l">Вкладених</value>
         <value gender="n" plural="y" case="l">Вкладених</value>
 		</adjective>
-        
+
     <adjective name="Available">
         <value gender="m" plural="n">Доступний</value>
         <value gender="f" plural="n">Доступна</value>
@@ -519,7 +536,7 @@
         <value gender="n" plural="y" case="l">Призначених</value>
     </adjective>
 
-    
+
     <adjective name="Billed">
         <value gender="m" plural="n">Нарахований</value>
         <value gender="m" plural="y">Нараховані</value>
@@ -714,7 +731,7 @@
         <value gender="f" plural="n" case="l">Перетвореній</value>
         <value gender="f" plural="y" case="l">Перетворених</value>
     </adjective>
-    
+
     <adjective name="Corresponding">
         <value gender="m" plural="n">Відповідний</value>
         <value gender="f" plural="n">Відповідна</value>
@@ -949,7 +966,7 @@
 </adjective>
 
 <adjective name="Deleted">
-             
+
         <value gender="m" plural="n">Видалений</value>
         <value gender="m" plural="y">Видалені</value>
         <value gender="f" plural="n">Видалена</value>
@@ -1183,7 +1200,7 @@
         <value gender="f" plural="y" case="l">Кожних</value>
 </adjective>
 <adjective name="Empty">
-      
+
         <value gender="m" plural="n">Пустий</value>
         <value gender="m" plural="y">Пусті</value>
         <value gender="f" plural="n">Пуста</value>
@@ -1533,43 +1550,43 @@
         <value gender="f" plural="n" case="l">Архівній</value>
         <value gender="f" plural="y" case="l">Архівних</value>
     </adjective>
-    
+
     <adjective name="Imported">
-        <value gender="m" plural="n">Імпортований</value> 
-        <value gender="f" plural="n">Імпортована</value> 
-        <value gender="n" plural="n">Імпортоване</value> 
-        <value gender="m" plural="y">Імпортовані</value> 
-        <value gender="f" plural="y">Імпортовані</value> 
-        <value gender="n" plural="y">Імпортовані</value> 
-        <value gender="m" plural="n" case="a">Імпортований</value> 
-        <value gender="f" plural="n" case="a">Імпортовану</value> 
-        <value gender="n" plural="n" case="a">Імпортоване</value> 
-        <value gender="m" plural="y" case="a">Імпортовані</value> 
-        <value gender="f" plural="y" case="a">Імпортовані</value> 
-        <value gender="n" plural="y" case="a">Імпортовані</value> 
-        <value gender="m" plural="n" case="g">Імпортованого</value> 
-        <value gender="f" plural="n" case="g">Імпортованої</value> 
-        <value gender="n" plural="n" case="g">Імпортованого</value> 
-        <value gender="m" plural="y" case="g">Імпортованих</value> 
-        <value gender="f" plural="y" case="g">Імпортованих</value> 
-        <value gender="n" plural="y" case="g">Імпортованих</value> 
-        <value gender="m" plural="n" case="d">Імпортованому</value> 
-        <value gender="f" plural="n" case="d">Імпортованій</value> 
-        <value gender="n" plural="n" case="d">Імпортованому</value> 
-        <value gender="m" plural="y" case="d">Імпортованим</value> 
-        <value gender="f" plural="y" case="d">Імпортованим</value> 
-        <value gender="n" plural="y" case="d">Імпортованим</value> 
-        <value gender="m" plural="n" case="in">Імпортованим</value> 
-        <value gender="f" plural="n" case="in">Імпортованою</value> 
-        <value gender="n" plural="n" case="in">Імпортованим</value> 
-        <value gender="m" plural="y" case="in">Імпортованими</value> 
-        <value gender="f" plural="y" case="in">Імпортованими</value> 
-        <value gender="n" plural="y" case="in">Імпортованими</value> 
-        <value gender="m" plural="n" case="l">Імпортованому</value> 
-        <value gender="f" plural="n" case="l">Імпортованій</value> 
-        <value gender="n" plural="n" case="l">Імпортованому</value> 
-        <value gender="m" plural="y" case="l">Імпортованих</value> 
-        <value gender="f" plural="y" case="l">Імпортованих</value> 
+        <value gender="m" plural="n">Імпортований</value>
+        <value gender="f" plural="n">Імпортована</value>
+        <value gender="n" plural="n">Імпортоване</value>
+        <value gender="m" plural="y">Імпортовані</value>
+        <value gender="f" plural="y">Імпортовані</value>
+        <value gender="n" plural="y">Імпортовані</value>
+        <value gender="m" plural="n" case="a">Імпортований</value>
+        <value gender="f" plural="n" case="a">Імпортовану</value>
+        <value gender="n" plural="n" case="a">Імпортоване</value>
+        <value gender="m" plural="y" case="a">Імпортовані</value>
+        <value gender="f" plural="y" case="a">Імпортовані</value>
+        <value gender="n" plural="y" case="a">Імпортовані</value>
+        <value gender="m" plural="n" case="g">Імпортованого</value>
+        <value gender="f" plural="n" case="g">Імпортованої</value>
+        <value gender="n" plural="n" case="g">Імпортованого</value>
+        <value gender="m" plural="y" case="g">Імпортованих</value>
+        <value gender="f" plural="y" case="g">Імпортованих</value>
+        <value gender="n" plural="y" case="g">Імпортованих</value>
+        <value gender="m" plural="n" case="d">Імпортованому</value>
+        <value gender="f" plural="n" case="d">Імпортованій</value>
+        <value gender="n" plural="n" case="d">Імпортованому</value>
+        <value gender="m" plural="y" case="d">Імпортованим</value>
+        <value gender="f" plural="y" case="d">Імпортованим</value>
+        <value gender="n" plural="y" case="d">Імпортованим</value>
+        <value gender="m" plural="n" case="in">Імпортованим</value>
+        <value gender="f" plural="n" case="in">Імпортованою</value>
+        <value gender="n" plural="n" case="in">Імпортованим</value>
+        <value gender="m" plural="y" case="in">Імпортованими</value>
+        <value gender="f" plural="y" case="in">Імпортованими</value>
+        <value gender="n" plural="y" case="in">Імпортованими</value>
+        <value gender="m" plural="n" case="l">Імпортованому</value>
+        <value gender="f" plural="n" case="l">Імпортованій</value>
+        <value gender="n" plural="n" case="l">Імпортованому</value>
+        <value gender="m" plural="y" case="l">Імпортованих</value>
+        <value gender="f" plural="y" case="l">Імпортованих</value>
         <value gender="n" plural="y" case="l">Імпортованихіі</value>
     </adjective>
 
@@ -1689,7 +1706,7 @@
         <value gender="f" plural="y" case="l">Недійсних</value>
 </adjective>
 
- <adjective name="its"> 
+ <adjective name="its">
         <value gender="m" plural="n">Його</value>
         <value gender="f" plural="n">Її</value>
         <value gender="n" plural="n">Його</value>
@@ -1766,7 +1783,7 @@
         <value gender="f" plural="y" case="l">Останніх</value>
         <value gender="n" plural="y" case="l">Останніх</value>
     </adjective>
-        
+
     <adjective name="Linked">
        	<value gender="n" plural="n">Пов’язане</value>
 		<value gender="m" plural="n">Пов’язаний</value>
@@ -1845,7 +1862,7 @@
         <value gender="n" plural="y" case="l">Завантажених</value>
 		</adjective>
 <adjective name="Locked">
-     
+
         <value gender="m" plural="n">Заблокований</value>
         <value gender="m" plural="y">Заблоковані</value>
         <value gender="f" plural="n">Заблокована</value>
@@ -1922,7 +1939,7 @@
         <value gender="f" plural="n" case="l">Останній</value>
         <value gender="f" plural="y" case="l">Останніх</value>
 </adjective>
-    
+
     <adjective name="Managed">
         <value gender="m" plural="n">Керований</value>
         <value gender="f" plural="n">Керована</value>
@@ -1960,8 +1977,8 @@
         <value gender="m" plural="y" case="l">Керованій</value>
         <value gender="f" plural="y" case="l">Керованій</value>
         <value gender="n" plural="y" case="l">Керованій</value>
-    </adjective>    
-    
+    </adjective>
+
 <adjective name="Managing">
         <value gender="n" plural="n">Керуюче</value>
 <value gender="m" plural="n">Керуючий</value>
@@ -2078,7 +2095,7 @@
         <value gender="f" plural="n" case="l">Головній</value>
         <value gender="f" plural="y" case="l">Головних</value>
 </adjective>
-	
+
 	<adjective name="Matching">
         <value gender="m" plural="n">Співпадаючий</value>
         <value gender="m" plural="y">Співпадаючі</value>
@@ -2156,7 +2173,7 @@
         <value gender="n" plural="y" case="l">Злитих</value>
     </adjective>
 <adjective name="More">
-        <value gender="n" plural="n">Більше</value>    
+        <value gender="n" plural="n">Більше</value>
 		<value gender="m" plural="n">Більший</value>
 		<value gender="f" plural="n">Більша</value>
 		<value gender="n" plural="y">Більші</value>
@@ -2192,7 +2209,7 @@
 		<value gender="n" plural="y" case="l">Більших</value>
 		<value gender="m" plural="y" case="l">Більших</value>
 		<value gender="f" plural="y" case="l">Більших</value></adjective>
-	
+
 	<adjective name="Multiple">
         <value gender="n" plural="n">Множинне</value>
 		<value gender="m" plural="n">Множинний</value>
@@ -2465,7 +2482,7 @@
         <value gender="f" plural="y" case="l">Числах</value>
 </adjective>
 
- <adjective name="One"> 
+ <adjective name="One">
         <value gender="m" plural="n">Один</value>
         <value gender="f" plural="n">Одна</value>
         <value gender="n" plural="n">Одне</value>
@@ -2504,7 +2521,7 @@
         <value gender="n" plural="y" case="l">Одних</value>
 	</adjective>
 
-    <adjective name="Older"> 
+    <adjective name="Older">
         <value gender="m" plural="n">Ранній</value>
         <value gender="f" plural="n">Рання</value>
         <value gender="n" plural="n">Раннє</value>
@@ -2619,7 +2636,7 @@
         <value gender="f" plural="y" case="l">Оригінальних</value>
         <value gender="n" plural="y" case="l">Оригінальних</value>
 		</adjective>
-        
+
     <adjective name="Other">
         <value gender="m" plural="n">Інший</value>
         <value gender="f" plural="n">Інша</value>
@@ -2736,7 +2753,7 @@
         <value gender="f" plural="y" case="l">Персональних</value>
 </adjective>
 
-    
+
     <adjective name="Popular">
         <value gender="m" plural="n">Популярний</value>
         <value gender="m" plural="y">Популярні</value>
@@ -2775,7 +2792,7 @@
         <value gender="f" plural="n" case="l">Популярній</value>
         <value gender="f" plural="y" case="l">Популярних</value>
     </adjective>
-    
+
     <adjective name="Posted">
         <value gender="m" plural="n">Надісланий</value>
         <value gender="m" plural="y">Надіслані</value>
@@ -3439,7 +3456,7 @@
         <value gender="f" plural="n" case="l">Запланованій</value>
         <value gender="f" plural="y" case="l">Запланованих</value>
 </adjective>
-	
+
 	<adjective name="Selected">
         <value gender="m" plural="n">Вибраний</value>
         <value gender="m" plural="y">Вибрані</value>
@@ -3594,7 +3611,7 @@
         <value gender="f" plural="n" case="l">Одній</value>
         <value gender="f" plural="y" case="l">Одних</value>
     </adjective>
-    
+
     <adjective name="Social">
         <value gender="m" plural="n">Соціальний</value>
         <value gender="f" plural="n">Соціальна</value>
@@ -3944,7 +3961,7 @@
 	<value gender="f" plural="n" case="l">Підтримуваній</value>
 	<value gender="f" plural="y" case="l">Підтримуваних</value>
     </adjective>
-    
+
     <adjective name="Synced">
 	<value gender="m" plural="n">Синхронізований</value>
 	<value gender="m" plural="y">Синхронізовані</value>
@@ -4140,7 +4157,7 @@
         <value gender="f" plural="y" case="l">Цих</value>
 </adjective>
 <adjective name="Those">
-     
+
         <value gender="m" plural="n">Той</value>
         <value gender="m" plural="y">Ті</value>
         <value gender="f" plural="n">Та</value>
@@ -4610,7 +4627,7 @@
         <value gender="f" plural="n" case="l">Непідшитій</value>
         <value gender="f" plural="y" case="l">Непідшитих</value>
     </adjective>
-    
+
     <adjective name="Unshared">
         <value gender="m" plural="n">Що не є спільним</value>
         <value gender="f" plural="n">Що не є спільною</value>
@@ -4727,7 +4744,7 @@
         <value gender="f" plural="n" case="l">Належить користувачеві</value>
         <value gender="f" plural="y" case="l">Належить користувачеві</value>
 </adjective>
-    
+
     <adjective name="Valid">
         <value gender="m" plural="n">Дійсний</value>
         <value gender="f" plural="n">Дійсна</value>
@@ -4924,7 +4941,7 @@
 </adjective>
 
 <adjective name="Zero ">
-     
+
         <value gender="m" plural="n">Нульовий</value>
         <value gender="m" plural="y"> Нульові</value>
         <value gender="f" plural="n">Нульова</value>

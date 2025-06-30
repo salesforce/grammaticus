@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Invalid Domain</param>
         <param name="ReadOnly">You cannot edit this field</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--Default--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Not Applicable**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Start of Dialogue</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Search Results</param>
         <param name="Recent">Recently Viewed</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">This image is not available because: You don’t have the privileges to see it, or it has been removed from the system</param>
         <param name="weekly_export_folder">Other Uploaded Collateral/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">Creation Failed.</param>
         <param name="Common_success_message">Creation succeeded.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Request a Licence Reduction</param>
         <param name="pageheader">Please fill out all of the required fields to submit your licence reduction request. This is the fastest way to have your request processed.  Please do not submit multiple requests for the same licences as this may cause unnecessary delays.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">You can use "*" as a wildcard next to other characters to improve your search results.</param>
         <param name="error_lookup_multiple_matches_ile">Multiple items found.&lt;br&gt;Click icon to refine search.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Expand List</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Expanded List</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Selections</param>
         <param name="assignLicensesDescription">Select the checkbox next to each package you want to assign to this user, and then click Assign. The checkbox is absent if a package does not have sufficient licences available or the package status is expired or suspended.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Webstore</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Confirmation</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Information</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -66,7 +83,7 @@
         <value gender="m" plural="y">D'autres</value>
         <value gender="f" plural="y">D'autres</value>
     </adjective>
-        
+
     <adjective name="Any" startsWith="c">
          <value gender="m" plural="n">Tout</value>
         <value gender="f" plural="n">Toute</value>
@@ -115,7 +132,7 @@
         <value gender="m" plural="y">Facturés</value>
         <value gender="f" plural="y">Facturées</value>
      </adjective>
-        
+
     <adjective name="Certain">
         <value gender="m" plural="n">Certain</value>
         <value gender="f" plural="n">Certaine</value>
@@ -143,7 +160,7 @@
         <value gender="m" plural="y">Convertis</value>
         <value gender="f" plural="y">Converties</value>
      </adjective>
-    
+
    <adjective name="Corresponding" startsWith="c">
         <value gender="m" plural="n">Correspondant</value>
         <value gender="f" plural="n">Correspondante</value>
@@ -192,7 +209,7 @@
         <value gender="m" plural="y">Supprimés</value>
         <value gender="f" plural="y">Supprimées</value>
     </adjective>
-    
+
     <adjective name="Designated" startsWith="c">
         <value gender="m" plural="n">Désigné</value>
         <value gender="f" plural="n">Désignée</value>
@@ -230,8 +247,8 @@
         <value gender="f" plural="n">Modifiable</value>
         <value gender="m" plural="y">Modifiables</value>
         <value gender="f" plural="y">Modifiables</value>
-    </adjective> 
-        
+    </adjective>
+
     <adjective name="Empty">
         <value gender="m" plural="n">Vide</value>
         <value gender="f" plural="n">Vide</value>
@@ -345,7 +362,7 @@
     <adjective name="Key" startsWith="c">
         <value gender="n" plural="n">Key</value>
     </adjective>
-        
+
     <adjective name="Last" startsWith="c">
         <value gender="m" plural="n">Dernier</value>
         <value gender="f" plural="n">Dernière</value>
@@ -465,7 +482,7 @@
         <value gender="m" plural="y">Le nombre</value>
         <value gender="f" plural="y">Le nombre</value>
     </adjective>
-        
+
     <adjective name="One" startsWith="v">
          <value gender="m" plural="n">Un</value>
         <value gender="f" plural="n">Une</value>
@@ -584,7 +601,7 @@
         <value gender="m" plural="y">Appartenant à la file d'attente</value>
         <value gender="f" plural="y">Appartenant à la file d'attente</value>
     </adjective>
-        
+
     <adjective name="Recent" startsWith="c">
         <value gender="m" plural="n">Récent</value>
         <value gender="f" plural="n">Récente</value>
@@ -708,7 +725,7 @@
         <value gender="m" plural="y">Sociaux</value>
         <value gender="f" plural="y">Sociales</value>
     </adjective>
-        
+
     <adjective name="Source" startsWith="c">
         <value gender="m" plural="n">Source</value>
         <value gender="f" plural="n">Source</value>
@@ -801,7 +818,7 @@
         <value gender="m" plural="y">Ces</value>
         <value gender="f" plural="y">Ces</value>
     </adjective>
-        
+
     <adjective name="Today" startsWith="c">
         <value gender="n" plural="n">Today</value>
     </adjective>
@@ -825,7 +842,7 @@
         <value gender="f" plural="n">Traduite</value>
         <value gender="m" plural="y">Traduits</value>
         <value gender="f" plural="y">Traduites</value>
-    </adjective>   
+    </adjective>
 
     <adjective name="Transferable" startsWith="c">
         <value gender="m" plural="n">Transférable</value>
@@ -931,7 +948,7 @@
         <value gender="m" plural="y">Vos</value>
         <value gender="f" plural="y">Vos</value>
     </adjective>
-        
+
     <adjective name="Zero">
         <value gender="m" plural="n">Zéro</value>
         <value gender="f" plural="n">Zéro</value>
@@ -953,8 +970,8 @@
         <value gender="f" plural="n">une</value>
         <value gender="m" plural="y">des</value>
         <value gender="f" plural="y">des</value>
-    </adjective>    
-    
+    </adjective>
+
     <adjective name="de" startsWith="c" position="b"> <!-- extra spaces in non-contracted forms are intentional -->
         <value gender="m" plural="n">du </value>
         <value gender="m" plural="n" startsWith="v">d'</value>
@@ -965,56 +982,56 @@
       <value gender="f" plural="y" startsWith="v">d'</value>
       <value gender="m" plural="y" startsWith="v">d'</value>
     </adjective>
-    
+
     <adjective name="de_a" startsWith="c" position="b">
         <value gender="m" plural="n">d'un</value>
         <value gender="f" plural="n">d'une</value>
         <value gender="m" plural="y">des</value>
         <value gender="f" plural="y">des</value>
-    </adjective>   
-    
+    </adjective>
+
     <adjective name="found" startsWith="c">
         <value gender="m" plural="n">trouvé</value>
         <value gender="f" plural="n">trouvée</value>
         <value gender="m" plural="y">trouvés</value>
         <value gender="f" plural="y">trouvées</value>
     </adjective>
-    
+
     <adjective name="Marked" startsWith="c">
         <value gender="m" plural="n">Marqué</value>
         <value gender="f" plural="n">Marquée</value>
         <value gender="m" plural="y">Marqués</value>
         <value gender="f" plural="y">Marquées</value>
-    </adjective>    
-    
+    </adjective>
+
     <adjective name="Num_d" startsWith="c" position="b">
         <value gender="m" plural="n">Le nombre de</value>
         <value gender="f" plural="n">Le nombre de</value>
         <value gender="m" plural="y">Le nombre de</value>
         <value gender="f" plural="y">Le nombre de</value>
     </adjective>
-    
+
     <adjective name="Posted">
         <value gender="m" plural="n">Publié</value>
         <value gender="f" plural="n">Publiée</value>
         <value gender="m" plural="y">Publiés</value>
         <value gender="f" plural="y">Publiées</value>
     </adjective>
-    
+
     <adjective name="Recently_Accessed" startsWith="c">
         <value gender="m" plural="n">Récemment accédé</value>
         <value gender="f" plural="n">Récemment accédée</value>
         <value gender="m" plural="y">Récemment accédés</value>
         <value gender="f" plural="y">Récemment accédées</value>
     </adjective>
-    
+
     <adjective name="Supported" startsWith="c">
         <value gender="m" plural="n">Pris en charge</value>
         <value gender="f" plural="n">Prise en charge</value>
         <value gender="m" plural="y">Pris en charge</value>
         <value gender="f" plural="y">Prises en charge</value>
     </adjective>
-    
+
     <adjective name="the_à" startsWith="v" position="b"> <!-- extra spaces in non-contracted forms are intentional -->
         <value gender="m" plural="n">au </value>
         <value gender="m" plural="n" startsWith="v">à l'</value>
@@ -1023,7 +1040,7 @@
         <value gender="m" plural="y">aux </value>
         <value gender="f" plural="y">aux </value>
     </adjective>
-    
+
     <adjective name="the_de" startsWith="c" position="b"> <!-- extra spaces in non-contracted forms are intentional -->
         <value gender="m" plural="n">du </value>
         <value gender="m" plural="n" startsWith="v">de l'</value>
@@ -1032,20 +1049,19 @@
         <value gender="m" plural="y">des </value>
         <value gender="f" plural="y">des </value>
     </adjective>
-    
+
     <adjective name="Unfiled_Public" startsWith="c">
         <value gender="m" plural="n">Public non classé</value>
         <value gender="f" plural="n">Publique non classée</value>
         <value gender="m" plural="y">Publics non classés</value>
         <value gender="f" plural="y">Publiques non classées</value>
     </adjective>
-    
+
     <adjective name="Valid" startsWith="c">
         <value gender="m" plural="n">Valide</value>
         <value gender="f" plural="n">Valide</value>
         <value gender="m" plural="y">Valides</value>
         <value gender="f" plural="y">Valides</value>
     </adjective>
-    
-</adjectives>
 
+</adjectives>

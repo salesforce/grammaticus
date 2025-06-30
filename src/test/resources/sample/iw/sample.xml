@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -9,7 +24,7 @@
         <param name="openAnAccount"><Account/> <gender><when val="f">נפתחה</when>נפתח</gender></param>  <!--  Really account opened -->
         <param name="openAnAEntity"><Entity entity="0"/> <gender><when val="f">נפתחה</when>נפתח</gender></param>
 	</section>
-    
+
     <!--
         "Exception" section is now in ex.xml.
     -->
@@ -243,10 +258,10 @@
         <param name="MalformedDomain">תחום לא חוקי</param>
         <param name="ReadOnly">אין באפשרותך לערוך שדה זה</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1094,7 +1109,7 @@
         <param name="Default">--ברירת מחדל--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**לא ישים**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1523,7 +1538,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">תחילת דו-שיח</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">תוצאות חיפוש</param>
         <param name="Recent">הוצגו לאחרונה</param>
@@ -1570,9 +1585,9 @@
         <param name="access_failed_alt">תמונה זו אינה זמינה מאחר ש: אין ברשותך הרשאות לראות אותה, או שהיא הוסרה מהמערכת</param>
         <param name="weekly_export_folder">תיעוד נלווה אחר שהועלה/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1583,7 +1598,7 @@
         <param name="Failure_message">יצירה נכשלה.</param>
         <param name="Common_success_message">יצירה הצליחה.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">בקש הפחתת רשיונות</param>
         <param name="pageheader">מלא את כל השדות הדרושים כדי לשלוח את בקשת הפחתת הרשיונות שלך. זוהי הדרך המהירה ביותר לעבד את הבקשה שלך.  אל תשלח בקשות מרובות עבור אותם רשיונות, כיוון שפעולה כזו עלולה לגרום לעיכובים בלתי נחוצים.</param>
@@ -1810,8 +1825,8 @@
         <param name="useWildcardsWithSearch">באפשרותך להשתמש ב-'*' בתור תו כללי לצד תווים אחרים, כדי לשפר את תוצאות החיפוש.</param>
         <param name="error_lookup_multiple_matches_ile">פריטים מרובים נמצאו.&lt;br&gt;לחץ על הסמל כדי למקד את החיפוש.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">הרחב רשימה</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">רשימה מורחבת</param>
@@ -1846,7 +1861,7 @@
         <param name="selections">בחירות</param>
         <param name="assignLicensesDescription">בחר את תיבת הסימון שלצד כל חבילה שברצונך להקצות למשתמש זה ולאחר מכן לחץ על 'הקצה'. תיבת הסימון חסרה אם אין מספיק רשיונות זמינים עבור החבילה או אם מצב החבילה הוא פג או מושעה.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1854,10 +1869,10 @@
         <param name="3">חנות אינטרנט</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">אישור</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">פרטים</param>   <!-- aliased across labels; do not change -->
@@ -1959,5 +1974,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -68,7 +85,7 @@
     </noun>
 
 
-    
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -87,10 +104,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
-    
-		
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Kompetens</value>
         <value plural="y">Kompetenser</value>
@@ -100,22 +117,22 @@
         <value plural="y" article="the">Kompetenserna</value>
     </noun>
 
-    
-        
-        
-    
-     
-        
-    
-     
-     
-    
-    
-    
-                    
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n">Dokument</value>
         <value plural="y">Dokument</value>
@@ -134,10 +151,10 @@
         <value plural="y" article="the">Händelserna</value>
     </noun>
 
-    
 
-    
-    
+
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="e" startsWith="c">
         <value plural="n">Offert</value>
         <value plural="n" article="a">En offert</value>
@@ -147,7 +164,7 @@
         <value plural="y" article="a">Offerter</value>
       </noun>
 
-      
+
           <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="e" startsWith="c">
         <value plural="n">Kontakt</value>
         <value plural="y">Kontakter</value>
@@ -156,15 +173,15 @@
         <value plural="n" article="the">Kontakten</value>
         <value plural="y" article="the">Kontakterna</value>
     </noun>
-    
-    
-<!--    
-   
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
 
-    
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
 		<value plural="n">Fråga</value>
 		<value plural="n" article="a">En fråga</value>
@@ -173,11 +190,11 @@
       <value plural="y" article="the">Frågorna</value>
       <value plural="y" article="a">Vissa frågor</value>
     </noun>
-		
-    
-        
- 
-    
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="e" startsWith="c">
         <value plural="n">Lead</value>
         <value plural="y">Leads</value>
@@ -194,9 +211,9 @@
         <value plural="y" article="a">Säljprojekt</value>
         <value plural="n" article="the">Säljprojektet</value>
         <value plural="y" article="the">Säljprojekten</value>
-    </noun>    
+    </noun>
 
-    
+
    <noun name="OpportunityLineItem" entity="OpportunityLineItem" type="entity" alias="OpportunityLineItems" gender="e" startsWith="v">
         <value plural="n">Säljprojektsprodukt</value>
         <value plural="y">Säljprojektsprodukter</value>
@@ -204,9 +221,9 @@
         <value plural="y" article="a">Säljprojektsprodukter</value>
         <value plural="n" article="the">Säljprojektsprodukten</value>
         <value plural="y" article="the">Säljprojektsprodukterna</value>
-    </noun>    
+    </noun>
 
-	
+
 <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="e" startsWith="v">
         <value plural="n">Prisbok</value>
         <value plural="y">Prisböcker</value>
@@ -221,9 +238,9 @@
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
 
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -240,27 +257,26 @@
     -->
 
 
-	    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-   
-    
+
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
         <value plural="n">Företagsnamn</value>
         <value plural="y">Företagsnamn</value>
     </noun>
-    
-     
+
+
      <noun name="Product_Currency" entity="Product" gender="e" startsWith="c" standardField="y">
         <value plural="n">Produktvaluta</value>
     </noun>
 
-    
+
      <import file="adjectives.xml"/>
 </names>
-

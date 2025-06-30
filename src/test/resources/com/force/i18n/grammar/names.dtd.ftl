@@ -1,8 +1,25 @@
 <!--
+  Copyright (c) 2025, Salesforce, Inc.
+  SPDX-License-Identifier: Apache-2
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!--
    Grammaticus dictionary DTD for ${decl.language}
 
    see com.force.i18n.grammar.LanguageDeclension for more information
-   
+
    DO NOT MODIFY BY HAND! This file is generated from names.dtd.ftl
 -->
 <!-- simple boolean type -->
@@ -128,7 +145,7 @@ noun element is used to specify translation of nouns
 <#else> "${decl.defaultStartsWith.dbValue}"
 </#if>  %standardField;	    #IMPLIED
   >
-  
+
 <!--
 version element is used to specify noun translation override based on version
     atLeast:   the version number that this should be used after.
@@ -136,7 +153,7 @@ version element is used to specify noun translation override based on version
 </#if>
 <#if decl.hasEndsWith()>    endsWith: What kind of sound does this noun ends with
 <#elseif decl.hasStartsWith()>    startsWith: What kind of sound does this noun start with
-</#if>    -->  
+</#if>    -->
 <!ELEMENT version (value)+>
 <!ATTLIST version
   atLeast   CDATA            #REQUIRED

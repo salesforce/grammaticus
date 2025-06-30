@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -86,7 +103,7 @@
        <value plural="y" case="abl" poss="f">Müşterilerimden</value>
        <value plural="y" case="abl" poss="s">Müşterilerinden</value>
    </noun>
-    
+
    <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="v">
        <value plural="n">Aktivite</value>
        <value plural="n" poss="f">Aktivitem</value>
@@ -125,9 +142,9 @@
        <value plural="y" case="abl" poss="f">Aktivitelerimden</value>
        <value plural="y" case="abl" poss="s">Aktivitelerinden</value>
    </noun>
-    
-       
-               
+
+
+
    <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
        <value plural="n">Kampanya</value>
        <value plural="n" poss="f">Kampanyam</value>
@@ -164,22 +181,22 @@
        <value plural="y" case="abl" poss="f">Kampanyalarımdan</value>
        <value plural="y" case="abl" poss="s">Kampanyalarından</value>
    </noun>
-    
-       
-        
-       
-    
-    
 
-    
+
+
+
+
+
+
+
     <!-- Content -->
-    
+
 
 	<!-- // Content -->
-    
-   
-      
-       
+
+
+
+
    <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
      <value plural="n">Belge</value>
        <value plural="n" poss="f">Belgem</value>
@@ -219,25 +236,25 @@
        <value plural="y" case="abl" poss="s">Belgelerinden</value>
    </noun>
 
-    
-    
 
 
 
-    
+
+
+
 
  <!--******* Entitlement ****************************************************-->
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <!--******* Entitlement Contact ****************************************************-->
 
 
-	
+
 
 
    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">
@@ -279,10 +296,10 @@
        <value plural="y" case="abl" poss="s">Etkinliklerinden</value>
    </noun>
 
-   
-        
-    
-    
+
+
+
+
 
    <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
    <value plural="n">Müşteri Adayı</value>
@@ -322,36 +339,36 @@
        <value plural="y" case="abl" poss="f">Müşteri Adaylarımdan</value>
        <value plural="y" case="abl" poss="s">Müşteri Adaylarından</value>
    </noun>
-   
+
    <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Skill</value>
         <value plural="y">Skills</value>
     </noun>
-   
-      
-      
-      
-      
-      
-      
-       
-        
-        
-       
 
 
-    
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--******* Message ****************************************************-->
 
-    
-    
+
+
 <!--******* Message Member ****************************************************-->
-    
-    
+
+
    <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="v">
    <value plural="n">Fırsat</value>
        <value plural="n" poss="f">Fırsatım</value>
@@ -391,14 +408,14 @@
        <value plural="y" case="abl" poss="f">Fırsatlarımdan</value>
        <value plural="y" case="abl" poss="s">Fırsatlarından</value>
    </noun>
-    
-      
-   
 
-   
 
-    
-  
+
+
+
+
+
+
 
    <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
    <value plural="n">Fiyat Rehberi</value>
@@ -439,7 +456,7 @@
        <value plural="y" case="abl" poss="s">Fiyat Rehberlerinden</value>
    </noun>
 
-   
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
        <value plural="n">Soru</value>
        <value plural="n" poss="f">Sorum</value>
@@ -481,9 +498,9 @@
        <value plural="y" case="abl" poss="s">Sorularından</value>
     </noun>
 
-    
-    
-        
+
+
+
 
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
        <value plural="n">Teklif</value>
@@ -527,24 +544,24 @@
     </noun>
 
 
-      
-      
-
-    
 
 
-        
-    
-    
-   
-      
-       
+
+
+
+
+
+
+
+
+
+
 
    <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
     -->
-    
+
    <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
        <value plural="n">{0}</value>
        <value plural="y">{0}</value>
@@ -555,23 +572,22 @@
        <entity/>,<entity_record_type/>
     -->
 
-   
+
 
    <!--==================================================================
       Other Nouns
     ======================================================================-->
 
       <!--******* Accounts *************************************************-->
-   
+
    <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
        <value plural="n">Müşteri Adı</value>
        <value plural="y">Müşteri Adları</value>
    </noun>
-    
+
     <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
        <value plural="n">Ürün Para Birimi</value></noun>
 
-   
+
     <import file="adjectives.xml"/>
 </names>
-

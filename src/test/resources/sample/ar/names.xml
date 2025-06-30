@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -79,7 +96,7 @@
     <value plural="y" case="a" poss="f">نشاطاتي</value>
     <value plural="y" case="a" poss="s">نشاطاتك</value>
   </noun>
-  
+
   <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f">
     <value plural="n">حملة</value>
     <value plural="n" poss="f">حملتي</value>
@@ -95,7 +112,7 @@
     <value plural="y" case="a" poss="s">حملاتك</value>
   </noun>
 
-  
+
    <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="f">
     <value plural="n">جهة الاتصال</value>
     <value plural="n" poss="f">جهة الاتصال الخاصة بي</value>
@@ -109,7 +126,7 @@
     <value plural="y" case="a">جهات الاتصال</value>
     <value plural="y" case="a" poss="f">جهات الاتصال الخاصة بي</value>
     <value plural="y" case="a" poss="s">جهات الاتصال الخاصة بك</value>
-  </noun>  
+  </noun>
 
   <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m">
     <value plural="n">مستند</value>
@@ -172,11 +189,11 @@
     <value plural="y" case="a" poss="f">أسئلتي</value>
     <value plural="y" case="a" poss="s">أسئلتك</value>
   </noun>
-  
-  
-  
-  
-  
+
+
+
+
+
 
 
   <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m">
@@ -248,7 +265,7 @@
   ======================================================================-->
 
   <!--******* Accounts *************************************************-->
- 
+
   <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="m" standardField="y">
     <value plural="n">اسم الحساب</value>
     <value plural="y">اسماء الحساب</value>

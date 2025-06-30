@@ -1,8 +1,18 @@
-/* 
- * Copyright (c) 2017, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.force.i18n.commons.text;
@@ -34,7 +44,7 @@ import com.google.common.collect.Iterators;
 public final class TextUtil {
 
     private static final Logger logger = Logger.getLogger(TextUtil.class.getName());
-    
+
     //Various statics for logging long strings undergoing escaping
     private static final int MIN_LOG_LENGTH = 1000000; //1,000,000 character strings are suspicious :P
     public static final int MIN_GACK_LENGTH = 23000000; //23,000,000 character strings are insane
@@ -528,7 +538,7 @@ public final class TextUtil {
      * other use of single-quotes will be escaped
      * @param src the source string
      * @param sb the string buider to append to
-     * @param check should we check first for whether there's a curly brace.  Performance improvement if you know there is one. 
+     * @param check should we check first for whether there's a curly brace.  Performance improvement if you know there is one.
      * @return sb
      */
     public static StringBuilder escapeForMessageFormat(String src, StringBuilder sb, boolean check) {
@@ -720,11 +730,11 @@ public final class TextUtil {
             return key;
         }
     }
-    
+
     private static final String[] JSON_IN = new String[] { "\\",  "\b", "\f", "\n", "\r", "\t", "\"" };
     private static final String[] JSON_OUT = new String[] { "\\\\", "\\b", "\\f", "\\n", "\\r", "\\t", "\\\""};
     private static final TrieMatcher JSON_SEARCH_REPLACE = TrieMatcher.compile(JSON_IN, JSON_OUT);
-    
+
     /**
      * Properly escapes strings to be displayed in Json Strings. This means that backslashes and double quotes are
      * escaped. <br>

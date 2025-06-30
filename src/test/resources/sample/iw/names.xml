@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -60,8 +77,8 @@
         <value plural="n" article="the">הפעילות</value>
         <value plural="y" article="the">הפעילויות</value>
     </noun>
-    
-        
+
+
     <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="f">
         <value plural="n">שעות עבודה</value>
         <value plural="y">שעות עבודה מרובות</value>
@@ -73,7 +90,7 @@
         <value plural="n" article="the">מבצע הקידום</value>
         <value plural="y" article="the">מבצעי הקידום</value>
     </noun>
-                        
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f">
         <value plural="n">מיומנות</value>
         <value plural="y">מיומנויות</value>
@@ -81,12 +98,12 @@
         <value plural="y" article="the">המיומנויות</value>
     </noun>
 
-                    
-    
-        
+
+
+
     <!-- Content -->
 
-    
+
 	<!-- // Content -->
 
         <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m">
@@ -99,29 +116,29 @@
         <value plural="y">אירועים</value>
     </noun>
 
-        
+
     <noun name="KnowledgeArticleHistory" alias="KnowledgeArticleHistories" gender="f" startsWith="v" standardField="n" type="entity"  entity="KnowledgeArticleHistory" >
         <value plural="n">היסטוריית מאמר</value>
         <value plural="y">היסטוריית מאמרים</value>
         <value plural="n" article="the">היסטוריית המאמר</value>
         <value plural="y" article="the">היסטוריית המאמרים</value>
-    </noun>    
+    </noun>
 
-    
-    
-	    
-    
-    
-        
-        
-    
-   
-	
-	    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f">
         <value plural="n">הצעת מחיר</value>
         <value plural="y">הצעות מחיר</value>
@@ -129,22 +146,22 @@
         <value plural="y" article="the">הצעות המחיר</value>
       </noun>
 
-      
-      
 
-   
-    
-    
+
+
+
+
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="f">
         <value plural="n">שאלה</value>
         <value plural="y">שאלות</value>
     </noun>
-    
-    
-	
-	
-	
-    
+
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="f">
         <value plural="n">הפניה</value>
         <value plural="y">הפניות</value>
@@ -157,22 +174,22 @@
         <value plural="y" article="the">ההזדמנויות</value>
     </noun>
 
-    
-    
-    
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m">
         <value plural="n">מחירון</value>
         <value plural="y">מחירונים</value>
     </noun>
 
-    
-    
-        
-    
-    
 
-        
-    
+
+
+
+
+
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -189,29 +206,28 @@
     -->
 
 
-    
+
 	    <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
-    
+
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="m" startsWith="v" standardField="y">
         <value plural="n">שם חשבון</value>
         <value plural="y">שמות חשבונות</value>
         <value plural="n" article="the">שם החשבון</value>
         <value plural="y" article="the">שמות החשבונות</value>
     </noun>
-    
-     
+
+
      <noun name="Product_Currency" entity="Product" gender="m" startsWith="c" standardField="y">
-        <value plural="n">מטבע מוצר</value> 
+        <value plural="n">מטבע מוצר</value>
         <value plural="n" article="the">מטבע המוצר</value>
 </noun>
 
-    
+
      <import file="adjectives.xml"/>
 </names>
-

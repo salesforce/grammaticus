@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -78,9 +95,9 @@
         <value plural="n" case="pr">Действии</value>
         <value plural="y" case="pr">Действиях</value>
     </noun>
-    
 
-    
+
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -88,7 +105,7 @@
         <value plural="y">Multiple Business Hours</value>
     </noun>-->
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
-        <value plural="n">Кампания</value>          
+        <value plural="n">Кампания</value>
         <value plural="y">Кампании</value>
    	    <value plural="n" case="a">Кампанию</value>
         <value plural="y" case="a">Кампании</value>
@@ -105,10 +122,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
-    
-    
-    
+
+
+
+
     <noun name="Skill" entity="skill" type="entity" alias="skills" gender="m" startsWith="c">
         <value plural="n">Навык</value>
         <value plural="y">Навыки</value>
@@ -124,22 +141,22 @@
         <value plural="y" case="pr">Навыках</value>
     </noun>
 
-    
-    
-    
-    
-   
-	    
-    
-    
-    
-    
-    
-     
-                    
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Документ</value>
         <value plural="y">Документы</value>
@@ -170,22 +187,22 @@
         <value plural="y" case="pr">Событиях</value>
     </noun>
 
-    
-    
-    
-    
-      
-      
-      
-    
 
-<!--    
-   
+
+
+
+
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
 
-    
+
      <noun name="Question" entity="Question" type="entity" alias="Questions" gender="m" startsWith="c">
         <value plural="n">Вопрос</value>
         <value plural="y">Вопросы</value>
@@ -200,11 +217,11 @@
         <value plural="n" case="pr">Вопросе</value>
         <value plural="y" case="pr">Вопросах</value>
     </noun>
-    
-    
-    
-    
-    
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="v">
         <value plural="n">Интерес</value>
     <value plural="y">Интересы</value>
@@ -235,9 +252,9 @@
         <value plural="y" case="pr">Возможностях</value>
     </noun>
 
-	
-	
-	
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
         <value plural="n">Прайс-лист</value>
         <value plural="y">Прайс-листы</value>
@@ -253,8 +270,8 @@
         <value plural="y" case="pr">Прайс-листах</value>
     </noun>
 
-    
-	
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
         <value plural="n">Смета</value>
         <value plural="y">Сметы</value>
@@ -274,9 +291,9 @@
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
 
-   
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -293,27 +310,26 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
         <value plural="n">Имя организации</value>
         <value plural="y">Имена организаций</value>
     <value plural="n" case="g">Имени организации</value>
     </noun>
-    
-   
-     
+
+
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Валюта продукта</value>
     </noun>
 
      <import file="adjectives.xml"/>
 </names>
-

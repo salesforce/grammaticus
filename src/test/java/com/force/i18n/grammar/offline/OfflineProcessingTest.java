@@ -1,9 +1,20 @@
-/* 
- * Copyright (c) 2019, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.force.i18n.grammar.offline;
 
 import java.util.*;
@@ -41,10 +52,10 @@ public class OfflineProcessingTest {
 		        //.filter(a->locales.contains(a.getLocale()))
 				.map(a->new Object[]{a}).collect(Collectors.toList());
 	}
-	
+
 	@Parameter
 	public HumanLanguage language;
-	
+
 	@Test
 	public void simpleSerialization() throws Exception {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(BaseGrammaticalLabelTest.getSampleDescriptor(language));
@@ -59,13 +70,13 @@ public class OfflineProcessingTest {
         dict.writeJson(sb, false, termsInUse.stream().map(a->a.getName()).collect(Collectors.toList()));
         ScriptEngine engine = JsTestUtils.getScriptEngine();
         engine.eval(sb.toString());
-        
+
         // make sure dict will run with null terms. tests for contents TBD
         dict.writeJson(new StringBuilder(), false, null);
-	}	
-	
-	
-	@Test 
+	}
+
+
+	@Test
 	public void compareRenameable() throws Exception {
         GrammaticalLabelSetDescriptor descriptor = BaseGrammaticalLabelTest.getSampleDescriptor(language);
         Collection<LabelReference> labels = ImmutableList.of(
@@ -82,7 +93,7 @@ public class OfflineProcessingTest {
             Noun accountNoun = dict.getNoun("account", false);
             Noun leadNoun = dict.getNoun("lead", false);
             Noun renamedNoun = accountNoun.clone(leadNoun.getGender(), leadNoun.getStartsWith(), leadNoun.getAllDefinedValues());
- 
+
             MockRenamingProvider newProvider = new MockRenamingProvider(renamedNoun);
             RenamingProviderFactory.get().setProvider(newProvider);
             JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[0]);
@@ -92,12 +103,12 @@ public class OfflineProcessingTest {
         } finally {
             RenamingProviderFactory.get().setProvider(curProvider);
         }
-        
-		
+
+
 	}
-	
-	
-	@Test 
+
+
+	@Test
 	public void compareAddProduct() throws Exception {
         GrammaticalLabelSetDescriptor descriptor = BaseGrammaticalLabelTest.getSampleDescriptorDir(language);
         Collection<LabelReference> labels = ImmutableList.of(
@@ -107,26 +118,26 @@ public class OfflineProcessingTest {
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[0]);
 	}
 
-	
-	@Test 
+
+	@Test
 	public void compareNewEntity() throws Exception {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(BaseGrammaticalLabelTest.getSampleDescriptor(language));
         GrammaticalLabelSet set = loader.getSet(language);
         LanguageDictionary dict = set.getDictionary();
 
-		
+
         GrammaticalLabelSetDescriptor descriptor = BaseGrammaticalLabelTest.getSampleDescriptorDir(language);
         Collection<LabelReference> labels = ImmutableList.of(
         		new LabelRef("Buttons", "new_entity"),
-        		new LabelRef("Sample", "openAnAEntity")        		
+        		new LabelRef("Sample", "openAnAEntity")
 		);
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Account", dict)});
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Opportunity", dict)});
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Quote", dict)});
-		
+
 	}
-	   
-    @Test 
+
+    @Test
     public void comparePlural() throws Exception {
         GrammaticalLabelSetDescriptor descriptor = BaseGrammaticalLabelTest.getSampleDescriptorDir(language);
         Collection<LabelReference> labels = ImmutableList.of(
@@ -137,10 +148,10 @@ public class OfflineProcessingTest {
                 new LabelRef("Sample", "num_records_zero", 1),
                 new LabelRef("Sample", "num_records_zero", 2)
         );
-        JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[0]);        
+        JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[0]);
     }
-    
-    @Test 
+
+    @Test
     public void comparePluralEntity() throws Exception {
         GrammaticalLabelSetLoader loader = new GrammaticalLabelSetLoader(BaseGrammaticalLabelTest.getSampleDescriptor(language));
         GrammaticalLabelSet set = loader.getSet(language);
@@ -158,6 +169,6 @@ public class OfflineProcessingTest {
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Account", dict)});
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Opportunity", dict)});
         JsTestUtils.compareResults(this.language, descriptor, labels, new Renameable[] {new BaseGrammaticalLabelTest.MockExistingRenameable("Quote", dict)});
-        
+
     }
 }

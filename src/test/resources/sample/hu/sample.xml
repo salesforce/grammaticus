@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Érvénytelen tartomány</param>
         <param name="ReadOnly">Ezt a mezőt nem lehet szerkeszteni</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--Alapértelmezett--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Nem alkalmazható**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Párbeszédpanel indítása</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Találatok</param>
         <param name="Recent">Legutóbb megtekintett</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">Ez a kép a következő okból kifolyólag nem áll rendelkezésre: Nem rendelkezik jogosultsággal a megtekintéséhez, vagy a képet törölték a rendszerből.</param>
         <param name="weekly_export_folder">Egyéb feltöltött biztosíték/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">A létrehozási művelet sikertelen volt.</param>
         <param name="Common_success_message">A létrehozási művelet sikeresen megtörtént.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Licencszám-csökkentés kérése</param>
         <param name="pageheader">A licencszám-csökkentési kérelem elküldéséhez töltse ki az összes kötelezően kitöltendő mezőt. Ez biztosítja, hogy kérelmének feldolgozása a lehető leggyorsabban megtörténjen.  Ne küldjön be több kérelmet ugyanazon licencekkel kapcsolatban, az ugyanis fölösleges késlekedéshez vezethet.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">A többi karakter mellé beírt helyettesítő karakter (*) használatával javíthatja a keresés eredményességét.</param>
         <param name="error_lookup_multiple_matches_ile">Több találat is van.&lt;br&gt;Kattintson az ikonra a keresés pontosításához.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Lista kibontása</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Kibontott lista</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Kijelölések</param>
         <param name="assignLicensesDescription">Jelölje be a felhasználóhoz hozzárendelni kívánt csomagok mellett látható jelölőnégyzeteket, majd kattintson a Hozzárendelés gombra. A jelölőnégyzet nem látható, ha a csomag nem rendelkezik a megfelelő licencekkel, ha a csomag állapota Lejárt vagy Felfüggesztve.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Webáruház</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Elfogadás</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Információ</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

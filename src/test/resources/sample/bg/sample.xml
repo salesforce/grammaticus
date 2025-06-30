@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Невалиден домейн</param>
         <param name="ReadOnly">Не можете да редактирате това поле</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--По подразбиране--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Не е приложимо**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Започване на диалог</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Резултати от търсенето</param>
         <param name="Recent">Наскоро преглеждани</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">Това изображение не е налично, защото: Нямате правата да го видите или е било премахнато от системата</param>
         <param name="weekly_export_folder">Други качени странични/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">Създаването беше неуспешно.</param>
         <param name="Common_success_message">Създаването беше успешно.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Заявка за намаляване на лиценз</param>
         <param name="pageheader">Моля, попълнете всички задължителни полета, за да изпратите заявката си за намаляване на лиценз. Това е най-бързият начин да бъде обработена заявката ви.  Моля, не подавайте множество заявки за един и същи лицензи, тъй като това може да предизвика ненужни забавяния.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">Можете да използвате „*“ като заместващ знак след други знаци, за да подобрите резултатите от търсенето си.</param>
         <param name="error_lookup_multiple_matches_ile">Намерени са множество елементи.&lt;br&gt;Щракнете върху иконата, за да конкретизирате търсенето.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Разширяване на списъка</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Разширен списък</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Избрани</param>
         <param name="assignLicensesDescription">Отметнете квадратчето до всеки от пакетите, които искате да присвоите на този потребител, след което щракнете върху „Присвояване“. До пакетите, за които не са налични необходимите лицензи или чието състояние е „изтекъл“ или „временно преустановен“, няма такива квадратчета.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Интернет магазин</param>
         <param name="4">Привет</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Потвърждение</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Информация</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>
