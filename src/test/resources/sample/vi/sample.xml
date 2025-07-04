@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
  SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Miền không hợp lệ</param>
         <param name="ReadOnly">Bạn không thể chỉnh sửa trường này</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--Mặc Định--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Không Áp Dụng Được**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Bắt Đầu Hội Thoại</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Kết Quả Tìm Kiếm</param>
         <param name="Recent">Được Xem Gần Đây</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">Hình ảnh này không sẵn có bởi vì: Bạn không có quyền xem nó, hoặc nó đã bị gỡ bỏ khỏi hệ thống</param>
         <param name="weekly_export_folder">Tài Sản Tải Lên Khác/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">Không Tạo Lập Được.</param>
         <param name="Common_success_message">Tạo Lập Thành Công.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Yêu Cầu Giảm Bớt Bản Quyền</param>
         <param name="pageheader">Vui lòng điền vào tất cả các trường bắt buộc để nộp yêu cầu giảm bớt bản quyền của bạn. Đây là cách nhanh nhất để yêu cầu của bạn được xử lý.  Vui lòng không nộp nhiều yêu cầu cho cùng bản quyền vì điều này có thể gây ra các trì hoãn không cần thiết.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">Bạn có thể sử dụng "*" làm một ký tự đại diện đứng sát các ký tự khác để nâng cao các kết quả Tìm kiếm của bạn.</param>
         <param name="error_lookup_multiple_matches_ile">Nhiều mục được Tìm thấy.&lt;br&gt;Nhấp biểu tượng để chỉnh sửa lại Tìm kiếm của bạn.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Mở Rộng Danh Sách</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Danh Sách Được Mở Rộng</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Các Lựa Chọn</param>
         <param name="assignLicensesDescription">Lựa chọn hộp chọn bên cạnh mỗi gói bạn muốn phân công cho người dùng này, và sau đó nhấp Phân Công. Hộp chọn sẽ thiếu nếu một gói sản phẩm không có đủ bản quyền sẵn có hoặc trạng thái của gói sản phẩm bị hết hạn hoặc tạm ngưng.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Webstore</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Xác Nhận</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Thông Tin</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

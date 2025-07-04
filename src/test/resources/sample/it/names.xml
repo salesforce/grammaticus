@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -66,7 +83,7 @@
         <value plural="n" article="the">L'attività</value>
         <value plural="y" article="the">Le attività</value>
     </noun>
-    
+
 
 
 
@@ -87,10 +104,10 @@
     <!-- Content -->
         <!-- // Content -->
 
-    
 
-    
-    
+
+
+
 <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f" startsWith="c">
         <value plural="n">Competenza</value>
         <value plural="y">Competenze</value>
@@ -100,26 +117,26 @@
          <value plural="y" article="the">Le competenze</value>
     </noun>
 
-    
-    
-        
-    
-    
-    
-    
 
-    
-    
-    
 
-            
-        
-          
-    
-    
-    
-        
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="m" startsWith="c">
         <value plural="n">Documento</value>
         <value plural="y">Documenti</value>
@@ -138,10 +155,10 @@
         <value plural="y" article="the">Gli eventi</value>
 	</noun>
 
-   
 
-        
-    
+
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="m" startsWith="c">
         <value plural="n">Preventivo</value>
         <value plural="n" article="a">Un preventivo</value>
@@ -151,17 +168,17 @@
         <value plural="y" article="a">Dei preventivi</value>
       </noun>
 
-      
-      
-    
-    
 
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value></noun> -->
 
-    
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="f" startsWith="c">
     <value plural="n">Domanda</value>
         <value plural="n" article="a">Una domanda</value>
@@ -170,11 +187,11 @@
         <value plural="y" article="the">Le domande</value>
         <value plural="y" article="a">Delle domande</value>
     </noun>
-    
-    
-    
-  
- 
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n">Lead</value>
         <value plural="y">Lead</value>
@@ -193,9 +210,9 @@
         <value plural="y" article="the">Le opportunità</value>
     </noun>
 
-    
-	
-   
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="m" startsWith="c">
         <value plural="n">Listino prezzi</value>
         <value plural="y">Listini prezzi</value>
@@ -210,9 +227,9 @@
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-     
 
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -229,8 +246,8 @@
     -->
 
 
-        
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
@@ -241,7 +258,7 @@
         <value plural="n">Nome account</value>
         <value plural="y">Nomi account</value>
     </noun>
-    
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Valuta prodotto</value>
     </noun>
@@ -249,5 +266,3 @@
 
      <import file="adjectives.xml"/>
 </names>
-
-

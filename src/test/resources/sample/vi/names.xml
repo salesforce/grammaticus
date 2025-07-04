@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -58,8 +75,8 @@
         <value plural="n">Hoạt Động</value>
         <value plural="y">Hoạt Động</value>
     </noun>
-        
-        
+
+
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
         <value plural="n">Giờ Làm Việc</value>
         <value plural="y">Nhiều Giờ Làm Việc</value>
@@ -82,73 +99,73 @@
         <value plural="y">Sự Kiện</value>
     </noun>
 
-<!--    
-   
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Cấp Độ Truy Cập Dự Báo</value></noun> -->
 
-           
-    
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n">Khách Hàng Tiềm Năng</value>
         <value plural="y">Khách Hàng Tiềm Năng</value>
     </noun>
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-            
-        
-            
-	    
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="n" startsWith="v">
         <value plural="n">Cơ Hội</value>
         <value plural="y">Cơ Hội</value>
     </noun>
 
-    
-    
+
+
           <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
         <value plural="n">Danh Sách Sản Phẩm</value>
         <value plural="y">Danh Sách Sản Phẩm</value>
     </noun>
 
-    
-    
+
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">Thắc Mắc</value>
         <value plural="y">Thắc Mắc</value>
     </noun>
-        
-        
-        
-        
-            
+
+
+
+
+
      <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">Báo Giá</value>
         <value plural="y">Báo Giá</value>
       </noun>
-                    
-        
+
+
  <!--   <noun name="Report" entity="Report" type="entity" alias="Reports" gender="n" startsWith="c">
         <value plural="n">Báo Cáo</value>
         <value plural="y">Báo Cáo</value>
     </noun> -->
-        
-        
-          
-    
 
-        
-    
+
+
+
+
+
+
 
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
@@ -166,28 +183,27 @@
     -->
 
 
-    
+
 	    <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
-    
+
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="n" startsWith="v" standardField="y">
         <value plural="n">Tên Tài Khoản</value>
         <value plural="y">Tên Tài Khoản </value>
     </noun>
-    
-    
+
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">Tiền Tệ của Sản Phẩm</value></noun>
 
-    
-    
-        
-    <import file="adjectives.xml"/>
-    
-</names>
 
+
+
+    <import file="adjectives.xml"/>
+
+</names>

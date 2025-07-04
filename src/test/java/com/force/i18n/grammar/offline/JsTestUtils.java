@@ -1,9 +1,20 @@
-/* 
- * Copyright (c) 2021, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.force.i18n.grammar.offline;
 
 import java.io.IOException;
@@ -24,8 +35,8 @@ import com.google.common.io.Resources;
 import com.ibm.icu.text.MessageFormat;
 
 /**
- * Tests for executing JS code inside the JVM. 
- * Not optimized for Graal. 
+ * Tests for executing JS code inside the JVM.
+ * Not optimized for Graal.
  * @author stamm
  *
  */
@@ -33,21 +44,21 @@ public class JsTestUtils {
     private static String GRAMMATICUS_JS;
 
     private static String getGrammaticusJs() throws IOException {
-    	if (GRAMMATICUS_JS == null) {	
-    		GRAMMATICUS_JS = Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), StandardCharsets.UTF_8); 		
+    	if (GRAMMATICUS_JS == null) {
+    		GRAMMATICUS_JS = Resources.toString(JsTestUtils.class.getResource("grammaticus.js"), StandardCharsets.UTF_8);
     	}
     	return GRAMMATICUS_JS;
     }
-    
+
     /**
      * @return a script engine with an appropriate global context for $Api so that we don't have to revaluate the functions constantly
-     * 
+     *
      * If you want to add stuff to bindings while running tests, just comment out the if and the closing brace
      */
     public static ScriptEngine getScriptEngine() {
         System.setProperty("polyglot.js.nashorn-compat","true");
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
-        
+
         Bindings engineBindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
         engineBindings.put("polyglot.js.allowAllAccess", true);
 
@@ -74,7 +85,7 @@ public class JsTestUtils {
         sb.append("var $G = new Grammaticus();\n");
         // Apply overrides to the instance
         set.getDictionary().getDeclension().writeJsonOverrides(sb, "$G");
-        
+
         Set<GrammaticalTerm> termsInUse = new HashSet<>();
         // Add in labels
         sb.append("$G.addLabels(");
@@ -86,16 +97,16 @@ public class JsTestUtils {
         //System.out.println(sb.toString());
         // Evaluate it.
         engine.eval(sb.toString());
-        
+
         if (nouns != null && nouns.length >= 0) {
         	sb = new StringBuilder();
         	sb.append("$G.addTerms(");
         	set.getDictionary().writeJsonTerms(sb, true, Arrays.asList(nouns).stream().map(a->a.getStandardNoun(language)).collect(Collectors.toList()));
         	sb.append(");");
             engine.eval(sb.toString());
-        	
+
         }
-        
+
         List<String> errors = new ArrayList<>();
         for (LabelReference label : labels) {
         	String javaStr = set.getString(label.getSection(), label.getKey(), nouns, label.getArguments());
@@ -111,11 +122,11 @@ public class JsTestUtils {
                 if (!javaStr.equals(jsStr)) {
                     errors.add("Mismatch for " + label + " when formatting should be \t" + javaStr + "\t but was \t" + jsStr);
                 }
-        	    
+
         	}
         }
         Assert.assertTrue(errors.stream().collect(Collectors.joining("\n")), errors.size() == 0);
 
     }
-    
+
 }

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -192,8 +209,8 @@
     <value plural="n" case="par">Toista</value>
     <value plural="y" case="par">Toisia</value>
 </adjective>
-        
-<adjective name="Any">        
+
+<adjective name="Any">
     <value plural="n">Any</value>
 </adjective>
 
@@ -346,7 +363,7 @@
     <value plural="n" case="par">Laskutettua</value>
     <value plural="y" case="par">Laskutettuja</value>
 </adjective>
-        
+
     <adjective name="Certain">
     <value plural="n" case="n">Tietty</value>
     <value plural="y" case="n">Tietyt</value>
@@ -446,7 +463,7 @@
     <value plural="n" case="par">Muunnettua</value>
     <value plural="y" case="par">Muunnettuja</value>
 </adjective>
-    
+
 <adjective name="Corresponding">
     <value plural="n" case="n">Vastaava</value>
     <value plural="y" case="n">Vastaavat</value>
@@ -472,7 +489,7 @@
     <value plural="y" case="par">Vastaavia</value>
 </adjective>
 
-<adjective name="Created">            
+<adjective name="Created">
     <value plural="n" case="n">Luotu</value>
     <value plural="y" case="n">Luodut</value>
     <value plural="n" case="g">Luodun</value>
@@ -674,7 +691,7 @@
      <value plural="y" case="tra">Vedoksiksi</value>
      <value plural="n" case="par">Vedosta</value>
      <value plural="y" case="par">Vedoksia</value>
- </adjective> 
+ </adjective>
 
 <adjective name="Duplicate">
     <value plural="n" case="n">Kaksinkertainen</value>
@@ -750,7 +767,7 @@
     <value plural="n" case="par">Muokattavaa</value>
     <value plural="y" case="par">Muokattavia</value>
 </adjective>
-        
+
     <adjective name="Empty">
     <value plural="n" case="n">Tyhjä</value>
     <value plural="y" case="n">Tyhjät</value>
@@ -1008,7 +1025,7 @@
         <value plural="y" case="tra">Tuoduiksi</value>
         <value plural="n" case="par">Tuotua</value>
         <value plural="y" case="par">Tuotuja</value>
-    </adjective>        
+    </adjective>
 
 <adjective name="Inactive">
     <value plural="n" case="n">Ei-aktiivinen</value>
@@ -1116,7 +1133,7 @@
     <adjective name="Key">
         <value plural="n">Key</value>
 </adjective>
-        
+
 <adjective name="Last">
     <value plural="n" case="n">Viimeinen</value>
     <value plural="y" case="n">Viimeiset</value>
@@ -1367,7 +1384,7 @@
     <value plural="y" case="par">Lisää</value>
 </adjective>
 
-	<adjective name="Multiple">           
+	<adjective name="Multiple">
 	<value plural="n" case="n">Usea</value>
     <value plural="y" case="n">Useat</value>
     <value plural="n" case="g">Usean</value>
@@ -1474,7 +1491,7 @@
     <value plural="n" case="par">Ei</value>
     <value plural="y" case="par">Ei</value>
 </adjective>
-    
+
     <adjective name="Non-primary">
         <value plural="n" case="n">Ei-ensisijainen</value>
         <value plural="y" case="n">Ei-ensisijaiset</value>
@@ -1500,8 +1517,8 @@
         <value plural="y" case="par">Ei-ensisijaisia</value>
     </adjective>
 
-    <adjective name="Num"> <!-- this is short for number for a space in the UI that is very narrow.  If no appropriate 
-lation exists - use number.  Num won opportunities is the most commonly used phrase --> 
+    <adjective name="Num"> <!-- this is short for number for a space in the UI that is very narrow.  If no appropriate
+lation exists - use number.  Num won opportunities is the most commonly used phrase -->
     <value plural="n" case="n"> Num</value>
     <value plural="y" case="n">Num</value>
     <value plural="n" case="g">Num</value>
@@ -1525,7 +1542,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
     <value plural="n" case="par">Num</value>
     <value plural="y" case="par">Num</value>
 </adjective>
-        
+
  <adjective name="One">
      <value plural="n" case="n">Yksi</value>
     <value plural="y" case="n">Yhdet</value>
@@ -1548,7 +1565,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
     <value plural="n" case="tra">Yhdeksi</value>
     <value plural="y" case="tra">Yksiksi</value>
     <value plural="n" case="par">Yhtä</value>
-    <value plural="y" case="par">Yksiä</value>	
+    <value plural="y" case="par">Yksiä</value>
 </adjective>
 
 <adjective name="Older">
@@ -1951,7 +1968,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
 	<value plural="n" case="par">Jonon omistamaa</value>
 	<value plural="y" case="par">Jonon omistamia</value>
 </adjective>
-        
+
 <adjective name="Recent">
     <value plural="n" case="n">Viimeisin</value>
     <value plural="y" case="n">Viimeisimmät</value>
@@ -2360,7 +2377,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
     <value plural="n" case="par">Sosiaalista</value>
     <value plural="y" case="par">Sosiaalisia</value>
 </adjective>
-        
+
 <adjective name="Source">
     <value plural="n">Lähde</value>
     <value plural="y" case="n">Lähteenä</value>
@@ -2664,7 +2681,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
     <value plural="y" case="tra">Täksi</value>
     <value plural="y" case="par">Tätä</value>
 </adjective>
-        
+
     <adjective name="Today">
         <value plural="n">Today</value>
 </adjective>
@@ -3118,7 +3135,7 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
     <value plural="n" case="par">Sinun</value>
     <value plural="y" case="par">Sinun</value>
 </adjective>
-        
+
 <adjective name="Zero">
     <value plural="n" case="n">Nolla</value>
     <value plural="y" case="n">Nollat</value>
@@ -3238,6 +3255,5 @@ lation exists - use number.  Num won opportunities is the most commonly used phr
         <value plural="y" case="tra">Käypiksi</value>
         <value plural="n" case="par">Käypää</value>
         <value plural="y" case="par">Käypiä</value>
-    </adjective>    
+    </adjective>
 </adjectives>
-

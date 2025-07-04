@@ -1,8 +1,18 @@
-/* 
- * Copyright (c) 2017, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.force.i18n.grammar.parser;
@@ -343,8 +353,8 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
     			+ "<adjective name=\"Euro\"><value endsWith=\"c\">으로</value><value endsWith=\"v\">로</value><value endsWith=\"s\">로</value></adjective>";
 
     	String KO_NOUN_FORMAT= "<noun name=\"Table\" entity=\"Table\" type=\"entity\" alias=\"Tables\" gender=\"f\"><value plural=\"n\">%s</value></noun>";
-    
-    
+
+
     	// Note
         assertValue(KOREAN, "<Table/><eul/>", String.format(KO_NOUN_FORMAT, "작업") + KO_PARTICLES, "작업을");  // Jag-eob: Ends with consonant
         assertValue(KOREAN, "<Table/><euro/>", String.format(KO_NOUN_FORMAT, "작업") + KO_PARTICLES, "작업으로");  // Jag-eob: Ends with consonant
@@ -356,9 +366,9 @@ public class AutoDerivingDeclensionTest extends BaseGrammaticalLabelTest {
         // Skill
         assertValue(KOREAN, "<Table/><eul/>", String.format(KO_NOUN_FORMAT, "기술") + KO_PARTICLES, "기술을");  // gisul: Ends with flap
         assertValue(KOREAN, "<Table/><euro/>", String.format(KO_NOUN_FORMAT, "기술") + KO_PARTICLES, "기술로");  // Gisul: Ends with flap
-        
+
     }
-    
+
     /*
     // This is the above test without the unicode conversion for easy readibility
     private final static String BG_THIN = "<adjective name=\"Thin\">\r\n" +

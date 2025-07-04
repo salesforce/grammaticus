@@ -1,576 +1,1163 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
-<adjectives>
-    <!--=====================================================================
-      Modifier - Adjectives
-
-      <adjective> tag has no attributes.
-      <Values>:
-       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
-       plural: (y)es | (n)o                                  - default is n
-
-       Note: The default value of attributes are neutor/singular.
-           <adjective name="">
-              <value>x</value>
-    </adjective>
-
-       This element  has only singular form.
-    ======================================================================-->
-
-
-    <adjective name="Accessed">
-        <value plural="n">已访问</value>
-    </adjective>
-
-    <adjective name="Active">
-      <value plural="n">已启用</value>
-    </adjective>
-
-    <adjective name="Additional">
-        <value plural="n">其他</value>
-    </adjective>
-
-    <adjective name="All">
-      <value plural="n">全部</value>
-    </adjective>
-
-    <adjective name="All_Day">
-        <value plural="n">整天</value>
-    </adjective>
-
-    <adjective name="Alternative">
-        <value plural="n">替代</value>
-    </adjective>
-
-    <adjective name="Another">
-        <value plural="n">另一</value>
-    </adjective>
-        
-    <adjective name="Any">
-         <value plural="n">任何</value>
-	</adjective>
-
-    <adjective name="Archived">
-      <value plural="n">已归档</value>
-    </adjective>
-
-    <adjective name="Assigned">
-        <value plural="n">已分配</value>
-    </adjective>
-
-    <adjective name="Associated">
-        <value plural="n">关联的</value>
-    </adjective>
-
-    <adjective name="Attached">
-        <value plural="n">Attached</value>
-    </adjective>
-
-    <adjective name="Available">
-        <value plural="n">Available</value>
-    </adjective>
-
-    <adjective name="Billed">
-        <value plural="n">已开单</value>
-    </adjective>
-        
-    <adjective name="Certain">
-        <value plural="n">某些</value>
-    </adjective>
-
-    <adjective name="Closed">
-  <value plural="n">已结束</value>
-    </adjective>
-
-    <adjective name="Completed">
-  <value plural="n">已完成</value>
-    </adjective>
-
-    <adjective name="Converted">
-  <value plural="n">已转换</value>
-    </adjective>
-    
-    <adjective name="Corresponding">
-        <value plural="n">相应的</value>
-    </adjective>
-
-    <adjective name="Created">
-        <value plural="n">已创建</value>
-    </adjective>
-
-    <adjective name="Current">
-  <value plural="n">当前</value>
-    </adjective>
-
-    <adjective name="Custom">
-  <value plural="n">自定义</value>
-    </adjective>
-
-    <adjective name="Default">
-  <value plural="n">默认</value>
-    </adjective>
-
-    <adjective name="Delegated">
-        <value plural="n">已委派</value>
-    </adjective>
-
-    <adjective name="Deleted">
-        <value plural="n">已删除的</value>
-    </adjective>
-    
-    <adjective name="Designated">
-        <value plural="n">指定的</value>
-    </adjective>
-
-    <adjective name="Different">
-        <value plural="n">Different</value>
-    </adjective>
-
-<adjective name="Draft">
-        <value plural="n">草稿</value>
-    </adjective>
-
-    <adjective name="Duplicate">
-  <value plural="n">重复</value>
-    </adjective>
-
-    <adjective name="Each">
-        <value plural="n">每个</value>
-    </adjective>
-
-    <adjective name="Editable">
-  <value plural="n">可编辑</value>
-    </adjective>
-        
-<adjective name="Empty">
-        <value plural="n">空</value>
-    </adjective>
-
-    <adjective name="Every">
-        <value plural="n">每一</value>
-    </adjective>
-
-    <adjective name="Existing">
-  <value plural="n">现有</value>
-    </adjective>
-
-    <adjective name="Expected">
-        <value plural="n">预期</value>
-    </adjective>
-
-    <adjective name="First">
-       <value plural="n">第一页</value>
-    </adjective>
-
-	<adjective name="Following">
-        <value plural="n">以下</value>
-    </adjective>
-
-    <adjective name="Future">
-  <value plural="n">第一页</value>
-    </adjective>
-
-    <adjective name="Helpful">
-  <value plural="n">有用</value>
-    </adjective>
-
-    <adjective name="Historical">
-        <value plural="n">历史的</value>
-    </adjective>
-
-    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
-    <adjective name="Hot">
-        <value plural="n">Hot</value>
-    </adjective>
-
-    <adjective name="Ignored">
-        <value plural="n">Ignored</value>
-    </adjective>
-
-    <adjective name="Imported">
-        <value plural="n">导入的</value>
-    </adjective>
-
-    <adjective name="Inactive">
-  <value plural="n">未启用</value>
-    </adjective>
-
-	<adjective name="Individual">
-        <value plural="n">个别</value>
-    </adjective>
-
-    <adjective name="Invalid">
-        <value plural="n">无效</value>
-    </adjective>
-
-<!--=====================================================================
-    "Key" may no longer be used in the app
-    ======================================================================-->
-    <adjective name="Its">
-         <value plural="n">其</value>
-	</adjective>
-
-    <adjective name="Key">
-        <value plural="n">主要</value>
-    </adjective>
-        
-    <adjective name="Last">
-        <value plural="n">上一个</value>
-    </adjective>
-
-    <adjective name="Linked">
-       <value plural="n">已链接</value>
-    </adjective>
-
-    <adjective name="Loaded">
-        <value plural="n">已加载</value>
-    </adjective>
-
-    <adjective name="Locked">
-        <value plural="n">已锁定</value>
-    </adjective>
-
-    <adjective name="Managing">
-        <value plural="n">管理的</value>
-    </adjective>
-
-    <adjective name="Managed">
-        <value plural="n">受管理</value>
-    </adjective>
-
-    <adjective name="Master">
-        <value plural="n">主</value>
-    </adjective>
-
-	<adjective name="Matching">
-		<value plural="n">匹配</value>
-    </adjective>
-
-    <adjective name="Merged">
-        <value plural="n">已合并</value>
-    </adjective>
-
-<adjective name="More">
-        <value plural="n">更多</value>
-    </adjective> 
-
-	<adjective name="Multiple">
-        <value plural="n">多个</value>
-    </adjective>
-
-    <adjective name="My">
-  <value plural="n">我的</value>
-    </adjective>
-
-    <adjective name="Neglected">
-        <value plural="n">已忽视</value>
-    </adjective>
-
-    <adjective name="New">
-  <value plural="n">新建</value>
-    </adjective>
-
-    <adjective name="No">
-  <value plural="n">否</value>
-    </adjective>
-    
-    <adjective name="Non-primary">
-        <value plural="n">非主要</value>
-    </adjective>
-
-    <adjective name="Num"> <!--number-->
-        <value plural="n">编号</value>
-    </adjective>
-        
-<adjective name="One">
-         <value plural="n">一个</value>
-	</adjective>
-
-<adjective name="Older">
-        <value plural="n">较早</value>
-    </adjective>
-
-    <adjective name="Open">
-  <value plural="n">未处理</value>
-    </adjective>
-
-<adjective name="Original">
-        <value plural="n">原始</value>
-    </adjective>
-
-<adjective name="Other">
-        <value plural="n">其他</value>
-    </adjective>
-
-    <adjective name="Overdue">
-  <value plural="n">逾期</value>
-    </adjective>
-
-    <adjective name="Overridden">
-  <value plural="n">被优先取代</value>
-    </adjective>
-
-<adjective name="Owning">
-        <value plural="n">拥有的</value>
-    </adjective>
-
-    <adjective name="Personal">
-  <value plural="n">个人</value>
-    </adjective>
-
-    <adjective name="Popular">
-  <value plural="n">流行</value>
-    </adjective>
-
-     <adjective name="Predefined">
-        <value plural="n">预定义</value>
-    </adjective>
-
-<adjective name="Proposed">
-        <value plural="n">建议的</value>
-    </adjective>
-
-	<adjective name="Primary">
-		<value plural="n">主要</value>
-    </adjective>
-
-    <adjective name="Private">
-  <value plural="n">专用</value>
-    </adjective>
-
-    <adjective name="Public">
-       <value plural="n">公用</value>
-    </adjective>
-
-<adjective name="Published">
-        <value plural="n">已发布</value>
-    </adjective>
-
-    <adjective name="Queue_Owned">
-       <value plural="n">队列所有</value>
-    </adjective>
-        
-    <adjective name="Recent">
-        <value plural="n">最近</value>
-    </adjective>
-
-    <adjective name="Recently">
-        <value plural="n">最近</value>
-    </adjective>
-
-    <adjective name="Recurring">
-        <value plural="n">重复性</value>
-    </adjective>
-
-
-    <adjective name="Remaining">
-        <value plural="n">剩余</value>
-    </adjective>
-
-<adjective name="Rejected">
-        <value plural="n">已拒绝</value>
-    </adjective>
-
-    <adjective name="Related">
-		<value plural="n">相关</value>
-    </adjective>
-
-    <adjective name="Relevant">
-        <value plural="n">相关的</value>
-    </adjective>
-
-<adjective name="Resulting">
-        <value plural="n">产生的</value>
-    </adjective>
-
-    <adjective name="Reviewed">
-		<value plural="n">已审核</value>
-    </adjective>
-
-    <adjective name="Same">
-        <value plural="n">Same</value>
-    </adjective>
-
-    <adjective name="Sample">	 
-       <value plural="n">示例</value>
-    </adjective>
-
-    <adjective name="Scheduled">
-        <value plural="n">已计划</value>
-    </adjective>
-
-	<adjective name="Second">
-		<value plural="n">第二</value>
-    </adjective>
-
-    <adjective name="Selected">
-		<value plural="n">已选取</value>
-    </adjective>
-
-<adjective name="Shared">
-        <value plural="n">已共享</value>
-    </adjective>
-
-	<adjective name="Similar">
-        <value plural="n">类似</value>
-    </adjective>
-
-    <adjective name="Single">
-        <value plural="n">单个</value>
-    </adjective>
-
-    <adjective name="Social">
-        <value plural="n">社交</value>
-    </adjective>
-        
-    <adjective name="Source">	
-        <value plural="n">源</value>
-    </adjective>
-
-    <adjective name="Specified">
-        <value plural="n">已指定</value>
-    </adjective>
-
-    <adjective name="Stale">
-        <value plural="n">过时</value>
-    </adjective>
-
-    <adjective name="Standard">
-		<value plural="n">标准</value>
-    </adjective>
-
-    <adjective name="Stuck">
-        <value plural="n">停滞</value>
-    </adjective>
-
-    <adjective name="Suggested">
-        <value plural="n">建议的</value>
-    </adjective>
-
-	    <adjective name="Supplementary">
-        <value plural="n">补充</value>
-    </adjective>
-
-    <adjective name="Synced">
-        <value plural="n">同步的</value>
-    </adjective>
-
-    <adjective name="That">
-        <value plural="n">那个</value>
-    </adjective>
-
-    <adjective name="Their">
-        <value plural="n">它们的</value>
-    </adjective>
-
-    <adjective name="These">
-        <value plural="n">这些</value>
-    </adjective>
-
-    <adjective name="Those">
-        <value plural="n">这些</value>
-    </adjective>
-
-    <adjective name="This">
-        <value plural="n">这个</value>
-    </adjective>
-        
-    <adjective name="Today">
-        <value plural="n">Today</value>
-    </adjective>
-
-	<adjective name="Top">
-		<value plural="n">顶部</value>
-    </adjective>
-
-    <adjective name="Total">
-  <value plural="n">总额</value>
-    </adjective>
-
-    <adjective name="Translated">
-        <value plural="n">翻译</value>
-    </adjective>
-
-    <adjective name="Transferable">
-  <value plural="n">可转移</value>
-    </adjective>
-
-    <adjective name="Unconverted">
-        <value plural="n">未转换</value>
-    </adjective>
-
-    <adjective name="Unread">
-	<value plural="n">未读</value>
-    </adjective>
-
-    <adjective name="Unreviewed">
-        <value plural="n">未查看</value>
-    </adjective>
-
-    <adjective name="Unresolved">
-	<value plural="n">未解析</value>
-    </adjective>
-
-    <adjective name="Unused">
-        <value plural="n">未使用</value>
-    </adjective>
-
-    <adjective name="Unfiled">
-        <value plural="n">未归档</value>
-    </adjective>
-
-    <adjective name="Unshared">
-        <value plural="n">已取消共享</value>
-    </adjective>
-
-    <adjective name="Updated">
-        <value plural="n">已更新</value>
-    </adjective>
-
-    <adjective name="Useful">
-        <value plural="n">有用</value>
-    </adjective>
-
-    <adjective name="User_Owned">
-        <value plural="n">用户所有</value>
-    </adjective>
-
-    <adjective name="Viewed">
-        <value plural="n">已查看</value>
-    </adjective>
-
-    <adjective name="Visible">
-        <value plural="n">可见</value>
-    </adjective>
-
-    <adjective name="Won">
-        <value plural="n">赢得客户</value>
-    </adjective>
-
-    <adjective name="Your">
-        <value plural="n">您的</value>
-    </adjective>
-        
-    <adjective name="Zero">
-        <value plural="n">零 </value>
-    </adjective>
-    
-    <adjective name="Marked">
-	   <value plural="n">标记的</value>
-    </adjective>
-    
-    <adjective name="Posted">
-        <value plural="n">已张贴</value>
-    </adjective>
-    
-    <adjective name="Supported">
-	    <value plural="n">支持的</value>
-	</adjective>
-	
-	<adjective name="Valid">
-        <value plural="n">有效</value>
-    </adjective>
-
-</adjectives>
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<!DOCTYPE adjectives SYSTEM "adjectives.dtd">
+
+<adjectives>
+
+    <!--=====================================================================
+
+      Modifier - Adjectives
+
+
+
+      <adjective> tag has no attributes.
+
+      <Values>:
+
+       gender: (n)eutor | (f)eminine | (m)asculine | (e)utor - default is n
+
+       plural: (y)es | (n)o                                  - default is n
+
+
+
+       Note: The default value of attributes are neutor/singular.
+
+           <adjective name="">
+
+              <value>x</value>
+
+    </adjective>
+
+
+
+       This element  has only singular form.
+
+    ======================================================================-->
+
+
+
+
+
+    <adjective name="Accessed">
+
+        <value plural="n">已访问</value>
+
+    </adjective>
+
+
+
+    <adjective name="Active">
+
+      <value plural="n">已启用</value>
+
+    </adjective>
+
+
+
+    <adjective name="Additional">
+
+        <value plural="n">其他</value>
+
+    </adjective>
+
+
+
+    <adjective name="All">
+
+      <value plural="n">全部</value>
+
+    </adjective>
+
+
+
+    <adjective name="All_Day">
+
+        <value plural="n">整天</value>
+
+    </adjective>
+
+
+
+    <adjective name="Alternative">
+
+        <value plural="n">替代</value>
+
+    </adjective>
+
+
+
+    <adjective name="Another">
+
+        <value plural="n">另一</value>
+
+    </adjective>
+
+
+
+    <adjective name="Any">
+
+         <value plural="n">任何</value>
+
+	</adjective>
+
+
+
+    <adjective name="Archived">
+
+      <value plural="n">已归档</value>
+
+    </adjective>
+
+
+
+    <adjective name="Assigned">
+
+        <value plural="n">已分配</value>
+
+    </adjective>
+
+
+
+    <adjective name="Associated">
+
+        <value plural="n">关联的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Attached">
+
+        <value plural="n">Attached</value>
+
+    </adjective>
+
+
+
+    <adjective name="Available">
+
+        <value plural="n">Available</value>
+
+    </adjective>
+
+
+
+    <adjective name="Billed">
+
+        <value plural="n">已开单</value>
+
+    </adjective>
+
+
+
+    <adjective name="Certain">
+
+        <value plural="n">某些</value>
+
+    </adjective>
+
+
+
+    <adjective name="Closed">
+
+  <value plural="n">已结束</value>
+
+    </adjective>
+
+
+
+    <adjective name="Completed">
+
+  <value plural="n">已完成</value>
+
+    </adjective>
+
+
+
+    <adjective name="Converted">
+
+  <value plural="n">已转换</value>
+
+    </adjective>
+
+
+
+    <adjective name="Corresponding">
+
+        <value plural="n">相应的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Created">
+
+        <value plural="n">已创建</value>
+
+    </adjective>
+
+
+
+    <adjective name="Current">
+
+  <value plural="n">当前</value>
+
+    </adjective>
+
+
+
+    <adjective name="Custom">
+
+  <value plural="n">自定义</value>
+
+    </adjective>
+
+
+
+    <adjective name="Default">
+
+  <value plural="n">默认</value>
+
+    </adjective>
+
+
+
+    <adjective name="Delegated">
+
+        <value plural="n">已委派</value>
+
+    </adjective>
+
+
+
+    <adjective name="Deleted">
+
+        <value plural="n">已删除的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Designated">
+
+        <value plural="n">指定的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Different">
+
+        <value plural="n">Different</value>
+
+    </adjective>
+
+
+
+<adjective name="Draft">
+
+        <value plural="n">草稿</value>
+
+    </adjective>
+
+
+
+    <adjective name="Duplicate">
+
+  <value plural="n">重复</value>
+
+    </adjective>
+
+
+
+    <adjective name="Each">
+
+        <value plural="n">每个</value>
+
+    </adjective>
+
+
+
+    <adjective name="Editable">
+
+  <value plural="n">可编辑</value>
+
+    </adjective>
+
+
+
+<adjective name="Empty">
+
+        <value plural="n">空</value>
+
+    </adjective>
+
+
+
+    <adjective name="Every">
+
+        <value plural="n">每一</value>
+
+    </adjective>
+
+
+
+    <adjective name="Existing">
+
+  <value plural="n">现有</value>
+
+    </adjective>
+
+
+
+    <adjective name="Expected">
+
+        <value plural="n">预期</value>
+
+    </adjective>
+
+
+
+    <adjective name="First">
+
+       <value plural="n">第一页</value>
+
+    </adjective>
+
+
+
+	<adjective name="Following">
+
+        <value plural="n">以下</value>
+
+    </adjective>
+
+
+
+    <adjective name="Future">
+
+  <value plural="n">第一页</value>
+
+    </adjective>
+
+
+
+    <adjective name="Helpful">
+
+  <value plural="n">有用</value>
+
+    </adjective>
+
+
+
+    <adjective name="Historical">
+
+        <value plural="n">历史的</value>
+
+    </adjective>
+
+
+
+    <!-- Hot meaning Popular, like Hot Ideas / Popular Ideas -->
+
+    <adjective name="Hot">
+
+        <value plural="n">Hot</value>
+
+    </adjective>
+
+
+
+    <adjective name="Ignored">
+
+        <value plural="n">Ignored</value>
+
+    </adjective>
+
+
+
+    <adjective name="Imported">
+
+        <value plural="n">导入的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Inactive">
+
+  <value plural="n">未启用</value>
+
+    </adjective>
+
+
+
+	<adjective name="Individual">
+
+        <value plural="n">个别</value>
+
+    </adjective>
+
+
+
+    <adjective name="Invalid">
+
+        <value plural="n">无效</value>
+
+    </adjective>
+
+
+
+<!--=====================================================================
+
+    "Key" may no longer be used in the app
+
+    ======================================================================-->
+
+    <adjective name="Its">
+
+         <value plural="n">其</value>
+
+	</adjective>
+
+
+
+    <adjective name="Key">
+
+        <value plural="n">主要</value>
+
+    </adjective>
+
+
+
+    <adjective name="Last">
+
+        <value plural="n">上一个</value>
+
+    </adjective>
+
+
+
+    <adjective name="Linked">
+
+       <value plural="n">已链接</value>
+
+    </adjective>
+
+
+
+    <adjective name="Loaded">
+
+        <value plural="n">已加载</value>
+
+    </adjective>
+
+
+
+    <adjective name="Locked">
+
+        <value plural="n">已锁定</value>
+
+    </adjective>
+
+
+
+    <adjective name="Managing">
+
+        <value plural="n">管理的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Managed">
+
+        <value plural="n">受管理</value>
+
+    </adjective>
+
+
+
+    <adjective name="Master">
+
+        <value plural="n">主</value>
+
+    </adjective>
+
+
+
+	<adjective name="Matching">
+
+		<value plural="n">匹配</value>
+
+    </adjective>
+
+
+
+    <adjective name="Merged">
+
+        <value plural="n">已合并</value>
+
+    </adjective>
+
+
+
+<adjective name="More">
+
+        <value plural="n">更多</value>
+
+    </adjective>
+
+
+
+	<adjective name="Multiple">
+
+        <value plural="n">多个</value>
+
+    </adjective>
+
+
+
+    <adjective name="My">
+
+  <value plural="n">我的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Neglected">
+
+        <value plural="n">已忽视</value>
+
+    </adjective>
+
+
+
+    <adjective name="New">
+
+  <value plural="n">新建</value>
+
+    </adjective>
+
+
+
+    <adjective name="No">
+
+  <value plural="n">否</value>
+
+    </adjective>
+
+
+
+    <adjective name="Non-primary">
+
+        <value plural="n">非主要</value>
+
+    </adjective>
+
+
+
+    <adjective name="Num"> <!--number-->
+
+        <value plural="n">编号</value>
+
+    </adjective>
+
+
+
+<adjective name="One">
+
+         <value plural="n">一个</value>
+
+	</adjective>
+
+
+
+<adjective name="Older">
+
+        <value plural="n">较早</value>
+
+    </adjective>
+
+
+
+    <adjective name="Open">
+
+  <value plural="n">未处理</value>
+
+    </adjective>
+
+
+
+<adjective name="Original">
+
+        <value plural="n">原始</value>
+
+    </adjective>
+
+
+
+<adjective name="Other">
+
+        <value plural="n">其他</value>
+
+    </adjective>
+
+
+
+    <adjective name="Overdue">
+
+  <value plural="n">逾期</value>
+
+    </adjective>
+
+
+
+    <adjective name="Overridden">
+
+  <value plural="n">被优先取代</value>
+
+    </adjective>
+
+
+
+<adjective name="Owning">
+
+        <value plural="n">拥有的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Personal">
+
+  <value plural="n">个人</value>
+
+    </adjective>
+
+
+
+    <adjective name="Popular">
+
+  <value plural="n">流行</value>
+
+    </adjective>
+
+
+
+     <adjective name="Predefined">
+
+        <value plural="n">预定义</value>
+
+    </adjective>
+
+
+
+<adjective name="Proposed">
+
+        <value plural="n">建议的</value>
+
+    </adjective>
+
+
+
+	<adjective name="Primary">
+
+		<value plural="n">主要</value>
+
+    </adjective>
+
+
+
+    <adjective name="Private">
+
+  <value plural="n">专用</value>
+
+    </adjective>
+
+
+
+    <adjective name="Public">
+
+       <value plural="n">公用</value>
+
+    </adjective>
+
+
+
+<adjective name="Published">
+
+        <value plural="n">已发布</value>
+
+    </adjective>
+
+
+
+    <adjective name="Queue_Owned">
+
+       <value plural="n">队列所有</value>
+
+    </adjective>
+
+
+
+    <adjective name="Recent">
+
+        <value plural="n">最近</value>
+
+    </adjective>
+
+
+
+    <adjective name="Recently">
+
+        <value plural="n">最近</value>
+
+    </adjective>
+
+
+
+    <adjective name="Recurring">
+
+        <value plural="n">重复性</value>
+
+    </adjective>
+
+
+
+
+
+    <adjective name="Remaining">
+
+        <value plural="n">剩余</value>
+
+    </adjective>
+
+
+
+<adjective name="Rejected">
+
+        <value plural="n">已拒绝</value>
+
+    </adjective>
+
+
+
+    <adjective name="Related">
+
+		<value plural="n">相关</value>
+
+    </adjective>
+
+
+
+    <adjective name="Relevant">
+
+        <value plural="n">相关的</value>
+
+    </adjective>
+
+
+
+<adjective name="Resulting">
+
+        <value plural="n">产生的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Reviewed">
+
+		<value plural="n">已审核</value>
+
+    </adjective>
+
+
+
+    <adjective name="Same">
+
+        <value plural="n">Same</value>
+
+    </adjective>
+
+
+
+    <adjective name="Sample">
+
+       <value plural="n">示例</value>
+
+    </adjective>
+
+
+
+    <adjective name="Scheduled">
+
+        <value plural="n">已计划</value>
+
+    </adjective>
+
+
+
+	<adjective name="Second">
+
+		<value plural="n">第二</value>
+
+    </adjective>
+
+
+
+    <adjective name="Selected">
+
+		<value plural="n">已选取</value>
+
+    </adjective>
+
+
+
+<adjective name="Shared">
+
+        <value plural="n">已共享</value>
+
+    </adjective>
+
+
+
+	<adjective name="Similar">
+
+        <value plural="n">类似</value>
+
+    </adjective>
+
+
+
+    <adjective name="Single">
+
+        <value plural="n">单个</value>
+
+    </adjective>
+
+
+
+    <adjective name="Social">
+
+        <value plural="n">社交</value>
+
+    </adjective>
+
+
+
+    <adjective name="Source">
+
+        <value plural="n">源</value>
+
+    </adjective>
+
+
+
+    <adjective name="Specified">
+
+        <value plural="n">已指定</value>
+
+    </adjective>
+
+
+
+    <adjective name="Stale">
+
+        <value plural="n">过时</value>
+
+    </adjective>
+
+
+
+    <adjective name="Standard">
+
+		<value plural="n">标准</value>
+
+    </adjective>
+
+
+
+    <adjective name="Stuck">
+
+        <value plural="n">停滞</value>
+
+    </adjective>
+
+
+
+    <adjective name="Suggested">
+
+        <value plural="n">建议的</value>
+
+    </adjective>
+
+
+
+	    <adjective name="Supplementary">
+
+        <value plural="n">补充</value>
+
+    </adjective>
+
+
+
+    <adjective name="Synced">
+
+        <value plural="n">同步的</value>
+
+    </adjective>
+
+
+
+    <adjective name="That">
+
+        <value plural="n">那个</value>
+
+    </adjective>
+
+
+
+    <adjective name="Their">
+
+        <value plural="n">它们的</value>
+
+    </adjective>
+
+
+
+    <adjective name="These">
+
+        <value plural="n">这些</value>
+
+    </adjective>
+
+
+
+    <adjective name="Those">
+
+        <value plural="n">这些</value>
+
+    </adjective>
+
+
+
+    <adjective name="This">
+
+        <value plural="n">这个</value>
+
+    </adjective>
+
+
+
+    <adjective name="Today">
+
+        <value plural="n">Today</value>
+
+    </adjective>
+
+
+
+	<adjective name="Top">
+
+		<value plural="n">顶部</value>
+
+    </adjective>
+
+
+
+    <adjective name="Total">
+
+  <value plural="n">总额</value>
+
+    </adjective>
+
+
+
+    <adjective name="Translated">
+
+        <value plural="n">翻译</value>
+
+    </adjective>
+
+
+
+    <adjective name="Transferable">
+
+  <value plural="n">可转移</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unconverted">
+
+        <value plural="n">未转换</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unread">
+
+	<value plural="n">未读</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unreviewed">
+
+        <value plural="n">未查看</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unresolved">
+
+	<value plural="n">未解析</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unused">
+
+        <value plural="n">未使用</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unfiled">
+
+        <value plural="n">未归档</value>
+
+    </adjective>
+
+
+
+    <adjective name="Unshared">
+
+        <value plural="n">已取消共享</value>
+
+    </adjective>
+
+
+
+    <adjective name="Updated">
+
+        <value plural="n">已更新</value>
+
+    </adjective>
+
+
+
+    <adjective name="Useful">
+
+        <value plural="n">有用</value>
+
+    </adjective>
+
+
+
+    <adjective name="User_Owned">
+
+        <value plural="n">用户所有</value>
+
+    </adjective>
+
+
+
+    <adjective name="Viewed">
+
+        <value plural="n">已查看</value>
+
+    </adjective>
+
+
+
+    <adjective name="Visible">
+
+        <value plural="n">可见</value>
+
+    </adjective>
+
+
+
+    <adjective name="Won">
+
+        <value plural="n">赢得客户</value>
+
+    </adjective>
+
+
+
+    <adjective name="Your">
+
+        <value plural="n">您的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Zero">
+
+        <value plural="n">零 </value>
+
+    </adjective>
+
+
+
+    <adjective name="Marked">
+
+	   <value plural="n">标记的</value>
+
+    </adjective>
+
+
+
+    <adjective name="Posted">
+
+        <value plural="n">已张贴</value>
+
+    </adjective>
+
+
+
+    <adjective name="Supported">
+
+	    <value plural="n">支持的</value>
+
+	</adjective>
+
+
+
+	<adjective name="Valid">
+
+        <value plural="n">有效</value>
+
+    </adjective>
+
+
+
+</adjectives>

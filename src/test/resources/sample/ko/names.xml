@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -58,9 +75,9 @@
         <value plural="n">활동</value>
         <value plural="y">활동</value>
     </noun>
-    
 
-        
+
+
 
 
 <!--    <noun name="BusinessHours" entity="BusinessHours" type="entity" alias="BusinessHourses" gender="n" startsWith="c">
@@ -75,31 +92,31 @@
     <!-- Content -->
         <!-- // Content -->
 
-        
-    
-        
-    
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">기술</value>
         <value plural="y">기술</value>
     </noun>
 
-    
-        
-        
-    
-      
-        
-    
-    
-    
-    
-    
-    
-                        
-    
-    
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Document" entity="document" type="entity" alias="documents" gender="n" startsWith="c">
         <value plural="n">문서</value>
         <value plural="y">문서</value>
@@ -110,36 +127,36 @@
         <value plural="y">행사</value>
     </noun>
 
-     
-    
-        
-    
+
+
+
+
       <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">견적</value>
         <value plural="y">견적</value>
       </noun>
 
-      
-      
-    
-    
 
-<!--    
-   
+
+
+
+
+<!--
+
     <noun name="Forecast_Access_Level" entity="Forecast" gender="n" startsWith="c" standardField="n">
         <value plural="n">Forecast Access Level</value>
     </noun> -->
 
-    
+
         <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">질문</value>
         <value plural="y">질문</value>
     </noun>
-    
-    
-        
-    
-    
+
+
+
+
+
     <noun name="Lead" entity="lead" type="entity" alias="leads" gender="n" startsWith="c">
         <value plural="n">리드</value>
         <value plural="y">리드</value>
@@ -150,15 +167,15 @@
         <value plural="y">기회</value>
     </noun>
 
-    
-	
-    
+
+
+
     <noun name="Pricebook" entity="pricebook" type="entity" alias="pricebooks" gender="n" startsWith="c">
         <value plural="n">가격 목록</value>
         <value plural="y">가격 목록</value>
     </noun>
 
-    
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -175,9 +192,9 @@
     -->
 
 
-        
-        
-  
+
+
+
 
 
     <!--==================================================================
@@ -185,17 +202,16 @@
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
+
     <noun name="Account_Name" alias="account_Names" entity="account" type="field" gender="n" startsWith="v" standardField="y">
         <value plural="n">계정 이름</value>
         <value plural="y">계정 이름</value>
     </noun>
-    
+
      <noun name="Product_Currency" entity="product" gender="n" startsWith="c" standardField="y">
         <value plural="n">제품 통화</value>
     </noun>
 
-    
+
      <import file="adjectives.xml"/>
 </names>
-

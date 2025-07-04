@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Dominio no válido</param>
         <param name="ReadOnly">No puede modificar este campo</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--Predeterminado--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**No corresponde**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Inicio del diálogo</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Resultados de búsqueda</param>
         <param name="Recent">Vistos recientemente</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">Esta imagen no está disponible porque: No tiene privilegios para verla o se eliminó del sistema</param>
         <param name="weekly_export_folder">Otra documentación asociada cargada</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">La creación ha fallado.</param>
         <param name="Common_success_message">Creación correcta.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Solicitar una reducción de licencia</param>
         <param name="pageheader">Complete todos los campos requeridos para enviar su solicitud de reducción de licencia. Se trata de la manera más rápida de procesar su solicitud.  No envíe varias solicitudes para las mismas licencias ya que podría ocasionar demoras innecesarias.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">Puede usar "*" como comodín junto a otros caracteres para mejorar los resultados de búsqueda.</param>
         <param name="error_lookup_multiple_matches_ile">Se han encontrado varios elementos.&lt;br&gt;Haga clic en el icono para redefinir la búsqueda.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Ampliar lista</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Lista ampliada</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Selecciones</param>
         <param name="assignLicensesDescription">Seleccione la casilla de selección junto a cada paquete que desee asignar a este usuario y, a continuación, haga clic en Asignar. La casilla de selección no aparece si un paquete no tiene suficientes licencias disponibles o si el paquete está caducado o suspendido.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Tienda Web</param>
         <param name="4">Saludos</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Confirmación</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Información</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

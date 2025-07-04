@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -36,8 +53,8 @@
 
     <adjective name="Another" startsWith="v">
         <value plural="n">Újabb</value></adjective>
-        
-     <adjective name="Any" startsWith="c"> 
+
+     <adjective name="Any" startsWith="c">
         <value plural="n">Minden</value>
 	</adjective>
 
@@ -140,7 +157,7 @@
 
     <adjective name="Imported" startsWith="v">
         <value plural="n">Importálva</value></adjective>
-    
+
     <adjective name="Inactive" startsWith="v">
         <value plural="n">Inaktív</value></adjective>
 
@@ -149,8 +166,8 @@
 
     <adjective name="Invalid" startsWith="v">
         <value plural="n">Érvénytelen</value></adjective>
-        
-     <adjective name="Its" startsWith="v"> 
+
+     <adjective name="Its" startsWith="v">
         <value plural="n">Annak a</value>
 	</adjective>
 
@@ -165,13 +182,13 @@
 
 	<adjective name="Linked" startsWith="c">
        <value plural="n">Csatolt</value></adjective>
-       
+
     <adjective name="Loaded" startsWith="c">
         <value plural="n">Betöltött</value></adjective>
 
     <adjective name="Locked" startsWith="c">
         <value plural="n">Lefoglalt</value></adjective>
-    
+
     <adjective name="Managed" startsWith="c">
         <value plural="n">Kezelt</value></adjective>
 
@@ -180,7 +197,7 @@
 
   <adjective name="Master" startsWith="c">
         <value gender="n" plural="n">Fő</value></adjective>
-  
+
     <adjective name="Marked" startsWith="c">
 	<value plural="n">Megjelölt</value></adjective>
 
@@ -192,11 +209,11 @@
     </adjective>
 
 	<adjective name="More" startsWith="c">
-        <value plural="n">További</value></adjective>  
+        <value plural="n">További</value></adjective>
 
 	<adjective name="Multiple" startsWith="c">
         <value plural="n">Sok</value></adjective>
-        
+
     <adjective name="My" startsWith="c">
         <value plural="n">Saját</value></adjective>
 
@@ -208,7 +225,7 @@
 
     <adjective name="No" startsWith="v">
         <value plural="n">Nem</value></adjective>
-        
+
     <adjective name="Non-primary" startsWith="c">
         <value plural="n">Nem elsődleges</value></adjective>
 
@@ -218,7 +235,7 @@
 	<adjective name="Older" startsWith="c">
         <value plural="n">Régebbi</value></adjective>
 
-<adjective name="One" startsWith="v"> 
+<adjective name="One" startsWith="v">
         <value plural="n">Egy</value>
 	</adjective>
 
@@ -239,7 +256,7 @@
 
 	<adjective name="Owning" startsWith="v">
         <value plural="n">Tulajdonos</value></adjective>
-        
+
     <adjective name="Personal" startsWith="c">
         <value plural="n">Személyes</value></adjective>
 
@@ -338,7 +355,7 @@
 
     <adjective name="Supplementary" startsWith="c">
         <value plural="n">Kiegészítő</value></adjective>
-        
+
     <adjective name="Supported" startsWith="c">
 	<value plural="n">Támogatott</value></adjective>
 
@@ -405,7 +422,7 @@
 
     <adjective name="User_Owned" startsWith="c">
         <value plural="n">Felhasználói</value></adjective>
-    
+
     <adjective name="Valid" startsWith="v">
         <value plural="n">Érvényes</value>
     </adjective>
@@ -424,7 +441,7 @@
 
     <adjective name="Zero" startsWith="c">
         <value plural="n">Nulla </value></adjective>
-        
+
     <article name="A" type="a">
 		<value plural="n" startsWith="c">egy</value>
 		<value plural="n" startsWith="v">egy</value>
@@ -435,4 +452,3 @@
         <value plural="n" startsWith="c">A</value>
     </article>
 </adjectives>
-

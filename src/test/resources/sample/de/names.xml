@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -70,7 +87,7 @@
        	 <value plural="y" case="d">Aktivitäten</value>
        	<value plural="y" case="g">Aktivitäten</value>
    	</noun>
-        
+
 
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
         <value plural="n" case="n">Kampagne</value>
@@ -82,8 +99,8 @@
         <value plural="y" case="d">Kampagnen</value>
         <value plural="y" case="g">Kampagnen</value>
     </noun>
-    
-    
+
+
 <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="f" startsWith="c">
         <value plural="n" case="n">Fertigkeit</value>
         <value plural="n" case="a">Fertigkeit</value>
@@ -95,7 +112,7 @@
         <value plural="y" case="g">Fertigkeiten</value>
     </noun>
 
-        
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n" case="n">Dokument</value>
         <value plural="n" case="a">Dokument</value>
@@ -119,8 +136,8 @@
     </noun>
 
 
-    
-    
+
+
    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n" case="n">Angebot</value>
         <value plural="n" case="a">Angebot</value>
@@ -142,8 +159,8 @@
         <value plural="y" case="d">Fragen</value>
         <value plural="y" case="g">Fragen</value>
         </noun>
-    
- 
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n" case="n">Lead</value>
         <value plural="n" case="a">Lead</value>
@@ -177,8 +194,8 @@
         <value plural="y" case="g">Preisbücher</value>
     </noun>
 
-    
-	
+
+
    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n" case="n">Angebot</value>
         <value plural="n" case="a">Angebot</value>
@@ -194,9 +211,9 @@
         <value plural="n">Report</value>
         <value plural="y">Reports</value>
     </noun> -->
-    
 
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -213,8 +230,8 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
@@ -226,15 +243,13 @@
 		<value plural="n" case="a">Accountnamen</value>
         <value plural="y">Accountnamen</value>
 		<value plural="y" case="a">Accountnamen</value>
-    </noun>   
-    
-     
+    </noun>
+
+
 	<noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Produktwährung</value>
     </noun>
 
-    
+
      <import file="adjectives.xml"/>
 </names>
-
-

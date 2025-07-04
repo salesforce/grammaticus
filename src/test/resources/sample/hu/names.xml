@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -141,7 +158,7 @@
         <value plural="n" case="t">Ügyfélig</value>
         <value plural="n" case="t" poss="f">Ügyfelemig</value>
         <value plural="n" case="t" poss="s">Ügyfeléig</value>
-        <value plural="y" case="t">Ügyfelekig</value> 
+        <value plural="y" case="t">Ügyfelekig</value>
         <value plural="y" case="t" poss="f">Ügyfeleimig</value>
         <value plural="y" case="t" poss="s">Ügyfeleiig</value>
         <value plural="n" case="di">Ügyfelenként</value>
@@ -151,7 +168,7 @@
         <value plural="y" case="di" poss="f">Ügyfelek</value>
         <value plural="y" case="di" poss="s">Ügyfelek</value>
     </noun>
-    
+
         <noun name="Activity" entity="Activity" type="entity" alias="Activities" gender="n" startsWith="c">
          <value plural="n">Tevékenység</value>
         <value plural="n" poss="f">Tevékenységem</value>
@@ -254,12 +271,12 @@
         <value plural="n" case="di" poss="s">Tevékenységeiként</value>
         <value plural="y" case="di">Tevékenységek</value>
         <value plural="y" case="di" poss="f">Tevékenységek</value>
-        <value plural="y" case="di" poss="s">Tevékenységek</value>   
+        <value plural="y" case="di" poss="s">Tevékenységek</value>
 
     </noun>
-    
-        
-            
+
+
+
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
         <value plural="n">Kampány</value>
         <value plural="n" poss="f">Kampányom</value>
@@ -363,7 +380,7 @@
         <value plural="y" case="di">Kampányok</value>
         <value plural="y" case="di" poss="f">Kampányok</value>
         <value plural="y" case="di" poss="s">Kampányok</value>       </noun>
-    
+
 
     <noun name="Case" entity="Case" type="entity" alias="Cases" gender="n" startsWith="v">
         <value plural="n">Eset</value>
@@ -426,7 +443,7 @@
         <value plural="y" case="abl">Esetektől</value>
         <value plural="y" case="abl" poss="f">Eseteimtől</value>
         <value plural="y" case="abl" poss="s">Eseteitől</value>
-        <value plural="n" case="d">Esetnek</value> 
+        <value plural="n" case="d">Esetnek</value>
         <value plural="n" case="d" poss="f">Esetemnek</value>
         <value plural="n" case="d" poss="s">Esetének</value>
         <value plural="y" case="d">Eseteknek</value>
@@ -468,7 +485,7 @@
         <value plural="y" case="di">Esetek</value>
         <value plural="y" case="di" poss="f">Esetek</value>
         <value plural="y" case="di" poss="s">Esetek</value>
-</noun> 
+</noun>
 
        <noun name="Contact" entity="Contact" type="entity" alias="Contacts" gender="n" startsWith="c">
          <value plural="n">Kapcsolattartó</value>
@@ -573,10 +590,10 @@
         <value plural="y" case="di">Kapcsolattartók</value>
         <value plural="y" case="di" poss="f">Kapcsolattartók</value>
         <value plural="y" case="di" poss="s">Kapcsolattartók</value>
-</noun>        
+</noun>
 
 <!-- Content -->
-        
+
 	<!-- // Content -->
 
     <noun name="Contract" entity="Contract" type="entity" alias="Contracts" gender="n" startsWith="c">
@@ -681,15 +698,15 @@
         <value plural="n" case="di" poss="s">Szerződéseiként</value>
         <value plural="y" case="di">Szerződések</value>
         <value plural="y" case="di" poss="f">Szerződések</value>
-        <value plural="y" case="di" poss="s">Szerződések</value>       
-</noun>        
+        <value plural="y" case="di" poss="s">Szerződések</value>
+</noun>
 
-    
-    
-    
-    
-    
-<noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">    
+
+
+
+
+
+<noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n">Dokumentum</value>
         <value plural="n" poss="f">Dokumentumom</value>
         <value plural="n" poss="s">Dokumentuma</value>
@@ -791,10 +808,10 @@
         <value plural="n" case="di" poss="s">Dokumentumonként</value>
         <value plural="y" case="di">Dokumentumok</value>
         <value plural="y" case="di" poss="f">Dokumentumok</value>
-        <value plural="y" case="di" poss="s">Dokumentumok</value>       
-</noun>        
+        <value plural="y" case="di" poss="s">Dokumentumok</value>
+</noun>
 
-        
+
 	<noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Szaktudás</value>
         <value plural="n" poss="f">Szaktudásom</value>
@@ -897,11 +914,11 @@
         <value plural="n" case="di" poss="s">Szaktudásaiként</value>
         <value plural="y" case="di">Szaktudások</value>
         <value plural="y" case="di" poss="f">Szaktudások</value>
-        <value plural="y" case="di" poss="s">Szaktudások</value>   
+        <value plural="y" case="di" poss="s">Szaktudások</value>
     </noun>
 
-    
-    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">    
+
+    <noun name="Event" entity="Event" type="entity" alias="Events" gender="n" startsWith="v">
         <value plural="n">Esemény</value>
         <value plural="n" poss="f">Eseményem</value>
         <value plural="n" poss="s">Eseménye</value>
@@ -1003,8 +1020,8 @@
         <value plural="n" case="di" poss="s">Eseményeiként</value>
         <value plural="y" case="di">Események</value>
         <value plural="y" case="di" poss="f">Események</value>
-        <value plural="y" case="di" poss="s">Események</value>       
-</noun>        
+        <value plural="y" case="di" poss="s">Események</value>
+</noun>
 
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n">Lead</value>
@@ -1108,16 +1125,16 @@
         <value plural="n" case="di" poss="s">Lead-jeiként</value>
         <value plural="y" case="di">Lead-ek</value>
         <value plural="y" case="di" poss="f">Lead-ek</value>
-        <value plural="y" case="di" poss="s">Lead-ek</value>       
+        <value plural="y" case="di" poss="s">Lead-ek</value>
         <value plural="n" case="al">Lead-hez</value>
         <value plural="n" case="al" poss="f">Lead-emhez</value>
         <value plural="n" case="al" poss="s">Lead-jéhez</value>
         <value plural="y" case="al">Lead-ekhez</value>
         <value plural="y" case="al" poss="f">Lead-jeimhez</value>
-        <value plural="y" case="al" poss="s">Lead-jeihez</value>        
-</noun>        
+        <value plural="y" case="al" poss="s">Lead-jeihez</value>
+</noun>
 
-    
+
 
 
 
@@ -1223,8 +1240,8 @@
         <value plural="n" case="di" poss="s">Opportunity-jaként</value>
         <value plural="y" case="di">Opportunity-k</value>
         <value plural="y" case="di" poss="f">Opportunity-k</value>
-        <value plural="y" case="di" poss="s">Opportunity-k</value>       
-</noun>        
+        <value plural="y" case="di" poss="s">Opportunity-k</value>
+</noun>
 
 
 
@@ -1330,8 +1347,8 @@
         <value plural="n" case="di" poss="s">Árjegyzékeiként</value>
         <value plural="y" case="di">Árjegyzékek</value>
         <value plural="y" case="di" poss="f">Árjegyzékek</value>
-        <value plural="y" case="di" poss="s">Árjegyzékek</value>       
-</noun>        
+        <value plural="y" case="di" poss="s">Árjegyzékek</value>
+</noun>
 
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
                 <value plural="n">Kérdés</value>
@@ -1435,7 +1452,7 @@
         <value plural="n" case="di" poss="s">Kérdéseiként</value>
         <value plural="y" case="di">Kérdés</value>
         <value plural="y" case="di" poss="f">Kérdés</value>
-        <value plural="y" case="di" poss="s">Kérdés</value>   
+        <value plural="y" case="di" poss="s">Kérdés</value>
 
     </noun>
 
@@ -1542,16 +1559,16 @@
         <value plural="n" case="di" poss="s">Árajánlatiként</value>
         <value plural="y" case="di">Árajánlat</value>
         <value plural="y" case="di" poss="f">Árajánlat</value>
-        <value plural="y" case="di" poss="s">Árajánlat</value>   
+        <value plural="y" case="di" poss="s">Árajánlat</value>
     </noun>
 
-      
-    
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
     -->
-    
+
     <noun name="Entity" entity="Entity" type="entity" gender="n" startsWith="c">
         <value plural="n">{0}</value>
         <value plural="y">{0}</value>
@@ -1562,7 +1579,7 @@
         <entity/>, <entity_record_type/>
     -->
 
-    
+
 
     <!--==================================================================
       Other Nouns
@@ -1575,13 +1592,12 @@
         <value plural="y">Ügyfél nevei</value>
 	<value plural="n" poss="s" case="d">Ügyfél nevének</value>
     </noun>
-    
-     
+
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">Termék pénzneme</value></noun>
 
-    
-				
+
+
     <import file="adjectives.xml"/>
 </names>
-

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -242,7 +259,7 @@
         <value gender="n" plural="y" case="d">Weiteren</value>
         <value gender="f" plural="y" case="d">Weiteren</value>
     </adjective>
-        
+
     <adjective name="Any">
          <value gender="m" plural="n">Irgendwelcher</value>
         <value gender="n" plural="n">Irgendwelches</value>
@@ -479,7 +496,7 @@
         <value gender="n" plural="y" case="d">Fakturierten</value>
         <value gender="f" plural="y" case="d">Fakturierten</value>
     </adjective>
-        
+
     <adjective name="Certain">
        <value gender="m" plural="n">Gewisser</value>
         <value gender="n" plural="n">Gewisses</value>
@@ -587,7 +604,7 @@
         <value gender="n" plural="y">Konvertierte</value>
         <value gender="f" plural="y">Konvertierte</value>
     </adjective>
-    
+
  <adjective name="Corresponding">
         <value gender="m" plural="n" article="the">Entsprechende</value>
         <value gender="n" plural="n" article="the">Entsprechende</value>
@@ -922,8 +939,8 @@
         <value gender="m" plural="y">Bearbeitbare</value>
         <value gender="n" plural="y">Bearbeitbare</value>
         <value gender="f" plural="y">Bearbeitbare</value>
-    </adjective>   
-        
+    </adjective>
+
     <adjective name="Empty">
        <value gender="m" plural="n">Leerer</value>
         <value gender="n" plural="n">Leeres</value>
@@ -1353,7 +1370,7 @@
     <adjective name="Key">
         <value gender="n" plural="n">Key</value>
     </adjective>
-        
+
     <adjective name="Last">
         <value gender="m" plural="n" article="the">Letzte</value>
         <value gender="n" plural="n" article="the">Letzte</value>
@@ -1453,7 +1470,7 @@
         <value gender="f" plural="y" case="d" article="the">Verknüpften</value>
         <value gender="m" plural="y" case="g" article="the">Verknüpften</value>
         <value gender="n" plural="y" case="g" article="the">Verknüpften</value>
-        <value gender="f" plural="y" case="g" article="the">Verknüpften</value> 
+        <value gender="f" plural="y" case="g" article="the">Verknüpften</value>
     </adjective>
 
     <adjective name="Loaded">
@@ -1630,7 +1647,7 @@
         <value gender="f" plural="y" case="d" article="the">Verwaltungs</value>
         <value gender="m" plural="y" case="g" article="the">Verwaltungs</value>
         <value gender="n" plural="y" case="g" article="the">Verwaltungs</value>
-        <value gender="f" plural="y" case="g" article="the">Verwaltungs</value> 
+        <value gender="f" plural="y" case="g" article="the">Verwaltungs</value>
     </adjective>
 
     <adjective name="Managed">
@@ -1956,7 +1973,7 @@
         <value gender="f" plural="y">Keine</value>
     </adjective>
 
-    <adjective name="Non-primary">      
+    <adjective name="Non-primary">
         <value gender="m" plural="n" article="the">Nicht-primäre</value>
         <value gender="n" plural="n" article="the">Nicht-primäre</value>
         <value gender="f" plural="n" article="the">Nicht-primäre</value>
@@ -2006,7 +2023,7 @@
         <value gender="n" plural="y">Anz.</value>
         <value gender="f" plural="y">Anz.</value>
     </adjective>
-    
+
 <adjective name="One">
         <value gender="m" plural="n">Ein</value>
         <value gender="n" plural="n">Ein</value>
@@ -2472,7 +2489,7 @@
     <adjective name="Queue_Owned">
         <value gender="n" plural="n">Queue Owned</value>
     </adjective>
-        
+
     <adjective name="Recent">
         <value gender="m" plural="n" article="the">Letzte</value>
         <value gender="n" plural="n" article="the">Letzte</value>
@@ -2521,7 +2538,7 @@
         <value gender="f" plural="n" case="d">Wiederkehrenden</value>
         <value gender="m" plural="y" case="d">Wiederkehrenden</value>
         <value gender="n" plural="y" case="d">Wiederkehrenden</value>
-        <value gender="f" plural="y" case="d">Wiederkehrenden</value>		
+        <value gender="f" plural="y" case="d">Wiederkehrenden</value>
         <value gender="m" plural="n" case="g">Wiederkehrenden</value>
         <value gender="n" plural="n" case="g">Wiederkehrenden</value>
         <value gender="f" plural="n" case="g">Wiederkehrenden</value>
@@ -2861,7 +2878,7 @@
         <value gender="f" plural="y">zweite</value>
     </adjective>
 
-    <adjective name="Selected">           
+    <adjective name="Selected">
         <value gender="m" plural="n">Ausgewählter</value>
         <value gender="n" plural="n">Ausgewähltes</value>
          <value gender="f" plural="n">Ausgewählte</value>
@@ -2909,7 +2926,7 @@
          <value gender="f" plural="y" case="d" article="the">Ausgewählten</value>
          <value gender="m" plural="y" case="g" article="the">Ausgewählten</value>
          <value gender="n" plural="y" case="g" article="the">Ausgewählten</value>
-        <value gender="f" plural="y" case="g" article="the">Ausgewählten</value>      
+        <value gender="f" plural="y" case="g" article="the">Ausgewählten</value>
      </adjective>
 
      <adjective name="Shared">
@@ -2960,10 +2977,10 @@
         <value gender="f" plural="y" case="d" article="the">Freigegebenen</value>
         <value gender="m" plural="y" case="g" article="the">Freigegebenen</value>
         <value gender="n" plural="y" case="g" article="the">Freigegebenen</value>
-        <value gender="f" plural="y" case="g" article="the">Freigegebenen</value>        
+        <value gender="f" plural="y" case="g" article="the">Freigegebenen</value>
     </adjective>
 
-    <adjective name="Similar">    	
+    <adjective name="Similar">
         <value gender="m" plural="n">Ähnlicher</value>
         <value gender="n" plural="n">Ähnliches</value>
         <value gender="f" plural="n">Ähnliche</value>
@@ -3017,7 +3034,7 @@
         <value gender="f" plural="y" case="a">einzelnen</value>
     </adjective>
 
-    <adjective name="Social">                
+    <adjective name="Social">
         <value gender="m" plural="n" article="the">Soziale</value>
         <value gender="n" plural="n" article="the">Soziale</value>
         <value gender="f" plural="n" article="the">Soziale</value>
@@ -3067,7 +3084,7 @@
         <value gender="n" plural="y" case="g">Sozialer</value>
         <value gender="f" plural="y" case="g">Sozialer</value>
     </adjective>
-        
+
     <adjective name="Source">
 	<value gender="m" plural="n" article="the">Quell</value>
 	<value gender="n" plural="n" article="the">Quell</value>
@@ -3204,7 +3221,7 @@
         <value gender="m" plural="y" case="d">Vorgeschlagenen</value>
         <value gender="n" plural="y" case="d">Vorgeschlagenen</value>
         <value gender="f" plural="y" case="d">Vorgeschlagenen</value>
-    </adjective>  
+    </adjective>
 
     <adjective name="Supplementary">
         <value gender="m" plural="n">Zusätzlicher</value>
@@ -3254,7 +3271,7 @@
         <value gender="f" plural="y" case="d" article="the">Zusätzliche</value>
         <value gender="m" plural="y" case="g" article="the">Zusätzliche</value>
         <value gender="n" plural="y" case="g" article="the">Zusätzliche</value>
-        <value gender="f" plural="y" case="g" article="the">Zusätzliche</value>        
+        <value gender="f" plural="y" case="g" article="the">Zusätzliche</value>
     </adjective>
 
     <adjective name="Synced">
@@ -3424,7 +3441,7 @@
         <value gender="n" plural="y" case="d">Diesen</value>
         <value gender="f" plural="y" case="d">Diesen</value>
     </adjective>
-        
+
     <adjective name="Today">
         <value gender="n" plural="n">Today</value>
     </adjective>
@@ -3520,7 +3537,7 @@
         <value gender="f" plural="n" case="g">Transferable</value>
         <value gender="m" plural="y" case="g">Transferable</value>
         <value gender="n" plural="y" case="g">Transferable</value>
-        <value gender="f" plural="y" case="g">Transferable</value>     	
+        <value gender="f" plural="y" case="g">Transferable</value>
     </adjective>
 
     <adjective name="Unconverted">
@@ -3817,7 +3834,7 @@
         <value gender="n" plural="y" case="g">Ihrer</value>
         <value gender="f" plural="y" case="g">Ihrer</value>
      </adjective>
-        
+
     <adjective name="Zero">
        <value gender="m" plural="n">Null</value>
         <value gender="n" plural="n">Null</value>
@@ -3871,7 +3888,7 @@
         <value gender="n" plural="y" case="a">Den</value>
         <value gender="f" plural="y" case="a">Den</value>
     </article>
-    
+
     <article name="A" type="a">
         <value gender="m" plural="n">Ein</value>
         <value gender="n" plural="n">Ein</value>
@@ -3886,7 +3903,7 @@
         <value gender="n" plural="n" case="a">Ein</value>
         <value gender="f" plural="n" case="a">Eine</value>
     </article>
-	
+
 	<adjective name="Active_def">
     	<value gender="m" plural="n">Aktiver</value>
         <value gender="n" plural="n">Aktives</value>
@@ -3895,7 +3912,7 @@
         <value gender="n" plural="y">Aktiven</value>
         <value gender="f" plural="y">Aktiven</value>
   	</adjective>
-  	
+
   	<adjective name="Billed_def">
 		<value gender="m" plural="n">Fakturierter</value>
         <value gender="n" plural="n">Fakturiertes</value>
@@ -3904,7 +3921,7 @@
         <value gender="n" plural="y">Fakturierten</value>
         <value gender="f" plural="y">Fakturierten</value>
      </adjective>
-     
+
      <adjective name="Certain_def">
        <value gender="m" plural="n">Gewisser</value>
         <value gender="n" plural="n">Gewisses</value>
@@ -3931,7 +3948,7 @@
         <value gender="n" plural="y" case="d">Gewissen</value>
         <value gender="f" plural="y" case="d">Gewissen</value>
     </adjective>
-    
+
     <adjective name="Delegated_def">
       	<value gender="m" plural="n">Delegierter</value>
         <value gender="n" plural="n">Delegiertes</value>
@@ -3940,7 +3957,7 @@
         <value gender="n" plural="y">Delegierten</value>
         <value gender="f" plural="y">Delegierten</value>
      </adjective>
-     
+
      <adjective name="Deleted_def">
        <value gender="m" plural="n">Gelöschter</value>
         <value gender="n" plural="n">Gelöschtes</value>
@@ -3967,7 +3984,7 @@
         <value gender="n" plural="y" case="d">Gelöschten</value>
         <value gender="f" plural="y" case="d">Gelöschten</value>
     </adjective>
-    
+
     <adjective name="Editable_def">
         <value gender="m" plural="n">Bearbeitbarer</value>
         <value gender="n" plural="n">Bearbeitbares</value>
@@ -3975,8 +3992,8 @@
         <value gender="m" plural="y">Bearbeitbaren</value>
         <value gender="n" plural="y">Bearbeitbaren</value>
         <value gender="f" plural="y">Bearbeitbaren</value>
-    </adjective>     
-    
+    </adjective>
+
     <adjective name="Empty_def">
        <value gender="m" plural="n">Leerer</value>
         <value gender="n" plural="n">Leeres</value>
@@ -4012,7 +4029,7 @@
         <value gender="n" plural="y">Vorhandenen</value>
         <value gender="f" plural="y">Vorhandenen</value>
     </adjective>
-    
+
     <adjective name="Expected_def">
 		<value gender="m" plural="n">Erwarteter</value>
         <value gender="n" plural="n">Erwartete</value>
@@ -4021,7 +4038,7 @@
         <value gender="n" plural="y">Erwarteten</value>
         <value gender="f" plural="y">Erwarteten</value>
      </adjective>
-     
+
      <adjective name="Future_def">
         <value gender="m" plural="n">Zukünftiger</value>
         <value gender="n" plural="n">Zukünftiges</value>
@@ -4030,7 +4047,7 @@
         <value gender="n" plural="y">Zukünftigen</value>
         <value gender="f" plural="y">Zukünftigen</value>
   </adjective>
-  
+
   <adjective name="Loaded_def">
        <value gender="m" plural="n">Geladener</value>
         <value gender="n" plural="n">Geladenes</value>
@@ -4057,7 +4074,7 @@
         <value gender="n" plural="y" case="d">Geladenen</value>
         <value gender="f" plural="y" case="d">Geladenen</value>
     </adjective>
-    
+
     <adjective name="Locked_def">
        <value gender="m" plural="n">Gesperrter</value>
         <value gender="n" plural="n">Gesperrtes</value>
@@ -4084,7 +4101,7 @@
         <value gender="n" plural="y" case="d">Gesperrten</value>
         <value gender="f" plural="y" case="d">Gesperrten</value>
     </adjective>
-    
+
     <adjective name="Marked">
 	<value gender="m" plural="n" article="the">Markierte</value>
 	<value gender="n" plural="n" article="the">Markierte</value>
@@ -4135,7 +4152,7 @@
 	<value gender="n" plural="y" case="g">Markierter</value>
 	<value gender="f" plural="y" case="g">Markierter</value>
   </adjective>
-  
+
   <adjective name="Matching_def">
         <value gender="m" plural="n">Übereinstimmender</value>
         <value gender="n" plural="n">Übereinstimmendes</value>
@@ -4144,7 +4161,7 @@
         <value gender="n" plural="y">Übereinstimmenden</value>
         <value gender="f" plural="y">Übereinstimmenden</value>
     </adjective>
-    
+
     <adjective name="Merged_def">
     <value gender="m" plural="n">Zusammengeführter</value>
     <value gender="n" plural="n">Zusammengeführtes</value>
@@ -4171,7 +4188,7 @@
     <value gender="n" plural="y" case="d">Zusammengeführten</value>
     <value gender="f" plural="y" case="d">Zusammengeführten</value>
     </adjective>
-    
+
     <adjective name="Modified">
         <value gender="m" plural="n">Geänderter</value>
         <value gender="n" plural="n">Geändertes</value>
@@ -4180,7 +4197,7 @@
         <value gender="n" plural="y">Geänderten</value>
         <value gender="f" plural="y">Geänderten</value>
     </adjective>
-    
+
     <adjective name="Open_def">
         <value gender="m" plural="n">Offener</value>
         <value gender="n" plural="n">Offenes</value>
@@ -4189,7 +4206,7 @@
         <value gender="n" plural="y">Offenen</value>
         <value gender="f" plural="y">Offenen</value>
 	</adjective>
-	
+
 	<adjective name="Posted">
        <value gender="m" plural="n">Gesendeter</value>
         <value gender="n" plural="n">Gesendetes</value>
@@ -4252,7 +4269,7 @@
         <value gender="n" plural="n" case="d" article="a">Gesendeten</value>
         <value gender="f" plural="n" case="d" article="a">Gesendeten</value>
     </adjective>
-    
+
     <adjective name="Posted_def">
        <value gender="m" plural="n">Gesendeter</value>
         <value gender="n" plural="n">Gesendetes</value>
@@ -4279,7 +4296,7 @@
         <value gender="n" plural="y" case="d">Gesendeten</value>
         <value gender="f" plural="y" case="d">Gesendeten</value>
     </adjective>
-    
+
     <adjective name="Proposed_def">
        <value gender="m" plural="n">Vorgeschlagener</value>
         <value gender="n" plural="n">Vorgeschlagenes</value>
@@ -4306,7 +4323,7 @@
         <value gender="n" plural="y" case="d">Vorgeschlagenen</value>
         <value gender="f" plural="y" case="d">Vorgeschlagenen</value>
     </adjective>
-    
+
     <adjective name="Rejected_def">
        <value gender="m" plural="n">Abgelehnter</value>
         <value gender="n" plural="n">Abgelehntes</value>
@@ -4333,7 +4350,7 @@
         <value gender="n" plural="y" case="d">Abgelehnten</value>
         <value gender="f" plural="y" case="d">Abgelehnten</value>
     </adjective>
-    
+
     <adjective name="Related_def">
 		<value gender="m" plural="n">Zugehöriger</value>
         <value gender="n" plural="n">Zugehöriges</value>
@@ -4342,7 +4359,7 @@
         <value gender="n" plural="y">Zugehörigen</value>
         <value gender="f" plural="y">Zugehörigen</value>
     </adjective>
-    
+
     <adjective name="Relevant_Reviewed">
         <value gender="m" plural="n" article="the">Relevante Überprüfte</value>
         <value gender="n" plural="n" article="the">Relevante überprüfte</value>
@@ -4372,7 +4389,7 @@
         <value gender="n" plural="y">Relevante nicht überprüfte</value>
         <value gender="f" plural="y">Relevante nicht überprüfte</value>
     </adjective>
-    
+
     <adjective name="Remaining_def">
        <value gender="m" plural="n">Verbleibender</value>
         <value gender="n" plural="n">Verbleibendes</value>
@@ -4399,7 +4416,7 @@
         <value gender="n" plural="y" case="d">Verbleibenden</value>
         <value gender="f" plural="y" case="d">Verbleibenden</value>
     </adjective>
-    
+
     <adjective name="Saved">
         <value gender="m" plural="n">Gespeicherter</value>
         <value gender="n" plural="n">Gespeichertes</value>
@@ -4414,7 +4431,7 @@
         <value gender="n" plural="y" article="the">Gespeicherten</value>
         <value gender="f" plural="y" article="the">Gespeicherten</value>
     </adjective>
-    
+
     <adjective name="Scheduled_def">
         <value gender="m" plural="n">geplante</value>
         <value gender="n" plural="n">geplante</value>
@@ -4422,8 +4439,8 @@
         <value gender="m" plural="y">geplanten</value>
         <value gender="n" plural="y">geplanten</value>
         <value gender="f" plural="y">geplanten</value>
-    </adjective>    
-    
+    </adjective>
+
     <adjective name="Shared_def">
     <value gender="m" plural="n">Freigegebener</value>
     <value gender="n" plural="n">Freigegebene</value>
@@ -4450,7 +4467,7 @@
     <value gender="n" plural="y" case="d">Freigegebenen</value>
     <value gender="f" plural="y" case="d">Freigegebenen</value>
     </adjective>
-    
+
     <adjective name="Supported">
 	<value gender="m" plural="n" article="the">Unterstützte</value>
 	<value gender="n" plural="n" article="the">Unterstützte</value>
@@ -4501,7 +4518,7 @@
 	<value gender="n" plural="y" case="g">Unterstützter</value>
 	<value gender="f" plural="y" case="g">Unterstützter</value>
     </adjective>
-    
+
     <adjective name="Synced_def">
     <value gender="m" plural="n">Synchronisierter</value>
     <value gender="n" plural="n">Synchronisiertes</value>
@@ -4528,7 +4545,7 @@
     <value gender="n" plural="y" case="d">Synchronisierten</value>
     <value gender="f" plural="y" case="d">Synchronisierten</value>
     </adjective>
-    
+
     <adjective name="that_acc">
         <value gender="m" plural="n" article="the">diesen</value>
         <value gender="n" plural="n" article="the">dieses</value>
@@ -4558,7 +4575,7 @@
         <value gender="n" plural="y">diesen</value>
         <value gender="f" plural="y">diesen</value>
     </adjective>
-    
+
     <adjective name="this_dat">
         <value gender="m" plural="n" article="the">diesem</value>
         <value gender="n" plural="n" article="the">diesem</value>
@@ -4573,7 +4590,7 @@
         <value gender="n" plural="y">diesen</value>
         <value gender="f" plural="y">diesen</value>
     </adjective>
-    
+
     <adjective name="Unfiled_Public">
         <value gender="m" plural="n" article="the">Nicht abgelegte öffentliche</value>
         <value gender="n" plural="n" article="the">Nicht abgelegte öffentliche</value>
@@ -4588,7 +4605,7 @@
         <value gender="n" plural="y">Nicht abgelegte öffentliche</value>
         <value gender="f" plural="y">Nicht abgelegte öffentliche</value>
     </adjective>
-    
+
     <adjective name="Unread_def">
 		<value gender="m" plural="n">Ungelesener</value>
         <value gender="n" plural="n">Ungelesenes</value>
@@ -4597,7 +4614,7 @@
         <value gender="n" plural="y">Ungelesenen</value>
         <value gender="f" plural="y">Ungelesenen</value>
     </adjective>
-    
+
     <adjective name="Valid">
         <value gender="m" plural="n" article="the">Gültige</value>
         <value gender="n" plural="n" article="the">Gültige</value>
@@ -4648,7 +4665,7 @@
         <value gender="n" plural="y" case="g">Gültiger</value>
         <value gender="f" plural="y" case="g">Gültiger</value>
     </adjective>
-    
+
     <adjective name="Won_gen">
         <value gender="m" plural="n" article="the">Gewonnenen</value>
         <value gender="n" plural="n" article="the">Gewonnenen</value>
@@ -4663,11 +4680,11 @@
         <value gender="n" plural="y">Gewonnener</value>
         <value gender="f" plural="y">Gewonnener</value>
     </adjective>
-    
+
     <adjective name="Your_dat">
         <value gender="m" plural="n" article="the">Ihrem</value>
     	<value gender="n" plural="n" article="the">Ihrem</value>
-    	<value gender="f" plural="n" article="the">Ihrer</value> 
+    	<value gender="f" plural="n" article="the">Ihrer</value>
         <value gender="m" plural="y" article="the">Ihren</value>
    	 	<value gender="n" plural="y" article="the">Ihren</value>
     	<value gender="f" plural="y" article="the">Ihren</value>
@@ -4676,7 +4693,7 @@
     	<value gender="f" plural="n">Ihrer</value>
         <value gender="m" plural="y">Ihren</value>
     	<value gender="n" plural="y">Ihren</value>
-    	<value gender="f" plural="y">Ihren</value>   
+    	<value gender="f" plural="y">Ihren</value>
     </adjective>
 
 
@@ -4694,7 +4711,5 @@
         <value gender="n" plural="y">Ihrer</value>
         <value gender="f" plural="y">Ihrer</value>
     </adjective>
-        
+
 </adjectives>
-
-

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE adjectives SYSTEM "adjectives.dtd">
 <adjectives>
     <!--=====================================================================
@@ -95,7 +112,7 @@
         <value plural="y" article="the">Другите</value>
    </adjective>
 
- <adjective name="Any"> 
+ <adjective name="Any">
       <value gender="n" plural="n">Bсички</value>
       <value gender="m" plural="n" article="the">Bсички</value>
       <value gender="f" plural="n">Bсички</value>
@@ -103,8 +120,8 @@
       <value plural="y">Bсички</value>
       <value gender="f" plural="n" article="the">Bсички</value>
       <value gender="n" plural="n" article="the">Bсички</value>
-      <value plural="y" article="the">Bсички</value>	
-  </adjective> 
+      <value plural="y" article="the">Bсички</value>
+  </adjective>
 
   <adjective name="Archived">
         <value gender="m" plural="n">Архивиран</value>
@@ -251,7 +268,7 @@
         <value gender="n" plural="n" article="the">Допълнителното</value>
         <value plural="y" article="the">Допълнителните</value>
    </adjective>
-   
+
     <adjective name="Default">
         <value gender="m" plural="n">По подразбиране</value>
         <value gender="m" plural="n" article="the">По подразбиране</value>
@@ -284,7 +301,7 @@
         <value gender="n" plural="n" article="the">Изтритото</value>
         <value plural="y" article="the">Изтритите</value>
    </adjective>
-    
+
     <adjective name="Designated">
         <value gender="m" plural="n">Обозначен</value>
         <value gender="m" plural="n" article="the">Обозначеният</value>
@@ -484,7 +501,7 @@
           <value plural="y">Импортирани</value>
           <value plural="y" article="the">Импортираните</value>
      </adjective>
-     
+
     <adjective name="Inactive">
         <value gender="m" plural="n">Неактивен</value>
         <value gender="m" plural="n" article="the">Неактивният</value>
@@ -519,7 +536,7 @@
         <value plural="y" article="the">Невалидните</value>
    </adjective>
 
- <adjective name="its"> 
+ <adjective name="its">
         <value gender="m" plural="n">негов</value>
         <value gender="m" plural="n" article="the">неговият</value>
         <value gender="f" plural="n">нейна</value>
@@ -587,7 +604,7 @@
         <value gender="n" plural="n" article="the">Заключеното</value>
         <value plural="y" article="the">Заключените</value>
    </adjective>
-    
+
     <adjective name="Managed">
         <value gender="m" plural="n">Управляван</value>
         <value gender="m" plural="n" article="the">Управляваният</value>
@@ -609,7 +626,7 @@
 			<value plural="y">Управляващи</value>
 			<value plural="y" article="the">Управляващите</value>
 			</adjective>
-    
+
     <adjective name="Marked">
 	<value gender="m" plural="n">маркиран</value>
 	<value gender="m" plural="n" article="the">маркираният</value>
@@ -658,15 +675,15 @@
    </adjective>
 
 	<adjective name="More">
-		<value gender="m" plural="n">Повече</value>   
-		<value gender="m" plural="n" article="the">Повече</value>  
-		<value gender="f" plural="n">Повече</value>    
-		<value gender="f" plural="n" article="the">Повече</value>    
-		<value gender="n" plural="n">Повече</value>    
-		<value gender="n" plural="n" article="the">Повече</value>   
-		<value plural="y">Повече</value>    
+		<value gender="m" plural="n">Повече</value>
+		<value gender="m" plural="n" article="the">Повече</value>
+		<value gender="f" plural="n">Повече</value>
+		<value gender="f" plural="n" article="the">Повече</value>
+		<value gender="n" plural="n">Повече</value>
+		<value gender="n" plural="n" article="the">Повече</value>
+		<value plural="y">Повече</value>
 		<value plural="y" article="the">Повече</value>
-	</adjective>  
+	</adjective>
 
 	<adjective name="Multiple">
 		<value gender="m" plural="n">Множество</value>
@@ -724,7 +741,7 @@
         <value gender="n" plural="n" article="the">Няма</value>
         <value plural="y" article="the">Няма</value>
    </adjective>
-    
+
     <adjective name="Non-primary">
         <value gender="m" plural="n">Неосновен</value>
         <value gender="m" plural="n" article="the">Неосновният</value>
@@ -734,7 +751,7 @@
         <value gender="f" plural="n" article="the">Неосновната</value>
         <value gender="n" plural="n" article="the">Неосновното</value>
         <value plural="y" article="the">Неосновните</value>
-        
+
     </adjective>
 
    <adjective name="Num"><!--number-->
@@ -760,7 +777,7 @@
         <value plural="y" article="the">По-старите</value>
    </adjective>
 
- <adjective name="One"> 
+ <adjective name="One">
         <value gender="m" plural="n">Един</value>
         <value gender="m" plural="n" article="the">Единият</value>
         <value gender="f" plural="n">Една</value>
@@ -1271,7 +1288,7 @@
         <value gender="n" plural="n" article="the">Тяхното</value>
         <value plural="y" article="the">Техните</value>
    </adjective>
-   
+
    <adjective name="These">
         <value gender="m" plural="n">Тези</value>
         <value gender="m" plural="n" article="the">Тези</value>
@@ -1460,7 +1477,7 @@
         <value gender="n" plural="n" article="the">Притежаваното от потребителя</value>
         <value plural="y" article="the">Притежаваните от потребителя</value>
    </adjective>
-    
+
     <adjective name="Valid">
         <value gender="m" plural="n">Валиден</value>
         <value gender="m" plural="n" article="the">Валидният</value>
@@ -1518,5 +1535,3 @@
         <value plural="y" article="the">Вашите</value>
    </adjective>
 </adjectives>
-
-

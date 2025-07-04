@@ -1,9 +1,20 @@
-/* 
- * Copyright (c) 2021, salesforce.com, inc.
- * All rights reserved.
- * Licensed under the BSD 3-Clause license. 
- * For full license text, see LICENSE.txt file in the repo root  or https://opensource.org/licenses/BSD-3-Clause
+/*
+ * Copyright (c) 2025, Salesforce, Inc.
+ * SPDX-License-Identifier: Apache-2
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
 package com.force.i18n.grammar.offline;
 
 import static com.force.i18n.LanguageConstants.*;
@@ -42,7 +53,7 @@ public class PluralRulesJsImpl {
              case AMHARIC:return "function am(n) {return n >= 0 && n <= 1 ? 'one' : 'other';}";
              case MARATHI: // above function < ICU64
             	 return ONE;
-            	 
+
              case ARABIC:return "function ar(n) {\n"+
                "var s = String(n).split('.'),t0 = Number(s[0]) == n,n100 = t0 && s[0].slice(-2);\n"+
                "return n == 0 ? 'zero' : n == 1 ? 'one' : n == 2 ? 'two' : n100 >= 3 && n100 <= 10 ? 'few' : n100 >= 11 && n100 <= 99 ? 'many' : 'other';}";

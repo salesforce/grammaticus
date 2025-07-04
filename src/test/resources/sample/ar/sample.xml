@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">مجال غير صالح</param>
         <param name="ReadOnly">لا يمكنك تحرير هذا الحقل.</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--افتراضي--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**غير منطبق**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">بدء المحادثة</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">نتائج البحث</param>
         <param name="Recent">المعروضة حديثًا</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">هذه الصورة غير متوفرة لأن: ليس لديك الامتيازات الكافية لعرضها، أو أنه قد تم حذفها من النظام</param>
         <param name="weekly_export_folder">الوثائق المرفقة الأخرى التي تم تحميلها/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">فشل الإنشاء</param>
         <param name="Common_success_message">نجح الإنشاء.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">طلب تخفيض الترخيص</param>
         <param name="pageheader">الرجاء إكمال كافة الحقول المطلوبة لإرسال طلبك لتخفيض الترخيص. هذه هي أسرع طريقة لمعالجة طلبك.  الرجاء عدم إرسال طلبات متعددة لنفس الترخيص حيث قد يتسبب هذا في تأخيرات غير ضرورية.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">يمكنك استخدام "*" كحرف بدل بجوار الحروف الأخرى لتحسين نتائج البحث.</param>
         <param name="error_lookup_multiple_matches_ile">تم العثور على عناصر متعددة.&lt;br&gt;انقر فوق الرمز لتنقية البحث.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">توسيع القائمة</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">قائمة موسعة</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">تحديدات</param>
         <param name="assignLicensesDescription">حدد خانة الاختيار المجاورة لكل حزمة تريد تعيينها لهذا المستخدم، ثم انقر فوق "تعيين". تغيب خانة الاختيار إذا كانت حزمة ما لا يتوفر لها التراخيص الكافية أو إذا كانت حالة الحزمة قد انتهت صلاحيتها أو كانت معلقة.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Classic</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">متجر الويب</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">التأكيد</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">معلومات</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

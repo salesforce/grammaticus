@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-    Copyright 2001 salesforce.com,Inc. All rights reserved. Company Confidential.
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
+
 <!DOCTYPE iniFile
   SYSTEM "labels.dtd">
 <iniFile>
@@ -237,10 +252,10 @@
         <param name="MalformedDomain">Domain Tidak Valid</param>
         <param name="ReadOnly">Anda tidak dapat mengedit kontrak ini.</param>
     </section>
-    
+
     <!-- Entries in this section are only used by the API and don't need translating -->
     <!-- Start do not translate -->
-    
+
     <!-- End do not translate -->
 
     <section name="Buttons" all_languages="yes" public="false">
@@ -1088,7 +1103,7 @@
         <param name="Default">--Default--</param>   <!-- aliased across labels; do not change -->
         <param name="NotApplicable">**Tidak Bisa Diterapkan**</param>
     </section>
-    
+
     <section name="CustomLinks" all_languages="yes" public="false">
         <!-- The Title here can include a {0} for the organization name, but we changed the label to not reference it -->
         <param name="Title" alias="Global_Entity.enterprise_integration_links"/>
@@ -1517,7 +1532,7 @@
         <param name="DatabaseDotCom">database.com</param>
         <param name="startOfDialog">Permulaan Dialog</param>
     </section>
-    
+
     <section name="LookupDialog" all_languages="yes" public="false">
         <param name="Results">Hasil Pencarian</param>
         <param name="Recent">Terakhir Dilihat</param>
@@ -1564,9 +1579,9 @@
         <param name="access_failed_alt">Gambar ini tidak tersedia karena: Anda tidak memiliki izin untuk melihatnya, atau telah dihapus dari sistem</param>
         <param name="weekly_export_folder">Jaminan Unggahan Lain/</param>
     </section>
-    
-    
-    
+
+
+
     <section name="QuickCreate" all_languages="yes" public="false">
         <param name="Account"><Account/></param>
         <param name="Opportunity"><Opportunity/></param>
@@ -1577,7 +1592,7 @@
         <param name="Failure_message">Pembuatan Gagal.</param>
         <param name="Common_success_message">Pembuatan berhasil.</param>
     </section>
-    
+
     <section name="Page_ReduceLicense" all_languages="yes" public="false">
         <param name="title">Minta Pengurangan Lisensi</param>
         <param name="pageheader">Harap isi semua bidang isian yang diperlukan untuk mengirimkan permintaan pengurangan lisensi Anda. Ini adalah cara tercepat untuk memproses permintaan Anda.  Harap jangan kirim beberapa permintaan untuk lisensi yang sama karena ini dapat menyebabkan penundaan yang tidak diperlukan.</param>
@@ -1804,8 +1819,8 @@
         <param name="useWildcardsWithSearch">Anda dapat menggunakan "*" (tanda bintang) sebagai wildcard di sebelah karakter lain untuk memperbaiki hasil pencarian Anda.</param>
         <param name="error_lookup_multiple_matches_ile">Banyak item ditemukan.&lt;br&gt;Klik ikon untuk mempersempit pencarian.</param>
     </section>
-    
-    
+
+
     <section name="Sharing" all_languages="yes" public="false">
         <param name="expand">Bentangkan Daftar</param>   <!-- aliased across labels; do not change -->
         <param name="expanded_list">Daftar yang Dibentangkan</param>
@@ -1840,7 +1855,7 @@
         <param name="selections">Pilihan</param>
         <param name="assignLicensesDescription">Pilih kotak centang di sebelah setiap paket yang ingin Anda tugaskan kepada pengguna ini, dan kemudian klik Penugasan. Kotak centang tidak ada jika paket tidak memiliki lisensi yang cukup atau status paket kadaluwarsa atau ditangguhkan.</param>
     </section>
-    
+
     <section name="UiSkin" all_languages="yes" public="false">
         <param name="0">salesforce.com Klasik</param>
         <param name="1">salesforce.com</param>   <!-- aliased across labels; do not change -->
@@ -1848,10 +1863,10 @@
         <param name="3">Toko web</param>
         <param name="4">Aloha</param>
     </section>
-    
-    
-    
-    
+
+
+
+
     <section name="Icon" all_languages="yes" public="false">
         <param name="CONFIRM">Konfirmasi</param>   <!-- aliased across labels; do not change -->
         <param name="INFO">Informasi</param>   <!-- aliased across labels; do not change -->
@@ -1953,5 +1968,5 @@
         <param name="nextText" alias="Wizard.next"/>
         <param name="previousText" alias="Wizard.previous"/>
     </section>
-    
+
 </iniFile>

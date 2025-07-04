@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -58,7 +75,7 @@
         <value plural="n">Activity</value>
         <value plural="y">Activities</value>
     </noun>
-    
+
 
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="n" startsWith="c">
         <value plural="n">Campaign</value>
@@ -70,7 +87,7 @@
         <value plural="y">Skills</value>
     </noun>
 
-        
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n">Document</value>
         <value plural="y">Documents</value>
@@ -81,22 +98,22 @@
         <value plural="y">Events</value>
     </noun>
 
-    
-    
-    
-    
+
+
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">Quote</value>
         <value plural="y">Quotes</value>
       </noun>
 
-  
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">Question</value>
         <value plural="y">Questions</value>
     </noun>
-    
-    
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="n" startsWith="c">
         <value plural="n">Lead</value>
         <value plural="y">Leads</value>
@@ -107,22 +124,22 @@
         <value plural="y">Opportunities</value>
     </noun>
 
-    
-    
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="n" startsWith="c">
         <value plural="n">Price Book</value>
         <value plural="y">Price Books</value>
     </noun>
 
-    
-    
+
+
     <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="n" startsWith="c">
         <value plural="n">Quote</value>
         <value plural="y">Quotes</value>
     </noun>
 
 
-    
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -139,8 +156,8 @@
     -->
 
 
-    
-    
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
@@ -151,10 +168,9 @@
         <value plural="n">Account Name</value>
         <value plural="y">Account Names</value>
     </noun>
-     
+
      <noun name="Product_Currency" entity="Product" gender="n" startsWith="c" standardField="y">
         <value plural="n">Product Currency</value></noun>
 
      <import file="adjectives.xml"/>
 </names>
-

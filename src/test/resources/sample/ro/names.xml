@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2025, Salesforce, Inc.
+    SPDX-License-Identifier: Apache-2
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <!DOCTYPE names SYSTEM "names.dtd">
 <names>
 <!--==========================================================================
@@ -64,8 +81,8 @@
         <value plural="y" case="d" article="the">Activităţilor</value>
     </noun>
 
-    
-        
+
+
     <noun name="Campaign" entity="Campaign" type="entity" alias="Campaigns" gender="f" startsWith="c">
         <value plural="n">Campanie</value>
         <value plural="n" article="the">Campania</value>
@@ -75,17 +92,17 @@
         <value plural="y" case="d" article="the">Campaniilor</value>
     </noun>
 
-    
-    
-    
-    
+
+
+
+
 <!-- Content -->
     	<!-- // Content -->
 
 
-    
-    
-    
+
+
+
     <noun name="Document" entity="Document" type="entity" alias="Documents" gender="n" startsWith="c">
         <value plural="n">Document</value>
         <value plural="n" article="the">Documentul</value>
@@ -95,12 +112,12 @@
         <value plural="y" case="d" article="the">Documentelor</value>
     </noun>
 
-    
-
-    
 
 
-    
+
+
+
+
 
 
 
@@ -114,12 +131,12 @@
     </noun>
 
 
-        
-        
-     
-    
-    
-    
+
+
+
+
+
+
     <noun name="Lead" entity="Lead" type="entity" alias="Leads" gender="m" startsWith="c">
         <value plural="n">Client potenţial</value>
         <value plural="n" article="the">Clientul potenţial</value>
@@ -129,20 +146,20 @@
         <value plural="y" case="d" article="the">Clienţilor potenţiali</value>
     </noun>
 
-        
-           
-        
-        
-        
-        
-        
-    
-            
-      
-      
-  
-      
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <noun name="Opportunity" entity="Opportunity" type="entity" alias="Opportunities" gender="f" startsWith="v">
         <value plural="n">Oportunitate</value>
         <value plural="n" article="the">Oportunitatea</value>
@@ -152,12 +169,12 @@
         <value plural="y" case="d" article="the">Oportunităţilor</value>
     </noun>
 
-    
-    
-    
 
-    
-  
+
+
+
+
+
     <noun name="Pricebook" entity="Pricebook" type="entity" alias="Pricebooks" gender="f" startsWith="c">
         <value plural="n">Listă de preţuri</value>
         <value plural="n" article="the">Lista de preţuri</value>
@@ -167,7 +184,7 @@
         <value plural="y" case="d" article="the">Listelor de preţuri</value>
     </noun>
 
-    
+
     <noun name="Question" entity="Question" type="entity" alias="Questions" gender="n" startsWith="c">
         <value plural="n">Întrebare</value>
         <value plural="y">Întrebări</value>
@@ -177,10 +194,10 @@
         <value plural="y" case="d" article="the">Întrebărilor</value>
     </noun>
 
-    
-    
-    
-    
+
+
+
+
    <noun name="Quote" entity="Quote" type="entity" alias="Quotes" gender="f" startsWith="c">
 	  <value plural="n">Ofertă</value>
       <value plural="y">Oferte </value>
@@ -190,24 +207,24 @@
       <value plural="y" case="d" article="the">Ofertelor</value>
     </noun>
 
-      
 
-    
 
-    
- 
-    
+
+
+
+
+
     <noun name="Skill" entity="Skill" type="entity" alias="Skills" gender="n" startsWith="c">
         <value plural="n">Aptitudine</value>
         <value plural="y">Aptitudini</value>
     </noun>
-	    
-	 
-    
-    
 
-        
-    
+
+
+
+
+
+
     <!-- Special for Custom Objects/Tabs
          This is actually, not only for custom object but should be considered as template
          for any unknown entities.
@@ -224,27 +241,25 @@
     -->
 
 
-    
-	
+
+
     <!--==================================================================
       Other Nouns
     ======================================================================-->
 
     <!--******* Accounts *************************************************-->
-    
-    
-    
+
+
+
     <noun name="Account_Name" alias="Account_Names" entity="Account" type="field" gender="f" startsWith="c" standardField="y">
         <value plural="n">Denumire cont</value>
         <value plural="y">Denumiri cont</value>
     </noun>
-    
-    
+
+
      <noun name="Product_Currency" entity="Product" gender="f" startsWith="c" standardField="y">
         <value plural="n">Valută produs</value></noun>
 
-    
+
     <import file="adjectives.xml"/>
 </names>
-
-
