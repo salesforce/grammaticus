@@ -363,11 +363,14 @@ public class BaseLocalizer {
          * The MALAYSIA (MY) (ms_MY) locale returns a time format of the form 'hh:mm' making it impossible to differentiate AM/PM
          * @return a dateformat with either a 24-hour clock or the necessary AM/PM identifier attached
          */
-        private static DateFormat checkAM(DateFormat dateFormat, Locale l) {
-            DateFormat df = dateFormat;
-            String p = ((SimpleDateFormat)dateFormat).toPattern();
-            if ((p.indexOf('a') == -1) && (p.indexOf('k') == -1) && (p.indexOf('H') == -1)) {
-                df = new SimpleDateFormat(p + " a", l);
+        DateFormat checkAM(DateFormat dateFormat, Locale l) {
+            SimpleDateFormat df = (SimpleDateFormat)dateFormat;
+            String p = df.toPattern();
+
+            // fix if neither 'H' or 'k' (24-hour) does not present, and if 'a' or 'B'
+            // (AM/PM notation) doesn't exist.  ICU version of SimpleDateFormat may return 'B' for zh-TW
+            if ((p.indexOf('H') == -1 && p.indexOf('k') == -1) && (p.indexOf('a') == -1 && p.indexOf('B') == -1)) {
+                df.applyPattern(p + " a");
             }
             return df;
         }
