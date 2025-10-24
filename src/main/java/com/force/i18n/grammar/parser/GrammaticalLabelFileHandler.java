@@ -838,8 +838,13 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
                 || !Character.isDigit(entityName.charAt(0)) ? null : entityName);
 
             TermAttributes attributes = new TermAttributes(getDictionary().getDeclension(), atts, false);
-            this.modTag = AdjectiveRefTag.getAdjectiveRefTag(lowerName, refTag, refTag,
-                Character.isUpperCase(tagName.charAt(0)), attributes);
+            if (getDictionary().getDeclension() instanceof com.force.i18n.grammar.impl.BasqueDeclension) {
+                this.modTag = BasqueAdjectiveRefTag.getAdjectiveRefTag(lowerName, refTag, refTag,
+                    Character.isUpperCase(tagName.charAt(0)), attributes);
+            } else {
+                this.modTag = AdjectiveRefTag.getAdjectiveRefTag(lowerName, refTag, refTag,
+                    Character.isUpperCase(tagName.charAt(0)), attributes);
+            }
         }
 
 ///CLOVER:OFF
@@ -1121,85 +1126,120 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
 
 
     NounRefTag constructNounTag(String entityName, Attributes atts, String entityElement) {
+        if (entityName == null) return null;
+
+        EntityNameContext nameCtx = resolveEntityNameAndCapitalization(entityName, entityElement);
+
+        LanguageDictionary dict = getParser().getDictionary();
+        LanguageDeclension declension = dict.getDeclension();
+
+        TermAttributes ta = new TermAttributes(declension, atts);
+        NounForm nounForm = getPreferredNounForm(ta, declension);
+
+        boolean escapeHtml = shouldEscapeHtml(atts);
+
+        NounRefTag custom = handleCustomEntity(nameCtx, escapeHtml, atts, nounForm, currentSection.getName(), currentParam.getName());
+        if (custom != null) return custom;
+
+        Noun exact = dict.getNoun(nameCtx.lowerName, false);
+        NounRefTag exactTag = handleExactNoun(exact, nameCtx, escapeHtml, nounForm);
+        if (exactTag != null) return exactTag;
+
+        Noun alias = dict.getNounByPluralAlias(nameCtx.lowerName, false);
+        NounRefTag aliasTag = handlePluralAlias(alias, nameCtx, escapeHtml, nounForm, ta, declension, currentSection.getName(), currentParam.getName());
+        if (aliasTag != null) return aliasTag;
+
+        return null;
+    }
+
+    private static final class EntityNameContext {
+        final String realEntityName;
+        final boolean isCapital;
+        final String lowerName;
+        final String originalEntityName;
+
+        EntityNameContext(String realEntityName, boolean isCapital, String lowerName, String originalEntityName) {
+            this.realEntityName = realEntityName;
+            this.isCapital = isCapital;
+            this.lowerName = lowerName;
+            this.originalEntityName = originalEntityName;
+        }
+    }
+
+    private EntityNameContext resolveEntityNameAndCapitalization(String entityName, String entityElement) {
         boolean isCapital = false;
-
-        Integer ref = null;
-        TermAttributes ta = new TermAttributes(getDictionary().getDeclension(), atts);
-
         String realEntityName = entityName;
-        // entityName could be null if this called for constructing ModTag
+
         if (entityElement != null) {
             isCapital = Character.isUpperCase(entityElement.charAt(0));
             realEntityName = ENTITY;
-
         } else if (entityName != null) {
             isCapital = Character.isUpperCase(realEntityName.charAt(0));
         }
 
+        String lowerName = realEntityName != null ? realEntityName.toLowerCase() : null;
+        return new EntityNameContext(realEntityName, isCapital, lowerName, entityName);
+    }
+
+    private boolean shouldEscapeHtml(Attributes atts) {
         String escapeHtmlStr = atts.getValue(ESCAPE_HTML);
-        boolean escapeHtml = "true".equals(escapeHtmlStr) || "y".equals(escapeHtmlStr);
+        return "true".equals(escapeHtmlStr) || "y".equals(escapeHtmlStr);
+    }
 
-        if (entityName != null) {
-            String lowerName = realEntityName.toLowerCase();
+    private NounForm getPreferredNounForm(TermAttributes ta, LanguageDeclension declension) {
+        if (declension.shouldApproximateNounFormsAtParseTime()) {
+            NounForm approx = ta.getApproximateNounForm();
+            return approx != null ? approx : ta.getExactNounForm();
+        }
 
-            // Try and get the noun
-            Noun n = getParser().getDictionary().getNoun(lowerName, false);
+        NounForm exact = ta.getExactNounForm();
+        if (exact != null) return exact;
 
-            // Get the form for the noun.
-            NounForm nid = ta.getExactNounForm();
-            if (nid == null) {
-                // Log a different error for articles vs non articles
-                if (ta.getArticle() != LanguageArticle.ZERO) {
-                    logger.finest("###\tNoun form " + ta + " at " + currentSection.getName() + "."
-                            + currentParam.getName() + " uses antiquated article form.  Stop it.");
-                } else {
-                    logger.log(getProblemLogLevel(), "###\tNoun form " + ta + " at " + currentSection.getName() + "."
-                            + currentParam.getName() + " not defined for this type of language");
-                }
-                nid = ta.getApproximateNounForm();
-            }
+        if (ta.getArticle() != LanguageArticle.ZERO) {
+            logger.finest("###\tNoun form " + ta + " at " + currentSection.getName() + "." + currentParam.getName() + " uses antiquated article form.  Stop it.");
+        } else {
+            logger.log(getProblemLogLevel(), "###\tNoun form " + ta + " at " + currentSection.getName() + "." + currentParam.getName() + " not defined for this type of language");
+        }
+        return ta.getApproximateNounForm();
+    }
 
-            // first test if this is for custom entities.  They need to keep track of the reference id
-            if (getParser().getDictionary().isCustom(lowerName)) {
-                // takes entity="0", "1", ... in addition to entityName
-                String testRef = atts.getValue(ENTITY);
-                try {
-                    ref = Integer.parseInt(testRef);
-                } catch (Exception ex) {
-                    // Yeah, this should be NPE || NumberFormatException.  This is simpler.
-                }
-                if (ref == null) {
-                    logger.log(getProblemLogLevel(), "###\tCustom entity <" + entityName + "> at " + currentSection.getName() + "."
-                        + currentParam.getName() + " must have entity attribute");
-                    return null;
-                }
-                return NounRefTag.getNounTag(realEntityName, ref, isCapital, escapeHtml, nid);
-            }
+    private NounRefTag handleCustomEntity(EntityNameContext nameCtx, boolean escapeHtml,
+            Attributes atts, NounForm nounForm, String sectionName, String paramName) {
 
-            // OK, we have a "real" noun for it.
-            if ( n != null) {
-                // this is %entity/%compoundNouns - check plural="y" in case someone set
-                return NounRefTag.getNounTag(realEntityName, null, isCapital, escapeHtml, nid);
-            }
+        if (!getParser().getDictionary().isCustom(nameCtx.lowerName)) return null;
 
-            // See if it's a lowercase alias.
-            n = getParser().getDictionary().getNounByPluralAlias(lowerName, false);
-            if ( n != null ) {
-                // Get the "correct" term attribute based on plural overrides
-                NounForm overrideForm = getDictionary().getDeclension().getExactNounForm(LanguageNumber.PLURAL, nid.getCase(), nid.getPossessive(), nid.getArticle());
-                if (overrideForm == null) {
-                    // Look for legacy article forms...
-                    if (ta.getArticle() != LanguageArticle.ZERO && getDictionary().getDeclension().hasArticle() &&
-                        !getDictionary().getDeclension().hasArticleInNounForm()) {
-                        logger.finest("###\tNoun form " + ta + " at " + currentSection.getName() + "."
-                                + currentParam.getName() + " uses antiquated article form.  Stop it.");
-                        overrideForm = getDictionary().getDeclension().getApproximateNounForm(LanguageNumber.PLURAL, nid.getCase(), nid.getPossessive(), nid.getArticle());
-                    }
-                }
-                return NounRefTag.getNounTag(n.getName(), null, isCapital, escapeHtml, overrideForm);
+        Integer ref = null;
+        String testRef = atts.getValue(ENTITY);
+        try {
+            ref = Integer.valueOf(testRef);
+        } catch (Exception ex) {
+            // ignore, handled below
+        }
+
+        if (ref == null) {
+            logger.log(getProblemLogLevel(), "###\tCustom entity <" + nameCtx.originalEntityName + "> at " + sectionName + "." + paramName + " must have entity attribute");
+            return null;
+        }
+        return NounRefTag.getNounTag(nameCtx.realEntityName, ref, nameCtx.isCapital, escapeHtml, nounForm);
+    }
+
+    private NounRefTag handleExactNoun(Noun noun, EntityNameContext nameCtx, boolean escapeHtml, NounForm nounForm) {
+        if (noun == null) return null;
+        return NounRefTag.getNounTag(nameCtx.realEntityName, null, nameCtx.isCapital, escapeHtml, nounForm);
+    }
+
+    private NounRefTag handlePluralAlias(Noun aliasNoun, EntityNameContext nameCtx, boolean escapeHtml,
+            NounForm baseForm, TermAttributes ta, LanguageDeclension declension, String sectionName, String paramName) {
+        if (aliasNoun == null) return null;
+
+        NounForm overrideForm = declension.getExactNounForm(LanguageNumber.PLURAL, baseForm.getCase(), baseForm.getPossessive(), baseForm.getArticle());
+        if (overrideForm == null) {
+            if (ta.getArticle() != LanguageArticle.ZERO && declension.hasArticle() && !declension.hasArticleInNounForm()) {
+                logger.finest("###\tNoun form " + ta + " at " + sectionName + "." + paramName + " uses antiquated article form.  Stop it.");
+                overrideForm = declension.getApproximateNounForm(LanguageNumber.PLURAL, baseForm.getCase(), baseForm.getPossessive(), baseForm.getArticle());
             }
         }
-        return null;
+        return NounRefTag.getNounTag(aliasNoun.getName(), null, nameCtx.isCapital, escapeHtml, overrideForm);
     }
 
     /**

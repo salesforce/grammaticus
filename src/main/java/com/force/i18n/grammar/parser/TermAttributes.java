@@ -121,6 +121,7 @@ public final class TermAttributes implements Serializable {
         LanguagePossessive p = LanguagePossessive.fromLabelValue(atts.getValue(POSSESSIVE));
         if (p != null) _possessive = p;
         LanguageArticle a = LanguageArticle.fromLabelValue(atts.getValue(ARTICLE));
+        if (a == null) a = LanguageArticle.fromDbValue(atts.getValue(ARTICLE));
         if (a != null) _article = a;
         LanguagePosition loc = LanguagePosition.fromLabelValue(atts.getValue(POSITION));
         if (loc != null) _position = loc;

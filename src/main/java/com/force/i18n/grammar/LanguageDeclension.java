@@ -361,9 +361,55 @@ public interface LanguageDeclension {
         return getApproximateNounForm(number, getDefaultCase(), LanguagePossessive.NONE, articleType);
     }
 
+    /**
+     * Canonical noun form used by dictionary fallback copy. For languages with
+     * specialized concrete forms (e.g., Basque), this returns the appropriate
+     * enum-backed form to store values against. Defaults to getNounForm.
+     */
+    default NounForm getCanonicalNounForm(LanguageNumber number, LanguageArticle articleType) {
+        return getNounForm(number, articleType);
+    }
+
     // Convenience method for retrieving an equivalent nounForm from this declension
     default NounForm getNounForm(NounForm nf) {
         return getExactNounForm(nf.getNumber(), nf.getCase(), nf.getPossessive(), nf.getArticle());
+    }
+
+    /**
+     * Hint for label parsing: whether to choose approximate/dynamic noun forms at <b>parse time</b>
+     * (not at render time) when constructing noun refs from labels.
+     * <p>
+     * Rationale: For languages whose inflection is primarily realized by productive rules at render time
+     * (e.g., generated from a bare stem using case/number/article morphology), the parser should preserve
+     * the requested attributes (number, case, article) by selecting a dynamic/approximate noun form and
+     * storing it directly in the tag. This avoids re-deriving or collapsing the author-requested attributes
+     * later, and prevents double approximation.
+     * </p>
+     * <p>
+     * If this method returns {@code true}, callers retrieving a noun tag's form should use that stored form
+     * as-is instead of recomputing an approximate form at render time.
+     * </p>
+     */
+    default boolean shouldApproximateNounFormsAtParseTime() { return false; }
+
+    /**
+     * Optional: Generate a rendered <b>surface</b> (the final, inflected output string) from a
+     * base/lemma value for the given noun form. Implementations may apply language-specific
+     * morphology and phonological adjustments (e.g., suffix selection, vowel interaction) based on
+     * the form's attributes (number, case, article, etc.).
+     * <p>
+     * Return {@code null} if surface generation from base is not supported by the declension.
+     * </p>
+     */
+    default String generateSurfaceFromBase(String base, NounForm form) { return null; }
+
+    /**
+     * Optional: Generate a rendered <b>surface</b> directly from a noun term for the given noun form.
+     * Default implementation delegates to {@link #generateSurfaceFromBase(String, NounForm)} using the
+     * term's default/base value.
+     */
+    default String generateSurfaceFromTerm(Noun noun, NounForm form) {
+        return generateSurfaceFromBase(noun == null ? null : noun.getDefaultString(false), form);
     }
 
     /**

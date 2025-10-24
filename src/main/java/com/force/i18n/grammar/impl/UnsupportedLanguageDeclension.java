@@ -372,17 +372,6 @@ abstract class UnsupportedLanguageDeclension extends ArticledDeclension {
 
 
     /**
-     * Basque is a language isolate that uses agglutination to form most of the words.  Our grammar
-     * engine is not designed to handle it at this time.
-     * Basque has an "unmarked" noun form, to which you add singular or plural endings.
-     */
-    static class BasqueDeclension extends UnsupportedAsSimpleDeclension {
-        public BasqueDeclension(HumanLanguage language) {
-            super(language);
-        }
-    }
-
-    /**
      * Greenlandic is member of Eskimo–Aleut (Inuit) that has highly synthetic with heavy suffixes. Our grammar engine
      * is not designed to handle it at this time therefore, provide just Singular form for now.
      * <p>

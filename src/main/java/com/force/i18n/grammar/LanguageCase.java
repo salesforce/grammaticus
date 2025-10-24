@@ -57,6 +57,7 @@ public enum LanguageCase {
     ADVERBIAL ("adv", "Adverbial"),
     ABESSIVE("abe", "Abessive"),
     COMITATIVE("com", "Comitative"),
+    BENEFACTIVE("be", "Benefactive"),
     ;
 
 	public static final char JSON_ATTR_NAME = 'c';
