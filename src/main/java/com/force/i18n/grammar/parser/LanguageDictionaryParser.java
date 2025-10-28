@@ -101,11 +101,11 @@ public final class LanguageDictionaryParser {
         boolean copyFormsDirectly = LanguageDeclensionFactory.get().isForwardingProxy(this.dictionary.getDeclension())
             || fallbackDictionary.getDeclension().getClass().isAssignableFrom(this.dictionary.getDeclension().getClass());
 
-        Set<String> fallbackNouns = new HashSet<String>(fallbackDictionary.getAllTermNames(TermType.Noun));
+        Set<String> fallbackNouns = new HashSet<>(fallbackDictionary.getAllTermNames(TermType.Noun));
         fallbackNouns.removeAll(this.dictionary.getAllTermNames(TermType.Noun));  // Remove all translated nouns
 
-        NounForm defaultNounForm = this.dictionary.getDeclension().getNounForm(LanguageNumber.SINGULAR, LanguageArticle.ZERO);
-        NounForm pluralNounForm = this.dictionary.getDeclension().hasPlural() ? this.dictionary.getDeclension().getNounForm(LanguageNumber.PLURAL, LanguageArticle.ZERO) : null;
+        NounForm defaultNounForm = this.dictionary.getDeclension().getCanonicalNounForm(LanguageNumber.SINGULAR, LanguageArticle.ZERO);
+        NounForm pluralNounForm = this.dictionary.getDeclension().hasPlural() ? this.dictionary.getDeclension().getCanonicalNounForm(LanguageNumber.PLURAL, LanguageArticle.ZERO) : null;
         NounForm fallbackPluralNounForm = fallbackDictionary.getDeclension().getNounForm(LanguageNumber.PLURAL, LanguageArticle.ZERO);
 
         for (String nounToAdd : fallbackNouns) {
@@ -134,7 +134,7 @@ public final class LanguageDictionaryParser {
         }
 
         // Copy over adjectives (but not articles)
-        Set<String> fallbackAdjectives = new HashSet<String>(fallbackDictionary.getAllTermNames(TermType.Adjective));
+        Set<String> fallbackAdjectives = new HashSet<>(fallbackDictionary.getAllTermNames(TermType.Adjective));
         fallbackAdjectives.removeAll(this.dictionary.getAllTermNames(TermType.Adjective));  // Remove all translated adjectives
         for (String adjectiveToAdd : fallbackAdjectives) {
             Adjective fallbackAdj = fallbackDictionary.getAdjective(adjectiveToAdd);
@@ -157,7 +157,7 @@ public final class LanguageDictionaryParser {
 
         // Copy over article iff we are a child class.
         if (dictionary.getDeclension().hasArticle() && copyFormsDirectly) {
-            Set<String> fallbackArticles = new HashSet<String>(fallbackDictionary.getAllTermNames(TermType.Article));
+            Set<String> fallbackArticles = new HashSet<>(fallbackDictionary.getAllTermNames(TermType.Article));
             fallbackArticles.removeAll(this.dictionary.getAllTermNames(TermType.Article));  // Remove all translated Articles
             for (String articleToAdd : fallbackArticles) {
                 Article fallbackArt = fallbackDictionary.getArticle(articleToAdd);

@@ -31,7 +31,7 @@ class AdjectiveRefTag extends ModifierRefTag {
     // Keep the size of serialized maps down to a minimum by reusing tags.
     protected static final ConcurrentUniquefy<AdjectiveRefTag> tagMap = new ConcurrentUniquefy<>();
 
-    private AdjectiveRefTag(String name, NounRefTag nounTag, TermRefTag nextTerm, boolean isCapital,
+    protected AdjectiveRefTag(String name, NounRefTag nounTag, TermRefTag nextTerm, boolean isCapital,
             TermAttributes overrides) {
         super(name, nounTag, nextTerm, isCapital, overrides);
     }

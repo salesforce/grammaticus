@@ -270,8 +270,8 @@ public enum LanguageDeclensionFactory {
             return new UnsupportedLanguageDeclension.IrishDeclension(language);
         case WELSH:    // Lenition
             return new UnsupportedLanguageDeclension.CelticDeclension(language);
-        case BASQUE:   // Agglutintive in a way that can't really be supported
-            return new UnsupportedLanguageDeclension.BasqueDeclension(language);
+        case BASQUE:
+            return new BasqueDeclension(language);
         case MALTESE:  // More complicated than arabic: complicated starts with, dual form, etc.
             return new UnsupportedLanguageDeclension.MalteseDeclension(language);
         case PERSIAN:  // Arabic vs Persian native words have different declensions
@@ -286,6 +286,8 @@ public enum LanguageDeclensionFactory {
             return new SimpleDeclension(language);
         case KAQCHIKEL:
             return new SimpleDeclension(language);
+        default:
+            // just fallthrouh to the default
         }
 
         if (FAIL_ON_MISSING) {

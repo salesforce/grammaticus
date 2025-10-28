@@ -100,43 +100,4 @@ public class GrammaticalLabelFileTest extends BaseGrammaticalLabelTest {
         assertEquals("Tài Liệu", renderLabel(VIETNAMESE, "<Document/>"));
         assertEquals("Các Tài Liệu", renderLabel(VIETNAMESE, "<Documents/>"));
     }
-
-    // TODO: what is this for?  seems like its just reporting on terminal for missing plural form in names.xml.
-    //       it's not validatin/asserting; disable it for now.
-    // public void testDifferenceInRenameTabs() throws Exception {
-    //     StringBuilder diffs = new StringBuilder();
-    //     for (HumanLanguage language : LanguageProviderFactory.get().getAll()) {
-    //         if (!LanguageDeclensionFactory.get().getDeclension(language).hasPlural()) continue;
-    //         LanguageDictionary dictionary = loadDictionary(language);
-    //         Multimap<String,String> nowHasPlural = TreeMultimap.create();
-    //         Multimap<String,String> missingPlural = TreeMultimap.create();
-
-    //         for (String entity : new TreeSet<String>(dictionary.getNounsByEntity().keySet())) {
-    //             for (Noun n : dictionary.getNounsByEntity().get(entity)) {
-    //                 if (n.getNounType() == NounType.ENTITY) continue;
-    //                 boolean hasPluralForm = false;
-    //                 for (NounForm form : n.getAllDefinedValues().keySet()) {
-    //                     if (form.getNumber() == LanguageNumber.PLURAL && form.getCase() == LanguageCase.NOMINATIVE) {
-    //                         hasPluralForm = true;
-    //                         break;
-    //                     }
-    //                 }
-    //                 if (hasPluralForm != (n.getNounType() == NounType.FIELD)) {
-    //                     if (hasPluralForm) {
-    //                         nowHasPlural.put(entity, n.getName());
-    //                     } else {
-    //                         missingPlural.put(entity, n.getName());
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         if (nowHasPlural.size() > 0) {
-    //             diffs.append(language).append(" can rename plural fields for: ").append(nowHasPlural).append('\n');
-    //         }
-    //         if (missingPlural.size() > 0) {
-    //             diffs.append(language).append(" has these plural fields removed for rename: ").append(missingPlural).append('\n');
-    //         }
-    //     }
-    //     System.out.println(diffs.toString());
-    // }
 }

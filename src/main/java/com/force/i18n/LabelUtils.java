@@ -32,8 +32,6 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.checkerframework.checker.nullness.qual.Nullable;
-
 import com.force.i18n.commons.text.GenericTrieMatcher;
 import com.force.i18n.commons.text.GenericTrieMatcher.GenericTrieMatch;
 import com.force.i18n.commons.text.TextUtil;
@@ -134,7 +132,7 @@ public enum LabelUtils {
      * @param grammar XML snippet
      * @return a sample dictionary file containing the xml snippet inside the "names" tag
      */
-    public static String getSampleGrammarFile(@Nullable String grammar) {
+    public static String getSampleGrammarFile(String grammar) {
         if (grammar == null || grammar.isEmpty()) {
             return null;
         } else {

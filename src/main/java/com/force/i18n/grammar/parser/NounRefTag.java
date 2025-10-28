@@ -17,7 +17,6 @@
 
 package com.force.i18n.grammar.parser;
 
-
 import static com.google.common.base.Preconditions.checkState;
 
 import java.util.List;
@@ -29,7 +28,6 @@ import com.force.i18n.*;
 import com.force.i18n.commons.text.TextUtil;
 import com.force.i18n.grammar.*;
 import com.force.i18n.grammar.GrammaticalTerm.TermType;
-
 
 /**
  * Noun Tag reference implementation.
@@ -46,7 +44,7 @@ class NounRefTag extends TermRefTag {
 
     private final NounForm form;
     private final boolean isCapital; // capital case
-    private final boolean escapeHtml;  // Should the entity name be "pre-escaped"
+    private final boolean escapeHtml; // Should the entity name be "pre-escaped"
     // used if this is dynamic reference to entity like <entity entity="0"/>
     private final int index;
     private final int hashCode;
@@ -72,8 +70,7 @@ class NounRefTag extends TermRefTag {
         final int PRIME = 37;
         result = result * PRIME + (form == null ? 0 : form.hashCode());
         result = result * PRIME + index;
-        result = result<<2 + (isCapital ? 2 : 0)
-             + (escapeHtml ? 1 : 0);
+        result = result << 2 + (isCapital ? 2 : 0) + (escapeHtml ? 1 : 0);
         return result;
     }
 
@@ -104,9 +101,13 @@ class NounRefTag extends TermRefTag {
     public NounForm getForm(LanguageDictionary dict, boolean overrideForm) {
         if (!overrideForm) {
             return getForm();
-        } else {
-            return dict.getDeclension().getApproximateNounForm(getForm().getNumber(), getForm().getCase(), getForm().getPossessive(), getForm().getArticle());
         }
+        // For declensions that generate noun surfaces at render time (like Basque), the form was set as an approximate/dynamic one during label parsing,
+        // so re-running approximation would be redundant and could lose the intended attributes. Just return the stored form.
+        if (dict.getDeclension().shouldApproximateNounFormsAtParseTime()) {
+            return getForm();
+        }
+        return dict.getDeclension().getApproximateNounForm(getForm().getNumber(), getForm().getCase(), getForm().getPossessive(), getForm().getArticle());
     }
 
     // leaves the number as part of the inflection, but removes possession, case, and article
@@ -136,48 +137,22 @@ class NounRefTag extends TermRefTag {
 
         NounForm frm = getForm(dict, overrideForms);
 
-        if (isDynamic()) {
-            if (entities == null) {
-                if (!LabelDebug.isLabelHintAllowed()) {
-                        logger.log(Level.SEVERE,
-                                "Calling getLabel that has an <entity> without providing that entity only allowed in label debug mode");
-                }
-                s = frm.getNumber().isPlural() ? "<Entities>" : "<Entity>";
-                return isCapital ? s : dict.getDeclension().formLowercaseNounForm(s, frm);
+        // Preserve original early-return behavior for missing dynamic entity (no HTML escaping)
+        if (isDynamic() && entities == null) {
+            if (!LabelDebug.isLabelHintAllowed()) {
+                logger.log(Level.SEVERE, "Calling getLabel that has an <entity> without providing that entity only allowed in label debug mode");
             }
-            Renameable ei = entities[index];
-            Noun n = dict.getDynamicNoun(getName(), ei, true, true);
-            if (n != null) {
-                s = n.getString(frm, !isCapital);
-
-                if (s == null) {
-                    logger.log(Level.INFO, "Noun reference in label files to an undefined form " + getForm() + " for " + getName());
-                    // TODO: Gack in development.
-                    s = n.getCloseButNoCigarString(frm);
-                }
-
-            // For non-renamable standard entity, simply return its label
-            } else if (ei.hasStandardLabel()) {
-                s = frm.getNumber().isPlural() ? ei.getLabelPlural() : ei.getLabel();
-                if (!isCapital)
-                    s = dict.getDeclension().formLowercaseNounForm(s, form);
-            }
-        } else {
-            Noun n = dict.getNoun(getName(), true);
-            assert n != null : "Couldn't find noun for " + getName();
-            s = n.getString(frm, !isCapital);
-            if (s == null) {
-                logger.log(Level.INFO, "Noun reference in label files to an undefined form " + frm + " for " + getName());
-                s = n.getDefaultString(frm.getNumber().isPlural());
-                if (!isCapital) s = n.getDeclension().formLowercaseNounForm(s, frm);
-                if (s == null && !frm.getNumber().isPlural()) {
-                    // TODO: German has some nouns that only have plural versions.  WHAT THE HELL (campaign_member_information)
-                    s = n.getDefaultString(true);
-                    if (!isCapital) s = n.getDeclension().formLowercaseNounForm(s, frm);
-                }
-            }
+            String placeholder = frm.getNumber().isPlural() ? "<Entities>" : "<Entity>";
+            return isCapital ? placeholder : dict.getDeclension().formLowercaseNounForm(placeholder, frm);
         }
 
+        // Dynamic vs static rendering
+        s = isDynamic() ? renderDynamic(dict, frm, entities) : renderStatic(dict, frm);
+
+        // Language-specific fallback generation from term if still missing
+        if (s == null) {
+            s = generateFromTermIfMissing(dict, frm, entities);
+        }
 
         assert s != null : "No string found for form : " + form + " for " + getName();
 
@@ -188,11 +163,83 @@ class NounRefTag extends TermRefTag {
         return s;
     }
 
+    private String renderDynamic(LanguageDictionary dict, NounForm frm, Renameable... entities) {
+        Renameable entity = getEntityAtIndexOrNull(entities);
+        if (entity == null) return null;
+
+        Noun n = dict.getDynamicNoun(getName(), entity, true, true);
+        if (n != null) {
+            String s = n.getString(frm, !isCapital);
+            if (s != null) return s;
+
+            // If explicit form is missing, try language-specific surface generation from the term
+            String generated = dict.getDeclension().generateSurfaceFromTerm(n, frm);
+            if (generated != null) {
+                return isCapital ? generated : n.getDeclension().formLowercaseNounForm(generated, frm);
+            }
+            logger.info(() -> "Noun reference in label files to an undefined form " + getForm() + " for " + getName());
+            return n.getCloseButNoCigarString(frm);
+        }
+
+        // For non-renamable standard entity, simply return its label
+        if (entity.hasStandardLabel()) {
+            String s = frm.getNumber().isPlural() ? entity.getLabelPlural() : entity.getLabel();
+            return isCapital ? s : dict.getDeclension().formLowercaseNounForm(s, frm);
+        }
+        return null;
+    }
+
+    private String renderStatic(LanguageDictionary dict, NounForm frm) {
+        Noun n = dict.getNoun(getName(), true);
+        assert n != null : "Couldn't find noun for " + getName();
+
+        String s = n.getString(frm, !isCapital);
+        if (s != null) return s;
+
+        // If the declension can generate surfaces from base, use it when explicit form is absent
+        String generated = dict.getDeclension().generateSurfaceFromBase(n.getDefaultString(false), frm);
+        if (generated != null) {
+            return isCapital ? generated : n.getDeclension().formLowercaseNounForm(generated, frm);
+        }
+
+        logger.info(() -> "Noun reference in label files to an undefined form " + frm + " for " + getName());
+        s = n.getDefaultString(frm.getNumber().isPlural());
+        if (s != null) {
+            return isCapital ? s : n.getDeclension().formLowercaseNounForm(s, frm);
+        }
+        if (!frm.getNumber().isPlural()) {
+            // TODO: German has some nouns that only have plural versions. WHAT THE HELL (campaign_member_information)
+            s = n.getDefaultString(true);
+            if (s != null) {
+                return isCapital ? s : n.getDeclension().formLowercaseNounForm(s, frm);
+            }
+        }
+        return null;
+    }
+
+    private String generateFromTermIfMissing(LanguageDictionary dict, NounForm frm, Renameable... entities) {
+        Noun n;
+        if (isDynamic()) {
+            Renameable entity = getEntityAtIndexOrNull(entities);
+            n = entity != null ? dict.getDynamicNoun(getName(), entity, true, false) : dict.getNoun(getName(), true);
+        } else {
+            n = dict.getNoun(getName(), true);
+        }
+        String generated = dict.getDeclension().generateSurfaceFromTerm(n, frm);
+        if (generated == null) return null;
+
+        return isCapital ? generated : n.getDeclension().formLowercaseNounForm(generated, frm);
+    }
+
+    private Renameable getEntityAtIndexOrNull(Renameable... entities) {
+        return (entities != null && index >= 0 && index < entities.length) ? entities[index] : null;
+    }
+
     @Override
     String extraJson(LanguageDictionary dictionary, List<?> terms) {
         // grammaticus.js no longer supports 'legacy' article form such as <account article="a"/>
         if (this.form instanceof LegacyArticledNounForm) {
-            logger.log(Level.SEVERE, "Noun reference in label files with legacy article directive for " + getName()
+            logger.severe(() -> "Noun reference in label files with legacy article directive for " + getName()
                     + ". this is no longer supported in Javascript. please use proper article tag such as \"<a/>\".");
         }
 
@@ -209,6 +256,14 @@ class NounRefTag extends TermRefTag {
             && this.index == ((NounRefTag)obj).index
             && this.escapeHtml == ((NounRefTag)obj).escapeHtml
             && this.isCapital == ((NounRefTag)obj).isCapital;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof NounRefTag) {
+            return super.equals(obj);
+        }
+        return false;
     }
 
     @Override

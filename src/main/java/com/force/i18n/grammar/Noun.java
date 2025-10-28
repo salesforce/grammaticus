@@ -42,8 +42,8 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     private final NounType nounType;
     private String entityName;              // not final for readResolve()
     private String pluralAlias;             // not final for readResolve()
-    private LanguageGender gender;          // TODO: make final
-    private LanguageStartsWith startsWith;  // TODO: make final
+    private LanguageGender gender;
+    private LanguageStartsWith startsWith;
     private String access;                  // not final for readResolve()
     private final boolean isStandardField; // specifies whether this label is a standard field or not. For the Rename
     private final boolean isCopied;        // specifies whether this noun was copied from english (or another fallback language)
@@ -175,10 +175,9 @@ public abstract class Noun extends GrammaticalTerm implements Cloneable {
     }
 
     @Override
-    public final boolean equals(Object obj) {
+    public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj instanceof Noun) {
-            Noun n = (Noun)obj;
+        if (obj instanceof Noun n) {
             return super.equals(n) && equalsAttribute(n) && equalsValue(n);
         }
         return false;
