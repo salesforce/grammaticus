@@ -221,7 +221,14 @@ class NounRefTag extends TermRefTag {
         Noun n;
         if (isDynamic()) {
             Renameable entity = getEntityAtIndexOrNull(entities);
-            n = entity != null ? dict.getDynamicNoun(getName(), entity, true, false) : dict.getNoun(getName(), true);
+            if (entity != null) {
+                n = dict.getDynamicNoun(getName(), entity, true, false);
+            } else if (entities != null && entities.length > 0) {
+                // Fallback: if the requested dynamic index is out of range, use the first provided entity
+                n = dict.getDynamicNoun(getName(), entities[0], true, false);
+            } else {
+                n = dict.getNoun(getName(), true);
+            }
         } else {
             n = dict.getNoun(getName(), true);
         }
