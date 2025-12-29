@@ -524,6 +524,9 @@ public final class TextUtil {
     }
 
     public static String escapeForMessageFormat(String str) {
+        if (str == null || str.length() == 0) {
+            return str;
+        }
         return escapeForMessageFormat(str, new StringBuilder(str.length()), true).toString();
     }
 
@@ -542,6 +545,9 @@ public final class TextUtil {
      * @return sb
      */
     public static StringBuilder escapeForMessageFormat(String src, StringBuilder sb, boolean check) {
+        if (src == null || src.length() == 0) {
+            return sb.append(src == null ? "" : src);
+        }
         if (check && src.indexOf('{') < 0) {
             // Label doesn't specify any substitutions, ie. {0}
             return sb.append(src);
