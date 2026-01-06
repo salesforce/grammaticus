@@ -31,8 +31,8 @@ public class TextUtilTest extends TestCase {
     // Tests for escapeForMessageFormat(String str)
     
     public void testEscapeForMessageFormat_NullInput() {
-        // Test that null input returns null without throwing NPE
-        assertNull(TextUtil.escapeForMessageFormat(null));
+        // Test that null input returns empty string without throwing NPE
+        assertEquals("", TextUtil.escapeForMessageFormat(null));
     }
     
     public void testEscapeForMessageFormat_EmptyString() {
@@ -145,7 +145,7 @@ public class TextUtilTest extends TestCase {
         
         // Scenario from the stack trace: null string from RefTag.toString()
         String nullString = null;
-        assertNull(TextUtil.escapeForMessageFormat(nullString));
+        assertEquals("", TextUtil.escapeForMessageFormat(nullString));
         
         // Test with StringBuilder for null handling
         StringBuilder sb = new StringBuilder("Label: ");
