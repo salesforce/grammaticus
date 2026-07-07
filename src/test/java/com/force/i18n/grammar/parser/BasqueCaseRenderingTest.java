@@ -18,14 +18,17 @@
 package com.force.i18n.grammar.parser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -34,7 +37,20 @@ import org.junit.jupiter.params.provider.MethodSource;
 import com.force.i18n.HumanLanguage;
 import com.force.i18n.Renameable;
 import com.force.i18n.grammar.GrammaticalLabelSet;
+import com.force.i18n.grammar.LanguageArticle;
+import com.force.i18n.grammar.LanguageCase;
+import com.force.i18n.grammar.LanguageDeclension;
+import com.force.i18n.grammar.LanguageGender;
+import com.force.i18n.grammar.LanguageNumber;
+import com.force.i18n.grammar.LanguagePossessive;
+import com.force.i18n.grammar.LanguageStartsWith;
+import com.force.i18n.grammar.Noun;
+import com.force.i18n.grammar.Noun.NounType;
+import com.force.i18n.grammar.NounForm;
+import com.force.i18n.grammar.impl.LanguageDeclensionFactory;
 import com.force.i18n.LanguageProviderFactory;
+
+import com.google.common.collect.ImmutableMap;
 
 /**
  * End-to-end tests for Basque suffix rendering across cases and stem endings using attributes on terms. Converted to
@@ -379,6 +395,19 @@ public class BasqueCaseRenderingTest {
                             "<noun name=\"VowelH\"><value plural=\"n\">Zah</value></noun>" },
                     { "ABS pl with article=i falls back to def", "etxeak", "<house plural=\"y\" article=\"i\"/>",
                             nouns },
+
+                    // Explicit plural override: when names.xml defines both singular and plural values,
+                    // a label reference with plural="y" (default article="i") must return the stored
+                    // plural value, not the singular base + suffix.
+                    { "ABS pl explicit override (default article)", "Plural Test",
+                            "<TestXXX plural=\"y\"/>",
+                            "<noun name=\"TestXXX\"><value plural=\"n\">Singular Test</value><value plural=\"y\">Plural Test</value></noun>" },
+                    { "ABS pl explicit override (article=d)", "Plural Test",
+                            "<TestXXX plural=\"y\" article=\"d\"/>",
+                            "<noun name=\"TestXXX\"><value plural=\"n\">Singular Test</value><value plural=\"y\">Plural Test</value></noun>" },
+                    { "ABS sg explicit override still works", "Singular Test",
+                            "<TestXXX/>",
+                            "<noun name=\"TestXXX\"><value plural=\"n\">Singular Test</value><value plural=\"y\">Plural Test</value></noun>" },
                 };
             return Arrays.stream(arr).map(Arguments::of);
         }
@@ -389,7 +418,7 @@ public class BasqueCaseRenderingTest {
             assertEquals(expected, helper.renderLabel(eu, label, grammar), description);
         }
 
-        @org.junit.jupiter.api.Test
+        @Test
         void staticFallbackGenerateFromTermIfMissingReturnsNull_throws() {
             String grammar = "<noun name=\"NoVal\"></noun>";
             String label = "<NoVal case=\"d\" article=\"d\"/>";
@@ -532,6 +561,139 @@ public class BasqueCaseRenderingTest {
 
             assertEquals(expected, helper.getValue(eu, label, new Renameable[] { account, contact }, grammar),
                     description);
+        }
+    }
+
+    /**
+     * Regression tests for the rename/override write path (the runtime entry point exercised by the
+     * external {@code RenamingProvider} in the Core app server via
+     * {@link Noun#clone(LanguageGender, LanguageStartsWith, Map)}).
+     *
+     * <p>
+     * Basque's {@code getApproximateNounForm(...)} returns a non-enum {@code BasqueDynamicNounForm}
+     * whenever the requested (number, case, article) triple has no exact enum form (e.g. plural ABS
+     * with the default INDEFINITE article, or any non-core singular case). When such a form is used as
+     * an override key, it reaches {@code BasqueNoun.setString}, which historically cast the form to the
+     * enum {@code BasqueNounForm} unconditionally and threw {@link ClassCastException}.
+     * </p>
+     */
+    @Nested
+    @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+    class OverrideWritePath extends Base {
+
+        private LanguageDeclension declension() {
+            return LanguageDeclensionFactory.get().getDeclension(eu);
+        }
+
+        private Noun newBasqueNoun() {
+            // A minimal Basque noun with an explicit BASE (bare stem) override, mirroring how a
+            // dictionary-loaded noun looks before rename overrides are applied.
+            return declension().createNoun("Etxe", NounType.ENTITY, "Etxe", LanguageStartsWith.CONSONANT,
+                    LanguageGender.NEUTER,
+                    ImmutableMap.of(declension().getNounForm(LanguageNumber.SINGULAR, LanguageArticle.ZERO), "Etxe"));
+        }
+
+        /**
+         * Plural ABS with the default (INDEFINITE) article produces a dynamic form. Cloning with it as
+         * an override key drives it into setString and must not throw (was ClassCastException on 1.3.3).
+         */
+        @Test
+        void cloneWithDynamicPluralOverrideDoesNotThrow() {
+            Noun noun = newBasqueNoun();
+            NounForm dynamic = declension().getApproximateNounForm(
+                    LanguageNumber.PLURAL, LanguageCase.NOMINATIVE, LanguagePossessive.NONE, LanguageArticle.INDEFINITE);
+            Map<NounForm, String> overrides = ImmutableMap.of(dynamic, "Etxeak");
+            assertDoesNotThrow(() -> noun.clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, overrides),
+                    "override with a dynamic plural noun form must not throw a ClassCastException");
+        }
+
+        /**
+         * A non-core singular case (e.g. INESSIVE) has no exact singular enum form and also yields a
+         * dynamic form. Cloning with it must not throw, and — critically — must not corrupt the
+         * bare-stem BASE value used as the source for render-time surface generation.
+         */
+        @Test
+        void cloneWithDynamicNonCoreSingularDoesNotThrowOrCorruptBase() {
+            Noun noun = newBasqueNoun();
+            String baseBefore = noun.getDefaultString(false);
+
+            NounForm dynamic = declension().getApproximateNounForm(
+                    LanguageNumber.SINGULAR, LanguageCase.INESSIVE, LanguagePossessive.NONE, LanguageArticle.DEFINITE);
+            Map<NounForm, String> overrides = ImmutableMap.of(dynamic, "Etxean");
+            Noun clone = assertDoesNotThrow(
+                    () -> noun.clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, overrides),
+                    "override with a dynamic non-core singular noun form must not throw a ClassCastException");
+
+            // The inflected surface must NOT have overwritten the bare stem: rendering derives every
+            // form from the BASE/default string, so a corrupted base would poison all other forms.
+            assertEquals(baseBefore, clone.getDefaultString(false),
+                    "storing a dynamic (non-enum) form must not overwrite the bare-stem BASE value");
+        }
+
+        /**
+         * End-to-end analogue of the Core rename path: clone an existing dictionary noun with an
+         * override map keyed by approximate forms, exactly as {@code RenamingProvider} does.
+         */
+        @Test
+        void cloneWithApproximateFormOverridesDoesNotThrow() {
+            Noun noun = newBasqueNoun();
+            LanguageDeclension decl = declension();
+            Map<NounForm, String> overrides = ImmutableMap.of(
+                    decl.getApproximateNounForm(LanguageNumber.SINGULAR, LanguageCase.NOMINATIVE,
+                            LanguagePossessive.NONE, LanguageArticle.INDEFINITE), "Bulego",
+                    decl.getApproximateNounForm(LanguageNumber.PLURAL, LanguageCase.NOMINATIVE,
+                            LanguagePossessive.NONE, LanguageArticle.INDEFINITE), "Bulegoak");
+            assertDoesNotThrow(() -> noun.clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, overrides),
+                    "cloning with approximate-form override keys must not throw (Core rename path)");
+        }
+
+        /**
+         * A rename override must mutate only the clone, never the shared base dictionary noun.
+         * {@code Noun.clone()} does a shallow {@code super.clone()}, so unless {@code BasqueNoun}
+         * deep-copies its {@code values} map the clone aliases the original's storage and the override
+         * leaks back into the base (corrupting every future clone of it). This is the same guard every
+         * sibling declension (Bengali, Bulgarian, Dravidian, Korean, Complex) implements.
+         */
+        @Test
+        void cloneDoesNotMutateOriginalValues() {
+            Noun orig = newBasqueNoun();
+            // A form that actually stores (round-trips to the SG_N_DEF enum), so the leak is observable.
+            NounForm storable = declension().getNounForm(LanguageNumber.SINGULAR, LanguageArticle.DEFINITE);
+            Map<NounForm, String> overrides = ImmutableMap.of(storable, "Bulego");
+
+            orig.clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, overrides);
+
+            // The original must still hold only its single BASE value; the override belongs to the clone.
+            assertEquals(1, orig.getAllDefinedValues().size(),
+                    "cloning with an override must not mutate the original noun's values map (shared-map aliasing)");
+        }
+
+        /**
+         * The {@code setString} round-trip branch: a non-enum form whose (number, case, article) maps to
+         * an existing enum key must actually be stored under that enum (not dropped). Verifies the
+         * {@code bnf = eb} path, which the drop-path tests above never exercise.
+         */
+        @Test
+        void cloneWithRoundTrippingNonEnumFormStoresValue() {
+            Noun orig = newBasqueNoun();
+            // A custom (non-enum) NounForm carrying PLURAL/ERGATIVE/DEFINITE — which getExactNounForm maps
+            // to the enum PL_ERG_DEF and round-trips, so setString should store it rather than drop it.
+            NounForm nonEnum = new NounForm() {
+                @Override public LanguageNumber getNumber() { return LanguageNumber.PLURAL; }
+                @Override public LanguageCase getCase() { return LanguageCase.ERGATIVE; }
+                @Override public LanguageArticle getArticle() { return LanguageArticle.DEFINITE; }
+                @Override public LanguagePossessive getPossessive() { return LanguagePossessive.NONE; }
+                @Override public String getKey() { return "n:erg:d"; }
+            };
+            Map<NounForm, String> overrides = ImmutableMap.of(nonEnum, "Etxeek");
+
+            Noun clone = orig.clone(LanguageGender.NEUTER, LanguageStartsWith.CONSONANT, overrides);
+
+            // Retrieval is keyed by the enum, so the stored value is visible through the enum form.
+            NounForm enumForm = declension().getExactNounForm(LanguageNumber.PLURAL, LanguageCase.ERGATIVE,
+                    LanguagePossessive.NONE, LanguageArticle.DEFINITE);
+            assertEquals("Etxeek", clone.getString(enumForm),
+                    "a non-enum form that round-trips to an enum key must be stored under that enum");
         }
     }
 }

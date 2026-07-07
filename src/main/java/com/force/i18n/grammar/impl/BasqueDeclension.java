@@ -292,7 +292,8 @@ public class BasqueDeclension extends AbstractLanguageDeclension {
      */
     public static class BasqueNoun extends Noun {
         private static final long serialVersionUID = 1L;
-        private final Map<BasqueNounForm, String> values = new EnumMap<>(BasqueNounForm.class);
+        private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BasqueNoun.class.getName());
+        private Map<BasqueNounForm, String> values = new EnumMap<>(BasqueNounForm.class);
         private transient volatile int stemFlags = -1;
 
         public BasqueNoun(AbstractLanguageDeclension declension, String name, String pluralAlias, NounType type,
@@ -304,6 +305,21 @@ public class BasqueDeclension extends AbstractLanguageDeclension {
         @Override
         public java.util.Map<? extends NounForm, String> getAllDefinedValues() {
             return java.util.Collections.unmodifiableMap(values);
+        }
+
+        /**
+         * Deep-copy the {@code values} map. {@link Noun#clone()} does a shallow {@code super.clone()},
+         * which would leave the clone sharing this instance's map; a subsequent {@code setString} on the
+         * clone (e.g. via the rename/override path in {@link LanguageDictionary#getDynamicNoun}) would
+         * then leak back into — and corrupt — the shared base noun. Every sibling noun with its own
+         * value map (Bengali, Bulgarian, Dravidian, Korean, Complex) overrides {@code clone()} for the
+         * same reason.
+         */
+        @Override
+        public Noun clone() {
+            BasqueNoun noun = (BasqueNoun) super.clone();
+            noun.values = new EnumMap<>(this.values);
+            return noun;
         }
 
         @Override
@@ -339,13 +355,41 @@ public class BasqueDeclension extends AbstractLanguageDeclension {
 
         @Override
         public void setString(String value, NounForm form) {
-            values.put((BasqueNounForm) form, value);
-            if (value != null) {
-                BasqueNounForm bnf = (BasqueNounForm) form;
-                if (bnf == BasqueNounForm.BASE || bnf == BasqueNounForm.SG_N_IND || bnf == BasqueNounForm.SG_N_DEF) {
-                    String lower = getDeclension().getLanguage().toFoldedCase(value);
-                    stemFlags = computeStemFlags(lower);
+            // Mirror the getString() guard: only BasqueNounForm (enum) keys are ever stored/retrieved.
+            // A dynamic (non-enum) form carries a (number, case, article) triple that has no exact enum
+            // key (e.g. a non-core singular case, or plural indefinite). Such forms flow through the
+            // rename/override path (Noun.clone(..., valueOverrides)) from the external RenamingProvider.
+            //
+            // We must not cast blindly (historically a ClassCastException), and we must not coerce the
+            // form to BASE via getExactNounForm(): that would store an already-inflected surface under
+            // the bare-stem key and corrupt render-time surface generation, which derives every form
+            // from the BASE/default string. Since getString() can never return a value for a non-enum
+            // form anyway, and Basque synthesizes such surfaces productively at render time, dropping
+            // the override loses nothing retrievable. Map to an enum key only when it round-trips.
+            BasqueNounForm bnf;
+            if (form instanceof BasqueNounForm b) {
+                bnf = b;
+            } else {
+                NounForm exact = getDeclension().getExactNounForm(form.getNumber(), form.getCase(),
+                        form.getPossessive(), form.getArticle());
+                if (exact instanceof BasqueNounForm eb
+                        && eb.getNumber() == form.getNumber()
+                        && eb.getCase() == form.getCase()
+                        && eb.getArticle() == form.getArticle()) {
+                    bnf = eb;
+                } else {
+                    if (logger.isLoggable(java.util.logging.Level.FINE)) {
+                        logger.fine("###\tIgnoring Basque noun override for non-enum form " + form.getKey()
+                                + " on " + getName() + "; rendered productively at label time.");
+                    }
+                    return;
                 }
+            }
+            values.put(bnf, value);
+            if (value != null
+                    && (bnf == BasqueNounForm.BASE || bnf == BasqueNounForm.SG_N_IND || bnf == BasqueNounForm.SG_N_DEF)) {
+                String lower = getDeclension().getLanguage().toFoldedCase(value);
+                stemFlags = computeStemFlags(lower);
             }
         }
 
@@ -625,6 +669,11 @@ public class BasqueDeclension extends AbstractLanguageDeclension {
         LanguageNumber num = (number == null) ? LanguageNumber.SINGULAR : number;
         LanguageCase kase = (languageCase == null) ? LanguageCase.NOMINATIVE : languageCase;
         LanguageArticle art = (article == null) ? getDefaultArticle() : article;
+
+        // Basque plural always uses definite morphology; normalize article for plural
+        if (num.isPlural()) {
+            art = LanguageArticle.DEFINITE;
+        }
 
         // Try exact first
         NounForm exact = getExactNounForm(num, kase, possessive, art);
