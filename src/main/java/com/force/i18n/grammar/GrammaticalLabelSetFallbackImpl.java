@@ -65,16 +65,19 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
     }
 
     /**
-     * Either set's section-to-filename map is null when it was parsed while label hints were disallowed, so
-     * a union is only possible when both are present.
+     * The section-to-filename map is either complete or absent: it is null when the set was parsed while label
+     * hints were disallowed. Consumers treat a non-null map as authoritative for every section, so a partial
+     * union (one side present, the other absent) would misattribute a section's file -- e.g. a mapless main set
+     * overriding a section also defined in a mapped fallback would report the fallback's file for a label whose
+     * effective value came from the main set. Combine only when both maps are present; otherwise return null so
+     * the "absent or complete" invariant the null-tolerant consumers rely on is preserved.
      *
-     * @return the two maps combined, whichever one exists, or null if neither does
+     * @return the two maps combined when both are present, otherwise null
      */
-    private static Map<String, String> unionSectionToFilename(GrammaticalLabelSet main, GrammaticalLabelSet fallback) {
+    static Map<String, String> unionSectionToFilename(GrammaticalLabelSet main, GrammaticalLabelSet fallback) {
         Map<String, String> mainMap = main.getLabelSectionToFilename();
         Map<String, String> fallbackMap = fallback.getLabelSectionToFilename();
-        if (mainMap == null) return fallbackMap;
-        if (fallbackMap == null) return mainMap;
+        if (mainMap == null || fallbackMap == null) return null;
         return new ImmutableMapUnion<>(mainMap, fallbackMap);
     }
 

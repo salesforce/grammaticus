@@ -41,16 +41,20 @@ import com.google.common.collect.SetMultimap;
 class LabelUsageTest {
 
     private LabelDebugProvider originalDebugProvider;
+    private LabelUsageTracking originalUsageTracker;
 
     @BeforeEach
     void captureState() {
         this.originalDebugProvider = LabelDebugProvider.get();
+        this.originalUsageTracker = LabelUsage.get();
     }
 
     @AfterEach
     void restoreState() {
-        LabelUsage.set(LabelUsageTracking.NONE);
+        // Restore the debug provider first -- that may itself register a tracker through the compatibility
+        // bridge -- then put the usage registry back to exactly what it held before the test.
         LabelDebugProvider.setLabelDebugProviderEnabled(this.originalDebugProvider);
+        LabelUsage.set(this.originalUsageTracker);
     }
 
     @Test
@@ -80,6 +84,31 @@ class LabelUsageTest {
     @DisplayName("the registry rejects null")
     void rejectsNull() {
         assertThrows(NullPointerException.class, () -> LabelUsage.set(null));
+    }
+
+    @Test
+    @DisplayName("clear(expected) resets to NONE only when the expected tracker is still registered")
+    void clearIsConditional() {
+        RecordingTracker tracker = new RecordingTracker();
+        LabelUsage.set(tracker);
+
+        assertTrue(LabelUsage.clear(tracker), "clear must succeed when the expected tracker is current");
+        assertSame(LabelUsageTracking.NONE, LabelUsage.get());
+    }
+
+    @Test
+    @DisplayName("clear(stale) does not erase a tracker another caller installed after the fact")
+    void clearDoesNotEraseNewerRegistration() {
+        RecordingTracker first = new RecordingTracker();
+        RecordingTracker second = new RecordingTracker();
+        LabelUsage.set(first);
+
+        // Simulate the deregistration race: `first` decides to clear itself, but `second` has already taken the
+        // slot in between. A check-then-set clear would wipe `second`; the conditional clear must leave it.
+        LabelUsage.set(second);
+        assertFalse(LabelUsage.clear(first), "clearing a stale tracker must not report success");
+
+        assertSame(second, LabelUsage.get(), "a newer registration must survive a stale caller's clear");
     }
 
     @Test
@@ -182,6 +211,32 @@ class LabelUsageTest {
         assertSame(tracker, LabelUsage.get());
     }
 
+    @Test
+    @DisplayName("installing a tracking debug provider registers it to receive reads (Core-tracker compat)")
+    void installingTrackingProviderReceivesReads() {
+        // Mirrors how Salesforce Core installs its LabelUsageTracker: a LabelDebugProvider subclass that always
+        // tracks, registered through setLabelDebugProviderEnabled(provider) -- never through setTrackingLabelUsage.
+        // Reads must reach it, otherwise production telemetry silently drops to LabelUsageTracking.NONE.
+        RecordingDebugProvider provider = new RecordingDebugProvider();
+        LabelDebugProvider.setLabelDebugProviderEnabled(provider);
+
+        assertSame(provider, LabelUsage.get(), "a tracking provider must occupy the usage-registry slot on install");
+        LabelUsage.get().trackLabel("Sample", "account");
+        assertEquals(List.of("Sample.account"), provider.recorded);
+    }
+
+    @Test
+    @DisplayName("installing a non-tracking debug provider does not claim the registry slot")
+    void installingNonTrackingProviderLeavesRegistry() {
+        RecordingTracker unrelated = new RecordingTracker();
+        LabelUsage.set(unrelated);
+
+        // A plain enabled provider is not a tracker; it must not seize the slot from an unrelated tracker.
+        LabelDebugProvider.setLabelDebugProviderEnabled(true);
+
+        assertSame(unrelated, LabelUsage.get(), "a non-tracking provider must not displace an unrelated tracker");
+    }
+
     private static final class RecordingTracker implements LabelUsageTracking {
         private final List<String> recorded = new ArrayList<>();
 
@@ -198,6 +253,55 @@ class LabelUsageTest {
         @Override
         public SetMultimap<String, String> getUsedLabels() {
             return ImmutableSetMultimap.of();
+        }
+    }
+
+    /**
+     * A {@link LabelDebugProvider} that is itself an always-on tracker, mirroring Salesforce Core's
+     * {@code LabelUsageTracker}: it is installed through {@link LabelDebugProvider#setLabelDebugProviderEnabled}
+     * and reports {@link #isTrackingLabelUsage()} == true, but never calls {@link #setTrackingLabelUsage}.
+     */
+    private static final class RecordingDebugProvider extends LabelDebugProvider {
+        private final List<String> recorded = new ArrayList<>();
+
+        @Override
+        public boolean isAllowed() {
+            return false;
+        }
+
+        @Override
+        public String makeLabelHintIfRequested(String text, String section, String key) {
+            return text;
+        }
+
+        @Override
+        public boolean isTrackingLabelUsage() {
+            return true;
+        }
+
+        @Override
+        public void setTrackingLabelUsage(boolean trackUsage) {
+            // always tracks; nothing to toggle
+        }
+
+        @Override
+        public void trackLabel(String section, String key) {
+            this.recorded.add(section + "." + key);
+        }
+
+        @Override
+        public SetMultimap<String, String> getUsedLabels() {
+            return ImmutableSetMultimap.of();
+        }
+
+        @Override
+        public boolean setLabelHintRequest(boolean value) {
+            return value;
+        }
+
+        @Override
+        public void setLabelHintMode(String value) {
+            // no label-hint rendering in this telemetry-only fixture
         }
     }
 }

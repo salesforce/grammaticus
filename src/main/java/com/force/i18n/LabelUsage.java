@@ -17,6 +17,8 @@
 
 package com.force.i18n;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 import com.google.common.base.Preconditions;
 
 /**
@@ -29,7 +31,7 @@ import com.google.common.base.Preconditions;
  * @since 1.3.7
  */
 public final class LabelUsage {
-    private volatile static LabelUsageTracking INSTANCE = LabelUsageTracking.NONE;
+    private static final AtomicReference<LabelUsageTracking> INSTANCE = new AtomicReference<>(LabelUsageTracking.NONE);
 
     private LabelUsage() {
     }
@@ -38,7 +40,7 @@ public final class LabelUsage {
      * @return the registered tracker, never null
      */
     public static LabelUsageTracking get() {
-        return INSTANCE;
+        return INSTANCE.get();
     }
 
     /**
@@ -47,6 +49,21 @@ public final class LabelUsage {
      * @param tracker the tracker to register; use {@link LabelUsageTracking#NONE} to stop tracking
      */
     public static void set(LabelUsageTracking tracker) {
-        INSTANCE = Preconditions.checkNotNull(tracker);
+        INSTANCE.set(Preconditions.checkNotNull(tracker));
+    }
+
+    /**
+     * Deregister {@code expected} by resetting the registry to {@link LabelUsageTracking#NONE}, but only if it is
+     * still the registered tracker. This is the atomic form of the check-then-clear a tracker needs when turning
+     * itself off: if another caller has installed a different tracker in the meantime, that newer registration is
+     * left untouched rather than erased.
+     *
+     * @param expected the tracker that believes it is registered
+     * @return {@code true} if {@code expected} was current and has been reset to {@code NONE}; {@code false} if a
+     *         different tracker was registered and nothing changed
+     * @since 1.3.8
+     */
+    public static boolean clear(LabelUsageTracking expected) {
+        return INSTANCE.compareAndSet(expected, LabelUsageTracking.NONE);
     }
 }
