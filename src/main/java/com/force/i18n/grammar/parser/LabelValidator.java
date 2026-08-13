@@ -122,6 +122,10 @@ public class LabelValidator {
 
             Set<String> inheritedNouns = ls.getDictionary().getAllInheritedTermNames(TermType.Noun);
 
+            // Null when the set was parsed while label hints were disallowed; only used to name the offending
+            // file in the message, so an absent map should not fail the validation.
+            Map<String, String> sectionToFilename = ls.getLabelSectionToFilename();
+
             // Iterate through the label set
             for (String section : ls.sectionNames()) {
                 Map<String, Object> sectionMap = ls.getSection(section);
@@ -140,7 +144,8 @@ public class LabelValidator {
                             if (!declension.getEntityForms().contains(form)) continue;  // Ignore autoderived forms
                             Noun noun = ls.getDictionary().getNoun(name, false);
                             if (!noun.getAllDefinedValues().keySet().contains(form)) {
-                                errMsgs.add(ls.getDictionary().getLanguage().getLocaleString() + ":" + section + "." + entry.getKey() + ":" + ls.getLabelSectionToFilename().get(section)
+                                String filename = sectionToFilename == null ? null : sectionToFilename.get(section);
+                                errMsgs.add(ls.getDictionary().getLanguage().getLocaleString() + ":" + section + "." + entry.getKey() + ":" + filename
                                     + " form " + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun " + name );
                             }
                         }

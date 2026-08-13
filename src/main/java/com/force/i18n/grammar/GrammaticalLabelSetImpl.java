@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import com.force.i18n.LabelDebugProvider;
 import com.force.i18n.LabelReference;
 import com.force.i18n.LabelSetImpl;
+import com.force.i18n.LabelUsage;
 import com.force.i18n.LanguageLabelSetDescriptor.GrammaticalLabelSetDescriptor;
 import com.force.i18n.Renameable;
 import com.force.i18n.commons.text.TextUtil;
@@ -226,7 +226,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
      */
     @Override
     public Object get(String section, String param, boolean allowLabelException) throws ParameterNotFoundException, SettingsSectionNotFoundException {
-        LabelDebugProvider.get().trackLabel(section, param);
+        LabelUsage.get().trackLabel(section, param);
         Object result = inner_get(section, param, true);
         if (result == null) {
             return processMissingLabel(
@@ -237,7 +237,7 @@ public class GrammaticalLabelSetImpl extends LabelSetImpl implements Grammatical
 
     @Override
     public Object get(String section, String param, Object ifNull) throws SettingsSectionNotFoundException {
-        LabelDebugProvider.get().trackLabel(section, param);
+        LabelUsage.get().trackLabel(section, param);
         return super.get(section, param, ifNull);
     }
 

@@ -72,10 +72,11 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         // Directory from which we're loading data.
         this.baseDir = dataFile;
 
-        if (LabelDebug.isLabelHintAllowed()) {
-            BASE_FILE = dataFile.getPath();
-            this.sectionToFileName = parser.getSectionToFileName();
-        }
+        this.baseFile = dataFile.getPath();
+        // Whether sections are recorded was decided once, when the parse context was created; null here
+        // means they are not.  Reading the mutable global instead let one handler of a parse disagree with
+        // another, or with itself between construction and the sections it wrote.
+        this.sectionToFileName = parser.getSectionToFileName();
     }
 
     final Level getProblemLogLevel() {
@@ -306,8 +307,8 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
         SectionTag(RootTag parent, Attributes atts) throws SAXParseException {
             super(parent, atts);
 
-            if (LabelDebug.isLabelHintAllowed()) {
-                sectionToFileName.put(getName(), BASE_FILE);
+            if (sectionToFileName != null) {
+                sectionToFileName.put(getName(), baseFile);
             }
 
             currentSection = this;
@@ -1301,8 +1302,9 @@ class GrammaticalLabelFileHandler extends TrackingHandler {
     // -----------------------------------------------------------
     // Label Debugger support
     // ----------------------------------------------------------
-    private String BASE_FILE = null;
-    private Map<String, String> sectionToFileName;
+    private final String baseFile;
+    /** Shared with every handler of this parse, or null if label hints were not allowed when it started. */
+    private final Map<String, String> sectionToFileName;
 
     Map<String, String> getSectionToFileName() {
         return this.sectionToFileName;
