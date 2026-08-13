@@ -63,7 +63,24 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
     private Set<ErrorInfo> invalidLabels;  // The set of labels that have a "problem" with them
 
     private long lastModified = -1;
-    private Map<String, String> sectionToFileName = new ConcurrentHashMap<>();;
+
+    /**
+     * Section name to the file that declared it, or {@code null} when label hints were not allowed as this
+     * parse context was created.
+     * <p>
+     * The decision is taken once, here, and holds for every handler of this parse — including the nested
+     * handlers created for each {@code <import>}. Consulting the mutable global {@link LabelDebug} per
+     * handler and again per {@code <section>} instead made the map's contents depend on when the debug
+     * provider was last replaced, which could leave it partially populated or not created at all while
+     * handlers still wrote to it.
+     * <p>
+     * It is left null rather than empty when hints are off: only {@link LabelDebug#getFilename()} reads it,
+     * so nothing should be retained for a process that cannot render label hints (one entry per section is
+     * ~40 bytes, which reaches several MB per label set on a large corpus), and
+     * {@code GrammaticalLabelSetFileCacheLoader} tests for null to decide that a cached label set predates
+     * label hints being enabled and must be rebuilt.
+     */
+    private final Map<String, String> sectionToFileName;
 
     /**
      * Construct a label file parser
@@ -83,6 +100,7 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         this.desc = labelDesc;
         this.parentProvider = parentProvider;
         this.trackDupes = trackDupes;
+        this.sectionToFileName = LabelDebug.isLabelHintAllowed() ? new ConcurrentHashMap<>() : null;
     }
 
     @Override
@@ -137,6 +155,10 @@ public class GrammaticalLabelFileParser implements BasePropertyFile.Parser {
         return this.lastModified;
     }
 
+    /**
+     * @return the section name to declaring file map, or {@code null} if label hints were not allowed when
+     *         this parser was created and it was therefore never built
+     */
     public Map<String, String> getSectionToFileName() {
         return this.sectionToFileName;
     }

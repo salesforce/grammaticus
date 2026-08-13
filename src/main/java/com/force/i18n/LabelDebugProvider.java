@@ -28,10 +28,16 @@ import com.google.common.collect.*;
  * Provide access to LabelDebugging.  This class has two distinct implementations, one which does nothing
  * and one which may add some helpful hints to the end of every label on a page and keep a list of those
  * labels around for display.
+ * <p>
+ * Label reads are reported to the tracker registered with {@link LabelUsage}, not to this class.  A component
+ * that wants only usage telemetry should implement {@link LabelUsageTracking} and register it there; replacing
+ * the debug provider to get telemetry also changes {@link #isAllowed()} for everything that reads it, which is
+ * a decision the telemetry component does not own.  This class implements {@link LabelUsageTracking} so that
+ * the developer flow gated by {@link #setTrackingLabelUsage(boolean)} keeps working unchanged.
  *
  * @author stamm (from rchen/150)
  */
-public abstract class LabelDebugProvider {
+public abstract class LabelDebugProvider implements LabelUsageTracking {
 	// TODO SLT: Switch to an enum
     protected static final String TRACE = "trace";
     protected static final String MASK = "mask";
@@ -55,6 +61,11 @@ public abstract class LabelDebugProvider {
      */
     public static void setLabelDebugProviderEnabled(LabelDebugProvider provider) {
     	Preconditions.checkNotNull(provider);
+        // Don't leave a replaced provider registered as the usage tracker; it can no longer be reached to be
+        // turned off.  A tracker registered by anything other than the outgoing provider is left alone.
+        if (LabelUsage.get() == INSTANCE) {
+            LabelUsage.set(LabelUsageTracking.NONE);
+        }
         INSTANCE = provider;
     }
 
@@ -305,6 +316,12 @@ public abstract class LabelDebugProvider {
         @Override
         public synchronized void setTrackingLabelUsage(boolean trackUsage) {
             this.isTracking = trackUsage;
+            // Label reads go to the LabelUsage registry, so the developer flow has to register itself there.
+            if (trackUsage) {
+                LabelUsage.set(this);
+            } else if (LabelUsage.get() == this) {
+                LabelUsage.set(LabelUsageTracking.NONE);
+            }
         }
 
         private static final LabelDebugContinuation NOT_TRACKING = new LabelDebugContinuation() {};

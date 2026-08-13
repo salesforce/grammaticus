@@ -111,6 +111,12 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
         assertEquals(badLabels.toString(), 0, badLabels.length());
     }
 
+    /** The section-to-filename map is only built when label hints are allowed, so it may not be there. */
+    private static String filenameOf(GrammaticalLabelSet labelSet, String section) {
+        Map<String, String> sectionToFilename = labelSet.getLabelSectionToFilename();
+        return sectionToFilename == null ? "<unknown file>" : sectionToFilename.get(section);
+    }
+
     public void testReferencedCaseFormsExist() throws IOException {
         List<String> errMsgs = new ArrayList<String>();
 
@@ -159,7 +165,7 @@ public class GrammaticalLabelTest extends BaseGrammaticalLabelTest {
                             Noun noun = mainSet.getDictionary().getNoun(name, false);
                             if (!noun.getAllDefinedValues().keySet().contains(form)) {
                                 errMsgs.add(language.getLocaleString() + ":" + section + "." + entry.getKey() + ":"
-                                        + ls.getLabelSectionToFilename().get(section) + " form "
+                                        + filenameOf(ls, section) + " form "
                                         + LabelUtils.get().getFormDescriptionInEnglish(declension, form) + " for noun "
                                         + name);
                             }

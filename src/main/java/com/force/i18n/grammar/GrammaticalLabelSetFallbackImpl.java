@@ -50,7 +50,7 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
     public GrammaticalLabelSetFallbackImpl(GrammaticalLabelSet main, GrammaticalLabelSet fallback) {
         super(main.getDictionary(),
                 new CompositePropertyFileDataImpl(main.getPropertyFileData(), fallback.getPropertyFileData()),
-                new ImmutableMapUnion<>(main.getLabelSectionToFilename(), fallback.getLabelSectionToFilename()),
+                unionSectionToFilename(main, fallback),
                 Sets.union(main.getPublicSectionNames(), fallback.getPublicSectionNames()));
         this.main = main;
         this.fallback = fallback;
@@ -62,6 +62,20 @@ public final class GrammaticalLabelSetFallbackImpl extends GrammaticalLabelSetIm
         if (!_allowOtherForms && fallback instanceof GrammaticalLabelSetImpl) _allowOtherForms = ((GrammaticalLabelSetImpl)fallback).allowOtherGrammaticalForms();
         allowOtherGrammaticalForms = _allowOtherForms;
         setLastModified(Math.max(main.getLastModified(), fallback.getLastModified()));
+    }
+
+    /**
+     * Either set's section-to-filename map is null when it was parsed while label hints were disallowed, so
+     * a union is only possible when both are present.
+     *
+     * @return the two maps combined, whichever one exists, or null if neither does
+     */
+    private static Map<String, String> unionSectionToFilename(GrammaticalLabelSet main, GrammaticalLabelSet fallback) {
+        Map<String, String> mainMap = main.getLabelSectionToFilename();
+        Map<String, String> fallbackMap = fallback.getLabelSectionToFilename();
+        if (mainMap == null) return fallbackMap;
+        if (fallbackMap == null) return mainMap;
+        return new ImmutableMapUnion<>(mainMap, fallbackMap);
     }
 
     /**

@@ -64,8 +64,10 @@ public final class LabelDebug {
         }
 
         Map<String,String> fileMap = ((LabelSet)LocalizerFactory.get().getDefaultLocalizer().getLabelSet()).getLabelSectionToFilename();
-        assert null != fileMap : "Didn't load label section to filename";
-        return fileMap.get(getSection());
+        // Absent if the label set was parsed while label hints were disallowed.  A disk-cached set is
+        // rebuilt on the next load, but an in-memory one stays as parsed until the app reloads it, and a
+        // missing filename should not fail the label hint that asked for it.
+        return fileMap == null ? null : fileMap.get(getSection());
     }
 
     public String getText() {
