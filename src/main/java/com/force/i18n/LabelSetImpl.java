@@ -115,8 +115,10 @@ public class LabelSetImpl extends BasePropertyFile implements LabelSet {
     }
 
     public String getFilenameFromLabelSection(String sectionName) {
-        assert (null != getLabelSectionToFilename());
-        return getLabelSectionToFilename().get(sectionName);
+        // Null when the set was parsed while label hints were disallowed (the default); the section-to-filename
+        // map only exists to name files for developer hints, so an absent map means "unknown", not an error.
+        Map<String, String> sectionToFilename = getLabelSectionToFilename();
+        return sectionToFilename == null ? null : sectionToFilename.get(sectionName);
     }
 
     protected void setLabelSectionToFilename(Map<String, String> sectionMap) {

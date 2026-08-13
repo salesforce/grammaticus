@@ -63,10 +63,16 @@ public abstract class LabelDebugProvider implements LabelUsageTracking {
     	Preconditions.checkNotNull(provider);
         // Don't leave a replaced provider registered as the usage tracker; it can no longer be reached to be
         // turned off.  A tracker registered by anything other than the outgoing provider is left alone.
-        if (LabelUsage.get() == INSTANCE) {
-            LabelUsage.set(LabelUsageTracking.NONE);
-        }
+        LabelUsage.clear(INSTANCE);
         INSTANCE = provider;
+        // Compatibility bridge: a provider that is itself an always-on tracker (e.g. a telemetry collector
+        // installed by occupying the debug-provider slot, as Salesforce Core does) expects to receive label
+        // reads once installed.  Reads now flow through the LabelUsage registry, so register it there; otherwise
+        // its callbacks would silently drop to LabelUsageTracking.NONE.  Providers that only track through the
+        // developer setTrackingLabelUsage(true) flow report false here and register themselves on that call.
+        if (provider.isTrackingLabelUsage()) {
+            LabelUsage.set(provider);
+        }
     }
 
     /**
@@ -319,8 +325,9 @@ public abstract class LabelDebugProvider implements LabelUsageTracking {
             // Label reads go to the LabelUsage registry, so the developer flow has to register itself there.
             if (trackUsage) {
                 LabelUsage.set(this);
-            } else if (LabelUsage.get() == this) {
-                LabelUsage.set(LabelUsageTracking.NONE);
+            } else {
+                // Only clear if we're still the registered tracker; don't erase a tracker someone else installed.
+                LabelUsage.clear(this);
             }
         }
 
